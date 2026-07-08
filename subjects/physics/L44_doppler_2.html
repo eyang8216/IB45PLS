@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 44: Lesson 44: The Doppler Effect II — Light, Redshift, and Applications — IB Physics HL</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']]
+  },
+  options: {
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap');
+  
+  :root {
+    --bg: #fdfcf9;
+    --text: #1a1a1a;
+    --accent: #2c5f2d;
+    --border: #d0cec7;
+    --code-bg: #f4f3ef;
+    --callout-bg: #f0f7f0;
+    --callout-border: #2c5f2d;
+    --warning-bg: #fff8e6;
+    --warning-border: #c4941a;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  body {
+    font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid var(--accent);
+    color: var(--accent);
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 2.5rem 0 0.75rem;
+    color: #1a1a1a;
+  }
+  
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.5rem;
+  }
+  
+  p { margin: 0 0 1rem; }
+  
+  ul, ol { margin: 0 0 1rem 1.5rem; }
+  li { margin-bottom: 0.35rem; }
+  
+  code {
+    background: var(--code-bg);
+    padding: 0.15em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+    font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+  }
+  
+  pre {
+    background: var(--code-bg);
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 0 0 1rem;
+    font-size: 0.85em;
+    line-height: 1.5;
+  }
+  
+  pre code {
+    background: none;
+    padding: 0;
+    font-size: inherit;
+  }
+  
+  blockquote {
+    border-left: 4px solid var(--callout-border);
+    background: var(--callout-bg);
+    margin: 0 0 1rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+  }
+  
+  blockquote.warning {
+    border-left-color: var(--warning-border);
+    background: var(--warning-bg);
+  }
+  
+  strong { font-weight: 700; }
+  
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.5rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  
+  .nav a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+  
+  .nav a:hover { background: var(--callout-bg); }
+  
+  .worked-example, .answer {
+    background: var(--code-bg);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin: 0.75rem 0 1.25rem;
+  }
+  
+  .worked-example strong:first-child, .answer strong:first-child {
+    color: var(--accent);
+  }
+  
+  @media print {
+    body { font-size: 12pt; max-width: 100%; padding: 0; }
+    .nav { display: none; }
+    h1 { font-size: 18pt; }
+    h2 { font-size: 14pt; }
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 0 1rem;
+  }
+  
+  th, td {
+    border: 1px solid var(--border);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  
+  th {
+    background: var(--code-bg);
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L43_doppler_1.html">← Lesson 43</a>
+  <a href="L45_gravitational_fields_1.html">Lesson 45 →</a>
+</nav>
+
+<h1>Lesson 44: The Doppler Effect II — Light, Redshift, and Applications</h1>
+
+<h2>What You'll Learn</h2>
+<ul>
+<li>Why the Doppler effect for light is fundamentally different from sound</li>
+<li>The relativistic Doppler formula for electromagnetic waves</li>
+<li>Redshift and blueshift: what they tell us about the universe</li>
+<li>The redshift parameter z and how astronomers use it</li>
+<li>Applications: Hubble's law, expanding universe, radar speed guns</li>
+<li>How to distinguish between Doppler shift and cosmological redshift</li>
+</ul>
+
+<hr>
+
+<h2>1. Light vs. Sound: A Fundamental Difference</h2>
+
+<p>In Lesson 43, we studied the Doppler effect for sound waves. Sound requires a medium (air, water, solid) and the speeds v_o and v_s are measured relative to that medium.</p>
+
+<p>Light is different. Light does <strong>not</strong> require a medium. There is no "ether" that light travels through. Because of special relativity, all observers measure the same speed of light (c = 3.00 × 10⁸ m/s) regardless of their own motion. This changes the Doppler formula completely.</p>
+
+<h3>What Stays the Same</h3>
+
+<ul>
+<li>If source and observer approach each other, the observed frequency <strong>increases</strong> (blueshift).</li>
+<li>If source and observer recede from each other, the observed frequency <strong>decreases</strong> (redshift).</li>
+</ul>
+
+<h3>What Changes</h3>
+
+<ul>
+<li>There is only <strong>relative velocity</strong> between source and observer — no separate "source speed" and "observer speed" relative to a medium.</li>
+<li>The formula is different because of relativistic time dilation and length contraction.</li>
+<li>The shift depends only on the relative speed, not on who is moving.</li>
+</ul>
+
+<hr>
+
+<h2>2. The Relativistic Doppler Formula</h2>
+
+<p>For electromagnetic waves (light, radio, X-rays, etc.):</p>
+
+<p>$$f' = f \sqrt{\frac{c \pm v}{c \mp v}}$$</p>
+
+<p>where:</p>
+<ul>
+<li><strong>f</strong> = frequency emitted by the source in its rest frame (Hz)</li>
+<li><strong>f'</strong> = frequency observed (Hz)</li>
+<li><strong>v</strong> = relative speed of source and observer (m/s) — the magnitude of the relative velocity</li>
+<li><strong>c</strong> = speed of light = 3.00 × 10⁸ m/s</li>
+</ul>
+
+<h3>Sign Convention for Light</h3>
+
+<p>The sign convention is simpler than for sound because only the relative motion matters:</p>
+
+<ul>
+<li><strong>Approaching (blueshift, f' > f):</strong> Use the upper signs — f' = f √((c+v)/(c−v))</li>
+<li><strong>Receding (redshift, f' < f):</strong> Use the lower signs — f' = f √((c−v)/(c+v))</li>
+</ul>
+
+<p>Equivalently, in terms of wavelength λ = c/f:</p>
+
+<p>$$\lambda' = \lambda \sqrt{\frac{c \mp v}{c \pm v}}$$</p>
+
+<p>where the upper signs are for approaching (λ' < λ, blueshift) and the lower signs for receding (λ' > λ, redshift).</p>
+
+<h3>Low-Speed Approximation</h3>
+
+<p>For speeds much less than c (v ≪ c), which covers nearly all everyday situations, we can use an approximation:</p>
+
+<p>$$\frac{\Delta f}{f} \approx \pm \frac{v}{c}$$</p>
+
+<p>or equivalently:</p>
+
+<p>$$\frac{\Delta \lambda}{\lambda} \approx \mp \frac{v}{c}$$</p>
+
+<p>where Δf = f' − f and Δλ = λ' − λ. The minus sign in the wavelength version means: if v is the speed of recession (positive), Δλ is positive (redshift). If v is the speed of approach, Δλ is negative (blueshift).</p>
+
+<h3>Common Misconception #1</h3>
+
+<blockquote>"Light from a moving source travels at c + v or c − v."</blockquote>
+
+<p>No. All observers measure light travelling at exactly c = 3.00 × 10⁸ m/s. The wavelength and frequency change, but the speed is invariant. This is a fundamental postulate of special relativity. The Doppler effect for light is a consequence of the invariance of c combined with time dilation.</p>
+
+<h3>Common Misconception #2</h3>
+
+<blockquote>"Redshift means the light is actually red in colour."</blockquote>
+
+<p>Redshift means the wavelength has <strong>increased</strong> (shifted toward the red end of the spectrum). If ultraviolet light from a distant galaxy is redshifted, it might become visible blue light — still not red. The term "redshift" refers to the direction of the shift, not the final colour. Similarly, "blueshift" means the wavelength has decreased.</p>
+
+<hr>
+
+<h2>3. The Redshift Parameter z</h2>
+
+<p>Astronomers define a dimensionless quantity called <strong>redshift</strong>, denoted by z:</p>
+
+<p>$$z = \frac{\lambda_{\text{observed}} - \lambda_{\text{emitted}}}{\lambda_{\text{emitted}}} = \frac{\Delta \lambda}{\lambda}$$</p>
+
+<p>Equivalently:</p>
+
+<p>$$z = \frac{f_{\text{emitted}} - f_{\text{observed}}}{f_{\text{observed}}}$$</p>
+
+<p><strong>Important:</strong> Some textbooks define z using the observed frequency in the denominator. The IB Data Booklet uses the wavelength formula above, which is equivalent for small shifts.</p>
+
+<p>For the relativistic Doppler effect:</p>
+
+<p>$$1 + z = \sqrt{\frac{1 + v/c}{1 - v/c}}$$</p>
+
+<p>Solving for v/c:</p>
+
+<p>$$\frac{v}{c} = \frac{(1+z)^2 - 1}{(1+z)^2 + 1}$$</p>
+
+<p>For small z (v ≪ c), v/c ≈ z.</p>
+
+<h3>What z Values Mean</h3>
+
+<table>
+<tr>
+<th>z</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td>z > 0</td>
+<td>Redshift — object moving away</td>
+</tr>
+<tr>
+<td>z < 0</td>
+<td>Blueshift — object moving toward us</td>
+</tr>
+<tr>
+<td>z = 0.1</td>
+<td>v ≈ 0.1c = 30,000 km/s</td>
+</tr>
+<tr>
+<td>z = 1</td>
+<td>v ≈ 0.6c</td>
+</tr>
+<tr>
+<td>z = 10</td>
+<td>v ≈ 0.98c (very distant galaxies)</td>
+</tr>
+</table>
+
+<p>The highest confirmed redshifts for galaxies are around z ≈ 11, corresponding to light that has been travelling for over 13 billion years.</p>
+
+<hr>
+
+<h2>4. Applications of the Doppler Effect for Light</h2>
+
+<h3>4.1 Radar Speed Guns</h3>
+
+<p>Police radar guns emit a microwave beam that reflects off a moving car. The reflected wave is Doppler-shifted. By measuring Δf, the gun calculates the car's speed.</p>
+
+<p>This is a <strong>double Doppler shift</strong>: the car "receives" a shifted frequency from the gun (like a moving observer), then reflects it as a moving source. For v ≪ c:</p>
+
+<p>$$\Delta f \approx \frac{2v f}{c}$$</p>
+
+<p>The factor of 2 comes from the double shift.</p>
+
+<h3>4.2 Measuring the Rotation of the Sun</h3>
+
+<p>By measuring the Doppler shift of light from the east and west limbs (edges) of the Sun, astronomers can measure the Sun's rotation speed. One limb approaches us (blueshift), the other recedes (redshift). The Sun rotates once approximately every 25 days at its equator.</p>
+
+<h3>4.3 Binary Stars</h3>
+
+<p>When two stars orbit each other, one star periodically moves toward Earth and then away. The spectral lines from that star oscillate between blueshift and redshift with the orbital period. This allows astronomers to measure orbital speeds and periods, and from those, calculate the masses of the stars using Kepler's laws.</p>
+
+<h3>4.4 Exoplanet Detection</h3>
+
+<p>When a planet orbits a star, the star wobbles slightly around the common centre of mass. This wobble creates a tiny periodic Doppler shift in the star's light. By measuring this wobble (the <strong>radial velocity method</strong>), astronomers have discovered thousands of exoplanets. The effect is tiny — shifts of a few metres per second in a star's motion — requiring extremely precise spectroscopy.</p>
+
+<hr>
+
+<h2>5. Hubble's Law and the Expanding Universe</h2>
+
+<p>In 1929, Edwin Hubble discovered that distant galaxies are moving away from us, and the farther away they are, the faster they recede:</p>
+
+<p>$$v = H_0 d$$</p>
+
+<p>where:</p>
+<ul>
+<li><strong>v</strong> = recessional velocity of the galaxy (km/s)</li>
+<li><strong>d</strong> = distance to the galaxy (Mpc, megaparsecs)</li>
+<li><strong>H₀</strong> = Hubble constant ≈ 70 km/s per Mpc</li>
+</ul>
+
+<p>This is <strong>Hubble's Law</strong>. It tells us the universe is expanding. Every galaxy (except a few very nearby ones bound by gravity) is moving away from every other galaxy. The space between galaxies is stretching.</p>
+
+<h3>Cosmological Redshift vs. Doppler Redshift</h3>
+
+<p>This is a subtle but important distinction. The redshift of distant galaxies is NOT primarily a Doppler shift. Galaxies are not "flying through space" away from us. Instead, the <strong>space itself is expanding</strong>, and the light waves are stretched as they travel through expanding space. The redshift of distant galaxies is a <strong>cosmological redshift</strong>, caused by the expansion of the universe.</p>
+
+<p>However, for IB purposes, you can use the Doppler formula and z to calculate recessional velocities, as this gives a reasonable approximation for moderate redshifts.</p>
+
+<h3>The Big Bang Implication</h3>
+
+<p>If galaxies are moving apart now, then in the past they must have been closer together. Extrapolating backwards, about 13.8 billion years ago, all matter and energy was concentrated in an extremely hot, dense state — the Big Bang. The cosmic microwave background radiation (CMB), with a temperature of 2.7 K, is the redshifted remnant of the radiation from this early universe.</p>
+
+<hr>
+
+<h2>6. Comparing Doppler Effect for Sound vs. Light</h2>
+
+<table>
+<tr>
+<th>Property</th>
+<th>Sound</th>
+<th>Light</th>
+</tr>
+<tr>
+<td>Medium required</td>
+<td>Yes (air, water, etc.)</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Speed measurement</td>
+<td>Relative to medium</td>
+<td>All observers measure c</td>
+</tr>
+<tr>
+<td>Moving source vs. observer</td>
+<td>Different effects</td>
+<td>Only relative velocity matters</td>
+</tr>
+<tr>
+<td>Formula</td>
+<td>f' = f(v ± v_o)/(v ∓ v_s)</td>
+<td>f' = f √((c ± v)/(c ∓ v))</td>
+</tr>
+<tr>
+<td>Applications</td>
+<td>Sirens, echolocation</td>
+<td>Astronomy, radar, cosmology</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>Worked Examples</h2>
+
+<h3>Example 1: Hydrogen Spectrum Redshift</h3>
+
+<p>The hydrogen-alpha spectral line has a rest wavelength of 656.3 nm. In a distant galaxy's spectrum, this line is observed at 662.9 nm.</p>
+<p>(a) Calculate the redshift z.</p>
+<p>(b) Estimate the recessional velocity of the galaxy.</p>
+<p>(c) Estimate the distance to the galaxy using H₀ = 70 km/s/Mpc.</p>
+
+<p><strong>Approach:</strong> (a) Use the definition of z. (b) For small z, use v = cz. (c) Use Hubble's law.</p>
+
+<p>(a) $z = \frac{\lambda' - \lambda}{\lambda} = \frac{662.9 - 656.3}{656.3} = \frac{6.6}{656.3} = 0.01006$</p>
+
+<p>(b) Since z ≪ 1, we can use v ≈ zc = 0.01006 × 3.00 × 10⁸ = 3.02 × 10⁶ m/s = 3020 km/s.</p>
+
+<p>Let's verify with the full relativistic formula: z = 0.01006 → v/c = ((1.01006)² − 1)/((1.01006)² + 1) = 0.0202/2.0202 = 0.0100. So v = 0.0100c = 3000 km/s. The approximation is excellent.</p>
+
+<p>(c) d = v/H₀ = 3020 / 70 = 43.1 Mpc ≈ 140 million light-years.</p>
+
+<p><strong>Why this makes sense:</strong> A shift of about 6.6 nm on 656 nm is about 1%, so z ≈ 0.01 and v ≈ 3000 km/s, which is 1% of c. This is a moderately nearby galaxy (43 Mpc) that would be part of the general Hubble flow.</p>
+
+<hr>
+
+<h3>Example 2: Radar Speed Gun</h3>
+
+<p>A police radar gun operates at 10.525 GHz (X-band). It detects a reflected signal shifted by 1.50 kHz from a car.</p>
+<p>(a) Is the car approaching or receding?</p>
+<p>(b) Calculate the speed of the car.</p>
+
+<p><strong>Approach:</strong> (a) Determine the sign of Δf. (b) Use Δf ≈ 2vf/c for radar double-shift.</p>
+
+<p>(a) The reflected frequency is higher than the emitted frequency. A higher frequency means the car is approaching the radar gun (blueshift/double blueshift).</p>
+
+<p>(b) $\Delta f = \frac{2v f}{c}$ → $v = \frac{\Delta f \cdot c}{2f}$</p>
+
+<p>$v = \frac{1.50 \times 10^3 \times 3.00 \times 10^8}{2 \times 10.525 \times 10^9} = \frac{4.50 \times 10^{11}}{2.105 \times 10^{10}} = 21.4 \text{ m/s}$</p>
+
+<p>v = 21.4 m/s = 77.0 km/h.</p>
+
+<p><strong>Why this makes sense:</strong> A 1.5 kHz shift on 10.525 GHz is about 1.4 × 10⁻⁷ fractional shift. This corresponds to v/c ≈ 7 × 10⁻⁸, giving v ≈ 21 m/s. The factor of 2 in the formula accounts for the double Doppler shift.</p>
+
+<hr>
+
+<h3>Example 3: Receding Galaxy Using Relativistic Formula</h3>
+
+<p>A galaxy is measured to have z = 0.50. Calculate its recessional velocity using:</p>
+<p>(a) The low-speed approximation v = zc.</p>
+<p>(b) The full relativistic formula.</p>
+<p>(c) Explain why the answers differ.</p>
+
+<p><strong>Approach:</strong> Compare the two formulas.</p>
+
+<p>(a) $v_{\text{approx}} = 0.50 \times c = 1.50 \times 10^8 \text{ m/s}$</p>
+
+<p>(b) $\frac{v}{c} = \frac{(1+z)^2 - 1}{(1+z)^2 + 1} = \frac{2.25 - 1}{2.25 + 1} = \frac{1.25}{3.25} = 0.3846$</p>
+
+<p>$v = 0.3846c = 1.154 \times 10^8 \text{ m/s}$ = 115,400 km/s.</p>
+
+<p>(c) The approximation v = zc fails at large z because it ignores relativistic effects. The approximation gives 0.50c, while the correct value is 0.38c. The error is about 30%. For z < 0.1, the error is less than 5%, so the approximation is acceptable. For z ≥ 0.1, always use the relativistic formula.</p>
+
+<hr>
+
+<h3>Example 4: Blueshift of Andromeda</h3>
+
+<p>The Andromeda Galaxy (M31) shows a blueshift with z = −0.0010 (negative z means blueshift).</p>
+<p>(a) What does a negative z tell us about Andromeda's motion?</p>
+<p>(b) Calculate Andromeda's radial velocity.</p>
+<p>(c) Why is Andromeda blueshifted when most galaxies are redshifted?</p>
+
+<p><strong>Approach:</strong> (a) Interpret the sign. (b) Use v ≈ zc. (c) Gravitational binding.</p>
+
+<p>(a) Negative z means the observed wavelength is shorter than the emitted wavelength. Andromeda is moving toward us.</p>
+
+<p>(b) Since z is very small: v ≈ zc = (−0.0010) × (3.00 × 10⁸) = −3.0 × 10⁵ m/s = −300 km/s. The negative sign indicates approaching motion.</p>
+
+<p>(c) Most galaxies are redshifted because the expansion of the universe carries them away from us. However, Andromeda is only 2.5 million light-years away — close enough that the gravitational attraction between Andromeda and the Milky Way overcomes the cosmic expansion. Andromeda is on a collision course with the Milky Way, expected to merge in about 4.5 billion years.</p>
+
+<hr>
+
+<h3>Example 5: Stellar Rotation</h3>
+
+<p>The hydrogen-alpha line (656.3 nm) from opposite edges of the Sun shows a wavelength difference of 0.0082 nm between the approaching and receding limbs. Calculate the rotational speed of the Sun's equator.</p>
+
+<p><strong>Approach:</strong> The wavelength shift on each limb is Δλ = 0.0041 nm (half the total difference). Use Δλ/λ = v/c.</p>
+
+<p>$\frac{\Delta \lambda}{\lambda} = \frac{v}{c}$</p>
+
+<p>$v = c \times \frac{\Delta \lambda}{\lambda} = 3.00 \times 10^8 \times \frac{0.0041}{656.3} = 3.00 \times 10^8 \times 6.25 \times 10^{-6} = 1875 \text{ m/s} \approx 1.9 \text{ km/s}$</p>
+
+<p><strong>Why this makes sense:</strong> The Sun's equatorial rotation speed is about 2 km/s. The wavelength shift is tiny — about 6 parts per million — which is why precise spectroscopy is needed.</p>
+
+<hr>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1</h3>
+<p>A star's spectrum shows the hydrogen-alpha line at 656.5 nm instead of its rest wavelength of 656.3 nm.</p>
+<p>(a) Is the star moving toward or away from Earth? Explain.</p>
+<p>(b) Calculate the redshift z.</p>
+<p>(c) Estimate the radial velocity of the star using the approximation v = zc.</p>
+<p>(d) Calculate the exact velocity using the relativistic formula and compare.</p>
+
+<h3>Problem 2</h3>
+<p>A distant quasar has a measured redshift of z = 3.0.</p>
+<p>(a) Explain what z = 3.0 means in terms of the wavelength shift.</p>
+<p>(b) Calculate the recessional velocity using the relativistic formula.</p>
+<p>(c) The light we see from this quasar was emitted when the universe was much younger. If the current age is 13.8 billion years, and the quasar's light has been travelling for about 11.5 billion years, how old was the universe when the light was emitted?</p>
+
+<h3>Problem 3</h3>
+<p>A police radar operates at 24.125 GHz (K-band). It measures a frequency shift of 2.8 kHz from a receding car.</p>
+<p>(a) Calculate the speed of the car.</p>
+<p>(b) Convert your answer to km/h.</p>
+<p>(c) Why is the frequency shift negative for a receding car, but radar guns display positive speed? Explain what the gun actually measures.</p>
+
+<h3>Problem 4</h3>
+<p>The calcium K-line has a rest wavelength of 393.4 nm. In the spectrum of a binary star system, this line oscillates between 393.1 nm and 393.7 nm with a period of 8.0 days.</p>
+<p>(a) Calculate the maximum approach and recession speeds of the star.</p>
+<p>(b) If the orbit is circular, what is the orbital speed?</p>
+<p>(c) Why does the spectral line oscillate? Draw a simple diagram showing the positions of the star and Earth when the line is at each extreme.</p>
+
+<h3>Problem 5</h3>
+<p>A galaxy cluster is measured to be at a distance of 200 Mpc. The Hubble constant is 70 km/s/Mpc.</p>
+<p>(a) Use Hubble's law to calculate the expected recessional velocity of the cluster.</p>
+<p>(b) Calculate the expected redshift z of this cluster.</p>
+<p>(c) If the measured z is different from your answer in (b), what might that indicate about the cluster?</p>
+
+<h3>Problem 6 (IB Exam-Style)</h3>
+<p>The Andromeda Galaxy is approaching the Milky Way at approximately 110 km/s. It is 2.5 × 10⁶ light-years away.</p>
+<p>(a) Calculate the blueshift z for Andromeda. [2 marks]</p>
+<p>(b) The hydrogen-alpha line from Andromeda is measured in a laboratory at 656.3 nm. Calculate the observed wavelength from Andromeda. [2 marks]</p>
+<p>(c) Most galaxies are redshifted. Explain why Andromeda is blueshifted and discuss why this does not contradict the Big Bang theory. [3 marks]</p>
+
+<hr>
+
+<h2>Answers</h2>
+
+<h3>Answer 1</h3>
+<p>(a) The observed wavelength (656.5 nm) is longer than the rest wavelength (656.3 nm). Longer wavelength = redshift = the star is moving away from Earth.</p>
+
+<p>(b) $z = \frac{656.5 - 656.3}{656.3} = \frac{0.2}{656.3} = 3.05 \times 10^{-4}$</p>
+
+<p>(c) $v \approx zc = 3.05 \times 10^{-4} \times 3.00 \times 10^8 = 9.15 \times 10^4 \text{ m/s} = 91.5 \text{ km/s}$</p>
+
+<p>(d) Using the relativistic formula: $v/c = \frac{1.000305^2 - 1}{1.000305^2 + 1} = 3.05 \times 10^{-4}$. The answers are essentially identical because z is very small.</p>
+
+<h3>Answer 2</h3>
+<p>(a) z = 3.0 means the observed wavelength is 4 times the emitted wavelength: λ' = (1 + 3.0)λ = 4λ. Every spectral line is stretched by a factor of 4.</p>
+
+<p>(b) $\frac{v}{c} = \frac{(1+3)^2 - 1}{(1+3)^2 + 1} = \frac{16-1}{16+1} = \frac{15}{17} = 0.8824$. $v = 0.8824c = 2.65 \times 10^8 \text{ m/s}$.</p>
+
+<p>(c) Universe age at emission = 13.8 − 11.5 = 2.3 billion years. The quasar's light was emitted when the universe was only about 2.3 billion years old.</p>
+
+<h3>Answer 3</h3>
+<p>(a) $\Delta f = \frac{2vf}{c}$, and for a receding car Δf = −2.8 kHz. $v = \frac{2.8 \times 10^3 \times 3.00 \times 10^8}{2 \times 24.125 \times 10^9} = \frac{8.4 \times 10^{11}}{4.825 \times 10^{10}} = 17.4 \text{ m/s}$.</p>
+
+<p>(b) 17.4 m/s × 3.6 = 62.6 km/h.</p>
+
+<p>(c) The radar gun measures the absolute value of Δf and converts it to speed. The sign tells whether the car approaches or recedes, but the gun displays speed regardless. Modern guns use the phase shift between transmitted and received signals rather than the frequency shift, but the principle is the same.</p>
+
+<h3>Answer 4</h3>
+<p>(a) At 393.1 nm (blueshift): Δλ = −0.3 nm. v = (0.3/393.4) × 3.00×10⁸ = 2.29×10⁵ m/s = 229 km/s. At 393.7 nm (redshift): Δλ = +0.3 nm. v = 229 km/s away. Maximum speeds are ±229 km/s.</p>
+
+<p>(b) For a circular orbit, the orbital speed is the constant magnitude: 229 km/s. The radial velocity varies sinusoidally between −229 and +229 km/s.</p>
+
+<p>(c) As the star orbits, its velocity component along our line of sight changes. When the star moves directly toward us, we see maximum blueshift. A quarter orbit later, it moves perpendicular to our line of sight (zero radial velocity, λ = rest wavelength). A quarter orbit after that, it moves directly away (maximum redshift). This is why the spectral line oscillates.</p>
+
+<h3>Answer 5</h3>
+<p>(a) $v = H_0 d = 70 \times 200 = 14,000 \text{ km/s}$.</p>
+
+<p>(b) $z \approx v/c = 14,000 / 3.00 \times 10^5 = 0.0467$.</p>
+
+<p>(c) A different measured z could indicate that the cluster has a <strong>peculiar velocity</strong> — motion relative to the Hubble flow caused by local gravitational interactions (with nearby clusters, superclusters, or large-scale structures). The Hubble flow describes the average expansion; individual galaxies and clusters can deviate from it.</p>
+
+<h3>Answer 6</h3>
+<p>(a) $z = v/c = −110 / (3.00 × 10^5) = −3.67 × 10^{−4}$. The negative sign indicates blueshift. [2 marks]</p>
+
+<p>(b) $\lambda' = \lambda (1 + z) = 656.3 \times (1 − 3.67 × 10^{−4}) = 656.3 \times 0.999633 = 656.06 \text{ nm}$. [2 marks]</p>
+
+<p>(c) Andromeda is close enough that its gravitational attraction to the Milky Way dominates over cosmic expansion. On small scales, gravity can overcome the Hubble flow. This does not contradict the Big Bang because Hubble's law describes the large-scale average expansion. On local scales (a few Mpc), peculiar velocities from gravitational interactions between galaxies can exceed the Hubble velocity. The Big Bang theory predicts expansion on the largest scales, not that every object moves away from every other. [3 marks]</p>
+
+<hr>
+
+<h2>Key Takeaways</h2>
+
+<ol>
+<li><strong>The Doppler effect for light is fundamentally relativistic.</strong> There is no medium, so only the relative velocity matters. All observers measure the speed of light as c.</li>
+</ol>
+
+<ol>
+<li><strong>Redshift (z > 0) means a source is receding; blueshift (z < 0) means a source is approaching.</strong> The parameter z = Δλ/λ quantifies the shift.</li>
+</ol>
+
+<ol>
+<li><strong>The relativistic Doppler formula</strong> is $f' = f \sqrt{(c \pm v)/(c \mp v)}$. For v ≪ c, use Δf/f ≈ ±v/c.</li>
+</ol>
+
+<ol>
+<li><strong>Radar speed guns use the double Doppler shift</strong> — Δf ≈ 2vf/c, with the factor of 2 from the round trip.</li>
+</ol>
+
+<ol>
+<li><strong>Hubble's Law (v = H₀d)</strong> tells us the universe is expanding. The redshift of distant galaxies is cosmological — due to the expansion of space itself, not simple Doppler shift.</li>
+</ol>
+
+<ol>
+<li><strong>Redshift is one of the most powerful tools in astronomy.</strong> It lets us measure velocities, distances, stellar rotation, binary orbits, and detect exoplanets.</li>
+</ol>
+
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L43_doppler_1.html">← Lesson 43</a>
+  <a href="L45_gravitational_fields_1.html">Lesson 45 →</a>
+</nav>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Dashboard — Lessons</title>
+<meta name="csrf-token" content="{{ csrf_token }}">
+<style>:root{--bg:#fafaf8;--text:#1a1a1a;--accent:#1a1a2e;--border:#ddd}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.6}
+header{background:linear-gradient(135deg,#1a1a2e,#16213e);color:white;padding:2rem}
+header h1{font-size:1.5rem;font-weight:600}header p{opacity:.8;margin-top:.3rem}
+header a{color:white;text-decoration:underline;opacity:.7;font-size:.85rem}
+.container{max-width:1000px;margin:0 auto;padding:1.5rem}
+h2{font-size:1.2rem;margin:1.5rem 0 1rem;color:var(--accent);border-bottom:2px solid var(--accent);padding-bottom:.3rem}
+.attempts-list{list-style:none}
+.attempts-list li{background:white;border:1px solid var(--border);border-radius:8px;padding:1rem;margin-bottom:.6rem}
+.attempts-list .meta{font-size:.8rem;color:#888;margin-bottom:.3rem}
+.attempts-list .scores{display:flex;gap:.8rem;flex-wrap:wrap;font-size:.85rem}
+.attempts-list .scores span{background:#f0f0f0;padding:.2rem .5rem;border-radius:4px}
+.score-total{background:#1a1a2e!important;color:white!important;font-weight:600}
+.essay-preview{font-size:.85rem;color:#555;white-space:pre-wrap;max-height:120px;overflow-y:auto;margin-top:.3rem;font-style:italic;border-left:3px solid #ddd;padding-left:.8rem}
+.feedback-text{font-size:.85rem;color:#555;margin-top:.3rem;line-height:1.5}
+.empty{text-align:center;color:#999;padding:2rem;font-style:italic}
+.criterion-detail{margin-top:.5rem;font-size:.8rem;color:#666}
+.criterion-detail .cd{display:flex;gap:1rem;flex-wrap:wrap}
+.criterion-detail .cd div{background:#fafafa;padding:.2rem .5rem;border-radius:4px}
+</style></head><body>
+<header>
+<h1>📊 Dashboard</h1>
+<p>Welcome, {{ user_name }} · <a href="/">← Back to Lessons</a> · <a href="/logout">Logout</a></p>
+</header>
+<div class="container">
+
+<h2>📝 Lang Lit Mock Attempts</h2>
+{% if mock_attempts %}
+<ul class="attempts-list">
+{% for a in mock_attempts|reverse %}
+<li>
+<div class="meta">{{ a.date }} · {{ a.prompt_title or a.subject }} · {{ a.mode }}</div>
+{% if a.scores and a.scores.total %}
+<div class="scores">
+<span class="score-total">Total: {{ a.scores.total }}/20</span>
+{% if a.scores and a.scores.criterion_a %}<span>A: {{ a.scores.criterion_a.score }}/5</span>{% endif %}
+{% if a.scores and a.scores.criterion_b %}<span>B: {{ a.scores.criterion_b.score }}/5</span>{% endif %}
+{% if a.scores and a.scores.criterion_c %}<span>C: {{ a.scores.criterion_c.score }}/5</span>{% endif %}
+{% if a.scores and a.scores.criterion_d %}<span>D: {{ a.scores.criterion_d.score }}/5</span>{% endif %}
+</div>
+<div class="criterion-detail">
+<div class="cd">
+{% if a.scores.criterion_a and a.scores.criterion_a.comment %}<div><strong>A:</strong> {{ a.scores.criterion_a.comment }}</div>{% endif %}
+{% if a.scores.criterion_b and a.scores.criterion_b.comment %}<div><strong>B:</strong> {{ a.scores.criterion_b.comment }}</div>{% endif %}
+{% if a.scores.criterion_c and a.scores.criterion_c.comment %}<div><strong>C:</strong> {{ a.scores.criterion_c.comment }}</div>{% endif %}
+{% if a.scores.criterion_d and a.scores.criterion_d.comment %}<div><strong>D:</strong> {{ a.scores.criterion_d.comment }}</div>{% endif %}
+</div>
+{% if a.scores.overall_feedback %}<em style="font-size:.85rem;display:block;margin-top:.4rem">{{ a.scores.overall_feedback }}</em>{% endif %}
+</div>
+{% endif %}
+<div class="essay-preview">{{ a.essay_preview[:200] }}{% if a.essay_preview|length > 200 %}...{% endif %}</div>
+</li>
+{% endfor %}
+</ul>
+{% else %}<p class="empty">No mock attempts yet. Try a Paper 1 practice!</p>{% endif %}
+
+<h2>🎓 SAT Attempts</h2>
+{% if sat_attempts %}
+<ul class="attempts-list">
+{% for a in sat_attempts|reverse %}
+<li>
+<div class="meta">{{ a.date }} · {{ a.module }}</div>
+<div class="feedback-text">{{ a.feedback[:500] }}{% if a.feedback|length > 500 %}...{% endif %}</div>
+</li>
+{% endfor %}
+</ul>
+{% else %}<p class="empty">No SAT attempts yet.</p>{% endif %}
+
+</div>
+</body></html>

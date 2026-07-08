@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 45: Floating Exchange Rates — IB Economics SL</title>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; font-size: 17px; line-height: 1.8; color: #1a1a1a; background: #fdfcf9; max-width: 850px; margin: 0 auto; padding: 2rem 1.5rem; }
+  h1 { font-size: 1.8rem; color: #2c6b4f; border-bottom: 2px solid #2c6b4f; padding-bottom: 0.4rem; }
+  h2 { font-size: 1.3rem; color: #2c6b4f; margin-top: 2rem; }
+  h3 { font-size: 1.1rem; color: #333; }
+  .nav { display: flex; justify-content: space-between; padding: 0.7rem 0; border-bottom: 1px solid #ddd; margin-bottom: 1.5rem; font-size: 0.9rem; }
+  .nav a { color: #2c6b4f; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  .ib-tip { background: #e8f5e9; border-left: 4px solid #2c6b4f; padding: 0.8rem 1rem; margin: 1.5rem 0; border-radius: 0 6px 6px 0; }
+  .problem { background: #fff; border: 1px solid #ddd; padding: 1rem 1.2rem; margin: 0.8rem 0; border-radius: 6px; }
+  .answer { background: #f9fafb; border-left: 3px solid #888; padding: 0.8rem 1rem; margin: 0.5rem 0 1.2rem 1rem; border-radius: 0 4px 4px 0; }
+  .evaluate { background: #fff8e1; border: 1px solid #ffc107; padding: 1rem 1.2rem; margin: 1.5rem 0; border-radius: 6px; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+  th, td { border: 1px solid #ccc; padding: 0.5rem 0.7rem; text-align: left; }
+  th { background: #e8f0ec; }
+  pre { background: #f5f5f5; padding: 1rem; border-radius: 6px; overflow-x: auto; font-size: 0.9rem; }
+  code { background: #f0f0f0; padding: 0.15rem 0.3rem; border-radius: 3px; font-size: 0.9rem; }
+  pre code { background: none; padding: 0; }
+  hr { border: none; border-top: 1px solid #ddd; margin: 2rem 0; }
+  .nav-bottom { display: flex; justify-content: space-between; padding: 0.7rem 0; border-top: 1px solid #ddd; margin-top: 2rem; font-size: 0.9rem; }
+  .nav-bottom a { color: #2c6b4f; text-decoration: none; }
+  .nav-bottom a:hover { text-decoration: underline; }
+  @media print { body { font-size: 12pt; } .nav, .nav-bottom { display: none; } }
+</style>
+</head>
+<body>
+<div class="nav"><a href="lesson_44_economic_integration.html">← Previous Lesson</a><a href="index.html">Index</a><a href="lesson_46_consequences_exchange_rate.html">Next Lesson →</a></div>
+<h1>Lesson 45: Floating Exchange Rates</h1>
+<h2>What You'll Learn</h2>
+<ul>
+<li>The definition of an <strong>exchange rate</strong> as the price of one currency in terms of another.</li>
+<li>How a <strong>floating exchange rate</strong> is determined by market forces of supply and demand with <strong>no government intervention</strong>.</li>
+<li>The sources of <strong>demand for a currency</strong> and <strong>supply of a currency</strong> in the foreign exchange market.</li>
+<li>How to <strong>draw and interpret</strong> foreign exchange market diagrams.</li>
+<li>The difference between <strong>appreciation</strong> and <strong>depreciation</strong>, and their causes.</li>
+</ol>
+<hr>
+<h2>1. What Is an Exchange Rate?</h2>
+<p>An <strong>exchange rate</strong> is the price of one currency expressed in terms of another currency. It can be quoted in two ways:</p>
+</p>
+<ul>
+<li><strong>Direct (price) quotation</strong>: Domestic currency per unit of foreign currency. Example: For a UK resident, £0.80/$1 means $1 costs £0.80.</li>
+<li><strong>Indirect (volume) quotation</strong>: Foreign currency per unit of domestic currency. Example: $1.25/£1 means £1 buys $1.25.</li>
+</ul>
+<p><strong>IB convention</strong>: We typically quote the exchange rate as the price of a unit of foreign currency in domestic currency. If the rate changes from €0.90/$ to €0.95/$, the euro has <strong>depreciated</strong> (it now costs more euros to buy one dollar).</p>
+</p>
+<hr>
+<h2>2. The Freely Floating Exchange Rate System</h2>
+<p>In a <strong>freely floating</strong> (or clean float) exchange rate system, the exchange rate is determined entirely by market forces — the supply of and demand for the currency in the foreign exchange market — with <strong>no government or central bank intervention</strong>.</p>
+</p>
+<p>The foreign exchange market is the largest financial market in the world, with daily turnover exceeding $7.5 trillion (2022 BIS data).</p>
+</p>
+<h3>Demand for a Currency</h3>
+<p>The demand curve for a currency (e.g., the euro, €) is downward-sloping. As the euro becomes cheaper (depreciates), the quantity of euros demanded increases. Sources of demand:</p>
+</p>
+<ol>
+<li><strong>Foreign buyers of domestic exports</strong>: When a US importer buys German cars, they need euros to pay. Demand for euros increases with German exports.</li>
+</ol>
+<ol>
+<li><strong>Foreign investors</strong>: Foreign direct investment (FDI) — e.g., a Japanese firm building a factory in France — requires euros. Portfolio investment — buying European stocks and bonds — also requires euros.</li>
+</ol>
+<ol>
+<li><strong>Speculators</strong>: If currency traders expect the euro to appreciate, they buy euros now to sell later at a profit.</li>
+</ol>
+<ol>
+<li><strong>Central banks (in managed floats)</strong>: Central banks buying euros to add to their foreign reserves. (In a pure float, this source is zero.)</li>
+</ol>
+<h3>Supply of a Currency</h3>
+<p>The supply curve for the euro is upward-sloping. As the euro becomes more expensive (appreciates), the quantity of euros supplied on foreign exchange markets increases. Sources of supply:</p>
+</p>
+<ol>
+<li><strong>Domestic buyers of imports</strong>: When a German importer buys US machinery, they supply euros (sell euros) to obtain dollars. Supply of euros increases with European imports.</li>
+</ol>
+<ol>
+<li><strong>Domestic investors investing abroad</strong>: Europeans buying US stocks or building factories in China supply euros to buy foreign currency.</li>
+</ol>
+<ol>
+<li><strong>Speculators</strong>: If traders expect the euro to depreciate, they sell euros now to avoid losses or to profit from the decline.</li>
+</ol>
+<ol>
+<li><strong>Central banks (in managed floats)</strong>: Selling euros to influence the exchange rate.</li>
+</ol>
+<hr>
+<h2>3. The Foreign Exchange Market Diagram</h2>
+<p>The standard S-D diagram for the foreign exchange market has:</p>
+</p>
+<ul>
+<li><strong>Vertical axis</strong>: Price of the currency (e.g., $/€ — dollars per euro). A higher value means the euro has appreciated (buys more dollars).</li>
+<li><strong>Horizontal axis</strong>: Quantity of euros traded.</li>
+<li><strong>Demand curve (D)</strong>: Downward-sloping, representing foreign demand for euros.</li>
+<li><strong>Supply curve (S)</strong>: Upward-sloping, representing domestic supply of euros.</li>
+<li><strong>Equilibrium</strong>: Where D = S, determining the equilibrium exchange rate.</li>
+</ol>
+<h3>Diagram: Initial Equilibrium</h3>
+<pre><code>
+$/€  │      S
+     │     ╱
+e*   │────●───
+     │   ╱ ╲
+     │  ╱   ╲
+     │ ╱     ╲ D
+     │╱       ╲
+     └───────────── Q€
+</code></pre>
+<p>At equilibrium exchange rate e*, the quantity of euros demanded equals the quantity supplied.</p>
+</p>
+<hr>
+<h2>4. Appreciation and Depreciation</h2>
+<h3>Appreciation</h3>
+<p>An <strong>appreciation</strong> is an increase in the value of a currency in a floating exchange rate system. The currency becomes more expensive in terms of other currencies.</p>
+</p>
+<p><strong>Causes of appreciation</strong> (rightward shift of demand OR leftward shift of supply):</p>
+</p>
+<ol>
+<li><strong>Higher domestic interest rates</strong>: Relatively higher interest rates attract foreign portfolio investment → increased demand for the currency. Example: If the ECB raises rates while the Fed holds steady, euros become more attractive → demand for euros shifts right → euro appreciates.</li>
+</ol>
+<ol>
+<li><strong>Stronger export performance</strong>: If domestic goods become more desirable (higher quality, innovation), foreign demand for exports rises → demand for the currency rises → appreciation.</li>
+</ol>
+<ol>
+<li><strong>Foreign investment inflows</strong>: FDI into the country (e.g., a mining boom attracting foreign capital) increases demand for the currency.</li>
+</ol>
+<ol>
+<li><strong>Speculation</strong>: If markets expect future appreciation, speculative buying can cause appreciation now (self-fulfilling).</li>
+</ol>
+<ol>
+<li><strong>Lower domestic inflation</strong>: If domestic inflation is lower than foreign inflation, domestic goods become relatively cheaper → exports rise, imports fall → demand shifts right, supply shifts left → appreciation.</li>
+</ol>
+<p><strong>Diagram: Appreciation (Increase in Demand)</strong></p>
+</p>
+<pre><code>
+$/€  │      S
+     │     ╱
+e₂   │    ╱ ●──
+     │   ╱ ╱╲
+e₁   │──●─╱─ ╲
+     │ ╱ ╱    ╲ D₂
+     │╱ ╱      ╲
+     │  ╱ D₁    ╲
+     └───────────── Q€
+</code></pre>
+<p>Demand shifts right (D₁ → D₂) due to higher interest rates or stronger exports. The exchange rate rises from e₁ to e₂ — the currency appreciates.</p>
+</p>
+<h3>Depreciation</h3>
+<p>A <strong>depreciation</strong> is a decrease in the value of a currency in a floating system. The currency becomes cheaper.</p>
+</p>
+<p><strong>Causes of depreciation</strong> (leftward shift of demand OR rightward shift of supply):</p>
+</p>
+<ol>
+<li><strong>Lower domestic interest rates</strong>: Capital flows out seeking higher returns abroad → demand falls, supply rises → depreciation.</li>
+</ol>
+<ol>
+<li><strong>Weak export performance</strong>: Loss of competitiveness → demand for currency falls.</li>
+</ol>
+<ol>
+<li><strong>Capital outflows</strong>: Domestic investors moving capital abroad → supply of currency rises.</li>
+</ol>
+<ol>
+<li><strong>Speculation</strong>: If markets expect depreciation, selling pressure creates depreciation now.</li>
+</ol>
+<ol>
+<li><strong>Higher domestic inflation</strong>: Domestic goods become relatively more expensive → exports fall (demand shifts left), imports rise (supply shifts right) → depreciation.</li>
+</ol>
+<p><strong>Diagram: Depreciation (Increase in Supply)</strong></p>
+</p>
+<pre><code>
+$/€  │       S₁
+     │      ╱  S₂
+     │     ╱ ╱
+e₁   │──●─╱─╱
+     │ ╱ ╲╱
+e₂   │╱   ●──
+     │╲   ╱
+     │ ╲ ╱ D
+     │  ╲╱
+     └───────────── Q€
+</code></pre>
+<p>Supply shifts right (S₁ → S₂) due to capital outflows or increased imports. The exchange rate falls from e₁ to e₂ — the currency depreciates.</p>
+</p>
+<h3>Worked Example: Interest Rate Change</h3>
+<p><strong>Scenario</strong>: The US Federal Reserve raises interest rates from 2% to 4%, while the European Central Bank keeps rates at 2%.</p>
+</p>
+<p><strong>Analysis</strong>:</p>
+</p>
+<ul>
+<li>US assets now offer higher returns relative to euro-denominated assets.</li>
+<li>European investors move funds to the US → <strong>supply of euros increases</strong> (selling euros to buy dollars).</li>
+<li>US investors keep funds at home and may repatriate funds from Europe → <strong>demand for euros decreases</strong> (less buying of euros).</li>
+<li>Net effect: Supply of euros shifts right, demand for euros shifts left.</li>
+<li>Result: <strong>The euro depreciates against the dollar</strong>. The $/€ rate falls.</li>
+</ol>
+<hr>
+<h2>5. Terminology: Appreciation/Depreciation vs. Revaluation/Devaluation</h2>
+<table>
+<tr><th>System</th><th>Increase in Value</th><th>Decrease in Value</th></tr>
+<tr><td>Floating</td><td><strong>Appreciation</strong></td><td><strong>Depreciation</strong></td></tr>
+<tr><td>Fixed</td><td><strong>Revaluation</strong></td><td><strong>Devaluation</strong></td></tr>
+</table>
+<ul>
+<li><strong>Appreciation/Depreciation</strong> = market-driven (floating system).</li>
+<li><strong>Revaluation/Devaluation</strong> = government/central bank decision (fixed system).</li>
+</ul>
+<p>Do NOT mix these terms in your IB exam — it signals that you don't understand the exchange rate regime.</p>
+</p>
+<hr>
+<h2>IB Exam Tip</h2>
+<p>On Paper 1 and Paper 2, you must be able to <strong>draw and shift</strong> the foreign exchange diagram. Label axes clearly: the price of the currency (e.g., $/€ or ¥/£) on the vertical axis and quantity of the currency on the horizontal. Always identify <strong>which curve shifts</strong> and <strong>why</strong> (the specific cause), then show the new equilibrium and state whether the currency has appreciated or depreciated.</p>
+</p>
+<hr>
+<h2>Practice Problems</h2>
+<h3>Problem 1 — Basic Forex Diagram</h3>
+<p>Draw (describe) the foreign exchange market for the British pound (£), with the price in US dollars per pound ($/£) on the vertical axis and quantity of pounds on the horizontal axis. The equilibrium exchange rate is $1.30/£.</p>
+</p>
+<p>(a) What does the demand curve for pounds represent? List three sources.
+(b) What does the supply curve of pounds represent? List three sources.
+(c) If the exchange rate were $1.40/£ (above equilibrium), would there be excess demand or excess supply? What market force would push the rate back to $1.30?</p>
+</p>
+<h3>Problem 2 — Interest Rate-Driven Appreciation</h3>
+<p>The Bank of England raises its policy rate from 3% to 5%, while the European Central Bank keeps rates at 3%.</p>
+</p>
+<p>(a) Which currency should appreciate and which should depreciate? Why?
+(b) Draw the foreign exchange market for the pound (price in €/£). Show which curve(s) shift and in which direction.
+(c) Explain the chain of causality: higher UK rates → currency movement. Use the concept of "hot money" (short-term portfolio flows).</p>
+</p>
+<h3>Problem 3 — Inflation-Driven Depreciation</h3>
+<p>Country X has an inflation rate of 12%, while its major trading partners average 2% inflation. Country X has a floating exchange rate.</p>
+</p>
+<p>(a) Predict the effect on Country X's currency. Explain using BOTH the demand side (effect on exports) AND the supply side (effect on imports).
+(b) Draw the forex diagram and show the shift(s).
+(c) Explain how this currency movement could (partially) self-correct Country X's competitiveness problem.</p>
+</p>
+<h3>Problem 4 — Speculation</h3>
+<p>Rumours circulate that Country A's central bank is about to cut interest rates significantly. Currency traders believe this will happen.</p>
+</p>
+<p>(a) What will speculators do NOW, before the actual rate cut?
+(b) What happens to the demand and supply of Country A's currency?
+(c) What is the effect on the exchange rate? Explain the concept of a "self-fulfilling prophecy."
+(d) If the rate cut subsequently does NOT happen, what would you expect to happen to the exchange rate?</p>
+</p>
+<h3>Problem 5 — Multiple Simultaneous Factors</h3>
+<p>Country B experiences the following simultaneously:</p>
+</p>
+<ul>
+<li>A surge in foreign direct investment (multinationals building factories in B).</li>
+<li>A sharp rise in imports of consumer goods due to a domestic consumption boom.</li>
+<li>Foreign speculators selling B's currency short (betting on a fall).</li>
+</ol>
+<p>The net effect is ambiguous. Analyse each factor's effect on the demand and supply of B's currency and determine what happens if:
+(a) The FDI surge dominates.
+(b) The import boom and speculation dominate.</p>
+</p>
+<h3>Problem 6 — IB-Style Essay (Challenging)</h3>
+<p>"A freely floating exchange rate is the ideal system for all countries." Evaluate this statement. [15 marks]</p>
+</p>
+<p>In your answer, you should:</p>
+</p>
+<ul>
+<li>Explain how a floating exchange rate system works.</li>
+<li>Discuss advantages of floating rates.</li>
+<li>Discuss disadvantages of floating rates.</li>
+<li>Consider circumstances where alternative regimes might be preferable.</li>
+<li>Use the CLASPP framework and real-world examples.</li>
+</ol>
+<hr>
+<h2>Answers</h2>
+<h3>Answer 1 — Basic Forex Diagram</h3>
+<p>(a) The demand curve for pounds represents the quantity of pounds that foreigners want to buy at each exchange rate. It is downward-sloping because as the pound becomes cheaper (depreciates), UK exports become cheaper for foreigners → they buy more UK goods → they demand more pounds. Three sources:</p>
+</p>
+<ol>
+<li>Foreign buyers of UK exports (goods and services).</li>
+<li>Foreign investors buying UK assets (FDI, stocks, bonds).</li>
+<li>Speculators expecting pound appreciation.</li>
+</ol>
+<p>(b) The supply curve of pounds represents the quantity of pounds that UK residents want to sell (supply to the forex market) at each exchange rate. It is upward-sloping because as the pound becomes more expensive (appreciates), foreign goods become cheaper for UK residents → they import more → they supply more pounds to buy foreign currency. Three sources:</p>
+</p>
+<ol>
+<li>UK importers (need foreign currency, supply pounds).</li>
+<li>UK investors investing abroad.</li>
+<li>Speculators expecting pound depreciation.</li>
+</ol>
+<p>(c) At $1.40/£ (above equilibrium $1.30/£):</p>
+</p>
+<ul>
+<li>The pound is <strong>overvalued</strong> at this rate.</li>
+<li>Quantity of pounds supplied > quantity demanded → <strong>excess supply</strong>.</li>
+<li>Market force: The surplus of pounds puts <strong>downward pressure</strong> on the price ($/£). Sellers compete to sell pounds, driving the rate down. As the rate falls, quantity supplied decreases and quantity demanded increases until equilibrium at $1.30/£ is restored.</li>
+</ol>
+<h3>Answer 2 — Interest Rate-Driven Appreciation</h3>
+<p>(a) The <strong>pound should appreciate</strong> against the euro. UK assets now offer relatively higher returns (5% vs. 3%), attracting capital inflows into the UK.</p>
+</p>
+<p>(b) Diagram (€/£ market):</p>
+</p>
+<ul>
+<li>Demand for pounds shifts <strong>right</strong> (D₁ → D₂): European investors want to buy UK bonds → need pounds.</li>
+<li>Supply of pounds shifts <strong>left</strong> (S₁ → S₂): UK investors keep funds at home rather than investing in Eurozone → fewer pounds supplied.</li>
+<li>Both shifts push the equilibrium €/£ rate <strong>upward</strong> → pound appreciates.</li>
+</ol>
+<p>(c) Chain of causality:</p>
+</p>
+<ol>
+<li>Bank of England raises rate to 5%.</li>
+<li>UK government bonds now yield 5% vs. Eurozone bonds at 3%.</li>
+<li>International investors (including from Eurozone) move <strong>short-term portfolio capital</strong> ("hot money") to the UK to capture the yield differential.</li>
+<li>To buy UK bonds, they must first buy pounds → <strong>demand for pounds rises</strong>.</li>
+<li>Simultaneously, UK investors find foreign bonds less attractive → <strong>supply of pounds falls</strong> (less selling of pounds).</li>
+<li>The combined effect: pound appreciates.</li>
+<li>Hot money flows are large, rapid, and can reverse quickly if the interest rate differential narrows.</li>
+</ol>
+<h3>Answer 3 — Inflation-Driven Depreciation</h3>
+<p>(a) With 12% domestic inflation vs. 2% abroad:</p>
+</p>
+<ul>
+<li><strong>Demand side</strong>: Country X's exports become relatively more expensive → foreign demand for X's goods falls → <strong>demand for X's currency shifts left</strong>.</li>
+<li><strong>Supply side</strong>: Imported goods become relatively cheaper → X's residents buy more imports → they supply more of their currency to buy foreign currency → <strong>supply of X's currency shifts right</strong>.</li>
+</ul>
+<p>(b) Diagram: Demand shifts left (D₁ → D₂), supply shifts right (S₁ → S₂). Both movements push the exchange rate down → <strong>depreciation of X's currency</strong>.</p>
+</p>
+<p>(c) The depreciation partially self-corrects the competitiveness problem:</p>
+</p>
+<ul>
+<li>X's exports become cheaper for foreigners (in foreign currency terms) → partially offsets the inflation-driven price increase.</li>
+<li>Imports become more expensive for X's residents (in domestic currency terms) → discourages imports.</li>
+<li>This is the <strong>purchasing power parity (PPP)</strong> mechanism: if inflation differentials persist, exchange rates tend to adjust to maintain similar real purchasing power. The depreciation acts as an automatic stabiliser.</li>
+</ol>
+<h3>Answer 4 — Speculation</h3>
+<p>(a) Speculators, anticipating a rate cut that would lower the return on Country A's assets, will <strong>sell Country A's currency NOW</strong> (before the cut) to avoid losses from the expected depreciation.</p>
+</p>
+<p>(b) The speculative selling:</p>
+</p>
+<ul>
+<li><strong>Increases the supply</strong> of A's currency on forex markets (S shifts right).</li>
+<li>Speculators are selling A's currency to buy other currencies.</li>
+<li>Demand may also fall if foreign speculators had previously bought A's currency and now unwind those positions.</li>
+</ol>
+<p>(c) The <strong>exchange rate depreciates immediately</strong>, even before any actual rate cut. This is a <strong>self-fulfilling prophecy</strong>: speculators expect depreciation → they sell → their selling causes the depreciation they expected. The market "prices in" the expected event.</p>
+</p>
+<p>(d) If the rate cut does NOT happen:</p>
+</p>
+<ul>
+<li>The market has "overreacted" — the depreciation was based on false expectations.</li>
+<li>When the central bank holds rates steady, speculators realise their mistake.</li>
+<li>They buy A's currency back (covering short positions) → demand rises → the currency <strong>appreciates back</strong> toward its original level.</li>
+<li>This causes <strong>exchange rate volatility</strong> unrelated to fundamentals — one of the criticisms of floating rates with large speculative flows.</li>
+</ol>
+<h3>Answer 5 — Multiple Simultaneous Factors</h3>
+<p><strong>Factor 1 — FDI surge</strong>: Multinationals building factories need Country B's currency to pay local workers, buy land, and purchase local materials → <strong>demand for B's currency increases</strong> (D shifts right) → upward pressure on exchange rate (appreciation tendency).</p>
+</p>
+<p><strong>Factor 2 — Import boom</strong>: Domestic consumption boom increases imports → residents sell B's currency to buy foreign currency → <strong>supply of B's currency increases</strong> (S shifts right) → downward pressure (depreciation tendency).</p>
+</p>
+<p><strong>Factor 3 — Speculative selling</strong>: Speculators sell B's currency short → <strong>supply increases further</strong> (S shifts right further) → additional downward pressure.</p>
+</p>
+<p>(a) <strong>If FDI dominates</strong>: The rightward shift of D is larger than the rightward shift of S → <strong>net appreciation</strong> of B's currency.</p>
+</p>
+<p>(b) <strong>If imports + speculation dominate</strong>: The rightward shift of S is larger than the rightward shift of D → <strong>net depreciation</strong> of B's currency.</p>
+</p>
+<p>The actual outcome is an empirical question, determined by the relative magnitudes of these flows.</p>
+</p>
+<h3>Answer 6 — IB-Style Essay (Model Answer Outline)</h3>
+<p><strong>Introduction</strong>: A freely floating exchange rate — determined purely by market forces — has theoretical appeal as an automatic adjustment mechanism. However, claiming it is "ideal for all countries" ignores significant costs, particularly for small, open, or developing economies.</p>
+</p>
+<p><strong>Advantages of floating rates</strong>:</p>
+</p>
+<ol>
+<li><strong>Automatic current account adjustment</strong>: A deficit creates excess supply of the currency → depreciation → exports rise, imports fall → deficit self-corrects. No need for painful domestic deflation.</li>
+<li><strong>Monetary policy autonomy</strong>: The central bank can set interest rates for domestic objectives (inflation, employment) without needing to defend an exchange rate peg.</li>
+<li><strong>No need for large foreign reserves</strong>: Unlike fixed regimes, the central bank does not need to hold vast reserves of foreign currency.</li>
+<li><strong>Insulation from foreign inflation</strong>: Floating rates allow countries to maintain independent inflation rates.</li>
+<li><strong>Less vulnerability to speculative attacks</strong>: While speculation causes volatility, a floating rate cannot "break" in the way a fixed peg can (e.g., UK's exit from ERM in 1992).</li>
+</ol>
+<p><strong>Disadvantages of floating rates</strong>:</p>
+</p>
+<ol>
+<li><strong>Exchange rate volatility</strong>: Large short-term swings create uncertainty for traders and investors, potentially reducing international trade and investment.</li>
+<li><strong>Speculation</strong>: Currencies can become misaligned from fundamentals — overshooting (Dornbusch model) means exchange rates can deviate significantly from their long-run equilibrium.</li>
+<li><strong>Inflation risk</strong>: Depreciation raises import prices → cost-push inflation → possible wage-price spiral. Developing countries with high import dependence are particularly vulnerable.</li>
+<li><strong>No anti-inflation anchor</strong>: Unlike a fixed peg (which ties domestic inflation to the anchor country's inflation), a float requires a credible domestic monetary framework to control inflation.</li>
+<li><strong>Terms of trade shocks</strong>: Commodity-exporting developing countries face large exchange rate swings with commodity price cycles, destabilising the non-commodity sector ("Dutch disease").</li>
+</ol>
+<p><strong>Evaluation (CLASPP)</strong>:</p>
+</p>
+<ul>
+<li><strong>Conclusion</strong>: Floating rates are ideal for large, diversified economies with credible monetary institutions (US, UK, Japan, Eurozone). They are problematic for small, undiversified economies with weak institutions.</li>
+<li><strong>Limitations</strong>: The theoretical self-adjustment mechanism (via trade elasticities) assumes the Marshall-Lerner condition holds — in the short run, the J-curve means depreciation may initially worsen the trade balance.</li>
+<li><strong>Assumptions</strong>: The "ideal for all" claim assumes all countries have deep financial markets, credible central banks, and diversified trade. Most developing countries lack one or more.</li>
+<li><strong>Stakeholders</strong>: Exporters and importers bear currency risk; speculators benefit from volatility; consumers bear inflation pass-through.</li>
+<li><strong>Priorities</strong>: The priority is matching the exchange rate regime to country characteristics. A single "ideal" system for all countries is as implausible as a single ideal tax rate.</li>
+<li><strong>Policy alternatives</strong>: Small open economies may prefer a managed float (dirty float) reducing volatility without full rigidity. Dollarisation or currency boards suit countries with hyperinflation histories and no monetary credibility. Fixed pegs suit countries closely integrated with a single large trading partner.</li>
+</ol>
+<p><strong>Final conclusion</strong>: Floating exchange rates are the best system for many countries but not all. The choice of exchange rate regime is context-dependent, and the notion of a universal ideal is inconsistent with the diversity of economic structures in the global economy.</p>
+</p>
+<hr>
+<h2>Evaluate</h2>
+<h3>"A freely floating exchange rate is the ideal system for all countries." Evaluate.</h3>
+<p>The assertion that floating exchange rates represent a universally ideal system ignores the diversity of economic structures, institutional capacities, and policy priorities across countries. While floating rates offer significant advantages, particularly automatic adjustment and monetary autonomy, they also impose costs that may be prohibitive for certain economies.</p>
+</p>
+<p><strong>Conclusion</strong>: Floating rates are the best available system for large, diversified economies with credible monetary frameworks, but they are not ideal for all — particularly for small, open, or institutionally weak developing economies.</p>
+</p>
+<p><strong>Limitations</strong>: The theoretical case for floating rates rests on the assumption that foreign exchange markets are efficient and driven by trade fundamentals. In reality, short-term capital flows and speculation dominate daily turnover ($7.5 trillion vs. ~$25 trillion annual trade). Exchange rates frequently overshoot fundamentals, creating misalignments that disrupt trade and investment decisions. The Dornbusch overshooting model explains why: asset markets adjust faster than goods markets, causing exchange rates to move beyond their long-run equilibrium.</p>
+</p>
+<p><strong>Assumptions challenged</strong>: The claim assumes the Marshall-Lerner condition is satisfied and the J-curve is short — but empirical evidence shows trade elasticities are often low in the short run, meaning depreciation may not quickly improve the current account. It also assumes all countries have deep financial markets to absorb speculative flows without destabilisation. Small developing economies with thin forex markets are prone to extreme volatility from modest capital flows.</p>
+</p>
+<p><strong>Stakeholder analysis</strong>: Exporters and importers, particularly SMEs, face significant hedging costs and uncertainty under floating rates. Multinationals with diversified operations may be indifferent. Consumers in import-dependent economies suffer when depreciation feeds through to higher prices (exchange rate pass-through). Speculators profit from volatility but do not bear its real-economy costs.</p>
+</p>
+<p><strong>Priorities and trade-offs</strong>: The choice of regime involves a trade-off between flexibility and stability. Countries that trade heavily with a single partner (e.g., Canada with the US, though Canada floats) or that need an external anti-inflation anchor (e.g., Ecuador dollarising after hyperinflation) may rationally prefer fixed or managed regimes. The priority should be matching the regime to the country's economic structure.</p>
+</p>
+<p><strong>Policy alternatives</strong>: For institutionally weak economies, a fixed peg or currency board provides a credible anti-inflation framework that floating cannot. For economies with moderate financial development, a managed float combines flexibility with reduced volatility. China's managed float has supported its export-led growth model for decades, contradicting the claim that floating is universally ideal. (198 words)</p>
+</p>
+<div class="nav-bottom"><a href="lesson_44_economic_integration.html">← Previous Lesson</a><a href="index.html">Index</a><a href="lesson_46_consequences_exchange_rate.html">Next Lesson →</a></div>
+</body>
+</html>

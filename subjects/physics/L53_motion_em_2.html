@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 53: Lesson 53: Motion in EM Fields II — Mass Spectrometer and Cyclotron — IB Physics HL</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']]
+  },
+  options: {
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap');
+  
+  :root {
+    --bg: #fdfcf9;
+    --text: #1a1a1a;
+    --accent: #2c5f2d;
+    --border: #d0cec7;
+    --code-bg: #f4f3ef;
+    --callout-bg: #f0f7f0;
+    --callout-border: #2c5f2d;
+    --warning-bg: #fff8e6;
+    --warning-border: #c4941a;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  body {
+    font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid var(--accent);
+    color: var(--accent);
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 2.5rem 0 0.75rem;
+    color: #1a1a1a;
+  }
+  
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.5rem;
+  }
+  
+  p { margin: 0 0 1rem; }
+  
+  ul, ol { margin: 0 0 1rem 1.5rem; }
+  li { margin-bottom: 0.35rem; }
+  
+  code {
+    background: var(--code-bg);
+    padding: 0.15em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+    font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+  }
+  
+  pre {
+    background: var(--code-bg);
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 0 0 1rem;
+    font-size: 0.85em;
+    line-height: 1.5;
+  }
+  
+  pre code {
+    background: none;
+    padding: 0;
+    font-size: inherit;
+  }
+  
+  blockquote {
+    border-left: 4px solid var(--callout-border);
+    background: var(--callout-bg);
+    margin: 0 0 1rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+  }
+  
+  blockquote.warning {
+    border-left-color: var(--warning-border);
+    background: var(--warning-bg);
+  }
+  
+  strong { font-weight: 700; }
+  
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.5rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  
+  .nav a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+  
+  .nav a:hover { background: var(--callout-bg); }
+  
+  .worked-example, .answer {
+    background: var(--code-bg);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin: 0.75rem 0 1.25rem;
+  }
+  
+  .worked-example strong:first-child, .answer strong:first-child {
+    color: var(--accent);
+  }
+  
+  @media print {
+    body { font-size: 12pt; max-width: 100%; padding: 0; }
+    .nav { display: none; }
+    h1 { font-size: 18pt; }
+    h2 { font-size: 14pt; }
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 0 1rem;
+  }
+  
+  th, td {
+    border: 1px solid var(--border);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  
+  th {
+    background: var(--code-bg);
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L52_motion_em_1.html">← Lesson 52</a>
+  <a href="L54_induction_1.html">Lesson 54 →</a>
+</nav>
+
+<h1>Lesson 53: Motion in EM Fields II — Mass Spectrometer and Cyclotron</h1>
+
+<h2>What You'll Learn</h2>
+<ul>
+<li>Understand how a velocity selector works using crossed E and B fields</li>
+<li>Calculate ion masses in a mass spectrometer from orbit radius</li>
+<li>Explain the operation of a cyclotron and calculate particle energy</li>
+<li>Recognise why the cyclotron frequency is independent of particle speed</li>
+</ul>
+
+<hr>
+
+<h2>1. The Velocity Selector</h2>
+
+<h3>1.1 Why Filter by Speed?</h3>
+
+<p>Mass spectrometers and other particle devices need ions of a specific speed. A velocity selector uses perpendicular electric and magnetic fields to let through only particles with exactly the right speed — too fast or too slow, and they are deflected away.</p>
+
+<h3>1.2 How It Works</h3>
+
+<p>Crossed fields: <strong>E</strong> points downward, <strong>B</strong> points into the page. A positive ion experiences:</p>
+<ul>
+<li>Electric force $F_E = qE$ downward</li>
+<li>Magnetic force $F_B = qvB$ upward (from Fleming's LHR — positive charge moving right, B into page, force is up)</li>
+</ul>
+
+<p>When these balance: $qE = qvB$, giving:</p>
+<p>$$v = \frac{E}{B}$$</p>
+
+<p>Only particles with speed $v = E/B$ pass straight through. Slower particles ($v < E/B$) have $F_E > F_B$ and are deflected toward the electric force. Faster particles are deflected the other way.</p>
+
+<p>The selected speed depends only on the field strengths, NOT on the particle's charge or mass. This is a crucial feature: all ions with $v = E/B$ pass, regardless of species.</p>
+
+<hr>
+
+<h2>2. The Mass Spectrometer</h2>
+
+<h3>2.1 Separating Ions by Mass</h3>
+
+<p>A mass spectrometer has three stages:</p>
+<ol>
+<li><strong>Ionisation:</strong> Atoms are ionised (typically singly charged, +e)</li>
+<li><strong>Velocity selection:</strong> Crossed E and B fields pass only ions with $v = E/B$</li>
+<li><strong>Magnetic deflection:</strong> A uniform B-field deflects ions into semicircular paths</li>
+</ol>
+
+<p>In the deflection chamber, the radius is:</p>
+<p>$$r = \frac{mv}{qB}$$</p>
+
+<p>Since all ions enter with the same $v$ and $q$, the radius is proportional to mass: $r \propto m$.</p>
+
+<p>Combining with $v = E/B$ from the velocity selector:</p>
+<p>$$m = \frac{qrB_{\text{def}}}{v} = \frac{qrB_{\text{def}}B_{\text{sel}}}{E}$$</p>
+
+<p>Heavier ions have larger orbit radii and strike the detector further from the entry point.</p>
+
+<hr>
+
+<h2>3. The Cyclotron</h2>
+
+<h3>3.1 Accelerating Particles in Spirals</h3>
+
+<p>A cyclotron uses a magnetic field to bend particles into circles and an alternating electric field to give them a "kick" twice per orbit. Two hollow D-shaped electrodes ("dees") sit in a uniform B-field. A high-frequency AC voltage is applied between them.</p>
+
+<p>In each dee, the particle moves in a semicircle ($r = mv/qB$). At the gap, the electric field accelerates it into the other dee. With each crossing, the speed increases and the radius grows, producing a spiral path.</p>
+
+<h3>3.2 The Cyclotron Frequency</h3>
+
+<p>The time for a half-circle is independent of speed:</p>
+<p>$$T_{\text{half}} = \frac{\pi m}{qB}$$</p>
+
+<p>This is because $r \propto v$, so the distance ($\pi r$) and speed both scale proportionally — they cancel. The cyclotron frequency is:</p>
+<p>$$f = \frac{qB}{2\pi m}$$</p>
+
+<p>The AC voltage must match this frequency. For non-relativistic speeds, this frequency is constant.</p>
+
+<h3>3.3 Maximum Energy</h3>
+
+<p>When the spiral reaches the edge of the dees (radius $R$), the particle exits:</p>
+<p>$$v_{\text{max}} = \frac{qBR}{m}$$</p>
+<p>$$KE_{\text{max}} = \frac{q^2B^2R^2}{2m}$$</p>
+
+<hr>
+
+<h2>Worked Examples</h2>
+
+<h3>Worked Example 53.1 — Velocity Selector</h3>
+
+<p><strong>Problem:</strong> A velocity selector has $E = 2.0 \times 10^4\text{ V m}^{-1}$ and $B = 0.10\text{ T}$. (a) What speed passes through? (b) Protons enter at $1.5 \times 10^5\text{ m s}^{-1}$. Which way are they deflected?</p>
+
+<p><strong>Solution (a):</strong> $v = E/B = 2.0\times 10^4/0.10 = 2.0\times 10^5\text{ m s}^{-1}$.</p>
+
+<p><strong>(b):</strong> $v = 1.5\times 10^5 < v_{\text{sel}}$. Magnetic force ($\propto v$) is smaller than electric force → deflected in direction of electric force.</p>
+
+<hr>
+
+<h3>Worked Example 53.2 — Mass Spectrometer</h3>
+
+<p><strong>Problem:</strong> Singly charged ions pass through a velocity selector ($E = 5.0 \times 10^3\text{ V m}^{-1}$, $B = 0.20\text{ T}$) into a $0.15\text{ T}$ deflection field. Two ion species strike at $r_1 = 0.12\text{ m}$ and $r_2 = 0.16\text{ m}$. Find their masses in atomic mass units.</p>
+
+<p><strong>Solution:</strong></p>
+<p>$v = 5.0\times 10^3/0.20 = 2.5\times 10^4\text{ m s}^{-1}$.</p>
+<p>$m_1 = qr_1B_{\text{def}}/v = (1.60\times 10^{-19})(0.12)(0.15)/(2.5\times 10^4) = 1.15\times 10^{-25}\text{ kg} = 69.4\text{ u}$.</p>
+<p>$m_2 = m_1 \times 0.16/0.12 = 1.54\times 10^{-25}\text{ kg} = 92.5\text{ u}$.</p>
+
+<p>These could be isotopes of gallium (Ga-69 and Ga-71, plus hydrides) or different elements entirely.</p>
+
+<hr>
+
+<h3>Worked Example 53.3 — Cyclotron</h3>
+
+<p><strong>Problem:</strong> A cyclotron with $B = 1.5\text{ T}$ and dee radius $R = 0.80\text{ m}$ accelerates protons. Find: (a) the cyclotron frequency, and (b) the maximum kinetic energy in MeV.</p>
+
+<p><strong>Solution (a):</strong></p>
+<p>$f = qB/(2\pi m) = (1.60\times 10^{-19})(1.5)/(2\pi \times 1.67\times 10^{-27}) = 2.29 \times 10^7\text{ Hz} = 22.9\text{ MHz}$.</p>
+
+<p><strong>(b):</strong></p>
+<p>$v_{\text{max}} = qBR/m = (1.60\times 10^{-19})(1.5)(0.80)/(1.67\times 10^{-27}) = 1.15 \times 10^8\text{ m s}^{-1}$. This is 38% of $c$ — relativistic corrections are significant!</p>
+<p>$KE_{\text{max}} = \frac{1}{2}mv^2 = \frac{1}{2}(1.67\times 10^{-27})(1.32\times 10^{16}) = 1.10 \times 10^{-11}\text{ J} = 69\text{ MeV}$.</p>
+
+<p>At these speeds, relativistic mass increase shifts the cyclotron frequency — this is why synchrotrons are used for very high energies.</p>
+
+<hr>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1</h3>
+<p>A velocity selector uses $E = 1.8 \times 10^4\text{ V m}^{-1}$ and $B = 0.060\text{ T}$. What speed is selected? Doubly charged ions of this speed enter — are they deflected?</p>
+
+<h3>Problem 2</h3>
+<p>In a mass spectrometer, ions of speed $5.0 \times 10^4\text{ m s}^{-1}$ enter a $0.25\text{ T}$ field. Ions of mass 24 u strike the detector at what radius? ($1\text{ u} = 1.66 \times 10^{-27}\text{ kg}$)</p>
+
+<h3>Problem 3</h3>
+<p>A cyclotron accelerates alpha particles ($q = +2e$, $m = 6.64 \times 10^{-27}\text{ kg}$) with $B = 0.80\text{ T}$ and $R = 0.60\text{ m}$. Find the frequency and maximum KE.</p>
+
+<h3>Problem 4</h3>
+<p>Compare a mass spectrometer and a cyclotron: how does each use electric and magnetic fields, and what information does each provide?</p>
+
+<h3>Problem 5 — IB-Style</h3>
+<p>A mass spectrometer analyses a sample containing two isotopes, both singly charged. The velocity selector uses $E = 3.0 \times 10^3\text{ V m}^{-1}$, $B_{\text{sel}} = 0.060\text{ T}$. The deflection field is $B_{\text{def}} = 0.15\text{ T}$. Two beams strike the detector at radii 8.2 cm and 9.8 cm.</p>
+
+<p>(a) Calculate the speed of ions entering the deflection chamber. (1 mark)</p>
+<p>(b) Determine the mass of each isotope in u. (3 marks)</p>
+<p>(c) The detector records that the inner peak is 3 times taller than the outer peak. Suggest what this indicates about the sample. (2 marks)</p>
+<p>(d) If the velocity selector's electric field drifts by 2%, what percentage error does this introduce in the mass determination? (2 marks)</p>
+
+<hr>
+
+<h2>Answers</h2>
+
+<h3>Answer 1</h3>
+<p>$v = 1.8\times 10^4/0.060 = 3.0\times 10^5\text{ m s}^{-1}$. For doubly charged ions ($q = 2e$): $F_E = 2eE$, $F_B = 2evB$. The factor of 2 cancels. The velocity selector is independent of charge — doubly charged ions with the same speed also pass through.</p>
+
+<h3>Answer 2</h3>
+<p>$m = 24 \times 1.66\times 10^{-27} = 3.98\times 10^{-26}\text{ kg}$. $r = mv/(qB) = (3.98\times 10^{-26})(5.0\times 10^4)/(1.60\times 10^{-19})(0.25) = 0.050\text{ m} = 5.0\text{ cm}$.</p>
+
+<h3>Answer 3</h3>
+<p>$f = (2 \times 1.60\times 10^{-19})(0.80)/(2\pi \times 6.64\times 10^{-27}) = 6.13 \times 10^6\text{ Hz}$. $KE_{\text{max}} = (3.20\times 10^{-19})^2(0.80)^2(0.60)^2/(2 \times 6.64\times 10^{-27}) = 2.84 \times 10^{-12}\text{ J} = 17.8\text{ MeV}$.</p>
+
+<h3>Answer 4</h3>
+<p>Mass spectrometer: uses E+B for velocity selection, then B alone for deflection. $r \propto m$ for fixed $v$ and $q$. Measures mass. Cyclotron: uses B for circular confinement, alternating E for acceleration. Measures nothing — it produces high-energy particles for experiments.</p>
+
+<h3>Answer 5 — IB-Style</h3>
+<p><strong>(a)</strong> $v = 3.0\times 10^3/0.060 = 5.0\times 10^4\text{ m s}^{-1}$. (1 mark)</p>
+
+<p><strong>(b)</strong> $m = qrB_{\text{def}}/v$. $m_1 = (1.60\times 10^{-19})(0.082)(0.15)/(5.0\times 10^4) = 3.94\times 10^{-26}\text{ kg} = 23.7\text{ u}$. $m_2 = (1.60\times 10^{-19})(0.098)(0.15)/(5.0\times 10^4) = 4.70\times 10^{-26}\text{ kg} = 28.3\text{ u}$. (3 marks)</p>
+
+<p><strong>(c)</strong> The taller inner peak (smaller radius, lighter isotope) at 23.7 u is about 3× more abundant than the heavier isotope at 28.3 u. This could indicate the sample is predominantly one isotope. (2 marks)</p>
+
+<p><strong>(d)</strong> $m \propto 1/E$, so a 2% change in $E$ gives a 2% error in $m$. Percentage error in mass = percentage error in $E$ = 2%. (2 marks — 1 for proportional reasoning, 1 for correct percentage.)</p>
+
+<hr>
+
+<h2>Key Takeaways</h2>
+
+<ol>
+<li><strong>Velocity selector:</strong> $v = E/B$. Selects by speed only, independent of $q$ and $m$.</li>
+</ol>
+
+<ol>
+<li><strong>Mass spectrometer:</strong> $r = mv/(qB)$. Heavier ions → larger radius. Used to identify isotopes and measure atomic masses.</li>
+</ol>
+
+<ol>
+<li><strong>Cyclotron:</strong> Frequency $f = qB/(2\pi m)$ is constant (non-relativistic). Maximum energy: $KE_{\text{max}} = q^2B^2R^2/(2m)$. Limited by relativity at high speeds — synchrotrons solve this.</li>
+</ol>
+
+<ol>
+<li><strong>All three devices</strong> exploit the interplay of electric and magnetic forces on moving charges.</li>
+</ol>
+
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L52_motion_em_1.html">← Lesson 52</a>
+  <a href="L54_induction_1.html">Lesson 54 →</a>
+</nav>
+
+</body>
+</html>

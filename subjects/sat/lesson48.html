@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 48: Passage Mapping & Active Reading</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root {
+    --bg: #fafaf9;
+    --text: #1a1a1a;
+    --accent: #1a5276;
+    --trap-bg: #fff3cd;
+    --trap-border: #ffc107;
+    --pattern-bg: #d1ecf1;
+    --pattern-border: #17a2b8;
+    --card: #ffffff;
+    --border: #d0d0cb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+  h1 { font-size: 1.8rem; color: var(--accent); border-bottom: 3px solid var(--accent); padding-bottom: 0.5rem; margin-bottom: 1rem; }
+  h2 { font-size: 1.35rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+  h3 { font-size: 1.15rem; color: #333; margin: 1.5rem 0 0.5rem; }
+  p, li { margin: 0.5em 0; }
+  ul, ol { padding-left: 1.5rem; margin: 0.5em 0; }
+  .trap-box {
+    background: var(--trap-bg);
+    border-left: 4px solid var(--trap-border);
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.95rem;
+  }
+  .trap-box strong { color: #856404; }
+  .pattern-box {
+    background: var(--pattern-bg);
+    border-left: 4px solid var(--pattern-border);
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.95rem;
+  }
+  .pattern-box strong { color: #0c5460; }
+  .example {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem 1.3rem;
+    margin: 1rem 0;
+  }
+  .example h4 { color: var(--accent); margin-bottom: 0.3rem; }
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 2.5rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  .nav a { color: var(--accent); text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  code { background: #f0f0f0; padding: 0.15em 0.4em; border-radius: 3px; font-size: 0.9em; }
+  strong { color: #222; }
+  @media print {
+    body { font-size: 14px; }
+    .nav { display: none; }
+  }
+</style>
+</head>
+<body>
+<h1>Lesson 48: Passage Mapping & Active Reading</h1>
+<h2>What You'll Learn</h2>
+<p>The SAT presents passages from four domains — literature, science, social science/history, and humanities. Each has predictable structures, and knowing those structures lets you read strategically rather than getting lost. You'll learn passage mapping, active reading techniques, and how to adapt your approach to each passage type.</p>
+<h2>SAT Context</h2>
+<p>Every SAT module contains multiple passages of varying types and lengths (typically 25-150 lines each). Students who read passively — just letting words wash over them — consistently underperform. Students who read actively — engaging with the text, tracking the argument, noting shifts — score higher with less re-reading.</p>
+<hr>
+<h3> The Four SAT Passage Types</h3>
+<p>#### 1. Literature (Fiction)</p>
+<p>**Typical content:** Excerpts from novels and short stories, contemporary or classic (20th-21st century predominates)</p>
+<p>**Focus:** Character, conflict, relationships, emotional shifts</p>
+<p>**Key elements to track:**</p>
+<ul>
+<li>Who is the main character? What do they want?</li>
+<li>What is the conflict (internal or external)?</li>
+<li>Is there a shift in mood, perspective, or understanding?</li>
+<li>What is the narrative point of view (first person, third person limited, third person omniscient)?</li>
+</ul>
+<p>**Active reading for literature:**</p>
+<ul>
+<li>Underline character names and anything that reveals their traits</li>
+<li>Mark moments of realization or change (often signaled by "suddenly," "for the first time," "she realized")</li>
+<li>Note the emotional arc — does the character's feeling change?</li>
+</ul>
+<p>#### 2. Science</p>
+<p>**Typical content:** Biology, physics, chemistry, environmental science, astronomy</p>
+<p>**Focus:** Hypothesis, evidence, conclusion, implications</p>
+<p>**Key elements to track:**</p>
+<ul>
+<li>What is being studied or investigated?</li>
+<li>What is the hypothesis or research question?</li>
+<li>What evidence/data is presented?</li>
+<li>What conclusion do the researchers draw?</li>
+<li>Are there limitations or caveats?</li>
+</ul>
+<p>**Active reading for science:**</p>
+<ul>
+<li>Structure is almost always: phenomenon → hypothesis → method/evidence → findings → implications</li>
+<li>Underline the hypothesis and the conclusion</li>
+<li>Don't get bogged down in scientific terminology — the SAT will define or contextualize key terms</li>
+<li>Note hedging language: "suggests," "may indicate," "warrants further study"</li>
+</ul>
+<p>#### 3. Social Science / History</p>
+<p>**Typical content:** Economics, psychology, sociology, political science; U.S. founding documents, global history</p>
+<p>**Focus:** Argument, evidence, historical context, cause-effect</p>
+<p>**Key elements to track:**</p>
+<ul>
+<li>What is the author's thesis or argument?</li>
+<li>What evidence or historical examples support it?</li>
+<li>Is there a counterargument addressed?</li>
+<li>What is the author's perspective or bias?</li>
+</ul>
+<p>**Active reading for social science/history:**</p>
+<ul>
+<li>These passages are argument-driven — find the thesis</li>
+<li>Note cause-effect chains: "X led to Y, which in turn caused Z"</li>
+<li>For historical passages, pay attention to chronology and perspective</li>
+<li>U.S. founding documents: identify the grievance or principle being asserted</li>
+</ul>
+<p>#### 4. Humanities</p>
+<p>**Typical content:** Art, music, philosophy, literary criticism, cultural analysis</p>
+<p>**Focus:** Interpretation, analysis, aesthetic judgment</p>
+<p>**Key elements to track:**</p>
+<ul>
+<li>What work or idea is being analyzed?</li>
+<li>What is the author's interpretive claim?</li>
+<li>How does the author support that interpretation?</li>
+</ul>
+<p>**Active reading for humanities:**</p>
+<ul>
+<li>These passages are interpretive — the author is making a case for a particular understanding</li>
+<li>Look for: "This reveals that..." / "What X fails to recognize..." / "A more nuanced reading suggests..."</li>
+</ul>
+<hr>
+<h3> Passage Mapping: The 30-60 Second Skim</h3>
+<p>Before reading in detail, invest 30-60 seconds in a quick map. This orients you and makes detailed reading more efficient.</p>
+<p>**The mapping process:**</p>
+<li>**Read the blurb** (the italicized introduction above the passage). It tells you: author, title, date, context. This is FREE information — use it.</li>
+<li>**Read the first sentence of each paragraph.** These are typically topic sentences.</li>
+<li>**Read the last sentence of the passage.** This often contains the conclusion or thesis.</li>
+<li>**Identify: Topic, Author's Position, Structure.**</li>
+<p>**After mapping, you should be able to answer:**</p>
+<ul>
+<li>What is this passage about? (topic)</li>
+<li>What does the author think about it? (position)</li>
+<li>How is it organized? (structure — problem/solution, claim/evidence, narrative, etc.)</li>
+</ul>
+<p>> **🔍 PATTERN RECOGNITION:** Students who passage-map score consistently higher than those who don't. The 60-second investment saves 3-5 minutes of confused re-reading later. The map gives you a mental scaffold onto which you can hang details as you read.</p>
+<hr>
+<h3> Active Reading Techniques</h3>
+<p>#### Technique 1: Underline Topic Sentences</p>
+<p>The first sentence of each paragraph usually signals what that paragraph is about. Underline it. If you need to find a detail later, you'll know which paragraph to scan.</p>
+<p>#### Technique 2: Circle Transition Words</p>
+<p>Transitions signal the LOGIC of the argument. Circle them as you read:</p>
+<ul>
+<li>**Continuation:** moreover, furthermore, additionally, also</li>
+<li>**Contrast/Shift:** however, but, yet, although, on the other hand, nevertheless</li>
+<li>**Cause-Effect:** therefore, thus, consequently, as a result, because</li>
+<li>**Example:** for instance, for example, such as</li>
+<li>**Conclusion:** in conclusion, ultimately, in sum</li>
+</ul>
+<p>#### Technique 3: Bracket the Thesis</p>
+<p>When you find the author's main argument, put brackets around it. This is the most important sentence(s) in the passage. Most questions connect back to it.</p>
+<p>#### Technique 4: Note Shifts</p>
+<p>When the author changes direction — from describing a problem to proposing a solution, from presenting evidence to analyzing it, from one character's perspective to another's — draw a horizontal line or write "SHIFT" in the margin. Questions often target these transition points.</p>
+<p>#### Technique 5: Summarize After Each Paragraph</p>
+<p>In 3-5 words, note what the paragraph DID. Not what it said — what it DID. Examples: "Introduces problem," "Provides example," "Presents counterargument," "States conclusion."</p>
+<hr>
+<h3> When to Read Questions First</h3>
+<p>**Strategy A: Read passage first (recommended for most students)**</p>
+<ul>
+<li>You understand the passage holistically</li>
+<li>You can answer main idea, purpose, and structure questions confidently</li>
+<li>You can locate details efficiently because you know the passage's organization</li>
+<li>**Best for:** Students who read comfortably and have good comprehension</li>
+</ul>
+<p>**Strategy B: Skim questions first, then read (for slower readers)**</p>
+<ul>
+<li>Skim the question stems (not the answer choices) before reading</li>
+<li>This tells you what to look for</li>
+<li>**Risk:** You may read narrowly, hunting for answers instead of understanding the passage</li>
+<li>**Best for:** Students who struggle with time and need to prioritize</li>
+</ul>
+<p>> **🚨 SAT TRAP ALERT:** The "questions first" strategy can backfire if you read answer choices before the passage. Wrong answers are designed to be seductive — if you see them before you've formed your own understanding, they can distort your reading.</p>
+<hr>
+<h3> How to Handle Each Passage Type</h3>
+<p>#### Science Passages: The Formula</p>
+<p>Almost all SAT science passages follow this structure:</p>
+<li>**Introduce a phenomenon or question** — "Scientists have long wondered why..."</li>
+<li>**Describe previous understanding (optional)** — "Traditionally, researchers believed..."</li>
+<li>**Present new research** — "However, a team led by Dr. X..."</li>
+<li>**Describe method and findings** — "Using Y technique, they discovered that..."</li>
+<li>**Discuss implications** — "These findings suggest that..."</li>
+<p>**Your job:** Find the new finding and how it differs from previous understanding. That's where the questions cluster.</p>
+<p>#### Literature Passages: Character and Shift</p>
+<ul>
+<li>Focus on the main character's internal state — feelings, desires, conflicts</li>
+<li>Look for a SHIFT: a change in understanding, emotion, or situation</li>
+<li>The shift is almost always the subject of at least one question</li>
+<li>Pay attention to descriptive language that reveals character traits</li>
+</ul>
+<p>#### History/Social Science Passages: The Argument</p>
+<ul>
+<li>Find the thesis statement (usually in paragraph 1 or the conclusion)</li>
+<li>Identify the evidence the author uses (historical examples, data, logic)</li>
+<li>Note the author's perspective — are they defending, challenging, or analyzing?</li>
+<li>For paired history passages, identify the conflict between perspectives</li>
+</ul>
+<hr>
+<h3> Common Passage Sources</h3>
+<p>Knowing where SAT passages come from helps you anticipate style and vocabulary:</p>
+<p>**Literature:**</p>
+<ul>
+<li>Contemporary: authors like Jhumpa Lahiri, Chimamanda Ngozi Adichie, Haruki Murakami</li>
+<li>Classic: authors like Jane Austen, Charles Dickens, Charlotte Brontë</li>
+<li>The blurb always provides context — use it</li>
+</ul>
+<p>**Science:**</p>
+<ul>
+<li>Publications: Nature, Science, Scientific American, National Geographic</li>
+<li>Style: accessible to a general educated reader, not specialist-level</li>
+</ul>
+<p>**History/Social Science:**</p>
+<ul>
+<li>U.S. founding documents and "Great Global Conversation" texts</li>
+<li>Speeches, essays, letters by historical figures</li>
+<li>Modern social science adapted from academic journals</li>
+</ul>
+<p>**Humanities:**</p>
+<ul>
+<li>Essays on art, literature, music, philosophy</li>
+<li>Often persuasive or interpretive in nature</li>
+</ul>
+<hr>
+<h3> Worked Passage Walkthrough: Science</h3>
+<p>**Passage (condensed):**</p>
+<p>*Blurb: Adapted from a 2018 article in Nature about the discovery of a new neural mechanism for memory formation.*</p>
+<p>[P1] For decades, neuroscientists believed that long-term memories were stored exclusively through the strengthening of synaptic connections between neurons. This process, known as long-term potentiation (LTP), was considered the sole cellular basis of memory.</p>
+<p>[P2] However, a research team at Stanford University has identified a second, previously unknown mechanism. Using advanced imaging techniques, the team observed that certain memories trigger the formation of entirely new synaptic connections, not just the strengthening of existing ones.</p>
+<p>[P3] The researchers trained mice to navigate a maze, then examined their brains. Mice that learned the maze showed not only strengthened synapses but also a 23% increase in the total number of synaptic connections in the hippocampus. Control mice showed no such increase.</p>
+<p>[P4] This finding challenges the long-held assumption that the adult brain cannot create new synapses in significant numbers. It also opens new avenues for research into memory disorders, suggesting that conditions like Alzheimer's may involve failures in this second mechanism rather than in LTP alone.</p>
+<p>**Passage Map:**</p>
+<ul>
+<li>Topic: New neural mechanism for memory</li>
+<li>Position: There's a second mechanism beyond LTP</li>
+<li>Structure: Old understanding → New discovery → Evidence → Implications</li>
+</ul>
+<p>**Key elements:**</p>
+<ul>
+<li>P1 thesis: Old model (LTP only)</li>
+<li>P2 shift: "However" — new mechanism discovered</li>
+<li>P3 evidence: 23% increase in synapse count</li>
+<li>P4 implications: challenges assumption, opens Alzheimer's research</li>
+</ul>
+<hr>
+<h2>Practice Problems</h2>
+<p>*Use the passage mapping and active reading techniques on the following passage, then answer the questions.*</p>
+<p>**Passage:**</p>
+<p>*Blurb: Adapted from a 2020 article in the Journal of Consumer Psychology.*</p>
+<p>[P1] The "default effect" refers to the well-documented tendency of consumers to stick with pre-selected options rather than actively choosing alternatives. When a software installation offers a "standard" installation pre-checked, most users accept it. When an employer automatically enrolls new hires in a retirement plan unless they opt out, participation rates soar.</p>
+<p>[P2] Policymakers have seized on the default effect as a tool for "nudging" citizens toward beneficial behaviors — saving for retirement, registering as organ donors, choosing renewable energy plans. The appeal is obvious: defaults achieve behavioral change without restricting freedom of choice. Citizens can always opt out.</p>
+<p>[P3] Yet recent research suggests that defaults may carry hidden costs. In a series of experiments, participants who were defaulted into a particular choice subsequently showed less knowledge about the decision domain than those who made an active choice. When later faced with related decisions, defaulted participants were less equipped to make informed judgments.</p>
+<p>[P4] These findings complicate the narrative of defaults as an unmitigated good. While defaults may boost immediate outcomes, they may also undermine the development of decision-making competence — a trade-off that policymakers have largely overlooked.</p>
+<h3> Problem 1</h3>
+<p>The primary purpose of the passage is to:</p>
+<p>A) argue that default effects should never be used in policy</p>
+<p>B) describe the default effect and present a potential drawback to its use</p>
+<p>C) explain how software companies exploit consumer psychology</p>
+<p>D) prove that active choice is always superior to default options</p>
+<h3> Problem 2</h3>
+<p>According to the passage, which of the following is an advantage of using defaults for policy?</p>
+<p>A) They educate citizens about important decisions.</p>
+<p>B) They achieve behavioral change while preserving freedom of choice.</p>
+<p>C) They increase citizens' knowledge about the decision domain.</p>
+<p>D) They eliminate the need for any consumer decision-making.</p>
+<h3> Problem 3</h3>
+<p>The function of paragraph 3 ("Yet recent research...informed judgments") is to:</p>
+<p>A) provide additional examples of successful default effects</p>
+<p>B) introduce evidence that complicates the positive view of defaults</p>
+<p>C) summarize the main arguments in favor of default effects</p>
+<p>D) propose a solution to the problems caused by defaults</p>
+<h3> Problem 4</h3>
+<p>The passage suggests that defaulted participants, compared to those who made active choices, were:</p>
+<p>A) more satisfied with their decisions</p>
+<p>B) less knowledgeable about the decision domain</p>
+<p>C) equally capable of making subsequent informed decisions</p>
+<p>D) more likely to opt out of future defaults</p>
+<h3> Problem 5</h3>
+<p>The author mentions "retirement plan" enrollment in paragraph 1 primarily to:</p>
+<p>A) illustrate a positive example of the default effect</p>
+<p>B) argue that defaults are harmful to consumers</p>
+<p>C) demonstrate a case where defaults failed</p>
+<p>D) criticize employers for manipulating workers</p>
+<hr>
+<h2>Answers</h2>
+<h3> Problem 1</h3>
+<p>**Answer: B**</p>
+<p>**Explanation:** The passage has two clear parts: P1-P2 describe the default effect and its benefits (nudging, preserving choice), while P3-P4 present a drawback (undermining decision-making competence). Option B captures both. Option A is too extreme — the passage says there's a "trade-off," not that defaults should never be used. Option C is too narrow — software is just one example. Option D is too extreme and goes beyond the passage.</p>
+<h3> Problem 2</h3>
+<p>**Answer: B**</p>
+<p>**Explanation:** Paragraph 2 states: "defaults achieve behavioral change without restricting freedom of choice. Citizens can always opt out." This is directly cited as a benefit. Option A contradicts P3. Option C is the opposite — P3 says defaulted participants had LESS knowledge. Option D is extreme and unsupported.</p>
+<h3> Problem 3</h3>
+<p>**Answer: B**</p>
+<p>**Explanation:** P3 begins with "Yet" — a contrast signal. While P2 describes benefits, P3 introduces evidence that defaults "may carry hidden costs." The function is to complicate the narrative, not to support it. Option A is the opposite. Option C is wrong — P3 is about drawbacks, not support. Option D is wrong — no solution is proposed in P3.</p>
+<h3> Problem 4</h3>
+<p>**Answer: B**</p>
+<p>**Explanation:** P3 states: "participants who were defaulted into a particular choice subsequently showed less knowledge about the decision domain than those who made an active choice." Option A is unstated. Option C contradicts P3. Option D is unstated — opting out of future defaults isn't discussed.</p>
+<h3> Problem 5</h3>
+<p>**Answer: A**</p>
+<p>**Explanation:** P1 uses the retirement plan example to illustrate how defaults work positively — enrollment soars when it's the default. This is an illustration of the default effect. Option B contradicts the context of the example. Option C is wrong — the example shows success, not failure. Option D is a misreading — the passage isn't criticizing employers here.</p>
+<hr>
+<p>**Quick Recap:**</p>
+<ul>
+<li>Map passages in 30-60 seconds: read blurb, topic sentences, and conclusion</li>
+<li>Underline topic sentences, circle transitions, bracket the thesis</li>
+<li>Science: hypothesis → evidence → conclusion</li>
+<li>Literature: character → conflict → shift</li>
+<li>History/Social Science: argument → evidence → perspective</li>
+<li>Note shifts — that's where questions cluster</li>
+</ul>
+<div class="nav">
+<a href="lesson47.html">← Previous Lesson</a>
+<a href="index.html">📋 All Lessons</a>
+<a href="lesson49.html">Next Lesson →</a>
+</div>
+</body>
+</html>

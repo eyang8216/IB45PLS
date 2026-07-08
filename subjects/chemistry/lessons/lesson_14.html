@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 14: Enthalpy Changes — Definitions, Calorimetry, q = mcΔT — IB Chemistry HL</title>
+<script>window.MathJax = { loader: {load: ['[tex]/mhchem']}, tex: {packages: {'[+]': ['mhchem']}} };</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Palatino', 'Georgia', serif; background: var(--bg); color: var(--text); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; font-size: 17px; line-height: 1.7; }
+  h1 { font-size: 1.7rem; color: var(--accent); margin-bottom: 0.5rem; }
+  h2 { font-size: 1.25rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; margin: 2rem 0 1rem; }
+  h3 { font-size: 1.1rem; color: #444; margin: 1.3rem 0 0.5rem; }
+  p, li { margin-bottom: 0.6rem; }
+  ul, ol { padding-left: 1.8rem; margin-bottom: 1rem; }
+  .worked { background: #f0f7f0; border-left: 4px solid #2c5f2d; padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
+  .worked strong { color: #2c5f2d; }
+  .answer { background: #fefdf7; border: 1px solid var(--border); padding: 0.8rem 1.2rem; margin: 0.5rem 0; border-radius: 6px; }
+  .definition { background: #fdf5e6; border-left: 4px solid #d4a017; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+  th, td { padding: 0.5rem; border: 1px solid #ccc; text-align: left; }
+  th { background: #f0f7f0; }
+  pre, code { background: #f5f5f5; font-family: 'Courier New', monospace; font-size: 0.9em; }
+  pre { padding: 1rem; overflow-x: auto; margin: 1rem 0; white-space: pre-wrap; }
+  .nav { display: flex; justify-content: space-between; margin: 3rem 0 1rem; padding-top: 1rem; border-top: 2px solid var(--border); font-size: 0.9rem; }
+  .nav a { color: #1a5c9e; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  @media print { body { font-size: 14px; } .nav { display: none; } }
+</style>
+</head>
+<body>
+<h1>Lesson 14: Enthalpy Changes — Definitions, Calorimetry, q = mcΔT</h1>
+<h2>What You'll Learn</h2>
+<ul>
+<li>Define the terms "system," "surroundings," "exothermic reaction," and "endothermic reaction"</li>
+<li>Write chemical equations that represent standard enthalpy of formation (ΔH_f⦵) and standard enthalpy of combustion (ΔH_c⦵)</li>
+<li>Use the calorimetry equation q = mcΔT to calculate heat changes from temperature measurements</li>
+<li>Convert a measured heat change q into a molar enthalpy change ΔH expressed in kJ mol⁻¹</li>
+<li>Identify the main sources of experimental error in calorimetry experiments and explain how they affect results</li>
+</ul>
+<hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
+<h2>1. System, Surroundings, and the Meaning of Enthalpy Change</h2>
+<h3>What Is the System and What Are the Surroundings?</h3>
+<p>When chemists study the energy changes that accompany a chemical reaction, they begin by deciding what counts as "the reaction" and what counts as "everything else." This distinction is fundamental to all of thermochemistry.</p>
+<p>The <strong>system</strong> is the part of the universe that we are focusing on. In a chemical context, the system is the reaction itself — the atoms, molecules, and ions that are rearranging, breaking bonds, and forming new bonds. The system is where the chemical change actually occurs.</p>
+<p>The <strong>surroundings</strong> are everything outside the system. This includes the container holding the reaction (a beaker, a test tube, a calorimeter cup), the solvent if the reaction is in solution, the air in the room, the thermometer that measures the temperature, and even the hand of the person holding the apparatus.</p>
+<h3>Why Does This Distinction Matter?</h3>
+<p>Energy can flow between the system and the surroundings, but the total energy of the universe (system plus surroundings) is conserved. This is a statement of the First Law of Thermodynamics. When we measure a temperature change, we are measuring a change in the surroundings. We then use that measurement to figure out what happened to the energy of the system.</p>
+<h3>What Does "Enthalpy Change" Mean?</h3>
+<p>The symbol ΔH (read as "delta H") represents the <strong>enthalpy change</strong> of the system. The Greek letter delta (Δ) means "change in," and H stands for enthalpy. Enthalpy is a measure of the total heat content of a system at constant pressure. Most reactions we study in the laboratory happen in open containers at the constant pressure of the atmosphere, so ΔH is the quantity that tells us how much heat the system absorbs or releases.</p>
+<p>The sign of ΔH follows a convention:</p>
+<ul>
+<li>If the system <strong>releases</strong> heat to the surroundings, the system's energy has decreased, so ΔH is <strong>negative</strong>. This is called an <strong>exothermic</strong> reaction.</li>
+<li>If the system <strong>absorbs</strong> heat from the surroundings, the system's energy has increased, so ΔH is <strong>positive</strong>. This is called an <strong>endothermic</strong> reaction.</li>
+</ul>
+<p>Many students find the sign convention confusing at first. A helpful way to think about it: when you touch a beaker and it feels warm, that means heat has left the system and entered your hand (the surroundings). The system lost energy, so ΔH is negative. When the beaker feels cold, heat has left your hand and entered the system. The system gained energy, so ΔH is positive.</p>
+<h3>How to Tell Whether a Reaction Is Exothermic or Endothermic</h3>
+<p>There are two practical ways to determine this:</p>
+<ol>
+<li><strong>Measure the temperature.</strong> If the temperature of the surroundings rises, the reaction is exothermic (ΔH negative). If the temperature of the surroundings falls, the reaction is endothermic (ΔH positive).</li>
+</ol>
+<ol>
+<li><strong>Look at the position of "energy" or "heat" in the thermochemical equation.</strong> If heat appears on the product side (for example, "reactants → products + 572 kJ"), the reaction is exothermic — energy is released as a product. If heat appears on the reactant side ("reactants + 100 kJ → products"), the reaction is endothermic — energy must be supplied for the reaction to proceed.</li>
+</ol>
+<table>
+<tr>
+<th>Property</th>
+<th>Exothermic</th>
+<th>Endothermic</th>
+</tr>
+<tr>
+<td>Sign of ΔH</td>
+<td>Negative (−)</td>
+<td>Positive (+)</td>
+</tr>
+<tr>
+<td>Direction of heat flow</td>
+<td>System → Surroundings</td>
+<td>Surroundings → System</td>
+</tr>
+<tr>
+<td>Temperature of surroundings</td>
+<td>Rises (gets hotter)</td>
+<td>Falls (gets colder)</td>
+</tr>
+<tr>
+<td>How energy appears in equation</td>
+<td>On the product side</td>
+<td>On the reactant side</td>
+</tr>
+<tr>
+<td>Everyday examples</td>
+<td>Burning a candle, mixing acid and base, hand warmer packets</td>
+<td>Melting ice, dissolving ammonium nitrate in a cold pack, photosynthesis</td>
+</tr>
+</table>
+<h3>Common Misconception</h3>
+<p>Many students think that if a reaction gives off heat, the enthalpy of the system must increase because "something is being added." But the opposite is true: if the system is giving heat away, it is losing energy, so its enthalpy decreases and ΔH is negative. Think of the system like a bank account: if you withdraw money (release heat), your balance goes down. If you deposit money (absorb heat), your balance goes up.</p>
+<p><strong>Worked Example 1:</strong> A student places a few pellets of solid sodium hydroxide, NaOH(s), into a beaker of water and stirs. The beaker becomes noticeably warm to the touch. Is the dissolving process exothermic or endothermic? What is the sign of ΔH for this process?</p>
+<p><strong>Answer:</strong> The beaker (which is part of the surroundings) becomes warm. This tells us that heat has been transferred from the system (the dissolving NaOH) to the surroundings (the beaker and the water). The system has released energy, so the process is <strong>exothermic</strong>. Because the system lost energy, ΔH is <strong>negative</strong>.</p>
+<p><strong>Worked Example 2:</strong> The equation for the decomposition of calcium carbonate is sometimes written as: CaCO₃(s) + 178 kJ → CaO(s) + CO₂(g). Is this reaction exothermic or endothermic? What is the sign of ΔH?</p>
+<p><strong>Answer:</strong> The energy term "178 kJ" appears on the reactant side of the equation. This tells us that energy must be absorbed by the system for the reaction to occur. Therefore, the reaction is <strong>endothermic</strong>. The system gains energy, so ΔH is <strong>positive</strong>: ΔH = +178 kJ mol⁻¹.</p>
+<hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
+<h2>2. Standard Enthalpy of Formation (ΔH_f⦵)</h2>
+<h3>What Is Standard Enthalpy of Formation?</h3>
+<p>The standard enthalpy of formation, written as ΔH_f⦵, is a specific type of enthalpy change. It answers the question: how much energy is absorbed or released when a compound is built from its most basic building blocks — the elements themselves?</p>
+<p><strong>Definition:</strong> The standard enthalpy of formation (ΔH_f⦵) is the enthalpy change when <strong>one mole</strong> of a compound is formed from its <strong>elements in their standard states</strong>, under standard conditions of 298 K (25°C) and 100 kPa (approximately 1 atmosphere of pressure).</p>
+<h3>Why Is This Quantity Useful?</h3>
+<p>If we know the ΔH_f⦵ for many compounds, we can calculate the enthalpy change for almost any reaction without having to measure every single one in the laboratory. This is the basis of Hess's Law, which is the subject of Lesson 15.</p>
+<h3>Three Requirements of a Formation Equation</h3>
+<p>Every ΔH_f⦵ equation must satisfy three strict requirements:</p>
+<p><strong>Requirement 1: Exactly 1 mole of product.</strong> The equation must produce exactly one mole of the compound whose ΔH_f⦵ we are writing. If the equation produces two moles, that is not a formation equation.</p>
+<p><strong>Requirement 2: Reactants must be elements in their standard states.</strong> A "standard state" means the most stable form of the element at 298 K and 100 kPa. For example, carbon's standard state is solid graphite, not diamond. Oxygen's standard state is O₂ gas, not O atoms or O₃ (ozone). The standard states of common elements are:</p>
+<ul>
+<li>Carbon: C(s, graphite)</li>
+<li>Hydrogen: H₂(g)</li>
+<li>Oxygen: O₂(g)</li>
+<li>Nitrogen: N₂(g)</li>
+<li>Chlorine: Cl₂(g)</li>
+<li>Bromine: Br₂(l) — note: bromine is a liquid at room temperature, so its standard state is liquid, not gas</li>
+<li>Iodine: I₂(s) — iodine is a solid</li>
+<li>Sulfur: S(s, rhombic) — rhombic sulfur is the most stable allotrope</li>
+<li>Sodium: Na(s)</li>
+<li>Iron: Fe(s)</li>
+</ul>
+<p><strong>Requirement 3: Standard conditions.</strong> The ⦵ symbol (sometimes written as a superscript circle with a horizontal line through it) indicates standard conditions: 298 K and 100 kPa.</p>
+<h3>A Critical Rule: ΔH_f⦵ of Elements Is Zero</h3>
+<p>The enthalpy of formation of any element in its standard state is defined as zero. Why? Because an element "forming itself" involves no chemical change — you start with the element and end with the element. Since there is no change, there is no enthalpy change. So ΔH_f⦵[O₂(g)] = 0, ΔH_f⦵[C(s, graphite)] = 0, ΔH_f⦵[Na(s)] = 0, and so on.</p>
+<p>An important subtlety: this rule applies only to the element in its <strong>standard state</strong>. ΔH_f⦵ of O₃(g) (ozone) is not zero because O₃ is not the standard state of oxygen — O₂ is. Similarly, ΔH_f⦵ of C(s, diamond) is not zero because diamond is not the standard state of carbon — graphite is.</p>
+<h3>Writing Formation Equations: Examples</h3>
+<p><strong>Correct formation equation for carbon dioxide:</strong></p>
+<p>C(s, graphite) + O₂(g) → CO₂(g)</p>
+<p>This equation produces 1 mol of CO₂ from its elements in their standard states. ΔH_f⦵[CO₂(g)] = −394 kJ mol⁻¹.</p>
+<p><strong>Incorrect formation equation for carbon dioxide:</strong></p>
+<p>2C(s, graphite) + 2O₂(g) → 2CO₂(g)</p>
+<p>This produces 2 mol of CO₂, violating Requirement 1. This equation represents a reaction with ΔH = 2 × (−394) = −788 kJ, but it is not the formation equation.</p>
+<p><strong>Correct formation equation for liquid ethanol, C₂H₅OH(l):</strong></p>
+<p>2C(s, graphite) + 3H₂(g) + ½O₂(g) → C₂H₅OH(l)</p>
+<p>Note that fractional coefficients are allowed. The key is that the product side has exactly 1 mole of ethanol.</p>
+<p><strong>Correct formation equation for solid ammonium nitrate, NH₄NO₃(s):</strong></p>
+<p>N₂(g) + 2H₂(g) + ³⁄₂O₂(g) → NH₄NO₃(s)</p>
+<p>There are 2 nitrogen atoms in NH₄NO₃, which come from 1 molecule of N₂ gas. There are 4 hydrogen atoms, which come from 2 molecules of H₂ gas. There are 3 oxygen atoms, which come from ³⁄₂ molecules of O₂ gas. The product is 1 mole of NH₄NO₃.</p>
+<p><strong>Worked Example 3:</strong> Write the equation that represents ΔH_f⦵ of liquid sulfuric acid, H₂SO₄(l).</p>
+<p><strong>Answer:</strong> We need to produce exactly 1 mole of H₂SO₄. The elements are found in H₂ gas, S(s, rhombic), and O₂ gas. In H₂SO₄, there are 2 hydrogen atoms (from 1 H₂ molecule), 1 sulfur atom (from 1 S atom), and 4 oxygen atoms (from 2 O₂ molecules). The formation equation is:</p>
+<p>H₂(g) + S(s, rhombic) + 2O₂(g) → H₂SO₄(l)</p>
+<p><strong>Worked Example 4:</strong> Write the equation that represents ΔH_f⦵ of solid magnesium nitrate, Mg(NO₃)₂(s).</p>
+<p><strong>Answer:</strong> The elements are Mg(s), N₂(g), and O₂(g). In Mg(NO₃)₂, there is 1 Mg atom, 2 N atoms (from 1 N₂ molecule), and 6 O atoms (from 3 O₂ molecules). The formation equation is:</p>
+<p>Mg(s) + N₂(g) + 3O₂(g) → Mg(NO₃)₂(s)</p>
+<hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
+<h2>3. Standard Enthalpy of Combustion (ΔH_c⦵)</h2>
+<h3>What Is Standard Enthalpy of Combustion?</h3>
+<p>The standard enthalpy of combustion, written as ΔH_c⦵, is the enthalpy change when a substance reacts with oxygen and burns completely.</p>
+<p><strong>Definition:</strong> The standard enthalpy of combustion (ΔH_c⦵) is the enthalpy change when <strong>one mole</strong> of a substance is <strong>completely burned</strong> in <strong>excess oxygen</strong>, under standard conditions of 298 K and 100 kPa.</p>
+<h3>What Does "Completely Burned" Mean?</h3>
+<p>"Completely burned" means that every atom of carbon becomes CO₂, every atom of hydrogen becomes H₂O, every atom of sulfur becomes SO₂, and so on. No soot (unburned carbon), no carbon monoxide (CO), and no other partial combustion products are formed. For this to happen, there must be plenty of excess oxygen present.</p>
+<p>The standard products of complete combustion are:</p>
+<ul>
+<li>Carbon atoms → CO₂(g)</li>
+<li>Hydrogen atoms → H₂O(l) — note: liquid water is the standard product, not gaseous water, because standard conditions are 298 K at which water is a liquid</li>
+<li>Sulfur atoms → SO₂(g)</li>
+<li>Nitrogen atoms → N₂(g) — nitrogen is typically not oxidized during combustion; it is released as N₂ gas</li>
+</ul>
+<h3>Writing Combustion Equations</h3>
+<p>A combustion equation always has the substance being burned on the left side (exactly 1 mole of it) and oxygen on the left side as well. The products are the combustion products listed above.</p>
+<p><strong>Important:</strong> Combustion reactions are always exothermic, so ΔH_c⦵ values are always negative. You will never see a positive ΔH_c⦵ in a data table.</p>
+<p><strong>Worked Example 5:</strong> Write the equation that represents ΔH_c⦵ of propane, C₃H₈(g).</p>
+<p><strong>Answer:</strong> We start with 1 mole of propane: C₃H₈(g). Propane contains 3 carbon atoms and 8 hydrogen atoms. The carbon becomes 3 CO₂(g). The hydrogen becomes 4 H₂O(l). Now we count oxygen atoms needed on the right side: 3 CO₂ molecules contain 3 × 2 = 6 oxygen atoms. 4 H₂O molecules contain 4 × 1 = 4 oxygen atoms. Total oxygen atoms needed = 6 + 4 = 10. These come from O₂ molecules, so we need 10 ÷ 2 = 5 O₂ molecules.</p>
+<p>The combustion equation is: C₃H₈(g) + 5O₂(g) → 3CO₂(g) + 4H₂O(l).</p>
+<p><strong>Worked Example 6:</strong> Write the equation that represents ΔH_c⦵ of liquid ethanol, C₂H₅OH(l).</p>
+<p><strong>Answer:</strong> We start with 1 mole of ethanol. Ethanol contains 2 carbon atoms (→ 2 CO₂), 6 hydrogen atoms (→ 3 H₂O), and already has 1 oxygen atom in its structure. On the right side, we need oxygen for 2 CO₂ (4 O atoms) and 3 H₂O (3 O atoms), which is 7 O atoms total. The ethanol molecule supplies 1 O atom, so we need 6 more from O₂ gas: 6 ÷ 2 = 3 O₂ molecules.</p>
+<p>The combustion equation is: C₂H₅OH(l) + 3O₂(g) → 2CO₂(g) + 3H₂O(l).</p>
+<p>A common student mistake here is forgetting to account for the oxygen already in the fuel molecule. Always count the oxygen in the fuel before determining how many O₂ molecules are needed.</p>
+<hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
+<h2>4. Calorimetry: Measuring Heat Changes with q = mcΔT</h2>
+<h3>What Is Calorimetry?</h3>
+<p>Calorimetry is the experimental technique for measuring the heat absorbed or released during a chemical reaction or a physical process. The word "calorimetry" comes from "calorie," an old unit of heat. In a calorimetry experiment, we carry out a reaction in a container that is as well-insulated as possible (often a polystyrene cup, which is an excellent thermal insulator), and we measure the temperature change of the solution using a thermometer.</p>
+<h3>The Calorimetry Equation</h3>
+<p>The fundamental equation of calorimetry is:</p>
+<p><strong>q = mcΔT</strong></p>
+<p>Each symbol in this equation has a precise meaning:</p>
+<ul>
+<li><strong>q</strong> is the heat change, measured in <strong>joules (J)</strong>. It is the amount of thermal energy that has been transferred. If q is positive, the solution gained heat. If q is negative, the solution lost heat.</li>
+</ul>
+<ul>
+<li><strong>m</strong> is the mass of the substance being heated, measured in <strong>grams (g)</strong>. For a calorimetry experiment with an aqueous solution, this is the total mass of the solution. An important and very useful approximation: for dilute aqueous solutions, the density is very close to 1.00 g cm⁻³. This means that 1 cm³ of solution has a mass of approximately 1 g. So if you measure 50.0 cm³ of solution, you can assume its mass is 50.0 g.</li>
+</ul>
+<ul>
+<li><strong>c</strong> is the <strong>specific heat capacity</strong>, measured in <strong>J g⁻¹ K⁻¹</strong> (joules per gram per kelvin). This is a property of the material being heated. It tells you how much energy is needed to raise the temperature of 1 gram of the substance by 1 kelvin. For water and for dilute aqueous solutions, c = 4.18 J g⁻¹ K⁻¹. The specific heat capacity of water is unusually high compared to most substances, which is why large bodies of water like oceans change temperature slowly.</li>
+</ul>
+<ul>
+<li><strong>ΔT</strong> is the <strong>temperature change</strong>, measured in either <strong>kelvin (K)</strong> or <strong>degrees Celsius (°C)</strong>. Since a change of 1 K is exactly the same size as a change of 1°C, the numerical value of ΔT is the same in both units. ΔT is calculated as: ΔT = T_final − T_initial.</li>
+</ul>
+<h3>Converting q to ΔH</h3>
+<p>The heat change q tells us about the surroundings (the solution). But we want the enthalpy change ΔH, which is about the system (the reaction). Here is the crucial conversion:</p>
+<p><strong>ΔH = −q/n</strong></p>
+<p>Where:</p>
+<ul>
+<li>The <strong>negative sign</strong> accounts for the fact that if the solution gets hot (q positive for the surroundings), the reaction released heat (ΔH negative for the system). If the solution gets cold, the reaction absorbed heat.</li>
+<li><strong>n</strong> is the number of <strong>moles of the limiting reactant</strong> — the reactant that runs out first and determines how much reaction actually happened.</li>
+</ul>
+<p>ΔH is usually expressed in <strong>kJ mol⁻¹</strong> (kilojoules per mole). So after calculating q in joules, you must:</p>
+<ol>
+<li>Convert q from joules to kilojoules by dividing by 1000.</li>
+<li>Divide by the number of moles.</li>
+<li>Apply the negative sign.</li>
+</ol>
+<h3>Worked Example 7: A Complete Calorimetry Calculation</h3>
+<p><strong>Problem:</strong> A student mixes 50.0 cm³ of 1.00 mol dm⁻³ hydrochloric acid, HCl(aq), with 50.0 cm³ of 1.00 mol dm⁻³ sodium hydroxide, NaOH(aq), in a polystyrene cup. The initial temperature of both solutions is 21.0°C. After mixing, the highest temperature reached is 27.6°C. Calculate the enthalpy change for the neutralization reaction: HCl(aq) + NaOH(aq) → NaCl(aq) + H₂O(l).</p>
+<p><strong>Strategy:</strong> To solve this problem, we need to determine the total mass of the solution, compute the temperature change, use q = mcΔT to find the heat absorbed by the solution, find the number of moles that reacted, and finally convert q to ΔH with proper units and sign.</p>
+<p><strong>Step 1 — Total volume and mass:</strong></p>
+<p>Total volume = 50.0 cm³ + 50.0 cm³ = 100.0 cm³.</p>
+<p>Using the approximation that the density of a dilute aqueous solution is 1.00 g cm⁻³, the total mass is:</p>
+<p>m = 100.0 g.</p>
+<p><strong>Step 2 — Temperature change:</strong></p>
+<p>ΔT = T_final − T_initial = 27.6°C − 21.0°C = 6.6°C = 6.6 K.</p>
+<p><strong>Step 3 — Heat absorbed by the solution:</strong></p>
+<p>q = mcΔT</p>
+<p>q = (100.0 g) × (4.18 J g⁻¹ K⁻¹) × (6.6 K)</p>
+<p>q = 100.0 × 4.18 × 6.6</p>
+<p>q = 100.0 × 27.588</p>
+<p>q = 2758.8 J</p>
+<p>We can round to q = 2.76 × 10³ J = 2.76 kJ.</p>
+<p><strong>Step 4 — Moles of the limiting reactant:</strong></p>
+<p>The reaction is 1:1 (one mole of HCl reacts with one mole of NaOH). Calculate moles of each:</p>
+<p>n(HCl) = concentration × volume = 1.00 mol dm⁻³ × 0.0500 dm³ = 0.0500 mol</p>
+<p>n(NaOH) = 1.00 mol dm⁻³ × 0.0500 dm³ = 0.0500 mol</p>
+<p>Both are equal, so both are fully consumed. n = 0.0500 mol.</p>
+<p><strong>Step 5 — Convert q to ΔH:</strong></p>
+<p>ΔH = −q / n</p>
+<p>ΔH = −2.76 kJ / 0.0500 mol</p>
+<p>ΔH = −55.2 kJ mol⁻¹.</p>
+<p><strong>Why this makes sense:</strong> The temperature rose, confirming the reaction is exothermic, which matches the negative sign. The magnitude of around −55 to −57 kJ mol⁻¹ is the well-known value for strong acid–strong base neutralization.</p>
+<h3>Worked Example 8: Calorimetry with a Limiting Reactant</h3>
+<p><strong>Problem:</strong> A student adds 2.00 g of magnesium powder to 100 cm³ of 0.500 mol dm⁻³ copper(II) sulfate solution, CuSO₄(aq), in a polystyrene cup. The temperature of the solution rises by 12.3°C. The reaction is: Mg(s) + CuSO₄(aq) → MgSO₄(aq) + Cu(s). The atomic mass of magnesium is 24.31 g mol⁻¹. Calculate ΔH for this reaction.</p>
+<p><strong>Strategy:</strong> We first find which reactant limits the reaction, because ΔH must be calculated per mole of the limiting reactant. Then we use q = mcΔT and convert.</p>
+<p><strong>Step 1 — Find the limiting reactant:</strong></p>
+<p>Moles of Mg = mass / molar mass = 2.00 g / 24.31 g mol⁻¹ = 0.0823 mol.</p>
+<p>Moles of CuSO₄ = concentration × volume = 0.500 mol dm⁻³ × 0.100 dm³ = 0.0500 mol.</p>
+<p>The equation shows a 1:1 ratio. Since CuSO₄ has fewer moles (0.0500 < 0.0823), CuSO₄ is the limiting reactant. Only 0.0500 mol of the reaction occurs.</p>
+<p><strong>Step 2 — Calculate the heat absorbed by the solution:</strong></p>
+<p>m ≈ 100 g (mass of the solution, using the density approximation).</p>
+<p>c = 4.18 J g⁻¹ K⁻¹.</p>
+<p>ΔT = 12.3°C = 12.3 K.</p>
+<p>q = 100 × 4.18 × 12.3 = 5141.4 J = 5.14 kJ.</p>
+<p><strong>Step 3 — Calculate ΔH:</strong></p>
+<p>ΔH = −q / n(limiting) = −5.14 kJ / 0.0500 mol = −103 kJ mol⁻¹.</p>
+<p><strong>Why this makes sense:</strong> Displacement reactions like this, where a more reactive metal replaces a less reactive one, are typically strongly exothermic, and a value of around −100 kJ mol⁻¹ is in the expected range. The negative sign is correct because the temperature rose.</p>
+<h3>A Crucial Detail: Always Divide by the Limiting Reactant</h3>
+<p>Many students divide by the total moles of all reactants or by the moles of the reactant in excess. This produces a wrong answer. The ΔH value tells you the heat change <strong>per mole of reaction that actually happened</strong>, and the reaction can only happen to the extent allowed by the reactant that runs out first. Always identify the limiting reactant before doing the division.</p>
+<hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
+<h2>5. Experimental Errors in Calorimetry</h2>
+<h3>Why Experimental Values Differ from Data Book Values</h3>
+<p>If you perform a calorimetry experiment in a school laboratory, your measured ΔH value will almost certainly be different from the value printed in a data book. This does not mean you did the experiment "wrong" — it means there are inherent limitations in the experimental setup. Understanding these limitations is an important part of being a scientist.</p>
+<h3>The Biggest Source of Error: Heat Loss</h3>
+<p>The single largest source of error in calorimetry is heat loss to the surroundings. No matter how well insulated your polystyrene cup is, some heat will escape through the walls of the cup, through the lid, or when you lift the lid to add a reactant. This escaped heat never reaches the thermometer, so the measured temperature rise is smaller than it should be.</p>
+<p><strong>Consequence:</strong> The experimental |ΔH| is smaller than the true value. For an exothermic reaction, the experimental ΔH is less negative than the data book value. For an endothermic reaction, the experimental ΔH is less positive than the data book value.</p>
+<p>Another way to say this: calorimetry experiments tend to underestimate the magnitude of the enthalpy change.</p>
+<h3>How to Minimize Heat Loss</h3>
+<p>Scientists use several strategies to reduce heat loss:</p>
+<ul>
+<li>Use a polystyrene cup with a lid. Polystyrene is a good thermal insulator.</li>
+<li>Stir the solution continuously so that heat is evenly distributed and the thermometer reads a representative temperature.</li>
+<li>Extrapolate the temperature-time graph back to the time of mixing. After measuring temperature for several minutes, you draw a line through the cooling portion of the graph and extrapolate backward to find what the maximum temperature would have been if there were no heat loss at all.</li>
+</ul>
+<h3>Other Sources of Error</h3>
+<table>
+<tr>
+<th>Source of error</th>
+<th>Explanation</th>
+<th>Effect on result</th>
+</tr>
+<tr>
+<td>Heat loss to surroundings</td>
+<td>Some heat escapes from the cup into the air or through the walls.</td>
+<td>ΔT is too small, so \</td>
+<td>ΔH\</td>
+<td>is too small.</td>
+</tr>
+<tr>
+<td>Assuming solution density = 1.00 g cm⁻³</td>
+<td>Real solutions have densities slightly different from 1.00, especially if concentrated.</td>
+<td>Small error in mass, typically 1–2%.</td>
+</tr>
+<tr>
+<td>Assuming c = 4.18 J g⁻¹ K⁻¹</td>
+<td>The specific heat capacity of the solution is assumed to be that of pure water, but dissolved ions change it slightly.</td>
+<td>Small error in q, typically a few percent.</td>
+</tr>
+<tr>
+<td>Thermometer precision</td>
+<td>A standard laboratory thermometer might be readable only to ±0.5°C.</td>
+<td>Random error; can be reduced by repeating the experiment and averaging.</td>
+</tr>
+<tr>
+<td>Incomplete reaction or slow reaction</td>
+<td>If the reaction does not go to completion quickly, the temperature rise is spread out over time and more heat is lost.</td>
+<td>ΔT is too small, so \</td>
+<td>ΔH\</td>
+<td>is too small.</td>
+</tr>
+<tr>
+<td>Evaporation</td>
+<td>If the solution gets hot, some water may evaporate, taking energy with it.</td>
+<td>ΔT is slightly too small.</td>
+</tr>
+</table>
+<h3>Common Misconception</h3>
+<p>Students sometimes think that using a more precise thermometer or a digital temperature probe eliminates heat loss error. It does not. Heat loss is a <strong>systematic error</strong> — it affects every measurement in the same direction (always making |ΔH| too small). A better thermometer reduces <strong>random error</strong> (the scatter of repeated measurements) but does not fix the fact that heat is escaping.</p>
+<hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
+<h2>Practice Problems</h2>
+<ol>
+<li>Classify each of the following processes as exothermic or endothermic and state the sign of ΔH (positive or negative):</li>
+</ol>
+<p>(a) Methane gas, CH₄(g), burns in air to produce carbon dioxide and water vapor, releasing heat that can be felt several meters away from the flame.</p>
+<p>(b) Solid ammonium nitrate, NH₄NO₃(s), dissolves in water and the beaker becomes noticeably cold to the touch.</p>
+<p>(c) The reaction 2H₂(g) + O₂(g) → 2H₂O(l) is written in a textbook with "+ 572 kJ" written on the product side of the equation.</p>
+<ol>
+<li>Write the balanced chemical equation, with state symbols, that represents the standard enthalpy of formation, ΔH_f⦵, for each of the following compounds:</li>
+</ol>
+<p>(a) Solid ammonium chloride, NH₄Cl(s)</p>
+<p>(b) Liquid ethanoic acid (acetic acid), CH₃COOH(l)</p>
+<p>(c) Solid aluminium oxide, Al₂O₃(s)</p>
+<ol>
+<li>A student carries out a calorimetry experiment by mixing 25.0 cm³ of 2.00 mol dm⁻³ nitric acid, HNO₃(aq), with 25.0 cm³ of 2.00 mol dm⁻³ potassium hydroxide, KOH(aq), in a polystyrene cup. Both solutions start at 20.0°C. After mixing, the temperature rises to 33.4°C. The specific heat capacity of the solution is 4.18 J g⁻¹ K⁻¹ and the density of the solution can be assumed to be 1.00 g cm⁻³. Calculate ΔH for the neutralization reaction in kJ mol⁻¹.</li>
+</ol>
+<ol>
+<li>In a combustion calorimetry experiment, a student burns 0.460 g of ethanol, C₂H₅OH(l), and uses the heat released to warm 200 g of water. The temperature of the water rises from 20.0°C to 32.0°C. The relative molecular mass of ethanol is 46.0. The specific heat capacity of water is 4.18 J g⁻¹ K⁻¹. Calculate the experimental value for the standard enthalpy of combustion of ethanol, ΔH_c⦵, in kJ mol⁻¹.</li>
+</ol>
+<ol>
+<li><strong>(IB-exam style)</strong> A student investigates the precipitation reaction between silver nitrate and sodium chloride by mixing 50.0 cm³ of 1.00 mol dm⁻³ AgNO₃(aq) with 50.0 cm³ of 1.00 mol dm⁻³ NaCl(aq) in a polystyrene cup with a lid. The temperature of both solutions before mixing is 19.8°C. After mixing, the maximum temperature recorded is 24.2°C. The equation for the reaction is: Ag⁺(aq) + Cl⁻(aq) → AgCl(s).</li>
+</ol>
+<p>(a) Calculate the experimental value of ΔH for this precipitation reaction, in kJ mol⁻¹. State any assumptions you make in your calculation.</p>
+<p>(b) A data book gives the value of ΔH for this reaction as −65 kJ mol⁻¹. Suggest two specific reasons why the student's experimental value differs from the data book value, and explain the direction of the difference.</p>
+<p>(c) The student repeats the experiment using 25.0 cm³ of 1.00 mol dm⁻³ AgNO₃(aq) and 75.0 cm³ of 1.00 mol dm⁻³ NaCl(aq), both initially at 19.8°C. Without performing a full calculation, predict and explain whether the temperature rise in this second experiment will be smaller than, equal to, or larger than 4.4°C.</p>
+<hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
+<h2>Answers</h2>
+<ol>
+<li><strong>(a)</strong> Burning methane is combustion, which always releases heat. The release of heat to the surroundings means the process is <strong>exothermic</strong>, and ΔH is <strong>negative</strong>. The fact that heat can be felt from several meters away confirms that a large amount of energy is being transferred from the system to the surroundings.</li>
+</ol>
+<p><strong>(b)</strong> When the beaker feels cold, heat is flowing from your hand (the surroundings) into the beaker (the system). The dissolving process is absorbing energy from the surroundings, so it is <strong>endothermic</strong>, and ΔH is <strong>positive</strong>. This is the principle behind instant cold packs, which often contain ammonium nitrate.</p>
+<p><strong>(c)</strong> The notation "+ 572 kJ" on the product side of the equation means that 572 kJ of energy is released as the reaction proceeds. When energy is written as a product, the reaction is <strong>exothermic</strong>, and ΔH is <strong>negative</strong>. For this specific reaction, the equation shows 2 moles of H₂ reacting, so ΔH = −572 kJ for the reaction as written, which equals −286 kJ per mole of H₂O formed.</p>
+<ol>
+<li><strong>(a)</strong> Ammonium chloride, NH₄Cl, contains nitrogen, hydrogen, and chlorine. The elements in their standard states are N₂(g), H₂(g), and Cl₂(g). The compound has 1 N, 4 H, and 1 Cl atom. To get 1 N atom, we need ½ N₂. To get 4 H atoms, we need 2 H₂. To get 1 Cl atom, we need ½ Cl₂. The formation equation is: ½N₂(g) + 2H₂(g) + ½Cl₂(g) → NH₄Cl(s).</li>
+</ol>
+<p><strong>(b)</strong> Ethanoic acid, CH₃COOH, contains 2 C atoms, 4 H atoms, and 2 O atoms. The formation equation is: 2C(s, graphite) + 2H₂(g) + O₂(g) → CH₃COOH(l). This produces exactly 1 mole of ethanoic acid from its elements.</p>
+<p><strong>(c)</strong> Aluminium oxide, Al₂O₃, contains 2 Al atoms and 3 O atoms. Elements are Al(s) and O₂(g). The formation equation is: 2Al(s) + ³⁄₂O₂(g) → Al₂O₃(s).</p>
+<ol>
+<li><strong>Step 1 — Total volume and mass:</strong> Total volume = 25.0 + 25.0 = 50.0 cm³. Assuming density = 1.00 g cm⁻³, m = 50.0 g.</li>
+</ol>
+<p><strong>Step 2 — Temperature change:</strong> ΔT = 33.4 − 20.0 = 13.4°C = 13.4 K.</p>
+<p><strong>Step 3 — Heat absorbed by the solution:</strong></p>
+<p>q = mcΔT = 50.0 × 4.18 × 13.4 = 2800.6 J = 2.80 kJ.</p>
+<p><strong>Step 4 — Moles of limiting reactant:</strong></p>
+<p>n(HNO₃) = 2.00 mol dm⁻³ × 0.0250 dm³ = 0.0500 mol.</p>
+<p>n(KOH) = 2.00 mol dm⁻³ × 0.0250 dm³ = 0.0500 mol.</p>
+<p>Both are equal, so n = 0.0500 mol.</p>
+<p><strong>Step 5 — Calculate ΔH:</strong></p>
+<p>ΔH = −q/n = −2.80 kJ / 0.0500 mol = −56.0 kJ mol⁻¹.</p>
+<p><strong>Common pitfall:</strong> Students sometimes forget to convert cm³ to dm³ when calculating moles. Remember: 1 dm³ = 1000 cm³, so 25.0 cm³ = 0.0250 dm³. Also, students sometimes use the mass of only one solution (25.0 g) instead of the total mass (50.0 g). The thermometer measures the temperature of the entire mixed solution, so you must use the total mass.</p>
+<ol>
+<li><strong>Step 1 — Temperature change:</strong> ΔT = 32.0 − 20.0 = 12.0°C = 12.0 K.</li>
+</ol>
+<p><strong>Step 2 — Heat absorbed by the water:</strong></p>
+<p>q = mcΔT = 200 × 4.18 × 12.0 = 10032 J = 10.03 kJ.</p>
+<p><strong>Step 3 — Moles of ethanol burned:</strong></p>
+<p>n = 0.460 g / 46.0 g mol⁻¹ = 0.0100 mol.</p>
+<p><strong>Step 4 — Experimental ΔH_c⦵:</strong></p>
+<p>ΔH = −q/n = −10.03 kJ / 0.0100 mol = −1003 kJ mol⁻¹ ≈ −1.00 × 10³ kJ mol⁻¹.</p>
+<p><strong>Why this makes sense:</strong> The data book value for ΔH_c⦵ of ethanol is approximately −1367 kJ mol⁻¹. The experimental value is less exothermic (its magnitude is smaller) because of heat loss to the surroundings and possibly incomplete combustion. This is the expected pattern.</p>
+<ol>
+<li><strong>(a)</strong> Total volume = 50.0 + 50.0 = 100.0 cm³, so m ≈ 100.0 g (assuming density = 1.00 g cm⁻³). The specific heat capacity of the solution is assumed to be 4.18 J g⁻¹ K⁻¹ (same as water). ΔT = 24.2 − 19.8 = 4.4°C = 4.4 K.</li>
+</ol>
+<p>q = 100.0 × 4.18 × 4.4 = 1839.2 J = 1.84 kJ.</p>
+<p>n(AgNO₃) = 1.00 × 0.0500 = 0.0500 mol; n(NaCl) = 1.00 × 0.0500 = 0.0500 mol. Both are equal, so the limiting amount is 0.0500 mol.</p>
+<p>ΔH = −1.84 kJ / 0.0500 mol = −36.8 kJ mol⁻¹.</p>
+<p>Assumptions stated: the density of the solution equals 1.00 g cm⁻³; the specific heat capacity of the solution equals that of pure water, 4.18 J g⁻¹ K⁻¹; heat loss to the surroundings is negligible; the reaction goes to completion.</p>
+<p><strong>(b)</strong> The experimental value (−36.8 kJ mol⁻¹) is less exothermic than the data book value (−65 kJ mol⁻¹). Two specific reasons are:</p>
+<ul>
+<li><strong>Heat loss to the surroundings:</strong> Despite using a polystyrene cup and a lid, some heat escapes through the walls, the lid, and when the solutions are mixed. This escaped heat is not recorded by the thermometer, making the measured temperature rise smaller than it should be. A smaller ΔT leads to a smaller calculated |ΔH|.</li>
+<li><strong>Approximating the solution as pure water:</strong> The solution contains dissolved ions (Ag⁺, NO₃⁻, Na⁺, Cl⁻) which change both the density and the specific heat capacity of the liquid compared to pure water. Using c = 4.18 J g⁻¹ K⁻¹ is an approximation that introduces a small error.</li>
+</ul>
+<p><strong>(c)</strong> In the second experiment, the number of moles of AgNO₃ is n = 1.00 × 0.0250 = 0.0250 mol. Since NaCl is in excess (0.0750 mol), AgNO₃ is the limiting reactant. Only 0.0250 mol of Ag⁺ ions react, compared to 0.0500 mol in the first experiment. Since only half as many moles react, only half as much heat is released. However, the total volume of the solution is still 100.0 cm³. With half the heat released into the same volume of solution, the temperature rise will be approximately <strong>half</strong> of 4.4°C, which is about 2.2°C. Thus the temperature rise will be <strong>smaller</strong>. Note that ΔH per mole (the molar enthalpy change) remains the same — only the amount of reaction, and therefore the total heat and the temperature change, is halved.</p>
+<div class="nav">
+<a href="lesson_13.html">← Previous Lesson</a>
+<a href="../index.html">Home</a>
+<a href="lesson_15.html">Next Lesson →</a>
+</div>
+</body>
+</html>

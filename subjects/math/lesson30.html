@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 30 — Proof by Induction: Summation Formulas</title>
+<script>
+MathJax = {
+  tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body {
+    max-width: 800px; margin: 40px auto; font-family: 'Times New Roman', Georgia, serif;
+    font-size: 17px; line-height: 1.7; padding: 0 20px; color: #1a1a1a;
+  }
+  h1 { font-size: 22px; border-bottom: 2px solid #333; padding-bottom: 8px; margin-top: 36px; }
+  h2 { font-size: 19px; margin-top: 28px; color: #2c3e50; }
+  h3 { font-size: 17px; margin-top: 22px; color: #444; }
+  h4 { font-size: 16px; margin-top: 18px; }
+  p { margin: 0.6em 0; }
+  li { margin: 0.3em 0 0.3em 20px; }
+  hr { margin: 20px 0; border: none; border-top: 1px solid #ddd; }
+  .math-block { text-align: center; margin: 1em 0; overflow-x: auto; }
+  .table-line { font-family: 'Courier New', monospace; font-size: 15px; margin: 0.1em 0; }
+  pre { background: #f5f5f5; padding: 10px 14px; border-radius: 4px; overflow-x: auto; font-size: 14px; }
+  b { color: #222; }
+  table { border-collapse: collapse; margin: 16px 0; width: 100%; font-size: 15px; }
+  th { background: #2c3e50; color: #fff; padding: 8px 12px; text-align: center; font-weight: bold; }
+  td { border: 1px solid #ccc; padding: 8px 12px; text-align: center; }
+  tr:nth-child(even) { background: #f9f9f9; }
+  .nav { text-align: center; margin: 30px 0; font-size: 14px; }
+  .nav a { margin: 0 8px; color: #3498db; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  @media print { body { font-size: 15px; } }
+</style>
+</head>
+<body>
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+<h1>Lesson 30: Proof by Induction — Summation Formulas</h1>
+
+<h2>WHAT Is Mathematical Induction?</h2>
+
+<p>Imagine someone tells you a formula and claims it works for every positive whole number \(n = 1, 2, 3, \dots\) forever. You could test \(n = 1\) — it works. Then \(n = 2\) — it works too. Then \(n = 3\) — still works. But how can you be sure it works for \(n = 1000\), or \(n = 1000000\), without checking every single case? You cannot check infinitely many numbers one by one.</p>
+
+<p><b>Mathematical induction</b> is a method of proof that solves this problem. It lets you prove that a statement is true for all positive whole numbers using just two steps. The method is like setting up a chain of dominoes where knocking over the first one guarantees that every domino in the line will fall.</p>
+
+<h2>WHY Learn Induction?</h2>
+
+<p>Induction is one of the most important proof techniques in mathematics. It appears throughout the IB AAHL syllabus — summation formulas, divisibility, inequalities, matrix powers, and more. It also teaches you a way of thinking: if you can prove that &quot;true for \(k\)&quot; forces &quot;true for \(k+1\),&quot; and you already know it is true for the starting value, then it must be true everywhere. This logical structure shows up in computer science (proving algorithms are correct), in engineering, and in any field that uses discrete mathematics.</p>
+
+<p><hr></p>
+
+<h2>1. The Domino Analogy</h2>
+
+<p>Picture a long row of dominoes standing on end. Two things need to happen for all the dominoes to fall:</p>
+
+<li><b>You knock over the first domino.</b> If the first one never falls, the chain never starts.</li>
+<li><b>Each domino is close enough to knock over the next one.</b> When domino \(k\) falls, it hits domino \(k+1\) and makes it fall too.</li>
+
+<p>If both conditions are met, every domino in the row will fall — the first falls, which knocks over the second, which knocks over the third, and so on forever.</p>
+
+<p>Mathematical induction uses exactly this logic:</p>
+
+<li><b>Base case:</b> Prove the statement is true for \(n = 1\) (or whatever the first value is). This is knocking over the first domino.</li>
+<li><b>Inductive step:</b> Prove that if the statement is true for \(n = k\) (where \(k\) is any positive whole number), then it must also be true for \(n = k+1\). This is showing that each domino knocks over the next one.</li>
+
+<p>Once both steps are done, the statement is guaranteed true for \(n = 1, 2, 3, \dots\) forever. No further checking is needed.</p>
+
+<p><hr></p>
+
+<h2>2. The Three-Part Structure of an Induction Proof</h2>
+
+<p>Every induction proof follows the same structure. Learning this structure is half the battle.</p>
+
+<p class="table-line">| Part | What You Do | How to Write It |</p>
+<p class="table-line">|<hr><hr>|<hr><hr><hr><hr>-|<hr><hr><hr><hr><hr>--|</p>
+<p class="table-line">| <b>1. Statement</b> | Name the claim you are proving and call it \(P(n)\) | &quot;Let \(P(n)\) be the statement that ...&quot; |</p>
+<p class="table-line">| <b>2. Base case</b> | Verify \(P(1)\) is true by direct calculation | &quot;When \(n = 1\): LHS = ..., RHS = ..., so \(P(1)\) is true.&quot; |</p>
+<p class="table-line">| <b>3. Inductive hypothesis</b> | Assume \(P(k)\) is true for some arbitrary \(k\) | &quot;Assume \(P(k)\) is true for some \(k \in \mathbb{N}\). That is: ...&quot; |</p>
+<p class="table-line">| <b>4. Inductive step</b> | Starting from \(P(k)\), prove \(P(k+1)\) | &quot;We must show that \(P(k+1)\) is true. Starting from the LHS of \(P(k+1)\): ...&quot; |</p>
+<p class="table-line">| <b>5. Conclusion</b> | State that induction is complete | &quot;By the principle of mathematical induction, \(P(n)\) is true for all \(n \in \mathbb{N}\).&quot; |</p>
+
+<p><b>Common misconception:</b> Some students think the inductive hypothesis means &quot;assume the statement is true for all \(n\).&quot; That would be assuming exactly what you are trying to prove! You only assume it for one arbitrary value \(k\), and then prove that this forces it to be true for the next value \(k+1\).</p>
+
+<p><hr></p>
+
+<h2>3. The Core Strategy for Summation Induction</h2>
+
+<p>When the statement \(P(n)\) involves a sum (sigma notation), the inductive step almost always follows the same pattern:</p>
+
+<li><b>Split the sum:</b> Write the sum up to \(k+1\) as the sum up to \(k\), plus the \((k+1)\)-th term.</li>
+<li><b>Apply the hypothesis:</b> Replace the sum up to \(k\) with the formula from \(P(k)\).</li>
+<li><b>Algebraically combine:</b> Get a common denominator if needed, factor, and simplify until the expression matches the right-hand side of \(P(k+1)\).</li>
+
+<p><hr></p>
+
+<h2>4. Worked Example 1: Sum of the First \(n\) Natural Numbers</h2>
+
+<p><b>Problem:</b> Prove that for all positive whole numbers \(n\):</p>
+
+<div class="math-block">$$
+1 + 2 + 3 + \dots + n = \frac{n(n+1)}{2}$$</div>
+
+<p><b>Approach:</b> Let \(P(n)\) name this statement. Check the base case \(n=1\). Then assume \(P(k)\) and try to prove \(P(k+1)\) by splitting the sum and using the hypothesis.</p>
+
+<p><b>Step 1 — Define the statement:</b></p>
+<p>Let \(P(n)\) be the statement: \(\displaystyle\sum_{r=1}^{n} r = \frac{n(n+1)}{2}\).</p>
+
+<p>This sigma notation \(\sum_{r=1}^{n} r\) just means &quot;add up \(r\) for every whole number \(r\) from 1 to \(n\).&quot;</p>
+
+<p><b>Step 2 — Base case (\(n = 1\)):</b></p>
+
+<p>Left-hand side (LHS): \(\sum_{r=1}^{1} r = 1\).</p>
+
+<p>Right-hand side (RHS): \(\frac{1(1+1)}{2} = \frac{1 \cdot 2}{2} = 1\).</p>
+
+<p>LHS = RHS, so \(P(1)\) is true. The first domino has fallen.</p>
+
+<p><b>Step 3 — Inductive hypothesis:</b></p>
+<p>Assume \(P(k)\) is true for some \(k \in \mathbb{N}\). That is, assume:</p>
+
+<div class="math-block">$$
+\sum_{r=1}^{k} r = \frac{k(k+1)}{2}$$</div>
+
+<p>This is your tool — you get to use it in the next step.</p>
+
+<p><b>Step 4 — Inductive step (prove \(P(k+1)\)):</b></p>
+<p>We need to show that \(P(k+1)\) is true:</p>
+
+<div class="math-block">$$
+\sum_{r=1}^{k+1} r = \frac{(k+1)(k+2)}{2}$$</div>
+
+<p>Start from the left-hand side of \(P(k+1)\) and try to reach the right-hand side:</p>
+
+<div class="math-block">$$
+\begin{aligned}
+\sum_{r=1}^{k+1} r &= \underbrace{\sum_{r=1}^{k} r}_{\text{this is the hypothesis!}} + \;(k+1) \\[6pt]
+&= \frac{k(k+1)}{2} + (k+1) \qquad \text{(substituting the hypothesis)} \\[6pt]
+&= \frac{k(k+1)}{2} + \frac{2(k+1)}{2} \qquad \text{(common denominator 2)} \\[6pt]
+&= \frac{k(k+1) + 2(k+1)}{2} \\[6pt]
+&= \frac{(k+1)(k + 2)}{2} \qquad \text{(factor out }k+1\text{)} \\[6pt]
+&= \frac{(k+1)((k+1)+1)}{2}
+\end{aligned}$$</div>
+
+<p>This is exactly the right-hand side of \(P(k+1)\). So \(P(k+1)\) is true whenever \(P(k)\) is true.</p>
+
+<p><b>Step 5 — Conclusion:</b></p>
+<p>By the principle of mathematical induction, \(P(n)\) is true for all \(n \in \mathbb{N}\).</p>
+
+<p><b>Why this makes sense:</b> The formula \(\frac{n(n+1)}{2}\) is often called the &quot;triangular number&quot; formula. For \(n = 5\), it gives \(\frac{5 \cdot 6}{2} = 15\), and indeed \(1+2+3+4+5 = 15\). The induction proof guarantees that this formula works for every \(n\), not just the ones you check by hand.</p>
+
+<p><hr></p>
+
+<h2>5. Worked Example 2: Sum of Squares</h2>
+
+<p><b>Problem:</b> Prove that for all positive whole numbers \(n\):</p>
+
+<div class="math-block">$$
+1^2 + 2^2 + 3^2 + \dots + n^2 = \frac{n(n+1)(2n+1)}{6}$$</div>
+
+<p><b>Approach:</b> Same structure. The algebra in the inductive step will be slightly longer because the target expression has more factors.</p>
+
+<p><b>Step 1:</b> Let \(P(n)\) be: \(\displaystyle\sum_{r=1}^{n} r^2 = \frac{n(n+1)(2n+1)}{6}\).</p>
+
+<p><b>Step 2 — Base case (\(n = 1\)):</b></p>
+<p>LHS: \(1^2 = 1\).</p>
+<p>RHS: \(\frac{1(1+1)(2\cdot1+1)}{6} = \frac{1 \cdot 2 \cdot 3}{6} = \frac{6}{6} = 1\).</p>
+<p>LHS = RHS, so \(P(1)\) is true.</p>
+
+<p><b>Step 3 — Inductive hypothesis:</b></p>
+<p>Assume \(P(k)\): \(\displaystyle\sum_{r=1}^{k} r^2 = \frac{k(k+1)(2k+1)}{6}\).</p>
+
+<p><b>Step 4 — Inductive step:</b></p>
+<p>We need to prove \(P(k+1)\): \(\displaystyle\sum_{r=1}^{k+1} r^2 = \frac{(k+1)(k+2)(2k+3)}{6}\).</p>
+
+<p>Starting from the LHS:</p>
+
+<div class="math-block">$$
+\begin{aligned}
+\sum_{r=1}^{k+1} r^2 &= \underbrace{\sum_{r=1}^{k} r^2}_{\text{use hypothesis}} + \;(k+1)^2 \\[6pt]
+&= \frac{k(k+1)(2k+1)}{6} + (k+1)^2 \\[6pt]
+&= \frac{k(k+1)(2k+1)}{6} + \frac{6(k+1)^2}{6} \qquad \text{(common denominator 6)} \\[6pt]
+&= \frac{k(k+1)(2k+1) + 6(k+1)^2}{6} \\[6pt]
+&= \frac{(k+1)\big[k(2k+1) + 6(k+1)\big]}{6} \qquad \text{(factor out }k+1\text{)} \\[6pt]
+&= \frac{(k+1)(2k^2 + k + 6k + 6)}{6} \\[6pt]
+&= \frac{(k+1)(2k^2 + 7k + 6)}{6}
+\end{aligned}$$</div>
+
+<p>Now factor the quadratic \(2k^2 + 7k + 6\). Look for two numbers that multiply to \(2 \times 6 = 12\) and add to \(7\). Those numbers are \(3\) and \(4\). So:</p>
+
+<div class="math-block">$$
+2k^2 + 7k + 6 = 2k^2 + 3k + 4k + 6 = k(2k+3) + 2(2k+3) = (2k+3)(k+2)$$</div>
+
+<p>Substitute back:</p>
+
+<div class="math-block">$$
+\frac{(k+1)(2k+3)(k+2)}{6} = \frac{(k+1)(k+2)(2k+3)}{6} = \frac{(k+1)((k+1)+1)(2(k+1)+1)}{6}$$</div>
+
+<p>This is exactly \(P(k+1)\).</p>
+
+<p><b>Step 5:</b> By induction, \(P(n)\) is true for all \(n \in \mathbb{N}\).</p>
+
+<p><b>Pitfall:</b> When factoring, double-check that your factored expression expands back to the original. A sign error in factoring is a common place where induction proofs go wrong.</p>
+
+<p><hr></p>
+
+<h2>6. Worked Example 3: Sum of Cubes</h2>
+
+<p><b>Problem:</b> Prove that for all positive whole numbers \(n\):</p>
+
+<div class="math-block">$$
+1^3 + 2^3 + 3^3 + \dots + n^3 = \left[\frac{n(n+1)}{2}\right]^2$$</div>
+
+<p><b>Approach:</b> Notice the right-hand side is the square of the formula for \(1+2+\dots+n\) from Example 1. This is a beautiful result: the sum of the first \(n\) cubes equals the square of the sum of the first \(n\) natural numbers.</p>
+
+<p><b>Step 1:</b> Let \(P(n)\) be: \(\displaystyle\sum_{r=1}^{n} r^3 = \left[\frac{n(n+1)}{2}\right]^2\).</p>
+
+<p><b>Step 2 — Base case (\(n = 1\)):</b></p>
+<p>LHS: \(1^3 = 1\).</p>
+<p>RHS: \(\left[\frac{1 \cdot 2}{2}\right]^2 = 1^2 = 1\).</p>
+<p>\(P(1)\) is true.</p>
+
+<p><b>Step 3 — Inductive hypothesis:</b></p>
+<p>Assume \(P(k)\): \(\displaystyle\sum_{r=1}^{k} r^3 = \left[\frac{k(k+1)}{2}\right]^2\).</p>
+
+<p><b>Step 4 — Inductive step:</b></p>
+<p>Prove \(P(k+1)\): \(\displaystyle\sum_{r=1}^{k+1} r^3 = \left[\frac{(k+1)(k+2)}{2}\right]^2\).</p>
+
+<div class="math-block">$$
+\begin{aligned}
+\sum_{r=1}^{k+1} r^3 &= \sum_{r=1}^{k} r^3 + (k+1)^3 \\[6pt]
+&= \left[\frac{k(k+1)}{2}\right]^2 + (k+1)^3 \qquad \text{(by hypothesis)} \\[6pt]
+&= \frac{k^2(k+1)^2}{4} + (k+1)^3 \\[6pt]
+&= \frac{k^2(k+1)^2}{4} + \frac{4(k+1)^3}{4} \qquad \text{(common denominator 4)} \\[6pt]
+&= \frac{k^2(k+1)^2 + 4(k+1)^3}{4} \\[6pt]
+&= \frac{(k+1)^2\big[k^2 + 4(k+1)\big]}{4} \qquad \text{(factor out }(k+1)^2\text{)} \\[6pt]
+&= \frac{(k+1)^2(k^2 + 4k + 4)}{4} \\[6pt]
+&= \frac{(k+1)^2(k+2)^2}{4} \\[6pt]
+&= \left[\frac{(k+1)(k+2)}{2}\right]^2
+\end{aligned}$$</div>
+
+<p>This is \(P(k+1)\).</p>
+
+<p><b>Step 5:</b> By induction, \(P(n)\) is true for all \(n \in \mathbb{N}\).</p>
+
+<p><b>Why this makes sense:</b> For \(n = 3\), the formula gives \(\left[\frac{3 \cdot 4}{2}\right]^2 = 6^2 = 36\). And indeed \(1^3 + 2^3 + 3^3 = 1 + 8 + 27 = 36\). The fact that this always works — that the sum of cubes is always a perfect square — is a surprising and elegant result that induction lets us prove with confidence.</p>
+
+<p><hr></p>
+
+<h2>7. Key Strategy Summary for Summation Induction</h2>
+
+<p>When you prove \(P(k+1)\) from \(P(k)\) for a summation formula, always follow these four sub-steps:</p>
+
+<li><b>Split the sum</b> at the \((k+1)\)-th term: \(\sum_{r=1}^{k+1} = \sum_{r=1}^{k} + \text{term}_{k+1}\).</li>
+<li><b>Substitute</b> the inductive hypothesis for the sum up to \(k\).</li>
+<li><b>Manipulate algebraically</b> — common denominator, factor, expand, simplify.</li>
+<li><b>Match the target</b> — your final expression must look exactly like the RHS of \(P(k+1)\), with every \(k\) replaced by \(k+1\).</li>
+
+<p><b>Common misconception:</b> Some students try to prove \(P(k+1)\) by starting from the RHS and working backward, or by manipulating both sides at once. The cleanest approach is to start from the LHS of \(P(k+1)\) and work forward until you reach the RHS.</p>
+
+<p><hr></p>
+
+<h2>Practice Problems</h2>
+
+<p><b>Problem 1:</b> Prove by mathematical induction that for all positive whole numbers \(n\):</p>
+
+<div class="math-block">$$
+1 + 3 + 5 + \dots + (2n-1) = n^2$$</div>
+
+<p>In other words, the sum of the first \(n\) odd numbers equals \(n^2\).</p>
+
+<p><b>Problem 2:</b> Prove by mathematical induction that for all positive whole numbers \(n\):</p>
+
+<div class="math-block">$$
+2 + 4 + 6 + \dots + 2n = n(n+1)$$</div>
+
+<p>This is the sum of the first \(n\) even numbers.</p>
+
+<p><b>Problem 3:</b> Prove by mathematical induction that for all \(n \in \mathbb{N}\):</p>
+
+<div class="math-block">$$
+\sum_{r=1}^{n} r(r+1) = \frac{n(n+1)(n+2)}{3}$$</div>
+
+<p><b>Problem 4:</b> Prove by mathematical induction that for all \(n \in \mathbb{N}\):</p>
+
+<div class="math-block">$$
+\sum_{r=1}^{n} (2r-1)^2 = \frac{n(2n-1)(2n+1)}{3}$$</div>
+
+<p>This formula gives the sum of the squares of the first \(n\) odd numbers.</p>
+
+<p><b>Problem 5 (IB Exam Style):</b> Consider the statement \(P(n)\): \(\displaystyle\sum_{r=1}^{n} \frac{1}{r(r+1)} = \frac{n}{n+1}\) for all \(n \in \mathbb{N}\).</p>
+
+<p>(a) Show that \(P(1)\) is true. [1 mark]</p>
+<p>(b) Assume \(P(k)\) is true and use this to prove that \(P(k+1)\) is true. [4 marks]</p>
+<p>(c) State the conclusion of the induction argument. [1 mark]</p>
+
+<p>(You may use the fact that \(\frac{1}{r(r+1)} = \frac{1}{r} - \frac{1}{r+1}\). This is called a partial fraction decomposition.)</p>
+
+<p><b>Problem 6:</b> Prove by mathematical induction that for all \(n \in \mathbb{N}\):</p>
+
+<div class="math-block">$$
+\sum_{r=1}^{n} r(r!) = (n+1)! - 1$$</div>
+
+<p>Recall: \(r!\) (read &quot;\(r\) factorial&quot;) means \(r \times (r-1) \times (r-2) \times \dots \times 1\). Also, \((r+1)! = (r+1) \times r!\).</p>
+
+<p><hr></p>
+
+<h2>Answers</h2>
+
+<p><b>Answer 1:</b></p>
+
+<p>Let \(P(n)\) be: \(\displaystyle\sum_{r=1}^{n} (2r-1) = n^2\).</p>
+
+<p><b>Base case (\(n=1\)):</b> LHS: \(2(1)-1 = 1\). RHS: \(1^2 = 1\). \(P(1)\) is true.</p>
+
+<p><b>Inductive hypothesis:</b> Assume \(P(k)\): \(\displaystyle\sum_{r=1}^{k} (2r-1) = k^2\).</p>
+
+<p><b>Inductive step:</b> Prove \(P(k+1)\): \(\displaystyle\sum_{r=1}^{k+1} (2r-1) = (k+1)^2\).</p>
+
+<div class="math-block">$$
+\begin{aligned}
+\sum_{r=1}^{k+1} (2r-1) &= \sum_{r=1}^{k} (2r-1) + (2(k+1)-1) \\
+&= k^2 + (2k+2-1) \qquad \text{(using the hypothesis)} \\
+&= k^2 + 2k + 1 \\
+&= (k+1)^2
+\end{aligned}$$</div>
+
+<p>So \(P(k+1)\) is true. By induction, \(P(n)\) is true for all \(n \in \mathbb{N}\).</p>
+
+<p><b>Interpretation:</b> This proves that the sum of the first \(n\) odd numbers is always a perfect square — the square of \(n\). For example, \(1+3+5+7 = 16 = 4^2\).</p>
+
+<p><hr></p>
+
+<p><b>Answer 2:</b></p>
+
+<p>Let \(P(n)\) be: \(\displaystyle\sum_{r=1}^{n} 2r = n(n+1)\).</p>
+
+<p><b>Base case (\(n=1\)):</b> LHS: \(2(1) = 2\). RHS: \(1(2) = 2\). \(P(1)\) is true.</p>
+
+<p><b>Inductive hypothesis:</b> Assume \(P(k)\): \(\displaystyle\sum_{r=1}^{k} 2r = k(k+1)\).</p>
+
+<p><b>Inductive step:</b> Prove \(P(k+1)\): \(\displaystyle\sum_{r=1}^{k+1} 2r = (k+1)(k+2)\).</p>
+
+<div class="math-block">$$
+\begin{aligned}
+\sum_{r=1}^{k+1} 2r &= \sum_{r=1}^{k} 2r + 2(k+1) \\
+&= k(k+1) + 2(k+1) \qquad \text{(using the hypothesis)} \\
+&= (k+1)(k+2) \qquad \text{(factor out }k+1\text{)}
+\end{aligned}$$</div>
+
+<p>So \(P(k+1)\) is true. By induction, \(P(n)\) is true for all \(n \in \mathbb{N}\).</p>
+
+<p><b>Interpretation:</b> The sum of the first \(n\) even numbers is \(n(n+1)\). For \(n=4\), \(2+4+6+8 = 20\) and \(4 \times 5 = 20\).</p>
+
+<p><hr></p>
+
+<p><b>Answer 3:</b></p>
+
+<p>Let \(P(n)\) be: \(\displaystyle\sum_{r=1}^{n} r(r+1) = \frac{n(n+1)(n+2)}{3}\).</p>
+
+<p><b>Base case (\(n=1\)):</b> LHS: \(1 \cdot 2 = 2\). RHS: \(\frac{1 \cdot 2 \cdot 3}{3} = \frac{6}{3} = 2\). \(P(1)\) is true.</p>
+
+<p><b>Inductive hypothesis:</b> Assume \(P(k)\): \(\displaystyle\sum_{r=1}^{k} r(r+1) = \frac{k(k+1)(k+2)}{3}\).</p>
+
+<p><b>Inductive step:</b> Prove \(P(k+1)\): \(\displaystyle\sum_{r=1}^{k+1} r(r+1) = \frac{(k+1)(k+2)(k+3)}{3}\).</p>
+
+<div class="math-block">$$
+\begin{aligned}
+\sum_{r=1}^{k+1} r(r+1) &= \sum_{r=1}^{k} r(r+1) + (k+1)(k+2) \\
+&= \frac{k(k+1)(k+2)}{3} + (k+1)(k+2) \qquad \text{(by hypothesis)} \\
+&= \frac{k(k+1)(k+2) + 3(k+1)(k+2)}{3} \\
+&= \frac{(k+1)(k+2)(k+3)}{3} \qquad \text{(factor out }(k+1)(k+2)\text{)}
+\end{aligned}$$</div>
+
+<p>So \(P(k+1)\) is true. By induction, \(P(n)\) is true for all \(n \in \mathbb{N}\).</p>
+
+<p><hr></p>
+
+<p><b>Answer 4:</b></p>
+
+<p>Let \(P(n)\) be: \(\displaystyle\sum_{r=1}^{n} (2r-1)^2 = \frac{n(2n-1)(2n+1)}{3}\).</p>
+
+<p><b>Base case (\(n=1\)):</b> LHS: \((2(1)-1)^2 = 1^2 = 1\). RHS: \(\frac{1(2\cdot1-1)(2\cdot1+1)}{3} = \frac{1 \cdot 1 \cdot 3}{3} = 1\). \(P(1)\) is true.</p>
+
+<p><b>Inductive hypothesis:</b> Assume \(P(k)\): \(\displaystyle\sum_{r=1}^{k} (2r-1)^2 = \frac{k(2k-1)(2k+1)}{3}\).</p>
+
+<p><b>Inductive step:</b> Prove \(P(k+1)\): \(\displaystyle\sum_{r=1}^{k+1} (2r-1)^2 = \frac{(k+1)(2k+1)(2k+3)}{3}\).</p>
+
+<div class="math-block">$$
+\begin{aligned}
+\sum_{r=1}^{k+1} (2r-1)^2 &= \sum_{r=1}^{k} (2r-1)^2 + (2(k+1)-1)^2 \\
+&= \frac{k(2k-1)(2k+1)}{3} + (2k+1)^2 \qquad \text{(by hypothesis)} \\
+&= \frac{k(2k-1)(2k+1) + 3(2k+1)^2}{3} \\
+&= \frac{(2k+1)\big[k(2k-1) + 3(2k+1)\big]}{3} \qquad \text{(factor out }2k+1\text{)} \\
+&= \frac{(2k+1)(2k^2 - k + 6k + 3)}{3} \\
+&= \frac{(2k+1)(2k^2 + 5k + 3)}{3}
+\end{aligned}$$</div>
+
+<p>Factor \(2k^2 + 5k + 3\): find two numbers that multiply to \(2 \times 3 = 6\) and add to \(5\). Those are \(2\) and \(3\). So \(2k^2 + 5k + 3 = 2k^2 + 2k + 3k + 3 = 2k(k+1) + 3(k+1) = (k+1)(2k+3)\).</p>
+
+<div class="math-block">$$
+\frac{(2k+1)(k+1)(2k+3)}{3} = \frac{(k+1)(2k+1)(2(k+1)+1)}{3}$$</div>
+
+<p>This is \(P(k+1)\). By induction, \(P(n)\) is true for all \(n \in \mathbb{N}\).</p>
+
+<p><hr></p>
+
+<p><b>Answer 5:</b></p>
+
+<p>(a) \(P(1)\): LHS = \(\frac{1}{1 \cdot 2} = \frac{1}{2}\). RHS = \(\frac{1}{1+1} = \frac{1}{2}\). LHS = RHS, so \(P(1)\) is true.</p>
+
+<p>(b) Assume \(P(k)\): \(\displaystyle\sum_{r=1}^{k} \frac{1}{r(r+1)} = \frac{k}{k+1}\).</p>
+
+<p>We must prove \(P(k+1)\): \(\displaystyle\sum_{r=1}^{k+1} \frac{1}{r(r+1)} = \frac{k+1}{k+2}\).</p>
+
+<div class="math-block">$$
+\begin{aligned}
+\sum_{r=1}^{k+1} \frac{1}{r(r+1)} &= \sum_{r=1}^{k} \frac{1}{r(r+1)} + \frac{1}{(k+1)(k+2)} \\[6pt]
+&= \frac{k}{k+1} + \frac{1}{(k+1)(k+2)} \qquad \text{(by hypothesis)} \\[6pt]
+&= \frac{k(k+2)}{(k+1)(k+2)} + \frac{1}{(k+1)(k+2)} \qquad \text{(common denominator)} \\[6pt]
+&= \frac{k(k+2) + 1}{(k+1)(k+2)} \\[6pt]
+&= \frac{k^2 + 2k + 1}{(k+1)(k+2)} \\[6pt]
+&= \frac{(k+1)^2}{(k+1)(k+2)} \\[6pt]
+&= \frac{k+1}{k+2} \qquad \text{(cancel }k+1\text{)}
+\end{aligned}$$</div>
+
+<p>This is exactly the RHS of \(P(k+1)\), so \(P(k+1)\) is true.</p>
+
+<p>(c) By the principle of mathematical induction, \(P(n)\) is true for all \(n \in \mathbb{N}\). That is, \(\displaystyle\sum_{r=1}^{n} \frac{1}{r(r+1)} = \frac{n}{n+1}\) for every positive whole number \(n\).</p>
+
+<p><b>Why this makes sense:</b> The formula shows that as \(n\) gets large, the sum approaches 1 (since \(\frac{n}{n+1} \to 1\)). The sum &quot;telescopes&quot; — each term cancels with part of the next term when written in partial fraction form, which is why the formula is so simple.</p>
+
+<p><hr></p>
+
+<p><b>Answer 6:</b></p>
+
+<p>Let \(P(n)\) be: \(\displaystyle\sum_{r=1}^{n} r(r!) = (n+1)! - 1\).</p>
+
+<p><b>Base case (\(n=1\)):</b> LHS: \(1 \cdot 1! = 1 \cdot 1 = 1\). RHS: \(2! - 1 = 2 - 1 = 1\). \(P(1)\) is true.</p>
+
+<p><b>Inductive hypothesis:</b> Assume \(P(k)\): \(\displaystyle\sum_{r=1}^{k} r(r!) = (k+1)! - 1\).</p>
+
+<p><b>Inductive step:</b> Prove \(P(k+1)\): \(\displaystyle\sum_{r=1}^{k+1} r(r!) = (k+2)! - 1\).</p>
+
+<div class="math-block">$$
+\begin{aligned}
+\sum_{r=1}^{k+1} r(r!) &= \sum_{r=1}^{k} r(r!) + (k+1)(k+1)! \\[6pt]
+&= (k+1)! - 1 + (k+1)(k+1)! \qquad \text{(by hypothesis)} \\[6pt]
+&= (k+1)!\big[1 + (k+1)\big] - 1 \qquad \text{(factor out }(k+1)!\text{)} \\[6pt]
+&= (k+1)!(k+2) - 1 \\[6pt]
+&= (k+2)! - 1 \qquad \text{(since }(k+2)! = (k+2)(k+1)!\text{)}
+\end{aligned}$$</div>
+
+<p>This is \(P(k+1)\). By induction, \(P(n)\) is true for all \(n \in \mathbb{N}\).</p>
+
+<p><b>Pitfall:</b> The step where you go from \((k+1)!(k+2)\) to \((k+2)!\) relies on understanding the definition of factorial: \((k+2)! = (k+2) \times (k+1) \times k \times \dots \times 1 = (k+2) \times (k+1)!\). If this is unfamiliar, review the definition of factorial before attempting this proof.</p>
+
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+</body>
+</html>

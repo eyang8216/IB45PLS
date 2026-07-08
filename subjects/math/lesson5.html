@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 5 — Integration by Parts (Advanced)</title>
+<script>
+MathJax = {
+  tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body {
+    max-width: 800px; margin: 40px auto; font-family: 'Times New Roman', Georgia, serif;
+    font-size: 17px; line-height: 1.7; padding: 0 20px; color: #1a1a1a;
+  }
+  h1 { font-size: 22px; border-bottom: 2px solid #333; padding-bottom: 8px; margin-top: 36px; }
+  h2 { font-size: 19px; margin-top: 28px; color: #2c3e50; }
+  h3 { font-size: 17px; margin-top: 22px; color: #444; }
+  h4 { font-size: 16px; margin-top: 18px; }
+  p { margin: 0.6em 0; }
+  li { margin: 0.3em 0 0.3em 20px; }
+  hr { margin: 20px 0; border: none; border-top: 1px solid #ddd; }
+  .math-block { text-align: center; margin: 1em 0; overflow-x: auto; }
+  .table-line { font-family: 'Courier New', monospace; font-size: 15px; margin: 0.1em 0; }
+  pre { background: #f5f5f5; padding: 10px 14px; border-radius: 4px; overflow-x: auto; font-size: 14px; }
+  b { color: #222; }
+  table { border-collapse: collapse; margin: 16px 0; width: 100%; font-size: 15px; }
+  th { background: #2c3e50; color: #fff; padding: 8px 12px; text-align: center; font-weight: bold; }
+  td { border: 1px solid #ccc; padding: 8px 12px; text-align: center; }
+  tr:nth-child(even) { background: #f9f9f9; }
+  .nav { text-align: center; margin: 30px 0; font-size: 14px; }
+  .nav a { margin: 0 8px; color: #3498db; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  @media print { body { font-size: 15px; } }
+</style>
+</head>
+<body>
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+<h1>Lesson 5: Integration by Parts (Advanced)</h1>
+
+<h2>When One Round of Integration by Parts Is Not Enough</h2>
+
+<p>In Lesson 4, we learned how integration by parts converts the integral of a product into a simpler integral that can be evaluated immediately. However, not every product yields to a single application of the formula. There are two important scenarios where the technique must be extended.</p>
+
+<p>The first scenario occurs when the integrand contains a polynomial multiplied by an exponential or trigonometric function, and the polynomial has degree greater than 1—for example, $x^2 e^x$ or $x^3 \sin x$. Each round of integration by parts reduces the degree of the polynomial by one, so we need to apply the technique repeatedly until the polynomial disappears.</p>
+
+<p>The second scenario occurs when both functions in the product are &quot;cyclical&quot; under differentiation and integration—the classic example is $e^x \sin x$. After two rounds of integration by parts, the original integral reappears on the right-hand side. Instead of going in circles forever, we treat this as an algebraic equation and solve for the original integral.</p>
+
+<p>The reason these advanced techniques matter is that integrals like $\int x^3 e^x dx$ and $\int e^x \sin x\,dx$ appear frequently in applications: Laplace transforms, Fourier analysis, damped oscillations, and quantum mechanics all involve such integrals.</p>
+
+<h2>Scenario 1: Repeated Integration by Parts</h2>
+
+<p>When the integrand is a polynomial $x^n$ multiplied by $e^{kx}$, $\sin(kx)$, or $\cos(kx)$, the LIATE rule tells us to set $u$ equal to the polynomial term. After one round of integration by parts, the new integral contains $x^{n-1}$ instead of $x^n$. The polynomial degree drops by one. We apply integration by parts again, and again, until the polynomial term becomes a constant and then vanishes.</p>
+
+<h3>Worked Example: Repeated IBP</h3>
+
+<p><b>Problem:</b> Evaluate $\displaystyle \int x^2 e^x \, dx$.</p>
+
+<p><b>Approach:</b> To solve this, we set $u = x^2$ (Algebraic) and $dv = e^x dx$ (Exponential), following LIATE. After the first round, we will have an integral with $x e^x$, which requires a second round of integration by parts.</p>
+
+<p><b>Step-by-step working:</b></p>
+
+<p><b>Round 1:</b> $u = x^2$, $dv = e^x dx$. Then $du = 2x\,dx$, $v = e^x$.</p>
+
+<div class="math-block">$$\int x^2 e^x dx = x^2 e^x - \int 2x e^x dx$$</div>
+
+<p>The remaining integral is $\int 2x e^x dx$. We factor out the constant $2$: this equals $2\int x e^x dx$. Now we apply integration by parts a second time.</p>
+
+<p><b>Round 2:</b> For $\int x e^x dx$, set $u = x$, $dv = e^x dx$. Then $du = dx$, $v = e^x$.</p>
+
+<div class="math-block">$$\int x e^x dx = x e^x - \int e^x dx = x e^x - e^x$$</div>
+
+<p>Now substitute this back into the expression from Round 1:</p>
+
+<div class="math-block">$$\int x^2 e^x dx = x^2 e^x - 2(x e^x - e^x) + C$$</div>
+<div class="math-block">$$= x^2 e^x - 2x e^x + 2e^x + C$$</div>
+<div class="math-block">$$= e^x(x^2 - 2x + 2) + C$$</div>
+
+<p><b>Why this makes sense:</b> We can verify by differentiating. Using the product rule on $e^x(x^2 - 2x + 2)$: the derivative of $e^x$ times the polynomial is $e^x(x^2 - 2x + 2)$. The derivative of the polynomial times $e^x$ is $e^x(2x - 2)$. Adding these: $e^x(x^2 - 2x + 2 + 2x - 2) = e^x(x^2) = x^2 e^x$. The answer is correct. Notice the pattern: the coefficients alternate in sign and the polynomial inside the parentheses is related to the derivatives of $x^2$.</p>
+
+<p><hr></p>
+
+<h2>Scenario 2: The Loop Trick (Integration by Parts with Cyclical Functions)</h2>
+
+<p>When the integrand is the product of an exponential and a trigonometric function—for example, $e^x \sin x$ or $e^{2x} \cos(3x)$—something remarkable happens. Neither function changes its type under differentiation or integration: $e^x$ stays $e^x$, and $\sin x$ cycles between $\sin x$ and $\cos x$. After two rounds of integration by parts, the original integral reappears on the right-hand side, creating an equation that we can solve algebraically.</p>
+
+<p>Many students panic when they see the original integral reappear and think they have made a mistake. This is actually the sign that the loop trick is working correctly.</p>
+
+<h3>Worked Example: The Loop Trick</h3>
+
+<p><b>Problem:</b> Evaluate $\displaystyle \int e^x \sin x \, dx$.</p>
+
+<p><b>Approach:</b> To solve this, we apply integration by parts twice. LIATE does not give a decisive preference here (both Trigonometric and Exponential are in the list), but a useful strategy is to let $u$ be the trigonometric function in both rounds so that the pattern stays consistent.</p>
+
+<p><b>Step-by-step working:</b></p>
+
+<p>Let $I = \int e^x \sin x\,dx$. This name $I$ is just notation to make the algebra cleaner.</p>
+
+<p><b>Round 1:</b> Set $u = \sin x$, $dv = e^x dx$. Then $du = \cos x\,dx$, $v = e^x$.</p>
+
+<div class="math-block">$$I = e^x \sin x - \int e^x \cos x\,dx \quad \text{(Equation 1)}$$</div>
+
+<p><b>Round 2:</b> Now evaluate $\int e^x \cos x\,dx$. Set $u = \cos x$, $dv = e^x dx$. Then $du = -\sin x\,dx$, $v = e^x$.</p>
+
+<div class="math-block">$$\int e^x \cos x\,dx = e^x \cos x - \int e^x (-\sin x)\,dx = e^x \cos x + \int e^x \sin x\,dx$$</div>
+
+<p>But $\int e^x \sin x\,dx$ is exactly our original $I$! So:</p>
+
+<div class="math-block">$$\int e^x \cos x\,dx = e^x \cos x + I \quad \text{(Equation 2)}$$</div>
+
+<p>Now substitute Equation 2 into Equation 1:</p>
+
+<div class="math-block">$$I = e^x \sin x - (e^x \cos x + I)$$</div>
+<div class="math-block">$$I = e^x \sin x - e^x \cos x - I$$</div>
+
+<p>Add $I$ to both sides:</p>
+
+<div class="math-block">$$2I = e^x \sin x - e^x \cos x$$</div>
+<div class="math-block">$$2I = e^x(\sin x - \cos x)$$</div>
+
+<p>Divide by 2:</p>
+
+<div class="math-block">$$I = \frac{1}{2}e^x(\sin x - \cos x) + C$$</div>
+
+<p><b>Why this makes sense:</b> The answer is a combination of $\sin x$ and $\cos x$ multiplied by $e^x$, which is exactly what we would expect—integrating a product of $e^x$ and $\sin x$ should produce something of the same form. The factor $\frac{1}{2}$ comes from solving the algebraic equation.</p>
+
+<p><b>A common mistake:</b> Students often forget to add the constant $C$ at the end. Even though we manipulated the equation with $I$ on both sides, $I$ represents an indefinite integral, so the final answer must include $+C$. Another common mistake is forgetting to divide by the coefficient (2 in this case) after adding $I$ to both sides.</p>
+
+<p><hr></p>
+
+<h2>Scenario 3: The Tabular Method (A Shortcut)</h2>
+
+<p>For integrals of the form $\int (\text{polynomial}) \times (\text{exponential or trigonometric})\,dx$, the tabular method organizes repeated integration by parts into a compact table. This method is much faster than writing out each round of integration by parts separately.</p>
+
+<p>Here is how to construct the table:</p>
+
+<li>Create three columns: Sign, $u$ (differentiate), and $dv$ (integrate).</li>
+<li>Put the polynomial in the $u$ column and differentiate it repeatedly until you reach $0$.</li>
+<li>Put the exponential or trigonometric function in the $dv$ column and integrate it repeatedly the same number of times.</li>
+<li>The signs alternate: $+$, $-$, $+$, $-$, starting with $+$.</li>
+<li>Multiply diagonally (sign × $u$ term × $dv$ term directly to the right and down one row) and add all the products.</li>
+
+<h3>Worked Example: Tabular Method</h3>
+
+<p><b>Problem:</b> Evaluate $\displaystyle \int x^3 \sin x \, dx$.</p>
+
+<p><b>Approach:</b> To solve this, we use the tabular method. The polynomial $x^3$ goes in the differentiate column, and $\sin x$ goes in the integrate column.</p>
+
+<p><b>Step-by-step working:</b></p>
+
+<p class="table-line">| Sign | $u$ (differentiate) | $dv$ (integrate) |</p>
+<p class="table-line">|:<hr>|:<hr>|:<hr>|</p>
+<p class="table-line">| $+$ | $x^3$ | $\sin x$ |</p>
+<p class="table-line">| $-$ | $3x^2$ | $-\cos x$ |</p>
+<p class="table-line">| $+$ | $6x$ | $-\sin x$ |</p>
+<p class="table-line">| $-$ | $6$ | $\cos x$ |</p>
+<p class="table-line">| $+$ | $0$ | $\sin x$ |</p>
+
+<p>Now multiply along the diagonals (sign × $u$ row × $dv$ from the row below):</p>
+
+<p>The first diagonal: $(+)(x^3)(-\cos x) = -x^3\cos x$</p>
+<p>The second diagonal: $(-)(3x^2)(-\sin x) = +3x^2\sin x$</p>
+<p>The third diagonal: $(+)(6x)(\cos x) = +6x\cos x$</p>
+<p>The fourth diagonal: $(-)(6)(\sin x) = -6\sin x$</p>
+
+<p>The fifth row has $u = 0$, so it contributes nothing.</p>
+
+<p>Adding all these:</p>
+
+<div class="math-block">$$\int x^3 \sin x\,dx = -x^3\cos x + 3x^2\sin x + 6x\cos x - 6\sin x + C$$</div>
+
+<p><b>Why this makes sense:</b> The highest power term is $x^3$ attached to $\cos x$, and the signs alternate with each row. This pattern is typical: when you differentiate a cubic polynomial, you get three nonzero derivatives followed by zero.</p>
+
+<p><hr></p>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1</h3>
+<p>Evaluate the indefinite integral $\displaystyle \int x^2 \sin x \, dx$ using repeated integration by parts.</p>
+
+<h3>Problem 2</h3>
+<p>Evaluate the indefinite integral $\displaystyle \int e^{2x} \cos x \, dx$ using the loop trick.</p>
+
+<h3>Problem 3</h3>
+<p>Evaluate the indefinite integral $\displaystyle \int e^x \cos(3x) \, dx$ using the loop trick.</p>
+
+<h3>Problem 4</h3>
+<p>Evaluate the indefinite integral $\displaystyle \int x^3 e^{-x} \, dx$ using the tabular method.</p>
+
+<h3>Problem 5</h3>
+<p>Evaluate the indefinite integral $\displaystyle \int e^{-x} \sin(2x) \, dx$ using the loop trick.</p>
+
+<p><hr></p>
+
+<h2>Answers</h2>
+
+<h3>Answer 1</h3>
+
+<p>We apply repeated integration by parts. Round 1: $u = x^2$, $dv = \sin x\,dx$, so $du = 2x\,dx$, $v = -\cos x$. This gives $\int x^2\sin x\,dx = -x^2\cos x + \int 2x\cos x\,dx$. Round 2 for $\int 2x\cos x\,dx$: $u = 2x$, $dv = \cos x\,dx$, so $du = 2\,dx$, $v = \sin x$. This gives $\int 2x\cos x\,dx = 2x\sin x - \int 2\sin x\,dx = 2x\sin x + 2\cos x$. Combining: $\int x^2\sin x\,dx = -x^2\cos x + 2x\sin x + 2\cos x + C$. A common mistake is getting the signs wrong on the trigonometric integrals: $\int \sin x\,dx = -\cos x$ (negative) and $\int \cos x\,dx = \sin x$ (positive).</p>
+
+<h3>Answer 2</h3>
+
+<p>Let $I = \int e^{2x}\cos x\,dx$. Round 1: $u = \cos x$, $dv = e^{2x}dx$, so $du = -\sin x\,dx$, $v = \frac{1}{2}e^{2x}$. Then $I = \frac{1}{2}e^{2x}\cos x - \int \frac{1}{2}e^{2x}(-\sin x)dx = \frac{1}{2}e^{2x}\cos x + \frac{1}{2}\int e^{2x}\sin x\,dx$. Round 2 for $\int e^{2x}\sin x\,dx$: $u = \sin x$, $dv = e^{2x}dx$, so $du = \cos x\,dx$, $v = \frac{1}{2}e^{2x}$. Then $\int e^{2x}\sin x\,dx = \frac{1}{2}e^{2x}\sin x - \frac{1}{2}\int e^{2x}\cos x\,dx = \frac{1}{2}e^{2x}\sin x - \frac{1}{2}I$. Substitute back: $I = \frac{1}{2}e^{2x}\cos x + \frac{1}{2}\left(\frac{1}{2}e^{2x}\sin x - \frac{1}{2}I\right) = \frac{1}{2}e^{2x}\cos x + \frac{1}{4}e^{2x}\sin x - \frac{1}{4}I$. Bring $\frac{1}{4}I$ to the left: $I + \frac{1}{4}I = \frac{5}{4}I = \frac{1}{2}e^{2x}\cos x + \frac{1}{4}e^{2x}\sin x$. Multiply by $\frac{4}{5}$: $I = \frac{e^{2x}}{5}(2\cos x + \sin x) + C$. A common pitfall is mishandling the fractions when solving for $I$. Be systematic: collect all $I$ terms on one side first.</p>
+
+<h3>Answer 3</h3>
+
+<p>Let $I = \int e^x\cos(3x)dx$. Round 1: $u = \cos(3x)$, $dv = e^x dx$, so $du = -3\sin(3x)dx$, $v = e^x$. Then $I = e^x\cos(3x) + 3\int e^x\sin(3x)dx$. Round 2 for $\int e^x\sin(3x)dx$: $u = \sin(3x)$, $dv = e^x dx$, so $du = 3\cos(3x)dx$, $v = e^x$. Then $\int e^x\sin(3x)dx = e^x\sin(3x) - 3\int e^x\cos(3x)dx = e^x\sin(3x) - 3I$. Substitute: $I = e^x\cos(3x) + 3(e^x\sin(3x) - 3I) = e^x\cos(3x) + 3e^x\sin(3x) - 9I$. So $I + 9I = 10I = e^x(\cos(3x) + 3\sin(3x))$. Therefore $I = \frac{e^x}{10}(\cos(3x) + 3\sin(3x)) + C$.</p>
+
+<h3>Answer 4</h3>
+
+<p>Using the tabular method:</p>
+
+<p class="table-line">| Sign | Differentiate | Integrate |</p>
+<p class="table-line">|:<hr>|:<hr>|:<hr>|</p>
+<p class="table-line">| $+$ | $x^3$ | $e^{-x}$ |</p>
+<p class="table-line">| $-$ | $3x^2$ | $-e^{-x}$ |</p>
+<p class="table-line">| $+$ | $6x$ | $e^{-x}$ |</p>
+<p class="table-line">| $-$ | $6$ | $-e^{-x}$ |</p>
+<p class="table-line">| $+$ | $0$ | $e^{-x}$ |</p>
+
+<p>Diagonal products: $(+)(x^3)(-e^{-x}) = -x^3e^{-x}$, $(-)(3x^2)(e^{-x}) = -3x^2e^{-x}$, $(+)(6x)(-e^{-x}) = -6xe^{-x}$, $(-)(6)(e^{-x}) = -6e^{-x}$. Adding: $\int x^3 e^{-x}dx = -x^3e^{-x} - 3x^2e^{-x} - 6xe^{-x} - 6e^{-x} + C = -e^{-x}(x^3 + 3x^2 + 6x + 6) + C$. All signs are negative because the sign column and the integrate column both contribute sign information. Check carefully row by row.</p>
+
+<h3>Answer 5</h3>
+
+<p>Let $I = \int e^{-x}\sin(2x)dx$. Round 1: $u = \sin(2x)$, $dv = e^{-x}dx$, so $du = 2\cos(2x)dx$, $v = -e^{-x}$. Then $I = -e^{-x}\sin(2x) + 2\int e^{-x}\cos(2x)dx$. Round 2 for $\int e^{-x}\cos(2x)dx$: $u = \cos(2x)$, $dv = e^{-x}dx$, so $du = -2\sin(2x)dx$, $v = -e^{-x}$. Then $\int e^{-x}\cos(2x)dx = -e^{-x}\cos(2x) - 2\int e^{-x}\sin(2x)dx = -e^{-x}\cos(2x) - 2I$. Substitute: $I = -e^{-x}\sin(2x) + 2(-e^{-x}\cos(2x) - 2I) = -e^{-x}\sin(2x) - 2e^{-x}\cos(2x) - 4I$. So $I + 4I = 5I = -e^{-x}(\sin(2x) + 2\cos(2x))$. Therefore $I = -\frac{e^{-x}}{5}(\sin(2x) + 2\cos(2x)) + C$. Note the overall negative sign: this comes from the fact that the integral of $e^{-x}$ is $-e^{-x}$, which flips signs compared to the $e^x$ case.</p>
+
+<p><hr></p>
+
+<h2>Key Takeaways</h2>
+
+<li>When the polynomial has degree $n &gt; 1$, repeated integration by parts reduces the degree by one each round. Stop when the polynomial vanishes.</li>
+<li>The loop trick works when the original integral reappears after two rounds. Do not panic when you see the same integral again—isolate it algebraically and solve.</li>
+<li>The tabular method is a fast, organized way to handle $\int (\text{polynomial}) \times (\text{exponential or trig})\,dx$. Differentiate the polynomial until zero, integrate the other function, and multiply diagonally with alternating signs.</li>
+<li>Never forget $+C$. Even in the loop trick, where the algebra involves the integral on both sides, the final answer must include the constant of integration.</li>
+<li>Double-check your signs. Alternating signs in the tabular method and sign flips from integrating trigonometric functions are the most common sources of error.</li>
+
+
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+</body>
+</html>

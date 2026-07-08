@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 18: Geometry — Circles (Arcs, Chords, Sectors)</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root {
+    --bg: #fafaf9;
+    --text: #1a1a1a;
+    --accent: #1a5276;
+    --trap-bg: #fff3cd;
+    --trap-border: #ffc107;
+    --pattern-bg: #d1ecf1;
+    --pattern-border: #17a2b8;
+    --card: #ffffff;
+    --border: #d0d0cb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+  h1 { font-size: 1.8rem; color: var(--accent); border-bottom: 3px solid var(--accent); padding-bottom: 0.5rem; margin-bottom: 1rem; }
+  h2 { font-size: 1.35rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+  h3 { font-size: 1.15rem; color: #333; margin: 1.5rem 0 0.5rem; }
+  p, li { margin: 0.5em 0; }
+  ul, ol { padding-left: 1.5rem; margin: 0.5em 0; }
+  .trap-box {
+    background: var(--trap-bg);
+    border-left: 4px solid var(--trap-border);
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.95rem;
+  }
+  .trap-box strong { color: #856404; }
+  .pattern-box {
+    background: var(--pattern-bg);
+    border-left: 4px solid var(--pattern-border);
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.95rem;
+  }
+  .pattern-box strong { color: #0c5460; }
+  .example {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem 1.3rem;
+    margin: 1rem 0;
+  }
+  .example h4 { color: var(--accent); margin-bottom: 0.3rem; }
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 2.5rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  .nav a { color: var(--accent); text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  code { background: #f0f0f0; padding: 0.15em 0.4em; border-radius: 3px; font-size: 0.9em; }
+  strong { color: #222; }
+  @media print {
+    body { font-size: 14px; }
+    .nav { display: none; }
+  }
+</style>
+</head>
+<body>
+<h1>Lesson 18: Geometry — Circles (Arcs, Chords, Sectors)</h1>
+<h2>What You'll Learn</h2>
+<ul>
+<li>Circle fundamentals: circumference, area, radius, diameter</li>
+<li>Arc length and sector area formulas — and when to use each</li>
+<li>The relationship between central angles and arcs</li>
+<li>Inscribed angles and why they're always half the arc they intercept</li>
+<li>Tangent lines and their perpendicular relationship with radii</li>
+<li>The critical distinction between arc measure (degrees) and arc length (distance)</li>
+</ul>
+<h2>SAT Context</h2>
+<p>Circle problems appear in **3–5 questions** across the SAT Math section, typically in the Geometry and Trigonometry domain. The SAT tests a specific set of circle concepts: circumference, area, arc length, sector area, central vs. inscribed angles, and the tangent-radius perpendicular property. Unlike IB AAHL, the SAT does NOT test radian measure for angles — everything is in degrees. The formulas for circumference, area, arc length, and sector area are provided on the SAT reference sheet, but knowing them by heart saves precious seconds. The most subtle trap on the SAT is confusing arc measure (an angle in degrees) with arc length (a physical distance along the circle).</p>
+<hr>
+<h2>Circle Fundamentals</h2>
+<p>For a circle with radius $r$ and diameter $d = 2r$:</p>
+<p>| Quantity | Formula | What It Measures |</p>
+<p>|:---|:---|:---|</p>
+<p>| **Diameter** | $d = 2r$ | Distance across the circle through center |</p>
+<p>| **Circumference** | $C = 2\pi r = \pi d$ | Distance around the circle |</p>
+<p>| **Area** | $A = \pi r^2$ | Space inside the circle |</p>
+<p>> **🚨 SAT TRAP ALERT:** The area formula uses $r^2$, and the circumference formula uses $r$ (not squared). A classic SAT distractor: giving you $r = 3$ and offering $9\pi$ (area) as an answer choice when the question asked for circumference ($6\pi$), or vice versa. Always check: are they asking for space inside (area) or distance around (circumference)?</p>
+<hr>
+<h2>Arc Length</h2>
+<p>An arc is a portion of the circumference. The arc length is proportional to the central angle.</p>
+<p>$$\text{Arc Length} = \frac{\theta}{360°} \times 2\pi r$$</p>
+<p>Where $\theta$ is the central angle (in degrees) that subtends the arc.</p>
+<p>> **🔍 PATTERN RECOGNITION:** The fraction $\frac{\theta}{360°}$ tells you what fraction of the full circle the arc represents. If $\theta = 90°$, the arc is $\frac{1}{4}$ of the circumference. If $\theta = 60°$, it's $\frac{1}{6}$. Think in fractions — it's faster than plugging into the formula.</p>
+<h3> Worked Example 1: Arc Length</h3>
+<p>**Problem:** A circle has radius 10 cm. What is the length of the arc subtended by a central angle of $72°$?</p>
+<p>**Solution:**</p>
+<p>$$\text{Arc Length} = \frac{72}{360} \times 2\pi(10) = \frac{1}{5} \times 20\pi = 4\pi \text{ cm}$$</p>
+<hr>
+<h2>Sector Area</h2>
+<p>A sector is the region bounded by two radii and an arc (like a pizza slice). The sector area is proportional to the central angle.</p>
+<p>$$\text{Sector Area} = \frac{\theta}{360°} \times \pi r^2$$</p>
+<p>> **🔍 PATTERN RECOGNITION:** The sector area formula is the same pattern as arc length — multiply the whole-circle formula by $\frac{\theta}{360°}$. Arc length: fraction × circumference; Sector area: fraction × area. This symmetry makes both formulas easy to remember.</p>
+<h3> Worked Example 2: Sector Area</h3>
+<p>**Problem:** A circle has radius 8. A sector has a central angle of $45°$. What is the area of the sector?</p>
+<p>**Solution:**</p>
+<p>$$\text{Sector Area} = \frac{45}{360} \times \pi(8)^2 = \frac{1}{8} \times 64\pi = 8\pi$$</p>
+<hr>
+<h2>Arc Measure vs. Arc Length</h2>
+<p>This distinction is **the most important circle concept on the SAT**.</p>
+<p>| Term | What It Is | Units | Notation |</p>
+<p>|:---|:---|:---|:---|</p>
+<p>| **Arc Measure** | The angular size of the arc | Degrees | $m\widehat{AB} = 60°$ |</p>
+<p>| **Arc Length** | The physical distance along the arc | Linear units (cm, in, etc.) | $\text{length of }\widehat{AB} = \frac{\pi r}{3}$ |</p>
+<p>> **🚨 SAT TRAP ALERT:** If a problem asks "what is the length of arc $AB$?" the answer is a distance (something with $\pi$, cm, inches, etc.). If it asks "what is the measure of arc $AB$?" the answer is in degrees. The SAT will include both a degree answer and a distance answer as choices. Read carefully which one they're asking for.</p>
+<h3> Worked Example 3: The Distinction</h3>
+<p>**Problem:** In a circle with radius 6, a central angle of $120°$ subtends arc $PQ$.</p>
+<p>(a) What is the measure of arc $PQ$?</p>
+<p>(b) What is the length of arc $PQ$?</p>
+<p>**Solution:**</p>
+<p>(a) The arc MEASURE equals the central angle: $120°$. That's it — no formula needed.</p>
+<p>(b) The arc LENGTH: $\frac{120}{360} \times 2\pi(6) = \frac{1}{3} \times 12\pi = 4\pi$.</p>
+<hr>
+<h2>Central Angles and Arcs</h2>
+<p>A **central angle** has its vertex at the center of the circle. Its sides are radii.</p>
+<p>**Key fact:** The measure of a central angle **equals** the measure of its intercepted arc.</p>
+<p>$$\text{Central angle} = \text{Arc measure}$$</p>
+<hr>
+<h2>Inscribed Angles</h2>
+<p>An **inscribed angle** has its vertex ON the circle. Its sides are chords.</p>
+<p>**Key fact:** The measure of an inscribed angle is **half** the measure of its intercepted arc.</p>
+<p>$$\text{Inscribed angle} = \frac{1}{2} \times \text{Arc measure}$$</p>
+<p>> **🔍 PATTERN RECOGNITION:** If a central angle and an inscribed angle intercept the same arc, the inscribed angle is exactly half the central angle. This relationship is tested frequently — it's one of the SAT's favorite circle geometry questions.</p>
+<h3> Worked Example 4: Inscribed Angle</h3>
+<p>**Problem:** In a circle, chord $AB$ and chord $AC$ form an inscribed angle of $35°$ at point $A$ (on the circle). What is the measure of arc $BC$ (the arc not containing $A$)?</p>
+<p>**Solution:** The inscribed angle is $35°$. The intercepted arc is twice the inscribed angle:</p>
+<p>$$\text{Arc measure} = 2 \times 35° = 70°$$</p>
+<hr>
+<h2>Inscribed Angle in a Semicircle</h2>
+<p>If an inscribed angle intercepts a semicircle (an arc of $180°$), the angle is $90°$. In other words:</p>
+<p>> **An angle inscribed in a semicircle is always a right angle.**</p>
+<p>This is a specific application: $\theta_{\text{inscribed}} = \frac{1}{2} \times 180° = 90°$.</p>
+<p>This is Thales' theorem and is a favorite SAT geometry fact.</p>
+<hr>
+<h2>Tangent Lines</h2>
+<p>A tangent line touches the circle at exactly one point (the point of tangency).</p>
+<p>**Key fact:** The radius drawn to the point of tangency is **perpendicular** to the tangent line.</p>
+<p>```</p>
+<p>|</p>
+<p>|  radius</p>
+<p>|</p>
+<p>----+---- tangent line</p>
+<p>|</p>
+<p>circle</p>
+<p>```</p>
+<p>> **🚨 SAT TRAP ALERT:** When the SAT shows a tangent line, the radius to the tangency point is ALWAYS perpendicular. This creates a right triangle if you connect the center, the tangency point, and an external point. The SAT expects you to recognize this right triangle and apply the Pythagorean theorem.</p>
+<h3> Worked Example 5: Tangent-Radius</h3>
+<p>**Problem:** From a point $P$ outside a circle, a tangent is drawn touching the circle at point $T$. The center of the circle is $O$. If $OP = 13$ and the radius $OT = 5$, what is the length of tangent segment $PT$?</p>
+<p>**Solution:** $OT \perp PT$ (radius perpendicular to tangent). Triangle $OTP$ is a right triangle with right angle at $T$. By the Pythagorean theorem:</p>
+<p>$$OT^2 + PT^2 = OP^2$$</p>
+<p>$$5^2 + PT^2 = 13^2$$</p>
+<p>$$25 + PT^2 = 169$$</p>
+<p>$$PT^2 = 144$$</p>
+<p>$$PT = 12$$</p>
+<p>This is the 5-12-13 Pythagorean triple.</p>
+<hr>
+<h2>Circles and Proportions</h2>
+<p>Because arc length and sector area are directly proportional to the central angle, you can set up proportions:</p>
+<p>$$\frac{\text{Arc Length}}{\text{Circumference}} = \frac{\text{Sector Area}}{\text{Circle Area}} = \frac{\text{Central Angle}}{360°}$$</p>
+<p>If you know three of these, you can find the fourth without going through the full formula.</p>
+<hr>
+<h2>Practice Problems</h2>
+<h3> Problem 1</h3>
+<p>A circle has a circumference of $36\pi$. What is the area of the circle?</p>
+<p>(A) $18\pi$</p>
+<p>(B) $36\pi$</p>
+<p>(C) $324\pi$</p>
+<p>(D) $1296\pi$</p>
+<h3> Problem 2</h3>
+<p>In a circle with radius 9, what is the length of the arc subtended by a central angle of $80°$?</p>
+<p>(A) $2\pi$</p>
+<p>(B) $4\pi$</p>
+<p>(C) $8\pi$</p>
+<p>(D) $16\pi$</p>
+<h3> Problem 3</h3>
+<p>A sector of a circle has an area of $15\pi$ and a central angle of $60°$. What is the radius of the circle?</p>
+<h3> Problem 4</h3>
+<p>In a circle, an inscribed angle measures $28°$. What is the measure of the central angle that intercepts the same arc?</p>
+<p>(A) $14°$</p>
+<p>(B) $28°$</p>
+<p>(C) $56°$</p>
+<p>(D) $152°$</p>
+<h3> Problem 5</h3>
+<p>From a point $P$ outside a circle with center $O$, two tangents $PA$ and $PB$ are drawn (where $A$ and $B$ are points of tangency). If $\angle AOB = 120°$, what is $\angle APB$?</p>
+<p>(A) $30°$</p>
+<p>(B) $60°$</p>
+<p>(C) $90°$</p>
+<p>(D) $120°$</p>
+<h3> Problem 6</h3>
+<p>A circle has a diameter of 20. A chord is 12 units long. What is the distance from the center of the circle to this chord?</p>
+<p>(A) 6</p>
+<p>(B) 8</p>
+<p>(C) 10</p>
+<p>(D) 16</p>
+<hr>
+<h2>Answers</h2>
+<h3> Problem 1 — Answer: (C) $324\pi$</h3>
+<p>$C = 2\pi r = 36\pi$, so $r = 18$. Area $= \pi r^2 = \pi(18)^2 = 324\pi$.</p>
+<p>**Wrong-answer analysis:**</p>
+<ul>
+<li>(A) $18\pi$ — used $r$ instead of $r^2$: $\pi \times 18$</li>
+<li>(B) $36\pi$ — confused area with circumference</li>
+<li>(D) $1296\pi$ — used $2r$ as radius: $\pi(36)^2$</li>
+</ul>
+<hr>
+<h3> Problem 2 — Answer: (B) $4\pi$</h3>
+<p>$$\text{Arc Length} = \frac{80}{360} \times 2\pi(9) = \frac{2}{9} \times 18\pi = 4\pi$$</p>
+<p>**Wrong-answer analysis:**</p>
+<ul>
+<li>(A) $2\pi$ — used $\frac{80}{360} \times \pi(9)$ (area formula instead of circumference)</li>
+<li>(C) $8\pi$ — used $\frac{80}{360} \times 2\pi(18)$ (doubled radius)</li>
+<li>(D) $16\pi$ — forgot to multiply by $\frac{80}{360}$ (gave full circumference $18\pi$)</li>
+</ul>
+<hr>
+<h3> Problem 3 — Answer: $r = \sqrt{90} = 3\sqrt{10}$</h3>
+<p>$$\text{Sector Area} = \frac{60}{360} \times \pi r^2 = \frac{1}{6}\pi r^2 = 15\pi$$</p>
+<p>$$\frac{1}{6}\pi r^2 = 15\pi$$</p>
+<p>$$\pi r^2 = 90\pi$$</p>
+<p>$$r^2 = 90$$</p>
+<p>$$r = \sqrt{90} = 3\sqrt{10}$$</p>
+<hr>
+<h3> Problem 4 — Answer: (C) $56°$</h3>
+<p>An inscribed angle is half the measure of its intercepted arc, so the arc measures $2 \times 28° = 56°$. The central angle equals the arc measure, so it's $56°$.</p>
+<p>**Wrong-answer analysis:**</p>
+<ul>
+<li>(A) $14°$ — halved the inscribed angle instead of doubling it</li>
+<li>(B) $28°$ — confused inscribed angle with central angle (they're only equal if the vertex is at the center)</li>
+<li>(D) $152°$ — used the supplementary arc: $180° - 28° = 152°$ (confused with cyclic quadrilateral)</li>
+</ul>
+<hr>
+<h3> Problem 5 — Answer: (B) $60°$</h3>
+<p>In quadrilateral $OAPB$, we have:</p>
+<ul>
+<li>$\angle OAP = 90°$ (radius $\perp$ tangent)</li>
+<li>$\angle OBP = 90°$ (radius $\perp$ tangent)</li>
+<li>$\angle AOB = 120°$ (given)</li>
+</ul>
+<p>Sum of interior angles of a quadrilateral: $360°$.</p>
+<p>$$\angle APB = 360° - 90° - 90° - 120° = 60°$$</p>
+<p>**Wrong-answer analysis:**</p>
+<ul>
+<li>(A) $30°$ — halved $60°$ incorrectly</li>
+<li>(C) $90°$ — assumed tangent-tangent angle is always right</li>
+<li>(D) $120°$ — assumed $\angle APB = \angle AOB$</li>
+</ul>
+<hr>
+<h3> Problem 6 — Answer: (B) 8</h3>
+<p>The radius is half the diameter: $r = 10$. Draw the radius to one endpoint of the chord and the perpendicular from the center to the chord. This perpendicular bisects the chord, creating a right triangle with:</p>
+<ul>
+<li>Hypotenuse = radius = $10$</li>
+<li>Half the chord = $12/2 = 6$</li>
+<li>Distance from center to chord = $d$</li>
+</ul>
+<p>$$d^2 + 6^2 = 10^2$$</p>
+<p>$$d^2 + 36 = 100$$</p>
+<p>$$d^2 = 64$$</p>
+<p>$$d = 8$$</p>
+<p>**Wrong-answer analysis:**</p>
+<ul>
+<li>(A) 6 — used half the chord length as the answer</li>
+<li>(C) 10 — used the radius as the answer</li>
+<li>(D) 16 — used $d = \sqrt{10^2 + 6^2} = \sqrt{136}$ misunderstanding</li>
+</ul>
+<hr>
+<h2>Key Takeaways</h2>
+<li>**Arc measure (degrees) ≠ Arc length (distance).** Know which one the question asks for.</li>
+<li>Central angle = arc measure. Inscribed angle = half the arc measure.</li>
+<li>Any angle inscribed in a semicircle is $90°$ (a right angle).</li>
+<li>The radius to the point of tangency is always perpendicular to the tangent line.</li>
+<li>The fraction $\frac{\theta}{360°}$ is the key to both arc length and sector area.</li>
+<div class="nav">
+<a href="lesson17.html">← Previous Lesson</a>
+<a href="index.html">📋 All Lessons</a>
+<a href="lesson19.html">Next Lesson →</a>
+</div>
+</body>
+</html>

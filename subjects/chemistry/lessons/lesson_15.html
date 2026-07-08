@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 15: Hess's Law — Enthalpy Cycles, ΔH_f⦵ and ΔH_c⦵ Methods — IB Chemistry HL</title>
+<script>window.MathJax = { loader: {load: ['[tex]/mhchem']}, tex: {packages: {'[+]': ['mhchem']}} };</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Palatino', 'Georgia', serif; background: var(--bg); color: var(--text); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; font-size: 17px; line-height: 1.7; }
+  h1 { font-size: 1.7rem; color: var(--accent); margin-bottom: 0.5rem; }
+  h2 { font-size: 1.25rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; margin: 2rem 0 1rem; }
+  h3 { font-size: 1.1rem; color: #444; margin: 1.3rem 0 0.5rem; }
+  p, li { margin-bottom: 0.6rem; }
+  ul, ol { padding-left: 1.8rem; margin-bottom: 1rem; }
+  .worked { background: #f0f7f0; border-left: 4px solid #2c5f2d; padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
+  .worked strong { color: #2c5f2d; }
+  .answer { background: #fefdf7; border: 1px solid var(--border); padding: 0.8rem 1.2rem; margin: 0.5rem 0; border-radius: 6px; }
+  .definition { background: #fdf5e6; border-left: 4px solid #d4a017; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+  th, td { padding: 0.5rem; border: 1px solid #ccc; text-align: left; }
+  th { background: #f0f7f0; }
+  pre, code { background: #f5f5f5; font-family: 'Courier New', monospace; font-size: 0.9em; }
+  pre { padding: 1rem; overflow-x: auto; margin: 1rem 0; white-space: pre-wrap; }
+  .nav { display: flex; justify-content: space-between; margin: 3rem 0 1rem; padding-top: 1rem; border-top: 2px solid var(--border); font-size: 0.9rem; }
+  .nav a { color: #1a5c9e; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  @media print { body { font-size: 14px; } .nav { display: none; } }
+</style>
+</head>
+<body>
+<h1>Lesson 15: Hess's Law — Enthalpy Cycles, ΔH_f⦵ and ΔH_c⦵ Methods</h1>
+<h2>What You'll Learn</h2>
+<ul>
+<li>State Hess's Law and explain what it means for enthalpy to be a state function</li>
+<li>Calculate ΔH for a reaction using standard enthalpies of formation (the ΔH_f⦵ method)</li>
+<li>Calculate ΔH for a reaction using standard enthalpies of combustion (the ΔH_c⦵ method)</li>
+<li>Manipulate given chemical equations — flipping, multiplying, and adding — to find an unknown ΔH</li>
+<li>Construct enthalpy cycle diagrams to visualize and solve multi-step problems</li>
+</ul>
+<hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
+<h2>1. Hess's Law: Why the Path Does Not Matter</h2>
+<h3>What Does Hess's Law Say?</h3>
+<p>Hess's Law states that the enthalpy change for a chemical reaction is the same regardless of whether the reaction happens in one step or in a series of steps, as long as the starting materials (the initial state) and the final products (the final state) are the same in every case.</p>
+<p>This can be written more formally: <strong>ΔH for a reaction depends only on the initial and final states, not on the route taken between them.</strong></p>
+<h3>What Does "Route" Mean?</h3>
+<p>Imagine you want to travel from New York to Los Angeles. You could fly directly. Or you could fly from New York to Chicago, then from Chicago to Denver, then from Denver to Los Angeles. The distance you travel is different in each case, but you start in New York and end in Los Angeles either way.</p>
+<p>In chemistry, the "route" is the sequence of reaction steps. The overall enthalpy change ΔH is like the straight-line distance between the starting point and the ending point — it does not depend on how you got there. The individual ΔH values for each step add up to the same total no matter which steps you choose.</p>
+<h3>Why Is This Useful?</h3>
+<p>Some reactions are impossible to measure directly in a calorimeter. For example, you cannot simply put carbon and hydrogen in a calorimeter and measure the enthalpy of formation of ethane directly — the reaction between C(s) and H₂(g) does not happen in a simple, clean way. But if you can find a route from carbon and hydrogen to ethane using reactions whose ΔH values are known, you can calculate the desired ΔH without ever measuring it.</p>
+<h3>Enthalpy Is a State Function</h3>
+<p>The phrase "state function" means a quantity whose value depends only on the current state of the system, not on how the system got there. Your altitude above sea level is a state function — if you climb a mountain, your final altitude depends only on where you are standing, not on whether you took the steep route or the gentle route. Enthalpy is a state function in exactly the same way.</p>
+<h3>Common Misconception</h3>
+<p>Some students think Hess's Law is a special rule that only applies in certain circumstances. But Hess's Law is simply a consequence of the First Law of Thermodynamics (energy is conserved) and the fact that enthalpy is a state function. It always applies. There are no exceptions.</p>
+<hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
+<h2>2. Method 1: Calculating ΔH Using Standard Enthalpies of Formation (ΔH_f⦵)</h2>
+<h3>The Logic of the Formation Method</h3>
+<p>Imagine you have a reaction: Reactants → Products. One way to go from reactants to products is directly. Another way is to first "un-form" all the reactants — break them down into their constituent elements — and then "form" the products from those same elements.</p>
+<p>Un-forming a compound is the reverse of its formation reaction, so the enthalpy change is the negative of ΔH_f⦵. Forming a product from elements has an enthalpy change equal to ΔH_f⦵ of that product.</p>
+<p>Since both routes must have the same total ΔH (Hess's Law), we can write:</p>
+<p><strong>ΔH_reaction = ΣΔH_f⦵(products) − ΣΔH_f⦵(reactants)</strong></p>
+<p>The symbol Σ (capital Greek letter sigma) means "the sum of." You take each product's ΔH_f⦵, multiply it by the number of moles of that product in the balanced equation (its coefficient), and add them all up. Then you do the same for the reactants. Then you subtract the reactants sum from the products sum.</p>
+<h3>Why This Formula Has a Minus Sign</h3>
+<p>The minus sign appears because the formation enthalpies of reactants are being "reversed" in the enthalpy cycle. Going from reactants to elements is the opposite of forming the reactants from elements, so we subtract instead of adding.</p>
+<h3>What to Do with Elements in the Equation</h3>
+<p>If a reactant or product is an element in its standard state, its ΔH_f⦵ is zero. This is the rule we learned in Lesson 14. For example, in the combustion of methane:</p>
+<p>CH₄(g) + 2O₂(g) → CO₂(g) + 2H₂O(l)</p>
+<p>O₂(g) is an element, so ΔH_f⦵[O₂(g)] = 0. CH₄ is a compound, so its ΔH_f⦵ is not zero. CO₂ and H₂O are compounds, so their ΔH_f⦵ values are not zero.</p>
+<h3>Worked Example 1: Combustion of Methane</h3>
+<p><strong>Problem:</strong> Calculate the standard enthalpy change for the complete combustion of methane: CH₄(g) + 2O₂(g) → CO₂(g) + 2H₂O(l). Use the following standard enthalpies of formation:</p>
+<ul>
+<li>ΔH_f⦵[CH₄(g)] = −75 kJ mol⁻¹</li>
+<li>ΔH_f⦵[CO₂(g)] = −394 kJ mol⁻¹</li>
+<li>ΔH_f⦵[H₂O(l)] = −286 kJ mol⁻¹</li>
+</ul>
+<p><strong>Strategy:</strong> We apply the formula ΔH = ΣΔH_f⦵(products) − ΣΔH_f⦵(reactants). For each substance, we multiply its ΔH_f⦵ by its coefficient from the balanced equation. O₂ is an element so its ΔH_f⦵ is zero.</p>
+<p><strong>Step 1 — Sum of ΔH_f⦵ for products:</strong></p>
+<p>The products are CO₂(g) with coefficient 1, and H₂O(l) with coefficient 2.</p>
+<p>ΣΔH_f⦵(products) = 1 × (−394) + 2 × (−286)</p>
+<p>= −394 + (−572)</p>
+<p>= −966 kJ mol⁻¹.</p>
+<p><strong>Step 2 — Sum of ΔH_f⦵ for reactants:</strong></p>
+<p>The reactants are CH₄(g) with coefficient 1, and O₂(g) with coefficient 2.</p>
+<p>ΣΔH_f⦵(reactants) = 1 × (−75) + 2 × (0)</p>
+<p>= −75 + 0</p>
+<p>= −75 kJ mol⁻¹.</p>
+<p><strong>Step 3 — Calculate ΔH:</strong></p>
+<p>ΔH = ΣΔH_f⦵(products) − ΣΔH_f⦵(reactants)</p>
+<p>= −966 − (−75)</p>
+<p>= −966 + 75</p>
+<p>= −891 kJ mol⁻¹.</p>
+<p><strong>Why this makes sense:</strong> Combustion of methane is known to be highly exothermic, releasing a large amount of energy. A value of −891 kJ mol⁻¹ confirms this. The negative sign is correct.</p>
+<h3>Worked Example 2: Formation Method with More Complex Stoichiometry</h3>
+<p><strong>Problem:</strong> Calculate ΔH for the reaction: 2Al(s) + Fe₂O₃(s) → Al₂O₃(s) + 2Fe(s). The standard enthalpies of formation are:</p>
+<ul>
+<li>ΔH_f⦵[Fe₂O₃(s)] = −824 kJ mol⁻¹</li>
+<li>ΔH_f⦵[Al₂O₃(s)] = −1676 kJ mol⁻¹</li>
+</ul>
+<p><strong>Strategy:</strong> Both Al(s) and Fe(s) are elements in their standard states, so their ΔH_f⦵ values are zero. We only need to consider the two compounds.</p>
+<p><strong>Step 1 — Products:</strong></p>
+<p>ΣΔH_f⦵(products) = 1 × (−1676) + 2 × (0) = −1676 kJ mol⁻¹.</p>
+<p><strong>Step 2 — Reactants:</strong></p>
+<p>ΣΔH_f⦵(reactants) = 2 × (0) + 1 × (−824) = −824 kJ mol⁻¹.</p>
+<p><strong>Step 3 — Calculate ΔH:</strong></p>
+<p>ΔH = −1676 − (−824) = −1676 + 824 = −852 kJ mol⁻¹.</p>
+<p><strong>Why this makes sense:</strong> This is the thermite reaction, famous for being extremely exothermic — hot enough to melt iron. The large negative ΔH confirms this.</p>
+<hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
+<h2>3. Method 2: Calculating ΔH Using Standard Enthalpies of Combustion (ΔH_c⦵)</h2>
+<h3>The Logic of the Combustion Method</h3>
+<p>The formation method uses the idea of going "down to elements" and back up. The combustion method uses the idea of going "up to combustion products" (CO₂, H₂O, etc.) and back.</p>
+<p>Imagine that both the reactants and the products can be burned in oxygen to produce the same set of combustion products (CO₂, H₂O, SO₂, etc.). One route from reactants to products is direct. Another route is: burn the reactants to their combustion products, and then "un-burn" those combustion products to form the reaction products.</p>
+<p>Un-burning is the reverse of combustion, so the enthalpy change is the negative of ΔH_c⦵. This leads to a formula that is similar to the formation formula but with the order reversed:</p>
+<p><strong>ΔH_reaction = ΣΔH_c⦵(reactants) − ΣΔH_c⦵(products)</strong></p>
+<p>Notice carefully: for the combustion method, we subtract the PRODUCTS from the REACTANTS. This is the opposite of the formation method. Many students get the sign wrong by using the formation formula when they should be using the combustion formula. If you always remember "combustion = reactants minus products," you will avoid this error.</p>
+<h3>When Is the Combustion Method Used?</h3>
+<p>The combustion method is most useful for reactions involving organic compounds (hydrocarbons, alcohols, carboxylic acids, etc.), because the enthalpies of combustion of organic compounds are easy to measure experimentally and are widely tabulated. Enthalpies of formation for organic compounds are sometimes harder to find.</p>
+<p>Also, if you are given ΔH_c⦵ values for all the species in a reaction, use the combustion method. If you are given ΔH_f⦵ values, use the formation method. Mixing methods within one calculation is a recipe for errors.</p>
+<h3>What about Water?</h3>
+<p>The ΔH_c⦵ of H₂O(l) is zero, because water is already a combustion product — it cannot be burned further. Similarly, the ΔH_c⦵ of CO₂(g) is zero. This makes sense: you cannot burn ash.</p>
+<h3>Worked Example 3: Hydrogenation of Ethene</h3>
+<p><strong>Problem:</strong> Calculate the enthalpy change for the hydrogenation of ethene: C₂H₄(g) + H₂(g) → C₂H₆(g). Use the following standard enthalpies of combustion:</p>
+<ul>
+<li>ΔH_c⦵[C₂H₄(g)] = −1411 kJ mol⁻¹</li>
+<li>ΔH_c⦵[H₂(g)] = −286 kJ mol⁻¹</li>
+<li>ΔH_c⦵[C₂H₆(g)] = −1560 kJ mol⁻¹</li>
+</ul>
+<p><strong>Strategy:</strong> We use the combustion formula: ΔH = ΣΔH_c⦵(reactants) − ΣΔH_c⦵(products).</p>
+<p><strong>Step 1 — Sum of ΔH_c⦵ for reactants:</strong></p>
+<p>ΣΔH_c⦵(reactants) = 1 × (−1411) + 1 × (−286) = −1697 kJ mol⁻¹.</p>
+<p><strong>Step 2 — Sum of ΔH_c⦵ for products:</strong></p>
+<p>ΣΔH_c⦵(products) = 1 × (−1560) = −1560 kJ mol⁻¹.</p>
+<p><strong>Step 3 — Calculate ΔH:</strong></p>
+<p>ΔH = −1697 − (−1560) = −1697 + 1560 = −137 kJ mol⁻¹.</p>
+<p><strong>Why this makes sense:</strong> Hydrogenation reactions (adding H₂ across a double bond) are typically exothermic because a weaker π bond is replaced by a stronger σ bond. The negative ΔH is consistent with this expectation.</p>
+<h3>Worked Example 4: Esterification</h3>
+<p><strong>Problem:</strong> Calculate ΔH for the esterification reaction: CH₃COOH(l) + C₂H₅OH(l) → CH₃COOC₂H₅(l) + H₂O(l). The standard enthalpies of combustion are:</p>
+<ul>
+<li>ΔH_c⦵[CH₃COOH(l)] = −875 kJ mol⁻¹</li>
+<li>ΔH_c⦵[C₂H₅OH(l)] = −1367 kJ mol⁻¹</li>
+<li>ΔH_c⦵[CH₃COOC₂H₅(l)] = −2250 kJ mol⁻¹</li>
+<li>ΔH_c⦵[H₂O(l)] = 0 kJ mol⁻¹</li>
+</ul>
+<p><strong>Strategy:</strong> Water's ΔH_c⦵ is zero. Apply the combustion formula.</p>
+<p><strong>Step 1 — Reactants:</strong></p>
+<p>ΣΔH_c⦵(reactants) = (−875) + (−1367) = −2242 kJ mol⁻¹.</p>
+<p><strong>Step 2 — Products:</strong></p>
+<p>ΣΔH_c⦵(products) = (−2250) + (0) = −2250 kJ mol⁻¹.</p>
+<p><strong>Step 3 — Calculate ΔH:</strong></p>
+<p>ΔH = −2242 − (−2250) = −2242 + 2250 = +8 kJ mol⁻¹.</p>
+<p><strong>Why this makes sense:</strong> Esterification reactions typically have very small ΔH values, often close to zero. The value of +8 kJ mol⁻¹ means this reaction is very slightly endothermic, which is entirely plausible.</p>
+<hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
+<h2>4. Method 3: Manipulating and Combining Given Equations</h2>
+<h3>The Puzzle Approach</h3>
+<p>Sometimes you are given two or three reactions with their ΔH values and asked to find ΔH for a target reaction. The target reaction does not appear directly in the given data, but you can construct it by combining the given reactions — flipping them, multiplying them, and adding them together.</p>
+<p>This method is sometimes called the "thermochemical equation method" or the "Hess cycle puzzle method." It is the most direct application of Hess's Law: if you can build the target equation from given equations, the ΔH for the target is the sum of the ΔH values of the equations you combined, with each ΔH adjusted for any flipping or multiplying you did.</p>
+<h3>Three Allowed Operations</h3>
+<p>There are exactly three things you are allowed to do to a thermochemical equation:</p>
+<p><strong>Operation 1: Flip (reverse) an equation.</strong></p>
+<p>If you reverse a reaction, you must change the sign of its ΔH.</p>
+<p>Example: If C(s) + O₂(g) → CO₂(g) has ΔH = −394 kJ, then the reverse, CO₂(g) → C(s) + O₂(g), has ΔH = +394 kJ.</p>
+<p><strong>Operation 2: Multiply an equation by a number.</strong></p>
+<p>If you multiply all coefficients in an equation by n, you must multiply ΔH by n as well.</p>
+<p>Example: If H₂(g) + ½O₂(g) → H₂O(l) has ΔH = −286 kJ, then multiplying by 2 gives 2H₂(g) + O₂(g) → 2H₂O(l) with ΔH = −572 kJ.</p>
+<p><strong>Operation 3: Add equations together.</strong></p>
+<p>If you write two (or more) equations and add them, the ΔH of the combined equation is the sum of the individual ΔH values. When adding equations, identical species appearing on both the left and right sides cancel out, just like in algebra.</p>
+<h3>A Systematic Approach</h3>
+<p>When faced with a "combine equations" problem, follow these steps every time:</p>
+<ol>
+<li>Write down the target equation.</li>
+<li>Look at the first substance in the target equation. Find which given equation contains that substance on the correct side. If it is on the wrong side, flip that equation (and change the sign of its ΔH).</li>
+<li>If the coefficient of that substance in the given equation does not match the target, multiply the entire equation (and its ΔH) by the appropriate factor.</li>
+<li>Repeat for the next substance, always making sure substances you do not want in the final equation will cancel when you add everything up.</li>
+<li>Add all the manipulated equations. Cancel identical species on both sides.</li>
+<li>Verify that the resulting equation exactly matches the target equation.</li>
+<li>Add up all the manipulated ΔH values to get the answer.</li>
+</ol>
+<h3>Worked Example 5: Iron Extraction</h3>
+<p><strong>Problem:</strong> Calculate ΔH for the reaction: Fe₂O₃(s) + 3CO(g) → 2Fe(s) + 3CO₂(g). This is the key reaction in a blast furnace for extracting iron. Use the following data:</p>
+<ul>
+<li>Equation (1): 2Fe(s) + ³⁄₂O₂(g) → Fe₂O₃(s), ΔH = −824 kJ mol⁻¹</li>
+<li>Equation (2): C(s) + ½O₂(g) → CO(g), ΔH = −111 kJ mol⁻¹</li>
+<li>Equation (3): C(s) + O₂(g) → CO₂(g), ΔH = −394 kJ mol⁻¹</li>
+</ul>
+<p><strong>Strategy:</strong> The target equation has Fe₂O₃ as a reactant, but equation (1) has Fe₂O₃ as a product. So we must flip equation (1). The target has CO as a reactant, but equation (2) has CO as a product. So we must flip equation (2). The target has CO₂ as a product, and equation (3) has CO₂ as a product — we keep equation (3) as is. We also need the carbon atoms from equations (2) and (3) to cancel.</p>
+<p><strong>Step 1 — Flip equation (1):</strong></p>
+<p>Fe₂O₃(s) → 2Fe(s) + ³⁄₂O₂(g), ΔH = +824 kJ.</p>
+<p><strong>Step 2 — Flip equation (2) and multiply by 3:</strong></p>
+<p>We need 3CO as a reactant. Equation (2) makes 1CO as a product. Flip it: CO(g) → C(s) + ½O₂(g), ΔH = +111 kJ. Then multiply by 3: 3CO(g) → 3C(s) + ³⁄₂O₂(g), ΔH = 3 × (+111) = +333 kJ.</p>
+<p><strong>Step 3 — Keep equation (3) and multiply by 3:</strong></p>
+<p>We need 3CO₂ as a product. Equation (3) makes 1CO₂. Multiply by 3: 3C(s) + 3O₂(g) → 3CO₂(g), ΔH = 3 × (−394) = −1182 kJ.</p>
+<p><strong>Step 4 — Add all three equations:</strong></p>
+<pre><code>   Fe₂O₃(s)       → 2Fe(s) + ³⁄₂O₂(g)         ΔH = +824
+   3CO(g)          → 3C(s)  + ³⁄₂O₂(g)         ΔH = +333
+   3C(s) + 3O₂(g)  → 3CO₂(g)                   ΔH = −1182
+   ─────────────────────────────────────────
+   Fe₂O₃(s) + 3CO(g) + 3C(s) + 3O₂(g) → 2Fe(s) + ³⁄₂O₂(g) + ³⁄₂O₂(g) + 3C(s) + 3CO₂(g)</code></pre>
+<p>Now cancel: 3C(s) appears on both sides, so it cancels. For the oxygen species: on the left we have 3O₂(g); on the right we have ³⁄₂O₂(g) + ³⁄₂O₂(g) = 3O₂(g). These also cancel completely. What remains is exactly: Fe₂O₃(s) + 3CO(g) → 2Fe(s) + 3CO₂(g). This matches the target.</p>
+<p><strong>Step 5 — Sum the ΔH values:</strong></p>
+<p>ΔH = +824 + 333 + (−1182) = −25 kJ mol⁻¹.</p>
+<p><strong>Why this makes sense:</strong> The blast furnace reaction is known to be slightly exothermic. The value of −25 kJ mol⁻¹ is small in magnitude, which is reasonable for a reaction where both reactants and products are relatively stable compounds.</p>
+<h3>Worked Example 6: Formation of Hydrazine</h3>
+<p><strong>Problem:</strong> Hydrazine, N₂H₄, is used as rocket fuel. Calculate ΔH for the reaction: N₂(g) + 2H₂(g) → N₂H₄(l). This is actually the formation of hydrazine from its elements, so the answer is ΔH_f⦵ of hydrazine. Use:</p>
+<ul>
+<li>Equation (1): N₂H₄(l) + O₂(g) → N₂(g) + 2H₂O(l), ΔH = −622 kJ mol⁻¹</li>
+<li>Equation (2): H₂(g) + ½O₂(g) → H₂O(l), ΔH = −286 kJ mol⁻¹</li>
+</ul>
+<p><strong>Strategy:</strong> The target has N₂H₄ as a product, but equation (1) has N₂H₄ as a reactant. So we flip equation (1). The target has 2H₂ as a reactant, and equation (2) has H₂ as a reactant — we keep equation (2) but multiply by 2. We also need H₂O(l) and O₂(g) to cancel.</p>
+<p><strong>Step 1 — Flip equation (1):</strong></p>
+<p>N₂(g) + 2H₂O(l) → N₂H₄(l) + O₂(g), ΔH = +622 kJ.</p>
+<p><strong>Step 2 — Multiply equation (2) by 2:</strong></p>
+<p>2H₂(g) + O₂(g) → 2H₂O(l), ΔH = 2 × (−286) = −572 kJ.</p>
+<p><strong>Step 3 — Add the equations:</strong></p>
+<pre><code>   N₂(g) + 2H₂O(l)   → N₂H₄(l) + O₂(g)    ΔH = +622
+   2H₂(g) + O₂(g)     → 2H₂O(l)            ΔH = −572
+   ────────────────────────────────────────
+   N₂(g) + 2H₂O(l) + 2H₂(g) + O₂(g) → N₂H₄(l) + O₂(g) + 2H₂O(l)</code></pre>
+<p>Cancel 2H₂O(l) and O₂(g) from both sides. What remains: N₂(g) + 2H₂(g) → N₂H₄(l). This matches the target.</p>
+<p><strong>Step 4 — Sum ΔH:</strong></p>
+<p>ΔH = +622 + (−572) = +50 kJ mol⁻¹.</p>
+<p><strong>Why this makes sense:</strong> Hydrazine has a positive enthalpy of formation, meaning it is thermodynamically unstable relative to its elements. This is precisely why it is useful as a rocket fuel — it stores energy that can be released upon decomposition or combustion.</p>
+<hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
+<h2>5. Enthalpy Cycle Diagrams: A Visual Tool</h2>
+<h3>What Is an Enthalpy Cycle?</h3>
+<p>An enthalpy cycle is a diagram that shows different possible routes from reactants to products. These diagrams are especially helpful for avoiding sign errors, because you can write down the two routes and set them equal to each other.</p>
+<h3>The Formation Cycle</h3>
+<p>For a reaction using the formation method, the cycle looks like this:</p>
+<pre><code>             ΔH (unknown)
+Reactants ───────────────→ Products
+    │                          │
+    │ −ΣΔH_f⦵(reactants)      │ +ΣΔH_f⦵(products)
+    │                          │
+    └──────────────────────────┘
+              Elements</code></pre>
+<p>Going from Reactants to Elements requires reversing the formation of the reactants, so the enthalpy change is −ΣΔH_f⦵(reactants). Going from Elements to Products is the formation of the products, with enthalpy change +ΣΔH_f⦵(products). By Hess's Law, the direct route (Reactants → Products) must equal the sum of the two-step route:</p>
+<p>ΔH = −ΣΔH_f⦵(reactants) + ΣΔH_f⦵(products)</p>
+<p>ΔH = ΣΔH_f⦵(products) − ΣΔH_f⦵(reactants)</p>
+<p>This is exactly the formula we used in Section 2.</p>
+<h3>The Combustion Cycle</h3>
+<p>For the combustion method, the cycle is:</p>
+<pre><code>             ΔH (unknown)
+Reactants ───────────────→ Products
+    │                          │
+    │ +ΣΔH_c⦵(reactants)      │ +ΣΔH_c⦵(products)
+    │                          │
+    └──────────────────────────┘
+         Combustion Products
+         (CO₂, H₂O, etc.)</code></pre>
+<p>This time the two-step route goes down: Reactants burn to combustion products (+ΣΔH_c⦵ reactants), then combustion products "un-burn" to form Products (−ΣΔH_c⦵ products). Setting the routes equal:</p>
+<p>ΔH = ΣΔH_c⦵(reactants) − ΣΔH_c⦵(products)</p>
+<h3>Drawing Cycles in an Exam</h3>
+<p>A rough sketch of an enthalpy cycle can earn you marks even if your final numerical answer is wrong, because it shows the examiner that you understand the logic. Label each arrow with the chemical change it represents and the ΔH value. Make sure the arrows form a complete loop. The cycle does not need to be beautiful — it needs to be logically correct.</p>
+<hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
+<h2>Practice Problems</h2>
+<ol>
+<li>Calculate the standard enthalpy change for the complete combustion of ethanol: C₂H₅OH(l) + 3O₂(g) → 2CO₂(g) + 3H₂O(l). Use the following standard enthalpies of formation: ΔH_f⦵[C₂H₅OH(l)] = −278 kJ mol⁻¹, ΔH_f⦵[CO₂(g)] = −394 kJ mol⁻¹, ΔH_f⦵[H₂O(l)] = −286 kJ mol⁻¹.</li>
+</ol>
+<ol>
+<li>Calculate the standard enthalpy change for the dimerization of nitrogen dioxide: 2NO₂(g) → N₂O₄(g). Use the following standard enthalpies of formation: ΔH_f⦵[NO₂(g)] = +33 kJ mol⁻¹, ΔH_f⦵[N₂O₄(g)] = +9 kJ mol⁻¹. Explain what the sign of your answer means.</li>
+</ol>
+<ol>
+<li>Use the combustion method to find ΔH for the reaction: 2C(s, graphite) + 3H₂(g) + ½O₂(g) → C₂H₅OH(l). The relevant standard enthalpies of combustion are: ΔH_c⦵[C(s, graphite)] = −394 kJ mol⁻¹, ΔH_c⦵[H₂(g)] = −286 kJ mol⁻¹, ΔH_c⦵[C₂H₅OH(l)] = −1367 kJ mol⁻¹.</li>
+</ol>
+<ol>
+<li>The reaction 2NO(g) + O₂(g) → 2NO₂(g) is important in atmospheric chemistry. Use the following data to calculate its ΔH:</li>
+</ol>
+<ul>
+<li>Equation (a): N₂(g) + O₂(g) → 2NO(g), ΔH = +181 kJ mol⁻¹</li>
+<li>Equation (b): N₂(g) + 2O₂(g) → 2NO₂(g), ΔH = +67 kJ mol⁻¹</li>
+</ul>
+<ol>
+<li><strong>(IB-exam style)</strong> The standard enthalpy of formation of methane, CH₄(g), can be determined indirectly using Hess's Law. A student has the following experimental data:</li>
+</ol>
+<ul>
+<li>Reaction 1: C(s, graphite) + O₂(g) → CO₂(g), ΔH = −394 kJ mol⁻¹</li>
+<li>Reaction 2: H₂(g) + ½O₂(g) → H₂O(l), ΔH = −286 kJ mol⁻¹</li>
+<li>Reaction 3: CH₄(g) + 2O₂(g) → CO₂(g) + 2H₂O(l), ΔH = −891 kJ mol⁻¹</li>
+</ul>
+<p>The target reaction is: C(s, graphite) + 2H₂(g) → CH₄(g).</p>
+<p>(a) By manipulating and combining reactions 1, 2, and 3 as necessary, determine ΔH_f⦵ of methane. Show clearly how you manipulate each equation and calculate the final value.</p>
+<p>(b) Draw a fully labeled enthalpy cycle diagram (formation cycle) that represents your calculation.</p>
+<p>(c) The data book value for ΔH_f⦵[CH₄(g)] is −75 kJ mol⁻¹. A student claims that because this value is negative, methane must be thermodynamically unstable. Explain why this claim is incorrect.</p>
+<hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
+<h2>Answers</h2>
+<ol>
+<li><strong>Step 1 — Products:</strong> ΣΔH_f⦵(products) = 2(−394) + 3(−286) = −788 + (−858) = −1646 kJ mol⁻¹.</li>
+</ol>
+<p><strong>Step 2 — Reactants:</strong> ΣΔH_f⦵(reactants) = (−278) + 3(0) = −278 kJ mol⁻¹. (O₂ is an element, so its ΔH_f⦵ = 0.)</p>
+<p><strong>Step 3 — Calculate ΔH:</strong> ΔH = −1646 − (−278) = −1646 + 278 = −1368 kJ mol⁻¹.</p>
+<p><strong>Why this makes sense:</strong> This is the combustion of ethanol, and the value (−1368) matches the known ΔH_c⦵ of ethanol. The large negative value confirms that alcohols release a great deal of energy when burned.</p>
+<p><strong>Common mistake:</strong> Forgetting to multiply the ΔH_f⦵ values by the stoichiometric coefficients. The coefficient of H₂O is 3, so you must use 3 × (−286), not just −286.</p>
+<ol>
+<li><strong>Step 1 — Products:</strong> ΣΔH_f⦵(products) = 1 × (+9) = +9 kJ mol⁻¹.</li>
+</ol>
+<p><strong>Step 2 — Reactants:</strong> ΣΔH_f⦵(reactants) = 2 × (+33) = +66 kJ mol⁻¹.</p>
+<p><strong>Step 3 — Calculate ΔH:</strong> ΔH = +9 − (+66) = −57 kJ mol⁻¹.</p>
+<p>The negative sign tells us that the dimerization (two NO₂ molecules combining to form one N₂O₄ molecule) is exothermic. This means N₂O₄ is more thermodynamically stable than two separate NO₂ molecules under standard conditions.</p>
+<ol>
+<li><strong>Step 1 — Reactants:</strong> ΣΔH_c⦵(reactants) = 2(−394) + 3(−286) + ½(0) = −788 + (−858) + 0 = −1646 kJ mol⁻¹. (O₂ has ΔH_c⦵ = 0 because it cannot be burned.)</li>
+</ol>
+<p><strong>Step 2 — Products:</strong> ΣΔH_c⦵(products) = 1 × (−1367) = −1367 kJ mol⁻¹.</p>
+<p><strong>Step 3 — Calculate ΔH:</strong> ΔH = −1646 − (−1367) = −1646 + 1367 = −279 kJ mol⁻¹.</p>
+<p>This value should be the negative of the combustion enthalpy of ethanol (since this reaction is the reverse of combustion "from the elements' perspective"), and indeed |−279| ≈ |−278|, the known ΔH_f⦵ of ethanol. The small discrepancy is due to rounding in the given data.</p>
+<p><strong>Important check:</strong> This problem asks for ΔH, and the target reaction happens to be the formation of ethanol from its elements. So the answer should be ΔH_f⦵ of ethanol. The formation method gave −278 kJ mol⁻¹. The combustion method gives approximately the same value. This cross-check confirms that both methods are consistent.</p>
+<ol>
+<li><strong>Strategy:</strong> The target has 2NO as a reactant. Equation (a) has 2NO as a product, so flip equation (a). The target has 2NO₂ as a product. Equation (b) has 2NO₂ as a product, so keep equation (b) as is. N₂ and O₂ should cancel.</li>
+</ol>
+<p><strong>Step 1 — Flip equation (a):</strong> 2NO(g) → N₂(g) + O₂(g), ΔH = −181 kJ mol⁻¹.</p>
+<p><strong>Step 2 — Keep equation (b):</strong> N₂(g) + 2O₂(g) → 2NO₂(g), ΔH = +67 kJ mol⁻¹.</p>
+<p><strong>Step 3 — Add:</strong></p>
+<pre><code>   2NO(g)           → N₂(g) + O₂(g)      ΔH = −181
+   N₂(g) + 2O₂(g)   → 2NO₂(g)            ΔH = +67
+   ─────────────────────────────────────
+   2NO(g) + N₂(g) + 2O₂(g) → N₂(g) + O₂(g) + 2NO₂(g)</code></pre>
+<p>Cancel N₂(g). On the left we have 2O₂(g), on the right we have O₂(g). So one O₂(g) remains on the left. The resulting equation: 2NO(g) + O₂(g) → 2NO₂(g). This matches the target.</p>
+<p><strong>Step 4 — Sum ΔH:</strong> ΔH = −181 + 67 = −114 kJ mol⁻¹.</p>
+<p><strong>Why this makes sense:</strong> The oxidation of NO to NO₂ is known to be exothermic, which is consistent with the negative ΔH.</p>
+<ol>
+<li><strong>(a)</strong> Target: C(s, graphite) + 2H₂(g) → CH₄(g). We need C and 2H₂ on the left and CH₄ on the right.</li>
+</ol>
+<p>Equation (1) has C on the left: keep it. C(s) + O₂(g) → CO₂(g), ΔH = −394.</p>
+<p>Equation (2) has H₂ on the left but only 1H₂: multiply by 2. 2H₂(g) + O₂(g) → 2H₂O(l), ΔH = 2(−286) = −572.</p>
+<p>Equation (3) has CH₄ on the left, but we need CH₄ on the right: flip it. CO₂(g) + 2H₂O(l) → CH₄(g) + 2O₂(g), ΔH = +891.</p>
+<p>Now add:</p>
+<pre><code>   C(s) + O₂(g)               → CO₂(g)           ΔH = −394
+   2H₂(g) + O₂(g)             → 2H₂O(l)          ΔH = −572
+   CO₂(g) + 2H₂O(l)           → CH₄(g) + 2O₂(g)  ΔH = +891
+   ──────────────────────────────────────────────
+   C(s) + O₂(g) + 2H₂(g) + O₂(g) + CO₂(g) + 2H₂O(l) → CO₂(g) + 2H₂O(l) + CH₄(g) + 2O₂(g)</code></pre>
+<p>Cancel CO₂(g), 2H₂O(l). On the left: O₂(g) + O₂(g) = 2O₂(g). On the right: 2O₂(g). Cancel. What remains: C(s) + 2H₂(g) → CH₄(g). This matches the target.</p>
+<p>ΔH = −394 + (−572) + 891 = −75 kJ mol⁻¹. So ΔH_f⦵[CH₄(g)] = −75 kJ mol⁻¹.</p>
+<p><strong>(b)</strong> The formation cycle for methane has three levels:</p>
+<p>Top level (left): Reactants = C(s) + 2H₂(g)</p>
+<p>Top level (right): Product = CH₄(g)</p>
+<p>Middle level: Elements (the same as the reactants in this case, since the reactants are already elements)</p>
+<p>Bottom level: Combustion products = CO₂(g) + 2H₂O(l)</p>
+<p>Route 1 (direct): C(s) + 2H₂(g) → CH₄(g), ΔH = ? (the unknown).</p>
+<p>Route 2 (via combustion): C(s) + 2H₂(g) + 2O₂(g) → CO₂(g) + 2H₂O(l), then CO₂(g) + 2H₂O(l) → CH₄(g) + 2O₂(g).</p>
+<p>The cycle confirms: ΔH = (−394 − 572) − (−891) = −75 kJ mol⁻¹.</p>
+<p><strong>(c)</strong> The student's claim is incorrect because a negative ΔH_f⦵ does not indicate instability — in fact, it indicates the opposite. A negative ΔH_f⦵ means that the formation of the compound from its elements releases energy, which means the compound is at a lower energy level than the separate elements. Lower energy corresponds to greater thermodynamic stability. Methane, with ΔH_f⦵ = −75 kJ mol⁻¹, is thermodynamically more stable than separated carbon (graphite) and hydrogen gas. If a compound had a positive ΔH_f⦵ (like hydrazine at +50 kJ mol⁻¹), that would indicate thermodynamic instability relative to its elements.</p>
+<div class="nav">
+<a href="lesson_14.html">← Previous Lesson</a>
+<a href="../index.html">Home</a>
+<a href="lesson_16.html">Next Lesson →</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>SAT Practice Tests — Lessons</title>
+<meta name="csrf-token" content="{{ csrf_token }}">
+<style>:root{--bg:#fafaf8;--text:#1a1a1a;--accent:#e67e22;--border:#ddd}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;font-size:17px;line-height:1.7;color:var(--text);background:var(--bg);max-width:900px;margin:0 auto;padding:2rem 1.5rem}
+h1{font-size:2rem;color:var(--accent);border-bottom:3px solid var(--accent);padding-bottom:.5rem;margin-bottom:.5rem}
+.subtitle{color:#666;margin-bottom:2rem;font-style:italic}
+h2{font-size:1.3rem;color:var(--accent);margin:1.5rem 0 1rem}
+.test-card{background:white;border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:1rem;border-left:4px solid var(--accent)}
+.test-card h3{color:var(--accent);margin-bottom:.3rem}
+.test-card .mods{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.8rem}
+.test-card .mod-btn{display:inline-block;padding:.4rem 1rem;background:#f5f0e8;border-radius:6px;text-decoration:none;color:var(--text);font-size:.85rem;font-weight:600;border:1px solid var(--border)}
+.test-card .mod-btn:hover{background:var(--accent);color:white;border-color:var(--accent)}
+.timer-box{display:none;text-align:center;padding:1rem;background:#1a1a2e;color:white;border-radius:12px;margin-bottom:1rem;font-size:1.3rem;font-family:monospace}
+.timer-box.warning{animation:pulse 1s infinite}@keyframes pulse{0%,100%{opacity:1}50%{opacity:.7}}
+.question-box{display:none;background:white;border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:1rem;white-space:pre-wrap;max-height:500px;overflow-y:auto}
+textarea{width:100%;min-height:200px;border:2px solid var(--border);border-radius:12px;padding:1rem;font-family:inherit;font-size:1rem;resize:vertical;display:none;outline:none}
+textarea:focus{border-color:var(--accent)}
+.btn{display:none;background:var(--accent);color:white;padding:.7rem 2rem;border:none;border-radius:8px;font-size:1rem;cursor:pointer;font-weight:600;margin:0 .5rem}
+.btn:hover{opacity:.85}.btn:disabled{opacity:.5}
+.btn-group{display:none;gap:.5rem;margin:1rem 0}
+.loading{display:none;text-align:center;padding:2rem}
+.back-link{display:inline-block;margin-top:1rem;color:var(--accent)}
+</style></head><body>
+<h1>🎓 SAT Practice Tests</h1>
+<p class="subtitle">Timed practice with AI grading — Math & Reading/Writing modules</p>
+
+<div id="testSelector">
+<h2>Available Tests</h2>
+{% for test_name, modules in tests.items()|sort %}
+<div class="test-card">
+<h3>{{ test_name | replace('test','Test ') }}</h3>
+<div class="mods">
+{% for mod_name, content in modules.items()|sort %}
+<button class="mod-btn" onclick="startTest('{{ test_name }}','{{ mod_name }}')">📝 {{ mod_name | replace('_',' ') | title }}</button>
+{% endfor %}
+</div>
+</div>
+{% endfor %}
+{% if not tests %}<p style="color:#999">No practice tests available yet.</p>{% endif %}
+</div>
+
+<div class="timer-box" id="timer">⏱ 00:00</div>
+<div class="question-box" id="questions"></div>
+<textarea id="answers" placeholder="Type your answers here..."></textarea>
+<div class="btn-group" id="btnGroup">
+<button class="btn" id="startBtn" onclick="beginTimer()">Start Timer</button>
+<button class="btn" id="submitBtn" onclick="submitSAT()" disabled>Submit for Grading</button>
+</div>
+<div class="loading" id="loading"><p>⏳ Grading in progress...</p></div>
+<div id="results"></div>
+
+<script>
+var csrf = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+var currentTest = '', currentModule = '', timerInterval = null, timeLeft = 0;
+var isTimed = true;
+
+function startTest(test, mod){
+  currentTest = test; currentModule = mod;
+  fetch('/subjects/sat/practice_tests/'+test+'/'+mod+'.md')
+    .then(r=>r.text()).then(content=>{
+      document.getElementById('testSelector').style.display='none';
+      document.getElementById('questions').innerHTML='<pre style="white-space:pre-wrap;font-family:inherit">'+escapeHtml(content)+'</pre>';
+      document.getElementById('questions').style.display='block';
+      document.getElementById('answers').style.display='block';
+      document.getElementById('btnGroup').style.display='flex';
+      document.getElementById('startBtn').style.display='inline-block';
+      document.getElementById('submitBtn').style.display='inline-block';
+      // Set time based on module type
+      if(mod.startsWith('math')) timeLeft = 35*60; else timeLeft = 32*60;
+      updateTimerDisplay();
+    });
+}
+
+function beginTimer(){
+  document.getElementById('startBtn').disabled = true;
+  document.getElementById('submitBtn').disabled = false;
+  document.getElementById('timer').style.display = 'block';
+  timerInterval = setInterval(function(){
+    timeLeft--;
+    updateTimerDisplay();
+    if(timeLeft <= 300) document.getElementById('timer').classList.add('warning');
+    if(timeLeft <= 0){ clearInterval(timerInterval); submitSAT(); }
+  }, 1000);
+}
+
+function updateTimerDisplay(){
+  var m = Math.floor(timeLeft/60), s = timeLeft % 60;
+  document.getElementById('timer').textContent = '⏱ '+String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+}
+
+function submitSAT(){
+  clearInterval(timerInterval);
+  document.getElementById('submitBtn').disabled = true;
+  document.getElementById('loading').style.display = 'block';
+  var answers = document.getElementById('answers').value;
+  var questions = document.getElementById('questions').textContent;
+
+  fetch('/sat/grade', {
+    method:'POST',
+    headers:{'Content-Type':'application/json','X-CSRF-Token':csrf},
+    body: JSON.stringify({answers:answers, questions:questions, module:currentModule})
+  }).then(r=>r.json()).then(data=>{
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('results').innerHTML = '<h2>📊 Results</h2><div style="background:white;border-radius:12px;padding:1.5rem;margin-top:1rem;white-space:pre-wrap">'+(data.response||data.error||'Error')+'</div>';
+    document.getElementById('results').scrollIntoView({behavior:'smooth'});
+  });
+}
+
+function escapeHtml(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML;}
+</script>
+</body></html>

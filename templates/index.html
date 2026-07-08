@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="csrf-token" content="{{ csrf_token }}">
+<title>Lessons — IB Study Hub</title>
+<link rel="stylesheet" href="/static/style.css">
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$','$'], ['\(','\)']], displayMath: [['$$','$$'], ['\[','\]']] },
+  loader: { load: ['[tex]/mhchem'] },
+  tex: { packages: {'[+]': ['mhchem']} }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-content">
+    <h1>Your IB Study Hub</h1>
+    <p class="hero-subtitle">IB Sciences · Lang Lit · SAT Prep</p>
+    <p class="hero-meta">200+ lessons · Paper 1/2 practice · AI grading · Timed SAT tests</p>
+  </div>
+  <div class="hero-decoration">
+    <span>📊</span><span>🧪</span><span>⚛️</span><span>📐</span><span>🇨🇳</span><span>🇬🇧</span><span>🎓</span>
+  </div>
+</header>
+
+<!-- FOUR ROWS: SUBJECT ROW 1, SUBJECT ROW 2, SUBJECT ROW 3, FINAL ROW -->
+<section class="subject-section">
+  <h2 class="section-label">IB Diploma Subjects</h2>
+
+  <div class="subject-rows">
+    <div class="subject-row">
+      <a href="/subjects/economics/" class="subject-card" style="--card-accent: #2c6b4f">
+        <div class="card-icon">📊</div>
+        <div class="card-content">
+          <h2>Economics SL</h2>
+          <p>57 lessons — Micro, Macro, International &amp; Development Economics</p>
+          <span class="card-badge">57 Lessons</span>
+        </div>
+        <div class="card-arrow">→</div>
+      </a>
+
+      <a href="/subjects/chemistry/" class="subject-card" style="--card-accent: #2c5f2d">
+        <div class="card-icon">🧪</div>
+        <div class="card-content">
+          <h2>Chemistry HL</h2>
+          <p>41 lessons — Stoichiometry, Atomic Structure, Bonding, Energetics &amp; more</p>
+          <span class="card-badge">41 Lessons</span>
+        </div>
+        <div class="card-arrow">→</div>
+      </a>
+    </div>
+
+    <div class="subject-row">
+      <a href="/subjects/physics/" class="subject-card" style="--card-accent: #6c3483">
+        <div class="card-icon">⚛️</div>
+        <div class="card-content">
+          <h2>Physics HL</h2>
+          <p>67 lessons — Mechanics, Thermal, Waves, Electricity, Quantum &amp; more</p>
+          <span class="card-badge">67 Lessons</span>
+        </div>
+        <div class="card-arrow">→</div>
+      </a>
+
+      <a href="/subjects/math/" class="subject-card" style="--card-accent: #1a5276">
+        <div class="card-icon">📐</div>
+        <div class="card-content">
+          <h2>Math AA HL</h2>
+          <p>50 lessons — Algebra, Functions, Trig, Calculus, Vectors, Stats &amp; Probability</p>
+          <span class="card-badge">50 Lessons</span>
+        </div>
+        <div class="card-arrow">→</div>
+      </a>
+    </div>
+
+    <div class="subject-row">
+      <a href="/subjects/chinese/" class="subject-card" style="--card-accent: #b22222">
+        <div class="card-icon">🇨🇳</div>
+        <div class="card-content">
+          <h2>Chinese Lang Lit SL</h2>
+          <p>Paper 1 &amp; 2 practice with rubric-based AI grading</p>
+          <span class="card-badge">7 Prompts</span>
+        </div>
+        <div class="card-arrow">→</div>
+      </a>
+
+      <a href="/subjects/english/" class="subject-card" style="--card-accent: #1a5276">
+        <div class="card-icon">🇬🇧</div>
+        <div class="card-content">
+          <h2>English Lang Lit SL</h2>
+          <p>Paper 1 guided textual analysis with AI grading against the IB rubric</p>
+          <span class="card-badge">3 Prompts</span>
+        </div>
+        <div class="card-arrow">→</div>
+      </a>
+    </div>
+
+    <div class="final-row">
+      <a href="/subjects/sat/" class="sat-big-card" style="--sat-accent: #e67e22">
+        <div class="sat-icon-row">
+          <span class="sat-icon">🎓</span>
+        </div>
+        <div class="sat-content">
+          <h2>SAT Prep</h2>
+          <p>50 lessons covering all SAT Math and Reading &amp; Writing topics, plus 5 timed practice tests with answer keys.</p>
+          <div class="sat-stats">
+            <span class="sat-stat">📚 50 Lessons</span>
+            <span class="sat-stat">📋 5 Practice Tests</span>
+            <span class="sat-stat">🤖 AI-Graded</span>
+            <span class="sat-stat">⏱️ Timed Tests</span>
+          </div>
+        </div>
+        <div class="sat-arrow">→</div>
+      </a>
+
+      <a href="/dashboard" class="dash-card">
+        <span class="dash-icon">📊</span>
+        <div class="dash-content">
+          <h2>Your Dashboard</h2>
+          <p>Track lesson progress, view mock attempts &amp; see your growth over time</p>
+        </div>
+        <span class="dash-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features">
+  <div class="feature">
+    <span class="feature-icon">🎯</span>
+    <h3>IB 7 Standard</h3>
+    <p>Every lesson includes practice problems, worked examples, and IB-style evaluation questions.</p>
+  </div>
+  <div class="feature">
+    <span class="feature-icon">📱</span>
+    <h3>Print-Friendly</h3>
+    <p>Lessons use clean typography with print stylesheets. Study on screen or on paper.</p>
+  </div>
+  <div class="feature">
+    <span class="feature-icon">🤖</span>
+    <h3>AI Tutor</h3>
+    <p>Stuck on a concept? Click the chat bubble to ask your personal IB tutor for help.</p>
+  </div>
+  <div class="feature">
+    <span class="feature-icon">🔢</span>
+    <h3>MathJax Powered</h3>
+    <p>Beautiful math and chemical equation rendering. $$E=mc^2$$ — looks great everywhere.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <p>Lessons generated by AI agents using the official IB curriculum.<br>
+  Economics: Tragakes 3rd Ed. · Chemistry: Owen Exam Prep Guide · Physics: Hamper 3rd Ed. · Math: Pearson 2019.</p>
+  <p class="footer-small">Built with ❤ for IB students everywhere.</p>
+</footer>
+
+<!-- CHATBOT WIDGET -->
+<div id="chatbot">
+  <button id="chatbot-toggle" class="chatbot-toggle" title="Ask the AI Tutor">
+    <span class="chatbot-icon">🤖</span>
+    <span class="chatbot-label">Ask Tutor</span>
+  </button>
+
+  <div id="chatbot-window" class="chatbot-window hidden">
+    <div class="chatbot-header">
+      <h3>🤖 AI IB Tutor</h3>
+      <p>Ask me anything about Economics, Chemistry, Physics, or Math!</p>
+      <button id="chatbot-close" class="chatbot-close">✕</button>
+    </div>
+    <div id="chatbot-messages" class="chatbot-messages">
+      <div class="message bot">
+        <div class="message-content">
+          <p>Hi! I'm your IB tutor. I can help with Economics SL, Chemistry HL, Physics HL, and Math AA HL.</p>
+          <p>What topic are you working on?</p>
+        </div>
+      </div>
+    </div>
+    <div class="chatbot-input-area">
+      <textarea id="chatbot-input" placeholder="Ask a question..." rows="1"></textarea>
+      <button id="chatbot-send">➤</button>
+    </div>
+    <div id="chatbot-status" class="chatbot-status"></div>
+  </div>
+</div>
+
+<script src="/static/chatbot.js"></script>
+</body>
+</html>

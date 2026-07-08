@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 42 — Function Fundamentals (Domain, Range, Composition)</title>
+<script>
+MathJax = {
+  tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body {
+    max-width: 800px; margin: 40px auto; font-family: 'Times New Roman', Georgia, serif;
+    font-size: 17px; line-height: 1.7; padding: 0 20px; color: #1a1a1a;
+  }
+  h1 { font-size: 22px; border-bottom: 2px solid #333; padding-bottom: 8px; margin-top: 36px; }
+  h2 { font-size: 19px; margin-top: 28px; color: #2c3e50; }
+  h3 { font-size: 17px; margin-top: 22px; color: #444; }
+  h4 { font-size: 16px; margin-top: 18px; }
+  p { margin: 0.6em 0; }
+  li { margin: 0.3em 0 0.3em 20px; }
+  hr { margin: 20px 0; border: none; border-top: 1px solid #ddd; }
+  .math-block { text-align: center; margin: 1em 0; overflow-x: auto; }
+  .table-line { font-family: 'Courier New', monospace; font-size: 15px; margin: 0.1em 0; }
+  pre { background: #f5f5f5; padding: 10px 14px; border-radius: 4px; overflow-x: auto; font-size: 14px; }
+  b { color: #222; }
+  table { border-collapse: collapse; margin: 16px 0; width: 100%; font-size: 15px; }
+  th { background: #2c3e50; color: #fff; padding: 8px 12px; text-align: center; font-weight: bold; }
+  td { border: 1px solid #ccc; padding: 8px 12px; text-align: center; }
+  tr:nth-child(even) { background: #f9f9f9; }
+  .nav { text-align: center; margin: 30px 0; font-size: 14px; }
+  .nav a { margin: 0 8px; color: #3498db; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  @media print { body { font-size: 15px; } }
+</style>
+</head>
+<body>
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+<h1>Lesson 42: Function Fundamentals — Domain, Range, Composition, and Inverses</h1>
+
+<h2>What You Will Learn and Why It Matters</h2>
+
+<p>A <b>function</b> is a rule that assigns each input to exactly one output. You write this as $f(x)$ where $x$ is the input. This lesson covers four foundational ideas: the set of allowed inputs (domain), the set of possible outputs (range), combining two functions into one (composition), and reversing a function to get the input back from the output (inverse). These ideas appear throughout the IB AAHL syllabus — in calculus, in probability density functions, in transformations of graphs, and in solving equations. If you do not fully understand domain and inverse functions now, later topics like derivatives of inverse trig functions or integration by substitution will feel much harder than they actually are.</p>
+
+<p><hr></p>
+
+<h2>1. Domain: The Set of Allowed Inputs</h2>
+
+<p>The <b>domain</b> of a function is the set of all real numbers $x$ that you can safely plug into the function without causing a mathematical error. There are three operations that restrict the domain: division by zero, square roots (or any even-indexed root) of a negative number, and logarithms of zero or negative numbers.</p>
+
+<p>When you see a fraction, set the denominator not equal to zero and solve. When you see a square root, set the expression inside the square root to be greater than or equal to zero. When you see a logarithm, set the argument strictly greater than zero.</p>
+
+<p>To write the domain, use either inequality notation ($x \geq 3$) or interval notation ($[3, \infty)$). Both are acceptable on IB exams, but you should be comfortable with both.</p>
+
+<p><hr></p>
+
+<h3>Worked Example 1</h3>
+
+<p><b>Problem:</b> Find the domain of the function $f(x) = \sqrt{x - 3}$.</p>
+
+<p><b>Approach:</b> A square root requires the expression inside it to be non-negative. Write that inequality and solve.</p>
+
+<p><b>Step-by-step working:</b></p>
+<li>The expression under the square root is $x - 3$.</li>
+<li>For the square root to be defined, we need $x - 3 \geq 0$.</li>
+<li>Adding $3$ to both sides gives $x \geq 3$.</li>
+
+<p>The domain is $\{x \in \mathbb{R} \mid x \geq 3\}$, which in interval notation is $[3, \infty)$.</p>
+
+<p><b>Why this makes sense:</b> If you try $x = 2$, you get $\sqrt{-1}$, which is not a real number. If you try $x = 3$, you get $\sqrt{0} = 0$, which is fine. Any number larger than $3$ also works.</p>
+
+<p><hr></p>
+
+<h3>Worked Example 2</h3>
+
+<p><b>Problem:</b> Find the domain of the function $f(x) = \dfrac{1}{x^2 - 4}$.</p>
+
+<p><b>Approach:</b> This is a fraction. The denominator cannot be zero. Set the denominator equal to zero, find the forbidden values, and exclude them from all real numbers.</p>
+
+<p><b>Step-by-step working:</b></p>
+<li>The denominator is $x^2 - 4$.</li>
+<li>Set $x^2 - 4 = 0$, which gives $x^2 = 4$.</li>
+<li>Taking square roots on both sides gives $x = 2$ or $x = -2$.</li>
+<li>These are the values that make the denominator zero.</li>
+
+<p>The domain is all real numbers except $2$ and $-2$. In interval notation: $(-\infty, -2) \cup (-2, 2) \cup (2, \infty)$.</p>
+
+<p><b>Why this makes sense:</b> At $x = 2$, the fraction becomes $\frac{1}{0}$, which is undefined. At $x = -2$, same problem. Every other number gives a real output.</p>
+
+<p><hr></p>
+
+<h2>2. Range: The Set of All Possible Outputs</h2>
+
+<p>The <b>range</b> of a function is the set of all $y$ values (outputs) that the function can produce when you use every $x$ in the domain.</p>
+
+<p>Finding the range is often harder than finding the domain. For simple functions, you can figure out the range by asking: &quot;What values can this expression produce?&quot; For example, a square root can never give a negative output. A squared expression is always non-negative. A fraction with a constant numerator and a quadratic denominator has certain behaviors near asymptotes and far away from them.</p>
+
+<p><hr></p>
+
+<h3>Worked Example 3</h3>
+
+<p><b>Problem:</b> Find the range of $f(x) = \sqrt{x - 3}$.</p>
+
+<p><b>Approach:</b> Determine what outputs the square root can produce given the domain $x \geq 3$.</p>
+
+<p><b>Step-by-step working:</b></p>
+<li>The smallest value in the domain is $x = 3$.</li>
+<li>When $x = 3$, $f(3) = \sqrt{0} = 0$.</li>
+<li>As $x$ increases, $x - 3$ increases.</li>
+<li>The square root of ever-larger numbers produces ever-larger outputs, with no upper bound.</li>
+
+<p>The range is $\{y \in \mathbb{R} \mid y \geq 0\}$, or $[0, \infty)$.</p>
+
+<p><b>Why this makes sense:</b> The square root symbol always denotes the non-negative root. Even if the expression inside gets very large, the output is always zero or positive, never negative.</p>
+
+<p><hr></p>
+
+<h3>Worked Example 4</h3>
+
+<p><b>Problem:</b> Find the range of $f(x) = \dfrac{1}{x^2 - 4}$, where $x \neq \pm 2$.</p>
+
+<p><b>Approach:</b> Analyze the behavior of the fraction as $x$ approaches the excluded values and as $x$ becomes very large (positive or negative). Identify the output values that appear.</p>
+
+<p><b>Step-by-step working:</b></p>
+<li>As $x$ approaches $2$ from the right, $x^2 - 4$ is a small positive number, so the fraction becomes very large and positive. As $x$ approaches $2$ from the left, $x^2 - 4$ is a small negative number, so the fraction becomes very large and negative. Similar behavior occurs near $x = -2$.</li>
+<li>As $x \to \infty$ or $x \to -\infty$, $x^2 - 4$ becomes very large, so $\frac{1}{x^2 - 4}$ approaches $0$ from the positive side if $|x| &gt; 2$, and from the negative side if $|x| &lt; 2$.</li>
+<li>Between $-2$ and $2$, the denominator $x^2 - 4$ is negative. At $x = 0$, it is $-4$, giving $f(0) = -\frac{1}{4}$. This is the maximum value in that negative portion.</li>
+<li>For $|x| &gt; 2$, the output is always positive and can take any positive value.</li>
+
+<p>The range is $(-\infty, -\frac{1}{4}] \cup (0, \infty)$. Notice that $-\frac{1}{4}$ is included because it is achieved at $x = 0$. Zero is not included because the output never actually reaches zero; it only approaches zero as $x$ grows without bound.</p>
+
+<p><b>Common misconception:</b> Many students think the range must be all real numbers except something. But a function like this one has a gap: values between $-\frac{1}{4}$ and $0$ (excluding $-\frac{1}{4}$ itself and excluding $0$) are never produced.</p>
+
+<p><hr></p>
+
+<h2>3. Composite Functions</h2>
+
+<p>A <b>composite function</b> applies one function to the output of another. The notation $(f \circ g)(x)$ means &quot;apply $g$ to $x$ first, then apply $f$ to that result.&quot; Written out: $(f \circ g)(x) = f(g(x))$.</p>
+
+<p>The <b>domain of a composite function</b> $(f \circ g)$ consists of all $x$ such that:</p>
+<li>- $x$ is in the domain of $g$ (so you can compute $g(x)$), AND</li>
+<li>- $g(x)$ is in the domain of $f$ (so you can plug the result into $f$).</li>
+
+<p>Many students skip the second condition. Do not skip it.</p>
+
+<p><hr></p>
+
+<h3>Worked Example 5</h3>
+
+<p><b>Problem:</b> Let $f(x) = 2x + 1$ and $g(x) = x^2$. Find both $(f \circ g)(x)$ and $(g \circ f)(x)$. Then explain why they are different.</p>
+
+<p><b>Approach:</b> For $(f \circ g)(x)$, substitute $g(x)$ into $f$ by replacing every $x$ in $f(x)$ with $x^2$. For $(g \circ f)(x)$, do the reverse.</p>
+
+<p><b>Step-by-step working:</b></p>
+<li>$(f \circ g)(x) = f(g(x)) = f(x^2) = 2(x^2) + 1 = 2x^2 + 1$.</li>
+<li>$(g \circ f)(x) = g(f(x)) = g(2x + 1) = (2x + 1)^2 = 4x^2 + 4x + 1$.</li>
+
+<p>The two results are different: $2x^2 + 1$ versus $4x^2 + 4x + 1$.</p>
+
+<p><b>Why this makes sense:</b> Composition is not like multiplication. The order matters because you are changing which operation happens first. Squaring then doubling and adding 1 is not the same as doubling and adding 1 then squaring.</p>
+
+<p><hr></p>
+
+<h3>Worked Example 6</h3>
+
+<p><b>Problem:</b> Let $f(x) = \sqrt{x}$ and $g(x) = x - 5$. Find the domain of the composite function $(f \circ g)(x)$.</p>
+
+<p><b>Approach:</b> First form the composite: $f(g(x)) = \sqrt{x - 5}$. Then apply both domain conditions.</p>
+
+<p><b>Step-by-step working:</b></p>
+<li>$g(x) = x - 5$ is defined for all real numbers. So the first condition places no restriction.</li>
+<li>The output of $g$ is $x - 5$. This must be in the domain of $f$, which requires the input to be $\geq 0$ (since $f$ is a square root).</li>
+<li>So we need $x - 5 \geq 0$, which gives $x \geq 5$.</li>
+
+<p>The domain of $(f \circ g)$ is $[5, \infty)$.</p>
+
+<p><b>Common misconception:</b> Some students think the domain of the composite is just the domain of the inner function $g$. Here, $g$ is defined for all real numbers, but the composite is only defined for $x \geq 5$.</p>
+
+<p><hr></p>
+
+<h2>4. Inverse Functions</h2>
+
+<p>An <b>inverse function</b> undoes what the original function did. If $f(a) = b$, then $f^{-1}(b) = a$. The notation $f^{-1}$ does NOT mean $\frac{1}{f}$. It means the inverse function.</p>
+
+<p>To find the inverse function algebraically:</p>
+<li>Write $y = f(x)$.</li>
+<li>Swap every $x$ for $y$ and every $y$ for $x$.</li>
+<li>Solve the resulting equation for $y$. The result is $y = f^{-1}(x)$.</li>
+
+<p>A function has an inverse <b>only if it is one-to-one</b> on its domain. A one-to-one function is a function where each output comes from exactly one input. Graphically, a one-to-one function passes the <b>horizontal line test</b>: any horizontal line crosses the graph at most once.</p>
+
+<p>Graphically, the inverse function is the reflection of the original function across the line $y = x$.</p>
+
+<p><hr></p>
+
+<h3>Worked Example 7</h3>
+
+<p><b>Problem:</b> Find the inverse of $f(x) = \dfrac{2x - 1}{x + 3}$, where $x \neq -3$.</p>
+
+<p><b>Approach:</b> Write $y = f(x)$, swap $x$ and $y$, then solve for $y$.</p>
+
+<p><b>Step-by-step working:</b></p>
+<li>Write $y = \dfrac{2x - 1}{x + 3}$.</li>
+<li>Swap: $x = \dfrac{2y - 1}{y + 3}$.</li>
+<li>Multiply both sides by $(y + 3)$: $x(y + 3) = 2y - 1$.</li>
+<li>Expand: $xy + 3x = 2y - 1$.</li>
+<li>Group terms containing $y$ on one side: $xy - 2y = -3x - 1$.</li>
+<li>Factor out $y$: $y(x - 2) = -3x - 1$.</li>
+<li>Multiply both sides by $-1$: $y(2 - x) = 3x + 1$.</li>
+<li>Divide by $(2 - x)$: $y = \dfrac{3x + 1}{2 - x}$.</li>
+
+<p>So $f^{-1}(x) = \dfrac{3x + 1}{2 - x}$, with domain $x \neq 2$.</p>
+
+<p><b>Why this makes sense:</b> You can check by composing: $f(f^{-1}(x))$ should equal $x$. If you plug $\frac{3x+1}{2-x}$ into the original formula for $f$, the algebra will simplify to $x$.</p>
+
+<p><hr></p>
+
+<h2>5. Odd and Even Functions</h2>
+
+<p>A function is <b>even</b> if $f(-x) = f(x)$ for every $x$ in the domain. This means the graph is symmetric about the $y$-axis. Common examples include $x^2$, $\cos x$, and $|x|$.</p>
+
+<p>A function is <b>odd</b> if $f(-x) = -f(x)$ for every $x$ in the domain. This means the graph has rotational symmetry of 180 degrees about the origin. Common examples include $x^3$, $\sin x$, and $x$.</p>
+
+<p>Many functions are neither even nor odd. To classify, compute $f(-x)$ and compare it to $f(x)$ and $-f(x)$.</p>
+
+<p><hr></p>
+
+<h3>Worked Example 8</h3>
+
+<p><b>Problem:</b> Classify $f(x) = x^3 - 3x$ as even, odd, or neither.</p>
+
+<p><b>Approach:</b> Compute $f(-x)$ by substituting $-x$ everywhere $x$ appears. Then simplify and compare to $f(x)$ and $-f(x)$.</p>
+
+<p><b>Step-by-step working:</b></p>
+<li>$f(-x) = (-x)^3 - 3(-x) = -x^3 + 3x$.</li>
+<li>Factor out $-1$: $f(-x) = -(x^3 - 3x) = -f(x)$.</li>
+<li>Since $f(-x) = -f(x)$, the function is odd.</li>
+
+<p><b>Why this makes sense:</b> If you pick $x = 2$, then $f(2) = 8 - 6 = 2$ and $f(-2) = -8 + 6 = -2$, which is indeed $-f(2)$.</p>
+
+<p><hr></p>
+
+<h2>Practice Problems</h2>
+
+<p><b>1.</b> Find the domain and range of $f(x) = \ln(x + 2)$.</p>
+
+<p><b>2.</b> Let $f(x) = \dfrac{1}{x}$ and $g(x) = 3x - 2$. Find and simplify both $(f \circ g)(x)$ and $(g \circ f)(x)$. State the domain of each composite function.</p>
+
+<p><b>3.</b> Find the inverse function of $f(x) = 2e^x - 1$. State the domain of the inverse.</p>
+
+<p><b>4.</b> Classify $f(x) = |x|$ as even, odd, or neither. Justify your answer by showing the calculation.</p>
+
+<p><b>5.</b> (IB Exam Style) A function $f$ is defined by $f(x) = \sqrt{x^2 - 9}$.</p>
+
+<p>(a) Find the domain of $f$. [2 marks]</p>
+
+<p>(b) Find the range of $f$. [2 marks]</p>
+
+<p>(c) Explain why $f$ does not have an inverse function on its maximal domain, and suggest a domain restriction that would make $f$ invertible. [2 marks]</p>
+
+<p><b>6.</b> The functions $f$ and $g$ are defined by $f(x) = 2x + 1$ and $(f \circ g)(x) = 6x + 5$. Find an expression for $g(x)$.</p>
+
+<p><hr></p>
+
+<h2>Answers</h2>
+
+<p><b>1.</b> The function $\ln(x + 2)$ contains a natural logarithm. The argument of a logarithm must be strictly greater than zero. So $x + 2 &gt; 0$, which gives $x &gt; -2$. The domain is $(-2, \infty)$. For the range, the natural logarithm function can output any real number. As $x$ approaches $-2$ from the right, $x + 2$ approaches $0^+$ and $\ln(x+2)$ approaches $-\infty$. As $x$ grows without bound, $\ln(x+2)$ grows without bound. Every real number is achieved somewhere. The range is $\mathbb{R}$, or $(-\infty, \infty)$. A common mistake is to think the range is $[0, \infty)$ because of the square-root pattern, but logarithms behave differently from square roots.</p>
+
+<p><b>2.</b> For $(f \circ g)(x)$: substitute $g(x) = 3x - 2$ into $f(x) = \frac{1}{x}$. This gives $(f \circ g)(x) = \frac{1}{3x - 2}$. The denominator cannot be zero, so $3x - 2 \neq 0$, meaning $x \neq \frac{2}{3}$. The domain of $f \circ g$ is all real numbers except $\frac{2}{3}$. For $(g \circ f)(x)$: substitute $f(x) = \frac{1}{x}$ into $g(x) = 3x - 2$. This gives $(g \circ f)(x) = 3\left(\frac{1}{x}\right) - 2 = \frac{3}{x} - 2$. The domain of $f$ itself requires $x \neq 0$, so the domain of $g \circ f$ is all real numbers except $0$.</p>
+
+<p><b>3.</b> Start with $y = 2e^x - 1$. Swap $x$ and $y$: $x = 2e^y - 1$. Add $1$ to both sides: $x + 1 = 2e^y$. Divide by $2$: $\frac{x+1}{2} = e^y$. Take the natural logarithm of both sides: $y = \ln\left(\frac{x+1}{2}\right)$. Thus $f^{-1}(x) = \ln\left(\frac{x+1}{2}\right)$. For this inverse to be defined, the argument of the logarithm must be positive, so $\frac{x+1}{2} &gt; 0$, which gives $x &gt; -1$. The domain of $f^{-1}$ is $(-1, \infty)$. Notice that this matches the range of the original function: $f(x) = 2e^x - 1$ always gives outputs greater than $-1$, because $e^x &gt; 0$ so $2e^x &gt; 0$ and $2e^x - 1 &gt; -1$.</p>
+
+<p><b>4.</b> Compute $f(-x) = |{-x}|$. The absolute value of $-x$ equals the absolute value of $x$, because absolute value measures distance from zero regardless of sign. So $f(-x) = |x| = f(x)$. Since $f(-x) = f(x)$ for all real $x$, the function $f(x) = |x|$ is even. Many students incorrectly guess that $|x|$ is odd because the graph has a sharp corner, but the test is purely algebraic: $f(-x)$ must equal either $f(x)$ or $-f(x)$.</p>
+
+<p><b>5.</b> (a) The expression under the square root must be non-negative: $x^2 - 9 \geq 0$. This means $x^2 \geq 9$, so $|x| \geq 3$. The domain is $(-\infty, -3] \cup [3, \infty)$. [2 marks]</p>
+
+<p>(b) At the boundary points $x = \pm 3$, $f(x) = \sqrt{0} = 0$. As $|x|$ increases, $x^2 - 9$ grows without bound, so $\sqrt{x^2 - 9}$ grows without bound. The square root always gives a non-negative output. Therefore the range is $[0, \infty)$. [2 marks]</p>
+
+<p>(c) The function fails the horizontal line test because $f(4) = \sqrt{7}$ and $f(-4) = \sqrt{7}$ — two different inputs give the same output. So $f$ is not one-to-one on its full domain. To make $f$ invertible, restrict the domain to $[3, \infty)$ (the right branch only). Then each output comes from exactly one input. Alternatively, one could restrict to $(-\infty, -3]$. [2 marks]</p>
+
+<p><b>6.</b> We know that $(f \circ g)(x) = f(g(x)) = 2 \cdot g(x) + 1$. The problem tells us this equals $6x + 5$. So we set up the equation: $2g(x) + 1 = 6x + 5$. Subtract $1$ from both sides: $2g(x) = 6x + 4$. Divide by $2$: $g(x) = 3x + 2$. To verify: $f(g(x)) = 2(3x + 2) + 1 = 6x + 4 + 1 = 6x + 5$, which matches the given information.</p>
+
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+</body>
+</html>

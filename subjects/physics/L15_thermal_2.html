@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 15: Lesson 15: Thermal Physics 2 — Specific Heat Capacity and Latent Heat — IB Physics HL</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']]
+  },
+  options: {
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap');
+  
+  :root {
+    --bg: #fdfcf9;
+    --text: #1a1a1a;
+    --accent: #2c5f2d;
+    --border: #d0cec7;
+    --code-bg: #f4f3ef;
+    --callout-bg: #f0f7f0;
+    --callout-border: #2c5f2d;
+    --warning-bg: #fff8e6;
+    --warning-border: #c4941a;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  body {
+    font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid var(--accent);
+    color: var(--accent);
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 2.5rem 0 0.75rem;
+    color: #1a1a1a;
+  }
+  
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.5rem;
+  }
+  
+  p { margin: 0 0 1rem; }
+  
+  ul, ol { margin: 0 0 1rem 1.5rem; }
+  li { margin-bottom: 0.35rem; }
+  
+  code {
+    background: var(--code-bg);
+    padding: 0.15em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+    font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+  }
+  
+  pre {
+    background: var(--code-bg);
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 0 0 1rem;
+    font-size: 0.85em;
+    line-height: 1.5;
+  }
+  
+  pre code {
+    background: none;
+    padding: 0;
+    font-size: inherit;
+  }
+  
+  blockquote {
+    border-left: 4px solid var(--callout-border);
+    background: var(--callout-bg);
+    margin: 0 0 1rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+  }
+  
+  blockquote.warning {
+    border-left-color: var(--warning-border);
+    background: var(--warning-bg);
+  }
+  
+  strong { font-weight: 700; }
+  
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.5rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  
+  .nav a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+  
+  .nav a:hover { background: var(--callout-bg); }
+  
+  .worked-example, .answer {
+    background: var(--code-bg);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin: 0.75rem 0 1.25rem;
+  }
+  
+  .worked-example strong:first-child, .answer strong:first-child {
+    color: var(--accent);
+  }
+  
+  @media print {
+    body { font-size: 12pt; max-width: 100%; padding: 0; }
+    .nav { display: none; }
+    h1 { font-size: 18pt; }
+    h2 { font-size: 14pt; }
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 0 1rem;
+  }
+  
+  th, td {
+    border: 1px solid var(--border);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  
+  th {
+    background: var(--code-bg);
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L14_thermal_1.html">← Lesson 14</a>
+  <a href="L16_greenhouse_1.html">Lesson 16 →</a>
+</nav>
+
+<h1>Lesson 15: Thermal Physics 2 — Specific Heat Capacity and Latent Heat</h1>
+
+<h2>What You'll Learn</h2>
+
+<p>When you heat a pot of water on a stove, something interesting happens: the temperature rises steadily, but when the water starts boiling, the temperature stops rising even though you're still adding heat. Where does that energy go? In this lesson, you will learn about two fundamental concepts that explain this behavior: <strong>specific heat capacity</strong>, which tells you how much energy is needed to raise the temperature of a substance, and <strong>latent heat</strong>, which tells you how much energy is needed to change a substance's state without changing its temperature. These concepts are essential for understanding everything from cooking to climate science to the design of thermal systems in engineering.</p>
+
+<hr>
+
+<h2>1. Specific Heat Capacity</h2>
+
+<h3>Why This Matters</h3>
+
+<p>Different materials require different amounts of energy to heat up. A metal spoon left in a hot cup of tea becomes painful to touch within seconds, but the ceramic cup itself stays comfortable to hold for much longer. This is not just because of different starting temperatures — it reflects a fundamental property of each material called <strong>specific heat capacity</strong>. Understanding this property allows engineers to choose materials for heat sinks, insulation, and thermal storage. It also explains why coastal cities have milder climates than inland cities at the same latitude: water has an unusually high specific heat capacity.</p>
+
+<h3>Key Ideas</h3>
+
+<p><strong>Specific heat capacity</strong> (symbol: c) is defined as the amount of energy required to raise the temperature of 1 kilogram of a substance by 1 kelvin (or 1°C, since a change of 1 K equals a change of 1°C). Its SI unit is joules per kilogram per kelvin, written as J/(kg·K) or equivalently J/(kg·°C).</p>
+
+<p>The mathematical relationship is:</p>
+
+<p><strong>Q = m c ΔT</strong></p>
+
+<p>where:</p>
+<ul>
+<li><strong>Q</strong> is the thermal energy transferred (in joules, J). Some textbooks call this "heat," but in physics we prefer "thermal energy transfer."</li>
+<li><strong>m</strong> is the mass of the substance (in kilograms, kg)</li>
+<li><strong>c</strong> is the specific heat capacity (in J/(kg·K))</li>
+<li><strong>ΔT</strong> is the change in temperature (in kelvin or °C)</li>
+</ul>
+
+<p>The symbol Δ (Greek letter "delta") means "change in." So ΔT means "final temperature minus initial temperature."</p>
+
+<p>When a substance gains thermal energy, Q is positive and ΔT is positive (temperature rises). When a substance loses thermal energy, Q is negative and ΔT is negative (temperature falls). The same formula works for both heating and cooling.</p>
+
+<p><strong>Why does specific heat capacity vary between substances?</strong> At the microscopic level, when you add energy to a material, that energy goes into increasing the kinetic energy of its particles (atoms or molecules). Different materials have different atomic masses, different bonding structures, and different numbers of ways to store energy (called "degrees of freedom"). A monatomic gas like helium has only translational motion (3 degrees of freedom). A diatomic gas like oxygen has both translational and rotational motion (5 degrees of freedom). A solid has vibrational modes as well. The more ways a substance can store energy internally, the more energy it takes to raise its temperature by a given amount — so its specific heat capacity is higher.</p>
+
+<p>The specific heat capacity of water is approximately <strong>4200 J/(kg·K)</strong>. This is one of the highest values for any common substance, which has profound consequences for life on Earth and for climate.</p>
+
+<h3>Common Misconceptions</h3>
+
+<blockquote class="warning"><strong>⚠️ MISCONCEPTION ALERT:</strong> Many students think that a substance with a high specific heat capacity "heats up faster." The opposite is true. A high specific heat capacity means the substance <em>resists</em> temperature change — it takes more energy to raise its temperature by 1 K. Think of specific heat capacity as "thermal inertia": a high value means the substance is sluggish to change temperature.</blockquote>
+
+<blockquote class="warning"><strong>⚠️ MISCONCEPTION ALERT:</strong> Some students confuse temperature (measured in K or °C) with thermal energy (measured in J). A large lake at 15°C contains vastly more thermal energy than a cup of tea at 80°C, because thermal energy depends on both temperature and mass. Temperature measures the average kinetic energy per particle, not the total energy of the system.</blockquote>
+
+<blockquote class="warning"><strong>⚠️ MISCONCEPTION ALERT:</strong> The specific heat capacity is not a constant for all temperatures. It varies slightly with temperature and pressure. However, for IB Physics, you should treat it as a constant for a given substance unless told otherwise.</blockquote>
+
+<hr>
+
+<h2>2. Latent Heat</h2>
+
+<h3>Why This Matters</h3>
+
+<p>When ice melts into water at 0°C, or when water boils into steam at 100°C, the temperature does not change during the phase transition even though energy is being added continuously. This energy is not "lost" — it is used to break the bonds between particles rather than to increase their kinetic energy. This "hidden" energy is called <strong>latent heat</strong> (from the Latin word <em>latens</em>, meaning "hidden").</p>
+
+<p>Understanding latent heat explains why steam burns are so much more severe than boiling water burns: steam at 100°C contains the latent heat of vaporization, which is released onto your skin when the steam condenses back into water. It also explains why sweating cools you down: the evaporation of sweat absorbs latent heat from your skin.</p>
+
+<h3>Key Ideas</h3>
+
+<p><strong>Latent heat</strong> (symbol: L, not to be confused with length) is the thermal energy absorbed or released during a change of state at constant temperature. There are two types:</p>
+
+<ol>
+<li><strong>Latent heat of fusion</strong> (L_f): The energy required to change 1 kg of a substance from solid to liquid (melting) or released when changing from liquid to solid (freezing). Both processes occur at the same temperature (the melting point).</li>
+</ol>
+
+<ol>
+<li><strong>Latent heat of vaporization</strong> (L_v): The energy required to change 1 kg of a substance from liquid to gas (boiling/evaporating) or released when changing from gas to liquid (condensing). Both processes occur at the same temperature (the boiling point at a given pressure).</li>
+</ol>
+
+<p>The mathematical relationship is:</p>
+
+<p><strong>Q = m L</strong></p>
+
+<p>where:</p>
+<ul>
+<li><strong>Q</strong> is the thermal energy transferred (in J)</li>
+<li><strong>m</strong> is the mass of the substance changing state (in kg)</li>
+<li><strong>L</strong> is the specific latent heat (in J/kg)</li>
+</ul>
+
+<p>The same formula works for both fusion and vaporization. For melting, use L_f; for boiling, use L_v.</p>
+
+<p>For water:</p>
+<ul>
+<li>Specific latent heat of fusion: approximately <strong>3.34 × 10⁵ J/kg</strong> (or 334,000 J/kg)</li>
+<li>Specific latent heat of vaporization: approximately <strong>2.26 × 10⁶ J/kg</strong> (or 2,260,000 J/kg)</li>
+</ul>
+
+<p>Notice that the latent heat of vaporization is roughly seven times larger than the latent heat of fusion. This makes sense microscopically: melting only requires particles to break free from fixed positions in the solid lattice while remaining close together. Vaporization requires particles to completely escape from the liquid and move far apart, overcoming all intermolecular attractions.</p>
+
+<h3>The Heating Curve</h3>
+
+<p>A <strong>heating curve</strong> is a graph of temperature versus energy added. When you heat a solid:</p>
+<ol>
+<li>The temperature rises (solid phase) — Q = m c_solid ΔT</li>
+<li>The temperature plateaus at the melting point while the solid melts — Q = m L_f</li>
+<li>The temperature rises again (liquid phase) — Q = m c_liquid ΔT</li>
+<li>The temperature plateaus at the boiling point while the liquid boils — Q = m L_v</li>
+<li>The temperature rises again (gas phase) — Q = m c_gas ΔT</li>
+</ol>
+
+<p>The flat sections of the curve (where temperature stays constant) correspond to latent heat. The sloping sections correspond to specific heat capacity.</p>
+
+<h3>Common Misconceptions</h3>
+
+<blockquote class="warning"><strong>⚠️ MISCONCEPTION ALERT:</strong> Many students ask, "If the temperature isn't changing, where is the energy going?" The energy goes into increasing the <strong>potential energy</strong> of the particles, not their <strong>kinetic energy</strong>. Temperature measures average kinetic energy. During a phase change, the added energy breaks intermolecular bonds (increasing potential energy), so the kinetic energy — and therefore the temperature — stays constant.</blockquote>
+
+<blockquote class="warning"><strong>⚠️ MISCONCEPTION ALERT:</strong> Students often think that boiling water is hotter than water that is "just about to boil." Both are at exactly 100°C (at standard atmospheric pressure). The difference is that the boiling water contains more energy because of the latent heat already absorbed.</blockquote>
+
+<blockquote class="warning"><strong>⚠️ MISCONCEPTION ALERT:</strong> Evaporation and boiling are not the same thing. Boiling occurs at a specific temperature (the boiling point) and happens throughout the liquid. Evaporation can occur at any temperature and only happens at the surface of the liquid. Both involve the same latent heat of vaporization.</blockquote>
+
+<hr>
+
+<h2>3. Using Specific Heat Capacity and Latent Heat Together</h2>
+
+<h3>Why This Matters</h3>
+
+<p>Real-world problems often involve both temperature changes and phase changes. For example, to find the total energy needed to turn ice at −10°C into steam at 120°C, you must calculate:</p>
+<ol>
+<li>Energy to warm the ice from −10°C to 0°C (specific heat of ice)</li>
+<li>Energy to melt the ice at 0°C (latent heat of fusion)</li>
+<li>Energy to warm the water from 0°C to 100°C (specific heat of water)</li>
+<li>Energy to boil the water at 100°C (latent heat of vaporization)</li>
+<li>Energy to warm the steam from 100°C to 120°C (specific heat of steam)</li>
+</ol>
+
+<p>Each step uses a different value of c or L. The total energy is the sum of all five contributions.</p>
+
+<h3>Conservation of Energy in Thermal Interactions</h3>
+
+<p>When two substances at different temperatures are brought into thermal contact (with no phase changes), the hotter substance loses thermal energy and the colder substance gains thermal energy until they reach the same temperature. Assuming no energy is lost to the surroundings:</p>
+
+<p><strong>Energy lost by hot substance = Energy gained by cold substance</strong></p>
+
+<p>m_hot × c_hot × (T_hot,initial − T_final) = m_cold × c_cold × (T_final − T_cold,initial)</p>
+
+<p>This is the fundamental principle of <strong>calorimetry</strong>, the measurement of heat transfer. (Note: the proper term in physics is "thermal energy transfer," but "calorimetry" is the traditional name of the technique.)</p>
+
+<hr>
+
+<h2>Worked Examples</h2>
+
+<h3>Example 1: Heating a Metal Block</h3>
+
+<p>A 2.0 kg block of aluminum is heated from 20°C to 80°C. The specific heat capacity of aluminum is 900 J/(kg·K). Calculate the thermal energy absorbed by the block.</p>
+
+<p><strong>Approach:</strong> This is a straightforward temperature change with no phase change. Use Q = m c ΔT, identifying each quantity carefully.</p>
+
+<p><strong>Solution:</strong></p>
+<ul>
+<li>m = 2.0 kg</li>
+<li>c = 900 J/(kg·K)</li>
+<li>ΔT = 80°C − 20°C = 60°C (which equals 60 K)</li>
+</ul>
+
+<p>Q = m c ΔT</p>
+<p>Q = (2.0 kg) × (900 J/(kg·K)) × (60 K)</p>
+<p>Q = 2.0 × 900 × 60 = 108,000 J = 1.08 × 10⁵ J</p>
+
+<p><strong>Why this makes sense:</strong> Aluminum has a moderately low specific heat capacity. 1.08 × 10⁵ J is roughly the energy a 100 W light bulb uses in about 18 minutes, which is reasonable for heating a 2 kg block through 60°C.</p>
+
+<hr>
+
+<h3>Example 2: Melting Ice</h3>
+
+<p>How much energy is required to melt 0.50 kg of ice at 0°C? The specific latent heat of fusion of water is 3.34 × 10⁵ J/kg.</p>
+
+<p><strong>Approach:</strong> This is a pure phase change at constant temperature. Use Q = m L_f.</p>
+
+<p><strong>Solution:</strong></p>
+<ul>
+<li>m = 0.50 kg</li>
+<li>L_f = 3.34 × 10⁵ J/kg</li>
+</ul>
+
+<p>Q = m L_f</p>
+<p>Q = (0.50 kg) × (3.34 × 10⁵ J/kg)</p>
+<p>Q = 1.67 × 10⁵ J</p>
+
+<p><strong>Why this makes sense:</strong> This is about 167 kJ. For comparison, the same energy could raise 0.50 kg of liquid water from 0°C to about 80°C. The energy required just to break the crystal structure (without any temperature change) is substantial.</p>
+
+<hr>
+
+<h3>Example 3: Ice to Warm Water</h3>
+
+<p>A student places 0.20 kg of ice at 0°C into an insulated cup. How much energy is needed to turn all of this into water at 25°C? Use L_f = 3.34 × 10⁵ J/kg and c_water = 4200 J/(kg·K).</p>
+
+<p><strong>Approach:</strong> This problem has two stages: first melt the ice (latent heat), then warm the resulting water (specific heat capacity). Calculate each contribution separately and add them.</p>
+
+<p><strong>Solution:</strong></p>
+
+<p><strong>Step 1: Melting the ice at 0°C</strong></p>
+<p>Q₁ = m L_f = (0.20 kg) × (3.34 × 10⁵ J/kg) = 6.68 × 10⁴ J</p>
+
+<p><strong>Step 2: Warming the water from 0°C to 25°C</strong></p>
+<p>ΔT = 25°C − 0°C = 25 K</p>
+<p>Q₂ = m c ΔT = (0.20 kg) × (4200 J/(kg·K)) × (25 K)</p>
+<p>Q₂ = 0.20 × 4200 × 25 = 21,000 J = 2.10 × 10⁴ J</p>
+
+<p><strong>Total energy:</strong></p>
+<p>Q_total = Q₁ + Q₂ = 6.68 × 10⁴ J + 2.10 × 10⁴ J = 8.78 × 10⁴ J</p>
+
+<p><strong>Why this makes sense:</strong> The melting step requires more than three times as much energy as the warming step. This illustrates how much energy is "hidden" in phase changes.</p>
+
+<hr>
+
+<h3>Example 4: Cooling Water with Ice</h3>
+
+<p>A drink contains 0.30 kg of water at 25°C. A student adds 0.050 kg of ice at 0°C to cool it down. Assuming no energy is exchanged with the surroundings, what is the final temperature of the drink after all the ice has melted? Use L_f = 3.34 × 10⁵ J/kg and c_water = 4200 J/(kg·K).</p>
+
+<p><strong>Approach:</strong> This is a conservation of energy problem. The ice will absorb energy to melt and then absorb more energy as the resulting water warms up. The original water will lose energy as it cools. Set energy lost by warm water equal to energy gained by ice (melting + warming).</p>
+
+<p><strong>Solution:</strong></p>
+<p>Let T be the final temperature of everything (in °C).</p>
+
+<p><strong>Energy lost by warm water:</strong></p>
+<p>Q_lost = m_warm × c × (25 − T) = (0.30 kg) × (4200 J/(kg·K)) × (25 − T)</p>
+
+<p><strong>Energy gained by ice (melting):</strong></p>
+<p>Q_melt = m_ice × L_f = (0.050 kg) × (3.34 × 10⁵ J/kg) = 16,700 J</p>
+
+<p><strong>Energy gained by melted ice warming from 0°C to T:</strong></p>
+<p>Q_warm_ice = m_ice × c × (T − 0) = (0.050 kg) × (4200 J/(kg·K)) × T</p>
+
+<p><strong>Conservation of energy:</strong></p>
+<p>Q_lost = Q_melt + Q_warm_ice</p>
+
+<p>(0.30)(4200)(25 − T) = 16,700 + (0.050)(4200)T</p>
+
+<p>1260 × (25 − T) = 16,700 + 210T</p>
+<p>31,500 − 1260T = 16,700 + 210T</p>
+<p>31,500 − 16,700 = 1260T + 210T</p>
+<p>14,800 = 1470T</p>
+<p>T = 14,800 / 1470 ≈ 10.1°C</p>
+
+<p><strong>Why this makes sense:</strong> The temperature drops from 25°C to about 10°C — a significant cooling effect from just 50 g of ice. This is why ice is so effective at cooling drinks: the latent heat of fusion absorbs enormous energy.</p>
+
+<hr>
+
+<h3>Example 5: Steam Burn vs. Boiling Water Burn</h3>
+
+<p>A person spills 0.010 kg of boiling water at 100°C onto their hand. Another person's hand is exposed to 0.010 kg of steam at 100°C that condenses onto their skin and cools to 50°C. Compare the energy released in each case. Use L_v = 2.26 × 10⁶ J/kg and c_water = 4200 J/(kg·K).</p>
+
+<p><strong>Approach:</strong> For boiling water, only specific heat capacity cooling from 100°C to 50°C. For steam, first the latent heat of condensation is released at 100°C, then the resulting water cools from 100°C to 50°C.</p>
+
+<p><strong>Solution:</strong></p>
+
+<p><strong>Boiling water (100°C → 50°C):</strong></p>
+<p>ΔT = 50 K</p>
+<p>Q_water = m c ΔT = (0.010 kg) × (4200 J/(kg·K)) × (50 K) = 2100 J</p>
+
+<p><strong>Steam (condenses at 100°C, then cools to 50°C):</strong></p>
+<p>Q_steam = m L_v + m c ΔT</p>
+<p>Q_steam = (0.010 kg) × (2.26 × 10⁶ J/kg) + (0.010 kg) × (4200 J/(kg·K)) × (50 K)</p>
+<p>Q_steam = 22,600 J + 2100 J = 24,700 J</p>
+
+<p><strong>Comparison:</strong></p>
+<p>Q_steam / Q_water = 24,700 / 2100 ≈ 11.8</p>
+
+<p><strong>Why this makes sense:</strong> Steam releases nearly 12 times more energy than boiling water at the same initial temperature. The latent heat of vaporization dominates. This explains why steam burns are far more dangerous than boiling water burns.</p>
+
+<hr>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1</h3>
+<p>A 1.5 kg iron skillet is heated on a stove from 25°C to 175°C. The specific heat capacity of iron is 450 J/(kg·K). Calculate the thermal energy absorbed by the skillet. If the stove supplies energy at a rate of 1500 W (joules per second), how long does the heating take, assuming no energy is lost to the surroundings?</p>
+
+<h3>Problem 2</h3>
+<p>A 3.0 kg aluminum pot contains 2.0 kg of water, both initially at 20°C. A heater supplies 5.0 × 10⁵ J of energy to the pot-water system. Assuming no energy is lost to the surroundings, calculate the final temperature of the water and pot. The specific heat capacity of aluminum is 900 J/(kg·K) and of water is 4200 J/(kg·K). Hint: both the pot and the water end up at the same final temperature.</p>
+
+<h3>Problem 3</h3>
+<p>An ice cube of mass 0.025 kg is taken from a freezer at −18°C and dropped into a glass containing 0.22 kg of water at 22°C. Calculate the final temperature of the water after the ice has completely melted, assuming no energy exchange with the surroundings. The specific heat capacity of ice is 2100 J/(kg·K), the specific latent heat of fusion of water is 3.34 × 10⁵ J/kg, and the specific heat capacity of water is 4200 J/(kg·K).</p>
+
+<h3>Problem 4</h3>
+<p>A student wants to cool 0.40 kg of water from 30°C to 10°C by adding ice at 0°C. Calculate the minimum mass of ice required. Use L_f = 3.34 × 10⁵ J/kg and c_water = 4200 J/(kg·K).</p>
+
+<h3>Problem 5</h3>
+<p>A 0.500 kg block of a mystery metal at 100°C is placed into 0.400 kg of water at 15°C in an insulated container. The final equilibrium temperature is 23°C. Calculate the specific heat capacity of the mystery metal. The specific heat capacity of water is 4200 J/(kg·K). Suggest what metal this might be.</p>
+
+<h3>Problem 6 (IB Exam-Style)</h3>
+<p>A student investigates the specific latent heat of fusion of ice using the method of mixtures. The student places 0.120 kg of warm water at 40.0°C into a calorimeter (an insulated container used for thermal measurements). Ice cubes at 0°C are dried with a paper towel and added one at a time until the temperature reaches 10.0°C. The total mass of ice added is 0.042 kg. The specific heat capacity of water is 4200 J/(kg·K).</p>
+
+<p>(a) Explain why the ice cubes are dried before adding them to the warm water. [2 marks]</p>
+
+<p>(b) Explain why the water is stirred during the experiment. [1 mark]</p>
+
+<p>(c) Calculate the experimental value for the specific latent heat of fusion of ice. [4 marks]</p>
+
+<p>(d) The accepted value for the specific latent heat of fusion of ice is 3.34 × 10⁵ J/kg. Calculate the percentage difference between the experimental and accepted values. [1 mark]</p>
+
+<p>(e) Suggest one reason why the experimental value might differ from the accepted value, and state whether this would make the experimental value too high or too low. [2 marks]</p>
+
+<hr>
+
+<h2>Answers</h2>
+
+<h3>Answer 1</h3>
+
+<p><strong>Calculation:</strong></p>
+<p>ΔT = 175°C − 25°C = 150 K</p>
+<p>Q = m c ΔT = (1.5 kg) × (450 J/(kg·K)) × (150 K) = 101,250 J ≈ 1.01 × 10⁵ J</p>
+
+<p><strong>Time calculation:</strong></p>
+<p>Power P = 1500 W = 1500 J/s</p>
+<p>Time t = Q / P = 101,250 J / 1500 J/s = 67.5 s</p>
+
+<p>The heating takes approximately 68 seconds, or just over one minute.</p>
+
+<p><strong>Common pitfall:</strong> Students sometimes forget to convert °C to change in temperature as K. In this case, ΔT in °C equals ΔT in K, so no issue, but always check.</p>
+
+<hr>
+
+<h3>Answer 2</h3>
+
+<p>Both the aluminum pot and the water start at 20°C and end at temperature T. Energy goes into both:</p>
+
+<p>Energy into aluminum: Q_Al = m_Al × c_Al × (T − 20) = (3.0)(900)(T − 20)</p>
+<p>Energy into water: Q_water = m_water × c_water × (T − 20) = (2.0)(4200)(T − 20)</p>
+
+<p>Total energy: Q_total = Q_Al + Q_water = 5.0 × 10⁵ J</p>
+
+<p>(3.0)(900)(T − 20) + (2.0)(4200)(T − 20) = 5.0 × 10⁵</p>
+<p>2700(T − 20) + 8400(T − 20) = 5.0 × 10⁵</p>
+<p>(2700 + 8400)(T − 20) = 5.0 × 10⁵</p>
+<p>11,100(T − 20) = 5.0 × 10⁵</p>
+<p>T − 20 = 500,000 / 11,100 ≈ 45.0</p>
+<p>T ≈ 65.0°C</p>
+
+<p>The final temperature is approximately 65°C.</p>
+
+<p><strong>Common pitfall:</strong> Forgetting that the pot also absorbs energy. The pot's contribution is significant because it has both substantial mass and is in direct contact with the heat source.</p>
+
+<hr>
+
+<h3>Answer 3</h3>
+
+<p>The ice goes through three stages:</p>
+<ol>
+<li>Warm from −18°C to 0°C (ice): Q₁ = (0.025)(2100)(18) = 945 J</li>
+<li>Melt at 0°C: Q₂ = (0.025)(3.34 × 10⁵) = 8350 J</li>
+<li>Warm from 0°C to final T (water): Q₃ = (0.025)(4200)(T)</li>
+</ol>
+
+<p>The warm water cools from 22°C to T: Q₄ = (0.22)(4200)(22 − T) = 924(22 − T)</p>
+
+<p>Conservation of energy: energy gained by ice = energy lost by water</p>
+<p>Q₁ + Q₂ + Q₃ = Q₄</p>
+<p>945 + 8350 + (0.025)(4200)(T) = (0.22)(4200)(22 − T)</p>
+<p>9295 + 105T = 924(22 − T)</p>
+<p>9295 + 105T = 20,328 − 924T</p>
+<p>105T + 924T = 20,328 − 9295</p>
+<p>1029T = 11,033</p>
+<p>T ≈ 10.7°C</p>
+
+<p>The final temperature is approximately 10.7°C.</p>
+
+<hr>
+
+<h3>Answer 4</h3>
+
+<p>The energy that needs to be removed from the water:</p>
+<p>Q_remove = m_water × c × (30 − 10) = (0.40)(4200)(20) = 33,600 J</p>
+
+<p>Let m be the mass of ice. The ice absorbs energy by melting (at 0°C) and then the resulting water warms from 0°C to 10°C:</p>
+<p>Q_absorb = m × L_f + m × c × (10 − 0) = m × 3.34 × 10⁵ + m × 4200 × 10</p>
+<p>Q_absorb = m × 334,000 + m × 42,000 = m × 376,000</p>
+
+<p>Set equal:</p>
+<p>m × 376,000 = 33,600</p>
+<p>m = 33,600 / 376,000 = 0.0894 kg ≈ 0.089 kg</p>
+
+<p>About 89 g of ice is needed. This is over 20% of the water's mass — ice is effective but you need a fair amount.</p>
+
+<hr>
+
+<h3>Answer 5</h3>
+
+<p>Energy gained by water:</p>
+<p>Q_water = (0.400)(4200)(23 − 15) = (0.400)(4200)(8) = 13,440 J</p>
+
+<p>Energy lost by metal:</p>
+<p>Q_metal = (0.500)(c_metal)(100 − 23) = (0.500)(c_metal)(77) = 38.5 × c_metal</p>
+
+<p>Conservation of energy:</p>
+<p>38.5 × c_metal = 13,440</p>
+<p>c_metal = 13,440 / 38.5 ≈ 349 J/(kg·K)</p>
+
+<p>The specific heat capacity is approximately 350 J/(kg·K). This is close to brass (about 380 J/(kg·K)) or zinc (about 390 J/(kg·K)).</p>
+
+<hr>
+
+<h3>Answer 6</h3>
+
+<p><strong>(a)</strong> The ice cubes are dried to remove any liquid water clinging to their surface. If undried ice is added, the mass of water on the surface would contribute to the final mass without having absorbed latent heat to melt, since it's already liquid. This would make the measured mass of ice larger than the actual mass that underwent melting, causing the calculated latent heat to be too low. [2 marks]</p>
+
+<p><strong>(b)</strong> Stirring ensures that thermal energy is distributed evenly throughout the water, so the temperature reading represents the true temperature of all the water, not just the liquid near the thermometer. [1 mark]</p>
+
+<p><strong>(c)</strong> Energy lost by warm water:</p>
+<p>Q_lost = m_warm × c × (T_initial − T_final)</p>
+<p>Q_lost = (0.120 kg) × (4200 J/(kg·K)) × (40.0 − 10.0) K</p>
+<p>Q_lost = 0.120 × 4200 × 30.0 = 15,120 J</p>
+
+<p>Energy gained by ice:</p>
+<p>Melting: Q_melt = 0.042 × L_f</p>
+<p>Warming from 0°C to 10°C: Q_warm = 0.042 × 4200 × 10.0 = 1764 J</p>
+
+<p>Energy conservation:</p>
+<p>0.042 × L_f + 1764 = 15,120</p>
+<p>0.042 × L_f = 15,120 − 1764 = 13,356</p>
+<p>L_f = 13,356 / 0.042 = 318,000 J/kg = 3.18 × 10⁵ J/kg [4 marks]</p>
+
+<p><strong>(d)</strong> Percentage difference:</p>
+<p>|3.18 × 10⁵ − 3.34 × 10⁵| / 3.34 × 10⁵ × 100% = (0.16 / 3.34) × 100% ≈ 4.8% [1 mark]</p>
+
+<p><strong>(e)</strong> One possible reason: the calorimeter itself absorbs some thermal energy from the warm water, meaning not all the energy lost by the water goes into melting the ice. This would cause the calculated L_f to be too low, because the calculation assumes all energy lost by the water went to the ice. Other acceptable answers: heat gain from surroundings (makes L_f too high if ice melts from room temperature air), or incomplete drying of ice cubes (makes L_f too low because extra water mass inflates the "ice" mass). [2 marks]</p>
+
+<hr>
+
+<h2>Key Takeaways</h2>
+
+<ol>
+<li><strong>Specific heat capacity</strong> (c) measures how much energy is needed to raise the temperature of 1 kg of a substance by 1 K. The formula is Q = m c ΔT.</li>
+</ol>
+
+<ol>
+<li>Water has an exceptionally high specific heat capacity (4200 J/(kg·K)), which moderates Earth's climate and makes water an excellent coolant.</li>
+</ol>
+
+<ol>
+<li><strong>Latent heat</strong> (L) is the energy absorbed or released during a phase change at constant temperature. The formula is Q = m L.</li>
+</ol>
+
+<ol>
+<li>During a phase change, temperature stays constant because energy goes into changing potential energy (breaking bonds), not kinetic energy.</li>
+</ol>
+
+<ol>
+<li>The <strong>latent heat of vaporization</strong> is much larger than the <strong>latent heat of fusion</strong> because vaporization requires particles to escape completely from the liquid.</li>
+</ol>
+
+<ol>
+<li>In <strong>calorimetry problems</strong>, apply conservation of energy: the total energy lost by hot substances equals the total energy gained by cold substances (including any latent heat contributions).</li>
+</ol>
+
+<ol>
+<li>When a problem involves both temperature changes and phase changes, break it into stages, calculate each stage separately, and sum the results.</li>
+</ol>
+
+<ol>
+<li>The IB Data Booklet provides values for specific heat capacities and latent heats. Always check which values are provided.</li>
+</ol>
+
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L14_thermal_1.html">← Lesson 14</a>
+  <a href="L16_greenhouse_1.html">Lesson 16 →</a>
+</nav>
+
+</body>
+</html>

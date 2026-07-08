@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 36 — Binomial Distribution</title>
+<script>
+MathJax = {
+  tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body {
+    max-width: 800px; margin: 40px auto; font-family: 'Times New Roman', Georgia, serif;
+    font-size: 17px; line-height: 1.7; padding: 0 20px; color: #1a1a1a;
+  }
+  h1 { font-size: 22px; border-bottom: 2px solid #333; padding-bottom: 8px; margin-top: 36px; }
+  h2 { font-size: 19px; margin-top: 28px; color: #2c3e50; }
+  h3 { font-size: 17px; margin-top: 22px; color: #444; }
+  h4 { font-size: 16px; margin-top: 18px; }
+  p { margin: 0.6em 0; }
+  li { margin: 0.3em 0 0.3em 20px; }
+  hr { margin: 20px 0; border: none; border-top: 1px solid #ddd; }
+  .math-block { text-align: center; margin: 1em 0; overflow-x: auto; }
+  .table-line { font-family: 'Courier New', monospace; font-size: 15px; margin: 0.1em 0; }
+  pre { background: #f5f5f5; padding: 10px 14px; border-radius: 4px; overflow-x: auto; font-size: 14px; }
+  b { color: #222; }
+  table { border-collapse: collapse; margin: 16px 0; width: 100%; font-size: 15px; }
+  th { background: #2c3e50; color: #fff; padding: 8px 12px; text-align: center; font-weight: bold; }
+  td { border: 1px solid #ccc; padding: 8px 12px; text-align: center; }
+  tr:nth-child(even) { background: #f9f9f9; }
+  .nav { text-align: center; margin: 30px 0; font-size: 14px; }
+  .nav a { margin: 0 8px; color: #3498db; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  @media print { body { font-size: 15px; } }
+</style>
+</head>
+<body>
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+<h1>Lesson 36: The Binomial Distribution</h1>
+
+<p><hr></p>
+
+<h2>What Is the Binomial Distribution and Why Do We Need It?</h2>
+
+<p>Suppose you flip a coin 10 times and count how many heads you get. Or a factory inspects 20 items and counts how many are defective. Or you guess on 12 multiple-choice questions and want to know your chance of passing. All of these have the same underlying structure: a fixed number of independent trials, each with two possible outcomes (success or failure), and the same probability of success on every trial.</p>
+
+<p>The <b>binomial distribution</b> is the probability distribution that describes exactly this situation. Instead of listing every possible sequence of outcomes (which gets impossible as the number of trials grows), the binomial formula gives a shortcut to compute the probability of getting any specific number of successes.</p>
+
+<p><hr></p>
+
+<h2>What Is a Bernoulli Trial?</h2>
+
+<p>A <b>Bernoulli trial</b> (named after the Swiss mathematician Jacob Bernoulli) is the simplest possible random experiment: it has exactly two outcomes. We call one outcome a <b>success</b> (coded as 1) and the other a <b>failure</b> (coded as 0).</p>
+
+<p>The probability of success is a number p between 0 and 1. The probability of failure is q = 1 − p.</p>
+
+<p><b>Examples of Bernoulli trials:</b></p>
+
+<li>- Flipping a fair coin: heads is a success, p = 0.5.</li>
+<li>- Rolling a die and checking for a 6: rolling a 6 is a success, p = 1/6.</li>
+<li>- Inspecting a product: finding it defective is a success (if that is what we are counting), p = 0.02.</li>
+
+<p><hr></p>
+
+<h2>The Binomial Setting — Four Conditions</h2>
+
+<p>A random variable X follows a <b>binomial distribution</b> if all four of these conditions are satisfied:</p>
+
+<li><b>Fixed number of trials:</b> There is a specific number n of Bernoulli trials.</li>
+<li><b>Independent trials:</b> The outcome of one trial does not affect any other trial.</li>
+<li><b>Two outcomes per trial:</b> Each trial results in either success or failure.</li>
+<li><b>Constant probability:</b> The probability of success p is the same for every trial.</li>
+
+<p>When these conditions hold, we write:</p>
+
+<div class="math-block">$$X \sim B(n, p)$$</div>
+
+<p>This notation means &quot;X follows a binomial distribution with n trials and success probability p.&quot; The symbol ∼ is read as &quot;is distributed as.&quot;</p>
+
+<p><hr></p>
+
+<h2>The Binomial Probability Formula</h2>
+
+<p>If X ~ B(n, p), the probability of getting exactly k successes is:</p>
+
+<div class="math-block">$$\boxed{P(X = k) = \binom{n}{k}\, p^k (1-p)^{n-k}, \quad k = 0, 1, 2, \ldots, n}$$</div>
+
+<p>Let&#x27;s break down what each piece means:</p>
+
+<li>- <b>pᵏ:</b> The probability that k specific trials are all successes. Since each success has probability p and trials are independent, we multiply p by itself k times: pᵏ.</li>
+<li>- <b>(1−p)ⁿ⁻ᵏ:</b> The probability that the remaining n−k trials are all failures. Each failure has probability (1−p), and there are n−k of them: (1−p)ⁿ⁻ᵏ.</li>
+<li>- <b>\binom{n}{k}:</b> The <b>binomial coefficient</b>, read as &quot;n choose k.&quot; It counts how many different ways we can select which k of the n trials will be the successes.</li>
+
+<p>The binomial coefficient is calculated as:</p>
+
+<div class="math-block">$$\binom{n}{k} = \frac{n!}{k!(n-k)!}$$</div>
+
+<p>where n! (n factorial) means n × (n−1) × (n−2) × … × 2 × 1. For example, 5! = 5 × 4 × 3 × 2 × 1 = 120.</p>
+
+<p><hr></p>
+
+<h2>Worked Example 1: Fair Coin Tosses</h2>
+
+<p><b>Problem:</b> A fair coin is tossed 10 times. Let X be the number of heads. Find the probability of getting exactly 6 heads.</p>
+
+<p><b>Approach:</b> The four binomial conditions are all met: n = 10 fixed tosses, tosses are independent, two outcomes per toss (heads or tails), and p = 0.5 for every toss. So X ~ B(10, 0.5).</p>
+
+<p><b>Step 1: Identify the values.</b> n = 10, k = 6, p = 0.5.</p>
+
+<p><b>Step 2: Compute the binomial coefficient.</b></p>
+
+<div class="math-block">$$\binom{10}{6} = \frac{10!}{6!\,4!} = \frac{10 \times 9 \times 8 \times 7}{4 \times 3 \times 2 \times 1} = \frac{5040}{24} = 210$$</div>
+
+<p><b>Step 3: Plug into the formula.</b></p>
+
+<div class="math-block">$$P(X = 6) = 210 \times (0.5)^6 \times (0.5)^4 = 210 \times (0.5)^{10}$$</div>
+
+<p>Since (0.5)¹⁰ = 1/1024:</p>
+
+<div class="math-block">$$P(X = 6) = \frac{210}{1024} = \frac{105}{512} \approx 0.2051$$</div>
+
+<p><b>Interpretation:</b> If you toss a fair coin 10 times, you have about a 20.5% chance of getting exactly 6 heads. This is one of the more likely outcomes because 6 is close to the expected value (which is 10 × 0.5 = 5).</p>
+
+<p><b>Why this makes sense:</b> There are 210 different sequences of 10 coin tosses that contain exactly 6 heads (think HHHHHHTTTT, HHHHHTHTTT, and 208 others). Each sequence has probability (0.5)¹⁰ = 1/1024. So the total probability is 210/1024.</p>
+
+<p><hr></p>
+
+<h2>Worked Example 2: Defective Products</h2>
+
+<p><b>Problem:</b> A machine produces items with a 5% defect rate. In a random sample of 20 items, let X be the number of defective items.</p>
+
+<p>(a) Find the probability of exactly 2 defective items.</p>
+<p>(b) Find the probability of at most 1 defective.</p>
+<p>(c) Find the probability of at least 1 defective.</p>
+
+<p><b>Approach:</b> The sample is random and each item is independent. n = 20, p = 0.05.</p>
+
+<p><b>(a) Exactly 2 defectives:</b></p>
+
+<div class="math-block">$$P(X = 2) = \binom{20}{2}(0.05)^2(0.95)^{18}$$</div>
+
+<p>Compute the binomial coefficient: \binom{20}{2} = 20×19/2 = 190.</p>
+
+<p>(0.05)² = 0.0025.</p>
+
+<p>Now (0.95)¹⁸ can be computed with a calculator: approximately 0.3972.</p>
+
+<p>P(X = 2) ≈ 190 × 0.0025 × 0.3972 ≈ 0.1887.</p>
+
+<p>So about an 18.9% chance of exactly 2 defectives.</p>
+
+<p><b>(b) At most 1 defective:</b></p>
+
+<p>&quot;At most 1&quot; means 0 or 1. We add the two probabilities:</p>
+
+<p>P(X ≤ 1) = P(X = 0) + P(X = 1).</p>
+
+<p>P(X = 0) = \binom{20}{0}(0.05)⁰(0.95)²⁰ = 1 × 1 × (0.95)²⁰ ≈ 0.3585.</p>
+
+<p>P(X = 1) = \binom{20}{1}(0.05)¹(0.95)¹⁹ = 20 × 0.05 × (0.95)¹⁹.</p>
+
+<p>(0.95)¹⁹ ≈ 0.3774, so P(X = 1) ≈ 20 × 0.05 × 0.3774 = 0.3774.</p>
+
+<p>P(X ≤ 1) ≈ 0.3585 + 0.3774 = 0.7359.</p>
+
+<p>So about a 73.6% chance of getting 0 or 1 defectives.</p>
+
+<p><b>(c) At least 1 defective:</b></p>
+
+<p>&quot;At least 1&quot; means 1, 2, 3, …, or 20. Computing all of these individually would be tedious. A much smarter approach: use the complement.</p>
+
+<p>P(X ≥ 1) = 1 − P(X = 0) = 1 − 0.3585 = 0.6415.</p>
+
+<p><b>Why the complement works:</b> Every possible number of defectives (0 through 20) sums to probability 1. The event &quot;at least 1&quot; is everything except X = 0. So subtracting P(X = 0) from 1 gives the answer instantly.</p>
+
+<p><b>Common misconception:</b> Students sometimes try to compute P(X ≥ 1) by adding P(X = 1) + P(X = 2) + … + P(X = 20) individually. This is slow and error-prone. Always check if the complement (1 − something) is easier.</p>
+
+<p><hr></p>
+
+<h2>Mean and Variance of a Binomial Random Variable</h2>
+
+<p>For X ~ B(n, p), the expected value and variance have very simple formulas:</p>
+
+<div class="math-block">$$\boxed{E(X) = np}$$</div>
+
+<div class="math-block">$$\boxed{\text{Var}(X) = np(1-p) = npq}$$</div>
+
+<div class="math-block">$$\boxed{\sigma = \sqrt{np(1-p)}}$$</div>
+
+<p>You do not need to sum over all k values to find E(X) and Var(X). The formulas come from the fact that a binomial random variable is the sum of n independent Bernoulli trials, each with mean p and variance p(1−p). When you add independent random variables, their means add and their variances add.</p>
+
+<p><b>Example:</b> For X ~ B(100, 0.3):</p>
+
+<li>- E(X) = 100 × 0.3 = 30</li>
+<li>- Var(X) = 100 × 0.3 × 0.7 = 21</li>
+<li>- σ = √21 ≈ 4.58</li>
+
+<p><b>Interpretation:</b> In 100 trials with a 30% success rate, you expect about 30 successes. The number of successes typically varies from 30 by about ±4.6.</p>
+
+<p><hr></p>
+
+<h2>Shape of the Binomial Distribution</h2>
+
+<p>The shape of the binomial distribution depends on p:</p>
+
+<li>- When p = 0.5, the distribution is <b>symmetric</b>. The bars for k successes and n−k successes have equal height.</li>
+<li>- When p &lt; 0.5, the distribution is <b>skewed to the right</b>. Lower numbers of successes are more likely, and there is a longer tail toward higher values.</li>
+<li>- When p &gt; 0.5, the distribution is <b>skewed to the left</b>. Higher numbers of successes are more likely.</li>
+<li>- As n gets larger, the binomial distribution looks more and more like a bell-shaped normal curve (this is the Central Limit Theorem, which we preview in the next lesson).</li>
+
+<p><hr></p>
+
+<h2>Calculator Use for Binomial Probabilities</h2>
+
+<p>In IB exams, you can use your graphing calculator to compute binomial probabilities directly:</p>
+
+<li>- <b>TI-Nspire:</b> Menu → Probability → Distributions → Binomial Pdf (for P(X = k)) or Binomial Cdf (for P(X ≤ k)).</li>
+<li>- <b>TI-84:</b> 2nd → DISTR → binompdf(n, p, k) or binomcdf(n, p, k).</li>
+<li>- <b>Casio:</b> STAT → DIST → BINM → Bpd or Bcd.</li>
+
+<p>&quot;Pdf&quot; stands for probability density function (gives P(X = k)) and &quot;Cdf&quot; stands for cumulative distribution function (gives P(X ≤ k)). Even with a calculator available, you should be able to write the formula and compute simple cases by hand, because some exam questions ask you to set up the expression.</p>
+
+<p><hr></p>
+
+<h2>Worked Example 3: Multiple-Choice Test</h2>
+
+<p><b>Problem:</b> A multiple-choice test has 12 questions, each with 4 options. A student guesses randomly on every question. Let X be the number of correct answers.</p>
+
+<p>(a) State the distribution of X.</p>
+<p>(b) Find E(X) and explain what it means.</p>
+<p>(c) Find the probability of getting exactly 5 correct.</p>
+<p>(d) Find the probability of passing, where passing means getting at least 6 correct.</p>
+
+<p><b>Approach:</b></p>
+
+<p>(a) n = 12 independent questions, each with probability p = 1/4 = 0.25 of being correct by guessing. So X ~ B(12, 0.25).</p>
+
+<p>(b) E(X) = np = 12 × 0.25 = 3. <b>Interpretation:</b> A student who guesses on every question will get about 3 out of 12 correct on average. This is why random guessing is not a good strategy.</p>
+
+<p>(c) P(X = 5) = \binom{12}{5}(0.25)⁵(0.75)⁷.</p>
+
+<p>First, \binom{12}{5} = 12!/(5!·7!) = (12×11×10×9×8)/(5×4×3×2×1) = 95040/120 = 792.</p>
+
+<p>(0.25)⁵ = (1/4)⁵ = 1/1024.</p>
+
+<p>(0.75)⁷ = (3/4)⁷ = 3⁷/4⁷ = 2187/16384.</p>
+
+<p>P(X = 5) = 792 × (1/1024) × (2187/16384).</p>
+
+<p>Using a calculator: P(X = 5) ≈ 0.1032, or about 10.3%.</p>
+
+<p>(d) P(pass) = P(X ≥ 6) = 1 − P(X ≤ 5).</p>
+
+<p>Use a calculator: binomcdf(12, 0.25, 5) ≈ 0.9456.</p>
+
+<p>P(X ≥ 6) ≈ 1 − 0.9456 = 0.0544.</p>
+
+<p><b>Interpretation:</b> There is only about a 5.4% chance of passing by guessing. This makes sense — to pass you need at least half the questions right, but on average you only get a quarter right by guessing.</p>
+
+<p><hr></p>
+
+<h2>Practice Problems</h2>
+
+<p><hr></p>
+
+<h3>Problem 1</h3>
+<p>A fair six-sided die is rolled 8 times. Let X be the number of times a &quot;6&quot; appears.</p>
+
+<p>(a) State the distribution of X (give n and p).</p>
+<p>(b) Write the expression for P(X = 2) using the binomial formula, then compute it. Leave unsimplified factors if you wish, but give a decimal answer.</p>
+<p>(c) Find P(X ≥ 1) — the probability of getting at least one 6.</p>
+<p>(d) Find E(X) and Var(X).</p>
+
+<p><hr></p>
+
+<h3>Problem 2</h3>
+<p>In a school, 30% of students study Spanish. A random sample of 15 students is selected. Let X be the number of students in the sample who study Spanish.</p>
+
+<p>(a) Find P(X = 5). Use your calculator or compute by hand with the formula.</p>
+<p>(b) Find P(3 ≤ X ≤ 6) — the probability that between 3 and 6 students (inclusive) study Spanish.</p>
+<p>(c) Find the mode of X — that is, the most likely number of Spanish students in the sample. *Hint: the mode of a binomial is near np. Compute P(X = 4) and P(X = 5) and compare.*</p>
+
+<p><hr></p>
+
+<h3>Problem 3</h3>
+<p>A biased coin lands heads with probability 0.4. It is tossed 20 times. Let X be the number of heads.</p>
+
+<p>(a) Calculate E(X) and the standard deviation σ.</p>
+<p>(b) Using the approximate rule that most values fall within 2 standard deviations of the mean (E(X) ± 2σ), give a range where you would expect the number of heads to fall about 95% of the time.</p>
+
+<p><hr></p>
+
+<h3>Problem 4</h3>
+<p>A binomial experiment has n = 25 trials and success probability p = 0.2.</p>
+
+<p>(a) Without using a calculator, write the full expression (with the binomial coefficient) for P(X = 3).</p>
+<p>(b) Write the expression for P(X = 0) and verify that it simplifies to (0.8)²⁵. If a calculator gives P(X = 0) ≈ 0.0038, check that this is reasonable.</p>
+<p>(c) Explain why P(X &gt; 25) = 0 and P(X &lt; 0) = 0. What does this tell you about the possible values of X?</p>
+
+<p><hr></p>
+
+<h3>Problem 5 (IB Exam Style — 8 marks)</h3>
+<p>A new drug is effective for 80% of patients who take it. In a clinical trial, the drug is given to 10 patients. Assume the patients respond independently.</p>
+
+<p>(a) [1 mark] State the distribution of X, the number of patients who respond to the drug.</p>
+
+<p>(b) [2 marks] Find the probability that exactly 8 patients respond.</p>
+
+<p>(c) [3 marks] Find the probability that at least 9 patients respond. Show your working clearly.</p>
+
+<p>(d) [2 marks] The trial is considered a &quot;strong success&quot; if all 10 patients respond. Find the probability of a strong success. Is this outcome likely? Explain briefly.</p>
+
+<p><hr></p>
+
+<h2>Answers</h2>
+
+<p><hr></p>
+
+<h3>Answer 1</h3>
+
+<p>(a) X ~ B(8, 1/6). There are n = 8 independent rolls, each with p = 1/6 chance of a 6.</p>
+
+<p>(b) P(X = 2) = \binom{8}{2}(1/6)²(5/6)⁶.</p>
+
+<p>\binom{8}{2} = 28. (1/6)² = 1/36. (5/6)⁶ = 15625/46656.</p>
+
+<p>P(X = 2) = 28 × (1/36) × (15625/46656) = (28 × 15625)/(36 × 46656) = 437500/1679616 ≈ 0.2605.</p>
+
+<p>(c) P(X ≥ 1) = 1 − P(X = 0). P(X = 0) = (5/6)⁸ = 390625/1679616 ≈ 0.2326. So P(X ≥ 1) ≈ 1 − 0.2326 = 0.7674.</p>
+
+<p><b>Why the complement?</b> Computing P(X = 1) + P(X = 2) + … + P(X = 8) would be slow. Using 1 − P(X = 0) is instant.</p>
+
+<p>(d) E(X) = 8 × (1/6) = 8/6 = 4/3 ≈ 1.333.</p>
+
+<p>Var(X) = 8 × (1/6) × (5/6) = 40/36 = 10/9 ≈ 1.111.</p>
+
+<p><b>Interpretation:</b> In 8 rolls, you expect about 1.33 sixes on average, with a variance of about 1.11.</p>
+
+<p><hr></p>
+
+<h3>Answer 2</h3>
+
+<p>X ~ B(15, 0.30).</p>
+
+<p>(a) P(X = 5) = \binom{15}{5}(0.3)⁵(0.7)¹⁰.</p>
+
+<p>\binom{15}{5} = 3003. (0.3)⁵ = 0.00243. (0.7)¹⁰ ≈ 0.02825.</p>
+
+<p>P(X = 5) ≈ 3003 × 0.00243 × 0.02825 ≈ 0.2061.</p>
+
+<p>(b) P(3 ≤ X ≤ 6) = P(X ≤ 6) − P(X ≤ 2).</p>
+
+<p>Using a calculator: binomcdf(15, 0.3, 6) ≈ 0.8689 and binomcdf(15, 0.3, 2) ≈ 0.1268.</p>
+
+<p>P(3 ≤ X ≤ 6) ≈ 0.8689 − 0.1268 = 0.7421.</p>
+
+<p>(c) The expected value is np = 15 × 0.3 = 4.5, so the mode should be near 4 or 5.</p>
+
+<p>P(X = 4) = \binom{15}{4}(0.3)⁴(0.7)¹¹ = 1365 × 0.0081 × 0.01977 ≈ 0.2186.</p>
+
+<p>P(X = 5) ≈ 0.2061 (from part a).</p>
+
+<p>So P(X = 4) &gt; P(X = 5). The mode is 4.</p>
+
+<p>You can also use the rule: mode = floor((n+1)p) = floor(16 × 0.3) = floor(4.8) = 4. This is a quick check, but computing and comparing is more reliable on an exam.</p>
+
+<p><hr></p>
+
+<h3>Answer 3</h3>
+
+<p>(a) E(X) = np = 20 × 0.4 = 8.</p>
+
+<p>Var(X) = np(1−p) = 20 × 0.4 × 0.6 = 4.8.</p>
+
+<p>σ = √4.8 ≈ 2.19.</p>
+
+<p>(b) The approximate 95% range is E(X) ± 2σ:</p>
+
+<p>8 − 2(2.19) = 8 − 4.38 = 3.62 (round to about 4)</p>
+
+<p>8 + 2(2.19) = 8 + 4.38 = 12.38 (round to about 12)</p>
+
+<p>So we expect the number of heads to be between 4 and 12 about 95% of the time.</p>
+
+<p><b>Why this works:</b> For large enough n, the binomial is approximately normal (the Central Limit Theorem). The empirical rule for normal distributions says about 95% of values lie within 2 standard deviations of the mean. Here n = 20 is moderately large, so the approximation is reasonable.</p>
+
+<p><hr></p>
+
+<h3>Answer 4</h3>
+
+<p>(a) P(X = 3) = \binom{25}{3}(0.2)³(0.8)²².</p>
+
+<p>\binom{25}{3} = (25×24×23)/(3×2×1) = 13800/6 = 2300.</p>
+
+<p>So P(X = 3) = 2300 × (0.2)³ × (0.8)²² = 2300 × 0.008 × (0.8)²².</p>
+
+<p>(b) P(X = 0) = \binom{25}{0}(0.2)⁰(0.8)²⁵ = 1 × 1 × (0.8)²⁵.</p>
+
+<p>Since (0.8)²⁵ ≈ 0.00378, this matches the calculator value. It is small but not zero — it is possible (though unlikely) to get zero successes in 25 trials even with p = 0.2.</p>
+
+<p>(c) X counts successes in 25 trials. The minimum possible number of successes is 0 (if all trials fail) and the maximum is 25 (if all succeed). There is no way to have more than 25 successes or fewer than 0, so P(X &gt; 25) = 0 and P(X &lt; 0) = 0.</p>
+
+<p>This tells you that the binomial distribution only assigns positive probability to the integers 0, 1, 2, …, n. Anything outside this range is impossible.</p>
+
+<p><hr></p>
+
+<h3>Answer 5</h3>
+
+<p>(a) X ~ B(10, 0.8). The 10 patients are independent trials, each with p = 0.8 chance of responding. [1 mark]</p>
+
+<p>(b) P(X = 8) = \binom{10}{8}(0.8)⁸(0.2)².</p>
+
+<p>\binom{10}{8} = \binom{10}{2} = 45.</p>
+
+<p>(0.8)⁸ ≈ 0.1678. (0.2)² = 0.04.</p>
+
+<p>P(X = 8) ≈ 45 × 0.1678 × 0.04 ≈ 0.3020. [2 marks]</p>
+
+<p>(c) P(X ≥ 9) = P(X = 9) + P(X = 10).</p>
+
+<p>P(X = 9) = \binom{10}{9}(0.8)⁹(0.2)¹ = 10 × (0.8)⁹ × 0.2.</p>
+
+<p>(0.8)⁹ ≈ 0.1342. So P(X = 9) ≈ 10 × 0.1342 × 0.2 ≈ 0.2684.</p>
+
+<p>P(X = 10) = (0.8)¹⁰ ≈ 0.1074.</p>
+
+<p>P(X ≥ 9) ≈ 0.2684 + 0.1074 = 0.3758. [3 marks]</p>
+
+<p>(d) P(X = 10) = (0.8)¹⁰ ≈ 0.1074, or about 10.7%.</p>
+
+<p>This is not very likely — only about a 1 in 9 chance. Even though the drug is quite effective (80%), getting all 10 patients to respond is unlikely because each patient has a 20% chance of not responding. The probability (0.8)¹⁰ is like getting 10 independent successes in a row, each with probability 0.8. [2 marks]</p>
+
+
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+</body>
+</html>

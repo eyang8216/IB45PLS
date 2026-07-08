@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 28 — Matrices: Operations, Determinants, Inverses</title>
+<script>
+MathJax = {
+  tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body {
+    max-width: 800px; margin: 40px auto; font-family: 'Times New Roman', Georgia, serif;
+    font-size: 17px; line-height: 1.7; padding: 0 20px; color: #1a1a1a;
+  }
+  h1 { font-size: 22px; border-bottom: 2px solid #333; padding-bottom: 8px; margin-top: 36px; }
+  h2 { font-size: 19px; margin-top: 28px; color: #2c3e50; }
+  h3 { font-size: 17px; margin-top: 22px; color: #444; }
+  h4 { font-size: 16px; margin-top: 18px; }
+  p { margin: 0.6em 0; }
+  li { margin: 0.3em 0 0.3em 20px; }
+  hr { margin: 20px 0; border: none; border-top: 1px solid #ddd; }
+  .math-block { text-align: center; margin: 1em 0; overflow-x: auto; }
+  .table-line { font-family: 'Courier New', monospace; font-size: 15px; margin: 0.1em 0; }
+  pre { background: #f5f5f5; padding: 10px 14px; border-radius: 4px; overflow-x: auto; font-size: 14px; }
+  b { color: #222; }
+  table { border-collapse: collapse; margin: 16px 0; width: 100%; font-size: 15px; }
+  th { background: #2c3e50; color: #fff; padding: 8px 12px; text-align: center; font-weight: bold; }
+  td { border: 1px solid #ccc; padding: 8px 12px; text-align: center; }
+  tr:nth-child(even) { background: #f9f9f9; }
+  .nav { text-align: center; margin: 30px 0; font-size: 14px; }
+  .nav a { margin: 0 8px; color: #3498db; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  @media print { body { font-size: 15px; } }
+</style>
+</head>
+<body>
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+<h1>Lesson 28 — Matrices: Operations, Determinants, and Inverses</h1>
+
+<h2>What Are Matrices?</h2>
+
+<h3>The &quot;What&quot;</h3>
+
+<p>A <b>matrix</b> (plural: <b>matrices</b>) is a rectangular array of numbers arranged in rows and columns. Each number in the matrix is called an <b>entry</b> or <b>element</b>. The <b>order</b> (or <b>dimension</b>) of a matrix is described as $m \times n$, meaning $m$ rows and $n$ columns.</p>
+
+<p>For example, this is a $2 \times 3$ matrix:</p>
+
+<div class="math-block">$$A = \begin{pmatrix} a_{11} &amp; a_{12} &amp; a_{13} \\ a_{21} &amp; a_{22} &amp; a_{23} \end{pmatrix}$$</div>
+
+<p>The entry $a_{ij}$ sits in row $i$ and column $j$. The first subscript gives the row number. The second gives the column number.</p>
+
+<h3>The &quot;Why&quot;</h3>
+
+<p>Matrices are a compact way to represent and solve systems of linear equations. They are used to describe transformations (rotations, reflections, scaling) in geometry. They appear in computer graphics, economics, statistics, and quantum mechanics. Understanding matrix operations — addition, multiplication, determinants, and inverses — is essential for solving linear systems efficiently.</p>
+
+<p><hr></p>
+
+<h2>1. Matrix Addition and Subtraction</h2>
+
+<p>Two matrices can be added or subtracted only when they have exactly the same order (same number of rows and same number of columns). The operation is performed entry by entry:</p>
+
+<div class="math-block">$$\begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix} + \begin{pmatrix} e &amp; f \\ g &amp; h \end{pmatrix} = \begin{pmatrix} a+e &amp; b+f \\ c+g &amp; d+h \end{pmatrix}$$</div>
+
+<p><b>A common misconception:</b> Students sometimes try to add matrices of different sizes. This is not defined. A $2 \times 3$ matrix cannot be added to a $3 \times 2$ matrix.</p>
+
+<h3>Scalar Multiplication</h3>
+
+<p>To multiply a matrix by a scalar (a single number), multiply every entry by that scalar:</p>
+
+<div class="math-block">$$k\begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix} = \begin{pmatrix} ka &amp; kb \\ kc &amp; kd \end{pmatrix}$$</div>
+
+<p><hr></p>
+
+<h2>2. Matrix Multiplication</h2>
+
+<p>Matrix multiplication is more complex than addition. Two matrices $A$ and $B$ can be multiplied (in the order $AB$) only if the number of columns of $A$ equals the number of rows of $B$.</p>
+
+<p>If $A$ is $m \times n$ and $B$ is $n \times p$, then the product $AB$ is $m \times p$.</p>
+
+<p>The entry in row $i$ and column $j$ of the product is computed as the <b>dot product</b> of row $i$ of $A$ with column $j$ of $B$:</p>
+
+<div class="math-block">$$\boxed{c_{ij} = \sum_{k=1}^{n} a_{ik}\,b_{kj}}$$</div>
+
+<p>This means: multiply the first entry of the row by the first entry of the column, the second by the second, and so on, then add all the products.</p>
+
+<h3>Key Properties</h3>
+
+<li>- Matrix multiplication is <b>not commutative</b>: in general, $AB \neq BA$. The order matters.</li>
+<li>- Matrix multiplication <b>is associative</b>: $(AB)C = A(BC)$. You can group them either way.</li>
+<li>- Matrix multiplication <b>is distributive</b>: $A(B + C) = AB + AC$.</li>
+
+<p><hr></p>
+
+<h2>Worked Example 1: Matrix Multiplication</h2>
+
+<p><b>Problem:</b> Compute the product $AB$ where</p>
+
+<div class="math-block">$$A = \begin{pmatrix} 2 &amp; 1 &amp; 3 \\ -1 &amp; 0 &amp; 4 \end{pmatrix},\quad B = \begin{pmatrix} 1 &amp; 2 \\ 3 &amp; -1 \\ 0 &amp; 5 \end{pmatrix}$$</div>
+
+<p><b>Approach:</b> $A$ is $2 \times 3$ and $B$ is $3 \times 2$, so $AB$ will be $2 \times 2$. Compute each entry using row-from-$A$ dotted with column-from-$B$.</p>
+
+<p><b>Step 1 — Entry $(1,1)$:</b> Row 1 of $A$ = $(2, 1, 3)$, Column 1 of $B$ = $(1, 3, 0)$.</p>
+<div class="math-block">$$c_{11} = 2(1) + 1(3) + 3(0) = 2 + 3 + 0 = 5$$</div>
+
+<p><b>Step 2 — Entry $(1,2)$:</b> Row 1 of $A$ = $(2, 1, 3)$, Column 2 of $B$ = $(2, -1, 5)$.</p>
+<div class="math-block">$$c_{12} = 2(2) + 1(-1) + 3(5) = 4 - 1 + 15 = 18$$</div>
+
+<p><b>Step 3 — Entry $(2,1)$:</b> Row 2 of $A$ = $(-1, 0, 4)$, Column 1 of $B$ = $(1, 3, 0)$.</p>
+<div class="math-block">$$c_{21} = -1(1) + 0(3) + 4(0) = -1 + 0 + 0 = -1$$</div>
+
+<p><b>Step 4 — Entry $(2,2)$:</b> Row 2 of $A$ = $(-1, 0, 4)$, Column 2 of $B$ = $(2, -1, 5)$.</p>
+<div class="math-block">$$c_{22} = -1(2) + 0(-1) + 4(5) = -2 + 0 + 20 = 18$$</div>
+
+<p><b>Answer:</b></p>
+<div class="math-block">$$AB = \begin{pmatrix} 5 &amp; 18 \\ -1 &amp; 18 \end{pmatrix}$$</div>
+
+<p><hr></p>
+
+<h2>3. The Determinant</h2>
+
+<p>The <b>determinant</b> is a special scalar value associated with a square matrix. It provides critical information about the matrix: whether it is invertible, how it scales areas or volumes, and properties of the linear transformation it represents.</p>
+
+<h3>Determinant of a $2 \times 2$ Matrix</h3>
+
+<div class="math-block">$$\boxed{\det\begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix} = \begin{vmatrix} a &amp; b \\ c &amp; d \end{vmatrix} = ad - bc}$$</div>
+
+<p>The determinant is the product of the main diagonal minus the product of the off-diagonal.</p>
+
+<li>- If $\det A \neq 0$, the matrix is <b>invertible</b> (also called <b>non-singular</b>).</li>
+<li>- If $\det A = 0$, the matrix is <b>singular</b> (not invertible). Geometrically, this means the transformation collapses the plane into a line or a point.</li>
+
+<p><hr></p>
+
+<h3>Determinant of a $3 \times 3$ Matrix</h3>
+
+<p>For a $3 \times 3$ matrix $A = \begin{pmatrix} a &amp; b &amp; c \\ d &amp; e &amp; f \\ g &amp; h &amp; i \end{pmatrix}$, the determinant is computed by <b>expansion along the first row</b>:</p>
+
+<div class="math-block">$$\boxed{\det A = a\begin{vmatrix}e&amp;f\\h&amp;i\end{vmatrix} - b\begin{vmatrix}d&amp;f\\g&amp;i\end{vmatrix} + c\begin{vmatrix}d&amp;e\\g&amp;h\end{vmatrix}}$$</div>
+
+<p>Notice the alternating signs: $+$, $-$, $+$. The $2 \times 2$ determinants inside are called <b>minors</b>. Specifically:</p>
+
+<div class="math-block">$$\det A = a(ei - fh) - b(di - fg) + c(dh - eg)$$</div>
+
+<p><hr></p>
+
+<h2>Worked Example 2: $3 \times 3$ Determinant</h2>
+
+<p><b>Problem:</b> Find the determinant of $A = \begin{pmatrix} 2 &amp; 1 &amp; 3 \\ 4 &amp; -1 &amp; 0 \\ 1 &amp; 2 &amp; 5 \end{pmatrix}$.</p>
+
+<p><b>Approach:</b> Expand along the first row using the formula with alternating signs.</p>
+
+<p><b>Step 1 — Set up the expansion:</b></p>
+<div class="math-block">$$\det A = 2\begin{vmatrix}-1&amp;0\\2&amp;5\end{vmatrix} - 1\begin{vmatrix}4&amp;0\\1&amp;5\end{vmatrix} + 3\begin{vmatrix}4&amp;-1\\1&amp;2\end{vmatrix}$$</div>
+
+<p><b>Step 2 — Compute each $2 \times 2$ determinant:</b></p>
+<p>First: $(-1)(5) - (0)(2) = -5 - 0 = -5$.</p>
+<p>Second: $(4)(5) - (0)(1) = 20 - 0 = 20$.</p>
+<p>Third: $(4)(2) - (-1)(1) = 8 + 1 = 9$.</p>
+
+<p><b>Step 3 — Combine with signs:</b></p>
+<div class="math-block">$$\det A = 2(-5) - 1(20) + 3(9) = -10 - 20 + 27 = -3$$</div>
+
+<p><b>Answer:</b> $\det A = -3$.</p>
+
+<p><b>Why this makes sense:</b> The determinant is non-zero ($-3$), so the matrix is invertible.</p>
+
+<p><hr></p>
+
+<h2>4. Inverse of a $2 \times 2$ Matrix</h2>
+
+<p>The <b>inverse</b> of a square matrix $A$, written $A^{-1}$, is the matrix that satisfies $AA^{-1} = A^{-1}A = I$, where $I$ is the <b>identity matrix</b> (ones on the diagonal, zeros elsewhere).</p>
+
+<p>For a $2 \times 2$ matrix $A = \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix}$ with $\det A = ad - bc \neq 0$:</p>
+
+<div class="math-block">$$\boxed{A^{-1} = \frac{1}{\det A}\begin{pmatrix} d &amp; -b \\ -c &amp; a \end{pmatrix}}$$</div>
+
+<p>The pattern: swap $a$ and $d$, change the signs of $b$ and $c$, then divide everything by the determinant.</p>
+
+<p><hr></p>
+
+<h2>Worked Example 3: Inverse of a $2 \times 2$ Matrix</h2>
+
+<p><b>Problem:</b> Find the inverse of $A = \begin{pmatrix} 3 &amp; 2 \\ 5 &amp; 4 \end{pmatrix}$.</p>
+
+<p><b>Approach:</b> Compute the determinant. If it is non-zero, apply the formula.</p>
+
+<p><b>Step 1 — Determinant:</b></p>
+<div class="math-block">$$\det A = 3(4) - 2(5) = 12 - 10 = 2$$</div>
+
+<p><b>Step 2 — Apply the formula:</b></p>
+<div class="math-block">$$A^{-1} = \frac{1}{2}\begin{pmatrix} 4 &amp; -2 \\ -5 &amp; 3 \end{pmatrix} = \begin{pmatrix} 2 &amp; -1 \\ -2.5 &amp; 1.5 \end{pmatrix}$$</div>
+
+<p><b>Step 3 — Verify:</b></p>
+<p>$\begin{pmatrix}3&amp;2\\5&amp;4\end{pmatrix}\begin{pmatrix}2&amp;-1\\-2.5&amp;1.5\end{pmatrix} = \begin{pmatrix}6-5&amp;-3+3\\10-10&amp;-5+6\end{pmatrix} = \begin{pmatrix}1&amp;0\\0&amp;1\end{pmatrix} = I$. Confirmed.</p>
+
+<p><b>Answer:</b> $A^{-1} = \begin{pmatrix} 2 &amp; -1 \\ -2.5 &amp; 1.5 \end{pmatrix}$</p>
+
+<p><hr></p>
+
+<h2>5. Inverse of a $3 \times 3$ Matrix (Using Cofactors)</h2>
+
+<p>For a $3 \times 3$ matrix, the inverse is computed using the <b>adjugate method</b>:</p>
+
+<div class="math-block">$$A^{-1} = \frac{1}{\det A}\,(\text{adj }A)$$</div>
+
+<p>The <b>adjugate</b> (adj $A$) is the transpose of the <b>cofactor matrix</b>. Each cofactor is computed as:</p>
+
+<div class="math-block">$$C_{ij} = (-1)^{i+j} \cdot M_{ij}$$</div>
+
+<p>where $M_{ij}$ is the <b>minor</b> — the determinant of the $2 \times 2$ matrix obtained by deleting row $i$ and column $j$ from $A$. The sign $(-1)^{i+j}$ creates a checkerboard pattern: positions where $i + j$ is even get $+$, odd get $-$.</p>
+
+<p><hr></p>
+
+<h2>Worked Example 4: Inverse of a $3 \times 3$ Matrix</h2>
+
+<p><b>Problem:</b> Find the inverse of $A = \begin{pmatrix} 1 &amp; 2 &amp; 0 \\ 3 &amp; 1 &amp; 2 \\ 0 &amp; 1 &amp; 1 \end{pmatrix}$.</p>
+
+<p><b>Approach:</b> Compute $\det A$, then find all nine cofactors, form the cofactor matrix, transpose to get the adjugate, and multiply by $\frac{1}{\det A}$.</p>
+
+<p><b>Step 1 — Determinant (expand along first row):</b></p>
+<p>$\det A = 1\begin{vmatrix}1&amp;2\\1&amp;1\end{vmatrix} - 2\begin{vmatrix}3&amp;2\\0&amp;1\end{vmatrix} + 0 = 1(1-2) - 2(3-0) = -1 - 6 = -7$.</p>
+
+<p><b>Step 2 — Cofactors (using checkerboard signs):</b></p>
+
+<p>$C_{11} = +\begin{vmatrix}1&amp;2\\1&amp;1\end{vmatrix} = 1 - 2 = -1$.</p>
+
+<p>$C_{12} = -\begin{vmatrix}3&amp;2\\0&amp;1\end{vmatrix} = -(3 - 0) = -3$.</p>
+
+<p>$C_{13} = +\begin{vmatrix}3&amp;1\\0&amp;1\end{vmatrix} = 3 - 0 = 3$.</p>
+
+<p>$C_{21} = -\begin{vmatrix}2&amp;0\\1&amp;1\end{vmatrix} = -(2 - 0) = -2$.</p>
+
+<p>$C_{22} = +\begin{vmatrix}1&amp;0\\0&amp;1\end{vmatrix} = 1 - 0 = 1$.</p>
+
+<p>$C_{23} = -\begin{vmatrix}1&amp;2\\0&amp;1\end{vmatrix} = -(1 - 0) = -1$.</p>
+
+<p>$C_{31} = +\begin{vmatrix}2&amp;0\\1&amp;2\end{vmatrix} = 4 - 0 = 4$.</p>
+
+<p>$C_{32} = -\begin{vmatrix}1&amp;0\\3&amp;2\end{vmatrix} = -(2 - 0) = -2$.</p>
+
+<p>$C_{33} = +\begin{vmatrix}1&amp;2\\3&amp;1\end{vmatrix} = 1 - 6 = -5$.</p>
+
+<p>Cofactor matrix: $\begin{pmatrix}-1 &amp; -3 &amp; 3 \\ -2 &amp; 1 &amp; -1 \\ 4 &amp; -2 &amp; -5\end{pmatrix}$.</p>
+
+<p><b>Step 3 — Adjugate (transpose the cofactor matrix):</b></p>
+<p>$\text{adj }A = \begin{pmatrix}-1 &amp; -2 &amp; 4 \\ -3 &amp; 1 &amp; -2 \\ 3 &amp; -1 &amp; -5\end{pmatrix}$.</p>
+
+<p><b>Step 4 — Multiply by $\frac{1}{\det A}$:</b></p>
+<p>$A^{-1} = \frac{1}{-7}\begin{pmatrix}-1 &amp; -2 &amp; 4 \\ -3 &amp; 1 &amp; -2 \\ 3 &amp; -1 &amp; -5\end{pmatrix} = \begin{pmatrix}\frac{1}{7} &amp; \frac{2}{7} &amp; -\frac{4}{7} \\ \frac{3}{7} &amp; -\frac{1}{7} &amp; \frac{2}{7} \\ -\frac{3}{7} &amp; \frac{1}{7} &amp; \frac{5}{7}\end{pmatrix}$.</p>
+
+<p><hr></p>
+
+<h2>6. Important Properties of Determinants</h2>
+
+<li>- $\det(AB) = (\det A)(\det B)$ — the determinant of a product is the product of determinants.</li>
+<li>- $\det(A^{-1}) = \frac{1}{\det A}$ — the determinant of the inverse is the reciprocal.</li>
+<li>- $\det(A^T) = \det A$ — transposing does not change the determinant.</li>
+<li>- Swapping two rows changes the sign of the determinant.</li>
+<li>- If any row (or column) is all zeros, the determinant is zero.</li>
+<li>- If two rows (or columns) are identical, the determinant is zero.</li>
+
+<p><hr></p>
+
+<h2>Summary Table</h2>
+
+<p class="table-line">| Operation | Rule |</p>
+<p class="table-line">|<hr><hr><hr>--|<hr><hr>|</p>
+<p class="table-line">| Addition | Entry-wise (same order required) |</p>
+<p class="table-line">| Multiplication | Row $\times$ Column dot products |</p>
+<p class="table-line">| $\det(2 \times 2)$ | $ad - bc$ |</p>
+<p class="table-line">| $\det(3 \times 3)$ | Expansion by minors (first row) |</p>
+<p class="table-line">| $A^{-1}$ ($2 \times 2$) | $\frac{1}{ad-bc}\begin{pmatrix}d&amp;-b\\-c&amp;a\end{pmatrix}$ |</p>
+<p class="table-line">| $A^{-1}$ ($3 \times 3$) | $\frac{1}{\det A}(\text{adj }A)$ |</p>
+
+<p><hr></p>
+
+<h2>Practice Problems</h2>
+
+<p><b>Problem 1:</b> Let $A = \begin{pmatrix}2&amp;1&amp;3\\0&amp;-1&amp;4\end{pmatrix}$ and $B = \begin{pmatrix}1&amp;0\\-1&amp;2\\3&amp;1\end{pmatrix}$. Compute the product $AB$.</p>
+
+<p><b>Problem 2:</b> Compute the determinant of $\begin{pmatrix}5&amp;2\\3&amp;-1\end{pmatrix}$.</p>
+
+<p><b>Problem 3:</b> Compute the determinant of $\begin{pmatrix}1&amp;0&amp;2\\3&amp;1&amp;4\\2&amp;-1&amp;1\end{pmatrix}$.</p>
+
+<p><b>Problem 4:</b> Find the inverse of $A = \begin{pmatrix}4&amp;3\\2&amp;1\end{pmatrix}$.</p>
+
+<p><b>Problem 5 (IB-style):</b> Let $A = \begin{pmatrix}2&amp;1\\0&amp;3\end{pmatrix}$ and $B = \begin{pmatrix}4&amp;-1\\2&amp;5\end{pmatrix}$.</p>
+<p>(a) Compute the product $AB$. [2 marks]</p>
+<p>(b) Find $\det A$ and $\det B$. [1 mark]</p>
+<p>(c) Verify that $\det(AB) = \det A \cdot \det B$. [2 marks]</p>
+
+<p><b>Problem 6:</b> Find the inverse of $B = \begin{pmatrix}1&amp;2&amp;1\\0&amp;1&amp;2\\1&amp;0&amp;1\end{pmatrix}$ using the cofactor method. Show all steps.</p>
+
+<p><hr></p>
+
+<h2>Answers</h2>
+
+<p><b>Answer 1:</b></p>
+
+<p>$A$ is $2 \times 3$, $B$ is $3 \times 2$, so $AB$ is $2 \times 2$.</p>
+
+<p>$c_{11} = 2(1) + 1(-1) + 3(3) = 2 - 1 + 9 = 10$.</p>
+
+<p>$c_{12} = 2(0) + 1(2) + 3(1) = 0 + 2 + 3 = 5$.</p>
+
+<p>$c_{21} = 0(1) + (-1)(-1) + 4(3) = 0 + 1 + 12 = 13$.</p>
+
+<p>$c_{22} = 0(0) + (-1)(2) + 4(1) = 0 - 2 + 4 = 2$.</p>
+
+<p>$AB = \begin{pmatrix}10&amp;5\\13&amp;2\end{pmatrix}$.</p>
+
+<p><hr></p>
+
+<p><b>Answer 2:</b></p>
+
+<p>$\det = 5(-1) - 2(3) = -5 - 6 = -11$.</p>
+
+<p><hr></p>
+
+<p><b>Answer 3:</b></p>
+
+<p>Expand along the first row:</p>
+
+<p>$\det = 1\begin{vmatrix}1&amp;4\\-1&amp;1\end{vmatrix} - 0 + 2\begin{vmatrix}3&amp;1\\2&amp;-1\end{vmatrix}$.</p>
+
+<p>First minor: $1(1) - 4(-1) = 1 + 4 = 5$.</p>
+
+<p>Second minor: $3(-1) - 1(2) = -3 - 2 = -5$.</p>
+
+<p>$\det = 1(5) + 2(-5) = 5 - 10 = -5$.</p>
+
+<p><hr></p>
+
+<p><b>Answer 4:</b></p>
+
+<p>$\det A = 4(1) - 3(2) = 4 - 6 = -2$.</p>
+
+<p>$A^{-1} = \frac{1}{-2}\begin{pmatrix}1&amp;-3\\-2&amp;4\end{pmatrix} = \begin{pmatrix}-\frac{1}{2}&amp;\frac{3}{2}\\1&amp;-2\end{pmatrix}$.</p>
+
+<p><hr></p>
+
+<p><b>Answer 5:</b></p>
+
+<p><b>(a)</b> $AB = \begin{pmatrix}2(4)+1(2) &amp; 2(-1)+1(5)\\0(4)+3(2) &amp; 0(-1)+3(5)\end{pmatrix} = \begin{pmatrix}8+2 &amp; -2+5\\0+6 &amp; 0+15\end{pmatrix} = \begin{pmatrix}10&amp;3\\6&amp;15\end{pmatrix}$.</p>
+
+<p><b>(b)</b> $\det A = 2(3) - 1(0) = 6$. $\det B = 4(5) - (-1)(2) = 20 + 2 = 22$.</p>
+
+<p><b>(c)</b> $\det(AB) = 10(15) - 3(6) = 150 - 18 = 132$.</p>
+
+<p>$\det A \cdot \det B = 6 \times 22 = 132$. They match. ✓</p>
+
+<p><hr></p>
+
+<p><b>Answer 6:</b></p>
+
+<p>$\det B = 1\begin{vmatrix}1&amp;2\\0&amp;1\end{vmatrix} - 2\begin{vmatrix}0&amp;2\\1&amp;1\end{vmatrix} + 1\begin{vmatrix}0&amp;1\\1&amp;0\end{vmatrix} = 1(1) - 2(-2) + 1(-1) = 1 + 4 - 1 = 4$.</p>
+
+<p>Cofactors:</p>
+
+<p>$C_{11} = +\begin{vmatrix}1&amp;2\\0&amp;1\end{vmatrix} = 1$.</p>
+
+<p>$C_{12} = -\begin{vmatrix}0&amp;2\\1&amp;1\end{vmatrix} = -(-2) = 2$.</p>
+
+<p>$C_{13} = +\begin{vmatrix}0&amp;1\\1&amp;0\end{vmatrix} = -1$.</p>
+
+<p>$C_{21} = -\begin{vmatrix}2&amp;1\\0&amp;1\end{vmatrix} = -2$.</p>
+
+<p>$C_{22} = +\begin{vmatrix}1&amp;1\\1&amp;1\end{vmatrix} = 0$.</p>
+
+<p>$C_{23} = -\begin{vmatrix}1&amp;2\\1&amp;0\end{vmatrix} = -(-2) = 2$.</p>
+
+<p>$C_{31} = +\begin{vmatrix}2&amp;1\\1&amp;2\end{vmatrix} = 3$.</p>
+
+<p>$C_{32} = -\begin{vmatrix}1&amp;1\\0&amp;2\end{vmatrix} = -2$.</p>
+
+<p>$C_{33} = +\begin{vmatrix}1&amp;2\\0&amp;1\end{vmatrix} = 1$.</p>
+
+<p>Cofactor matrix: $\begin{pmatrix}1&amp;2&amp;-1\\-2&amp;0&amp;2\\3&amp;-2&amp;1\end{pmatrix}$.</p>
+
+<p>Adjugate (transpose): $\begin{pmatrix}1&amp;-2&amp;3\\2&amp;0&amp;-2\\-1&amp;2&amp;1\end{pmatrix}$.</p>
+
+<p>$B^{-1} = \frac{1}{4}\begin{pmatrix}1&amp;-2&amp;3\\2&amp;0&amp;-2\\-1&amp;2&amp;1\end{pmatrix} = \begin{pmatrix}\frac{1}{4}&amp;-\frac{1}{2}&amp;\frac{3}{4}\\\frac{1}{2}&amp;0&amp;-\frac{1}{2}\\-\frac{1}{4}&amp;\frac{1}{2}&amp;\frac{1}{4}\end{pmatrix}$.</p>
+
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+</body>
+</html>

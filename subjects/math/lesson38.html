@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 38 — Optimization Problems</title>
+<script>
+MathJax = {
+  tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body {
+    max-width: 800px; margin: 40px auto; font-family: 'Times New Roman', Georgia, serif;
+    font-size: 17px; line-height: 1.7; padding: 0 20px; color: #1a1a1a;
+  }
+  h1 { font-size: 22px; border-bottom: 2px solid #333; padding-bottom: 8px; margin-top: 36px; }
+  h2 { font-size: 19px; margin-top: 28px; color: #2c3e50; }
+  h3 { font-size: 17px; margin-top: 22px; color: #444; }
+  h4 { font-size: 16px; margin-top: 18px; }
+  p { margin: 0.6em 0; }
+  li { margin: 0.3em 0 0.3em 20px; }
+  hr { margin: 20px 0; border: none; border-top: 1px solid #ddd; }
+  .math-block { text-align: center; margin: 1em 0; overflow-x: auto; }
+  .table-line { font-family: 'Courier New', monospace; font-size: 15px; margin: 0.1em 0; }
+  pre { background: #f5f5f5; padding: 10px 14px; border-radius: 4px; overflow-x: auto; font-size: 14px; }
+  b { color: #222; }
+  table { border-collapse: collapse; margin: 16px 0; width: 100%; font-size: 15px; }
+  th { background: #2c3e50; color: #fff; padding: 8px 12px; text-align: center; font-weight: bold; }
+  td { border: 1px solid #ccc; padding: 8px 12px; text-align: center; }
+  tr:nth-child(even) { background: #f9f9f9; }
+  .nav { text-align: center; margin: 30px 0; font-size: 14px; }
+  .nav a { margin: 0 8px; color: #3498db; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  @media print { body { font-size: 15px; } }
+</style>
+</head>
+<body>
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+<h1>Lesson 38: Optimization Problems — Using Derivatives to Find Best Values</h1>
+
+<h2>What is Optimization?</h2>
+
+<p><b>Optimization</b> means finding the best possible value of something — the <b>maximum</b> (largest) or the <b>minimum</b> (smallest). In real life, you might want to maximize profit, minimize cost, maximize area given a fixed amount of fencing, or minimize the material needed to make a can that holds a certain volume.</p>
+
+<h2>Why Learn This?</h2>
+
+<p>Optimization problems appear frequently on the IB AAHL exam. They test whether you can take a real-world situation, turn it into a mathematical function, and then use derivatives (which you learned in earlier lessons) to find where that function reaches its highest or lowest point. The diagnostic test showed this is an area that needs more practice — so let&#x27;s build it from the ground up.</p>
+
+<h2>What is a Derivative? (Brief Reminder)</h2>
+
+<p>A <b>derivative</b> of a function f(x) tells you the slope of the function at any point x. When a function reaches a maximum or minimum, the slope is zero — the graph is flat at that moment. So to find maximum or minimum values, we find where the derivative equals zero. These points are called <b>critical points</b>.</p>
+
+<h2>The General Strategy</h2>
+
+<p>Here is a step-by-step method for every optimization problem. Keep this list handy.</p>
+
+<li><b>Draw a picture.</b> Sketch the situation and label everything you know.</li>
+<li><b>Name your variables.</b> Write down what each letter stands for (e.g., let x = width in meters).</li>
+<li><b>Write the quantity you want to optimize</b> (area, volume, cost, distance) as an expression involving your variables.</li>
+<li><b>Find a constraint</b> — a piece of information that relates your variables (e.g., total fencing = 400m, or a point lies on a circle). Use the constraint to rewrite your expression so it uses <b>only one variable</b>.</li>
+<li><b>State the domain</b> — what values can that one variable realistically take? (e.g., a length cannot be negative or exceed the total available amount.)</li>
+<li><b>Differentiate</b> the single-variable function and set the derivative equal to zero. Solve for the variable. These solutions are your critical points.</li>
+<li><b>Test each critical point</b> to decide if it gives a maximum or a minimum. You can use the second derivative: if f&#x27;&#x27;(x) &lt; 0, the point is a maximum; if f&#x27;&#x27;(x) &gt; 0, it is a minimum. You should also check the endpoints of the domain — sometimes the best value happens at an edge, not where the derivative is zero.</li>
+<li><b>Answer in context.</b> State what the dimensions are, with units. Don&#x27;t stop at &quot;x = 5&quot; — say &quot;the width is 5 meters and the height is 3 meters.&quot;</li>
+
+<p><hr></p>
+
+<h2>Worked Example 1: Rectangle in a Semicircle</h2>
+
+<p><b>Problem:</b> A rectangle is placed inside a semicircle of radius R. The base of the rectangle lies on the diameter of the semicircle, and the top two corners touch the curved edge. Find the width and height of the rectangle that give the largest possible area.</p>
+
+<p><b>Approach:</b> We will follow the 8-step strategy.</p>
+
+<p><b>Step 1 — Draw and label.</b> Picture a semicircle sitting on the x-axis, centered at the origin. The rectangle sits inside it, with its base on the x-axis. Let the rectangle extend from −w to w horizontally, so its full width is 2w. Let its height be h.</p>
+
+<p><b>Step 2 — Name variables.</b></p>
+<li>- Let w = half the width of the rectangle (so full width = 2w).</li>
+<li>- Let h = height of the rectangle.</li>
+<li>- R is the radius of the semicircle (a constant).</li>
+
+<p><b>Step 3 — Quantity to optimize.</b> We want to maximize the area A.</p>
+<p>A = (full width) × (height) = 2w × h = 2wh.</p>
+
+<p><b>Step 4 — Find and use the constraint.</b> The top-right corner of the rectangle sits at the point (w, h). This point must lie on the semicircle. The equation of a circle of radius R centered at the origin is x² + y² = R². Since the top-right corner is on this circle: w² + h² = R².</p>
+
+<p>Solve for h in terms of w:</p>
+<p>h = √(R² − w²).</p>
+
+<p>Substitute into the area:</p>
+<p>A = 2w × √(R² − w²) = 2w(R² − w²)^(1/2).</p>
+
+<p>Now area is a function of one variable: A(w) = 2w(R² − w²)^(1/2).</p>
+
+<p><b>Step 5 — Domain.</b> w is a horizontal distance from the center to the side of the rectangle. It cannot be negative or larger than R (the radius). So 0 ≤ w ≤ R.</p>
+
+<p><b>Step 6 — Differentiate and find critical points.</b> We use the product rule: if A(w) = u × v with u = 2w and v = (R² − w²)^(1/2), then A&#x27;(w) = u&#x27;v + uv&#x27;.</p>
+
+<p>u&#x27; = 2.</p>
+<p>v&#x27; = (1/2)(R² − w²)^(−1/2) × (−2w) = −w / √(R² − w²).</p>
+
+<p>So:</p>
+<p>A&#x27;(w) = 2 × √(R² − w²) + 2w × [−w / √(R² − w²)]</p>
+<p>A&#x27;(w) = 2√(R² − w²) − 2w² / √(R² − w²).</p>
+
+<p>Set A&#x27;(w) = 0:</p>
+<p>2√(R² − w²) = 2w² / √(R² − w²).</p>
+
+<p>Multiply both sides by √(R² − w²):</p>
+<p>2(R² − w²) = 2w².</p>
+<p>R² − w² = w².</p>
+<p>R² = 2w².</p>
+<p>w² = R²/2.</p>
+<p>w = R/√2. (We take the positive root since w is a distance.)</p>
+
+<p><b>Step 7 — Confirm it is a maximum.</b> We could use the second derivative, but there is a simpler check: at the endpoints w = 0 and w = R, the area is zero (if w = 0, width is 0; if w = R, height is 0). Since the area is positive at w = R/√2, and the endpoints give zero, this critical point must be the maximum.</p>
+
+<p><b>Step 8 — Answer in context.</b></p>
+<p>Half-width = R/√2, so full width = 2R/√2 = R√2.</p>
+<p>Height: h = √(R² − R²/2) = √(R²/2) = R/√2.</p>
+
+<p><b>Answer:</b> The rectangle with maximum area has width = R√2 and height = R/√2. Notice the width is exactly twice the height.</p>
+
+<p><b>Why this makes sense:</b> A very wide, flat rectangle has almost no height. A very tall, thin rectangle has almost no width. The best shape balances width and height so the rectangle stretches far into the curved part of the semicircle — and the math tells us the optimal width-to-height ratio is 2:1.</p>
+
+<p><hr></p>
+
+<h2>Worked Example 2: Fencing Against a Wall</h2>
+
+<p><b>Problem:</b> A farmer owns 400 meters of fencing. She wants to build a rectangular pen against a long, straight barn wall, so only three sides need fencing (the barn wall serves as the fourth side). What dimensions give the largest possible area for the pen?</p>
+
+<p><b>Approach:</b> Two sides perpendicular to the wall, one side parallel to it.</p>
+
+<p><b>Step 1 — Draw.</b> Picture a rectangle where one long side is the barn wall. The other three sides are made of fencing.</p>
+
+<p><b>Step 2 — Name variables.</b></p>
+<li>- Let x = length of each of the two sides perpendicular to the wall (in meters).</li>
+<li>- Let y = length of the side parallel to the wall (in meters).</li>
+
+<p><b>Step 3 — Quantity to optimize.</b> We want to maximize the area A = x × y.</p>
+
+<p><b>Step 4 — Use the constraint.</b> Total fencing used is 2x + y = 400 (the two x sides plus the one y side). Solve for y:</p>
+<p>y = 400 − 2x.</p>
+
+<p>Substitute into area:</p>
+<p>A(x) = x(400 − 2x) = 400x − 2x².</p>
+
+<p><b>Step 5 — Domain.</b> x must be at least 0 and cannot exceed 200 (because if x &gt; 200, then y = 400 − 2x would be negative, which is meaningless for a length). So 0 ≤ x ≤ 200.</p>
+
+<p><b>Step 6 — Differentiate.</b></p>
+<p>A&#x27;(x) = 400 − 4x.</p>
+
+<p>Set A&#x27;(x) = 0:</p>
+<p>400 − 4x = 0 → 4x = 400 → x = 100.</p>
+
+<p><b>Step 7 — Confirm maximum.</b> A&#x27;&#x27;(x) = −4, which is negative for all x. A negative second derivative means the function is curving downward, so x = 100 gives a maximum. Also check endpoints: if x = 0, area = 0; if x = 200, y = 0, area = 0. So x = 100 is definitely the maximum.</p>
+
+<p><b>Step 8 — Answer.</b> x = 100 m, so y = 400 − 2(100) = 200 m. Maximum area = 100 × 200 = 20,000 m².</p>
+
+<p><b>Answer:</b> The pen should be 100 m deep (perpendicular to the wall) and 200 m wide (parallel to the wall). The maximum area is 20,000 square meters.</p>
+
+<p><b>Why this makes sense:</b> If you make the pen very deep (large x), you use up fencing on the sides and have little left for the long parallel side. If you make it very wide (large y), the sides become tiny. The optimum splits the fencing so that the single parallel side gets half the total fencing (200 m) and the two perpendicular sides share the other half (100 m each).</p>
+
+<p><hr></p>
+
+<h2>Worked Example 3: Box Made by Cutting Corners</h2>
+
+<p><b>Problem:</b> You have a square sheet of cardboard measuring 12 cm by 12 cm. From each corner, you cut out a square of side length x cm. Then you fold up the four flaps to make an open-top box. What value of x gives the largest possible volume for the box?</p>
+
+<p><b>Approach:</b> After cutting out squares of side x from each corner, the base of the box becomes a square of side (12 − 2x), and the height of the box is x.</p>
+
+<p><b>Volume function:</b></p>
+<p>V(x) = (base side)² × height = (12 − 2x)² × x.</p>
+
+<p>Expand (12 − 2x)²:</p>
+<p>(12 − 2x)² = 144 − 48x + 4x².</p>
+
+<p>So:</p>
+<p>V(x) = x(144 − 48x + 4x²) = 144x − 48x² + 4x³.</p>
+
+<p><b>Domain:</b> x is the size of the cut-out square. It must be at least 0 and cannot exceed 6 (if x = 6, the entire sheet is cut away). So 0 ≤ x ≤ 6.</p>
+
+<p><b>Differentiate:</b></p>
+<p>V&#x27;(x) = 144 − 96x + 12x².</p>
+
+<p>Factor out 12:</p>
+<p>V&#x27;(x) = 12(x² − 8x + 12).</p>
+
+<p>Factor the quadratic: x² − 8x + 12 = (x − 2)(x − 6).</p>
+
+<p>So V&#x27;(x) = 12(x − 2)(x − 6).</p>
+
+<p>Set V&#x27;(x) = 0: x = 2 or x = 6.</p>
+
+<p><b>Check which is the maximum:</b></p>
+<li>- At x = 6, the volume is V(6) = 6 × (0)² = 0. This is the minimum (a flat box with no base).</li>
+<li>- At x = 2: use the second derivative.</li>
+<p>V&#x27;&#x27;(x) = −96 + 24x.</p>
+<p>V&#x27;&#x27;(2) = −96 + 48 = −48, which is negative. So x = 2 gives a maximum.</p>
+
+<p><b>Answer:</b> Cut squares of side 2 cm from each corner. The resulting box has a base of 8 cm × 8 cm and a height of 2 cm. Maximum volume = 8 × 8 × 2 = 128 cm³.</p>
+
+<p><b>Why this makes sense:</b> If you cut tiny squares (x near 0), you have a wide base but almost no height, so the volume is tiny. If you cut large squares (x near 6), you get a tall box but the base shrinks to almost nothing. The optimum balances base area against height, which happens when x = 2.</p>
+
+<p><hr></p>
+
+<h2>Worked Example 4: Cylinder Inside a Sphere</h2>
+
+<p><b>Problem:</b> Find the dimensions of the cylinder with the largest possible volume that can fit completely inside a sphere of radius R. The cylinder&#x27;s axis aligns with a diameter of the sphere.</p>
+
+<p><b>Approach:</b> Draw a cross-section through the center. You see a rectangle (the cylinder&#x27;s side view) inscribed in a circle of radius R. The rectangle has width 2r (the cylinder&#x27;s diameter) and height 2h (the cylinder&#x27;s total height).</p>
+
+<p><b>Constraint:</b> The top-right corner of the rectangle, at (r, h), must lie on the circle: r² + h² = R². Solve for r²: r² = R² − h².</p>
+
+<p><b>Volume to maximize:</b></p>
+<p>V = πr² × (total height) = π(R² − h²) × 2h = 2π(R²h − h³).</p>
+
+<p>So V(h) = 2π(R²h − h³), with domain 0 ≤ h ≤ R.</p>
+
+<p><b>Differentiate:</b></p>
+<p>V&#x27;(h) = 2π(R² − 3h²).</p>
+
+<p>Set V&#x27;(h) = 0:</p>
+<p>R² − 3h² = 0 → h² = R²/3 → h = R/√3.</p>
+
+<p><b>Check maximum:</b> V&#x27;&#x27;(h) = 2π(−6h) = −12πh, which is negative for h &gt; 0. So h = R/√3 gives a maximum.</p>
+
+<p><b>Find r:</b> r² = R² − R²/3 = 2R²/3, so r = R√(2/3).</p>
+
+<p><b>Answer:</b> The cylinder of maximum volume has radius r = R√(2/3) and height = 2h = 2R/√3.</p>
+
+<p><hr></p>
+
+<h2>Common Misconceptions</h2>
+
+<p><b>Misconception 1:</b> &quot;The derivative being zero always means I found the answer.&quot; Actually, the derivative being zero only gives you <b>critical points</b>. A critical point could be a maximum, a minimum, or neither (a point of inflection). You must always test — using the second derivative or checking endpoints.</p>
+
+<p><b>Misconception 2:</b> &quot;I only need to check where the derivative is zero.&quot; The maximum or minimum could happen at the <b>endpoint</b> of the domain, where the derivative may not be zero. Always check endpoints.</p>
+
+<p><b>Misconception 3:</b> &quot;Variables can be anything.&quot; Every variable in an optimization problem has a real-world meaning (length, area, time). This limits what values it can take. Always write down the domain.</p>
+
+<p><hr></p>
+
+<h2>Practice Problems</h2>
+
+<p><b>1.</b> Find two positive numbers whose product is 100 and whose sum is as small as possible. (Hint: let the numbers be x and 100/x. Then minimize the sum S(x) = x + 100/x.)</p>
+
+<p><b>2.</b> You need to design a rectangular box with a square base and no top. The box must have a volume of 32,000 cm³. Find the dimensions (side of square base and height) that use the smallest possible amount of material — that is, minimize the surface area. (Hint: if the square base has side x and the height is h, then volume = x²h = 32,000 and surface area = x² + 4xh.)</p>
+
+<p><b>3.</b> Find the point on the curve y = √x that is closest to the point (3, 0). (Hint: instead of minimizing distance, you can minimize the square of the distance. The distance squared from a point (x, √x) to (3, 0) is D = (x − 3)² + (√x − 0)². Work with D as your function to minimize.)</p>
+
+<p><b>4.</b> A wire 60 cm long is cut into two pieces. One piece is bent into a square, the other into an equilateral triangle. How should you cut the wire to maximize the total enclosed area? (Important: check the endpoints — the maximum might occur when all the wire goes to one shape.)</p>
+
+<p><b>5. [IB Exam Style — 7 marks]</b> A company manufactures cylindrical cans with both a top and a bottom. Each can must hold exactly 1000 cm³ of liquid.</p>
+
+<p>(a) Let the radius be r cm and the height be h cm. Write an equation relating r and h to the volume. [1 mark]</p>
+
+<p>(b) Write an expression for the total surface area S of the can (including top and bottom) in terms of r and h. [1 mark]</p>
+
+<p>(c) Use the volume constraint to express h in terms of r, and then write S as a function of r alone. [2 marks]</p>
+
+<p>(d) Find the radius that minimizes the surface area. [2 marks]</p>
+
+<p>(e) Find the ratio of height to radius (h : r) for the can with minimal surface area. [1 mark]</p>
+
+<p><hr></p>
+
+<h2>Answers</h2>
+
+<p><b>1.</b> Let the numbers be x and y, with xy = 100, so y = 100/x. Sum S(x) = x + 100/x, with domain x &gt; 0. S&#x27;(x) = 1 − 100/x². Set S&#x27;(x) = 0: 1 = 100/x² → x² = 100 → x = 10 (positive solution). Then y = 10. S&#x27;&#x27;(x) = 200/x³, and S&#x27;&#x27;(10) = 200/1000 = 0.2 &gt; 0, so it is a minimum. The two numbers are 10 and 10, and the minimum sum is 20.</p>
+
+<p><b>Why this makes sense:</b> For a fixed product, the sum is smallest when the two numbers are equal. This is a general principle: symmetry often gives the optimum.</p>
+
+<p><b>2.</b> Volume: x²h = 32,000, so h = 32,000/x². Surface area A = x² + 4xh = x² + 4x(32,000/x²) = x² + 128,000/x. Domain: x &gt; 0. A&#x27;(x) = 2x − 128,000/x². Set A&#x27;(x) = 0: 2x = 128,000/x² → 2x³ = 128,000 → x³ = 64,000 → x = ³√64,000 = 40. Then h = 32,000/1,600 = 20. A&#x27;&#x27;(40) = 2 + 256,000/64,000 = 6 &gt; 0, so minimum. Dimensions: base 40 cm × 40 cm, height 20 cm.</p>
+
+<p><b>3.</b> Let D(x) = (x − 3)² + (√x)² = (x − 3)² + x = x² − 6x + 9 + x = x² − 5x + 9. Domain: x ≥ 0. D&#x27;(x) = 2x − 5. Set D&#x27;(x) = 0: x = 2.5. D&#x27;&#x27;(x) = 2 &gt; 0, so minimum. The point is (2.5, √2.5) ≈ (2.5, 1.581).</p>
+
+<p><b>4.</b> Let x cm go to the square. The square has perimeter x, so side = x/4, area = (x/4)² = x²/16. The remaining (60 − x) cm goes to the equilateral triangle. The triangle has 3 equal sides, so each side = (60 − x)/3. The area of an equilateral triangle with side s is (√3/4)s², so triangle area = (√3/4) × ((60 − x)/3)² = (√3/4) × (60 − x)²/9 = √3(60 − x)²/36. Total area A(x) = x²/16 + √3(60 − x)²/36, domain 0 ≤ x ≤ 60. A&#x27;(x) = x/8 − √3(60 − x)/18. Set A&#x27;(x) = 0: x/8 = √3(60 − x)/18 → 18x = 8√3(60 − x) → 18x = 480√3 − 8√3·x → x(18 + 8√3) = 480√3 → x ≈ 24.3. This is a <b>minimum</b> (check A&#x27;&#x27;: positive). The endpoints: if x = 60 (all square), area = 3600/16 = 225. If x = 0 (all triangle), area = √3(3600)/36 = 100√3 ≈ 173.2. Since the critical point is a minimum, the <b>maximum</b> happens at an endpoint: x = 60. <b>Answer:</b> Use all 60 cm for the square — do not cut the wire at all. Maximum area = 225 cm².</p>
+
+<p><b>Pitfall:</b> Many students find the critical point and stop. Always check endpoints when the domain is closed. The derivative finds interior optima; the boundary might be better.</p>
+
+<p><b>5. [IB Exam Style — Answers]</b></p>
+
+<p>(a) Volume = πr²h = 1000. [1 mark]</p>
+
+<p>(b) S = 2πr² (top and bottom) + 2πrh (curved side). [1 mark]</p>
+
+<p>(c) From (a): h = 1000/(πr²). Substitute into S: S(r) = 2πr² + 2πr × (1000/(πr²)) = 2πr² + 2000/r. [2 marks]</p>
+
+<p>(d) S&#x27;(r) = 4πr − 2000/r². Set S&#x27;(r) = 0: 4πr = 2000/r² → 4πr³ = 2000 → r³ = 500/π → r = ³√(500/π). [2 marks]</p>
+
+<p>(e) Find h: h = 1000/(πr²). Ratio h/r = [1000/(πr²)] / r = 1000/(πr³). Substitute r³ = 500/π: h/r = 1000/(π × 500/π) = 1000/500 = 2. So h : r = 2 : 1. The height equals the diameter. [1 mark]</p>
+
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+</body>
+</html>

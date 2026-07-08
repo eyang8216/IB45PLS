@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 45 — Rational Functions & Asymptotes</title>
+<script>
+MathJax = {
+  tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body {
+    max-width: 800px; margin: 40px auto; font-family: 'Times New Roman', Georgia, serif;
+    font-size: 17px; line-height: 1.7; padding: 0 20px; color: #1a1a1a;
+  }
+  h1 { font-size: 22px; border-bottom: 2px solid #333; padding-bottom: 8px; margin-top: 36px; }
+  h2 { font-size: 19px; margin-top: 28px; color: #2c3e50; }
+  h3 { font-size: 17px; margin-top: 22px; color: #444; }
+  h4 { font-size: 16px; margin-top: 18px; }
+  p { margin: 0.6em 0; }
+  li { margin: 0.3em 0 0.3em 20px; }
+  hr { margin: 20px 0; border: none; border-top: 1px solid #ddd; }
+  .math-block { text-align: center; margin: 1em 0; overflow-x: auto; }
+  .table-line { font-family: 'Courier New', monospace; font-size: 15px; margin: 0.1em 0; }
+  pre { background: #f5f5f5; padding: 10px 14px; border-radius: 4px; overflow-x: auto; font-size: 14px; }
+  b { color: #222; }
+  table { border-collapse: collapse; margin: 16px 0; width: 100%; font-size: 15px; }
+  th { background: #2c3e50; color: #fff; padding: 8px 12px; text-align: center; font-weight: bold; }
+  td { border: 1px solid #ccc; padding: 8px 12px; text-align: center; }
+  tr:nth-child(even) { background: #f9f9f9; }
+  .nav { text-align: center; margin: 30px 0; font-size: 14px; }
+  .nav a { margin: 0 8px; color: #3498db; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  @media print { body { font-size: 15px; } }
+</style>
+</head>
+<body>
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+<h1>Lesson 45: Rational Functions and Asymptotes</h1>
+
+<h2>What You Will Learn and Why It Matters</h2>
+
+<p>A <b>rational function</b> is a fraction where both the numerator and the denominator are polynomials. You have already worked with simple rational functions like $f(x) = \frac{1}{x}$. In this lesson, you will learn how to analyze more complicated rational functions by finding vertical asymptotes, horizontal asymptotes, oblique (slant) asymptotes, and intercepts. Rational functions appear in many areas of applied mathematics: they model rates, concentrations, and inverse relationships. In IB AAHL, you need to sketch rational functions, solve rational inequalities, and later, integrate them using partial fractions. Mastering the analysis of asymptotes now will make those topics much easier.</p>
+
+<p><hr></p>
+
+<h2>1. What Is a Rational Function?</h2>
+
+<p>A rational function has the form</p>
+
+<div class="math-block">$$f(x) = \frac{P(x)}{Q(x)}$$</div>
+
+<p>where $P(x)$ and $Q(x)$ are polynomials. The <b>domain</b> of a rational function excludes every value of $x$ that makes $Q(x) = 0$, because division by zero is undefined.</p>
+
+<p><hr></p>
+
+<h2>2. Vertical Asymptotes</h2>
+
+<p>A <b>vertical asymptote</b> is a vertical line $x = a$ that the graph approaches but never touches. As $x$ gets closer and closer to $a$, the value of $f(x)$ grows without bound (either toward $+\infty$ or $-\infty$).</p>
+
+<p>Vertical asymptotes occur where $Q(x) = 0$ AND the factor does not cancel with a matching factor in the numerator. If a factor does cancel, the graph has a <b>hole</b> (a removable discontinuity) instead of a vertical asymptote.</p>
+
+<h3>Worked Example 1</h3>
+
+<p><b>Problem:</b> Find any vertical asymptotes of $f(x) = \dfrac{x + 1}{x - 2}$.</p>
+
+<p><b>Approach:</b> Set the denominator equal to zero and check whether the numerator is also zero at that value.</p>
+
+<p><b>Step-by-step working:</b></p>
+<li>The denominator is $x - 2$. Set $x - 2 = 0$, giving $x = 2$.</li>
+<li>Check the numerator at $x = 2$: $2 + 1 = 3$, which is not zero.</li>
+<li>Since the denominator is zero but the numerator is not, there is a vertical asymptote at $x = 2$.</li>
+
+<p><b>Why this makes sense:</b> As $x$ approaches $2$, the denominator becomes very small while the numerator stays near $3$. A small denominator makes a fraction large in magnitude. From the right ($x &gt; 2$), the denominator is positive, so the fraction goes to $+\infty$. From the left ($x &lt; 2$), the denominator is negative, so the fraction goes to $-\infty$.</p>
+
+<p><hr></p>
+
+<h3>Worked Example 2: Recognising a Hole</h3>
+
+<p><b>Problem:</b> Analyze $f(x) = \dfrac{x^2 - 1}{x - 1}$ for vertical asymptotes and holes.</p>
+
+<p><b>Approach:</b> Factor the numerator and look for cancellation with the denominator.</p>
+
+<p><b>Step-by-step working:</b></p>
+<li>Factor the numerator: $x^2 - 1 = (x - 1)(x + 1)$.</li>
+<li>The function becomes $f(x) = \dfrac{(x - 1)(x + 1)}{x - 1}$.</li>
+<li>The factor $(x - 1)$ cancels, leaving $f(x) = x + 1$, but only for $x \neq 1$.</li>
+<li>There is no vertical asymptote. Instead, there is a <b>hole</b> at $x = 1$. The hole&#x27;s $y$-coordinate is found by plugging $x = 1$ into the simplified form: $y = 1 + 1 = 2$. The point $(1, 2)$ is missing from the graph.</li>
+
+<p><b>Common misconception:</b> Many students cancel the factor and then forget that the original function is still undefined at the cancelled value. The hole must be noted.</p>
+
+<p><hr></p>
+
+<h2>3. Horizontal Asymptotes</h2>
+
+<p>A <b>horizontal asymptote</b> is a horizontal line $y = L$ that the graph approaches as $x$ becomes very large (positive or negative). It describes the <b>end behavior</b> of the function.</p>
+
+<p>To find the horizontal asymptote, compare the degree of the numerator $n$ with the degree of the denominator $m$:</p>
+
+<li>- <b>If $n &lt; m$:</b> The horizontal asymptote is $y = 0$. The denominator grows faster, pulling the fraction toward zero.</li>
+<li>- <b>If $n = m$:</b> The horizontal asymptote is $y = \dfrac{\text{leading coefficient of } P}{\text{leading coefficient of } Q}$.</li>
+<li>- <b>If $n &gt; m$:</b> There is <b>no horizontal asymptote</b>. The function grows without bound. (It may instead have an oblique asymptote, discussed in the next section.)</li>
+
+<h3>Worked Example 3</h3>
+
+<p><b>Problem:</b> Find the horizontal asymptote of $f(x) = \dfrac{2x^2 + 1}{x^2 - 3}$.</p>
+
+<p><b>Approach:</b> Compare the degrees. Here $n = 2$ and $m = 2$, so they are equal. Divide the leading coefficients.</p>
+
+<p><b>Step-by-step working:</b></p>
+<li>The leading term of the numerator is $2x^2$. The leading term of the denominator is $x^2$.</li>
+<li>As $x$ becomes very large, the $+1$ and $-3$ become negligible compared to the $x^2$ terms.</li>
+<li>The function behaves like $\frac{2x^2}{x^2} = 2$.</li>
+
+<p>The horizontal asymptote is $y = 2$.</p>
+
+<p><b>Why this makes sense:</b> For $x = 1000$, the numerator is approximately $2\,000\,001$ and the denominator is approximately $999\,997$. Their ratio is about $2.000004$, very close to $2$.</p>
+
+<p><hr></p>
+
+<h3>Worked Example 4</h3>
+
+<p><b>Problem:</b> Find the horizontal asymptote of $f(x) = \dfrac{3x}{x^2 + 1}$.</p>
+
+<p><b>Approach:</b> Here $n = 1$ and $m = 2$. Since $n &lt; m$, the horizontal asymptote is $y = 0$.</p>
+
+<p><b>Why this makes sense:</b> The denominator grows quadratically ($x^2$) while the numerator grows only linearly ($x$). The denominator dominates, driving the fraction to zero as $x$ becomes very large.</p>
+
+<p><hr></p>
+
+<h2>4. Oblique (Slant) Asymptotes</h2>
+
+<p>When the degree of the numerator is exactly one more than the degree of the denominator ($n = m + 1$), the function does not have a horizontal asymptote. Instead, it has an <b>oblique asymptote</b> — a slanted line that the graph approaches as $x \to \pm\infty$.</p>
+
+<p>To find the oblique asymptote, perform polynomial long division. The quotient (ignoring the remainder) is the equation of the oblique asymptote. As $x$ becomes very large, the remainder term approaches zero.</p>
+
+<h3>Worked Example 5</h3>
+
+<p><b>Problem:</b> Find the oblique asymptote of $f(x) = \dfrac{x^2 + 2x}{x - 1}$.</p>
+
+<p><b>Approach:</b> Divide $x^2 + 2x$ by $x - 1$ using polynomial long division.</p>
+
+<p><b>Step-by-step working:</b></p>
+<li>Divide $x^2$ by $x$ to get $x$. Multiply $(x - 1)$ by $x$ to get $x^2 - x$. Subtract from $x^2 + 2x$: $(x^2 + 2x) - (x^2 - x) = 3x$.</li>
+<li>Divide $3x$ by $x$ to get $3$. Multiply $(x - 1)$ by $3$ to get $3x - 3$. Subtract: $3x - (3x - 3) = 3$.</li>
+<li>So $f(x) = x + 3 + \dfrac{3}{x - 1}$.</li>
+<li>As $x \to \pm\infty$, the fraction $\dfrac{3}{x - 1}$ approaches $0$.</li>
+
+<p>The oblique asymptote is the line $y = x + 3$.</p>
+
+<p><b>Why this makes sense:</b> For very large $x$, the $+3$ remainder term becomes negligible, and the graph closely follows the line $y = x + 3$.</p>
+
+<p><hr></p>
+
+<h2>5. Full Analysis of a Rational Function</h2>
+
+<p>To fully analyze a rational function and sketch its graph, work through these steps in order:</p>
+
+<li><b>Factor</b> the numerator and denominator completely.</li>
+<li><b>Domain:</b> exclude values that make the denominator zero.</li>
+<li><b>Vertical asymptotes:</b> from uncancelled denominator factors.</li>
+<li><b>Holes:</b> from cancelled factors. Find the $y$-coordinate using the simplified form.</li>
+<li><b>Horizontal or oblique asymptote:</b> compare degrees.</li>
+<li><b>$x$-intercepts:</b> set the numerator equal to zero (after factoring).</li>
+<li><b>$y$-intercept:</b> evaluate $f(0)$, if $0$ is in the domain.</li>
+<li><b>Sign analysis:</b> test intervals between critical points to determine where the graph is positive or negative.</li>
+
+<h3>Worked Example 6</h3>
+
+<p><b>Problem:</b> Analyze the rational function $f(x) = \dfrac{x^2 - 4}{x^2 - 1}$.</p>
+
+<p><b>Approach:</b> Follow the eight steps above.</p>
+
+<p><b>Step-by-step working:</b></p>
+
+<li><b>Factor:</b> $f(x) = \dfrac{(x - 2)(x + 2)}{(x - 1)(x + 1)}$.</li>
+
+<li><b>Domain:</b> The denominator is zero when $x = 1$ or $x = -1$. The domain is $\mathbb{R} \setminus \{-1, 1\}$.</li>
+
+<li><b>Vertical asymptotes:</b> Neither factor cancels with the numerator, so there are vertical asymptotes at $x = 1$ and $x = -1$.</li>
+
+<li><b>Holes:</b> None.</li>
+
+<li><b>Horizontal asymptote:</b> The degrees are $n = 2$ and $m = 2$, which are equal. The leading coefficients are $1$ and $1$, so the horizontal asymptote is $y = 1$.</li>
+
+<li><b>$x$-intercepts:</b> Set the numerator $(x - 2)(x + 2) = 0$, giving $x = 2$ and $x = -2$.</li>
+
+<li><b>$y$-intercept:</b> $f(0) = \dfrac{0 - 4}{0 - 1} = \dfrac{-4}{-1} = 4$.</li>
+
+<li><b>Sign analysis:</b> The critical points are $-2$, $-1$, $1$, and $2$. Test each interval by picking a sample $x$ value.</li>
+
+<li>- $x &lt; -2$ (e.g., $x = -3$): numerator $(-)(-) = (+)$, denominator $(-)(-) = (+)$, so $f(x) &gt; 0$.</li>
+<li>- $-2 &lt; x &lt; -1$ (e.g., $x = -1.5$): numerator $(+)(-) = (-)$, denominator $(-)(-) = (+)$, so $f(x) &lt; 0$.</li>
+<li>- $-1 &lt; x &lt; 1$ (e.g., $x = 0$): numerator $(+)(-) = (-)$, denominator $(-)(+) = (-)$, so $f(x) &gt; 0$. (We already computed $f(0) = 4$.)</li>
+<li>- $1 &lt; x &lt; 2$ (e.g., $x = 1.5$): numerator $(+)(-) = (-)$, denominator $(+)(+) = (+)$, so $f(x) &lt; 0$.</li>
+<li>- $x &gt; 2$ (e.g., $x = 3$): numerator $(+)(+) = (+)$, denominator $(+)(+) = (+)$, so $f(x) &gt; 0$.</li>
+
+<p>The graph approaches $y = 1$ as $x \to \pm\infty$, shoots toward $\pm\infty$ near the vertical asymptotes, crosses the $x$-axis at $\pm 2$, and passes through the $y$-axis at $4$.</p>
+
+<p><hr></p>
+
+<h2>6. Rational Inequalities</h2>
+
+<p>To solve an inequality involving a rational function, find the critical points (where the numerator is zero or the denominator is zero). These points divide the number line into intervals. Test a sample point from each interval to determine the sign of the function on that interval.</p>
+
+<h3>Worked Example 7</h3>
+
+<p><b>Problem:</b> Solve the inequality $\dfrac{x + 2}{x - 3} &gt; 0$.</p>
+
+<p><b>Approach:</b> Find critical points, mark them on a number line, and test each interval.</p>
+
+<p><b>Step-by-step working:</b></p>
+<li>Numerator zero: $x + 2 = 0$, giving $x = -2$.</li>
+<li>Denominator zero: $x - 3 = 0$, giving $x = 3$.</li>
+<li>These points divide the real line into three intervals: $x &lt; -2$, $-2 &lt; x &lt; 3$, and $x &gt; 3$.</li>
+<li>Test $x = -3$ (first interval): $\frac{-3 + 2}{-3 - 3} = \frac{-1}{-6} = \frac{1}{6} &gt; 0$. The interval $x &lt; -2$ is part of the solution.</li>
+<li>Test $x = 0$ (second interval): $\frac{0 + 2}{0 - 3} = \frac{2}{-3} = -\frac{2}{3} &lt; 0$. The interval $-2 &lt; x &lt; 3$ is NOT part of the solution.</li>
+<li>Test $x = 4$ (third interval): $\frac{4 + 2}{4 - 3} = \frac{6}{1} = 6 &gt; 0$. The interval $x &gt; 3$ is part of the solution.</li>
+
+<p>The solution is $x &lt; -2$ or $x &gt; 3$. In interval notation: $(-\infty, -2) \cup (3, \infty)$.</p>
+
+<p><b>Common misconception:</b> Many students try to multiply both sides by $(x - 3)$, but this is dangerous because $(x - 3)$ could be negative, which would flip the inequality sign. The sign-table method avoids this problem entirely.</p>
+
+<p><hr></p>
+
+<h2>Practice Problems</h2>
+
+<p><b>1.</b> Find all asymptotes (vertical, horizontal, and oblique if any) of the function $f(x) = \dfrac{2x + 1}{x - 3}$.</p>
+
+<p><b>2.</b> For the function $f(x) = \dfrac{x}{x^2 - 4}$, state the domain, find all vertical asymptotes, and find the horizontal asymptote.</p>
+
+<p><b>3.</b> Find the oblique asymptote of $f(x) = \dfrac{2x^2 + x + 1}{x}$.</p>
+
+<p><b>4.</b> Solve the inequality $\dfrac{x - 1}{x + 2} \leq 0$.</p>
+
+<p><b>5.</b> (IB Exam Style) Consider the function $f(x) = \dfrac{x^2 - 1}{x^2 - 4}$.</p>
+
+<p>(a) Factor the numerator and denominator fully. [1 mark]</p>
+
+<p>(b) State the domain of $f$. [1 mark]</p>
+
+<p>(c) Write the equations of all vertical and horizontal asymptotes. [2 marks]</p>
+
+<p>(d) Find the coordinates of the $x$-intercepts and the $y$-intercept. [2 marks]</p>
+
+<p><hr></p>
+
+<h2>Answers</h2>
+
+<p><b>1.</b> The denominator $x - 3$ equals zero at $x = 3$, and the numerator $2(3) + 1 = 7 \neq 0$, so there is a vertical asymptote at $x = 3$. The degrees of numerator and denominator are both $1$, so the horizontal asymptote is $y = \frac{2}{1} = 2$. No oblique asymptote. A common mistake is to think the horizontal asymptote is $y = \frac{1}{-3}$, confusing coefficients with constants.</p>
+
+<p><b>2.</b> The denominator is $x^2 - 4 = (x - 2)(x + 2)$. The domain is all real numbers except $x = 2$ and $x = -2$. At both $x = 2$ and $x = -2$, the numerator is not zero (it is $2$ and $-2$ respectively), so there are vertical asymptotes at $x = 2$ and $x = -2$. The degree of the numerator ($1$) is less than the degree of the denominator ($2$), so the horizontal asymptote is $y = 0$. As $x$ grows without bound, the $x^2$ in the denominator dominates, pulling the fraction toward zero.</p>
+
+<p><b>3.</b> Divide: $\dfrac{2x^2 + x + 1}{x} = 2x + 1 + \dfrac{1}{x}$. As $x \to \pm\infty$, the term $\frac{1}{x}$ approaches $0$. The oblique asymptote is $y = 2x + 1$. This is a slanted line with slope $2$ and $y$-intercept $1$. Near $x = 0$, the function has a vertical asymptote because of the $\frac{1}{x}$ remainder term.</p>
+
+<p><b>4.</b> Critical points: numerator zero at $x = 1$, denominator zero at $x = -2$. Test intervals. For $x &lt; -2$ (e.g., $x = -3$): $\frac{-4}{-1} = 4 &gt; 0$, not part of solution. For $-2 &lt; x &lt; 1$ (e.g., $x = 0$): $\frac{-1}{2} = -\frac{1}{2} &lt; 0$, part of solution. For $x &gt; 1$ (e.g., $x = 2$): $\frac{1}{4} &gt; 0$, not part of solution. At $x = 1$, the expression equals $0$, which satisfies $\leq 0$. At $x = -2$, the expression is undefined. The solution is $-2 &lt; x \leq 1$. In interval notation: $(-2, 1]$.</p>
+
+<p><b>5.</b> (a) $f(x) = \dfrac{(x - 1)(x + 1)}{(x - 2)(x + 2)}$. [1 mark]</p>
+
+<p>(b) The denominator is zero when $x = 2$ or $x = -2$. The domain is $\mathbb{R} \setminus \{-2, 2\}$. [1 mark]</p>
+
+<p>(c) The vertical asymptotes are $x = 2$ and $x = -2$ (no factors cancel). The degrees are both $2$, and the leading coefficients are both $1$, so the horizontal asymptote is $y = 1$. [2 marks]</p>
+
+<p>(d) The $x$-intercepts occur when the numerator is zero: $(x - 1)(x + 1) = 0$, giving $x = 1$ and $x = -1$. The coordinates are $(1, 0)$ and $(-1, 0)$. The $y$-intercept is $f(0) = \dfrac{0 - 1}{0 - 4} = \dfrac{-1}{-4} = \dfrac{1}{4}$, so the point is $\left(0, \frac{1}{4}\right)$. [2 marks]</p>
+
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+</body>
+</html>

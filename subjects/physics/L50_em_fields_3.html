@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 50: Lesson 50: Electric & Magnetic Fields III — Magnetic Fields & Forces — IB Physics HL</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']]
+  },
+  options: {
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap');
+  
+  :root {
+    --bg: #fdfcf9;
+    --text: #1a1a1a;
+    --accent: #2c5f2d;
+    --border: #d0cec7;
+    --code-bg: #f4f3ef;
+    --callout-bg: #f0f7f0;
+    --callout-border: #2c5f2d;
+    --warning-bg: #fff8e6;
+    --warning-border: #c4941a;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  body {
+    font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid var(--accent);
+    color: var(--accent);
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 2.5rem 0 0.75rem;
+    color: #1a1a1a;
+  }
+  
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.5rem;
+  }
+  
+  p { margin: 0 0 1rem; }
+  
+  ul, ol { margin: 0 0 1rem 1.5rem; }
+  li { margin-bottom: 0.35rem; }
+  
+  code {
+    background: var(--code-bg);
+    padding: 0.15em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+    font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+  }
+  
+  pre {
+    background: var(--code-bg);
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 0 0 1rem;
+    font-size: 0.85em;
+    line-height: 1.5;
+  }
+  
+  pre code {
+    background: none;
+    padding: 0;
+    font-size: inherit;
+  }
+  
+  blockquote {
+    border-left: 4px solid var(--callout-border);
+    background: var(--callout-bg);
+    margin: 0 0 1rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+  }
+  
+  blockquote.warning {
+    border-left-color: var(--warning-border);
+    background: var(--warning-bg);
+  }
+  
+  strong { font-weight: 700; }
+  
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.5rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  
+  .nav a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+  
+  .nav a:hover { background: var(--callout-bg); }
+  
+  .worked-example, .answer {
+    background: var(--code-bg);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin: 0.75rem 0 1.25rem;
+  }
+  
+  .worked-example strong:first-child, .answer strong:first-child {
+    color: var(--accent);
+  }
+  
+  @media print {
+    body { font-size: 12pt; max-width: 100%; padding: 0; }
+    .nav { display: none; }
+    h1 { font-size: 18pt; }
+    h2 { font-size: 14pt; }
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 0 1rem;
+  }
+  
+  th, td {
+    border: 1px solid var(--border);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  
+  th {
+    background: var(--code-bg);
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L49_em_fields_2.html">← Lesson 49</a>
+  <a href="L51_em_fields_4.html">Lesson 51 →</a>
+</nav>
+
+<h1>Lesson 50: Electric & Magnetic Fields III — Magnetic Fields & Forces</h1>
+
+<h2>What You'll Learn</h2>
+<ul>
+<li>Magnetic field patterns (bar magnet, straight wire, solenoid)</li>
+<li>Magnetic force on a moving charge: F = qvB sin θ</li>
+<li>Magnetic force on a current-carrying wire: F = BIL sin θ</li>
+<li>Fleming's Left-Hand Rule for direction</li>
+<li>Definition of the tesla</li>
+</ul>
+
+<hr>
+
+<h2>1. Magnetic Fields — Sources and Patterns</h2>
+
+<h3>What Creates a Magnetic Field?</h3>
+
+<ul>
+<li><strong>Permanent magnets</strong> (aligned electron spins in iron, nickel, cobalt)</li>
+<li><strong>Moving charges</strong> (electric currents)</li>
+<li><strong>Changing electric fields</strong> (beyond IB scope)</li>
+</ul>
+
+<h3>Magnetic Field Lines</h3>
+
+<table>
+<tr>
+<th>Rule</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>Direction</td>
+<td>North → South (outside the magnet)</td>
+</tr>
+<tr>
+<td>Closed loops</td>
+<td>Field lines form complete loops</td>
+</tr>
+<tr>
+<td>Density</td>
+<td>More lines = stronger field</td>
+</tr>
+<tr>
+<td>Never cross</td>
+<td>Field is single-valued</td>
+</tr>
+</table>
+
+<h3>Key Magnetic Field Patterns</h3>
+
+<p><strong>Bar Magnet:</strong></p>
+<pre><code>
+    → → → → → → → →
+  N ●—————→——————→● S
+    → → → → → → → →
+</code></pre>
+<p>Lines emerge from N, curve around, enter at S.</p>
+
+<p><strong>Straight Current-Carrying Wire:</strong></p>
+<p>Concentric circles around the wire. Right-Hand Grip Rule: thumb points in current direction, fingers curl in B-field direction.</p>
+
+<pre><code>
+Current ↑     B-field (from above):
+   │          ↺ ↺ ↺
+   │          →·←
+   │          ↻ ↻ ↻
+</code></pre>
+
+<p><strong>Solenoid (Coil):</strong></p>
+<p>Inside: uniform field parallel to axis (like a bar magnet).</p>
+<p>Right-Hand Grip Rule: fingers curl in current direction, thumb points to N pole.</p>
+
+<pre><code>
+   ═══════════════
+   → → → → → → → →     Inside: uniform B
+   ═══════════════
+   S              N
+</code></pre>
+
+<hr>
+
+<h2>2. Magnetic Force on a Moving Charge</h2>
+
+<h3>The Lorentz Force</h3>
+
+<p>A charge q moving with velocity v in a magnetic field B experiences a force:</p>
+
+<p>$$F = qvB\sin\theta$$</p>
+
+<p>where:</p>
+<ul>
+<li><strong>F</strong> = magnetic force (N)</li>
+<li><strong>q</strong> = charge (C) — sign matters!</li>
+<li><strong>v</strong> = speed (m/s)</li>
+<li><strong>B</strong> = magnetic field strength (T, tesla)</li>
+<li><strong>θ</strong> = angle between v and B</li>
+</ul>
+
+<h3>Important Properties</h3>
+
+<table>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>Direction</td>
+<td><strong>Perpendicular</strong> to BOTH v and B</td>
+</tr>
+<tr>
+<td>Work</td>
+<td>Magnetic force does <strong>NO WORK</strong> (F ⊥ v always)</td>
+</tr>
+<tr>
+<td>Speed</td>
+<td>Magnetic force changes direction, NEVER speed</td>
+</tr>
+<tr>
+<td>θ = 0° or 180°</td>
+<td>No force if moving parallel to field</td>
+</tr>
+<tr>
+<td>θ = 90°</td>
+<td>Maximum force F = qvB</td>
+</tr>
+</table>
+
+<h3>Fleming's Left-Hand Rule</h3>
+
+<pre><code>
+     F (Force)
+     ↑
+     |
+  B ←—·—→ I (Current / v for + charge)
+     |
+</code></pre>
+
+<ul>
+<li><strong>ThuMb</strong> = Motion/Force (F)</li>
+<li><strong>First finger</strong> = Field (B, N→S)</li>
+<li><strong>SeCond finger</strong> = Current (I, or v for positive charge)</li>
+</ul>
+
+<p>For negative charges, reverse the current/velocity direction!</p>
+
+<hr>
+
+<h2>3. Magnetic Force on a Current-Carrying Wire</h2>
+
+<p>A current I in a wire of length L in a magnetic field B:</p>
+
+<p>$$F = BIL\sin\theta$$</p>
+
+<p>where:</p>
+<ul>
+<li><strong>F</strong> = force on wire (N)</li>
+<li><strong>I</strong> = current (A)</li>
+<li><strong>L</strong> = length of wire in the field (m)</li>
+<li><strong>θ</strong> = angle between wire (current direction) and B-field</li>
+</ul>
+
+<h3>Derivation</h3>
+
+<p>In time t, charge q = It passes through the wire. The force on this charge:</p>
+<p>F = qvB sin θ = (It)(L/t)(B sin θ) = BIL sin θ</p>
+
+<p><em>(since v = L/t for charge moving through wire length L)</em></p>
+
+<h3>Direction</h3>
+
+<p>Same Fleming's Left-Hand Rule: middle finger points in <strong>conventional current</strong> direction (+ to −).</p>
+
+<hr>
+
+<h2>4. Definition of the Tesla</h2>
+
+<p>The tesla (T) is defined from F = BIL:</p>
+
+<p>$$1 \text{ T} = 1 \frac{\text{N}}{\text{A} \cdot \text{m}}$$</p>
+
+<p>A magnetic field of 1 tesla exerts a force of 1 newton on a 1-metre wire carrying 1 ampere perpendicular to the field.</p>
+
+<h3>Typical B-Field Values</h3>
+
+<table>
+<tr>
+<th>Source</th>
+<th>B-field</th>
+</tr>
+<tr>
+<td>Earth's magnetic field</td>
+<td>~5 × 10⁻⁵ T</td>
+</tr>
+<tr>
+<td>Refrigerator magnet</td>
+<td>~0.01 T</td>
+</tr>
+<tr>
+<td>MRI machine</td>
+<td>1.5 − 3 T</td>
+</tr>
+<tr>
+<td>Strongest lab magnets</td>
+<td>~45 T</td>
+</tr>
+<tr>
+<td>Neutron star surface</td>
+<td>~10⁸ T</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>5. Right-Hand Slap Rule (Alternative to Fleming's)</h2>
+
+<p>An alternative to Fleming's Left-Hand Rule:</p>
+
+<ul>
+<li><strong>Fingers</strong> point in B-field direction (N→S)</li>
+<li><strong>Thumb</strong> points in current direction (or v for + charge)</li>
+<li><strong>Palm faces</strong> direction of force ("slap")</li>
+</ul>
+
+<p>Good for checking: if you "slap" the wire, the force pushes in the direction of your palm.</p>
+
+<hr>
+
+<h2>Worked Examples</h2>
+
+<h3>Worked Example 50.1 — Force on an Electron in a B-Field</h3>
+
+<p><strong>Problem:</strong> An electron moves at 5.0 × 10⁶ m/s perpendicular to a magnetic field of 0.20 T. Find:</p>
+<p>(a) the magnitude of the magnetic force</p>
+<p>(b) the acceleration of the electron</p>
+<p>(e = 1.60 × 10⁻¹⁹ C, mₑ = 9.11 × 10⁻³¹ kg)</p>
+
+<p><strong>Solution:</strong></p>
+
+<p><strong>(a)</strong></p>
+<p>$$F = qvB\sin\theta = 1.60 \times 10^{-19} \times 5.0 \times 10^6 \times 0.20 \times \sin 90°$$</p>
+<p>$$F = 1.60 \times 10^{-19} \times 5.0 \times 10^6 \times 0.20 = \mathbf{1.60 \times 10^{-13} \text{ N}}$$</p>
+
+<p><strong>(b)</strong></p>
+<p>$$a = \frac{F}{m} = \frac{1.60 \times 10^{-13}}{9.11 \times 10^{-31}} = \mathbf{1.76 \times 10^{17} \text{ m/s}^2}$$</p>
+
+<p>Direction: perpendicular to both v and B (use Fleming's Left-Hand Rule, reversing for negative charge).</p>
+
+<hr>
+
+<h3>Worked Example 50.2 — Force on a Current-Carrying Wire</h3>
+
+<p><strong>Problem:</strong> A straight wire of length 0.50 m carries a current of 3.0 A and is placed in a uniform magnetic field of 0.40 T. The wire makes an angle of 30° with the field. Find the force on the wire.</p>
+
+<p><strong>Solution:</strong></p>
+
+<p>$$F = BIL\sin\theta = 0.40 \times 3.0 \times 0.50 \times \sin 30°$$</p>
+<p>$$F = 0.40 \times 3.0 \times 0.50 \times 0.50 = \mathbf{0.30 \text{ N}}$$</p>
+
+<hr>
+
+<h3>Worked Example 50.3 — Direction Practice</h3>
+
+<p><strong>Problem:</strong> A wire carries current eastward. The magnetic field points northward. Find the direction of the force on the wire.</p>
+
+<p><strong>Solution:</strong></p>
+
+<p>Using Fleming's Left-Hand Rule:</p>
+<ul>
+<li>First finger (Field): North</li>
+<li>Second finger (Current): East</li>
+<li>ThuMb (Force): <strong>Upward</strong> (vertically out of the page)</li>
+</ul>
+
+<p>Verify with Right-Hand Slap: fingers North, thumb East → palm faces upward ✓</p>
+
+<hr>
+
+<h3>Worked Example 50.4 — Solenoid Field</h3>
+
+<p><strong>Problem:</strong> A solenoid has 500 turns over a length of 0.25 m and carries 2.0 A. Calculate the magnetic field inside the solenoid. (μ₀ = 4π × 10⁻⁷ T·m/A)</p>
+
+<p><strong>Solution:</strong></p>
+
+<p>For an ideal solenoid:</p>
+<p>$$B = \mu_0 n I$$</p>
+
+<p>where n = turns per unit length = N/L = 500/0.25 = 2000 turns/m.</p>
+
+<p>$$B = 4\pi \times 10^{-7} \times 2000 \times 2.0 = 4\pi \times 10^{-7} \times 4000$$</p>
+<p>$$B = 1.60\pi \times 10^{-3} = \mathbf{5.03 \times 10^{-3} \text{ T}}$$</p>
+
+<hr>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1</h3>
+<p>A proton (q = +1.60 × 10⁻¹⁹ C) moves at 3.0 × 10⁶ m/s northward in a magnetic field of 0.50 T directed eastward.</p>
+<p>(a) Find the magnitude of the magnetic force.</p>
+<p>(b) State the direction of the force.</p>
+<p>(c) Explain why the proton's speed doesn't change.</p>
+
+<h3>Problem 2</h3>
+<p>A 0.80 m wire carries 5.0 A perpendicular to a uniform magnetic field and experiences a force of 0.60 N.</p>
+<p>(a) Calculate the magnetic field strength.</p>
+<p>(b) If the wire is rotated so it makes 60° with the field, what is the new force?</p>
+
+<h3>Problem 3</h3>
+<p>An electron enters a region where the magnetic field is directed into the page and the electron's velocity is to the right.</p>
+<p>(a) Sketch the electron's path (qualitatively).</p>
+<p>(b) Use Fleming's Left-Hand Rule to verify the initial direction of deflection.</p>
+<p>(c) Why does the electron follow a circular path?</p>
+
+<h3>Problem 4</h3>
+<p>A power line carries 200 A horizontally east-west. Earth's magnetic field at this location is 5.0 × 10⁻⁵ T directed northward, dipping at 60° below the horizontal.</p>
+<p>(a) Which component of Earth's field affects the wire? (The wire is horizontal.)</p>
+<p>(b) Calculate the force per metre on the wire.</p>
+<p>(c) Determine the direction of the force.</p>
+
+<h3>Problem 5 (IB-Style — Direction + Magnitude)</h3>
+<p>Two long parallel wires are separated by 0.10 m. Wire 1 carries 4.0 A northward, wire 2 carries 3.0 A southward.</p>
+
+<p><strong>(a)</strong> State the direction of the magnetic field created by wire 1 at the location of wire 2.</p>
+<p><strong>(b)</strong> Calculate the magnitude of this magnetic field. (μ₀ = 4π × 10⁻⁷ T·m/A)</p>
+<p><strong>(c)</strong> Determine the magnitude and direction of the force on wire 2 (length 2.0 m) due to wire 1's magnetic field.</p>
+<p><strong>(d)</strong> State whether the wires attract or repel each other. Explain using field line concepts.</p>
+
+<hr>
+
+<h2>Answers</h2>
+
+<h3>Answer 1</h3>
+<p><strong>(a)</strong> v ⊥ B (north ⊥ east): F = qvB = 1.60×10⁻¹⁹ × 3.0×10⁶ × 0.50 = <strong>2.40 × 10⁻¹³ N</strong></p>
+
+<p><strong>(b)</strong> Fleming's LHR: First finger East (B), Second finger North (v for + charge). Thumb points <strong>upward</strong> (out of the page/skyward).</p>
+
+<p><strong>(c)</strong> Magnetic force is always perpendicular to velocity. F ⊥ v → no work done → KE unchanged → speed constant. Only direction changes.</p>
+
+<hr>
+
+<h3>Answer 2</h3>
+<p><strong>(a)</strong> F = BIL → B = F/(IL) = 0.60/(5.0 × 0.80) = <strong>0.15 T</strong></p>
+
+<p><strong>(b)</strong> F = BIL sin θ = 0.15 × 5.0 × 0.80 × sin 60° = 0.60 × 0.866 = <strong>0.52 N</strong></p>
+
+<hr>
+
+<h3>Answer 3</h3>
+<p><strong>(a)</strong> Electron enters from left, moving right. B into page. Force initially downward (negative charge reverses direction). Path curves downward in a circular arc.</p>
+
+<p><strong>(b)</strong> For − charge: reverse the current direction in Fleming's LHR. The electron moving right = current to the LEFT. First finger into page (B), Second finger LEFT, Thumb points DOWNWARD ✓</p>
+
+<p><strong>(c)</strong> F is always ⊥ v, providing centripetal force. The electron undergoes uniform circular motion in the plane perpendicular to B (in this case, the plane of the page). Radius r = mv/(qB).</p>
+
+<hr>
+
+<h3>Answer 4</h3>
+<p><strong>(a)</strong> Only the vertical component of B affects a horizontal wire (component ⊥ to wire and ⊥ to current direction). B_vertical = B × sin 60° = 5.0×10⁻⁵ × 0.866 = 4.33×10⁻⁵ T.</p>
+
+<p><strong>(b)</strong> F/L = IB⊥ = 200 × 4.33×10⁻⁵ = <strong>8.66 × 10⁻³ N/m</strong></p>
+
+<p><strong>(c)</strong> Current eastward. B vertical component downward. Fleming's LHR: First finger downward, Second finger east → Thumb SOUTH. Force is southward.</p>
+
+<hr>
+
+<h3>Answer 5 (IB-Style)</h3>
+<p><strong>(a)</strong> Wire 1 (current north). Using Right-Hand Grip Rule: thumb north, fingers curl. At the position of wire 2 (to the east of wire 1), the field points <strong>downward</strong> (into the page if the wires are in the horizontal plane).</p>
+
+<p><strong>(b)</strong> B = μ₀I/(2πr) = (4π×10⁻⁷ × 4.0)/(2π × 0.10) = (1.6π×10⁻⁶)/(0.20π) = <strong>8.0 × 10⁻⁶ T</strong></p>
+
+<p><strong>(c)</strong> Wire 2 carries 3.0 A southward (opposite direction to wire 1). Using F = BIL sin θ with B from wire 1 at wire 2:</p>
+<p>F = 8.0×10⁻⁶ × 3.0 × 2.0 × sin 90° = <strong>4.8 × 10⁻⁵ N</strong></p>
+
+<p>Direction: B downward, I southward. Fleming's LHR: First finger down, Second finger south → Thumb WEST. So wire 2 is pushed <strong>away</strong> from wire 1 (westward).</p>
+
+<p><strong>(d)</strong> The wires carry currents in <strong>opposite</strong> directions → they <strong>repel</strong>. </p>
+
+<p>Field line explanation: Between the wires, the B-fields from the two currents point in the same direction (both up or both down, depending on position), creating a stronger field between them. The wires are pushed toward regions of weaker field → pushed apart. (For parallel currents, fields cancel between wires → wires are pushed together → attract.)</p>
+
+<p>Mnemonic: "Parallel currents attract, anti-parallel currents repel."</p>
+
+<hr>
+
+<h2>Key Takeaways</h2>
+
+<table>
+<tr>
+<th>Concept</th>
+<th>Equation</th>
+<th>Notes</th>
+</tr>
+<tr>
+<td>Force on moving charge</td>
+<td>F = qvB sin θ</td>
+<td>Direction: Fleming's LHR</td>
+</tr>
+<tr>
+<td>Force on current wire</td>
+<td>F = BIL sin θ</td>
+<td>I = conventional current (+ to −)</td>
+</tr>
+<tr>
+<td>No work</td>
+<td>F ⊥ v</td>
+<td>Speed unchanged, only direction</td>
+</tr>
+<tr>
+<td>Tesla definition</td>
+<td>1 T = 1 N/(A·m)</td>
+<td>Unit of B-field</td>
+</tr>
+<tr>
+<td>Solenoid field</td>
+<td>B = μ₀nI</td>
+<td>Uniform inside, similar to bar magnet</td>
+</tr>
+<tr>
+<td>Parallel wires</td>
+<td>F/L = μ₀I₁I₂/(2πr)</td>
+<td>Attract if currents parallel</td>
+</tr>
+</table>
+
+<blockquote><strong>IB Data Booklet:</strong> F = qvB sin θ and F = BIL sin θ are in Sub-topic 5.4. μ₀ = 4π × 10⁻⁷ T·m/A is provided. Magnetic force direction uses Fleming's Left-Hand Rule (motor rule) — you must know this for Paper 1 and 2. Remember: magnetic force does zero work!</blockquote>
+
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L49_em_fields_2.html">← Lesson 49</a>
+  <a href="L51_em_fields_4.html">Lesson 51 →</a>
+</nav>
+
+</body>
+</html>

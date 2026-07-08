@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 52: Lesson 52: Motion in EM Fields I — Electron Gun and Parallel Plates — IB Physics HL</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']]
+  },
+  options: {
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap');
+  
+  :root {
+    --bg: #fdfcf9;
+    --text: #1a1a1a;
+    --accent: #2c5f2d;
+    --border: #d0cec7;
+    --code-bg: #f4f3ef;
+    --callout-bg: #f0f7f0;
+    --callout-border: #2c5f2d;
+    --warning-bg: #fff8e6;
+    --warning-border: #c4941a;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  body {
+    font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid var(--accent);
+    color: var(--accent);
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 2.5rem 0 0.75rem;
+    color: #1a1a1a;
+  }
+  
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.5rem;
+  }
+  
+  p { margin: 0 0 1rem; }
+  
+  ul, ol { margin: 0 0 1rem 1.5rem; }
+  li { margin-bottom: 0.35rem; }
+  
+  code {
+    background: var(--code-bg);
+    padding: 0.15em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+    font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+  }
+  
+  pre {
+    background: var(--code-bg);
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 0 0 1rem;
+    font-size: 0.85em;
+    line-height: 1.5;
+  }
+  
+  pre code {
+    background: none;
+    padding: 0;
+    font-size: inherit;
+  }
+  
+  blockquote {
+    border-left: 4px solid var(--callout-border);
+    background: var(--callout-bg);
+    margin: 0 0 1rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+  }
+  
+  blockquote.warning {
+    border-left-color: var(--warning-border);
+    background: var(--warning-bg);
+  }
+  
+  strong { font-weight: 700; }
+  
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.5rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  
+  .nav a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+  
+  .nav a:hover { background: var(--callout-bg); }
+  
+  .worked-example, .answer {
+    background: var(--code-bg);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin: 0.75rem 0 1.25rem;
+  }
+  
+  .worked-example strong:first-child, .answer strong:first-child {
+    color: var(--accent);
+  }
+  
+  @media print {
+    body { font-size: 12pt; max-width: 100%; padding: 0; }
+    .nav { display: none; }
+    h1 { font-size: 18pt; }
+    h2 { font-size: 14pt; }
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 0 1rem;
+  }
+  
+  th, td {
+    border: 1px solid var(--border);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  
+  th {
+    background: var(--code-bg);
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L51_em_fields_4.html">← Lesson 51</a>
+  <a href="L53_motion_em_2.html">Lesson 53 →</a>
+</nav>
+
+<h1>Lesson 52: Motion in EM Fields I — Electron Gun and Parallel Plates</h1>
+
+<h2>What You'll Learn</h2>
+<ul>
+<li>Understand thermionic emission and how an electron gun produces a beam</li>
+<li>Calculate the speed of electrons accelerated through a potential difference</li>
+<li>Analyse the parabolic motion of charged particles in uniform electric fields</li>
+<li>Apply projectile-motion thinking to electrons between parallel plates</li>
+<li>Understand the principle of the cathode ray tube (CRT)</li>
+</ul>
+
+<hr>
+
+<h2>1. Producing a Beam of Electrons</h2>
+
+<h3>1.1 Why This Matters</h3>
+
+<p>In Lessons 48–51, we studied electric and magnetic fields and the forces they exert on charges. Now we put a specific charge — the electron — into those fields and watch what happens. An electron moving through electric and magnetic fields follows a path determined by the same principles as a projectile in a gravitational field, but with forces that are typically billions of times stronger relative to its mass. This is why electron beams can be steered with small voltages and why CRTs can paint an image on a screen in microseconds.</p>
+
+<h3>1.2 Thermionic Emission — Getting Electrons Out</h3>
+
+<p>Electrons are bound inside metals. To create a free beam of electrons, we need to give them enough energy to escape the metal surface. One way is <strong>thermionic emission</strong>: heat a metal filament until the electrons have enough thermal kinetic energy to boil off the surface.</p>
+
+<p>In an electron gun, a heated cathode (negative electrode) emits electrons. A nearby anode (positive electrode) at a high positive voltage attracts and accelerates them. The electrons pass through a hole in the anode and emerge as a narrow beam.</p>
+
+<h3>1.3 The Electron Gun Equation</h3>
+
+<p>When an electron (charge $e$, mass $m_e$) is accelerated from rest through a potential difference $V$, the work done by the electric field is $eV$. This work becomes the electron's kinetic energy:</p>
+
+<p>$$eV = \frac{1}{2}m_ev^2$$</p>
+
+<p>Solving for the speed:</p>
+<p>$$v = \sqrt{\frac{2eV}{m_e}}$$</p>
+
+<p>This is one of the most-used equations in electron physics. It tells you the speed of an electron after being accelerated through $V$ volts.</p>
+
+<p><strong>A common mistake:</strong> The mass in this equation is the electron mass ($m_e = 9.11 \times 10^{-31}\text{ kg}$), NOT the mass of whatever particle you might be dealing with. If the problem involves a proton or an ion, use the appropriate mass.</p>
+
+<hr>
+
+<h2>2. Electrons in a Uniform Electric Field</h2>
+
+<h3>2.1 The Setup</h3>
+
+<p>Consider an electron entering the space between two parallel plates. The plates are connected to a voltage source, creating a uniform electric field $E = V/d$ between them, where $d$ is the plate separation. The electron enters with an initial horizontal velocity $v_x$ and experiences a constant vertical electric force.</p>
+
+<h3>2.2 Why It Is Just Projectile Motion</h3>
+
+<p>The force on the electron is $F = eE$ (vertically, toward the positive plate). The acceleration is:</p>
+<p>$$a = \frac{F}{m_e} = \frac{eE}{m_e}$$</p>
+
+<p>This is exactly analogous to a projectile in a gravitational field, with $\frac{eE}{m_e}$ playing the role of $g$. The motion splits into independent horizontal and vertical components:</p>
+
+<p><strong>Horizontal:</strong> No force → constant velocity → $x = v_x t$</p>
+
+<p><strong>Vertical:</strong> Constant acceleration → $y = \frac{1}{2}at^2 = \frac{1}{2}\frac{eE}{m_e}t^2$</p>
+
+<p>Eliminating $t$ gives the parabolic path:</p>
+<p>$$y = \frac{eE}{2m_ev_x^2}x^2$$</p>
+
+<p>The electron follows a parabola, curving toward the positive plate.</p>
+
+<h3>2.3 Deflection in a Given Field</h3>
+
+<p>For plates of length $L$, the time spent between them is $t = L/v_x$. The vertical deflection at the far end is:</p>
+<p>$$y = \frac{1}{2}\frac{eE}{m_e}\left(\frac{L}{v_x}\right)^2$$</p>
+
+<p>After leaving the plates, the electron travels in a straight line (no more field) toward a screen. The total deflection on the screen can be calculated by treating the exit as a launch point with the electron's velocity at that moment.</p>
+
+<hr>
+
+<h2>3. The Cathode Ray Tube (CRT)</h2>
+
+<h3>3.1 How It Works</h3>
+
+<p>A CRT was the display technology in old televisions and computer monitors. It contains:</p>
+<ul>
+<li>An electron gun producing a narrow beam</li>
+<li>Deflection plates (or magnetic coils) to steer the beam horizontally and vertically</li>
+<li>A phosphorescent screen that glows when struck by electrons</li>
+</ul>
+
+<p>By rapidly scanning the beam across the screen line by line while varying its intensity, a CRT paints a complete image. The physics that makes it work is exactly what we study in this lesson — electrons accelerated by an electric field and deflected by additional fields.</p>
+
+<hr>
+
+<h2>Worked Examples</h2>
+
+<h3>Worked Example 52.1 — Electron Speed from Accelerating Voltage</h3>
+
+<p><strong>Problem:</strong> Electrons are accelerated from rest through a potential difference of $5,000\text{ V}$ in an electron gun. Calculate their final speed.</p>
+
+<p><strong>Approach:</strong> Use $eV = \frac{1}{2}m_ev^2$. Check if the speed is relativistic (if $v > 0.1c$, we should consider relativistic corrections — for now, calculate and check).</p>
+
+<p><strong>Solution:</strong></p>
+<p>$$v = \sqrt{\frac{2eV}{m_e}} = \sqrt{\frac{2(1.60 \times 10^{-19})(5,000)}{9.11 \times 10^{-31}}} = \sqrt{\frac{1.60 \times 10^{-15}}{9.11 \times 10^{-31}}} = \sqrt{1.756 \times 10^{15}} = 4.19 \times 10^7\text{ m s}^{-1}$$</p>
+
+<p><strong>Check:</strong> $v/c = 4.19 \times 10^7 / 3.00 \times 10^8 = 0.14$. This is about 14% of light speed — relativistic corrections would be small (~1%) but not negligible for precise work. At IB level, we use the non-relativistic formula.</p>
+
+<hr>
+
+<h3>Worked Example 52.2 — Electron Deflection in Parallel Plates</h3>
+
+<p><strong>Problem:</strong> An electron enters the region between two parallel plates at $5.0 \times 10^6\text{ m s}^{-1}$ horizontally. The plates are $3.0\text{ cm}$ long and separated by $1.0\text{ cm}$, with a voltage of $200\text{ V}$ between them. Calculate the vertical deflection of the electron as it leaves the plates.</p>
+
+<p><strong>Approach:</strong> Find the electric field $E = V/d$. Find the vertical acceleration $a = eE/m_e$. Find the time between plates $t = L/v_x$. Find deflection $y = \frac{1}{2}at^2$.</p>
+
+<p><strong>Solution:</strong></p>
+<p>$$E = \frac{V}{d} = \frac{200}{0.010} = 20,000\text{ V m}^{-1}$$</p>
+<p>$$a = \frac{eE}{m_e} = \frac{(1.60 \times 10^{-19})(20,000)}{9.11 \times 10^{-31}} = 3.51 \times 10^{15}\text{ m s}^{-2}$$</p>
+<p>$$t = \frac{L}{v_x} = \frac{0.030}{5.0 \times 10^6} = 6.0 \times 10^{-9}\text{ s}$$</p>
+<p>$$y = \frac{1}{2}at^2 = \frac{1}{2}(3.51 \times 10^{15})(6.0 \times 10^{-9})^2 = \frac{1}{2}(3.51 \times 10^{15})(3.6 \times 10^{-17}) = 0.063\text{ m} = 6.3\text{ cm}$$</p>
+
+<p><strong>Why this makes sense:</strong> The deflection (6.3 cm) is larger than the plate separation (1.0 cm), which means the electron would hit the positive plate before reaching the end. In a real CRT, the voltage would be adjusted to keep the beam between the plates. This example shows how sensitive electron beams are to electric fields — tiny voltages produce large deflections because electrons are so light.</p>
+
+<hr>
+
+<h3>Worked Example 52.3 — Finding Acceleration Voltage from Speed</h3>
+
+<p><strong>Problem:</strong> An electron in a beam has speed $6.0 \times 10^6\text{ m s}^{-1}$. Through what potential difference was it accelerated from rest?</p>
+
+<p><strong>Approach:</strong> Rearrange $eV = \frac{1}{2}mv^2$ to find $V$. The answer will be in volts.</p>
+
+<p><strong>Solution:</strong></p>
+<p>$$V = \frac{m_ev^2}{2e} = \frac{(9.11 \times 10^{-31})(6.0 \times 10^6)^2}{2(1.60 \times 10^{-19})} = \frac{(9.11 \times 10^{-31})(3.6 \times 10^{13})}{3.20 \times 10^{-19}} = \frac{3.28 \times 10^{-17}}{3.20 \times 10^{-19}} = 103\text{ V}$$</p>
+
+<p><strong>Why this makes sense:</strong> A modest 103 V accelerates an electron to 6 million metres per second — about 2% of light speed. The electron's tiny mass means small voltages produce enormous speeds.</p>
+
+<hr>
+
+<h3>Worked Example 52.4 — IB-Style CRT Problem</h3>
+
+<p><strong>Problem:</strong> The electron gun in an oscilloscope accelerates electrons through $2,000\text{ V}$. The beam then passes between horizontal deflection plates $4.0\text{ cm}$ long, separated by $0.50\text{ cm}$. A deflection voltage of $150\text{ V}$ is applied.</p>
+
+<p>(a) Calculate the speed of electrons entering the deflection plates. (2 marks)</p>
+<p>(b) Determine the vertical deflection at the end of the plates. (3 marks)</p>
+<p>(c) After leaving the plates, the electrons travel $25\text{ cm}$ to the screen. Calculate the total vertical deflection on the screen. (3 marks)</p>
+
+<p><strong>Solution (a):</strong></p>
+<p>$$v = \sqrt{\frac{2eV}{m_e}} = \sqrt{\frac{2(1.60\times 10^{-19})(2,000)}{9.11\times 10^{-31}}} = 2.65 \times 10^7\text{ m s}^{-1}$$</p>
+
+<p><strong>(b):</strong></p>
+<p>$E = 150/0.005 = 30,000\text{ V m}^{-1}$.</p>
+<p>$a = (1.60\times 10^{-19})(30,000)/(9.11\times 10^{-31}) = 5.27 \times 10^{15}\text{ m s}^{-2}$.</p>
+<p>$t = 0.040/(2.65\times 10^7) = 1.51 \times 10^{-9}\text{ s}$.</p>
+<p>$y_1 = \frac{1}{2}(5.27\times 10^{15})(1.51\times 10^{-9})^2 = 6.0 \times 10^{-3}\text{ m} = 0.60\text{ cm}$.</p>
+
+<p><strong>(c):</strong> Vertical velocity at exit: $v_y = at = (5.27\times 10^{15})(1.51\times 10^{-9}) = 7.96 \times 10^6\text{ m s}^{-1}$.</p>
+<p>Time to screen after plates: $t_2 = 0.25/(2.65\times 10^7) = 9.43 \times 10^{-9}\text{ s}$.</p>
+<p>Additional deflection: $y_2 = v_y t_2 = (7.96\times 10^6)(9.43\times 10^{-9}) = 0.075\text{ m} = 7.5\text{ cm}$.</p>
+<p>Total: $y = 0.60 + 7.5 = 8.1\text{ cm}$.</p>
+
+<hr>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1</h3>
+<p>Electrons are accelerated from rest through a potential difference of 800 V. Calculate their final speed. Express the answer as a percentage of the speed of light.</p>
+
+<h3>Problem 2</h3>
+<p>An electron enters a region of uniform electric field at $4.0 \times 10^6\text{ m s}^{-1}$ perpendicular to the field. The field strength is $5.0 \times 10^3\text{ V m}^{-1}$. After $2.0 \times 10^{-8}\text{ s}$, calculate: (a) the vertical deflection, and (b) the vertical component of velocity.</p>
+
+<h3>Problem 3</h3>
+<p>An electron gun produces a beam of electrons with speed $3.0 \times 10^7\text{ m s}^{-1}$. A pair of parallel plates 5.0 cm long with a separation of 1.5 cm is used to deflect the beam. What voltage between the plates is needed to produce a deflection of 2.0 cm at the end of the plates?</p>
+
+<h3>Problem 4</h3>
+<p>Explain why an electron beam between parallel plates follows a parabolic path, while an electron in a uniform magnetic field follows a circular path.</p>
+
+<h3>Problem 5 — IB-Style</h3>
+<p>In an electron deflection experiment, electrons are accelerated through $3.0\text{ kV}$ in an electron gun and enter a region of uniform electric field between two parallel plates of length $6.0\text{ cm}$.</p>
+
+<p>(a) Calculate the speed of the electrons. (1 mark)</p>
+
+<p>(b) The electric field strength between the plates is $4.0 \times 10^4\text{ V m}^{-1}$. Calculate the acceleration of the electrons. (2 marks)</p>
+
+<p>(c) Calculate the time an electron spends between the plates and the vertical deflection. (3 marks)</p>
+
+<p>(d) The deflecting voltage is now doubled. By what factor does the deflection change? (2 marks)</p>
+
+<p>(e) Suggest one way the deflection could be increased without changing the voltage between the plates, and explain why it works. (2 marks)</p>
+
+<hr>
+
+<h2>Answers</h2>
+
+<h3>Answer 1</h3>
+<p>$v = \sqrt{2(1.60\times 10^{-19})(800)/(9.11\times 10^{-31})} = \sqrt{2.81\times 10^{14}} = 1.68 \times 10^7\text{ m s}^{-1}$. $v/c = 1.68\times 10^7/3.00\times 10^8 = 0.056 = 5.6\%$.</p>
+
+<h3>Answer 2</h3>
+<p><strong>(a)</strong> $a = eE/m_e = (1.60\times 10^{-19})(5.0\times 10^3)/(9.11\times 10^{-31}) = 8.78 \times 10^{14}\text{ m s}^{-2}$.</p>
+<p>$y = \frac{1}{2}at^2 = \frac{1}{2}(8.78\times 10^{14})(2.0\times 10^{-8})^2 = 0.176\text{ m} = 17.6\text{ cm}$.</p>
+<p><strong>(b)</strong> $v_y = at = (8.78\times 10^{14})(2.0\times 10^{-8}) = 1.76 \times 10^7\text{ m s}^{-1}$.</p>
+
+<h3>Answer 3</h3>
+<p>$t = 0.050/(3.0\times 10^7) = 1.67\times 10^{-9}\text{ s}$. $y = \frac{1}{2}at^2$, so $a = 2y/t^2 = 2(0.020)/(1.67\times 10^{-9})^2 = 1.44\times 10^{16}\text{ m s}^{-2}$. $E = m_ea/e = (9.11\times 10^{-31})(1.44\times 10^{16})/(1.60\times 10^{-19}) = 8.20 \times 10^4\text{ V m}^{-1}$. $V = Ed = (8.20\times 10^4)(0.015) = 1,230\text{ V}$.</p>
+
+<h3>Answer 4</h3>
+<p>In a uniform E-field, the force is constant in magnitude and direction → constant acceleration → parabolic path (like projectile motion). In a uniform B-field, the force is always perpendicular to velocity → changes direction but not speed → uniform circular motion ($r = mv/qB$). The E-field changes the speed; the B-field only changes direction.</p>
+
+<h3>Answer 5 — IB-Style</h3>
+<p><strong>(a)</strong> $v = \sqrt{2(1.60\times 10^{-19})(3,000)/(9.11\times 10^{-31})} = 3.25 \times 10^7\text{ m s}^{-1}$. (1 mark)</p>
+
+<p><strong>(b)</strong> $a = eE/m_e = (1.60\times 10^{-19})(4.0\times 10^4)/(9.11\times 10^{-31}) = 7.02 \times 10^{15}\text{ m s}^{-2}$. (2 marks)</p>
+
+<p><strong>(c)</strong> $t = 0.060/(3.25\times 10^7) = 1.85 \times 10^{-9}\text{ s}$. $y = \frac{1}{2}(7.02\times 10^{15})(1.85\times 10^{-9})^2 = 1.20 \times 10^{-2}\text{ m} = 1.20\text{ cm}$. (3 marks)</p>
+
+<p><strong>(d)</strong> Doubling $V$ doubles $E$, which doubles $a$, which doubles $y$ (since $y \propto a$). Factor of 2. (2 marks — 1 for recognising proportional relationship, 1 for factor.)</p>
+
+<p><strong>(e)</strong> Increase the length $L$ of the plates. The electron spends longer in the field, so the deflection increases (and $y \propto L^2$). Alternatively: reduce the accelerating voltage in the electron gun, which reduces $v_x$, increasing the time in the field and thus the deflection. (2 marks.)</p>
+
+<hr>
+
+<h2>Key Takeaways</h2>
+
+<ol>
+<li><strong>Electron gun:</strong> $eV = \frac{1}{2}m_ev^2$. The speed depends on the accelerating voltage.</li>
+</ol>
+
+<ol>
+<li><strong>Motion in uniform E-field = projectile motion.</strong> Horizontal: constant velocity. Vertical: constant acceleration $a = eE/m_e$.</li>
+</ol>
+
+<ol>
+<li><strong>Path is parabolic</strong> — mathematically identical to a projectile in a gravitational field, with $eE/m_e$ replacing $g$.</li>
+</ol>
+
+<ol>
+<li><strong>Electrons are extremely light</strong> ($9.11\times 10^{-31}\text{ kg}$), so small voltages produce large accelerations and high speeds. 1,000 V → ~$2\times 10^7\text{ m s}^{-1}$ (7% of $c$).</li>
+</ol>
+
+<ol>
+<li><strong>CRT principle:</strong> Accelerate, deflect, detect. The same physics underlies oscilloscopes, old TVs, and electron microscopes.</li>
+</ol>
+
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L51_em_fields_4.html">← Lesson 51</a>
+  <a href="L53_motion_em_2.html">Lesson 53 →</a>
+</nav>
+
+</body>
+</html>

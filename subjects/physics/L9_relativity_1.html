@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 9: Lesson 9: Special Relativity I — Reference Frames and Einstein's Postulates — IB Physics HL</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']]
+  },
+  options: {
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap');
+  
+  :root {
+    --bg: #fdfcf9;
+    --text: #1a1a1a;
+    --accent: #2c5f2d;
+    --border: #d0cec7;
+    --code-bg: #f4f3ef;
+    --callout-bg: #f0f7f0;
+    --callout-border: #2c5f2d;
+    --warning-bg: #fff8e6;
+    --warning-border: #c4941a;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  body {
+    font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid var(--accent);
+    color: var(--accent);
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 2.5rem 0 0.75rem;
+    color: #1a1a1a;
+  }
+  
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.5rem;
+  }
+  
+  p { margin: 0 0 1rem; }
+  
+  ul, ol { margin: 0 0 1rem 1.5rem; }
+  li { margin-bottom: 0.35rem; }
+  
+  code {
+    background: var(--code-bg);
+    padding: 0.15em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+    font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+  }
+  
+  pre {
+    background: var(--code-bg);
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 0 0 1rem;
+    font-size: 0.85em;
+    line-height: 1.5;
+  }
+  
+  pre code {
+    background: none;
+    padding: 0;
+    font-size: inherit;
+  }
+  
+  blockquote {
+    border-left: 4px solid var(--callout-border);
+    background: var(--callout-bg);
+    margin: 0 0 1rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+  }
+  
+  blockquote.warning {
+    border-left-color: var(--warning-border);
+    background: var(--warning-bg);
+  }
+  
+  strong { font-weight: 700; }
+  
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.5rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  
+  .nav a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+  
+  .nav a:hover { background: var(--callout-bg); }
+  
+  .worked-example, .answer {
+    background: var(--code-bg);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin: 0.75rem 0 1.25rem;
+  }
+  
+  .worked-example strong:first-child, .answer strong:first-child {
+    color: var(--accent);
+  }
+  
+  @media print {
+    body { font-size: 12pt; max-width: 100%; padding: 0; }
+    .nav { display: none; }
+    h1 { font-size: 18pt; }
+    h2 { font-size: 14pt; }
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 0 1rem;
+  }
+  
+  th, td {
+    border: 1px solid var(--border);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  
+  th {
+    background: var(--code-bg);
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L8_rigid_body_3.html">← Lesson 8</a>
+  <a href="L10_measurement_uncertainty.html">Lesson 10 →</a>
+</nav>
+
+<h1>Lesson 9: Special Relativity I — Reference Frames and Einstein's Postulates</h1>
+
+<h2>What You'll Learn</h2>
+<ul>
+<li>Distinguish between inertial and non-inertial reference frames</li>
+<li>Understand Galilean relativity and why it fails for light</li>
+<li>State Einstein's two postulates of special relativity</li>
+<li>Explain why the constancy of the speed of light is revolutionary</li>
+</ul>
+
+<hr>
+
+<h2>1. Reference Frames — Where Are You Watching From?</h2>
+
+<h3>1.1 What Is a Reference Frame?</h3>
+
+<p>A reference frame is a coordinate system from which observations and measurements are made. It's the "point of view" of an observer. If you are sitting on a train and measure the speed of a passing car, your measurement will differ from that of someone standing on the platform. Both measurements are correct — they just refer to different reference frames.</p>
+
+<h3>1.2 Inertial vs. Non-Inertial Frames</h3>
+
+<p>An <strong>inertial reference frame</strong> is one in which Newton's First Law holds: an object with no net force acting on it moves at constant velocity (or remains at rest). Any frame moving at constant velocity relative to an inertial frame is itself an inertial frame. A train moving at a steady 100 km/h on a straight track is an inertial frame — if you toss a ball straight up inside it, the ball goes up and comes straight back down into your hand, exactly as it would if the train were stationary.</p>
+
+<p>A <strong>non-inertial frame</strong> is one that is accelerating or rotating. If the train suddenly brakes, passengers lurch forward even though no force pushed them — Newton's First Law appears to be violated. Fictitious forces (like the "centrifugal force") appear in non-inertial frames. Special relativity deals only with inertial frames.</p>
+
+<hr>
+
+<h2>2. Galilean Relativity — The Old View</h2>
+
+<h3>2.1 Adding Velocities</h3>
+
+<p>Before Einstein, physicists used Galilean relativity. If you walk forward at $5\text{ m s}^{-1}$ inside a train moving at $30\text{ m s}^{-1}$, an observer on the platform measures your speed as $30 + 5 = 35\text{ m s}^{-1}$. Velocities simply add: $v' = v + u$. This seems obvious because it works perfectly at everyday speeds.</p>
+
+<h3>2.2 The Problem — Light Doesn't Cooperate</h3>
+
+<p>In the late 19th century, James Clerk Maxwell showed that light is an electromagnetic wave travelling at a specific speed: $c = 3.00 \times 10^8\text{ m s}^{-1}$. But speed relative to WHAT? Waves in water travel relative to the water. Sound travels relative to air. What medium does light travel through?</p>
+
+<p>Physicists proposed the "luminiferous aether" — an invisible medium filling all space. If the aether existed, Earth's motion through it should be detectable. The Michelson-Morley experiment (1887) attempted to measure this motion with extraordinary precision. It found NOTHING. The speed of light was the same in ALL directions, regardless of Earth's motion. The aether did not exist.</p>
+
+<p>This was deeply troubling. If you shine a torch from a moving train, Galilean relativity predicts the light should travel at $c + 30\text{ m s}^{-1}$ relative to the ground. But Maxwell's equations and the Michelson-Morley experiment said light always travels at exactly $c$, no matter what.</p>
+
+<hr>
+
+<h2>3. Einstein's Two Postulates (1905)</h2>
+
+<p>Einstein resolved the crisis by rejecting Galilean relativity for light. He proposed two postulates:</p>
+
+<p><strong>Postulate 1 — The Principle of Relativity:</strong></p>
+<p>The laws of physics are the same in all inertial reference frames. There is no experiment you can perform inside a closed laboratory moving at constant velocity that will tell you how fast you are moving. This applies to ALL laws of physics — mechanics, electromagnetism, everything.</p>
+
+<p><strong>Postulate 2 — The Constancy of the Speed of Light:</strong></p>
+<p>The speed of light in a vacuum, $c = 3.00 \times 10^8\text{ m s}^{-1}$, is the same in all inertial reference frames, regardless of the motion of the source or the observer.</p>
+
+<p>The second postulate is the revolutionary one. It says that if you measure the speed of light from a stationary star and from a star moving toward you at $10^7\text{ m s}^{-1}$, both measurements give exactly $c$. Velocities do NOT simply add for light. This single postulate requires us to abandon our intuitive notions of space and time — which is what the next three lessons explore.</p>
+
+<hr>
+
+<h2>4. Why the Second Postulate Changes Everything</h2>
+
+<h3>4.1 The Thought Experiment</h3>
+
+<p>Imagine a train moving at $0.5c$. A passenger at the centre of the train turns on a light. According to the passenger (in the train frame), the light reaches the front and back of the train simultaneously. The light travels the same distance in both directions at speed $c$.</p>
+
+<p>According to an observer on the platform (in the ground frame), the back of the train moves TOWARD the light pulse while the front moves AWAY from it. Yet BOTH observers measure the light travelling at speed $c$ relative to themselves. The only way this can be true is if the two observers disagree about distances and times — if space and time themselves are relative.</p>
+
+<h3>4.2 What We Must Abandon</h3>
+
+<p>Special relativity requires us to abandon three deeply held beliefs:</p>
+<ol>
+<li><strong>Absolute time:</strong> Time does not flow at the same rate for all observers.</li>
+<li><strong>Absolute simultaneity:</strong> Two events that are simultaneous in one frame are not simultaneous in another.</li>
+<li><strong>Simple velocity addition:</strong> $v' = v + u$ is an approximation valid only at low speeds.</li>
+</ol>
+
+<p>In Lessons 11–13, we explore the consequences: time dilation, length contraction, and relativistic dynamics.</p>
+
+<hr>
+
+<h2>Worked Examples</h2>
+
+<h3>Worked Example 9.1 — Identifying Inertial Frames</h3>
+
+<p><strong>Problem:</strong> Which of these are inertial reference frames: (a) a car accelerating from a traffic light, (b) a train moving at constant speed on a straight track, (c) the Earth's surface, (d) a spacecraft drifting in deep space with its engines off?</p>
+
+<p><strong>Solution:</strong></p>
+<p>(a) NOT inertial — accelerating.</p>
+<p>(b) IS inertial — constant velocity, straight line.</p>
+<p>(c) Approximately inertial — Earth rotates (centripetal acceleration), but for most experiments the effects are negligible.</p>
+<p>(d) IS inertial — no forces, constant velocity. This is the best approximation to an ideal inertial frame.</p>
+
+<hr>
+
+<h3>Worked Example 9.2 — The Michelson-Morley Null Result</h3>
+
+<p><strong>Problem:</strong> Explain why the Michelson-Morley experiment's null result (no detected aether drift) was so significant.</p>
+
+<p><strong>Approach:</strong> Describe the expected result under the aether hypothesis, then explain what was actually observed and its implication.</p>
+
+<p><strong>Solution:</strong></p>
+<p>If the aether existed, Earth's motion through it (~$30\text{ km s}^{-1}$ around the Sun) should produce different light speeds in different directions. The interferometer was sensitive enough to detect this. After repeated measurements at different times of day and seasons, the result was consistently zero — the speed of light was the same in all directions. This meant either: (a) the aether does not exist, or (b) Earth drags the aether with it. Option (b) was ruled out by stellar aberration observations. The null result was the first strong evidence for Einstein's second postulate — there is no preferred reference frame for light.</p>
+
+<hr>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1</h3>
+<p>State Einstein's two postulates of special relativity.</p>
+
+<h3>Problem 2</h3>
+<p>A spaceship moves at constant velocity far from any gravitational field. An astronaut performs experiments inside the ship. Can she determine her speed without looking outside? Explain using the first postulate.</p>
+
+<h3>Problem 3</h3>
+<p>In Galilean relativity, a car moving at $30\text{ m s}^{-1}$ with a passenger throwing a ball forward at $10\text{ m s}^{-1}$ gives the ball a ground speed of $40\text{ m s}^{-1}$. If the car's headlights are on, what would Galilean relativity predict for the speed of the light relative to the ground? What does special relativity predict? Which is correct?</p>
+
+<h3>Problem 4</h3>
+<p>Explain why special relativity only deals with inertial reference frames and why accelerating frames require general relativity.</p>
+
+<h3>Problem 5 — IB-Style</h3>
+<p>(a) State the two postulates of special relativity. (2 marks)</p>
+<p>(b) A student claims: "If I travel toward a light source at half the speed of light, I should measure the light arriving at $1.5c$." Explain why this statement is incorrect according to special relativity. (2 marks)</p>
+<p>(c) The Michelson-Morley experiment used an interferometer to compare the speed of light in perpendicular directions. Explain why a null result was obtained and what conclusion was drawn from this result. (3 marks)</p>
+
+<hr>
+
+<h2>Answers</h2>
+
+<h3>Answer 1</h3>
+<p>(1) The laws of physics are the same in all inertial reference frames. (2) The speed of light in a vacuum has the same value $c$ in all inertial frames, independent of the motion of the source or observer.</p>
+
+<h3>Answer 2</h3>
+<p>No — the first postulate states that all laws of physics are identical in all inertial frames. Any experiment performed inside the ship would give the same result regardless of the ship's constant velocity. She can measure her acceleration but not her absolute velocity. There is no preferred "stationary" frame.</p>
+
+<h3>Answer 3</h3>
+<p>Galilean relativity would predict $c + 30\text{ m s}^{-1}$ for the light speed relative to ground. Special relativity predicts EXACTLY $c$ — no addition. Special relativity is correct; this has been confirmed by countless experiments. Velocities do not add simply for light.</p>
+
+<h3>Answer 4</h3>
+<p>Special relativity's postulates apply to inertial frames. In accelerating frames, the laws of physics appear to change (fictitious forces appear), and the simple constant-velocity relationships between frames break down. Einstein's general relativity (1915) extends relativity to accelerating frames and shows that acceleration is equivalent to gravity (the equivalence principle).</p>
+
+<h3>Answer 5 — IB-Style</h3>
+<p><strong>(a)</strong> (2 marks) 1: Laws of physics identical in all inertial frames. 2: Speed of light in vacuum is $c$ in all inertial frames, independent of source/observer motion.</p>
+
+<p><strong>(b)</strong> (2 marks) According to the second postulate, the speed of light is the same ($c$) for ALL observers regardless of their motion relative to the source. The student would measure the light arriving at exactly $c$, not $1.5c$. Galilean velocity addition ($u+v$) does not apply to light. Only at speeds much less than $c$ does simple addition approximate the correct relativistic formula.</p>
+
+<p><strong>(c)</strong> (3 marks) The interferometer split a light beam into two perpendicular paths, then recombined them. If Earth moved through the aether, the speed of light should differ in the two directions, producing a shift in the interference pattern when the apparatus was rotated. No shift was observed — the speed of light was the same in all directions. (1 mark for describing the method.) The null result indicated that the aether hypothesis was incorrect. (1 mark.) The conclusion: there is no preferred reference frame for light propagation; the speed of light is invariant, consistent with Einstein's second postulate. (1 mark.)</p>
+
+<hr>
+
+<h2>Key Takeaways</h2>
+
+<ol>
+<li><strong>Inertial frames</strong> move at constant velocity. The laws of physics are the same in all of them.</li>
+</ol>
+
+<ol>
+<li><strong>Galilean relativity</strong> ($v' = v + u$) works for everyday speeds but FAILS for light.</li>
+</ol>
+
+<ol>
+<li><strong>Einstein's postulates:</strong> (1) Physics is the same in all inertial frames. (2) Light speed $c$ is the same in all frames.</li>
+</ol>
+
+<ol>
+<li><strong>Michelson-Morley:</strong> No aether. Light speed is invariant — the experiment that launched relativity.</li>
+</ol>
+
+<ol>
+<li>The second postulate forces us to abandon absolute time and absolute simultaneity — explored in the next lessons.</li>
+</ol>
+
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L8_rigid_body_3.html">← Lesson 8</a>
+  <a href="L10_measurement_uncertainty.html">Lesson 10 →</a>
+</nav>
+
+</body>
+</html>

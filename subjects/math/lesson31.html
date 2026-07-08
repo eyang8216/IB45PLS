@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 31 — Proof by Induction: Divisibility & Inequalities</title>
+<script>
+MathJax = {
+  tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body {
+    max-width: 800px; margin: 40px auto; font-family: 'Times New Roman', Georgia, serif;
+    font-size: 17px; line-height: 1.7; padding: 0 20px; color: #1a1a1a;
+  }
+  h1 { font-size: 22px; border-bottom: 2px solid #333; padding-bottom: 8px; margin-top: 36px; }
+  h2 { font-size: 19px; margin-top: 28px; color: #2c3e50; }
+  h3 { font-size: 17px; margin-top: 22px; color: #444; }
+  h4 { font-size: 16px; margin-top: 18px; }
+  p { margin: 0.6em 0; }
+  li { margin: 0.3em 0 0.3em 20px; }
+  hr { margin: 20px 0; border: none; border-top: 1px solid #ddd; }
+  .math-block { text-align: center; margin: 1em 0; overflow-x: auto; }
+  .table-line { font-family: 'Courier New', monospace; font-size: 15px; margin: 0.1em 0; }
+  pre { background: #f5f5f5; padding: 10px 14px; border-radius: 4px; overflow-x: auto; font-size: 14px; }
+  b { color: #222; }
+  table { border-collapse: collapse; margin: 16px 0; width: 100%; font-size: 15px; }
+  th { background: #2c3e50; color: #fff; padding: 8px 12px; text-align: center; font-weight: bold; }
+  td { border: 1px solid #ccc; padding: 8px 12px; text-align: center; }
+  tr:nth-child(even) { background: #f9f9f9; }
+  .nav { text-align: center; margin: 30px 0; font-size: 14px; }
+  .nav a { margin: 0 8px; color: #3498db; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  @media print { body { font-size: 15px; } }
+</style>
+</head>
+<body>
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+<h1>Lesson 31: Proof by Induction — Divisibility and Inequalities</h1>
+
+<p><hr></p>
+
+<h2>What Is Proof by Induction?</h2>
+
+<p>Proof by induction is a method for proving that a statement is true for every counting number (1, 2, 3, …). Think of it like knocking over dominoes. If you can knock over the first domino, and you can show that each domino knocks over the next one, then every domino falls.</p>
+
+<p>An induction proof always has three parts:</p>
+
+<li>- <b>Base case:</b> Prove the statement is true for the first number (usually n = 1).</li>
+<li>- <b>Inductive hypothesis:</b> Assume the statement is true for some number k. This is a temporary assumption used only inside the proof.</li>
+<li>- <b>Inductive step:</b> Using the assumption that it works for k, prove it must also work for k + 1.</li>
+
+<p>If you complete all three parts, the principle of mathematical induction says the statement is true for all counting numbers.</p>
+
+<p>In this lesson, we apply induction to two new types of statements: <b>divisibility statements</b> (like &quot;7ⁿ − 1 is always a multiple of 6&quot;) and <b>inequalities</b> (like &quot;2ⁿ is greater than n&quot;).</p>
+
+<p><hr></p>
+
+<h2>Part A: Divisibility Proofs</h2>
+
+<h3>What &quot;Divisible&quot; Means</h3>
+
+<p>A number A is <b>divisible</b> by a number d if there exists some integer m such that A = d × m. In other words, dividing A by d gives a whole number with no remainder. For example, 12 is divisible by 3 because 12 = 3 × 4.</p>
+
+<p>When we prove divisibility by induction, the inductive step uses an algebraic technique: we rewrite the (k+1) case to expose the k case, which we already assumed is divisible.</p>
+
+<p><hr></p>
+
+<h3>Worked Example 1: Prove 7ⁿ − 1 Is Divisible by 6</h3>
+
+<p><b>Statement:</b> For every counting number n, the expression 7ⁿ − 1 is a multiple of 6.</p>
+
+<p><b>Base case (n = 1):</b></p>
+
+<p>Compute 7¹ − 1: this equals 7 − 1 = 6. The number 6 is divisible by 6 (since 6 = 6 × 1). The base case holds.</p>
+
+<p><b>Inductive hypothesis:</b></p>
+
+<p>Assume that 7ᵏ − 1 is divisible by 6 for some counting number k. This means there exists an integer m such that:</p>
+
+<div class="math-block">$$
+7^k - 1 = 6m$$</div>
+
+<p><b>Inductive step:</b></p>
+
+<p>We want to show that 7ᵏ⁺¹ − 1 is also divisible by 6.</p>
+
+<p><b>Approach:</b> Start with 7ᵏ⁺¹ − 1 and try to link it to 7ᵏ − 1. Write 7ᵏ⁺¹ as 7 × 7ᵏ.</p>
+
+<p>Then add and subtract 7 (a clever trick to make 7ᵏ − 1 appear):</p>
+
+<div class="math-block">$$
+\begin{aligned}
+7^{k+1} - 1 &= 7 \cdot 7^k - 1 \\
+&= 7 \cdot 7^k - 7 + 7 - 1 \\
+&= 7(7^k - 1) + 6
+\end{aligned}$$</div>
+
+<p>Now substitute the hypothesis 7ᵏ − 1 = 6m:</p>
+
+<div class="math-block">$$
+7^{k+1} - 1 = 7(6m) + 6 = 6(7m + 1)$$</div>
+
+<p>The right-hand side is 6 multiplied by the integer (7m + 1). So 7ᵏ⁺¹ − 1 is divisible by 6.</p>
+
+<p>Since the base case works and the inductive step works, 7ⁿ − 1 is divisible by 6 for all counting numbers n. ✓</p>
+
+<p><b>Why this makes sense:</b> The &quot;add and subtract&quot; trick creates a copy of 7ᵏ − 1, which we know is a multiple of 6. The leftover piece (6) is also a multiple of 6. Adding two multiples of 6 gives another multiple of 6.</p>
+
+<p><b>Common misconception:</b> Students sometimes write 7ᵏ⁺¹ − 1 = 7(7ᵏ) − 1 and get stuck. The key is to force the term (7ᵏ − 1) to appear inside the expression. Adding and subtracting the same number is a legitimate algebraic move because it does not change the value.</p>
+
+<p><hr></p>
+
+<h3>Worked Example 2: Prove 3²ⁿ − 1 Is Divisible by 8</h3>
+
+<p><b>Statement:</b> For every counting number n, the expression 3²ⁿ − 1 is a multiple of 8.</p>
+
+<p>First, notice that 3²ⁿ = (3²)ⁿ = 9ⁿ. This makes the algebra easier.</p>
+
+<p><b>Base case (n = 1):</b></p>
+
+<p>3² − 1 = 9 − 1 = 8. The number 8 is divisible by 8. ✓</p>
+
+<p><b>Inductive hypothesis:</b></p>
+
+<p>Assume 3²ᵏ − 1 = 8m for some integer m.</p>
+
+<p><b>Inductive step:</b></p>
+
+<p>We need to show that 3²⁽ᵏ⁺¹⁾ − 1 is divisible by 8.</p>
+
+<p><b>Approach:</b> Write 3²⁽ᵏ⁺¹⁾ as 3²ᵏ × 3² = 9 × 3²ᵏ.</p>
+
+<p>Then add and subtract 9 to expose 3²ᵏ − 1:</p>
+
+<div class="math-block">$$
+\begin{aligned}
+3^{2(k+1)} - 1 &= 3^{2k+2} - 1 \\
+&= 3^{2k} \cdot 3^2 - 1 \\
+&= 9 \cdot 3^{2k} - 1 \\
+&= 9 \cdot 3^{2k} - 9 + 9 - 1 \\
+&= 9(3^{2k} - 1) + 8
+\end{aligned}$$</div>
+
+<p>Now substitute the hypothesis 3²ᵏ − 1 = 8m:</p>
+
+<div class="math-block">$$
+3^{2(k+1)} - 1 = 9(8m) + 8 = 8(9m + 1)$$</div>
+
+<p>Since 9m + 1 is an integer, the expression is 8 times an integer, so it is divisible by 8. ✓</p>
+
+<p><b>Why this makes sense:</b> The algebraic structure is the same as Example 1. We find the right number to add and subtract (9 in this case, because 9 = 3² is the multiplier in front of 3²ᵏ). This creates the block (3²ᵏ − 1) which we know is a multiple of 8, plus a remainder of 8, which is also a multiple of 8.</p>
+
+<p><hr></p>
+
+<h3>Worked Example 3: Prove n³ − n Is Divisible by 3</h3>
+
+<p><b>Statement:</b> For every counting number n, the expression n³ − n is a multiple of 3.</p>
+
+<p><b>Base case (n = 1):</b></p>
+
+<p>1³ − 1 = 0. The number 0 is divisible by 3 (0 = 3 × 0). ✓</p>
+
+<p><b>Inductive hypothesis:</b></p>
+
+<p>Assume k³ − k = 3m for some integer m.</p>
+
+<p><b>Inductive step:</b></p>
+
+<p><b>Approach:</b> Expand (k+1)³ fully, then rearrange to find k³ − k inside.</p>
+
+<p>First expand (k+1)³:</p>
+
+<p>(k+1)³ = k³ + 3k² + 3k + 1</p>
+
+<p>Now compute (k+1)³ − (k+1):</p>
+
+<div class="math-block">$$
+\begin{aligned}
+(k+1)^3 - (k+1) &= (k^3 + 3k^2 + 3k + 1) - k - 1 \\
+&= k^3 + 3k^2 + 3k + 1 - k - 1 \\
+&= k^3 + 3k^2 + 2k
+\end{aligned}$$</div>
+
+<p>Now we want to see k³ − k somewhere. Write 2k as 3k − k:</p>
+
+<div class="math-block">$$
+k^3 + 3k^2 + 2k = k^3 + 3k^2 + 3k - k = (k^3 - k) + 3k^2 + 3k$$</div>
+
+<p>Factor 3 from the last two terms:</p>
+
+<p>(k³ − k) + 3(k² + k)</p>
+
+<p>Now substitute k³ − k = 3m from the hypothesis:</p>
+
+<p>3m + 3(k² + k) = 3(m + k² + k)</p>
+
+<p>This is 3 times an integer, so (k+1)³ − (k+1) is divisible by 3. ✓</p>
+
+<p><b>Why this makes sense:</b> When we expand (k+1)³, we get k³ plus extra terms. Subtracting (k+1) isolates k³ − k and leaves behind terms that all have a factor of 3. The induction hypothesis handles k³ − k, and the remaining terms are clearly multiples of 3.</p>
+
+<p><b>Pitfall alert:</b> When you expand (k+1)³, be careful with signs. The subtraction of (k+1) means you subtract both k and 1. Students sometimes forget to subtract the 1.</p>
+
+<p><hr></p>
+
+<h2>Part B: Inequality Proofs</h2>
+
+<h3>The Idea</h3>
+
+<p>When proving inequalities by induction, the inductive step is different from divisibility. Instead of showing that something is a multiple, we build a chain of inequalities. We start with the (k+1) expression, relate it to the k expression, apply the hypothesis, and keep comparing until we reach the desired inequality.</p>
+
+<p>A common technique: we may need to prove a small &quot;helper inequality&quot; on the side (for example, showing that 2k ≥ k+1 when k ≥ 1).</p>
+
+<p><hr></p>
+
+<h3>Worked Example 4: Prove 2ⁿ &gt; n for All n ≥ 1</h3>
+
+<p><b>Statement:</b> For every counting number n, the number 2 raised to the power n is greater than n itself.</p>
+
+<p><b>Base case (n = 1):</b></p>
+
+<p>2¹ = 2, and 2 &gt; 1, so the statement holds. ✓</p>
+
+<p><b>Inductive hypothesis:</b></p>
+
+<p>Assume 2ᵏ &gt; k for some counting number k.</p>
+
+<p><b>Inductive step:</b></p>
+
+<p>We need to show that 2ᵏ⁺¹ &gt; k + 1.</p>
+
+<p><b>Approach:</b> Write 2ᵏ⁺¹ as 2 × 2ᵏ. Then apply the hypothesis.</p>
+
+<div class="math-block">$$
+2^{k+1} = 2 \cdot 2^k$$</div>
+
+<p>Since we know 2ᵏ &gt; k (by the hypothesis), multiplying both sides by the positive number 2 preserves the inequality:</p>
+
+<div class="math-block">$$
+2 \cdot 2^k > 2 \cdot k$$</div>
+
+<p>So 2ᵏ⁺¹ &gt; 2k.</p>
+
+<p>Now we ask: is 2k at least as big as k + 1? Since k ≥ 1, we have k + k ≥ k + 1, which means 2k ≥ k + 1.</p>
+
+<p>Chaining these together:</p>
+
+<div class="math-block">$$
+2^{k+1} > 2k \geq k + 1$$</div>
+
+<p>Therefore 2ᵏ⁺¹ &gt; k + 1. ✓</p>
+
+<p><b>Why this makes sense:</b> Multiplying the hypothesis by 2 gives us 2ᵏ⁺¹ &gt; 2k. Then we compare 2k with k+1. For any k ≥ 1, doubling k gives a number that is at least k+1 (since k ≥ 1 implies k + k ≥ k + 1). The chain of inequalities completes the proof.</p>
+
+<p><hr></p>
+
+<h3>Worked Example 5: Prove 2ⁿ &gt; n² for n ≥ 5</h3>
+
+<p><b>Statement:</b> For every integer n greater than or equal to 5, the number 2ⁿ is greater than n².</p>
+
+<p>Notice that the base case here starts at n = 5, not n = 1. Induction can start at any integer.</p>
+
+<p><b>Base case (n = 5):</b></p>
+
+<p>2⁵ = 32, and 5² = 25. Since 32 &gt; 25, the statement holds. ✓</p>
+
+<p><b>Inductive hypothesis:</b></p>
+
+<p>Assume 2ᵏ &gt; k² for some integer k ≥ 5.</p>
+
+<p><b>Inductive step:</b></p>
+
+<p>We need to show 2ᵏ⁺¹ &gt; (k+1)².</p>
+
+<p><b>Approach:</b> Write 2ᵏ⁺¹ as 2 × 2ᵏ, apply the hypothesis, then compare 2k² with (k+1)².</p>
+
+<div class="math-block">$$
+2^{k+1} = 2 \cdot 2^k > 2 \cdot k^2 \quad \text{(by the hypothesis)}$$</div>
+
+<p>Now we have 2ᵏ⁺¹ &gt; 2k². If we can show that 2k² ≥ (k+1)² for k ≥ 5, then we can conclude 2ᵏ⁺¹ &gt; (k+1)².</p>
+
+<p>Let&#x27;s check when 2k² ≥ (k+1)² holds. Expand (k+1)²:</p>
+
+<p>(k+1)² = k² + 2k + 1</p>
+
+<p>So we need:</p>
+
+<div class="math-block">$$
+2k^2 \geq k^2 + 2k + 1$$</div>
+
+<p>Subtract k² from both sides:</p>
+
+<div class="math-block">$$
+k^2 \geq 2k + 1$$</div>
+
+<p>Subtract 2k + 1 from both sides:</p>
+
+<div class="math-block">$$
+k^2 - 2k - 1 \geq 0$$</div>
+
+<p>Rewrite as (k − 1)² − 2 ≥ 0, or (k − 1)² ≥ 2.</p>
+
+<p>For k ≥ 3, we have k − 1 ≥ 2, so (k − 1)² ≥ 4, which is certainly ≥ 2. Since our k is at least 5, this condition is satisfied.</p>
+
+<p>Thus 2k² ≥ (k+1)² for all k ≥ 5. Chaining:</p>
+
+<div class="math-block">$$
+2^{k+1} > 2k^2 \geq (k+1)^2$$</div>
+
+<p>Therefore 2ᵏ⁺¹ &gt; (k+1)². ✓</p>
+
+<p><b>Why this makes sense:</b> The helper inequality 2k² ≥ (k+1)² is the crucial step. It is not true for small k (try k = 2: 2×4 = 8, but 3² = 9). This is why the statement itself is false for n = 2, 3, and 4 — and why the base case must start at n = 5. The induction proof captures exactly where the statement becomes true and stays true.</p>
+
+<p><b>Common misconception:</b> Students sometimes try to prove 2ⁿ &gt; n² starting from n = 1. It fails at n = 2 (2² = 4 = 2², not greater) and n = 3 (2³ = 8 &lt; 9 = 3²) and n = 4 (2⁴ = 16 = 4², not greater). The statement only becomes true at n = 5. Always check where the statement first becomes true and set your base case there.</p>
+
+<p><hr></p>
+
+<h2>Practice Problems</h2>
+
+<p><hr></p>
+
+<h3>Problem 1</h3>
+<p>Prove by induction that 5ⁿ − 1 is divisible by 4 for every counting number n. Write out all three parts clearly: base case, inductive hypothesis, and inductive step.</p>
+
+<p><hr></p>
+
+<h3>Problem 2</h3>
+<p>Prove by induction that 11ⁿ − 6 is divisible by 5 for every counting number n. In the inductive step, explain your choice of what number to add and subtract.</p>
+
+<p><hr></p>
+
+<h3>Problem 3</h3>
+<p>Prove by induction that n(n² + 5) is divisible by 6 for every counting number n. *Hint: after expanding (k+1)((k+1)² + 5), try to isolate k(k² + 5) and then show the remaining terms are also multiples of 6. You may need to note that the product of two consecutive integers is always even.*</p>
+
+<p><hr></p>
+
+<h3>Problem 4</h3>
+<p>Prove by induction that 3ⁿ &gt; 2ⁿ for every counting number n. Your inductive step should involve multiplying an inequality by a positive number.</p>
+
+<p><hr></p>
+
+<h3>Problem 5 (IB Exam Style — 7 marks)</h3>
+<p>A sequence is defined by the statement P(n): n! &gt; 2ⁿ for integers n ≥ 4.</p>
+
+<p>(a) [1 mark] Show that P(4) is true.</p>
+
+<p>(b) [1 mark] Write down the inductive hypothesis for P(k), where k ≥ 4.</p>
+
+<p>(c) [5 marks] Prove by induction that n! &gt; 2ⁿ for all integers n ≥ 4. In your inductive step, clearly state any additional inequality you use and justify why it holds for k ≥ 4.</p>
+
+<p><hr></p>
+
+<h3>Problem 6</h3>
+<p>Prove Bernoulli&#x27;s inequality: (1 + x)ⁿ ≥ 1 + nx for every counting number n and every real number x &gt; −1.</p>
+
+<p>In the inductive step, you will multiply both sides of the hypothesis by (1 + x). Pay attention to the sign of (1 + x) — explain why the inequality direction is preserved.</p>
+
+<p><hr></p>
+
+<h2>Answers</h2>
+
+<p><hr></p>
+
+<h3>Answer 1</h3>
+
+<p>Let P(n) be the statement &quot;5ⁿ − 1 is divisible by 4.&quot;</p>
+
+<p><b>Base case (n = 1):</b> 5¹ − 1 = 4. Since 4 = 4 × 1, the statement is true for n = 1.</p>
+
+<p><b>Inductive hypothesis:</b> Assume P(k) is true for some k. That is, 5ᵏ − 1 = 4m for some integer m.</p>
+
+<p><b>Inductive step:</b> Consider 5ᵏ⁺¹ − 1.</p>
+
+<p>Write 5ᵏ⁺¹ = 5 × 5ᵏ. Then add and subtract 5:</p>
+
+<div class="math-block">$$
+5^{k+1} - 1 = 5 \cdot 5^k - 5 + 5 - 1 = 5(5^k - 1) + 4$$</div>
+
+<p>Substitute 5ᵏ − 1 = 4m:</p>
+
+<div class="math-block">$$
+5(4m) + 4 = 4(5m + 1)$$</div>
+
+<p>This is 4 times the integer (5m + 1), so 5ᵏ⁺¹ − 1 is divisible by 4. Thus P(k+1) is true.</p>
+
+<p><b>Why it works:</b> Adding and subtracting 5 creates the factor (5ᵏ − 1) which the hypothesis tells us is 4m. The leftover 4 is also a multiple of 4. Their sum is a multiple of 4.</p>
+
+<p><hr></p>
+
+<h3>Answer 2</h3>
+
+<p>Let P(n) be &quot;11ⁿ − 6 is divisible by 5.&quot;</p>
+
+<p><b>Base case (n = 1):</b> 11¹ − 6 = 5, which equals 5 × 1. True.</p>
+
+<p><b>Inductive hypothesis:</b> 11ᵏ − 6 = 5m for some integer m.</p>
+
+<p><b>Inductive step:</b> Write 11ᵏ⁺¹ = 11 × 11ᵏ.</p>
+
+<p>We need to add and subtract a number that makes (11ᵏ − 6) appear. Since we have 11 × 11ᵏ, we want 11 × 6 = 66:</p>
+
+<div class="math-block">$$
+11^{k+1} - 6 = 11 \cdot 11^k - 6 = 11 \cdot 11^k - 66 + 66 - 6 = 11(11^k - 6) + 60$$</div>
+
+<p>Substitute 11ᵏ − 6 = 5m:</p>
+
+<div class="math-block">$$
+11(5m) + 60 = 5(11m) + 5 \cdot 12 = 5(11m + 12)$$</div>
+
+<p>This is 5 times an integer, so 11ᵏ⁺¹ − 6 is divisible by 5. ✓</p>
+
+<p><b>Why add and subtract 66?</b> We have 11 × 11ᵏ. To expose (11ᵏ − 6), we need 11 × (−6) = −66. So we write 11 × 11ᵏ − 66 + 60, which equals the original 11 × 11ᵏ − 6 because −66 + 60 = −6.</p>
+
+<p><hr></p>
+
+<h3>Answer 3</h3>
+
+<p>Let P(n) be &quot;n(n² + 5) is divisible by 6.&quot;</p>
+
+<p><b>Base case (n = 1):</b> 1 × (1 + 5) = 6. Since 6 = 6 × 1, true.</p>
+
+<p><b>Inductive hypothesis:</b> k(k² + 5) = 6m for some integer m.</p>
+
+<p><b>Inductive step:</b> Compute (k+1)((k+1)² + 5).</p>
+
+<p>First, (k+1)² = k² + 2k + 1, so (k+1)² + 5 = k² + 2k + 6.</p>
+
+<p>Now multiply:</p>
+
+<div class="math-block">$$
+(k+1)(k^2 + 2k + 6) = (k+1)(k^2 + 5 + 2k + 1)$$</div>
+
+<p>We can separate the (k² + 5) part:</p>
+
+<div class="math-block">$$
+(k+1)(k^2 + 5) + (k+1)(2k + 1)$$</div>
+
+<p>Expand the first part: (k+1)(k² + 5) = k(k² + 5) + (k² + 5).</p>
+
+<p>The second part: (k+1)(2k + 1) = 2k² + k + 2k + 1 = 2k² + 3k + 1.</p>
+
+<p>Add everything together:</p>
+
+<div class="math-block">$$
+k(k^2 + 5) + (k^2 + 5) + (2k^2 + 3k + 1) = k(k^2 + 5) + 3k^2 + 3k + 6$$</div>
+
+<p>Factor 3 from the middle terms:</p>
+
+<div class="math-block">$$
+k(k^2 + 5) + 3k(k+1) + 6$$</div>
+
+<p>Now substitute k(k² + 5) = 6m:</p>
+
+<div class="math-block">$$
+6m + 3k(k+1) + 6$$</div>
+
+<p>The term k(k+1) is the product of two consecutive integers. One of any two consecutive integers is even, so k(k+1) is even — it equals 2t for some integer t. Then 3k(k+1) = 3 × 2t = 6t, which is divisible by 6.</p>
+
+<p>The term 6 is also divisible by 6. And 6m is divisible by 6. The sum of three multiples of 6 is a multiple of 6. Therefore the whole expression is divisible by 6.</p>
+
+<p><b>Pitfall:</b> Students sometimes try to directly factor 6 out of 3k(k+1) and fail because 3k(k+1) does not look like a multiple of 6 at first glance. The key insight is that k(k+1) is always even, so 3 times an even number is a multiple of 6.</p>
+
+<p><hr></p>
+
+<h3>Answer 4</h3>
+
+<p>Let P(n) be &quot;3ⁿ &gt; 2ⁿ.&quot;</p>
+
+<p><b>Base case (n = 1):</b> 3¹ = 3, 2¹ = 2. Since 3 &gt; 2, P(1) is true.</p>
+
+<p><b>Inductive hypothesis:</b> 3ᵏ &gt; 2ᵏ for some k.</p>
+
+<p><b>Inductive step:</b> Write 3ᵏ⁺¹ = 3 × 3ᵏ.</p>
+
+<p>By the hypothesis, 3ᵏ &gt; 2ᵏ. Since 3 is positive, multiplying both sides by 3 preserves the inequality:</p>
+
+<p>3 × 3ᵏ &gt; 3 × 2ᵏ, so 3ᵏ⁺¹ &gt; 3 × 2ᵏ.</p>
+
+<p>Now 3 × 2ᵏ is certainly greater than 2 × 2ᵏ (because 3 &gt; 2 and 2ᵏ is positive). And 2 × 2ᵏ = 2ᵏ⁺¹.</p>
+
+<p>Chaining: 3ᵏ⁺¹ &gt; 3 × 2ᵏ &gt; 2 × 2ᵏ = 2ᵏ⁺¹.</p>
+
+<p>Therefore 3ᵏ⁺¹ &gt; 2ᵏ⁺¹. ✓</p>
+
+<p><b>Why it works:</b> The hypothesis gives us a direct comparison between 3ᵏ and 2ᵏ. Multiplying by 3 on one side and then comparing to 2ᵏ⁺¹ uses the fact that 3 × 2ᵏ &gt; 2 × 2ᵏ = 2ᵏ⁺¹.</p>
+
+<p><b>Common misconception:</b> Some students write 3ᵏ⁺¹ = 3 × 3ᵏ &gt; 3 × 2ᵏ and then claim this equals 6ᵏ, which is wrong. 3 × 2ᵏ is not 6ᵏ. The exponent belongs only to the 2, not to the 3.</p>
+
+<p><hr></p>
+
+<h3>Answer 5</h3>
+
+<p>(a) P(4): 4! = 24, and 2⁴ = 16. Since 24 &gt; 16, P(4) is true. [1 mark]</p>
+
+<p>(b) Inductive hypothesis: Assume k! &gt; 2ᵏ for some integer k ≥ 4. [1 mark]</p>
+
+<p>(c) <b>Inductive step</b> [5 marks]:</p>
+
+<p>We need to prove (k+1)! &gt; 2ᵏ⁺¹.</p>
+
+<p>Write (k+1)! = (k+1) × k!.</p>
+
+<p>By the hypothesis, k! &gt; 2ᵏ. Since (k+1) is positive, multiply both sides by (k+1):</p>
+
+<p>(k+1) × k! &gt; (k+1) × 2ᵏ</p>
+
+<p>So (k+1)! &gt; (k+1) × 2ᵏ.</p>
+
+<p>Now, since k ≥ 4, we have k + 1 ≥ 5, and 5 &gt; 2. Therefore (k+1) × 2ᵏ &gt; 2 × 2ᵏ = 2ᵏ⁺¹.</p>
+
+<p>Chaining: (k+1)! &gt; (k+1) × 2ᵏ &gt; 2 × 2ᵏ = 2ᵏ⁺¹.</p>
+
+<p>Thus (k+1)! &gt; 2ᵏ⁺¹. ✓</p>
+
+<p>Since P(4) is true and P(k) ⇒ P(k+1) for all k ≥ 4, by induction n! &gt; 2ⁿ for all n ≥ 4.</p>
+
+<p><b>Why the condition k ≥ 4 matters:</b> The step (k+1) × 2ᵏ &gt; 2 × 2ᵏ requires k+1 &gt; 2, which is true for k ≥ 2. However, the statement n! &gt; 2ⁿ is false for n = 2 (2! = 2 = 2², not greater) and n = 3 (3! = 6 &lt; 8 = 2³). The base case at n = 4 is the first place where the statement becomes true.</p>
+
+<p><hr></p>
+
+<h3>Answer 6</h3>
+
+<p>Let P(n) be &quot;(1 + x)ⁿ ≥ 1 + nx&quot; for x &gt; −1.</p>
+
+<p><b>Base case (n = 1):</b> (1 + x)¹ = 1 + x = 1 + 1×x. The equality holds, so P(1) is true.</p>
+
+<p><b>Inductive hypothesis:</b> (1 + x)ᵏ ≥ 1 + kx for some k.</p>
+
+<p><b>Inductive step:</b> Write (1 + x)ᵏ⁺¹ = (1 + x)(1 + x)ᵏ.</p>
+
+<p>Multiply both sides of the hypothesis by (1 + x). Note: since x &gt; −1, we have 1 + x &gt; 0, so multiplying by (1 + x) does not flip the inequality direction.</p>
+
+<p>(1 + x)(1 + x)ᵏ ≥ (1 + x)(1 + kx)</p>
+
+<p>Now expand the right-hand side:</p>
+
+<p>(1 + x)(1 + kx) = 1 + kx + x + kx² = 1 + (k+1)x + kx²</p>
+
+<p>Since kx² ≥ 0 (k is a positive integer and x² is non-negative), we have:</p>
+
+<p>1 + (k+1)x + kx² ≥ 1 + (k+1)x</p>
+
+<p>Chaining: (1 + x)ᵏ⁺¹ ≥ 1 + (k+1)x + kx² ≥ 1 + (k+1)x.</p>
+
+<p>Thus (1 + x)ᵏ⁺¹ ≥ 1 + (k+1)x. ✓</p>
+
+<p><b>Why x &gt; −1 matters:</b> If x were less than −1, then 1 + x would be negative. Multiplying an inequality by a negative number flips the direction, and the proof would break. The condition x &gt; −1 guarantees that 1 + x is positive, so the inequality direction is preserved when we multiply.</p>
+
+
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+</body>
+</html>

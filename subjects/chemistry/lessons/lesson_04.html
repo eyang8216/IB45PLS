@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 4: Atomic Emission Spectra — Hydrogen Spectrum & Convergence — IB Chemistry HL</title>
+<script>window.MathJax = { loader: {load: ['[tex]/mhchem']}, tex: {packages: {'[+]': ['mhchem']}} };</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; --hover: #f5f0e8; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Palatino', 'Georgia', serif; background: var(--bg); color: var(--text); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; font-size: 17px; line-height: 1.7; }
+  h1 { font-size: 1.7rem; color: var(--accent); margin-bottom: 0.5rem; }
+  h2 { font-size: 1.25rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; margin: 2rem 0 1rem; }
+  h3 { font-size: 1.1rem; color: #444; margin: 1.3rem 0 0.5rem; }
+  p, li { margin-bottom: 0.6rem; }
+  ul, ol { padding-left: 1.8rem; margin-bottom: 1rem; }
+  .worked { background: #f0f7f0; border-left: 4px solid #2c5f2d; padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
+  .worked strong { color: #2c5f2d; }
+  .answer { background: #fefdf7; border: 1px solid var(--border); padding: 0.8rem 1.2rem; margin: 0.5rem 0; border-radius: 6px; }
+  .nav { display: flex; justify-content: space-between; margin: 3rem 0 1rem; padding-top: 1rem; border-top: 2px solid var(--border); font-size: 0.9rem; }
+  .nav a { color: #1a5c9e; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  .definition { background: #fdf5e6; border-left: 4px solid #d4a017; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  code { background: #f0f0f0; padding: 0.15rem 0.35rem; border-radius: 3px; font-size: 0.9em; }
+  table { border-collapse: collapse; margin: 1rem 0; width: 100%; }
+  th, td { border: 1px solid var(--border); padding: 0.5rem 0.8rem; text-align: left; }
+  th { background: #f5f0e8; }
+  @media print { body { font-size: 14px; } .nav { display: none; } }
+</style>
+</head>
+<body>
+<h1>Lesson 4: Atomic Emission Spectra — Hydrogen Spectrum & Convergence</h1>
+
+<h2>What You'll Learn</h2>
+<ul>
+  <li>Distinguish between continuous spectra and line spectra, and explain why line spectra are evidence that electron energy levels are quantised</li>
+  <li>Describe the three stages of producing a line spectrum: excitation, relaxation (emission), and detection</li>
+  <li>Name the three main series in the hydrogen emission spectrum and identify the final energy level (n₁) for each series</li>
+  <li>Explain what the convergence limit of a spectral series represents and how it is related to the ionisation energy of the atom</li>
+  <li>Calculate the energy of a photon from its wavelength or frequency using ΔE = hν and c = λν</li>
+  <li>Use the Rydberg formula to calculate the wavelength of any line in the hydrogen spectrum and to explain trends within and between series</li>
+</ul>
+
+<hr>
+<h2>1. Continuous Spectra and Line Spectra — Two Very Different Kinds of Light</h2>
+<h3>What a continuous spectrum is</h3>
+<p>If you pass ordinary white light — the kind that comes from the sun or a light bulb — through a glass prism, the light spreads out into a rainbow of colours: red, orange, yellow, green, blue, indigo, and violet. This is a <strong>continuous spectrum</strong>. In a continuous spectrum, every possible wavelength of visible light is present, and the colours blend smoothly into one another without any gaps. A continuous spectrum is produced by hot, dense objects like the filament of an incandescent light bulb or the surface of a star. In these sources, atoms are so crowded together that they emit light across all wavelengths.</p>
+<h3>What a line spectrum is and why it is so important</h3>
+<p>A <strong>line spectrum</strong> looks completely different. If you pass the light from a glowing gas (such as the gas inside a neon sign or a hydrogen discharge tube) through a prism, you do not see a continuous rainbow. Instead, you see a dark background with a few isolated, brightly coloured lines at specific positions. Each line corresponds to light of one very precise wavelength. There is no light at all at the wavelengths between these lines.</p>
+<p>Line spectra were a puzzle when they were first discovered in the nineteenth century. Classical physics could not explain why atoms would only emit light at certain wavelengths and not others. The explanation only came with the development of quantum mechanics in the early twentieth century. The existence of line spectra is one of the most important pieces of evidence that <strong>electron energy levels in atoms are quantised</strong>, meaning that electrons can only have certain specific energies and cannot have any energy value in between. We will explore what "quantised" means and why it produces line spectra in the next section.</p>
+<p>A common misconception is that line spectra are only produced in special laboratory conditions. In fact, line spectra are everywhere. The colours of neon signs, the yellow glow of sodium street lamps, and the characteristic colours seen in fireworks are all examples of line spectra produced by excited atoms in gases.</p>
+<hr>
+<h2>2. How a Line Spectrum Is Produced — Excitation, Relaxation, and Detection</h2>
+<h3>What happens step by step</h3>
+<p>The production of a line spectrum can be understood as a three-stage process. Every step is a direct consequence of the fact that electrons in atoms can only occupy specific, discrete energy levels.</p>
+<p><strong>Stage 1: Excitation.</strong> An atom in its normal, lowest-energy state (called the <strong>ground state</strong>) is supplied with energy. This energy can come from heating, from an electrical discharge, or from absorbing a photon of light. An electron in the atom absorbs a precise amount of this energy — exactly the amount needed to jump from its current energy level to a higher, empty energy level. The atom is now in an <strong>excited state</strong>. The electron cannot absorb just any amount of energy; it can only absorb the exact amount that matches the energy gap between two allowed levels. This is what "quantised" means: only certain energy values are permitted.</p>
+<p><strong>Stage 2: Relaxation (Emission).</strong> An excited atom is unstable. After a very short time (typically about 10⁻⁸ seconds), the excited electron falls back down to a lower energy level. When it does so, it must release the energy it previously absorbed. This energy is released as a single particle (a quantum) of light, called a <strong>photon</strong>. The energy of this photon is exactly equal to the energy difference between the higher level and the lower level:</p>
+\[
+\Delta E = E_{\text{higher}} - E_{\text{lower}} = h\nu
+\]
+
+<p>In this equation, h is Planck's constant (6.63 × 10⁻³⁴ J s) and ν (the Greek letter "nu") is the frequency of the light in hertz (Hz). Since the energy levels are fixed, the energy difference ΔE can only take certain specific values, so the frequency (and therefore the colour) of the emitted photon can also only take certain specific values. This is why we see discrete lines rather than a continuous smear of colour.</p>
+<p><strong>Stage 3: Detection.</strong> The emitted photons travel to a detector (which could be a prism and a photographic plate, or a modern electronic detector). Because each photon has a specific wavelength, photons from different transitions are separated. The result is a <strong>line emission spectrum</strong>: a pattern of bright lines at distinct wavelengths against a dark background.</p>
+<div class="worked">
+<strong>Worked Example 1: Calculating the Energy of a Photon from Its Wavelength</strong>
+<p><strong>Problem:</strong> An electron in a hydrogen atom falls from the n = 3 energy level to the n = 2 energy level, emitting a photon of red light with a wavelength of 656 nanometres (nm). Calculate the energy of this photon in joules (J). Use h = 6.63 × 10⁻³⁴ J s and c = 3.00 × 10⁸ m s⁻¹.</p>
+<p><strong>Approach:</strong> We are given the wavelength and need the energy. The two equations that connect wavelength to energy are c = λν (which relates wavelength λ and frequency ν) and E = hν (which relates frequency ν and energy E). We will first find the frequency from the wavelength, then use the frequency to find the energy.</p>
+<p><strong>Step 1:</strong> Convert the wavelength from nanometres to metres, because the speed of light c is in metres per second.</p>
+\[
+\lambda = 656\text{ nm} = 656 \times 10^{-9}\text{ m} = 6.56 \times 10^{-7}\text{ m}
+\]
+
+<p><strong>Step 2:</strong> Calculate the frequency using c = λν, rearranged to ν = c / λ.</p>
+\[
+\nu = \frac{c}{\lambda} = \frac{3.00 \times 10^8\text{ m s}^{-1}}{6.56 \times 10^{-7}\text{ m}} = 4.57 \times 10^{14}\text{ Hz}
+\]
+
+<p><strong>Step 3:</strong> Calculate the energy using E = hν.</p>
+\[
+E = h\nu = (6.63 \times 10^{-34}\text{ J s}) \times (4.57 \times 10^{14}\text{ Hz}) = 3.03 \times 10^{-19}\text{ J}
+\]
+
+<p><strong>Why this makes sense:</strong> Photon energies for visible light are typically in the range of 10⁻¹⁹ J. The red photon has a longer wavelength and lower frequency than blue light, so its energy should be at the lower end of the visible range. About 3 × 10⁻¹⁹ J is reasonable. For context, if you multiply this energy by Avogadro's number (6.02 × 10²³), you get about 182 kJ mol⁻¹ — the energy per mole of these photons.</p>
+</div>
+
+<hr>
+<h2>3. The Hydrogen Emission Spectrum — Three Series of Lines</h2>
+<h3>Why hydrogen is the simplest and most important spectrum</h3>
+<p>Hydrogen is the simplest atom in the universe: it has only one proton and one electron. Because there is only one electron, the hydrogen emission spectrum is the simplest and cleanest line spectrum of any element. It became the testing ground for the quantum mechanical model of the atom, and understanding the hydrogen spectrum is essential for understanding atomic structure in general.</p>
+<h3>What a spectral series is</h3>
+<p>In the hydrogen spectrum, the many possible electron transitions are grouped into <strong>series</strong>. Each series corresponds to electrons falling to a specific lower energy level, designated as n₁. Different values of n₁ produce series in different regions of the electromagnetic spectrum:</p>
+<table>
+<tr>
+  <th>Series Name</th>
+  <th>Final Energy Level (n₁)</th>
+  <th>Region of the Electromagnetic Spectrum</th>
+  <th>Example Transition</th>
+</tr>
+<tr>
+  <td>-------------</td>
+  <td>------------------------</td>
+  <td>---------------------------------------</td>
+  <td>-------------------</td>
+</tr>
+<tr>
+  <td>Lyman series</td>
+  <td>n₁ = 1</td>
+  <td>Ultraviolet (UV)</td>
+  <td>n = 2 → n = 1</td>
+</tr>
+<tr>
+  <td>Balmer series</td>
+  <td>n₁ = 2</td>
+  <td>Visible light</td>
+  <td>n = 3 → n = 2</td>
+</tr>
+<tr>
+  <td>Paschen series</td>
+  <td>n₁ = 3</td>
+  <td>Infrared (IR)</td>
+  <td>n = 4 → n = 3</td>
+</tr>
+</table>
+
+<p>The <strong>Balmer series</strong> is the one you can see with your own eyes. It consists of four visible lines: a red line at 656 nm (from n = 3 to n = 2), a blue-green line at 486 nm (from n = 4 to n = 2), a blue line at 434 nm (from n = 5 to n = 2), and a violet line at 410 nm (from n = 6 to n = 2).</p>
+<p>The <strong>Lyman series</strong> lies entirely in the ultraviolet region. Because the electron is falling all the way to the ground state (n = 1), these transitions release more energy than Balmer transitions. Higher energy means higher frequency and shorter wavelength — all beyond what the human eye can see.</p>
+<p>The <strong>Paschen series</strong> lies in the infrared region. Because the electron only falls to n = 3, these transitions release less energy, producing photons with frequencies below the visible range.</p>
+<h3>A key pattern: the lines get closer together</h3>
+<p>Within any series, as you look at transitions from higher and higher starting levels, the lines get closer and closer together. For example, in the Balmer series, the gap between the n = 3 → 2 line (656 nm) and the n = 4 → 2 line (486 nm) is about 170 nm. The gap between n = 4 → 2 and n = 5 → 2 (434 nm) is only about 52 nm. As n gets larger, the energy levels themselves get closer together near the top, so the differences between successive transitions become smaller and smaller.</p>
+<div class="worked">
+<strong>Worked Example 2: Identifying a Transition from Its Wavelength</strong>
+<p><strong>Problem:</strong> A line in the emission spectrum of hydrogen is observed at a wavelength of 486 nm. This line belongs to the Balmer series. Determine the values of n₁ and n₂ for this transition.</p>
+<p><strong>Approach:</strong> The Balmer series is defined by n₁ = 2 (the electron always falls to the n = 2 level). The wavelength of 486 nm corresponds to one of the four visible Balmer lines. We need to identify which starting level n₂ produces this wavelength.</p>
+<p><strong>Solution:</strong> The four visible Balmer lines and their starting levels are: 656 nm (n₂ = 3), 486 nm (n₂ = 4), 434 nm (n₂ = 5), and 410 nm (n₂ = 6). Therefore, the line at 486 nm corresponds to the transition from n₂ = 4 to n₁ = 2.</p>
+<p><strong>Why this makes sense:</strong> It is useful to memorise the correspondence between the visible Balmer lines and their n₂ values, as IB exam questions often require you to identify transitions. The 486 nm line is the blue-green line, which is the second line in the series.</p>
+</div>
+
+<hr>
+<h2>4. The Convergence Limit — Where Lines Become a Continuum</h2>
+<h3>What the convergence limit is and what it physically represents</h3>
+<p>As we look at transitions from higher and higher starting levels within a series, the lines crowd closer and closer together. Eventually, at very high values of n, the lines are so close that they cannot be distinguished from one another. They appear to merge into a continuous band of light. The point at which this merging occurs is called the <strong>convergence limit</strong>.</p>
+<p>The convergence limit corresponds to a transition from n = ∞ (infinity) to the final level n₁ of that series. An electron at n = ∞ is completely free — it is no longer bound to the nucleus at all. The atom has been ionised. Therefore, the convergence limit represents the point at which the electron has just enough energy to escape the atom entirely.</p>
+<h3>How the convergence limit gives us the ionisation energy</h3>
+<p>For the Lyman series (n₁ = 1), the convergence limit corresponds to an electron falling from n = ∞ all the way to n = 1. The energy of a photon at the convergence limit is exactly the energy that would be required to do the reverse process: remove an electron from n = 1 and send it to n = ∞. In other words, the energy of the Lyman series convergence limit photon is equal to the <strong>first ionisation energy</strong> of hydrogen.</p>
+<p>We can calculate this energy using the frequency at convergence:</p>
+\[
+\text{Ionisation energy (per atom)} = h \times \nu_{\text{convergence}}
+\]
+
+<p>To convert from joules per atom to kilojoules per mole, multiply by Avogadro's number (6.02 × 10²³ mol⁻¹) and divide by 1000.</p>
+<div class="worked">
+<strong>Worked Example 3: Calculating Ionisation Energy from the Convergence Limit</strong>
+<p><strong>Problem:</strong> The convergence limit of the Lyman series for hydrogen occurs at a frequency of 3.28 × 10¹⁵ Hz. Calculate the first ionisation energy of hydrogen in kilojoules per mole (kJ mol⁻¹). Use h = 6.63 × 10⁻³⁴ J s.</p>
+<p><strong>Approach:</strong> First calculate the energy per photon (per atom) using E = hν. Then convert to energy per mole using Avogadro's number. Finally convert from joules to kilojoules.</p>
+<p><strong>Step 1:</strong> Energy per atom.</p>
+\[
+E_{\text{atom}} = h\nu = (6.63 \times 10^{-34}\text{ J s}) \times (3.28 \times 10^{15}\text{ Hz}) = 2.17 \times 10^{-18}\text{ J}
+\]
+
+<p><strong>Step 2:</strong> Energy per mole.</p>
+\[
+E_{\text{mole}} = (2.17 \times 10^{-18}\text{ J}) \times (6.02 \times 10^{23}\text{ mol}^{-1}) = 1.31 \times 10^{6}\text{ J mol}^{-1}
+\]
+
+<p><strong>Step 3:</strong> Convert to kilojoules.</p>
+\[
+E = 1.31 \times 10^{6}\text{ J mol}^{-1} \div 1000 = 1310\text{ kJ mol}^{-1}
+\]
+
+<p><strong>Why this makes sense:</strong> The literature value for the ionisation energy of hydrogen is 1312 kJ mol⁻¹. Our calculated value of 1310 kJ mol⁻¹ agrees to three significant figures. The small difference arises from rounding of constants.</p>
+</div>
+
+<hr>
+<h2>5. The Rydberg Formula — Predicting Any Line in the Hydrogen Spectrum</h2>
+<h3>What the Rydberg formula is and what it tells us</h3>
+<p>The <strong>Rydberg formula</strong> is a mathematical equation that can predict the wavelength of any line in the hydrogen emission spectrum, given the two energy levels involved in the transition. It is written as:</p>
+\[
+\frac{1}{\lambda} = R_H \left( \frac{1}{n_1^2} - \frac{1}{n_2^2} \right)
+\]
+
+<p>In this formula:</p>
+<ul>
+  <li>λ (lambda) is the wavelength of the emitted photon, in metres (m).</li>
+  <li>R_H is the Rydberg constant, which has a value of 1.097 × 10⁷ m⁻¹.</li>
+  <li>n₁ is the lower energy level (the level the electron falls to). This must be a positive integer: 1, 2, 3, and so on.</li>
+  <li>n₂ is the higher energy level (the level the electron falls from). This must be larger than n₁, so n₂ > n₁.</li>
+</ul>
+
+<p>The formula shows us that the energy of a photon (which is proportional to 1/λ) depends on the difference between 1/n₁² and 1/n₂². As n₂ gets larger and larger, the term 1/n₂² gets smaller and smaller, approaching zero. This explains why the lines in a series crowd together — the differences between successive transitions shrink as n₂ increases.</p>
+<h3>Using the Rydberg formula to compare series</h3>
+<p>The Rydberg formula also explains why the Lyman series (n₁ = 1) produces photons with much higher energy (shorter wavelength) than the Balmer series (n₁ = 2). When n₁ = 1, the term 1/n₁² = 1/1 = 1. When n₁ = 2, the term 1/n₁² = 1/4 = 0.25. Since 1/λ = R_H × (1/n₁² − 1/n₂²), a larger value of 1/n₁² leads to a larger value of 1/λ, which means a smaller wavelength λ and therefore a higher energy photon. The Lyman series photons are ultraviolet; the Balmer series photons are visible — exactly as the formula predicts.</p>
+<div class="worked">
+<strong>Worked Example 4: Using the Rydberg Formula to Calculate a Wavelength</strong>
+<p><strong>Problem:</strong> Use the Rydberg formula to calculate the wavelength of the first line in the Lyman series, which corresponds to the transition from n = 2 to n = 1. The Rydberg constant R_H = 1.097 × 10⁷ m⁻¹.</p>
+<p><strong>Approach:</strong> Substitute n₁ = 1 and n₂ = 2 into the Rydberg formula and solve for λ.</p>
+\[
+\frac{1}{\lambda} = R_H \left( \frac{1}{n_1^2} - \frac{1}{n_2^2} \right) = 1.097 \times 10^7 \times \left( \frac{1}{1^2} - \frac{1}{2^2} \right)
+\]
+
+\[
+\frac{1}{\lambda} = 1.097 \times 10^7 \times \left( 1 - \frac{1}{4} \right) = 1.097 \times 10^7 \times 0.75
+\]
+
+\[
+\frac{1}{\lambda} = 8.23 \times 10^6\text{ m}^{-1}
+\]
+
+\[
+\lambda = \frac{1}{8.23 \times 10^6} = 1.22 \times 10^{-7}\text{ m} = 122\text{ nm}
+\]
+
+<p><strong>Why this makes sense:</strong> The wavelength of 122 nm is in the ultraviolet region of the electromagnetic spectrum, which is exactly where we expect the Lyman series to be. The first line of the Lyman series is indeed the longest-wavelength (lowest-energy) line in that series, and 122 nm is just beyond the violet end of the visible spectrum.</p>
+</div>
+
+<hr>
+<h2>Practice Problems</h2>
+<p><strong>Problem 1:</strong> A photon of green light has a wavelength of 500 nanometres. Calculate the energy of this photon in joules. Use Planck's constant h = 6.63 × 10⁻³⁴ J s and the speed of light c = 3.00 × 10⁸ m s⁻¹.</p>
+<p><strong>Problem 2:</strong> A line in the Balmer series of the hydrogen emission spectrum has a frequency of 6.17 × 10¹⁴ Hz. (a) Calculate the wavelength of this line in nanometres. (b) Identify the transition by giving the values of n₁ and n₂. (c) State what colour this line appears to the human eye. (The visible spectrum spans roughly 400 nm to 700 nm.)</p>
+<p><strong>Problem 3:</strong> (a) The lines in the Balmer series get closer and closer together as the wavelength decreases. Explain why this happens, making reference to the energy levels in the hydrogen atom. (b) Name the series of the hydrogen spectrum that would be observed in the infrared region of the electromagnetic spectrum, and state the value of n₁ for this series.</p>
+<p><strong>Problem 4:</strong> The convergence limit of the Lyman series for atomic hydrogen occurs at a frequency of 3.28 × 10¹⁵ Hz. (a) Calculate the wavelength of the photon at the convergence limit. (b) Use this frequency to calculate the first ionisation energy of hydrogen in kilojoules per mole. Use h = 6.63 × 10⁻³⁴ J s and Avogadro's number = 6.02 × 10²³ mol⁻¹.</p>
+<p><strong>Problem 5 (IB-Style):</strong> The emission spectrum of atomic hydrogen contains a prominent red line at a wavelength of 656 nm in the visible region. (a) State the name of the series to which this line belongs, and give the values of n₁ and n₂ for the transition that produces it. (b) Calculate the energy, in joules, of one photon of this red light. Use c = 3.00 × 10⁸ m s⁻¹ and h = 6.63 × 10⁻³⁴ J s. (c) Another line in the same series appears at a wavelength of 365 nm, which is in the ultraviolet. Explain, by comparing the energy levels involved, why this line has a shorter wavelength (and therefore higher energy) than the 656 nm line. (d) The line at 365 nm happens to be the convergence limit of the Balmer series. Describe what would be observed in the spectrum at wavelengths shorter than 365 nm, and explain why.</p>
+<hr>
+<h2>Answers</h2>
+<p><strong>Answer 1:</strong> Convert wavelength to metres: λ = 500 nm = 5.00 × 10⁻⁷ m.</p>
+<p>Calculate frequency: ν = c / λ = (3.00 × 10⁸) / (5.00 × 10⁻⁷) = 6.00 × 10¹⁴ Hz.</p>
+<p>Calculate energy: E = hν = (6.63 × 10⁻³⁴) × (6.00 × 10¹⁴) = 3.98 × 10⁻¹⁹ J.</p>
+<hr>
+<p><strong>Answer 2:</strong> (a) λ = c / ν = (3.00 × 10⁸) / (6.17 × 10¹⁴) = 4.86 × 10⁻⁷ m = 486 nm.</p>
+<p>(b) The line at 486 nm is the second line of the Balmer series, corresponding to the transition from n₂ = 4 to n₁ = 2.</p>
+<p>(c) A wavelength of 486 nm falls in the blue-green region of the visible spectrum. The line appears as a blue-green (or cyan) colour.</p>
+<hr>
+<p><strong>Answer 3:</strong> (a) The lines get closer together because the energy levels in hydrogen converge as n increases. The energy difference between two adjacent levels, n and n + 1, is large at small values of n (for example, between n = 1 and n = 2) but becomes very small at large values of n (for example, between n = 10 and n = 11). Since the energy of the photon equals the energy difference between the two levels, transitions from high n values produce photons with very similar energies, and the corresponding spectral lines are crowded together. As n approaches infinity, the energy levels are so close together that the lines merge into a continuum.</p>
+<p>(b) The Paschen series appears in the infrared region. For this series, the electron always falls to n₁ = 3.</p>
+<hr>
+<p><strong>Answer 4:</strong> (a) λ = c / ν = (3.00 × 10⁸) / (3.28 × 10¹⁵) = 9.15 × 10⁻⁸ m = 91.5 nm. This is in the ultraviolet region.</p>
+<p>(b) Energy per atom: E = hν = (6.63 × 10⁻³⁴) × (3.28 × 10¹⁵) = 2.17 × 10⁻¹⁸ J.</p>
+<p>Energy per mole: E = (2.17 × 10⁻¹⁸) × (6.02 × 10²³) = 1.31 × 10⁶ J mol⁻¹.</p>
+<p>Convert to kJ: 1.31 × 10⁶ ÷ 1000 = 1310 kJ mol⁻¹. This is the first ionisation energy of hydrogen.</p>
+<hr>
+<p><strong>Answer 5:</strong> (a) The 656 nm line is in the visible region, so it belongs to the Balmer series, for which n₁ = 2. This particular line comes from the transition n₂ = 3 → n₁ = 2.</p>
+<p>(b) First, convert the wavelength: λ = 656 nm = 6.56 × 10⁻⁷ m.</p>
+<p>ν = c / λ = (3.00 × 10⁸) / (6.56 × 10⁻⁷) = 4.57 × 10¹⁴ Hz.</p>
+<p>E = hν = (6.63 × 10⁻³⁴) × (4.57 × 10¹⁴) = 3.03 × 10⁻¹⁹ J.</p>
+<p>(c) The 365 nm line involves a transition from a much higher starting level (for example, n₂ = 6 or higher) to n₁ = 2. The energy gap between a very high n level and n = 2 is larger than the energy gap between n = 3 and n = 2. A larger energy gap means the emitted photon carries more energy. Since energy and wavelength are inversely related (E = hc/λ), a higher energy photon has a shorter wavelength. Therefore, the transition from a higher n level produces a line at the shorter wavelength of 365 nm.</p>
+<p>(d) At wavelengths shorter than 365 nm (which is the convergence limit of the Balmer series), the spectrum would show a continuous range of light rather than discrete lines. The convergence limit represents the transition from n = ∞ to n = 2. At wavelengths shorter than this limit, the electron is no longer falling to n = 2 but is instead being completely removed from the atom (ionised). The ejected electron can carry away any amount of kinetic energy, allowing a continuous range of photon energies and therefore a continuous spectrum rather than discrete lines. This continuous region is sometimes called the Balmer continuum.</p>
+
+<div class="nav">
+  <a href="lesson_03.html">← Lesson 3</a>
+  <a href="lesson_05.html">Lesson 5 →</a>
+</div>
+
+</body>
+</html>

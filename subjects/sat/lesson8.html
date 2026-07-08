@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 8: Data Interpretation from Graphs & Tables</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root {
+    --bg: #fafaf9;
+    --text: #1a1a1a;
+    --accent: #1a5276;
+    --trap-bg: #fff3cd;
+    --trap-border: #ffc107;
+    --pattern-bg: #d1ecf1;
+    --pattern-border: #17a2b8;
+    --card: #ffffff;
+    --border: #d0d0cb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+  h1 { font-size: 1.8rem; color: var(--accent); border-bottom: 3px solid var(--accent); padding-bottom: 0.5rem; margin-bottom: 1rem; }
+  h2 { font-size: 1.35rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+  h3 { font-size: 1.15rem; color: #333; margin: 1.5rem 0 0.5rem; }
+  p, li { margin: 0.5em 0; }
+  ul, ol { padding-left: 1.5rem; margin: 0.5em 0; }
+  .trap-box {
+    background: var(--trap-bg);
+    border-left: 4px solid var(--trap-border);
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.95rem;
+  }
+  .trap-box strong { color: #856404; }
+  .pattern-box {
+    background: var(--pattern-bg);
+    border-left: 4px solid var(--pattern-border);
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.95rem;
+  }
+  .pattern-box strong { color: #0c5460; }
+  .example {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem 1.3rem;
+    margin: 1rem 0;
+  }
+  .example h4 { color: var(--accent); margin-bottom: 0.3rem; }
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 2.5rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  .nav a { color: var(--accent); text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  code { background: #f0f0f0; padding: 0.15em 0.4em; border-radius: 3px; font-size: 0.9em; }
+  strong { color: #222; }
+  @media print {
+    body { font-size: 14px; }
+    .nav { display: none; }
+  }
+</style>
+</head>
+<body>
+<h1>Lesson 8: Data Interpretation from Graphs & Tables</h1>
+<h2>What You'll Learn</h2>
+<ul>
+<li>Reading and comparing values from bar graphs, histograms, dot plots, and box plots</li>
+<li>Identifying misleading graph features: truncated axes, inconsistent scales</li>
+<li>Extracting exact values vs. estimating from graphs</li>
+<li>SAT-specific graph-reading traps</li>
+<li>Converting between visual representation and numerical data</li>
+<li>The "according to the graph" rule: answer is IN the data, not in your head</li>
+</ul>
+<h2>SAT Context</h2>
+<p>Data interpretation from graphs and tables is a staple of the SAT Math section, appearing 3-5 times per test. These questions test your ability to read visual displays of data accurately—not your math skills. The SAT uses bar graphs, line graphs, histograms, dot plots, and box plots, often with tricky axis scaling designed to fool careless readers. For an AAHL student, the "math" is trivial; the challenge is purely visual literacy—reading axes correctly, not making assumptions, and extracting the right number from the right bar. These are speed bumps, not roadblocks: you can answer most in 30-45 seconds if you're methodical.</p>
+<h2>Bar Graphs</h2>
+<h3> What They Show</h3>
+<p>Bar graphs compare quantities across categories. Each bar's height represents a value.</p>
+<h3> How to Read Them</h3>
+<li>Read the **title** to understand what's being measured.</li>
+<li>Check the **axes labels**: what does each bar represent? What unit is the vertical axis?</li>
+<li>Check the **scale**: does the axis start at 0? What are the increments?</li>
+<li>For exact values, trace the top of the bar to the axis.</li>
+<p>> **🚨 SAT TRAP ALERT: The Truncated Axis.** Sometimes the SAT shows a bar graph where the vertical axis starts at a value other than 0. If a graph starts at 50 instead of 0, a bar that's twice as tall as another does NOT represent twice the value. Example: axis runs from 80 to 100. Bar A at 85, Bar B at 95. Bar B looks about twice as tall visually, but the actual values are $85$ vs. $95$—only about a 12% difference. Always check where the axis starts before making visual comparisons.</p>
+<h3> Bar Graph Example</h3>
+<p>A graph shows "Number of Books Read" for 5 students:</p>
+<p>| Student | Books |</p>
+<p>|---------|:-----:|</p>
+<p>| Ana     |   8   |</p>
+<p>| Ben     |   5   |</p>
+<p>| Cal     |   12  |</p>
+<p>| Dee     |   7   |</p>
+<p>| Eli     |   9   |</p>
+<p>**Question:** How many more books did Cal read than the mean of all students?</p>
+<p>Mean = $\frac{8+5+12+7+9}{5} = \frac{41}{5} = 8.2$. Cal: 12. Difference: $12 - 8.2 = 3.8$.</p>
+<h2>Histograms</h2>
+<h3> What They Show</h3>
+<p>Histograms display the distribution of a numerical variable. Bars touch (unlike bar graphs) and represent intervals (bins).</p>
+<h3> How to Read Them</h3>
+<li>The x-axis shows numerical intervals (e.g., 0-10, 10-20, 20-30).</li>
+<li>The height shows the **frequency** (count) in each interval.</li>
+<li>The shape reveals distribution: symmetric, skewed right, skewed left, bimodal.</li>
+<h3> Histogram vs. Bar Graph</h3>
+<ul>
+<li>**Bar graph:** Categories (dogs, cats, birds) — bars don't touch.</li>
+<li>**Histogram:** Numerical ranges (0-10, 10-20) — bars touch.</li>
+</ul>
+<p>> **🔍 PATTERN RECOGNITION: "According to the graph..."** When the SAT uses this phrase, the answer must be directly supported by the visual data. Don't bring in outside knowledge or assumptions. If you can't point to the specific bar, line, or point that proves the answer, it's wrong. This is the SAT's way of testing whether you can extract information from a data display without over-interpreting.</p>
+<h2>Dot Plots</h2>
+<h3> What They Show</h3>
+<p>Each dot represents one observation. Dot plots show individual data points and reveal clusters, gaps, and outliers.</p>
+<h3> How to Read Them</h3>
+<ul>
+<li>Count dots to find frequency.</li>
+<li>The mode is the value with the most dots.</li>
+<li>The median is the middle dot (or average of two middle dots).</li>
+<li>The range is (max value − min value).</li>
+</ul>
+<h2>Box Plots (Box-and-Whisker Plots)</h2>
+<h3> What They Show</h3>
+<p>A box plot displays the five-number summary:</p>
+<ul>
+<li>**Minimum:** Left whisker end</li>
+<li>**Q1 (first quartile):** Left edge of box (25th percentile)</li>
+<li>**Median:** Line inside box (50th percentile)</li>
+<li>**Q3 (third quartile):** Right edge of box (75th percentile)</li>
+<li>**Maximum:** Right whisker end</li>
+</ul>
+<h3> How to Read Them</h3>
+<ul>
+<li>The box contains the middle 50% of data.</li>
+<li>The IQR (Interquartile Range) = Q3 − Q1 = width of the box.</li>
+<li>A longer whisker indicates more spread in that tail.</li>
+<li>The median line's position in the box shows skew: closer to Q1 = right-skewed; closer to Q3 = left-skewed.</li>
+</ul>
+<h3> SAT Question Types</h3>
+<li>"What is the median?" — Read the line inside the box.</li>
+<li>"What is the range?" — Maximum − Minimum.</li>
+<li>"What is the IQR?" — Q3 − Q1.</li>
+<li>"Which statement about the distribution is true?" — Check spread, skew, outliers.</li>
+<h3> Worked Example 1: Bar Graph with Misleading Scale</h3>
+<p>**Problem:** A bar graph shows monthly profits for a company. The y-axis starts at $80,000 and goes to $100,000 in increments of $2,000. January shows a bar at $84,000, and June shows a bar at $96,000. By what percent did profit increase from January to June?</p>
+<p>A) About 14.3%</p>
+<p>B) About 50%</p>
+<p>C) The graph makes it impossible to tell exactly.</p>
+<p>D) About 12.5%</p>
+<p>**Solution:**</p>
+<p>Percent increase = $\frac{96,000 - 84,000}{84,000} \times 100\% = \frac{12,000}{84,000} \times 100\% \approx 14.3\%$.</p>
+<p>Despite the axis starting at $80,000, the actual values are given. The visual might make the increase look dramatic (the June bar appears about 6 times taller visually), but the actual percent increase is modest.</p>
+<p>**Answer: A.**</p>
+<p>**Wrong answer analysis:**</p>
+<ul>
+<li>B (50%): This is the visual impression if you ignore the truncated axis. The June bar ($96K - 80K = 16K$ above baseline) is about twice the January bar ($84K - 80K = 4K$ above baseline) visually, but that's misleading.</li>
+<li>C is incorrect because the values ARE given and precise.</li>
+<li>D (12.5%) comes from $\frac{12,000}{96,000}$ (using June as denominator instead of January).</li>
+</ul>
+<h3> Worked Example 2: Box Plot Interpretation</h3>
+<p>**Problem:** Two box plots show test scores for Class A and Class B:</p>
+<ul>
+<li>Class A: Min = 55, Q1 = 68, Median = 78, Q3 = 85, Max = 98</li>
+<li>Class B: Min = 60, Q1 = 72, Median = 76, Q3 = 82, Max = 92</li>
+</ul>
+<p>Which statement must be true?</p>
+<p>A) Every student in Class A scored higher than every student in Class B.</p>
+<p>B) The range of Class A is greater than the range of Class B.</p>
+<p>C) The median of Class A is lower than the median of Class B.</p>
+<p>D) At least 75% of Class B scored above 60.</p>
+<p>**Solution:**</p>
+<ul>
+<li>A: False. Class A min (55) is less than Class B min (60), so NOT every Class A student scored higher.</li>
+<li>B: Range of A = 98 − 55 = 43. Range of B = 92 − 60 = 32. So 43 > 32. True! But wait—let me check all options.</li>
+<li>C: Median of A = 78, median of B = 76. 78 > 76, so A's median is higher. False.</li>
+<li>D: 75% above 60? B's min is 60, so Q1 is 72. At least 75% scored above Q1 (72), which is > 60. But the exact statement "above 60" — 100% scored at or above 60 (min = 60), so at least 75% scored above 60? That's technically true (100% > 75%), but it's a strange claim. Actually, "above 60" means > 60, and min = 60 means at least one person scored exactly 60, so not all are above 60. But we don't know how many scored exactly 60. Box plots don't give that precision. So D is not necessarily true.</li>
+</ul>
+<p>**Answer: B.**</p>
+<h3> Worked Example 3: Dot Plot Median</h3>
+<p>**Problem:** A dot plot shows the following numbers of pets per household for 15 households:</p>
+<p>1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 5</p>
+<p>What is the median number of pets?</p>
+<p>**Solution:**</p>
+<p>15 data points. The median is the 8th value when sorted.</p>
+<p>Counting: 1,1,1,1 (4), 2,2,2,2,2 (5 more = 9 total) → the 8th value is 2.</p>
+<p>**Answer: 2.**</p>
+<hr>
+<h2>Practice Problems</h2>
+<li>A histogram of exam scores shows: 50-59: 3 students, 60-69: 8 students, 70-79: 12 students, 80-89: 15 students, 90-100: 7 students. How many students scored 70 or above?</li>
+<p>A) 12</p>
+<p>B) 27</p>
+<p>C) 34</p>
+<p>D) 45</p>
+<li>A box plot shows: Min=10, Q1=15, Median=22, Q3=30, Max=45. What is the interquartile range (IQR)?</li>
+<p>A) 8</p>
+<p>B) 12</p>
+<p>C) 15</p>
+<p>D) 35</p>
+<li>A bar graph shows car sales: the y-axis starts at 180 and goes to 200. Sales for 2022 show a bar at 185; for 2023, a bar at 195. The 2023 bar appears twice as tall visually. What is the actual percent increase?</li>
+<p>A) About 5.4%</p>
+<p>B) About 10%</p>
+<p>C) About 50%</p>
+<p>D) About 100%</p>
+<li>A dot plot shows the ages of participants: 18, 18, 19, 20, 20, 20, 21, 21, 22, 25. What is the mode?</li>
+<p>A) 18</p>
+<p>B) 20</p>
+<p>C) 21</p>
+<p>D) 20.5</p>
+<li>A line graph shows temperature over 8 hours. According to the graph, at which hour was the temperature exactly 72°F? The graph shows: Hour 1: 68°, Hour 3: 72°, Hour 5: 76°, Hour 7: 70°. If a student claims the temperature at Hour 6 was 73°, is this supported?</li>
+<p>A) Yes, because the trend is upward.</p>
+<p>B) No, because the graph only shows data at odd hours.</p>
+<p>C) Yes, because $76 - 70 = 6$ and halfway is 73.</p>
+<p>D) No, because the temperature was decreasing from hour 5 to 7.</p>
+<li>**(Challenge)** A box plot of salaries (in thousands) shows: Min=35, Q1=48, Median=62, Q3=80, Max=150. An employee earning $150,000 is an outlier based on the $1.5 \times \text{IQR}$ rule. What is the upper fence?</li>
+<p>A) 80</p>
+<p>B) 96</p>
+<p>C) 128</p>
+<p>D) 150</p>
+<hr>
+<h2>Answers</h2>
+<li>**Answer: C.** 70 or above: 70-79 (12) + 80-89 (15) + 90-100 (7) = 34. **Wrong answers:** A (12) is only the 70-79 bin. B (27) = 12 + 15, forgetting the 90-100 bin. D (45) is the total of all students (3+8+12+15+7 = 45).</li>
+<li>**Answer: C.** IQR = Q3 − Q1 = 30 − 15 = 15. **Wrong answers:** A (8) = 30 − 22 (Q3 − median). B (12) = 22 − 10 (median − min). D (35) = 45 − 10 (range, not IQR).</li>
+<li>**Answer: A.** Percent increase = $\frac{195 - 185}{185} \times 100\% = \frac{10}{185} \times 100\% \approx 5.4\%$. **Wrong answers:** B (10%): $\frac{10}{100}$, treating the absolute increase as a percent without dividing by original. C (50%): the visual impression from the truncated axis. D (100%): doubling the visual impression.</li>
+<li>**Answer: B.** The mode is the most frequent value. 20 appears 3 times, more than any other value. **Wrong answers:** A (18) appears twice. C (21) appears twice. D (20.5) is the median, not the mode.</li>
+<li>**Answer: B.** "According to the graph" means only what's shown. The graph provides data at hours 1, 3, 5, and 7 only. We cannot determine the temperature at hour 6 from the graph alone—we'd be interpolating, which isn't "according to the graph." **Wrong answers:** A assumes a trend not shown. C assumes linear change between points, which the graph doesn't establish. D makes a claim about decreasing but doesn't answer whether hour 6's temperature can be determined.</li>
+<li>**Answer: C.** IQR = 80 − 48 = 32. Upper fence = Q3 + 1.5 × IQR = 80 + 1.5(32) = 80 + 48 = 128. Since 150 > 128, the $150,000 salary is an outlier. **Wrong answers:** A (80) is Q3 itself. B (96) = 80 + 0.5(32), using half IQR. D (150) is the max, not the fence.</li>
+<div class="nav">
+<a href="lesson07.html">← Previous Lesson</a>
+<a href="index.html">📋 All Lessons</a>
+<a href="lesson09.html">Next Lesson →</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 29 — Row Reduction & Solving Linear Systems</title>
+<script>
+MathJax = {
+  tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body {
+    max-width: 800px; margin: 40px auto; font-family: 'Times New Roman', Georgia, serif;
+    font-size: 17px; line-height: 1.7; padding: 0 20px; color: #1a1a1a;
+  }
+  h1 { font-size: 22px; border-bottom: 2px solid #333; padding-bottom: 8px; margin-top: 36px; }
+  h2 { font-size: 19px; margin-top: 28px; color: #2c3e50; }
+  h3 { font-size: 17px; margin-top: 22px; color: #444; }
+  h4 { font-size: 16px; margin-top: 18px; }
+  p { margin: 0.6em 0; }
+  li { margin: 0.3em 0 0.3em 20px; }
+  hr { margin: 20px 0; border: none; border-top: 1px solid #ddd; }
+  .math-block { text-align: center; margin: 1em 0; overflow-x: auto; }
+  .table-line { font-family: 'Courier New', monospace; font-size: 15px; margin: 0.1em 0; }
+  pre { background: #f5f5f5; padding: 10px 14px; border-radius: 4px; overflow-x: auto; font-size: 14px; }
+  b { color: #222; }
+  table { border-collapse: collapse; margin: 16px 0; width: 100%; font-size: 15px; }
+  th { background: #2c3e50; color: #fff; padding: 8px 12px; text-align: center; font-weight: bold; }
+  td { border: 1px solid #ccc; padding: 8px 12px; text-align: center; }
+  tr:nth-child(even) { background: #f9f9f9; }
+  .nav { text-align: center; margin: 30px 0; font-size: 14px; }
+  .nav a { margin: 0 8px; color: #3498db; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  @media print { body { font-size: 15px; } }
+</style>
+</head>
+<body>
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+<h1>Lesson 29: Row Reduction and Solving Linear Systems</h1>
+
+<h2>WHAT Is Row Reduction?</h2>
+
+<p>A <b>linear system</b> is a collection of equations where each equation is a straight line (in two dimensions) or a flat plane (in three dimensions). For example, here is a system of three equations with three unknown variables \(x\), \(y\), and \(z\):</p>
+
+<div class="math-block">$$
+\begin{cases}
+x + 2y + z = 9 \\
+2x + y - z = 3 \\
+3x - y + 2z = 8
+\end{cases}$$</div>
+
+<p>Solving this by hand using substitution or elimination would involve many messy steps. <b>Row reduction</b> (also called <b>Gaussian elimination</b>) is an organized method that turns any linear system into a form where you can read off the answers directly.</p>
+
+<p>The core idea is to write the system as a grid of numbers (a <b>matrix</b>), then perform simple, legal operations on the rows until the grid has a staircase pattern. At that point, solving is easy.</p>
+
+<h2>WHY Learn Row Reduction?</h2>
+
+<p>Row reduction is systematic. It works on systems with 2 equations, 3 equations, or 50 equations. It never requires clever guesswork — you just follow the algorithm. It also tells you whether a system has one solution, no solution, or infinitely many solutions, which is information you cannot always get just by looking at the equations. This method is foundational for linear algebra, computer graphics, economic modeling, and any field that deals with large sets of linear constraints.</p>
+
+<p><hr></p>
+
+<h2>1. Writing a Linear System as a Matrix</h2>
+
+<p>A <b>matrix</b> (plural: matrices) is a rectangular array of numbers. To convert a linear system into a matrix, you drop the variables and the equals signs and keep only the coefficients and the right-hand-side numbers.</p>
+
+<p>The system:</p>
+
+<div class="math-block">$$
+\begin{cases}
+a_{11}x + a_{12}y + a_{13}z = b_1 \\
+a_{21}x + a_{22}y + a_{23}z = b_2 \\
+a_{31}x + a_{32}y + a_{33}z = b_3
+\end{cases}$$</div>
+
+<p>can be written compactly as \(A\mathbf{x} = \mathbf{b}\), where \(A\) is called the <b>coefficient matrix</b> and \(\mathbf{x}\) and \(\mathbf{b}\) are column vectors.</p>
+
+<p>For row reduction, it is even more useful to write the <b>augmented matrix</b>, which attaches the right-hand-side column to the coefficient matrix with a vertical bar:</p>
+
+<div class="math-block">$$
+\left(\begin{array}{ccc|c}
+a_{11} & a_{12} & a_{13} & b_1 \\
+a_{21} & a_{22} & a_{23} & b_2 \\
+a_{31} & a_{32} & a_{33} & b_3
+\end{array}\right)$$</div>
+
+<p>Each row corresponds to one equation. The numbers before the bar are the coefficients of \(x\), \(y\), and \(z\). The number after the bar is the right-hand side of the equation.</p>
+
+<p><b>Example:</b> The system at the top of this lesson becomes this augmented matrix:</p>
+
+<div class="math-block">$$
+\left(\begin{array}{ccc|c}
+1 & 2 & 1 & 9 \\
+2 & 1 & -1 & 3 \\
+3 & -1 & 2 & 8
+\end{array}\right)$$</div>
+
+<p><hr></p>
+
+<h2>2. The Three Elementary Row Operations</h2>
+
+<p>There are exactly three operations you are allowed to perform on the rows of an augmented matrix. They are called <b>elementary row operations</b>, and they all have one crucial property: they do not change the solution of the system.</p>
+
+<p><b>Operation 1 — Swap two rows.</b> You can exchange any two rows. Notation: \(R_i \leftrightarrow R_j\). This just changes the order of the equations, which does not affect the solutions.</p>
+
+<p><b>Operation 2 — Multiply a row by a non-zero number.</b> You can multiply every entry in a row by the same non-zero constant. Notation: \(R_i \to kR_i\) where \(k \neq 0\). This is like multiplying both sides of an equation by \(k\), which preserves equality as long as \(k\) is not zero.</p>
+
+<p><b>Operation 3 — Add a multiple of one row to another.</b> You can replace a row by itself plus a multiple of another row. Notation: \(R_i \to R_i + kR_j\). This is the workhorse of the method — it lets you create zeros.</p>
+
+<p><b>Common misconception:</b> Students sometimes try to replace a row by a multiple of itself AND add another row in one combined step that is not one of the three legal operations. Stick to the three allowed operations one at a time.</p>
+
+<p><hr></p>
+
+<h2>3. What the Goal Looks Like: Row Echelon Form (REF)</h2>
+
+<p>The goal of row reduction is to reach <b>row echelon form (REF)</b>. A matrix is in REF when:</p>
+
+<li>All rows that contain only zeros are at the bottom.</li>
+<li>The first non-zero entry in each row (called the <b>pivot</b> or <b>leading coefficient</b>) is farther to the right than the pivot in the row above it.</li>
+<li>All entries below each pivot are zero.</li>
+
+<p>Visually, the non-zero entries form a staircase going down and to the right:</p>
+
+<div class="math-block">$$
+\begin{pmatrix}
+\boxed{2} & 1 & 3 & 4 \\
+0 & \boxed{5} & -1 & 2 \\
+0 & 0 & \boxed{3} & 6
+\end{pmatrix}$$</div>
+
+<p>The boxed numbers (2, 5, 3) are the pivots. Notice how everything below each pivot is zero.</p>
+
+<p>There is also a stricter version called <b>reduced row echelon form (RREF)</b>, where each pivot is exactly 1 and is the only non-zero entry in its column. RREF lets you read solutions directly without back-substitution. For now, REF is enough.</p>
+
+<p><hr></p>
+
+<h2>4. The Gaussian Elimination Algorithm</h2>
+
+<p>Here is the step-by-step process you follow every time:</p>
+
+<li>Write the augmented matrix.</li>
+<li>Working from left to right, make each pivot position a 1 (optional but helpful) and then create zeros below it using operation 3 (\(R_i \to R_i + kR_j\)).</li>
+<li>Once the matrix is in REF, read the equations from bottom to top to find the solution (this is called <b>back-substitution</b>).</li>
+
+<p><hr></p>
+
+<h2>5. Worked Example: A System with a Unique Solution</h2>
+
+<p><b>Problem:</b> Solve this system using Gaussian elimination:</p>
+
+<div class="math-block">$$
+\begin{cases}
+x + 2y + z = 9 \\
+2x + y - z = 3 \\
+3x - y + 2z = 8
+\end{cases}$$</div>
+
+<p><b>Approach:</b> Write the augmented matrix. Use row operations to create zeros below the first pivot, then below the second pivot. Then back-substitute.</p>
+
+<p><b>Step 1 — Write the augmented matrix:</b></p>
+<div class="math-block">$$
+\left(\begin{array}{ccc|c}
+1 & 2 & 1 & 9 \\
+2 & 1 & -1 & 3 \\
+3 & -1 & 2 & 8
+\end{array}\right)$$</div>
+
+<p><b>Step 2 — Create zeros below the first pivot (the 1 in row 1, column 1):</b></p>
+
+<p>For row 2: \(R_2 \to R_2 - 2R_1\). This means: new row 2 = old row 2 minus 2 times row 1.</p>
+<div class="math-block">$$
+\begin{array}{c}
+R_2: (2, 1, -1, 3) - 2(1, 2, 1, 9) = (2-2, 1-4, -1-2, 3-18) = (0, -3, -3, -15)
+\end{array}$$</div>
+
+<p>For row 3: \(R_3 \to R_3 - 3R_1\).</p>
+<div class="math-block">$$
+\begin{array}{c}
+R_3: (3, -1, 2, 8) - 3(1, 2, 1, 9) = (3-3, -1-6, 2-3, 8-27) = (0, -7, -1, -19)
+\end{array}$$</div>
+
+<p>The matrix now looks like:</p>
+<div class="math-block">$$
+\left(\begin{array}{ccc|c}
+1 & 2 & 1 & 9 \\
+0 & -3 & -3 & -15 \\
+0 & -7 & -1 & -19
+\end{array}\right)$$</div>
+
+<p><b>Step 3 — Make the second pivot nicer (optional but helpful).</b> Divide row 2 by \(-3\): \(R_2 \to -\frac{1}{3}R_2\).</p>
+
+<div class="math-block">$$
+\left(\begin{array}{ccc|c}
+1 & 2 & 1 & 9 \\
+0 & 1 & 1 & 5 \\
+0 & -7 & -1 & -19
+\end{array}\right)$$</div>
+
+<p><b>Step 4 — Create a zero below the second pivot:</b> \(R_3 \to R_3 + 7R_2\).</p>
+<div class="math-block">$$
+\begin{array}{c}
+R_3: (0, -7, -1, -19) + 7(0, 1, 1, 5) = (0, -7+7, -1+7, -19+35) = (0, 0, 6, 16)
+\end{array}$$</div>
+
+<div class="math-block">$$
+\left(\begin{array}{ccc|c}
+1 & 2 & 1 & 9 \\
+0 & 1 & 1 & 5 \\
+0 & 0 & 6 & 16
+\end{array}\right)$$</div>
+
+<p><b>Step 5 — Make the third pivot 1:</b> \(R_3 \to \frac{1}{6}R_3\).</p>
+
+<div class="math-block">$$
+\left(\begin{array}{ccc|c}
+1 & 2 & 1 & 9 \\
+0 & 1 & 1 & 5 \\
+0 & 0 & 1 & \frac{8}{3}
+\end{array}\right)$$</div>
+
+<p><b>Step 6 — Back-substitute (read from bottom to top):</b></p>
+
+<p>The third row means \(z = \frac{8}{3}\).</p>
+
+<p>The second row means \(y + z = 5\). Substitute \(z = \frac{8}{3}\): \(y + \frac{8}{3} = 5\), so \(y = 5 - \frac{8}{3} = \frac{15-8}{3} = \frac{7}{3}\).</p>
+
+<p>The first row means \(x + 2y + z = 9\). Substitute: \(x + 2(\frac{7}{3}) + \frac{8}{3} = 9\), so \(x + \frac{14}{3} + \frac{8}{3} = 9\), so \(x + \frac{22}{3} = 9\), and \(x = 9 - \frac{22}{3} = \frac{27-22}{3} = \frac{5}{3}\).</p>
+
+<p><b>Answer:</b> \(x = \frac{5}{3}\), \(y = \frac{7}{3}\), \(z = \frac{8}{3}\).</p>
+
+<p><b>Why this makes sense:</b> Plug these values into the original first equation: \(\frac{5}{3} + 2(\frac{7}{3}) + \frac{8}{3} = \frac{5+14+8}{3} = \frac{27}{3} = 9\). It checks out.</p>
+
+<p><hr></p>
+
+<h2>6. Worked Example: A System with No Solution</h2>
+
+<p><b>Problem:</b> Solve this system:</p>
+
+<div class="math-block">$$
+\begin{cases}
+x + y + z = 3 \\
+2x - y + z = 2 \\
+4x + y + 3z = 5
+\end{cases}$$</div>
+
+<p><b>Approach:</b> Row reduce and watch for a contradiction.</p>
+
+<p><b>Step 1 — Augmented matrix:</b></p>
+<div class="math-block">$$
+\left(\begin{array}{ccc|c}
+1 & 1 & 1 & 3 \\
+2 & -1 & 1 & 2 \\
+4 & 1 & 3 & 5
+\end{array}\right)$$</div>
+
+<p><b>Step 2 — Zeros below first pivot:</b></p>
+<p>\(R_2 \to R_2 - 2R_1\): \((2, -1, 1, 2) - 2(1, 1, 1, 3) = (0, -3, -1, -4)\).</p>
+<p>\(R_3 \to R_3 - 4R_1\): \((4, 1, 3, 5) - 4(1, 1, 1, 3) = (0, -3, -1, -7)\).</p>
+
+<div class="math-block">$$
+\left(\begin{array}{ccc|c}
+1 & 1 & 1 & 3 \\
+0 & -3 & -1 & -4 \\
+0 & -3 & -1 & -7
+\end{array}\right)$$</div>
+
+<p><b>Step 3 — Zero below second pivot:</b> \(R_3 \to R_3 - R_2\).</p>
+<p>\((0, -3, -1, -7) - (0, -3, -1, -4) = (0, 0, 0, -3)\).</p>
+
+<div class="math-block">$$
+\left(\begin{array}{ccc|c}
+1 & 1 & 1 & 3 \\
+0 & -3 & -1 & -4 \\
+0 & 0 & 0 & -3
+\end{array}\right)$$</div>
+
+<p><b>Step 4 — Interpret:</b> The last row means \(0x + 0y + 0z = -3\), or simply \(0 = -3\). This is impossible.</p>
+
+<p><b>Answer:</b> The system has <b>no solution</b>. It is called an <b>inconsistent</b> system.</p>
+
+<p><hr></p>
+
+<h2>7. Worked Example: A System with Infinitely Many Solutions</h2>
+
+<p><b>Problem:</b> Solve this system:</p>
+
+<div class="math-block">$$
+\begin{cases}
+x + 2y - z = 4 \\
+2x + 4y - 2z = 8 \\
+x - y + z = 1
+\end{cases}$$</div>
+
+<p><b>Approach:</b> Row reduce and watch for a row of zeros or a free variable.</p>
+
+<p><b>Step 1 — Augmented matrix:</b></p>
+<div class="math-block">$$
+\left(\begin{array}{ccc|c}
+1 & 2 & -1 & 4 \\
+2 & 4 & -2 & 8 \\
+1 & -1 & 1 & 1
+\end{array}\right)$$</div>
+
+<p><b>Step 2 — Zero below first pivot:</b></p>
+<p>\(R_2 \to R_2 - 2R_1\): \((2, 4, -2, 8) - 2(1, 2, -1, 4) = (0, 0, 0, 0)\).</p>
+
+<p>Row 2 becomes all zeros. This means the second equation was just a multiple of the first — it adds no new information.</p>
+
+<p><b>Step 3 — Continue with row 3:</b></p>
+<p>\(R_3 \to R_3 - R_1\): \((1, -1, 1, 1) - (1, 2, -1, 4) = (0, -3, 2, -3)\).</p>
+
+<div class="math-block">$$
+\left(\begin{array}{ccc|c}
+1 & 2 & -1 & 4 \\
+0 & -3 & 2 & -3 \\
+0 & 0 & 0 & 0
+\end{array}\right)$$</div>
+
+<p><b>Step 4 — Make the second pivot 1:</b> \(R_2 \to -\frac{1}{3}R_2\).</p>
+
+<div class="math-block">$$
+\left(\begin{array}{ccc|c}
+1 & 2 & -1 & 4 \\
+0 & 1 & -\frac{2}{3} & 1 \\
+0 & 0 & 0 & 0
+\end{array}\right)$$</div>
+
+<p><b>Step 5 — Create a zero above the second pivot (optional, toward RREF):</b></p>
+<p>\(R_1 \to R_1 - 2R_2\): \((1, 2, -1, 4) - 2(0, 1, -\frac{2}{3}, 1) = (1, 0, \frac{1}{3}, 2)\).</p>
+
+<div class="math-block">$$
+\left(\begin{array}{ccc|c}
+1 & 0 & \frac{1}{3} & 2 \\
+0 & 1 & -\frac{2}{3} & 1 \\
+0 & 0 & 0 & 0
+\end{array}\right)$$</div>
+
+<p><b>Step 6 — Interpret:</b> The matrix gives us:</p>
+<li>- \(x + \frac{1}{3}z = 2\), so \(x = 2 - \frac{1}{3}z\).</li>
+<li>- \(y - \frac{2}{3}z = 1\), so \(y = 1 + \frac{2}{3}z\).</li>
+<li>- The third row is \(0 = 0\) (always true, so no restriction).</li>
+
+<p>The variable \(z\) is <b>free</b> — it can be any real number. We express \(x\) and \(y\) in terms of \(z\).</p>
+
+<p>Let \(z = t\), where \(t\) is any real number. Then:</p>
+<div class="math-block">$$
+x = 2 - \frac{1}{3}t, \qquad y = 1 + \frac{2}{3}t, \qquad z = t$$</div>
+
+<p><b>Answer:</b> Infinitely many solutions. The solution set is a line (a one-parameter family) in three-dimensional space.</p>
+
+<p><hr></p>
+
+<h2>8. How to Classify a Linear System</h2>
+
+<p>After reducing to REF, look at the augmented matrix:</p>
+
+<li>- <b>Unique solution:</b> Every variable column has a pivot, and there is no row of the form \((0\;0\;0\;|\;k)\) with \(k \neq 0\). There are as many non-zero rows as variables.</li>
+<li>- <b>No solution:</b> There is at least one row of the form \((0\;0\;0\;|\;k)\) where \(k \neq 0\). This is a contradiction.</li>
+<li>- <b>Infinitely many solutions:</b> There are fewer pivots than variables, and there is no contradictory row. At least one variable is free.</li>
+
+<p><hr></p>
+
+<h2>9. Solving Using the Inverse Matrix (Alternative Method)</h2>
+
+<p>If the coefficient matrix \(A\) is square (same number of equations as variables) and its determinant is not zero, the system \(A\mathbf{x} = \mathbf{b}\) has exactly one solution, given by:</p>
+
+<div class="math-block">$$
+\boxed{\mathbf{x} = A^{-1}\mathbf{b}}$$</div>
+
+<p>This method is fast for small systems (like \(2 \times 2\)) but less practical for large systems than row reduction.</p>
+
+<h3>Worked Example: Inverse Matrix Method</h3>
+
+<p><b>Problem:</b> Solve this \(2 \times 2\) system using the inverse matrix:</p>
+
+<div class="math-block">$$
+\begin{cases}
+2x + y = 5 \\
+x + 3y = 7
+\end{cases}$$</div>
+
+<p><b>Approach:</b> Write \(A\), \(\mathbf{x}\), and \(\mathbf{b}\). Compute \(A^{-1}\). Multiply.</p>
+
+<p><b>Step 1:</b> \(A = \begin{pmatrix} 2 &amp; 1 \\ 1 &amp; 3 \end{pmatrix}\), \(\mathbf{b} = \begin{pmatrix} 5 \\ 7 \end{pmatrix}\).</p>
+
+<p><b>Step 2 — Determinant:</b> \(\det A = (2)(3) - (1)(1) = 6 - 1 = 5\). Since it is not zero, \(A^{-1}\) exists.</p>
+
+<p><b>Step 3 — Inverse:</b> For a \(2 \times 2\) matrix \(\begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix}\), the inverse is \(\frac{1}{ad-bc}\begin{pmatrix} d &amp; -b \\ -c &amp; a \end{pmatrix}\).</p>
+
+<p>So \(A^{-1} = \frac{1}{5}\begin{pmatrix} 3 &amp; -1 \\ -1 &amp; 2 \end{pmatrix}\).</p>
+
+<p><b>Step 4 — Multiply:</b> \(\mathbf{x} = A^{-1}\mathbf{b} = \frac{1}{5}\begin{pmatrix} 3 &amp; -1 \\ -1 &amp; 2 \end{pmatrix}\begin{pmatrix} 5 \\ 7 \end{pmatrix}\).</p>
+
+<p>Compute the product: \(\begin{pmatrix} 3(5) + (-1)(7) \\ (-1)(5) + 2(7) \end{pmatrix} = \begin{pmatrix} 15 - 7 \\ -5 + 14 \end{pmatrix} = \begin{pmatrix} 8 \\ 9 \end{pmatrix}\).</p>
+
+<p>Then multiply by \(\frac{1}{5}\): \(\begin{pmatrix} 8/5 \\ 9/5 \end{pmatrix}\).</p>
+
+<p><b>Answer:</b> \(x = \frac{8}{5}\), \(y = \frac{9}{5}\).</p>
+
+<p><hr></p>
+
+<h2>Practice Problems</h2>
+
+<p><b>Problem 1:</b> Solve this system using Gaussian elimination:</p>
+
+<div class="math-block">$$
+\begin{cases}
+x + y + z = 6 \\
+2x - y + 3z = 14 \\
+3x + y - z = 2
+\end{cases}$$</div>
+
+<p><b>Problem 2:</b> Solve this system using Gaussian elimination:</p>
+
+<div class="math-block">$$
+\begin{cases}
+x + 2y - z = 4 \\
+3x + 6y - 3z = 12 \\
+2x - y + z = 5
+\end{cases}$$</div>
+
+<p><b>Problem 3:</b> Set up the augmented matrix for this system and row reduce enough to determine whether it has a unique solution, no solution, or infinitely many solutions:</p>
+
+<div class="math-block">$$
+\begin{cases}
+x + y + z = 3 \\
+x - y + 2z = 1 \\
+2x + 3z = 5
+\end{cases}$$</div>
+
+<p><b>Problem 4:</b> Solve this system using the inverse matrix method:</p>
+
+<div class="math-block">$$
+\begin{cases}
+3x + 2y = 11 \\
+2x - y = 5
+\end{cases}$$</div>
+
+<p><b>Problem 5 (IB Exam Style):</b> Consider the system:</p>
+
+<div class="math-block">$$
+\begin{cases}
+x + y + z = 2 \\
+2x + 3y + 2z = 5 \\
+2x + 3y + (k^2 - 1)z = k + 1
+\end{cases}$$</div>
+
+<p>(a) Write down the augmented matrix for this system. [1 mark]</p>
+<p>(b) Use row operations to reduce the matrix to row echelon form. [3 marks]</p>
+<p>(c) Determine the values of \(k\) for which the system has a unique solution. [2 marks]</p>
+<p>(d) Determine the values of \(k\) for which the system has no solution. Explain why there are no values of \(k\) for which the system has infinitely many solutions. [2 marks]</p>
+
+<p><b>Problem 6:</b> A system has been reduced to this augmented matrix:</p>
+
+<div class="math-block">$$
+\left(\begin{array}{ccc|c}
+1 & 2 & 0 & 5 \\
+0 & 0 & 1 & -3 \\
+0 & 0 & 0 & 0
+\end{array}\right)$$</div>
+
+<p>Write the solution set in parametric form, using a parameter \(t\) for any free variable.</p>
+
+<p><hr></p>
+
+<h2>Answers</h2>
+
+<p><b>Answer 1:</b> Augmented matrix: \(\left(\begin{array}{ccc|c} 1 &amp; 1 &amp; 1 &amp; 6 \\ 2 &amp; -1 &amp; 3 &amp; 14 \\ 3 &amp; 1 &amp; -1 &amp; 2 \end{array}\right)\).</p>
+
+<p>\(R_2 \to R_2 - 2R_1\): \((2, -1, 3, 14) - 2(1, 1, 1, 6) = (0, -3, 1, 2)\).</p>
+
+<p>\(R_3 \to R_3 - 3R_1\): \((3, 1, -1, 2) - 3(1, 1, 1, 6) = (0, -2, -4, -16)\).</p>
+
+<p>Matrix: \(\left(\begin{array}{ccc|c} 1 &amp; 1 &amp; 1 &amp; 6 \\ 0 &amp; -3 &amp; 1 &amp; 2 \\ 0 &amp; -2 &amp; -4 &amp; -16 \end{array}\right)\).</p>
+
+<p>Simplify row 3: \(R_3 \to -\frac{1}{2}R_3\) gives \((0, 1, 2, 8)\). Swap \(R_2 \leftrightarrow R_3\) for convenience:</p>
+
+<p>\(\left(\begin{array}{ccc|c} 1 &amp; 1 &amp; 1 &amp; 6 \\ 0 &amp; 1 &amp; 2 &amp; 8 \\ 0 &amp; -3 &amp; 1 &amp; 2 \end{array}\right)\).</p>
+
+<p>\(R_3 \to R_3 + 3R_2\): \((0, -3, 1, 2) + 3(0, 1, 2, 8) = (0, 0, 7, 26)\).</p>
+
+<p>\(\left(\begin{array}{ccc|c} 1 &amp; 1 &amp; 1 &amp; 6 \\ 0 &amp; 1 &amp; 2 &amp; 8 \\ 0 &amp; 0 &amp; 7 &amp; 26 \end{array}\right)\).</p>
+
+<p>Back-substitute: \(7z = 26 \Rightarrow z = \frac{26}{7}\).</p>
+
+<p>\(y + 2z = 8 \Rightarrow y + \frac{52}{7} = 8 \Rightarrow y = \frac{56-52}{7} = \frac{4}{7}\).</p>
+
+<p>\(x + y + z = 6 \Rightarrow x + \frac{4}{7} + \frac{26}{7} = 6 \Rightarrow x + \frac{30}{7} = \frac{42}{7} \Rightarrow x = \frac{12}{7}\).</p>
+
+<p><b>Answer 2:</b> Augmented matrix: \(\left(\begin{array}{ccc|c} 1 &amp; 2 &amp; -1 &amp; 4 \\ 3 &amp; 6 &amp; -3 &amp; 12 \\ 2 &amp; -1 &amp; 1 &amp; 5 \end{array}\right)\).</p>
+
+<p>\(R_2 \to R_2 - 3R_1\): \((3, 6, -3, 12) - 3(1, 2, -1, 4) = (0, 0, 0, 0)\). Row 2 is all zeros, so the second equation was just a multiple of the first.</p>
+
+<p>\(R_3 \to R_3 - 2R_1\): \((2, -1, 1, 5) - 2(1, 2, -1, 4) = (0, -5, 3, -3)\).</p>
+
+<p>Matrix: \(\left(\begin{array}{ccc|c} 1 &amp; 2 &amp; -1 &amp; 4 \\ 0 &amp; -5 &amp; 3 &amp; -3 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right)\).</p>
+
+<p>\(R_2 \to -\frac{1}{5}R_2\): \((0, 1, -\frac{3}{5}, \frac{3}{5})\).</p>
+
+<p>\(R_1 \to R_1 - 2R_2\): \((1, 2, -1, 4) - 2(0, 1, -\frac{3}{5}, \frac{3}{5}) = (1, 0, \frac{1}{5}, \frac{14}{5})\).</p>
+
+<p>\(\left(\begin{array}{ccc|c} 1 &amp; 0 &amp; \frac{1}{5} &amp; \frac{14}{5} \\ 0 &amp; 1 &amp; -\frac{3}{5} &amp; \frac{3}{5} \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right)\).</p>
+
+<p>Let \(z = t\) (free). Then \(x = \frac{14}{5} - \frac{1}{5}t\) and \(y = \frac{3}{5} + \frac{3}{5}t\).</p>
+
+<p>The system has <b>infinitely many solutions</b>.</p>
+
+<p><b>Answer 3:</b> Augmented matrix: \(\left(\begin{array}{ccc|c} 1 &amp; 1 &amp; 1 &amp; 3 \\ 1 &amp; -1 &amp; 2 &amp; 1 \\ 2 &amp; 0 &amp; 3 &amp; 5 \end{array}\right)\).</p>
+
+<p>\(R_2 \to R_2 - R_1\): \((1, -1, 2, 1) - (1, 1, 1, 3) = (0, -2, 1, -2)\).</p>
+
+<p>\(R_3 \to R_3 - 2R_1\): \((2, 0, 3, 5) - 2(1, 1, 1, 3) = (0, -2, 1, -1)\).</p>
+
+<p>\(\left(\begin{array}{ccc|c} 1 &amp; 1 &amp; 1 &amp; 3 \\ 0 &amp; -2 &amp; 1 &amp; -2 \\ 0 &amp; -2 &amp; 1 &amp; -1 \end{array}\right)\).</p>
+
+<p>\(R_3 \to R_3 - R_2\): \((0, -2, 1, -1) - (0, -2, 1, -2) = (0, 0, 0, 1)\).</p>
+
+<p>\(\left(\begin{array}{ccc|c} 1 &amp; 1 &amp; 1 &amp; 3 \\ 0 &amp; -2 &amp; 1 &amp; -2 \\ 0 &amp; 0 &amp; 0 &amp; 1 \end{array}\right)\).</p>
+
+<p>Row 3 reads \(0 = 1\), which is a contradiction. The system has <b>no solution</b> (it is inconsistent).</p>
+
+<p><b>Answer 4:</b> \(A = \begin{pmatrix} 3 &amp; 2 \\ 2 &amp; -1 \end{pmatrix}\), \(\mathbf{b} = \begin{pmatrix} 11 \\ 5 \end{pmatrix}\).</p>
+
+<p>\(\det A = (3)(-1) - (2)(2) = -3 - 4 = -7\). Since \(\det A \neq 0\), the inverse exists.</p>
+
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+</body>
+</html>

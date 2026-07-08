@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 4 — Integration by Parts (Basic)</title>
+<script>
+MathJax = {
+  tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body {
+    max-width: 800px; margin: 40px auto; font-family: 'Times New Roman', Georgia, serif;
+    font-size: 17px; line-height: 1.7; padding: 0 20px; color: #1a1a1a;
+  }
+  h1 { font-size: 22px; border-bottom: 2px solid #333; padding-bottom: 8px; margin-top: 36px; }
+  h2 { font-size: 19px; margin-top: 28px; color: #2c3e50; }
+  h3 { font-size: 17px; margin-top: 22px; color: #444; }
+  h4 { font-size: 16px; margin-top: 18px; }
+  p { margin: 0.6em 0; }
+  li { margin: 0.3em 0 0.3em 20px; }
+  hr { margin: 20px 0; border: none; border-top: 1px solid #ddd; }
+  .math-block { text-align: center; margin: 1em 0; overflow-x: auto; }
+  .table-line { font-family: 'Courier New', monospace; font-size: 15px; margin: 0.1em 0; }
+  pre { background: #f5f5f5; padding: 10px 14px; border-radius: 4px; overflow-x: auto; font-size: 14px; }
+  b { color: #222; }
+  table { border-collapse: collapse; margin: 16px 0; width: 100%; font-size: 15px; }
+  th { background: #2c3e50; color: #fff; padding: 8px 12px; text-align: center; font-weight: bold; }
+  td { border: 1px solid #ccc; padding: 8px 12px; text-align: center; }
+  tr:nth-child(even) { background: #f9f9f9; }
+  .nav { text-align: center; margin: 30px 0; font-size: 14px; }
+  .nav a { margin: 0 8px; color: #3498db; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  @media print { body { font-size: 15px; } }
+</style>
+</head>
+<body>
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+<h1>Lesson 4: Integration by Parts (Basic)</h1>
+
+<h2>What Is Integration by Parts and Why Does It Matter?</h2>
+
+<p>Differentiation has a set of straightforward rules: the product rule, the chain rule, the quotient rule. Integration, however, has no direct analog of the product rule. You cannot integrate a product of two functions by integrating each factor separately and multiplying. The integral of $x \cdot e^x$ is not $\frac{x^2}{2} \cdot e^x$. The integral of $x \cdot \sin x$ is not $\frac{x^2}{2} \cdot (-\cos x)$.</p>
+
+<p>We need a technique that handles products of functions during integration. <b>Integration by parts</b> is the technique that fills this gap. It is the integration counterpart of the product rule for differentiation, and it converts the integral of a product into a different integral that may be easier to evaluate.</p>
+
+<p>This technique is essential for integrating expressions like $x e^x$, $x \sin x$, $\ln x$, $\arctan x$, and many others that appear throughout calculus, physics, and engineering.</p>
+
+<h2>Where the Formula Comes From</h2>
+
+<p>We begin with the <b>product rule</b> for differentiation. Suppose $u$ and $v$ are two functions of $x$. The product rule states:</p>
+
+<div class="math-block">$$\frac{d}{dx}(u \cdot v) = u \frac{dv}{dx} + v \frac{du}{dx}$$</div>
+
+<p>In a more compact notation using differentials, we write $u&#x27; = \frac{du}{dx}$ and $v&#x27; = \frac{dv}{dx}$. Then the product rule is:</p>
+
+<div class="math-block">$$\frac{d}{dx}(uv) = u v&#x27; + v u&#x27;$$</div>
+
+<p>Now rearrange this equation. Move the second term to the left side:</p>
+
+<div class="math-block">$$u v&#x27; = \frac{d}{dx}(uv) - v u&#x27;$$</div>
+
+<p>The next step is to integrate both sides with respect to $x$. The integral of a derivative $\frac{d}{dx}(uv)$ is simply $uv$, by the Fundamental Theorem of Calculus:</p>
+
+<div class="math-block">$$\int u v&#x27; \, dx = uv - \int v u&#x27; \, dx$$</div>
+
+<p>This is the integration by parts formula in its &quot;function&quot; form. In practice, we use the cleaner differential notation. Let $du = u&#x27;\,dx$ and $dv = v&#x27;\,dx$. Then the formula becomes:</p>
+
+<div class="math-block">$$\int u \, dv = uv - \int v \, du$$</div>
+
+<p>This is what we call the <b>integration by parts formula</b>. It trades the original integral $\int u\,dv$ for a new integral $\int v\,du$. The art of using this technique is choosing $u$ and $dv$ so that the new integral is simpler than the original.</p>
+
+<h2>The LIATE Rule: How to Choose $u$</h2>
+
+<p>A common question from students is: &quot;How do I know what to pick as $u$ and what to pick as $dv$?&quot; The answer is the <b>LIATE rule</b>, which is a priority list for selecting $u$ when the integrand is a product of two functions from different families. The letter $u$ should come from the type that appears higher in this list:</p>
+
+<p class="table-line">| Priority | Letter | Function Type | Examples |</p>
+<p class="table-line">|<hr>|<hr>|<hr>|<hr>|</p>
+<p class="table-line">| Highest | <b>L</b> | Logarithmic | $\ln x$, $\ln(2x + 1)$, $\ln(3x)$ |</p>
+<p class="table-line">| | <b>I</b> | Inverse trigonometric | $\arcsin x$, $\arctan x$, $\arccos x$ |</p>
+<p class="table-line">| | <b>A</b> | Algebraic (polynomials, roots) | $x$, $x^2$, $\sqrt{x}$, $x^5 + 2$ |</p>
+<p class="table-line">| | <b>T</b> | Trigonometric | $\sin x$, $\cos x$, $\tan x$, $\sec x$ |</p>
+<p class="table-line">| Lowest | <b>E</b> | Exponential | $e^x$, $e^{2x}$, $3^x$ |</p>
+
+<p>The reasoning behind this order is that differentiating a logarithmic or inverse trigonometric function produces a simpler algebraic expression (for example, the derivative of $\ln x$ is $\frac{1}{x}$). Differentiating a polynomial lowers its degree, which is progress. But differentiating a trigonometric or exponential function does not fundamentally change its type—$\sin x$ becomes $\cos x$, and $e^x$ stays $e^x$.</p>
+
+<p>Whatever is not chosen as $u$ becomes $dv$, and you must be able to integrate $dv$ to get $v$.</p>
+
+<p>Here are three quick illustrations of the LIATE rule:</p>
+
+<li>- In $\int x e^x \, dx$, $x$ is Algebraic and $e^x$ is Exponential. Since A comes before E, we choose $u = x$ and $dv = e^x\,dx$.</li>
+<li>- In $\int x \sin x \, dx$, $x$ is Algebraic and $\sin x$ is Trigonometric. Since A comes before T, we choose $u = x$ and $dv = \sin x\,dx$.</li>
+<li>- In $\int \ln x \, dx$, we have only one visible function. The trick is to write it as $\ln x \cdot 1$. Now $\ln x$ is Logarithmic and $1$ is Algebraic. L comes before A, so $u = \ln x$ and $dv = 1 \cdot dx$.</li>
+
+<h2>A Common Misconception</h2>
+
+<p>Many students believe that the function that is &quot;harder&quot; to integrate should be chosen as $u$. This is backwards. You should choose $u$ as the function that becomes <b>simpler when differentiated</b>. The function you pick as $dv$ must be one you <b>can integrate</b>. The LIATE rule formalizes this insight.</p>
+
+<h2>Step-by-Step Method</h2>
+
+<li><b>Identify the two types</b> of functions in the product and use LIATE to select $u$.</li>
+<li><b>Set $dv$</b> to be everything else in the integrand, including the $dx$.</li>
+<li><b>Differentiate $u$</b> to get $du = u&#x27;\,dx$.</li>
+<li><b>Integrate $dv$</b> to get $v$ (no need for $+C$ at this stage—we will add it at the end).</li>
+<li><b>Apply the formula</b> $\int u\,dv = uv - \int v\,du$.</li>
+<li><b>Evaluate the new integral</b> $\int v\,du$, which should be simpler than the original.</li>
+<li><b>Add $+C$</b> to the final result.</li>
+
+<p><hr></p>
+
+<h2>Worked Examples</h2>
+
+<h3>Example 1: A Polynomial Times an Exponential</h3>
+
+<p><b>Problem:</b> Evaluate $\displaystyle \int x e^x \, dx$.</p>
+
+<p><b>Approach:</b> To solve this, we need to identify the types of functions. Here $x$ is Algebraic and $e^x$ is Exponential. The LIATE rule says A comes before E, so we choose $u = x$ and $dv = e^x\,dx$.</p>
+
+<p><b>Step-by-step working:</b></p>
+
+<div class="math-block">$$u = x \quad \implies \quad du = 1 \cdot dx$$</div>
+<div class="math-block">$$dv = e^x\,dx \quad \implies \quad v = e^x$$</div>
+
+<p>Now substitute into the integration by parts formula $\int u\,dv = uv - \int v\,du$:</p>
+
+<div class="math-block">$$\int x e^x \, dx = x \cdot e^x - \int e^x \cdot 1\,dx$$</div>
+
+<p>The new integral is simply $\int e^x\,dx = e^x$. So:</p>
+
+<div class="math-block">$$\int x e^x \, dx = x e^x - e^x + C$$</div>
+
+<p>Factor out $e^x$:</p>
+
+<div class="math-block">$$\int x e^x \, dx = e^x(x - 1) + C$$</div>
+
+<p><b>Why this makes sense:</b> We can check by differentiating the answer. Using the product rule: $\frac{d}{dx}[e^x(x-1)] = e^x(x-1) + e^x(1) = e^x(x-1+1) = x e^x$, which matches the original integrand. The check confirms the result is correct.</p>
+
+<p><hr></p>
+
+<h3>Example 2: A Polynomial Times a Trigonometric Function</h3>
+
+<p><b>Problem:</b> Evaluate $\displaystyle \int x \sin x \, dx$.</p>
+
+<p><b>Approach:</b> To solve this, we note that $x$ is Algebraic and $\sin x$ is Trigonometric. LIATE says A before T, so $u = x$ and $dv = \sin x\,dx$.</p>
+
+<p><b>Step-by-step working:</b></p>
+
+<div class="math-block">$$u = x \quad \implies \quad du = dx$$</div>
+<div class="math-block">$$dv = \sin x\,dx \quad \implies \quad v = -\cos x$$</div>
+
+<p>Apply the formula:</p>
+
+<div class="math-block">$$\int x \sin x \, dx = x(-\cos x) - \int (-\cos x)\,dx$$</div>
+
+<p>The double negative becomes a positive:</p>
+
+<div class="math-block">$$= -x\cos x + \int \cos x\,dx$$</div>
+
+<p>The integral of $\cos x$ is $\sin x$:</p>
+
+<div class="math-block">$$= -x\cos x + \sin x + C$$</div>
+
+<p><b>Why this makes sense:</b> Differentiating $ -x\cos x + \sin x$ using the product rule on the first term: $\frac{d}{dx}(-x\cos x) = -(1 \cdot \cos x + x \cdot (-\sin x)) = -\cos x + x\sin x$. Adding the derivative of $\sin x$ which is $\cos x$ gives $x\sin x$. The answer checks out.</p>
+
+<p><hr></p>
+
+<h3>Example 3: The Natural Logarithm (A Special Case)</h3>
+
+<p><b>Problem:</b> Evaluate $\displaystyle \int \ln x \, dx$.</p>
+
+<p><b>Approach:</b> To solve this, we notice there is only one function. The technique is to rewrite the integrand as $\ln x \cdot 1$, so we have a product of a Logarithmic function ($\ln x$) and an Algebraic function ($1$). LIATE says L before A, so $u = \ln x$ and $dv = 1 \cdot dx$.</p>
+
+<p><b>Step-by-step working:</b></p>
+
+<div class="math-block">$$u = \ln x \quad \implies \quad du = \frac{1}{x}\,dx$$</div>
+<div class="math-block">$$dv = dx \quad \implies \quad v = x$$</div>
+
+<p>Apply the formula:</p>
+
+<div class="math-block">$$\int \ln x \, dx = (\ln x)(x) - \int x \cdot \frac{1}{x}\,dx$$</div>
+
+<p>The $x$ in the numerator and denominator cancel:</p>
+
+<div class="math-block">$$= x\ln x - \int 1\,dx$$</div>
+<div class="math-block">$$= x\ln x - x + C$$</div>
+
+<p><b>Why this makes sense:</b> Differentiating $x\ln x - x$: by the product rule, $\frac{d}{dx}(x\ln x) = 1 \cdot \ln x + x \cdot \frac{1}{x} = \ln x + 1$. The derivative of $-x$ is $-1$. Adding: $\ln x + 1 - 1 = \ln x$. The result is correct. This is a classic formula worth remembering: $\int \ln x\,dx = x\ln x - x + C$.</p>
+
+<p><hr></p>
+
+<h3>Example 4: A Polynomial Times Cosine with a Constant Multiple</h3>
+
+<p><b>Problem:</b> Evaluate $\displaystyle \int x \cos(3x) \, dx$.</p>
+
+<p><b>Approach:</b> To solve this, we identify $x$ as Algebraic and $\cos(3x)$ as Trigonometric. LIATE says A before T, so $u = x$ and $dv = \cos(3x)\,dx$. When integrating $\cos(3x)$, we need the chain rule in reverse: the integral of $\cos(kx)$ is $\frac{1}{k}\sin(kx)$.</p>
+
+<p><b>Step-by-step working:</b></p>
+
+<div class="math-block">$$u = x \quad \implies \quad du = dx$$</div>
+<div class="math-block">$$dv = \cos(3x)\,dx \quad \implies \quad v = \frac{1}{3}\sin(3x)$$</div>
+
+<p>Apply the formula:</p>
+
+<div class="math-block">$$\int x \cos(3x)\,dx = x \cdot \frac{1}{3}\sin(3x) - \int \frac{1}{3}\sin(3x)\,dx$$</div>
+
+<p>Factor out the constant $\frac{1}{3}$ from the remaining integral:</p>
+
+<div class="math-block">$$= \frac{1}{3}x\sin(3x) - \frac{1}{3}\int \sin(3x)\,dx$$</div>
+
+<p>The integral of $\sin(3x)$ is $-\frac{1}{3}\cos(3x)$, because when we differentiate $-\frac{1}{3}\cos(3x)$, we get $-\frac{1}{3} \cdot (-\sin(3x) \cdot 3) = \sin(3x)$:</p>
+
+<div class="math-block">$$= \frac{1}{3}x\sin(3x) - \frac{1}{3}\left(-\frac{1}{3}\cos(3x)\right) + C$$</div>
+<div class="math-block">$$= \frac{1}{3}x\sin(3x) + \frac{1}{9}\cos(3x) + C$$</div>
+
+<p><b>Why this makes sense:</b> The answer contains both a sine term (from the $x$ interacting with the integral of $\cos$) and a cosine term (from the second round of integration). The coefficients $\frac{1}{3}$ and $\frac{1}{9}$ come from the chain-rule constants when integrating trig functions with arguments like $3x$. This structure is typical for integration by parts with trigonometric functions.</p>
+
+<p><hr></p>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1</h3>
+<p>Evaluate the indefinite integral $\displaystyle \int x e^{2x} \, dx$.</p>
+
+<h3>Problem 2</h3>
+<p>Evaluate the indefinite integral $\displaystyle \int x \cos x \, dx$.</p>
+
+<h3>Problem 3</h3>
+<p>Evaluate the indefinite integral $\displaystyle \int \ln(2x) \, dx$. (Hint: First rewrite $\ln(2x)$ as $\ln 2 + \ln x$, or treat it as a single logarithmic function using $u = \ln(2x)$.)</p>
+
+<h3>Problem 4</h3>
+<p>Evaluate the indefinite integral $\displaystyle \int x \sin(2x) \, dx$.</p>
+
+<h3>Problem 5</h3>
+<p>Evaluate the indefinite integral $\displaystyle \int \arctan x \, dx$. (Hint: Write the integrand as $\arctan x \cdot 1$. The function $\arctan x$ is an inverse trigonometric function, so it takes priority over the algebraic $1$ in LIATE. You will need a substitution for the resulting integral.)</p>
+
+<h3>Problem 6</h3>
+<p>Evaluate the indefinite integral $\displaystyle \int x^2 \ln x \, dx$. (Hint: LIATE says Logarithmic comes before Algebraic, even when the algebraic part is $x^2$. So $u = \ln x$ and $dv = x^2\,dx$.)</p>
+
+<p><hr></p>
+
+<h2>Answers</h2>
+
+<h3>Answer 1</h3>
+
+<p>We identify $x$ as Algebraic and $e^{2x}$ as Exponential. By LIATE, $u = x$ and $dv = e^{2x}\,dx$. Then $du = dx$ and $v = \frac{1}{2}e^{2x}$. Applying the formula: $\int x e^{2x}\,dx = x \cdot \frac{1}{2}e^{2x} - \int \frac{1}{2}e^{2x}\,dx = \frac{1}{2}x e^{2x} - \frac{1}{2} \cdot \frac{1}{2}e^{2x} + C = \frac{1}{2}x e^{2x} - \frac{1}{4}e^{2x} + C$. This can also be written as $\frac{e^{2x}}{4}(2x - 1) + C$. A common mistake is forgetting the $\frac{1}{2}$ factor when integrating $e^{2x}$ to get $v$.</p>
+
+<h3>Answer 2</h3>
+
+<p>We identify $x$ as Algebraic and $\cos x$ as Trigonometric. By LIATE, $u = x$ and $dv = \cos x\,dx$. Then $du = dx$ and $v = \sin x$. Applying the formula: $\int x \cos x\,dx = x\sin x - \int \sin x\,dx = x\sin x - (-\cos x) + C = x\sin x + \cos x + C$. A common error is getting the sign wrong: the integral of $\cos x$ is $+\sin x$, and the integral of $\sin x$ is $-\cos x$. Watch the double negative carefully.</p>
+
+<h3>Answer 3</h3>
+
+<p>We can use the property $\ln(2x) = \ln 2 + \ln x$. The integral splits as $\int \ln 2\,dx + \int \ln x\,dx$. The first part is $(\ln 2)x$. The second part, as shown in Example 3, is $x\ln x - x$. Combined: $\int \ln(2x)\,dx = x\ln 2 + x\ln x - x + C = x(\ln 2 + \ln x) - x + C = x\ln(2x) - x + C$. Alternatively, use $u = \ln(2x)$ directly with $dv = dx$. Then $du = \frac{1}{2x} \cdot 2\,dx = \frac{1}{x}\,dx$ and $v = x$. The formula gives $x\ln(2x) - \int x \cdot \frac{1}{x}\,dx = x\ln(2x) - x + C$, the same result.</p>
+
+<h3>Answer 4</h3>
+
+<p>We identify $x$ as Algebraic and $\sin(2x)$ as Trigonometric. By LIATE, $u = x$ and $dv = \sin(2x)\,dx$. Then $du = dx$. To find $v$, we integrate $\sin(2x)$: the integral of $\sin(kx)$ is $-\frac{1}{k}\cos(kx)$, so $v = -\frac{1}{2}\cos(2x)$. Applying the formula: $\int x\sin(2x)\,dx = x\left(-\frac{1}{2}\cos(2x)\right) - \int \left(-\frac{1}{2}\cos(2x)\right)dx = -\frac{1}{2}x\cos(2x) + \frac{1}{2}\int \cos(2x)\,dx$. The integral of $\cos(2x)$ is $\frac{1}{2}\sin(2x)$, so: $-\frac{1}{2}x\cos(2x) + \frac{1}{2} \cdot \frac{1}{2}\sin(2x) + C = -\frac{1}{2}x\cos(2x) + \frac{1}{4}\sin(2x) + C$.</p>
+
+<h3>Answer 5</h3>
+
+<p>The function $\arctan x$ is inverse trigonometric (I in LIATE). We write it as $\arctan x \cdot 1$, so the Algebraic $1$ becomes $dv$. Set $u = \arctan x$ and $dv = dx$. Then $du = \frac{1}{1 + x^2}\,dx$ and $v = x$. Applying the formula: $\int \arctan x\,dx = x\arctan x - \int x \cdot \frac{1}{1+x^2}\,dx = x\arctan x - \int \frac{x}{1+x^2}\,dx$. For the remaining integral, use the substitution $w = 1 + x^2$, so $dw = 2x\,dx$ and $x\,dx = \frac{1}{2}dw$. Then $\int \frac{x}{1+x^2}\,dx = \frac{1}{2}\int \frac{1}{w}\,dw = \frac{1}{2}\ln|w| = \frac{1}{2}\ln(1+x^2)$. Since $1+x^2$ is always positive, we can drop the absolute value. Final answer: $\int \arctan x\,dx = x\arctan x - \frac{1}{2}\ln(1+x^2) + C$. A common pitfall is not recognizing that the remaining integral $\int \frac{x}{1+x^2}\,dx$ is a $\ln$ form through substitution.</p>
+
+<h3>Answer 6</h3>
+
+<p>We have $\ln x$ (Logarithmic) and $x^2$ (Algebraic). LIATE says L before A, so $u = \ln x$ even though differentiating $x^2$ seems tempting. Set $u = \ln x$ and $dv = x^2\,dx$. Then $du = \frac{1}{x}\,dx$ and $v = \frac{1}{3}x^3$. Applying the formula: $\int x^2 \ln x\,dx = \frac{1}{3}x^3 \ln x - \int \frac{1}{3}x^3 \cdot \frac{1}{x}\,dx = \frac{1}{3}x^3 \ln x - \frac{1}{3}\int x^2\,dx = \frac{1}{3}x^3 \ln x - \frac{1}{3} \cdot \frac{x^3}{3} + C = \frac{1}{3}x^3 \ln x - \frac{1}{9}x^3 + C$. This can be factored as $\frac{x^3}{9}(3\ln x - 1) + C$. Many students make the mistake of choosing $u = x^2$ here, which makes the integral more complicated rather than simpler. The LIATE rule exists precisely to prevent this error.</p>
+
+<p><hr></p>
+
+<h2>Key Takeaways</h2>
+
+<li>Integration by parts is the integration counterpart of the product rule. It converts $\int u\,dv$ into $uv - \int v\,du$.</li>
+<li>The LIATE rule tells you what to choose as $u$: Logarithmic, Inverse trig, Algebraic, Trigonometric, Exponential, in that order of priority.</li>
+<li>The function $dv$ must be something you can integrate. It always includes the $dx$ factor.</li>
+<li>When you see a lone logarithm or inverse trig function, write it as the function times $1$ and use $dv = dx$.</li>
+<li>Always check your answer by differentiating. This catches errors in signs, constants, and missing terms.</li>
+
+
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+</body>
+</html>

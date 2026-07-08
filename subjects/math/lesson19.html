@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 19 — Complex Numbers: Cartesian Form & Operations</title>
+<script>
+MathJax = {
+  tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body {
+    max-width: 800px; margin: 40px auto; font-family: 'Times New Roman', Georgia, serif;
+    font-size: 17px; line-height: 1.7; padding: 0 20px; color: #1a1a1a;
+  }
+  h1 { font-size: 22px; border-bottom: 2px solid #333; padding-bottom: 8px; margin-top: 36px; }
+  h2 { font-size: 19px; margin-top: 28px; color: #2c3e50; }
+  h3 { font-size: 17px; margin-top: 22px; color: #444; }
+  h4 { font-size: 16px; margin-top: 18px; }
+  p { margin: 0.6em 0; }
+  li { margin: 0.3em 0 0.3em 20px; }
+  hr { margin: 20px 0; border: none; border-top: 1px solid #ddd; }
+  .math-block { text-align: center; margin: 1em 0; overflow-x: auto; }
+  .table-line { font-family: 'Courier New', monospace; font-size: 15px; margin: 0.1em 0; }
+  pre { background: #f5f5f5; padding: 10px 14px; border-radius: 4px; overflow-x: auto; font-size: 14px; }
+  b { color: #222; }
+  table { border-collapse: collapse; margin: 16px 0; width: 100%; font-size: 15px; }
+  th { background: #2c3e50; color: #fff; padding: 8px 12px; text-align: center; font-weight: bold; }
+  td { border: 1px solid #ccc; padding: 8px 12px; text-align: center; }
+  tr:nth-child(even) { background: #f9f9f9; }
+  .nav { text-align: center; margin: 30px 0; font-size: 14px; }
+  .nav a { margin: 0 8px; color: #3498db; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  @media print { body { font-size: 15px; } }
+</style>
+</head>
+<body>
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+<h1>Lesson 19: Complex Numbers — Cartesian Form and Basic Operations</h1>
+
+<h2>WHAT Are Complex Numbers?</h2>
+
+<p>You already know how to solve equations like \(x^2 - 4 = 0\). You factor it to \((x-2)(x+2) = 0\), giving you \(x = 2\) or \(x = -2\). Both are ordinary real numbers.</p>
+
+<p>Now try solving this equation:</p>
+
+<div class="math-block">$$
+x^2 + 1 = 0$$</div>
+
+<p>Subtract 1 from both sides: \(x^2 = -1\). A number squared is negative one? That is impossible with the numbers you have used so far. The square of any real number is always zero or positive. For example, \(3^2 = 9\), \((-3)^2 = 9\), and \(0^2 = 0\). None of these equal \(-1\).</p>
+
+<p>So mathematicians invented a new number. They called it the <b>imaginary unit</b>, written as \(i\), and defined it by one simple rule:</p>
+
+<div class="math-block">$$
+\boxed{i^2 = -1}$$</div>
+
+<p>The letter \(i\) is not a variable you solve for. It is a constant — a new kind of number that lives outside the real number line. With \(i\) in your toolkit, you can now solve every quadratic equation, not just the ones that happen to have real answers.</p>
+
+<p>A <b>complex number</b> is any number you can write as \(a + bi\), where \(a\) and \(b\) are ordinary real numbers. The set of all complex numbers is called \(\mathbb{C}\).</p>
+
+<h2>WHY Do Complex Numbers Matter?</h2>
+
+<p>Complex numbers are not just an abstract curiosity. They are used every day by electrical engineers to analyze alternating current circuits. They appear in quantum mechanics, where the fundamental equation of physics (the Schrödinger equation) has \(i\) built into it. They are used in signal processing, control systems, and fluid dynamics. Understanding complex numbers opens the door to a huge range of advanced mathematics and real-world applications.</p>
+
+<p><hr></p>
+
+<h2>1. Cartesian Form</h2>
+
+<p>The <b>Cartesian form</b> (also called rectangular form) of a complex number is simply writing it as \(a + bi\). For example, \(3 + 4i\) and \(-2 - i\) are both complex numbers in Cartesian form.</p>
+
+<p>When you look at \(a + bi\):</p>
+
+<li>- \(a\) is called the <b>real part</b>, written as \(\operatorname{Re}(z)\). It is the number sitting by itself.</li>
+<li>- \(b\) is called the <b>imaginary part</b>, written as \(\operatorname{Im}(z)\). It is just the coefficient in front of \(i\). The imaginary part is \(b\) itself, not \(bi\).</li>
+
+<p><b>Common misconception:</b> Many students think the imaginary part of \(3 + 4i\) is \(4i\). It is not — the imaginary part is just \(4\). The \(i\) is the imaginary unit, and the imaginary part is the real number that multiplies it.</p>
+
+<p>Here are some examples to make this clear:</p>
+
+<li>- For \(z = 3 + 4i\): the real part is \(3\) and the imaginary part is \(4\).</li>
+<li>- For \(z = -2 - i\): the real part is \(-2\) and the imaginary part is \(-1\) (because \(-i\) means \(-1 \cdot i\)).</li>
+<li>- For \(z = 7\): the real part is \(7\) and the imaginary part is \(0\). A real number is a special case of a complex number — one where the imaginary part happens to be zero.</li>
+<li>- For \(z = 5i\): the real part is \(0\) and the imaginary part is \(5\). This is called a <b>purely imaginary</b> number.</li>
+
+<p><hr></p>
+
+<h2>2. Equality of Complex Numbers</h2>
+
+<p>Two complex numbers are equal exactly when both their real parts match and their imaginary parts match. In symbols:</p>
+
+<div class="math-block">$$
+\boxed{a + bi = c + di \quad\text{means}\quad a = c \;\text{and}\; b = d}$$</div>
+
+<p>This rule is very useful. Whenever a problem tells you that two complex numbers are equal, you can split it into two separate real-number equations.</p>
+
+<h3>Worked Example: Finding Unknown Values from Equality</h3>
+
+<p><b>Problem:</b> Find the real numbers \(x\) and \(y\) such that \((x + y) + (x - y)i = 5 + i\).</p>
+
+<p><b>Approach:</b> Since the two complex numbers are equal, their real parts must be equal and their imaginary parts must be equal. Write two equations and solve them as a system.</p>
+
+<p><b>Step 1 — Equate real parts:</b></p>
+<p>The real part on the left is \(x + y\). The real part on the right is \(5\).</p>
+<div class="math-block">$$
+x + y = 5$$</div>
+
+<p><b>Step 2 — Equate imaginary parts:</b></p>
+<p>The imaginary part on the left is \(x - y\). The imaginary part on the right is \(1\).</p>
+<div class="math-block">$$
+x - y = 1$$</div>
+
+<p><b>Step 3 — Solve the system:</b></p>
+<p>Add the two equations: \((x + y) + (x - y) = 5 + 1\), which gives \(2x = 6\), so \(x = 3\).</p>
+<p>Substitute back: \(3 + y = 5\), so \(y = 2\).</p>
+
+<p><b>Answer:</b> \(x = 3\), \(y = 2\).</p>
+
+<p><b>Why this makes sense:</b> Check by plugging back: \((3 + 2) + (3 - 2)i = 5 + 1i = 5 + i\). It matches perfectly.</p>
+
+<p><hr></p>
+
+<h2>3. Adding and Subtracting Complex Numbers</h2>
+
+<p>Adding and subtracting complex numbers is simple: you treat the real parts and imaginary parts separately, just like you treat &quot;like terms&quot; when combining algebraic expressions.</p>
+
+<div class="math-block">$$
+\boxed{(a + bi) + (c + di) = (a + c) + (b + d)i}$$</div>
+<div class="math-block">$$
+\boxed{(a + bi) - (c + di) = (a - c) + (b - d)i}$$</div>
+
+<h3>Worked Example 1 — Addition</h3>
+
+<p><b>Problem:</b> Simplify \((3 + 2i) + (5 - 4i)\).</p>
+
+<p><b>Approach:</b> Group the real numbers together and the \(i\)-terms together.</p>
+
+<p><b>Step 1:</b> Real parts: \(3 + 5 = 8\).</p>
+<p><b>Step 2:</b> Imaginary parts: \(2 + (-4) = -2\).</p>
+<p><b>Step 3:</b> Put them together: \(8 - 2i\).</p>
+
+<p><b>Answer:</b> \(8 - 2i\).</p>
+
+<h3>Worked Example 2 — Subtraction</h3>
+
+<p><b>Problem:</b> Simplify \((6 + i) - (2 - 3i)\).</p>
+
+<p><b>Approach:</b> Be careful with the minus sign — it applies to both parts of the second number. Think of it as \((6 + i) + (-2 + 3i)\).</p>
+
+<p><b>Step 1:</b> Real parts: \(6 - 2 = 4\).</p>
+<p><b>Step 2:</b> Imaginary parts: \(1 - (-3)\). Subtracting negative three is the same as adding three: \(1 + 3 = 4\).</p>
+<p><b>Step 3:</b> Put them together: \(4 + 4i\).</p>
+
+<p><b>Answer:</b> \(4 + 4i\).</p>
+
+<p><b>Common misconception:</b> Many students subtract only the real part and forget to distribute the minus sign to the imaginary part. Always write the subtraction as adding the negative: \(a + bi - (c + di) = a + bi - c - di\).</p>
+
+<p><hr></p>
+
+<h2>4. Multiplying Complex Numbers</h2>
+
+<p>To multiply two complex numbers, expand them exactly like you expand two binomials — use the distributive property (often called FOIL: First, Outer, Inner, Last). Then, wherever you see \(i^2\), replace it with \(-1\).</p>
+
+<div class="math-block">$$
+\boxed{(a + bi)(c + di) = ac + adi + bci + bdi^2 = (ac - bd) + (ad + bc)i}$$</div>
+
+<p>You do not need to memorize that formula. Just expand and simplify \(i^2 = -1\).</p>
+
+<h3>Worked Example 1 — Basic Multiplication</h3>
+
+<p><b>Problem:</b> Multiply \((2 + 3i)(1 - 4i)\).</p>
+
+<p><b>Approach:</b> Expand step by step using the distributive property, then replace \(i^2\) with \(-1\) and combine like terms.</p>
+
+<p><b>Step 1 — Expand:</b></p>
+<p>Multiply \(2\) by \(1\): \(2\)</p>
+<p>Multiply \(2\) by \(-4i\): \(-8i\)</p>
+<p>Multiply \(3i\) by \(1\): \(+3i\)</p>
+<p>Multiply \(3i\) by \(-4i\): \(-12i^2\)</p>
+
+<p>So we have: \(2 - 8i + 3i - 12i^2\)</p>
+
+<p><b>Step 2 — Combine the \(i\)-terms:</b> \(-8i + 3i = -5i\). We now have \(2 - 5i - 12i^2\).</p>
+
+<p><b>Step 3 — Replace \(i^2\) with \(-1\):</b> \(-12i^2 = -12(-1) = +12\).</p>
+
+<p><b>Step 4 — Add the real numbers:</b> \(2 + 12 = 14\).</p>
+
+<p><b>Answer:</b> \(14 - 5i\).</p>
+
+<h3>Worked Example 2 — Squaring a Complex Number</h3>
+
+<p><b>Problem:</b> Evaluate \((1 + i)^2\).</p>
+
+<p><b>Approach:</b> Squaring means multiplying the number by itself. Expand and simplify.</p>
+
+<p><b>Step 1 — Expand:</b></p>
+<p>\((1 + i)(1 + i) = 1 + i + i + i^2 = 1 + 2i + i^2\)</p>
+
+<p><b>Step 2 — Replace \(i^2\) with \(-1\):</b> \(1 + 2i + (-1) = 1 + 2i - 1\).</p>
+
+<p><b>Step 3 — Simplify:</b> The \(1\) and \(-1\) cancel, leaving \(2i\).</p>
+
+<p><b>Answer:</b> \(2i\).</p>
+
+<p><b>Why this makes sense:</b> \(1 + i\) squared gives \(2i\), which is purely imaginary. This may feel surprising, but it follows directly from \(i^2 = -1\).</p>
+
+<h3>Worked Example 3 — The Conjugate Product</h3>
+
+<p><b>Problem:</b> Multiply \((3 - i)(3 + i)\).</p>
+
+<p><b>Approach:</b> Expand as usual. Notice that these two numbers have the same real part and opposite imaginary parts — they are <b>conjugates</b> of each other (you will study conjugates in depth in Lesson 20).</p>
+
+<p><b>Step 1 — Expand:</b></p>
+<p>\((3 - i)(3 + i) = 9 + 3i - 3i - i^2\).</p>
+
+<p><b>Step 2 — The middle terms cancel:</b> \(3i - 3i = 0\).</p>
+
+<p><b>Step 3 — Replace \(i^2\):</b> \(-i^2 = -(-1) = +1\).</p>
+
+<p><b>Step 4 — Add:</b> \(9 + 1 = 10\).</p>
+
+<p><b>Answer:</b> \(10\), which is a real number. Multiplying a complex number by its conjugate always gives a real number — this fact becomes extremely useful when you divide complex numbers.</p>
+
+<p><hr></p>
+
+<h2>5. Powers of \(i\)</h2>
+
+<p>The powers of \(i\) follow a repeating cycle of length 4. Once you know the first four powers, you can find any power of \(i\).</p>
+
+<p>Let us compute them one at a time:</p>
+
+<div class="math-block">$$
+\begin{aligned}
+i^1 &= i \\[4pt]
+i^2 &= -1 \\[4pt]
+i^3 &= i^2 \cdot i = (-1) \cdot i = -i \\[4pt]
+i^4 &= i^2 \cdot i^2 = (-1) \cdot (-1) = 1
+\end{aligned}$$</div>
+
+<p>Now what about \(i^5\)? Since \(i^4 = 1\), we have \(i^5 = i^4 \cdot i = 1 \cdot i = i\). The cycle starts over.</p>
+
+<p>The pattern is: \(i, -1, -i, 1, i, -1, -i, 1, \dots\)</p>
+
+<p><b>Key rule:</b> To find \(i^n\), divide the exponent \(n\) by 4 and look at the remainder.</p>
+<li>- If the remainder is 0, \(i^n = 1\).</li>
+<li>- If the remainder is 1, \(i^n = i\).</li>
+<li>- If the remainder is 2, \(i^n = -1\).</li>
+<li>- If the remainder is 3, \(i^n = -i\).</li>
+
+<h3>Worked Example: A Large Power of \(i\)</h3>
+
+<p><b>Problem:</b> Evaluate \(i^{2023}\).</p>
+
+<p><b>Approach:</b> Divide 2023 by 4 to find the remainder. The remainder determines which value in the cycle we land on.</p>
+
+<p><b>Step 1:</b> Divide: \(2023 \div 4\). Since \(4 \times 505 = 2020\), the remainder is \(2023 - 2020 = 3\).</p>
+
+<p><b>Step 2:</b> A remainder of 3 means \(i^{2023} = i^3 = -i\).</p>
+
+<p><b>Answer:</b> \(-i\).</p>
+
+<p><b>Common misconception:</b> Some students think \(i^0 = 0\). But any number (except 0 itself) raised to the power 0 is 1. So \(i^0 = 1\), which matches the remainder-0 case.</p>
+
+<p><hr></p>
+
+<h2>Practice Problems</h2>
+
+<p><b>Problem 1:</b> For the complex number \(z = -4 + 7i\), state the real part \(\operatorname{Re}(z)\) and the imaginary part \(\operatorname{Im}(z)\).</p>
+
+<p><b>Problem 2:</b> Simplify \((5 - 2i) + (-3 + 6i) - (4 + i)\). Give your answer in Cartesian form \(a + bi\).</p>
+
+<p><b>Problem 3:</b> Multiply \((2 + i)(3 - 5i)\) and express your answer in the form \(a + bi\).</p>
+
+<p><b>Problem 4:</b> Evaluate \((2 - i)^2\) and give your answer in Cartesian form \(a + bi\).</p>
+
+<p><b>Problem 5 (IB Exam Style):</b> The complex numbers \(z\) and \(w\) are given by \(z = 3 + 2i\) and \(w = 1 - 4i\).</p>
+<p>(a) Find \(z + w\) and \(z - w\), giving each answer in the form \(a + bi\). [2 marks]</p>
+<p>(b) Find \(zw\), giving your answer in the form \(a + bi\). [2 marks]</p>
+<p>(c) Verify that \(\operatorname{Re}(zw)\) equals \(\operatorname{Re}(z)\operatorname{Re}(w) - \operatorname{Im}(z)\operatorname{Im}(w)\). [2 marks]</p>
+
+<p><b>Problem 6:</b> Evaluate \(i^{50} + i^{51} + i^{52} + i^{53}\).</p>
+
+<p><b>Problem 7:</b> Simplify \((1 + i)(1 - i)(2 + 3i)\) and express your answer in the form \(a + bi\).</p>
+
+<p><hr></p>
+
+<h2>Answers</h2>
+
+<p><b>Answer 1:</b> The complex number \(z = -4 + 7i\) is in Cartesian form \(a + bi\) with \(a = -4\) and \(b = 7\). Therefore \(\operatorname{Re}(z) = -4\) and \(\operatorname{Im}(z) = 7\). Remember: the imaginary part is the coefficient 7, not \(7i\).</p>
+
+<p><b>Answer 2:</b> We group the real parts and imaginary parts separately, being careful to distribute the minus sign in the subtraction.</p>
+
+<p>Real parts: \(5 + (-3) - 4 = 5 - 3 - 4 = -2\).</p>
+
+<p>Imaginary parts: \(-2 + 6 - 1 = 3\).</p>
+
+<p>So the result is \(-2 + 3i\).</p>
+
+<p><b>Answer 3:</b> Expand \((2 + i)(3 - 5i)\) using the distributive property:</p>
+
+<p>\(2 \cdot 3 = 6\)</p>
+<p>\(2 \cdot (-5i) = -10i\)</p>
+<p>\(i \cdot 3 = 3i\)</p>
+<p>\(i \cdot (-5i) = -5i^2\)</p>
+
+<p>Combine: \(6 - 10i + 3i - 5i^2 = 6 - 7i - 5i^2\).</p>
+
+<p>Replace \(i^2\) with \(-1\): \(-5(-1) = +5\).</p>
+
+<p>So we have \(6 - 7i + 5 = 11 - 7i\).</p>
+
+<p><b>Answer 4:</b> \((2 - i)^2\) means \((2 - i)(2 - i)\). Expand:</p>
+
+<p>\(2 \cdot 2 = 4\)</p>
+<p>\(2 \cdot (-i) = -2i\)</p>
+<p>\((-i) \cdot 2 = -2i\)</p>
+<p>\((-i) \cdot (-i) = i^2\)</p>
+
+<p>Combine: \(4 - 2i - 2i + i^2 = 4 - 4i + i^2\).</p>
+
+<p>Replace \(i^2\) with \(-1\): \(4 - 4i - 1 = 3 - 4i\).</p>
+
+<p><b>Answer 5:</b></p>
+
+<p>(a) \(z + w = (3 + 2i) + (1 - 4i) = (3 + 1) + (2 - 4)i = 4 - 2i\).</p>
+
+<p>\(z - w = (3 + 2i) - (1 - 4i) = (3 - 1) + (2 - (-4))i = 2 + 6i\).</p>
+
+<p>(b) \(zw = (3 + 2i)(1 - 4i) = 3(1) + 3(-4i) + 2i(1) + 2i(-4i) = 3 - 12i + 2i - 8i^2\).</p>
+
+<p>Combine: \(3 - 10i - 8i^2\). Replace \(i^2 = -1\): \(-8(-1) = 8\). So \(3 - 10i + 8 = 11 - 10i\).</p>
+
+<p>(c) Left-hand side: \(\operatorname{Re}(zw) = \operatorname{Re}(11 - 10i) = 11\).</p>
+
+<p>Right-hand side: \(\operatorname{Re}(z)\operatorname{Re}(w) - \operatorname{Im}(z)\operatorname{Im}(w) = (3)(1) - (2)(-4) = 3 - (-8) = 3 + 8 = 11\).</p>
+
+<p>Both sides equal 11, so the verification is successful. This formula is actually the general pattern for the real part of a product of two complex numbers.</p>
+
+<p><b>Pitfall:</b> In part (b), many students forget that the imaginary part of \(w\) is \(-4\) (not \(4\)). Keep the sign with the number.</p>
+
+<p><b>Answer 6:</b> Find each power by dividing the exponent by 4 and checking the remainder.</p>
+
+<li>- \(50 \div 4 = 12\) remainder \(2\), so \(i^{50} = i^2 = -1\).</li>
+<li>- \(51 \div 4 = 12\) remainder \(3\), so \(i^{51} = i^3 = -i\).</li>
+<li>- \(52 \div 4 = 13\) remainder \(0\), so \(i^{52} = i^0 = 1\).</li>
+<li>- \(53 \div 4 = 13\) remainder \(1\), so \(i^{53} = i^1 = i\).</li>
+
+<p>Now add them: \((-1) + (-i) + 1 + i\).</p>
+
+<p>The \(-1\) and \(1\) cancel to \(0\). The \(-i\) and \(i\) cancel to \(0\). The total sum is \(0\).</p>
+
+<p><b>Why this makes sense:</b> Adding four consecutive powers of \(i\) always gives zero because the cycle \(i, -1, -i, 1\) sums to zero. This is a useful shortcut to remember.</p>
+
+<p><b>Answer 7:</b> First multiply \((1 + i)(1 - i)\). These are conjugates, so their product is real:</p>
+
+<p>\((1 + i)(1 - i) = 1 - i + i - i^2 = 1 - i^2 = 1 - (-1) = 2\).</p>
+
+<p>Now multiply this result by \((2 + 3i)\): \(2(2 + 3i) = 4 + 6i\).</p>
+
+<p>The final answer is \(4 + 6i\).</p>
+
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+</body>
+</html>

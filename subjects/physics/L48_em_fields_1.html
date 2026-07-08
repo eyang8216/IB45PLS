@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 48: Lesson 48: Electric & Magnetic Fields I — Coulomb's Law & E-Fields — IB Physics HL</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']]
+  },
+  options: {
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap');
+  
+  :root {
+    --bg: #fdfcf9;
+    --text: #1a1a1a;
+    --accent: #2c5f2d;
+    --border: #d0cec7;
+    --code-bg: #f4f3ef;
+    --callout-bg: #f0f7f0;
+    --callout-border: #2c5f2d;
+    --warning-bg: #fff8e6;
+    --warning-border: #c4941a;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  body {
+    font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid var(--accent);
+    color: var(--accent);
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 2.5rem 0 0.75rem;
+    color: #1a1a1a;
+  }
+  
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.5rem;
+  }
+  
+  p { margin: 0 0 1rem; }
+  
+  ul, ol { margin: 0 0 1rem 1.5rem; }
+  li { margin-bottom: 0.35rem; }
+  
+  code {
+    background: var(--code-bg);
+    padding: 0.15em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+    font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+  }
+  
+  pre {
+    background: var(--code-bg);
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 0 0 1rem;
+    font-size: 0.85em;
+    line-height: 1.5;
+  }
+  
+  pre code {
+    background: none;
+    padding: 0;
+    font-size: inherit;
+  }
+  
+  blockquote {
+    border-left: 4px solid var(--callout-border);
+    background: var(--callout-bg);
+    margin: 0 0 1rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+  }
+  
+  blockquote.warning {
+    border-left-color: var(--warning-border);
+    background: var(--warning-bg);
+  }
+  
+  strong { font-weight: 700; }
+  
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.5rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  
+  .nav a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+  
+  .nav a:hover { background: var(--callout-bg); }
+  
+  .worked-example, .answer {
+    background: var(--code-bg);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin: 0.75rem 0 1.25rem;
+  }
+  
+  .worked-example strong:first-child, .answer strong:first-child {
+    color: var(--accent);
+  }
+  
+  @media print {
+    body { font-size: 12pt; max-width: 100%; padding: 0; }
+    .nav { display: none; }
+    h1 { font-size: 18pt; }
+    h2 { font-size: 14pt; }
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 0 1rem;
+  }
+  
+  th, td {
+    border: 1px solid var(--border);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  
+  th {
+    background: var(--code-bg);
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L47_gravitational_fields_3.html">← Lesson 47</a>
+  <a href="L49_em_fields_2.html">Lesson 49 →</a>
+</nav>
+
+<h1>Lesson 48: Electric & Magnetic Fields I — Coulomb's Law & E-Fields</h1>
+
+<h2>What You'll Learn</h2>
+<ul>
+<li>Electric charge conservation, conductors vs insulators</li>
+<li>Coulomb's Law: F = kq₁q₂/r²</li>
+<li>Electric field strength E = F/q</li>
+<li>Field due to a point charge: E = kQ/r²</li>
+<li>Uniform E-field between parallel plates: E = V/d</li>
+</ul>
+
+<hr>
+
+<h2>1. Electric Charge — Fundamental Properties</h2>
+
+<h3>Charge Conservation</h3>
+
+<p>Electric charge cannot be created or destroyed — it can only be transferred. The net charge of an isolated system is constant.</p>
+
+<h3>Quantization of Charge</h3>
+
+<p>Charge comes in discrete units:</p>
+<p>$$e = 1.60 \times 10^{-19} \text{ C}$$</p>
+
+<p>All charges are integer multiples of e: q = ne, n = ±1, ±2, ±3, ...</p>
+
+<h3>Conductors vs Insulators</h3>
+
+<table>
+<tr>
+<th>Property</th>
+<th>Conductors</th>
+<th>Insulators</th>
+</tr>
+<tr>
+<td>Charge movement</td>
+<td>Free electrons can flow</td>
+<td>Electrons tightly bound</td>
+</tr>
+<tr>
+<td>Examples</td>
+<td>Metals (copper, silver), graphite</td>
+<td>Rubber, glass, plastic</td>
+</tr>
+<tr>
+<td>Charging</td>
+<td>Charge distributes over surface</td>
+<td>Charge stays where deposited</td>
+</tr>
+<tr>
+<td>Electric field inside</td>
+<td>Zero (in electrostatic equilibrium)</td>
+<td>Can be non-zero</td>
+</tr>
+</table>
+
+<h3>Charging Methods</h3>
+
+<ul>
+<li><strong>Friction:</strong> Rubbing transfers electrons (triboelectric effect)</li>
+<li><strong>Conduction:</strong> Contact with charged object</li>
+<li><strong>Induction:</strong> Bringing a charged object near (without contact) causes charge separation, then grounding fixes the charge</li>
+</ul>
+
+<hr>
+
+<h2>2. Coulomb's Law</h2>
+
+<p>The force between two point charges is proportional to the product of the charges and inversely proportional to the square of the separation:</p>
+
+<p>$$F = \frac{k q_1 q_2}{r^2}$$</p>
+
+<p>where:</p>
+<ul>
+<li><strong>k</strong> = Coulomb constant = 8.99 × 10⁹ N·m²/C²</li>
+<li><strong>q₁, q₂</strong> = charges (C) — signs matter!</li>
+<li><strong>r</strong> = separation (m)</li>
+</ul>
+
+<p>In terms of permittivity of free space ε₀:</p>
+<p>$$k = \frac{1}{4\pi\varepsilon_0}$$</p>
+
+<p>$$\varepsilon_0 = 8.85 \times 10^{-12} \text{ C}^2\text{/N·m}^2$$</p>
+
+<h3>Sign and Direction</h3>
+
+<ul>
+<li>Like charges (both + or both −): <strong>repel</strong> → F positive (away from each other)</li>
+<li>Unlike charges (+ and −): <strong>attract</strong> → F negative (toward each other)</li>
+<li>Force acts along the line joining the charges</li>
+</ul>
+
+<h3>Comparison with Gravity</h3>
+
+<table>
+<tr>
+<th>Electrostatic</th>
+<th>Gravitational</th>
+</tr>
+<tr>
+<td>Formula</td>
+<td>F = kq₁q₂/r²</td>
+<td>F = Gm₁m₂/r²</td>
+</tr>
+<tr>
+<td>Constant</td>
+<td>k ≈ 9×10⁹</td>
+<td>G ≈ 6.67×10⁻¹¹</td>
+</tr>
+<tr>
+<td>Force can be</td>
+<td>Attractive or repulsive</td>
+<td>Only attractive</td>
+</tr>
+<tr>
+<td>Relative strength</td>
+<td>~10³⁶× stronger</td>
+<td>Extremely weak</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>3. Electric Field Strength E</h2>
+
+<h3>Definition</h3>
+
+<p>The electric field at a point is the force per unit charge experienced by a small positive test charge placed at that point:</p>
+
+<p>$$E = \frac{F}{q}$$</p>
+
+<p><strong>Units:</strong> N/C (equivalent to V/m)</p>
+
+<h3>Field Due to a Point Charge</h3>
+
+<p>$$E = \frac{kQ}{r^2} = \frac{Q}{4\pi\varepsilon_0 r^2}$$</p>
+
+<h3>Direction</h3>
+
+<ul>
+<li>Away from positive charges (+Q → E points outward)</li>
+<li>Toward negative charges (−Q → E points inward)</li>
+</ul>
+
+<pre><code>
++Q                    −Q
+ ↑ → · ← ↓           ↓ → · ← ↑
+(E outward)          (E inward)
+</code></pre>
+
+<hr>
+
+<h2>4. Electric Field Lines</h2>
+
+<h3>Rules</h3>
+
+<table>
+<tr>
+<th>Rule</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>Start/End</td>
+<td>Start on + charges, end on − charges</td>
+</tr>
+<tr>
+<td>Density</td>
+<td>More lines = stronger field</td>
+</tr>
+<tr>
+<td>Direction</td>
+<td>Tangent to line = direction of E</td>
+</tr>
+<tr>
+<td>Never cross</td>
+<td>Field is single-valued at each point</td>
+</tr>
+<tr>
+<td>Perpendicular</td>
+<td>Perpendicular to conductor surfaces</td>
+</tr>
+</table>
+
+<h3>Common Configurations</h3>
+
+<p><strong>Single positive charge:</strong> Radial lines outward</p>
+<p><strong>Single negative charge:</strong> Radial lines inward</p>
+<p><strong>Dipole (+ and −):</strong> Curved lines from + to −</p>
+<p><strong>Two like charges:</strong> Lines repel between them, null point in between</p>
+
+<hr>
+
+<h2>5. Uniform Electric Field — Parallel Plates</h2>
+
+<p>When two parallel conducting plates are connected to a potential difference (battery), a <strong>uniform</strong> E-field is established between them (ignoring edge effects).</p>
+
+<p>$$E = \frac{V}{d}$$</p>
+
+<p>where:</p>
+<ul>
+<li><strong>V</strong> = potential difference between plates (volts)</li>
+<li><strong>d</strong> = plate separation (m)</li>
+</ul>
+
+<pre><code>
+    + + + + + + + + + + +
+    |                     |
+    ↓  ↓  ↓  ↓  ↓  ↓  ↓   ← Uniform E-field (everywhere same strength & direction)
+    |                     |
+    − − − − − − − − − − −
+</code></pre>
+
+<h3>Force on a Charge in Uniform Field</h3>
+
+<p>$$F = qE = \frac{qV}{d}$$</p>
+
+<ul>
+<li>Positive charge: force <strong>in direction of E</strong> (toward negative plate)</li>
+<li>Negative charge: force <strong>opposite to E</strong> (toward positive plate)</li>
+</ul>
+
+<h3>Acceleration</h3>
+
+<p>$$a = \frac{F}{m} = \frac{qE}{m} = \frac{qV}{md}$$</p>
+
+<hr>
+
+<h2>Worked Examples</h2>
+
+<h3>Worked Example 48.1 — Force Between Charges</h3>
+
+<p><strong>Problem:</strong> Two point charges, +3.0 μC and −5.0 μC, are placed 0.20 m apart. Find the magnitude and direction of the force on each charge.</p>
+
+<p><strong>Solution:</strong></p>
+
+<p>$$F = \frac{k q_1 q_2}{r^2} = \frac{8.99 \times 10^9 \times (3.0 \times 10^{-6}) \times (5.0 \times 10^{-6})}{(0.20)^2}$$</p>
+
+<p>$$F = \frac{8.99 \times 10^9 \times 1.5 \times 10^{-11}}{0.040} = \frac{0.1349}{0.040} = 3.37 \text{ N}$$</p>
+
+<p>Force is <strong>attractive</strong> (unlike charges). The +3.0 μC charge is pulled toward the −5.0 μC charge, and vice versa. Magnitude: <strong>3.37 N</strong> on each.</p>
+
+<hr>
+
+<h3>Worked Example 48.2 — E-field at a Point</h3>
+
+<p><strong>Problem:</strong> Find the electric field at a point 0.15 m from a +4.0 μC point charge.</p>
+
+<p><strong>Solution:</strong></p>
+
+<p>$$E = \frac{kQ}{r^2} = \frac{8.99 \times 10^9 \times 4.0 \times 10^{-6}}{(0.15)^2}$$</p>
+
+<p>$$E = \frac{3.596 \times 10^4}{0.0225} = \mathbf{1.60 \times 10^6 \text{ N/C}}$$</p>
+
+<p>Direction: radially <strong>outward</strong> from the charge (away from +).</p>
+
+<hr>
+
+<h3>Worked Example 48.3 — Electron in Uniform Field</h3>
+
+<p><strong>Problem:</strong> An electron enters a uniform electric field between two parallel plates separated by 0.020 m with a potential difference of 100 V. Find:</p>
+<p>(a) the electric field strength between the plates</p>
+<p>(b) the force on the electron</p>
+<p>(c) the acceleration of the electron (e = 1.60 × 10⁻¹⁹ C, mₑ = 9.11 × 10⁻³¹ kg)</p>
+
+<p><strong>Solution:</strong></p>
+
+<p><strong>(a)</strong></p>
+<p>$$E = \frac{V}{d} = \frac{100}{0.020} = \mathbf{5.0 \times 10^3 \text{ V/m}}$$</p>
+
+<p><strong>(b)</strong></p>
+<p>$$F = qE = 1.60 \times 10^{-19} \times 5.0 \times 10^3 = \mathbf{8.0 \times 10^{-16} \text{ N}}$$</p>
+
+<p>Direction: opposite to E (electron is negative → force toward positive plate).</p>
+
+<p><strong>(c)</strong></p>
+<p>$$a = \frac{F}{m} = \frac{8.0 \times 10^{-16}}{9.11 \times 10^{-31}} = \mathbf{8.78 \times 10^{14} \text{ m/s}^2}$$</p>
+
+<p>This enormous acceleration shows how strongly electric fields affect electrons!</p>
+
+<hr>
+
+<h3>Worked Example 48.4 — Null Point Between Charges</h3>
+
+<p><strong>Problem:</strong> Two charges +9.0 μC and +4.0 μC are placed 1.0 m apart. Find the point on the line between them where the net electric field is zero.</p>
+
+<p><strong>Solution:</strong></p>
+
+<p>Let the null point be at distance x from the 9.0 μC charge. The fields must be equal in magnitude and opposite in direction:</p>
+
+<p>$$\frac{k \times 9.0 \times 10^{-6}}{x^2} = \frac{k \times 4.0 \times 10^{-6}}{(1.0 - x)^2}$$</p>
+
+<p>Cancel k and 10⁻⁶:</p>
+<p>$$\frac{9.0}{x^2} = \frac{4.0}{(1.0 - x)^2}$$</p>
+
+<p>Take square root of both sides:</p>
+<p>$$\frac{3.0}{x} = \frac{2.0}{1.0 - x}$$</p>
+
+<p>Cross multiply: 3.0(1.0 − x) = 2.0x</p>
+<p>3.0 − 3.0x = 2.0x</p>
+<p>3.0 = 5.0x</p>
+<p><strong>x = 0.60 m</strong> from the 9.0 μC charge.</p>
+
+<p>Check: at 0.60 m from 9 μC → E₁ = k×9/(0.36) = 25k. At 0.40 m from 4 μC → E₂ = k×4/(0.16) = 25k. Equal magnitude, opposite direction ✓</p>
+
+<hr>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1</h3>
+<p>Two point charges of +2.0 μC and +8.0 μC are 0.30 m apart. Calculate:</p>
+<p>(a) the force between them (magnitude and type)</p>
+<p>(b) the electric field at the midpoint between them</p>
+
+<h3>Problem 2</h3>
+<p>A proton (q = +1.60 × 10⁻¹⁹ C, m = 1.67 × 10⁻²⁷ kg) is placed in a uniform electric field of 2.0 × 10⁴ N/C.</p>
+<p>(a) Find the force on the proton.</p>
+<p>(b) Calculate its acceleration.</p>
+<p>(c) If it starts from rest, how fast is it moving after 1.0 μs?</p>
+
+<h3>Problem 3</h3>
+<p>Two parallel plates are separated by 5.0 mm and connected to a 200 V battery.</p>
+<p>(a) What is the E-field between the plates?</p>
+<p>(b) An electron enters this field. What is the magnitude of the force on it?</p>
+<p>(c) If the electron enters at 3.0 × 10⁶ m/s parallel to the plates, sketch its path and explain.</p>
+
+<h3>Problem 4</h3>
+<p>Three point charges form an equilateral triangle of side 0.10 m: q₁ = +3.0 μC, q₂ = +3.0 μC, q₃ = −3.0 μC. Find the net electric field at the midpoint of the side connecting q₁ and q₂.</p>
+
+<h3>Problem 5 (IB-Style — Charge Configuration)</h3>
+<p>Two identical small conducting spheres, A and B, carry charges of +6.0 nC and −2.0 nC respectively. They are touched together briefly and then separated to a distance of 12 cm.</p>
+
+<p><strong>(a)</strong> State the charge on each sphere after separation. Justify your answer.</p>
+<p><strong>(b)</strong> Calculate the electrostatic force between them after separation.</p>
+<p><strong>(c)</strong> A third identical sphere C, initially uncharged, is now brought into contact with sphere A, then removed. Sphere C is then brought into contact with sphere B, then removed. Calculate the final charge on each sphere.</p>
+<p><strong>(d)</strong> Sphere A (with its charge from part c) is placed at the origin (0,0). Sphere B (with its charge from part c) is placed at (0.12 m, 0). Calculate the net electric field at the point (0.06 m, 0.08 m) — directly above the midpoint.</p>
+
+<hr>
+
+<h2>Answers</h2>
+
+<h3>Answer 1</h3>
+<p><strong>(a)</strong> F = kq₁q₂/r² = 8.99×10⁹ × 2.0×10⁻⁶ × 8.0×10⁻⁶/(0.30)² = 143.8×10⁻³/0.09 = <strong>1.60 N repulsive</strong> (both positive)</p>
+
+<p><strong>(b)</strong> At midpoint (0.15 m from each): </p>
+<p>E₁ = k×2.0×10⁻⁶/(0.15)² = 8.99×10⁹×2.0×10⁻⁶/0.0225 = 7.99×10⁵ N/C (away from q₁)</p>
+<p>E₂ = k×8.0×10⁻⁶/(0.15)² = 3.20×10⁶ N/C (away from q₂)</p>
+<p>E_net = 3.20×10⁶ − 7.99×10⁵ = <strong>2.40 × 10⁶ N/C</strong> toward the smaller charge.</p>
+
+<hr>
+
+<h3>Answer 2</h3>
+<p><strong>(a)</strong> F = qE = 1.60×10⁻¹⁹ × 2.0×10⁴ = <strong>3.20 × 10⁻¹⁵ N</strong> in direction of E</p>
+
+<p><strong>(b)</strong> a = F/m = 3.20×10⁻¹⁵/1.67×10⁻²⁷ = <strong>1.92 × 10¹² m/s²</strong></p>
+
+<p><strong>(c)</strong> v = u + at = 0 + 1.92×10¹² × 1.0×10⁻⁶ = <strong>1.92 × 10⁶ m/s</strong></p>
+
+<hr>
+
+<h3>Answer 3</h3>
+<p><strong>(a)</strong> E = V/d = 200/(5.0×10⁻³) = <strong>4.0 × 10⁴ V/m</strong></p>
+
+<p><strong>(b)</strong> F = eE = 1.60×10⁻¹⁹ × 4.0×10⁴ = <strong>6.4 × 10⁻¹⁵ N</strong></p>
+
+<p><strong>(c)</strong> The electron enters parallel to plates with horizontal speed 3.0×10⁶ m/s. The E-field exerts a force toward the positive plate (electron is negative, so opposite to E direction). This causes parabolic motion — constant horizontal velocity, constant vertical acceleration — just like projectile motion. Path: parabola curving toward the positive plate.</p>
+
+<hr>
+
+<h3>Answer 4</h3>
+<p>The midpoint of q₁−q₂: fields from q₁ and q₂ cancel (equal magnitude, opposite direction — both positive, so both point away, toward the midpoint from opposite sides → cancel).</p>
+
+<p>Only q₃ contributes. Distance from q₃ to midpoint: the altitude of the equilateral triangle = 0.10 × √3/2 = 0.0866 m.</p>
+
+<p>E = k|q₃|/r² = 8.99×10⁹ × 3.0×10⁻⁶/(0.0866)² = 2.697×10⁴/0.0075 = <strong>3.60 × 10⁶ N/C</strong></p>
+
+<p>Direction: toward q₃ (since q₃ is negative, field points toward it).</p>
+
+<hr>
+
+<h3>Answer 5 (IB-Style)</h3>
+<p><strong>(a)</strong> When conducting spheres touch, charge distributes equally (they're identical). Total charge = +6.0 + (−2.0) = +4.0 nC. Each gets +2.0 nC.</p>
+
+<p><strong>(b)</strong> F = k(2.0×10⁻⁹)²/(0.12)² = 8.99×10⁹ × 4.0×10⁻¹⁸/0.0144 = <strong>2.50 × 10⁻⁶ N repulsive</strong></p>
+
+<p><strong>(c)</strong> Step 1: C touches A (A has +2.0 nC, C has 0). Total = +2.0 nC → each gets +1.0 nC. A = +1.0 nC, C = +1.0 nC.</p>
+<p>Step 2: C (now +1.0 nC) touches B (+2.0 nC). Total = +3.0 nC → each gets +1.5 nC.</p>
+<p>Final: <strong>A = +1.0 nC, B = +1.5 nC, C = +1.5 nC</strong></p>
+
+<p><strong>(d)</strong> At (0.06, 0.08): distance to A = distance to B = √(0.06² + 0.08²) = 0.10 m.</p>
+<p>E_A = k(1.0×10⁻⁹)/(0.10)² = 8.99×10⁹×1.0×10⁻⁹/0.01 = 899 N/C, direction: away from A at angle.</p>
+<p>E_B = k(1.5×10⁻⁹)/(0.10)² = 1349 N/C, direction: away from B at angle.</p>
+
+<p>Components: E_A_x = 899 × (0.06/0.10) = 539 N/C right</p>
+<p>E_A_y = 899 × (0.08/0.10) = 719 N/C up</p>
+<p>E_B_x = 1349 × (−0.06/0.10) = −809 N/C (left)</p>
+<p>E_B_y = 1349 × (0.08/0.10) = 1079 N/C up</p>
+
+<p>E_net_x = 539 − 809 = −270 N/C</p>
+<p>E_net_y = 719 + 1079 = 1798 N/C</p>
+
+<p>Magnitude: √(270² + 1798²) = <strong>1818 N/C</strong></p>
+<p>Direction: θ = tan⁻¹(1798/270) ≈ <strong>81.5° above the negative x-axis</strong> (pointing up and mostly left).</p>
+
+<hr>
+
+<h2>Key Takeaways</h2>
+
+<table>
+<tr>
+<th>Concept</th>
+<th>Equation</th>
+<th>Notes</th>
+</tr>
+<tr>
+<td>Coulomb's Law</td>
+<td>F = kq₁q₂/r²</td>
+<td>k = 8.99×10⁹ N·m²/C²</td>
+</tr>
+<tr>
+<td>E-field definition</td>
+<td>E = F/q</td>
+<td>N/C or V/m</td>
+</tr>
+<tr>
+<td>Point charge E-field</td>
+<td>E = kQ/r²</td>
+<td>Direction: away from +, toward −</td>
+</tr>
+<tr>
+<td>Parallel plate E-field</td>
+<td>E = V/d</td>
+<td>Uniform between plates</td>
+</tr>
+<tr>
+<td>Charge of electron</td>
+<td>e = 1.60 × 10⁻¹⁹ C</td>
+<td>Quantized!</td>
+</tr>
+<tr>
+<td>ε₀</td>
+<td>8.85 × 10⁻¹² C²/N·m²</td>
+<td>k = 1/(4πε₀)</td>
+</tr>
+</table>
+
+<blockquote><strong>IB Data Booklet:</strong> F = kq₁q₂/r², E = F/q, E = kQ/r², and E = V/d are given in Sub-topic 5.1. The Data Booklet provides k, ε₀, and e values. Electric field is a vector — always consider direction when adding fields from multiple charges.</blockquote>
+
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L47_gravitational_fields_3.html">← Lesson 47</a>
+  <a href="L49_em_fields_2.html">Lesson 49 →</a>
+</nav>
+
+</body>
+</html>

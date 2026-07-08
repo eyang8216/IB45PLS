@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 46: Command of Evidence (Quantitative & Graphs)</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root {
+    --bg: #fafaf9;
+    --text: #1a1a1a;
+    --accent: #1a5276;
+    --trap-bg: #fff3cd;
+    --trap-border: #ffc107;
+    --pattern-bg: #d1ecf1;
+    --pattern-border: #17a2b8;
+    --card: #ffffff;
+    --border: #d0d0cb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+  h1 { font-size: 1.8rem; color: var(--accent); border-bottom: 3px solid var(--accent); padding-bottom: 0.5rem; margin-bottom: 1rem; }
+  h2 { font-size: 1.35rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+  h3 { font-size: 1.15rem; color: #333; margin: 1.5rem 0 0.5rem; }
+  p, li { margin: 0.5em 0; }
+  ul, ol { padding-left: 1.5rem; margin: 0.5em 0; }
+  .trap-box {
+    background: var(--trap-bg);
+    border-left: 4px solid var(--trap-border);
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.95rem;
+  }
+  .trap-box strong { color: #856404; }
+  .pattern-box {
+    background: var(--pattern-bg);
+    border-left: 4px solid var(--pattern-border);
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.95rem;
+  }
+  .pattern-box strong { color: #0c5460; }
+  .example {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem 1.3rem;
+    margin: 1rem 0;
+  }
+  .example h4 { color: var(--accent); margin-bottom: 0.3rem; }
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 2.5rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  .nav a { color: var(--accent); text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  code { background: #f0f0f0; padding: 0.15em 0.4em; border-radius: 3px; font-size: 0.9em; }
+  strong { color: #222; }
+  @media print {
+    body { font-size: 14px; }
+    .nav { display: none; }
+  }
+</style>
+</head>
+<body>
+<h1>Lesson 46: Command of Evidence (Quantitative & Graphs)</h1>
+<h2>What You'll Learn</h2>
+<p>Some SAT passages include charts, graphs, or tables, and you'll be asked to synthesize this quantitative data with the passage text. You'll learn to interpret graphs accurately, identify relationships between data and claims, and avoid the most common graph-reading mistakes.</p>
+<h2>SAT Context</h2>
+<p>Quantitative evidence questions appear in about 1 out of every 4 modules. They typically involve a passage that makes a claim, accompanied by a graph or table, with questions asking which statement is supported by the data. These questions test data literacy — a skill explicitly valued by the College Board.</p>
+<hr>
+<h3> Graph Reading 101: The Systematic Approach</h3>
+<p>Before answering ANY graph question, run through this checklist:</p>
+<p>**1. Title:** What is being measured? The title tells you the subject.</p>
+<p>**2. Axes:** What's on the x-axis? What's on the y-axis? What are the units?</p>
+<p>**3. Legend (if present):** What do different colors, patterns, or line styles represent?</p>
+<p>**4. Trend:** Is the data going up, down, flat, or fluctuating?</p>
+<p>**5. Outliers:** Are there any data points that don't fit the pattern?</p>
+<p>> **🚨 SAT TRAP ALERT:** The most common graph error is confusing what each axis represents. Students see "increasing line" and think "things are getting better" without checking whether the y-axis measures something positive or negative. Always verify: what exactly is going up or down?</p>
+<hr>
+<h3> Types of Graphs on the SAT</h3>
+<p>**Bar Charts**</p>
+<ul>
+<li>Compare values across categories</li>
+<li>Look for: which category is highest/lowest, patterns across groups</li>
+<li>Trap: misreading the scale (especially when it doesn't start at zero)</li>
+</ul>
+<p>**Line Graphs**</p>
+<ul>
+<li>Show change over time or across a continuous variable</li>
+<li>Look for: overall trend (up/down/flat), slope (steep vs. gradual), inflection points</li>
+<li>Trap: extrapolating beyond the data shown</li>
+</ul>
+<p>**Pie Charts**</p>
+<ul>
+<li>Show proportions of a whole</li>
+<li>Look for: largest/smallest slices, slices that together form a majority</li>
+<li>Trap: confusing percentages with absolute numbers</li>
+</ul>
+<p>**Tables**</p>
+<ul>
+<li>Present exact numerical data</li>
+<li>Look for: comparisons across rows or columns, maximum/minimum values</li>
+<li>Trap: comparing the wrong rows or columns</li>
+</ul>
+<p>**Scatter Plots**</p>
+<ul>
+<li>Show relationship between two variables</li>
+<li>Look for: correlation (positive/negative/none), clusters, outliers</li>
+<li>Trap: assuming correlation = causation</li>
+</ul>
+<hr>
+<h3> Question Type 1: "Which statement is supported by the graph?"</h3>
+<p>These questions ask you to pick the answer choice that the data DIRECTLY supports. The passage text is secondary — focus on the graph.</p>
+<p>**Strategy:**</p>
+<li>Read each answer choice carefully.</li>
+<li>For each, check: does the graph confirm this?</li>
+<li>If the graph doesn't address it, it's wrong — even if the passage text mentions it.</li>
+<li>If the graph contradicts it, it's wrong.</li>
+<p>> **🔍 PATTERN RECOGNITION:** The correct answer to a graph-only question will be a statement you can VERIFY by pointing to a specific data point, bar, line segment, or table cell. If you can't point to proof on the graph, the answer is wrong.</p>
+<hr>
+<h3> Question Type 2: "The data most directly supports which claim in the passage?"</h3>
+<p>These questions require SYNTHESIS — combining the graph data with the passage's argument.</p>
+<p>**Strategy:**</p>
+<li>Identify the passage's main claims.</li>
+<li>Compare each claim against the graph.</li>
+<li>The correct answer is the claim that the graph CONFIRMS (not contradicts, not fails to address).</li>
+<p>**Common wrong answer patterns:**</p>
+<ul>
+<li>A claim the passage makes but the graph doesn't address</li>
+<li>A claim the graph appears to support but actually contradicts (misreading)</li>
+<li>A claim that goes beyond what the graph can prove</li>
+</ul>
+<hr>
+<h3> Synthesizing Text + Data: The Two-Source Rule</h3>
+<p>When a question asks you to connect passage claims with graph data, the correct answer must be consistent with BOTH sources.</p>
+<p>**The Two-Source Test:**</p>
+<li>Is this claim actually MADE in the passage? (Check the text.)</li>
+<li>Is this claim SUPPORTED by the graph? (Check the data.)</li>
+<p>If the answer is NO to either, the choice is wrong.</p>
+<p>> **🚨 SAT TRAP ALERT:** A statement that the passage clearly makes but the graph does not address is WRONG if the question asks what "the data supports." The data — not the passage — must be the source of support.</p>
+<hr>
+<h3> Common Graph Misreadings</h3>
+<p>**1. Absolute vs. Relative (Percentage vs. Number)**</p>
+<p>If a graph shows percentages and you interpret them as absolute numbers, you'll get it wrong.</p>
+<p>Example: "Country A increased its recycling rate from 20% to 40%, while Country B went from 50% to 60%."</p>
+<p>Wrong reading: "Country A recycles more than Country B." (We don't know absolute amounts.)</p>
+<p>Correct reading: "Country A's recycling rate grew faster than Country B's."</p>
+<p>**2. Scale Deception**</p>
+<p>The y-axis not starting at zero can exaggerate differences.</p>
+<p>Example: A bar chart with y-axis starting at 80 and ending at 100 might make a 5-point difference look massive. Always check axis origins.</p>
+<p>**3. Correlation ≠ Causation**</p>
+<p>Two variables moving together doesn't mean one caused the other. The SAT will sometimes offer answer choices that assert causation based on correlation — these are wrong unless the passage provides a causal mechanism.</p>
+<p>**4. Ignoring the Legend**</p>
+<p>When a graph has multiple data series (different line styles or bar colors), students sometimes compare the wrong ones. Always verify: what does this color/pattern represent?</p>
+<hr>
+<h3> Worked Example 1</h3>
+<p>**Passage excerpt:**</p>
+<p>"A recent study tracked the average daily screen time of teenagers across four countries over a 10-year period. The researchers found that screen time increased in all four countries, though at markedly different rates. They attribute the differing rates to variations in smartphone adoption and broadband infrastructure."</p>
+<p>**Graph:** A line graph showing average daily screen time (in hours) from 2013 to 2023 for four countries:</p>
+<ul>
+<li>Country A: 2.5 → 8.0 hours (steep, steady increase)</li>
+<li>Country B: 3.0 → 5.0 hours (moderate increase)</li>
+<li>Country C: 4.0 → 4.5 hours (nearly flat)</li>
+<li>Country D: 1.5 → 7.0 hours (steep increase, especially after 2018)</li>
+</ul>
+<p>**Question 1:** Which statement is supported by the graph?</p>
+<p>A) Country C had the highest screen time in 2023.</p>
+<p>B) Country A had the highest screen time in 2023.</p>
+<p>C) Screen time decreased in Country B between 2013 and 2023.</p>
+<p>D) All four countries had approximately equal screen time in 2013.</p>
+<p>**Answer:** B</p>
+<p>**Explanation:** Country A reaches 8.0 hours in 2023, which is higher than D's 7.0, B's 5.0, and C's 4.5. Option A is wrong — Country C had the LOWEST in 2023. Option C contradicts — Country B increased. Option D is wrong — 2013 values range from 1.5 to 4.0, not approximately equal.</p>
+<p>**Question 2:** The data in the graph most directly supports which claim from the passage?</p>
+<p>A) Screen time increased in all four countries.</p>
+<p>B) Smartphone adoption rates explain the differences between countries.</p>
+<p>C) Country C has the best broadband infrastructure.</p>
+<p>D) Teenagers spend too much time on screens.</p>
+<p>**Answer:** A</p>
+<p>**Explanation:** All four lines slope upward — every country shows an increase. Option B is a claim the passage makes but the graph doesn't prove (the graph doesn't show smartphone adoption data). Option C is not supported — Country C's flat line says nothing about infrastructure quality. Option D is an opinion, not a data-supported claim.</p>
+<hr>
+<h3> Worked Example 2</h3>
+<p>**Passage excerpt:**</p>
+<p>"Economists have long debated the relationship between a country's education spending and its economic growth. Some argue that increased education investment reliably produces higher GDP growth rates. Others contend that the relationship is more complex, depending on how effectively funds are deployed."</p>
+<p>**Table:**</p>
+<p>| Country | Education Spending (% of GDP) | Avg. Annual GDP Growth (2010-2020) |</p>
+<p>|---------|-------------------------------|------------------------------------|</p>
+<p>| Finland | 6.4% | 1.2% |</p>
+<p>| South Korea | 5.3% | 3.1% |</p>
+<p>| Brazil | 6.2% | 0.8% |</p>
+<p>| India | 3.8% | 6.8% |</p>
+<p>**Question:** The data in the table most directly supports which claim?</p>
+<p>A) Higher education spending reliably produces higher GDP growth.</p>
+<p>B) There is no consistent correlation between education spending and GDP growth in the data shown.</p>
+<p>C) Finland's economy is declining.</p>
+<p>D) India spends too little on education.</p>
+<p>**Answer:** B</p>
+<p>**Explanation:** India has the lowest spending (3.8%) but the highest growth (6.8%). Finland has the highest spending (6.4%) but near the lowest growth (1.2%). This shows no consistent pattern — sometimes high spending correlates with low growth, sometimes low spending correlates with high growth. Option A is contradicted by the data. Option C is wrong — 1.2% growth is positive, not declining. Option D is an opinion, not supported by the data.</p>
+<hr>
+<h2>Practice Problems</h2>
+<p>*Question 1 refers to the following graph:*</p>
+<p>[A bar chart titled "Renewable Energy as Percentage of Total Electricity Generation, 2022." Bars: Norway 98%, Brazil 85%, Germany 46%, United States 22%, China 30%, India 20%.]</p>
+<h3> Problem 1</h3>
+<p>Which statement is supported by the graph?</p>
+<p>A) The United States generates more renewable electricity in absolute terms than Germany.</p>
+<p>B) Norway generates the highest percentage of its electricity from renewable sources among the countries shown.</p>
+<p>C) China and India have identical renewable energy policies.</p>
+<p>D) More than 50% of the countries shown generate a majority of their electricity from renewable sources.</p>
+<hr>
+<p>*Questions 2-3 refer to the following passage and graph:*</p>
+<p>**Passage:**</p>
+<p>"A study published in the Journal of Nutrition examined the relationship between breakfast consumption and academic performance among high school students. Researchers tracked 2,000 students over two academic years, recording whether they ate breakfast regularly (at least 5 days per week) and their end-of-year GPA. The results, while showing a correlation, left unresolved the question of causation."</p>
+<p>**Graph:** A bar chart showing average GPA:</p>
+<ul>
+<li>Regular breakfast eaters: 3.4</li>
+<li>Irregular breakfast eaters (2-4 days/week): 3.1</li>
+<li>Rare breakfast eaters (0-1 days/week): 2.8</li>
+</ul>
+<h3> Problem 2</h3>
+<p>Which statement is supported by the graph?</p>
+<p>A) Students who eat breakfast regularly had a higher average GPA than students who rarely eat breakfast.</p>
+<p>B) Eating breakfast causes higher academic performance.</p>
+<p>C) Approximately 2,000 students were classified as rare breakfast eaters.</p>
+<p>D) The GPA difference between regular and rare breakfast eaters is less than 0.2 points.</p>
+<h3> Problem 3</h3>
+<p>The data in the graph most directly supports which claim from the passage?</p>
+<p>A) The study tracked 2,000 students over two academic years.</p>
+<p>B) The results showed a correlation between breakfast consumption and GPA.</p>
+<p>C) The question of causation remains unresolved.</p>
+<p>D) The study was published in the Journal of Nutrition.</p>
+<hr>
+<p>*Questions 4-5 refer to the following passage and table:*</p>
+<p>**Passage:**</p>
+<p>"Climate scientists have documented a steady increase in global average temperatures over the past century. The rate of warming, however, has not been uniform. Researchers have identified several periods of accelerated warming interspersed with periods of relative stability, a pattern that complicates straightforward extrapolations of future temperature trends."</p>
+<p>**Table: Global Average Temperature Increase by Decade (in °C relative to 1951-1980 average)**</p>
+<p>| Decade | Temperature Anomaly |</p>
+<p>|--------|---------------------|</p>
+<p>| 1970s | -0.02 |</p>
+<p>| 1980s | +0.18 |</p>
+<p>| 1990s | +0.32 |</p>
+<p>| 2000s | +0.52 |</p>
+<p>| 2010s | +0.75 |</p>
+<h3> Problem 4</h3>
+<p>Which statement is supported by the table?</p>
+<p>A) Global temperatures decreased during the 1980s.</p>
+<p>B) Each successive decade from the 1970s to the 2010s was warmer than the previous decade.</p>
+<p>C) The 2010s were the warmest decade in recorded history.</p>
+<p>D) Temperature increases slowed during the 1990s compared to the 1980s.</p>
+<h3> Problem 5</h3>
+<p>The data in the table most directly supports which claim from the passage?</p>
+<p>A) The rate of warming has not been uniform.</p>
+<p>B) Climate scientists have documented a steady increase in global average temperatures.</p>
+<p>C) The pattern complicates extrapolations of future trends.</p>
+<p>D) Researchers identified periods of relative temperature stability.</p>
+<hr>
+<p>*Question 6 refers to the following graph:*</p>
+<p>[A line graph titled "Coffee Shop Openings and Closings in Metro City, 2015-2023." Two lines: Openings (solid) and Closings (dashed). Openings: rose from 20 to 75 between 2015 and 2019, dropped to 30 in 2020, rose again to 60 by 2023. Closings: steady at ~15 from 2015-2019, spiked to 55 in 2020, dropped to 20 by 2023.]</p>
+<h3> Problem 6</h3>
+<p>Which statement is supported by the graph?</p>
+<p>A) More coffee shops closed than opened in 2020.</p>
+<p>B) Coffee shop openings followed a steady upward trend throughout the entire period.</p>
+<p>C) Coffee shop closings have exceeded openings every year since 2015.</p>
+<p>D) The number of coffee shops in Metro City decreased every year from 2015 to 2023.</p>
+<hr>
+<h2>Answers</h2>
+<h3> Problem 1</h3>
+<p>**Answer: B**</p>
+<p>**Explanation:** Norway's bar shows 98%, the highest among all countries shown. This is directly verifiable. Option A is wrong because the graph shows percentages, not absolute numbers — we can't determine absolute generation. Option C is wrong — the graph shows similar percentages but says nothing about policies. Option D is wrong — only Norway (98%) and Brazil (85%) are above 50% (2 out of 6, which is 33%, not a majority).</p>
+<h3> Problem 2</h3>
+<p>**Answer: A**</p>
+<p>**Explanation:** Regular breakfast eaters have an average GPA of 3.4, while rare breakfast eaters have 2.8. This is a difference of 0.6 points, and 3.4 > 2.8. Option B confuses correlation with causation. Option C is wrong — the passage mentions 2,000 total students; the graph doesn't show how many were in each category. Option D is mathematically wrong — 3.4 - 2.8 = 0.6, not less than 0.2.</p>
+<h3> Problem 3</h3>
+<p>**Answer: B**</p>
+<p>**Explanation:** The graph shows a pattern — as breakfast frequency increases, average GPA increases (2.8 → 3.1 → 3.4). This is exactly what "correlation" means. Option A is a claim about methodology, not shown in the graph. Option C is a statement about what the study DIDN'T establish, not what the data shows. Option D is about publication, not data.</p>
+<h3> Problem 4</h3>
+<p>**Answer: B**</p>
+<p>**Explanation:** The anomaly values are: -0.02, +0.18, +0.32, +0.52, +0.75. Each decade is warmer than the one before. Option A is wrong — the 1980s were positive (+0.18), indicating warming. Option C goes beyond the data — the table only covers 1970s-2010s. Option D is mathematically wrong — the increase was 0.14°C (1980s to 1990s) vs. 0.20°C (1970s to 1980s), so it actually accelerated.</p>
+<h3> Problem 5</h3>
+<p>**Answer: B**</p>
+<p>**Explanation:** The table shows temperatures increasing from -0.02 to +0.75 — a steady increase across five decades. Option A contradicts the table — the warming appears quite uniform (each decade warmer than the previous). Option C is about implications not directly shown. Option D contradicts — there's no period of stability shown.</p>
+<h3> Problem 6</h3>
+<p>**Answer: A**</p>
+<p>**Explanation:** In 2020, openings = 30 and closings = 55, so closings (55) exceeded openings (30). Option B is wrong — openings dropped sharply in 2020. Option C is wrong — openings exceeded closings in several years (e.g., 2015: 20 vs 15; 2019: 75 vs 15). Option D is wrong — we don't know the net number of shops; openings often exceeded closings.</p>
+<hr>
+<p>**Quick Recap:**</p>
+<ul>
+<li>Always read the title, axes, legend, and scale before interpreting</li>
+<li>Point to specific data for every answer you choose</li>
+<li>Percentages ≠ absolute numbers</li>
+<li>Correlation ≠ causation</li>
+<li>The correct answer is supported by BOTH the text AND the data (for synthesis questions)</li>
+<li>Check axis origins — truncated scales can be misleading</li>
+</ul>
+<div class="nav">
+<a href="lesson45.html">← Previous Lesson</a>
+<a href="index.html">📋 All Lessons</a>
+<a href="lesson47.html">Next Lesson →</a>
+</div>
+</body>
+</html>

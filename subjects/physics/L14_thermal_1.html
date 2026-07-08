@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 14: Lesson 14: Thermal Energy Transfers I — Heat & Temperature — IB Physics HL</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']]
+  },
+  options: {
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap');
+  
+  :root {
+    --bg: #fdfcf9;
+    --text: #1a1a1a;
+    --accent: #2c5f2d;
+    --border: #d0cec7;
+    --code-bg: #f4f3ef;
+    --callout-bg: #f0f7f0;
+    --callout-border: #2c5f2d;
+    --warning-bg: #fff8e6;
+    --warning-border: #c4941a;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  body {
+    font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid var(--accent);
+    color: var(--accent);
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 2.5rem 0 0.75rem;
+    color: #1a1a1a;
+  }
+  
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.5rem;
+  }
+  
+  p { margin: 0 0 1rem; }
+  
+  ul, ol { margin: 0 0 1rem 1.5rem; }
+  li { margin-bottom: 0.35rem; }
+  
+  code {
+    background: var(--code-bg);
+    padding: 0.15em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+    font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+  }
+  
+  pre {
+    background: var(--code-bg);
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 0 0 1rem;
+    font-size: 0.85em;
+    line-height: 1.5;
+  }
+  
+  pre code {
+    background: none;
+    padding: 0;
+    font-size: inherit;
+  }
+  
+  blockquote {
+    border-left: 4px solid var(--callout-border);
+    background: var(--callout-bg);
+    margin: 0 0 1rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+  }
+  
+  blockquote.warning {
+    border-left-color: var(--warning-border);
+    background: var(--warning-bg);
+  }
+  
+  strong { font-weight: 700; }
+  
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.5rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  
+  .nav a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+  
+  .nav a:hover { background: var(--callout-bg); }
+  
+  .worked-example, .answer {
+    background: var(--code-bg);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin: 0.75rem 0 1.25rem;
+  }
+  
+  .worked-example strong:first-child, .answer strong:first-child {
+    color: var(--accent);
+  }
+  
+  @media print {
+    body { font-size: 12pt; max-width: 100%; padding: 0; }
+    .nav { display: none; }
+    h1 { font-size: 18pt; }
+    h2 { font-size: 14pt; }
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 0 1rem;
+  }
+  
+  th, td {
+    border: 1px solid var(--border);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  
+  th {
+    background: var(--code-bg);
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L13_relativity_4.html">← Lesson 13</a>
+  <a href="L15_thermal_2.html">Lesson 15 →</a>
+</nav>
+
+<h1>Lesson 14: Thermal Energy Transfers I — Heat & Temperature</h1>
+
+<h2>What You'll Learn</h2>
+<ul>
+<li>Temperature scales: Celsius, Kelvin, and absolute zero</li>
+<li>Thermal equilibrium and the zeroth law of thermodynamics</li>
+<li>Specific heat capacity: $Q = mc\Delta\theta$</li>
+<li>Specific latent heat: $Q = mL$</li>
+<li>Heating curves and phase changes</li>
+<li>Internal energy: kinetic and potential molecular contributions</li>
+</ul>
+
+<hr>
+
+<h2>1. Temperature and Temperature Scales</h2>
+
+<p><strong>Temperature</strong> is a measure of the average random kinetic energy of particles in a substance. It determines the direction of spontaneous thermal energy transfer — energy flows from higher to lower temperature.</p>
+
+<h3>Temperature Scales</h3>
+
+<table>
+<tr>
+<th>Scale</th>
+<th>Freezing point of water</th>
+<th>Boiling point of water</th>
+<th>Absolute zero</th>
+</tr>
+<tr>
+<td>Celsius (°C)</td>
+<td>0°C</td>
+<td>100°C</td>
+<td>−273.15°C</td>
+</tr>
+<tr>
+<td>Kelvin (K)</td>
+<td>273.15 K</td>
+<td>373.15 K</td>
+<td>0 K</td>
+</tr>
+</table>
+
+<p><strong>Conversion:</strong> $T(\text{K}) = T(\text{°C}) + 273.15 \approx T(\text{°C}) + 273$</p>
+
+<p>The Kelvin scale is the SI base unit. <strong>Absolute zero</strong> (0 K) is the theoretical lowest temperature, where particles have minimum kinetic energy. It cannot be reached, but experiments have achieved nanokelvin temperatures.</p>
+
+<p><strong>Temperature difference:</strong> $\Delta T$ in K = $\Delta T$ in °C (since the scales differ only by a constant offset).</p>
+
+<hr>
+
+<h2>2. Thermal Equilibrium (Zeroth Law)</h2>
+
+<p><strong>The zeroth law of thermodynamics:</strong> If two systems are each in thermal equilibrium with a third system, they are in thermal equilibrium with each other.</p>
+
+<p>This allows us to use thermometers: when the thermometer reaches the same temperature as the object being measured, they are in thermal equilibrium.</p>
+
+<hr>
+
+<h2>3. Internal Energy</h2>
+
+<p>The <strong>internal energy</strong> $U$ of a substance is the sum of:</p>
+<ol>
+<li><strong>Kinetic energy</strong> of all particles (random translational, rotational, vibrational motion) — directly related to temperature.</li>
+<li><strong>Potential energy</strong> of all particles (due to intermolecular forces) — changes during phase transitions.</li>
+</ol>
+
+<p><strong>Key distinction:</strong> During a phase change, temperature stays constant but internal energy changes — the potential energy changes while kinetic energy stays the same.</p>
+
+<p>For an ideal gas, internal energy depends only on temperature: $U = \frac{3}{2}nRT$ (monatomic) or $U = \frac{5}{2}nRT$ (diatomic).</p>
+
+<hr>
+
+<h2>4. Specific Heat Capacity</h2>
+
+<p>The thermal energy $Q$ required to change the temperature of mass $m$ of a substance by $\Delta\theta$ is:</p>
+
+<p>$$Q = mc\Delta\theta$$</p>
+
+<p>where $c$ is the <strong>specific heat capacity</strong> (J·kg⁻¹·K⁻¹).</p>
+
+<table>
+<tr>
+<th>Substance</th>
+<th>$c$ (J·kg⁻¹·K⁻¹)</th>
+</tr>
+<tr>
+<td>Water</td>
+<td>4186</td>
+</tr>
+<tr>
+<td>Ice</td>
+<td>2100</td>
+</tr>
+<tr>
+<td>Steam</td>
+<td>2010</td>
+</tr>
+<tr>
+<td>Aluminum</td>
+<td>900</td>
+</tr>
+<tr>
+<td>Copper</td>
+<td>385</td>
+</tr>
+<tr>
+<td>Iron</td>
+<td>450</td>
+</tr>
+</table>
+
+<p>Water has an unusually high specific heat capacity, which moderates Earth's climate.</p>
+
+<hr>
+
+<h3>Worked Example 14.1 — Heating Water</h3>
+
+<p><strong>Problem:</strong> How much energy is required to heat 2.50 kg of water from 20.0°C to 85.0°C?</p>
+
+<p><strong>Solution:</strong></p>
+
+<p>$m = 2.50 \text{ kg}$, $c = 4186 \text{ J·kg}^{-1}\text{·K}^{-1}$, $\Delta\theta = 85.0 - 20.0 = 65.0 \text{ K}$</p>
+
+<p>$Q = mc\Delta\theta = 2.50 \times 4186 \times 65.0$</p>
+<p>$= 2.50 \times 4186 \times 65.0 = 680,225 \text{ J}$</p>
+
+<p>$$\boxed{Q \approx 6.80 \times 10^5 \text{ J} = 680 \text{ kJ}}$$</p>
+
+<hr>
+
+<h2>5. Specific Latent Heat</h2>
+
+<p>During a phase change, temperature remains constant while energy is absorbed or released. The energy per unit mass is the <strong>specific latent heat</strong> $L$:</p>
+
+<p>$$Q = mL$$</p>
+
+<ul>
+<li><strong>Latent heat of fusion</strong> $L_f$: solid ↔ liquid</li>
+<li><strong>Latent heat of vaporization</strong> $L_v$: liquid ↔ gas</li>
+</ul>
+
+<table>
+<tr>
+<th>Substance</th>
+<th>$L_f$ (kJ/kg)</th>
+<th>$L_v$ (kJ/kg)</th>
+</tr>
+<tr>
+<td>Water</td>
+<td>334</td>
+<td>2257</td>
+</tr>
+<tr>
+<td>Ethanol</td>
+<td>108</td>
+<td>855</td>
+</tr>
+<tr>
+<td>Lead</td>
+<td>25</td>
+<td>870</td>
+</tr>
+</table>
+
+<hr>
+
+<h3>Worked Example 14.2 — Melting Ice</h3>
+
+<p><strong>Problem:</strong> How much energy is required to completely melt 0.500 kg of ice at 0°C?</p>
+
+<p><strong>Solution:</strong></p>
+
+<p>$Q = mL_f = 0.500 \times (3.34 \times 10^5) = 1.67 \times 10^5 \text{ J}$</p>
+
+<p>$$\boxed{Q = 167 \text{ kJ}}$$</p>
+
+<p>Note: This is the same energy needed to heat the resulting water by about $Q/(mc) = 1.67 \times 10^5/(0.500 \times 4186) \approx 79.8 \text{ K}$, i.e., from 0°C to nearly 80°C. The energy to break intermolecular bonds is substantial!</p>
+
+<hr>
+
+<h2>6. Heating Curves</h2>
+
+<p>A <strong>heating curve</strong> plots temperature vs. energy added. Flat regions represent phase changes.</p>
+
+<pre><code>
+T (°C)
+120 |                    _______
+    |                   /
+100 |    ______________/  ← boiling (L_v)
+    |   /
+  0 |__/  ← melting (L_f)
+    |/
+-20 |_______
+    +------------------------> Q
+</code></pre>
+
+<p><strong>Interpreting the curve:</strong></p>
+<ul>
+<li>Sloping sections: $Q = mc\Delta\theta$, temperature rises</li>
+<li>Flat sections: $Q = mL$, phase change at constant temperature</li>
+</ul>
+
+<hr>
+
+<h3>Worked Example 14.3 — Heating Ice to Steam</h3>
+
+<p><strong>Problem:</strong> Calculate the total energy needed to convert 0.200 kg of ice at −10.0°C to steam at 100.0°C. Given: $c_{\text{ice}} = 2100 \text{ J·kg}^{-1}\text{·K}^{-1}$, $c_{\text{water}} = 4186 \text{ J·kg}^{-1}\text{·K}^{-1}$, $L_f = 3.34 \times 10^5 \text{ J/kg}$, $L_v = 2.26 \times 10^6 \text{ J/kg}$.</p>
+
+<p><strong>Solution:</strong></p>
+
+<p>Break into stages:</p>
+
+<p><strong>Stage 1:</strong> Heat ice from −10.0°C to 0°C</p>
+<p>$Q_1 = mc_{\text{ice}}\Delta\theta = 0.200 \times 2100 \times 10.0 = 4,200 \text{ J}$</p>
+
+<p><strong>Stage 2:</strong> Melt ice at 0°C</p>
+<p>$Q_2 = mL_f = 0.200 \times 3.34 \times 10^5 = 66,800 \text{ J}$</p>
+
+<p><strong>Stage 3:</strong> Heat water from 0°C to 100°C</p>
+<p>$Q_3 = mc_{\text{water}}\Delta\theta = 0.200 \times 4186 \times 100 = 83,720 \text{ J}$</p>
+
+<p><strong>Stage 4:</strong> Vaporize water at 100°C</p>
+<p>$Q_4 = mL_v = 0.200 \times 2.26 \times 10^6 = 452,000 \text{ J}$</p>
+
+<p><strong>Total:</strong> $Q = 4,200 + 66,800 + 83,720 + 452,000 = 606,720 \text{ J}$</p>
+
+<p>$$\boxed{Q \approx 607 \text{ kJ}}$$</p>
+
+<p>The vaporization step dominates (≈74% of total energy).</p>
+
+<hr>
+
+<h3>Worked Example 14.4 — Mixing Hot and Cold Water</h3>
+
+<p><strong>Problem:</strong> 0.300 kg of water at 80.0°C is mixed with 0.200 kg of water at 15.0°C in an insulated container. Find the final equilibrium temperature.</p>
+
+<p><strong>Solution:</strong></p>
+
+<p>Energy lost by hot water = energy gained by cold water (no heat loss to surroundings).</p>
+
+<p>$$m_h c (T_h - T_f) = m_c c (T_f - T_c)$$</p>
+
+<p>Cancel $c$ (same substance):</p>
+<p>$$0.300(80.0 - T_f) = 0.200(T_f - 15.0)$$</p>
+
+<p>$$24.0 - 0.300T_f = 0.200T_f - 3.00$$</p>
+
+<p>$$24.0 + 3.00 = 0.200T_f + 0.300T_f$$</p>
+
+<p>$$27.0 = 0.500T_f$$</p>
+
+<p>$$T_f = \boxed{54.0\text{°C}}$$</p>
+
+<hr>
+
+<h3>Worked Example 14.5 — Finding Specific Heat Capacity</h3>
+
+<p><strong>Problem:</strong> A 0.150 kg aluminum block at 100°C is placed in 0.250 kg of water at 20.0°C in an insulated calorimeter. The final temperature is 28.5°C. Determine the specific heat capacity of aluminum. ($c_{\text{water}} = 4186 \text{ J·kg}^{-1}\text{·K}^{-1}$)</p>
+
+<p><strong>Solution:</strong></p>
+
+<p>Energy lost by Al = energy gained by water:</p>
+<p>$$m_{\text{Al}} c_{\text{Al}} (100 - 28.5) = m_w c_w (28.5 - 20.0)$$</p>
+
+<p>$$0.150 \times c_{\text{Al}} \times 71.5 = 0.250 \times 4186 \times 8.5$$</p>
+
+<p>$$10.725 \, c_{\text{Al}} = 0.250 \times 4186 \times 8.5 = 8895.25$$</p>
+
+<p>$$c_{\text{Al}} = \frac{8895.25}{10.725} = 829 \text{ J·kg}^{-1}\text{·K}^{-1}$$</p>
+
+<p>$$\boxed{c_{\text{Al}} \approx 8.3 \times 10^2 \text{ J·kg}^{-1}\text{·K}^{-1}}$$</p>
+
+<p>This is close to the accepted value of 900 J·kg⁻¹·K⁻¹; the ≈8% discrepancy could be due to heat loss, thermometer errors, or the calorimeter absorbing some heat.</p>
+
+<hr>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1 — Simple Heating</h3>
+<p>How much energy is needed to raise the temperature of 5.00 kg of copper ($c = 385 \text{ J·kg}^{-1}\text{·K}^{-1}$) from 25.0°C to 85.0°C?</p>
+
+<h3>Problem 2 — Phase Change</h3>
+<p>A 0.500 kg block of ice at 0°C is placed in 2.00 kg of water at 30.0°C in an insulated container. (a) How much energy is needed to melt all the ice? (b) Does all the ice melt? (c) What is the final temperature after equilibrium is reached?</p>
+
+<h3>Problem 3 — Internal Energy</h3>
+<p>Explain why the temperature of a boiling liquid remains constant even though energy is continuously being supplied. Discuss what happens to the internal energy of the system.</p>
+
+<h3>Problem 4 — IB-Style: Multi-Stage Heating</h3>
+<p>A student heats 0.100 kg of a solid substance at −20.0°C. The substance melts at 50.0°C and vaporizes at 150.0°C. Given: $c_{\text{solid}} = 1500 \text{ J·kg}^{-1}\text{·K}^{-1}$, $c_{\text{liquid}} = 2500 \text{ J·kg}^{-1}\text{·K}^{-1}$, $L_f = 4.00 \times 10^4 \text{ J/kg}$, $L_v = 8.50 \times 10^5 \text{ J/kg}$. Calculate the total energy to convert it to gas at 150.0°C.</p>
+
+<h3>Problem 5 — IB-Style: Calorimetry with Phase Change</h3>
+<p>A 0.0500 kg piece of ice at −5.0°C is added to 0.300 kg of water at 40.0°C in a perfectly insulated calorimeter of negligible heat capacity. Determine the final temperature. ($c_{\text{ice}} = 2100 \text{ J·kg}^{-1}\text{·K}^{-1}$, $c_{\text{water}} = 4186 \text{ J·kg}^{-1}\text{·K}^{-1}$, $L_f = 3.34 \times 10^5 \text{ J/kg}$)</p>
+
+<hr>
+
+<h2>Answers</h2>
+
+<h3>Answer 1</h3>
+<p>$Q = mc\Delta\theta = 5.00 \times 385 \times (85.0 - 25.0)$</p>
+<p>$= 5.00 \times 385 \times 60.0 = \boxed{1.16 \times 10^5 \text{ J} = 116 \text{ kJ}}$</p>
+
+<h3>Answer 2</h3>
+<p><strong>(a)</strong> $Q_{\text{melt}} = mL_f = 0.500 \times 3.34 \times 10^5 = \boxed{1.67 \times 10^5 \text{ J}}$</p>
+
+<p><strong>(b)</strong> Energy available from cooling water to 0°C:</p>
+<p>$Q_{\text{avail}} = m_w c_w \Delta\theta = 2.00 \times 4186 \times 30.0 = 2.51 \times 10^5 \text{ J}$</p>
+
+<p>Since $Q_{\text{avail}} > Q_{\text{melt}}$ ($2.51 \times 10^5 > 1.67 \times 10^5$), <strong>yes</strong>, all the ice melts.</p>
+
+<p><strong>(c)</strong> After melting, we have 0.500 kg of water at 0°C and 2.00 kg of water that has been cooled. The energy remaining after melting:</p>
+<p>$Q_{\text{remaining}} = 2.51 \times 10^5 - 1.67 \times 10^5 = 8.40 \times 10^4 \text{ J}$</p>
+
+<p>This energy warms 2.50 kg of water:</p>
+<p>$Q = (m_{\text{ice}} + m_w)c_w\Delta\theta$</p>
+<p>$8.40 \times 10^4 = 2.50 \times 4186 \times \Delta\theta$</p>
+<p>$\Delta\theta = \frac{8.40 \times 10^4}{2.50 \times 4186} = 8.03 \text{ K}$</p>
+
+<p>Final temperature: $\boxed{8.03\text{°C}}$</p>
+
+<h3>Answer 3</h3>
+<p>During boiling, the energy supplied goes into <strong>breaking intermolecular bonds</strong> rather than increasing kinetic energy. The potential energy component of internal energy increases (molecules move apart to form vapor), while the kinetic energy (temperature) remains constant. Thus, internal energy $U$ <strong>increases</strong> during boiling even though temperature doesn't change. The energy per unit mass for this process is the latent heat of vaporization.</p>
+
+<h3>Answer 4</h3>
+<p><strong>Stage 1:</strong> Solid −20.0°C → 50.0°C: $\Delta\theta = 70.0 \text{ K}$</p>
+<p>$Q_1 = 0.100 \times 1500 \times 70.0 = 10,500 \text{ J}$</p>
+
+<p><strong>Stage 2:</strong> Melt at 50.0°C:</p>
+<p>$Q_2 = 0.100 \times 4.00 \times 10^4 = 4,000 \text{ J}$</p>
+
+<p><strong>Stage 3:</strong> Liquid 50.0°C → 150.0°C: $\Delta\theta = 100.0 \text{ K}$</p>
+<p>$Q_3 = 0.100 \times 2500 \times 100.0 = 25,000 \text{ J}$</p>
+
+<p><strong>Stage 4:</strong> Vaporize at 150.0°C:</p>
+<p>$Q_4 = 0.100 \times 8.50 \times 10^5 = 85,000 \text{ J}$</p>
+
+<p><strong>Total:</strong> $Q = 10,500 + 4,000 + 25,000 + 85,000 = \boxed{1.245 \times 10^5 \text{ J} \approx 125 \text{ kJ}}$</p>
+
+<h3>Answer 5</h3>
+<p><strong>Step 1:</strong> Heat ice from −5.0°C to 0°C:</p>
+<p>$Q_1 = 0.0500 \times 2100 \times 5.0 = 525 \text{ J}$</p>
+
+<p><strong>Step 2:</strong> Melt ice at 0°C:</p>
+<p>$Q_2 = 0.0500 \times 3.34 \times 10^5 = 16,700 \text{ J}$</p>
+
+<p>Total to bring ice to water at 0°C: $525 + 16,700 = 17,225 \text{ J}$</p>
+
+<p><strong>Step 3:</strong> Check if this energy can come from cooling 0.300 kg of water from 40.0°C to 0°C:</p>
+<p>$Q_{\text{max}} = 0.300 \times 4186 \times 40.0 = 50,232 \text{ J}$</p>
+
+<p>Since $Q_{\text{max}} > 17,225 \text{ J}$, all ice melts and the resulting water warms.</p>
+
+<p><strong>Step 4:</strong> Final temperature with 0.350 kg total water:</p>
+<p>Energy remaining = $50,232 - 17,225 = 33,007 \text{ J}$</p>
+
+<p>$33,007 = 0.350 \times 4186 \times (T_f - 0)$</p>
+
+<p>$T_f = \frac{33,007}{0.350 \times 4186} = \frac{33,007}{1465.1} = 22.5\text{°C}$</p>
+
+<p>$$\boxed{T_f \approx 22.5\text{°C}}$$</p>
+
+<hr>
+
+<h2>Key Takeaways</h2>
+<ol>
+<li><strong>Temperature</strong> measures average kinetic energy; convert between °C and K using $T(\text{K}) = T(\text{°C}) + 273$.</li>
+<li><strong>Specific heat capacity</strong> $Q = mc\Delta\theta$ governs temperature changes.</li>
+<li><strong>Specific latent heat</strong> $Q = mL$ governs phase changes at constant temperature.</li>
+<li><strong>Internal energy</strong> = kinetic (temperature) + potential (intermolecular bonds) contributions.</li>
+<li>Phase changes involve potential energy changes at constant temperature.</li>
+<li><strong>Heating curves</strong> show temperature plateaus during melting and boiling.</li>
+</ol>
+
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L13_relativity_4.html">← Lesson 13</a>
+  <a href="L15_thermal_2.html">Lesson 15 →</a>
+</nav>
+
+</body>
+</html>

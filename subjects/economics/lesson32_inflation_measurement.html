@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 32: Inflation — Measurement and Causes</title>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f8a; --border: #d0cdc4; --card-bg: #f8f5f0; --highlight: #e8f0f8; --heading: #1a3a52; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Georgia, 'Times New Roman', serif; font-size: 17px; line-height: 1.7; color: var(--text); background: var(--bg); max-width: 820px; margin: 0 auto; padding: 40px 32px 60px; }
+  nav.breadcrumb { font-size: 14px; margin-bottom: 32px; padding-bottom: 16px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  nav.breadcrumb a { color: var(--accent); text-decoration: none; }
+  nav.breadcrumb a:hover { text-decoration: underline; }
+  h1 { font-size: 2em; color: var(--heading); margin-bottom: 8px; border-bottom: 3px solid var(--accent); padding-bottom: 10px; }
+  h2 { font-size: 1.4em; color: var(--heading); margin: 36px 0 12px; padding-left: 8px; border-left: 4px solid var(--accent); }
+  h3 { font-size: 1.15em; color: #2a4a30; margin: 24px 0 8px; }
+  p { margin: 10px 0; }
+  ul, ol { margin: 8px 0 16px 24px; }
+  li { margin: 5px 0; }
+  strong { color: #1a2a3a; }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 15px; }
+  th { background: var(--heading); color: white; padding: 10px 12px; text-align: left; }
+  td { padding: 8px 12px; border: 1px solid var(--border); }
+  tr:nth-child(even) { background: var(--card-bg); }
+  .highlight-box { background: var(--highlight); border-left: 4px solid var(--accent); padding: 14px 18px; margin: 16px 0; border-radius: 0 6px 6px 0; }
+  .tip-box { background: #fffdf0; border: 1px solid #e0c860; padding: 14px 18px; margin: 20px 0; border-radius: 6px; }
+  .tip-box::before { content: "💡 IB Exam Tip"; font-weight: bold; display: block; margin-bottom: 6px; color: #8a6d20; }
+  .problem { background: var(--card-bg); padding: 14px 18px; margin: 14px 0; border-radius: 6px; border: 1px solid var(--border); }
+  .problem strong { color: var(--accent); }
+  .answer { border-left: 3px solid #5a8a5a; padding-left: 16px; margin: 10px 0 20px; }
+  .evaluate-box { background: #f4f0ea; border: 2px solid #8a6d3b; padding: 20px 24px; margin: 28px 0; border-radius: 8px; }
+  .evaluate-box h2 { border-left-color: #8a6d3b; }
+  .claspp { color: #6a5030; font-weight: bold; margin: 10px 0 4px; }
+  hr { border: none; border-top: 1px solid var(--border); margin: 32px 0; }
+  @media print { body { font-size: 12pt; padding: 20px; max-width: 100%; } nav.breadcrumb, .no-print { display: none; } h1 { font-size: 18pt; } h2 { font-size: 14pt; } .highlight-box, .tip-box, .problem, .evaluate-box { break-inside: avoid; } a { color: var(--text); text-decoration: none; } }
+</style>
+</head>
+<body>
+
+<nav class="breadcrumb">
+  <span><a href="lesson31_unemployment_policies.html">← Lesson 31: Unemployment</a></span>
+  <span><a href="#">Index</a></span>
+  <span><a href="lesson33_inflation_consequences.html">Lesson 33: Inflation Consequences →</a></span>
+</nav>
+
+<h1>Lesson 32: Inflation — Measurement and Causes</h1>
+
+<h2>What You'll Learn</h2>
+<ul>
+  <li>How inflation is defined and measured using CPI</li>
+  <li>How to calculate the inflation rate from CPI data</li>
+  <li>The two main types of inflation: demand-pull and cost-push</li>
+  <li>The critical distinction between deflation and disinflation</li>
+  <li>Limitations of CPI as a measure</li>
+</ul>
+
+<hr>
+
+<h2>1. Definition and the CPI</h2>
+
+<h3>What Is Inflation?</h3>
+
+<p><strong>Inflation</strong> is a <strong>sustained increase in the general price level</strong> of goods and services in an economy over a period of time. This does NOT mean all prices rise equally — individual prices may rise or fall, but the <em>average level</em> rises.</p>
+
+<p>One-off price increases (e.g., due to a tax change) = NOT inflation. Inflation requires a continuous, self-perpetuating rise over multiple periods.</p>
+
+<h3>The Consumer Price Index (CPI)</h3>
+
+<p>The CPI tracks the cost of a <strong>representative basket of goods and services</strong> purchased by a typical household.</p>
+
+<p><strong>Construction Steps</strong>:</p>
+<ol>
+  <li><strong>Select a base year</strong> — the reference point</li>
+  <li><strong>Define the basket</strong> — survey households</li>
+  <li><strong>Assign weights</strong> — each item's share of total expenditure</li>
+  <li><strong>Collect prices</strong> monthly from retail outlets</li>
+  <li><strong>Compute the index</strong>:</li>
+</ol>
+
+$$\text{CPI}_t = \frac{\text{Cost of basket in year }t}{\text{Cost of basket in base year}} \times 100$$
+
+<div class="highlight-box">
+<strong>Worked Example: CPI Calculation</strong>
+
+<table>
+  <tr><th>Item</th><th>Weight</th><th>Price 2020</th><th>Price 2021</th><th>Price 2022</th></tr>
+  <tr><td>Bread</td><td>20%</td><td>$2.00</td><td>$2.20</td><td>$2.42</td></tr>
+  <tr><td>Milk</td><td>10%</td><td>$1.50</td><td>$1.65</td><td>$1.73</td></tr>
+  <tr><td>Rice</td><td>10%</td><td>$3.00</td><td>$3.15</td><td>$3.30</td></tr>
+  <tr><td>Rent</td><td>30%</td><td>$800</td><td>$840</td><td>$880</td></tr>
+  <tr><td>Transport</td><td>30%</td><td>$200</td><td>$210</td><td>$218</td></tr>
+</table>
+
+<p><strong>Weighted basket cost</strong> (1 unit each):<br>
+2020: (0.2×2.00)+(0.1×1.50)+(0.1×3.00)+(0.3×800)+(0.3×200) = 0.40+0.15+0.30+240+60 = <strong>$300.85</strong><br>
+2021: 0.44+0.165+0.315+252+63 = <strong>$315.92</strong><br>
+2022: 0.484+0.173+0.330+264+65.4 = <strong>$330.39</strong></p>
+
+<p><strong>CPI values</strong>: CPI₂₀₂₀ = 100.00 | CPI₂₀₂₁ = 105.01 | CPI₂₀₂₂ = 109.82</p>
+</div>
+
+<h2>2. Calculating the Inflation Rate</h2>
+
+$$\text{Inflation Rate}_t = \frac{\text{CPI}_t - \text{CPI}_{t-1}}{\text{CPI}_{t-1}} \times 100\%$$
+
+<p><strong>Using our example</strong>:<br>
+Inflation 2021 = (105.01 − 100.00) / 100.00 × 100% = <strong>5.01%</strong><br>
+Inflation 2022 = (109.82 − 105.01) / 105.01 × 100% = <strong>4.58%</strong></p>
+
+<p>CPI rising but at a decreasing rate = <strong>disinflation</strong>.</p>
+
+<h2>3. Limitations of the CPI</h2>
+
+<h3>a) Substitution Bias</h3>
+<p>CPI uses a fixed basket with fixed weights. When beef prices surge, consumers <strong>substitute</strong> toward chicken. The fixed basket overstates the inflation consumers actually experience.</p>
+
+<h3>b) Quality Changes</h3>
+<p>A smartphone today costs more than a phone in 2005, but it's vastly superior. CPI records only the price increase, missing quality improvement. <strong>Result</strong>: CPI overstates inflation when quality improves.</p>
+
+<h3>c) New Goods Bias</h3>
+<p>New products (e.g., streaming services) take time to enter the basket. These often fall rapidly in price after introduction. CPI misses early price declines.</p>
+
+<h3>d) Different Household Patterns</h3>
+<p>CPI reflects an <strong>average</strong> household. Elderly, students, rural, and urban households have very different spending patterns.</p>
+
+<h3>e) Geographic Variation</h3>
+<p>Prices differ across regions; national CPI averages mask regional differences.</p>
+
+<h2>4. Demand-Pull Inflation</h2>
+
+<p><strong>Demand-pull inflation</strong> occurs when <strong>AD increases</strong> while aggregate supply cannot keep up: <strong>"Too much money chasing too few goods."</strong></p>
+
+<h3>AD/AS Diagram</h3>
+<ul>
+  <li>Start: AD₀, SRAS₀, LRAS at Yf, P₀</li>
+  <li>AD shifts RIGHT to AD₁ (due to ↑C, ↑I, ↑G, or ↑(X−M))</li>
+  <li>New equilibrium: <strong>higher P AND higher Y (Y₁ &gt; Yf)</strong></li>
+</ul>
+
+<table>
+  <tr><th>AD Component</th><th>Causes</th></tr>
+  <tr><td>Consumption (C)</td><td>Tax cuts, consumer confidence ↑, wealth effect</td></tr>
+  <tr><td>Investment (I)</td><td>Interest rate cuts, business confidence ↑</td></tr>
+  <tr><td>Government (G)</td><td>Fiscal stimulus, infrastructure spending</td></tr>
+  <tr><td>Net Exports (X−M)</td><td>Currency depreciation, foreign income growth</td></tr>
+</table>
+
+<h2>5. Cost-Push Inflation</h2>
+
+<p><strong>Cost-push inflation</strong> occurs when <strong>costs of production rise</strong>, reducing SRAS.</p>
+
+<h3>AD/AS Diagram</h3>
+<ul>
+  <li>Start: AD₀, SRAS₀, LRAS at Yf, P₀</li>
+  <li>SRAS shifts LEFT to SRAS₁ (due to rising input costs)</li>
+  <li>New equilibrium: <strong>higher P AND LOWER Y (Y₁ &lt; Yf) — STAGFLATION</strong></li>
+</ul>
+
+<table>
+  <tr><th>Cause</th><th>Mechanism</th></tr>
+  <tr><td>Rising commodity prices</td><td>Oil, food, metals price shocks (OPEC 1973)</td></tr>
+  <tr><td>Rising wages</td><td>Strong unions, minimum wage exceeding productivity</td></tr>
+  <tr><td>Supply chain disruptions</td><td>Natural disasters, pandemics, wars</td></tr>
+  <tr><td>Currency depreciation</td><td>Imported inputs become more expensive</td></tr>
+</table>
+
+<h3>Policy Dilemma</h3>
+<ul>
+  <li><strong>Contractionary</strong> reduces inflation but worsens recession (Y already &lt; Yf)</li>
+  <li><strong>Expansionary</strong> boosts Y but worsens inflation</li>
+  <li><strong>Preferred</strong>: Supply-side policies to shift SRAS back right</li>
+</ul>
+
+<h2>6. Deflation vs Disinflation — Critical Distinction</h2>
+
+<table>
+  <tr><th>Term</th><th>Definition</th><th>CPI Behavior</th></tr>
+  <tr><td><strong>Deflation</strong></td><td>A sustained <strong>decrease</strong> in the general price level</td><td>CPI falling (negative inflation rate)</td></tr>
+  <tr><td><strong>Disinflation</strong></td><td>A <strong>decrease in the rate of inflation</strong> — prices still rising, but more slowly</td><td>CPI rising at a decreasing rate</td></tr>
+</table>
+
+<div class="highlight-box">
+<strong>Numerical Example</strong>:
+<table>
+  <tr><th>Year</th><th>CPI</th><th>Change</th></tr>
+  <tr><td>2020</td><td>100.0</td><td>—</td></tr>
+  <tr><td>2021</td><td>108.0</td><td>+8.0% (inflation)</td></tr>
+  <tr><td>2022</td><td>113.4</td><td>+5.0% (<strong>disinflation</strong>)</td></tr>
+  <tr><td>2023</td><td>109.0</td><td>−3.9% (<strong>deflation</strong>)</td></tr>
+</table>
+</div>
+
+<p><strong>Why deflation is dangerous</strong>: Consumers delay purchases → C↓ → AD↓ → further deflation → <strong>deflationary spiral</strong>. Real debt burden rises → bankruptcies. Japan's "lost decades" is the classic case study.</p>
+
+<div class="tip-box">
+<p><strong>Diagrams are essential</strong>: Draw AD/AS for both demand-pull (AD right: higher P, higher Y) and cost-push (SRAS left: higher P, lower Y). Label equilibrium points, axes, and shifts clearly. <strong>"Sustained increase"</strong> — definition must include the word "sustained." CPI calculation: Practice the formula. <strong>Distinguish deflation/disinflation</strong>: Write both on your diagram if relevant.</p>
+</div>
+
+<h2>Practice Problems</h2>
+
+<div class="problem"><strong>Problem 1 (Easy)</strong><br>The CPI in Country A was 120 in 2022 and 126 in 2023. Calculate the inflation rate for 2023. Is this inflation, deflation, or disinflation if 2022's inflation rate was 9%?</div>
+<div class="problem"><strong>Problem 2 (Easy)</strong><br>Explain TWO limitations of the CPI as a measure of the cost of living. Use specific examples.</div>
+<div class="problem"><strong>Problem 3 (Medium)</strong><br>Using an AD/AS diagram, explain the difference between demand-pull and cost-push inflation in terms of their effects on real GDP.</div>
+<div class="problem"><strong>Problem 4 (Medium)</strong><br>A country's CPI values are: 2020 = 100, 2021 = 105, 2022 = 108.15, 2023 = 109.23. Calculate the inflation rate for each year and identify any periods of disinflation or deflation.</div>
+<div class="problem"><strong>Problem 5 (Challenging)</strong><br>Country X's CPI basket is weighted as: Food 30%, Housing 35%, Transport 15%, Healthcare 10%, Entertainment 10%. In 2023, food prices rose 8%, housing rose 3%, transport fell 2%, healthcare rose 12%, and entertainment rose 1%. Calculate the overall inflation rate. If the central bank targets 2–4%, should it intervene?</div>
+<div class="problem"><strong>Problem 6 (IB-Style 15-mark)</strong><br>"Cost-push inflation is more difficult to control than demand-pull inflation." Discuss this statement.</div>
+
+<h2>Answers</h2>
+
+<div class="answer"><strong>Answer 1</strong>: Inflation rate = (126 − 120) / 120 × 100% = 6/120 × 100 = <strong>5.00%</strong>. 2022 inflation was 9%, so inflation fell from 9% to 5%. Prices are still rising, just more slowly. This is <strong>disinflation</strong> (not deflation — CPI is not falling, only the rate of increase is falling).</div>
+
+<div class="answer"><strong>Answer 2</strong>: <strong>1. Substitution Bias</strong>: CPI uses a fixed basket. If beef prices surge, consumers switch to chicken. CPI continues to assume heavy beef consumption, overstating true cost-of-living increase. <strong>2. Quality Changes</strong>: A laptop today costs $1,200 vs. $1,000 five years ago. Raw price comparison suggests 20% inflation, but today's laptop has 4× RAM, SSD, Retina display. CPI may not fully adjust for quality, overstating inflation.</div>
+
+<div class="answer"><strong>Answer 3</strong>: <strong>Demand-pull</strong>: AD shifts RIGHT → P↑ AND Y↑ (economy overheats above Yf). Policy: Contractionary — no dilemma. <strong>Cost-push</strong>: SRAS shifts LEFT → P↑ AND Y↓ (stagflation). Policy dilemma: contractionary fixes inflation but worsens recession; expansionary fixes recession but worsens inflation. The crucial distinction: demand-pull shows higher Y; cost-push shows lower Y.</div>
+
+<div class="answer"><strong>Answer 4</strong>:<br>
+2021: (105−100)/100 = <strong>5.00%</strong><br>
+2022: (108.15−105)/105 = <strong>3.00%</strong><br>
+2023: (109.23−108.15)/108.15 = <strong>1.00%</strong><br>
+2021→2022: Inflation fell 5%→3% = <strong>disinflation</strong>. 2022→2023: Inflation fell 3%→1% = <strong>disinflation</strong>. No deflation: CPI never fell below previous year.</div>
+
+<div class="answer"><strong>Answer 5</strong>: Weighted inflation = Σ(weight × price change):<br>
+Food: 0.30×8% = 2.40% | Housing: 0.35×3% = 1.05% | Transport: 0.15×(−2%) = −0.30% | Healthcare: 0.10×12% = 1.20% | Entertainment: 0.10×1% = 0.10%<br>
+<strong>Overall = 4.45%</strong><br><br>
+4.45% exceeds the 2–4% target band. BUT: Food (8%) and healthcare (12%) surges may be supply shocks (cost-push), which contractionary policy would worsen. Transport is falling (−2%), suggesting demand weakness. <strong>Recommendation</strong>: Investigate whether food/healthcare are supply-side shocks before acting. If demand-pull, raise rates. If cost-push, consider supply-side measures or tolerate a temporary overshoot.</div>
+
+<div class="answer"><strong>Answer 6 (Full IB-Style)</strong>:<br>
+<strong>Introduction</strong>: Cost-push inflation arises from rising production costs shifting SRAS left. The claim that it is harder to control rests in the policy dilemma of stagflation.<br><br>
+<strong>The Policy Dilemma</strong>: To reduce inflation → contractionary (AD left) → Y falls further below Yf. To restore output → expansionary (AD right) → inflation worsens. <strong>No policy can simultaneously fix both problems</strong> using demand-side tools alone. The appropriate remedy — shifting SRAS back right — is slow, uncertain, and often outside policymakers' direct control (e.g., global oil prices).<br><br>
+<strong>Why Demand-Pull Is Easier</strong>: Contractionary policy (raise rates) shifts AD left. No dilemma: both P and Y return toward equilibrium in the same direction. Central banks can act quickly and independently.<br><br>
+<strong>BUT — Cost-Push May Self-Correct</strong>: If caused by a temporary supply shock, SRAS shifts back as shock fades. No policy response may be best.<br><br>
+<strong>AND — Demand-Pull Has Its Own Complexities</strong>: Identifying the output gap precisely is hard; time lags (6–18 months); political pressure to avoid rate hikes.<br><br>
+<strong>Supply-Side Solutions for Cost-Push</strong>: Alternative energy investment, productivity improvements, trade liberalization → shift LRAS right, addressing root causes permanently.<br><br>
+<strong>Conclusion</strong>: Cost-push is more difficult <strong>in the short run</strong> because of the stagflation dilemma. However, the ideal approach is prevention — supply-side policies that make the economy resilient to cost shocks — combined with central bank credibility that anchors inflation expectations.</div>
+
+<div class="evaluate-box">
+<h2>Evaluate</h2>
+<p><em>"Cost-push inflation is more difficult to control than demand-pull inflation."</em></p>
+<p class="claspp">CLASPP Analysis (166 words)</p>
+
+<p><strong>Conclusion</strong>: The statement is largely valid in the short run due to the stagflation policy dilemma. Cost-push inflation presents a trade-off between price stability and output that demand-pull does not, making it genuinely harder to manage with conventional tools.</p>
+
+<p><strong>Long-term vs Short-term</strong>: In the short run, cost-push creates the dilemma described above. In the long run, supply shocks often reverse naturally, and supply-side policies can shift SRAS/LRAS right, resolving cost-push permanently. Demand-pull may be harder to control in the long run if driven by structural excess demand.</p>
+
+<p><strong>Assumptions</strong>: Assumes cost-push is a domestic problem controllable by domestic policy. In reality, cost-push often originates from global commodity prices outside domestic control. Also assumes policymakers value both price stability and output equally.</p>
+
+<p><strong>Stakeholders</strong>: Workers suffer most from cost-push (rising prices, potential layoffs). Central banks face credibility crises. Governments lose popularity.</p>
+
+<p><strong>Priorities</strong>: If inflation expectations become unanchored (wage-price spiral), controlling inflation must be the priority regardless of output costs. If the shock is clearly temporary, preserving output takes priority.</p>
+
+<p><strong>Pros/Cons</strong>: Pro — accurately identifies the unique policy dilemma. Con — oversimplifies; demand-pull control has timing/identification challenges, and cost-push solutions exist albeit slower.</p>
+
+<p><strong>Overall</strong>: Cost-push is harder <strong>short-run</strong>, but both require thoughtful policy mixes.</p>
+</div>
+
+<hr>
+
+<nav class="breadcrumb">
+  <span><a href="lesson31_unemployment_policies.html">← Lesson 31: Unemployment</a></span>
+  <span><a href="#">Index</a></span>
+  <span><a href="lesson33_inflation_consequences.html">Lesson 33: Inflation Consequences →</a></span>
+</nav>
+
+</body>
+</html>

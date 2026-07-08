@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 26: Lesson 26: Circuits III — Kirchhoff's Laws & Potential Dividers — IB Physics HL</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']]
+  },
+  options: {
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap');
+  
+  :root {
+    --bg: #fdfcf9;
+    --text: #1a1a1a;
+    --accent: #2c5f2d;
+    --border: #d0cec7;
+    --code-bg: #f4f3ef;
+    --callout-bg: #f0f7f0;
+    --callout-border: #2c5f2d;
+    --warning-bg: #fff8e6;
+    --warning-border: #c4941a;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  body {
+    font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid var(--accent);
+    color: var(--accent);
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 2.5rem 0 0.75rem;
+    color: #1a1a1a;
+  }
+  
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.5rem;
+  }
+  
+  p { margin: 0 0 1rem; }
+  
+  ul, ol { margin: 0 0 1rem 1.5rem; }
+  li { margin-bottom: 0.35rem; }
+  
+  code {
+    background: var(--code-bg);
+    padding: 0.15em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+    font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+  }
+  
+  pre {
+    background: var(--code-bg);
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 0 0 1rem;
+    font-size: 0.85em;
+    line-height: 1.5;
+  }
+  
+  pre code {
+    background: none;
+    padding: 0;
+    font-size: inherit;
+  }
+  
+  blockquote {
+    border-left: 4px solid var(--callout-border);
+    background: var(--callout-bg);
+    margin: 0 0 1rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+  }
+  
+  blockquote.warning {
+    border-left-color: var(--warning-border);
+    background: var(--warning-bg);
+  }
+  
+  strong { font-weight: 700; }
+  
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.5rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  
+  .nav a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+  
+  .nav a:hover { background: var(--callout-bg); }
+  
+  .worked-example, .answer {
+    background: var(--code-bg);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin: 0.75rem 0 1.25rem;
+  }
+  
+  .worked-example strong:first-child, .answer strong:first-child {
+    color: var(--accent);
+  }
+  
+  @media print {
+    body { font-size: 12pt; max-width: 100%; padding: 0; }
+    .nav { display: none; }
+    h1 { font-size: 18pt; }
+    h2 { font-size: 14pt; }
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 0 1rem;
+  }
+  
+  th, td {
+    border: 1px solid var(--border);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  
+  th {
+    background: var(--code-bg);
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L25_circuits_2.html">← Lesson 25</a>
+  <a href="L27_circuits_4.html">Lesson 27 →</a>
+</nav>
+
+<h1>Lesson 26: Circuits III — Kirchhoff's Laws & Potential Dividers</h1>
+
+<blockquote><strong>IB Data Booklet references:</strong> $\sum I_{\text{in}} = \sum I_{\text{out}}$ (Junction Rule), $\sum V = 0$ (Loop Rule), $V_{\text{out}} = V_{\text{in}} \frac{R_2}{R_1 + R_2}$ (potential divider)</blockquote>
+
+<h2>What You'll Learn</h2>
+<ul>
+<li><strong>Kirchhoff's Junction Rule</strong>: $\sum I_{\text{in}} = \sum I_{\text{out}}$ (charge conservation)</li>
+<li><strong>Kirchhoff's Loop Rule</strong>: $\sum V = 0$ around any closed loop (energy conservation)</li>
+<li>How to solve <strong>multi-loop circuits</strong> using Kirchhoff's Laws</li>
+<li>The <strong>potential divider</strong> formula: $V_{\text{out}} = V_{\text{in}} \times \frac{R_2}{R_1 + R_2}$</li>
+<li>Applications of potential dividers with <strong>sensors</strong> (LDR, thermistor)</li>
+</ul>
+
+<hr>
+
+<h2>1. Kirchhoff's Junction Rule (First Law)</h2>
+
+<p><strong>Statement:</strong> At any junction in a circuit, the sum of currents entering equals the sum of currents leaving.</p>
+
+<p>$$\boxed{\sum I_{\text{in}} = \sum I_{\text{out}}}$$</p>
+
+<h3>Why it works</h3>
+<p>This is a direct consequence of <strong>conservation of charge</strong>. Charge cannot accumulate at a junction — whatever flows in must flow out.</p>
+
+<h3>Sign convention</h3>
+<ul>
+<li>Currents <strong>entering</strong> the junction: positive</li>
+<li>Currents <strong>leaving</strong> the junction: negative</li>
+<li>Algebraic sum: $\sum I = 0$</li>
+</ul>
+
+<h3>Example</h3>
+<p>At a junction with three wires:</p>
+<p>$$I_1 = I_2 + I_3$$</p>
+
+<p>If $I_1 = 5.0\ \mathrm{A}$ and $I_2 = 3.0\ \mathrm{A}$, then $I_3 = 2.0\ \mathrm{A}$.</p>
+
+<hr>
+
+<h2>2. Kirchhoff's Loop Rule (Second Law)</h2>
+
+<p><strong>Statement:</strong> Around any closed loop in a circuit, the algebraic sum of potential differences is zero.</p>
+
+<p>$$\boxed{\sum V = 0}$$</p>
+
+<h3>Why it works</h3>
+<p>This is a consequence of <strong>conservation of energy</strong>. The electrical potential energy gained by a charge going through the battery must exactly equal the energy lost going through the resistors in a complete loop.</p>
+
+<h3>Sign Convention for Loop Rule</h3>
+
+<p>Going around a loop in your chosen direction:</p>
+
+<table>
+<tr>
+<th>Component</th>
+<th>Direction</th>
+<th>Sign of $V$</th>
+</tr>
+<tr>
+<td>Battery</td>
+<td>From − to +</td>
+<td>$+\varepsilon$ (gain)</td>
+</tr>
+<tr>
+<td>Battery</td>
+<td>From + to −</td>
+<td>$-\varepsilon$ (loss)</td>
+</tr>
+<tr>
+<td>Resistor</td>
+<td>Same direction as current</td>
+<td>$-IR$ (voltage drop)</td>
+</tr>
+<tr>
+<td>Resistor</td>
+<td>Opposite direction to current</td>
+<td>$+IR$ (voltage rise)</td>
+</tr>
+</table>
+
+<h3>Practical strategy for applying loop rule</h3>
+<ol>
+<li><strong>Assign currents</strong> to each branch (label $I_1$, $I_2$, $I_3$, etc.) with assumed directions</li>
+<li><strong>Write junction equations</strong> for each node</li>
+<li><strong>Write loop equations</strong> for each independent loop (number of loops = branches − junctions + 1)</li>
+<li><strong>Solve the system</strong> of equations simultaneously</li>
+<li>If any current comes out negative, it means the actual direction is opposite to your assumption</li>
+</ol>
+
+<hr>
+
+<h2>3. Solving Multi-Loop Circuits Step by Step</h2>
+
+<h3>Systematic Method</h3>
+
+<ol>
+<li><strong>Label all junctions</strong> (nodes) — usually with letters A, B, C, etc.</li>
+<li><strong>Assign a current</strong> and direction to each branch. Use $I_1$, $I_2$, $I_3$, etc. (Direction is arbitrary; a negative result means opposite direction.)</li>
+<li><strong>Apply Junction Rule</strong> at $(n-1)$ junctions, where $n$ is the total number of junctions</li>
+<li><strong>Apply Loop Rule</strong> to independent loops (choose loops that don't just repeat information)</li>
+<li><strong>Solve the simultaneous equations</strong></li>
+<li><strong>Check</strong> with unused loops or by verifying power balance: $P_{\text{supplied}} = P_{\text{dissipated}}$</li>
+</ol>
+
+<hr>
+
+<h2>4. The Potential Divider</h2>
+
+<p>A <strong>potential divider</strong> (voltage divider) is two resistors in series across a voltage source. The output voltage is taken across one of the resistors:</p>
+
+<p>$$\boxed{V_{\text{out}} = V_{\text{in}} \times \frac{R_2}{R_1 + R_2}}$$</p>
+
+<p>where $V_{\text{out}}$ is the voltage across $R_2$.</p>
+
+<h3>How it works</h3>
+<p>The same current $I = \frac{V_{\text{in}}}{R_1 + R_2}$ flows through both resistors.</p>
+
+<p>$V_{\text{out}} = I R_2 = \frac{V_{\text{in}}}{R_1 + R_2} \times R_2 = V_{\text{in}} \frac{R_2}{R_1 + R_2}$</p>
+
+<h3>Key Insight</h3>
+<ul>
+<li>If $R_2 = 0$: $V_{\text{out}} = 0$ (short circuit)</li>
+<li>If $R_2 \to \infty$: $V_{\text{out}} = V_{\text{in}}$ (open circuit)</li>
+<li>If $R_1 = R_2$: $V_{\text{out}} = V_{\text{in}}/2$</li>
+<li>The output voltage can be continuously varied between 0 and $V_{\text{in}}$</li>
+</ul>
+
+<h3>The Potentiometer</h3>
+<p>A <strong>potentiometer</strong> is a variable potential divider — a single resistive track with a sliding contact (wiper). Moving the wiper changes the ratio $R_1 : R_2$, giving a continuously variable $V_{\text{out}}$.</p>
+
+<hr>
+
+<h2>5. Sensor Applications</h2>
+
+<p>Potential dividers are widely used with sensors whose resistance changes with the environment.</p>
+
+<h3>Light-Dependent Resistor (LDR)</h3>
+<ul>
+<li>Resistance <strong>decreases</strong> as light intensity <strong>increases</strong></li>
+<li>In bright light: $R_{\text{LDR}}$ is low (typically few hundred $\Omega$)</li>
+<li>In darkness: $R_{\text{LDR}}$ is high (typically M$\Omega$)</li>
+</ul>
+
+<h3>Thermistor (NTC — Negative Temperature Coefficient)</h3>
+<ul>
+<li>Resistance <strong>decreases</strong> as temperature <strong>increases</strong></li>
+<li>At low temperatures: $R$ is high</li>
+<li>At high temperatures: $R$ is low</li>
+</ul>
+
+<h3>Sensor Circuit Design</h3>
+<p>Place the sensor in the appropriate position:</p>
+
+<ul>
+<li><strong>To get $V_{\text{out}} \uparrow$ when sensor $R \downarrow$</strong>: Put the sensor as $R_1$ (top), fixed resistor as $R_2$ (bottom)</li>
+<li>$V_{\text{out}} = V_{\text{in}} \frac{R_{\text{fixed}}}{R_{\text{sensor}} + R_{\text{fixed}}}$</li>
+<li>When sensor $R \downarrow$, denominator $\downarrow$, $V_{\text{out}} \uparrow$</li>
+</ul>
+
+<ul>
+<li><strong>To get $V_{\text{out}} \downarrow$ when sensor $R \downarrow$</strong>: Put the sensor as $R_2$ (bottom), fixed resistor as $R_1$ (top)</li>
+<li>$V_{\text{out}} = V_{\text{in}} \frac{R_{\text{sensor}}}{R_{\text{fixed}} + R_{\text{sensor}}}$</li>
+<li>When sensor $R \downarrow$, numerator $\downarrow$, $V_{\text{out}} \downarrow$</li>
+</ul>
+
+<blockquote class="warning">⚠️ <strong>Exam tip:</strong> Be explicit about which resistor is in which position and explain how $V_{\text{out}}$ changes.</blockquote>
+
+<hr>
+
+<h2>6. The Wheatstone Bridge (Balanced Condition)</h2>
+
+<p>A Wheatstone bridge consists of four resistors in a diamond configuration. A galvanometer (sensitive ammeter) connects the two midpoints.</p>
+
+<h3>Balanced Condition</h3>
+<p>The bridge is <strong>balanced</strong> when no current flows through the galvanometer:</p>
+
+<p>$$\boxed{\frac{R_1}{R_2} = \frac{R_3}{R_4}}$$</p>
+
+<p>At balance, the potentials at the two midpoints are equal. This is used for precise resistance measurement.</p>
+
+<hr>
+
+<h2>Worked Examples</h2>
+
+<h3>Worked Example 26.1 — Junction Rule</h3>
+<p><strong>Problem:</strong> At a junction, $I_1 = 4.0\ \mathrm{A}$ enters, $I_2 = 1.5\ \mathrm{A}$ leaves, and $I_3 = 1.0\ \mathrm{A}$ leaves. What is the magnitude and direction of $I_4$?</p>
+
+<p><strong>Solution:</strong></p>
+<p>Junction rule: $I_1 - I_2 - I_3 - I_4 = 0$ (entering positive)</p>
+<p>$4.0 - 1.5 - 1.0 - I_4 = 0$</p>
+<p>$I_4 = 1.5\ \mathrm{A}$ <strong>leaving</strong> the junction. ✓</p>
+
+<hr>
+
+<h3>Worked Example 26.2 — Two-Loop Kirchhoff Problem</h3>
+<p><strong>Problem:</strong> Circuit: $12\ \mathrm{V}$ battery, then node A. Branch 1: $R_1 = 4\ \Omega$ to node B. Branch 2: $R_2 = 6\ \Omega$ to node B. From B back to battery through $R_3 = 2\ \Omega$.</p>
+
+<p>Find all three branch currents.</p>
+
+<p><strong>Solution:</strong></p>
+<p>Let $I_1$ through $R_1$, $I_2$ through $R_2$, $I_3$ through $R_3$.</p>
+
+<p>At junction A: $I_3 = I_1 + I_2$ (total from battery splits)</p>
+
+<p>Loop 1 (battery → $R_1$ → $R_3$ → battery): $12 - 4I_1 - 2I_3 = 0$</p>
+<p>Loop 2 (battery → $R_2$ → $R_3$ → battery): $12 - 6I_2 - 2I_3 = 0$</p>
+
+<p>Substitute $I_3 = I_1 + I_2$:</p>
+<p>Loop 1: $12 - 4I_1 - 2(I_1 + I_2) = 0 \Rightarrow 12 - 6I_1 - 2I_2 = 0$ … (1)</p>
+<p>Loop 2: $12 - 6I_2 - 2(I_1 + I_2) = 0 \Rightarrow 12 - 2I_1 - 8I_2 = 0$ … (2)</p>
+
+<p>From (1): $6I_1 + 2I_2 = 12 \Rightarrow 3I_1 + I_2 = 6$</p>
+<p>From (2): $2I_1 + 8I_2 = 12 \Rightarrow I_1 + 4I_2 = 6$</p>
+
+<p>Solve: From first: $I_2 = 6 - 3I_1$. Substitute: $I_1 + 4(6 - 3I_1) = 6$</p>
+<p>$I_1 + 24 - 12I_1 = 6 \Rightarrow -11I_1 = -18 \Rightarrow I_1 = 1.636\ \mathrm{A}$</p>
+
+<p>$I_2 = 6 - 3(1.636) = 1.092\ \mathrm{A}$</p>
+<p>$I_3 = I_1 + I_2 = 2.728\ \mathrm{A}$</p>
+
+<p>Check: Loop 1: $12 - 4(1.636) - 2(2.728) = 12 - 6.544 - 5.456 = 0$ ✓</p>
+
+<hr>
+
+<h3>Worked Example 26.3 — Potential Divider (Fixed Resistors)</h3>
+<p><strong>Problem:</strong> A $9.0\ \mathrm{V}$ battery is connected across a potential divider with $R_1 = 200\ \Omega$ and $R_2 = 300\ \Omega$. Calculate $V_{\text{out}}$ across $R_2$.</p>
+
+<p><strong>Solution:</strong></p>
+<p>$V_{\text{out}} = 9.0 \times \frac{300}{200 + 300} = 9.0 \times \frac{300}{500} = 9.0 \times 0.600 = 5.4\ \mathrm{V}$ ✓</p>
+
+<hr>
+
+<h3>Worked Example 26.4 — Potential Divider with LDR</h3>
+<p><strong>Problem:</strong> An LDR is placed as $R_1$ in a potential divider with a fixed $R_2 = 10\ \mathrm{k\Omega}$ and $V_{\text{in}} = 6.0\ \mathrm{V}$. In bright light, $R_{\text{LDR}} = 1.0\ \mathrm{k\Omega}$. In darkness, $R_{\text{LDR}} = 100\ \mathrm{k\Omega}$.</p>
+<p>(a) Calculate $V_{\text{out}}$ in bright light and in darkness. <strong>[4 marks]</strong></p>
+<p>(b) This $V_{\text{out}}$ is connected to a circuit that switches on a lamp when $V_{\text{out}} > 4.0\ \mathrm{V}$. Does the lamp turn on in bright light or darkness? Explain. <strong>[2 marks]</strong></p>
+
+<p><strong>Solution:</strong></p>
+<p><strong>(a)</strong> $V_{\text{out}}$ is across $R_2$ (the fixed resistor):</p>
+<p>$V_{\text{out}} = V_{\text{in}} \times \frac{R_2}{R_1 + R_2} = 6.0 \times \frac{10}{R_1 + 10}$</p>
+
+<p>Bright light ($R_1 = 1.0$): $V_{\text{out}} = 6.0 \times \frac{10}{1.0 + 10} = 6.0 \times \frac{10}{11} = 5.45\ \mathrm{V}$</p>
+<p>Darkness ($R_1 = 100$): $V_{\text{out}} = 6.0 \times \frac{10}{100 + 10} = 6.0 \times \frac{10}{110} = 0.545\ \mathrm{V}$ ✓✓</p>
+
+<p><strong>(b)</strong> $V_{\text{out}}$ exceeds $4.0\ \mathrm{V}$ in <strong>bright light</strong> ($5.45\ \mathrm{V} > 4.0\ \mathrm{V}$), not in darkness ($0.545\ \mathrm{V}$). So the lamp turns on in <strong>bright light</strong>. This is counterintuitive (you might want a lamp to come on when it's dark). To reverse, swap the LDR and fixed resistor positions. ✓✓</p>
+
+<hr>
+
+<h3>Worked Example 26.5 — Wheatstone Bridge</h3>
+<p><strong>Problem:</strong> In a Wheatstone bridge, $R_1 = 100\ \Omega$, $R_2 = 200\ \Omega$, and $R_3 = 150\ \Omega$. The bridge is balanced.</p>
+<p>(a) Calculate $R_4$. <strong>[2 marks]</strong></p>
+<p>(b) Explain what "balanced" means and how you would detect it experimentally. <strong>[2 marks]</strong></p>
+
+<p><strong>Solution:</strong></p>
+<p><strong>(a)</strong> Balanced: $\frac{R_1}{R_2} = \frac{R_3}{R_4}$</p>
+<p>$\frac{100}{200} = \frac{150}{R_4} \Rightarrow R_4 = 150 \times \frac{200}{100} = 300\ \Omega$ ✓✓</p>
+
+<p><strong>(b)</strong> "Balanced" means the potentials at the two midpoints are equal, so <strong>no current flows</strong> through the galvanometer connecting them. Experimentally, you vary one of the known resistors until the galvanometer reads zero. ✓✓</p>
+
+<hr>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1 — Junction Rule</h3>
+<p>Currents of $2.0\ \mathrm{A}$ and $3.0\ \mathrm{A}$ enter a junction, and a current of $1.0\ \mathrm{A}$ leaves. What is the magnitude and direction of the fourth current? <strong>[2 marks]</strong></p>
+
+<h3>Problem 2 — Simple Potential Divider</h3>
+<p>A $12\ \mathrm{V}$ supply is connected across $R_1 = 40\ \Omega$ and $R_2 = 60\ \Omega$ in series. Calculate $V_{\text{out}}$ across $R_2$. <strong>[1 mark]</strong></p>
+
+<h3>Problem 3 — Kirchhoff Two-Loop Circuit</h3>
+<p>In a circuit: a $9.0\ \mathrm{V}$ battery connects to a junction. One branch has $R_1 = 3.0\ \Omega$; the other has $R_2 = 6.0\ \Omega$. Both rejoin, then pass through $R_3 = 2.0\ \Omega$ back to the battery. Calculate all three branch currents using Kirchhoff's Laws. <strong>[6 marks]</strong></p>
+
+<h3>Problem 4 — Sensor Circuit Design</h3>
+<p>You need a circuit where $V_{\text{out}}$ <strong>increases</strong> when the temperature <strong>decreases</strong>. You have an NTC thermistor and a fixed resistor.</p>
+<p>(a) Draw the circuit showing whether the thermistor is $R_1$ or $R_2$. <strong>[2 marks]</strong></p>
+<p>(b) Explain your choice. <strong>[2 marks]</strong></p>
+<p>(c) If $V_{\text{in}} = 5.0\ \mathrm{V}$, $R_{\text{fixed}} = 10\ \mathrm{k\Omega}$, and the thermistor has $R = 5.0\ \mathrm{k\Omega}$ at $30\mathrm{°C}$ and $R = 20\ \mathrm{k\Omega}$ at $10\mathrm{°C}$, calculate $V_{\text{out}}$ at each temperature. <strong>[3 marks]</strong></p>
+
+<h3>Problem 5 — IB-Style: Kirchhoff + Potential Divider Combined</h3>
+<p>Consider this circuit: A $6.0\ \mathrm{V}$ battery with negligible internal resistance. From positive terminal, the circuit splits into two parallel branches:</p>
+<ul>
+<li><strong>Branch A:</strong> $R_1 = 12\ \Omega$ in series with a parallel pair ($R_2 = 6.0\ \Omega$, $R_3 = 3.0\ \Omega$)</li>
+<li><strong>Branch B:</strong> $R_4 = 4.0\ \Omega$</li>
+</ul>
+
+<p>Both branches rejoin and return to the battery.</p>
+
+<p>(a) Using circuit reduction, calculate the total equivalent resistance. <strong>[3 marks]</strong></p>
+<p>(b) Calculate the current supplied by the battery. <strong>[1 mark]</strong></p>
+<p>(c) Calculate the current through $R_4$. <strong>[2 marks]</strong></p>
+<p>(d) Using potential divider principles, calculate the voltage across $R_2$. <strong>[4 marks]</strong></p>
+<p>(e) Verify your answer to (d) using Kirchhoff's Laws. <strong>[3 marks]</strong></p>
+
+<hr>
+
+<h2>Answers</h2>
+
+<h3>Answer 1</h3>
+<p>Entering positive: $+2.0 + 3.0 - 1.0 - I_4 = 0$</p>
+<p>$I_4 = 4.0\ \mathrm{A}$ <strong>leaving</strong> the junction. ✓✓</p>
+
+<h3>Answer 2</h3>
+<p>$V_{\text{out}} = 12 \times \frac{60}{40 + 60} = 12 \times 0.60 = 7.2\ \mathrm{V}$ ✓</p>
+
+<h3>Answer 3</h3>
+<p>Let $I_1$ through $3\ \Omega$, $I_2$ through $6\ \Omega$, $I_3$ through $2\ \Omega$ (from battery).</p>
+
+<p>Junction: $I_3 = I_1 + I_2$</p>
+<p>Loop via $R_1$: $9 - 3I_1 - 2I_3 = 0$</p>
+<p>Loop via $R_2$: $9 - 6I_2 - 2I_3 = 0$</p>
+
+<p>Substitute: $9 - 3I_1 - 2(I_1 + I_2) = 0 \Rightarrow 9 - 5I_1 - 2I_2 = 0$ …(1)</p>
+<p>$9 - 6I_2 - 2(I_1 + I_2) = 0 \Rightarrow 9 - 2I_1 - 8I_2 = 0$ …(2)</p>
+
+<p>From (1): $5I_1 + 2I_2 = 9$</p>
+<p>From (2): $2I_1 + 8I_2 = 9 \Rightarrow I_1 + 4I_2 = 4.5$</p>
+
+<p>$I_1 = 4.5 - 4I_2$. Substitute into (1): $5(4.5 - 4I_2) + 2I_2 = 9$</p>
+<p>$22.5 - 20I_2 + 2I_2 = 9 \Rightarrow -18I_2 = -13.5 \Rightarrow I_2 = 0.75\ \mathrm{A}$</p>
+
+<p>$I_1 = 4.5 - 4(0.75) = 1.5\ \mathrm{A}$</p>
+<p>$I_3 = 1.5 + 0.75 = 2.25\ \mathrm{A}$ ✓✓✓✓✓✓</p>
+
+<h3>Answer 4</h3>
+<p><strong>(a)</strong> Place the thermistor as $R_2$ (bottom) and the fixed resistor as $R_1$ (top). $V_{\text{out}}$ is taken across the thermistor. ✓✓</p>
+
+<p><strong>(b)</strong> $V_{\text{out}} = V_{\text{in}} \frac{R_{\text{thermistor}}}{R_{\text{fixed}} + R_{\text{thermistor}}}$. When temperature decreases, $R_{\text{thermistor}}$ increases (NTC), so the fraction increases → $V_{\text{out}}$ increases. ✓✓</p>
+
+<p><strong>(c)</strong> At $30\mathrm{°C}$: $V_{\text{out}} = 5.0 \times \frac{5.0}{10 + 5.0} = 5.0 \times \frac{5}{15} = 1.67\ \mathrm{V}$</p>
+<p>At $10\mathrm{°C}$: $V_{\text{out}} = 5.0 \times \frac{20}{10 + 20} = 5.0 \times \frac{20}{30} = 3.33\ \mathrm{V}$ ✓✓✓</p>
+
+<h3>Answer 5 — IB-Style Full Solution</h3>
+<p><strong>(a)</strong> $R_{23} = \frac{6.0 \times 3.0}{6.0 + 3.0} = 2.0\ \Omega$</p>
+<p>$R_A = R_1 + R_{23} = 12 + 2.0 = 14\ \Omega$</p>
+<p>$R_B = R_4 = 4.0\ \Omega$</p>
+<p>$R_{\text{total}} = \frac{R_A \times R_B}{R_A + R_B} = \frac{14 \times 4.0}{14 + 4.0} = \frac{56}{18} = 3.11\ \Omega$ ✓✓✓</p>
+
+<p><strong>(b)</strong> $I_{\text{total}} = 6.0/3.11 = 1.93\ \mathrm{A}$ ✓</p>
+
+<p><strong>(c)</strong> $R_4$ is directly across $6.0\ \mathrm{V}$: $I_4 = 6.0/4.0 = 1.5\ \mathrm{A}$ ✓✓</p>
+
+<p><strong>(d)</strong> Current in Branch A: $I_A = 1.93 - 1.5 = 0.43\ \mathrm{A}$</p>
+<p>Voltage across $R_1$: $V_1 = 0.43 \times 12 = 5.16\ \mathrm{V}$</p>
+<p>Voltage across parallel pair: $V_{23} = 6.0 - 5.16 = 0.84\ \mathrm{V}$</p>
+
+<p>Both $R_2$ and $R_3$ have $0.84\ \mathrm{V}$ across them.</p>
+<p>$I_2 = 0.84/6.0 = 0.14\ \mathrm{A}$, $I_3 = 0.84/3.0 = 0.28\ \mathrm{A}$</p>
+<p>Check: $0.14 + 0.28 = 0.42 \approx 0.43$ ✓ ✓✓✓</p>
+
+<p><strong>(e)</strong> Using Kirchhoff for Branch A: $6.0 - 12I_A - 6I_2 = 0$ and $I_A = I_2 + I_3$ and $6I_2 = 3I_3$ (same voltage). $I_3 = 2I_2$, so $I_A = 3I_2$. Then $6.0 - 12(3I_2) - 6I_2 = 0 \Rightarrow 6.0 - 42I_2 = 0 \Rightarrow I_2 = 0.143\ \mathrm{A}$. Then $V_2 = 0.143 \times 6 = 0.86\ \mathrm{V}$. Matches! ✓✓✓</p>
+
+<hr>
+
+<h2>Key Takeaways</h2>
+<ol>
+<li><strong>Kirchhoff's Junction Rule</strong> ($\sum I_{\text{in}} = \sum I_{\text{out}}$): Charge is conserved at every junction.</li>
+<li><strong>Kirchhoff's Loop Rule</strong> ($\sum V = 0$): Energy is conserved around any closed loop. Going through a battery from − to + gives +$\varepsilon$; going through a resistor in the direction of current gives −$IR$.</li>
+<li>For multi-loop circuits, write junction equations first, then loop equations. Solve the system.</li>
+<li><strong>Potential divider</strong>: $V_{\text{out}} = V_{\text{in}} \frac{R_2}{R_1 + R_2}$. The output voltage depends on the resistance ratio.</li>
+<li>For <strong>sensor circuits</strong> (LDR, thermistor), place the sensor carefully — its position determines whether $V_{\text{out}}$ increases or decreases with the environmental change.</li>
+</ol>
+
+<hr>
+
+<p><em>Next: Lesson 27 — Circuits IV: EMF, Internal Resistance & Power</em></p>
+
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L25_circuits_2.html">← Lesson 25</a>
+  <a href="L27_circuits_4.html">Lesson 27 →</a>
+</nav>
+
+</body>
+</html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 27 — Planes & Intersections</title>
+<script>
+MathJax = {
+  tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body {
+    max-width: 800px; margin: 40px auto; font-family: 'Times New Roman', Georgia, serif;
+    font-size: 17px; line-height: 1.7; padding: 0 20px; color: #1a1a1a;
+  }
+  h1 { font-size: 22px; border-bottom: 2px solid #333; padding-bottom: 8px; margin-top: 36px; }
+  h2 { font-size: 19px; margin-top: 28px; color: #2c3e50; }
+  h3 { font-size: 17px; margin-top: 22px; color: #444; }
+  h4 { font-size: 16px; margin-top: 18px; }
+  p { margin: 0.6em 0; }
+  li { margin: 0.3em 0 0.3em 20px; }
+  hr { margin: 20px 0; border: none; border-top: 1px solid #ddd; }
+  .math-block { text-align: center; margin: 1em 0; overflow-x: auto; }
+  .table-line { font-family: 'Courier New', monospace; font-size: 15px; margin: 0.1em 0; }
+  pre { background: #f5f5f5; padding: 10px 14px; border-radius: 4px; overflow-x: auto; font-size: 14px; }
+  b { color: #222; }
+  table { border-collapse: collapse; margin: 16px 0; width: 100%; font-size: 15px; }
+  th { background: #2c3e50; color: #fff; padding: 8px 12px; text-align: center; font-weight: bold; }
+  td { border: 1px solid #ccc; padding: 8px 12px; text-align: center; }
+  tr:nth-child(even) { background: #f9f9f9; }
+  .nav { text-align: center; margin: 30px 0; font-size: 14px; }
+  .nav a { margin: 0 8px; color: #3498db; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  @media print { body { font-size: 15px; } }
+</style>
+</head>
+<body>
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+<h1>Lesson 27 — Planes and Intersections</h1>
+
+<h2>What Is a Plane?</h2>
+
+<h3>The &quot;What&quot;</h3>
+
+<p>A plane is a flat, two-dimensional surface that extends infinitely in all directions. In three-dimensional space, a plane is the analog of a line in two dimensions. While a line in 2D can be described by one linear equation ($ax + by = c$), a plane in 3D is described by one linear equation ($ax + by + cz = d$).</p>
+
+<p>A plane is uniquely determined by:</p>
+
+<li>- A <b>point</b> on the plane (any one point).</li>
+<li>- A <b>normal vector</b> — a vector that is perpendicular to the plane.</li>
+
+<p>The normal vector &quot;points straight out&quot; of the plane. Every vector that lies within the plane is perpendicular to the normal vector.</p>
+
+<h3>The &quot;Why&quot;</h3>
+
+<p>Planes are fundamental in 3D geometry. The intersection of two planes is a line. The intersection of three planes may be a point. Distances from points to planes appear in optimization problems. Understanding plane equations and intersections is essential for IB AAHL vector problems.</p>
+
+<p><hr></p>
+
+<h2>1. Equation of a Plane</h2>
+
+<h3>Vector Form</h3>
+
+<p>Let $\vec{a}$ be the position vector of a known point $A$ on the plane. Let $\vec{n}$ be a normal vector (perpendicular to the plane). For any point $\vec{r}$ on the plane, the vector $\vec{r} - \vec{a}$ lies within the plane. Since every vector in the plane is perpendicular to $\vec{n}$, their dot product is zero:</p>
+
+<div class="math-block">$$\boxed{\vec{n} \cdot (\vec{r} - \vec{a}) = 0}$$</div>
+
+<p>This is the <b>vector form</b> of the plane equation.</p>
+
+<h3>Scalar (Cartesian) Form</h3>
+
+<p>If $\vec{n} = \begin{pmatrix}n_1\\n_2\\n_3\end{pmatrix}$ and $\vec{r} = \begin{pmatrix}x\\y\\z\end{pmatrix}$, expanding the vector form gives:</p>
+
+<div class="math-block">$$n_1(x - a_1) + n_2(y - a_2) + n_3(z - a_3) = 0$$</div>
+
+<p>Rearranging:</p>
+
+<div class="math-block">$$\boxed{n_1 x + n_2 y + n_3 z = d}$$</div>
+
+<p>where $d = \vec{n}\cdot\vec{a} = n_1 a_1 + n_2 a_2 + n_3 a_3$. The coefficients $n_1, n_2, n_3$ are exactly the components of the normal vector. This is the <b>scalar (Cartesian) form</b>.</p>
+
+<p><hr></p>
+
+<h2>Worked Example 1: Plane from Normal and Point</h2>
+
+<p><b>Problem:</b> Find the equation of the plane that passes through $A(2, -1, 3)$ and has normal vector $\vec{n} = \begin{pmatrix}1\\4\\-2\end{pmatrix}$. Give the answer in scalar form.</p>
+
+<p><b>Approach:</b> Substitute into $\vec{n}\cdot(\vec{r} - \vec{a}) = 0$, expand, and simplify.</p>
+
+<p><b>Step 1 — Write the vector form:</b></p>
+<div class="math-block">$$1(x - 2) + 4(y - (-1)) + (-2)(z - 3) = 0$$</div>
+
+<p><b>Step 2 — Expand:</b></p>
+<div class="math-block">$$(x - 2) + 4(y + 1) - 2(z - 3) = 0$$</div>
+<div class="math-block">$$x - 2 + 4y + 4 - 2z + 6 = 0$$</div>
+
+<p><b>Step 3 — Collect terms:</b></p>
+<div class="math-block">$$x + 4y - 2z + 8 = 0$$</div>
+
+<p><b>Answer:</b> $x + 4y - 2z = -8$, or equivalently $x + 4y - 2z + 8 = 0$.</p>
+
+<p><hr></p>
+
+<h2>2. Finding a Plane Through Three Points</h2>
+
+<p>If you know three points $A, B, C$ on the plane (and they are not collinear — not all on the same line), you can find the plane&#x27;s equation by:</p>
+
+<li>Forming two vectors in the plane: $\overrightarrow{AB} = \vec{b} - \vec{a}$ and $\overrightarrow{AC} = \vec{c} - \vec{a}$.</li>
+<li>Computing a normal vector by taking the cross product: $\vec{n} = \overrightarrow{AB} \times \overrightarrow{AC}$. (The cross product of two vectors in the plane gives a vector perpendicular to both, which is perpendicular to the plane.)</li>
+<li>Using point $A$ and $\vec{n}$ in the vector form $\vec{n}\cdot(\vec{r} - \vec{a}) = 0$.</li>
+
+<p><hr></p>
+
+<h2>Worked Example 2: Plane Through Three Points</h2>
+
+<p><b>Problem:</b> Find the scalar equation of the plane containing the points $A(1, 0, 2)$, $B(3, -1, 4)$, and $C(2, 5, -1)$.</p>
+
+<p><b>Approach:</b> Compute $\overrightarrow{AB}$ and $\overrightarrow{AC}$, take their cross product for $\vec{n}$, then use the point-normal form.</p>
+
+<p><b>Step 1 — Compute vectors in the plane:</b></p>
+<div class="math-block">$$\overrightarrow{AB} = \begin{pmatrix}3-1\\-1-0\\4-2\end{pmatrix} = \begin{pmatrix}2\\-1\\2\end{pmatrix}$$</div>
+<div class="math-block">$$\overrightarrow{AC} = \begin{pmatrix}2-1\\5-0\\-1-2\end{pmatrix} = \begin{pmatrix}1\\5\\-3\end{pmatrix}$$</div>
+
+<p><b>Step 2 — Compute the normal vector using the cross product:</b></p>
+<div class="math-block">$$\vec{n} = \overrightarrow{AB} \times \overrightarrow{AC} = \begin{pmatrix}(-1)(-3) - (2)(5)\\(2)(1) - (2)(-3)\\(2)(5) - (-1)(1)\end{pmatrix} = \begin{pmatrix}3 - 10\\2 + 6\\10 + 1\end{pmatrix} = \begin{pmatrix}-7\\8\\11\end{pmatrix}$$</div>
+
+<p><b>Step 3 — Use point $A(1, 0, 2)$:</b></p>
+<div class="math-block">$$-7(x - 1) + 8(y - 0) + 11(z - 2) = 0$$</div>
+<div class="math-block">$$-7x + 7 + 8y + 11z - 22 = 0$$</div>
+<div class="math-block">$$-7x + 8y + 11z - 15 = 0$$</div>
+
+<p><b>Answer:</b> $-7x + 8y + 11z = 15$, or equivalently $7x - 8y - 11z = -15$.</p>
+
+<p><hr></p>
+
+<h2>3. Intersection of a Line and a Plane</h2>
+
+<p>To find where a line meets a plane, substitute the parametric equations of the line into the scalar equation of the plane and solve for the parameter.</p>
+
+<h3>The Three Possibilities</h3>
+
+<li>- <b>One intersection point:</b> The line pierces the plane at a single point. This happens when the line is not parallel to the plane.</li>
+<li>- <b>No intersection:</b> The line is parallel to the plane and never meets it. You get a contradiction like $5 = 7$ when solving for $\lambda$.</li>
+<li>- <b>Infinite intersections:</b> The line lies entirely in the plane. You get an identity like $0 = 0$ for all $\lambda$.</li>
+
+<p><hr></p>
+
+<h2>Worked Example 3: Line-Plane Intersection</h2>
+
+<p><b>Problem:</b> Find the intersection of the line $\vec{r} = \begin{pmatrix}3\\0\\4\end{pmatrix} + t\begin{pmatrix}1\\2\\-1\end{pmatrix}$ with the plane $x + 3y - 2z = 1$.</p>
+
+<p><b>Approach:</b> Write the parametric equations, substitute into the plane equation, and solve for $t$.</p>
+
+<p><b>Step 1 — Parametric equations:</b></p>
+<div class="math-block">$$x = 3 + t,\quad y = 2t,\quad z = 4 - t$$</div>
+
+<p><b>Step 2 — Substitute into the plane equation:</b></p>
+<div class="math-block">$$(3 + t) + 3(2t) - 2(4 - t) = 1$$</div>
+<div class="math-block">$$3 + t + 6t - 8 + 2t = 1$$</div>
+<div class="math-block">$$(3 - 8) + (t + 6t + 2t) = 1$$</div>
+<div class="math-block">$$-5 + 9t = 1$$</div>
+<div class="math-block">$$9t = 6$$</div>
+<div class="math-block">$$t = \frac{2}{3}$$</div>
+
+<p><b>Step 3 — Find the intersection point:</b></p>
+<p>$x = 3 + \frac{2}{3} = \frac{11}{3}$, $y = 2 \cdot \frac{2}{3} = \frac{4}{3}$, $z = 4 - \frac{2}{3} = \frac{10}{3}$.</p>
+
+<p><b>Answer:</b> $\left(\dfrac{11}{3}, \dfrac{4}{3}, \dfrac{10}{3}\right)$</p>
+
+<p><hr></p>
+
+<h2>Worked Example 4: Line Parallel to a Plane</h2>
+
+<p><b>Problem:</b> Find the intersection of $\vec{r} = \begin{pmatrix}1\\2\\-1\end{pmatrix} + \lambda\begin{pmatrix}2\\-1\\3\end{pmatrix}$ with the plane $2x + y - z = 7$.</p>
+
+<p><b>Approach:</b> Substitute and see what happens.</p>
+
+<p><b>Step 1 — Parametric equations:</b></p>
+<div class="math-block">$$x = 1 + 2\lambda,\quad y = 2 - \lambda,\quad z = -1 + 3\lambda$$</div>
+
+<p><b>Step 2 — Substitute:</b></p>
+<div class="math-block">$$2(1 + 2\lambda) + (2 - \lambda) - (-1 + 3\lambda) = 7$$</div>
+<div class="math-block">$$2 + 4\lambda + 2 - \lambda + 1 - 3\lambda = 7$$</div>
+<div class="math-block">$$(2 + 2 + 1) + (4\lambda - \lambda - 3\lambda) = 7$$</div>
+<div class="math-block">$$5 + 0\lambda = 7$$</div>
+<div class="math-block">$$5 = 7$$</div>
+
+<p>This is a contradiction — no value of $\lambda$ can make $5 = 7$.</p>
+
+<p><b>Answer:</b> The line does not intersect the plane. It is parallel to the plane (the direction vector is perpendicular to the normal vector) and lies at a distance from it.</p>
+
+<p><hr></p>
+
+<h2>4. Intersection of Two Planes</h2>
+
+<p>Two non-parallel planes intersect in a <b>line</b>. To find this line, you need:</p>
+
+<li>A <b>direction vector</b> for the line: $\vec{d} = \vec{n}_1 \times \vec{n}_2$. (This vector is perpendicular to both normals, so it lies in both planes.)</li>
+<li>A <b>point</b> on both planes: set one variable to $0$ (or another convenient value) and solve the two plane equations for the other two variables.</li>
+
+<p><hr></p>
+
+<h2>Worked Example 5: Intersection of Two Planes</h2>
+
+<p><b>Problem:</b> Find the line of intersection of the planes $\Pi_1: x + 2y - z = 4$ and $\Pi_2: 2x - y + 3z = 1$.</p>
+
+<p><b>Approach:</b> Compute $\vec{d} = \vec{n}_1 \times \vec{n}_2$. Then find a common point by setting $z = 0$.</p>
+
+<p><b>Step 1 — Identify normal vectors:</b></p>
+<p>$\vec{n}_1 = \begin{pmatrix}1\\2\\-1\end{pmatrix}$, $\vec{n}_2 = \begin{pmatrix}2\\-1\\3\end{pmatrix}$.</p>
+
+<p><b>Step 2 — Compute the direction vector:</b></p>
+<div class="math-block">$$\vec{d} = \vec{n}_1 \times \vec{n}_2 = \begin{pmatrix}2(3) - (-1)(-1)\\(-1)(2) - 1(3)\\1(-1) - 2(2)\end{pmatrix} = \begin{pmatrix}6 - 1\\-2 - 3\\-1 - 4\end{pmatrix} = \begin{pmatrix}5\\-5\\-5\end{pmatrix}$$</div>
+
+<p>This simplifies to $\begin{pmatrix}1\\-1\\-1\end{pmatrix}$ (dividing by $5$).</p>
+
+<p><b>Step 3 — Find a common point (set $z = 0$):</b></p>
+<p>From $\Pi_1$: $x + 2y = 4$.</p>
+<p>From $\Pi_2$: $2x - y = 1$.</p>
+
+<p>From the second equation: $y = 2x - 1$. Substitute into the first:</p>
+<p>$x + 2(2x - 1) = 4$, so $x + 4x - 2 = 4$, $5x = 6$, $x = \frac{6}{5}$.</p>
+
+<p>Then $y = 2(\frac{6}{5}) - 1 = \frac{12}{5} - 1 = \frac{7}{5}$.</p>
+
+<p>Point: $\left(\frac{6}{5}, \frac{7}{5}, 0\right)$.</p>
+
+<p><b>Step 4 — Write the line:</b></p>
+<div class="math-block">$$\vec{r} = \begin{pmatrix}6/5\\7/5\\0\end{pmatrix} + \lambda\begin{pmatrix}1\\-1\\-1\end{pmatrix}$$</div>
+
+<p><hr></p>
+
+<h2>5. Distance from a Point to a Plane</h2>
+
+<p>The perpendicular distance from a point $P(x_1, y_1, z_1)$ to the plane $ax + by + cz = d$ is:</p>
+
+<div class="math-block">$$\boxed{\text{distance} = \frac{|ax_1 + by_1 + cz_1 - d|}{\sqrt{a^2 + b^2 + c^2}}}$$</div>
+
+<p>The numerator is the absolute value of the result when you plug the point&#x27;s coordinates into the plane equation (with $d$ on the right side). The denominator is the magnitude of the normal vector. This formula is the 3D analog of the 2D point-to-line distance formula.</p>
+
+<p><hr></p>
+
+<h2>Worked Example 6: Distance from Point to Plane</h2>
+
+<p><b>Problem:</b> Find the distance from the point $P(3, -1, 2)$ to the plane $2x - 2y + z = 5$.</p>
+
+<p><b>Approach:</b> Identify $a, b, c, d$, substitute the point&#x27;s coordinates, and apply the formula.</p>
+
+<p><b>Step 1 — Identify coefficients:</b></p>
+<p>$a = 2$, $b = -2$, $c = 1$, $d = 5$.</p>
+
+<p><b>Step 2 — Compute the numerator:</b></p>
+<p>$|2(3) + (-2)(-1) + 1(2) - 5| = |6 + 2 + 2 - 5| = |5| = 5$.</p>
+
+<p><b>Step 3 — Compute the denominator:</b></p>
+<p>$\sqrt{2^2 + (-2)^2 + 1^2} = \sqrt{4 + 4 + 1} = \sqrt{9} = 3$.</p>
+
+<p><b>Step 4 — Distance:</b></p>
+<p>$\text{distance} = \frac{5}{3}$.</p>
+
+<p><b>Answer:</b> The distance is $\frac{5}{3}$ units.</p>
+
+<p><hr></p>
+
+<h2>Summary Table</h2>
+
+<p class="table-line">| Concept | Formula / Method |</p>
+<p class="table-line">|<hr><hr><hr>|<hr><hr><hr><hr><hr><hr>|</p>
+<p class="table-line">| Plane from normal and point | $\vec{n}\cdot(\vec{r} - \vec{a}) = 0$ |</p>
+<p class="table-line">| Scalar form | $n_1x + n_2y + n_3z = d$ |</p>
+<p class="table-line">| Plane through 3 points | $\vec{n} = \overrightarrow{AB} \times \overrightarrow{AC}$ |</p>
+<p class="table-line">| Line-plane intersection | Substitute parametric line into plane, solve for $\lambda$ |</p>
+<p class="table-line">| Two-plane intersection | $\vec{d} = \vec{n}_1 \times \vec{n}_2$, find common point |</p>
+<p class="table-line">| Point-to-plane distance | $\dfrac{|ax_1 + by_1 + cz_1 - d|}{\sqrt{a^2 + b^2 + c^2}}$ |</p>
+
+<p><hr></p>
+
+<h2>Practice Problems</h2>
+
+<p><b>Problem 1:</b> Find the scalar equation of the plane through $A(1, 3, -2)$ with normal vector $\vec{n} = \begin{pmatrix}2\\-1\\5\end{pmatrix}$.</p>
+
+<p><b>Problem 2:</b> Find the equation of the plane containing the three points $P(1, 2, 0)$, $Q(3, -1, 4)$, and $R(0, 5, 2)$. Give the answer in scalar form.</p>
+
+<p><b>Problem 3:</b> Find the intersection point of the line $\vec{r} = \begin{pmatrix}4\\-1\\2\end{pmatrix} + t\begin{pmatrix}3\\1\\-2\end{pmatrix}$ with the plane $x - 2y + z = 10$.</p>
+
+<p><b>Problem 4:</b> Find the line of intersection of the planes $\Pi_1: 2x + y - z = 3$ and $\Pi_2: x - 3y + 2z = 5$.</p>
+
+<p><b>Problem 5 (IB-style):</b> A point $P$ has coordinates $(2, -3, 1)$ and a plane $\Pi$ has equation $3x + 4y - 5z = 6$.</p>
+<p>(a) Find the perpendicular distance from $P$ to $\Pi$. [2 marks]</p>
+<p>(b) Hence, find the exact distance, leaving your answer in the form $\frac{p\sqrt{q}}{r}$ where $p$, $q$, and $r$ are integers. [1 mark]</p>
+
+<p><b>Problem 6:</b> Show that the line $\vec{r} = \begin{pmatrix}2\\1\\-3\end{pmatrix} + \lambda\begin{pmatrix}1\\-2\\1\end{pmatrix}$ lies entirely in the plane $x + 2y + 3z = -5$.</p>
+
+<p><hr></p>
+
+<h2>Answers</h2>
+
+<p><b>Answer 1:</b></p>
+
+<p>$2(x - 1) - 1(y - 3) + 5(z + 2) = 0$</p>
+
+<p>$2x - 2 - y + 3 + 5z + 10 = 0$</p>
+
+<p>$2x - y + 5z + 11 = 0$.</p>
+
+<p><hr></p>
+
+<p><b>Answer 2:</b></p>
+
+<p>$\overrightarrow{PQ} = \begin{pmatrix}2\\-3\\4\end{pmatrix}$, $\overrightarrow{PR} = \begin{pmatrix}-1\\3\\2\end{pmatrix}$.</p>
+
+<p>$\vec{n} = \overrightarrow{PQ} \times \overrightarrow{PR} = \begin{pmatrix}(-3)(2) - (4)(3)\\(4)(-1) - (2)(2)\\(2)(3) - (-3)(-1)\end{pmatrix} = \begin{pmatrix}-6-12\\-4-4\\6-3\end{pmatrix} = \begin{pmatrix}-18\\-8\\3\end{pmatrix}$.</p>
+
+<p>Using point $P(1, 2, 0)$: $-18(x-1) - 8(y-2) + 3(z-0) = 0$.</p>
+
+<p>$-18x + 18 - 8y + 16 + 3z = 0$, so $-18x - 8y + 3z + 34 = 0$, or $18x + 8y - 3z = 34$.</p>
+
+<p><hr></p>
+
+<p><b>Answer 3:</b></p>
+
+<p>Parametric: $x = 4 + 3t$, $y = -1 + t$, $z = 2 - 2t$.</p>
+
+<p>Substitute: $(4 + 3t) - 2(-1 + t) + (2 - 2t) = 10$.</p>
+
+<p>$4 + 3t + 2 - 2t + 2 - 2t = 10$, so $8 - t = 10$, $t = -2$.</p>
+
+<p>Point: $x = 4 + 3(-2) = -2$, $y = -1 + (-2) = -3$, $z = 2 - 2(-2) = 6$.</p>
+
+<p>Intersection: $(-2, -3, 6)$.</p>
+
+<p><hr></p>
+
+<p><b>Answer 4:</b></p>
+
+<p>$\vec{n}_1 = \begin{pmatrix}2\\1\\-1\end{pmatrix}$, $\vec{n}_2 = \begin{pmatrix}1\\-3\\2\end{pmatrix}$.</p>
+
+<p>$\vec{d} = \vec{n}_1 \times \vec{n}_2 = \begin{pmatrix}1(2) - (-1)(-3)\\(-1)(1) - 2(2)\\2(-3) - 1(1)\end{pmatrix} = \begin{pmatrix}2-3\\-1-4\\-6-1\end{pmatrix} = \begin{pmatrix}-1\\-5\\-7\end{pmatrix}$.</p>
+
+<p>Find point (set $z = 0$): $2x + y = 3$, $x - 3y = 5$.</p>
+
+<p>From the second: $x = 5 + 3y$. Substitute: $2(5 + 3y) + y = 3$, $10 + 6y + y = 3$, $7y = -7$, $y = -1$, $x = 2$.</p>
+
+<p>Line: $\vec{r} = \begin{pmatrix}2\\-1\\0\end{pmatrix} + \lambda\begin{pmatrix}-1\\-5\\-7\end{pmatrix}$ (or multiply direction by $-1$: $\begin{pmatrix}1\\5\\7\end{pmatrix}$).</p>
+
+<p><hr></p>
+
+<p><b>Answer 5:</b></p>
+
+<p><b>(a)</b> $\text{distance} = \dfrac{|3(2) + 4(-3) - 5(1) - 6|}{\sqrt{9 + 16 + 25}} = \dfrac{|6 - 12 - 5 - 6|}{\sqrt{50}} = \dfrac{|-17|}{5\sqrt{2}} = \dfrac{17}{5\sqrt{2}}$.</p>
+
+<p><b>(b)</b> Rationalizing: $\dfrac{17}{5\sqrt{2}} = \dfrac{17\sqrt{2}}{10}$. Here $p = 17$, $q = 2$, $r = 10$.</p>
+
+<p><hr></p>
+
+<p><b>Answer 6:</b></p>
+
+<p>Parametric: $x = 2 + \lambda$, $y = 1 - 2\lambda$, $z = -3 + \lambda$.</p>
+
+<p>Substitute into the plane: $(2 + \lambda) + 2(1 - 2\lambda) + 3(-3 + \lambda)$.</p>
+
+<p>$= 2 + \lambda + 2 - 4\lambda - 9 + 3\lambda = (2 + 2 - 9) + (\lambda - 4\lambda + 3\lambda) = -5 + 0 = -5$.</p>
+
+<p>Since the result is exactly $-5$ for every value of $\lambda$, every point on the line satisfies the plane equation. The line lies entirely in the plane.</p>
+
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+</body>
+</html>

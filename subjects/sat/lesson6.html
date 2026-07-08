@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 6: Scatterplots & Line of Best Fit</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root {
+    --bg: #fafaf9;
+    --text: #1a1a1a;
+    --accent: #1a5276;
+    --trap-bg: #fff3cd;
+    --trap-border: #ffc107;
+    --pattern-bg: #d1ecf1;
+    --pattern-border: #17a2b8;
+    --card: #ffffff;
+    --border: #d0d0cb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+  h1 { font-size: 1.8rem; color: var(--accent); border-bottom: 3px solid var(--accent); padding-bottom: 0.5rem; margin-bottom: 1rem; }
+  h2 { font-size: 1.35rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+  h3 { font-size: 1.15rem; color: #333; margin: 1.5rem 0 0.5rem; }
+  p, li { margin: 0.5em 0; }
+  ul, ol { padding-left: 1.5rem; margin: 0.5em 0; }
+  .trap-box {
+    background: var(--trap-bg);
+    border-left: 4px solid var(--trap-border);
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.95rem;
+  }
+  .trap-box strong { color: #856404; }
+  .pattern-box {
+    background: var(--pattern-bg);
+    border-left: 4px solid var(--pattern-border);
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.95rem;
+  }
+  .pattern-box strong { color: #0c5460; }
+  .example {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem 1.3rem;
+    margin: 1rem 0;
+  }
+  .example h4 { color: var(--accent); margin-bottom: 0.3rem; }
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 2.5rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  .nav a { color: var(--accent); text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  code { background: #f0f0f0; padding: 0.15em 0.4em; border-radius: 3px; font-size: 0.9em; }
+  strong { color: #222; }
+  @media print {
+    body { font-size: 14px; }
+    .nav { display: none; }
+  }
+</style>
+</head>
+<body>
+<h1>Lesson 6: Scatterplots & Line of Best Fit</h1>
+<h2>What You'll Learn</h2>
+<ul>
+<li>Interpreting scatterplots: positive/negative correlation and strength</li>
+<li>The correlation coefficient $r$ and what it tells you</li>
+<li>Finding and using the line of best fit equation</li>
+<li>Making predictions: interpolation (safe) vs. extrapolation (risky)</li>
+<li>The critical distinction: correlation ≠ causation</li>
+<li>SAT question pattern: "which equation best models the data?"</li>
+</ul>
+<h2>SAT Context</h2>
+<p>Scatterplot and line-of-best-fit questions appear consistently on the SAT, typically 2-4 per test. These are data analysis questions that AAHL does not cover in depth. The SAT will show you a scatterplot—sometimes with the line of best fit drawn, sometimes asking you to choose which equation fits—and ask you to interpret the slope, make a prediction, or evaluate a claim. The math is simple (you're not calculating the line by hand), but the interpretation traps are numerous and subtle. This is an area where you cannot lean on your AAHL algebra skills; you must learn SAT-specific data reasoning.</p>
+<h2>Understanding Scatterplots</h2>
+<h3> What a Scatterplot Shows</h3>
+<p>Each point represents one observation with two measurements: an $x$-value (independent variable) and a $y$-value (dependent variable).</p>
+<h3> Correlation Direction</h3>
+<ul>
+<li>**Positive correlation:** As $x$ increases, $y$ tends to increase. (Points slope upward.)</li>
+<li>**Negative correlation:** As $x$ increases, $y$ tends to decrease. (Points slope downward.)</li>
+<li>**No correlation:** No discernible pattern. (Points form a cloud.)</li>
+</ul>
+<h3> Correlation Strength</h3>
+<ul>
+<li>**Strong:** Points cluster tightly around a line.</li>
+<li>**Moderate:** Points follow a trend but with more scatter.</li>
+<li>**Weak:** Points barely suggest a trend.</li>
+</ul>
+<p>The **correlation coefficient $r$** quantifies strength and direction:</p>
+<ul>
+<li>$r$ ranges from $-1$ to $+1$.</li>
+<li>$r > 0$: positive correlation. $r < 0$: negative correlation.</li>
+<li>$|r|$ close to 1: strong. $|r|$ close to 0: weak.</li>
+<li>$r = 0.9$ is strong positive; $r = -0.3$ is weak negative.</li>
+</ul>
+<p>> **SAT Note:** The digital SAT may ask you to identify which $r$ value matches a given scatterplot. Look at the direction first (positive or negative) to eliminate half the options, then judge strength.</p>
+<h2>The Line of Best Fit</h2>
+<p>The line of best fit (also called the regression line or trend line) is the line that minimizes the total distance from all points. On the SAT, it's usually given as:</p>
+<p>$$y = mx + b$$</p>
+<p>where $m$ is the slope and $b$ is the $y$-intercept.</p>
+<h3> Interpreting Slope in Context</h3>
+<p>The slope $m$ means: "For each increase of 1 in $x$, the predicted $y$ increases by $m$."</p>
+<p>**Example:** If a line of best fit for hours studied ($x$) vs. test score ($y$) has slope 8.5, then: "For each additional hour studied, the predicted test score increases by 8.5 points."</p>
+<h3> Interpreting Intercept in Context</h3>
+<p>The $y$-intercept $b$ means: "When $x = 0$, the predicted $y$ is $b$." But be careful—the intercept may not be meaningful if $x = 0$ is outside the data range.</p>
+<h3> Finding the Line of Best Fit with Desmos</h3>
+<p>If the SAT gives you a table of data and asks for the line of best fit:</p>
+<li>Enter the data in a Desmos table (add a table, enter $x_1$ and $y_1$ values).</li>
+<li>Type: `y1 ~ m x1 + b`</li>
+<li>Desmos shows you $m$ and $b$ instantly.</li>
+<p>The tilde `~` tells Desmos to perform regression.</p>
+<h2>Predictions: Interpolation vs. Extrapolation</h2>
+<h3> Interpolation</h3>
+<p>Predicting within the range of the data. **Generally reliable.**</p>
+<p>**Example:** Data has $x$ from 10 to 50. Predicting $y$ when $x = 30$ is interpolation.</p>
+<h3> Extrapolation</h3>
+<p>Predicting beyond the range of the data. **Risky and often unreliable.**</p>
+<p>**Example:** Data has $x$ from 10 to 50. Predicting $y$ when $x = 80$ is extrapolation. The trend might not continue.</p>
+<p>> **🚨 SAT TRAP ALERT: Correlation ≠ Causation.** This is the single most tested statistical reasoning concept on the SAT. Just because two variables are correlated does NOT mean one causes the other. Example: "There is a strong positive correlation between ice cream sales and drowning deaths." Does ice cream cause drowning? No. A third variable (hot weather) causes both. The SAT LOVES to give you a correlation and ask whether a causal claim is valid. The answer is almost always "No, correlation does not imply causation" or "The data shows only an association, not a cause-effect relationship."</p>
+<p>> **🔍 PATTERN RECOGNITION: "Which equation best models the data?"** When you see this question with answer choices in the form $y = mx + b$:</p>
+<p>> 1. Check the $y$-intercept ($b$): look at where the line hits the $y$-axis on the graph. Eliminate choices with clearly wrong intercepts.</p>
+<p>> 2. Check the slope ($m$): is it positive or negative? Steep or shallow? Eliminate choices with wrong signs.</p>
+<p>> 3. For the remaining choices, test one point from the graph (pick an easy one) in each equation. The equation that gives the closest $y$ is the best.</p>
+<h3> Worked Example 1: Interpreting Slope from a Scatterplot</h3>
+<p>**Problem:** A scatterplot shows the relationship between the number of employees ($x$) at a company and the company's annual revenue ($y$, in millions of dollars). The line of best fit has equation $y = 0.15x + 2.3$. What does the slope 0.15 represent?</p>
+<p>A) The revenue of a company with 0 employees.</p>
+<p>B) The predicted revenue for each additional employee, in millions of dollars.</p>
+<p>C) The total revenue, in millions of dollars.</p>
+<p>D) The number of employees when revenue is 0.</p>
+<p>**Solution:**</p>
+<p>The slope is the rate of change: for each additional unit of $x$ (1 employee), $y$ (revenue) changes by 0.15 (million dollars, or $150,000).</p>
+<p>**Answer: B.**</p>
+<p>**Wrong answer analysis:**</p>
+<ul>
+<li>A describes the $y$-intercept 2.3, not the slope.</li>
+<li>C is too vague; it doesn't specify "per employee" or "additional."</li>
+<li>D describes the $x$-intercept (solving $0.15x + 2.3 = 0$), not the slope.</li>
+</ul>
+<h3> Worked Example 2: Correlation vs. Causation</h3>
+<p>**Problem:** A study finds a strong negative correlation ($r = -0.92$) between the number of hours students spend on social media and their GPA. Which of the following conclusions is valid?</p>
+<p>A) Spending more time on social media causes students' GPAs to decrease.</p>
+<p>B) Students with higher GPAs are more disciplined and therefore use social media less.</p>
+<p>C) There is an association between social media use and GPA, but causation cannot be determined.</p>
+<p>D) Reducing social media use to zero would guarantee a 4.0 GPA.</p>
+<p>**Solution:**</p>
+<p>The study shows correlation, not causation. We don't know if social media causes lower GPA, if lower GPA causes more social media use, or if a third factor (like sleep or study habits) affects both.</p>
+<p>**Answer: C.**</p>
+<p>**Wrong answer analysis:**</p>
+<ul>
+<li>A assumes causation from correlation—invalid.</li>
+<li>B does the same in the opposite direction—also invalid.</li>
+<li>D is absurd on multiple levels (extrapolation, assuming causation, overstatement).</li>
+</ul>
+<h3> Worked Example 3: Picking the Best Model Equation</h3>
+<p>**Problem:** A scatterplot shows data points that trend upward, roughly passing through $(0, 5)$ and $(10, 35)$. Which equation best models the data?</p>
+<p>A) $y = 2x + 5$</p>
+<p>B) $y = 3x + 5$</p>
+<p>C) $y = 5x + 2$</p>
+<p>D) $y = -3x + 35$</p>
+<p>**Solution:**</p>
+<li>Direction: upward = positive slope. Eliminate D (negative slope).</li>
+<li>$y$-intercept: The line passes near $(0, 5)$, so $b \approx 5$. Eliminate C ($b=2$) and check A and B.</li>
+<li>Slope: from $(0, 5)$ to $(10, 35)$, slope = $\frac{35-5}{10-0} = \frac{30}{10} = 3$.</li>
+<li>Equation: $y = 3x + 5$.</li>
+<p>**Answer: B.**</p>
+<p>**Wrong answer analysis:**</p>
+<ul>
+<li>A has the right intercept but wrong slope (too shallow).</li>
+<li>C has wrong intercept and wrong slope.</li>
+<li>D has negative slope (wrong direction) and wrong intercept.</li>
+</ul>
+<hr>
+<h2>Practice Problems</h2>
+<li>A scatterplot shows the relationship between daily high temperature ($x$, °F) and number of ice cream cones sold ($y$). The points trend upward in a roughly linear pattern. Which $r$ value is most plausible?</li>
+<p>A) $r = -0.85$</p>
+<p>B) $r = -0.15$</p>
+<p>C) $r = 0.15$</p>
+<p>D) $r = 0.85$</p>
+<li>The line of best fit for data relating hours of exercise per week ($x$) and resting heart rate ($y$, bpm) is $y = -2.5x + 78$. What does the slope of $-2.5$ indicate?</li>
+<p>A) The resting heart rate of someone who doesn't exercise.</p>
+<p>B) For each additional hour of exercise per week, predicted resting heart rate decreases by 2.5 bpm.</p>
+<p>C) Resting heart rate decreases by 2.5 bpm per week regardless of exercise.</p>
+<p>D) The correlation is negative, so the data is unreliable.</p>
+<li>Data on study time ($x$, hours) and exam score ($y$, points) has line of best fit $y = 8.2x + 52$. The data ranges from $x = 1$ to $x = 10$ hours. Which prediction is most reliable?</li>
+<p>A) The score for 5 hours of study.</p>
+<p>B) The score for 0 hours of study.</p>
+<p>C) The score for 20 hours of study.</p>
+<p>D) The score for 100 hours of study.</p>
+<li>A study finds a strong positive correlation between the number of firefighters at a fire and the amount of damage caused. Which statement is correct?</li>
+<p>A) More firefighters cause more damage, so fewer should be sent.</p>
+<p>B) The correlation is likely due to a third variable: larger fires require more firefighters and cause more damage.</p>
+<p>C) The data proves that adding firefighters increases damage.</p>
+<p>D) There is no relationship; the correlation is coincidental.</p>
+<li>A scatterplot shows data with the following summary: when $x = 0$, $y$ is approximately 12; when $x = 20$, $y$ is approximately 72. Which line of best fit is consistent with these observations?</li>
+<p>A) $y = 3x + 12$</p>
+<p>B) $y = 3x - 12$</p>
+<p>C) $y = 12x + 3$</p>
+<p>D) $y = 60x + 12$</p>
+<li>**(Challenge)** A scatterplot shows a strong linear relationship. The mean of the $x$-values is 50, and the mean of the $y$-values is 75. The line of best fit must pass through which point?</li>
+<p>A) $(0, 0)$</p>
+<p>B) $(0, 75)$</p>
+<p>C) $(50, 0)$</p>
+<p>D) $(50, 75)$</p>
+<hr>
+<h2>Answers</h2>
+<li>**Answer: D.** Upward trend → positive $r$, so eliminate A and B. "Roughly linear" suggests a strong correlation, so $r = 0.85$ is more plausible than $0.15$. **Wrong answers:** A has strong negative correlation—wrong direction. B has weak negative correlation—wrong direction and too weak. C is positive but too weak for a "roughly linear" trend.</li>
+<li>**Answer: B.** The slope is the rate of change: for each 1-unit increase in $x$ (hours of exercise), $y$ (resting heart rate) changes by $-2.5$ (decreases by 2.5 bpm). **Wrong answers:** A describes the $y$-intercept (78), not the slope. C removes the connection to exercise and states it as a universal fact—wrong. D incorrectly links negative correlation with unreliability; negative correlation is perfectly valid.</li>
+<li>**Answer: A.** 5 hours is within the data range (1-10), so this is interpolation—generally reliable. **Wrong answers:** B ($x=0$) is technically extrapolation (data starts at $x=1$) and the intercept may not be meaningful. C ($x=20$) and D ($x=100$) are extreme extrapolations far beyond the data range; the linear trend may not continue.</li>
+<li>**Answer: B.** This is the classic "correlation ≠ causation" example. Larger fires (third variable) cause both more firefighters to be sent AND more damage. **Wrong answers:** A assumes causation and makes a dangerous recommendation. C falsely claims "proves." D dismisses the correlation entirely when it likely has a real (if indirect) explanation.</li>
+<li>**Answer: A.** At $x=0$, $y \approx 12$ → intercept $b = 12$. Slope: $\frac{72-12}{20-0} = \frac{60}{20} = 3$. Equation: $y = 3x + 12$. **Wrong answers:** B has wrong sign on intercept ($-12$ instead of $+12$). C swaps slope and intercept. D has absurdly steep slope of 60.</li>
+<li>**Answer: D.** A fundamental property of the least-squares regression line: it always passes through the point $(\bar{x}, \bar{y})$, the mean of $x$ and mean of $y$. So it passes through $(50, 75)$. **Wrong answers:** A $(0,0)$ is the origin, which regression lines do not generally pass through. B $(0,75)$ and C $(50,0)$ are also not general properties of the regression line.</li>
+<div class="nav">
+<a href="lesson05.html">← Previous Lesson</a>
+<a href="index.html">📋 All Lessons</a>
+<a href="lesson07.html">Next Lesson →</a>
+</div>
+</body>
+</html>

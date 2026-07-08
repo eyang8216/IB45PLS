@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 16: Market Failure and Common Pool Resources | IB Economics SL</title>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root {
+    --bg: #fdfcf9; --text: #2c2416; --accent: #8b4513;
+    --light-accent: #f5f0e8; --border: #d4c5a9; --code-bg: #f9f6f0; --nav-bg: #3a3226;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Georgia, 'Times New Roman', serif; font-size: 17px; line-height: 1.75; color: var(--text); background: var(--bg); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+  nav.top-nav { display: flex; justify-content: space-between; align-items: center; background: var(--nav-bg); color: #e8dcc8; padding: 0.6rem 1.2rem; border-radius: 6px; margin-bottom: 1.8rem; font-size: 0.9rem; flex-wrap: wrap; gap: 0.4rem; }
+  nav.top-nav a { color: #f0c060; text-decoration: none; font-weight: bold; }
+  nav.top-nav a:hover { text-decoration: underline; }
+  nav.top-nav span { opacity: 0.7; }
+  h1 { font-size: 2rem; margin: 1.2rem 0 0.3rem; color: var(--accent); border-bottom: 3px double var(--border); padding-bottom: 0.5rem; }
+  h2 { font-size: 1.35rem; margin: 2rem 0 0.7rem; color: #5a3a1a; border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+  h3 { font-size: 1.1rem; margin: 1.3rem 0 0.4rem; color: #6b4423; }
+  p { margin: 0.7rem 0; }
+  ul, ol { margin: 0.5rem 0 0.5rem 1.8rem; }
+  li { margin: 0.25rem 0; }
+  strong { color: #5a2d0c; }
+  table { border-collapse: collapse; width: 100%; margin: 0.8rem 0; font-size: 0.95rem; }
+  th, td { border: 1px solid var(--border); padding: 0.5rem 0.7rem; text-align: left; }
+  th { background: var(--light-accent); font-weight: bold; color: #5a3a1a; }
+  tr:nth-child(even) { background: #fdfaf5; }
+  .highlight-box { background: #fffef8; border-left: 4px solid var(--accent); padding: 0.8rem 1.2rem; margin: 1rem 0; border-radius: 0 4px 4px 0; }
+  .diagram-box { background: var(--code-bg); border: 1px dashed var(--border); padding: 1rem 1.2rem; margin: 0.8rem 0; border-radius: 4px; font-family: 'Courier New', monospace; font-size: 0.88rem; line-height: 1.5; white-space: pre; color: #4a3620; }
+  .eval-box { background: #fdfaf3; border: 1px solid var(--border); padding: 1rem 1.3rem; margin: 1rem 0; border-radius: 6px; }
+  .eval-box h3 { margin-top: 0; color: var(--accent); }
+  hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+  @media print { body { font-size: 13px; line-height: 1.55; padding: 0.5rem; max-width: 100%; } nav.top-nav { display: none; } h1 { font-size: 1.5rem; } h2 { font-size: 1.15rem; } .diagram-box, .highlight-box, .eval-box { break-inside: avoid; } a { color: var(--text); text-decoration: none; } }
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a href="Lesson_15_Subsidies.html">← Previous Lesson</a>
+  <a href="#">📚 Index</a>
+  <a href="Lesson_17_Negative_Production_Externalities.html">Next Lesson →</a>
+</nav>
+
+<h1>Lesson 16: Market Failure and Common Pool Resources</h1>
+<h2>What You'll Learn</h2>
+<ul>
+  <li>What market failure is and its relationship to allocative efficiency</li>
+  <li>The characteristics of common pool resources (rivalrous but non-excludable)</li>
+  <li>The tragedy of the commons — why shared resources are overused</li>
+  <li>The sustainability problem and why future generations are affected</li>
+  <li>Government responses to common pool resource depletion</li>
+</ul>
+
+<h2>1. Market Failure and Allocative Efficiency — Review</h2>
+
+<h3>Allocative Efficiency</h3>
+<p>A market achieves <strong>allocative efficiency</strong> when resources are allocated such that <strong>marginal social benefit (MSB) equals marginal social cost (MSC)</strong>:</p>
+
+<div class="highlight-box">
+  <strong>MSB = MSC → socially optimal quantity (Q<sub>opt</sub>)</strong>
+</div>
+
+<h3>Market Failure</h3>
+<p><strong>Market failure</strong> occurs when the free market, left to itself, fails to achieve allocative efficiency. The market produces either:</p>
+<ul>
+  <li><strong>Too much</strong> (Q &gt; Q<sub>opt</sub>, where MSC &gt; MSB) — overproduction</li>
+  <li><strong>Too little</strong> (Q &lt; Q<sub>opt</sub>, where MSB &gt; MSC) — underproduction</li>
+</ul>
+
+<h2>2. Types of Goods — Classification</h2>
+
+<table>
+  <tr><th></th><th>Excludable</th><th>Non-Excludable</th></tr>
+  <tr><td><strong>Rivalrous</strong></td><td><strong>Private goods</strong> (pizza, car)</td><td><strong>Common pool resources</strong> (fish, forests, clean air)</td></tr>
+  <tr><td><strong>Non-Rivalrous</strong></td><td><strong>Club goods</strong> (Netflix, toll roads)</td><td><strong>Pure public goods</strong> (national defence, street lighting)</td></tr>
+</table>
+
+<ul>
+  <li><strong>Rivalrous</strong>: One person's consumption reduces availability for others.</li>
+  <li><strong>Excludable</strong>: It is possible to prevent non-payers from consuming the good.</li>
+</ul>
+
+<h2>3. Common Pool Resources — The Tragedy of the Commons</h2>
+
+<p><strong>Common pool resources (CPRs)</strong> are <strong>rivalrous</strong> but <strong>non-excludable</strong>.</p>
+
+<h3>The Tragedy of the Commons (Garrett Hardin, 1968)</h3>
+
+<p>The <strong>tragedy of the commons</strong> describes how individuals, acting rationally in their own self-interest, will <strong>overuse and deplete</strong> a shared resource — even when it is in no one's long-term interest.</p>
+
+<p><strong>The Logic:</strong></p>
+<ol>
+  <li>Each individual gets the <strong>full benefit</strong> of exploiting the resource (e.g., catching one more fish = profit for me).</li>
+  <li>The <strong>cost</strong> of depletion is shared among <strong>all users</strong> (e.g., one fewer fish in the sea hurts everyone a tiny bit).</li>
+  <li>Therefore: <strong>Private benefit > private cost</strong>, but <strong>social cost > private cost</strong>.</li>
+  <li>Result: Each user has an incentive to exploit as much as possible, leading to <strong>overuse and eventual depletion</strong>.</li>
+</ol>
+
+<p>This is a form of <strong>negative externality</strong> — each user imposes costs on others that they do not bear.</p>
+
+<h2>4. Examples of Common Pool Resource Problems</h2>
+
+<ul>
+  <li><strong>Overfishing</strong>: Oceans are non-excludable and rivalrous. Result: North Atlantic cod fishery collapse (1990s).</li>
+  <li><strong>Deforestation</strong>: Loggers gain full profit from cutting but share costs of lost biodiversity, carbon storage.</li>
+  <li><strong>Clean Air / Atmosphere</strong>: The atmosphere's capacity to absorb CO<sub>2</sub> is rivalrous and non-excludable. Result: climate change.</li>
+  <li><strong>Water Resources</strong>: Over-extraction for agriculture leads to depletion (e.g., Aral Sea shrinkage).</li>
+</ul>
+
+<h2>5. Why the Tragedy Occurs</h2>
+<ol>
+  <li><strong>Lack of property rights</strong>: No one owns the resource, so no one has an incentive to conserve it.</li>
+  <li><strong>No incentive for conservation</strong>: If I conserve today but you exploit tomorrow, my sacrifice was in vain.</li>
+  <li><strong>Short-term vs long-term</strong>: Individual users discount the future heavily.</li>
+  <li><strong>Open access</strong>: Anyone can enter and use the resource.</li>
+</ol>
+
+<h2>6. Sustainability</h2>
+<p><strong>Sustainability</strong> means meeting the needs of the present without compromising the ability of <strong>future generations</strong> to meet their own needs.</p>
+<ul>
+  <li><strong>Sustainable use</strong>: Harvesting at a rate ≤ the resource's natural regeneration rate.</li>
+  <li><strong>Unsustainable use</strong>: Harvesting faster than regeneration → depletion → extinction.</li>
+</ul>
+
+<h2>7. Government Responses</h2>
+
+<h3>1. Regulation (Command and Control)</h3>
+<ul><li>Set quotas/limits. Pros: direct, enforceable. Cons: costly monitoring, may be set wrong.</li></ul>
+
+<h3>2. Property Rights Assignment</h3>
+<ul><li>Give individuals/communities ownership. Owners conserve for long-term value. Example: Individual Transferable Quotas (ITQs).</li></ul>
+
+<h3>3. Tradable Permits (Cap and Trade)</h3>
+<ul><li>Set total cap, distribute/auction permits, allow trading. Pros: efficient, cap enforced. Cons: complex, allocation contentious.</li></ul>
+
+<h3>4. Collective Action / Community Management</h3>
+<ul><li>Elinor Ostrom's work: communities can manage CPRs. Requires clear boundaries, collective decision-making, monitoring, sanctions.</li></ul>
+
+<h3>5. Education and Awareness</h3>
+<ul><li>Inform users of long-term consequences. Pros: low cost. Cons: slow, may be insufficient alone.</li></ul>
+
+<h2>IB Exam Tip</h2>
+<div class="highlight-box">
+  When discussing common pool resources:<br>
+  • <strong>Define "rivalrous but non-excludable" clearly.</strong><br>
+  • <strong>Explain the tragedy logic explicitly: private benefit of exploitation vs shared cost.</strong><br>
+  • <strong>Use a real-world example</strong> — overfishing is the classic IB go-to.<br>
+  • <strong>Evaluate solutions</strong>: compare regulation vs property rights vs tradable permits.
+</div>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1 (Basic)</h3>
+<p>Define common pool resources and explain how they differ from pure public goods.</p>
+
+<h3>Problem 2 (Tragedy Logic)</h3>
+<p>Explain, using the concept of private vs social costs, why a fisherman has an incentive to catch as many fish as possible even when fish stocks are declining.</p>
+
+<h3>Problem 3 (Examples)</h3>
+<p>For each of the following, explain whether it is a common pool resource and why:<br>
+(a) A public park (b) Fish in the open ocean (c) A toll road (d) Clean air</p>
+
+<h3>Problem 4 (Sustainability)</h3>
+<p>A fishery can sustainably produce 100,000 tonnes of fish per year. Currently, 150,000 tonnes are caught annually.<br>
+(a) Explain why this is unsustainable.<br>
+(b) Suggest two policies the government could use to achieve sustainability.<br>
+(c) Discuss one advantage and one disadvantage of each policy.</p>
+
+<h3>Problem 5 (Solution Comparison)</h3>
+<p>Compare the use of fishing quotas with individual transferable quotas (ITQs) as policies to prevent overfishing.</p>
+
+<h3>Problem 6 (Challenging / IB-Style)</h3>
+<p>"The tragedy of the commons can only be solved by government regulation." Critically evaluate this statement, with reference to real-world examples and alternative approaches.</p>
+
+<hr>
+
+<h2>Answers</h2>
+
+<h3>Answer 1</h3>
+<p><strong>CPRs</strong> are rivalrous (consumption depletes) but non-excludable (hard to prevent access). <strong>Pure public goods</strong> are non-rivalrous AND non-excludable. Key difference: CPRs are rivalrous — overuse is possible.</p>
+
+<h3>Answer 2</h3>
+<p>Fisherman's private benefit = full market price of fish. Private cost = own fuel/labour costs. But social cost includes depletion of the stock shared by all. Private benefit > private cost, so rational to catch. But social cost > private cost → individually rational, collectively irrational = tragedy of the commons.</p>
+
+<h3>Answer 3</h3>
+<p>(a) <strong>Public park</strong>: Could be CPR when congested. (b) <strong>Fish in ocean</strong>: CPR — rivalrous and non-excludable. (c) <strong>Toll road</strong>: Club good — excludable via tolls. (d) <strong>Clean air</strong>: CPR — rivalrous absorptive capacity, non-excludable.</p>
+
+<h3>Answer 4</h3>
+<p>(a) Catch (150,000) > sustainable yield (100,000). Stock depleting → lower future catches, possible collapse.</p>
+<p>(b) <strong>Fishing quotas</strong> (TAC at 100,000): direct limit. Advantage: clear limit. Disadvantage: costly enforcement, "race to fish." <strong>ITQs</strong>: tradable shares. Advantage: efficient, incentive to conserve. Disadvantage: initial allocation may be unfair.</p>
+
+<h3>Answer 5</h3>
+<table>
+  <tr><th>Criterion</th><th>Fishing Quotas (TAC)</th><th>ITQs</th></tr>
+  <tr><td>Enforcement</td><td>Hard — "race to fish"</td><td>Easier — fixed allowance</td></tr>
+  <tr><td>Efficiency</td><td>Inefficient — too many boats</td><td>Efficient — tradable rights</td></tr>
+  <tr><td>Conservation incentive</td><td>Weak</td><td>Strong — quota is an asset</td></tr>
+  <tr><td>Equity</td><td>Can be distributed fairly</td><td>May concentrate ownership</td></tr>
+  <tr><td>Examples</td><td>EU CFP (mixed results)</td><td>NZ, Iceland (successful)</td></tr>
+</table>
+
+<h3>Answer 6</h3>
+<p><strong>Model answer outline:</strong> Arguments for regulation: CPRs involve externalities; without coercion, free-rider problem prevails; government has authority. Arguments against: Ostrom's community management works; property rights create conservation incentives; tradable permits use markets; regulation can fail (poor enforcement, political capture).</p>
+
+<hr>
+
+<div class="eval-box">
+<h2>Evaluate</h2>
+<h3>"The tragedy of the commons can only be solved by government regulation." Evaluate.</h3>
+
+<h3>Model Answer (CLASPP Structure)</h3>
+
+<p><strong>Conclusion</strong>: Government regulation is an important tool but not the <em>only</em> solution. Elinor Ostrom's Nobel Prize-winning work demonstrates that community-based management can succeed, and market-based approaches like tradable permits offer efficient alternatives. The best approach often combines multiple strategies.</p>
+
+<p><strong>Logic (Arguments For Government Regulation)</strong>: Common pool resources suffer from a fundamental <strong>free-rider problem</strong>. No individual has an incentive to unilaterally reduce their exploitation because the benefit of conservation is shared while the cost is private. Government regulation — setting and enforcing quotas, limits, or bans — can break this dynamic by making overuse illegal. Regulation provides clear, legally binding rules that apply to all users equally. Without it, the tragedy unfolds predictably: resources are depleted to collapse, as seen in the North Atlantic cod fishery before government intervention.</p>
+
+<p><strong>Logic (Arguments Against — Alternatives Exist)</strong>: However, Elinor Ostrom's extensive research demonstrated that communities can <strong>self-manage</strong> CPRs successfully without top-down government control. Her case studies included Swiss alpine grazing commons, irrigation systems in Nepal and Spain, and fisheries in Turkey — all managed sustainably for centuries. The conditions for success include clearly defined boundaries, collective decision-making, effective monitoring, graduated sanctions, and accessible conflict-resolution mechanisms. Furthermore, <strong>property rights</strong> create private incentives for conservation, and <strong>tradable permits</strong> combine regulatory limits with market efficiency (e.g., Iceland's ITQ system).</p>
+
+<p><strong>Assumptions</strong>: The statement assumes governments are competent, well-resourced, and free from corruption — which is not always the case. Government regulation can fail due to inadequate enforcement, regulatory capture (industry influences rules in its favour), or setting quotas at politically convenient but ecologically unsustainable levels.</p>
+
+<p><strong>Stakeholders</strong>: Local communities who depend on the resource have the strongest interest in sustainability but often the least power. Large commercial operators may resist limits. Future generations, who will inherit the resource — or its absence — have no voice in current decisions.</p>
+
+<p><strong>Prescribed Solutions</strong>: The most effective approaches often involve <strong>polycentric governance</strong> — multiple overlapping layers combining: (1) a government-set overall framework (total cap), (2) community-based management at the local level, and (3) market mechanisms (tradable rights) for efficiency.</p>
+
+<p><strong>Precedent/Evidence</strong>: New Zealand's fishery ITQ system has been widely praised for rebuilding stocks. Ostrom's case studies prove community management works under the right conditions. The EU's heavily regulated Common Fisheries Policy has a mixed record. The Montreal Protocol succeeded through international regulation, tradable permits, and industry cooperation.</p>
+
+<p>Government regulation is a powerful tool, but it is neither the only solution nor always sufficient on its own.</p>
+</div>
+<hr>
+
+<nav class="top-nav">
+  <a href="Lesson_15_Subsidies.html">← Previous Lesson</a>
+  <a href="#">📚 Index</a>
+  <a href="Lesson_17_Negative_Production_Externalities.html">Next Lesson →</a>
+</nav>
+
+</body>
+</html>

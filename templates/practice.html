@@ -1,0 +1,105 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>{{ prompt.title }} — {{ subject_name }}</title>
+<meta name="csrf-token" content="{{ csrf_token }}">
+<style>:root{--bg:#fafaf8;--text:#1a1a1a;--accent:#1a1a2e;--border:#ddd;--success:#27ae60}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;font-size:17px;line-height:1.7;color:var(--text);background:var(--bg);max-width:900px;margin:0 auto;padding:2rem 1.5rem}
+.nav-bar{display:flex;align-items:center;gap:1rem;padding:.6rem 1.2rem;margin:-2rem -1.5rem 1.5rem;background:linear-gradient(135deg,#1a1a2e,#16213e);color:white;font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:.9rem}
+.nav-bar a{color:white;text-decoration:none;opacity:.85}.nav-bar a:hover{opacity:1}
+h1{font-size:1.6rem;margin-bottom:.3rem;color:#1a1a2e}
+.paper-badge{display:inline-block;background:#1a1a2e;color:white;padding:.2rem .8rem;border-radius:20px;font-size:.8rem;margin-bottom:1rem}
+.passage-box{background:white;border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem;white-space:pre-wrap;font-size:.95rem;line-height:1.8;max-height:400px;overflow-y:auto}
+.prompt-box{background:#f0f4ff;border-left:4px solid #1a1a2e;padding:1rem 1.5rem;margin-bottom:1.5rem;border-radius:0 8px 8px 0}
+h2{font-size:1.2rem;margin:1.5rem 0 .7rem;color:#1a1a2e}
+textarea{width:100%;min-height:300px;border:2px solid var(--border);border-radius:12px;padding:1.2rem;font-family:Georgia,serif;font-size:1rem;line-height:1.7;resize:vertical;outline:none;margin-bottom:1rem}
+textarea:focus{border-color:#1a1a2e}
+.btn{display:inline-block;background:linear-gradient(135deg,#1a1a2e,#16213e);color:white;padding:.8rem 2rem;border:none;border-radius:10px;font-size:1.05rem;cursor:pointer;font-weight:600}.btn:hover{opacity:.9}.btn:disabled{opacity:.5}
+.results{display:none;margin-top:2rem}
+.result-card{background:white;border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:1rem}
+.criterion{display:flex;align-items:center;gap:1rem;margin-bottom:.5rem}
+.criterion .name{font-weight:600;min-width:180px;font-size:.95rem}
+.criterion .score{font-weight:bold;font-size:1.1rem}
+.criterion .stars{color:#f39c12;letter-spacing:2px}
+.criterion .comment{color:#555;font-size:.9rem;margin-top:.3rem}
+.total-score{text-align:center;font-size:1.5rem;font-weight:bold;color:var(--success);margin:1rem 0}
+.loading{text-align:center;padding:2rem;display:none}
+.loading .spinner{width:40px;height:40px;border:4px solid #ddd;border-top-color:#1a1a2e;border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 1rem}
+@keyframes spin{to{transform:rotate(360deg)}}
+</style></head><body>
+<div class="nav-bar">
+<a href="/">📚 Lessons</a><span style="opacity:.4">›</span>
+<a href="/subjects/{{ subject }}/">{{ subject_name }}</a><span style="opacity:.4">›</span>
+<span style="opacity:.6">{{ paper }} Practice</span>
+</div>
+
+<h1>{{ prompt.title }}</h1>
+<span class="paper-badge">{{ paper }}</span>
+
+{% if prompt.passage %}<div class="passage-box">{{ prompt.passage }}</div>{% elif prompt.works %}<div class="passage-box"><strong>Prescribed Works:</strong> {{ prompt.works | join(' · ') }}</div>{% endif %}
+
+<div class="prompt-box"><strong>📝 Prompt:</strong><br>{{ prompt.prompt }}</div>
+
+<h2>Your Response</h2>
+<textarea id="essay" placeholder="Write your analysis here..."></textarea>
+<button class="btn" id="submitBtn" onclick="submitEssay()">Submit for Grading</button>
+
+<div class="loading" id="loading"><div class="spinner"></div><p>AI is grading your essay...</p></div>
+
+<div class="results" id="results">
+<h2>📊 Grading Results</h2>
+<div id="resultContent"></div>
+</div>
+
+<script>
+var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+function submitEssay(){
+  var essay = document.getElementById('essay').value.trim();
+  if(essay.length < 50){ alert('Please write at least 50 characters.'); return; }
+  document.getElementById('submitBtn').disabled = true;
+  document.getElementById('loading').style.display = 'block';
+  document.getElementById('results').style.display = 'none';
+  
+  fetch('/grade', {
+    method:'POST',
+    headers:{'Content-Type':'application/json','X-CSRF-Token':csrfToken},
+    body: JSON.stringify({
+      essay: essay,
+      passage: {{ (prompt.passage or "") | tojson }},
+      prompt: {{ prompt.prompt | tojson }},
+      subject: '{{ subject }}',
+      mode: '{{ mode }}',
+      prompt_id: '{{ prompt.id }}',
+      prompt_title: '{{ prompt.title }}'
+    })
+  }).then(r=>r.json()).then(data=>{
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('submitBtn').disabled = false;
+    if(data.error){ document.getElementById('resultContent').innerHTML='<p style="color:red">❌ '+data.error+'</p>'; }
+    else{
+      var html = '<div class="total-score">Total: '+data.total+'/20</div>';
+      var crits = [
+        {key:'criterion_a',label:'A: Understanding & Interpretation'},
+        {key:'criterion_b',label:'B: Analysis & Evaluation'},
+        {key:'criterion_c',label:'C: Focus & Organization'},
+        {key:'criterion_d',label:'D: Language'}
+      ];
+      crits.forEach(function(c){
+        var d = data[c.key] || {};
+        var stars = '';
+        for(var i=0;i<5;i++) stars += i<d.score ? '★' : '☆';
+        html += '<div class="result-card"><div class="criterion"><span class="name">'+c.label+'</span><span class="stars">'+stars+'</span><span class="score">'+d.score+'/5</span></div><p class="comment">'+escapeHtml(d.comment||'')+'</p></div>';
+      });
+      html += '<div class="result-card"><strong>💬 Overall Feedback:</strong><p style="margin-top:.5rem;color:#555">'+escapeHtml(data.overall_feedback||'')+'</p></div>';
+      document.getElementById('resultContent').innerHTML = html;
+    }
+    document.getElementById('results').style.display = 'block';
+    document.getElementById('results').scrollIntoView({behavior:'smooth'});
+  }).catch(function(){
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('submitBtn').disabled = false;
+    document.getElementById('resultContent').innerHTML='<p style="color:red">❌ Connection error.</p>';
+    document.getElementById('results').style.display = 'block';
+  });
+}
+function escapeHtml(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML;}
+</script></body></html>

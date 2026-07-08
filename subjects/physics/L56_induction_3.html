@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 56: Lesson 56: Induction 3 — AC Generators, Transformers, and Power Transmission — IB Physics HL</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']]
+  },
+  options: {
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap');
+  
+  :root {
+    --bg: #fdfcf9;
+    --text: #1a1a1a;
+    --accent: #2c5f2d;
+    --border: #d0cec7;
+    --code-bg: #f4f3ef;
+    --callout-bg: #f0f7f0;
+    --callout-border: #2c5f2d;
+    --warning-bg: #fff8e6;
+    --warning-border: #c4941a;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  body {
+    font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid var(--accent);
+    color: var(--accent);
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 2.5rem 0 0.75rem;
+    color: #1a1a1a;
+  }
+  
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.5rem;
+  }
+  
+  p { margin: 0 0 1rem; }
+  
+  ul, ol { margin: 0 0 1rem 1.5rem; }
+  li { margin-bottom: 0.35rem; }
+  
+  code {
+    background: var(--code-bg);
+    padding: 0.15em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+    font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+  }
+  
+  pre {
+    background: var(--code-bg);
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 0 0 1rem;
+    font-size: 0.85em;
+    line-height: 1.5;
+  }
+  
+  pre code {
+    background: none;
+    padding: 0;
+    font-size: inherit;
+  }
+  
+  blockquote {
+    border-left: 4px solid var(--callout-border);
+    background: var(--callout-bg);
+    margin: 0 0 1rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+  }
+  
+  blockquote.warning {
+    border-left-color: var(--warning-border);
+    background: var(--warning-bg);
+  }
+  
+  strong { font-weight: 700; }
+  
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.5rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  
+  .nav a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+  
+  .nav a:hover { background: var(--callout-bg); }
+  
+  .worked-example, .answer {
+    background: var(--code-bg);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin: 0.75rem 0 1.25rem;
+  }
+  
+  .worked-example strong:first-child, .answer strong:first-child {
+    color: var(--accent);
+  }
+  
+  @media print {
+    body { font-size: 12pt; max-width: 100%; padding: 0; }
+    .nav { display: none; }
+    h1 { font-size: 18pt; }
+    h2 { font-size: 14pt; }
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 0 1rem;
+  }
+  
+  th, td {
+    border: 1px solid var(--border);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  
+  th {
+    background: var(--code-bg);
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L55_induction_2.html">← Lesson 55</a>
+  <a href="L57_atom_1.html">Lesson 57 →</a>
+</nav>
+
+<h1>Lesson 56: Induction 3 — AC Generators, Transformers, and Power Transmission</h1>
+
+<h2>What You'll Learn</h2>
+
+<p>In Lessons 54 and 55, you learned that changing magnetic flux through a coil induces an emf, and that induced emf opposes the change that caused it. You learned about moving wires in magnetic fields, about Faraday's law, and about Lenz's law. But everything we studied used <em>steady</em> (DC) currents or <em>one-time</em> changes.</p>
+
+<p>In this lesson, you'll learn how engineers exploit induction to generate the alternating current that powers every home, school, and factory on Earth. You'll learn how a spinning coil in a magnetic field produces a voltage that smoothly rises and falls, why the voltage in your wall outlet is described by something called "root mean square," how transformers can step voltage up or down with almost no energy loss, and why we transmit power at extremely high voltages across long distances.</p>
+
+<p>These aren't just abstract concepts — every time you charge your phone, turn on a light, or watch TV, you're using technology built on the principles in this lesson.</p>
+
+<hr>
+
+<h2>1. AC Generators (Alternators)</h2>
+
+<h3>Why This Matters</h3>
+
+<p>Direct current has a problem: it's hard to change its voltage. A battery gives you a fixed voltage, and if you need a different voltage, you need a different battery or complex electronics. But most devices need different voltages — your phone charger needs 5 V, your laptop needs 19 V, your refrigerator needs 120 V or 240 V. Power plants generate at thousands of volts, and transmission lines carry hundreds of thousands of volts.</p>
+
+<p>Alternating current (AC) solves this problem because AC voltage can be easily transformed up or down using a device with no moving parts: the transformer. But to use transformers, you first need AC. That's where the AC generator comes in.</p>
+
+<h3>The Key Ideas</h3>
+
+<p><strong>What is an AC generator?</strong> An AC generator (also called an alternator) is a device that converts mechanical energy — usually from a spinning turbine turned by steam, falling water, or wind — into electrical energy in the form of alternating current. It works on exactly the same principle you learned in Lesson 54: a changing magnetic flux through a coil induces an emf.</p>
+
+<p><strong>How it works: the rotating coil.</strong> Imagine a rectangular coil of wire with N turns, each of area A, rotating at a steady angular speed ω (omega) inside a uniform magnetic field B. The coil is mounted on an axle, and as it spins, the angle between the magnetic field and the normal to the coil's surface changes continuously.</p>
+
+<p>At any instant, the magnetic flux through one turn of the coil is:</p>
+
+<p><strong>Φ = B A cos(θ)</strong></p>
+
+<p>where θ is the angle between the magnetic field direction and the normal (perpendicular) to the coil's surface. If the coil rotates at constant angular speed ω, then θ = ωt (starting from θ = 0 at t = 0). So:</p>
+
+<p><strong>Φ(t) = B A cos(ωt)</strong></p>
+
+<p><strong>From flux to emf.</strong> Faraday's law tells us the induced emf is the negative rate of change of flux times the number of turns:</p>
+
+<p><strong>ε(t) = −N dΦ/dt</strong></p>
+
+<p>Taking the derivative of B A cos(ωt) with respect to time gives:</p>
+
+<p><strong>ε(t) = −N B A (−ω sin(ωt)) = N B A ω sin(ωt)</strong></p>
+
+<p>This is the fundamental equation of an AC generator. The induced emf varies sinusoidally with time. Let's define the <strong>peak emf</strong> ε₀:</p>
+
+<p><strong>ε₀ = N B A ω</strong></p>
+
+<p>Then: <strong>ε(t) = ε₀ sin(ωt)</strong></p>
+
+<p><strong>What this means physically.</strong> When the coil's surface is perpendicular to the magnetic field (θ = 0, or θ = 180°), the flux is at its maximum but not changing — so the induced emf is zero. When the coil's surface is parallel to the field (θ = 90° or 270°), the flux is zero but changing at its fastest rate — so the induced emf is at its peak (±ε₀). This is a crucial point: <strong>the emf depends on the RATE OF CHANGE of flux, not the amount of flux.</strong></p>
+
+<p><strong>Frequency.</strong> If the coil makes f complete revolutions per second, then ω = 2πf. In North America, the grid frequency is 60 Hz; in most of the rest of the world, it's 50 Hz. So the voltage at your wall outlet goes through a complete cycle 50 or 60 times each second.</p>
+
+<h3>Common Misconceptions</h3>
+
+<p><strong>"The emf is maximum when flux is maximum."</strong> No. The emf is maximum when the RATE OF CHANGE of flux is maximum. Flux is maximum when the coil is perpendicular to the field, but at that instant, the flux is momentarily not changing (the coil is moving parallel to the field lines), so the emf is zero. Flux is zero when the coil is parallel to the field, but it's changing most rapidly at that instant, so emf is maximum.</p>
+
+<p><strong>"The coil must be connected to a battery to spin."</strong> No. In a generator, mechanical energy spins the coil. The emf is induced by the changing flux. In a motor, electrical energy spins the coil. A generator and a motor are essentially the same device run in opposite directions. Many power plants use the same machine as both a generator (when producing electricity) and a motor (when starting up).</p>
+
+<h3>Important Variations</h3>
+
+<p><strong>Slip rings vs. split rings.</strong> An AC generator uses <strong>slip rings</strong> — two continuous metal rings, each connected to one end of the coil, with brushes sliding against them. Because each ring stays connected to the same end of the coil throughout the rotation, the output voltage alternates polarity. If you used a split-ring commutator instead (as in a DC motor), the output would be rectified — the negative half-cycles would be flipped to positive, giving a pulsating DC output. This is how a DC generator works.</p>
+
+<p><strong>Practical generators.</strong> Real power plant generators don't spin a coil inside a permanent magnet. Instead, they spin an electromagnet (the rotor) inside stationary coils (the stator). The rotor's magnetic field is produced by a DC current fed through slip rings. This design avoids passing the large output current through sliding contacts. The stator coils, which are stationary, can be directly connected to the external circuit.</p>
+
+<hr>
+
+<h2>2. Root Mean Square (RMS) Values</h2>
+
+<h3>Why This Matters</h3>
+
+<p>If an AC voltage is constantly changing, what number do you use to describe it? You can't say "120 volts" if the voltage goes from +170 V to −170 V. Which value is the "real" one? The answer uses a clever averaging technique that tells you the DC-equivalent voltage — the voltage that would deliver the same power to a resistor.</p>
+
+<h3>The Key Ideas</h3>
+
+<p><strong>The problem with simple averaging.</strong> The average of sin(ωt) over a complete cycle is zero — the positive half cancels the negative half. So the "average voltage" of AC is zero, which is clearly not useful for describing what the voltage "feels like" to a light bulb.</p>
+
+<p><strong>The solution: root mean square.</strong> Instead of averaging the voltage directly, we:</p>
+<ol>
+<li><strong>Square</strong> the voltage at every instant (making everything positive)</li>
+<li>Take the <strong>mean</strong> (average) of those squared values over a cycle</li>
+<li>Take the square <strong>root</strong> of that mean</li>
+</ol>
+
+<p>For a sinusoidal voltage v(t) = V₀ sin(ωt):</p>
+
+<ul>
+<li>v²(t) = V₀² sin²(ωt)</li>
+<li>The average of sin²(ωt) over a cycle is 1/2</li>
+<li>So the mean of v² is V₀²/2</li>
+<li>Taking the square root: <strong>V_rms = V₀ / √2</strong></li>
+</ul>
+
+<p>Similarly for current: <strong>I_rms = I₀ / √2</strong></p>
+
+<p><strong>Why RMS matters: power.</strong> The average power dissipated in a resistor R by an AC current is:</p>
+
+<p><strong>P_avg = I_rms² R = V_rms² / R = I_rms V_rms</strong></p>
+
+<p>This is exactly the same formula as for DC, using RMS values. An AC voltage with V_rms = 120 V delivers the same average power to a resistor as a 120 V DC source.</p>
+
+<p><strong>Numerical example.</strong> The wall outlet in North America is nominally 120 V RMS. The peak voltage is 120 × √2 ≈ 170 V. In countries with 230 V RMS, the peak is 230 × √2 ≈ 325 V. The peak-to-peak voltage is twice the peak: about 340 V in North America, 650 V elsewhere.</p>
+
+<h3>Common Misconceptions</h3>
+
+<p><strong>"RMS means average."</strong> No. The average of sin(ωt) is zero. The average of |sin(ωt)| (the absolute value) is 2V₀/π ≈ 0.637 V₀. The RMS value is V₀/√2 ≈ 0.707 V₀. These are three different numbers.</p>
+
+<p><strong>"V_rms is the voltage you measure with a voltmeter."</strong> For AC, yes — most voltmeters are designed to display RMS values. But they assume the waveform is a pure sine wave. For non-sinusoidal waveforms (like the output of a dimmer switch), a "true RMS" meter is needed. Cheap meters that assume a sine wave will give wrong readings for non-sinusoidal signals.</p>
+
+<hr>
+
+<h2>3. Transformers</h2>
+
+<h3>Why This Matters</h3>
+
+<p>Transformers are the reason we use AC for power distribution. They let us change voltage levels with remarkable efficiency (typically 95-99%) using no moving parts. Without transformers, the electrical grid as we know it would not exist. A transformer can take 11,000 V from a generator, step it up to 400,000 V for long-distance transmission, then step it down to 240 V for your home.</p>
+
+<h3>The Key Ideas</h3>
+
+<p><strong>What is a transformer?</strong> A transformer consists of two coils of wire (the primary and secondary) wound around a common iron core. When an alternating current flows through the primary coil, it creates a changing magnetic flux in the iron core. This changing flux passes through the secondary coil and, by Faraday's law, induces an emf across it.</p>
+
+<p><strong>Why the iron core?</strong> The iron core serves to "guide" the magnetic flux. Without it, the flux produced by the primary coil would spread out through the air, and only a tiny fraction would reach the secondary coil. Iron has a magnetic permeability thousands of times greater than air, so it concentrates the flux and channels almost all of it through both coils. This is essential for high efficiency.</p>
+
+<p><strong>The ideal transformer equations.</strong> In an ideal transformer (no energy losses):</p>
+<ul>
+<li>The flux through each turn of both coils is the same (because the same core links them).</li>
+<li>The rate of change of flux is the same for both.</li>
+<li>By Faraday's law, the emf per turn is the same for both coils.</li>
+</ul>
+
+<p>So for the primary coil (N_p turns): ε_p = −N_p dΦ/dt</p>
+<p>For the secondary coil (N_s turns): ε_s = −N_s dΦ/dt</p>
+
+<p>Dividing: <strong>ε_s / ε_p = N_s / N_p</strong></p>
+
+<p>In terms of voltages: <strong>V_s / V_p = N_s / N_p</strong></p>
+
+<p>This is the <strong>turns ratio equation</strong>. The voltage ratio equals the turns ratio.</p>
+
+<p><strong>Step-up transformer:</strong> N_s > N_p, so V_s > V_p</p>
+<p><strong>Step-down transformer:</strong> N_s < N_p, so V_s < V_p</p>
+
+<p><strong>Current in an ideal transformer.</strong> If the transformer is 100% efficient (no energy lost), then the power into the primary equals the power out of the secondary:</p>
+
+<p><strong>P_p = P_s</strong></p>
+<p><strong>V_p I_p = V_s I_s</strong></p>
+
+<p>Rearranging: <strong>I_s / I_p = V_p / V_s = N_p / N_s</strong></p>
+
+<p>So if a transformer steps UP the voltage by a factor of 10, it steps DOWN the current by a factor of 10. The product V × I stays constant (for an ideal transformer).</p>
+
+<p><strong>A crucial point about current.</strong> The secondary current I_s is determined by the LOAD connected to the secondary. If nothing is connected (open circuit), I_s = 0, and I_p is tiny (just enough to magnetize the core). When you connect a load, I_s flows, and this creates its own flux that OPPOSES the primary flux (by Lenz's law). The primary then draws more current to maintain the flux. So the primary current is determined by the secondary current, not the other way around.</p>
+
+<h3>Common Misconceptions</h3>
+
+<p><strong>"A step-up transformer creates energy."</strong> No. When voltage is stepped up, current is stepped down by the same factor. The power (V × I) stays the same (ignoring losses). Energy is conserved.</p>
+
+<p><strong>"Transformers work with DC."</strong> No. A transformer requires a CHANGING magnetic flux. Direct current produces a steady magnetic field, which does not induce any emf in the secondary after the initial turn-on transient. If you connect DC to a transformer primary, it acts like a short circuit (just the resistance of the copper wire) and will likely burn out.</p>
+
+<p><strong>"The turns ratio determines the current ratio regardless of load."</strong> No. The equation I_s/I_p = N_p/N_s is only true for an ideal transformer under load. If the secondary is open-circuited, I_s = 0, and I_p is very small — the turns ratio equation for current doesn't hold.</p>
+
+<h3>Real Transformer Losses</h3>
+
+<p>Real transformers are not 100% efficient. The main losses are:</p>
+
+<ol>
+<li><strong>Resistive (copper) losses:</strong> The coils have resistance, so I²R power is dissipated as heat in the windings.</li>
+</ol>
+
+<ol>
+<li><strong>Eddy current losses:</strong> The changing magnetic flux also induces currents in the iron core itself. These circulating currents (eddy currents) waste energy as heat. They're reduced by making the core from thin, laminated sheets insulated from each other, which restricts the paths for eddy currents.</li>
+</ol>
+
+<ol>
+<li><strong>Hysteresis losses:</strong> The iron core's magnetization must be reversed 100 or 120 times per second (twice per cycle). Each reversal requires energy, which appears as heat. Using "soft" magnetic materials (easy to magnetize and demagnetize) minimizes this.</li>
+</ol>
+
+<ol>
+<li><strong>Flux leakage:</strong> Not all the flux from the primary reaches the secondary. Some "leaks" out into the surrounding air.</li>
+</ol>
+
+<hr>
+
+<h2>4. Power Transmission</h2>
+
+<h3>Why This Matters</h3>
+
+<p>Power plants are often hundreds of kilometers from the cities and factories they serve. Transmitting electrical power over long distances involves a fundamental trade-off, and understanding it explains why you see high-voltage transmission lines crisscrossing every country.</p>
+
+<h3>The Key Ideas</h3>
+
+<p><strong>The fundamental problem: resistive losses.</strong> Transmission lines have resistance R. When current I flows through them, power is lost as heat:</p>
+
+<p><strong>P_lost = I² R</strong></p>
+
+<p>This power is wasted — it heats the air, not your home. To minimize losses, we want to minimize either I or R.</p>
+
+<p><strong>Why we can't just reduce R.</strong> Making the resistance low enough would require impractically thick (and heavy, and expensive) copper or aluminum cables. The resistance of a wire is R = ρL/A. For a 100 km line, even a very thick cable has significant resistance.</p>
+
+<p><strong>The solution: high voltage.</strong> Instead of reducing R, we reduce I. Since the power being transmitted is P = V I, we can transmit the same power with lower current if we use higher voltage:</p>
+
+<p><strong>P = V I  →  I = P / V</strong></p>
+
+<p>If we double the voltage, we halve the current for the same power, and the losses (∝ I²) drop to one-quarter.</p>
+
+<p>This is why power is transmitted at extremely high voltages: 110 kV, 220 kV, 400 kV, even 765 kV in some systems. At the power plant, a step-up transformer raises the generator voltage (typically 11-25 kV) to transmission voltage. Near the point of use, substations with step-down transformers reduce the voltage in stages: transmission voltage → subtransmission (33-66 kV) → distribution (11 kV) → household (120/240 V or 230/400 V).</p>
+
+<p><strong>Numerical example.</strong> Suppose a power plant generates 100 MW at 25 kV. The current would be I = 100×10⁶ / 25×10³ = 4000 A. If the transmission line has a resistance of 5 Ω, the losses would be I²R = (4000)² × 5 = 80 MW — that's 80% of the power generated, lost as heat!</p>
+
+<p>If the voltage is stepped up to 400 kV for transmission, the current drops to I = 100×10⁶ / 400×10³ = 250 A. Now the losses are (250)² × 5 = 0.3125 MW, or 0.31% of the generated power. This is why we use high-voltage transmission.</p>
+
+<p><strong>DC vs. AC transmission.</strong> For very long distances (over about 600 km for overhead lines, or 50 km for underwater/underground cables), high-voltage DC (HVDC) transmission becomes more economical than AC. DC has no capacitive or inductive losses (which become significant for long AC lines), and it requires fewer conductors. Modern power electronics make AC-DC-AC conversion practical at both ends.</p>
+
+<h3>Common Misconceptions</h3>
+
+<p><strong>"High voltage is dangerous, so why use it?"</strong> High voltage is dangerous for people, which is why transmission lines are placed on tall towers far from the ground and insulated from their supports. The danger comes from current passing through your body, and the high voltage is safely contained within insulated cables.</p>
+
+<p><strong>"Transformers waste the power they save."</strong> A well-designed transformer is 95-99% efficient. The small loss in the transformer is vastly outweighed by the reduction in transmission losses achieved by raising the voltage.</p>
+
+<hr>
+
+<h2>Worked Examples</h2>
+
+<h3>Example 1: AC Generator Output</h3>
+
+<p>A simple AC generator has a coil of 200 turns, each with an area of 0.050 m², rotating at 3000 revolutions per minute in a magnetic field of 0.20 T. Calculate the peak emf and the RMS emf.</p>
+
+<p><strong>Approach:</strong> Convert rpm to angular frequency. Use ε₀ = N B A ω. Then V_rms = ε₀/√2.</p>
+
+<p><strong>Step 1:</strong> Angular frequency.</p>
+<p>f = 3000 / 60 = 50 Hz</p>
+<p>ω = 2π × 50 = 314.2 rad/s</p>
+
+<p><strong>Step 2:</strong> Peak emf.</p>
+<p>ε₀ = N B A ω = 200 × 0.20 × 0.050 × 314.2 = 628.3 V</p>
+
+<p><strong>Step 3:</strong> RMS emf.</p>
+<p>ε_rms = 628.3 / √2 = 628.3 / 1.414 = 444.3 V</p>
+
+<p><strong>Why this makes sense:</strong> A generator with a large number of turns, a decent field, and a fast rotation produces hundreds of volts, which is a typical order of magnitude for power station generators before step-up.</p>
+
+<hr>
+
+<h3>Example 2: Transformer Design</h3>
+
+<p>An ideal transformer is needed to operate a 12.0 V, 60.0 W lamp from a 240 V mains supply. The primary coil has 2000 turns. Calculate: (a) the number of turns needed on the secondary, (b) the current in the primary coil.</p>
+
+<p><strong>Approach:</strong> Use the turns ratio equation to find N_s. For current, find I_s from the lamp power, then use the ideal transformer power equation.</p>
+
+<p><strong>Step 1:</strong> Turns ratio.</p>
+<p>N_s / N_p = V_s / V_p = 12.0 / 240 = 1/20</p>
+<p>N_s = 2000 × (1/20) = 100 turns</p>
+
+<p><strong>Step 2:</strong> Secondary current.</p>
+<p>P = V_s × I_s → I_s = 60.0 / 12.0 = 5.00 A</p>
+
+<p><strong>Step 3:</strong> Primary current.</p>
+<p>V_p I_p = V_s I_s → I_p = (V_s I_s) / V_p = 60.0 / 240 = 0.250 A</p>
+<p>Alternatively: I_p = I_s × (N_s/N_p) = 5.00 × (1/20) = 0.250 A</p>
+
+<p><strong>Why this makes sense:</strong> The transformer steps down voltage 20:1, so it steps up current 1:20. Power is conserved: 240 V × 0.25 A = 60 W = 12 V × 5 A.</p>
+
+<hr>
+
+<h3>Example 3: RMS Current and Power</h3>
+
+<p>An AC voltage with RMS value 230 V is applied to a resistor of 50.0 Ω. Calculate: (a) the RMS current, (b) the peak current, (c) the average power dissipated.</p>
+
+<p><strong>Approach:</strong> Ohm's law works with RMS values. Then convert to peak. Power uses RMS values.</p>
+
+<p><strong>Step 1:</strong> RMS current.</p>
+<p>I_rms = V_rms / R = 230 / 50.0 = 4.60 A</p>
+
+<p><strong>Step 2:</strong> Peak current.</p>
+<p>I₀ = I_rms × √2 = 4.60 × 1.414 = 6.51 A</p>
+
+<p><strong>Step 3:</strong> Average power.</p>
+<p>P_avg = I_rms² R = (4.60)² × 50.0 = 1058 W ≈ 1.06 kW</p>
+<p>Or: P_avg = V_rms × I_rms = 230 × 4.60 = 1058 W</p>
+
+<p><strong>Why this makes sense:</strong> The peak current is about 1.4 times the RMS, which is the familiar √2 relationship. The power is what you'd expect for a 1 kW heating element.</p>
+
+<hr>
+
+<h3>Example 4: Generator at Different Orientations</h3>
+
+<p>The generator from Example 1 has a peak emf of 628 V. Calculate the instantaneous emf at times corresponding to coil angles of: (a) 0°, (b) 45°, (c) 90°, (d) 180°.</p>
+
+<p><strong>Approach:</strong> Use ε(t) = ε₀ sin(θ), where θ is the angle from the perpendicular position.</p>
+
+<p><strong>Step 1:</strong> At 0°: ε = 628 × sin(0°) = 0 V. (Coil perpendicular to field; flux maximum but not changing.)</p>
+
+<p><strong>Step 2:</strong> At 45°: ε = 628 × sin(45°) = 628 × 0.707 = 444 V.</p>
+
+<p><strong>Step 3:</strong> At 90°: ε = 628 × sin(90°) = 628 V. (Coil parallel to field; flux zero but changing fastest.)</p>
+
+<p><strong>Step 4:</strong> At 180°: ε = 628 × sin(180°) = 0 V. (Coil perpendicular again, opposite orientation.)</p>
+
+<p><strong>Why this makes sense:</strong> The emf is zero when the coil is perpendicular to the field at both 0° and 180°, and peaks at 90°. This illustrates that emf depends on the RATE OF CHANGE of flux.</p>
+
+<hr>
+
+<h3>Example 5: Transmission Line Losses</h3>
+
+<p>A power station generates 50.0 MW at 22.0 kV. The transmission line has a total resistance of 8.00 Ω. Compare the power losses when transmitting at: (a) the generator voltage of 22.0 kV, (b) 220 kV after stepping up the voltage.</p>
+
+<p><strong>Approach:</strong> Calculate current for each case. Then use P_lost = I²R.</p>
+
+<p><strong>Step 1:</strong> Current at 22.0 kV.</p>
+<p>I = P / V = 50.0 × 10⁶ / 22.0 × 10³ = 2273 A</p>
+<p>P_lost = I²R = (2273)² × 8.00 = 41.3 × 10⁶ W = 41.3 MW</p>
+
+<p>This is 82.7% of the generated power — completely unacceptable.</p>
+
+<p><strong>Step 2:</strong> Current at 220 kV.</p>
+<p>I = P / V = 50.0 × 10⁶ / 220 × 10³ = 227 A</p>
+<p>P_lost = I²R = (227)² × 8.00 = 0.413 × 10⁶ W = 0.413 MW</p>
+
+<p>This is 0.83% of the generated power — excellent.</p>
+
+<p><strong>Why this makes sense:</strong> Increasing voltage by a factor of 10 decreases current by a factor of 10, and losses (∝ I²) decrease by a factor of 100. This dramatic reduction is why we use high-voltage transmission.</p>
+
+<hr>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1</h3>
+<p>An AC generator has a rectangular coil of 500 turns, each measuring 0.12 m by 0.080 m, rotating at 1500 rpm in a uniform magnetic field of 0.35 T. (a) Calculate the peak emf generated. (b) Calculate the RMS emf. (c) What is the frequency of the AC output?</p>
+
+<h3>Problem 2</h3>
+<p>An ideal transformer has 800 turns on the primary coil and 50 turns on the secondary. The primary is connected to a 120 V (RMS) AC supply. (a) Calculate the secondary voltage. (b) If a 24.0 W device is connected to the secondary, calculate the current in the secondary and in the primary. (c) Explain why the primary current is different from the secondary current.</p>
+
+<h3>Problem 3</h3>
+<p>A 240 V (RMS) AC supply is connected to a 2.00 kW electric heater. (a) Calculate the RMS current drawn by the heater. (b) Calculate the peak current. (c) Calculate the resistance of the heater element.</p>
+
+<h3>Problem 4</h3>
+<p>A power station generates 200 MW at 25.0 kV. The power is to be transmitted 150 km through cables with a total resistance of 6.50 Ω. (a) Calculate the power loss if the power were transmitted at the generator voltage. Express the loss as a percentage. (b) A step-up transformer raises the voltage to 500 kV for transmission. Calculate the new power loss and its percentage. (c) Explain physically why high-voltage transmission reduces losses.</p>
+
+<h3>Problem 5</h3>
+<p>A transformer has a primary of 1200 turns and a secondary of 80 turns. The primary is connected to a 120 V (RMS), 60 Hz supply. (a) Is this a step-up or step-down transformer? (b) Calculate the voltage across the secondary when no load is connected. (c) When a resistive load is connected, the secondary current is 3.00 A (RMS). Assuming 100% efficiency, calculate the primary current. (d) Would the primary current be the same if the 120 V supply were DC instead of AC? Explain.</p>
+
+<h3>Problem 6 (IB Exam Style)</h3>
+<p>A simple AC generator consists of a flat rectangular coil of 150 turns, each of area 0.040 m², rotating at a constant frequency f in a uniform magnetic field of strength 0.25 T. The output is connected to an oscilloscope, which displays a sinusoidal trace.</p>
+
+<p>(a) The peak-to-peak voltage on the oscilloscope is 340 V. Calculate the peak emf of the generator. [1 mark]</p>
+
+<p>(b) Show that the RMS emf of the generator is approximately 120 V. [1 mark]</p>
+
+<p>(c) The frequency of the displayed signal is 50.0 Hz. Calculate the angular frequency of the coil's rotation. [1 mark]</p>
+
+<p>(d) Determine the frequency of rotation of the coil in revolutions per minute. [1 mark]</p>
+
+<p>(e) Using ε₀ = NBAω, determine the number of turns on the coil. A different coil with the stated 150 turns was actually used — comment on whether your calculation confirms this. [3 marks]</p>
+
+<p>(f) The coil is now rotated at half its original frequency. State and explain what happens to: (i) the peak emf, (ii) the RMS emf, (iii) the period of the AC output. [3 marks]</p>
+
+<hr>
+
+<h2>Answers</h2>
+
+<h3>Answer 1</h3>
+<p>(a) Area A = 0.12 × 0.080 = 0.0096 m².</p>
+<p>f = 1500/60 = 25 Hz. ω = 2π × 25 = 157.1 rad/s.</p>
+<p>ε₀ = NBAω = 500 × 0.35 × 0.0096 × 157.1 = 263.9 V ≈ 264 V.</p>
+
+<p>(b) ε_rms = 264 / √2 = 186.7 V ≈ 187 V.</p>
+
+<p>(c) Frequency = 25 Hz. (One complete electrical cycle per revolution for a 2-pole generator.)</p>
+
+<h3>Answer 2</h3>
+<p>(a) V_s / V_p = N_s / N_p → V_s = 120 × (50/800) = 7.50 V.</p>
+
+<p>(b) P = V_s I_s → I_s = 24.0 / 7.50 = 3.20 A.</p>
+<p>I_p = P / V_p = 24.0 / 120 = 0.200 A.</p>
+<p>Or: I_p = I_s × (N_s/N_p) = 3.20 × (50/800) = 0.200 A.</p>
+
+<p>(c) The primary current is smaller because the transformer steps down voltage (by a factor of 800/50 = 16) and therefore steps up current by the same factor. Power is conserved: V_p I_p = V_s I_s. Since V_p > V_s, we must have I_p < I_s for the same power.</p>
+
+<h3>Answer 3</h3>
+<p>(a) I_rms = P / V_rms = 2000 / 240 = 8.33 A.</p>
+
+<p>(b) I₀ = I_rms × √2 = 8.33 × 1.414 = 11.8 A.</p>
+
+<p>(c) R = V_rms / I_rms = 240 / 8.33 = 28.8 Ω.</p>
+<p>Alternatively: R = V_rms² / P = 240² / 2000 = 28.8 Ω.</p>
+
+<h3>Answer 4</h3>
+<p>(a) I = 200 × 10⁶ / 25.0 × 10³ = 8000 A.</p>
+<p>P_lost = I²R = (8000)² × 6.50 = 4.16 × 10⁸ W = 416 MW.</p>
+<p>Percentage = (416/200) × 100% = 208%. </p>
+<p>This is impossible — the losses exceed the generated power, meaning the voltage would collapse long before delivering any useful power. This illustrates why we MUST step up voltage for transmission.</p>
+
+<p>(b) I = 200 × 10⁶ / 500 × 10³ = 400 A.</p>
+<p>P_lost = (400)² × 6.50 = 1.04 × 10⁶ W = 1.04 MW.</p>
+<p>Percentage = (1.04/200) × 100% = 0.52%.</p>
+
+<p>(c) For a fixed transmitted power P = VI, increasing V decreases I proportionally. Since resistive power loss is P_lost = I²R, reducing I by a factor of n reduces losses by n². At 500 kV, current is 20× smaller than at 25 kV, so losses are 400× smaller. The energy saved far outweighs the small losses in the step-up and step-down transformers.</p>
+
+<h3>Answer 5</h3>
+<p>(a) Step-down transformer because N_s < N_p (80 vs 1200).</p>
+
+<p>(b) V_s = V_p × (N_s/N_p) = 120 × (80/1200) = 120 × (1/15) = 8.00 V.</p>
+
+<p>(c) I_s = 3.00 A. Power: P = V_s I_s = 8.00 × 3.00 = 24.0 W.</p>
+<p>I_p = P / V_p = 24.0 / 120 = 0.200 A.</p>
+<p>Or: I_p = I_s × (N_s/N_p) = 3.00 × (1/15) = 0.200 A.</p>
+
+<p>(d) No. With DC, there is no changing magnetic flux (after the initial transient when the circuit is first connected). Without changing flux, Faraday's law gives zero induced emf in the secondary. The primary would draw a very large current limited only by the resistance of the copper wire, likely causing the transformer to overheat and burn out. Transformers REQUIRE alternating current.</p>
+
+<h3>Answer 6</h3>
+<p>(a) Peak emf = peak-to-peak / 2 = 340/2 = 170 V.</p>
+
+<p>(b) ε_rms = ε₀/√2 = 170/1.414 = 120.2 V ≈ 120 V.</p>
+
+<p>(c) ω = 2πf = 2π × 50.0 = 314.2 rad/s ≈ 314 rad/s.</p>
+
+<p>(d) f = 50.0 Hz = 50.0 revolutions per second = 50.0 × 60 = 3000 rpm.</p>
+
+<p>(e) ε₀ = NBAω → N = ε₀/(BAω) = 170 / (0.25 × 0.040 × 314.2) = 170 / 3.142 = 54.1 turns.</p>
+<p>This does NOT confirm 150 turns — it gives about 54 turns. Either the peak-to-peak voltage was read incorrectly, the area was different, or the magnetic field was stronger than stated. The actual generator with 150 turns would produce ε₀ = 150 × 0.25 × 0.040 × 314.2 = 471 V, giving a peak-to-peak of 942 V, not 340 V.</p>
+
+<p>(f) (i) The peak emf is halved because ε₀ = NBAω and ω is proportional to f.</p>
+<p>(ii) The RMS emf is also halved, since ε_rms = ε₀/√2.</p>
+<p>(iii) The period doubles because T = 1/f. When frequency is halved, the time for one complete cycle doubles.</p>
+
+<p><strong>Common pitfall:</strong> Some students think reducing frequency increases emf (confusing it with ω somehow being independent). No — the emf is directly proportional to ω, which is proportional to f.</p>
+
+<hr>
+
+<h2>Key Takeaways</h2>
+
+<ol>
+<li>An AC generator produces a sinusoidal emf ε(t) = NBAω sin(ωt) by rotating a coil in a magnetic field. The peak emf is ε₀ = NBAω.</li>
+</ol>
+
+<ol>
+<li>The emf is maximum when the flux is zero (coil parallel to field) and zero when the flux is maximum (coil perpendicular to field). Emf depends on the RATE OF CHANGE of flux.</li>
+</ol>
+
+<ol>
+<li>RMS values for sinusoidal AC: V_rms = V₀/√2, I_rms = I₀/√2. These give the DC-equivalent value that produces the same average power in a resistor.</li>
+</ol>
+
+<ol>
+<li>An ideal transformer satisfies V_s/V_p = N_s/N_p and V_p I_p = V_s I_s (power conservation). Transformers require AC — they do not work with DC.</li>
+</ol>
+
+<ol>
+<li>High-voltage transmission minimizes I²R losses. For fixed power, doubling voltage halves current and cuts losses to ¼.</li>
+</ol>
+
+<ol>
+<li>Real transformers have losses from coil resistance, eddy currents in the core, hysteresis, and flux leakage. Laminated cores reduce eddy currents; soft magnetic materials reduce hysteresis.</li>
+</ol>
+
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L55_induction_2.html">← Lesson 55</a>
+  <a href="L57_atom_1.html">Lesson 57 →</a>
+</nav>
+
+</body>
+</html>

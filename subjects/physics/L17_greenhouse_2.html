@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 17: Lesson 17: The Greenhouse Effect 2 — Albedo, Emissivity, and the Enhanced Greenhouse Effect — IB Physics HL</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']]
+  },
+  options: {
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap');
+  
+  :root {
+    --bg: #fdfcf9;
+    --text: #1a1a1a;
+    --accent: #2c5f2d;
+    --border: #d0cec7;
+    --code-bg: #f4f3ef;
+    --callout-bg: #f0f7f0;
+    --callout-border: #2c5f2d;
+    --warning-bg: #fff8e6;
+    --warning-border: #c4941a;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  body {
+    font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid var(--accent);
+    color: var(--accent);
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 2.5rem 0 0.75rem;
+    color: #1a1a1a;
+  }
+  
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.5rem;
+  }
+  
+  p { margin: 0 0 1rem; }
+  
+  ul, ol { margin: 0 0 1rem 1.5rem; }
+  li { margin-bottom: 0.35rem; }
+  
+  code {
+    background: var(--code-bg);
+    padding: 0.15em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+    font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+  }
+  
+  pre {
+    background: var(--code-bg);
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 0 0 1rem;
+    font-size: 0.85em;
+    line-height: 1.5;
+  }
+  
+  pre code {
+    background: none;
+    padding: 0;
+    font-size: inherit;
+  }
+  
+  blockquote {
+    border-left: 4px solid var(--callout-border);
+    background: var(--callout-bg);
+    margin: 0 0 1rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+  }
+  
+  blockquote.warning {
+    border-left-color: var(--warning-border);
+    background: var(--warning-bg);
+  }
+  
+  strong { font-weight: 700; }
+  
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.5rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  
+  .nav a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+  
+  .nav a:hover { background: var(--callout-bg); }
+  
+  .worked-example, .answer {
+    background: var(--code-bg);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin: 0.75rem 0 1.25rem;
+  }
+  
+  .worked-example strong:first-child, .answer strong:first-child {
+    color: var(--accent);
+  }
+  
+  @media print {
+    body { font-size: 12pt; max-width: 100%; padding: 0; }
+    .nav { display: none; }
+    h1 { font-size: 18pt; }
+    h2 { font-size: 14pt; }
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 0 1rem;
+  }
+  
+  th, td {
+    border: 1px solid var(--border);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  
+  th {
+    background: var(--code-bg);
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L16_greenhouse_1.html">← Lesson 16</a>
+  <a href="L18_gas_laws_1.html">Lesson 18 →</a>
+</nav>
+
+<h1>Lesson 17: The Greenhouse Effect 2 — Albedo, Emissivity, and the Enhanced Greenhouse Effect</h1>
+
+<h2>What You'll Learn</h2>
+
+<p>In the previous lesson, you learned that Earth's equilibrium temperature without an atmosphere would be about 255 K (−18°C), but the actual average is 288 K (15°C). This 33 K difference is caused by the greenhouse effect. In this lesson, you will explore how the greenhouse effect actually works at the molecular level, and you'll learn about two critical concepts that refine the energy balance model: <strong>albedo</strong> (reflectivity) and <strong>emissivity</strong> (efficiency of radiation). You will also examine the <strong>enhanced greenhouse effect</strong> — the additional warming caused by human activities that increase the concentration of greenhouse gases in the atmosphere. These concepts connect fundamental physics directly to one of the most important scientific and societal issues of our time.</p>
+
+<hr>
+
+<h2>1. Albedo: How Much Light Is Reflected</h2>
+
+<h3>Why This Matters</h3>
+
+<p>When sunlight strikes the Earth, not all of it is absorbed. Some fraction is reflected back into space by clouds, ice, oceans, deserts, and vegetation. This fraction is called the <strong>albedo</strong>, and it plays a crucial role in determining Earth's temperature. Changes in albedo — such as the melting of reflective ice sheets, exposing darker ocean water — can amplify climate change through what scientists call <strong>feedback loops</strong>. Understanding albedo helps us predict how Earth's climate will respond to changes in ice cover, cloud patterns, and land use.</p>
+
+<h3>Key Ideas</h3>
+
+<p>The <strong>albedo</strong> (symbol: α, Greek letter "alpha") of a surface or a planet is defined as the fraction of incident electromagnetic radiation that is reflected:</p>
+
+<p><strong>α = reflected power / incident power</strong></p>
+
+<p>Albedo is a dimensionless number between 0 and 1 (often expressed as a percentage):</p>
+<ul>
+<li>α = 0: a perfectly absorbing surface (like a black body), reflecting nothing</li>
+<li>α = 1: a perfectly reflecting surface, absorbing nothing</li>
+<li>α = 0.30: reflects 30% of incident radiation, absorbs 70%</li>
+</ul>
+
+<p>The Earth's average albedo is approximately <strong>0.30</strong>, but this varies dramatically across different surfaces:</p>
+
+<table>
+<tr>
+<th>Surface</th>
+<th>Approximate Albedo</th>
+</tr>
+<tr>
+<td>Fresh snow</td>
+<td>0.80 – 0.90</td>
+</tr>
+<tr>
+<td>Old snow</td>
+<td>0.50 – 0.70</td>
+</tr>
+<tr>
+<td>Ice</td>
+<td>0.30 – 0.50</td>
+</tr>
+<tr>
+<td>Desert sand</td>
+<td>0.30 – 0.40</td>
+</tr>
+<tr>
+<td>Grassland</td>
+<td>0.15 – 0.25</td>
+</tr>
+<tr>
+<td>Forest</td>
+<td>0.05 – 0.15</td>
+</tr>
+<tr>
+<td>Ocean (calm)</td>
+<td>0.05 – 0.10</td>
+</tr>
+<tr>
+<td>Clouds (thick)</td>
+<td>0.60 – 0.80</td>
+</tr>
+<tr>
+<td>Asphalt</td>
+<td>0.05 – 0.10</td>
+</tr>
+</table>
+
+<p>When we calculated Earth's equilibrium temperature in Lesson 16, we used the factor (1 − α) in the absorption term: the fraction of solar radiation that is actually absorbed is (1 − α). For Earth, (1 − 0.30) = 0.70, meaning 70% of incoming solar radiation is absorbed.</p>
+
+<p><strong>The Ice-Albedo Feedback:</strong></p>
+<p>This is a critical climate concept. As global temperatures rise, ice and snow cover decrease. Since ice and snow have high albedo (they reflect a lot of sunlight), their loss means less sunlight is reflected and more is absorbed by the darker ocean or land beneath. This additional absorbed energy causes further warming, which melts more ice — a positive feedback loop (where "positive" means it amplifies the initial change, not that it is "good").</p>
+
+<h3>Common Misconceptions</h3>
+
+<blockquote class="warning"><strong>⚠️ MISCONCEPTION ALERT:</strong> Students often confuse albedo with emissivity. Albedo describes how much incident radiation is <strong>reflected</strong> (primarily in the visible and near-infrared range for solar radiation). Emissivity describes how efficiently a surface <strong>emits</strong> its own thermal radiation (in the infrared for Earth-like temperatures). A surface can have high albedo and high emissivity simultaneously — for example, snow reflects visible sunlight well (high albedo) but also emits infrared radiation efficiently (high emissivity).</blockquote>
+
+<blockquote class="warning"><strong>⚠️ MISCONCEPTION ALERT:</strong> The albedo of Earth is not constant. It changes with seasons (more snow in winter), with cloud cover, and with long-term changes in ice extent. The value 0.30 is a long-term global average.</blockquote>
+
+<hr>
+
+<h2>2. Emissivity: How Efficiently Objects Radiate</h2>
+
+<h3>Why This Matters</h3>
+
+<p>Real objects are not perfect black bodies. A polished silver teapot, a rough black rock, and a human body all at the same temperature radiate different amounts of thermal energy. The factor that accounts for this difference is <strong>emissivity</strong> (ε). Understanding emissivity is essential for thermal engineering (designing radiators, heat shields, and spacecraft thermal control) and for accurately modeling Earth's energy balance.</p>
+
+<h3>Key Ideas</h3>
+
+<p><strong>Emissivity</strong> (symbol: ε, Greek letter "epsilon") is defined as the ratio of the power radiated by a surface to the power that would be radiated by a black body at the same temperature:</p>
+
+<p><strong>ε = power radiated by surface / power radiated by black body at same temperature</strong></p>
+
+<p>Emissivity is a dimensionless number between 0 and 1:</p>
+<ul>
+<li>ε = 1: a perfect black body, radiating at the maximum possible rate</li>
+<li>ε = 0: a perfect reflector, radiating nothing (this is a theoretical limit)</li>
+<li>Most real surfaces have emissivities between 0.5 and 1.0</li>
+</ul>
+
+<p>The Stefan-Boltzmann law for a real surface becomes:</p>
+
+<p><strong>P = ε σ A T⁴</strong></p>
+
+<p>Emissivity depends on the material, its surface finish, and the wavelength of radiation. For the same material at the same temperature, a rough, dark surface typically has higher emissivity than a smooth, shiny surface.</p>
+
+<p><strong>Kirchhoff's law of thermal radiation</strong> states that for a body in thermal equilibrium, the emissivity equals the absorptivity at each wavelength:</p>
+<p>ε(λ) = a(λ)</p>
+
+<p>This means a good absorber at a given wavelength is also a good emitter at that wavelength, and vice versa. A perfect reflector (like a polished metal mirror) has very low emissivity because it does not absorb radiation well — it reflects it instead.</p>
+
+<p><strong>Important distinction:</strong> Albedo (α) applies to the reflection of incoming radiation (primarily visible sunlight). Emissivity (ε) applies to the emission of the object's own thermal radiation (primarily infrared for objects at Earth-like temperatures). These involve different wavelength ranges, so α and ε can be quite different for the same surface.</p>
+
+<h3>Common Misconceptions</h3>
+
+<blockquote class="warning"><strong>⚠️ MISCONCEPTION ALERT:</strong> Students sometimes think that a shiny metal surface, because it "looks reflective," must also be a good radiator in the infrared. In fact, polished metals have very low infrared emissivity (often 0.05 or less). This is why the shiny side of emergency blankets faces inward toward the body — it reflects the body's infrared radiation back, reducing heat loss.</blockquote>
+
+<blockquote class="warning"><strong>⚠️ MISCONCEPTION ALERT:</strong> Emissivity is a property of the <strong>surface</strong>, not the bulk material. A piece of aluminum has different emissivity depending on whether it is polished (ε ≈ 0.05), anodized (ε ≈ 0.80), or painted black (ε ≈ 0.95).</blockquote>
+
+<hr>
+
+<h2>3. The Greenhouse Effect: How It Actually Works</h2>
+
+<h3>Why This Matters</h3>
+
+<p>The term "greenhouse effect" is a metaphor, and like many metaphors, it can be misleading. A real greenhouse works primarily by trapping warm air (preventing convection). The atmospheric greenhouse effect works by a completely different mechanism: <strong>selective absorption of infrared radiation by greenhouse gases</strong>. Understanding the actual physics is crucial for understanding climate change.</p>
+
+<h3>Key Ideas</h3>
+
+<p>Here is the step-by-step mechanism of the greenhouse effect:</p>
+
+<p><strong>Step 1:</strong> The Sun emits radiation, primarily in the visible and near-infrared range. The Sun's surface temperature is about 5800 K, so by Wien's law, its peak emission is at visible wavelengths (around 500 nm).</p>
+
+<p><strong>Step 2:</strong> The Earth's atmosphere is largely transparent to visible light (this is why we can see the Sun). About 70% of the incoming solar radiation reaches the Earth's surface and is absorbed (the rest is reflected by albedo).</p>
+
+<p><strong>Step 3:</strong> The Earth's surface warms up and emits thermal radiation. Because Earth's surface temperature is about 288 K, this radiation peaks in the infrared (around 10,000 nm or 10 μm, by Wien's law).</p>
+
+<p><strong>Step 4:</strong> Certain gases in the atmosphere — called <strong>greenhouse gases</strong> — absorb infrared radiation at specific wavelengths. The key greenhouse gases are:</p>
+<ul>
+<li><strong>Water vapor (H₂O)</strong>: the most abundant greenhouse gas, responsible for about 50% of the natural greenhouse effect</li>
+<li><strong>Carbon dioxide (CO₂)</strong>: the second most important, responsible for about 20% of the natural effect</li>
+<li><strong>Methane (CH₄)</strong></li>
+<li><strong>Nitrous oxide (N₂O)</strong></li>
+<li><strong>Ozone (O₃)</strong></li>
+</ul>
+
+<p>These gases are not greenhouse gases because of some special chemical property. They are greenhouse gases because their molecular structures allow them to vibrate in ways that match infrared frequencies. Molecules like N₂ and O₂ (which make up 99% of the atmosphere) are <strong>not</strong> greenhouse gases because they are diatomic homonuclear molecules (two identical atoms) — their vibrations do not create changing electric dipole moments, so they cannot absorb or emit infrared radiation efficiently.</p>
+
+<p><strong>Step 5:</strong> When greenhouse gas molecules absorb infrared photons, they gain vibrational energy. They then re-emit this energy in random directions — some goes upward into space, but some goes back downward toward the Earth's surface. This downward component is the "trapped" energy that warms the surface.</p>
+
+<p><strong>Step 6:</strong> The surface must now be warmer to radiate enough energy through this partially absorbing atmosphere to balance the incoming solar radiation. The surface temperature rises until the energy radiated to space (after passing through the atmosphere) equals the absorbed solar energy.</p>
+
+<p>The key insight: greenhouse gases do not "trap heat" in the sense of creating a physical barrier. They absorb and re-radiate infrared radiation, with about half of the re-radiation directed back toward the surface. This effectively makes it harder for energy to escape to space, so the surface must heat up to push enough energy through.</p>
+
+<h3>Common Misconceptions</h3>
+
+<blockquote class="warning"><strong>⚠️ MISCONCEPTION ALERT:</strong> "The greenhouse effect is like a real greenhouse." No. A real greenhouse works by preventing convection (hot air rising). The atmospheric greenhouse effect works by radiative absorption and re-emission. If you removed the glass from a greenhouse but left a roof that blocks convection, it would still work. If you replaced the Earth's greenhouse gases with a gas that blocks convection but not infrared, the greenhouse effect would vanish.</blockquote>
+
+<blockquote class="warning"><strong>⚠️ MISCONCEPTION ALERT:</strong> "The ozone hole causes global warming." These are separate problems. The ozone hole is about depletion of stratospheric ozone (O₃) by CFCs, which increases ultraviolet radiation reaching the surface. Global warming is about the enhanced greenhouse effect from CO₂ and other gases. While there are some indirect connections, they are fundamentally different issues.</blockquote>
+
+<blockquote class="warning"><strong>⚠️ MISCONCEPTION ALERT:</strong> "CO₂ is the only greenhouse gas" or "CO₂ is the most important greenhouse gas." Water vapor is actually the largest contributor to the natural greenhouse effect. However, human activities directly add CO₂ to the atmosphere, and its concentration is what we are changing. Water vapor acts as a feedback (warmer air holds more water vapor), amplifying the warming caused by CO₂.</blockquote>
+
+<hr>
+
+<h2>4. The Enhanced Greenhouse Effect</h2>
+
+<h3>Why This Matters</h3>
+
+<p>The natural greenhouse effect is essential for life on Earth — without it, the planet would be a frozen wasteland at about −18°C. But human activities since the Industrial Revolution have significantly increased the concentration of greenhouse gases in the atmosphere, intensifying the greenhouse effect beyond its natural level. This <strong>enhanced greenhouse effect</strong> is the primary driver of modern climate change.</p>
+
+<h3>Key Ideas</h3>
+
+<p>The enhanced greenhouse effect refers to the additional warming caused by increased concentrations of greenhouse gases from human activities:</p>
+
+<ul>
+<li><strong>Carbon dioxide (CO₂)</strong>: Pre-industrial levels were about 280 parts per million (ppm). Current levels exceed 420 ppm — a more than 50% increase. Primary sources: burning of fossil fuels (coal, oil, natural gas), deforestation, and cement production.</li>
+</ul>
+
+<ul>
+<li><strong>Methane (CH₄)</strong>: Concentrations have more than doubled since pre-industrial times. Primary sources: agriculture (especially livestock and rice paddies), landfills, and natural gas leakage.</li>
+</ul>
+
+<ul>
+<li><strong>Nitrous oxide (N₂O)</strong>: Concentrations have increased about 20%. Primary sources: agricultural fertilizers and industrial processes.</li>
+</ul>
+
+<p>The enhanced greenhouse effect shifts the energy balance. More greenhouse gases mean the atmosphere absorbs more outgoing infrared radiation, which means more is re-radiated back to the surface. The surface temperature rises until a new equilibrium is reached where outgoing radiation again balances incoming radiation.</p>
+
+<p><strong>Quantifying the effect:</strong></p>
+<p>The relationship between greenhouse gas concentration and temperature is complex because of feedback mechanisms. However, the fundamental physics is clear: increased greenhouse gas concentrations reduce the rate at which Earth can radiate energy to space. To restore balance, the Earth's surface must warm.</p>
+
+<h3>Common Misconceptions</h3>
+
+<blockquote class="warning"><strong>⚠️ MISCONCEPTION ALERT:</strong> "If the greenhouse effect is natural, how can it be a problem?" The natural greenhouse effect keeps Earth habitable. The enhanced greenhouse effect from human emissions adds to this natural effect, pushing temperatures beyond the range in which human civilization developed. The problem is the rate and magnitude of the additional warming.</blockquote>
+
+<blockquote class="warning"><strong>⚠️ MISCONCEPTION ALERT:</strong> "Climate has always changed, so current warming is natural." While climate has changed naturally throughout Earth's history (due to orbital variations, volcanic activity, etc.), the current warming is occurring far more rapidly than natural cycles and correlates precisely with the industrial-era rise in greenhouse gas concentrations. The physics of greenhouse gas radiative forcing provides the causal mechanism.</blockquote>
+
+<hr>
+
+<h2>5. Putting It All Together: The Refined Energy Balance Model</h2>
+
+<h3>Why This Matters</h3>
+
+<p>The simple black-body model from Lesson 16 gave T ≈ 255 K. Now we can refine it by incorporating albedo, emissivity, and the greenhouse effect to understand Earth's actual temperature. This refined model is the foundation of modern climate science.</p>
+
+<h3>Key Ideas</h3>
+
+<p>The full energy balance equation for Earth:</p>
+
+<p><strong>Power absorbed from Sun:</strong></p>
+<p>P_absorbed = S × πR² × (1 − α)</p>
+
+<p>where S ≈ 1360 W/m² and α ≈ 0.30.</p>
+
+<p><strong>Power radiated by Earth:</strong></p>
+<p>P_radiated = ε × σ × 4πR² × T⁴</p>
+
+<p>where ε ≈ 0.61 is the average infrared emissivity of Earth (accounting for the greenhouse effect — the effective emissivity is less than 1 because greenhouse gases block some outgoing radiation).</p>
+
+<p>At equilibrium:</p>
+<p>S × (1 − α) = 4εσT⁴</p>
+
+<p>T = [S(1 − α) / (4εσ)]^(1/4)</p>
+
+<p>With ε = 1 (no greenhouse effect): T ≈ 255 K = −18°C</p>
+<p>With ε ≈ 0.61 (including natural greenhouse effect): T ≈ 288 K = 15°C</p>
+
+<p>The difference of 33 K is the natural greenhouse warming. Changes in ε (through changes in greenhouse gas concentrations) change the equilibrium temperature.</p>
+
+<p>Note: In the IB syllabus, you may treat the greenhouse effect in terms of this effective emissivity model, or you may use a simpler layer model. Either approach captures the essential physics: greenhouse gases reduce the net rate at which energy escapes to space, requiring a higher surface temperature for balance.</p>
+
+<hr>
+
+<h2>Worked Examples</h2>
+
+<h3>Example 1: Effect of Albedo on Temperature</h3>
+
+<p>Imagine Earth's albedo increased from 0.30 to 0.40 (for example, due to increased cloud cover). If all else remains the same, what would the new equilibrium temperature be? Use S = 1360 W/m², σ = 5.67 × 10⁻⁸ W/(m²·K⁴), and assume the greenhouse effect keeps the effective emissivity at ε = 0.61.</p>
+
+<p><strong>Approach:</strong> Use the refined energy balance equation with the new albedo value.</p>
+
+<p><strong>Solution:</strong></p>
+<p>T = [S(1 − α) / (4εσ)]^(1/4)</p>
+
+<p>New absorption factor: (1 − α) = (1 − 0.40) = 0.60</p>
+
+<p>T⁴ = 1360 × 0.60 / (4 × 0.61 × 5.67 × 10⁻⁸)</p>
+<p>T⁴ = 816 / (1.383 × 10⁻⁷) = 5.90 × 10⁹</p>
+<p>T = (5.90 × 10⁹)^(1/4) ≈ 277 K = 4°C</p>
+
+<p><strong>Why this makes sense:</strong> A 10 percentage point increase in albedo reduces the equilibrium temperature by about 11 K. This illustrates how sensitive climate is to albedo — and why ice-albedo feedback is so important.</p>
+
+<hr>
+
+<h3>Example 2: Comparing Emissivities</h3>
+
+<p>Two metal plates of equal area are heated to 400 K. One is polished aluminum with ε = 0.05. The other is painted black with ε = 0.95. Calculate the power radiated per square meter by each plate. Use σ = 5.67 × 10⁻⁸ W/(m²·K⁴).</p>
+
+<p><strong>Approach:</strong> Use P/A = ε σ T⁴. Calculate separately for each plate.</p>
+
+<p><strong>Solution:</strong></p>
+<p>σ T⁴ = (5.67 × 10⁻⁸) × (400)⁴</p>
+
+<p>400² = 160,000</p>
+<p>400⁴ = 160,000² = 2.56 × 10¹⁰</p>
+
+<p>σ T⁴ = 5.67 × 10⁻⁸ × 2.56 × 10¹⁰ = 5.67 × 2.56 × 10² = 14.52 × 100 = 1452 W/m²</p>
+
+<p>Polished (ε = 0.05): P/A = 0.05 × 1452 = 72.6 W/m²</p>
+<p>Black (ε = 0.95): P/A = 0.95 × 1452 = 1379 W/m²</p>
+
+<p><strong>Why this makes sense:</strong> The black surface radiates about 19 times more power than the polished surface, even though both are at exactly the same temperature. The emissivity makes an enormous difference in radiative heat transfer.</p>
+
+<hr>
+
+<h3>Example 3: Energy Balance with Changing Greenhouse Effect</h3>
+
+<p>A simplified climate model treats Earth as having an effective emissivity ε. Currently, ε = 0.61 gives T = 288 K. If human activities increase greenhouse gas concentrations such that ε decreases to 0.58 (more trapping, lower effective emissivity), calculate the new equilibrium temperature. Use S = 1360 W/m², α = 0.30, σ = 5.67 × 10⁻⁸ W/(m²·K⁴).</p>
+
+<p><strong>Approach:</strong> Keep all parameters the same except ε.</p>
+
+<p><strong>Solution:</strong></p>
+<p>T_new = [S(1 − α) / (4ε_new σ)]^(1/4)</p>
+<p>T_old = [S(1 − α) / (4ε_old σ)]^(1/4)</p>
+
+<p>T_new / T_old = (ε_old / ε_new)^(1/4)</p>
+<p>T_new / 288 = (0.61 / 0.58)^(1/4)</p>
+<p>0.61 / 0.58 ≈ 1.0517</p>
+<p>(1.0517)^(1/4) ≈ 1.0127</p>
+
+<p>T_new ≈ 288 × 1.0127 ≈ 291.7 K ≈ 18.7°C</p>
+
+<p><strong>Why this makes sense:</strong> A 5% change in effective emissivity produces about a 3 K temperature rise — roughly the magnitude of warming observed over the 20th century. The T ∝ ε^(−1/4) relationship means small changes in ε produce noticeable but not catastrophic changes in T.</p>
+
+<hr>
+
+<h3>Example 4: Albedo Change from Melting Ice</h3>
+
+<p>A region of the Arctic Ocean has an area of 1.0 × 10¹² m². Initially, it is covered by ice with an albedo of 0.60. If the ice melts, it becomes open water with an albedo of 0.07. The solar radiation incident on this region averages 200 W/m². Calculate the additional power absorbed due to the albedo change.</p>
+
+<p><strong>Approach:</strong> Calculate the power absorbed before and after melting. The difference is the additional absorbed power.</p>
+
+<p><strong>Solution:</strong></p>
+<p>Power absorbed = incident power × (1 − α) × area</p>
+<p>Incident power on area = 200 W/m² × 1.0 × 10¹² m² = 2.0 × 10¹⁴ W</p>
+
+<p>Before melting (α = 0.60):</p>
+<p>Absorbed = 2.0 × 10¹⁴ × (1 − 0.60) = 2.0 × 10¹⁴ × 0.40 = 8.0 × 10¹³ W</p>
+
+<p>After melting (α = 0.07):</p>
+<p>Absorbed = 2.0 × 10¹⁴ × (1 − 0.07) = 2.0 × 10¹⁴ × 0.93 = 1.86 × 10¹⁴ W</p>
+
+<p>Additional absorbed = 1.86 × 10¹⁴ − 8.0 × 10¹³ = 1.06 × 10¹⁴ W</p>
+
+<p><strong>Why this makes sense:</strong> This is over 100 TW (terawatts) of additional heating — comparable to the total power consumption of human civilization. Even a regional albedo change has enormous energy implications, which is why the ice-albedo feedback is a major concern in climate science.</p>
+
+<hr>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1</h3>
+<p>A roof is covered with two different materials. Half has an albedo of 0.80 (white coating) and half has an albedo of 0.10 (dark asphalt). The incident solar radiation is 800 W/m² on a sunny day. Calculate the power absorbed per square meter for each half, and find the overall average albedo of the entire roof.</p>
+
+<h3>Problem 2</h3>
+<p>A tungsten filament in a light bulb operates at 2800 K. The filament has a surface area of 3.0 × 10⁻⁵ m² and an emissivity of 0.35. Calculate the total power radiated by the filament. Use σ = 5.67 × 10⁻⁸ W/(m²·K⁴).</p>
+
+<h3>Problem 3</h3>
+<p>A spacecraft in deep space (far from any star) has a surface area of 20 m² and must radiate away 5000 W of internally generated heat to maintain a constant temperature. The spacecraft's surface has an average emissivity of 0.80. Calculate the equilibrium temperature of the spacecraft's surface. Use σ = 5.67 × 10⁻⁸ W/(m²·K⁴).</p>
+
+<h3>Problem 4</h3>
+<p>Consider a planet identical to Earth in every way except that it has a thicker atmosphere, giving it an effective emissivity of 0.50 instead of Earth's 0.61. Use S = 1360 W/m², α = 0.30, and σ = 5.67 × 10⁻⁸ W/(m²·K⁴). Calculate the equilibrium surface temperature of this planet.</p>
+
+<h3>Problem 5</h3>
+<p>A student claims: "If Earth's albedo increases due to more clouds, the planet will cool. But if more clouds also trap more infrared radiation, the planet might warm. The net effect depends on which process dominates." Answer the following:</p>
+<p>(a) Explain how clouds increase planetary albedo.</p>
+<p>(b) Explain how clouds trap infrared radiation.</p>
+<p>(c) Describe why low, thick clouds tend to have a net cooling effect while high, thin cirrus clouds tend to have a net warming effect.</p>
+
+<h3>Problem 6 (IB Exam-Style)</h3>
+<p>The Sun has a surface temperature of 5800 K and a radius of 7.0 × 10⁸ m. It radiates as a black body.</p>
+
+<p>(a) Calculate the total power radiated by the Sun. Use σ = 5.67 × 10⁻⁸ W/(m²·K⁴). [2 marks]</p>
+
+<p>(b) At Earth's orbital distance of 1.5 × 10¹¹ m from the Sun, calculate the intensity (power per unit area) of solar radiation arriving at the top of Earth's atmosphere. This is the solar constant S. [2 marks]</p>
+
+<p>(c) Earth's average albedo is 0.30. Calculate the power absorbed by Earth from the Sun. Earth's radius is 6.4 × 10⁶ m. [3 marks]</p>
+
+<p>(d) Calculate Earth's equilibrium surface temperature assuming: (i) no atmosphere and black-body emission (ε = 1, no greenhouse effect); (ii) an effective emissivity of ε = 0.61 that accounts for the natural greenhouse effect. [3 marks]</p>
+
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L16_greenhouse_1.html">← Lesson 16</a>
+  <a href="L18_gas_laws_1.html">Lesson 18 →</a>
+</nav>
+
+</body>
+</html>

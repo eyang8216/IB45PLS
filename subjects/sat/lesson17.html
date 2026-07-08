@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 17: Geometry — Right Triangles & Trigonometry (SAT)</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root {
+    --bg: #fafaf9;
+    --text: #1a1a1a;
+    --accent: #1a5276;
+    --trap-bg: #fff3cd;
+    --trap-border: #ffc107;
+    --pattern-bg: #d1ecf1;
+    --pattern-border: #17a2b8;
+    --card: #ffffff;
+    --border: #d0d0cb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+  h1 { font-size: 1.8rem; color: var(--accent); border-bottom: 3px solid var(--accent); padding-bottom: 0.5rem; margin-bottom: 1rem; }
+  h2 { font-size: 1.35rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+  h3 { font-size: 1.15rem; color: #333; margin: 1.5rem 0 0.5rem; }
+  p, li { margin: 0.5em 0; }
+  ul, ol { padding-left: 1.5rem; margin: 0.5em 0; }
+  .trap-box {
+    background: var(--trap-bg);
+    border-left: 4px solid var(--trap-border);
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.95rem;
+  }
+  .trap-box strong { color: #856404; }
+  .pattern-box {
+    background: var(--pattern-bg);
+    border-left: 4px solid var(--pattern-border);
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.95rem;
+  }
+  .pattern-box strong { color: #0c5460; }
+  .example {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem 1.3rem;
+    margin: 1rem 0;
+  }
+  .example h4 { color: var(--accent); margin-bottom: 0.3rem; }
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 2.5rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  .nav a { color: var(--accent); text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  code { background: #f0f0f0; padding: 0.15em 0.4em; border-radius: 3px; font-size: 0.9em; }
+  strong { color: #222; }
+  @media print {
+    body { font-size: 14px; }
+    .nav { display: none; }
+  }
+</style>
+</head>
+<body>
+<h1>Lesson 17: Geometry — Right Triangles & Trigonometry (SAT)</h1>
+<h2>What You'll Learn</h2>
+<ul>
+<li>Pythagorean theorem and its applications in SAT geometry problems</li>
+<li>SOHCAHTOA: sine, cosine, and tangent definitions for right triangles</li>
+<li>How to use special right triangle ratios (30-60-90, 45-45-90) with trig</li>
+<li>The cofunction identity: $\sin(x) = \cos(90° - x)$</li>
+<li>How SAT trigonometry differs from IB AAHL trigonometry (much simpler!)</li>
+<li>Common mix-up traps between sine/cosine and opposite/adjacent</li>
+</ul>
+<h2>SAT Context</h2>
+<p>Trigonometry on the SAT is deliberately limited. The SAT tests only **right triangle trigonometry** — SOHCAHTOA and the complementary angle relationship. There is **no Law of Sines, no Law of Cosines, no identities** beyond $\sin(x) = \cos(90°-x)$, no radians, no unit circle beyond the first quadrant, no compound angle formulas, and no trigonometric equations. If you've completed IB AAHL, you have vastly more trigonometry knowledge than the SAT requires. The challenge is not the math — it's avoiding careless errors on straightforward problems. Expect **2–4 trigonometry questions** across both modules.</p>
+<hr>
+<h2>Pythagorean Theorem</h2>
+<p>For any right triangle with legs $a$ and $b$ and hypotenuse $c$:</p>
+<p>$$a^2 + b^2 = c^2$$</p>
+<p>> **🔍 PATTERN RECOGNITION:** The SAT almost always uses Pythagorean triples (3-4-5, 5-12-13, 8-15-17, 7-24-25) or their multiples. If you recognize these, you can skip the calculation entirely. The most common triple on the SAT is 3-4-5 and its multiples (6-8-10, 9-12-15, etc.).</p>
+<h3> Worked Example 1: Pythagorean Triple</h3>
+<p>**Problem:** In right triangle $ABC$ with right angle at $C$, $AC = 9$ and $BC = 12$. Find $AB$.</p>
+<p>**Solution:** Recognize the 3-4-5 triple scaled by 3: $9 = 3 \times 3$, $12 = 4 \times 3$, so the hypotenuse is $5 \times 3 = 15$.</p>
+<p>**Using the formula:** $AB^2 = 9^2 + 12^2 = 81 + 144 = 225$, $AB = \sqrt{225} = 15$.</p>
+<hr>
+<h2>SOHCAHTOA</h2>
+<p>For a right triangle with angle $\theta$:</p>
+<p>$$\sin\theta = \frac{\text{Opposite}}{\text{Hypotenuse}} \quad \text{(SOH)}$$</p>
+<p>$$\cos\theta = \frac{\text{Adjacent}}{\text{Hypotenuse}} \quad \text{(CAH)}$$</p>
+<p>$$\tan\theta = \frac{\text{Opposite}}{\text{Adjacent}} \quad \text{(TOA)}$$</p>
+<p>> **🚨 SAT TRAP ALERT:** "Opposite" and "adjacent" are relative to the angle you're using. The side opposite angle $A$ is adjacent to angle $B$, and vice versa. When a right triangle problem gives you two angles, make sure you know which angle you're working with before labeling sides.</p>
+<h3> Identifying Sides Relative to an Angle</h3>
+<p>```</p>
+<p>A</p>
+<p>|\</p>
+<p>| \</p>
+<p>opp|  \ hyp</p>
+<p>|   \</p>
+<p>|____\</p>
+<p>adj   B</p>
+<p>```</p>
+<ul>
+<li>**Hypotenuse:** Always the longest side, opposite the right angle.</li>
+<li>**Opposite:** The side across from the angle in question.</li>
+<li>**Adjacent:** The side next to the angle (that is NOT the hypotenuse).</li>
+</ul>
+<p>> **🚨 SAT TRAP ALERT:** The most common SAT trig error is mixing up $\sin$ and $\cos$. Remember: **S**ine uses the **O**pposite side (S-OH), **C**osine uses the **A**djacent side (C-AH). Students who rush often pick $\cos$ when the problem calls for $\sin$, and vice versa.</p>
+<hr>
+<h2>Finding Missing Sides with Trig</h2>
+<p>When you know one angle (other than the right angle) and one side, you can find any other side using SOHCAHTOA.</p>
+<h3> Worked Example 2: Using Sine to Find a Side</h3>
+<p>**Problem:** In right triangle $ABC$ with right angle at $C$, $\angle A = 35°$ and the hypotenuse $AB = 20$. Find $BC$, the side opposite angle $A$.</p>
+<p>**Solution:** $\sin(35°) = \frac{BC}{AB} = \frac{BC}{20}$, so $BC = 20 \cdot \sin(35°) \approx 20 \times 0.5736 \approx 11.47$.</p>
+<hr>
+<h2>Finding Missing Angles with Inverse Trig</h2>
+<p>When you know two sides and need to find an angle, use inverse trig:</p>
+<ul>
+<li>$\theta = \sin^{-1}\left(\frac{\text{opp}}{\text{hyp}}\right)$</li>
+<li>$\theta = \cos^{-1}\left(\frac{\text{adj}}{\text{hyp}}\right)$</li>
+<li>$\theta = \tan^{-1}\left(\frac{\text{opp}}{\text{adj}}\right)$</li>
+</ul>
+<p>> **🔍 PATTERN RECOGNITION:** On the SAT, a question that requires inverse trig will typically have answer choices that are easy to distinguish. You don't need exact decimal values — the SAT provides a calculator (Desmos) for the math modules, and you can compute these directly. But often, the answer is a recognizable angle (30°, 45°, 60°) that you can identify from the side ratios.</p>
+<hr>
+<h2>Special Right Triangles and Trig Values</h2>
+<p>You should know (or be able to derive quickly) these exact values:</p>
+<p>| $\theta$ | $\sin\theta$ | $\cos\theta$ | $\tan\theta$ |</p>
+<p>|:---:|:---:|:---:|:---:|</p>
+<p>| $30°$ | $\frac{1}{2}$ | $\frac{\sqrt{3}}{2}$ | $\frac{1}{\sqrt{3}} = \frac{\sqrt{3}}{3}$ |</p>
+<p>| $45°$ | $\frac{\sqrt{2}}{2}$ | $\frac{\sqrt{2}}{2}$ | $1$ |</p>
+<p>| $60°$ | $\frac{\sqrt{3}}{2}$ | $\frac{1}{2}$ | $\sqrt{3}$ |</p>
+<h3> Deriving from the Triangles</h3>
+<p>**For 30° and 60°:** Use the 30-60-90 triangle with sides $1 : \sqrt{3} : 2$.</p>
+<ul>
+<li>$\sin(30°) = \frac{\text{opp}}{\text{hyp}} = \frac{1}{2}$</li>
+<li>$\cos(30°) = \frac{\text{adj}}{\text{hyp}} = \frac{\sqrt{3}}{2}$</li>
+<li>$\tan(30°) = \frac{\text{opp}}{\text{adj}} = \frac{1}{\sqrt{3}}$</li>
+</ul>
+<ul>
+<li>$\sin(60°) = \frac{\sqrt{3}}{2}$, $\cos(60°) = \frac{1}{2}$, $\tan(60°) = \sqrt{3}$</li>
+</ul>
+<p>**For 45°:** Use the 45-45-90 triangle with sides $1 : 1 : \sqrt{2}$.</p>
+<ul>
+<li>$\sin(45°) = \frac{1}{\sqrt{2}} = \frac{\sqrt{2}}{2}$</li>
+<li>$\cos(45°) = \frac{1}{\sqrt{2}} = \frac{\sqrt{2}}{2}$</li>
+<li>$\tan(45°) = 1$</li>
+</ul>
+<hr>
+<h2>The Cofunction Identity</h2>
+<p>For complementary angles (angles that sum to $90°$):</p>
+<p>$$\sin(x) = \cos(90° - x)$$</p>
+<p>$$\cos(x) = \sin(90° - x)$$</p>
+<p>> **🔍 PATTERN RECOGNITION:** This is the ONLY trigonometric identity tested on the SAT (beyond SOHCAHTOA). If you see $\sin(20°) = \cos(k°)$, the answer is $k = 70°$ because $20° + 70° = 90°$. This pattern is so predictable that you can answer without computing any values.</p>
+<h3> Worked Example 3: Cofunction</h3>
+<p>**Problem:** In right triangle $PQR$ with right angle at $Q$, $\sin(P) = \frac{5}{13}$. What is $\cos(R)$?</p>
+<p>**Solution:** In a right triangle, angles $P$ and $R$ are complementary ($P + R = 90°$). By the cofunction identity: $\cos(R) = \sin(90° - R) = \sin(P)$. Since $\sin(P) = \frac{5}{13}$, we have $\cos(R) = \frac{5}{13}$.</p>
+<p>**Alternatively:** In the right triangle, the side opposite $P$ is the side adjacent to $R$. So $\sin(P) = \frac{\text{opp}_P}{\text{hyp}} = \frac{\text{adj}_R}{\text{hyp}} = \cos(R)$. They must be equal.</p>
+<hr>
+<h2>SAT vs. AAHL Trigonometry</h2>
+<p>| Feature | IB AAHL | SAT |</p>
+<p>|:---|:---|:---|</p>
+<p>| Trigonometric Identities | Many (Pythagorean, double-angle, sum/difference, etc.) | Only $\sin(x) = \cos(90°-x)$ |</p>
+<p>| Radians | Heavy use | Not tested |</p>
+<p>| Unit Circle | Full circle, all quadrants | Only first quadrant implied |</p>
+<p>| Law of Sines/Cosines | Yes | **No** |</p>
+<p>| Solving Trig Equations | Yes, with general solutions | **No** |</p>
+<p>| Compound Angles | $\sin(A \pm B)$, $\tan(2A)$, etc. | **No** |</p>
+<p>| Reciprocal Functions | $\csc$, $\sec$, $\cot$ | **No** (only $\sin$, $\cos$, $\tan$) |</p>
+<p>| Inverse Trig | $\arcsin$, $\arccos$, $\arctan$ | $\sin^{-1}$, $\cos^{-1}$, $\tan^{-1}$ on calculator |</p>
+<p>> **🚨 SAT TRAP ALERT:** If you find yourself reaching for an AAHL trig technique (double-angle formula, law of sines, etc.), STOP. You're overcomplicating it. The SAT trig question can ALWAYS be solved with just SOHCAHTOA and the Pythagorean theorem. The hard part is not the math — it's reading the diagram correctly.</p>
+<hr>
+<h2>Right Triangle Word Problems</h2>
+<h3> Angle of Elevation / Depression</h3>
+<p>These are just right triangles in disguise:</p>
+<ul>
+<li>**Angle of elevation:** Angle measured upward from horizontal</li>
+<li>**Angle of depression:** Angle measured downward from horizontal</li>
+</ul>
+<p>```</p>
+<ul>
+<li> (object)</li>
+</ul>
+<p>/|</p>
+<p>/ |</p>
+<p>/  | height</p>
+<p>/θ  |</p>
+<p>----+</p>
+<p>eye  horizontal</p>
+<p>```</p>
+<p>> **🔍 PATTERN RECOGNITION:** SAT word problems with "angle of elevation" or "angle of depression" are always right triangle trig problems. Draw the triangle, label the known side and angle, identify which side you need, and use the appropriate trig ratio.</p>
+<h3> Worked Example 4: Word Problem</h3>
+<p>**Problem:** A ladder 25 feet long leans against a wall. The ladder makes a $60°$ angle with the ground. How high up the wall does the ladder reach?</p>
+<p>**Solution:** The ladder is the hypotenuse (25 ft). The height is opposite the $60°$ angle.</p>
+<p>$$\sin(60°) = \frac{\text{height}}{25}$$</p>
+<p>$$\frac{\sqrt{3}}{2} = \frac{h}{25}$$</p>
+<p>$$h = 25 \cdot \frac{\sqrt{3}}{2} = \frac{25\sqrt{3}}{2} \approx 21.65 \text{ feet}$$</p>
+<hr>
+<h2>Practice Problems</h2>
+<h3> Problem 1</h3>
+<p>In right triangle $ABC$ with right angle at $C$, $AB = 17$ and $BC = 8$. What is $AC$?</p>
+<p>(A) 9</p>
+<p>(B) 15</p>
+<p>(C) $\sqrt{353}$</p>
+<p>(D) 25</p>
+<h3> Problem 2</h3>
+<p>In right triangle $DEF$ with right angle at $E$, $\angle D = 40°$ and $DE = 10$. Which expression gives $DF$ (the hypotenuse)?</p>
+<p>(A) $10 \sin(40°)$</p>
+<p>(B) $10 \cos(40°)$</p>
+<p>(C) $\frac{10}{\sin(40°)}$</p>
+<p>(D) $\frac{10}{\cos(40°)}$</p>
+<h3> Problem 3</h3>
+<p>In a 30-60-90 right triangle, the hypotenuse is 12. What is the area of the triangle?</p>
+<p>(A) $18\sqrt{3}$</p>
+<p>(B) $36\sqrt{3}$</p>
+<p>(C) $72$</p>
+<p>(D) $18$</p>
+<h3> Problem 4</h3>
+<p>In right triangle $XYZ$ with right angle at $Y$, $\sin(X) = \frac{12}{13}$. What is $\tan(X)$?</p>
+<p>(A) $\frac{5}{12}$</p>
+<p>(B) $\frac{12}{5}$</p>
+<p>(C) $\frac{5}{13}$</p>
+<p>(D) $\frac{13}{5}$</p>
+<h3> Problem 5</h3>
+<p>In right triangle $PQR$ with right angle at $Q$, $\cos(P) = 0.6$. What is $\sin(R)$?</p>
+<h3> Problem 6</h3>
+<p>A 30-foot ramp makes a $10°$ angle with the ground. To the nearest tenth of a foot, what horizontal distance does the ramp cover?</p>
+<hr>
+<h2>Answers</h2>
+<h3> Problem 1 — Answer: (B) 15</h3>
+<p>$AB$ is the hypotenuse = 17, $BC$ is a leg = 8. Using Pythagorean theorem:</p>
+<p>$$AC^2 + 8^2 = 17^2$$</p>
+<p>$$AC^2 + 64 = 289$$</p>
+<p>$$AC^2 = 225$$</p>
+<p>$$AC = 15$$</p>
+<p>This is the 8-15-17 Pythagorean triple.</p>
+<p>**Wrong-answer analysis:**</p>
+<ul>
+<li>(A) 9 — might have subtracted: $17 - 8 = 9$ (not how the theorem works)</li>
+<li>(C) $\sqrt{353}$ — might have added squares incorrectly: $17^2 + 8^2 = 289 + 64 = 353$</li>
+<li>(D) 25 — might have added: $17 + 8 = 25$</li>
+</ul>
+<hr>
+<h3> Problem 2 — Answer: (D) $\frac{10}{\cos(40°)}$</h3>
+<p>From angle $D$: $DE$ is the adjacent side (next to $D$, not the hypotenuse). $DF$ is the hypotenuse.</p>
+<p>$$\cos(40°) = \frac{\text{adj}}{\text{hyp}} = \frac{DE}{DF} = \frac{10}{DF}$$</p>
+<p>$$DF = \frac{10}{\cos(40°)}$$</p>
+<p>**Wrong-answer analysis:**</p>
+<ul>
+<li>(A) $10\sin(40°)$ — would give the opposite side, not the hypotenuse</li>
+<li>(B) $10\cos(40°)$ — would give the adjacent side if DF were known and you were solving for DE</li>
+<li>(C) $\frac{10}{\sin(40°)}$ — uses sine instead of cosine; would be correct if 10 were the opposite side</li>
+</ul>
+<hr>
+<h3> Problem 3 — Answer: (A) $18\sqrt{3}$</h3>
+<p>In a 30-60-90 triangle with hypotenuse 12: $2x = 12$, so $x = 6$ (shortest leg). The longer leg is $x\sqrt{3} = 6\sqrt{3}$. Area = $\frac{1}{2} \times \text{base} \times \text{height} = \frac{1}{2} \times 6 \times 6\sqrt{3} = 18\sqrt{3}$.</p>
+<p>**Wrong-answer analysis:**</p>
+<ul>
+<li>(B) $36\sqrt{3}$ — doubled the area (forgot the $\frac{1}{2}$)</li>
+<li>(C) 72 — used $6 \times 12$ (leg × hypotenuse)</li>
+<li>(D) 18 — used the legs without $\sqrt{3}$</li>
+</ul>
+<hr>
+<h3> Problem 4 — Answer: (B) $\frac{12}{5}$</h3>
+<p>$\sin(X) = \frac{\text{opp}}{\text{hyp}} = \frac{12}{13}$. In a right triangle at $Y$, the side opposite $X$ is $YZ$, and the hypotenuse is $XZ$. So $YZ = 12$ and $XZ = 13$. Using Pythagorean theorem: $XY^2 + 12^2 = 13^2$, so $XY^2 = 169 - 144 = 25$, $XY = 5$. Then $\tan(X) = \frac{\text{opp}}{\text{adj}} = \frac{YZ}{XY} = \frac{12}{5}$.</p>
+<p>**Wrong-answer analysis:**</p>
+<ul>
+<li>(A) $\frac{5}{12}$ — this is $\cot(X)$, the reciprocal of tangent</li>
+<li>(C) $\frac{5}{13}$ — this is $\cos(X)$, mixing up trig ratios</li>
+<li>(D) $\frac{13}{5}$ — this is $\csc(X)$, not tested on the SAT but a distractor</li>
+</ul>
+<hr>
+<h3> Problem 5 — Answer: $\sin(R) = 0.6$</h3>
+<p>In a right triangle at $Q$, angles $P$ and $R$ are complementary: $P + R = 90°$. By the cofunction identity, $\sin(R) = \cos(90° - R) = \cos(P) = 0.6$.</p>
+<hr>
+<h3> Problem 6 — Answer: Approximately 29.5 feet</h3>
+<p>The ramp is the hypotenuse (30 ft). The horizontal distance is adjacent to the $10°$ angle.</p>
+<p>$$\cos(10°) = \frac{\text{horizontal}}{30}$$</p>
+<p>$$\text{horizontal} = 30 \cdot \cos(10°) \approx 30 \times 0.9848 \approx 29.5 \text{ feet}$$</p>
+<hr>
+<h2>Key Takeaways</h2>
+<li>The SAT only tests right triangle trig: SOHCAHTOA and $\sin(x) = \cos(90°-x)$. Nothing more.</li>
+<li>Recognize Pythagorean triples (especially 3-4-5, 5-12-13, 8-15-17) to save time.</li>
+<li>The cofunction identity is the most predictable trig question on the SAT — complementary angles swap sine and cosine.</li>
+<li>Always identify which angle you're working with before labeling opposite/adjacent.</li>
+<li>Don't overcomplicate — if you're using AAHL techniques, you're doing too much.</li>
+<div class="nav">
+<a href="lesson16.html">← Previous Lesson</a>
+<a href="index.html">📋 All Lessons</a>
+<a href="lesson18.html">Next Lesson →</a>
+</div>
+</body>
+</html>

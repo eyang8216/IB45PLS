@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 13 — Taylor & Maclaurin Series</title>
+<script>
+MathJax = {
+  tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body {
+    max-width: 800px; margin: 40px auto; font-family: 'Times New Roman', Georgia, serif;
+    font-size: 17px; line-height: 1.7; padding: 0 20px; color: #1a1a1a;
+  }
+  h1 { font-size: 22px; border-bottom: 2px solid #333; padding-bottom: 8px; margin-top: 36px; }
+  h2 { font-size: 19px; margin-top: 28px; color: #2c3e50; }
+  h3 { font-size: 17px; margin-top: 22px; color: #444; }
+  h4 { font-size: 16px; margin-top: 18px; }
+  p { margin: 0.6em 0; }
+  li { margin: 0.3em 0 0.3em 20px; }
+  hr { margin: 20px 0; border: none; border-top: 1px solid #ddd; }
+  .math-block { text-align: center; margin: 1em 0; overflow-x: auto; }
+  .table-line { font-family: 'Courier New', monospace; font-size: 15px; margin: 0.1em 0; }
+  pre { background: #f5f5f5; padding: 10px 14px; border-radius: 4px; overflow-x: auto; font-size: 14px; }
+  b { color: #222; }
+  table { border-collapse: collapse; margin: 16px 0; width: 100%; font-size: 15px; }
+  th { background: #2c3e50; color: #fff; padding: 8px 12px; text-align: center; font-weight: bold; }
+  td { border: 1px solid #ccc; padding: 8px 12px; text-align: center; }
+  tr:nth-child(even) { background: #f9f9f9; }
+  .nav { text-align: center; margin: 30px 0; font-size: 14px; }
+  .nav a { margin: 0 8px; color: #3498db; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  @media print { body { font-size: 15px; } }
+</style>
+</head>
+<body>
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+<h1>Lesson 13: Taylor Series and Maclaurin Series</h1>
+
+<h2>1. The Central Question</h2>
+
+<p>Suppose you have a function, such as the exponential $e^x$ or the sine function $\sin x$. These functions are not polynomials—they involve transcendental operations that make them hard to compute by hand. Yet in many applications, from engineering to physics, we need to evaluate these functions numerically. The central question of this lesson is: can we represent a complicated function as an infinite polynomial—a power series—that we can evaluate term by term?</p>
+
+<p>The answer is yes, for a large class of functions. The resulting power series is called a <b>Taylor series</b>, and it is one of the most powerful ideas in calculus. The Taylor series gives us a way to approximate any sufficiently smooth function near a chosen point, with accuracy that improves as we include more terms.</p>
+
+<p><hr></p>
+
+<h2>2. What Is a Taylor Series?</h2>
+
+<p>Given a function $f(x)$ that can be differentiated infinitely many times at a point $x = a$, the <b>Taylor series</b> of $f$ centered at $a$ is:</p>
+
+<div class="math-block">$$f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!} (x-a)^n$$</div>
+
+<p>Let us unpack this notation. The symbol $f^{(n)}(a)$ means &quot;the $n$-th derivative of $f$, evaluated at $x = a$.&quot; So $f^{(0)}(a)$ is just $f(a)$, the value of the function itself. $f^{(1)}(a)$ is the first derivative $f&#x27;(a)$. $f^{(2)}(a)$ is the second derivative $f&#x27;&#x27;(a)$. The symbol $n!$ (read &quot;$n$ factorial&quot;) is the product of all positive integers from $1$ to $n$; for example, $3! = 3 \times 2 \times 1 = 6$. By convention, $0! = 1$.</p>
+
+<p>When the center is chosen to be $a = 0$, the series receives a special name: the <b>Maclaurin series</b>.</p>
+
+<div class="math-block">$$f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(0)}{n!} x^n$$</div>
+
+<p>Many students confuse Taylor and Maclaurin series, thinking they are different concepts. In fact, a Maclaurin series is simply a Taylor series with the center set to zero. This is the most common special case because calculations at zero are typically the easiest.</p>
+
+<p><hr></p>
+
+<h2>3. Where the Formula Comes From</h2>
+
+<p>To understand why the Taylor series takes this form, imagine we want to write the function $f(x)$ as a power series with unknown coefficients:</p>
+
+<div class="math-block">$$f(x) = c_0 + c_1(x-a) + c_2(x-a)^2 + c_3(x-a)^3 + \cdots$$</div>
+
+<p>Our goal is to determine the coefficients $c_0, c_1, c_2, \ldots$ in terms of the derivatives of $f$ at $a$.</p>
+
+<p>First, plug in $x = a$. All the $(x-a)$ terms become zero, leaving only $f(a) = c_0$. This tells us that $c_0$ is simply the value of the function at the center.</p>
+
+<p>Next, differentiate the series term by term:</p>
+
+<div class="math-block">$$f&#x27;(x) = c_1 + 2c_2(x-a) + 3c_3(x-a)^2 + 4c_4(x-a)^3 + \cdots$$</div>
+
+<p>Now plug in $x = a$ again. All terms with $(x-a)$ vanish, and we get $f&#x27;(a) = c_1$. So $c_1$ is the first derivative at the center.</p>
+
+<p>Differentiate a second time:</p>
+
+<div class="math-block">$$f&#x27;&#x27;(x) = 2c_2 + 6c_3(x-a) + 12c_4(x-a)^2 + \cdots$$</div>
+
+<p>Plug in $x = a$: $f&#x27;&#x27;(a) = 2c_2$, so $c_2 = \frac{f&#x27;&#x27;(a)}{2}$.</p>
+
+<p>Notice that the number multiplying $c_2$ after two differentiations is $2 = 2!$. After three differentiations we would get $6 = 3!$. The pattern continues: $c_n = \frac{f^{(n)}(a)}{n!}$. This is exactly the Taylor series formula.</p>
+
+<p><hr></p>
+
+<h2>4. The Maclaurin Series You Must Memorize</h2>
+
+<p>These five series are essential for IB AAHL. You should know their forms, their first few terms, and their intervals of convergence.</p>
+
+<h3>4.1 The Exponential Function: $e^x$</h3>
+
+<div class="math-block">$$e^x = \sum_{n=0}^{\infty} \frac{x^n}{n!} = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \cdots$$</div>
+
+<p><b>Why this works:</b> Every derivative of $e^x$ is $e^x$ itself. At $x = 0$, every derivative equals $1$. So $f^{(n)}(0) = 1$ for all $n$, giving $c_n = \frac{1}{n!}$.</p>
+
+<p>The radius of convergence is $R = \infty$, meaning this series converges for every real number $x$.</p>
+
+<p>Many students think the series for $e^x$ &quot;looks like&quot; it should converge only for small $x$ because factorials grow fast. But factorials are in the denominator, which means they help the series converge, not hinder it. The terms shrink to zero for any fixed $x$, no matter how large.</p>
+
+<h3>4.2 The Sine Function: $\sin x$</h3>
+
+<div class="math-block">$$\sin x = \sum_{n=0}^{\infty} \frac{(-1)^n x^{2n+1}}{(2n+1)!} = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots$$</div>
+
+<p><b>Why this works:</b> The derivatives of $\sin x$ cycle: $\sin x$, $\cos x$, $-\sin x$, $-\cos x$, and then repeat. Evaluated at $0$, this cycle gives $0, 1, 0, -1, 0, 1, 0, -1, \ldots$. Only the odd-order derivatives (first, third, fifth, ...) are nonzero, and they alternate in sign. That is why only odd powers appear.</p>
+
+<p>The radius of convergence is $R = \infty$.</p>
+
+<h3>4.3 The Cosine Function: $\cos x$</h3>
+
+<div class="math-block">$$\cos x = \sum_{n=0}^{\infty} \frac{(-1)^n x^{2n}}{(2n)!} = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots$$</div>
+
+<p><b>Why this works:</b> The derivatives of $\cos x$ cycle: $\cos x$, $-\sin x$, $-\cos x$, $\sin x$, and then repeat. Evaluated at $0$, this gives $1, 0, -1, 0, 1, 0, -1, 0, \ldots$. Only the even-order derivatives are nonzero, and they alternate in sign. That is why only even powers appear.</p>
+
+<p>The radius of convergence is $R = \infty$.</p>
+
+<h3>4.4 The Natural Logarithm: $\ln(1+x)$</h3>
+
+<div class="math-block">$$\ln(1+x) = \sum_{n=1}^{\infty} \frac{(-1)^{n-1} x^n}{n} = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \cdots$$</div>
+
+<p><b>Why this works:</b> The function evaluated at zero is $\ln(1) = 0$, so $c_0 = 0$. The first derivative is $\frac{1}{1+x}$, which at $x=0$ equals $1$. Higher derivatives follow the pattern $f^{(n)}(0) = (-1)^{n-1}(n-1)!$ for $n \geq 1$. Dividing by $n!$ gives $c_n = \frac{(-1)^{n-1}}{n}$.</p>
+
+<p>The radius of convergence is $R = 1$. The interval includes $x = 1$ (giving the alternating harmonic series, which converges) but excludes $x = -1$ (where the logarithm is undefined).</p>
+
+<p>A common misunderstanding is to think $\ln(1+x)$ converges for all $x$ like $e^x$ does. It does not—the series only works for $-1 &lt; x \leq 1$. At $x = -1$, the logarithm itself is undefined, and at $x &lt; -1$ or $x &gt; 1$, the series diverges.</p>
+
+<h3>4.5 The Binomial Series: $(1+x)^k$</h3>
+
+<div class="math-block">$$(1+x)^k = \sum_{n=0}^{\infty} \binom{k}{n} x^n = 1 + kx + \frac{k(k-1)}{2!}x^2 + \frac{k(k-1)(k-2)}{3!}x^3 + \cdots$$</div>
+
+<p>Here $\binom{k}{n}$ is the <b>generalized binomial coefficient</b>, defined for any real number $k$ and nonnegative integer $n$ by:</p>
+
+<div class="math-block">$$\binom{k}{n} = \frac{k(k-1)(k-2)\cdots(k-n+1)}{n!}$$</div>
+
+<p>The radius of convergence is $R = 1$ (when $k$ is not a nonnegative integer). A useful special case is the geometric series, obtained by setting $k = -1$:</p>
+
+<div class="math-block">$$\frac{1}{1+x} = \sum_{n=0}^{\infty} (-1)^n x^n = 1 - x + x^2 - x^3 + \cdots$$</div>
+
+<p><hr></p>
+
+<h2>5. Worked Examples — Building Series by Substitution</h2>
+
+<p>One of the most powerful techniques for finding Maclaurin series is substitution: if you know the series for a basic function, you can replace $x$ with a new expression to get the series for a related function. This is always legitimate within the radius of convergence.</p>
+
+<h3>Worked Example 1</h3>
+
+<p><b>Problem:</b> Find the Maclaurin series for $f(x) = e^{2x}$. Write the first four nonzero terms and the general term.</p>
+
+<p><b>Approach:</b> We know the series for $e^x$. Replace every $x$ in that series with $2x$, then simplify each term.</p>
+
+<p><b>Step 1:</b> Start with $e^u = \sum_{n=0}^{\infty} \frac{u^n}{n!}$ and substitute $u = 2x$:</p>
+
+<div class="math-block">$$e^{2x} = \sum_{n=0}^{\infty} \frac{(2x)^n}{n!} = \sum_{n=0}^{\infty} \frac{2^n x^n}{n!}$$</div>
+
+<p><b>Step 2:</b> Write the first four nonzero terms ($n = 0, 1, 2, 3$):</p>
+
+<div class="math-block">$$e^{2x} = 1 + 2x + \frac{4x^2}{2!} + \frac{8x^3}{3!} + \cdots = 1 + 2x + 2x^2 + \frac{4x^3}{3} + \cdots$$</div>
+
+<p>The general term is $\frac{2^n x^n}{n!}$.</p>
+
+<p><b>Why this makes sense:</b> The derivative of $e^{2x}$ is $2e^{2x}$, so at $x=0$ the first derivative is $2$, giving the coefficient $2$. The second derivative at $0$ is $4$, giving $\frac{4}{2!} = 2$. Our series matches this pattern.</p>
+
+<p><hr></p>
+
+<h3>Worked Example 2</h3>
+
+<p><b>Problem:</b> Find the Maclaurin series for $f(x) = \sin(x^2)$. Write the first four nonzero terms.</p>
+
+<p><b>Approach:</b> Substitute $u = x^2$ into the known series for $\sin u$.</p>
+
+<p><b>Step 1:</b> The series for sine is $\sin u = u - \frac{u^3}{3!} + \frac{u^5}{5!} - \frac{u^7}{7!} + \cdots$.</p>
+
+<p><b>Step 2:</b> Replace $u$ with $x^2$:</p>
+
+<div class="math-block">$$\sin(x^2) = x^2 - \frac{(x^2)^3}{3!} + \frac{(x^2)^5}{5!} - \frac{(x^2)^7}{7!} + \cdots$$</div>
+
+<p><b>Step 3:</b> Simplify the exponents:</p>
+
+<div class="math-block">$$\sin(x^2) = x^2 - \frac{x^6}{6} + \frac{x^{10}}{120} - \frac{x^{14}}{5040} + \cdots$$</div>
+
+<p>The general term is $\frac{(-1)^n x^{4n+2}}{(2n+1)!}$.</p>
+
+<p><b>Why this makes sense:</b> When $x$ is small, $x^2$ is even smaller, so $\sin(x^2)$ should behave like $x^2$ (its leading term). Our series confirms this: the first term is $x^2$.</p>
+
+<p><hr></p>
+
+<h3>Worked Example 3</h3>
+
+<p><b>Problem:</b> Find the Maclaurin series for $f(x) = \frac{1}{1+3x}$. Write the first four nonzero terms.</p>
+
+<p><b>Approach:</b> Recognize this as a geometric series. Use the identity $\frac{1}{1 - r} = \sum_{n=0}^{\infty} r^n$ with $r = -3x$.</p>
+
+<p><b>Step 1:</b> Rewrite the function to match the geometric series form:</p>
+
+<div class="math-block">$$\frac{1}{1+3x} = \frac{1}{1 - (-3x)}$$</div>
+
+<p><b>Step 2:</b> Substitute $r = -3x$ into $\sum_{n=0}^{\infty} r^n$:</p>
+
+<div class="math-block">$$\frac{1}{1+3x} = \sum_{n=0}^{\infty} (-3x)^n = \sum_{n=0}^{\infty} (-3)^n x^n$$</div>
+
+<p><b>Step 3:</b> First four nonzero terms: $1 - 3x + 9x^2 - 27x^3$.</p>
+
+<p><b>Why this makes sense:</b> This is a geometric series that converges when $|-3x| &lt; 1$, meaning $|x| &lt; \frac{1}{3}$. For values of $x$ inside this interval, the infinite sum adds up to exactly $\frac{1}{1+3x}$.</p>
+
+<p><hr></p>
+
+<h3>Worked Example 4</h3>
+
+<p><b>Problem:</b> Find the Taylor series for $f(x) = \ln x$ centered at $a = 1$. Write the first four nonzero terms.</p>
+
+<p><b>Approach:</b> Compute derivatives of $\ln x$, evaluate them at $x = 1$, and plug into the Taylor series formula with $a = 1$.</p>
+
+<p><b>Step 1:</b> Compute derivatives:</p>
+
+<p>$f(x) = \ln x$, so $f(1) = \ln(1) = 0$.</p>
+
+<p>$f&#x27;(x) = \frac{1}{x} = x^{-1}$, so $f&#x27;(1) = 1$.</p>
+
+<p>$f&#x27;&#x27;(x) = -x^{-2}$, so $f&#x27;&#x27;(1) = -1$.</p>
+
+<p>$f&#x27;&#x27;&#x27;(x) = 2x^{-3}$, so $f&#x27;&#x27;&#x27;(1) = 2$.</p>
+
+<p>$f^{(4)}(x) = -6x^{-4}$, so $f^{(4)}(1) = -6$.</p>
+
+<p><b>Step 2:</b> The pattern: $f^{(n)}(1) = (-1)^{n-1}(n-1)!$ for $n \geq 1$.</p>
+
+<p><b>Step 3:</b> Form the Taylor series with $a = 1$:</p>
+
+<div class="math-block">$$\ln x = \sum_{n=1}^{\infty} \frac{(-1)^{n-1}(n-1)!}{n!}(x-1)^n = \sum_{n=1}^{\infty} \frac{(-1)^{n-1}}{n}(x-1)^n$$</div>
+
+<p><b>Step 4:</b> First four nonzero terms:</p>
+
+<div class="math-block">$$\ln x = (x-1) - \frac{(x-1)^2}{2} + \frac{(x-1)^3}{3} - \frac{(x-1)^4}{4} + \cdots$$</div>
+
+<p><b>Why this makes sense:</b> If we set $x = 1 + u$, this becomes the standard $\ln(1+u)$ series we already know.</p>
+
+<p><hr></p>
+
+<h3>Worked Example 5</h3>
+
+<p><b>Problem:</b> Find the first four nonzero terms of the Maclaurin series for $f(x) = x \cos x$.</p>
+
+<p><b>Approach:</b> Start with the known series for $\cos x$ and multiply every term by $x$.</p>
+
+<p><b>Step 1:</b> Write the cosine series:</p>
+
+<div class="math-block">$$\cos x = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots$$</div>
+
+<p><b>Step 2:</b> Multiply each term by $x$:</p>
+
+<div class="math-block">$$x\cos x = x \cdot 1 - x \cdot \frac{x^2}{2!} + x \cdot \frac{x^4}{4!} - x \cdot \frac{x^6}{6!} + \cdots$$</div>
+
+<p><b>Step 3:</b> Simplify:</p>
+
+<div class="math-block">$$x\cos x = x - \frac{x^3}{2} + \frac{x^5}{24} - \frac{x^7}{720} + \cdots$$</div>
+
+<p><b>Why this makes sense:</b> The function $x\cos x$ is an odd function (it satisfies $f(-x) = -f(x)$), and indeed only odd powers appear in the series.</p>
+
+<p><hr></p>
+
+<h2>6. Summary Table</h2>
+
+<p class="table-line">| Function | Maclaurin Series | First Few Terms | $R$ |</p>
+<p class="table-line">|<hr>|<hr>|<hr>|<hr>|</p>
+<p class="table-line">| $e^x$ | $\sum_{n=0}^{\infty} \frac{x^n}{n!}$ | $1 + x + \frac{x^2}{2} + \frac{x^3}{6} + \cdots$ | $\infty$ |</p>
+<p class="table-line">| $\sin x$ | $\sum_{n=0}^{\infty} \frac{(-1)^n x^{2n+1}}{(2n+1)!}$ | $x - \frac{x^3}{6} + \frac{x^5}{120} - \cdots$ | $\infty$ |</p>
+<p class="table-line">| $\cos x$ | $\sum_{n=0}^{\infty} \frac{(-1)^n x^{2n}}{(2n)!}$ | $1 - \frac{x^2}{2} + \frac{x^4}{24} - \cdots$ | $\infty$ |</p>
+<p class="table-line">| $\ln(1+x)$ | $\sum_{n=1}^{\infty} \frac{(-1)^{n-1}x^n}{n}$ | $x - \frac{x^2}{2} + \frac{x^3}{3} - \cdots$ | $1$ |</p>
+<p class="table-line">| $\frac{1}{1-x}$ | $\sum_{n=0}^{\infty} x^n$ | $1 + x + x^2 + x^3 + \cdots$ | $1$ |</p>
+<p class="table-line">| $(1+x)^k$ | $\sum_{n=0}^{\infty} \binom{k}{n}x^n$ | $1 + kx + \frac{k(k-1)}{2}x^2 + \cdots$ | $1$ |</p>
+
+<p><hr></p>
+
+<h2>Practice Problems</h2>
+
+<p><b>Problem 1</b></p>
+<p>Find the Maclaurin series for $f(x) = e^{-x}$ by substituting $-x$ into the series for $e^x$. Write the first four nonzero terms and the general term.</p>
+
+<p><b>Problem 2</b></p>
+<p>Find the Maclaurin series for $f(x) = \cos(2x)$ by substituting $2x$ into the series for $\cos x$. Write the first four nonzero terms.</p>
+
+<p><b>Problem 3</b></p>
+<p>Find the Maclaurin series for $f(x) = \ln(1 - x)$ by substituting $-x$ into the series for $\ln(1+x)$. Write the first four nonzero terms.</p>
+
+<p><b>Problem 4</b></p>
+<p>Find the Taylor series for $f(x) = e^x$ centered at $a = 1$. Write the first four nonzero terms and the general term.</p>
+
+<p><b>Problem 5 (IB-style)</b></p>
+<p>The function $f$ is defined by $f(x) = x^2 e^x$.</p>
+
+<p>(a) Using the Maclaurin series for $e^x$, find the Maclaurin series for $f(x)$ up to and including the term in $x^5$. [3 marks]</p>
+
+<p>(b) Hence find the value of $f^{(4)}(0)$, the fourth derivative of $f$ evaluated at $x = 0$. [2 marks]</p>
+
+<p><hr></p>
+
+<h2>Answers</h2>
+
+<p><b>Answer 1</b></p>
+<p>Substitute $u = -x$ into $e^u = \sum_{n=0}^{\infty} \frac{u^n}{n!}$. This gives $e^{-x} = \sum_{n=0}^{\infty} \frac{(-x)^n}{n!} = \sum_{n=0}^{\infty} \frac{(-1)^n x^n}{n!}$.</p>
+
+<p>The first four nonzero terms (for $n = 0, 1, 2, 3$) are: $1 - x + \frac{x^2}{2!} - \frac{x^3}{3!}$, which simplifies to $1 - x + \frac{x^2}{2} - \frac{x^3}{6}$.</p>
+
+<p>The general term is $\frac{(-1)^n x^n}{n!}$.</p>
+
+<p><b>Answer 2</b></p>
+<p>Substitute $u = 2x$ into $\cos u = \sum_{n=0}^{\infty} \frac{(-1)^n u^{2n}}{(2n)!}$. This gives $\cos(2x) = \sum_{n=0}^{\infty} \frac{(-1)^n (2x)^{2n}}{(2n)!} = \sum_{n=0}^{\infty} \frac{(-1)^n 4^n x^{2n}}{(2n)!}$.</p>
+
+<p>The first four nonzero terms are:</p>
+<p>$n=0$: $1$</p>
+<p>$n=1$: $-\frac{4x^2}{2!} = -2x^2$</p>
+<p>$n=2$: $\frac{16x^4}{4!} = \frac{16x^4}{24} = \frac{2x^4}{3}$</p>
+<p>$n=3$: $-\frac{64x^6}{6!} = -\frac{64x^6}{720} = -\frac{4x^6}{45}$</p>
+
+<p>So: $1 - 2x^2 + \frac{2}{3}x^4 - \frac{4}{45}x^6$.</p>
+
+<p><b>Answer 3</b></p>
+<p>Substitute $u = -x$ into $\ln(1+u) = u - \frac{u^2}{2} + \frac{u^3}{3} - \frac{u^4}{4} + \cdots$.</p>
+
+<p>$\ln(1-x) = (-x) - \frac{(-x)^2}{2} + \frac{(-x)^3}{3} - \frac{(-x)^4}{4} + \cdots = -x - \frac{x^2}{2} - \frac{x^3}{3} - \frac{x^4}{4} - \cdots$</p>
+
+<p>The first four nonzero terms are: $-x - \frac{x^2}{2} - \frac{x^3}{3} - \frac{x^4}{4}$.</p>
+
+<p>All signs are negative, unlike the alternating signs in $\ln(1+x)$. The general term is $-\frac{x^n}{n}$ for $n \geq 1$.</p>
+
+<p><b>Answer 4</b></p>
+<p>For $f(x) = e^x$, every derivative is $e^x$, so $f^{(n)}(1) = e^1 = e$ for all $n$. Plugging into the Taylor series formula with $a = 1$:</p>
+
+<p>$e^x = \sum_{n=0}^{\infty} \frac{e}{n!}(x-1)^n = e + e(x-1) + \frac{e}{2}(x-1)^2 + \frac{e}{6}(x-1)^3 + \cdots$</p>
+
+<p>The first four nonzero terms are: $e + e(x-1) + \frac{e}{2}(x-1)^2 + \frac{e}{6}(x-1)^3$. The general term is $\frac{e}{n!}(x-1)^n$.</p>
+
+<p><b>Answer 5 (IB-style)</b></p>
+<p><b>(a)</b> The Maclaurin series for $e^x$ is $e^x = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \frac{x^5}{5!} + \cdots$. Multiply by $x^2$:</p>
+
+<p>$f(x) = x^2 e^x = x^2\left(1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \cdots\right) = x^2 + x^3 + \frac{x^4}{2!} + \frac{x^5}{3!} + \cdots$</p>
+
+<p>The Maclaurin series up to $x^5$ is: $x^2 + x^3 + \frac{x^4}{2} + \frac{x^5}{6}$. [3 marks]</p>
+
+<p><b>(b)</b> The coefficient of $x^4$ in the Maclaurin series is $\frac{f^{(4)}(0)}{4!}$. From part (a), the $x^4$ term is $\frac{x^4}{2}$, so $\frac{f^{(4)}(0)}{4!} = \frac{1}{2}$.</p>
+
+<p>Therefore $f^{(4)}(0) = \frac{1}{2} \cdot 4! = \frac{1}{2} \cdot 24 = 12$. [2 marks]</p>
+
+<p>A common pitfall is to forget to multiply by the factorial when extracting derivatives from series coefficients. The coefficient gives you $\frac{f^{(n)}(0)}{n!}$, not $f^{(n)}(0)$ directly.</p>
+
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+</body>
+</html>

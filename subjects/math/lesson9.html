@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 9 — Infinite Series & Geometric Series</title>
+<script>
+MathJax = {
+  tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body {
+    max-width: 800px; margin: 40px auto; font-family: 'Times New Roman', Georgia, serif;
+    font-size: 17px; line-height: 1.7; padding: 0 20px; color: #1a1a1a;
+  }
+  h1 { font-size: 22px; border-bottom: 2px solid #333; padding-bottom: 8px; margin-top: 36px; }
+  h2 { font-size: 19px; margin-top: 28px; color: #2c3e50; }
+  h3 { font-size: 17px; margin-top: 22px; color: #444; }
+  h4 { font-size: 16px; margin-top: 18px; }
+  p { margin: 0.6em 0; }
+  li { margin: 0.3em 0 0.3em 20px; }
+  hr { margin: 20px 0; border: none; border-top: 1px solid #ddd; }
+  .math-block { text-align: center; margin: 1em 0; overflow-x: auto; }
+  .table-line { font-family: 'Courier New', monospace; font-size: 15px; margin: 0.1em 0; }
+  pre { background: #f5f5f5; padding: 10px 14px; border-radius: 4px; overflow-x: auto; font-size: 14px; }
+  b { color: #222; }
+  table { border-collapse: collapse; margin: 16px 0; width: 100%; font-size: 15px; }
+  th { background: #2c3e50; color: #fff; padding: 8px 12px; text-align: center; font-weight: bold; }
+  td { border: 1px solid #ccc; padding: 8px 12px; text-align: center; }
+  tr:nth-child(even) { background: #f9f9f9; }
+  .nav { text-align: center; margin: 30px 0; font-size: 14px; }
+  .nav a { margin: 0 8px; color: #3498db; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  @media print { body { font-size: 15px; } }
+</style>
+</head>
+<body>
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+<h1>Lesson 9: Infinite Series and Geometric Series</h1>
+
+<h2>What Is an Infinite Series and Why Does It Matter?</h2>
+
+<p>Imagine you start walking toward a wall. Each step covers half the remaining distance. You take a step of 1 metre, then half a metre, then a quarter metre, and so on forever. Will you ever reach the wall?</p>
+
+<p>An <b>infinite series</b> answers questions like this. An infinite series is what happens when you add up all the terms of a sequence that never ends. We write it using sigma notation:</p>
+
+<div class="math-block">$$\sum_{n=1}^{\infty} a_n = a_1 + a_2 + a_3 + a_4 + \cdots$$</div>
+
+<p>The symbol $\sum$ (the Greek letter sigma) means &quot;add up.&quot; The subscript $n=1$ tells you to start at the first term, and $\infty$ means you never stop.</p>
+
+<p>Why does this matter? Infinite series appear everywhere in mathematics and science. They let us represent numbers exactly (like writing $0.333\ldots$ as a fraction), compute values of functions like sine and cosine, and model things like cooling objects and electrical circuits. The central question is: can adding infinitely many numbers ever give a finite answer?</p>
+
+<p><hr></p>
+
+<h2>The Key Idea: Partial Sums</h2>
+
+<p>Since you cannot literally add infinitely many numbers, mathematicians use a clever trick. Instead of adding all terms at once, you add them one at a time and watch what happens.</p>
+
+<p>A <b>partial sum</b> is the total after you have added a certain number of terms. The $N$-th partial sum, written $S_N$, is the sum of the first $N$ terms:</p>
+
+<div class="math-block">$$S_1 = a_1$$</div>
+<div class="math-block">$$S_2 = a_1 + a_2$$</div>
+<div class="math-block">$$S_3 = a_1 + a_2 + a_3$$</div>
+<div class="math-block">$$\vdots$$</div>
+<div class="math-block">$$S_N = a_1 + a_2 + \cdots + a_N$$</div>
+
+<p>Now we look at what happens to the sequence of partial sums $S_1, S_2, S_3, \ldots$ as $N$ gets larger and larger.</p>
+
+<p>Suppose the partial sums creep closer and closer to some fixed number $S$. Perhaps $S_1 = 0.5$, then $S_2 = 0.75$, then $S_3 = 0.875$, and so on, clearly heading toward $1$. In that case, we say the series <b>converges</b> to $S$, and we write:</p>
+
+<div class="math-block">$$\sum_{n=1}^{\infty} a_n = S$$</div>
+
+<p>If the partial sums do not approach any particular number — maybe they grow bigger and bigger without bound, or they bounce around forever — then we say the series <b>diverges</b>.</p>
+
+<p>Many students think that as long as the terms $a_n$ themselves get smaller the series must converge. But that is not true. The terms getting smaller is necessary for convergence, but it is not enough by itself. The classic counterexample is the harmonic series, which we will see later in this course.</p>
+
+<p><hr></p>
+
+<h2>A First Look: A Series That Diverges</h2>
+
+<p>Consider the simplest possible infinite series — just adding the number $1$ over and over forever:</p>
+
+<div class="math-block">$$\sum_{n=1}^{\infty} 1 = 1 + 1 + 1 + 1 + \cdots$$</div>
+
+<p>After $N$ terms, the partial sum is $S_N = N$. As $N$ goes to infinity, $S_N$ also goes to infinity. There is no fixed number the sum approaches. Therefore this series diverges. This is not surprising since the terms themselves do not get smaller — they stay at $1$ forever.</p>
+
+<p><hr></p>
+
+<h2>A Series That Converges: Telescoping</h2>
+
+<p>There is a special type of series called a <b>telescoping series</b>, where most of the terms cancel out when you write the partial sum. Think of it like a collapsible telescope: only the ends remain.</p>
+
+<p>Consider this series:</p>
+
+<div class="math-block">$$\sum_{n=1}^{\infty} \frac{1}{n(n+1)}$$</div>
+
+<p>Let us write out the first few terms. But first we need a useful trick from algebra. The fraction $\frac{1}{n(n+1)}$ can be split into two simpler fractions using <b>partial fractions</b>:</p>
+
+<div class="math-block">$$\frac{1}{n(n+1)} = \frac{1}{n} - \frac{1}{n+1}$$</div>
+
+<p>Now write out the first few terms of the series using this split:</p>
+
+<div class="math-block">$$n=1: \quad \frac{1}{1} - \frac{1}{2}$$</div>
+<div class="math-block">$$n=2: \quad \frac{1}{2} - \frac{1}{3}$$</div>
+<div class="math-block">$$n=3: \quad \frac{1}{3} - \frac{1}{4}$$</div>
+<div class="math-block">$$n=4: \quad \frac{1}{4} - \frac{1}{5}$$</div>
+
+<p>When you add these, something beautiful happens. The $-\frac{1}{2}$ from the first term cancels with the $+\frac{1}{2}$ from the second. The $-\frac{1}{3}$ from the second cancels with the $+\frac{1}{3}$ from the third. Almost everything cancels.</p>
+
+<p>The $N$-th partial sum, after all the cancellations, leaves only:</p>
+
+<div class="math-block">$$S_N = 1 - \frac{1}{N+1}$$</div>
+
+<p>Now let $N$ go to infinity. The fraction $\frac{1}{N+1}$ approaches $0$. Therefore:</p>
+
+<div class="math-block">$$\lim_{N\to\infty} S_N = 1 - 0 = 1$$</div>
+
+<p>The series converges, and its sum is exactly $1$.</p>
+
+<p><hr></p>
+
+<h2>The Geometric Series: The Most Important Series in This Course</h2>
+
+<p>A <b>geometric series</b> is formed by starting with a first term and then multiplying by the same number (called the <b>common ratio</b>) to get each next term. The pattern is:</p>
+
+<div class="math-block">$$\sum_{n=1}^{\infty} ar^{n-1} = a + ar + ar^2 + ar^3 + \cdots$$</div>
+
+<p>Here $a$ is the first term and $r$ is the common ratio. The exponent $n-1$ just makes the first term nice: when $n=1$, $ar^{1-1} = ar^0 = a$.</p>
+
+<p>Every term is $r$ times the previous one. For example, the series $4 + 2 + 1 + \frac{1}{2} + \cdots$ is geometric because each term is $\frac{1}{2}$ times the one before it.</p>
+
+<p><hr></p>
+
+<h3>Deriving the Sum Formula</h3>
+
+<p>Let us find a formula for the $N$-th partial sum of a geometric series. Write it out:</p>
+
+<div class="math-block">$$S_N = a + ar + ar^2 + \cdots + ar^{N-1}$$</div>
+
+<p>Now multiply both sides by $r$:</p>
+
+<div class="math-block">$$rS_N = ar + ar^2 + ar^3 + \cdots + ar^N$$</div>
+
+<p>Notice that both $S_N$ and $rS_N$ share many of the same terms. Subtract the second equation from the first:</p>
+
+<div class="math-block">$$S_N - rS_N = (a + ar + ar^2 + \cdots + ar^{N-1}) - (ar + ar^2 + \cdots + ar^N)$$</div>
+
+<p>Almost everything on the right cancels. Only $a$ from the first bracket and $-ar^N$ from the second bracket survive:</p>
+
+<div class="math-block">$$S_N - rS_N = a - ar^N$$</div>
+
+<p>Factor out $S_N$ on the left:</p>
+
+<div class="math-block">$$S_N(1 - r) = a(1 - r^N)$$</div>
+
+<p>Divide both sides by $(1 - r)$, as long as $r \neq 1$:</p>
+
+<div class="math-block">$$S_N = \frac{a(1 - r^N)}{1 - r}$$</div>
+
+<p>This is the formula for the $N$-th partial sum of a geometric series.</p>
+
+<p>Now the critical question: what happens when $N$ goes to infinity? The only part that depends on $N$ is $r^N$.</p>
+
+<p>If $|r| &lt; 1$ (that is, $r$ is strictly between $-1$ and $1$), then raising $r$ to larger and larger powers makes $r^N$ shrink toward $0$. For example, $(0.5)^{10} \approx 0.001$, and $(0.5)^{100}$ is tiny beyond imagination. So $r^N \to 0$ as $N \to \infty$, and:</p>
+
+<div class="math-block">$$\sum_{n=1}^{\infty} ar^{n-1} = \frac{a}{1 - r} \qquad \text{whenever } |r| &lt; 1$$</div>
+
+<p>If $|r| \geq 1$, then $r^N$ does not shrink to $0$. For example, if $r = 2$, then $2^N$ grows without bound. If $r = 1$, every term is just $a$, and we are adding $a$ infinitely many times. In all such cases the series diverges.</p>
+
+<p>The condition $|r| &lt; 1$ is what determines convergence. Always check it first.</p>
+
+<p><hr></p>
+
+<h2>Worked Examples</h2>
+
+<h3>Worked Example 1</h3>
+
+<p>Find the sum of the series $4 + 2 + 1 + \dfrac{1}{2} + \cdots$.</p>
+
+<p><b>Approach:</b> This looks like a geometric series because each term appears to be half of the previous one. We need to identify the first term $a$ and the common ratio $r$, verify that $|r| &lt; 1$, and then use the formula.</p>
+
+<p><b>Step 1:</b> Identify the first term. The first term is $a = 4$.</p>
+
+<p><b>Step 2:</b> Find the common ratio. Divide the second term by the first: $r = \frac{2}{4} = \frac{1}{2}$.</p>
+
+<p><b>Step 3:</b> Check the condition. $|r| = \frac{1}{2} &lt; 1$, so the series converges.</p>
+
+<p><b>Step 4:</b> Apply the sum formula:</p>
+
+<div class="math-block">$$\text{Sum} = \frac{a}{1 - r} = \frac{4}{1 - \frac{1}{2}} = \frac{4}{\frac{1}{2}} = 8$$</div>
+
+<p><b>Why this makes sense:</b> The first term is $4$, and each subsequent term is half the previous one. The sum should be larger than $4$ but not enormous because the terms quickly become tiny. After $4$ terms the sum is $4 + 2 + 1 + 0.5 = 7.5$. After $5$ it is $7.75$. After $6$ it is $7.875$. The partial sums are clearly approaching $8$, which confirms our formula.</p>
+
+<p><b>Answer: $8$</b></p>
+
+<p><hr></p>
+
+<h3>Worked Example 2</h3>
+
+<p>Find the sum of the series $3 - 1 + \dfrac{1}{3} - \dfrac{1}{9} + \cdots$.</p>
+
+<p><b>Approach:</b> The signs alternate, but the pattern of multiplying by the same number each time still holds. We find $a$ and $r$, check $|r|$, and apply the formula.</p>
+
+<p><b>Step 1:</b> First term: $a = 3$.</p>
+
+<p><b>Step 2:</b> Common ratio: divide the second term by the first: $r = \frac{-1}{3} = -\frac{1}{3}$.</p>
+
+<p><b>Step 3:</b> Check: $|r| = \frac{1}{3} &lt; 1$, so the series converges.</p>
+
+<p><b>Step 4:</b> Apply the formula:</p>
+
+<div class="math-block">$$\text{Sum} = \frac{3}{1 - \left(-\frac{1}{3}\right)} = \frac{3}{1 + \frac{1}{3}} = \frac{3}{\frac{4}{3}} = 3 \times \frac{3}{4} = \frac{9}{4}$$</div>
+
+<p><b>Why this makes sense:</b> The terms alternate between positive and negative, with shrinking magnitudes. The sum should settle somewhere between $3$ and $3 - 1 = 2$. Indeed, $\frac{9}{4} = 2.25$ is right in that range.</p>
+
+<p><b>Answer: $\frac{9}{4}$</b></p>
+
+<p><hr></p>
+
+<h3>Worked Example 3</h3>
+
+<p>Find the sum of the series written in sigma notation: $\displaystyle\sum_{n=1}^{\infty} 5 \cdot \left(\frac{2}{3}\right)^{n-1}$.</p>
+
+<p><b>Approach:</b> This is already in the standard geometric series form $\sum ar^{n-1}$. We can read $a$ and $r$ directly.</p>
+
+<p><b>Step 1:</b> Comparing to $ar^{n-1}$, we see $a = 5$ and $r = \frac{2}{3}$.</p>
+
+<p><b>Step 2:</b> Check: $|r| = \frac{2}{3} &lt; 1$. Converges.</p>
+
+<p><b>Step 3:</b> Sum formula:</p>
+
+<div class="math-block">$$\text{Sum} = \frac{5}{1 - \frac{2}{3}} = \frac{5}{\frac{1}{3}} = 15$$</div>
+
+<p><b>Why this makes sense:</b> Each term is $\frac{2}{3}$ of the previous one, so the sum should be larger than the first term ($5$) but smaller than infinite growth. Dividing by $1 - \frac{2}{3} = \frac{1}{3}$ effectively multiplies by $3$, giving $15$.</p>
+
+<p><b>Answer: $15$</b></p>
+
+<p><hr></p>
+
+<h3>Worked Example 4: Index Shift</h3>
+
+<p>Find the sum of $\displaystyle\sum_{n=2}^{\infty} \left(\frac{1}{2}\right)^n$.</p>
+
+<p><b>Approach:</b> The standard formula works when the sum starts at $n=1$ with $ar^{n-1}$ or at $n=0$ with $ar^n$. Here the sum starts at $n=2$, so the first term is $(\frac{1}{2})^2 = \frac{1}{4}$. We can think of this as a geometric series starting at a later term.</p>
+
+<p><b>Step 1:</b> Factor out the first term. Write the series as:</p>
+
+<div class="math-block">$$\sum_{n=2}^{\infty} \left(\frac{1}{2}\right)^n = \left(\frac{1}{2}\right)^2 + \left(\frac{1}{2}\right)^3 + \left(\frac{1}{2}\right)^4 + \cdots$$</div>
+
+<p><b>Step 2:</b> Factor out $(\frac{1}{2})^2 = \frac{1}{4}$:</p>
+
+<div class="math-block">$$= \frac{1}{4}\left(1 + \frac{1}{2} + \left(\frac{1}{2}\right)^2 + \cdots\right)$$</div>
+
+<p><b>Step 3:</b> The bracket is a standard geometric series with $a = 1$ and $r = \frac{1}{2}$. Its sum is $\frac{1}{1 - \frac{1}{2}} = 2$.</p>
+
+<p><b>Step 4:</b> Multiply: $\frac{1}{4} \times 2 = \frac{1}{2}$.</p>
+
+<p><b>Why this makes sense:</b> Another way: the full series starting from $n=0$ sums to $\frac{1}{1 - 1/2} = 2$, which is $1 + \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \cdots$. Our series starts at $\frac{1}{4}$, so it is the full sum minus the first two terms: $2 - 1 - \frac{1}{2} = \frac{1}{2}$. Both methods agree.</p>
+
+<p><b>Answer: $\frac{1}{2}$</b></p>
+
+<p><hr></p>
+
+<h3>Worked Example 5: Repeating Decimal as a Geometric Series</h3>
+
+<p>Express the repeating decimal $0.7777\ldots$ as a fraction in lowest terms.</p>
+
+<p><b>Approach:</b> A repeating decimal can be thought of as an infinite geometric series. Each digit position represents a power of one-tenth.</p>
+
+<p><b>Step 1:</b> Write the decimal as a sum of fractions:</p>
+
+<div class="math-block">$$0.7777\ldots = \frac{7}{10} + \frac{7}{100} + \frac{7}{1000} + \frac{7}{10000} + \cdots$$</div>
+
+<p><b>Step 2:</b> Identify the geometric series. Each term is $\frac{1}{10}$ times the previous term. So $a = \frac{7}{10}$ and $r = \frac{1}{10}$.</p>
+
+<p><b>Step 3:</b> Check: $|r| = \frac{1}{10} &lt; 1$. Converges.</p>
+
+<p><b>Step 4:</b> Apply the sum formula:</p>
+
+<div class="math-block">$$\text{Sum} = \frac{\frac{7}{10}}{1 - \frac{1}{10}} = \frac{\frac{7}{10}}{\frac{9}{10}} = \frac{7}{9}$$</div>
+
+<p><b>Why this makes sense:</b> Many students already know that $0.333\ldots = \frac{1}{3}$ and $0.666\ldots = \frac{2}{3}$. Following the pattern, $0.777\ldots$ should be $\frac{7}{9}$, which matches our calculation.</p>
+
+<p><b>Answer: $\frac{7}{9}$</b></p>
+
+<p><hr></p>
+
+<h2>A Quick Check for Divergence: The $n$-th Term Test</h2>
+
+<p>Sometimes you can tell immediately that a series diverges without doing any complicated calculations.</p>
+
+<p><b>The $n$-th Term Test (Divergence Test):</b> If the individual terms $a_n$ do not approach $0$ as $n$ goes to infinity, then the series $\sum a_n$ must diverge.</p>
+
+<p>Think about it: if you are adding numbers and the numbers are not getting closer and closer to $0$, the sum cannot settle down to a finite value. It will either grow without bound or oscillate forever.</p>
+
+<p><b>Important warning:</b> The reverse is NOT true. If the terms do approach $0$, the series might converge OR diverge. The $n$-th term test cannot prove convergence — it can only prove divergence.</p>
+
+<p><b>Example:</b> Consider $\displaystyle\sum_{n=1}^{\infty} \frac{n}{2n+1}$.</p>
+
+<p>Look at the general term: $a_n = \frac{n}{2n+1}$.</p>
+
+<p>As $n$ gets very large, the $+1$ in the denominator matters less and less. The ratio $\frac{n}{2n+1}$ approaches $\frac{1}{2}$.</p>
+
+<p>Since $\frac{1}{2} \neq 0$, the terms do not approach $0$, and by the $n$-th term test the series diverges.</p>
+
+<p><hr></p>
+
+<h2>Summary</h2>
+
+<p class="table-line">| Series Type | Form | Converges When | Sum Formula |</p>
+<p class="table-line">|<hr>|<hr>|<hr>|<hr>|</p>
+<p class="table-line">| Geometric | $\sum ar^{n-1}$ | $|r| &lt; 1$ | $\dfrac{a}{1 - r}$ |</p>
+<p class="table-line">| Telescoping | $\sum (b_n - b_{n+1})$ | $\lim b_n$ exists | $b_1 - \lim b_n$ |</p>
+
+<p>The geometric series is the one you will use most often. The condition $|r| &lt; 1$ must be burned into memory: if the absolute value of the common ratio is less than $1$, the series converges, and the sum is the first term divided by $(1 - r)$.</p>
+
+<p><hr></p>
+
+<h2>Practice Problems</h2>
+
+<p><b>Problem 1</b></p>
+
+<p>Find the sum of the following infinite geometric series: $2 + \dfrac{2}{3} + \dfrac{2}{9} + \dfrac{2}{27} + \cdots$. Show all your working.</p>
+
+<p><b>Problem 2</b></p>
+
+<p>Find the sum of the series $5 - \dfrac{5}{2} + \dfrac{5}{4} - \dfrac{5}{8} + \cdots$. Identify the first term, the common ratio, and confirm that the series converges before computing the sum.</p>
+
+<p><b>Problem 3</b></p>
+
+<p>Determine whether the following series converges. If it does, find the sum: $\displaystyle\sum_{n=1}^{\infty} 6 \cdot (0.4)^{n-1}$.</p>
+
+<p><b>Problem 4</b></p>
+
+<p>Find the sum of $\displaystyle\sum_{n=3}^{\infty} \left(\dfrac{1}{3}\right)^n$. Note that the sum starts at $n=3$, not at $n=1$.</p>
+
+<p><b>Problem 5</b> (IB-style)</p>
+
+<p>An infinite geometric series has a first term of $20$ and a sum of $50$.</p>
+
+<p>(a) Find the common ratio $r$. [3 marks]</p>
+
+<p>(b) Hence, or otherwise, find the sum of the series starting from the third term (that is, the sum $a_3 + a_4 + a_5 + \cdots$). [3 marks]</p>
+
+<p><b>Problem 6</b></p>
+
+<p>Does the series $\displaystyle\sum_{n=1}^{\infty} \dfrac{3n^2}{n^2 + 4}$ converge or diverge? Justify your answer using an appropriate test. If it diverges, explain why.</p>
+
+<p><hr></p>
+
+<h2>Answers</h2>
+
+<p><b>Answer 1</b></p>
+
+<p>We need to identify the first term and the common ratio. The first term is $a = 2$. To find the common ratio, divide the second term by the first: $r = \frac{2/3}{2} = \frac{1}{3}$. Since $|r| = \frac{1}{3} &lt; 1$, the series converges. Now apply the geometric series sum formula:</p>
+
+<div class="math-block">$$\text{Sum} = \frac{a}{1 - r} = \frac{2}{1 - \frac{1}{3}} = \frac{2}{\frac{2}{3}} = 2 \times \frac{3}{2} = 3$$</div>
+
+<p>So the sum of the infinite series is $3$.</p>
+
+<p>(Common pitfall: forgetting to check $|r| &lt; 1$ first. Always check convergence before using the formula.)</p>
+
+<p><hr></p>
+
+<p><b>Answer 2</b></p>
+
+<p>The first term is $a = 5$. The common ratio is $r = \frac{-5/2}{5} = -\frac{1}{2}$. Because $|r| = \frac{1}{2} &lt; 1$, the series converges. Using the sum formula:</p>
+
+<div class="math-block">$$\text{Sum} = \frac{a}{1 - r} = \frac{5}{1 - \left(-\frac{1}{2}\right)} = \frac{5}{1 + \frac{1}{2}} = \frac{5}{\frac{3}{2}} = 5 \times \frac{2}{3} = \frac{10}{3}$$</div>
+
+<p>So the sum is $\frac{10}{3}$.</p>
+
+<p>(Common pitfall: when $r$ is negative, the denominator becomes $1 - (-\frac{1}{2}) = 1 + \frac{1}{2} = \frac{3}{2}$. Students often write $1 - \frac{1}{2}$ by mistake.)</p>
+
+<p><hr></p>
+
+<p><b>Answer 3</b></p>
+
+<p>The series is in standard form $\sum ar^{n-1}$. Reading off, we have $a = 6$ and $r = 0.4$. Since $|r| = 0.4 &lt; 1$, the series converges. The sum is:</p>
+
+<div class="math-block">$$\text{Sum} = \frac{a}{1 - r} = \frac{6}{1 - 0.4} = \frac{6}{0.6} = 10$$</div>
+
+<p>So the series converges to $10$.</p>
+
+<p><hr></p>
+
+<p><b>Answer 4</b></p>
+
+<p>The sum starts at $n = 3$, so the first term is $\left(\frac{1}{3}\right)^3 = \frac{1}{27}$. This is a geometric series with first term $a = \frac{1}{27}$ and common ratio $r = \frac{1}{3}$.</p>
+
+<p>Alternatively, we can factor: the series $\sum_{n=3}^{\infty} \left(\frac{1}{3}\right)^n = \left(\frac{1}{3}\right)^3 \sum_{k=0}^{\infty} \left(\frac{1}{3}\right)^k = \frac{1}{27} \cdot \frac{1}{1 - \frac{1}{3}}$.</p>
+
+<p>Now compute:</p>
+
+<div class="math-block">$$\frac{1}{27} \times \frac{1}{\frac{2}{3}} = \frac{1}{27} \times \frac{3}{2} = \frac{3}{54} = \frac{1}{18}$$</div>
+
+<p>So the sum is $\frac{1}{18}$.</p>
+
+<p>(Common pitfall: using the formula $\frac{a}{1-r}$ with $a = 1$ instead of $a = (\frac{1}{3})^3$. The formula requires the actual first term of the series you are summing.)</p>
+
+<p><hr></p>
+
+<p><b>Answer 5</b></p>
+
+<p><b>(a)</b> For a geometric series with first term $a = 20$ and sum $S = 50$, we use $S = \frac{a}{1 - r}$. Substitute the known values:</p>
+
+<div class="math-block">$$50 = \frac{20}{1 - r}$$</div>
+
+<p>Multiply both sides by $(1 - r)$: $50(1 - r) = 20$.</p>
+
+<p>Divide by $50$: $1 - r = \frac{20}{50} = \frac{2}{5}$.</p>
+
+<p>So $r = 1 - \frac{2}{5} = \frac{3}{5}$.</p>
+
+<p>[3 marks: 1 for setting up the equation, 1 for correct algebra, 1 for the correct ratio.]</p>
+
+<p><b>(b)</b> The sum from the third term onward is the total sum minus the first two terms. The total sum is $50$. The first term is $20$. The second term is $ar = 20 \times \frac{3}{5} = 12$. Therefore:</p>
+
+<p>Sum from $n=3$ onward $= 50 - 20 - 12 = 18$.</p>
+
+<p>Alternatively, the series starting at $n=3$ is geometric with first term $ar^2 = 20 \times (\frac{3}{5})^2 = 20 \times \frac{9}{25} = \frac{36}{5} = 7.2$ and common ratio $\frac{3}{5}$. The sum is $\frac{7.2}{1 - 3/5} = 7.2 \times \frac{5}{2} = 18$. Both methods give the same answer.</p>
+
+<p>[3 marks: 1 for finding the second term, 1 for subtracting the first two terms from the total, 1 for the correct answer.]</p>
+
+<p><hr></p>
+
+<p><b>Answer 6</b></p>
+
+<p>We use the $n$-th term test. Look at the general term $a_n = \frac{3n^2}{n^2 + 4}$.</p>
+
+<p>To find the limit as $n \to \infty$, divide the numerator and denominator by the highest power of $n$, which is $n^2$:</p>
+
+<div class="math-block">$$\lim_{n\to\infty} \frac{3n^2}{n^2 + 4} = \lim_{n\to\infty} \frac{3}{1 + \frac{4}{n^2}} = \frac{3}{1 + 0} = 3$$</div>
+
+<p>The limit of the terms is $3$, which is not $0$. By the $n$-th term test, if the terms do not approach $0$, the series cannot converge. Therefore the series diverges.</p>
+
+<p>(Common pitfall: many students see the $n^2$ in both numerator and denominator and guess the series behaves like $\frac{1}{n^2}$, which would converge. But the numerator has a coefficient of $3$, and the terms approach $3$, not $0$. Always compute the limit of the terms first.)</p>
+
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+</body>
+</html>

@@ -1,0 +1,232 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 34: Economic Growth</title>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f8a; --border: #d0cdc4; --card-bg: #f8f5f0; --highlight: #e8f0f8; --heading: #1a3a52; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Georgia, 'Times New Roman', serif; font-size: 17px; line-height: 1.7; color: var(--text); background: var(--bg); max-width: 820px; margin: 0 auto; padding: 40px 32px 60px; }
+  nav.breadcrumb { font-size: 14px; margin-bottom: 32px; padding-bottom: 16px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  nav.breadcrumb a { color: var(--accent); text-decoration: none; } nav.breadcrumb a:hover { text-decoration: underline; }
+  h1 { font-size: 2em; color: var(--heading); margin-bottom: 8px; border-bottom: 3px solid var(--accent); padding-bottom: 10px; }
+  h2 { font-size: 1.4em; color: var(--heading); margin: 36px 0 12px; padding-left: 8px; border-left: 4px solid var(--accent); }
+  h3 { font-size: 1.15em; color: #2a4a30; margin: 24px 0 8px; }
+  p { margin: 10px 0; } ul, ol { margin: 8px 0 16px 24px; } li { margin: 5px 0; }
+  strong { color: #1a2a3a; }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 15px; }
+  th { background: var(--heading); color: white; padding: 10px 12px; text-align: left; }
+  td { padding: 8px 12px; border: 1px solid var(--border); } tr:nth-child(even) { background: var(--card-bg); }
+  .highlight-box { background: var(--highlight); border-left: 4px solid var(--accent); padding: 14px 18px; margin: 16px 0; border-radius: 0 6px 6px 0; }
+  .tip-box { background: #fffdf0; border: 1px solid #e0c860; padding: 14px 18px; margin: 20px 0; border-radius: 6px; }
+  .tip-box::before { content: "IB Exam Tip"; font-weight: bold; display: block; margin-bottom: 6px; color: #8a6d20; }
+  .problem { background: var(--card-bg); padding: 14px 18px; margin: 14px 0; border-radius: 6px; border: 1px solid var(--border); }
+  .problem strong { color: var(--accent); }
+  .answer { border-left: 3px solid #5a8a5a; padding-left: 16px; margin: 10px 0 20px; }
+  .evaluate-box { background: #f4f0ea; border: 2px solid #8a6d3b; padding: 20px 24px; margin: 28px 0; border-radius: 8px; }
+  .evaluate-box h2 { border-left-color: #8a6d3b; }
+  .claspp { color: #6a5030; font-weight: bold; margin: 10px 0 4px; }
+  hr { border: none; border-top: 1px solid var(--border); margin: 32px 0; }
+  @media print { body { font-size: 12pt; padding: 20px; max-width: 100%; } nav.breadcrumb, .no-print { display: none; } h1 { font-size: 18pt; } h2 { font-size: 14pt; } .highlight-box, .tip-box, .problem, .evaluate-box { break-inside: avoid; } a { color: var(--text); text-decoration: none; } }
+</style>
+</head>
+<body>
+
+<nav class="breadcrumb">
+  <span><a href="lesson33_inflation_consequences.html">Lesson 33: Inflation Consequences</a></span>
+  <span><a href="#">Index</a></span>
+  <span><a href="lesson35_inequality_lorenz_gini.html">Lesson 35: Inequality - Lorenz and Gini</a></span>
+</nav>
+
+<h1>Lesson 34: Economic Growth</h1>
+
+<h2>What You'll Learn</h2>
+<ul>
+  <li>The distinction between actual growth and potential growth</li>
+  <li>How to measure economic growth using real GDP</li>
+  <li>The causes of growth: factor quantity, factor quality, institutions</li>
+  <li>Positive and negative consequences of growth</li>
+  <li>The concept of sustainable growth</li>
+  <li>How to represent growth on PPC and AD/AS diagrams</li>
+</ul>
+
+<hr>
+
+<h2>1. Defining Economic Growth</h2>
+
+<p>Economic growth has TWO distinct meanings in IB Economics - and confusing them costs marks.</p>
+
+<h3>Actual Economic Growth</h3>
+<ul>
+  <li>An increase in <strong>real GDP</strong> (actual output produced and sold)</li>
+  <li>Represents <strong>using spare capacity</strong> more fully</li>
+  <li>On PPC: movement from point <strong>inside</strong> the curve toward frontier</li>
+  <li>On AD/AS: AD shifts right, moving along fixed LRAS/SRAS - higher equilibrium Y</li>
+</ul>
+
+<h3>Potential Economic Growth</h3>
+<ul>
+  <li>An increase in the economy's <strong>productive capacity</strong> - what it CAN produce</li>
+  <li>Represents <strong>expanding the frontier</strong></li>
+  <li>On PPC: entire curve shifts RIGHT (outward)</li>
+  <li>On AD/AS: LRAS shifts RIGHT</li>
+</ul>
+
+<div class="highlight-box">
+<strong>Worked Example: Distinguishing the Two</strong>
+<table>
+  <tr><th>Scenario</th><th>Type</th><th>Why</th></tr>
+  <tr><td>GDP rises $500B to $530B after stimulus</td><td>Actual</td><td>Using previously idle resources</td></tr>
+  <tr><td>New port built, increasing cargo capacity 20%</td><td>Potential</td><td>Capacity expanded</td></tr>
+  <tr><td>GDP rises 4%, output gap closed</td><td>Actual</td><td>Eliminating negative output gap</td></tr>
+  <tr><td>AI automation increases labor productivity 15%</td><td>Potential</td><td>More output possible per worker</td></tr>
+</table>
+</div>
+
+<h2>2. Measuring Economic Growth</h2>
+
+$$\text{Economic Growth Rate}_t = \frac{\text{Real GDP}_t - \text{Real GDP}_{t-1}}{\text{Real GDP}_{t-1}} \times 100\%$$
+
+<p><strong>Crucial</strong>: Must use <strong>REAL</strong> GDP (adjusted for inflation), not nominal.</p>
+
+<div class="highlight-box">
+<strong>Worked Example</strong>: Country X: Nominal GDP 2022 = $1.2T, deflator = 110. Nominal GDP 2023 = $1.35T, deflator = 115.5.<br><br>
+Real GDP 2022 = ($1.2T/110) x 100 = <strong>$1.091T</strong><br>
+Real GDP 2023 = ($1.35T/115.5) x 100 = <strong>$1.169T</strong><br>
+Growth = ($1.169T - $1.091T)/$1.091T x 100% = <strong>7.15%</strong>
+</div>
+
+<h3>Per Capita Growth</h3>
+$$\text{Real GDP per capita growth} \approx \text{Real GDP growth} - \text{Population growth}$$
+
+<p>If GDP grows 3% but population grows 2%, per capita growth is only ~1%. Better measure of whether living standards are rising.</p>
+
+<h2>3. Causes of Economic Growth</h2>
+
+<h3>A. Quantity of Factors of Production</h3>
+<ul>
+  <li><strong>Labor Quantity</strong>: Population growth, immigration, higher participation - more workers - LRAS/PPC shifts right</li>
+  <li><strong>Capital Quantity</strong>: Investment in physical capital - factories, machines, infrastructure</li>
+  <li><strong>Land/Natural Resources</strong>: Discovery of new resources, land reclamation</li>
+</ul>
+
+<h3>B. Quality of Factors - Productivity</h3>
+<ul>
+  <li><strong>Labor Productivity</strong>: Education and training (human capital), better health, technology</li>
+  <li><strong>Capital Productivity</strong>: Technological progress in machines, better management, R&D</li>
+  <li><strong>Total Factor Productivity (TFP)</strong>: The "technology multiplier" - portion of output not explained by input quantities</li>
+</ul>
+
+<h3>C. Institutional Factors</h3>
+<table>
+  <tr><th>Factor</th><th>Why It Matters</th></tr>
+  <tr><td>Property rights</td><td>Secure ownership encourages investment</td></tr>
+  <tr><td>Rule of law</td><td>Businesses can rely on agreements</td></tr>
+  <tr><td>Political stability</td><td>Predictable policy - no coups</td></tr>
+  <tr><td>Openness to trade</td><td>Access to markets, technology transfer, competition</td></tr>
+  <tr><td>Financial system depth</td><td>Efficient capital allocation</td></tr>
+  <tr><td>Low corruption</td><td>Resources go to productive uses, not bribes</td></tr>
+</table>
+
+<p><strong>Key insight</strong>: Institutions explain why countries with similar resources have vastly different outcomes (South Korea vs North Korea).</p>
+
+<h2>4. Consequences of Economic Growth</h2>
+
+<h3>Positive Consequences</h3>
+<table>
+  <tr><th>Consequence</th><th>Mechanism</th></tr>
+  <tr><td>Higher living standards</td><td>Real GDP per capita up - more goods/services per person</td></tr>
+  <tr><td>Higher employment</td><td>Actual growth requires more workers</td></tr>
+  <tr><td>Higher tax revenue</td><td>Larger tax base - more public spending</td></tr>
+  <tr><td>Poverty reduction</td><td>Growth creates opportunities</td></tr>
+  <tr><td>Environmental investment</td><td>Richer countries afford cleaner technology</td></tr>
+</table>
+
+<h3>Negative Consequences</h3>
+<table>
+  <tr><th>Consequence</th><th>Mechanism</th></tr>
+  <tr><td>Environmental degradation</td><td>More production - more pollution, resource depletion</td></tr>
+  <tr><td>Increased inequality</td><td>Benefits concentrate among capital owners and skilled workers</td></tr>
+  <tr><td>Structural change costs</td><td>Growth shifts employment - structural unemployment in declining industries</td></tr>
+  <tr><td>Resource depletion</td><td>Finite resources consumed faster</td></tr>
+  <tr><td>Social disruption</td><td>Urbanization, family dislocation, cultural erosion</td></tr>
+</table>
+
+<h3>The Easterlin Paradox</h3>
+<p>Beyond ~$20,000 per capita, self-reported happiness does NOT increase significantly with further GDP growth. Challenges assumption that growth always improves well-being.</p>
+
+<h2>5. Sustainable Growth</h2>
+
+<p><strong>Sustainable economic growth</strong>: meets present needs without compromising future generations.</p>
+
+<h3>Three Pillars</h3>
+<ol>
+  <li><strong>Economic sustainability</strong>: No unsustainable debt or asset bubbles</li>
+  <li><strong>Environmental sustainability</strong>: Within planetary boundaries</li>
+  <li><strong>Social sustainability</strong>: Inclusive, reducing inequality</li>
+</ol>
+
+<div class="tip-box">
+<p><strong>ALWAYS</strong> specify "actual" or "potential" growth. Never just say "economic growth" without clarifying. PPC and AD/AS diagrams both acceptable - use the one that fits context. For evaluation: "sustainable growth" is a powerful evaluation point. For data-response: if given nominal GDP and deflator, they want you to calculate real.</p>
+</div>
+
+<h2>Practice Problems</h2>
+
+<div class="problem"><strong>Problem 1 (Easy)</strong><br>Distinguish between actual economic growth and potential economic growth. Use a PPC diagram to illustrate.</div>
+<div class="problem"><strong>Problem 2 (Easy)</strong><br>Country A's nominal GDP in 2022 was $800B with deflator 125. In 2023, nominal GDP $880B with deflator 132. Calculate real GDP for both years and the real growth rate.</div>
+<div class="problem"><strong>Problem 3 (Medium)</strong><br>Identify and explain THREE causes of potential economic growth. For each, state whether it affects quantity or quality of factors.</div>
+<div class="problem"><strong>Problem 4 (Medium)</strong><br>Country B's real GDP grows 5% annually but population grows 3%. How long for real GDP per capita to double? (Use Rule of 70.)</div>
+<div class="problem"><strong>Problem 5 (Challenging)</strong><br>An economy experiences 6% real GDP growth for five consecutive years. However, Gini rises from 0.35 to 0.48, carbon emissions increase 40%, and life satisfaction unchanged. Evaluate whether this growth has been beneficial.</div>
+<div class="problem"><strong>Problem 6 (IB-Style 15-mark)</strong><br>"Economic growth always leads to improvements in living standards." Discuss this statement.</div>
+
+<h2>Answers</h2>
+
+<div class="answer"><strong>Answer 1</strong>: <strong>Actual growth</strong>: Increase in real GDP - using existing capacity. On PPC: movement from inside toward frontier. <strong>Potential growth</strong>: Increase in productive capacity. On PPC: entire curve shifts outward. Diagram: PPC0 and PPC1, point A inside PPC0 to point B on PPC0 (actual growth), PPC0 to PPC1 shift (potential growth).</div>
+
+<div class="answer"><strong>Answer 2</strong>: Real GDP 2022 = (800/125)x100 = <strong>$640B</strong>. Real GDP 2023 = (880/132)x100 = <strong>$666.67B</strong>. Growth = (666.67-640)/640 x 100% = <strong>4.17%</strong>. Check: nominal growth 10%, inflation ~5.6%, roughly 10%-5.6% = 4.4% (close).</div>
+
+<div class="answer"><strong>Answer 3</strong>: <strong>1. Investment in physical capital (quantity)</strong>: More factories, machines, infrastructure - LRAS shifts right. Example: China's infrastructure since 1990s. <strong>2. Education and training (quality - human capital)</strong>: Better-educated workers more productive. Example: South Korea's universal education driving tech transformation. <strong>3. Technological progress (quality - TFP)</strong>: R&D creates new products and efficient processes. Example: IT revolution increased productivity across all sectors.</div>
+
+<div class="answer"><strong>Answer 4</strong>: Per capita growth = 5% - 3% = 2% (approximate). Precisely: (1.05/1.03)-1 = 1.94%. Doubling time = 70/1.94 = <strong>~36 years</strong>. At 1.94% per capita, reaching $4,000 from $2,000 takes 36 years - very slow catch-up. Compare: at 5% per capita (China peak), doubling in 14 years. Country is improving but may never converge to developed nations.</div>
+
+<div class="answer"><strong>Answer 5</strong>: Cumulative growth = (1.06)^5-1 = 33.8% more output. Positives: more goods, higher tax revenue. Negatives: (1) Gini 0.35 to 0.48 = large inequality increase - benefits concentrated among wealthy, poor may be absolutely worse off. (2) Carbon +40% = environmentally unsustainable, costs falling on future generations. (3) Unchanged life satisfaction = Easterlin Paradox - growth without welfare improvement. Overall: narrowly beneficial (more output) but broadly questionable - "growth without development."</div>
+
+<div class="answer"><strong>Answer 6 (Full IB-Style)</strong>:<br>
+<strong>Introduction</strong>: The absolutist "always" claim requires scrutiny of what "living standards" mean and under what conditions growth translates to welfare.<br>
+<strong>Arguments For</strong>: (1) Higher material consumption - more goods/services. (2) Employment and income - jobs created, poverty reduced. (3) Public services - larger tax base enables better healthcare, education. (4) Longevity - richer countries have longer life expectancy, lower infant mortality.<br>
+<strong>Arguments Against</strong>: (1) Distribution matters - if growth benefits only top 10%, median person stagnates. (2) Environmental costs - pollution, climate change reduce living standards. (3) Non-material standards - leisure, community, mental health can erode. (4) Easterlin Paradox - beyond ~$20K/capita, happiness weakly correlates with income. (5) Composition of growth - arms vs education has different welfare implications.<br>
+<strong>What Makes Growth Improve Living Standards?</strong> Inclusive (broadly shared), sustainable (environmentally sound), directed toward genuine welfare-enhancing outputs, preserving leisure and community.<br>
+<strong>Conclusion</strong>: Economic growth does NOT "always" improve living standards. It does so only when inclusive, sustainable, and welfare-directed. Unqualified GDP growth can coexist with rising inequality, environmental destruction, and stagnant well-being. The statement is too absolute and must be rejected.</div>
+
+<div class="evaluate-box">
+<h2>Evaluate</h2>
+<p><em>"Economic growth always leads to improvements in living standards."</em></p>
+<p class="claspp">CLASPP Analysis (184 words)</p>
+
+<p><strong>Conclusion</strong>: The statement is false in its absolute form. Economic growth improves living standards only under specific conditions - when it is inclusive, sustainable, and directed toward welfare-enhancing outputs. Growth can and does occur alongside stagnant or declining living standards for significant portions of the population.</p>
+
+<p><strong>Long-term vs Short-term</strong>: In the short run, growth visibly raises employment and incomes. In the long run, however, unsustainable resource depletion and environmental degradation may reduce living standards for future generations, while inequality may compound.</p>
+
+<p><strong>Assumptions</strong>: Assumes direct, frictionless translation of GDP growth to welfare. Ignores distribution (who gets the growth?), composition (growth of what?), and externalities (what costs accompany growth?). Implicitly treats GDP as a welfare metric, which it is not.</p>
+
+<p><strong>Stakeholders</strong>: Capital owners and high-skilled workers benefit most. Low-skilled workers may be displaced. Future generations bear environmental costs. Rural communities may lose traditional livelihoods.</p>
+
+<p><strong>Priorities</strong>: If priority is aggregate output, growth succeeds. If priority is broad-based welfare, growth is a means not an end - must be evaluated against distribution, sustainability, and well-being metrics.</p>
+
+<p><strong>Pros/Cons</strong>: Pro - growth creates resources to solve problems. Con - growth can create or exacerbate the very problems it's supposed to solve.</p>
+
+<p><strong>Overall</strong>: Growth is a powerful but conditional tool for improving living standards.</p>
+</div>
+
+<hr>
+
+<nav class="breadcrumb">
+  <span><a href="lesson33_inflation_consequences.html">Lesson 33: Inflation Consequences</a></span>
+  <span><a href="#">Index</a></span>
+  <span><a href="lesson35_inequality_lorenz_gini.html">Lesson 35: Inequality - Lorenz and Gini</a></span>
+</nav>
+
+</body>
+</html>

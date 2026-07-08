@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 39 — Binomial Theorem & Binomial Expansion</title>
+<script>
+MathJax = {
+  tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body {
+    max-width: 800px; margin: 40px auto; font-family: 'Times New Roman', Georgia, serif;
+    font-size: 17px; line-height: 1.7; padding: 0 20px; color: #1a1a1a;
+  }
+  h1 { font-size: 22px; border-bottom: 2px solid #333; padding-bottom: 8px; margin-top: 36px; }
+  h2 { font-size: 19px; margin-top: 28px; color: #2c3e50; }
+  h3 { font-size: 17px; margin-top: 22px; color: #444; }
+  h4 { font-size: 16px; margin-top: 18px; }
+  p { margin: 0.6em 0; }
+  li { margin: 0.3em 0 0.3em 20px; }
+  hr { margin: 20px 0; border: none; border-top: 1px solid #ddd; }
+  .math-block { text-align: center; margin: 1em 0; overflow-x: auto; }
+  .table-line { font-family: 'Courier New', monospace; font-size: 15px; margin: 0.1em 0; }
+  pre { background: #f5f5f5; padding: 10px 14px; border-radius: 4px; overflow-x: auto; font-size: 14px; }
+  b { color: #222; }
+  table { border-collapse: collapse; margin: 16px 0; width: 100%; font-size: 15px; }
+  th { background: #2c3e50; color: #fff; padding: 8px 12px; text-align: center; font-weight: bold; }
+  td { border: 1px solid #ccc; padding: 8px 12px; text-align: center; }
+  tr:nth-child(even) { background: #f9f9f9; }
+  .nav { text-align: center; margin: 30px 0; font-size: 14px; }
+  .nav a { margin: 0 8px; color: #3498db; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  @media print { body { font-size: 15px; } }
+</style>
+</head>
+<body>
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+<h1>Lesson 39: The Binomial Theorem — Expanding Powers of (a + b)</h1>
+
+<h2>What is the Binomial Theorem?</h2>
+
+<p>A <b>binomial</b> is an expression with two terms, like (x + 2) or (2a − 3b). The <b>binomial theorem</b> is a formula that lets you expand (a + b)^n — that is, multiply (a + b) by itself n times — without doing the multiplication term by term. This is a core IB AAHL Topic 1 skill that connects algebra with combinatorics (counting) and also appears in infinite series.</p>
+
+<h2>Why Learn This?</h2>
+
+<p>If someone asks you to expand (x + 2)^4, you could multiply (x + 2)(x + 2)(x + 2)(x + 2) by hand and collect terms. That works for n = 4, but what about (x + 2)^20? The binomial theorem gives you a shortcut. It also lets you find a single specific term — like &quot;what is the coefficient of x^7 in (2x − 1)^10?&quot; — without expanding the whole thing. This shows up regularly in IB exams.</p>
+
+<p><hr></p>
+
+<h2>Part 1: The Binomial Coefficient</h2>
+
+<p>Before we can use the theorem, we need to understand a symbol called the <b>binomial coefficient</b>, written as:</p>
+
+<div class="math-block">$$\binom{n}{r}$$</div>
+
+<p>This is pronounced &quot;n choose r.&quot; It tells you the number of ways to select r items from a group of n items (you will see this again in Lesson 40 on counting). For now, think of it as a number that appears in the expansion formula.</p>
+
+<p>The formula is:</p>
+
+<div class="math-block">$$\binom{n}{r} = \frac{n!}{r!(n-r)!}$$</div>
+
+<p><b>What does n! mean?</b> The symbol n! (pronounced &quot;n factorial&quot;) means you multiply all positive whole numbers from n down to 1. For example:</p>
+<li>- 5! = 5 × 4 × 3 × 2 × 1 = 120</li>
+<li>- 3! = 3 × 2 × 1 = 6</li>
+<li>- 1! = 1</li>
+<li>- 0! is defined as 1 (this is a special convention that makes formulas work).</li>
+
+<p>There is also a shortcut for computing binomial coefficients without writing all the factorials:</p>
+
+<div class="math-block">$$\binom{n}{r} = \frac{n(n-1)(n-2)\cdots(n-r+1)}{r!}$$</div>
+
+<p>This means: start at n, multiply downward r terms, then divide by r!.</p>
+
+<p><b>Examples:</b></p>
+<li>- $\binom{5}{2} = \frac{5 \times 4}{2 \times 1} = \frac{20}{2} = 10$.</li>
+<li>- $\binom{7}{3} = \frac{7 \times 6 \times 5}{3 \times 2 \times 1} = \frac{210}{6} = 35$.</li>
+
+<p><b>Special values to memorize:</b></p>
+<li>- $\binom{n}{0} = 1$ (there is exactly one way to choose nothing).</li>
+<li>- $\binom{n}{1} = n$ (there are n ways to choose one item).</li>
+<li>- $\binom{n}{n} = 1$ (there is exactly one way to choose everything).</li>
+
+<p><hr></p>
+
+<h2>Part 2: Binomial Theorem for Positive Integer n</h2>
+
+<p>When n is a positive whole number (n = 1, 2, 3, 4, ...), the expansion looks like this:</p>
+
+<div class="math-block">$$(a+b)^n = \sum_{r=0}^{n} \binom{n}{r} a^{n-r} b^r$$</div>
+
+<p>The symbol Σ (capital sigma) means &quot;sum all the terms from r = 0 to r = n.&quot; Let&#x27;s write out what this means, term by term:</p>
+
+<div class="math-block">$$(a+b)^n = \binom{n}{0}a^n b^0 + \binom{n}{1}a^{n-1}b^1 + \binom{n}{2}a^{n-2}b^2 + \cdots + \binom{n}{n}a^0 b^n$$</div>
+
+<p>Notice the pattern:</p>
+<li>- The powers of a go down: a^n, a^{n−1}, a^{n−2}, ..., a^0.</li>
+<li>- The powers of b go up: b^0, b^1, b^2, ..., b^n.</li>
+<li>- In each term, the two exponents add up to n.</li>
+<li>- The binomial coefficient tells you how many of that type of term appear when you multiply everything out.</li>
+
+<h3>Worked Example 1: Expand (x + 2)^4</h3>
+
+<p><b>Problem:</b> Write (x + 2)^4 as a polynomial in x.</p>
+
+<p><b>Approach:</b> Use the formula with a = x, b = 2, n = 4. We write terms for r = 0, 1, 2, 3, 4.</p>
+
+<p>r = 0: $\binom{4}{0}x^4(2)^0 = 1 \cdot x^4 \cdot 1 = x^4$.</p>
+
+<p>r = 1: $\binom{4}{1}x^3(2)^1 = 4 \cdot x^3 \cdot 2 = 8x^3$.</p>
+
+<p>r = 2: $\binom{4}{2}x^2(2)^2 = 6 \cdot x^2 \cdot 4 = 24x^2$.</p>
+
+<p>r = 3: $\binom{4}{3}x^1(2)^3 = 4 \cdot x \cdot 8 = 32x$.</p>
+
+<p>r = 4: $\binom{4}{4}x^0(2)^4 = 1 \cdot 1 \cdot 16 = 16$.</p>
+
+<p>Add all terms: $(x + 2)^4 = x^4 + 8x^3 + 24x^2 + 32x + 16$.</p>
+
+<p><b>Why this makes sense:</b> If you multiplied (x + 2)(x + 2)(x + 2)(x + 2) by hand, you would pick one term from each bracket and multiply. The term 8x^3 comes from picking x from three brackets and 2 from one bracket — and there are $\binom{4}{1} = 4$ ways to choose which bracket contributes the 2. The factor of 2³ = 8 gives 4 × 8 = 32 for the x term, and so on. The binomial coefficient counts the combinations.</p>
+
+<h3>Worked Example 2: Find a Specific Coefficient</h3>
+
+<p><b>Problem:</b> Find the coefficient of x³ in the expansion of (2x − 3)^5. (Do not expand the whole expression.)</p>
+
+<p><b>Approach:</b> In the binomial formula, a = 2x, b = −3, n = 5. The term with x³ means the power on a = 2x must be 3, so n − r = 3, which gives r = 2.</p>
+
+<p>The term for r = 2 is: $\binom{5}{2} (2x)^3 (-3)^2$.</p>
+
+<p>Compute each piece:</p>
+<li>- $\binom{5}{2} = \frac{5 \times 4}{2} = 10$.</li>
+<li>- $(2x)^3 = 8x^3$.</li>
+<li>- $(-3)^2 = 9$.</li>
+
+<p>Multiply: $10 \cdot 8x^3 \cdot 9 = 720x^3$.</p>
+
+<p><b>Answer:</b> The coefficient is <b>720</b>.</p>
+
+<p><hr></p>
+
+<h2>Part 3: The General Binomial Theorem (for n That Is Not a Positive Integer)</h2>
+
+<p>What if n is a fraction, like 1/2, or a negative number, like −1? The formula changes. Instead of stopping at n terms, the expansion goes on forever (it is an <b>infinite series</b>). This only works when |x| &lt; 1 (the absolute value of x is less than 1), because otherwise the infinite series does not settle down to a finite value.</p>
+
+<p>For any real number n (not necessarily a positive integer):</p>
+
+<div class="math-block">$$(1+x)^n = 1 + nx + \frac{n(n-1)}{2!}x^2 + \frac{n(n-1)(n-2)}{3!}x^3 + \cdots$$</div>
+
+<p>The pattern is: the coefficient of x^k is $\frac{n(n-1)(n-2)\cdots(n-k+1)}{k!}$.</p>
+
+<p>This is valid for |x| &lt; 1.</p>
+
+<h3>Worked Example 3: Expand (1 + x)^(−1) up to x³</h3>
+
+<p><b>Problem:</b> Expand (1 + x)^(−1) as far as the term in x³. State when the expansion is valid.</p>
+
+<p><b>Approach:</b> Use n = −1 in the formula.</p>
+
+<p>Coefficient of x: n = −1 → −1.</p>
+
+<p>Coefficient of x²: $\frac{n(n-1)}{2!} = \frac{(-1)(-2)}{2} = \frac{2}{2} = 1$.</p>
+
+<p>Coefficient of x³: $\frac{n(n-1)(n-2)}{3!} = \frac{(-1)(-2)(-3)}{6} = \frac{-6}{6} = -1$.</p>
+
+<p>So: $(1+x)^{-1} = 1 - x + x^2 - x^3 + \cdots$</p>
+
+<p>This is valid for |x| &lt; 1.</p>
+
+<p><b>Why this makes sense:</b> You might recognize this pattern from algebra: $\frac{1}{1+x} = 1 - x + x^2 - x^3 + \cdots$ is the geometric series. The binomial theorem reproduces that familiar result. The signs alternate (positive, negative, positive, negative) because we are multiplying an odd number of negatives for every other term.</p>
+
+<h3>Worked Example 4: Expand √(1 + x) up to x³</h3>
+
+<p><b>Problem:</b> Expand √(1 + x), which means (1 + x)^(1/2), up to the term in x³.</p>
+
+<p><b>Approach:</b> Use n = 1/2.</p>
+
+<p>Term 1: 1.</p>
+
+<p>Term 2 (x): $n = \frac{1}{2}$, so coefficient = $\frac{1}{2}$.</p>
+
+<p>Term 3 (x²): $\frac{n(n-1)}{2!} = \frac{\frac{1}{2} \times \left(-\frac{1}{2}\right)}{2} = \frac{-\frac{1}{4}}{2} = -\frac{1}{8}$.</p>
+
+<p>Term 4 (x³): $\frac{n(n-1)(n-2)}{3!} = \frac{\frac{1}{2} \times \left(-\frac{1}{2}\right) \times \left(-\frac{3}{2}\right)}{6} = \frac{\frac{3}{8}}{6} = \frac{3}{48} = \frac{1}{16}$.</p>
+
+<p>So: $\sqrt{1+x} = (1+x)^{1/2} = 1 + \frac{1}{2}x - \frac{1}{8}x^2 + \frac{1}{16}x^3 + \cdots$</p>
+
+<p>This is valid for |x| &lt; 1.</p>
+
+<h3>Worked Example 5: Use the Expansion to Estimate a Value</h3>
+
+<p><b>Problem:</b> Use the expansion from Example 4 to estimate √1.04 to three decimal places.</p>
+
+<p><b>Approach:</b> √1.04 = (1 + 0.04)^(1/2). Set x = 0.04 in the expansion.</p>
+
+<p>$\sqrt{1.04} \approx 1 + \frac{1}{2}(0.04) - \frac{1}{8}(0.04)^2 + \frac{1}{16}(0.04)^3$.</p>
+
+<p>Compute term by term:</p>
+<li>- Term 1: 1.</li>
+<li>- Term 2: 0.5 × 0.04 = 0.02.</li>
+<li>- Term 3: 0.125 × 0.0016 = 0.0002. (Since it is subtracted: −0.0002.)</li>
+<li>- Term 4: (1/16) × 0.000064 ≈ 0.000004.</li>
+
+<p>Sum: 1 + 0.02 − 0.0002 + 0.000004 = 1.019804.</p>
+
+<p>Rounded to three decimal places: <b>1.020</b>.</p>
+
+<p><hr></p>
+
+<h2>A Critical IB Trap and How to Avoid It</h2>
+
+<p>The formula above works for (1 + x)^n, but what if you are given something like (4 + x)^(1/2)? The base is not 1 — it is 4. You <b>cannot</b> just plug 4 + x into the formula directly.</p>
+
+<p><b>The fix:</b> Factor out the constant so the expression starts with 1.</p>
+
+<div class="math-block">$$(4 + x)^{1/2} = 4^{1/2}\left(1 + \frac{x}{4}\right)^{1/2} = 2\left(1 + \frac{x}{4}\right)^{1/2}$$</div>
+
+<p>Now expand $\left(1 + \frac{x}{4}\right)^{1/2}$ using the formula with n = 1/2 and x replaced by x/4, then multiply everything by 2.</p>
+
+<p><b>General rule:</b> For (a + bx)^n, rewrite as $a^n\left(1 + \frac{b}{a}x\right)^n$, then expand $(1 + \frac{b}{a}x)^n$.</p>
+
+<p><hr></p>
+
+<h2>Common Misconceptions</h2>
+
+<p><b>Misconception 1:</b> &quot;Binomial coefficients are always whole numbers.&quot; For positive integer n, yes — they are always whole numbers because they count combinations. But in the general binomial theorem, the coefficients involve n, n−1, n−2, etc., and can be fractions.</p>
+
+<p><b>Misconception 2:</b> &quot;The expansion for (1 + x)^n always stops.&quot; Only when n is a positive integer. For any other n (fraction, negative, irrational), the expansion is an infinite series.</p>
+
+<p><b>Misconception 3:</b> &quot;I can just substitute x = 2 into (1 + x)^(1/2) and get √3.&quot; No — the infinite series only converges (settles down to the right answer) when |x| &lt; 1. For x = 2, the terms grow and the series does not work.</p>
+
+<p><b>Misconception 4:</b> &quot;The binomial coefficient and the term coefficient are the same thing.&quot; The <b>binomial coefficient</b> is $\binom{n}{r}$. The <b>term coefficient</b> in (a + bx)^n is $\binom{n}{r} a^{n-r} b^r$. For example, in (2x − 3)^5, the term with x³ has coefficient 720, but the binomial coefficient $\binom{5}{2}$ is only 10. The 720 comes from multiplying 10 by (2)³ and (−3)².</p>
+
+<p><hr></p>
+
+<h2>Practice Problems</h2>
+
+<p><b>1.</b> Expand (2x − 1)^4 fully. Write the result as a polynomial in x.</p>
+
+<p><b>2.</b> In the expansion of (x + 1/x)^6, find the term that does not contain x (the <b>constant term</b>, also called the term independent of x).</p>
+
+<p><b>3.</b> Find the coefficient of x^4 in the expansion of (x + 3)^7. Do not expand the whole thing — target the specific term.</p>
+
+<p><b>4.</b> Expand (1 − x)^(−2) up to the term in x³. State the range of x values for which this expansion is valid.</p>
+
+<p><b>5.</b> Expand √(4 + x) as far as the term in x². (Hint: factor out 4 first, then use the binomial theorem for (1 + x/4)^(1/2).)</p>
+
+<p><b>6. [IB Exam Style — 6 marks]</b> Use the binomial theorem to estimate (1.02)^10 to two decimal places.</p>
+
+<p>(a) Write (1.02)^10 as (1 + x)^n and identify x and n. [1 mark]</p>
+
+<p>(b) Write out the first four terms of the binomial expansion of (1 + x)^n. [2 marks]</p>
+
+<p>(c) Substitute x = 0.02 and compute the sum of these four terms. [2 marks]</p>
+
+<p>(d) Round your result to two decimal places. [1 mark]</p>
+
+<p><hr></p>
+
+<h2>Answers</h2>
+
+<p><b>1.</b> Using (a + b)^4 with a = 2x, b = −1:</p>
+<p>$\binom{4}{0}(2x)^4(-1)^0 = 1 \cdot 16x^4 \cdot 1 = 16x^4$.</p>
+<p>$\binom{4}{1}(2x)^3(-1)^1 = 4 \cdot 8x^3 \cdot (-1) = -32x^3$.</p>
+<p>$\binom{4}{2}(2x)^2(-1)^2 = 6 \cdot 4x^2 \cdot 1 = 24x^2$.</p>
+<p>$\binom{4}{3}(2x)^1(-1)^3 = 4 \cdot 2x \cdot (-1) = -8x$.</p>
+<p>$\binom{4}{4}(2x)^0(-1)^4 = 1 \cdot 1 \cdot 1 = 1$.</p>
+<p>Answer: $16x^4 - 32x^3 + 24x^2 - 8x + 1$.</p>
+
+<p><b>2.</b> In (x + 1/x)^6, a = x, b = 1/x = x^{−1}. The general term is $\binom{6}{r} x^{6-r} (x^{-1})^r = \binom{6}{r} x^{6-2r}$. We need the exponent of x to be zero: 6 − 2r = 0 → r = 3. The term is $\binom{6}{3} x^0 = 20$. Answer: <b>20</b>.</p>
+
+<p><b>3.</b> In (x + 3)^7, the term with x^4 has n − r = 4, so r = 3 (since n = 7). The term is $\binom{7}{3} x^4 (3)^3 = 35 \cdot x^4 \cdot 27 = 945x^4$. Coefficient: <b>945</b>.</p>
+
+<p><b>4.</b> n = −2. First four coefficients: r = 0: 1. r = 1: n = −2. r = 2: $\frac{(-2)(-3)}{2!} = \frac{6}{2} = 3$. r = 3: $\frac{(-2)(-3)(-4)}{3!} = \frac{-24}{6} = -4$. But careful — the expression is (1 − x)^(−2), so we replace x in the formula with (−x):</p>
+<p>$(1 + (-x))^{-2} = 1 + (-2)(-x) + 3(-x)^2 + (-4)(-x)^3 + \cdots = 1 + 2x + 3x^2 + 4x^3 + \cdots$.</p>
+<p>Valid for |−x| &lt; 1, meaning <b>|x| &lt; 1</b>.</p>
+
+<p><b>5.</b> $\sqrt{4+x} = 4^{1/2}(1 + x/4)^{1/2} = 2(1 + x/4)^{1/2}$. Expand $(1 + x/4)^{1/2}$ using n = 1/2 and replacing x with x/4:</p>
+<p>$(1 + x/4)^{1/2} = 1 + \frac{1}{2}(x/4) - \frac{1}{8}(x/4)^2 + \cdots = 1 + \frac{x}{8} - \frac{x^2}{128} + \cdots$.</p>
+<p>Multiply by 2: $\sqrt{4+x} = 2 + \frac{x}{4} - \frac{x^2}{64} + \cdots$.</p>
+
+<p><b>6.</b> (a) (1.02)^10 = (1 + 0.02)^10, so x = 0.02, n = 10. [1 mark]</p>
+
+<p>(b) $(1+x)^{10} = \binom{10}{0} + \binom{10}{1}x + \binom{10}{2}x^2 + \binom{10}{3}x^3 + \cdots = 1 + 10x + 45x^2 + 120x^3 + \cdots$. [2 marks]</p>
+
+<p>(c) Substitute x = 0.02: 1 + 10(0.02) + 45(0.0004) + 120(0.000008) = 1 + 0.2 + 0.018 + 0.00096 = 1.21896. [2 marks]</p>
+
+<p>(d) Rounded to two decimal places: <b>1.22</b>. (The exact value of 1.02^10 is approximately 1.218994, so our estimate is very close. The small error comes from the terms we omitted.) [1 mark]</p>
+
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+</body>
+</html>

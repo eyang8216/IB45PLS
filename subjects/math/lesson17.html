@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 17 — First-Order Linear DEs & Integrating Factor</title>
+<script>
+MathJax = {
+  tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body {
+    max-width: 800px; margin: 40px auto; font-family: 'Times New Roman', Georgia, serif;
+    font-size: 17px; line-height: 1.7; padding: 0 20px; color: #1a1a1a;
+  }
+  h1 { font-size: 22px; border-bottom: 2px solid #333; padding-bottom: 8px; margin-top: 36px; }
+  h2 { font-size: 19px; margin-top: 28px; color: #2c3e50; }
+  h3 { font-size: 17px; margin-top: 22px; color: #444; }
+  h4 { font-size: 16px; margin-top: 18px; }
+  p { margin: 0.6em 0; }
+  li { margin: 0.3em 0 0.3em 20px; }
+  hr { margin: 20px 0; border: none; border-top: 1px solid #ddd; }
+  .math-block { text-align: center; margin: 1em 0; overflow-x: auto; }
+  .table-line { font-family: 'Courier New', monospace; font-size: 15px; margin: 0.1em 0; }
+  pre { background: #f5f5f5; padding: 10px 14px; border-radius: 4px; overflow-x: auto; font-size: 14px; }
+  b { color: #222; }
+  table { border-collapse: collapse; margin: 16px 0; width: 100%; font-size: 15px; }
+  th { background: #2c3e50; color: #fff; padding: 8px 12px; text-align: center; font-weight: bold; }
+  td { border: 1px solid #ccc; padding: 8px 12px; text-align: center; }
+  tr:nth-child(even) { background: #f9f9f9; }
+  .nav { text-align: center; margin: 30px 0; font-size: 14px; }
+  .nav a { margin: 0 8px; color: #3498db; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  @media print { body { font-size: 15px; } }
+</style>
+</head>
+<body>
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+<h1>Lesson 17: First-Order Linear Differential Equations and the Integrating Factor</h1>
+
+<h2>What Is a First-Order Linear Differential Equation and Why Does It Matter?</h2>
+
+<p>A <b>differential equation</b> (often shortened to DE) is an equation that involves a function and its derivatives. Differential equations describe how things change — the rate at which a population grows, the speed at which a cup of coffee cools, the flow of current in an electrical circuit. If you can solve a differential equation, you can predict how a system will behave over time.</p>
+
+<p>In this lesson we focus on a particular type: the <b>first-order linear differential equation</b>. &quot;First-order&quot; means the equation contains only the first derivative $\frac{dy}{dx}$ (not $\frac{d^2y}{dx^2}$ or higher derivatives). &quot;Linear&quot; means that both $\frac{dy}{dx}$ and $y$ itself appear only to the first power — no $y^2$, no $\sin y$, no $\left(\frac{dy}{dx}\right)^3$.</p>
+
+<p>These equations can always be written in <b>standard form</b>:</p>
+
+<div class="math-block">$$\boxed{\frac{dy}{dx} + P(x)\,y = Q(x)}$$</div>
+
+<p>Here $P(x)$ and $Q(x)$ are functions that depend only on $x$. They can be constants, polynomials, trig functions, or anything else — as long as they do not involve $y$.</p>
+
+<h3>Examples: Linear or Not?</h3>
+
+<p class="table-line">| Differential Equation | Linear? | Why? |</p>
+<p class="table-line">|<hr>|<hr>|<hr>|</p>
+<p class="table-line">| $\frac{dy}{dx} + 2xy = x$ | Yes | $P(x) = 2x$, $Q(x) = x$ — fits the standard form |</p>
+<p class="table-line">| $\frac{dy}{dx} + \frac{y}{x} = x^2$ | Yes | $P(x) = \frac{1}{x}$, $Q(x) = x^2$ — fits the standard form |</p>
+<p class="table-line">| $\frac{dy}{dx} = y^2$ | No | The $y^2$ term is nonlinear |</p>
+<p class="table-line">| $\frac{dy}{dx} + \sin y = x$ | No | $\sin y$ is not of the form $P(x)\,y$ |</p>
+
+<p><hr></p>
+
+<h2>The Integrating Factor: A Clever Trick</h2>
+
+<p>The key to solving $\frac{dy}{dx} + P(x)y = Q(x)$ is to multiply both sides by a specially chosen function called an <b>integrating factor</b>. The integrating factor is a function of $x$, which we write as $\mu(x)$ (the Greek letter &quot;mu&quot;), defined by:</p>
+
+<div class="math-block">$$\boxed{\mu(x) = e^{\int P(x)\,dx}}$$</div>
+
+<p>The integral $\int P(x)\,dx$ means we find any antiderivative of $P(x)$. For this purpose you can ignore the constant of integration $+C$ — any antiderivative will work.</p>
+
+<h3>Why This Works</h3>
+
+<p>When we multiply the entire differential equation by $\mu(x)$, the left-hand side becomes a perfect derivative. Here is how:</p>
+
+<p>The original equation is $\frac{dy}{dx} + P(x)y = Q(x)$. Multiply every term by $\mu$:</p>
+
+<div class="math-block">$$\mu\frac{dy}{dx} + \mu P(x) y = \mu Q(x)$$</div>
+
+<p>Now, because of how we defined $\mu$, the left-hand side is exactly $\frac{d}{dx}(\mu y)$. To see why, use the product rule:</p>
+
+<div class="math-block">$$\frac{d}{dx}(\mu y) = \mu\frac{dy}{dx} + y\frac{d\mu}{dx}$$</div>
+
+<p>But $\frac{d\mu}{dx} = \frac{d}{dx} e^{\int P\,dx} = e^{\int P\,dx} \cdot P(x) = \mu P(x)$. So the two expressions match.</p>
+
+<p>This means the equation simplifies to:</p>
+
+<div class="math-block">$$\frac{d}{dx}(\mu y) = \mu Q(x)$$</div>
+
+<p>Now we integrate both sides with respect to $x$:</p>
+
+<div class="math-block">$$\mu y = \int \mu Q(x)\,dx$$</div>
+
+<p>And finally solve for $y$:</p>
+
+<div class="math-block">$$y = \frac{1}{\mu} \int \mu Q(x)\,dx$$</div>
+
+<p>Many students worry about forgetting the formula, but the recipe is easier to remember than the final formula. Let us learn the recipe.</p>
+
+<p><hr></p>
+
+<h2>The Step-by-Step Recipe</h2>
+
+<p>For a differential equation in the form $\frac{dy}{dx} + P(x)y = Q(x)$:</p>
+
+<li><b>Identify</b> $P(x)$ and $Q(x)$. Make sure the equation is in standard form first.</li>
+<li><b>Compute the integrating factor:</b> $\mu = e^{\int P(x)\,dx}$. You may drop the $+C$ in the integral.</li>
+<li><b>Multiply</b> every term of the DE by $\mu$.</li>
+<li><b>Recognise</b> that the left-hand side is now $\frac{d}{dx}(\mu y)$.</li>
+<li><b>Integrate</b> both sides with respect to $x$. The left side becomes $\mu y$. The right side is the integral of $\mu Q(x)$.</li>
+<li><b>Solve</b> for $y$ by dividing by $\mu$.</li>
+<li>If the problem gives an <b>initial condition</b> (like $y(1) = 2$), substitute the $x$ and $y$ values into your solution to find the constant $C$.</li>
+
+<p><hr></p>
+
+<h2>Worked Examples</h2>
+
+<h3>Worked Example 1: A Simple Constant-P Case</h3>
+
+<p><b>Solve the differential equation $\displaystyle\frac{dy}{dx} + 2xy = x$.</b></p>
+
+<p><b>Approach:</b> The equation is already in standard form. Identify $P(x)$ and $Q(x)$, find $\mu$, and follow the recipe.</p>
+
+<p><b>Step 1:</b> $P(x) = 2x$, $Q(x) = x$.</p>
+
+<p><b>Step 2:</b> Compute the integrating factor:</p>
+
+<div class="math-block">$$\mu = e^{\int 2x\,dx} = e^{x^2}$$</div>
+
+<p><b>Step 3:</b> Multiply the entire DE by $e^{x^2}$:</p>
+
+<div class="math-block">$$e^{x^2}\frac{dy}{dx} + 2x e^{x^2} y = x e^{x^2}$$</div>
+
+<p><b>Step 4:</b> The left-hand side is $\frac{d}{dx}\big(e^{x^2} y\big)$:</p>
+
+<div class="math-block">$$\frac{d}{dx}\big(e^{x^2} y\big) = x e^{x^2}$$</div>
+
+<p><b>Step 5:</b> Integrate both sides:</p>
+
+<div class="math-block">$$e^{x^2} y = \int x e^{x^2}\,dx$$</div>
+
+<p>For the integral on the right, use the substitution $u = x^2$, so $du = 2x\,dx$, which means $x\,dx = \frac{du}{2}$:</p>
+
+<div class="math-block">$$\int x e^{x^2}\,dx = \int e^u \cdot \frac{du}{2} = \frac{1}{2}e^u = \frac{1}{2}e^{x^2}$$</div>
+
+<p>So we have:</p>
+
+<div class="math-block">$$e^{x^2} y = \frac{1}{2}e^{x^2} + C$$</div>
+
+<p><b>Step 6:</b> Divide both sides by $e^{x^2}$:</p>
+
+<div class="math-block">$$y = \frac{1}{2} + C e^{-x^2}$$</div>
+
+<p><b>Why this makes sense:</b> As $x$ gets very large (positive or negative), $e^{-x^2}$ becomes extremely small, so $y$ approaches $\frac{1}{2}$. The constant term $\frac{1}{2}$ is called the steady-state solution.</p>
+
+<p><hr></p>
+
+<h3>Worked Example 2: With the $1/x$ Function and an Initial Condition</h3>
+
+<p><b>Solve $\displaystyle\frac{dy}{dx} + \frac{y}{x} = x^2$, given that $y(1) = 2$.</b></p>
+
+<p><b>Approach:</b> Standard form with $P(x) = \frac{1}{x}$. The integrating factor will involve a logarithm.</p>
+
+<p><b>Step 1:</b> $P(x) = \frac{1}{x}$, $Q(x) = x^2$.</p>
+
+<p><b>Step 2:</b> Compute $\mu$:</p>
+
+<div class="math-block">$$\mu = e^{\int \frac{1}{x}\,dx} = e^{\ln|x|} = |x|$$</div>
+
+<p>For $x &gt; 0$ (a reasonable domain since the initial condition is at $x = 1$), we can drop the absolute value and use $\mu = x$.</p>
+
+<p><b>Step 3:</b> Multiply the DE by $x$:</p>
+
+<div class="math-block">$$x\frac{dy}{dx} + y = x^3$$</div>
+
+<p><b>Step 4:</b> The left-hand side is $\frac{d}{dx}(xy)$:</p>
+
+<div class="math-block">$$\frac{d}{dx}(xy) = x^3$$</div>
+
+<p><b>Step 5:</b> Integrate:</p>
+
+<div class="math-block">$$xy = \int x^3\,dx = \frac{x^4}{4} + C$$</div>
+
+<p><b>Step 6:</b> Solve for $y$:</p>
+
+<div class="math-block">$$y = \frac{x^3}{4} + \frac{C}{x}$$</div>
+
+<p><b>Step 7:</b> Apply the initial condition $y(1) = 2$. Substitute $x = 1$, $y = 2$:</p>
+
+<div class="math-block">$$2 = \frac{1^3}{4} + \frac{C}{1} \quad\Longrightarrow\quad 2 = \frac{1}{4} + C \quad\Longrightarrow\quad C = 2 - \frac{1}{4} = \frac{7}{4}$$</div>
+
+<p>Therefore:</p>
+
+<div class="math-block">$$y = \frac{x^3}{4} + \frac{7}{4x}$$</div>
+
+<p><b>Why this makes sense:</b> You can check by differentiating: $\frac{dy}{dx} = \frac{3x^2}{4} - \frac{7}{4x^2}$, and $\frac{y}{x} = \frac{x^2}{4} + \frac{7}{4x^2}$. Adding them gives $\frac{3x^2}{4} + \frac{x^2}{4} = x^2$, which matches the right-hand side.</p>
+
+<p><hr></p>
+
+<h3>Worked Example 3: A Constant-Coefficient DE</h3>
+
+<p><b>Solve $\displaystyle\frac{dy}{dx} + 3y = 6$, with $y(0) = 5$.</b></p>
+
+<p><b>Approach:</b> $P(x) = 3$ is a constant, so the integrating factor is a simple exponential.</p>
+
+<p><b>Step 1:</b> $P(x) = 3$, $Q(x) = 6$.</p>
+
+<p><b>Step 2:</b> $\mu = e^{\int 3\,dx} = e^{3x}$.</p>
+
+<p><b>Step 3:</b> Multiply:</p>
+
+<div class="math-block">$$e^{3x}\frac{dy}{dx} + 3e^{3x}y = 6e^{3x}$$</div>
+
+<p><b>Step 4:</b> Left side is $\frac{d}{dx}(e^{3x}y)$:</p>
+
+<div class="math-block">$$\frac{d}{dx}(e^{3x}y) = 6e^{3x}$$</div>
+
+<p><b>Step 5:</b> Integrate:</p>
+
+<div class="math-block">$$e^{3x}y = \int 6e^{3x}\,dx = 6 \cdot \frac{1}{3}e^{3x} + C = 2e^{3x} + C$$</div>
+
+<p><b>Step 6:</b> Divide by $e^{3x}$:</p>
+
+<div class="math-block">$$y = 2 + C e^{-3x}$$</div>
+
+<p><b>Step 7:</b> Apply $y(0) = 5$:</p>
+
+<div class="math-block">$$5 = 2 + C \cdot e^0 = 2 + C \quad\Longrightarrow\quad C = 3$$</div>
+
+<p>Therefore:</p>
+
+<div class="math-block">$$y = 2 + 3e^{-3x}$$</div>
+
+<p><b>Why this makes sense:</b> As $x \to \infty$, the term $3e^{-3x}$ dies away to zero, and $y$ approaches $2$. This is the steady-state or equilibrium solution — the value $y$ settles into over time.</p>
+
+<p><hr></p>
+
+<h3>Worked Example 4: A DE Involving Trigonometric Functions</h3>
+
+<p><b>Solve $\displaystyle\frac{dy}{dx} - y\tan x = \sec x$, with $y(0) = 1$.</b></p>
+
+<p><b>Approach:</b> First rewrite in standard form to identify $P(x)$. Note that the equation is $\frac{dy}{dx} + (-\tan x)y = \sec x$.</p>
+
+<p><b>Step 1:</b> In standard form, $P(x) = -\tan x$ and $Q(x) = \sec x$.</p>
+
+<p><b>Step 2:</b> Compute $\mu$:</p>
+
+<div class="math-block">$$\mu = e^{\int -\tan x\,dx}$$</div>
+
+<p>The integral of $-\tan x$ is $\ln|\cos x|$ (since $\int \tan x\,dx = -\ln|\cos x|$). So:</p>
+
+<div class="math-block">$$\mu = e^{\ln|\cos x|} = \cos x$$</div>
+
+<p><b>Step 3:</b> Multiply the DE by $\cos x$:</p>
+
+<div class="math-block">$$\cos x \cdot \frac{dy}{dx} - \cos x \cdot \tan x \cdot y = \cos x \cdot \sec x$$</div>
+
+<p>Now simplify. Since $\tan x = \frac{\sin x}{\cos x}$, we have $\cos x \cdot \tan x = \sin x$. And $\cos x \cdot \sec x = \cos x \cdot \frac{1}{\cos x} = 1$:</p>
+
+<div class="math-block">$$\cos x \frac{dy}{dx} - \sin x \cdot y = 1$$</div>
+
+<p><b>Step 4:</b> The left-hand side is $\frac{d}{dx}(\cos x \cdot y)$:</p>
+
+<div class="math-block">$$\frac{d}{dx}(\cos x \cdot y) = 1$$</div>
+
+<p><b>Step 5:</b> Integrate:</p>
+
+<div class="math-block">$$\cos x \cdot y = \int 1\,dx = x + C$$</div>
+
+<p><b>Step 6:</b> Solve for $y$:</p>
+
+<div class="math-block">$$y = \frac{x + C}{\cos x} = (x + C)\sec x$$</div>
+
+<p><b>Step 7:</b> Apply $y(0) = 1$:</p>
+
+<div class="math-block">$$1 = \frac{0 + C}{\cos 0} = \frac{C}{1} = C \quad\Longrightarrow\quad C = 1$$</div>
+
+<p>Therefore:</p>
+
+<div class="math-block">$$y = (x + 1)\sec x$$</div>
+
+<p><hr></p>
+
+<h3>Worked Example 5: A DE That is Both Linear and Separable</h3>
+
+<p><b>Solve $\displaystyle\frac{dy}{dx} + y = 0$ using both separation of variables and the integrating factor method, and check that the answers agree.</b></p>
+
+<p><b>Method 1 — Separation:</b> Rewrite as $\frac{dy}{dx} = -y$. Separate: $\frac{1}{y}\,dy = -dx$. Integrate: $\ln|y| = -x + C$, so $y = Ae^{-x}$ where $A = e^C$.</p>
+
+<p><b>Method 2 — Integrating Factor:</b> $P(x) = 1$, so $\mu = e^{\int 1\,dx} = e^x$. Multiply: $e^x\frac{dy}{dx} + e^x y = 0$, so $\frac{d}{dx}(e^x y) = 0$. Integrate: $e^x y = C$, so $y = C e^{-x}$.</p>
+
+<p>Both methods give $y = (\text{constant}) \times e^{-x}$. The names of the constants differ ($A$ vs $C$) but the family of solutions is identical.</p>
+
+<p><hr></p>
+
+<h2>Summary of the Recipe</h2>
+
+<li>Write the DE in standard form: $\frac{dy}{dx} + P(x)y = Q(x)$</li>
+<li>Compute $\mu = e^{\int P(x)\,dx}$</li>
+<li>Multiply through by $\mu$</li>
+<li>The LHS becomes $\frac{d}{dx}(\mu y)$</li>
+<li>Integrate: $\mu y = \int \mu Q(x)\,dx$</li>
+<li>Solve for $y$</li>
+<li>Apply initial condition if given</li>
+
+<p><hr></p>
+
+<h2>Practice Problems</h2>
+
+<p><b>Problem 1</b></p>
+
+<p>Solve the differential equation $\displaystyle\frac{dy}{dx} + 4y = 8$. There is no initial condition, so your answer will include an arbitrary constant $C$.</p>
+
+<p><b>Problem 2</b></p>
+
+<p>Solve the differential equation $\displaystyle\frac{dy}{dx} + \frac{2y}{x} = x$, given the initial condition $y(1) = 3$. Show all steps including the computation of the integrating factor and the application of the initial condition.</p>
+
+<p><b>Problem 3</b></p>
+
+<p>Solve $\displaystyle\frac{dy}{dx} - y = e^x$, with $y(0) = 2$. Be careful: the equation has a minus sign before $y$, so $P(x) = -1$.</p>
+
+<p><b>Problem 4</b></p>
+
+<p>Solve the differential equation $\displaystyle x\frac{dy}{dx} + y = \sin x$, subject to the condition $y(\pi) = 0$. You will need to divide by $x$ first to put the equation in standard form.</p>
+
+<p><b>Problem 5</b> (IB-style)</p>
+
+<p>Consider the differential equation $\displaystyle\frac{dy}{dx} + y\cos x = \cos x$ with initial condition $y(0) = 0$.</p>
+
+<p>(a) Write the equation in standard form and identify $P(x)$ and $Q(x)$. [1 mark]</p>
+
+<p>(b) Find the integrating factor $\mu(x)$. [2 marks]</p>
+
+<p>(c) Hence solve the differential equation, giving $y$ explicitly in terms of $x$. [4 marks]</p>
+
+<p><b>Problem 6</b></p>
+
+<p>An RL electrical circuit has the current $I(t)$ (in amperes) governed by:</p>
+
+<div class="math-block">$$L\frac{dI}{dt} + RI = V$$</div>
+
+<p>where $L$ (inductance), $R$ (resistance), and $V$ (voltage) are positive constants. The initial current is zero: $I(0) = 0$. Solve this differential equation for $I(t)$. Write your final answer in the form $I(t) = \frac{V}{R}\left(1 - e^{-(R/L)t}\right)$.</p>
+
+<p><hr></p>
+
+<h2>Answers</h2>
+
+<p><b>Answer 1</b></p>
+
+<p>The equation is already in standard form with $P(x) = 4$ and $Q(x) = 8$.</p>
+
+<p>Compute the integrating factor: $\mu = e^{\int 4\,dx} = e^{4x}$.</p>
+
+<p>Multiply the DE: $e^{4x}\frac{dy}{dx} + 4e^{4x}y = 8e^{4x}$.</p>
+
+<p>The left side is $\frac{d}{dx}(e^{4x}y) = 8e^{4x}$.</p>
+
+<p>Integrate: $e^{4x}y = \int 8e^{4x}\,dx = 8 \cdot \frac{1}{4}e^{4x} + C = 2e^{4x} + C$.</p>
+
+<p>Divide by $e^{4x}$: $y = 2 + C e^{-4x}$.</p>
+
+<p>(Common pitfall: forgetting the $+C$ after integration. If you do, you only get the particular solution $y = 2$, missing the general solution.)</p>
+
+<p><hr></p>
+
+<p><b>Answer 2</b></p>
+
+<p>Standard form: $P(x) = \frac{2}{x}$, $Q(x) = x$.</p>
+
+<p>Integrating factor: $\mu = e^{\int \frac{2}{x}\,dx} = e^{2\ln|x|} = |x|^2 = x^2$ (for $x &gt; 0$, given $x = 1$ in the initial condition).</p>
+
+<p>Multiply: $x^2\frac{dy}{dx} + 2x y = x^3$.</p>
+
+<p>Left side is $\frac{d}{dx}(x^2 y) = x^3$.</p>
+
+<p>Integrate: $x^2 y = \int x^3\,dx = \frac{x^4}{4} + C$.</p>
+
+<p>Solve: $y = \frac{x^2}{4} + \frac{C}{x^2}$.</p>
+
+<p>Apply $y(1) = 3$: $3 = \frac{1}{4} + C \implies C = \frac{11}{4}$.</p>
+
+<p>Final answer: $y = \frac{x^2}{4} + \frac{11}{4x^2}$.</p>
+
+<p><hr></p>
+
+<p><b>Answer 3</b></p>
+
+<p>Standard form: $\frac{dy}{dx} + (-1)y = e^x$, so $P(x) = -1$, $Q(x) = e^x$.</p>
+
+<p>Integrating factor: $\mu = e^{\int (-1)\,dx} = e^{-x}$.</p>
+
+<p>Multiply: $e^{-x}\frac{dy}{dx} - e^{-x}y = e^{-x} \cdot e^x = 1$.</p>
+
+<p>Left side: $\frac{d}{dx}(e^{-x}y) = 1$.</p>
+
+<p>Integrate: $e^{-x}y = \int 1\,dx = x + C$.</p>
+
+<p>Solve: $y = (x + C)e^x$.</p>
+
+<p>Apply $y(0) = 2$: $2 = (0 + C) \cdot e^0 = C \implies C = 2$.</p>
+
+<p>Final answer: $y = (x + 2)e^x$.</p>
+
+<p>(Common pitfall: when $P(x)$ is negative, the integrating factor $e^{\int P\,dx}$ involves a negative exponent. Students sometimes forget the minus sign and write $\mu = e^x$ instead of $e^{-x}$.)</p>
+
+<p><hr></p>
+
+<p><b>Answer 4</b></p>
+
+<p>First, divide through by $x$ to get standard form: $\frac{dy}{dx} + \frac{y}{x} = \frac{\sin x}{x}$.</p>
+
+<p>So $P(x) = \frac{1}{x}$, $Q(x) = \frac{\sin x}{x}$.</p>
+
+<p>Integrating factor: $\mu = e^{\int \frac{1}{x}\,dx} = e^{\ln|x|} = x$ (for $x &gt; 0$, valid since initial condition is at $x = \pi$).</p>
+
+<p>Multiply by $x$: $x\frac{dy}{dx} + y = \sin x$.</p>
+
+<p>Left side: $\frac{d}{dx}(xy) = \sin x$.</p>
+
+<p>Integrate: $xy = \int \sin x\,dx = -\cos x + C$.</p>
+
+<p>Solve: $y = \frac{-\cos x + C}{x}$.</p>
+
+<p>Apply $y(\pi) = 0$: $0 = \frac{-\cos\pi + C}{\pi} = \frac{-(-1) + C}{\pi} = \frac{1 + C}{\pi}$.</p>
+
+<p>So $1 + C = 0$ and $C = -1$.</p>
+
+<p>Final answer: $y = \frac{-\cos x - 1}{x}$.</p>
+
+<p><hr></p>
+
+<p><b>Answer 5</b></p>
+
+<p><b>(a)</b> The equation $\frac{dy}{dx} + y\cos x = \cos x$ is already in standard form. Identifying against $\frac{dy}{dx} + P(x)y = Q(x)$, we have $P(x) = \cos x$ and $Q(x) = \cos x$.</p>
+
+<p>[1 mark: for correctly identifying both $P(x)$ and $Q(x)$.]</p>
+
+<p><b>(b)</b> The integrating factor is:</p>
+
+<div class="math-block">$$\mu(x) = e^{\int P(x)\,dx} = e^{\int \cos x\,dx} = e^{\sin x}$$</div>
+
+<p>[2 marks: 1 for the correct integral of $\cos x$, 1 for the correct final expression for $\mu$.]</p>
+
+<p><b>(c)</b> Multiply the DE by $e^{\sin x}$:</p>
+
+<div class="math-block">$$e^{\sin x}\frac{dy}{dx} + e^{\sin x} y \cos x = e^{\sin x}\cos x$$</div>
+
+<p>The left side is $\frac{d}{dx}(e^{\sin x} y)$, so:</p>
+
+<div class="math-block">$$\frac{d}{dx}(e^{\sin x} y) = e^{\sin x}\cos x$$</div>
+
+<p>Integrate both sides. For the right side, note that $\int e^{\sin x}\cos x\,dx$ can be evaluated with the substitution $u = \sin x$, $du = \cos x\,dx$:</p>
+
+<div class="math-block">$$\int e^{\sin x}\cos x\,dx = \int e^u\,du = e^u = e^{\sin x}$$</div>
+
+<p>So: $e^{\sin x} y = e^{\sin x} + C$.</p>
+
+<p>Divide by $e^{\sin x}$: $y = 1 + C e^{-\sin x}$.</p>
+
+<p>Apply $y(0) = 0$: $0 = 1 + C e^{-\sin 0} = 1 + C \cdot e^0 = 1 + C$, so $C = -1$.</p>
+
+<p>Final answer: $y = 1 - e^{-\sin x}$.</p>
+
+<p>[4 marks: 1 for multiplying by $\mu$, 1 for recognizing the LHS as a derivative, 1 for correct integration, 1 for applying the initial condition and obtaining the final answer.]</p>
+
+<p><hr></p>
+
+<p><b>Answer 6</b></p>
+
+<p>The equation is $L\frac{dI}{dt} + RI = V$. First put it in standard form by dividing every term by $L$:</p>
+
+<div class="math-block">$$\frac{dI}{dt} + \frac{R}{L}I = \frac{V}{L}$$</div>
+
+<p>Now $P(t) = \frac{R}{L}$ (a constant) and $Q(t) = \frac{V}{L}$.</p>
+
+<p>Compute the integrating factor: $\mu = e^{\int \frac{R}{L}\,dt} = e^{(R/L)t}$.</p>
+
+<p>Multiply: $e^{(R/L)t}\frac{dI}{dt} + \frac{R}{L}e^{(R/L)t}I = \frac{V}{L}e^{(R/L)t}$.</p>
+
+<p>Left side: $\frac{d}{dt}\big(e^{(R/L)t} I\big) = \frac{V}{L}e^{(R/L)t}$.</p>
+
+<p>Integrate: $e^{(R/L)t} I = \int \frac{V}{L}e^{(R/L)t}\,dt = \frac{V}{L} \cdot \frac{L}{R} e^{(R/L)t} + C = \frac{V}{R}e^{(R/L)t} + C$.</p>
+
+<p>Divide by $e^{(R/L)t}$: $I = \frac{V}{R} + C e^{-(R/L)t}$.</p>
+
+<p>Apply $I(0) = 0$: $0 = \frac{V}{R} + C \cdot e^0 = \frac{V}{R} + C$, so $C = -\frac{V}{R}$.</p>
+
+<p>Therefore:</p>
+
+<div class="math-block">$$I(t) = \frac{V}{R} - \frac{V}{R}e^{-(R/L)t} = \frac{V}{R}\left(1 - e^{-(R/L)t}\right)$$</div>
+
+<p>As $t \to \infty$, the exponential term dies away and the current approaches the steady-state value $\frac{V}{R}$ — exactly what Ohm&#x27;s law predicts for a DC circuit.</p>
+
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+</body>
+</html>

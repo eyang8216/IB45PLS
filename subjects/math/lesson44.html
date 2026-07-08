@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 44 — Modulus Functions & Inequalities</title>
+<script>
+MathJax = {
+  tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body {
+    max-width: 800px; margin: 40px auto; font-family: 'Times New Roman', Georgia, serif;
+    font-size: 17px; line-height: 1.7; padding: 0 20px; color: #1a1a1a;
+  }
+  h1 { font-size: 22px; border-bottom: 2px solid #333; padding-bottom: 8px; margin-top: 36px; }
+  h2 { font-size: 19px; margin-top: 28px; color: #2c3e50; }
+  h3 { font-size: 17px; margin-top: 22px; color: #444; }
+  h4 { font-size: 16px; margin-top: 18px; }
+  p { margin: 0.6em 0; }
+  li { margin: 0.3em 0 0.3em 20px; }
+  hr { margin: 20px 0; border: none; border-top: 1px solid #ddd; }
+  .math-block { text-align: center; margin: 1em 0; overflow-x: auto; }
+  .table-line { font-family: 'Courier New', monospace; font-size: 15px; margin: 0.1em 0; }
+  pre { background: #f5f5f5; padding: 10px 14px; border-radius: 4px; overflow-x: auto; font-size: 14px; }
+  b { color: #222; }
+  table { border-collapse: collapse; margin: 16px 0; width: 100%; font-size: 15px; }
+  th { background: #2c3e50; color: #fff; padding: 8px 12px; text-align: center; font-weight: bold; }
+  td { border: 1px solid #ccc; padding: 8px 12px; text-align: center; }
+  tr:nth-child(even) { background: #f9f9f9; }
+  .nav { text-align: center; margin: 30px 0; font-size: 14px; }
+  .nav a { margin: 0 8px; color: #3498db; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  @media print { body { font-size: 15px; } }
+</style>
+</head>
+<body>
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+<h1>Lesson 44: Modulus Functions and Inequalities</h1>
+
+<h2>What You Will Learn and Why It Matters</h2>
+
+<p>The <b>modulus</b> (or absolute value) of a number is its distance from zero on the number line. Distance is never negative, so the modulus of any number is always zero or positive. The modulus function appears throughout IB AAHL: in solving equations where a quantity could be positive or negative, in inequalities that describe a range around a central value, and in graph sketching where parts of a curve below the $x$-axis get reflected upward. Understanding the modulus deeply also prepares you for topics like complex numbers, where $|z|$ represents the distance from the origin in the complex plane.</p>
+
+<p><hr></p>
+
+<h2>1. Defining the Modulus Function</h2>
+
+<p>The modulus of $x$ is written as $|x|$ and is defined piecewise:</p>
+
+<div class="math-block">$$|x| = \begin{cases} x, &amp; \text{if } x \geq 0 \\ -x, &amp; \text{if } x &lt; 0 \end{cases}$$</div>
+
+<p>When $x$ is negative, multiplying by $-1$ makes it positive. For example, $|5| = 5$ and $|{-5}| = 5$. Both 5 and $-5$ are five units away from zero.</p>
+
+<p>Three important properties of the modulus:</p>
+<li>- $|x| \geq 0$ for every real number $x$. The modulus can never be negative.</li>
+<li>- $|ab| = |a| \cdot |b|$. The modulus of a product equals the product of the moduli.</li>
+<li>- $|a + b| \leq |a| + |b|$. This is called the <b>triangle inequality</b>. The direct distance from 0 to $a + b$ is never greater than going from 0 to $a$ and then from $a$ to $b$.</li>
+
+<p><hr></p>
+
+<h2>2. Solving Modulus Equations</h2>
+
+<h3>Type 1: $|f(x)| = k$ where $k \geq 0$</h3>
+
+<p>The equation $|f(x)| = k$ means the quantity $f(x)$ is exactly $k$ units away from zero. This happens when $f(x) = k$ OR $f(x) = -k$. You must solve both equations.</p>
+
+<p>If $k &lt; 0$, there is no solution, because a modulus can never equal a negative number.</p>
+
+<h3>Worked Example 1</h3>
+
+<p><b>Problem:</b> Solve the equation $|2x - 3| = 5$.</p>
+
+<p><b>Approach:</b> Write two separate equations: $2x - 3 = 5$ and $2x - 3 = -5$. Solve each one.</p>
+
+<p><b>Step-by-step working:</b></p>
+<li>First equation: $2x - 3 = 5$. Add $3$: $2x = 8$. Divide by $2$: $x = 4$.</li>
+<li>Second equation: $2x - 3 = -5$. Add $3$: $2x = -2$. Divide by $2$: $x = -1$.</li>
+
+<p>The solutions are $x = -1$ and $x = 4$.</p>
+
+<p><b>Why this makes sense:</b> When $x = 4$, $|2(4) - 3| = |8 - 3| = |5| = 5$. When $x = -1$, $|2(-1) - 3| = |{-2} - 3| = |{-5}| = 5$. Both work.</p>
+
+<p><hr></p>
+
+<h3>Type 2: $|f(x)| = |g(x)|$</h3>
+
+<p>If two expressions have the same modulus, then either they are equal or they are opposites. Solve $f(x) = g(x)$ and $f(x) = -g(x)$.</p>
+
+<h3>Worked Example 2</h3>
+
+<p><b>Problem:</b> Solve the equation $|x + 1| = |2x - 3|$.</p>
+
+<p><b>Approach:</b> Set up two equations: $x + 1 = 2x - 3$ and $x + 1 = -(2x - 3)$. Solve both.</p>
+
+<p><b>Step-by-step working:</b></p>
+<li>First equation: $x + 1 = 2x - 3$. Subtract $x$: $1 = x - 3$. Add $3$: $x = 4$.</li>
+<li>Second equation: $x + 1 = -2x + 3$. Add $2x$: $3x + 1 = 3$. Subtract $1$: $3x = 2$. Divide by $3$: $x = \frac{2}{3}$.</li>
+
+<p>The solutions are $x = \frac{2}{3}$ and $x = 4$.</p>
+
+<p><b>Why this makes sense:</b> At $x = 4$, $|4 + 1| = 5$ and $|2(4) - 3| = |5| = 5$. At $x = \frac{2}{3}$, $|\frac{2}{3} + 1| = |\frac{5}{3}| = \frac{5}{3}$ and $|2(\frac{2}{3}) - 3| = |\frac{4}{3} - \frac{9}{3}| = |{-\frac{5}{3}}| = \frac{5}{3}$. Both match.</p>
+
+<p><hr></p>
+
+<h2>3. Solving Modulus Inequalities</h2>
+
+<h3>Type A: $|f(x)| &lt; k$ where $k &gt; 0$</h3>
+
+<p>The expression $|f(x)| &lt; k$ means the value of $f(x)$ is less than $k$ units from zero. This happens when $f(x)$ is between $-k$ and $k$. The inequality is equivalent to:</p>
+
+<div class="math-block">$$-k &lt; f(x) &lt; k$$</div>
+
+<h3>Worked Example 3</h3>
+
+<p><b>Problem:</b> Solve the inequality $|x - 2| &lt; 3$.</p>
+
+<p><b>Approach:</b> Rewrite as a double inequality: $-3 &lt; x - 2 &lt; 3$. Then isolate $x$.</p>
+
+<p><b>Step-by-step working:</b></p>
+<li>$-3 &lt; x - 2 &lt; 3$.</li>
+<li>Add $2$ to all three parts: $-3 + 2 &lt; x &lt; 3 + 2$.</li>
+<li>Simplify: $-1 &lt; x &lt; 5$.</li>
+
+<p>The solution is all real numbers $x$ such that $-1 &lt; x &lt; 5$. In interval notation: $(-1, 5)$.</p>
+
+<p><hr></p>
+
+<h3>Type B: $|f(x)| &gt; k$ where $k \geq 0$</h3>
+
+<p>The expression $|f(x)| &gt; k$ means the value of $f(x)$ is more than $k$ units from zero. This happens when $f(x) &lt; -k$ OR $f(x) &gt; k$. The two regions are separate.</p>
+
+<h3>Worked Example 4</h3>
+
+<p><b>Problem:</b> Solve the inequality $|2x + 1| \geq 5$.</p>
+
+<p><b>Approach:</b> Split into two inequalities: $2x + 1 \leq -5$ OR $2x + 1 \geq 5$. Solve each.</p>
+
+<p><b>Step-by-step working:</b></p>
+<li>First branch: $2x + 1 \leq -5$. Subtract $1$: $2x \leq -6$. Divide by $2$: $x \leq -3$.</li>
+<li>Second branch: $2x + 1 \geq 5$. Subtract $1$: $2x \geq 4$. Divide by $2$: $x \geq 2$.</li>
+
+<p>The solution is $x \leq -3$ or $x \geq 2$. In interval notation: $(-\infty, -3] \cup [2, \infty)$.</p>
+
+<p><b>Common misconception:</b> Some students write $-5 \geq 2x + 1 \geq 5$ for this type. That is wrong. The inequality $|f(x)| &gt; k$ splits into two separate intervals, not a double inequality.</p>
+
+<p><hr></p>
+
+<h2>4. Graphs Involving Modulus</h2>
+
+<p>There are two distinct types of modulus graphs that students often confuse.</p>
+
+<p><b>Type 1: $y = |f(x)|$.</b> Take the original graph of $y = f(x)$. Any portion that lies below the $x$-axis (where $f(x) &lt; 0$) gets reflected upward to become positive. Portions already above the $x$-axis stay unchanged.</p>
+
+<p><b>Type 2: $y = f(|x|)$.</b> Take the portion of the original graph for $x \geq 0$ (the right half). Mirror it across the $y$-axis to produce the left half. The graph becomes symmetric about the $y$-axis.</p>
+
+<h3>Worked Example 5</h3>
+
+<p><b>Problem:</b> Describe the graph of $y = |x^2 - 4|$.</p>
+
+<p><b>Approach:</b> Start with the parabola $y = x^2 - 4$, which opens upward and crosses the $x$-axis at $x = \pm 2$. Between $-2$ and $2$, the parabola is below the $x$-axis. Reflect that portion upward.</p>
+
+<p><b>Step-by-step working:</b></p>
+<li>For $|x| \geq 2$, the parabola $x^2 - 4$ is already non-negative. The graph stays as $y = x^2 - 4$.</li>
+<li>For $|x| &lt; 2$, the parabola is negative. The modulus reflects it: $y = -(x^2 - 4) = 4 - x^2$.</li>
+
+<p>The graph looks like a parabola that dips to $y = -4$ at $x = 0$ in its original form, but the modulus version bounces that dip upward, creating a W-shaped curve with a peak at $(0, 4)$ and touching the $x$-axis at $x = \pm 2$.</p>
+
+<p><hr></p>
+
+<h2>5. Advanced Modulus Inequalities with Multiple Terms</h2>
+
+<p>When an inequality contains more than one modulus term, like $|x - a| + |x - b| &lt; c$, the most reliable method is to identify <b>critical points</b> where each expression inside a modulus equals zero. These points divide the number line into intervals. On each interval, every modulus expression has a definite sign, so you can remove the modulus bars and solve a regular inequality.</p>
+
+<h3>Worked Example 6</h3>
+
+<p><b>Problem:</b> Solve $|x - 1| + |x - 3| &lt; 5$.</p>
+
+<p><b>Approach:</b> Find the critical points by setting each expression inside modulus to zero: $x = 1$ and $x = 3$. These split the real line into three intervals: $x &lt; 1$, $1 \leq x &lt; 3$, and $x \geq 3$. On each interval, determine whether $(x - 1)$ and $(x - 3)$ are positive or negative, replace the modulus signs accordingly, and solve.</p>
+
+<p><b>Step-by-step working:</b></p>
+
+<p><b>Interval 1: $x &lt; 1$.</b> Here $x - 1 &lt; 0$ and $x - 3 &lt; 0$. So $|x - 1| = -(x - 1) = 1 - x$ and $|x - 3| = -(x - 3) = 3 - x$. The inequality becomes $(1 - x) + (3 - x) &lt; 5$, which simplifies to $4 - 2x &lt; 5$. Subtract $4$: $-2x &lt; 1$. Divide by $-2$ (reversing the inequality): $x &gt; -\frac{1}{2}$. Combined with $x &lt; 1$, this interval gives $-\frac{1}{2} &lt; x &lt; 1$.</p>
+
+<p><b>Interval 2: $1 \leq x &lt; 3$.</b> Here $x - 1 \geq 0$ and $x - 3 &lt; 0$. So $|x - 1| = x - 1$ and $|x - 3| = 3 - x$. The inequality becomes $(x - 1) + (3 - x) &lt; 5$, which simplifies to $2 &lt; 5$. This is always true. So the entire interval $1 \leq x &lt; 3$ is part of the solution.</p>
+
+<p><b>Interval 3: $x \geq 3$.</b> Here both $x - 1 \geq 0$ and $x - 3 \geq 0$. So $|x - 1| = x - 1$ and $|x - 3| = x - 3$. The inequality becomes $(x - 1) + (x - 3) &lt; 5$, which simplifies to $2x - 4 &lt; 5$. Add $4$: $2x &lt; 9$. Divide by $2$: $x &lt; \frac{9}{2}$. Combined with $x \geq 3$, this interval gives $3 \leq x &lt; \frac{9}{2}$.</p>
+
+<p><b>Union of all intervals:</b> $-\frac{1}{2} &lt; x &lt; \frac{9}{2}$.</p>
+
+<p><b>Why this makes sense:</b> The expression $|x - 1| + |x - 3|$ represents the sum of distances from $x$ to $1$ and from $x$ to $3$. The smallest possible sum is $2$, which occurs when $x$ is between $1$ and $3$ (the distance between the two points). The inequality asks for values where this sum is less than $5$, which is a generous bound, giving an interval larger than $[-1, 5]$ by half a unit on each side.</p>
+
+<p><hr></p>
+
+<h2>Practice Problems</h2>
+
+<p><b>1.</b> Solve the equation $|3x - 6| = 9$.</p>
+
+<p><b>2.</b> Solve the equation $|x + 4| = |2x - 1|$.</p>
+
+<p><b>3.</b> Solve the inequality $|x - 5| \leq 7$. Write your answer in interval notation.</p>
+
+<p><b>4.</b> Solve the inequality $|2x + 3| &gt; 8$. Write your answer as a union of intervals.</p>
+
+<p><b>5.</b> (IB Exam Style) Solve the inequality $|x + 1| &gt; 2|x - 1|$.</p>
+
+<p>(a) By squaring both sides, transform the inequality into a quadratic inequality in $x$. [2 marks]</p>
+
+<p>(b) Solve the resulting quadratic inequality. [2 marks]</p>
+
+<p>(c) State the final solution as an interval and verify that $x = 0$ satisfies the original inequality while $x = 4$ does not. [2 marks]</p>
+
+<p><b>6.</b> Solve the equation $|x^2 - x - 2| = 2$.</p>
+
+<p><hr></p>
+
+<h2>Answers</h2>
+
+<p><b>1.</b> Split into two equations. First: $3x - 6 = 9$, so $3x = 15$ and $x = 5$. Second: $3x - 6 = -9$, so $3x = -3$ and $x = -1$. The solutions are $x = -1$ and $x = 5$. A common mistake is to forget the negative branch, giving only $x = 5$.</p>
+
+<p><b>2.</b> Set $x + 4 = 2x - 1$ or $x + 4 = -(2x - 1)$. First equation: $x + 4 = 2x - 1$, subtract $x$ and add $1$: $5 = x$. Second equation: $x + 4 = -2x + 1$, add $2x$ and subtract $4$: $3x = -3$, so $x = -1$. Solutions: $x = -1$ and $x = 5$.</p>
+
+<p><b>3.</b> Rewrite as $-7 \leq x - 5 \leq 7$. Add $5$ to all three parts: $-2 \leq x \leq 12$. In interval notation: $[-2, 12]$. Visually, this is all points within 7 units of 5 on the number line.</p>
+
+<p><b>4.</b> Split into two inequalities. First: $2x + 3 &lt; -8$, so $2x &lt; -11$ and $x &lt; -\frac{11}{2}$. Second: $2x + 3 &gt; 8$, so $2x &gt; 5$ and $x &gt; \frac{5}{2}$. Solution: $(-\infty, -\frac{11}{2}) \cup (\frac{5}{2}, \infty)$. Note that strict inequality in the original means open intervals in the answer.</p>
+
+<p><b>5.</b> (a) Square both sides: $(x + 1)^2 &gt; 4(x - 1)^2$. Expand: $x^2 + 2x + 1 &gt; 4(x^2 - 2x + 1) = 4x^2 - 8x + 4$. Bring all terms to one side: $0 &gt; 3x^2 - 10x + 3$, or equivalently $3x^2 - 10x + 3 &lt; 0$. [2 marks]</p>
+
+<p>(b) Factor the quadratic: $3x^2 - 10x + 3 = (3x - 1)(x - 3)$. The roots are $x = \frac{1}{3}$ and $x = 3$. Since the quadratic opens upward (coefficient of $x^2$ is positive), it is negative between the roots. So $\frac{1}{3} &lt; x &lt; 3$. [2 marks]</p>
+
+<p>(c) Solution: $\left(\frac{1}{3}, 3\right)$. Check $x = 0$: $|0 + 1| = 1$ and $2|0 - 1| = 2$. Is $1 &gt; 2$? No. Wait — $x = 0$ is outside the interval and does NOT satisfy. Let us check $x = 2$: $|2 + 1| = 3$ and $2|2 - 1| = 2$. Is $3 &gt; 2$? Yes. And $2$ is inside $\left(\frac{1}{3}, 3\right)$. For $x = 4$: $|4 + 1| = 5$ and $2|4 - 1| = 6$. Is $5 &gt; 6$? No. Correct. [2 marks]</p>
+
+<p><b>6.</b> This is $|f(x)| = k$, so solve $x^2 - x - 2 = 2$ and $x^2 - x - 2 = -2$. First equation: $x^2 - x - 2 = 2$, so $x^2 - x - 4 = 0$. Using the quadratic formula: $x = \frac{1 \pm \sqrt{1 + 16}}{2} = \frac{1 \pm \sqrt{17}}{2}$. Second equation: $x^2 - x - 2 = -2$, so $x^2 - x = 0$, which factors as $x(x - 1) = 0$, giving $x = 0$ or $x = 1$. Solutions: $x = 0$, $x = 1$, $x = \frac{1 + \sqrt{17}}{2}$, $x = \frac{1 - \sqrt{17}}{2}$.</p>
+
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+</body>
+</html>

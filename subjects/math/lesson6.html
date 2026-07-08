@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 6 — Log Integrals + Trig Integrals</title>
+<script>
+MathJax = {
+  tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body {
+    max-width: 800px; margin: 40px auto; font-family: 'Times New Roman', Georgia, serif;
+    font-size: 17px; line-height: 1.7; padding: 0 20px; color: #1a1a1a;
+  }
+  h1 { font-size: 22px; border-bottom: 2px solid #333; padding-bottom: 8px; margin-top: 36px; }
+  h2 { font-size: 19px; margin-top: 28px; color: #2c3e50; }
+  h3 { font-size: 17px; margin-top: 22px; color: #444; }
+  h4 { font-size: 16px; margin-top: 18px; }
+  p { margin: 0.6em 0; }
+  li { margin: 0.3em 0 0.3em 20px; }
+  hr { margin: 20px 0; border: none; border-top: 1px solid #ddd; }
+  .math-block { text-align: center; margin: 1em 0; overflow-x: auto; }
+  .table-line { font-family: 'Courier New', monospace; font-size: 15px; margin: 0.1em 0; }
+  pre { background: #f5f5f5; padding: 10px 14px; border-radius: 4px; overflow-x: auto; font-size: 14px; }
+  b { color: #222; }
+  table { border-collapse: collapse; margin: 16px 0; width: 100%; font-size: 15px; }
+  th { background: #2c3e50; color: #fff; padding: 8px 12px; text-align: center; font-weight: bold; }
+  td { border: 1px solid #ccc; padding: 8px 12px; text-align: center; }
+  tr:nth-child(even) { background: #f9f9f9; }
+  .nav { text-align: center; margin: 30px 0; font-size: 14px; }
+  .nav a { margin: 0 8px; color: #3498db; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  @media print { body { font-size: 15px; } }
+</style>
+</head>
+<body>
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+<h1>Lesson 6: Logarithmic Integrals and Trigonometric Integrals</h1>
+
+<h2>Part 1: Logarithmic Integrals</h2>
+
+<h3>What Is a Logarithmic Integral and Why Does It Matter?</h3>
+
+<p>You already know from basic calculus that the derivative of $\ln x$ is $\frac{1}{x}$. Reversing this relationship gives one of the most fundamental integration formulas: $\int \frac{1}{x}\,dx = \ln|x| + C$. The absolute value is necessary because the domain of $\ln x$ is only positive $x$, but $\frac{1}{x}$ is defined for negative $x$ as well.</p>
+
+<p>However, many integrals we encounter have denominators that are not simply $x$ but are linear expressions like $3x + 2$ or $5 - 2x$. Recognizing these as logarithmic forms—and handling the constant factors correctly—is an essential skill for integration. These integrals appear whenever we integrate rational functions after partial fraction decomposition, and they are the building blocks of more advanced techniques.</p>
+
+<h3>The Fundamental Formula for Linear Denominators</h3>
+
+<p>When the denominator is a linear expression $ax + b$ (where $a$ and $b$ are constants and $a \neq 0$), the integral follows a straightforward pattern:</p>
+
+<div class="math-block">$$\int \frac{1}{ax + b}\,dx = \frac{1}{a}\ln|ax + b| + C$$</div>
+
+<p>The factor $\frac{1}{a}$ is the part that students most often forget. Here is why it exists. We can verify the formula by using the substitution $u = ax + b$. Then $du = a\,dx$, which means $dx = \frac{du}{a}$. Substituting:</p>
+
+<div class="math-block">$$\int \frac{1}{ax + b}\,dx = \int \frac{1}{u} \cdot \frac{du}{a} = \frac{1}{a}\int \frac{1}{u}\,du = \frac{1}{a}\ln|u| + C = \frac{1}{a}\ln|ax + b| + C$$</div>
+
+<p>The factor $\frac{1}{a}$ comes from the $dx = \frac{du}{a}$ step. If you forget it, you are effectively claiming that the derivative of $\ln|ax + b|$ is $\frac{1}{ax + b}$, but the chain rule tells us the derivative is actually $\frac{a}{ax + b}$.</p>
+
+<h3>When the Numerator Is the Derivative of the Denominator</h3>
+
+<p>A particularly elegant pattern arises when we recognize that the integral has the form $\int \frac{f&#x27;(x)}{f(x)}\,dx$. In this case, the answer is simply $\ln|f(x)| + C$, with no extra constant factor. This is because the substitution $u = f(x)$ gives $du = f&#x27;(x)\,dx$ exactly, so the integral becomes $\int \frac{1}{u}\,du = \ln|u| + C$.</p>
+
+<p>For example, in $\int \frac{2x}{x^2 + 1}\,dx$, the numerator $2x$ is exactly the derivative of the denominator $x^2 + 1$. The integral is therefore $\ln|x^2 + 1| + C$. Since $x^2 + 1$ is always positive, the absolute value bars can be dropped: $\ln(x^2 + 1) + C$.</p>
+
+<p>A common misconception: many students see a denominator and automatically apply the $\frac{1}{a}\ln|ax+b|$ formula without checking whether the numerator matches the derivative of the denominator. If the numerator is $2x$ and the denominator is $x^2 + 1$, the answer is not $\frac{1}{2x}\ln|x^2+1|$—that makes no sense because the factor $\frac{1}{a}$ only applies when the denominator is linear and the numerator is a constant.</p>
+
+<h3>Worked Examples for Logarithmic Integrals</h3>
+
+<p><b>Example 1:</b> Evaluate $\displaystyle \int \frac{1}{3x + 2}\,dx$.</p>
+
+<p>The denominator is linear with $a = 3$, so the factor is $\frac{1}{3}$:</p>
+
+<div class="math-block">$$\int \frac{1}{3x + 2}\,dx = \frac{1}{3}\ln|3x + 2| + C$$</div>
+
+<p><b>Example 2:</b> Evaluate $\displaystyle \int \frac{5}{2x - 1}\,dx$.</p>
+
+<p>The constant $5$ can be pulled outside the integral. The denominator is linear with $a = 2$:</p>
+
+<div class="math-block">$$\int \frac{5}{2x - 1}\,dx = 5\int \frac{1}{2x - 1}\,dx = 5 \cdot \frac{1}{2}\ln|2x - 1| + C = \frac{5}{2}\ln|2x - 1| + C$$</div>
+
+<p><b>Example 3:</b> Evaluate $\displaystyle \int \frac{2x}{x^2 + 1}\,dx$.</p>
+
+<p>The derivative of $x^2 + 1$ is $2x$, which is exactly the numerator. This matches the pattern $\int \frac{f&#x27;(x)}{f(x)}\,dx$:</p>
+
+<div class="math-block">$$\int \frac{2x}{x^2 + 1}\,dx = \ln(x^2 + 1) + C$$</div>
+
+<p>No extra factor is needed because the substitution $u = x^2 + 1$, $du = 2x\,dx$ is exact.</p>
+
+<p><b>Example 4:</b> Evaluate $\displaystyle \int \frac{x}{x^2 + 4}\,dx$.</p>
+
+<p>The derivative of $x^2 + 4$ is $2x$, but the numerator is only $x$. We need to adjust by multiplying and dividing by $2$:</p>
+
+<div class="math-block">$$\int \frac{x}{x^2 + 4}\,dx = \frac{1}{2}\int \frac{2x}{x^2 + 4}\,dx = \frac{1}{2}\ln(x^2 + 4) + C$$</div>
+
+<p>The factor $\frac{1}{2}$ compensates for the fact that the numerator is half of the derivative of the denominator.</p>
+
+<p><hr></p>
+
+<h2>Part 2: Trigonometric Integrals</h2>
+
+<h3>Standard Results You Should Know</h3>
+
+<p>Derivatives of the six trigonometric functions give six integration formulas. These are the direct reversals of differentiation rules:</p>
+
+<div class="math-block">$$\int \sin x\,dx = -\cos x + C$$</div>
+<div class="math-block">$$\int \cos x\,dx = \sin x + C$$</div>
+<div class="math-block">$$\int \sec^2 x\,dx = \tan x + C$$</div>
+<div class="math-block">$$\int \csc^2 x\,dx = -\cot x + C$$</div>
+<div class="math-block">$$\int \sec x \tan x\,dx = \sec x + C$$</div>
+<div class="math-block">$$\int \csc x \cot x\,dx = -\csc x + C$$</div>
+
+<p>A common error is forgetting the negative sign in $\int \sin x\,dx = -\cos x$. This happens because the derivative of $\cos x$ is $-\sin x$, so the sign flips when integrating.</p>
+
+<h3>Three Important Integrals That Are Less Obvious</h3>
+
+<h4>The Integral of $\tan x$</h4>
+
+<p>The tangent function is defined as $\tan x = \frac{\sin x}{\cos x}$. We can rewrite the integral:</p>
+
+<div class="math-block">$$\int \tan x\,dx = \int \frac{\sin x}{\cos x}\,dx$$</div>
+
+<p>The derivative of $\cos x$ is $-\sin x$. The numerator $\sin x$ is the negative of the derivative of the denominator. To use the pattern $\int \frac{f&#x27;(x)}{f(x)}\,dx$, we need the numerator to exactly match the derivative:</p>
+
+<div class="math-block">$$\int \frac{\sin x}{\cos x}\,dx = -\int \frac{-\sin x}{\cos x}\,dx = -\ln|\cos x| + C$$</div>
+
+<p>Since $-\ln|\cos x| = \ln|(\cos x)^{-1}| = \ln|\sec x|$, we can also write:</p>
+
+<div class="math-block">$$\int \tan x\,dx = \ln|\sec x| + C$$</div>
+
+<p>The absolute value bars are necessary because $\sec x$ can be negative.</p>
+
+<h4>The Integral of $\sec x$</h4>
+
+<p>This integral requires a clever algebraic manipulation. Multiply the numerator and denominator by $(\sec x + \tan x)$:</p>
+
+<div class="math-block">$$\int \sec x\,dx = \int \frac{\sec x(\sec x + \tan x)}{\sec x + \tan x}\,dx = \int \frac{\sec^2 x + \sec x \tan x}{\sec x + \tan x}\,dx$$</div>
+
+<p>Now observe the denominator: its derivative is $\sec x \tan x + \sec^2 x$, which is exactly the numerator. So this fits the pattern $\int \frac{f&#x27;(x)}{f(x)}\,dx$:</p>
+
+<div class="math-block">$$\int \sec x\,dx = \ln|\sec x + \tan x| + C$$</div>
+
+<p>This is a formula worth memorizing because the derivation, while instructive, is not something most people would invent on an exam.</p>
+
+<h4>The Integral of $\csc x$</h4>
+
+<p>A similar trick works for $\csc x$. Multiply numerator and denominator by $(\csc x - \cot x)$:</p>
+
+<div class="math-block">$$\int \csc x\,dx = \ln|\csc x - \cot x| + C$$</div>
+
+<p><hr></p>
+
+<h2>Part 3: Integrating Powers of Sine and Cosine</h2>
+
+<h3>The Half-Angle Formulas for $\sin^2 x$ and $\cos^2 x$</h3>
+
+<p>You cannot integrate $\sin^2 x$ directly using the basic formulas—the integral of $\sin^2 x$ is not $-\frac{1}{2}\cos^2 x$ or any similarly simple expression. The reason is that the chain rule would produce extra factors. Instead, we use the <b>half-angle formulas</b> (also called power-reduction identities), which come from the double-angle formula for cosine:</p>
+
+<div class="math-block">$$\sin^2 x = \frac{1 - \cos(2x)}{2}$$</div>
+<div class="math-block">$$\cos^2 x = \frac{1 + \cos(2x)}{2}$$</div>
+
+<p>These identities convert a squared trigonometric function into a form we can integrate using basic techniques.</p>
+
+<h3>Worked Example: $\int \sin^2 x\,dx$</h3>
+
+<p><b>Problem:</b> Evaluate $\displaystyle \int \sin^2 x\,dx$.</p>
+
+<p><b>Approach:</b> To solve this, we replace $\sin^2 x$ with the half-angle identity $\frac{1 - \cos(2x)}{2}$.</p>
+
+<p><b>Step-by-step working:</b></p>
+
+<div class="math-block">$$\int \sin^2 x\,dx = \int \frac{1 - \cos(2x)}{2}\,dx = \frac{1}{2}\int (1 - \cos(2x))\,dx$$</div>
+<div class="math-block">$$= \frac{1}{2}\left(x - \frac{1}{2}\sin(2x)\right) + C$$</div>
+<div class="math-block">$$= \frac{x}{2} - \frac{\sin(2x)}{4} + C$$</div>
+
+<p><b>Why this makes sense:</b> The answer contains an $x$ term, which tells us the integral grows linearly on average. This makes sense because $\sin^2 x$ oscillates between $0$ and $1$, so its accumulated area grows at an average rate of $\frac{1}{2}$ per unit of $x$.</p>
+
+<h3>Worked Example: $\int \cos^2(3x)\,dx$</h3>
+
+<p><b>Problem:</b> Evaluate $\displaystyle \int \cos^2(3x)\,dx$.</p>
+
+<p><b>Approach:</b> To solve this, we use $\cos^2(3x) = \frac{1 + \cos(6x)}{2}$, because the argument doubles from $3x$ to $6x$.</p>
+
+<p><b>Step-by-step working:</b></p>
+
+<div class="math-block">$$\int \cos^2(3x)\,dx = \int \frac{1 + \cos(6x)}{2}\,dx = \frac{1}{2}\int (1 + \cos(6x))\,dx$$</div>
+<div class="math-block">$$= \frac{1}{2}\left(x + \frac{1}{6}\sin(6x)\right) + C$$</div>
+<div class="math-block">$$= \frac{x}{2} + \frac{\sin(6x)}{12} + C$$</div>
+
+<p>The $\frac{1}{6}$ factor comes from integrating $\cos(6x)$: the integral of $\cos(kx)$ is $\frac{1}{k}\sin(kx)$.</p>
+
+<h3>Worked Example: Integrating an Odd Power of Sine</h3>
+
+<p><b>Problem:</b> Evaluate $\displaystyle \int \sin^3 x\,dx$.</p>
+
+<p><b>Approach:</b> To solve this, we cannot use the half-angle formula directly because the power is odd, not even. Instead, we separate one factor of $\sin x$ and convert the remaining $\sin^2 x$ using the Pythagorean identity $\sin^2 x = 1 - \cos^2 x$.</p>
+
+<p><b>Step-by-step working:</b></p>
+
+<div class="math-block">$$\int \sin^3 x\,dx = \int \sin^2 x \cdot \sin x\,dx = \int (1 - \cos^2 x)\sin x\,dx$$</div>
+
+<p>Now use the substitution $u = \cos x$, so $du = -\sin x\,dx$, which means $\sin x\,dx = -du$:</p>
+
+<div class="math-block">$$= \int (1 - u^2)(-du) = \int (u^2 - 1)\,du = \frac{u^3}{3} - u + C$$</div>
+
+<p>Substitute back $u = \cos x$:</p>
+
+<div class="math-block">$$= \frac{\cos^3 x}{3} - \cos x + C$$</div>
+
+<p><b>Why this makes sense:</b> This technique works for any odd power of $\sin x$ or $\cos x$: peel off one factor to serve as the $du$ part of a substitution, and convert the remaining even power using the Pythagorean identity.</p>
+
+<p><hr></p>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1</h3>
+<p>Evaluate the indefinite integral $\displaystyle \int \frac{1}{5x - 3}\,dx$.</p>
+
+<h3>Problem 2</h3>
+<p>Evaluate the indefinite integral $\displaystyle \int \frac{4}{2x + 7}\,dx$.</p>
+
+<h3>Problem 3</h3>
+<p>Evaluate the indefinite integral $\displaystyle \int \frac{3x^2}{x^3 + 8}\,dx$.</p>
+
+<h3>Problem 4</h3>
+<p>Evaluate the indefinite integral $\displaystyle \int \tan(2x)\,dx$.</p>
+
+<h3>Problem 5</h3>
+<p>Evaluate the indefinite integral $\displaystyle \int \sin^2(2x)\,dx$.</p>
+
+<h3>Problem 6</h3>
+<p>Evaluate the definite integral $\displaystyle \int_0^{\pi} \cos^2 x\,dx$.</p>
+
+<p><hr></p>
+
+<h2>Answers</h2>
+
+<h3>Answer 1</h3>
+
+<p>The denominator is linear with $a = 5$, so the integral is $\frac{1}{5}\ln|5x - 3| + C$. The absolute value is necessary because $5x - 3$ can be negative (when $x &lt; \frac{3}{5}$), and the logarithm is only defined for positive arguments. A common mistake is to forget the $\frac{1}{5}$ factor. You can check your answer by differentiating: the derivative of $\frac{1}{5}\ln|5x - 3|$ is $\frac{1}{5} \cdot \frac{5}{5x - 3} = \frac{1}{5x - 3}$, which is correct.</p>
+
+<h3>Answer 2</h3>
+
+<p>Factor out the constant $4$: $\int \frac{4}{2x+7}\,dx = 4\int \frac{1}{2x+7}\,dx$. The denominator is linear with $a = 2$, so the inner integral is $\frac{1}{2}\ln|2x+7|$. Multiplying by $4$: $4 \cdot \frac{1}{2}\ln|2x+7| + C = 2\ln|2x+7| + C$. Notice that the constants combine: $\frac{4}{2} = 2$.</p>
+
+<h3>Answer 3</h3>
+
+<p>The derivative of the denominator $x^3 + 8$ is $3x^2$, which is exactly the numerator. This matches the pattern $\int \frac{f&#x27;(x)}{f(x)}\,dx$, so the integral is $\ln|x^3 + 8| + C$. No extra constant factor is needed because the numerator and the derivative of the denominator match perfectly. A common error is trying to use the linear denominator formula here; that formula only applies when the denominator is of the form $ax + b$, not a cubic.</p>
+
+<h3>Answer 4</h3>
+
+<p>Rewrite $\tan(2x) = \frac{\sin(2x)}{\cos(2x)}$. Let $u = \cos(2x)$, so $du = -2\sin(2x)dx$, meaning $\sin(2x)dx = -\frac{du}{2}$. Then $\int \tan(2x)dx = \int \frac{\sin(2x)}{\cos(2x)}dx = \int \frac{1}{u}\left(-\frac{du}{2}\right) = -\frac{1}{2}\ln|u| + C = -\frac{1}{2}\ln|\cos(2x)| + C = \frac{1}{2}\ln|\sec(2x)| + C$. Note that we can also write the answer directly using the formula $\int \tan(kx)dx = \frac{1}{k}\ln|\sec(kx)| + C$, which generalizes the basic $\tan x$ integral.</p>
+
+<h3>Answer 5</h3>
+
+<p>Use the half-angle identity: $\sin^2(2x) = \frac{1 - \cos(4x)}{2}$. Then $\int \sin^2(2x)dx = \frac{1}{2}\int (1 - \cos(4x))dx = \frac{1}{2}\left(x - \frac{1}{4}\sin(4x)\right) + C = \frac{x}{2} - \frac{\sin(4x)}{8} + C$. The $\frac{1}{4}$ factor inside the parentheses comes from integrating $\cos(4x)$, and the $\frac{1}{2}$ outside gives the final coefficient of $\frac{1}{8}$ for the sine term.</p>
+
+<h3>Answer 6</h3>
+
+<p>Using the half-angle identity: $\cos^2 x = \frac{1 + \cos(2x)}{2}$. So $\int \cos^2 x\,dx = \frac{1}{2}\int (1 + \cos(2x))dx = \frac{x}{2} + \frac{\sin(2x)}{4} + C$. For the definite integral from $0$ to $\pi$: $\left[\frac{x}{2} + \frac{\sin(2x)}{4}\right]_0^\pi = \left(\frac{\pi}{2} + \frac{\sin(2\pi)}{4}\right) - \left(0 + \frac{\sin(0)}{4}\right) = \frac{\pi}{2} + 0 - 0 = \frac{\pi}{2}$. The sine terms vanish at both limits because $\sin(2\pi) = 0$ and $\sin(0) = 0$. The result $\frac{\pi}{2}$ is the average value of $\cos^2 x$ ($\frac{1}{2}$) multiplied by the length of the interval ($\pi$).</p>
+
+<p><hr></p>
+
+<h2>Key Takeaways</h2>
+
+<li>For $\int \frac{1}{ax + b}\,dx$, the answer is $\frac{1}{a}\ln|ax + b| + C$. The $\frac{1}{a}$ factor comes from the chain rule in reverse. Forgetting it is the most common error in logarithmic integration.</li>
+<li>When the numerator is exactly the derivative of the denominator, $\int \frac{f&#x27;(x)}{f(x)}\,dx = \ln|f(x)| + C$, with no extra factor.</li>
+<li>Memorize $\int \tan x\,dx = \ln|\sec x| + C$ and $\int \sec x\,dx = \ln|\sec x + \tan x| + C$. These appear regularly in more advanced problems.</li>
+<li>For $\sin^2 x$ and $\cos^2 x$, always use the half-angle formulas. There is no simpler way to integrate squared trigonometric functions.</li>
+<li>For odd powers of $\sin x$ or $\cos x$, save one factor for the $du$ of a substitution and convert the remaining even power using $\sin^2 x + \cos^2 x = 1$.</li>
+
+
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+</body>
+</html>

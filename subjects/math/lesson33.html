@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 33 — Probability Basics & Conditional Probability</title>
+<script>
+MathJax = {
+  tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body {
+    max-width: 800px; margin: 40px auto; font-family: 'Times New Roman', Georgia, serif;
+    font-size: 17px; line-height: 1.7; padding: 0 20px; color: #1a1a1a;
+  }
+  h1 { font-size: 22px; border-bottom: 2px solid #333; padding-bottom: 8px; margin-top: 36px; }
+  h2 { font-size: 19px; margin-top: 28px; color: #2c3e50; }
+  h3 { font-size: 17px; margin-top: 22px; color: #444; }
+  h4 { font-size: 16px; margin-top: 18px; }
+  p { margin: 0.6em 0; }
+  li { margin: 0.3em 0 0.3em 20px; }
+  hr { margin: 20px 0; border: none; border-top: 1px solid #ddd; }
+  .math-block { text-align: center; margin: 1em 0; overflow-x: auto; }
+  .table-line { font-family: 'Courier New', monospace; font-size: 15px; margin: 0.1em 0; }
+  pre { background: #f5f5f5; padding: 10px 14px; border-radius: 4px; overflow-x: auto; font-size: 14px; }
+  b { color: #222; }
+  table { border-collapse: collapse; margin: 16px 0; width: 100%; font-size: 15px; }
+  th { background: #2c3e50; color: #fff; padding: 8px 12px; text-align: center; font-weight: bold; }
+  td { border: 1px solid #ccc; padding: 8px 12px; text-align: center; }
+  tr:nth-child(even) { background: #f9f9f9; }
+  .nav { text-align: center; margin: 30px 0; font-size: 14px; }
+  .nav a { margin: 0 8px; color: #3498db; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  @media print { body { font-size: 15px; } }
+</style>
+</head>
+<body>
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+<h1>Lesson 33 — Probability Basics and Conditional Probability</h1>
+
+<h2>What is Probability and Why Learn It?</h2>
+
+<p>Probability is the branch of mathematics that measures how likely an event is to occur. It assigns a number between 0 and 1 to every possible outcome of a random experiment. A probability of 0 means the event is impossible. A probability of 1 means the event is certain.</p>
+
+<p>Probability is the foundation of statistics, data science, risk assessment, and decision-making under uncertainty. In IB AAHL, you need to calculate probabilities, work with conditional statements, and determine whether events are independent. This lesson builds these concepts from the ground up.</p>
+
+<h2>1. Sample Spaces and Events</h2>
+
+<p>A <b>random experiment</b> is any process whose outcome cannot be predicted with certainty. The <b>sample space</b>, denoted by $S$, is the set of all possible outcomes of a random experiment.</p>
+
+<p>An <b>event</b> is any collection of outcomes — that is, a subset of the sample space. We use capital letters like $A$ and $B$ to name events.</p>
+
+<p>When every outcome in the sample space has the same chance of occurring, we say the outcomes are <b>equally likely</b>. For equally likely outcomes, the probability of an event $A$ is:</p>
+
+<div class="math-block">$$P(A) = \frac{|A|}{|S|}$$</div>
+
+<p>The notation $|A|$ means &quot;the number of elements in set $A$.&quot; So $P(A)$ is the number of outcomes that make up event $A$, divided by the total number of possible outcomes.</p>
+
+<h3>Worked Example 1</h3>
+
+<p><b>Problem:</b> A fair six-sided die is rolled once. Find the probability of rolling an even number.</p>
+
+<p><b>Approach:</b> First identify the sample space, then count how many outcomes satisfy &quot;even number,&quot; then divide.</p>
+
+<p>The sample space is $S = \{1, 2, 3, 4, 5, 6\}$, so $|S| = 6$.</p>
+
+<p>The event &quot;roll an even number&quot; is $A = \{2, 4, 6\}$, so $|A| = 3$.</p>
+
+<div class="math-block">$$P(A) = \frac{3}{6} = \frac{1}{2}$$</div>
+
+<p><b>Why this makes sense:</b> Half the faces of the die show even numbers, so the probability is 0.5.</p>
+
+<p><hr></p>
+
+<h2>2. The Complement Rule</h2>
+
+<p>The <b>complement</b> of an event $A$, written as $A&#x27;$ (or sometimes $A^c$), is the event that $A$ does not happen. In set language, $A&#x27;$ contains every outcome in $S$ that is not in $A$.</p>
+
+<p>Since every outcome is either in $A$ or in $A&#x27;$, and these two sets have no overlap, their probabilities must sum to 1:</p>
+
+<div class="math-block">$$P(A&#x27;) = 1 - P(A)$$</div>
+
+<h3>Worked Example 2</h3>
+
+<p><b>Problem:</b> The probability that it rains on a given day in a certain city is 0.3. What is the probability that it does NOT rain?</p>
+
+<p><b>Approach:</b> Use the complement rule directly.</p>
+
+<div class="math-block">$$P(\text{no rain}) = 1 - P(\text{rain}) = 1 - 0.3 = 0.7$$</div>
+
+<p><b>Why this makes sense:</b> If there is a 30% chance of rain, then 70% of the time it does not rain. These two probabilities must add to 100%.</p>
+
+<p><hr></p>
+
+<h2>3. The Addition Rule for &quot;OR&quot;</h2>
+
+<p>The <b>union</b> of two events $A$ and $B$, written $A \cup B$, is the event that $A$ happens, $B$ happens, or both happen. The notation $\cup$ means &quot;union&quot; and corresponds to the word &quot;or.&quot;</p>
+
+<p>The <b>intersection</b> of two events $A$ and $B$, written $A \cap B$, is the event that both $A$ and $B$ happen. The notation $\cap$ means &quot;intersection&quot; and corresponds to the word &quot;and.&quot;</p>
+
+<p>To find $P(A \cup B)$, you cannot simply add $P(A)$ and $P(B)$, because any outcomes that belong to both events would be counted twice. The correct formula subtracts the overlap once:</p>
+
+<div class="math-block">$$P(A \cup B) = P(A) + P(B) - P(A \cap B)$$</div>
+
+<h3>Worked Example 3</h3>
+
+<p><b>Problem:</b> In a class of 30 students, 18 students study French, 14 students study Spanish, and 8 students study both languages. One student is chosen at random. Find the probability that this student studies French or Spanish.</p>
+
+<p><b>Approach:</b> Let $F$ be the event &quot;studies French&quot; and $S$ be the event &quot;studies Spanish.&quot; We use the addition rule.</p>
+
+<p>$P(F) = \frac{18}{30}$, $P(S) = \frac{14}{30}$, $P(F \cap S) = \frac{8}{30}$</p>
+
+<div class="math-block">$$P(F \cup S) = \frac{18}{30} + \frac{14}{30} - \frac{8}{30} = \frac{24}{30} = 0.8$$</div>
+
+<p><b>Why this makes sense:</b> If you simply added 18 and 14 you would get 32 students out of 30, which is impossible. The 8 students who study both were counted twice, so they must be subtracted once.</p>
+
+<p><hr></p>
+
+<h2>4. Mutually Exclusive Events</h2>
+
+<p>Two events are called <b>mutually exclusive</b> if they cannot both happen at the same time. In set language, their intersection is empty: $A \cap B = \emptyset$.</p>
+
+<p>When events are mutually exclusive, the intersection probability is zero: $P(A \cap B) = 0$. The addition rule simplifies to:</p>
+
+<div class="math-block">$$P(A \cup B) = P(A) + P(B)$$</div>
+
+<p>Many students confuse &quot;mutually exclusive&quot; with &quot;independent.&quot; They are completely different concepts. Mutually exclusive means the events cannot occur together. Independence means the occurrence of one does not affect the probability of the other.</p>
+
+<h3>Worked Example 4</h3>
+
+<p><b>Problem:</b> A card is drawn at random from a standard deck of 52 playing cards. Find the probability that the card is a King or a Queen.</p>
+
+<p><b>Approach:</b> A single card cannot be both a King and a Queen, so these events are mutually exclusive.</p>
+
+<p>$P(\text{King}) = \frac{4}{52}$ (there are 4 Kings in the deck).</p>
+
+<p>$P(\text{Queen}) = \frac{4}{52}$ (there are 4 Queens in the deck).</p>
+
+<div class="math-block">$$P(\text{King} \cup \text{Queen}) = \frac{4}{52} + \frac{4}{52} = \frac{8}{52} = \frac{2}{13}$$</div>
+
+<p><hr></p>
+
+<h2>5. Conditional Probability</h2>
+
+<p><b>Conditional probability</b> is the probability that one event occurs, given that another event has already occurred. The notation $P(A \mid B)$ is read as &quot;the probability of $A$ given $B$.&quot;</p>
+
+<p>The formula for conditional probability is:</p>
+
+<div class="math-block">$$P(A \mid B) = \frac{P(A \cap B)}{P(B)}$$</div>
+
+<p>This formula makes sense if you think about &quot;zooming in&quot; on the reduced world where $B$ has definitely happened. The denominator $P(B)$ is the size of this reduced world. The numerator $P(A \cap B)$ is the part of that reduced world where $A$ also happens.</p>
+
+<p>A crucial condition is that $P(B) &gt; 0$. You cannot condition on an impossible event.</p>
+
+<h3>Worked Example 5</h3>
+
+<p><b>Problem:</b> A fair six-sided die is rolled. Given that the outcome is even, what is the probability that it is a 6?</p>
+
+<p><b>Approach:</b> Let $B$ be &quot;the outcome is even&quot; and $A$ be &quot;the outcome is 6.&quot; Then find $P(A \mid B)$.</p>
+
+<p>The sample space is $\{1, 2, 3, 4, 5, 6\}$. The event $B$ (even) is $\{2, 4, 6\}$, so $P(B) = \frac{3}{6} = \frac{1}{2}$.</p>
+
+<p>The event $A$ (rolling a 6) is $\{6\}$. The intersection $A \cap B = \{6\}$, so $P(A \cap B) = \frac{1}{6}$.</p>
+
+<div class="math-block">$$P(A \mid B) = \frac{P(A \cap B)}{P(B)} = \frac{1/6}{1/2} = \frac{1}{6} \times \frac{2}{1} = \frac{1}{3}$$</div>
+
+<p><b>Why this makes sense:</b> In the reduced sample space $\{2, 4, 6\}$, there are three equally likely outcomes. Only one of them is a 6, so the conditional probability is $1/3$.</p>
+
+<h3>Worked Example 6</h3>
+
+<p><b>Problem:</b> Using the class from Worked Example 3 (30 students: 18 French, 14 Spanish, 8 both), find the probability that a randomly chosen student studies French, given that the student studies Spanish.</p>
+
+<p><b>Approach:</b> This is $P(F \mid S)$.</p>
+
+<div class="math-block">$$P(F \mid S) = \frac{P(F \cap S)}{P(S)} = \frac{8/30}{14/30} = \frac{8}{14} = \frac{4}{7}$$</div>
+
+<p><b>Why this makes sense:</b> Among the 14 Spanish students, 8 also study French. So the conditional probability is $8/14$.</p>
+
+<p><hr></p>
+
+<h2>6. Independence</h2>
+
+<p>Two events $A$ and $B$ are <b>independent</b> if knowing whether one occurred gives no information about whether the other occurred. There are three equivalent ways to check for independence:</p>
+
+<li>$P(A \cap B) = P(A) \times P(B)$</li>
+<li>$P(A \mid B) = P(A)$</li>
+<li>$P(B \mid A) = P(B)$</li>
+
+<p>If any one of these three equations is true, the other two are automatically true, and the events are independent. If any one is false, the events are dependent.</p>
+
+<h3>Worked Example 7</h3>
+
+<p><b>Problem:</b> A fair coin is tossed twice. Let $H_1$ be &quot;the first toss is heads&quot; and $H_2$ be &quot;the second toss is heads.&quot; Are $H_1$ and $H_2$ independent?</p>
+
+<p><b>Approach:</b> We check whether $P(H_1 \cap H_2) = P(H_1) \times P(H_2)$.</p>
+
+<p>$P(H_1) = \frac{1}{2}$, $P(H_2) = \frac{1}{2}$, $P(H_1 \cap H_2) = \frac{1}{4}$ (only the outcome HH satisfies both).</p>
+
+<p>$P(H_1) \times P(H_2) = \frac{1}{2} \times \frac{1}{2} = \frac{1}{4}$</p>
+
+<p>Since $P(H_1 \cap H_2) = P(H_1) \times P(H_2)$, the events are independent.</p>
+
+<p><b>Why this makes sense:</b> The result of the first coin toss has no physical effect on the second toss. The coin does not &quot;remember&quot; what it did before.</p>
+
+<h3>Worked Example 8</h3>
+
+<p><b>Problem:</b> A bag contains 5 red marbles and 3 blue marbles. You draw two marbles without replacement. Let $R_1$ be &quot;the first marble is red&quot; and $R_2$ be &quot;the second marble is red.&quot; Are $R_1$ and $R_2$ independent?</p>
+
+<p><b>Approach:</b> Check whether $P(R_2 \mid R_1)$ equals $P(R_2)$.</p>
+
+<p>First, $P(R_1) = \frac{5}{8}$ (5 red out of 8 total).</p>
+
+<p>If the first marble was red, then 4 red marbles remain out of 7 total marbles. So $P(R_2 \mid R_1) = \frac{4}{7}$.</p>
+
+<p>What would $P(R_2)$ be without any condition? It is actually still $\frac{5}{8}$, but careful reasoning is needed. Regardless, $\frac{4}{7} \neq \frac{5}{8}$, so $P(R_2 \mid R_1) \neq P(R_2)$. The events are NOT independent.</p>
+
+<p><b>Why this makes sense:</b> Removing a marble changes the composition of the bag. The outcome of the first draw physically affects the probabilities for the second draw.</p>
+
+<p><hr></p>
+
+<h2>7. Tree Diagrams</h2>
+
+<p>A <b>tree diagram</b> represents sequential events. Each branch from a node shows a possible outcome and its probability. The probabilities on all branches from a single node must sum to 1.</p>
+
+<p>To find the probability of a complete path (a sequence of outcomes), multiply the probabilities along the branches.</p>
+
+<p>To find the total probability of an event that can occur through multiple paths, add the probabilities of all those paths.</p>
+
+<h3>Worked Example 9</h3>
+
+<p><b>Problem:</b> A bag contains 4 red marbles and 6 blue marbles. Two marbles are drawn one after the other without replacement. Find the probability of drawing exactly one red marble.</p>
+
+<p><b>Approach:</b> Draw the tree, compute the probability of each path, and add the paths that give exactly one red.</p>
+
+<p><b>First draw:</b> $P(R) = \frac{4}{10} = \frac{2}{5}$, $P(B) = \frac{6}{10} = \frac{3}{5}$.</p>
+
+<p><b>Second draw after red:</b> 3 red and 6 blue remain, so $P(R \mid \text{first }R) = \frac{3}{9} = \frac{1}{3}$ and $P(B \mid \text{first }R) = \frac{6}{9} = \frac{2}{3}$.</p>
+
+<p><b>Second draw after blue:</b> 4 red and 5 blue remain, so $P(R \mid \text{first }B) = \frac{4}{9}$ and $P(B \mid \text{first }B) = \frac{5}{9}$.</p>
+
+<p>Path RB (first red, then blue): $\frac{4}{10} \times \frac{6}{9} = \frac{24}{90}$.</p>
+
+<p>Path BR (first blue, then red): $\frac{6}{10} \times \frac{4}{9} = \frac{24}{90}$.</p>
+
+<p>Total probability of exactly one red: $\frac{24}{90} + \frac{24}{90} = \frac{48}{90} = \frac{8}{15}$.</p>
+
+<p><b>Why this makes sense:</b> The two paths RB and BR each have the same probability because the numbers are symmetric. Their sum simplifies nicely.</p>
+
+<p><hr></p>
+
+<h2>8. Two-Way Tables</h2>
+
+<p>A <b>two-way table</b> (also called a contingency table) organizes data by two categorical variables. The cells show counts (or probabilities) for each combination of categories. The row totals and column totals appear in the margins.</p>
+
+<h3>Worked Example 10</h3>
+
+<p><b>Problem:</b> A survey of 100 people collected data on gender and coffee preference. Among the 60 males, 30 like coffee. Among the 40 females, 20 like coffee. Organize this data in a two-way table and find $P(\text{likes coffee} \mid \text{male})$.</p>
+
+<p><b>Approach:</b> Construct the table, then use the conditional probability formula.</p>
+
+<p class="table-line">|           | Likes Coffee | Does Not Like | Total |</p>
+<p class="table-line">|<hr><hr><hr>--|:<hr><hr><hr><hr>:|:<hr><hr><hr><hr>-:|:<hr>--:|</p>
+<p class="table-line">| <b>Male</b>  |      30      |      30       |  60   |</p>
+<p class="table-line">| <b>Female</b>|      20      |      20       |  40   |</p>
+<p class="table-line">| <b>Total</b> |      50      |      50       |  100  |</p>
+
+<div class="math-block">$$P(\text{likes coffee} \mid \text{male}) = \frac{30}{60} = 0.5$$</div>
+
+<p>Also note: $P(\text{male} \mid \text{likes coffee}) = \frac{30}{50} = 0.6$. These two conditional probabilities are different — a common point of confusion. The order of conditioning matters.</p>
+
+<p>In this particular table, $P(\text{coffee}) = 0.5$ and $P(\text{coffee} \mid \text{male}) = 0.5$, so coffee preference and gender happen to be independent in this dataset.</p>
+
+<p><hr></p>
+
+<h2>Glossary</h2>
+
+<p class="table-line">| Term | Meaning |</p>
+<p class="table-line">|<hr><hr>|<hr><hr><hr>|</p>
+<p class="table-line">| Sample space $S$ | The set of all possible outcomes of a random experiment |</p>
+<p class="table-line">| Event $A$ | A subset of the sample space |</p>
+<p class="table-line">| Complement $A&#x27;$ | The event that $A$ does not happen |</p>
+<p class="table-line">| Union $A \cup B$ | The event that $A$ or $B$ or both happen |</p>
+<p class="table-line">| Intersection $A \cap B$ | The event that both $A$ and $B$ happen |</p>
+<p class="table-line">| Conditional probability $P(A \mid B)$ | The probability of $A$ given that $B$ has occurred |</p>
+<p class="table-line">| Independent events | Events where $P(A \cap B) = P(A) \times P(B)$ |</p>
+<p class="table-line">| Mutually exclusive events | Events that cannot both happen: $A \cap B = \emptyset$ |</p>
+
+<p><hr></p>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1</h3>
+<p>A fair coin is tossed three times in a row.</p>
+
+<p>(a) Write out the sample space $S$ explicitly. How many outcomes are there?</p>
+
+<p>(b) Find the probability of getting exactly two heads.</p>
+
+<p>(c) Find the probability of getting at least one head.</p>
+
+<h3>Problem 2</h3>
+<p>A card is drawn at random from a standard 52-card deck. A &quot;face card&quot; is defined as a Jack, Queen, or King.</p>
+
+<p>(a) Find the probability that the card is a Heart or a face card.</p>
+
+<p>(b) Are the events &quot;Heart&quot; and &quot;face card&quot; mutually exclusive? Explain your answer.</p>
+
+<p>(c) Find the probability that the card is a Heart, given that it is a face card.</p>
+
+<h3>Problem 3</h3>
+<p>For two events $A$ and $B$, suppose $P(A) = 0.5$, $P(B) = 0.3$, and $P(A \cap B) = 0.2$.</p>
+
+<p>(a) Find $P(A \cup B)$.</p>
+
+<p>(b) Find $P(A \mid B)$.</p>
+
+<p>(c) Find $P(B \mid A)$.</p>
+
+<p>(d) Are $A$ and $B$ independent? Justify your answer using a calculation.</p>
+
+<h3>Problem 4</h3>
+<p>There are two urns. Urn 1 contains 5 white balls and 3 black balls. Urn 2 contains 4 white balls and 6 black balls. A fair coin is flipped to decide which urn to use. Then one ball is drawn from the chosen urn.</p>
+
+<p>(a) Draw a fully labeled tree diagram.</p>
+
+<p>(b) Find the probability that the drawn ball is white.</p>
+
+<p>(c) Given that the ball drawn is white, find the probability that it came from Urn 1.</p>
+
+<h3>Problem 5 (IB Exam Style)</h3>
+<p>In a survey of students at a school, 70% own a laptop, 50% own a tablet, and 35% own both a laptop and a tablet. A student is selected at random.</p>
+
+<p>(a) Find the probability that the student owns a laptop or a tablet. <b>[2 marks]</b></p>
+
+<p>(b) Determine whether owning a laptop and owning a tablet are independent events. Show your reasoning clearly. <b>[2 marks]</b></p>
+
+<p>(c) Given that the student owns a laptop, find the probability that they also own a tablet. <b>[2 marks]</b></p>
+
+<p><hr></p>
+
+<h2>Answers</h2>
+
+<h3>Problem 1</h3>
+
+<p>(a) The sample space is $S = \{HHH, HHT, HTH, HTT, THH, THT, TTH, TTT\}$. There are 8 outcomes.</p>
+
+<p>(b) The outcomes with exactly two heads are $\{HHT, HTH, THH\}$. There are 3 favorable outcomes out of 8, so the probability is $\frac{3}{8}$.</p>
+
+<p>(c) Rather than counting all outcomes with at least one head, it is easier to use the complement. The only outcome with no heads is $TTT$, which has probability $\frac{1}{8}$. Therefore $P(\text{at least one head}) = 1 - \frac{1}{8} = \frac{7}{8}$.</p>
+
+<h3>Problem 2</h3>
+
+<p>(a) There are 13 Hearts and 12 face cards (3 per suit × 4 suits). Among the Hearts, 3 cards (Jack, Queen, King of Hearts) are face cards. Using the addition rule: $P(\text{Heart} \cup \text{Face}) = \frac{13}{52} + \frac{12}{52} - \frac{3}{52} = \frac{22}{52} = \frac{11}{26}$.</p>
+
+<p>(b) They are NOT mutually exclusive, because the Jack, Queen, and King of Hearts are simultaneously Hearts and face cards. For mutual exclusivity, the intersection must be empty, but here there are 3 cards in the intersection.</p>
+
+<p>(c) $P(\text{Heart} \mid \text{Face}) = \frac{P(\text{Heart} \cap \text{Face})}{P(\text{Face})} = \frac{3/52}{12/52} = \frac{3}{12} = \frac{1}{4}$. Among the 12 face cards in the deck, exactly 3 are Hearts.</p>
+
+<h3>Problem 3</h3>
+
+<p>(a) $P(A \cup B) = 0.5 + 0.3 - 0.2 = 0.6$.</p>
+
+<p>(b) $P(A \mid B) = \frac{P(A \cap B)}{P(B)} = \frac{0.2}{0.3} = \frac{2}{3}$.</p>
+
+<p>(c) $P(B \mid A) = \frac{P(A \cap B)}{P(A)} = \frac{0.2}{0.5} = 0.4$.</p>
+
+<p>(d) To check independence, compute $P(A) \times P(B) = 0.5 \times 0.3 = 0.15$. Since $P(A \cap B) = 0.2 \neq 0.15$, the events are NOT independent. The product rule fails.</p>
+
+<h3>Problem 4</h3>
+
+<p>(a) Tree diagram: first branch is choosing Urn 1 (probability 0.5) or Urn 2 (probability 0.5). From Urn 1, branches are White ($\frac{5}{8}$) and Black ($\frac{3}{8}$). From Urn 2, branches are White ($\frac{4}{10} = \frac{2}{5}$) and Black ($\frac{6}{10} = \frac{3}{5}$).</p>
+
+<p>(b) $P(\text{White}) = P(\text{Urn 1}) \times P(\text{White} \mid \text{Urn 1}) + P(\text{Urn 2}) \times P(\text{White} \mid \text{Urn 2}) = 0.5 \times \frac{5}{8} + 0.5 \times \frac{4}{10} = \frac{5}{16} + \frac{2}{10} = \frac{5}{16} + \frac{1}{5}$.</p>
+
+<p>To add, use a common denominator of 80: $\frac{25}{80} + \frac{16}{80} = \frac{41}{80} = 0.5125$.</p>
+
+<p>(c) $P(\text{Urn 1} \mid \text{White}) = \frac{P(\text{Urn 1} \cap \text{White})}{P(\text{White})} = \frac{5/16}{41/80} = \frac{5}{16} \times \frac{80}{41} = \frac{25}{41}$.</p>
+
+<h3>Problem 5</h3>
+
+<p>Let $L$ be the event &quot;owns a laptop&quot; and $T$ be the event &quot;owns a tablet.&quot; Then $P(L) = 0.7$, $P(T) = 0.5$, $P(L \cap T) = 0.35$.</p>
+
+<p>(a) $P(L \cup T) = 0.7 + 0.5 - 0.35 = 0.85$. <b>[2 marks]</b></p>
+
+<p>(b) Compute $P(L) \times P(T) = 0.7 \times 0.5 = 0.35$. Since $P(L \cap T) = 0.35 = P(L) \times P(T)$, the events ARE independent. The product rule holds exactly. <b>[2 marks]</b></p>
+
+<p>(c) $P(T \mid L) = \frac{P(T \cap L)}{P(L)} = \frac{0.35}{0.7} = 0.5$. Notice that $P(T \mid L) = P(T)$, which is another way to confirm independence. <b>[2 marks]</b></p>
+
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+</body>
+</html>

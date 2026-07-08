@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 47 — Solving Trigonometric Equations</title>
+<script>
+MathJax = {
+  tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body {
+    max-width: 800px; margin: 40px auto; font-family: 'Times New Roman', Georgia, serif;
+    font-size: 17px; line-height: 1.7; padding: 0 20px; color: #1a1a1a;
+  }
+  h1 { font-size: 22px; border-bottom: 2px solid #333; padding-bottom: 8px; margin-top: 36px; }
+  h2 { font-size: 19px; margin-top: 28px; color: #2c3e50; }
+  h3 { font-size: 17px; margin-top: 22px; color: #444; }
+  h4 { font-size: 16px; margin-top: 18px; }
+  p { margin: 0.6em 0; }
+  li { margin: 0.3em 0 0.3em 20px; }
+  hr { margin: 20px 0; border: none; border-top: 1px solid #ddd; }
+  .math-block { text-align: center; margin: 1em 0; overflow-x: auto; }
+  .table-line { font-family: 'Courier New', monospace; font-size: 15px; margin: 0.1em 0; }
+  pre { background: #f5f5f5; padding: 10px 14px; border-radius: 4px; overflow-x: auto; font-size: 14px; }
+  b { color: #222; }
+  table { border-collapse: collapse; margin: 16px 0; width: 100%; font-size: 15px; }
+  th { background: #2c3e50; color: #fff; padding: 8px 12px; text-align: center; font-weight: bold; }
+  td { border: 1px solid #ccc; padding: 8px 12px; text-align: center; }
+  tr:nth-child(even) { background: #f9f9f9; }
+  .nav { text-align: center; margin: 30px 0; font-size: 14px; }
+  .nav a { margin: 0 8px; color: #3498db; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  @media print { body { font-size: 15px; } }
+</style>
+</head>
+<body>
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+<h1>Lesson 47: Solving Trigonometric Equations</h1>
+
+<h2>What Is This Topic?</h2>
+
+<p>A <b>trigonometric equation</b> is any equation that contains a trigonometric function — like sin x, cos x, or tan x — with the unknown angle x. Solving such an equation means finding every angle (in a given range) that makes the equation true. For example, &quot;sin x = 0.5&quot; is a trigonometric equation, and its solutions are all angles whose sine equals one half.</p>
+
+
+<div class="visual" style="text-align:center;margin:24px 0;background:#fafaf9;padding:16px;border-radius:8px;border:1px solid #ddd;">
+<p style="font-weight:bold;color:#2c3e50;margin-bottom:12px;">Figure: Solving cos x = 1/2 — the two solutions in [0, 2π]</p>
+<svg viewBox="0 0 400 400" width="360" height="360" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="200" cy="200" r="130" fill="none" stroke="#2c3e50" stroke-width="2"/>
+  <line x1="40" y1="200" x2="360" y2="200" stroke="#999" stroke-width="1"/>
+  <line x1="200" y1="40" x2="200" y2="360" stroke="#999" stroke-width="1"/>
+  <!-- cos x = 1/2 means x = 1/2 on the horizontal axis -->
+  <line x1="265" y1="40" x2="265" y2="360" stroke="#e74c3c" stroke-width="1" stroke-dasharray="6,3"/>
+  <text x="260" y="25" font-size="11" fill="#e74c3c">x = 1/2</text>
+  <!-- Points at π/3 and 5π/3 where cos = 1/2 -->
+  <circle cx="265" cy="200" r="5" fill="#e74c3c"/>
+  <!-- Arc to π/3 -->
+  <path d="M265,200 A130,130 0 0,1 200,70" fill="none" stroke="#1a5276" stroke-width="2.5"/>
+  <path d="M200,70 A130,130 0 0,1 135,200" fill="none" stroke="#1a5276" stroke-width="1" opacity="0.3"/>
+  <path d="M135,200 A130,130 0 0,1 200,330" fill="none" stroke="#1a5276" stroke-width="1" opacity="0.3"/>
+  <path d="M200,330 A130,130 0 0,1 265,200" fill="none" stroke="#1a5276" stroke-width="2.5"/>
+  <!-- Labels for solutions -->
+  <text x="270" y="193" font-size="13" fill="#e74c3c" font-weight="bold">π/3</text>
+  <text x="270" y="215" font-size="13" fill="#e74c3c" font-weight="bold">5π/3</text>
+</svg>
+<p style="font-size:13px;color:#666;margin-top:8px;">When cos x = 1/2, the points on the unit circle with x-coordinate 1/2 are at angles π/3 and 5π/3 (radians). These are the only solutions in one full rotation.</p>
+</div>
+<h2>Why Do We Learn This?</h2>
+
+<p>Trigonometric equations appear whenever something repeats in a cycle: sound waves, tides, the swing of a pendulum, alternating electric current, and satellite orbits all involve periodic motion described by sine and cosine. If you want to know *when* a wave reaches a certain height, you are solving a trigonometric equation. In the IB exam, you will often be told to find all solutions in the interval [0, 2π] (radians) or [0°, 360°] (degrees).</p>
+
+<h2>Key Terms Defined</h2>
+
+<p>A <b>principal value</b> is the first solution your calculator gives you — it is the simplest angle, always chosen from a specific narrow range. For sine, the principal value falls between −π/2 and π/2. For cosine, between 0 and π. For tangent, between −π/2 and π/2.</p>
+
+<p>The <b>unit circle</b> is a circle of radius 1 centered at the origin. An angle is measured counterclockwise from the positive x‑axis. The x‑coordinate of a point on the unit circle equals cos θ, and the y‑coordinate equals sin θ.</p>
+
+<p>A <b>reference angle</b> is the acute (less than 90°) angle between the terminal side of your angle and the x‑axis. It helps you find related solutions in other quadrants.</p>
+
+<p>The <b>period</b> of a trig function is how far you must travel along the x‑axis before the function repeats. sin x and cos x have period 2π; tan x has period π.</p>
+
+<h2>Common Misconceptions</h2>
+
+<p>Many students think a trigonometric equation has only one answer because their calculator shows one number. However, sine, cosine, and tangent each repeat forever, so an equation like sin x = 0.5 has infinitely many solutions. The IB usually asks for only the solutions that fall inside a specific interval.</p>
+
+<p>Another common error is forgetting to check which quadrants produce the correct sign. If sin x = −0.5, the angle must be in quadrant III or quadrant IV (where sine is negative). Always draw a quick sketch of the unit circle and label which functions are positive in each quadrant.</p>
+
+<p><hr></p>
+
+<h2>1. The General Approach to Solving</h2>
+
+<p>When you face a trigonometric equation, follow these steps in order:</p>
+
+<p><b>Step 1 — Isolate the trigonometric function.</b> Rearrange the equation until you have something like sin x = a, cos x = b, or tan x = c.</p>
+
+<p><b>Step 2 — Find the principal value.</b> Use your calculator or your knowledge of exact values to find the first angle that satisfies the equation.</p>
+
+<p><b>Step 3 — Find all solutions in the given interval.</b> Use the symmetry properties of the three functions:</p>
+
+<li>- For <b>sin x = a</b>: if the principal value is θ, the second solution in [0, 2π) is π − θ. After that, add multiples of 2π to both base solutions and keep only those inside your interval.</li>
+<li>- For <b>cos x = a</b>: if the principal value is θ, the second solution is 2π − θ (or equivalently −θ). Then add multiples of 2π.</li>
+<li>- For <b>tan x = a</b>: if the principal value is θ, all solutions are θ + nπ (where n is any integer). Tangent repeats every π, not every 2π.</li>
+
+<p><hr></p>
+
+<h2>2. Basic Equations — Worked Examples</h2>
+
+<h3>Example 1: sin x = 1/2, 0 ≤ x ≤ 2π</h3>
+
+<p><b>Problem:</b> Find every angle x between 0 and 2π for which sin x equals one half.</p>
+
+<p><b>Approach:</b> Identify the principal value. Then use the sine symmetry rule: if sin x = a and the principal value is θ, the other solution in one full revolution is π − θ.</p>
+
+<p>The principal value for sin x = 1/2 is x = π/6 (that is 30°). This is because sin(π/6) = 1/2.</p>
+
+<p>The second solution in [0, 2π) is π − π/6 = 5π/6. To check: sin(5π/6) = sin(π/6) = 1/2, and both angles lie inside the required interval.</p>
+
+<p><b>Answer:</b> x = π/6, 5π/6.</p>
+
+<p><b>Why this makes sense:</b> Sine is positive in quadrants I and II. The principal value π/6 is in quadrant I; the mirror angle across the y‑axis, 5π/6, is in quadrant II, where sine is also positive.</p>
+
+<p><hr></p>
+
+<h3>Example 2: cos x = −√2/2, 0 ≤ x ≤ 2π</h3>
+
+<p><b>Problem:</b> Find all angles x in [0, 2π] for which cos x equals negative root‑two over two.</p>
+
+<p><b>Approach:</b> Ignore the negative sign for a moment and find the reference angle for cos x = √2/2. Then place that reference angle in the quadrants where cosine is negative (quadrants II and III).</p>
+
+<p>The reference angle for cos = √2/2 is π/4 (because cos(π/4) = √2/2).</p>
+
+<p>Cosine is negative in quadrants II and III. In quadrant II, the angle is π − π/4 = 3π/4. In quadrant III, the angle is π + π/4 = 5π/4.</p>
+
+<p><b>Answer:</b> x = 3π/4, 5π/4.</p>
+
+<p><b>Why this makes sense:</b> The cosine function gives the x‑coordinate on the unit circle. That x‑coordinate is negative when the point sits to the left of the y‑axis — exactly quadrants II and III.</p>
+
+<p><hr></p>
+
+<h3>Example 3: tan x = √3, 0 ≤ x ≤ 2π</h3>
+
+<p><b>Problem:</b> Find all angles x in [0, 2π] for which tan x equals √3.</p>
+
+<p><b>Approach:</b> Find the principal value, then add multiples of π (the period of tangent) until you leave the interval.</p>
+
+<p>The principal value is x = π/3, because tan(π/3) = √3.</p>
+
+<p>Tangent repeats every π, so the next solution is π/3 + π = 4π/3. Adding another π would give 7π/3, which is larger than 2π and therefore outside the required interval.</p>
+
+<p><b>Answer:</b> x = π/3, 4π/3.</p>
+
+<p><b>Why this makes sense:</b> Tangent is positive in quadrants I and III. The principal value π/3 lands in quadrant I; adding half a revolution (π) lands at 4π/3, which is in quadrant III.</p>
+
+<p><hr></p>
+
+<h2>3. Equations That Need Trigonometric Identities</h2>
+
+<p>Sometimes the equation contains sin²x, cos 2x, or a mix of different functions. In these cases you need to replace one expression with an equivalent one — this is called using a <b>trigonometric identity</b>.</p>
+
+<p>A <b>trigonometric identity</b> is a formula that is always true, such as cos(2x) = 1 − 2 sin²x or sin²x + cos²x = 1.</p>
+
+<h3>Example 4: 2 sin²x − sin x − 1 = 0, 0 ≤ x ≤ 2π</h3>
+
+<p><b>Problem:</b> Solve the quadratic‑looking equation 2 sin²x − sin x − 1 = 0 for every angle x in [0, 2π].</p>
+
+<p><b>Approach:</b> Treat sin x as a single unknown. Substitute u = sin x to get a standard quadratic: 2u² − u − 1 = 0. Factor it, then solve for u, then find the angles x that give each u‑value.</p>
+
+<p>Factor: 2u² − u − 1 = (2u + 1)(u − 1) = 0. So u = −1/2 or u = 1.</p>
+
+<p>Now return to sin x:</p>
+
+<li>- If sin x = 1, the only angle in [0, 2π] with that sine is x = π/2.</li>
+<li>- If sin x = −1/2, sine is negative in quadrants III and IV. The reference angle for sin = 1/2 is π/6. In quadrant III: π + π/6 = 7π/6. In quadrant IV: 2π − π/6 = 11π/6.</li>
+
+<p><b>Answer:</b> x = π/2, 7π/6, 11π/6.</p>
+
+<p><b>Why this makes sense:</b> Replacing sin x with a letter turns a trigonometric puzzle into a familiar algebra problem. After solving the algebra, you translate each answer back to an angle using the unit circle.</p>
+
+<p><hr></p>
+
+<h3>Example 5: cos(2x) = sin x, 0 ≤ x ≤ 2π</h3>
+
+<p><b>Problem:</b> Solve cos(2x) = sin x for all angles x in [0, 2π].</p>
+
+<p><b>Approach:</b> The equation mixes cosine of a double angle with sine of a single angle. Use the identity cos(2x) = 1 − 2 sin²x to rewrite everything in terms of sin x.</p>
+
+<p>Substitute: 1 − 2 sin²x = sin x → 0 = 2 sin²x + sin x − 1.</p>
+
+<p>Factor: (2 sin x − 1)(sin x + 1) = 0.</p>
+
+<li>- 2 sin x − 1 = 0 gives sin x = 1/2 → x = π/6, 5π/6.</li>
+<li>- sin x + 1 = 0 gives sin x = −1 → x = 3π/2.</li>
+
+<p><b>Answer:</b> x = π/6, 5π/6, 3π/2.</p>
+
+<p><b>Why this makes sense:</b> The double‑angle identity converts a &quot;mixed&quot; equation into one that uses only sin x, which you already know how to solve.</p>
+
+<p><hr></p>
+
+<h2>4. Equations with a Multiple Angle — e.g. sin(3x)</h2>
+
+<p>When the angle inside the trig function is multiplied by a number (like 3x instead of x), the equation has more solutions squeezed into the same interval, because the function completes its cycle faster.</p>
+
+<h3>Example 6: sin(3x) = 1/2, 0 ≤ x ≤ 2π</h3>
+
+<p><b>Problem:</b> Find every angle x between 0 and 2π such that sin(3x) = 1/2.</p>
+
+<p><b>Approach:</b> Introduce a helper variable: let θ = 3x. Solve sin θ = 1/2 first. Then divide each solution for θ by 3 to get x. Finally, keep only the x‑values that fit the original interval.</p>
+
+<p>sin θ = 1/2 → θ = π/6 + 2πn or θ = 5π/6 + 2πn, for any integer n.</p>
+
+<p>Since 0 ≤ x ≤ 2π and x = θ/3, the variable θ must range from 0 to 6π. Now list all θ‑values in [0, 6π]:</p>
+
+<p>From the first family (π/6 + 2πn): π/6, 13π/6, 25π/6.</p>
+<p>From the second family (5π/6 + 2πn): 5π/6, 17π/6, 29π/6.</p>
+
+<p>The next value in each family would be π/6 + 6π = 37π/6, which is bigger than 6π, so we stop.</p>
+
+<p>Now divide by 3: x = π/18, 5π/18, 13π/18, 17π/18, 25π/18, 29π/18.</p>
+
+<p><b>Answer:</b> Six solutions: π/18, 5π/18, 13π/18, 17π/18, 25π/18, 29π/18.</p>
+
+<p><b>Why this makes sense:</b> The function sin(3x) oscillates three times as fast as sin x. Therefore, in the same interval [0, 2π], it hits the value 1/2 three times as often — producing six solutions instead of two.</p>
+
+<p><b>Common pitfall:</b> Many students forget to expand the range of θ. If x goes from 0 to 2π, then 3x goes from 0 to 6π. Always multiply the interval endpoints by the coefficient.</p>
+
+<p><hr></p>
+
+<h2>5. The Auxiliary Angle (R Method)</h2>
+
+<p>An equation like a sin x + b cos x = c cannot be solved by isolating a single trig function directly. Instead, you combine the left side into a single sine (or cosine) wave.</p>
+
+<p>The rule: <b>a sin x + b cos x = R sin(x + α)</b>, where R = √(a² + b²) and tan α = b/a (with α chosen in the correct quadrant based on the signs of a and b).</p>
+
+<h3>Example 7: sin x + √3 cos x = 1, 0 ≤ x ≤ 2π</h3>
+
+<p><b>Problem:</b> Solve sin x + √3 cos x = 1 for all angles x in [0, 2π].</p>
+
+<p><b>Approach:</b> Identify a = 1, b = √3. Compute R and α, rewrite the left side, then solve the resulting simple sine equation.</p>
+
+<p>R = √(1² + (√3)²) = √(1 + 3) = 2.</p>
+
+<p>tan α = √3/1 = √3 → α = π/3 (since both a and b are positive, α is in quadrant I).</p>
+
+<p>The original equation becomes: 2 sin(x + π/3) = 1 → sin(x + π/3) = 1/2.</p>
+
+<p>Now solve sin(θ) = 1/2 where θ = x + π/3:</p>
+
+<p>θ = π/6 + 2πn or θ = 5π/6 + 2πn.</p>
+
+<p>So x = π/6 − π/3 + 2πn = −π/6 + 2πn, or x = 5π/6 − π/3 + 2πn = π/2 + 2πn.</p>
+
+<p>Now choose n so that x falls in [0, 2π]:</p>
+
+<li>- From x = −π/6 + 2πn: n = 1 gives x = −π/6 + 2π = 11π/6. n = 0 gives −π/6 (negative — discard). n = 2 gives 23π/6 (too big).</li>
+<li>- From x = π/2 + 2πn: n = 0 gives π/2. n = 1 gives 5π/2 (too big).</li>
+
+<p><b>Answer:</b> x = π/2, 11π/6.</p>
+
+<p><b>Why this makes sense:</b> The R‑method collapses a sum of two different trig functions into a single shifted sine wave. Once you have a single trig function isolated, you fall back on the basic method from Section 2.</p>
+
+<p><hr></p>
+
+<h2>Practice Problems</h2>
+
+<p><b>Problem 1:</b> Solve cos x = 1/2 for all angles x in the interval [0, 2π].</p>
+
+<p><b>Problem 2:</b> Solve 2 sin²x = 1 for all angles x in the interval [0, 2π]. Think carefully: what happens when you take the square root?</p>
+
+<p><b>Problem 3:</b> Solve tan²x − 3 = 0 for all angles x in the interval [0, 2π].</p>
+
+<p><b>Problem 4:</b> Solve sin(2x) = cos x for all angles x in the interval [0, 2π]. You will need the double‑angle identity sin(2x) = 2 sin x cos x and then factor.</p>
+
+<p><b>Problem 5 (IB Exam Style — 6 marks):</b> A water depth in a harbour is modelled by D(t) = 3 sin t + 4 cos t + 10, where t is the time in hours after midnight and D is depth in metres.</p>
+<p>(a) Express 3 sin t + 4 cos t in the form R sin(t + α). [3 marks]</p>
+<p>(b) Hence find all times between midnight and noon when the depth is exactly 12 metres. Give answers to the nearest minute. [3 marks]</p>
+
+<p><b>Problem 6:</b> Solve cos(2x) + cos x = 0 for all angles x in the interval [0, 2π]. Use the identity cos(2x) = 2 cos²x − 1.</p>
+
+<p><hr></p>
+
+<h2>Answers</h2>
+
+<p><b>Answer 1:</b> Cosine is positive in quadrants I and IV. The principal value for cos x = 1/2 is π/3 (quadrant I). The other solution in [0, 2π) is 2π − π/3 = 5π/3 (quadrant IV). So x = π/3, 5π/3.</p>
+
+<p><b>Answer 2:</b> Divide both sides by 2: sin²x = 1/2. Take the square root: sin x = ±1/√2. <b>Pitfall:</b> the square root introduces both a positive and a negative branch — many students forget the negative branch.</p>
+
+<p>For sin x = 1/√2, the principal value is π/4; the second solution is π − π/4 = 3π/4.</p>
+<p>For sin x = −1/√2, the principal value is −π/4, which becomes 7π/4 in [0, 2π); the second solution is π − (−π/4) = 5π/4.</p>
+
+<p>All four solutions: x = π/4, 3π/4, 5π/4, 7π/4.</p>
+
+<p><b>Answer 3:</b> tan²x = 3 → tan x = ±√3. For tan x = √3: principal value π/3, then π/3 + π = 4π/3. For tan x = −√3: principal value −π/3, which becomes 2π/3 in [0, 2π) by adding π; the next is 2π/3 + π = 5π/3. So x = π/3, 2π/3, 4π/3, 5π/3.</p>
+
+<p><b>Answer 4:</b> Use sin(2x) = 2 sin x cos x to rewrite: 2 sin x cos x = cos x. Bring everything to one side: 2 sin x cos x − cos x = 0 → cos x(2 sin x − 1) = 0. <b>Pitfall:</b> do not divide both sides by cos x — you would lose the solutions where cos x = 0. Instead, factor.</p>
+
+<li>- cos x = 0 → x = π/2, 3π/2.</li>
+<li>- 2 sin x − 1 = 0 → sin x = 1/2 → x = π/6, 5π/6.</li>
+
+<p>All solutions: x = π/6, π/2, 5π/6, 3π/2.</p>
+
+<p><b>Answer 5:</b></p>
+<p>(a) R = √(3² + 4²) = √(9 + 16) = √25 = 5. tan α = 4/3 → α = arctan(4/3) ≈ 0.9273 radians. Since both coefficients are positive, α is in quadrant I. So 3 sin t + 4 cos t = 5 sin(t + 0.9273).</p>
+
+<p>(b) D(t) = 12 → 5 sin(t + 0.9273) + 10 = 12 → 5 sin(t + 0.9273) = 2 → sin(t + 0.9273) = 0.4.</p>
+
+<p>sin θ = 0.4 → θ = arcsin(0.4) ≈ 0.4115 or θ = π − 0.4115 ≈ 2.7301.</p>
+
+<p>So t + 0.9273 = 0.4115 + 2πn or t + 0.9273 = 2.7301 + 2πn.</p>
+
+<p>t = 0.4115 − 0.9273 = −0.5158 (discard — before midnight) or t = 2.7301 − 0.9273 = 1.8028.</p>
+
+<p>Add 2π to the negative solution: t = −0.5158 + 2π ≈ 5.7674.</p>
+
+<p>Both 1.8028 and 5.7674 fall between 0 and 12 (noon).</p>
+
+<p>Converting: 1.8028 hours = 1 hour 48 minutes (0.8028×60 ≈ 48). 5.7674 hours = 5 hours 46 minutes (0.7674×60 ≈ 46).</p>
+
+<p><b>Interpretation:</b> The depth reaches 12 metres at approximately 1:48 am and 5:46 am.</p>
+
+<p><b>Answer 6:</b> Substitute cos(2x) = 2 cos²x − 1: 2 cos²x − 1 + cos x = 0 → 2 cos²x + cos x − 1 = 0. Factor: (2 cos x − 1)(cos x + 1) = 0.</p>
+
+<li>- 2 cos x − 1 = 0 → cos x = 1/2 → x = π/3, 5π/3.</li>
+<li>- cos x + 1 = 0 → cos x = −1 → x = π.</li>
+
+<p>All solutions: x = π/3, π, 5π/3.</p>
+
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+</body>
+</html>

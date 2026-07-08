@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 11: Lesson 11: Special Relativity II — Time Dilation and Length Contraction — IB Physics HL</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']]
+  },
+  options: {
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap');
+  
+  :root {
+    --bg: #fdfcf9;
+    --text: #1a1a1a;
+    --accent: #2c5f2d;
+    --border: #d0cec7;
+    --code-bg: #f4f3ef;
+    --callout-bg: #f0f7f0;
+    --callout-border: #2c5f2d;
+    --warning-bg: #fff8e6;
+    --warning-border: #c4941a;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  body {
+    font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid var(--accent);
+    color: var(--accent);
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 2.5rem 0 0.75rem;
+    color: #1a1a1a;
+  }
+  
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.5rem;
+  }
+  
+  p { margin: 0 0 1rem; }
+  
+  ul, ol { margin: 0 0 1rem 1.5rem; }
+  li { margin-bottom: 0.35rem; }
+  
+  code {
+    background: var(--code-bg);
+    padding: 0.15em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+    font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+  }
+  
+  pre {
+    background: var(--code-bg);
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 0 0 1rem;
+    font-size: 0.85em;
+    line-height: 1.5;
+  }
+  
+  pre code {
+    background: none;
+    padding: 0;
+    font-size: inherit;
+  }
+  
+  blockquote {
+    border-left: 4px solid var(--callout-border);
+    background: var(--callout-bg);
+    margin: 0 0 1rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+  }
+  
+  blockquote.warning {
+    border-left-color: var(--warning-border);
+    background: var(--warning-bg);
+  }
+  
+  strong { font-weight: 700; }
+  
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.5rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  
+  .nav a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+  
+  .nav a:hover { background: var(--callout-bg); }
+  
+  .worked-example, .answer {
+    background: var(--code-bg);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin: 0.75rem 0 1.25rem;
+  }
+  
+  .worked-example strong:first-child, .answer strong:first-child {
+    color: var(--accent);
+  }
+  
+  @media print {
+    body { font-size: 12pt; max-width: 100%; padding: 0; }
+    .nav { display: none; }
+    h1 { font-size: 18pt; }
+    h2 { font-size: 14pt; }
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 0 1rem;
+  }
+  
+  th, td {
+    border: 1px solid var(--border);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  
+  th {
+    background: var(--code-bg);
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L10_measurement_uncertainty.html">← Lesson 10</a>
+  <a href="L12_relativity_3.html">Lesson 12 →</a>
+</nav>
+
+<h1>Lesson 11: Special Relativity II — Time Dilation and Length Contraction</h1>
+
+<h2>What You'll Learn</h2>
+<ul>
+<li>Calculate the Lorentz factor $\gamma = 1/\sqrt{1 - v^2/c^2}$</li>
+<li>Apply time dilation: moving clocks run slow by factor $\gamma$</li>
+<li>Apply length contraction: moving objects are shortened by factor $1/\gamma$</li>
+<li>Distinguish between proper time and proper length vs. measured values</li>
+</ul>
+
+<hr>
+
+<h2>1. The Lorentz Factor — How "Relativistic" Are You?</h2>
+
+<h3>1.1 The Magic Number $\gamma$</h3>
+
+<p>All relativistic effects depend on a single number: the Lorentz factor:</p>
+
+<p>$$\gamma = \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}}$$</p>
+
+<ul>
+<li>At $v = 0$: $\gamma = 1$ (no effect — Newtonian physics)</li>
+<li>At $v = 0.6c$: $\gamma = 1.25$ (25% time dilation)</li>
+<li>At $v = 0.866c$: $\gamma = 2$ (time runs at half speed)</li>
+<li>At $v = 0.99c$: $\gamma \approx 7$ (time runs at 1/7 speed)</li>
+<li>As $v \to c$: $\gamma \to \infty$</li>
+</ul>
+
+<p>For everyday speeds ($v \ll c$), $\gamma \approx 1$ and relativistic effects are negligible. This is why we never notice them — the fastest human-made object (Parker Solar Probe, ~$2 \times 10^5\text{ m s}^{-1}$) has $\gamma = 1.0000002$.</p>
+
+<h3>1.2 The Speed Limit</h3>
+
+<p>As $v$ approaches $c$, $\gamma$ approaches infinity. It would take infinite energy to accelerate a massive object to exactly $c$. The speed of light is a universal speed limit for anything with mass.</p>
+
+<hr>
+
+<h2>2. Time Dilation — Moving Clocks Run Slow</h2>
+
+<h3>2.1 Proper Time vs. Dilated Time</h3>
+
+<p><strong>Proper time</strong> $\Delta t_0$ is the time interval measured by an observer who is at rest relative to the events — someone for whom the two events occur at the same position. Think of a clock on a spaceship: the astronaut measures the time between two ticks of her own clock as $\Delta t_0$.</p>
+
+<p><strong>Dilated time</strong> $\Delta t$ is what a stationary observer measures:</p>
+
+<p>$$\Delta t = \gamma \Delta t_0$$</p>
+
+<p>Since $\gamma \geq 1$, $\Delta t \geq \Delta t_0$ — the stationary observer sees the moving clock running SLOWER. A clock moving at $0.866c$ ($\gamma = 2$) ticks once every 2 seconds according to the stationary observer, while the astronaut sees it tick every 1 second.</p>
+
+<h3>2.2 The Muon Evidence</h3>
+
+<p>Cosmic rays create muons in the upper atmosphere (~10 km up). Muons have a half-life of only $2.2\text{ μs}$ (in their own rest frame). At nearly $c$, they "should" travel only about $660\text{ m}$ before decaying — yet we detect them at sea level. Why?</p>
+
+<p>From Earth's frame: the muon's internal clock is time-dilated by $\gamma \approx 22$ (since $v \approx 0.999c$). Its effective half-life becomes $22 \times 2.2 = 48.4\text{ μs}$, enough to travel ~$14\text{ km}$ and reach the ground.</p>
+
+<p>From the muon's frame: the atmosphere is length-contracted (see Section 3) to about $450\text{ m}$, easily traversed in its brief lifetime.</p>
+
+<p>Both perspectives give the same result — the muon reaches the ground. This is experimental confirmation of both time dilation AND length contraction.</p>
+
+<h3>2.3 The Twin Paradox</h3>
+
+<p>One twin stays on Earth. The other travels to a distant star at relativistic speed and returns. The travelling twin ages LESS. This seems paradoxical because motion is relative — each twin sees the other moving. The resolution: the travelling twin experiences acceleration (turning around), which breaks the symmetry. The travelling twin IS younger upon return. This has been confirmed with atomic clocks on aeroplanes.</p>
+
+<hr>
+
+<h2>3. Length Contraction — Moving Objects Shrink</h2>
+
+<h3>3.1 Proper Length vs. Contracted Length</h3>
+
+<p><strong>Proper length</strong> $L_0$ is the length of an object measured in its own rest frame — the frame where the object is stationary. An astronaut measures her spaceship to be $100\text{ m}$ long. That's $L_0$.</p>
+
+<p><strong>Contracted length</strong> $L$ is what a stationary observer measures when the object moves past at speed $v$:</p>
+
+<p>$$L = \frac{L_0}{\gamma}$$</p>
+
+<p>Since $\gamma \geq 1$, $L \leq L_0$ — moving objects are SHORTER in the direction of motion. The contraction only affects the dimension parallel to motion; perpendicular dimensions are unchanged.</p>
+
+<p>At $0.866c$ ($\gamma = 2$), a $100\text{ m}$ spaceship appears to be $50\text{ m}$ long to a stationary observer.</p>
+
+<h3>3.2 It's Real, Not an Illusion</h3>
+
+<p>Length contraction is not an optical illusion caused by the finite travel time of light (though that also affects appearance). It is a genuine consequence of the geometry of spacetime. A moving object really IS shorter in the stationary frame.</p>
+
+<hr>
+
+<h2>Worked Examples</h2>
+
+<h3>Worked Example 11.1 — Time Dilation Calculation</h3>
+
+<p><strong>Problem:</strong> A spacecraft travels at $0.80c$ relative to Earth. The journey takes $5.0$ years as measured by the astronauts on board. How long does the journey take as measured by mission control on Earth?</p>
+
+<p><strong>Approach:</strong> The astronauts measure proper time $\Delta t_0 = 5.0$ years. Earth measures dilated time $\Delta t = \gamma\Delta t_0$. Calculate $\gamma$.</p>
+
+<p><strong>Solution:</strong></p>
+<p>$$\gamma = \frac{1}{\sqrt{1 - 0.80^2}} = \frac{1}{\sqrt{1 - 0.64}} = \frac{1}{\sqrt{0.36}} = \frac{1}{0.60} = 1.667$$</p>
+<p>$$\Delta t = 1.667 \times 5.0 = 8.33\text{ years}$$</p>
+
+<p><strong>Why this makes sense:</strong> At $0.80c$, $\gamma \approx 1.67$, so Earth sees the journey take about 67% longer than the astronauts experience.</p>
+
+<hr>
+
+<h3>Worked Example 11.2 — Length Contraction</h3>
+
+<p><strong>Problem:</strong> A spaceship has a proper length of $120\text{ m}$. It flies past Earth at $0.60c$. What length does an Earth-based observer measure?</p>
+
+<p><strong>Approach:</strong> $L_0 = 120\text{ m}$ is the proper length. $L = L_0/\gamma$.</p>
+
+<p><strong>Solution:</strong></p>
+<p>$$\gamma = \frac{1}{\sqrt{1-0.36}} = \frac{1}{0.80} = 1.25$$</p>
+<p>$$L = \frac{120}{1.25} = 96\text{ m}$$</p>
+
+<hr>
+
+<h3>Worked Example 11.3 — Muon Problem</h3>
+
+<p><strong>Problem:</strong> A muon is created $10\text{ km}$ above Earth's surface and travels straight down at $0.995c$. Its proper half-life is $2.2\text{ μs}$. Using time dilation, determine whether it reaches the surface.</p>
+
+<p><strong>Solution:</strong></p>
+<p>$$\gamma = \frac{1}{\sqrt{1-0.995^2}} = \frac{1}{\sqrt{0.009975}} \approx 10.0$$</p>
+<p>Dilated half-life: $\gamma \times 2.2 = 22\text{ μs}$. In $22\text{ μs}$ at $0.995c$, distance $= (0.995)(3.0\times 10^8)(22\times 10^{-6}) = 6,570\text{ m}$. After one half-life, half remain. After several half-lives, a significant fraction survives to $10\text{ km}$. Yes, many reach the surface.</p>
+
+<hr>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1</h3>
+<p>A spacecraft travels at $0.90c$. Find $\gamma$ and state the time dilation factor.</p>
+
+<h3>Problem 2</h3>
+<p>An astronaut ages $3.0$ years during a journey at $0.95c$ relative to Earth. How much time passes on Earth?</p>
+
+<h3>Problem 3</h3>
+<p>A rod has proper length $5.0\text{ m}$. At what speed must it move for its length to be measured as $3.0\text{ m}$ by a stationary observer?</p>
+
+<h3>Problem 4</h3>
+<p>Explain how both time dilation (from Earth's frame) and length contraction (from the muon's frame) give consistent predictions for the muon reaching sea level.</p>
+
+<h3>Problem 5 — IB-Style</h3>
+<p>A star is $40$ light-years from Earth as measured in Earth's frame. A spaceship travels to the star at $0.80c$.</p>
+
+<p>(a) Calculate $\gamma$ for this speed. (1 mark)</p>
+<p>(b) How long does the journey take as measured by an observer on Earth? (1 mark)</p>
+<p>(c) How long does the journey take as measured by the astronauts on the spaceship? (2 marks)</p>
+<p>(d) From the astronauts' perspective, the distance to the star is contracted. Calculate this distance. (2 marks)</p>
+<p>(e) Verify that the time in (c) and distance in (d) are consistent with the ship's speed being $0.80c$. (1 mark)</p>
+
+<hr>
+
+<h2>Answers</h2>
+
+<h3>Answer 1</h3>
+<p>$\gamma = 1/\sqrt{1-0.81} = 1/\sqrt{0.19} = 1/0.436 = 2.29$. Time runs $2.29\times$ slower for the moving clock as observed from the stationary frame.</p>
+
+<h3>Answer 2</h3>
+<p>$\gamma = 1/\sqrt{1-0.9025} = 1/\sqrt{0.0975} = 3.20$. $\Delta t = 3.20 \times 3.0 = 9.6$ years.</p>
+
+<h3>Answer 3</h3>
+<p>$L = L_0/\gamma$, so $\gamma = L_0/L = 5.0/3.0 = 1.667$. $1/\sqrt{1-v^2/c^2} = 1.667$, so $1-v^2/c^2 = 0.36$, $v/c = 0.80$. $v = 0.80c$.</p>
+
+<h3>Answer 4</h3>
+<p>Earth frame: muon lifetime dilated by $\gamma$ → lives longer, travels further. Muon frame: atmosphere length-contracted by $1/\gamma$ → distance to travel is shorter. Both frames predict the muon survives to the ground. The results are consistent because $\Delta t_{\text{Earth}} = \gamma\Delta t_0$ and $L_{\text{muon}} = L_0/\gamma$ — both give $v = L_0/\Delta t_{\text{Earth}} = (L_0/\gamma)/\Delta t_0$, which is the same speed.</p>
+
+<h3>Answer 5 — IB-Style</h3>
+<p><strong>(a)</strong> $\gamma = 1/\sqrt{1-0.64} = 1/0.60 = 1.667$. (1 mark)</p>
+<p><strong>(b)</strong> Time = distance/speed = $40/0.80 = 50$ years. (1 mark)</p>
+<p><strong>(c)</strong> Proper time for astronauts: $\Delta t_0 = \Delta t/\gamma = 50/1.667 = 30$ years. (2 marks — 1 for identifying proper time, 1 for calculation.)</p>
+<p><strong>(d)</strong> $L = L_0/\gamma = 40/1.667 = 24$ light-years. (2 marks)</p>
+<p><strong>(e)</strong> Speed = contracted distance/proper time = $24/30 = 0.80c$ ✓. (1 mark)</p>
+
+<hr>
+
+<h2>Key Takeaways</h2>
+
+<ol>
+<li><strong>Lorentz factor:</strong> $\gamma = 1/\sqrt{1-v^2/c^2}$. At everyday speeds $\gamma \approx 1$. Approaches $\infty$ as $v \to c$.</li>
+</ol>
+
+<ol>
+<li><strong>Time dilation:</strong> $\Delta t = \gamma\Delta t_0$. Moving clocks run slow. Proper time $\Delta t_0$ is measured in the rest frame.</li>
+</ol>
+
+<ol>
+<li><strong>Length contraction:</strong> $L = L_0/\gamma$. Moving objects are shortened along the direction of motion. Proper length $L_0$ is measured in the rest frame.</li>
+</ol>
+
+<ol>
+<li><strong>Muons prove both effects.</strong> They reach sea level because of time dilation (Earth frame) or length contraction (muon frame).</li>
+</ol>
+
+<ol>
+<li><strong>$c$ is the universal speed limit.</strong> Nothing with mass can reach it — $\gamma$ would be infinite.</li>
+</ol>
+
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L10_measurement_uncertainty.html">← Lesson 10</a>
+  <a href="L12_relativity_3.html">Lesson 12 →</a>
+</nav>
+
+</body>
+</html>

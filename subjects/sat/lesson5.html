@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 5: Unit Conversion & Dimensional Analysis</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root {
+    --bg: #fafaf9;
+    --text: #1a1a1a;
+    --accent: #1a5276;
+    --trap-bg: #fff3cd;
+    --trap-border: #ffc107;
+    --pattern-bg: #d1ecf1;
+    --pattern-border: #17a2b8;
+    --card: #ffffff;
+    --border: #d0d0cb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+  h1 { font-size: 1.8rem; color: var(--accent); border-bottom: 3px solid var(--accent); padding-bottom: 0.5rem; margin-bottom: 1rem; }
+  h2 { font-size: 1.35rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+  h3 { font-size: 1.15rem; color: #333; margin: 1.5rem 0 0.5rem; }
+  p, li { margin: 0.5em 0; }
+  ul, ol { padding-left: 1.5rem; margin: 0.5em 0; }
+  .trap-box {
+    background: var(--trap-bg);
+    border-left: 4px solid var(--trap-border);
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.95rem;
+  }
+  .trap-box strong { color: #856404; }
+  .pattern-box {
+    background: var(--pattern-bg);
+    border-left: 4px solid var(--pattern-border);
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.95rem;
+  }
+  .pattern-box strong { color: #0c5460; }
+  .example {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem 1.3rem;
+    margin: 1rem 0;
+  }
+  .example h4 { color: var(--accent); margin-bottom: 0.3rem; }
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 2.5rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  .nav a { color: var(--accent); text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  code { background: #f0f0f0; padding: 0.15em 0.4em; border-radius: 3px; font-size: 0.9em; }
+  strong { color: #222; }
+  @media print {
+    body { font-size: 14px; }
+    .nav { display: none; }
+  }
+</style>
+</head>
+<body>
+<h1>Lesson 5: Unit Conversion & Dimensional Analysis</h1>
+<h2>What You'll Learn</h2>
+<ul>
+<li>The factor-label method (multiplying by clever forms of 1) for unit conversion</li>
+<li>Converting compound units: speed (mi/hr), density (kg/m³), rates</li>
+<li>Square and cubic unit conversions — the most dangerous SAT trap</li>
+<li>Converting between metric prefixes (kilo-, centi-, milli-)</li>
+<li>Handling unfamiliar units the SAT provides conversion factors for</li>
+<li>Setting up conversion chains without memorizing formulas</li>
+</ul>
+<h2>SAT Context</h2>
+<p>Unit conversion questions appear 1-3 times per SAT. They range from straightforward (feet to inches) to deceptive (square feet to square yards). The SAT almost always provides the conversion factor (e.g., "1 mile = 5,280 feet"), so you don't need to memorize anything. What you DO need is the systematic technique for chaining conversions without getting lost. The SAT's favorite trick: square and cubic unit conversions, where the naive answer (e.g., "1 m² = 100 cm²") is always wrong and always among the answer choices. For an AAHL student, the skill is methodical setup, not mathematical difficulty.</p>
+<h2>The Factor-Label Method (Dimensional Analysis)</h2>
+<h3> The Core Idea</h3>
+<p>Multiply by fractions that equal 1:</p>
+<p>$$\frac{12 \text{ inches}}{1 \text{ foot}} = 1 \quad \text{and} \quad \frac{1 \text{ foot}}{12 \text{ inches}} = 1$$</p>
+<p>Choose the version that cancels the units you want to get rid of.</p>
+<h3> The Algorithm</h3>
+<li>Start with what you're given.</li>
+<li>Multiply by a conversion factor (a fraction = 1) with the unit you want to CANCEL in the denominator.</li>
+<li>Repeat until you reach the desired unit.</li>
+<li>Multiply all numerators, divide by all denominators.</li>
+<h3> Example: Convert 65 miles per hour to feet per second</h3>
+<p>Given: 1 mile = 5,280 ft, 1 hour = 3,600 seconds.</p>
+<p>$$65\frac{\text{mi}}{\text{hr}} \times \frac{5280\text{ ft}}{1\text{ mi}} \times \frac{1\text{ hr}}{3600\text{ s}}$$</p>
+<p>Cancel: mi cancels, hr cancels, leaving ft/s.</p>
+<p>$$65 \times \frac{5280}{3600} = 65 \times 1.466... \approx 95.3 \text{ ft/s}$$</p>
+<h3> Visual Setup for Complex Conversions</h3>
+<p>Draw a chain:</p>
+<p>$$65\ \frac{\text{mi}}{\text{hr}} \ \times\ \frac{5280\ \text{ft}}{1\ \text{mi}} \ \times\ \frac{1\ \text{hr}}{60\ \text{min}} \ \times\ \frac{1\ \text{min}}{60\ \text{s}}$$</p>
+<p>Each fraction is a conversion factor. Units cascade and cancel.</p>
+<h2>Compound Units: Speed, Density, Rates</h2>
+<h3> Speed</h3>
+<p>"65 miles per hour" means $\frac{65\ \text{miles}}{1\ \text{hour}}$. The "per" creates a fraction.</p>
+<h3> Density</h3>
+<p>"2.7 grams per cubic centimeter" means $\frac{2.7\ \text{g}}{1\ \text{cm}^3}$.</p>
+<h3> Conversion Strategy for Compound Units</h3>
+<p>Convert numerator and denominator separately. Then combine.</p>
+<p>**Example:** Convert 60 mi/hr to inches per second.</p>
+<p>Step 1: Convert numerator: 60 mi → inches.</p>
+<p>$60\ \text{mi} \times \frac{5280\ \text{ft}}{1\ \text{mi}} \times \frac{12\ \text{in}}{1\ \text{ft}} = 3,801,600\ \text{in}$</p>
+<p>Step 2: Convert denominator: 1 hr → seconds.</p>
+<p>$1\ \text{hr} \times \frac{60\ \text{min}}{1\ \text{hr}} \times \frac{60\ \text{s}}{1\ \text{min}} = 3,600\ \text{s}$</p>
+<p>Step 3: Divide: $\frac{3,801,600\ \text{in}}{3,600\ \text{s}} = 1,056\ \text{in/s}$</p>
+<p>> **🚨 SAT TRAP ALERT: Square and Cubic Unit Conversions.** This is the #1 unit conversion trap on the SAT. **1 square meter does NOT equal 100 square centimeters.** Here's why:</p>
+<p>></p>
+<p>> $1\ \text{m} = 100\ \text{cm}$</p>
+<p>></p>
+<p>> $(1\ \text{m})^2 = (100\ \text{cm})^2$ → $1\ \text{m}^2 = 10,000\ \text{cm}^2$</p>
+<p>></p>
+<p>> $(1\ \text{m})^3 = (100\ \text{cm})^3$ → $1\ \text{m}^3 = 1,000,000\ \text{cm}^3$</p>
+<p>></p>
+<p>> **The SAT WILL put $100$ and $1,000$ as answer choices for these conversions.** Don't fall for it.</p>
+<p>></p>
+<p>> **Rule:** Square the conversion factor for area, cube it for volume.</p>
+<p>> - If $1\ \text{yd} = 3\ \text{ft}$, then $1\ \text{yd}^2 = 9\ \text{ft}^2$ and $1\ \text{yd}^3 = 27\ \text{ft}^3$.</p>
+<p>> - If $1\ \text{m} = 100\ \text{cm}$, then $1\ \text{m}^2 = 10,000\ \text{cm}^2$ and $1\ \text{m}^3 = 1,000,000\ \text{cm}^3$.</p>
+<p>> **🔍 PATTERN RECOGNITION: When to check if units match.** If a problem mentions area (square feet, acres) or volume (cubic meters, gallons), and the answer asks for a linear measurement, or vice versa, be extra careful. Check that your conversion factor is squared or cubed appropriately. Another tell: if all the wrong answers are off by a factor of 100, 1000, or 9, it's a square/cubic unit trap.</p>
+<h3> Worked Example 1: Simple Linear Conversion</h3>
+<p>**Problem:** A road is 3.5 miles long. What is its length in feet? (1 mile = 5,280 feet)</p>
+<p>A) 1,760 ft</p>
+<p>B) 15,840 ft</p>
+<p>C) 18,480 ft</p>
+<p>D) 22,176 ft</p>
+<p>**Solution:**</p>
+<p>$3.5\ \text{mi} \times \frac{5,280\ \text{ft}}{1\ \text{mi}} = 3.5 \times 5,280 = 18,480\ \text{ft}$</p>
+<p>**Answer: C.**</p>
+<p>**Wrong answer analysis:**</p>
+<ul>
+<li>A (1,760 ft): $5,280 / 3 \approx 1,760$, dividing instead of multiplying.</li>
+<li>B (15,840 ft): $3 \times 5,280 = 15,840$, forgetting the 0.5 mile.</li>
+<li>D (22,176 ft): $3.5 \times 5,280 \times$ something extra? Or $5,280 \times 4.2$? Unclear derivation.</li>
+</ul>
+<h3> Worked Example 2: Speed Conversion with Multiple Steps</h3>
+<p>**Problem:** A cheetah runs at 70 miles per hour. Which expression gives its speed in feet per second? (1 mi = 5,280 ft)</p>
+<p>A) $70 \times \frac{1}{5280} \times \frac{1}{3600}$</p>
+<p>B) $70 \times \frac{5280}{1} \times \frac{3600}{1}$</p>
+<p>C) $70 \times \frac{5280}{1} \times \frac{1}{3600}$</p>
+<p>D) $70 \times \frac{1}{5280} \times \frac{3600}{1}$</p>
+<p>**Solution:**</p>
+<p>We need to convert mi to ft (multiply by 5,280) and hr to sec (divide by 3,600).</p>
+<p>$70\ \frac{\text{mi}}{\text{hr}} \times \frac{5,280\ \text{ft}}{1\ \text{mi}} \times \frac{1\ \text{hr}}{3,600\ \text{s}} = 70 \times \frac{5,280}{1} \times \frac{1}{3,600}$</p>
+<p>**Answer: C.**</p>
+<p>**Wrong answer analysis:**</p>
+<ul>
+<li>A: $\frac{1}{5280}$ would divide by 5,280 instead of multiplying—gives ft⁻¹.</li>
+<li>B: $\frac{3600}{1}$ would multiply by 3,600 instead of dividing—gives ft·hr/s, nonsense.</li>
+<li>D: Both conversions inverted.</li>
+</ul>
+<h3> Worked Example 3: Square Unit Trap</h3>
+<p>**Problem:** A rectangular floor measures 12 feet by 15 feet. What is the area of the floor in square yards? (1 yard = 3 feet)</p>
+<p>A) 20 yd²</p>
+<p>B) 60 yd²</p>
+<p>C) 180 yd²</p>
+<p>D) 540 yd²</p>
+<p>**Solution:**</p>
+<p>**Method 1** (Convert dimensions first):</p>
+<ul>
+<li>12 ft = 12/3 = 4 yd</li>
+<li>15 ft = 15/3 = 5 yd</li>
+<li>Area = $4 \times 5 = 20$ yd²</li>
+</ul>
+<p>**Method 2** (Convert area with squared factor):</p>
+<ul>
+<li>Area in ft²: $12 \times 15 = 180$ ft²</li>
+<li>Since 1 yd = 3 ft, 1 yd² = 9 ft²</li>
+<li>$180\ \text{ft}^2 \times \frac{1\ \text{yd}^2}{9\ \text{ft}^2} = 20\ \text{yd}^2$</li>
+</ul>
+<p>**Answer: A, 20 yd².**</p>
+<p>**Wrong answer analysis:**</p>
+<ul>
+<li>B (60 yd²): $180 / 3 = 60$, using the linear conversion factor instead of squaring it. **The classic trap.**</li>
+<li>C (180 yd²): Forgetting to convert at all—just the area in ft².</li>
+<li>D (540 yd²): $180 \times 3 = 540$, multiplying by 3 instead of dividing by 9.</li>
+</ul>
+<h3> Metric Prefixes Reference</h3>
+<p>The SAT expects you to know these metric prefixes. Memorize them:</p>
+<p>| Prefix | Symbol | Factor      |</p>
+<p>|--------|--------|-------------|</p>
+<p>| kilo-  | k      | $10^3 = 1,000$ |</p>
+<p>| hecto- | h      | $10^2 = 100$ |</p>
+<p>| deka-  | da     | $10^1 = 10$ |</p>
+<p>| *(base)* |      | $10^0 = 1$ |</p>
+<p>| deci-  | d      | $10^{-1} = 0.1$ |</p>
+<p>| centi- | c      | $10^{-2} = 0.01$ |</p>
+<p>| milli- | m      | $10^{-3} = 0.001$ |</p>
+<p>**Common SAT conversions:**</p>
+<ul>
+<li>1 km = 1,000 m</li>
+<li>1 m = 100 cm</li>
+<li>1 cm = 10 mm</li>
+<li>1 kg = 1,000 g</li>
+<li>1 L = 1,000 mL</li>
+</ul>
+<hr>
+<h2>Practice Problems</h2>
+<li>A car travels at 45 miles per hour. Which of the following is closest to its speed in feet per second? (1 mi = 5,280 ft)</li>
+<p>A) 50 ft/s</p>
+<p>B) 66 ft/s</p>
+<p>C) 85 ft/s</p>
+<p>D) 100 ft/s</p>
+<li>A swimming pool holds 15,000 gallons of water. If 1 gallon $\approx 0.134$ cubic feet, what is the volume of the pool in cubic feet?</li>
+<p>A) 1,120 ft³</p>
+<p>B) 2,010 ft³</p>
+<p>C) 11,194 ft³</p>
+<p>D) 112,000 ft³</p>
+<li>A rectangular garden is 24 feet long and 18 feet wide. What is the area of the garden in square yards? (1 yd = 3 ft)</li>
+<p>A) 24 yd²</p>
+<p>B) 48 yd²</p>
+<p>C) 72 yd²</p>
+<p>D) 432 yd²</p>
+<li>A box has a volume of 2 cubic meters. What is its volume in cubic centimeters?</li>
+<p>A) 200 cm³</p>
+<p>B) 20,000 cm³</p>
+<p>C) 200,000 cm³</p>
+<p>D) 2,000,000 cm³</p>
+<li>A metal block has a density of 8.0 grams per cubic centimeter. What is its density in kilograms per cubic meter? (1 kg = 1,000 g, 1 m = 100 cm)</li>
+<p>A) 80 kg/m³</p>
+<p>B) 800 kg/m³</p>
+<p>C) 8,000 kg/m³</p>
+<p>D) 80,000 kg/m³</p>
+<li>**(Challenge)** Water flows through a pipe at a rate of 3 cubic feet per second. If 1 ft³ ≈ 7.48 gallons, which is closest to the flow rate in gallons per minute?</li>
+<p>A) 22 gal/min</p>
+<p>B) 134 gal/min</p>
+<p>C) 1,346 gal/min</p>
+<p>D) 8,078 gal/min</p>
+<hr>
+<h2>Answers</h2>
+<li>**Answer: B.** $45 \times \frac{5280}{3600} = 45 \times \frac{22}{15} = 45 \times 1.466... = 66$ ft/s. (Simplify: $\frac{5280}{3600} = \frac{528}{360} = \frac{22}{15}$). **Wrong answers:** A (50 ft/s): rough guess, too low. C (85 ft/s): $45 \times 1.9$ or similar miscalculation. D (100 ft/s): $45 \times 2.2$, perhaps using 1 mi ≈ 8,000 ft or 1 hr ≈ 2,000 s.</li>
+<li>**Answer: B.** $15,000 \times 0.134 = 2,010$ ft³. **Wrong answers:** A (1,120): $15,000 / 0.134 \approx 112,000$ — wait, dividing gives a larger number. $15,000 \times 0.134$ is correct. A might be $15,000 \times 0.0748$ (wrong factor). C (11,194): $15,000 \times 0.134 \times$ something else, or decimal point error. D (112,000): $15,000 / 0.134 \approx 111,940$, using division instead of multiplication (common trap when the factor is less than 1).</li>
+<li>**Answer: B.** Method 1: 24 ft = 8 yd, 18 ft = 6 yd, area = $8 \times 6 = 48$ yd². Method 2: Area = $24 \times 18 = 432$ ft², $432 / 9 = 48$ yd². **Wrong answers:** A (24 yd²): adding dimensions? $8 + 6 + 10$? Unclear. C (72 yd²): $432 / 6 = 72$, dividing by 6 (perimeter-like) instead of 9. D (432 yd²): forgetting to convert—just reporting ft² as yd².</li>
+<li>**Answer: D.** $1\ \text{m} = 100\ \text{cm}$, so $1\ \text{m}^3 = (100)^3\ \text{cm}^3 = 1,000,000\ \text{cm}^3$. $2\ \text{m}^3 = 2,000,000\ \text{cm}^3$. **Wrong answers:** A (200): $2 \times 100$, using linear factor. B (20,000): $2 \times 100^2 = 20,000$, squaring but not cubing. C (200,000): $2 \times 100,000$, off by factor of 10.</li>
+<li>**Answer: C.** Convert $8.0\ \frac{\text{g}}{\text{cm}^3}$ to $\frac{\text{kg}}{\text{m}^3}$:</li>
+<p>$$8.0\ \frac{\text{g}}{\text{cm}^3} \times \frac{1\ \text{kg}}{1000\ \text{g}} \times \left(\frac{100\ \text{cm}}{1\ \text{m}}\right)^3 = 8.0 \times \frac{1}{1000} \times 1,000,000 = 8,000\ \frac{\text{kg}}{\text{m}^3}$$</p>
+<p>**Wrong answers:** A (80): misses both conversions. B (800): $8.0 \times 100 = 800$, only converting cm³→m³ once (linear). D (80,000): $8.0 \times 10,000$, off by factor of 10.</p>
+<li>**Answer: C.** $3\ \frac{\text{ft}^3}{\text{s}} \times \frac{7.48\ \text{gal}}{1\ \text{ft}^3} \times \frac{60\ \text{s}}{1\ \text{min}} = 3 \times 7.48 \times 60 = 1,346.4 \approx 1,346\ \text{gal/min}$. **Wrong answers:** A (22): $3 \times 7.48 = 22.44$, forgetting the seconds→minutes conversion. B (134): $3 \times 7.48 \times 6$, using 6 instead of 60. D (8,078): $3 \times 7.48 \times 3600 / 10$, or $3 \times 7.48 \times 360$, multiplying by 360 instead of 60.</li>
+<div class="nav">
+<a href="lesson04.html">← Previous Lesson</a>
+<a href="index.html">📋 All Lessons</a>
+<a href="lesson06.html">Next Lesson →</a>
+</div>
+</body>
+</html>

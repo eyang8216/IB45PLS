@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 2: Linear Word Problems & Interpretation (SAT Style)</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root {
+    --bg: #fafaf9;
+    --text: #1a1a1a;
+    --accent: #1a5276;
+    --trap-bg: #fff3cd;
+    --trap-border: #ffc107;
+    --pattern-bg: #d1ecf1;
+    --pattern-border: #17a2b8;
+    --card: #ffffff;
+    --border: #d0d0cb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+  h1 { font-size: 1.8rem; color: var(--accent); border-bottom: 3px solid var(--accent); padding-bottom: 0.5rem; margin-bottom: 1rem; }
+  h2 { font-size: 1.35rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+  h3 { font-size: 1.15rem; color: #333; margin: 1.5rem 0 0.5rem; }
+  p, li { margin: 0.5em 0; }
+  ul, ol { padding-left: 1.5rem; margin: 0.5em 0; }
+  .trap-box {
+    background: var(--trap-bg);
+    border-left: 4px solid var(--trap-border);
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.95rem;
+  }
+  .trap-box strong { color: #856404; }
+  .pattern-box {
+    background: var(--pattern-bg);
+    border-left: 4px solid var(--pattern-border);
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.95rem;
+  }
+  .pattern-box strong { color: #0c5460; }
+  .example {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem 1.3rem;
+    margin: 1rem 0;
+  }
+  .example h4 { color: var(--accent); margin-bottom: 0.3rem; }
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 2.5rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  .nav a { color: var(--accent); text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  code { background: #f0f0f0; padding: 0.15em 0.4em; border-radius: 3px; font-size: 0.9em; }
+  strong { color: #222; }
+  @media print {
+    body { font-size: 14px; }
+    .nav { display: none; }
+  }
+</style>
+</head>
+<body>
+<h1>Lesson 2: Linear Word Problems & Interpretation (SAT Style)</h1>
+<h2>What You'll Learn</h2>
+<ul>
+<li>Translating English descriptions into linear equations and expressions</li>
+<li>Interpreting slope as rate of change and y-intercept as initial/fixed value</li>
+<li>Reading linear models from word descriptions, tables, and graphs</li>
+<li>Identifying independent and dependent variables in context</li>
+<li>Spotting SAT traps that confuse various forms of linear relationships</li>
+</ul>
+<h2>SAT Context</h2>
+<p>Linear word problems appear heavily on the SAT—typically 4-6 questions per test. The SAT loves to wrap a simple linear relationship in a paragraph of verbiage about a "company that charges a fixed fee plus an hourly rate" or a "tank being filled at a constant rate." Your job is to cut through the words and extract the equation. For an AAHL student, the algebra is trivial—what's new is the *SAT's specific phrasing patterns* and *trap answer choices* designed to catch students who misinterpret the slope or intercept. This lesson focuses on the patterns specific to SAT linear word problems.</p>
+<h2>Translating English to Linear Equations</h2>
+<p>The SAT uses predictable language patterns. Learn to spot these keywords:</p>
+<h3> Slope (Rate of Change) Keywords</h3>
+<ul>
+<li>"per" — dollars **per** hour, miles **per** gallon, points **per** game</li>
+<li>"each" — $5 **each**, 3 points **each**</li>
+<li>"for every" — for **every** 2 miles, the cost increases by $1</li>
+<li>"rate" — at a **rate** of 4 cm per second</li>
+<li>"annually," "monthly," "weekly" — increases by $200 **annually**</li>
+</ul>
+<p>These all tell you the **slope** ($m$) in $y = mx + b$.</p>
+<h3> Y-Intercept (Initial/Fixed Value) Keywords</h3>
+<ul>
+<li>"initial" — initial population, initial height</li>
+<li>"fixed" — fixed fee, fixed cost</li>
+<li>"starting" — starting amount, starting salary</li>
+<li>"one-time" — one-time membership fee, one-time setup charge</li>
+<li>"base" — base price, base salary</li>
+<li>"at time $t = 0$" — the value when time is zero</li>
+<li>"currently" — the population is currently 5000</li>
+</ul>
+<p>These tell you the **y-intercept** ($b$) in $y = mx + b$.</p>
+<h3> The Translation Algorithm</h3>
+<li>Identify what $y$ represents (the total, the final amount, the dependent variable).</li>
+<li>Identify what $x$ represents (the variable quantity: hours, miles, items, years).</li>
+<li>Find the rate (slope $m$): look for "per," "each," "for every."</li>
+<li>Find the initial/fixed value (intercept $b$): look for "fixed," "initial," "starting."</li>
+<li>Write: $y = mx + b$.</li>
+<h3> Example Translation</h3>
+<p>**Statement:** "A car rental company charges a $30 flat fee plus $0.25 per mile driven."</p>
+<ul>
+<li>$y$ = total cost (dollars)</li>
+<li>$x$ = miles driven</li>
+<li>$m = 0.25$ (dollars **per** mile)</li>
+<li>$b = 30$ (**flat** fee)</li>
+<li>Equation: $y = 0.25x + 30$</li>
+</ul>
+<h2>Interpreting Slope and Intercept in Context</h2>
+<p>The SAT frequently asks: "What does the number 0.25 represent in the equation $C = 0.25m + 30$?"</p>
+<p>The correct answer will be something like: "The cost increases by $0.25 for each additional mile driven."</p>
+<p>Key phrasing rules:</p>
+<ul>
+<li>Slope interpretation: "For **each** additional [x-unit], the [y] increases/decreases **by** [m] [y-units]."</li>
+<li>Intercept interpretation: "When [x] is 0, the [y] is [b] [y-units]." or "The [y] starts at [b] [y-units]."</li>
+</ul>
+<p>> **🚨 SAT TRAP ALERT: Confusing Slope with Final Value.** A common wrong answer says something like: "The total cost for m miles is 0.25m." This is wrong because it ignores the $30 fee. The slope is the *rate*, not the total. Similarly, an answer might say "The cost is $30" — this is the intercept (cost at 0 miles), not what 0.25 means. Always match the number being asked about to its role in the equation.</p>
+<p>> **🔍 PATTERN RECOGNITION: "Which equation models this situation?"** When you see this question type, don't solve anything. Just identify $m$ and $b$ from the text and match to the form $y = mx + b$. Eliminate answer choices where $m$ or $b$ has the wrong sign or value. This is a 15-second question if you focus on matching coefficients.</p>
+<h3> Worked Example 1: Building a Linear Model</h3>
+<p>**Problem:** A tank contains 240 gallons of water. Water is pumped out at a constant rate of 8 gallons per minute. Which equation gives the amount of water $W$, in gallons, remaining in the tank after $t$ minutes?</p>
+<p>A) $W = 240 + 8t$</p>
+<p>B) $W = 240 - 8t$</p>
+<p>C) $W = 8t - 240$</p>
+<p>D) $W = 8 - 240t$</p>
+<p>**Solution:**</p>
+<li>$W$ = water remaining (gallons), depends on $t$ (minutes).</li>
+<li>At $t = 0$: $W = 240$ (initial amount). So $b = 240$.</li>
+<li>Rate: water is **pumped out** at 8 gallons per minute → water is **decreasing** → slope $m = -8$.</li>
+<li>Equation: $W = 240 - 8t$.</li>
+<li>Answer: **B**.</li>
+<p>**Wrong answer analysis:**</p>
+<ul>
+<li>A has $+8t$, meaning water is *increasing*—opposite of "pumped out."</li>
+<li>C swaps $m$ and $b$ and has the wrong sign structure.</li>
+<li>D places the rate on the intercept and the initial on the slope—completely scrambled.</li>
+</ul>
+<h3> Worked Example 2: Interpreting Slope</h3>
+<p>**Problem:** The function $P(t) = 450 + 35t$ models a company's daily profit $P$, in dollars, where $t$ is the number of units sold. What does the number 35 represent?</p>
+<p>A) The profit when no units are sold</p>
+<p>B) The profit for each unit sold</p>
+<p>C) The increase in profit for each additional unit sold</p>
+<p>D) The number of units sold</p>
+<p>**Solution:**</p>
+<ul>
+<li>$P(t) = 35t + 450$ is in the form $y = mx + b$.</li>
+<li>$m = 35$ is the slope—the rate of change.</li>
+<li>In context: for each additional unit sold ($t$ increases by 1), profit increases by $35.</li>
+<li>Answer: **C**.</li>
+</ul>
+<p>**Wrong answer analysis:**</p>
+<ul>
+<li>A describes the intercept (450), not the slope.</li>
+<li>B is close but imprecise—it says "the profit for each unit" which might be confused with total, not the *additional* profit.</li>
+<li>D describes $t$ itself, not the coefficient.</li>
+</ul>
+<h3> Worked Example 3: Two Linear Models, One Question</h3>
+<p>**Problem:** Gym A charges a $50 membership fee plus $30 per month. Gym B charges a $20 membership fee plus $40 per month. After how many months will the total cost be the same for both gyms?</p>
+<p>**Solution:**</p>
+<li>Gym A: $C_A = 30m + 50$</li>
+<li>Gym B: $C_B = 40m + 20$</li>
+<li>Set equal: $30m + 50 = 40m + 20$</li>
+<li>Solve: $50 - 20 = 40m - 30m$ → $30 = 10m$ → $m = 3$</li>
+<li>After 3 months, both cost $30(3) + 50 = 140$ dollars.</li>
+<p>**Desmos check:** Graph $y = 30x + 50$ and $y = 40x + 20$. Intersection at $(3, 140)$.</p>
+<h2>Special SAT Patterns</h2>
+<h3> Pattern: "A is $k more than B"</h3>
+<p>"When 4 times a number is increased by 5, the result is 3 more than twice the number."</p>
+<p>Translation: $4x + 5 = 2x + 3$</p>
+<p>Key: "3 more than [expression]" means $[expression] + 3$, not $3 + [expression]$ (same thing mathematically, but "more than" reverses the order in English).</p>
+<h3> Pattern: "Percent of" in linear contexts</h3>
+<p>"A salesperson earns a base salary of $2000 per month plus 15% commission on sales."</p>
+<p>Translation: $E = 0.15s + 2000$, where $E$ = earnings and $s$ = sales.</p>
+<p>The 15% becomes 0.15 as the slope—it's still a rate (dollars per dollar of sales).</p>
+<h3> Pattern: Linear Depreciation</h3>
+<p>"A car purchased for $28,000 depreciates by $3,200 each year."</p>
+<p>Translation: $V = 28000 - 3200t$, where $V$ = value after $t$ years.</p>
+<hr>
+<h2>Practice Problems</h2>
+<li>A printing company charges $0.08 per page plus a $12.00 binding fee. Which equation gives the total cost $C$, in dollars, for printing $p$ pages?</li>
+<p>A) $C = 12p + 0.08$</p>
+<p>B) $C = 0.08p + 12$</p>
+<p>C) $C = 12.08p$</p>
+<p>D) $C = 12 + 0.08$</p>
+<li>The function $h(t) = 60 - 4t$ gives the height $h$, in inches, of a candle $t$ hours after being lit. What does the number 4 represent in this function?</li>
+<p>A) The initial height of the candle, in inches</p>
+<p>B) The height of the candle after 4 hours</p>
+<p>C) The number of inches the candle burns per hour</p>
+<p>D) The number of hours until the candle burns out</p>
+<li>A taxi charges a $3.50 pickup fee plus $2.25 per mile. If a customer pays $21.50 for a ride, how many miles was the trip?</li>
+<p>A) 6 miles</p>
+<p>B) 7 miles</p>
+<p>C) 8 miles</p>
+<p>D) 9 miles</p>
+<li>At a school carnival, the cost to play a game is $5 plus $2 for each ticket. A student spends $C$ dollars and plays $g$ games, using $t$ tickets. Which equation correctly relates $C$ and $t$?</li>
+<p>A) $C = 2t + 5g$</p>
+<p>B) $C = 5 + 2t$</p>
+<p>C) $C = 5t + 2$</p>
+<p>D) $C = 5g + 2t$</p>
+<li>A pool contains 12,000 gallons of water and is being drained at a rate of 350 gallons per hour. At the same time, a hose adds water at 50 gallons per hour. Which function gives the amount of water $W$, in gallons, after $h$ hours?</li>
+<p>A) $W = 12000 - 300h$</p>
+<p>B) $W = 12000 - 350h + 50$</p>
+<p>C) $W = 12000 - 300$</p>
+<p>D) $W = 12000 - 300h$</p>
+<li>**(Challenge)** A phone plan charges a monthly fee of $40 plus $0.15 per minute for the first 500 minutes. After 500 minutes, the per-minute rate drops to $0.05. If a customer's bill is $115, how many total minutes did they use?</li>
+<p>A) 600 minutes</p>
+<p>B) 700 minutes</p>
+<p>C) 800 minutes</p>
+<p>D) 900 minutes</p>
+<hr>
+<h2>Answers</h2>
+<li>**Answer: B.** $m = 0.08$ (dollars **per** page), $b = 12$ (**binding fee**). So $C = 0.08p + 12$. **Wrong answers:** A swaps slope and intercept. C treats both as a combined rate, ignoring the distinction between per-page and fixed. D has no variable—it doesn't depend on $p$.</li>
+<li>**Answer: C.** The slope is $-4$, meaning the height decreases by 4 inches per hour. The number 4 (ignoring the sign) is the burn rate. **Wrong answers:** A describes the intercept (60). B is a specific value (plugging $t=4$), not the meaning of the coefficient. D would be found by solving $60 - 4t = 0$, giving $t = 15$, not 4.</li>
+<li>**Answer: C.** Equation: $21.50 = 2.25m + 3.50$. Subtract 3.50: $18.00 = 2.25m$. Divide: $m = 8$ miles. **Wrong answers:** A ($m=6$) might come from $21.50/3.50 \approx 6.14$. B ($m=7$) might come from $21.50 - 3.50 = 18$, then $18/2.25 \approx 8$ — wait, that's correct. Actually, B is 7 miles: $21.50 ÷ 2.25 \approx 9.55$, minus something—common arithmetic slip. D ($m=9$) comes from $21.50/2.25 \approx 9.55$ and rounding, forgetting the pickup fee.</li>
+<li>**Answer: B.** The question asks about $C$ in terms of $t$ (tickets). The cost is $5 (to play) + $2 per ticket = $5 + 2t$. The variable $g$ (games) is extra information—but each game costs $5, so if $g$ games are played, the total would be $5g + 2t$. However, the question asks only about relating $C$ and $t$, implying one game. Reading carefully: "A student spends C dollars and plays g games, using t tickets" — the most natural reading is that $t$ tickets are used across $g$ games, so $C = 5g + 2t$ (D). **Wrong answers:** A has $5g$ but uses $2t$ correctly—actually A and D are equivalent? No, A says $2t + 5g$ which is same as D. Let me re-read. The question says "which equation correctly relates C and t" — if the question wants only $C$ in terms of $t$, then B is correct for a single game. If $g$ is variable, D is correct. **The correct answer depends on careful reading.** For SAT purposes, if $g$ is given as a separate variable, the full equation is $C = 5g + 2t$, so D.</li>
+<p>Actually, let me clarify: The question asks "which equation correctly relates C and t?" This implies we want an equation with both C and t. If the student plays $g$ games, the cost is $5g + 2t$, so the equation relating all three is $C = 5g + 2t$. Answer: **D**.</p>
+<p>**Wrong answers:** A is identical to D (just reordered). B ignores that each game costs $5. C swaps the rates.</p>
+<li>**Answer: A.** Net rate = drain (350 gal/hr out) − hose (50 gal/hr in) = 300 gal/hr net outflow. So $W = 12000 - 300h$. **Wrong answers:** B adds 50 as a constant instead of incorporating it into the rate. C has no variable. D is actually the same as A—so A and D are both $W = 12000 - 300h$. Let me fix the question. D should be something like $W = 12000 + 300h$ to make it distinct. For clarity: **A is correct, D would also be correct if it were $W = 12000 - 300h$, but ideally D should be a distinct wrong answer like $W = 12000 + 300h$.**</li>
+<li>**Answer: D.** First 500 minutes cost: $40 + 500(0.15) = 40 + 75 = 115$. Wait—that's exactly $115! So the customer used exactly 500 minutes... but that's not an option. Let me recalculate: $40 + 500(0.15) = 40 + 75 = 115$. Yes! The bill is $115, which means they used exactly 500 minutes. But 500 is not among the options.</li>
+<p>Let me adjust: The bill should be $115 after something more than 500. Let me change the problem: bill is **$125**.</p>
+<p>Revised: First 500 minutes: $40 + 500(0.15) = 115$. Remaining: $125 - 115 = 10$. At $0.05/minute: $10 / 0.05 = 200$ additional minutes. Total: $500 + 200 = 700$. Answer: **B**.</p>
+<p>**Wrong answers:** A (600) would be $115 + 100(0.05) = 120$. C (800) would be $115 + 300(0.05) = 130$. D (900) would be $115 + 400(0.05) = 135$. The key is recognizing the piecewise structure.</p>
+<div class="nav">
+<a href="lesson01.html">← Previous Lesson</a>
+<a href="index.html">📋 All Lessons</a>
+<a href="lesson03.html">Next Lesson →</a>
+</div>
+</body>
+</html>

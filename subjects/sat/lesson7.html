@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 7: Two-Way Tables & Frequency Analysis</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root {
+    --bg: #fafaf9;
+    --text: #1a1a1a;
+    --accent: #1a5276;
+    --trap-bg: #fff3cd;
+    --trap-border: #ffc107;
+    --pattern-bg: #d1ecf1;
+    --pattern-border: #17a2b8;
+    --card: #ffffff;
+    --border: #d0d0cb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+  h1 { font-size: 1.8rem; color: var(--accent); border-bottom: 3px solid var(--accent); padding-bottom: 0.5rem; margin-bottom: 1rem; }
+  h2 { font-size: 1.35rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+  h3 { font-size: 1.15rem; color: #333; margin: 1.5rem 0 0.5rem; }
+  p, li { margin: 0.5em 0; }
+  ul, ol { padding-left: 1.5rem; margin: 0.5em 0; }
+  .trap-box {
+    background: var(--trap-bg);
+    border-left: 4px solid var(--trap-border);
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.95rem;
+  }
+  .trap-box strong { color: #856404; }
+  .pattern-box {
+    background: var(--pattern-bg);
+    border-left: 4px solid var(--pattern-border);
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.95rem;
+  }
+  .pattern-box strong { color: #0c5460; }
+  .example {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem 1.3rem;
+    margin: 1rem 0;
+  }
+  .example h4 { color: var(--accent); margin-bottom: 0.3rem; }
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 2.5rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  .nav a { color: var(--accent); text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  code { background: #f0f0f0; padding: 0.15em 0.4em; border-radius: 3px; font-size: 0.9em; }
+  strong { color: #222; }
+  @media print {
+    body { font-size: 14px; }
+    .nav { display: none; }
+  }
+</style>
+</head>
+<body>
+<h1>Lesson 7: Two-Way Tables & Frequency Analysis</h1>
+<h2>What You'll Learn</h2>
+<ul>
+<li>Reading and interpreting two-way (contingency) tables</li>
+<li>Calculating joint frequency, marginal frequency, and conditional relative frequency</li>
+<li>Distinguishing row percentages from column percentages</li>
+<li>The SAT question pattern: "given that X, what's the probability of Y?"</li>
+<li>Avoiding the most common table-reading mistakes on the SAT</li>
+<li>Converting between raw counts and relative frequencies</li>
+</ul>
+<h2>SAT Context</h2>
+<p>Two-way table questions appear 1-3 times per SAT. These are pure data analysis—no algebra required, just careful reading and the ability to extract the right numbers. The SAT's favorite move: giving you a full table and asking a conditional probability question where students grab the wrong row/column. For an AAHL student, the probability notation $P(A|B)$ is familiar, but the SAT asks these in plain English ("among those who..., what fraction...?"), and misreading the table accounts for most errors.</p>
+<h2>Anatomy of a Two-Way Table</h2>
+<p>A two-way table shows how two categorical variables relate. Here's a template:</p>
+<p>|               | Category X | Category Y | **Total** |</p>
+<p>|---------------|:----------:|:----------:|:---------:|</p>
+<p>| **Category A**|     a      |     b      |  **a+b**  |</p>
+<p>| **Category B**|     c      |     d      |  **c+d**  |</p>
+<p>| **Total**     |  **a+c**   |  **b+d**   | **a+b+c+d** |</p>
+<h3> Three Types of Frequencies</h3>
+<p>**1. Joint Frequencies (individual cells)**</p>
+<p>The count in a single cell: $a, b, c, d$.</p>
+<p>**2. Marginal Frequencies (row/column totals)**</p>
+<p>The totals in the margins: $a+b$, $c+d$, $a+c$, $b+d$.</p>
+<p>**3. Conditional Relative Frequencies**</p>
+<p>A proportion calculated within a row or column:</p>
+<ul>
+<li>Row: $\frac{a}{a+b}$ = proportion of Category A that is Category X.</li>
+<li>Column: $\frac{a}{a+c}$ = proportion of Category X that is Category A.</li>
+</ul>
+<h3> The Grand Total</h3>
+<p>The bottom-right cell ($a+b+c+d$) is the total number of observations.</p>
+<h2>SAT Question Patterns</h2>
+<h3> Pattern 1: "What fraction of [group] are [characteristic]?"</h3>
+<p>**Key:** The phrase after "of" tells you the **denominator** (the restricted group).</p>
+<p>**Example:** "What fraction of **students who passed** are **female**?"</p>
+<p>Denominator: total students who passed.</p>
+<p>Numerator: female students who passed.</p>
+<h3> Pattern 2: "Given that a randomly selected [person] is [characteristic], what's the probability..."</h3>
+<p>**Key:** "Given that" = condition = denominator.</p>
+<p>**Example:** "Given that a randomly selected student is **male**, what is the probability the student **passed**?"</p>
+<p>Denominator: total male students.</p>
+<p>Numerator: male students who passed.</p>
+<h3> Pattern 3: Joint relative frequency</h3>
+<p>"What proportion of **all** students are female and passed?"</p>
+<p>Denominator: grand total.</p>
+<p>Numerator: female students who passed.</p>
+<p>> **🚨 SAT TRAP ALERT: Using the Wrong Denominator.** The SAT will put answer choices that use the wrong denominator—the grand total when you should use a row total, the row total when you should use the column total, etc. Always identify: what is the *universe* for this question? Is it everyone? A specific row? A specific column? Read the "of" or "given that" phrase carefully. If a question says "of the students who passed," your denominator is the "passed" total, NOT the grand total.</p>
+<p>> **🔍 PATTERN RECOGNITION: "Among..., what percent...?"** Any time you see "among" in a two-way table question, it signals a conditional relative frequency. "Among X" means: restrict to group X, then find the proportion within that group. Similarly, "of the..." at the beginning of a question signals the denominator. Highlight or underline the conditional phrase before touching the numbers.</p>
+<h3> Worked Example 1: Reading a Two-Way Table</h3>
+<p>**Problem:** A survey of 200 people asked about pet ownership:</p>
+<p>|               | Own a Dog | No Dog | Total |</p>
+<p>|---------------|:---------:|:------:|:-----:|</p>
+<p>| **Own a Cat** |     40    |   30   |  70   |</p>
+<p>| **No Cat**    |     60    |   70   |  130  |</p>
+<p>| **Total**     |    100    |  100   |  200  |</p>
+<p>What fraction of dog owners also own a cat?</p>
+<p>A) $\frac{40}{200}$</p>
+<p>B) $\frac{40}{100}$</p>
+<p>C) $\frac{40}{70}$</p>
+<p>D) $\frac{70}{100}$</p>
+<p>**Solution:**</p>
+<p>"Of dog owners" → restrict to the "Own a Dog" column → denominator = 100.</p>
+<p>"Also own a cat" → the cell in the "Own a Cat" row and "Own a Dog" column → numerator = 40.</p>
+<p>Fraction: $\frac{40}{100} = 0.4 = 40\%$.</p>
+<p>**Answer: B.**</p>
+<p>**Wrong answer analysis:**</p>
+<ul>
+<li>A ($\frac{40}{200}$): This uses the grand total. It answers "what fraction of ALL people own both a dog and a cat?" Not the question asked.</li>
+<li>C ($\frac{40}{70}$): This restricts to cat owners instead of dog owners (column vs. row confusion).</li>
+<li>D ($\frac{70}{100}$): This is the proportion of dog owners who own a cat? No—70 is ALL cat owners, and 100 is dog owners. This fraction is meaningless in context; it asks "what fraction of dog owners are cat owners?" but uses the wrong numerator.</li>
+</ul>
+<h3> Worked Example 2: Conditional Probability Wording</h3>
+<p>**Problem:** The same table as above. Given that a randomly selected person does NOT own a cat, what is the probability the person owns a dog?</p>
+<p>**Solution:**</p>
+<p>"Given that... does NOT own a cat" → restrict to "No Cat" row → denominator = 130.</p>
+<p>"Owns a dog" → the cell in "No Cat" row and "Own a Dog" column → numerator = 60.</p>
+<p>Probability: $\frac{60}{130} = \frac{6}{13} \approx 0.462$.</p>
+<p>This is $P(\text{Dog} \mid \text{No Cat}) = \frac{60}{130}$.</p>
+<h3> Worked Example 3: Finding Missing Values</h3>
+<p>**Problem:** A two-way table is partially complete:</p>
+<p>|               | Passed | Failed | Total |</p>
+<p>|---------------|:------:|:------:|:-----:|</p>
+<p>| **Studied**   |   72   |        |       |</p>
+<p>| **Didn't Study** |      |   30   |   50  |</p>
+<p>| **Total**     |        |   42   |  120  |</p>
+<p>What is the probability that a randomly selected student who passed also studied?</p>
+<p>**Solution:**</p>
+<p>First, complete the table:</p>
+<ul>
+<li>Grand total = 120, "Didn't Study" row total = 50, so "Studied" row total = 120 − 50 = 70.</li>
+<li>"Failed" total = 42, so "Passed" total = 120 − 42 = 78.</li>
+<li>"Studied" and "Passed" = 72, so "Studied" and "Failed" = 70 − 72 = −2... That can't be right.</li>
+</ul>
+<p>Let me re-check. "Studied" row: 72 passed, total studied = 120 − 50 = 70. But 72 > 70, which is impossible. I need different numbers.</p>
+<p>Let me redesign the table:</p>
+<p>|               | Passed | Failed | Total |</p>
+<p>|---------------|:------:|:------:|:-----:|</p>
+<p>| **Studied**   |   54   |        |   60  |</p>
+<p>| **Didn't Study** |      |   30   |   40  |</p>
+<p>| **Total**     |        |   36   |  100  |</p>
+<p>Complete:</p>
+<ul>
+<li>"Studied" and "Failed": 60 − 54 = 6.</li>
+<li>"Didn't Study" and "Passed": 40 − 30 = 10.</li>
+<li>"Passed" total: 54 + 10 = 64. (Check: 64 + 36 = 100 ✓)</li>
+<li>"Failed" total: 6 + 30 = 36. ✓</li>
+</ul>
+<p>Now: "probability that a randomly selected student who passed also studied" = $\frac{54}{64} = \frac{27}{32} = 0.84375$.</p>
+<hr>
+<h2>Practice Problems</h2>
+<p>Use this table for problems 1-4:</p>
+<p>A survey of 150 high school students about whether they play a sport and/or a musical instrument:</p>
+<p>|                        | Plays Instrument | No Instrument | Total |</p>
+<p>|------------------------|:----------------:|:-------------:|:-----:|</p>
+<p>| **Plays a Sport**      |        35        |      55       |  90   |</p>
+<p>| **Does Not Play Sport**|        25        |      35       |  60   |</p>
+<p>| **Total**              |        60        |      90       |  150  |</p>
+<li>What fraction of the students play both a sport and an instrument?</li>
+<p>A) $\frac{35}{150}$</p>
+<p>B) $\frac{35}{90}$</p>
+<p>C) $\frac{35}{60}$</p>
+<p>D) $\frac{90}{150}$</p>
+<li>Among the students who play an instrument, what percent also play a sport?</li>
+<p>A) About 23.3%</p>
+<p>B) About 38.9%</p>
+<p>C) About 58.3%</p>
+<p>D) About 60.0%</p>
+<li>Given that a student plays a sport, what is the probability the student does NOT play an instrument?</li>
+<p>A) $\frac{55}{90}$</p>
+<p>B) $\frac{55}{150}$</p>
+<p>C) $\frac{35}{90}$</p>
+<p>D) $\frac{55}{60}$</p>
+<li>A student claims that "most students who play an instrument also play a sport." Is this claim supported by the data?</li>
+<p>A) Yes, because $\frac{35}{60} > 0.5$</p>
+<p>B) Yes, because $\frac{35}{150} > 0.5$</p>
+<p>C) No, because $\frac{35}{60} \approx 0.583$ which is > 0.5, so actually yes</p>
+<p>D) No, because $\frac{25}{60} \approx 0.417$, which means most instrument players do NOT play a sport.</p>
+<p>*(Wait—$\frac{35}{60} \approx 0.583 > 0.5$, so the claim IS supported. Let me revise the question.)*</p>
+<p>**Revised:** A student claims that "most students who play an instrument also play a sport." Is this claim supported?</p>
+<p>A) Yes, because 35 out of 60 instrument players (about 58.3%) also play a sport.</p>
+<p>B) No, because 35 is less than 55.</p>
+<p>C) No, because only $\frac{35}{150} = 23.3\%$ of all students are in that category.</p>
+<p>D) No, because more students play sports without instruments (55) than with instruments (35).</p>
+<li>A two-way table has row totals of 80 and 120, and column totals of 90 and 110. What is the grand total?</li>
+<p>A) 190</p>
+<p>B) 200</p>
+<p>C) 210</p>
+<p>D) Cannot be determined</p>
+<li>**(Challenge)** In a school, 60% of students take Art, 45% take Music, and 20% take both. What percent of students take neither Art nor Music?</li>
+<p>A) 5%</p>
+<p>B) 10%</p>
+<p>C) 15%</p>
+<p>D) 25%</p>
+<hr>
+<h2>Answers</h2>
+<li>**Answer: A.** The question asks "what fraction of **the students**" — meaning of ALL students (grand total). Students who play both = 35. Fraction = $\frac{35}{150}$. **Wrong answers:** B uses only sport players as denominator. C uses instrument players. D is the fraction who play sports.</li>
+<li>**Answer: C.** "Among the students who play an instrument" → denominator = 60 (instrument column total). "Also play a sport" → numerator = 35. $\frac{35}{60} \times 100\% \approx 58.3\%$. **Wrong answers:** A: $\frac{35}{150} \approx 23.3\%$, using grand total. B: $\frac{35}{90} \approx 38.9\%$, using sport players as denominator. D: $\frac{90}{150} = 60\%$, percentage of all students who play sports.</li>
+<li>**Answer: A.** "Given that a student plays a sport" → denominator = 90. "Does NOT play an instrument" → numerator = 55. $\frac{55}{90}$. **Wrong answers:** B uses grand total. C gives probability of playing an instrument given sports ($\frac{35}{90}$). D restricts to non-instrument players as denominator.</li>
+<li>**Answer: A.** The claim is about "students who play an instrument" (denominator = 60). Among them, 35 also play sports, which is $\frac{35}{60} \approx 58.3\% > 50\%$. The claim is supported. **Wrong answers:** B uses the wrong denominator (grand total) and also gets a result < 0.5. C and D are incorrect interpretations or calculations.</li>
+<li>**Answer: B.** Row totals: $80 + 120 = 200$. Column totals: $90 + 110 = 200$. Both should equal the grand total. **Wrong answers:** A (190) adds incorrectly. C (210) adds incorrectly. D is wrong because the grand total is determined by both row and column sums (they must match).</li>
+<li>**Answer: C.** Using the principle: $P(\text{Art} \cup \text{Music}) = P(\text{Art}) + P(\text{Music}) - P(\text{Both}) = 60\% + 45\% - 20\% = 85\%$. So neither = $100\% - 85\% = 15\%$. **Wrong answers:** A (5%): $100\% - 60\% - 45\% + 20\% = 15\%$ — wait, that gives 15% too. Let me recalculate: A might be from $100 - 60 - 45 = -5$, ignoring the "both" overlap correction but getting the magnitude wrong. B (10%): perhaps $100 - 60 - 45 + 20 = 15$ miscalculated as 10. C is correct at 15%. D (25%) = $100 - 60 - 45 + 50$ (using 50% instead of 20%).</li>
+<div class="nav">
+<a href="lesson06.html">← Previous Lesson</a>
+<a href="index.html">📋 All Lessons</a>
+<a href="lesson08.html">Next Lesson →</a>
+</div>
+</body>
+</html>

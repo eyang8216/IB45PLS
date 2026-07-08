@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 27: Lesson 27: Circuits IV — EMF, Internal Resistance & Power — IB Physics HL</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']]
+  },
+  options: {
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap');
+  
+  :root {
+    --bg: #fdfcf9;
+    --text: #1a1a1a;
+    --accent: #2c5f2d;
+    --border: #d0cec7;
+    --code-bg: #f4f3ef;
+    --callout-bg: #f0f7f0;
+    --callout-border: #2c5f2d;
+    --warning-bg: #fff8e6;
+    --warning-border: #c4941a;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  body {
+    font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid var(--accent);
+    color: var(--accent);
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 2.5rem 0 0.75rem;
+    color: #1a1a1a;
+  }
+  
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.5rem;
+  }
+  
+  p { margin: 0 0 1rem; }
+  
+  ul, ol { margin: 0 0 1rem 1.5rem; }
+  li { margin-bottom: 0.35rem; }
+  
+  code {
+    background: var(--code-bg);
+    padding: 0.15em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+    font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+  }
+  
+  pre {
+    background: var(--code-bg);
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 0 0 1rem;
+    font-size: 0.85em;
+    line-height: 1.5;
+  }
+  
+  pre code {
+    background: none;
+    padding: 0;
+    font-size: inherit;
+  }
+  
+  blockquote {
+    border-left: 4px solid var(--callout-border);
+    background: var(--callout-bg);
+    margin: 0 0 1rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+  }
+  
+  blockquote.warning {
+    border-left-color: var(--warning-border);
+    background: var(--warning-bg);
+  }
+  
+  strong { font-weight: 700; }
+  
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.5rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  
+  .nav a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+  
+  .nav a:hover { background: var(--callout-bg); }
+  
+  .worked-example, .answer {
+    background: var(--code-bg);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin: 0.75rem 0 1.25rem;
+  }
+  
+  .worked-example strong:first-child, .answer strong:first-child {
+    color: var(--accent);
+  }
+  
+  @media print {
+    body { font-size: 12pt; max-width: 100%; padding: 0; }
+    .nav { display: none; }
+    h1 { font-size: 18pt; }
+    h2 { font-size: 14pt; }
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 0 1rem;
+  }
+  
+  th, td {
+    border: 1px solid var(--border);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  
+  th {
+    background: var(--code-bg);
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L26_circuits_3.html">← Lesson 26</a>
+  <a href="L28_circuits_5.html">Lesson 28 →</a>
+</nav>
+
+<h1>Lesson 27: Circuits IV — EMF, Internal Resistance & Power</h1>
+
+<blockquote><strong>IB Data Booklet references:</strong> $\varepsilon = V + Ir$, $P = IV = I^2 R = \frac{V^2}{R}$, $V = IR$</blockquote>
+
+<h2>What You'll Learn</h2>
+<ul>
+<li><strong>EMF</strong> vs. <strong>terminal voltage</strong>: $\varepsilon = V + Ir$</li>
+<li><strong>Internal resistance</strong> of batteries and cells</li>
+<li><strong>Power</strong> in circuits: $P = IV = I^2R = V^2/R$</li>
+<li><strong>Maximum power transfer</strong> theorem</li>
+<li><strong>Energy dissipation</strong> and circuit <strong>efficiency</strong></li>
+</ul>
+
+<hr>
+
+<h2>1. EMF and Internal Resistance</h2>
+
+<h3>Electromotive Force (EMF)</h3>
+<p>The <strong>EMF</strong> $\varepsilon$ of a source is the <strong>total energy supplied per unit charge</strong> — the work done by the source to drive charge around a complete circuit. It is measured in <strong>volts</strong> (J/C).</p>
+
+<blockquote>Despite its name, EMF is <strong>not a force</strong> — it's a potential difference (voltage). It represents the maximum voltage a source can provide when no current is drawn.</blockquote>
+
+<h3>Terminal Voltage</h3>
+<p>The <strong>terminal voltage</strong> $V$ is the actual voltage available across the terminals of the source when current is flowing. It is <strong>always less than the EMF</strong> because some energy is lost overcoming the <strong>internal resistance</strong> $r$ of the source.</p>
+
+<p>$$\boxed{\varepsilon = V + Ir}$$</p>
+
+<p>or equivalently:</p>
+
+<p>$$\boxed{V = \varepsilon - Ir}$$</p>
+
+<h3>What is internal resistance?</h3>
+<p>Inside every real battery or cell, the chemical reactions and physical construction create an unavoidable resistance to current flow. This $r$ behaves as if it's a small resistor <strong>in series</strong> with an ideal EMF source.</p>
+
+<table>
+<tr>
+<th>Condition</th>
+<th>Terminal voltage</th>
+</tr>
+<tr>
+<td>Open circuit ($I = 0$)</td>
+<td>$V = \varepsilon$</td>
+</tr>
+<tr>
+<td>Normal operation</td>
+<td>$V = \varepsilon - Ir$</td>
+</tr>
+<tr>
+<td>Short circuit ($R_{\text{ext}} = 0$)</td>
+<td>$V = 0$, $I = \varepsilon/r$ (very large!)</td>
+</tr>
+</table>
+
+<h3>Full Circuit Equation</h3>
+<p>For a source (EMF $\varepsilon$, internal resistance $r$) connected to an external load $R$:</p>
+
+<p>$$\varepsilon = I(R + r)$$</p>
+
+<p>$$I = \frac{\varepsilon}{R + r}$$</p>
+
+<hr>
+
+<h2>2. Finding Internal Resistance Experimentally</h2>
+
+<h3>Method: Vary Load, Measure V and I</h3>
+<p>Connect the cell to a variable resistor (rheostat). Measure terminal voltage $V$ and current $I$ for different load settings.</p>
+
+<p>From $V = \varepsilon - Ir$, a graph of $V$ (y-axis) vs. $I$ (x-axis) gives:</p>
+<ul>
+<li><strong>y-intercept</strong> = $\varepsilon$ (EMF, when $I = 0$)</li>
+<li><strong>gradient</strong> = $-r$ (negative internal resistance)</li>
+<li><strong>x-intercept</strong> = $\varepsilon/r$ (short-circuit current)</li>
+</ul>
+
+<blockquote><strong>IB exam tip:</strong> The gradient is <strong>negative</strong>, so $r = |\text{gradient}|$. Be explicit about this!</blockquote>
+
+<hr>
+
+<h2>3. Electrical Power</h2>
+
+<p><strong>Power</strong> is the rate at which energy is transferred or converted:</p>
+
+<p>$$\boxed{P = IV}$$</p>
+
+<p>Using Ohm's Law ($V = IR$), we get three equivalent forms:</p>
+
+<p>$$\boxed{P = IV = I^2 R = \frac{V^2}{R}}$$</p>
+
+<table>
+<tr>
+<th>Form</th>
+<th>Best used when…</th>
+</tr>
+<tr>
+<td>$P = IV$</td>
+<td>You know current and voltage (general; always works)</td>
+</tr>
+<tr>
+<td>$P = I^2R$</td>
+<td>You know current and resistance (power lost in a resistor)</td>
+</tr>
+<tr>
+<td>$P = V^2/R$</td>
+<td>You know voltage and resistance (parallel circuits, fixed $V$)</td>
+</tr>
+</table>
+
+<h3>Power in Series vs. Parallel</h3>
+<ul>
+<li><strong>Series</strong> (same $I$): $P \propto R$ — the largest resistor dissipates the most power</li>
+<li><strong>Parallel</strong> (same $V$): $P \propto 1/R$ — the smallest resistor dissipates the most power</li>
+</ul>
+
+<hr>
+
+<h2>4. Power Transfer and Efficiency</h2>
+
+<h3>Total Power from a Source</h3>
+<p>The total power produced by a source: $P_{\text{total}} = \varepsilon I$</p>
+
+<p>Power delivered to external circuit: $P_{\text{external}} = VI = I^2 R$</p>
+
+<p>Power wasted in internal resistance: $P_{\text{internal}} = I^2 r$</p>
+
+<h3>Efficiency</h3>
+<p>$$\eta = \frac{P_{\text{useful}}}{P_{\text{total}}} = \frac{I^2 R}{I^2(R + r)} = \frac{R}{R + r}$$</p>
+
+<h3>Maximum Power Transfer</h3>
+<p>Maximum power is delivered to the load when:</p>
+
+<p>$$\boxed{R = r}$$</p>
+
+<p>(the load resistance equals the internal resistance). At this point, $\eta = 50\%$ — half the power is wasted internally.</p>
+
+<blockquote>In practice, power systems operate with $R \gg r$ to maximize efficiency, even though this doesn't maximize power output.</blockquote>
+
+<hr>
+
+<h2>5. Energy Dissipation</h2>
+
+<p>Electrical energy converted to heat in a resistor:</p>
+
+<p>$$E = Pt = IVt = I^2Rt = \frac{V^2}{R}t$$</p>
+
+<ul>
+<li>$1\ \mathrm{J} = 1\ \mathrm{W} \times 1\ \mathrm{s}$</li>
+<li>For larger amounts: $\mathrm{kWh}$ (kilowatt-hour) = $3.6 \times 10^6\ \mathrm{J}$</li>
+</ul>
+
+<hr>
+
+<h2>Worked Examples</h2>
+
+<h3>Worked Example 27.1 — Terminal Voltage</h3>
+<p><strong>Problem:</strong> A battery has EMF $12.0\ \mathrm{V}$ and internal resistance $r = 0.500\ \Omega$. It is connected to an external resistor $R = 5.50\ \Omega$. Calculate:</p>
+<p>(a) the circuit current</p>
+<p>(b) the terminal voltage</p>
+<p>(c) the power delivered to the external resistor</p>
+<p>(d) the power wasted in the battery</p>
+
+<p><strong>Solution:</strong></p>
+<p><strong>(a)</strong> $I = \frac{\varepsilon}{R + r} = \frac{12.0}{5.50 + 0.500} = \frac{12.0}{6.00} = 2.00\ \mathrm{A}$</p>
+
+<p><strong>(b)</strong> $V = \varepsilon - Ir = 12.0 - (2.00)(0.500) = 12.0 - 1.00 = 11.0\ \mathrm{V}$</p>
+
+<p><strong>(c)</strong> $P_{\text{ext}} = I^2 R = (2.00)^2 \times 5.50 = 22.0\ \mathrm{W}$</p>
+<p>Or: $P_{\text{ext}} = V I = 11.0 \times 2.00 = 22.0\ \mathrm{W}$</p>
+
+<p><strong>(d)</strong> $P_{\text{int}} = I^2 r = (2.00)^2 \times 0.500 = 2.00\ \mathrm{W}$</p>
+
+<p>Check: Total $P = \varepsilon I = 12.0 \times 2.00 = 24.0\ \mathrm{W} = 22.0 + 2.00$ ✓</p>
+
+<hr>
+
+<h3>Worked Example 27.2 — Finding EMF and r from Data</h3>
+<p><strong>Problem:</strong> A student measures the terminal voltage of a cell for different currents:</p>
+
+<table>
+<tr>
+<th>$I$ (A)</th>
+<th>0.00</th>
+<th>0.50</th>
+<th>1.00</th>
+<th>1.50</th>
+<th>2.00</th>
+</tr>
+<tr>
+<td>$V$ (V)</td>
+<td>1.58</td>
+<td>1.45</td>
+<td>1.32</td>
+<td>1.18</td>
+<td>1.05</td>
+</tr>
+</table>
+
+<p>Determine the EMF and internal resistance of the cell.</p>
+
+<p><strong>Solution:</strong></p>
+<p>EMF $\varepsilon$ = y-intercept = $V$ when $I = 0$ = <strong>1.58 V</strong></p>
+
+<p>Gradient = $\frac{\Delta V}{\Delta I} = \frac{1.05 - 1.58}{2.00 - 0.00} = \frac{-0.53}{2.00} = -0.265$</p>
+
+<p>$r = |\text{gradient}| = 0.265\ \Omega$</p>
+
+<p>Check: $V = \varepsilon - Ir \Rightarrow 1.45 \approx 1.58 - 0.50(0.265) = 1.58 - 0.133 = 1.447$ ✓</p>
+
+<hr>
+
+<h3>Worked Example 27.3 — Power Comparison</h3>
+<p><strong>Problem:</strong> A $12\ \mathrm{V}$ supply is connected to (a) a single $6.0\ \Omega$ resistor, (b) two $6.0\ \Omega$ resistors in series, (c) two $6.0\ \Omega$ resistors in parallel.</p>
+<p>Calculate the total power dissipated in each case.</p>
+
+<p><strong>Solution:</strong></p>
+<p><strong>(a)</strong> $P = \frac{V^2}{R} = \frac{12^2}{6.0} = 24\ \mathrm{W}$</p>
+
+<p><strong>(b)</strong> $R_{\text{total}} = 12\ \Omega$, $P = \frac{12^2}{12} = 12\ \mathrm{W}$</p>
+<p>(Each gets 6 W — half the voltage, quarter the power individually)</p>
+
+<p><strong>(c)</strong> $R_{\text{total}} = 3.0\ \Omega$, $P = \frac{12^2}{3.0} = 48\ \mathrm{W}$</p>
+<p>(Each gets 24 W — full voltage, double the current of single case)</p>
+
+<hr>
+
+<h3>Worked Example 27.4 — Maximum Power Transfer</h3>
+<p><strong>Problem:</strong> A source has EMF $9.0\ \mathrm{V}$ and internal resistance $r = 3.0\ \Omega$. What value of load resistance $R$ will receive maximum power, and what is that power?</p>
+
+<p><strong>Solution:</strong></p>
+<p>Maximum power when $R = r = 3.0\ \Omega$.</p>
+
+<p>$I = \frac{\varepsilon}{R + r} = \frac{9.0}{6.0} = 1.5\ \mathrm{A}$</p>
+
+<p>$P_{\text{max}} = I^2 R = (1.5)^2 \times 3.0 = 6.75\ \mathrm{W}$</p>
+
+<p>Efficiency: $\eta = \frac{R}{R + r} = \frac{3.0}{6.0} = 50\%$</p>
+
+<hr>
+
+<h3>Worked Example 27.5 — Battery Efficiency (IB-Style)</h3>
+<p><strong>Problem:</strong> A $6.0\ \mathrm{V}$ battery with $r = 0.80\ \Omega$ powers a $4.0\ \Omega$ load.</p>
+
+<p>(a) Calculate the current and terminal voltage. <strong>[2 marks]</strong></p>
+<p>(b) Calculate the power delivered to the load and the power dissipated in the battery. <strong>[2 marks]</strong></p>
+<p>(c) Calculate the efficiency of power transfer. <strong>[1 mark]</strong></p>
+<p>(d) The load is changed. For what load resistance would the efficiency be 90%? <strong>[3 marks]</strong></p>
+<p>(e) At this 90% efficiency load, what power is delivered to the load? How does this compare to the maximum possible power? <strong>[3 marks]</strong></p>
+
+<hr>
+
+<p><strong>Solution:</strong></p>
+<p><strong>(a)</strong> $I = \frac{6.0}{4.0 + 0.80} = 1.25\ \mathrm{A}$</p>
+<p>$V = 6.0 - (1.25)(0.80) = 6.0 - 1.00 = 5.0\ \mathrm{V}$ ✓✓</p>
+
+<p><strong>(b)</strong> $P_{\text{load}} = I^2 R = (1.25)^2 \times 4.0 = 6.25\ \mathrm{W}$</p>
+<p>$P_{\text{int}} = I^2 r = (1.25)^2 \times 0.80 = 1.25\ \mathrm{W}$ ✓✓</p>
+
+<p><strong>(c)</strong> $\eta = \frac{R}{R + r} = \frac{4.0}{4.0 + 0.80} = 0.833 = 83.3\%$ ✓</p>
+
+<p><strong>(d)</strong> $\eta = \frac{R}{R + r} = 0.90$</p>
+<p>$R = 0.90(R + 0.80) \Rightarrow R = 0.90R + 0.72 \Rightarrow 0.10R = 0.72 \Rightarrow R = 7.2\ \Omega$ ✓✓✓</p>
+
+<p><strong>(e)</strong> $I = \frac{6.0}{7.2 + 0.80} = 0.75\ \mathrm{A}$</p>
+<p>$P = I^2 R = (0.75)^2 \times 7.2 = 4.05\ \mathrm{W}$</p>
+
+<p>Maximum power transfer occurs at $R = r = 0.80\ \Omega$:</p>
+<p>$P_{\text{max}} = (\frac{6.0}{1.60})^2 \times 0.80 = (3.75)^2 \times 0.80 = 14.06 \times 0.80 = 11.25\ \mathrm{W}$</p>
+
+<p>The 90% efficiency load delivers <strong>much less power</strong> (4.05 W vs. 11.25 W) but uses the battery's energy far more efficiently. This is the classic engineering trade-off: power vs. efficiency! ✓✓✓</p>
+
+<hr>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1 — Terminal Voltage</h3>
+<p>A cell has EMF $1.50\ \mathrm{V}$ and internal resistance $0.200\ \Omega$. It is connected to an external $2.80\ \Omega$ resistor. Calculate: (a) the current, (b) the terminal voltage. <strong>[2 marks]</strong></p>
+
+<h3>Problem 2 — Finding EMF and r</h3>
+<p>A student obtains these data for a battery: $V = 8.40\ \mathrm{V}$ at $I = 0.50\ \mathrm{A}$; $V = 7.80\ \mathrm{V}$ at $I = 1.00\ \mathrm{A}$. Find the EMF and internal resistance. <strong>[3 marks]</strong></p>
+
+<h3>Problem 3 — Power Dissipation</h3>
+<p>A $24\ \Omega$ resistor is connected to a $12\ \mathrm{V}$ supply with negligible internal resistance. Calculate the power dissipated. Then calculate the new power if a second $24\ \Omega$ resistor is added (a) in series, (b) in parallel. <strong>[4 marks]</strong></p>
+
+<h3>Problem 4 — Short Circuit Danger</h3>
+<p>Explain why short-circuiting a car battery (12 V, $r \approx 0.01\ \Omega$) is extremely dangerous, using calculations to support your answer. <strong>[3 marks]</strong></p>
+
+<h3>Problem 5 — IB-Style: EMF Experiment Analysis</h3>
+<p>A student investigates a solar cell by connecting it to a variable resistor and measuring $V$ and $I$. The data are:</p>
+
+<table>
+<tr>
+<th>$V$ (V)</th>
+<th>0.00</th>
+<th>0.20</th>
+<th>0.40</th>
+<th>0.50</th>
+<th>0.55</th>
+<th>0.60</th>
+</tr>
+<tr>
+<td>$I$ (mA)</td>
+<td>50.0</td>
+<td>48.0</td>
+<td>42.0</td>
+<td>32.0</td>
+<td>20.0</td>
+<td>0.0</td>
+</tr>
+</table>
+
+<p>(a) Plot a graph of $V$ vs. $I$ and determine the EMF of the solar cell. <strong>[2 marks]</strong></p>
+<p>(b) Determine the short-circuit current. <strong>[1 mark]</strong></p>
+<p>(c) Calculate the internal resistance near $I = 30\ \mathrm{mA}$. <strong>[2 marks]</strong></p>
+<p>(d) Calculate the maximum power output of the solar cell from the data. <strong>[3 marks]</strong></p>
+<p>(e) Explain why a solar cell's internal resistance is not constant, unlike a simple battery. <strong>[2 marks]</strong></p>
+
+<hr>
+
+<h2>Answers</h2>
+
+<h3>Answer 1</h3>
+<p><strong>(a)</strong> $I = \frac{1.50}{2.80 + 0.200} = \frac{1.50}{3.00} = 0.500\ \mathrm{A}$</p>
+<p><strong>(b)</strong> $V = 1.50 - (0.500)(0.200) = 1.50 - 0.100 = 1.40\ \mathrm{V}$ ✓✓</p>
+
+<h3>Answer 2</h3>
+<p>$V = \varepsilon - Ir$</p>
+<p>$8.40 = \varepsilon - 0.50r$ …(1)</p>
+<p>$7.80 = \varepsilon - 1.00r$ …(2)</p>
+
+<p>(1) − (2): $0.60 = 0.50r \Rightarrow r = 1.20\ \Omega$</p>
+<p>From (1): $\varepsilon = 8.40 + 0.50(1.20) = 8.40 + 0.60 = 9.00\ \mathrm{V}$</p>
+
+<p>EMF = $9.00\ \mathrm{V}$, $r = 1.20\ \Omega$ ✓✓✓</p>
+
+<h3>Answer 3</h3>
+<p>Single: $P = V^2/R = 12^2/24 = 6.0\ \mathrm{W}$</p>
+<p><strong>(a)</strong> Series: $R = 48\ \Omega$, $P = 12^2/48 = 3.0\ \mathrm{W}$ (half)</p>
+<p><strong>(b)</strong> Parallel: $R = 12\ \Omega$, $P = 12^2/12 = 12\ \mathrm{W}$ (double) ✓✓✓✓</p>
+
+<h3>Answer 4</h3>
+<p>In a short circuit, $R_{\text{ext}} \approx 0$, so $I = \varepsilon/r = 12/0.01 = 1200\ \mathrm{A}$.</p>
+<p>$P = I^2 r = (1200)^2 \times 0.01 = 14,400\ \mathrm{W} = 14.4\ \mathrm{kW}$ dissipated as heat in the battery.</p>
+
+<p>This enormous current can cause the battery to overheat, explode, or melt the wires. Extremely dangerous! ✓✓✓</p>
+
+<h3>Answer 5 — IB-Style Full Solution</h3>
+<p><strong>(a)</strong> Plot $V$ (y-axis) vs $I$ (x-axis) in amps (convert mA: 0.050, 0.048, 0.042, 0.032, 0.020, 0.000).</p>
+<p>EMF = $V$ when $I = 0$ = <strong>0.60 V</strong>. ✓✓</p>
+
+<p><strong>(b)</strong> Short-circuit current = $I$ when $V = 0$ = <strong>50.0 mA</strong> = 0.0500 A. ✓</p>
+
+<p><strong>(c)</strong> Near $I = 30\ \mathrm{mA} = 0.030\ \mathrm{A}$: From data, near $(0.032, 0.50)$ and $(0.020, 0.55)$.</p>
+<p>$r = \left|\frac{\Delta V}{\Delta I}\right| = \frac{0.55 - 0.50}{0.020 - 0.032} = \frac{0.05}{-0.012} \approx 4.2\ \Omega$ ✓✓</p>
+
+<p><strong>(d)</strong> Power $P = VI$. Calculate for each data point:</p>
+<p>$(0)(0.050) = 0$, $(0.20)(0.048) = 9.6\ \mathrm{mW}$, $(0.40)(0.042) = 16.8\ \mathrm{mW}$, </p>
+<p>$(0.50)(0.032) = 16.0\ \mathrm{mW}$, $(0.55)(0.020) = 11.0\ \mathrm{mW}$, $(0.60)(0) = 0$</p>
+
+<p>Maximum power $\approx$ <strong>16.8 mW</strong> at $V = 0.40\ \mathrm{V}$, $I = 42\ \mathrm{mA}$. ✓✓✓</p>
+
+<p><strong>(e)</strong> A solar cell is a semiconductor device, not a simple chemical cell. Its internal resistance depends on the illumination level, the operating point on its I–V curve, and the semiconductor junction properties. It doesn't follow the simple linear $V = \varepsilon - Ir$ model of a chemical battery. ✓✓</p>
+
+<hr>
+
+<h2>Key Takeaways</h2>
+<ol>
+<li><strong>EMF</strong> $\varepsilon$ is the total energy per unit charge supplied. <strong>Terminal voltage</strong> $V = \varepsilon - Ir$ is always less when current flows.</li>
+<li><strong>Internal resistance</strong> $r$ acts like a resistor in series with the ideal source.</li>
+<li>From a $V$ vs. $I$ graph: y-intercept = $\varepsilon$, gradient = $-r$.</li>
+<li><strong>Power</strong>: $P = IV = I^2R = V^2/R$. Use the form that matches what you know.</li>
+<li><strong>Maximum power transfer</strong> occurs when $R = r$, but efficiency is only 50%. For high efficiency, use $R \gg r$.</li>
+<li><strong>Efficiency</strong>: $\eta = R/(R + r) = V/\varepsilon$.</li>
+</ol>
+
+<hr>
+
+<p><em>Next: Lesson 28 — Circuits V: Capacitors & RC Circuits (HL)</em></p>
+
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L26_circuits_3.html">← Lesson 26</a>
+  <a href="L28_circuits_5.html">Lesson 28 →</a>
+</nav>
+
+</body>
+</html>

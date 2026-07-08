@@ -1,0 +1,432 @@
+# Lesson 2: Forces Review
+
+## What You'll Learn
+
+In this lesson, you will review the concept of force and how forces determine the motion of objects. You will learn to draw free-body diagrams, apply Newton's three laws of motion, and solve problems involving multiple forces acting at once. This lesson builds the foundation for all of mechanics.
+
+---
+
+## 1. What Is a Force?
+
+### 1.1 Why This Matters
+
+Everything around you moves—or stays still—because of forces. When you push a door, throw a ball, or stand on the floor, forces are acting. Understanding what a force is and how to describe it is the starting point for all of physics. Without a clear picture of forces, you cannot explain why a car accelerates, why a bridge stands, or why a planet orbits the sun.
+
+### 1.2 The Key Ideas
+
+A **force** is a push or a pull exerted by one object on another. A force can change an object's speed, change its direction, or deform it (change its shape). Because a force has both a magnitude (how strong it is) and a direction, force is a **vector quantity**. In the SI system, force is measured in **newtons (N)**. One newton is the force needed to accelerate a 1 kg mass by 1 m/s².
+
+Forces arise from interactions between objects. There are two broad categories of forces. **Contact forces** occur when two objects physically touch, such as friction, normal reaction, tension, and air resistance. **Non-contact forces** (also called field forces) act at a distance, such as gravitational force, electric force, and magnetic force.
+
+Weight is a force that deserves special attention because it is often confused with mass. **Weight** is the gravitational force that the Earth (or another planet) exerts on an object. If an object has mass \( m \) and is near the surface of the Earth, its weight is given by \( W = mg \), where \( g \) is the gravitational field strength. On Earth, \( g \) is approximately 9.81 m/s², but for this course we will often use \( g = 10 \, \text{m/s}^2 \) for simplicity. **Mass**, by contrast, is a measure of how much matter an object contains. Mass is a scalar quantity measured in kilograms (kg). Mass does not depend on location; your mass is the same on Earth, the Moon, and in deep space. Your weight, however, changes because \( g \) changes.
+
+### 1.3 Common Misconceptions
+
+Many students say "the force of an object" as if an object carries force around with it. This is incorrect. Forces are interactions. An object does not "have" force; forces act on objects. When a moving car hits a wall, the car does not "have" a force that it delivers to the wall. The car and wall exert forces on each other during the collision.
+
+Another common misconception is that if an object is moving, there must be a force acting on it in the direction of motion. This is not true. If an object moves at constant velocity, the net force on it is zero. It was Newton's great insight that a force is needed to change motion, not to sustain motion.
+
+Students also frequently confuse mass and weight. Remember: mass is measured in kg; weight is a force measured in N. On a bathroom scale, you are measuring the normal force pushing up on you—which equals your weight when you are in equilibrium.
+
+---
+
+## 2. Newton's Three Laws of Motion
+
+### 2.1 Newton's First Law (The Law of Inertia)
+
+Newton's first law states: an object continues in a state of rest or uniform motion in a straight line unless acted upon by a net external force.
+
+This law tells us what happens when no net force acts. "Uniform motion in a straight line" means constant velocity—both constant speed and constant direction. "Rest" is just a special case of constant velocity (velocity = 0). So the first law really says: if the net force is zero, velocity is constant.
+
+**Inertia** is the tendency of an object to resist changes in its motion. The more mass an object has, the greater its inertia. That is why it is harder to push a car than a bicycle—not because the car is heavier (that's a force issue), but because the car has more inertia.
+
+Why does this matter? The first law demolishes the intuitive (but wrong) idea that motion requires a force to keep it going. In everyday life, moving objects do slow down and stop—but that is because friction, a force, is acting. In the absence of friction (think of a puck on an air hockey table), an object set in motion continues moving essentially forever.
+
+### 2.2 Newton's Second Law
+
+Newton's second law connects force, mass, and acceleration quantitatively. It states: the net force on an object equals the product of its mass and acceleration.
+
+In equation form: \( \sum \vec{F} = m \vec{a} \)
+
+The symbol \( \sum \vec{F} \) (read as "sigma F") means the **net force**, which is the vector sum of all forces acting on the object. Do not just plug in one force. You must add all the forces—as vectors—to find the net force.
+
+This equation tells us three critical things:
+1. Acceleration is in the same direction as the net force.
+2. For a given net force, a larger mass produces a smaller acceleration.
+3. If the net force is zero, acceleration is zero—which is exactly the first law.
+
+The unit of force, the newton, is defined by this law: \( 1 \, \text{N} = 1 \, \text{kg} \cdot \text{m/s}^2 \).
+
+When solving problems, you often decompose forces into perpendicular components (usually horizontal and vertical, or parallel and perpendicular to an incline). For each direction, you apply the second law separately:
+
+\( \sum F_x = m a_x \)
+
+\( \sum F_y = m a_y \)
+
+### 2.3 Newton's Third Law
+
+Newton's third law states: when object A exerts a force on object B, object B exerts a force of equal magnitude and opposite direction on object A.
+
+In short: \( \vec{F}_{A \, \text{on} \, B} = -\vec{F}_{B \, \text{on} \, A} \).
+
+These two forces are called an **action-reaction pair**. They always act on different objects. This is the most frequently misunderstood point. The force of the Earth pulling down on you (your weight) and the normal force of the floor pushing up on you are NOT an action-reaction pair. Why? Because both forces act on you. The reaction pair to your weight is the gravitational force you exert on the Earth. The reaction pair to the normal force is the force you exert downward on the floor.
+
+Key properties of action-reaction pairs:
+- They are equal in magnitude.
+- They are opposite in direction.
+- They act on different objects.
+- They are the same type of force (both gravitational, both normal, both frictional, etc.).
+
+### 2.4 Common Misconceptions
+
+Many students think that if a large truck hits a small car, the truck exerts a larger force on the car than the car exerts on the truck. Newton's third law says this is impossible: the forces are always equal. The reason the car suffers more damage is that the car has less mass, so the same force produces a larger acceleration (second law). The car undergoes a larger change in velocity, not because it felt a larger force, but because it has less inertia.
+
+Another common error is thinking that action-reaction forces cancel out because they are equal and opposite. They do not cancel because they act on different objects. Only forces acting on the same object can cancel.
+
+---
+
+## 3. Common Forces
+
+### 3.1 Weight (Gravitational Force)
+
+Weight was introduced above: \( W = mg \), always directed downward toward the center of the Earth. On a slope, weight still points straight down, not perpendicular to the slope.
+
+### 3.2 Normal Force
+
+The **normal force** is the force exerted by a surface on an object in contact with it, perpendicular (normal) to the surface. The word "normal" here means "perpendicular," not "ordinary." The normal force prevents objects from passing through solids.
+
+A common mistake is assuming the normal force always equals the weight. This is only true on a horizontal surface with no other vertical forces. If you push down on a book, the normal force increases. If an object is on an incline, the normal force equals \( mg \cos \theta \), not \( mg \). If an object is in an accelerating elevator, the normal force changes.
+
+### 3.3 Tension
+
+**Tension** is the force transmitted through a string, rope, cable, or similar object when it is pulled tight. Tension pulls equally on the objects at both ends of the rope. Throughout an ideal rope (massless, inextensible), the tension has the same magnitude everywhere.
+
+Many students think tension pushes. It does not. You cannot push with a rope. Tension always pulls along the direction of the rope.
+
+### 3.4 Friction
+
+**Friction** is a contact force that opposes relative motion (or attempted relative motion) between two surfaces in contact. There are two kinds.
+
+**Static friction** acts when the surfaces are not sliding past each other. It adjusts its magnitude to match whatever is trying to cause sliding, up to a maximum value: \( f_s^{\text{max}} = \mu_s N \), where \( \mu_s \) is the coefficient of static friction and \( N \) is the normal force. If the applied force is less than this maximum, static friction equals the applied force and there is no motion.
+
+**Kinetic friction** (also called dynamic friction) acts when the surfaces are sliding past each other. Its magnitude is constant: \( f_k = \mu_k N \), where \( \mu_k \) is the coefficient of kinetic friction. The coefficient of kinetic friction is almost always smaller than the coefficient of static friction. This is why it is harder to start pushing a heavy box than to keep it moving.
+
+Both \( \mu_s \) and \( \mu_k \) are dimensionless numbers that depend on the two materials in contact. They have no units.
+
+Friction always acts parallel to the surface, opposite to the direction of sliding (or, for static friction, opposite to the direction it would slide if friction were absent).
+
+### 3.5 Drag (Air Resistance)
+
+**Drag** is the resistive force a fluid (liquid or gas) exerts on an object moving through it. For small objects at low speeds, drag is approximately proportional to velocity. For larger speeds, it is approximately proportional to velocity squared. In IB Physics HL, you are not required to use a specific formula for drag magnitude; you should understand that it increases with speed and opposes motion. When an object falling through air reaches a speed where drag equals weight, the net force becomes zero and the object falls at constant speed—this is called **terminal velocity**.
+
+---
+
+## 4. Free-Body Diagrams
+
+### 4.1 What They Are and Why They Matter
+
+A **free-body diagram** (FBD) is a simplified drawing that shows all the forces acting on a single object. You replace the object with a dot or a box and draw every force as an arrow pointing in the direction it acts. The length of each arrow should be roughly proportional to the magnitude of the force.
+
+The free-body diagram is the single most important tool for solving force problems. If your free-body diagram is correct, the rest is just mathematics. If your free-body diagram is wrong, nothing that follows can be right.
+
+### 4.2 How to Draw a Free-Body Diagram
+
+1. Isolate the object of interest. Mentally strip away everything else.
+2. Represent the object as a dot or a small box.
+3. Identify every force acting ON the object. Ask: what touches it? What non-contact forces act?
+4. Draw each force as an arrow starting from the dot. Label each force clearly (W, N, T, f, etc.).
+5. Choose a coordinate system and draw it next to the diagram.
+6. If needed, resolve forces into components along your axes.
+
+Never include forces exerted BY the object on other things. Never include the "net force" as a separate arrow—it is the sum of the arrows you draw.
+
+### 4.3 Example of Misconceptions
+
+A student draws an object on a table and includes: weight downward, normal force upward, and "the force of the object on the table" downward. The last arrow does not belong because it acts on the table, not on the object. The FBD is for the object only.
+
+Another student draws an object sliding to the right and includes a "force of motion" arrow pointing right. There is no such force. The object was set in motion earlier; now only friction acts backward. The "force of motion" is not a real force.
+
+---
+
+## 5. Equilibrium
+
+### 5.1 Definition
+
+An object is in **equilibrium** when the net force on it is zero: \( \sum \vec{F} = 0 \). From Newton's second law, this means acceleration is zero: the object is either at rest or moving at constant velocity.
+
+Equilibrium can be **static** (at rest) or **dynamic** (moving at constant velocity). The physics is identical in both cases.
+
+### 5.2 Solving Equilibrium Problems
+
+Since forces are vectors, the condition \( \sum \vec{F} = 0 \) means:
+
+\( \sum F_x = 0 \) and \( \sum F_y = 0 \)
+
+To solve an equilibrium problem:
+1. Draw the free-body diagram.
+2. Choose axes and resolve all forces into components.
+3. Write \( \sum F_x = 0 \) and \( \sum F_y = 0 \).
+4. Solve the resulting equations.
+
+---
+
+## Worked Examples
+
+### Worked Example 2.1: Equilibrium on a Horizontal Surface
+
+A 5.0 kg box rests on a horizontal floor. The coefficient of static friction is 0.40. A student pushes horizontally on the box with a force of 15 N. Does the box move? If the student pushes with 25 N, does the box move? Take \( g = 10 \, \text{m/s}^2 \).
+
+**Approach:** To determine whether the box moves, we need to compare the applied force to the maximum static friction force. If the applied force exceeds \( f_s^{\text{max}} \), the box moves; otherwise, it stays still.
+
+**Step-by-step:**
+
+Step 1: Calculate the normal force. The box is on a horizontal surface with no vertical forces besides weight and normal.
+\( N = mg = (5.0 \, \text{kg})(10 \, \text{m/s}^2) = 50 \, \text{N} \)
+
+Step 2: Calculate the maximum static friction.
+\( f_s^{\text{max}} = \mu_s N = (0.40)(50 \, \text{N}) = 20 \, \text{N} \)
+
+Step 3: Compare. At 15 N applied: \( 15 \, \text{N} < 20 \, \text{N} \). The static friction matches the applied force (at 15 N), so the box does not move.
+
+At 25 N applied: \( 25 \, \text{N} > 20 \, \text{N} \). Static friction cannot provide enough force, so the box moves. Once moving, kinetic friction acts. Without \( \mu_k \) given, we can only say the box accelerates.
+
+**Why this makes sense:** Static friction is like a brake that can hold up to a certain limit. Push lightly and friction holds. Push hard enough to break the limit and sliding begins.
+
+### Worked Example 2.2: Inclined Plane Without Friction
+
+A 10 kg block is placed on a frictionless incline that makes an angle of 30° with the horizontal. Find the acceleration of the block down the incline. Take \( g = 10 \, \text{m/s}^2 \).
+
+**Approach:** The only forces on the block are weight (straight down) and the normal force (perpendicular to the incline). We resolve the weight into components parallel and perpendicular to the incline. The perpendicular component cancels the normal force. The parallel component causes acceleration.
+
+**Step-by-step:**
+
+Step 1: Draw the free-body diagram. Weight \( mg \) straight down. Normal \( N \) perpendicular to incline.
+
+Step 2: Choose axes: x parallel to incline (positive down the incline), y perpendicular to incline (positive upward from surface).
+
+Step 3: Resolve weight.
+\( W_{\parallel} = mg \sin \theta = (10 \, \text{kg})(10 \, \text{m/s}^2) \sin 30^\circ = 100 \, \text{N} \times 0.50 = 50 \, \text{N} \)
+\( W_{\perp} = mg \cos \theta = (10 \, \text{kg})(10 \, \text{m/s}^2) \cos 30^\circ = 100 \, \text{N} \times 0.866 = 86.6 \, \text{N} \)
+
+Step 4: Apply Newton's second law. In the y-direction: \( N - W_{\perp} = 0 \), so \( N = 86.6 \, \text{N} \). In the x-direction: \( W_{\parallel} = m a \), so \( 50 \, \text{N} = (10 \, \text{kg}) a \).
+
+Step 5: \( a = \frac{50 \, \text{N}}{10 \, \text{kg}} = 5.0 \, \text{m/s}^2 \).
+
+**Why this makes sense:** The acceleration down a frictionless incline is \( g \sin \theta \), which is smaller than \( g \). At 30°, \( \sin 30^\circ = 0.5 \), so \( a = 5 \, \text{m/s}^2 \), which is exactly half of \( g \). This matches our calculation.
+
+### Worked Example 2.3: Connected Objects
+
+Two blocks are connected by a light string over a frictionless pulley. Block A (mass 3.0 kg) sits on a frictionless horizontal table. Block B (mass 2.0 kg) hangs vertically off the edge of the table. Find the acceleration of the system and the tension in the string. Take \( g = 10 \, \text{m/s}^2 \).
+
+**Approach:** We treat each block separately, drawing free-body diagrams. The tension is the same throughout the string (ideal string). The blocks have the same magnitude of acceleration (connected). Apply Newton's second law to each block and solve the simultaneous equations.
+
+**Step-by-step:**
+
+Step 1: Free-body diagram for Block A (on table): Weight \( m_A g \) down, normal force \( N \) up (these cancel vertically). Tension \( T \) to the right. Block A accelerates right.
+
+\( T = m_A a \) ... Equation (1)
+
+Step 2: Free-body diagram for Block B (hanging): Weight \( m_B g \) down. Tension \( T \) up. Block B accelerates downward. Taking down as positive:
+
+\( m_B g - T = m_B a \) ... Equation (2)
+
+Step 3: Add equations (1) and (2):
+\( T + m_B g - T = m_A a + m_B a \)
+\( m_B g = (m_A + m_B) a \)
+\( a = \frac{m_B g}{m_A + m_B} = \frac{(2.0 \, \text{kg})(10 \, \text{m/s}^2)}{3.0 \, \text{kg} + 2.0 \, \text{kg}} = \frac{20 \, \text{N}}{5.0 \, \text{kg}} = 4.0 \, \text{m/s}^2 \)
+
+Step 4: Find tension from equation (1):
+\( T = m_A a = (3.0 \, \text{kg})(4.0 \, \text{m/s}^2) = 12 \, \text{N} \)
+
+**Why this makes sense:** The acceleration is less than \( g \) because the hanging block must also accelerate the block on the table. The tension is less than the hanging weight (20 N) because the hanging block accelerates downward—if tension equaled weight, the net force on block B would be zero and it wouldn't accelerate.
+
+### Worked Example 2.4: Incline with Friction
+
+A 5.0 kg block slides down a rough incline at 37° to the horizontal. The coefficient of kinetic friction is 0.25. Find the acceleration of the block. Take \( g = 10 \, \text{m/s}^2 \), \( \sin 37^\circ \approx 0.60 \), \( \cos 37^\circ \approx 0.80 \).
+
+**Approach:** Forces are weight, normal, and kinetic friction. Resolve weight into components parallel and perpendicular to the incline. The normal force equals the perpendicular component of weight. Friction opposes motion, so it points up the incline.
+
+**Step-by-step:**
+
+Step 1: Weight components:
+\( W_{\parallel} = mg \sin \theta = (5.0 \, \text{kg})(10 \, \text{m/s}^2)(0.60) = 30 \, \text{N} \) (down the incline)
+\( W_{\perp} = mg \cos \theta = (5.0 \, \text{kg})(10 \, \text{m/s}^2)(0.80) = 40 \, \text{N} \)
+
+Step 2: Normal force: \( N = W_{\perp} = 40 \, \text{N} \)
+
+Step 3: Kinetic friction: \( f_k = \mu_k N = (0.25)(40 \, \text{N}) = 10 \, \text{N} \) (up the incline)
+
+Step 4: Net force down the incline: \( F_{\text{net}} = W_{\parallel} - f_k = 30 \, \text{N} - 10 \, \text{N} = 20 \, \text{N} \)
+
+Step 5: Acceleration: \( a = \frac{F_{\text{net}}}{m} = \frac{20 \, \text{N}}{5.0 \, \text{kg}} = 4.0 \, \text{m/s}^2 \) down the incline.
+
+**Why this makes sense:** Without friction, acceleration would be \( g \sin 37^\circ = 6.0 \, \text{m/s}^2 \). Friction reduces it to 4.0 m/s², which is reasonable for a moderate incline with some roughness.
+
+### Worked Example 2.5: Object in an Accelerating Elevator
+
+A 60 kg person stands on a scale in an elevator. The scale reads the normal force. Find the scale reading when the elevator accelerates upward at 1.0 m/s². Take \( g = 10 \, \text{m/s}^2 \).
+
+**Approach:** The scale reads the normal force exerted upward on the person. The forces on the person are weight downward and normal force upward. Apply Newton's second law in the vertical direction.
+
+**Step-by-step:**
+
+Step 1: Define upward as positive. Forces: \( N \) (up, positive), \( mg \) (down, negative).
+
+Step 2: \( \sum F = N - mg = m a \)
+\( N - (60 \, \text{kg})(10 \, \text{m/s}^2) = (60 \, \text{kg})(1.0 \, \text{m/s}^2) \)
+\( N - 600 \, \text{N} = 60 \, \text{N} \)
+\( N = 660 \, \text{N} \)
+
+Step 3: The scale reads the normal force: 660 N. This corresponds to an apparent mass of \( 66 \, \text{kg} \) on the scale calibration (since the scale divides by \( g \)).
+
+**Why this makes sense:** When accelerating upward, you feel heavier because the floor must push harder to accelerate you upward against gravity. At constant velocity, the reading would be your actual weight, 600 N. Accelerating downward, the reading would be less than 600 N.
+
+---
+
+## Practice Problems
+
+### Problem 1
+
+A 2.0 kg book sits at rest on a horizontal table. A student pushes horizontally on the book with a force of 6.0 N. The coefficient of static friction between the book and the table is 0.50, and the coefficient of kinetic friction is 0.30. Take \( g = 10 \, \text{m/s}^2 \).
+
+(a) Calculate the maximum static friction force that can act on the book.
+
+(b) Determine whether the book moves when the 6.0 N force is applied. If it does not move, state the actual friction force acting on the book. If it does move, calculate the kinetic friction force and the acceleration.
+
+### Problem 2
+
+A 15 kg child slides down a playground slide inclined at 40° to the horizontal. The slide is frictionless. Take \( g = 10 \, \text{m/s}^2 \).
+
+(a) Calculate the component of the child's weight that acts parallel to the slide.
+
+(b) Determine the acceleration of the child down the slide.
+
+(c) If the slide is 3.2 m long and the child starts from rest, calculate the time it takes the child to reach the bottom. Use an appropriate kinematic equation and show all working.
+
+### Problem 3
+
+Two boxes are in contact on a frictionless horizontal surface. Box 1 has mass 4.0 kg and box 2 has mass 6.0 kg. A horizontal force of 50 N pushes box 1, and box 1 pushes box 2. The boxes move together.
+
+(a) Draw a separate free-body diagram for each box. Label all forces.
+
+(b) Calculate the acceleration of the two-box system.
+
+(c) Calculate the magnitude of the contact force between the two boxes.
+
+### Problem 4
+
+A 3.0 kg block is pulled across a rough horizontal surface by a rope that makes an angle of 30° above the horizontal. The tension in the rope is 20 N. The coefficient of kinetic friction between the block and the surface is 0.40. Take \( g = 10 \, \text{m/s}^2 \).
+
+(a) Show that the normal force on the block is less than the block's weight. Explain why this happens physically.
+
+(b) Calculate the magnitude of the normal force.
+
+(c) Calculate the acceleration of the block.
+
+### Problem 5
+
+A 12 kg box is held at rest on a rough incline that makes an angle of 25° with the horizontal. The coefficient of static friction between the box and the incline is 0.60. Take \( g = 10 \, \text{m/s}^2 \).
+
+(a) Calculate the component of the weight acting down the incline.
+
+(b) Determine the maximum static friction force that can act on the box.
+
+(c) The box is released from rest. Explain, with reference to the forces, whether the box slides down or remains at rest.
+
+(d) A student claims: "If I push the box perpendicular to the incline, the friction force increases and prevents it from sliding." Evaluate this claim using physics principles.
+
+### Problem 6 (IB Exam-Style)
+
+A block of mass \( m = 4.0 \, \text{kg} \) is placed on a rough wooden ramp that is inclined at an angle \( \theta \) to the horizontal. The coefficient of static friction between the block and the ramp is \( \mu_s = 0.70 \). The coefficient of kinetic friction is \( \mu_k = 0.50 \). The ramp angle is slowly increased from 0° until the block just begins to slide. Take \( g = 10 \, \text{m/s}^2 \).
+
+(a) On a diagram, draw and label the forces acting on the block when it is at rest on the ramp at angle \( \theta \).
+[3 marks]
+
+(b) By resolving forces parallel and perpendicular to the ramp, derive an expression for the angle \( \theta \) at which the block just begins to slide in terms of \( \mu_s \).
+[3 marks]
+
+(c) Calculate the critical angle at which the block begins to slide.
+[2 marks]
+
+(d) Once the block begins to slide, the ramp angle is kept at the value found in part (c). Calculate the acceleration of the block down the ramp.
+[4 marks]
+
+(e) Discuss whether the acceleration found in part (d) remains constant as the block slides further down the ramp. Assume the ramp is long and the block reaches significant speed.
+[2 marks]
+
+---
+
+## Answers
+
+### Answer 1
+
+(a) The normal force equals the weight: \( N = mg = (2.0 \, \text{kg})(10 \, \text{m/s}^2) = 20 \, \text{N} \). Maximum static friction is \( f_s^{\text{max}} = \mu_s N = (0.50)(20 \, \text{N}) = 10 \, \text{N} \).
+
+(b) The applied force of 6.0 N is less than the maximum static friction of 10 N. Therefore the book does not move. Since the book is in static equilibrium, the net force is zero. The actual static friction force exactly matches the applied force: \( f_s = 6.0 \, \text{N} \). The kinetic friction formula does not apply because there is no sliding.
+
+A common mistake here is to use the kinetic friction formula whenever friction is mentioned. Kinetic friction applies only when surfaces are sliding past each other. A common follow-up mistake is to forget that static friction is not always at its maximum—it adjusts to whatever is needed, up to the limit.
+
+### Answer 2
+
+(a) The weight is \( mg = (15 \, \text{kg})(10 \, \text{m/s}^2) = 150 \, \text{N} \). The component parallel to the slide is \( W_{\parallel} = mg \sin 40^\circ = 150 \, \text{N} \times \sin 40^\circ \). Using \( \sin 40^\circ \approx 0.643 \), \( W_{\parallel} \approx 150 \times 0.643 = 96.4 \, \text{N} \).
+
+(b) On a frictionless incline, the only force parallel to the incline is \( W_{\parallel} \). So \( a = \frac{W_{\parallel}}{m} = \frac{96.4 \, \text{N}}{15 \, \text{kg}} \approx 6.43 \, \text{m/s}^2 \). Equivalently, \( a = g \sin \theta = (10 \, \text{m/s}^2)(0.643) = 6.43 \, \text{m/s}^2 \).
+
+(c) The child starts from rest (\( u = 0 \)) and slides a distance \( s = 3.2 \, \text{m} \) with acceleration \( a = 6.43 \, \text{m/s}^2 \). Using \( s = ut + \frac{1}{2} a t^2 \): \( 3.2 = 0 + \frac{1}{2}(6.43) t^2 \). So \( t^2 = \frac{3.2 \times 2}{6.43} \approx 0.996 \), giving \( t \approx 1.0 \, \text{s} \). The child reaches the bottom in about 1.0 s.
+
+### Answer 3
+
+(a) Free-body diagram for box 1: Applied force 50 N to the right. Contact force \( F_c \) from box 2 pushing left on box 1 (by Newton's third law, box 1 pushes box 2 to the right with force \( F_c \)). Weight \( m_1 g \) down, normal \( N_1 \) up. The vertical forces cancel.
+
+Free-body diagram for box 2: Contact force \( F_c \) from box 1 pushing to the right. Weight \( m_2 g \) down, normal \( N_2 \) up. Vertical forces cancel.
+
+(b) The two boxes move together as one system of total mass \( 4.0 + 6.0 = 10 \, \text{kg} \). The net horizontal force on the system is 50 N. \( a = \frac{F_{\text{net}}}{m_{\text{total}}} = \frac{50}{10} = 5.0 \, \text{m/s}^2 \).
+
+(c) Consider box 2 alone. The only horizontal force on box 2 is the contact force \( F_c \). Using Newton's second law: \( F_c = m_2 a = (6.0 \, \text{kg})(5.0 \, \text{m/s}^2) = 30 \, \text{N} \).
+
+You could also consider box 1: the net force on box 1 is \( 50 \, \text{N} - F_c \), and this must equal \( m_1 a = (4.0)(5.0) = 20 \, \text{N} \), giving \( F_c = 50 - 20 = 30 \, \text{N} \), which is consistent.
+
+### Answer 4
+
+(a) The normal force is less than the weight because the tension in the rope has an upward vertical component. This vertical component of tension partially lifts the block, reducing the force the surface must provide. Mathematically, the vertical forces sum to zero: \( N + T \sin 30^\circ - mg = 0 \), so \( N = mg - T \sin 30^\circ \). Since \( T \sin 30^\circ \) is positive, \( N \) is smaller than \( mg \).
+
+(b) \( N = mg - T \sin 30^\circ = (3.0 \, \text{kg})(10 \, \text{m/s}^2) - (20 \, \text{N})(0.50) = 30 \, \text{N} - 10 \, \text{N} = 20 \, \text{N} \).
+
+(c) The kinetic friction force is \( f_k = \mu_k N = (0.40)(20 \, \text{N}) = 8.0 \, \text{N} \), acting to the left. The horizontal component of tension is \( T \cos 30^\circ = 20 \, \text{N} \times 0.866 \approx 17.3 \, \text{N} \) to the right. The net horizontal force is \( 17.3 \, \text{N} - 8.0 \, \text{N} = 9.3 \, \text{N} \) to the right. The acceleration is \( a = \frac{9.3 \, \text{N}}{3.0 \, \text{kg}} \approx 3.1 \, \text{m/s}^2 \).
+
+### Answer 5
+
+(a) \( W_{\parallel} = mg \sin 25^\circ = (12 \, \text{kg})(10 \, \text{m/s}^2) \sin 25^\circ \). Using \( \sin 25^\circ \approx 0.423 \): \( W_{\parallel} = 120 \, \text{N} \times 0.423 \approx 50.8 \, \text{N} \).
+
+(b) The normal force is \( N = mg \cos 25^\circ = 120 \, \text{N} \times 0.906 \approx 108.7 \, \text{N} \). Maximum static friction: \( f_s^{\text{max}} = \mu_s N = (0.60)(108.7 \, \text{N}) \approx 65.2 \, \text{N} \).
+
+(c) The component of weight pulling the box down the incline is about 50.8 N. The maximum static friction that can oppose this is about 65.2 N. Since 50.8 N < 65.2 N, static friction can match the down-incline component of weight. The box remains at rest when released.
+
+(d) Pushing perpendicular to the incline (into the surface) increases the normal force. Since \( f_s^{\text{max}} = \mu_s N \), a larger normal force increases the maximum possible static friction. However, if the box is not already sliding, friction only needs to match \( W_{\parallel} \), which is already less than the original maximum. Increasing \( f_s^{\text{max}} \) further does not change the situation—the box was not sliding anyway. If the box were already sliding, pushing into the incline would increase kinetic friction, potentially slowing it down. The student's claim is partially true but irrelevant in the situation described.
+
+### Answer 6 (IB Exam-Style)
+
+(a) [3 marks] The diagram should show the block as a dot or rectangle on the incline. Four forces must be drawn with labels: weight \( mg \) vertically downward; normal reaction \( N \) perpendicular to the incline; static friction \( f_s \) directed up the incline (opposing the tendency to slide down). Arrows should originate from the block. 1 mark for all forces present, 1 mark for correct directions, 1 mark for clear labels.
+
+(b) [3 marks] At the moment the block just begins to slide, static friction is at its maximum: \( f_s = \mu_s N \). Resolve weight: component parallel to incline = \( mg \sin \theta \), component perpendicular = \( mg \cos \theta \). Perpendicular equilibrium: \( N = mg \cos \theta \) [1 mark]. Parallel equilibrium at the threshold: \( mg \sin \theta = \mu_s N = \mu_s mg \cos \theta \) [1 mark]. Cancel \( mg \): \( \sin \theta = \mu_s \cos \theta \), so \( \tan \theta = \mu_s \) [1 mark]. The critical angle satisfies \( \theta = \arctan(\mu_s) \).
+
+(c) [2 marks] \( \theta = \arctan(0.70) \) [1 mark]. \( \theta \approx 35^\circ \) [1 mark].
+
+(d) [4 marks] At \( \theta \approx 35^\circ \), kinetic friction is \( f_k = \mu_k N = \mu_k mg \cos \theta \) [1 mark]. The net force down the incline: \( F_{\text{net}} = mg \sin \theta - \mu_k mg \cos \theta = mg(\sin \theta - \mu_k \cos \theta) \) [1 mark]. \( a = g(\sin \theta - \mu_k \cos \theta) \) [1 mark]. Using \( \sin 35^\circ \approx 0.574 \), \( \cos 35^\circ \approx 0.819 \): \( a = 10(0.574 - 0.50 \times 0.819) = 10(0.574 - 0.410) = 10(0.164) = 1.64 \, \text{m/s}^2 \approx 1.6 \, \text{m/s}^2 \) [1 mark].
+
+(e) [2 marks] As the block gains speed, air resistance (drag) increases. This is an additional force opposing motion. At significant speeds, drag becomes non-negligible and reduces the net force, meaning acceleration decreases over time. If the ramp is long enough, the block could reach terminal velocity where drag plus kinetic friction balances the down-incline component of weight. So the acceleration is not strictly constant; it decreases as speed increases [1 mark for identifying drag, 1 mark for explaining the effect on acceleration].
+
+---
+
+## Key Takeaways
+
+1. A force is a push or a pull; it is a vector quantity measured in newtons (N).
+2. Newton's first law: when the net force is zero, velocity is constant. No force is needed to keep something moving.
+3. Newton's second law: \( \sum \vec{F} = m \vec{a} \). The acceleration is in the direction of the net force.
+4. Newton's third law: forces come in equal and opposite pairs that act on different objects.
+5. Weight is a force (\( mg \)) and should not be confused with mass.
+6. The normal force is perpendicular to the surface; it is not always equal to the weight.
+7. Friction opposes relative motion. Static friction adjusts up to a maximum; kinetic friction is constant during sliding.
+8. A free-body diagram is the essential first step for solving any force problem.
+9. In equilibrium, both \( \sum F_x = 0 \) and \( \sum F_y = 0 \).
+10. On an incline, resolve the weight into components: \( mg \sin \theta \) parallel and \( mg \cos \theta \) perpendicular.

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 15: Subsidies | IB Economics SL</title>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root {
+    --bg: #fdfcf9; --text: #2c2416; --accent: #8b4513;
+    --light-accent: #f5f0e8; --border: #d4c5a9; --code-bg: #f9f6f0; --nav-bg: #3a3226;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Georgia, 'Times New Roman', serif; font-size: 17px; line-height: 1.75; color: var(--text); background: var(--bg); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+  nav.top-nav { display: flex; justify-content: space-between; align-items: center; background: var(--nav-bg); color: #e8dcc8; padding: 0.6rem 1.2rem; border-radius: 6px; margin-bottom: 1.8rem; font-size: 0.9rem; flex-wrap: wrap; gap: 0.4rem; }
+  nav.top-nav a { color: #f0c060; text-decoration: none; font-weight: bold; }
+  nav.top-nav a:hover { text-decoration: underline; }
+  nav.top-nav span { opacity: 0.7; }
+  h1 { font-size: 2rem; margin: 1.2rem 0 0.3rem; color: var(--accent); border-bottom: 3px double var(--border); padding-bottom: 0.5rem; }
+  h2 { font-size: 1.35rem; margin: 2rem 0 0.7rem; color: #5a3a1a; border-bottom: 1px solid var(--border); padding-bottom: 0.25rem; }
+  h3 { font-size: 1.1rem; margin: 1.3rem 0 0.4rem; color: #6b4423; }
+  p { margin: 0.7rem 0; }
+  ul, ol { margin: 0.5rem 0 0.5rem 1.8rem; }
+  li { margin: 0.25rem 0; }
+  strong { color: #5a2d0c; }
+  table { border-collapse: collapse; width: 100%; margin: 0.8rem 0; font-size: 0.95rem; }
+  th, td { border: 1px solid var(--border); padding: 0.5rem 0.7rem; text-align: left; }
+  th { background: var(--light-accent); font-weight: bold; color: #5a3a1a; }
+  tr:nth-child(even) { background: #fdfaf5; }
+  .highlight-box { background: #fffef8; border-left: 4px solid var(--accent); padding: 0.8rem 1.2rem; margin: 1rem 0; border-radius: 0 4px 4px 0; }
+  .diagram-box { background: var(--code-bg); border: 1px dashed var(--border); padding: 1rem 1.2rem; margin: 0.8rem 0; border-radius: 4px; font-family: 'Courier New', monospace; font-size: 0.88rem; line-height: 1.5; white-space: pre; color: #4a3620; }
+  .eval-box { background: #fdfaf3; border: 1px solid var(--border); padding: 1rem 1.3rem; margin: 1rem 0; border-radius: 6px; }
+  .eval-box h3 { margin-top: 0; color: var(--accent); }
+  hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+  @media print { body { font-size: 13px; line-height: 1.55; padding: 0.5rem; max-width: 100%; } nav.top-nav { display: none; } h1 { font-size: 1.5rem; } h2 { font-size: 1.15rem; } .diagram-box, .highlight-box, .eval-box { break-inside: avoid; } a { color: var(--text); text-decoration: none; } }
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a href="Lesson_14_Indirect_Taxes.html">← Previous Lesson</a>
+  <a href="#">📚 Index</a>
+  <a href="Lesson_16_Market_Failure_Common_Pool.html">Next Lesson →</a>
+</nav>
+
+<h1>Lesson 15: Subsidies</h1>
+<h2>What You'll Learn</h2>
+<ul>
+  <li>What a subsidy is and why governments grant them</li>
+  <li>How to draw subsidy diagrams (supply shifts down/right)</li>
+  <li>How to calculate consumer gain, producer gain, and government cost</li>
+  <li>Welfare analysis: why subsidies create deadweight loss</li>
+  <li>How to evaluate subsidies as a policy tool</li>
+</ul>
+
+<h2>1. Definition of a Subsidy</h2>
+
+<p>A <strong>subsidy</strong> is a payment by the government to producers, <strong>per unit of output</strong>, which reduces their costs of production.</p>
+<ul>
+  <li>Subsidies are the <strong>opposite of indirect taxes</strong> — they shift the supply curve <strong>downward</strong> (or to the right).</li>
+  <li>The amount of subsidy per unit = <strong>s</strong>.</li>
+</ul>
+
+<h3>Why Governments Grant Subsidies</h3>
+<ol>
+  <li><strong>Support merit goods</strong> — education, healthcare, public transport.</li>
+  <li><strong>Protect domestic industries</strong> — from foreign competition.</li>
+  <li><strong>Encourage exports</strong> — making domestic goods cheaper internationally.</li>
+  <li><strong>Support farmers</strong> — stabilize incomes, ensure food security.</li>
+  <li><strong>Promote environmentally friendly production</strong> — renewable energy subsidies.</li>
+  <li><strong>Protect employment</strong> — in declining or strategic industries.</li>
+</ol>
+
+<h2>2. The Subsidy Diagram</h2>
+
+<div class="diagram-box">
+Price
+  ↑
+  |        S (original)
+  |      /|
+  |     / |
+  |    /  |
+Pp|--/---|---- Price received by producers
+  | /    |
+Pe|-/----|---- Original equilibrium
+  |/     |
+Pc|------|---- Price paid by consumers
+  |      |  S − subsidy
+  |      |/
+  |      |--------------- D
+  +------+---------------→ Quantity
+       Qe    Qs
+</div>
+
+<ul>
+  <li>The supply curve shifts <strong>downward by the subsidy amount</strong> — at each quantity, producers need $s less because the government is paying them $s.</li>
+  <li><strong>P<sub>c</sub></strong> = new lower price paid by consumers.</li>
+  <li><strong>P<sub>p</sub></strong> = price received by producers = <strong>P<sub>c</sub> + s</strong>.</li>
+  <li><strong>Q<sub>s</sub></strong> = new higher equilibrium quantity.</li>
+</ul>
+
+<div class="highlight-box">
+  <strong>Key</strong>: P<sub>p</sub> − P<sub>c</sub> = s (the subsidy per unit). Producers receive more than consumers pay.
+</div>
+
+<h2>3. Consumer and Producer Gains</h2>
+
+<h3>Consumer Gain</h3>
+<ul>
+  <li>Consumers pay a lower price (P<sub>c</sub> &lt; P<sub>e</sub>) and buy more (Q<sub>s</sub> &gt; Q<sub>e</sub>).</li>
+  <li>Consumer surplus <strong>increases</strong>.</li>
+</ul>
+
+<h3>Producer Gain</h3>
+<ul>
+  <li>Producers receive a higher price (P<sub>p</sub> > P<sub>e</sub>) and sell more.</li>
+  <li>Producer surplus <strong>increases</strong>.</li>
+</ul>
+
+<h3>Government Cost</h3>
+<p><strong>Total cost to taxpayers</strong> = s × Q<sub>s</sub> (subsidy per unit × new quantity). This is the rectangle between P<sub>c</sub> and P<sub>p</sub>, extending to Q<sub>s</sub>.</p>
+
+<h2>4. Welfare Analysis — Why Subsidies Create DWL</h2>
+
+<table>
+  <tr><th>Measure</th><th>Before Subsidy</th><th>After Subsidy</th></tr>
+  <tr><td>Consumer Surplus</td><td>Original triangle</td><td><strong>Increases</strong></td></tr>
+  <tr><td>Producer Surplus</td><td>Original triangle</td><td><strong>Increases</strong></td></tr>
+  <tr><td>Government Cost</td><td>$0</td><td><strong>−s × Q<sub>s</sub></strong> (taxpayer money)</td></tr>
+  <tr><td>Net Welfare Change</td><td>—</td><td><strong>−DWL</strong></td></tr>
+</table>
+
+<p><strong>Why DWL arises:</strong> Beyond Q<sub>e</sub> (original equilibrium), the <strong>marginal cost</strong> of producing additional units exceeds the <strong>marginal benefit</strong> consumers get from them. From Q<sub>e</sub> to Q<sub>s</sub>: MC &gt; MB for each additional unit. Resources are being used to produce goods that consumers value <strong>less than the cost of production</strong>. This is <strong>overproduction beyond allocative efficiency</strong>.</p>
+
+<h2>5. Real-World Examples</h2>
+<ul>
+  <li><strong>Agricultural Subsidies</strong>: EU, USA, and Japan provide billions in farm subsidies. Criticized for overproduction, harming developing-country farmers, and taxpayer cost.</li>
+  <li><strong>Renewable Energy Subsidies</strong>: Feed-in tariffs for solar/wind. Germany's Energiewende reduced carbon emissions but raised electricity prices.</li>
+  <li><strong>Education Subsidies</strong>: Free university tuition in Germany and Nordic countries — education has positive externalities.</li>
+</ul>
+
+<h2>6. Comparing Subsidy and Price Floor for Farmers</h2>
+
+<table>
+  <tr><th>Policy</th><th>Mechanism</th><th>Cost Bearer</th><th>Surplus Problem</th></tr>
+  <tr><td><strong>Price Floor</strong></td><td>Minimum price above equilibrium</td><td>Taxpayers (government buys surplus)</td><td>Physical surplus — storage/disposal</td></tr>
+  <tr><td><strong>Subsidy</strong></td><td>Payment per unit to producers</td><td>Taxpayers</td><td>Overproduction — prices may fall</td></tr>
+</table>
+
+<p>A subsidy can be more efficient than a price floor because it avoids the waste of surplus disposal and allows market prices to clear the market.</p>
+
+<h2>IB Exam Tip</h2>
+<div class="highlight-box">
+  When drawing a subsidy diagram:<br>
+  • <strong>Shift supply DOWNWARD (or rightward) by the subsidy amount.</strong><br>
+  • <strong>Label P<sub>c</sub> on the demand curve (lower) and P<sub>p</sub> on the original supply curve (higher).</strong><br>
+  • <strong>Show P<sub>p</sub> − P<sub>c</sub> = s.</strong><br>
+  • <strong>Shade the DWL triangle beyond Q<sub>e</sub>.</strong>
+</div>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1 (Basic)</h3>
+<p>Define a subsidy and explain two reasons why a government might grant one.</p>
+
+<h3>Problem 2 (Diagram)</h3>
+<p>A market has equilibrium at P = $30, Q = 200. The government grants a subsidy of $6 per unit. After the subsidy: P<sub>c</sub> = $26, Q<sub>s</sub> = 240.<br>
+(a) Find P<sub>p</sub> (price received by producers).<br>
+(b) Draw a fully labelled subsidy diagram.<br>
+(c) Calculate consumer gain per unit and producer gain per unit.</p>
+
+<h3>Problem 3 (Government Cost)</h3>
+<p>Using Problem 2 data:<br>
+(a) Calculate the total government cost of the subsidy.<br>
+(b) Explain who benefits from this spending.</p>
+
+<h3>Problem 4 (Welfare Analysis)</h3>
+<p>Using the subsidy diagram, identify the deadweight loss and explain why it arises. Why might the government consider the DWL "worth it"?</p>
+
+<h3>Problem 5 (Comparison)</h3>
+<p>Compare a subsidy and a price floor as methods of supporting farmers. Which is likely to be more efficient, and why?</p>
+
+<h3>Problem 6 (Challenging / IB-Style)</h3>
+<p>"Subsidies always lead to inefficiency and should be avoided." Critically evaluate this statement.</p>
+
+<hr>
+
+<h2>Answers</h2>
+
+<h3>Answer 1</h3>
+<p>A <strong>subsidy</strong> is a payment by the government to producers per unit of output, reducing their cost of production.</p>
+<p>Reasons: <strong>Support merit goods</strong> (education/healthcare have positive externalities — market underproduces). <strong>Protect domestic industries</strong> (prevent job losses, maintain strategic capacity).</p>
+
+<h3>Answer 2</h3>
+<p>(a) P<sub>p</sub> = P<sub>c</sub> + s = $26 + $6 = <strong>$32</strong>.</p>
+<p>(b) Diagram: Original S and D at ($30, 200). New S−subsidy $6 below original S. P<sub>c</sub>=$26, Q<sub>s</sub>=240. P<sub>p</sub>=$32 on original S above Q<sub>s</sub>=240. Government cost = $6 × 240 = $1,440.</p>
+<p>(c) Consumer gain per unit = P<sub>e</sub> − P<sub>c</sub> = $30 − $26 = <strong>$4</strong>. Producer gain per unit = P<sub>p</sub> − P<sub>e</sub> = $32 − $30 = <strong>$2</strong>. Check: $4 + $2 = $6 = subsidy ✓</p>
+
+<h3>Answer 3</h3>
+<p>(a) Government cost = s × Q<sub>s</sub> = $6 × 240 = <strong>$1,440</strong>.</p>
+<p>(b) <strong>Consumers</strong> benefit from lower prices and more consumption. <strong>Producers</strong> benefit from higher net prices and more sales. <strong>Taxpayers</strong> bear the $1,440 cost — there is an opportunity cost. If the good has positive externalities, <strong>third parties</strong> may also benefit.</p>
+
+<h3>Answer 4</h3>
+<p>The DWL triangle lies between Q<sub>e</sub> (200) and Q<sub>s</sub> (240), bounded by demand and original supply. In this range, MC &gt; MB — resources produce units worth less than they cost. However, if the good has <strong>positive externalities</strong> (MSB above MPB), Q<sub>s</sub> may be closer to the socially optimal quantity, making the DWL "worth it."</p>
+
+<h3>Answer 5</h3>
+<table>
+  <tr><th>Criterion</th><th>Price Floor</th><th>Subsidy</th></tr>
+  <tr><td>Price to consumers</td><td>Higher (P<sub>f</sub> > P<sub>e</sub>)</td><td>Lower (P<sub>c</sub> < P<sub>e</sub>)</td></tr>
+  <tr><td>Quantity</td><td>Lower (Q<sub>d</sub>)</td><td>Higher (Q<sub>s</sub> > Q<sub>e</sub>)</td></tr>
+  <tr><td>Surplus waste</td><td>Physical surplus to dispose of</td><td>No physical waste</td></tr>
+  <tr><td>Efficiency</td><td>Generally worse — waste + DWL</td><td>DWL but no physical waste</td></tr>
+</table>
+<p>A <strong>subsidy</strong> is generally more efficient — avoids surplus disposal costs — but both create DWL.</p>
+
+<h3>Answer 6</h3>
+<p><strong>Model answer outline:</strong> Subsidies cause overproduction (Q &gt; Q<sub>e</sub>, MC &gt; MB → DWL) and require taxpayer funding. But merit goods with positive externalities are underproduced without subsidy — subsidy moves toward efficiency, not away. Temporary subsidies (infant industries, green tech) can build long-term competitiveness.</p>
+
+<hr>
+
+<div class="eval-box">
+<h2>Evaluate</h2>
+<h3>"Subsidies always lead to inefficiency and should be avoided." Evaluate.</h3>
+
+<h3>Model Answer (CLASPP Structure)</h3>
+
+<p><strong>Conclusion</strong>: The claim is overly broad. While subsidies can create inefficiency through overproduction, they can also <em>correct</em> inefficiency when addressing positive externalities. The key is whether the subsidy is well-targeted to address a genuine market failure.</p>
+
+<p><strong>Logic (Arguments For the Claim)</strong>: A subsidy in an otherwise efficient market shifts supply rightward, increasing quantity beyond the allocatively efficient level (Q<sub>e</sub>, where MB = MC). Beyond Q<sub>e</sub>, each additional unit costs more to produce than consumers value it — the classic deadweight loss triangle. The combined gain to consumers and producers is less than the cost to taxpayers. The opportunity cost of subsidy spending is significant. Over time, subsidies can breed <strong>dependency</strong> and <strong>inefficiency</strong> among recipient industries, who lose the incentive to innovate or cut costs.</p>
+
+<p><strong>Logic (Arguments Against)</strong>: However, the analysis above assumes no market failure. When <strong>positive externalities</strong> exist — as with education, healthcare, or green energy — the free market <em>underproduces</em> relative to the socially optimal quantity (MSB &gt; MPB). In such cases, a well-designed subsidy moves the market <strong>toward</strong>, not away from, allocative efficiency. For example, subsidising vaccinations increases uptake toward the socially optimal level, reducing disease transmission and healthcare costs for all. Similarly, renewable energy subsidies help shift the energy mix away from fossil fuels, addressing the negative externality of carbon emissions.</p>
+
+<p><strong>Assumptions</strong>: The "always" claim assumes all markets are perfectly competitive and efficient without government intervention — a demonstrably false premise. It also assumes the subsidy is set at the wrong level; a Pigouvian subsidy set equal to the marginal external benefit at Q<sub>opt</sub> can achieve allocative efficiency.</p>
+
+<p><strong>Stakeholders</strong>: Consumers of subsidised goods gain lower prices. Producers in subsidised industries gain higher revenues. Taxpayers bear the cost. Competitors in unsubsidised industries/countries (e.g., developing-world farmers competing against subsidised EU/US agriculture) are harmed. The environment may benefit from green subsidies.</p>
+
+<p><strong>Prescribed Solutions</strong>: Rather than avoiding all subsidies, governments should: (1) Only subsidise goods with clear positive externalities or strategic importance. (2) Set the subsidy at the level of the marginal external benefit, not higher. (3) Include <strong>sunset clauses</strong> so subsidies are temporary and reviewed. (4) Use direct cash transfers to the poor rather than broad consumption subsidies for equity goals, as transfers are less distortionary.</p>
+
+<p><strong>Precedent/Evidence</strong>: Agricultural subsidies in the EU and US have indeed created inefficiency (overproduction, trade distortion, high fiscal cost). In contrast, renewable energy feed-in tariffs in Germany helped scale solar and wind technology, driving down global costs — a case where temporary subsidies produced long-term efficiency gains.</p>
+
+<p>Subsidies do not <em>always</em> lead to inefficiency — they lead to inefficiency when poorly designed and applied to markets without externalities. When well-targeted at genuine market failures, subsidies can enhance, rather than reduce, allocative efficiency.</p>
+</div>
+<hr>
+
+<nav class="top-nav">
+  <a href="Lesson_14_Indirect_Taxes.html">← Previous Lesson</a>
+  <a href="#">📚 Index</a>
+  <a href="Lesson_16_Market_Failure_Common_Pool.html">Next Lesson →</a>
+</nav>
+
+</body>
+</html>

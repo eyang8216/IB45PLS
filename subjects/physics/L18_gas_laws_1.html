@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 18: Lesson 18: Gas Laws 1 — The Ideal Gas Model, Moles, and Avogadro — IB Physics HL</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']]
+  },
+  options: {
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap');
+  
+  :root {
+    --bg: #fdfcf9;
+    --text: #1a1a1a;
+    --accent: #2c5f2d;
+    --border: #d0cec7;
+    --code-bg: #f4f3ef;
+    --callout-bg: #f0f7f0;
+    --callout-border: #2c5f2d;
+    --warning-bg: #fff8e6;
+    --warning-border: #c4941a;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  body {
+    font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid var(--accent);
+    color: var(--accent);
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 2.5rem 0 0.75rem;
+    color: #1a1a1a;
+  }
+  
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.5rem;
+  }
+  
+  p { margin: 0 0 1rem; }
+  
+  ul, ol { margin: 0 0 1rem 1.5rem; }
+  li { margin-bottom: 0.35rem; }
+  
+  code {
+    background: var(--code-bg);
+    padding: 0.15em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+    font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+  }
+  
+  pre {
+    background: var(--code-bg);
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 0 0 1rem;
+    font-size: 0.85em;
+    line-height: 1.5;
+  }
+  
+  pre code {
+    background: none;
+    padding: 0;
+    font-size: inherit;
+  }
+  
+  blockquote {
+    border-left: 4px solid var(--callout-border);
+    background: var(--callout-bg);
+    margin: 0 0 1rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+  }
+  
+  blockquote.warning {
+    border-left-color: var(--warning-border);
+    background: var(--warning-bg);
+  }
+  
+  strong { font-weight: 700; }
+  
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.5rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  
+  .nav a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+  
+  .nav a:hover { background: var(--callout-bg); }
+  
+  .worked-example, .answer {
+    background: var(--code-bg);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin: 0.75rem 0 1.25rem;
+  }
+  
+  .worked-example strong:first-child, .answer strong:first-child {
+    color: var(--accent);
+  }
+  
+  @media print {
+    body { font-size: 12pt; max-width: 100%; padding: 0; }
+    .nav { display: none; }
+    h1 { font-size: 18pt; }
+    h2 { font-size: 14pt; }
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 0 1rem;
+  }
+  
+  th, td {
+    border: 1px solid var(--border);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  
+  th {
+    background: var(--code-bg);
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L17_greenhouse_2.html">← Lesson 17</a>
+  <a href="L19_gas_laws_2.html">Lesson 19 →</a>
+</nav>
+
+<h1>Lesson 18: Gas Laws 1 — The Ideal Gas Model, Moles, and Avogadro</h1>
+
+<h2>What You'll Learn</h2>
+
+<p>Gases are everywhere: the air you breathe, the helium in a party balloon, the steam from a boiling kettle. Despite being made of particles so small you can never see them directly, gases follow surprisingly simple and universal rules. To understand these rules, we first need a way to count gas particles (they're too numerous to count one by one!) and a simplified model of how they behave. In this lesson, you will learn about the <strong>ideal gas model</strong>, the concept of the <strong>mole</strong> as a counting unit, and <strong>Avogadro's constant</strong> — the bridge between the microscopic world of atoms and the macroscopic world of measurable quantities. This is the foundation upon which all gas laws are built.</p>
+
+<hr>
+
+<h2>1. What Is an Ideal Gas?</h2>
+
+<h3>Why This Matters</h3>
+
+<p>Real gases — the actual oxygen, nitrogen, and other gases in our atmosphere — are complicated. Their particles have finite size, attract each other at close range, and sometimes react chemically. If we tried to account for all these details, every gas problem would be impossibly complex. Instead, physicists use a simplified model called the <strong>ideal gas</strong>. This model strips away all the complications and captures the essential behavior that all gases share. Remarkably, at everyday temperatures and pressures, real gases behave very nearly like ideal gases, so the ideal gas model gives accurate predictions for most situations you'll encounter.</p>
+
+<h3>Key Ideas</h3>
+
+<p>An <strong>ideal gas</strong> is a theoretical gas that obeys the following assumptions:</p>
+
+<ol>
+<li><strong>Particles have negligible volume.</strong> The actual volume occupied by the gas particles themselves is insignificant compared to the total volume of the container. In other words, gas particles are treated as point masses — they have mass but no size.</li>
+</ol>
+
+<ol>
+<li><strong>No intermolecular forces.</strong> Gas particles do not attract or repel each other, except during collisions. Between collisions, they move in straight lines at constant speed.</li>
+</ol>
+
+<ol>
+<li><strong>Collisions are perfectly elastic.</strong> When gas particles collide with each other or with the walls of the container, no kinetic energy is lost. The total kinetic energy of all particles is conserved.</li>
+</ol>
+
+<ol>
+<li><strong>Particles are in constant, random motion.</strong> The particles move in all directions with a range of speeds. There is no preferred direction of motion.</li>
+</ol>
+
+<ol>
+<li><strong>The number of particles is very large.</strong> Statistical descriptions apply — we describe the gas in terms of averages (average speed, average kinetic energy) rather than tracking individual particles.</li>
+</ol>
+
+<ol>
+<li><strong>Newton's laws apply.</strong> The motion of each particle is governed by classical mechanics. (Quantum effects are negligible at the temperatures and densities of ordinary gases.)</li>
+</ol>
+
+<p>These six assumptions together define the <strong>kinetic model of an ideal gas</strong>. We will explore the consequences of this model in detail in later lessons. For now, the key takeaway is: an ideal gas is the simplest possible model of a gas, and it turns out to be remarkably accurate for real gases under ordinary conditions.</p>
+
+<p><strong>When does the ideal gas model break down?</strong> At very high pressures (where particles are squeezed so close together that their own volume becomes significant) and at very low temperatures (where intermolecular attractions become important relative to kinetic energy). Near the point of condensation into a liquid, gases deviate significantly from ideal behavior.</p>
+
+<h3>Common Misconceptions</h3>
+
+<blockquote class="warning"><strong>⚠️ MISCONCEPTION ALERT:</strong> "Ideal gas particles have no volume, so they must be infinitely small." The phrase "negligible volume" means the volume of the particles is negligible <strong>compared to the volume they move in</strong>. It does not mean the particles literally have zero size. In a typical gas at atmospheric pressure, the particles themselves occupy only about 0.1% of the container volume — the rest is empty space.</blockquote>
+
+<blockquote class="warning"><strong>⚠️ MISCONCEPTION ALERT:</strong> "Ideal gas particles don't interact, so they never touch." They do collide (otherwise they couldn't exert pressure on the container walls), but the collisions are instantaneous and elastic. There are no lingering forces (attractions or repulsions) between particles.</blockquote>
+
+<hr>
+
+<h2>2. The Mole: Counting Particles</h2>
+
+<h3>Why This Matters</h3>
+
+<p>A single breath of air contains roughly 10²² molecules. Writing numbers this large in everyday notation is impractical, and doing calculations with them is even worse. Physicists and chemists use a special counting unit called the <strong>mole</strong> (symbol: mol) to handle enormous numbers of particles. The mole is to counting particles what "dozen" is to counting eggs — except instead of 12, a mole contains approximately 6.02 × 10²³ things.</p>
+
+<h3>Key Ideas</h3>
+
+<p>A <strong>mole</strong> is defined as the amount of substance that contains exactly 6.02214076 × 10²³ elementary entities (atoms, molecules, ions, electrons, or any other specified particle). For IB Physics, you can use <strong>6.02 × 10²³</strong>.</p>
+
+<p>This number — 6.02 × 10²³ — is called <strong>Avogadro's constant</strong> (or Avogadro's number), symbol N_A (pronounced "N-sub-A"):</p>
+
+<p><strong>N_A = 6.02 × 10²³ mol⁻¹</strong></p>
+
+<p>The unit "mol⁻¹" means "per mole." When you multiply a number of moles by N_A, you get the total number of particles:</p>
+
+<p><strong>N = n × N_A</strong></p>
+
+<p>where:</p>
+<ul>
+<li><strong>N</strong> is the total number of particles (no units — it's a count)</li>
+<li><strong>n</strong> is the number of moles (units: mol)</li>
+<li><strong>N_A</strong> is Avogadro's constant (6.02 × 10²³ mol⁻¹)</li>
+</ul>
+
+<p><strong>Where does Avogadro's number come from?</strong> This is not an arbitrary number. It is chosen so that the mass of one mole of a substance (in grams) is numerically equal to its atomic or molecular mass in atomic mass units (u). For example:</p>
+<ul>
+<li>One mole of carbon-12 atoms has a mass of exactly 12 grams (because a carbon-12 atom has a mass of 12 u).</li>
+<li>One mole of oxygen molecules (O₂) has a mass of about 32 grams (because an O₂ molecule has a mass of about 32 u).</li>
+</ul>
+
+<p><strong>Molar mass</strong> (symbol: M) is the mass of one mole of a substance, expressed in grams per mole (g/mol) or kilograms per mole (kg/mol). The relationship between mass, moles, and molar mass is:</p>
+
+<p><strong>m = n × M</strong> (when M is in kg/mol) or <strong>m = n × M × 10⁻³</strong> (when M is in g/mol and m is in kg)</p>
+
+<p>For IB Physics:</p>
+<ul>
+<li>The molar mass of helium (He) is 4.00 g/mol = 0.00400 kg/mol</li>
+<li>The molar mass of nitrogen (N₂) is 28.0 g/mol = 0.0280 kg/mol</li>
+<li>The molar mass of oxygen (O₂) is 32.0 g/mol = 0.0320 kg/mol</li>
+</ul>
+
+<h3>Common Misconceptions</h3>
+
+<blockquote class="warning"><strong>⚠️ MISCONCEPTION ALERT:</strong> Students often confuse the mass of a single particle (in kg) with the molar mass (in kg/mol). To find the mass of one particle, divide the molar mass by Avogadro's constant: m_particle = M / N_A. For example, the mass of one helium atom is 0.00400 kg/mol ÷ (6.02 × 10²³ mol⁻¹) ≈ 6.64 × 10⁻²⁷ kg.</blockquote>
+
+<blockquote class="warning"><strong>⚠️ MISCONCEPTION ALERT:</strong> "One mole of a gas always occupies 22.4 liters." This is true ONLY at standard temperature and pressure (STP: 0°C and 1 atm). At other conditions, the volume is different. The idea that "1 mol = 22.4 L" without qualification is a common error.</blockquote>
+
+<hr>
+
+<h2>3. Connecting Microscopic and Macroscopic</h2>
+
+<h3>Why This Matters</h3>
+
+<p>The whole point of the mole concept is to connect the invisible microscopic world (individual atoms and molecules) with the measurable macroscopic world (pressure, volume, temperature, and mass). Without the mole, we'd have no way to relate the behavior of a gas in a cylinder to the motion of its individual particles.</p>
+
+<h3>Key Ideas</h3>
+
+<p>There are two equivalent ways to describe a gas:</p>
+
+<p><strong>Macroscopic description</strong>: We measure pressure (p), volume (V), and temperature (T). These are the quantities that appear in gas laws.</p>
+
+<p><strong>Microscopic description</strong>: We talk about the number of particles (N), their masses (m), and their average kinetic energy.</p>
+
+<p>The bridge between these two descriptions involves:</p>
+<ul>
+<li><strong>n</strong> (number of moles): connects particle count to measurable amounts</li>
+<li><strong>N_A</strong> (Avogadro's constant): converts between moles and number of particles</li>
+<li><strong>M</strong> (molar mass): converts between moles and mass in kg</li>
+<li><strong>k_B</strong> (Boltzmann constant, k_B = 1.38 × 10⁻²³ J/K): relates temperature to average particle kinetic energy</li>
+</ul>
+
+<p>The <strong>Boltzmann constant</strong> (k_B), found in your IB Data Booklet, is essentially the gas constant per particle:</p>
+
+<p><strong>k_B = R / N_A</strong></p>
+
+<p>where R = 8.31 J/(mol·K) is the universal gas constant (which we'll meet in Lesson 20).</p>
+
+<p>The Boltzmann constant tells us that the average translational kinetic energy of a particle in an ideal gas is:</p>
+
+<p><strong>E_k,avg = (3/2) k_B T</strong></p>
+
+<p>This is a profound result: temperature is directly proportional to the average kinetic energy of particles. If you double the absolute temperature, you double the average kinetic energy of the particles.</p>
+
+<hr>
+
+<h2>Worked Examples</h2>
+
+<h3>Example 1: Counting Molecules</h3>
+
+<p>A sealed container holds 0.25 mol of helium gas. How many helium atoms are in the container? Use N_A = 6.02 × 10²³ mol⁻¹.</p>
+
+<p><strong>Approach:</strong> Multiply the number of moles by Avogadro's constant.</p>
+
+<p><strong>Solution:</strong></p>
+<p>N = n × N_A = 0.25 mol × (6.02 × 10²³ mol⁻¹) = 1.505 × 10²³ atoms</p>
+
+<p><strong>Why this makes sense:</strong> A quarter of a mole contains a quarter of Avogadro's number — about 1.5 × 10²³ atoms. Even this "small" amount is an unimaginably huge number by everyday standards.</p>
+
+<hr>
+
+<h3>Example 2: Mass of a Single Molecule</h3>
+
+<p>Calculate the mass of a single nitrogen molecule (N₂). The molar mass of N₂ is 28.0 g/mol. Use N_A = 6.02 × 10²³ mol⁻¹.</p>
+
+<p><strong>Approach:</strong> Convert molar mass to kg/mol, then divide by Avogadro's constant.</p>
+
+<p><strong>Solution:</strong></p>
+<p>M = 28.0 g/mol = 0.0280 kg/mol</p>
+<p>m_N₂ = M / N_A = 0.0280 / (6.02 × 10²³) = 4.65 × 10⁻²⁶ kg</p>
+
+<p><strong>Why this makes sense:</strong> Individual molecules have extremely small masses, on the order of 10⁻²⁶ kg. This is why we need moles — working with individual molecular masses in calculations would be absurdly inconvenient.</p>
+
+<hr>
+
+<h3>Example 3: Moles from Mass</h3>
+
+<p>A gas cylinder contains 0.088 kg of carbon dioxide (CO₂). The molar mass of CO₂ is 44.0 g/mol. Calculate the number of moles of CO₂ in the cylinder.</p>
+
+<p><strong>Approach:</strong> Convert the mass to grams (or the molar mass to kg/mol), then use n = m / M.</p>
+
+<p><strong>Solution:</strong></p>
+<p>Method 1 (grams): m = 0.088 kg = 88 g, M = 44.0 g/mol</p>
+<p>n = 88 g / 44.0 g/mol = 2.0 mol</p>
+
+<p>Method 2 (kg): M = 44.0 g/mol = 0.0440 kg/mol</p>
+<p>n = 0.088 kg / 0.0440 kg/mol = 2.0 mol</p>
+
+<p><strong>Why this makes sense:</strong> 88 g of CO₂ is exactly twice the molar mass, so it contains two moles.</p>
+
+<hr>
+
+<h3>Example 4: Average Kinetic Energy at Room Temperature</h3>
+
+<p>Calculate the average translational kinetic energy of a gas particle at room temperature, which is 300 K. Use k_B = 1.38 × 10⁻²³ J/K.</p>
+
+<p><strong>Approach:</strong> Use E_k,avg = (3/2) k_B T.</p>
+
+<p><strong>Solution:</strong></p>
+<p>E_k,avg = (3/2) × (1.38 × 10⁻²³) × 300</p>
+<p>= 1.5 × 1.38 × 10⁻²³ × 300</p>
+<p>= 1.5 × 414 × 10⁻²³</p>
+<p>= 621 × 10⁻²³</p>
+<p>= 6.21 × 10⁻²¹ J</p>
+
+<p><strong>Why this makes sense:</strong> This is an extremely small amount of energy per particle. However, when you multiply by the enormous number of particles in even a small sample of gas, the total thermal energy becomes substantial.</p>
+
+<hr>
+
+<h3>Example 5: Mass from Particle Count</h3>
+
+<p>A container holds 3.01 × 10²⁴ molecules of oxygen (O₂). Calculate the mass of oxygen in the container. The molar mass of O₂ is 32.0 g/mol and N_A = 6.02 × 10²³ mol⁻¹.</p>
+
+<p><strong>Approach:</strong> First find the number of moles, then convert to mass.</p>
+
+<p><strong>Solution:</strong></p>
+<p>n = N / N_A = (3.01 × 10²⁴) / (6.02 × 10²³) = 5.00 mol</p>
+
+<p>m = n × M = 5.00 mol × 32.0 g/mol = 160 g = 0.160 kg</p>
+
+<p><strong>Why this makes sense:</strong> 3.01 × 10²⁴ is exactly 5 × (6.02 × 10²³), so it's 5 moles. Five moles of O₂ have a mass of 5 × 32 = 160 g.</p>
+
+<hr>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1</h3>
+<p>A balloon contains 0.80 mol of helium gas. Calculate the number of helium atoms in the balloon. Then calculate the mass of the helium in the balloon. The molar mass of helium is 4.00 g/mol. Use N_A = 6.02 × 10²³ mol⁻¹.</p>
+
+<h3>Problem 2</h3>
+<p>A sealed flask contains 1.20 × 10²⁴ molecules of nitrogen gas (N₂). Calculate the number of moles of nitrogen in the flask and the mass of the nitrogen. The molar mass of N₂ is 28.0 g/mol. Use N_A = 6.02 × 10²³ mol⁻¹.</p>
+
+<h3>Problem 3</h3>
+<p>A student has a sample of an unknown gas with a mass of 0.160 kg. The sample contains 5.00 moles of gas molecules. Calculate the molar mass of the gas in g/mol. Using the fact that common diatomic gases have molar masses of approximately 28 g/mol (N₂), 32 g/mol (O₂), and 2 g/mol (H₂), suggest which gas this might be.</p>
+
+<h3>Problem 4</h3>
+<p>Calculate the average translational kinetic energy of a gas particle at (a) 100 K, (b) 300 K, and (c) 900 K. Use k_B = 1.38 × 10⁻²³ J/K. Express each answer in joules. What pattern do you notice?</p>
+
+<h3>Problem 5</h3>
+<p>The mass of a single argon atom is 6.63 × 10⁻²⁶ kg. Calculate the molar mass of argon in g/mol. Use N_A = 6.02 × 10²³ mol⁻¹. Compare your answer to the known value of approximately 40 g/mol.</p>
+
+<h3>Problem 6 (IB Exam-Style)</h3>
+<p>A gas cylinder contains 0.500 kg of an ideal monatomic gas. The gas is at a temperature of 350 K.</p>
+
+<p>(a) The gas contains 12.5 moles of atoms. Calculate the molar mass of the gas in g/mol. [2 marks]</p>
+
+<p>(b) Calculate the total number of atoms in the cylinder. Use N_A = 6.02 × 10²³ mol⁻¹. [2 marks]</p>
+
+<p>(c) Calculate the average translational kinetic energy of one atom of this gas at 350 K. Use k_B = 1.38 × 10⁻²³ J/K. [2 marks]</p>
+
+<p>(d) Calculate the total translational kinetic energy of all the atoms in the cylinder. [2 marks]</p>
+
+<p>(e) The temperature of the gas is increased to 700 K. Calculate the new average translational kinetic energy per atom, and state the factor by which it has increased. [2 marks]</p>
+
+<hr>
+
+<h2>Answers</h2>
+
+<h3>Answer 1</h3>
+<p>N = n × N_A = 0.80 × (6.02 × 10²³) = 4.816 × 10²³ atoms</p>
+<p>Mass: m = n × M = 0.80 mol × 4.00 g/mol = 3.20 g = 0.00320 kg</p>
+
+<p>A party balloon contains nearly half a septillion atoms!</p>
+
+<hr>
+
+<h3>Answer 2</h3>
+<p>n = N / N_A = (1.20 × 10²⁴) / (6.02 × 10²³) = 1.99 mol (approximately 2.00 mol)</p>
+<p>m = n × M = 2.00 mol × 28.0 g/mol = 56.0 g</p>
+
+<hr>
+
+<h3>Answer 3</h3>
+<p>M = m / n = 0.160 kg / 5.00 mol = 0.0320 kg/mol = 32.0 g/mol</p>
+
+<p>This molar mass corresponds to oxygen (O₂). The unknown gas is oxygen.</p>
+
+<hr>
+
+<h3>Answer 4</h3>
+<p>(a) E_k = (3/2)k_B T = 1.5 × (1.38 × 10⁻²³) × 100 = 2.07 × 10⁻²¹ J</p>
+<p>(b) E_k = 1.5 × (1.38 × 10⁻²³) × 300 = 6.21 × 10⁻²¹ J</p>
+<p>(c) E_k = 1.5 × (1.38 × 10⁻²³) × 900 = 1.86 × 10⁻²⁰ J</p>
+
+<p>The average kinetic energy is directly proportional to the absolute temperature. Tripling the temperature from 300 K to 900 K triples the average kinetic energy (6.21 × 10⁻²¹ × 3 = 1.86 × 10⁻²⁰).</p>
+
+<hr>
+
+<h3>Answer 5</h3>
+<p>M = m_atom × N_A = (6.63 × 10⁻²⁶ kg) × (6.02 × 10²³ mol⁻¹)</p>
+<p>= 6.63 × 6.02 × 10⁻³ = 39.9 × 10⁻³ kg/mol = 39.9 g/mol</p>
+
+<p>This is very close to the known value of 39.95 g/mol for argon — the small difference is from rounding.</p>
+
+<hr>
+
+<h3>Answer 6</h3>
+
+<p><strong>(a)</strong> M = m / n = 0.500 kg / 12.5 mol = 0.0400 kg/mol = 40.0 g/mol [2 marks]</p>
+
+<p><strong>(b)</strong> N = n × N_A = 12.5 × (6.02 × 10²³) = 7.525 × 10²⁴ atoms [2 marks]</p>
+
+<p><strong>(c)</strong> E_k,avg = (3/2)k_B T = 1.5 × (1.38 × 10⁻²³) × 350 = 7.245 × 10⁻²¹ J [2 marks]</p>
+
+<p><strong>(d)</strong> Total E_k = N × E_k,avg = (7.525 × 10²⁴) × (7.245 × 10⁻²¹) = 5.45 × 10⁴ J [2 marks]</p>
+
+<p><strong>(e)</strong> At 700 K: E_k,avg = (3/2)k_B × 700 = 1.5 × 1.38 × 10⁻²³ × 700 = 1.449 × 10⁻²⁰ J</p>
+<p>Factor: 700/350 = 2. The average kinetic energy doubles when the absolute temperature doubles. [2 marks]</p>
+
+<hr>
+
+<h2>Key Takeaways</h2>
+
+<ol>
+<li>An <strong>ideal gas</strong> is a simplified model where particles have negligible volume, no intermolecular forces (except during elastic collisions), and are in constant random motion.</li>
+</ol>
+
+<ol>
+<li>The <strong>mole</strong> is the unit for "amount of substance." One mole contains N_A = 6.02 × 10²³ elementary entities.</li>
+</ol>
+
+<ol>
+<li><strong>Avogadro's constant</strong> (N_A) converts between number of particles (N) and number of moles (n): N = n × N_A.</li>
+</ol>
+
+<ol>
+<li><strong>Molar mass</strong> (M) converts between mass and number of moles: m = n × M.</li>
+</ol>
+
+<ol>
+<li>The mass of a single particle is related to the molar mass by: m_particle = M / N_A.</li>
+</ol>
+
+<ol>
+<li>The <strong>Boltzmann constant</strong> (k_B = 1.38 × 10⁻²³ J/K) relates temperature to average kinetic energy: E_k,avg = (3/2) k_B T.</li>
+</ol>
+
+<ol>
+<li>k_B and the universal gas constant R are related: k_B = R / N_A, where R = 8.31 J/(mol·K).</li>
+</ol>
+
+<ol>
+<li>These concepts build the bridge between the microscopic world of atoms and the macroscopic world of measurable gas properties (pressure, volume, temperature).</li>
+</ol>
+
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L17_greenhouse_2.html">← Lesson 17</a>
+  <a href="L19_gas_laws_2.html">Lesson 19 →</a>
+</nav>
+
+</body>
+</html>

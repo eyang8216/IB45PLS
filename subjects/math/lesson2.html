@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 2 — Implicit Differentiation</title>
+<script>
+MathJax = {
+  tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body {
+    max-width: 800px; margin: 40px auto; font-family: 'Times New Roman', Georgia, serif;
+    font-size: 17px; line-height: 1.7; padding: 0 20px; color: #1a1a1a;
+  }
+  h1 { font-size: 22px; border-bottom: 2px solid #333; padding-bottom: 8px; margin-top: 36px; }
+  h2 { font-size: 19px; margin-top: 28px; color: #2c3e50; }
+  h3 { font-size: 17px; margin-top: 22px; color: #444; }
+  h4 { font-size: 16px; margin-top: 18px; }
+  p { margin: 0.6em 0; }
+  li { margin: 0.3em 0 0.3em 20px; }
+  hr { margin: 20px 0; border: none; border-top: 1px solid #ddd; }
+  .math-block { text-align: center; margin: 1em 0; overflow-x: auto; }
+  .table-line { font-family: 'Courier New', monospace; font-size: 15px; margin: 0.1em 0; }
+  pre { background: #f5f5f5; padding: 10px 14px; border-radius: 4px; overflow-x: auto; font-size: 14px; }
+  b { color: #222; }
+  table { border-collapse: collapse; margin: 16px 0; width: 100%; font-size: 15px; }
+  th { background: #2c3e50; color: #fff; padding: 8px 12px; text-align: center; font-weight: bold; }
+  td { border: 1px solid #ccc; padding: 8px 12px; text-align: center; }
+  tr:nth-child(even) { background: #f9f9f9; }
+  .nav { text-align: center; margin: 30px 0; font-size: 14px; }
+  .nav a { margin: 0 8px; color: #3498db; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  @media print { body { font-size: 15px; } }
+</style>
+</head>
+<body>
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+<h1>Lesson 2: Implicit Differentiation</h1>
+
+<h2>What Is Implicit Differentiation and Why Does It Matter?</h2>
+
+<p>In mathematics, we often encounter equations that describe a relationship between two variables, typically written as $x$ and $y$. When we can express $y$ entirely in terms of $x$—for example, $y = x^2 + 3x$—we say that $y$ is an <b>explicit function</b> of $x$. The word &quot;explicit&quot; means the relationship is stated directly: you can read off the value of $y$ for any given $x$ without solving anything.</p>
+
+<p>However, many important equations in mathematics and science do not isolate $y$ on one side. An equation such as $x^2 + y^2 = 25$ describes a circle of radius 5 centered at the origin. This equation relates $x$ and $y$, but it does not tell us $y$ as a single formula in $x$. We say $y$ is an <b>implicit function</b> of $x$ because the relationship is hidden inside the equation rather than displayed openly.</p>
+
+<p>We need a method to find the slope of a curve—the derivative $\frac{dy}{dx}$—even when we cannot solve for $y$ explicitly. The reason this matters is that many curves in geometry (circles, ellipses, hyperbolas, the Folium of Descartes) and in applied problems (thermodynamic relations, economic indifference curves) are naturally expressed in implicit form. Without implicit differentiation, we would be unable to compute rates of change, find tangent lines, or locate critical points on these curves.</p>
+
+<p><b>Implicit differentiation</b> is the technique that lets us differentiate both sides of an equation directly with respect to $x$, treating $y$ as a function of $x$ even when we do not have an explicit formula for it.</p>
+
+<h2>The Core Idea: Treat $y$ as $y(x)$</h2>
+
+<p>The central insight of implicit differentiation is to imagine that $y$ is a function of $x$, which we can write as $y(x)$, even though we do not know its formula. Whenever we differentiate an expression that contains $y$, we apply the <b>chain rule</b>. The chain rule is the differentiation rule that tells us how to differentiate a composition of functions: if $f$ depends on $y$, and $y$ depends on $x$, then $\frac{d}{dx}[f(y)] = f&#x27;(y) \cdot \frac{dy}{dx}$.</p>
+
+<p>Here is what the chain rule produces for common expressions involving $y$ when we differentiate with respect to $x$:</p>
+
+<li>- The derivative of $y$ is $1 \cdot \frac{dy}{dx}$, because $\frac{d}{dy}(y) = 1$.</li>
+<li>- The derivative of $y^2$ is $2y \cdot \frac{dy}{dx}$, because $\frac{d}{dy}(y^2) = 2y$.</li>
+<li>- The derivative of $y^3$ is $3y^2 \cdot \frac{dy}{dx}$, following the same pattern.</li>
+<li>- The derivative of $\sin y$ is $\cos y \cdot \frac{dy}{dx}$.</li>
+<li>- The derivative of $e^y$ is $e^y \cdot \frac{dy}{dx}$.</li>
+
+<p>Every $y$-term generates an extra factor of $\frac{dy}{dx}$ when differentiated with respect to $x$. This factor is what we eventually isolate to obtain the derivative.</p>
+
+<p>Expressions that mix $x$ and $y$ in a product, such as $xy$ or $x^2y$, require the <b>product rule</b> in addition to the chain rule. The product rule states that $\frac{d}{dx}(uv) = u&#x27;v + uv&#x27;$, where $u$ and $v$ are both functions of $x$. For $xy$, we treat this as the product of the function $x$ and the function $y(x)$.</p>
+
+<h2>A Common Misconception: The Product Rule with Mixed Terms</h2>
+
+<p>Many students forget to apply the product rule when differentiating terms like $xy$ or $2xy$. Here is the precise breakdown:</p>
+
+<p>When we differentiate $2xy$ with respect to $x$, we are differentiating the product of two functions: the function $2x$ and the function $y(x)$. The product rule gives:</p>
+
+<div class="math-block">$$\frac{d}{dx}(2x \cdot y) = \frac{d}{dx}(2x) \cdot y + (2x) \cdot \frac{d}{dx}(y) = 2 \cdot y + 2x \cdot \frac{dy}{dx}$$</div>
+
+<p>The most common error is writing the derivative as simply $2y$ and omitting the $2x\frac{dy}{dx}$ term. Another common error is writing only $2\frac{dy}{dx}$ and forgetting the $2y$ term. Both parts are necessary.</p>
+
+<h2>Step-by-Step Method for Implicit Differentiation</h2>
+
+<p>When you encounter an implicit equation, follow these steps:</p>
+
+<li><b>Differentiate both sides</b> of the equation with respect to $x$, term by term.</li>
+<li><b>Apply the chain rule</b> to every term containing $y$: multiply by $\frac{dy}{dx}$.</li>
+<li><b>Apply the product rule</b> to any term that is a product of an $x$-expression and a $y$-expression.</li>
+<li><b>Collect all terms containing $\frac{dy}{dx}$</b> on one side of the equation.</li>
+<li><b>Move all terms without $\frac{dy}{dx}$</b> to the other side.</li>
+<li><b>Factor out $\frac{dy}{dx}$</b> from the side where you collected it.</li>
+<li><b>Divide</b> to isolate $\frac{dy}{dx}$.</li>
+
+<p><hr></p>
+
+<h2>Worked Examples</h2>
+
+<h3>Example 1: The Circle</h3>
+
+<p><b>Problem:</b> Find $\frac{dy}{dx}$ for the equation $x^2 + y^2 = 25$.</p>
+
+<p><b>Approach:</b> To solve this, we need to differentiate every term with respect to $x$, remembering that $y$ is a function of $x$, so $y^2$ requires the chain rule.</p>
+
+<p><b>Step-by-step working:</b></p>
+
+<div class="math-block">$$\frac{d}{dx}(x^2) + \frac{d}{dx}(y^2) = \frac{d}{dx}(25)$$</div>
+
+<p>The derivative of $x^2$ is $2x$. The derivative of a constant like $25$ is $0$. For $y^2$, the chain rule gives $2y \cdot \frac{dy}{dx}$:</p>
+
+<div class="math-block">$$2x + 2y\frac{dy}{dx} = 0$$</div>
+
+<p>Now collect the $\frac{dy}{dx}$ term and move everything else to the other side:</p>
+
+<div class="math-block">$$2y\frac{dy}{dx} = -2x$$</div>
+
+<p>Divide both sides by $2y$:</p>
+
+<div class="math-block">$$\frac{dy}{dx} = -\frac{x}{y}$$</div>
+
+<p><b>Why this makes sense:</b> The slope of a circle is negative when $x$ and $y$ have the same sign (first and third quadrants) and positive when they have opposite signs, which matches the geometry of a circle.</p>
+
+<p><hr></p>
+
+<h3>Example 2: An Equation with a Mixed Product</h3>
+
+<p><b>Problem:</b> Find $\frac{dy}{dx}$ for the equation $x^2 + y^2 = 2xy + 4$.</p>
+
+<p><b>Approach:</b> To solve this, we differentiate both sides. The left side is straightforward. The right side contains $2xy$, which is a product of $2x$ and $y$, so we must use the product rule there.</p>
+
+<p><b>Step-by-step working:</b></p>
+
+<p>Differentiate the left side:</p>
+
+<div class="math-block">$$\frac{d}{dx}(x^2) + \frac{d}{dx}(y^2) = 2x + 2y\frac{dy}{dx}$$</div>
+
+<p>Differentiate the right side. The constant $4$ gives $0$. For $2xy$, we apply the product rule to $2x$ and $y$:</p>
+
+<div class="math-block">$$\frac{d}{dx}(2xy) = \frac{d}{dx}(2x) \cdot y + 2x \cdot \frac{d}{dx}(y) = 2 \cdot y + 2x \cdot \frac{dy}{dx}$$</div>
+
+<p>So the full differentiated equation is:</p>
+
+<div class="math-block">$$2x + 2y\frac{dy}{dx} = 2y + 2x\frac{dy}{dx}$$</div>
+
+<p>Now collect all terms with $\frac{dy}{dx}$ on the left and all other terms on the right:</p>
+
+<div class="math-block">$$2y\frac{dy}{dx} - 2x\frac{dy}{dx} = 2y - 2x$$</div>
+
+<p>Factor out $\frac{dy}{dx}$ from the left side:</p>
+
+<div class="math-block">$$\frac{dy}{dx}(2y - 2x) = 2y - 2x$$</div>
+
+<p>Factor $2$ from both sides:</p>
+
+<div class="math-block">$$\frac{dy}{dx} \cdot 2(y - x) = 2(y - x)$$</div>
+
+<p>For $y \neq x$, we can divide both sides by $2(y - x)$, giving:</p>
+
+<div class="math-block">$$\frac{dy}{dx} = 1$$</div>
+
+<p><b>Why this makes sense:</b> The equation $x^2 + y^2 = 2xy + 4$ can be rewritten as $(x - y)^2 = 4$, which means $x - y = \pm 2$. This is the equation of two parallel lines, each with slope $1$. The derivative being $1$ everywhere (except where $x = y$, which never occurs on these lines) confirms this geometry.</p>
+
+<p><b>A common mistake:</b> Many students get $\frac{dy}{dx} = \frac{y - x}{y}$ for this problem because they mishandle the product rule on $2xy$. If you obtained that answer, check that you wrote both the $2y$ term and the $2x\frac{dy}{dx}$ term when differentiating $2xy$.</p>
+
+<p><hr></p>
+
+<h3>Example 3: A Trigonometric Implicit Equation</h3>
+
+<p><b>Problem:</b> Find $\frac{dy}{dx}$ for the equation $\sin(x + y) = x$.</p>
+
+<p><b>Approach:</b> To solve this, we differentiate $\sin(x + y)$ using the chain rule. The outer function is sine, and the inner function is $x + y$, whose derivative is $1 + \frac{dy}{dx}$.</p>
+
+<p><b>Step-by-step working:</b></p>
+
+<p>Differentiate both sides:</p>
+
+<div class="math-block">$$\frac{d}{dx}[\sin(x + y)] = \frac{d}{dx}(x)$$</div>
+
+<p>Apply the chain rule to the left side: the derivative of $\sin(\text{something})$ is $\cos(\text{something})$ times the derivative of the something:</p>
+
+<div class="math-block">$$\cos(x + y) \cdot \left(1 + \frac{dy}{dx}\right) = 1$$</div>
+
+<p>Divide both sides by $\cos(x + y)$:</p>
+
+<div class="math-block">$$1 + \frac{dy}{dx} = \frac{1}{\cos(x + y)}$$</div>
+
+<p>The expression $\frac{1}{\cos(x + y)}$ is the definition of $\sec(x + y)$. Subtract $1$ from both sides:</p>
+
+<div class="math-block">$$\frac{dy}{dx} = \sec(x + y) - 1$$</div>
+
+<p><b>Why this makes sense:</b> When $x + y$ is near $0$, $\sec(x+y)$ is near $1$, so $\frac{dy}{dx}$ is near $0$. As $x + y$ approaches $\frac{\pi}{2}$, $\sec(x+y)$ grows large, so $\frac{dy}{dx}$ becomes large. This matches the behavior of the implicit curve.</p>
+
+<p><hr></p>
+
+<h3>Example 4: The Folium of Descartes</h3>
+
+<p><b>Problem:</b> Find $\frac{dy}{dx}$ for the equation $x^3 + y^3 = 6xy$.</p>
+
+<p><b>Approach:</b> To solve this, we need the chain rule for $y^3$ and the product rule for $6xy$ on the right side.</p>
+
+<p><b>Step-by-step working:</b></p>
+
+<div class="math-block">$$\frac{d}{dx}(x^3) + \frac{d}{dx}(y^3) = \frac{d}{dx}(6xy)$$</div>
+
+<p>The derivative of $x^3$ is $3x^2$. For $y^3$, the chain rule gives $3y^2\frac{dy}{dx}$. For $6xy$, the product rule gives $6y + 6x\frac{dy}{dx}$:</p>
+
+<div class="math-block">$$3x^2 + 3y^2\frac{dy}{dx} = 6y + 6x\frac{dy}{dx}$$</div>
+
+<p>Collect $\frac{dy}{dx}$ terms on the left and other terms on the right:</p>
+
+<div class="math-block">$$3y^2\frac{dy}{dx} - 6x\frac{dy}{dx} = 6y - 3x^2$$</div>
+
+<p>Factor out $\frac{dy}{dx}$:</p>
+
+<div class="math-block">$$\frac{dy}{dx}(3y^2 - 6x) = 6y - 3x^2$$</div>
+
+<p>Divide both sides by $(3y^2 - 6x)$:</p>
+
+<div class="math-block">$$\frac{dy}{dx} = \frac{6y - 3x^2}{3y^2 - 6x}$$</div>
+
+<p>Factor $3$ from numerator and denominator:</p>
+
+<div class="math-block">$$\frac{dy}{dx} = \frac{3(2y - x^2)}{3(y^2 - 2x)} = \frac{2y - x^2}{y^2 - 2x}$$</div>
+
+<p><b>Why this makes sense:</b> The Folium of Descartes has a loop in the first quadrant. At the origin $(0,0)$, the curve crosses itself, and the derivative formula gives $\frac{0}{0}$, indicating two different tangent lines—which matches the geometry.</p>
+
+<p><hr></p>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1</h3>
+<p>Find $\frac{dy}{dx}$ for the equation $x^2 + y^2 = 2xy + 4$. Give your final answer in its simplest form.</p>
+
+<h3>Problem 2</h3>
+<p>Find $\frac{dy}{dx}$ for the equation $x^3 + y^3 = 6xy$, which describes the Folium of Descartes. Simplify your answer.</p>
+
+<h3>Problem 3</h3>
+<p>Find $\frac{dy}{dx}$ for the equation $\sin(x + y) = x$.</p>
+
+<h3>Problem 4</h3>
+<p>Find $\frac{dy}{dx}$ for the equation $e^{xy} = x + y$, where $e$ is the base of the natural logarithm.</p>
+
+<h3>Problem 5</h3>
+<p>A curve has equation $x^2 + 3xy + y^2 = 7$.</p>
+<p>(a) Find an expression for $\frac{dy}{dx}$ in terms of $x$ and $y$. [4 marks]</p>
+<p>(b) Hence find the equation of the tangent line to the curve at the point $(1, 2)$. [3 marks]</p>
+
+<p><hr></p>
+
+<h2>Answers</h2>
+
+<h3>Answer 1</h3>
+
+<p>To find $\frac{dy}{dx}$ for $x^2 + y^2 = 2xy + 4$, we differentiate both sides with respect to $x$. The left side gives $2x + 2y\frac{dy}{dx}$. The right side requires the product rule on $2xy$: the derivative is $2y + 2x\frac{dy}{dx}$, and the derivative of the constant $4$ is $0$. Setting these equal gives $2x + 2y\frac{dy}{dx} = 2y + 2x\frac{dy}{dx}$. We collect all terms containing $\frac{dy}{dx}$ on one side: $2y\frac{dy}{dx} - 2x\frac{dy}{dx} = 2y - 2x$. Factoring gives $\frac{dy}{dx}(2y - 2x) = 2y - 2x$. Dividing both sides by $2(y-x)$ yields $\frac{dy}{dx} = 1$, provided $y \neq x$. A common mistake is to mishandle the product rule on $2xy$ and lose the $2x\frac{dy}{dx}$ term, which leads to an incorrect answer like $\frac{y-x}{y}$. The correct answer is simply $\frac{dy}{dx} = 1$.</p>
+
+<h3>Answer 2</h3>
+
+<p>For $x^3 + y^3 = 6xy$, we differentiate term by term. The derivative of $x^3$ is $3x^2$. The derivative of $y^3$ is $3y^2\frac{dy}{dx}$ by the chain rule. On the right side, $6xy$ is a product, so its derivative is $6y + 6x\frac{dy}{dx}$ by the product rule. This gives the equation $3x^2 + 3y^2\frac{dy}{dx} = 6y + 6x\frac{dy}{dx}$. We bring $\frac{dy}{dx}$ terms to the left: $3y^2\frac{dy}{dx} - 6x\frac{dy}{dx} = 6y - 3x^2$. Factoring gives $\frac{dy}{dx}(3y^2 - 6x) = 6y - 3x^2$. Dividing and factoring a $3$ from numerator and denominator yields $\frac{dy}{dx} = \frac{2y - x^2}{y^2 - 2x}$. A common pitfall is forgetting the product rule on $6xy$. The right side must produce two terms, not just one.</p>
+
+<h3>Answer 3</h3>
+
+<p>To differentiate $\sin(x+y) = x$, we apply the chain rule to the left side. The derivative of $\sin$ of something is $\cos$ of that something, multiplied by the derivative of the inside. The derivative of the inside $(x+y)$ is $1 + \frac{dy}{dx}$. So the left side becomes $\cos(x+y) \cdot (1 + \frac{dy}{dx})$. The right side derivative is simply $1$. We have $\cos(x+y)(1 + \frac{dy}{dx}) = 1$. Dividing both sides by $\cos(x+y)$ gives $1 + \frac{dy}{dx} = \frac{1}{\cos(x+y)}$, which is $\sec(x+y)$. Subtracting $1$ yields $\frac{dy}{dx} = \sec(x+y) - 1$. A common error is forgetting to differentiate the inside $x+y$ and writing only $\cos(x+y)$ instead of $\cos(x+y)(1 + \frac{dy}{dx})$.</p>
+
+<h3>Answer 4</h3>
+
+<p>For $e^{xy} = x + y$, the left side is an exponential with $xy$ as the exponent. The chain rule says: differentiate $e^{\text{inside}}$ to get $e^{\text{inside}}$ times the derivative of the inside. The inside is $xy$, which is a product requiring the product rule: $\frac{d}{dx}(xy) = 1 \cdot y + x \cdot \frac{dy}{dx} = y + x\frac{dy}{dx}$. So the derivative of the left side is $e^{xy}(y + x\frac{dy}{dx})$. The right side derivative is $1 + \frac{dy}{dx}$. Setting them equal: $e^{xy}(y + x\frac{dy}{dx}) = 1 + \frac{dy}{dx}$. Expanding the left: $y e^{xy} + x e^{xy}\frac{dy}{dx} = 1 + \frac{dy}{dx}$. Collect $\frac{dy}{dx}$ terms: $x e^{xy}\frac{dy}{dx} - \frac{dy}{dx} = 1 - y e^{xy}$. Factor: $\frac{dy}{dx}(x e^{xy} - 1) = 1 - y e^{xy}$. Therefore $\frac{dy}{dx} = \frac{1 - y e^{xy}}{x e^{xy} - 1}$. The most common mistake here is mishandling the derivative of $e^{xy}$ by forgetting the product rule on the exponent $xy$.</p>
+
+<h3>Answer 5</h3>
+
+<p>(a) Differentiating $x^2 + 3xy + y^2 = 7$ term by term: the derivative of $x^2$ is $2x$. The term $3xy$ requires the product rule: $\frac{d}{dx}(3xy) = 3y + 3x\frac{dy}{dx}$. The derivative of $y^2$ is $2y\frac{dy}{dx}$ by the chain rule. The constant $7$ differentiates to $0$. This gives $2x + 3y + 3x\frac{dy}{dx} + 2y\frac{dy}{dx} = 0$. Collecting $\frac{dy}{dx}$ terms: $3x\frac{dy}{dx} + 2y\frac{dy}{dx} = -2x - 3y$. Factor: $\frac{dy}{dx}(3x + 2y) = -(2x + 3y)$. Therefore $\frac{dy}{dx} = -\frac{2x + 3y}{3x + 2y}$.</p>
+
+<p>(b) At the point $(1, 2)$, we substitute $x = 1$ and $y = 2$ into the derivative: $\frac{dy}{dx} = -\frac{2(1) + 3(2)}{3(1) + 2(2)} = -\frac{2 + 6}{3 + 4} = -\frac{8}{7}$. The slope of the tangent line at $(1, 2)$ is $-\frac{8}{7}$. Using point-slope form $y - y_1 = m(x - x_1)$: $y - 2 = -\frac{8}{7}(x - 1)$. Simplifying: $y = -\frac{8}{7}x + \frac{8}{7} + 2 = -\frac{8}{7}x + \frac{22}{7}$. The equation of the tangent line is $y = -\frac{8}{7}x + \frac{22}{7}$, or equivalently $8x + 7y = 22$.</p>
+
+<p>A common mistake in part (a) is to write the derivative of $3xy$ as $3y$ or $3\frac{dy}{dx}$ instead of the full product rule result $3y + 3x\frac{dy}{dx}$. Another common error is forgetting to substitute both $x$ and $y$ values when evaluating $\frac{dy}{dx}$ at the point.</p>
+
+<p><hr></p>
+
+<h2>Key Takeaways</h2>
+
+<li>Every term containing $y$ generates a $\frac{dy}{dx}$ factor when differentiated with respect to $x$, because of the chain rule.</li>
+<li>Products that mix $x$ and $y$ require the product rule. The derivative of $xy$ is $1 \cdot y + x \cdot \frac{dy}{dx}$, not just $y$ or just $\frac{dy}{dx}$.</li>
+<li>After differentiating, collect all terms with $\frac{dy}{dx}$ on one side, factor it out, and solve.</li>
+<li>Simplify the final expression. Some answers reduce dramatically—as in Example 2, where the derivative simplifies to $1$.</li>
+
+
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+</body>
+</html>

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 12 — Power Series & Radius of Convergence</title>
+<script>
+MathJax = {
+  tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body {
+    max-width: 800px; margin: 40px auto; font-family: 'Times New Roman', Georgia, serif;
+    font-size: 17px; line-height: 1.7; padding: 0 20px; color: #1a1a1a;
+  }
+  h1 { font-size: 22px; border-bottom: 2px solid #333; padding-bottom: 8px; margin-top: 36px; }
+  h2 { font-size: 19px; margin-top: 28px; color: #2c3e50; }
+  h3 { font-size: 17px; margin-top: 22px; color: #444; }
+  h4 { font-size: 16px; margin-top: 18px; }
+  p { margin: 0.6em 0; }
+  li { margin: 0.3em 0 0.3em 20px; }
+  hr { margin: 20px 0; border: none; border-top: 1px solid #ddd; }
+  .math-block { text-align: center; margin: 1em 0; overflow-x: auto; }
+  .table-line { font-family: 'Courier New', monospace; font-size: 15px; margin: 0.1em 0; }
+  pre { background: #f5f5f5; padding: 10px 14px; border-radius: 4px; overflow-x: auto; font-size: 14px; }
+  b { color: #222; }
+  table { border-collapse: collapse; margin: 16px 0; width: 100%; font-size: 15px; }
+  th { background: #2c3e50; color: #fff; padding: 8px 12px; text-align: center; font-weight: bold; }
+  td { border: 1px solid #ccc; padding: 8px 12px; text-align: center; }
+  tr:nth-child(even) { background: #f9f9f9; }
+  .nav { text-align: center; margin: 30px 0; font-size: 14px; }
+  .nav a { margin: 0 8px; color: #3498db; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  @media print { body { font-size: 15px; } }
+</style>
+</head>
+<body>
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+<h1>Lesson 12: Power Series and the Radius of Convergence</h1>
+
+<h2>1. What Is a Power Series?</h2>
+
+<p>A power series is a new kind of mathematical object. Instead of adding a finite list of numbers, a power series adds infinitely many terms, and each term contains a variable raised to a power. This means a power series is like a machine: you feed in a value for the variable, and the machine either produces a finite number (it converges) or it blows up (it diverges). Power series are important because they let us represent functions—such as the exponential, sine, and cosine—as infinite polynomials. This representation is the foundation for approximating functions, solving differential equations, and modelling physical systems.</p>
+
+<p>The general form of a power series centered at a number <b>a</b> (which we call the <b>center</b>) is:</p>
+
+<div class="math-block">$$\sum_{n=0}^{\infty} c_n (x - a)^n = c_0 + c_1(x-a) + c_2(x-a)^2 + c_3(x-a)^3 + \cdots$$</div>
+
+<p>Each symbol $c_n$ (read &quot;c sub n&quot;) is called a <b>coefficient</b>. A coefficient is simply a constant number that multiplies the power term $(x-a)^n$. The center $a$ is a fixed number that tells us where the series is &quot;anchored.&quot; The variable $x$ is what we plug in. When $a=0$, the series simplifies to $\sum c_n x^n$, which is called a power series centered at the origin.</p>
+
+<p>Many students assume that a power series behaves like a finite polynomial and always gives a number. This is not true. For some values of $x$, the infinite sum may grow without bound and fail to converge. The central question of this lesson is: for which values of $x$ does a given power series converge?</p>
+
+<p><hr></p>
+
+<h2>2. The Interval of Convergence</h2>
+
+<p>The set of all $x$ values for which a power series converges is called the <b>interval of convergence</b>. To build intuition, consider the simplest power series:</p>
+
+<div class="math-block">$$\sum_{n=0}^{\infty} x^n = 1 + x + x^2 + x^3 + \cdots$$</div>
+
+<p>This is a geometric series. A geometric series has the form $a + ar + ar^2 + \cdots$ and converges exactly when the common ratio $r$ satisfies $|r| &lt; 1$. Here the common ratio is $x$ itself, so the series converges when $|x| &lt; 1$ and diverges when $|x| \geq 1$. The interval of convergence is therefore $(-1, 1)$.</p>
+
+<p>Not all power series have such a simple interval. Some converge for all $x$, some converge only at the center, and most converge inside some finite radius around the center. The concept that captures this is the <b>radius of convergence</b>.</p>
+
+<p><hr></p>
+
+<h2>3. The Radius of Convergence</h2>
+
+<p>For any power series $\sum c_n (x-a)^n$, exactly one of three situations occurs:</p>
+
+<li>- <b>Radius $R = 0$</b>: The series converges only at $x = a$ and diverges everywhere else. The interval of convergence is just the single point $\{a\}$.</li>
+<li>- <b>Radius $R &gt; 0$ (finite)</b>: There exists a positive number $R$ such that the series converges for all $x$ with $|x-a| &lt; R$ and diverges for all $x$ with $|x-a| &gt; R$. The behavior at the endpoints $x = a-R$ and $x = a+R$ must be checked separately.</li>
+<li>- <b>Radius $R = \infty$</b>: The series converges for every real number $x$. The interval of convergence is $(-\infty, \infty)$.</li>
+
+<p>The radius $R$ is the distance from the center $a$ to the edge of the region where convergence is guaranteed. A common misunderstanding is that the endpoints are automatically included if the radius is finite. They are not—each endpoint must be tested individually by plugging it into the original series.</p>
+
+<p><hr></p>
+
+<h2>4. Finding the Radius with the Ratio Test</h2>
+
+<p>The Ratio Test (covered in the previous lesson) is the primary tool for finding the radius of convergence. To apply the Ratio Test to a power series $\sum c_n (x-a)^n$, we form the limit:</p>
+
+<div class="math-block">$$\rho = \lim_{n\to\infty} \left|\frac{c_{n+1}(x-a)^{n+1}}{c_n(x-a)^n}\right|$$</div>
+
+<p>We can factor out $|x-a|$ because it does not depend on $n$:</p>
+
+<div class="math-block">$$\rho = \lim_{n\to\infty} \left|\frac{c_{n+1}}{c_n}\right| \cdot |x-a|$$</div>
+
+<p>Define $L = \lim_{n\to\infty} \left|\frac{c_{n+1}}{c_n}\right|$ (assuming this limit exists). Then $\rho = L \cdot |x-a|$.</p>
+
+<p>The Ratio Test says the series converges when $\rho &lt; 1$, so we solve:</p>
+
+<div class="math-block">$$L \cdot |x-a| &lt; 1 \quad \Rightarrow \quad |x-a| &lt; \frac{1}{L}$$</div>
+
+<p>The radius of convergence is therefore:</p>
+
+<div class="math-block">$$\boxed{R = \frac{1}{L} = \lim_{n\to\infty} \left|\frac{c_n}{c_{n+1}}\right|}$$</div>
+
+<p>If $L = 0$, then $R = \infty$ (the series converges everywhere). If $L = \infty$, then $R = 0$ (the series converges only at the center).</p>
+
+<p><hr></p>
+
+<h2>5. Worked Examples</h2>
+
+<h3>Worked Example 1</h3>
+
+<p><b>Problem:</b> Find the radius and interval of convergence for $\displaystyle\sum_{n=0}^{\infty} \frac{x^n}{n!}$.</p>
+
+<p><b>Approach:</b> Identify the center and coefficients, then apply the Ratio Test. The factorial in the denominator suggests the series might converge for all $x$, because factorials grow extremely fast and overwhelm any power.</p>
+
+<p><b>Step 1:</b> The center is $a = 0$ and the coefficients are $c_n = \frac{1}{n!}$.</p>
+
+<p><b>Step 2:</b> Apply the Ratio Test:</p>
+
+<div class="math-block">$$\rho = \lim_{n\to\infty} \left|\frac{x^{n+1}/(n+1)!}{x^n/n!}\right| = \lim_{n\to\infty} \left|\frac{x^{n+1}}{(n+1)!} \cdot \frac{n!}{x^n}\right|$$</div>
+
+<p>Simplify: $\frac{x^{n+1}}{x^n} = |x|$, and $\frac{n!}{(n+1)!} = \frac{1}{n+1}$.</p>
+
+<div class="math-block">$$\rho = \lim_{n\to\infty} \frac{|x|}{n+1} = |x| \cdot 0 = 0$$</div>
+
+<p>Since $\rho = 0 &lt; 1$ for every real number $x$, the series converges for all $x$.</p>
+
+<p><b>Step 3:</b> The radius of convergence is $R = \infty$. The interval of convergence is $(-\infty, \infty)$.</p>
+
+<p><b>Why this makes sense:</b> The factorial $n!$ grows faster than any exponential $|x|^n$, so the terms shrink to zero rapidly regardless of the size of $x$.</p>
+
+<p><hr></p>
+
+<h3>Worked Example 2</h3>
+
+<p><b>Problem:</b> Find the radius and interval of convergence for $\displaystyle\sum_{n=1}^{\infty} \frac{x^n}{n}$.</p>
+
+<p><b>Approach:</b> Apply the Ratio Test to find the radius. Because the coefficients are $\frac{1}{n}$, the radius should be finite. Then test both endpoints separately by plugging them into the original series.</p>
+
+<p><b>Step 1:</b> Center $a = 0$, coefficients $c_n = \frac{1}{n}$.</p>
+
+<p><b>Step 2:</b> Apply the Ratio Test:</p>
+
+<div class="math-block">$$\rho = \lim_{n\to\infty} \left|\frac{x^{n+1}/(n+1)}{x^n/n}\right| = \lim_{n\to\infty} \frac{n}{n+1} \cdot |x| = 1 \cdot |x| = |x|$$</div>
+
+<p>We need $\rho &lt; 1$, so $|x| &lt; 1$. The radius is $R = 1$.</p>
+
+<p><b>Step 3:</b> Test the endpoints.</p>
+
+<p>When $x = 1$: the series becomes $\sum_{n=1}^{\infty} \frac{1}{n}$, which is the harmonic series. The harmonic series diverges because its partial sums grow without bound.</p>
+
+<p>When $x = -1$: the series becomes $\sum_{n=1}^{\infty} \frac{(-1)^n}{n}$, which is the alternating harmonic series. This series converges by the Alternating Series Test, because the terms $\frac{1}{n}$ decrease to zero.</p>
+
+<p><b>Step 4:</b> The interval of convergence is $[-1, 1)$ — the left endpoint is included, the right endpoint is not.</p>
+
+<p><b>Why this makes sense:</b> At $x=1$ we get the harmonic series, famous for diverging despite its terms approaching zero. At $x=-1$, the alternating signs save the series.</p>
+
+<p><hr></p>
+
+<h3>Worked Example 3</h3>
+
+<p><b>Problem:</b> Find the radius and interval of convergence for $\displaystyle\sum_{n=0}^{\infty} n! \, x^n$.</p>
+
+<p><b>Approach:</b> Here the factorial is in the numerator, not the denominator. This should make the terms grow rapidly, so convergence is unlikely except at the center.</p>
+
+<p><b>Step 1:</b> Center $a = 0$, coefficients $c_n = n!$.</p>
+
+<p><b>Step 2:</b> Apply the Ratio Test:</p>
+
+<div class="math-block">$$\rho = \lim_{n\to\infty} \left|\frac{(n+1)! \, x^{n+1}}{n! \, x^n}\right| = \lim_{n\to\infty} \frac{(n+1)!}{n!} \cdot |x| = \lim_{n\to\infty} (n+1) \cdot |x|$$</div>
+
+<p>When $x = 0$, every term of the series after the first is zero, so the series converges (its sum is actually $0! \cdot 0^0$, and by convention $0^0 = 1$ here, giving sum $1$).</p>
+
+<p>When $x \neq 0$: the limit is $\infty \cdot |x| = \infty &gt; 1$, so the series diverges.</p>
+
+<p><b>Step 3:</b> The radius of convergence is $R = 0$. The interval of convergence is $\{0\}$.</p>
+
+<p><b>Why this makes sense:</b> The factorial in the numerator makes the terms explode for any nonzero $x$. Only at $x=0$ does the series collapse to a single nonzero term.</p>
+
+<p><hr></p>
+
+<h3>Worked Example 4</h3>
+
+<p><b>Problem:</b> Find the radius and interval of convergence for $\displaystyle\sum_{n=1}^{\infty} \frac{(x-2)^n}{3^n}$.</p>
+
+<p><b>Approach:</b> Identify the center from the $(x-2)^n$ term — here the center is $a=2$. Apply the Ratio Test with $c_n = \frac{1}{3^n}$.</p>
+
+<p><b>Step 1:</b> The center is $a = 2$, and $c_n = \frac{1}{3^n}$.</p>
+
+<p><b>Step 2:</b> Apply the Ratio Test:</p>
+
+<div class="math-block">$$\rho = \lim_{n\to\infty} \left|\frac{(x-2)^{n+1}/3^{n+1}}{(x-2)^n/3^n}\right| = \lim_{n\to\infty} \frac{|x-2|}{3} = \frac{|x-2|}{3}$$</div>
+
+<p>We need $\rho &lt; 1$, so $\frac{|x-2|}{3} &lt; 1$, which gives $|x-2| &lt; 3$. The radius is $R = 3$.</p>
+
+<p><b>Step 3:</b> Test the endpoints $x = 2 \pm 3$.</p>
+
+<p>When $x = 5$ (that is, $x-2 = 3$): the series is $\sum \frac{3^n}{3^n} = \sum 1$. This series diverges because each term is $1$, so the partial sums grow without bound.</p>
+
+<p>When $x = -1$ (that is, $x-2 = -3$): the series is $\sum \frac{(-3)^n}{3^n} = \sum (-1)^n$. This series diverges because the terms oscillate between $1$ and $-1$ and never approach zero.</p>
+
+<p><b>Step 4:</b> The interval of convergence is $(-1, 5)$ — an open interval with neither endpoint included.</p>
+
+<p><b>Why this makes sense:</b> The endpoints both produce series that fail the simplest test: the terms do not tend to zero.</p>
+
+<p><hr></p>
+
+<h3>Worked Example 5</h3>
+
+<p><b>Problem:</b> Find the radius and interval of convergence for $\displaystyle\sum_{n=1}^{\infty} \frac{(x+1)^n}{n^2}$.</p>
+
+<p><b>Approach:</b> Recognize that $x+1 = x - (-1)$, so the center is $a = -1$. The coefficients $\frac{1}{n^2}$ suggest the series might converge at both endpoints because $\sum \frac{1}{n^2}$ converges.</p>
+
+<p><b>Step 1:</b> Center $a = -1$, $c_n = \frac{1}{n^2}$.</p>
+
+<p><b>Step 2:</b> Ratio Test:</p>
+
+<div class="math-block">$$\rho = \lim_{n\to\infty} \left|\frac{(x+1)^{n+1}/(n+1)^2}{(x+1)^n/n^2}\right| = \lim_{n\to\infty} \frac{n^2}{(n+1)^2} \cdot |x+1| = 1 \cdot |x+1| = |x+1|$$</div>
+
+<p>We need $|x+1| &lt; 1$, so $R = 1$.</p>
+
+<p><b>Step 3:</b> Test endpoints.</p>
+
+<p>When $x+1 = 1$ (so $x = 0$): the series is $\sum \frac{1}{n^2}$, a $p$-series with $p=2 &gt; 1$, which converges.</p>
+
+<p>When $x+1 = -1$ (so $x = -2$): the series is $\sum \frac{(-1)^n}{n^2}$, which converges absolutely because $\sum \frac{1}{n^2}$ converges.</p>
+
+<p><b>Step 4:</b> The interval of convergence is $[-2, 0]$ — a closed interval with both endpoints included.</p>
+
+<p><b>Why this makes sense:</b> The $n^2$ denominator tames the series enough to make it converge even at the endpoints.</p>
+
+<p><hr></p>
+
+<h2>6. Summary of the Method</h2>
+
+<p>To find the radius and interval of convergence for a power series $\sum c_n (x-a)^n$:</p>
+
+<li>Identify the center $a$ by looking at the expression $(x-a)^n$. If you see $(x+1)^n$, rewrite it as $(x - (-1))^n$ to see that $a = -1$.</li>
+<li>Apply the Ratio Test to obtain $\rho = \lim \left|\frac{c_{n+1}}{c_n}\right| \cdot |x-a|$.</li>
+<li>Set $\rho &lt; 1$ and solve for $|x-a| &lt; R$ to find the radius.</li>
+<li>Check each endpoint separately by plugging that $x$ value into the original series and using any convergence test. The Ratio Test always gives $\rho = 1$ at endpoints, so it cannot decide convergence there.</li>
+
+<p><hr></p>
+
+<h2>7. Three Archetypal Series</h2>
+
+<p>These three series provide useful intuition for how factorials affect convergence:</p>
+
+<p class="table-line">| Series | Radius $R$ | Interval (center 0) | Why |</p>
+<p class="table-line">|<hr>|<hr>|<hr>|<hr>|</p>
+<p class="table-line">| $\sum \dfrac{x^n}{n!}$ | $\infty$ | $(-\infty, \infty)$ | Factorial in denominator overwhelms any $x$ |</p>
+<p class="table-line">| $\sum \dfrac{x^n}{n}$ | $1$ | $[-1, 1)$ | Harmonic-like behavior at endpoints |</p>
+<p class="table-line">| $\sum n! \, x^n$ | $0$ | $\{0\}$ | Factorial in numerator makes terms explode |</p>
+
+<p><hr></p>
+
+<h2>Practice Problems</h2>
+
+<p><b>Problem 1</b></p>
+<p>Find the radius and interval of convergence for the power series $\displaystyle\sum_{n=1}^{\infty} \frac{x^n}{4^n}$.</p>
+
+<p><b>Problem 2</b></p>
+<p>Find the radius and interval of convergence for the power series $\displaystyle\sum_{n=0}^{\infty} \frac{x^n}{n^2+1}$.</p>
+
+<p><b>Problem 3</b></p>
+<p>Find the radius and interval of convergence for the power series $\displaystyle\sum_{n=0}^{\infty} \frac{(x-3)^n}{n!}$.</p>
+
+<p><b>Problem 4</b></p>
+<p>Find the radius and interval of convergence for the power series $\displaystyle\sum_{n=1}^{\infty} \frac{(x+2)^n}{n \cdot 5^n}$.</p>
+
+<p><b>Problem 5 (IB-style)</b></p>
+<p>Consider the power series $\displaystyle\sum_{n=1}^{\infty} \frac{n}{2^n}(x-1)^n$.</p>
+
+<p>(a) Determine the radius of convergence of the series. [3 marks]</p>
+
+<p>(b) Determine the interval of convergence of the series by testing the behavior at the endpoints. [4 marks]</p>
+
+<p><hr></p>
+
+<h2>Answers</h2>
+
+<p><b>Answer 1</b></p>
+<p>The series is $\sum \frac{x^n}{4^n} = \sum \left(\frac{x}{4}\right)^n$, a geometric series with common ratio $r = \frac{x}{4}$. A geometric series converges when $|r| &lt; 1$. Applying the Ratio Test directly: $\rho = \lim_{n\to\infty} \left|\frac{x^{n+1}/4^{n+1}}{x^n/4^n}\right| = \frac{|x|}{4}$. Setting $\rho &lt; 1$ gives $|x| &lt; 4$, so the radius is $R = 4$.</p>
+
+<p>Now test the endpoints. At $x = 4$: the series is $\sum 1$, which diverges because the terms do not approach zero. At $x = -4$: the series is $\sum (-1)^n$, which also diverges because the terms oscillate between $1$ and $-1$. Therefore the interval of convergence is $(-4, 4)$.</p>
+
+<p>A common mistake is to forget that geometric series with $|r| = 1$ always diverge because the terms do not tend to zero. The radius alone does not tell you the full interval—you must always check endpoints.</p>
+
+<p><hr></p>
+
+<p><b>Answer 2</b></p>
+<p>Apply the Ratio Test with $c_n = \frac{1}{n^2+1}$:</p>
+
+<p>$\rho = \lim_{n\to\infty} \left|\frac{x^{n+1}/((n+1)^2+1)}{x^n/(n^2+1)}\right| = \lim_{n\to\infty} \frac{n^2+1}{(n+1)^2+1} \cdot |x| = 1 \cdot |x| = |x|$.</p>
+
+<p>Setting $\rho &lt; 1$ gives $|x| &lt; 1$, so $R = 1$.</p>
+
+<p>Test $x = 1$: the series is $\sum \frac{1}{n^2+1}$. Compare this to the convergent $p$-series $\sum \frac{1}{n^2}$: for all $n \geq 1$, we have $\frac{1}{n^2+1} &lt; \frac{1}{n^2}$, so by the Comparison Test the series converges at $x = 1$.</p>
+
+<p>Test $x = -1$: the series is $\sum \frac{(-1)^n}{n^2+1}$. This series converges absolutely because $\sum \frac{1}{n^2+1}$ converges, as shown above.</p>
+
+<p>The interval of convergence is $[-1, 1]$, with both endpoints included.</p>
+
+<p><hr></p>
+
+<p><b>Answer 3</b></p>
+<p>Apply the Ratio Test with $c_n = \frac{1}{n!}$:</p>
+
+<p>$\rho = \lim_{n\to\infty} \left|\frac{(x-3)^{n+1}/(n+1)!}{(x-3)^n/n!}\right| = \lim_{n\to\infty} \frac{1}{n+1} \cdot |x-3| = 0 \cdot |x-3| = 0$.</p>
+
+<p>Since $\rho = 0 &lt; 1$ for every real number $x$, the series converges for all $x$. The radius of convergence is $R = \infty$, and the interval of convergence is $(-\infty, \infty)$. No endpoint testing is needed because there are no finite endpoints.</p>
+
+<p><hr></p>
+
+<p><b>Answer 4</b></p>
+<p>The center is $a = -2$ (since $x+2 = x - (-2)$), and $c_n = \frac{1}{n \cdot 5^n}$.</p>
+
+<p>Apply the Ratio Test:</p>
+
+<p>$\rho = \lim_{n\to\infty} \left|\frac{(x+2)^{n+1}}{(n+1) \cdot 5^{n+1}} \cdot \frac{n \cdot 5^n}{(x+2)^n}\right| = \lim_{n\to\infty} \frac{n}{n+1} \cdot \frac{|x+2|}{5} = \frac{|x+2|}{5}$.</p>
+
+<p>Setting $\rho &lt; 1$ gives $\frac{|x+2|}{5} &lt; 1$, so $|x+2| &lt; 5$. The radius is $R = 5$.</p>
+
+<p>Test the endpoint $x+2 = 5$, which means $x = 3$: the series becomes $\sum \frac{5^n}{n \cdot 5^n} = \sum \frac{1}{n}$, the harmonic series, which diverges.</p>
+
+<p>Test the endpoint $x+2 = -5$, which means $x = -7$: the series becomes $\sum \frac{(-5)^n}{n \cdot 5^n} = \sum \frac{(-1)^n}{n}$, the alternating harmonic series, which converges by the Alternating Series Test.</p>
+
+<p>The interval of convergence is $[-7, 3)$, with the left endpoint included and the right endpoint excluded.</p>
+
+<p>A common pitfall is to misidentify the center. The expression $(x+2)^n$ means the center is $-2$, not $2$. Always rewrite $(x+k)^n$ as $(x - (-k))^n$ to find the center correctly.</p>
+
+<p><hr></p>
+
+<p><b>Answer 5 (IB-style)</b></p>
+<p><b>(a)</b> The center is $a = 1$ and $c_n = \frac{n}{2^n}$. Apply the Ratio Test:</p>
+
+<p>$\rho = \lim_{n\to\infty} \left|\frac{(n+1)(x-1)^{n+1}/2^{n+1}}{n(x-1)^n/2^n}\right| = \lim_{n\to\infty} \frac{n+1}{n} \cdot \frac{|x-1|}{2} = 1 \cdot \frac{|x-1|}{2} = \frac{|x-1|}{2}$.</p>
+
+<p>For convergence we require $\rho &lt; 1$, so $\frac{|x-1|}{2} &lt; 1$, giving $|x-1| &lt; 2$. The radius of convergence is $R = 2$. [3 marks]</p>
+
+<p><b>(b)</b> The endpoints are $x = 1 - 2 = -1$ and $x = 1 + 2 = 3$.</p>
+
+<p>At $x = 3$: the series is $\sum \frac{n}{2^n}(3-1)^n = \sum \frac{n \cdot 2^n}{2^n} = \sum n$. The terms $n$ grow without bound, so they do not approach zero. By the $n$th Term Test for Divergence, the series diverges at $x = 3$.</p>
+
+<p>At $x = -1$: the series is $\sum \frac{n}{2^n}(-1-1)^n = \sum \frac{n(-2)^n}{2^n} = \sum n(-1)^n$. The terms are $n(-1)^n$, whose absolute values $n$ grow without bound. Since the terms do not approach zero, the series diverges at $x = -1$ by the $n$th Term Test.</p>
+
+<p>Therefore the interval of convergence is $(-1, 3)$, an open interval with neither endpoint included. [4 marks]</p>
+
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+</body>
+</html>

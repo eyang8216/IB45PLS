@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 23 — De Moivre's Theorem & Powers</title>
+<script>
+MathJax = {
+  tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body {
+    max-width: 800px; margin: 40px auto; font-family: 'Times New Roman', Georgia, serif;
+    font-size: 17px; line-height: 1.7; padding: 0 20px; color: #1a1a1a;
+  }
+  h1 { font-size: 22px; border-bottom: 2px solid #333; padding-bottom: 8px; margin-top: 36px; }
+  h2 { font-size: 19px; margin-top: 28px; color: #2c3e50; }
+  h3 { font-size: 17px; margin-top: 22px; color: #444; }
+  h4 { font-size: 16px; margin-top: 18px; }
+  p { margin: 0.6em 0; }
+  li { margin: 0.3em 0 0.3em 20px; }
+  hr { margin: 20px 0; border: none; border-top: 1px solid #ddd; }
+  .math-block { text-align: center; margin: 1em 0; overflow-x: auto; }
+  .table-line { font-family: 'Courier New', monospace; font-size: 15px; margin: 0.1em 0; }
+  pre { background: #f5f5f5; padding: 10px 14px; border-radius: 4px; overflow-x: auto; font-size: 14px; }
+  b { color: #222; }
+  table { border-collapse: collapse; margin: 16px 0; width: 100%; font-size: 15px; }
+  th { background: #2c3e50; color: #fff; padding: 8px 12px; text-align: center; font-weight: bold; }
+  td { border: 1px solid #ccc; padding: 8px 12px; text-align: center; }
+  tr:nth-child(even) { background: #f9f9f9; }
+  .nav { text-align: center; margin: 30px 0; font-size: 14px; }
+  .nav a { margin: 0 8px; color: #3498db; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  @media print { body { font-size: 15px; } }
+</style>
+</head>
+<body>
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+<h1>Lesson 23: De Moivre&#x27;s Theorem and Powers of Complex Numbers</h1>
+
+<h2>What Is De Moivre&#x27;s Theorem?</h2>
+
+<h3>The &quot;What&quot;</h3>
+
+<p>De Moivre&#x27;s theorem is a rule for raising a complex number to any integer power. If a complex number is written in polar form with modulus $r$ and argument $\theta$, then the $n$th power of that number has modulus $r^n$ and argument $n\theta$.</p>
+
+<p>The theorem is named after Abraham de Moivre (1667–1754), a French mathematician who spent most of his career in England. In its most common form, the theorem states:</p>
+
+<div class="math-block">$$(\cos\theta + i\sin\theta)^n = \cos(n\theta) + i\sin(n\theta)$$</div>
+
+<p>This holds for any integer $n$: positive, negative, or zero.</p>
+
+<p>In exponential form, the same idea is even more transparent:</p>
+
+<div class="math-block">$$(re^{i\theta})^n = r^n e^{in\theta}$$</div>
+
+<h3>The &quot;Why&quot; — Avoiding Enormous Expansions</h3>
+
+<p>Without De Moivre&#x27;s theorem, computing something like $(1 + i)^8$ would require expanding $(1 + i)^8$ using the binomial theorem, which produces nine terms involving powers of $i$, which then must be simplified using $i^2 = -1$, $i^3 = -i$, $i^4 = 1$, and so on. That is tedious and error-prone.</p>
+
+<p>With De Moivre&#x27;s theorem, the computation reduces to three simple steps: convert to polar form, apply the power to the modulus and argument, and convert back if needed.</p>
+
+<p><hr></p>
+
+<h2>1. The Theorem in Detail</h2>
+
+<p>Let $z = r(\cos\theta + i\sin\theta) = re^{i\theta}$. For any integer $n$:</p>
+
+<div class="math-block">$$z^n = r^n \bigl(\cos(n\theta) + i\sin(n\theta)\bigr) = r^n e^{in\theta}$$</div>
+
+<p><b>The modulus gets raised to the power $n$.</b> For example, if $r = 2$ and $n = 3$, the new modulus is $2^3 = 8$.</p>
+
+<p><b>The argument gets multiplied by $n$.</b> For example, if $\theta = \frac{\pi}{4}$ and $n = 3$, the new argument is $\frac{3\pi}{4}$.</p>
+
+<p>After computing $n\theta$, you may need to adjust the argument to keep it in the principal range $(-\pi, \pi]$. You do this by adding or subtracting multiples of $2\pi$.</p>
+
+<p><b>A common misconception:</b> Some students think De Moivre&#x27;s theorem works for any exponent, including fractions like $\frac{1}{2}$ (square roots). It does not work directly for non-integer exponents without careful handling. Fractional exponents produce multiple values — those are the roots of complex numbers, which are treated in a separate lesson.</p>
+
+<p><hr></p>
+
+<h2>Worked Example 1: A Simple Power</h2>
+
+<p><b>Problem:</b> Compute $(1 + i)^8$ and give the answer in Cartesian form.</p>
+
+<p><b>Approach:</b> We could expand $(1 + i)^8$ using the binomial theorem, but that would be very long. Instead, we convert $1 + i$ to polar form, apply De Moivre&#x27;s theorem with $n = 8$, and then convert back to Cartesian form.</p>
+
+<p><b>Step 1 — Convert $1 + i$ to polar form:</b></p>
+<div class="math-block">$$|1 + i| = \sqrt{1^2 + 1^2} = \sqrt{2}$$</div>
+<div class="math-block">$$\arg(1 + i) = \arctan\left(\frac{1}{1}\right) = \frac{\pi}{4}$$</div>
+
+<p>So $1 + i = \sqrt{2}\left(\cos\frac{\pi}{4} + i\sin\frac{\pi}{4}\right) = \sqrt{2}\,e^{i\pi/4}$.</p>
+
+<p><b>Step 2 — Apply De Moivre with $n = 8$:</b></p>
+<div class="math-block">$$(1 + i)^8 = (\sqrt{2})^8 \left(\cos\left(8 \cdot \frac{\pi}{4}\right) + i\sin\left(8 \cdot \frac{\pi}{4}\right)\right)$$</div>
+
+<p>Compute the modulus: $(\sqrt{2})^8 = (2^{1/2})^8 = 2^4 = 16$.</p>
+
+<p>Compute the argument: $8 \cdot \frac{\pi}{4} = 2\pi$.</p>
+
+<p><b>Step 3 — Evaluate the trigonometric functions:</b></p>
+<div class="math-block">$$\cos(2\pi) = 1,\quad \sin(2\pi) = 0$$</div>
+
+<p>So $(1 + i)^8 = 16(1 + 0i) = 16$.</p>
+
+<p><b>Answer:</b> $16$</p>
+
+<p><b>Why this makes sense:</b> The answer is a positive real number with no imaginary part. The argument $2\pi$ means the result lands on the positive real axis. The modulus $16$ is large because we raised the original modulus $\sqrt{2} \approx 1.414$ to the 8th power.</p>
+
+<p><hr></p>
+
+<h2>Worked Example 2: Argument Adjustment Required</h2>
+
+<p><b>Problem:</b> Compute $(\sqrt{3} - i)^6$ and give the answer in Cartesian form.</p>
+
+<p><b>Approach:</b> Convert to polar form, apply De Moivre, adjust the argument to the principal range, and convert back.</p>
+
+<p><b>Step 1 — Find modulus and argument:</b></p>
+<div class="math-block">$$|\sqrt{3} - i| = \sqrt{(\sqrt{3})^2 + (-1)^2} = \sqrt{3 + 1} = \sqrt{4} = 2$$</div>
+
+<p>For the argument: $\tan\theta = \frac{-1}{\sqrt{3}}$. The reference angle is $\frac{\pi}{6}$. Since $a = \sqrt{3} &gt; 0$ and $b = -1 &lt; 0$, the point is in Quadrant IV, so $\theta = -\frac{\pi}{6}$.</p>
+
+<p>So $\sqrt{3} - i = 2e^{-i\pi/6}$.</p>
+
+<p><b>Step 2 — Apply De Moivre with $n = 6$:</b></p>
+<div class="math-block">$$(\sqrt{3} - i)^6 = 2^6 e^{i \cdot 6 \cdot (-\pi/6)} = 64 e^{-i\pi}$$</div>
+
+<p><b>Step 3 — Convert to Cartesian:</b></p>
+<div class="math-block">$$64 e^{-i\pi} = 64(\cos(-\pi) + i\sin(-\pi)) = 64(-1 + 0i) = -64$$</div>
+
+<p><b>Answer:</b> $-64$</p>
+
+<p><b>Why this makes sense:</b> The argument $-\pi$ places the result on the negative real axis. The modulus $64$ equals $2^6$, as expected. The result is purely real because $\sin(-\pi) = 0$.</p>
+
+<p><hr></p>
+
+<h2>Worked Example 3: Negative Exponent</h2>
+
+<p><b>Problem:</b> Compute $(1 + i)^{-4}$.</p>
+
+<p><b>Approach:</b> De Moivre&#x27;s theorem works for negative integers exactly as it does for positive ones. The only difference is that $r^n$ with a negative $n$ produces a fraction.</p>
+
+<p><b>Step 1 — Polar form of $1 + i$:</b></p>
+<div class="math-block">$$1 + i = \sqrt{2}\,e^{i\pi/4}$$</div>
+
+<p><b>Step 2 — Apply De Moivre with $n = -4$:</b></p>
+<div class="math-block">$$(1 + i)^{-4} = (\sqrt{2})^{-4} e^{i \cdot (-4) \cdot (\pi/4)} = (\sqrt{2})^{-4} e^{-i\pi}$$</div>
+
+<p>Compute the modulus: $(\sqrt{2})^{-4} = (2^{1/2})^{-4} = 2^{-2} = \frac{1}{4}$.</p>
+
+<p><b>Step 3 — Convert to Cartesian:</b></p>
+<div class="math-block">$$\frac{1}{4} e^{-i\pi} = \frac{1}{4}(\cos(-\pi) + i\sin(-\pi)) = \frac{1}{4}(-1 + 0i) = -\frac{1}{4}$$</div>
+
+<p><b>Answer:</b> $-\frac{1}{4}$</p>
+
+<p><hr></p>
+
+<h2>Worked Example 4: A Fraction with Powers</h2>
+
+<p><b>Problem:</b> Simplify $\displaystyle \frac{(1 + i)^6}{(\sqrt{3} + i)^4}$. Give the answer in exponential form.</p>
+
+<p><b>Approach:</b> Convert both the numerator and the denominator to exponential form, apply De Moivre to each, then use the division rule for complex numbers (divide moduli, subtract arguments).</p>
+
+<p><b>Step 1 — Polar form of $1 + i$:</b></p>
+<p>Modulus: $\sqrt{2}$. Argument: $\frac{\pi}{4}$. So $1 + i = \sqrt{2}\,e^{i\pi/4}$.</p>
+
+<p><b>Step 2 — Polar form of $\sqrt{3} + i$:</b></p>
+<p>Modulus: $|\sqrt{3} + i| = \sqrt{3 + 1} = 2$.</p>
+<p>Argument: $\tan\theta = \frac{1}{\sqrt{3}}$, reference angle $\frac{\pi}{6}$. Since both components are positive (Quadrant I), $\theta = \frac{\pi}{6}$.</p>
+<p>So $\sqrt{3} + i = 2e^{i\pi/6}$.</p>
+
+<p><b>Step 3 — Apply powers:</b></p>
+<div class="math-block">$$(1 + i)^6 = (\sqrt{2})^6 e^{i \cdot 6 \cdot \pi/4} = 8 e^{i3\pi/2} = 8e^{-i\pi/2}$$</div>
+
+<p>(We replaced $3\pi/2$ with $-\pi/2$ by subtracting $2\pi$, since both represent the same angle but $-\pi/2$ is in the principal range.)</p>
+
+<div class="math-block">$$(\sqrt{3} + i)^4 = 2^4 e^{i \cdot 4 \cdot \pi/6} = 16 e^{i2\pi/3}$$</div>
+
+<p><b>Step 4 — Divide:</b></p>
+<div class="math-block">$$\frac{8e^{-i\pi/2}}{16e^{i2\pi/3}} = \frac{8}{16} e^{-i\pi/2 - i2\pi/3} = \frac{1}{2} e^{-i7\pi/6}$$</div>
+
+<p><b>Step 5 — Adjust argument to principal range:</b></p>
+<p>$-\frac{7\pi}{6} + 2\pi = \frac{5\pi}{6}$.</p>
+
+<p><b>Answer:</b> $\frac{1}{2} e^{i5\pi/6}$</p>
+
+<p><hr></p>
+
+<h2>2. Deriving Trigonometric Identities with De Moivre</h2>
+
+<p>De Moivre&#x27;s theorem provides an elegant way to derive formulas for $\cos(n\theta)$ and $\sin(n\theta)$ in terms of powers of $\cos\theta$ and $\sin\theta$. The technique is:</p>
+
+<li>Write $(\cos\theta + i\sin\theta)^n = \cos(n\theta) + i\sin(n\theta)$ (De Moivre).</li>
+<li>Expand the left side using the binomial theorem.</li>
+<li>Equate the real parts to get $\cos(n\theta)$.</li>
+<li>Equate the imaginary parts to get $\sin(n\theta)$.</li>
+
+<p><hr></p>
+
+<h2>Worked Example 5: Deriving $\cos(3\theta)$ and $\sin(3\theta)$</h2>
+
+<p><b>Problem:</b> Use De Moivre&#x27;s theorem to express $\cos(3\theta)$ in terms of $\cos\theta$ only, and $\sin(3\theta)$ in terms of $\sin\theta$ only.</p>
+
+<p><b>Approach:</b> Apply De Moivre with $n = 3$, expand the left side using the binomial theorem, then separate real and imaginary parts.</p>
+
+<p><b>Step 1 — Apply De Moivre:</b></p>
+<div class="math-block">$$(\cos\theta + i\sin\theta)^3 = \cos(3\theta) + i\sin(3\theta)$$</div>
+
+<p><b>Step 2 — Expand the left side using the binomial theorem:</b></p>
+
+<p>The binomial theorem says $(a + b)^3 = a^3 + 3a^2b + 3ab^2 + b^3$. Here $a = \cos\theta$ and $b = i\sin\theta$.</p>
+
+<div class="math-block">$$(\cos\theta + i\sin\theta)^3 = \cos^3\theta + 3\cos^2\theta(i\sin\theta) + 3\cos\theta(i\sin\theta)^2 + (i\sin\theta)^3$$</div>
+
+<p><b>Step 3 — Simplify using powers of $i$:</b></p>
+
+<p>We know $i^2 = -1$ and $i^3 = i^2 \cdot i = -i$.</p>
+
+<p>The expansion becomes:</p>
+<div class="math-block">$$= \cos^3\theta + 3i\cos^2\theta\sin\theta + 3\cos\theta(-\sin^2\theta) + (-i\sin^3\theta)$$</div>
+<div class="math-block">$$= (\cos^3\theta - 3\cos\theta\sin^2\theta) + i(3\cos^2\theta\sin\theta - \sin^3\theta)$$</div>
+
+<p><b>Step 4 — Equate real and imaginary parts:</b></p>
+
+<p>Real part: $\cos(3\theta) = \cos^3\theta - 3\cos\theta\sin^2\theta$.</p>
+
+<p>Imaginary part: $\sin(3\theta) = 3\cos^2\theta\sin\theta - \sin^3\theta$.</p>
+
+<p><b>Step 5 — Express in terms of a single function:</b></p>
+
+<p>For $\cos(3\theta)$: Replace $\sin^2\theta$ with $1 - \cos^2\theta$:</p>
+<div class="math-block">$$\cos(3\theta) = \cos^3\theta - 3\cos\theta(1 - \cos^2\theta) = \cos^3\theta - 3\cos\theta + 3\cos^3\theta = 4\cos^3\theta - 3\cos\theta$$</div>
+
+<p>For $\sin(3\theta)$: Replace $\cos^2\theta$ with $1 - \sin^2\theta$:</p>
+<div class="math-block">$$\sin(3\theta) = 3(1 - \sin^2\theta)\sin\theta - \sin^3\theta = 3\sin\theta - 3\sin^3\theta - \sin^3\theta = 3\sin\theta - 4\sin^3\theta$$</div>
+
+<p><b>Answer:</b></p>
+<div class="math-block">$$\cos(3\theta) = 4\cos^3\theta - 3\cos\theta$$</div>
+<div class="math-block">$$\sin(3\theta) = 3\sin\theta - 4\sin^3\theta$$</div>
+
+<p><b>Why this makes sense:</b> If we test with $\theta = 0$, both formulas give $\cos(0) = 1$ and $\sin(0) = 0$, which matches $\cos(0) = 1$ and $\sin(0) = 0$. If we test with $\theta = \frac{\pi}{2}$, we get $\cos(\frac{3\pi}{2}) = 0$ and $\sin(\frac{3\pi}{2}) = -1$, which is correct.</p>
+
+<p><hr></p>
+
+<h2>3. Key Strategy for Powers of Complex Numbers</h2>
+
+<p>When you need to compute a power of a complex number, follow this sequence:</p>
+
+<li><b>Convert to polar or exponential form.</b> Find $r = \sqrt{a^2 + b^2}$ and $\theta = \arg(z)$ with the correct quadrant.</li>
+<li><b>Apply De Moivre&#x27;s theorem.</b> Raise $r$ to the power $n$. Multiply $\theta$ by $n$.</li>
+<li><b>Adjust the argument</b> to the principal range $(-\pi, \pi]$ by adding or subtracting multiples of $2\pi$.</li>
+<li><b>Convert back to Cartesian form</b> if the question asks for $a + bi$ form.</li>
+
+<p><hr></p>
+
+<h2>Practice Problems</h2>
+
+<p><b>Problem 1:</b> Evaluate $(1 - i)^6$ and give your answer in Cartesian form $a + bi$.</p>
+
+<p><b>Problem 2:</b> Compute $(-1 + i\sqrt{3})^5$ using De Moivre&#x27;s theorem. Give the answer in Cartesian form.</p>
+
+<p><b>Problem 3:</b> Simplify the expression $\displaystyle \frac{(1 + i\sqrt{3})^4}{(1 - i)^3}$. Give your answer in the form $r(\cos\theta + i\sin\theta)$.</p>
+
+<p><b>Problem 4:</b> Use De Moivre&#x27;s theorem with $n = 2$ to derive an expression for $\cos(2\theta)$ in terms of $\cos\theta$ only.</p>
+
+<p><b>Problem 5 (IB-style):</b> Let $z = \cos\theta + i\sin\theta$ where $\theta$ is a real number.</p>
+<p>(a) Show that $z^n + \frac{1}{z^n} = 2\cos(n\theta)$ for any integer $n$. [3 marks]</p>
+<p>(b) Hence, express $\cos^3\theta$ in terms of $\cos\theta$ and $\cos(3\theta)$. [3 marks]</p>
+
+<p><b>Problem 6:</b> Evaluate $\left(\frac{\sqrt{2}}{2} - i\frac{\sqrt{2}}{2}\right)^{-10}$.</p>
+
+<p><hr></p>
+
+<h2>Answers</h2>
+
+<p><b>Answer 1:</b></p>
+
+<p>The number $1 - i$ has modulus $|1 - i| = \sqrt{1^2 + (-1)^2} = \sqrt{2}$.</p>
+
+<p>The argument: $\tan\theta = \frac{-1}{1} = -1$. Since $a &gt; 0$ and $b &lt; 0$ (Quadrant IV), $\theta = -\frac{\pi}{4}$.</p>
+
+<p>So $1 - i = \sqrt{2}\,e^{-i\pi/4}$.</p>
+
+<p>Apply De Moivre with $n = 6$: $(1 - i)^6 = (\sqrt{2})^6 e^{i \cdot 6 \cdot (-\pi/4)} = 8 e^{-i3\pi/2}$.</p>
+
+<p>Adjust the argument: $-\frac{3\pi}{2} + 2\pi = \frac{\pi}{2}$.</p>
+
+<p>So $8e^{i\pi/2} = 8(\cos\frac{\pi}{2} + i\sin\frac{\pi}{2}) = 8(0 + i) = 8i$.</p>
+
+<p><b>Answer:</b> $8i$</p>
+
+<p><hr></p>
+
+<p><b>Answer 2:</b></p>
+
+<p>Modulus: $|-1 + i\sqrt{3}| = \sqrt{(-1)^2 + (\sqrt{3})^2} = \sqrt{1 + 3} = 2$.</p>
+
+<p>Argument: $\tan\theta = \frac{\sqrt{3}}{-1} = -\sqrt{3}$. Reference angle $\frac{\pi}{3}$. Since $a &lt; 0$ and $b &gt; 0$ (Quadrant II), $\theta = \pi - \frac{\pi}{3} = \frac{2\pi}{3}$.</p>
+
+<p>So $-1 + i\sqrt{3} = 2e^{i2\pi/3}$.</p>
+
+<p>Apply De Moivre with $n = 5$: $(-1 + i\sqrt{3})^5 = 2^5 e^{i \cdot 5 \cdot 2\pi/3} = 32 e^{i10\pi/3}$.</p>
+
+<p>Adjust: $\frac{10\pi}{3} - 2\pi = \frac{10\pi}{3} - \frac{6\pi}{3} = \frac{4\pi}{3}$.</p>
+
+<p>Convert to Cartesian: $32(\cos\frac{4\pi}{3} + i\sin\frac{4\pi}{3}) = 32\left(-\frac{1}{2} - i\frac{\sqrt{3}}{2}\right) = -16 - 16\sqrt{3}i$.</p>
+
+<p><b>Answer:</b> $-16 - 16\sqrt{3}i$</p>
+
+<p><hr></p>
+
+<p><b>Answer 3:</b></p>
+
+<p>Numerator: $1 + i\sqrt{3}$ has modulus $\sqrt{1 + 3} = 2$. Argument: $\tan\theta = \frac{\sqrt{3}}{1} = \sqrt{3}$, so $\theta = \frac{\pi}{3}$ (Quadrant I). Thus $(1 + i\sqrt{3})^4 = 2^4 e^{i \cdot 4 \cdot \pi/3} = 16e^{i4\pi/3}$.</p>
+
+<p>Denominator: $1 - i$ has modulus $\sqrt{2}$. Argument: $-\frac{\pi}{4}$ (Quadrant IV). Thus $(1 - i)^3 = (\sqrt{2})^3 e^{i \cdot 3 \cdot (-\pi/4)} = 2\sqrt{2}\, e^{-i3\pi/4}$.</p>
+
+<p>Division: $\frac{16e^{i4\pi/3}}{2\sqrt{2}\,e^{-i3\pi/4}} = \frac{16}{2\sqrt{2}} e^{i(4\pi/3 + 3\pi/4)}$.</p>
+
+<p>Simplify the modulus: $\frac{16}{2\sqrt{2}} = \frac{8}{\sqrt{2}} = 4\sqrt{2}$.</p>
+
+<p>Simplify the argument: $\frac{4\pi}{3} + \frac{3\pi}{4} = \frac{16\pi}{12} + \frac{9\pi}{12} = \frac{25\pi}{12}$.</p>
+
+<p>Adjust: $\frac{25\pi}{12} - 2\pi = \frac{25\pi}{12} - \frac{24\pi}{12} = \frac{\pi}{12}$.</p>
+
+<p><b>Answer:</b> $4\sqrt{2}\left(\cos\frac{\pi}{12} + i\sin\frac{\pi}{12}\right)$</p>
+
+<p><hr></p>
+
+<p><b>Answer 4:</b></p>
+
+<p>De Moivre with $n = 2$: $(\cos\theta + i\sin\theta)^2 = \cos(2\theta) + i\sin(2\theta)$.</p>
+
+<p>Expand the left side: $\cos^2\theta + 2i\cos\theta\sin\theta + i^2\sin^2\theta = (\cos^2\theta - \sin^2\theta) + i(2\cos\theta\sin\theta)$.</p>
+
+<p>Equating real parts: $\cos(2\theta) = \cos^2\theta - \sin^2\theta$.</p>
+
+<p>Replace $\sin^2\theta$ with $1 - \cos^2\theta$: $\cos(2\theta) = \cos^2\theta - (1 - \cos^2\theta) = 2\cos^2\theta - 1$.</p>
+
+<p><b>Answer:</b> $\cos(2\theta) = 2\cos^2\theta - 1$</p>
+
+<p><hr></p>
+
+<p><b>Answer 5:</b></p>
+
+<p><b>(a)</b> Since $z = \cos\theta + i\sin\theta = e^{i\theta}$, we have $z^n = e^{in\theta} = \cos(n\theta) + i\sin(n\theta)$.</p>
+
+<p>Also $\frac{1}{z^n} = z^{-n} = e^{-in\theta} = \cos(n\theta) - i\sin(n\theta)$.</p>
+
+<p>Adding these: $z^n + \frac{1}{z^n} = [\cos(n\theta) + i\sin(n\theta)] + [\cos(n\theta) - i\sin(n\theta)] = 2\cos(n\theta)$.</p>
+
+<p><b>(b)</b> For $n = 1$: $z + \frac{1}{z} = 2\cos\theta$.</p>
+
+<p>Cube both sides: $(z + \frac{1}{z})^3 = 8\cos^3\theta$.</p>
+
+<p>Expand the left side: $z^3 + 3z + \frac{3}{z} + \frac{1}{z^3} = (z^3 + \frac{1}{z^3}) + 3(z + \frac{1}{z})$.</p>
+
+<p>Using the result from (a): $z^3 + \frac{1}{z^3} = 2\cos(3\theta)$ and $z + \frac{1}{z} = 2\cos\theta$.</p>
+
+<p>So $(z^3 + \frac{1}{z^3}) + 3(z + \frac{1}{z}) = 2\cos(3\theta) + 3(2\cos\theta) = 2\cos(3\theta) + 6\cos\theta$.</p>
+
+<p>Thus $8\cos^3\theta = 2\cos(3\theta) + 6\cos\theta$, which gives $\cos^3\theta = \frac{1}{4}\cos(3\theta) + \frac{3}{4}\cos\theta$.</p>
+
+<p><hr></p>
+
+<p><b>Answer 6:</b></p>
+
+<p>The number $\frac{\sqrt{2}}{2} - i\frac{\sqrt{2}}{2}$ has modulus $\sqrt{\left(\frac{\sqrt{2}}{2}\right)^2 + \left(-\frac{\sqrt{2}}{2}\right)^2} = \sqrt{\frac{1}{2} + \frac{1}{2}} = \sqrt{1} = 1$.</p>
+
+<p>Argument: $\tan\theta = \frac{-\sqrt{2}/2}{\sqrt{2}/2} = -1$. Since $a &gt; 0$ and $b &lt; 0$ (Quadrant IV), $\theta = -\frac{\pi}{4}$.</p>
+
+<p>So the number is $1 \cdot e^{-i\pi/4} = e^{-i\pi/4}$.</p>
+
+<p>Apply De Moivre with $n = -10$: $(e^{-i\pi/4})^{-10} = e^{i \cdot (-10) \cdot (-\pi/4)} = e^{i10\pi/4} = e^{i5\pi/2}$.</p>
+
+<p>Adjust: $\frac{5\pi}{2} - 2\pi = \frac{\pi}{2}$. So the result is $e^{i\pi/2} = i$.</p>
+
+<p><b>Answer:</b> $i$</p>
+
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+</body>
+</html>

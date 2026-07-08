@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 34 — Bayes' Theorem</title>
+<script>
+MathJax = {
+  tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body {
+    max-width: 800px; margin: 40px auto; font-family: 'Times New Roman', Georgia, serif;
+    font-size: 17px; line-height: 1.7; padding: 0 20px; color: #1a1a1a;
+  }
+  h1 { font-size: 22px; border-bottom: 2px solid #333; padding-bottom: 8px; margin-top: 36px; }
+  h2 { font-size: 19px; margin-top: 28px; color: #2c3e50; }
+  h3 { font-size: 17px; margin-top: 22px; color: #444; }
+  h4 { font-size: 16px; margin-top: 18px; }
+  p { margin: 0.6em 0; }
+  li { margin: 0.3em 0 0.3em 20px; }
+  hr { margin: 20px 0; border: none; border-top: 1px solid #ddd; }
+  .math-block { text-align: center; margin: 1em 0; overflow-x: auto; }
+  .table-line { font-family: 'Courier New', monospace; font-size: 15px; margin: 0.1em 0; }
+  pre { background: #f5f5f5; padding: 10px 14px; border-radius: 4px; overflow-x: auto; font-size: 14px; }
+  b { color: #222; }
+  table { border-collapse: collapse; margin: 16px 0; width: 100%; font-size: 15px; }
+  th { background: #2c3e50; color: #fff; padding: 8px 12px; text-align: center; font-weight: bold; }
+  td { border: 1px solid #ccc; padding: 8px 12px; text-align: center; }
+  tr:nth-child(even) { background: #f9f9f9; }
+  .nav { text-align: center; margin: 30px 0; font-size: 14px; }
+  .nav a { margin: 0 8px; color: #3498db; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  @media print { body { font-size: 15px; } }
+</style>
+</head>
+<body>
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+<h1>Lesson 34: Bayes&#x27; Theorem</h1>
+
+<p><hr></p>
+
+<h2>What Is Bayes&#x27; Theorem and Why Do We Need It?</h2>
+
+<p>Suppose a medical test for a disease is 95% accurate. If a patient tests positive, what are the chances they actually have the disease? You might guess 95%, but the real answer is often much lower. Why? Because the disease itself might be very rare.</p>
+
+<p>Bayes&#x27; Theorem is a mathematical rule that helps us answer exactly this kind of question. It lets us &quot;flip&quot; a conditional probability: if we know the probability of a positive test *given* the disease, Bayes&#x27; Theorem tells us the probability of the disease *given* a positive test.</p>
+
+<p>The theorem is named after Thomas Bayes, an 18th-century mathematician. It is one of the most powerful tools in probability because it shows us how to update our beliefs when we receive new evidence.</p>
+
+<p><hr></p>
+
+<h2>The Basic Idea: Flipping a Conditional Probability</h2>
+
+<p>A <b>conditional probability</b> P(A | B) (read as &quot;the probability of A given B&quot;) tells us how likely A is when we already know that B happened. In the previous lesson, you learned that:</p>
+
+<div class="math-block">$$P(A \mid B) = \frac{P(A \cap B)}{P(B)}$$</div>
+
+<p>This formula works forward: from condition B to outcome A. But sometimes we have the &quot;reverse&quot; information. For example, we might know:</p>
+
+<li>- P(positive test | disease) — the test&#x27;s detection rate.</li>
+<li>- But we want P(disease | positive test) — what the patient actually cares about.</li>
+
+<p>Bayes&#x27; Theorem gives us a way to compute this reverse probability.</p>
+
+<p><hr></p>
+
+<h2>Deriving Bayes&#x27; Theorem</h2>
+
+<p>We start from the definition of conditional probability. For any two events A and B:</p>
+
+<div class="math-block">$$P(A \mid B) = \frac{P(A \cap B)}{P(B)} \quad \text{and} \quad P(B \mid A) = \frac{P(A \cap B)}{P(A)}$$</div>
+
+<p>Both formulas contain the same intersection P(A ∩ B) (the probability that both A and B happen). If we solve each for the intersection, we get:</p>
+
+<div class="math-block">$$P(A \cap B) = P(A \mid B) \cdot P(B) = P(B \mid A) \cdot P(A)$$</div>
+
+<p>Now set the two equal and solve for P(B | A):</p>
+
+<div class="math-block">$$\boxed{P(B \mid A) = \frac{P(A \mid B) \cdot P(B)}{P(A)}}$$</div>
+
+<p>This is <b>Bayes&#x27; Theorem</b>. The denominator P(A) can be expanded using the <b>Law of Total Probability</b>. If B and B′ (read as &quot;not B&quot;) are the only two possibilities, then:</p>
+
+<div class="math-block">$$P(A) = P(A \mid B) \cdot P(B) + P(A \mid B&#x27;) \cdot P(B&#x27;)$$</div>
+
+<p>Putting everything together gives the full two-event form of Bayes&#x27; Theorem:</p>
+
+<div class="math-block">$$\boxed{P(B \mid A) = \frac{P(A \mid B)\, P(B)}{P(A \mid B)\, P(B) + P(A \mid B&#x27;)\, P(B&#x27;)}}$$</div>
+
+<p><hr></p>
+
+<h2>Important Vocabulary</h2>
+
+<p>When using Bayes&#x27; Theorem, the quantities have special names. Understanding these names helps you set up problems correctly.</p>
+
+<li>- <b>Prior probability:</b> P(B) — your belief about B *before* you see the evidence A.</li>
+<li>- <b>Likelihood:</b> P(A | B) — the probability of observing evidence A if B is true.</li>
+<li>- <b>Posterior probability:</b> P(B | A) — your updated belief about B *after* seeing evidence A.</li>
+<li>- <b>False positive:</b> Saying &quot;positive&quot; when the truth is negative — P(A | B′), where A is the evidence and B′ means &quot;not B.&quot;</li>
+
+<p><hr></p>
+
+<h2>Two Methods for Solving Bayes Problems</h2>
+
+<p>You can use the formula directly, or you can build a tree diagram or a table. Both methods are valid, but the tree/table method often makes it easier to see what is happening and reduces the chance of arithmetic mistakes. We will demonstrate both approaches.</p>
+
+<p><hr></p>
+
+<h2>Worked Example 1: The Medical Test (Tree Method)</h2>
+
+<p><b>Problem:</b> A disease affects 1% of the population. A test for the disease gives a positive result for 95% of people who have the disease. However, the test also returns a (false) positive for 10% of people who do not have the disease. A randomly chosen person takes the test and gets a positive result. What is the probability this person actually has the disease?</p>
+
+<p><b>Approach:</b> Let D mean &quot;has the disease&quot; and T⁺ mean &quot;tests positive.&quot; We know:</p>
+
+<li>- P(D) = 0.01 (prior — the disease is rare)</li>
+<li>- P(T⁺ | D) = 0.95 (the test catches 95% of sick people)</li>
+<li>- P(T⁺ | D′) = 0.10 (the test falsely alarms 10% of healthy people)</li>
+
+<p>We want P(D | T⁺).</p>
+
+<p><b>Step 1: Build a tree.</b> Start at the root and branch according to whether the person has the disease or not. Then from each branch, split according to the test result.</p>
+
+<pre>                ┌── T⁺ (0.95)  →  P(D ∩ T⁺) = 0.01 × 0.95 = 0.0095</pre>
+<pre>      ┌── D (0.01)</pre>
+<pre>      │         └── T⁻ (0.05)  →  P(D ∩ T⁻) = 0.01 × 0.05 = 0.0005</pre>
+<pre>Start │</pre>
+<pre>      │         ┌── T⁺ (0.10)  →  P(D′ ∩ T⁺) = 0.99 × 0.10 = 0.0990</pre>
+<pre>      └── D′ (0.99)</pre>
+<pre>                └── T⁻ (0.90)  →  P(D′ ∩ T⁻) = 0.99 × 0.90 = 0.8910</pre>
+
+<p><b>Step 2: Find P(D | T⁺).</b> By definition of conditional probability:</p>
+
+<div class="math-block">$$P(D \mid T^+) = \frac{P(D \cap T^+)}{P(T^+)}$$</div>
+
+<p>The numerator P(D ∩ T⁺) = 0.0095. The denominator P(T⁺) is the sum of all paths that lead to T⁺: 0.0095 + 0.0990 = 0.1085.</p>
+
+<div class="math-block">$$P(D \mid T^+) = \frac{0.0095}{0.1085} \approx 0.0876$$</div>
+
+<p><b>Interpretation:</b> The probability is about 8.76%. This is surprisingly low! Even though the test is 95% accurate, the disease is so rare (only 1% of people have it) that most positive test results are actually false positives.</p>
+
+<p><b>Why this makes sense:</b> Imagine 1000 people. About 10 have the disease (1%), and about 9.5 of them test positive. About 990 do not have the disease, and about 99 of *them* test positive (10% false positive rate). So among the roughly 108.5 positive tests, only about 9.5 are true positives. The ratio 9.5/108.5 ≈ 8.76%.</p>
+
+<p><b>Common misconception:</b> People often confuse P(T⁺ | D) with P(D | T⁺). The test being &quot;95% accurate&quot; means P(T⁺ | D) = 0.95. It does NOT mean P(D | T⁺) = 0.95. These two probabilities are very different when the disease is rare.</p>
+
+<p><hr></p>
+
+<h2>Worked Example 2: Two Factories (Table Method)</h2>
+
+<p><b>Problem:</b> Factory A produces 60% of a company&#x27;s light bulbs. Factory B produces the remaining 40%. Of the bulbs from Factory A, 2% are defective. Of the bulbs from Factory B, 5% are defective. A bulb is chosen at random from the combined output and is found to be defective. What is the probability it came from Factory A?</p>
+
+<p><b>Approach:</b> We want P(A | defective). We know:</p>
+
+<li>- P(A) = 0.60, P(B) = 0.40</li>
+<li>- P(defective | A) = 0.02, P(defective | B) = 0.05</li>
+
+<p><b>Step 1: Create a table with a convenient total.</b> Use 1000 bulbs as the total.</p>
+
+<p class="table-line">|  | Defective | Not Defective | Total |</p>
+<p class="table-line">|<hr>|<hr>|<hr>|<hr>|</p>
+<p class="table-line">| Factory A | 600 × 0.02 = 12 | 600 − 12 = 588 | 600 |</p>
+<p class="table-line">| Factory B | 400 × 0.05 = 20 | 400 − 20 = 380 | 400 |</p>
+<p class="table-line">| Total | 32 | 968 | 1000 |</p>
+
+<p><b>Step 2: Read the probability directly from the table.</b></p>
+
+<div class="math-block">$$P(A \mid \text{defective}) = \frac{\text{defective from A}}{\text{all defective}} = \frac{12}{32} = \frac{3}{8} = 0.375$$</div>
+
+<p><b>Interpretation:</b> About 37.5% of defective bulbs come from Factory A. Even though Factory A has a lower defect rate (2% vs 5%), it produces more bulbs, so it still contributes a significant share of the defects.</p>
+
+<p><b>Why this makes sense:</b> The table makes the counting explicit. Out of 32 defective bulbs, we simply count how many came from Factory A (12). The ratio 12/32 gives the conditional probability directly.</p>
+
+<p><hr></p>
+
+<h2>Worked Example 3: Screening Test with Two Stages</h2>
+
+<p><b>Problem:</b> A school screens students for a condition. The condition affects 5% of students. The screening test has sensitivity 98% (probability of a positive test if the student has the condition) and specificity 93% (probability of a negative test if the student does not have the condition). Find the probability that a student who tests positive actually has the condition.</p>
+
+<p><b>Approach:</b> Let C mean &quot;has the condition.&quot; We know:</p>
+
+<li>- P(C) = 0.05, P(C′) = 0.95</li>
+<li>- P(T⁺ | C) = 0.98 (sensitivity)</li>
+<li>- P(T⁻ | C′) = 0.93 (specificity), so P(T⁺ | C′) = 1 − 0.93 = 0.07</li>
+
+<p><b>Step 1: Apply Bayes&#x27; Theorem.</b></p>
+
+<div class="math-block">$$P(C \mid T^+) = \frac{P(T^+ \mid C)\,P(C)}{P(T^+ \mid C)\,P(C) + P(T^+ \mid C&#x27;)\,P(C&#x27;)}$$</div>
+
+<p><b>Step 2: Substitute the numbers.</b></p>
+
+<div class="math-block">$$P(C \mid T^+) = \frac{0.98 \times 0.05}{0.98 \times 0.05 + 0.07 \times 0.95} = \frac{0.049}{0.049 + 0.0665} = \frac{0.049}{0.1155} \approx 0.424$$</div>
+
+<p><b>Interpretation:</b> About 42.4%. Even with a high-sensitivity test (98%) and decent specificity (93%), only about 42% of positive test results are true positives. The condition is uncommon enough (5%) that false positives still matter.</p>
+
+<p><hr></p>
+
+<h2>General Bayes&#x27; Theorem: More Than Two Causes</h2>
+
+<p>Sometimes there are more than two categories. If events B₁, B₂, …, Bₙ form a <b>partition</b> of the sample space (meaning they are mutually exclusive and together cover all possibilities), then:</p>
+
+<div class="math-block">$$P(B_k \mid A) = \frac{P(A \mid B_k)\,P(B_k)}{\displaystyle\sum_{i=1}^{n} P(A \mid B_i)\,P(B_i)}$$</div>
+
+<p>The formula looks intimidating, but the idea is the same: the numerator is the probability of the one path you care about, and the denominator is the sum of probabilities of all paths that lead to A.</p>
+
+<p><hr></p>
+
+<h2>Practice Problems</h2>
+
+<p><hr></p>
+
+<h3>Problem 1</h3>
+<p>A box contains 3 fair coins and 2 biased coins. A fair coin lands heads with probability 0.5. A biased coin lands heads with probability 0.8. A coin is chosen at random from the box and flipped. It lands heads.</p>
+
+<p>(a) Draw a tree diagram showing all branches, their probabilities, and the intersection probabilities at the end of each path.</p>
+
+<p>(b) Find the probability that the chosen coin was biased, given that it landed heads.</p>
+
+<p><hr></p>
+
+<h3>Problem 2</h3>
+<p>A disease affects 2% of the population. A test gives a positive result for 99% of people who have the disease. However, the test also gives a (false) positive for 3% of people who do not have the disease.</p>
+
+<p>(a) What proportion of all tests come back positive? In other words, find P(T⁺).</p>
+
+<p>(b) If a randomly chosen person tests positive, what is the probability they actually have the disease?</p>
+
+<p><hr></p>
+
+<h3>Problem 3</h3>
+<p>Urn I contains 4 white balls and 6 black balls. Urn II contains 7 white balls and 3 black balls. You first choose an urn at random (each urn is equally likely). Then you draw one ball from the chosen urn.</p>
+
+<p>(a) Find the overall probability of drawing a white ball, P(white).</p>
+
+<p>(b) Given that the ball drawn is white, find the probability it came from Urn II.</p>
+
+<p><hr></p>
+
+<h3>Problem 4</h3>
+<p>On rainy days, the probability Sam is late for school is 0.4. On dry days, the probability Sam is late is 0.1. The probability of rain on any given day is 0.25. Sam arrives late to school today. What is the probability that it is raining?</p>
+
+<p><hr></p>
+
+<h3>Problem 5 (IB Exam Style — 6 marks)</h3>
+<p>A factory has three machines: X, Y, and Z. Machine X produces 50% of the items and has a defect rate of 1%. Machine Y produces 30% and has a defect rate of 3%. Machine Z produces 20% and has a defect rate of 5%.</p>
+
+<p>A randomly selected item from the factory&#x27;s output is found to be defective.</p>
+
+<p>(a) [1 mark] Calculate the total probability that a randomly selected item is defective.</p>
+
+<p>(b) [3 marks] Find the probability the defective item came from Machine X.</p>
+
+<p>(c) [2 marks] Find the probability the defective item came from Machine Z, and explain why the result makes sense even though Machine Z has the highest defect rate.</p>
+
+<p><hr></p>
+
+<h2>Answers</h2>
+
+<p><hr></p>
+
+<h3>Answer 1</h3>
+
+<p>(a) <b>Tree diagram:</b></p>
+
+<pre>                ┌── H (0.5)  →  P(Fair ∩ H) = 0.6 × 0.5 = 0.30</pre>
+<pre>      ┌── Fair (3/5 = 0.6)</pre>
+<pre>      │         └── T (0.5)  →  P(Fair ∩ T) = 0.6 × 0.5 = 0.30</pre>
+<pre>Start │</pre>
+<pre>      │         ┌── H (0.8)  →  P(Biased ∩ H) = 0.4 × 0.8 = 0.32</pre>
+<pre>      └── Biased (2/5 = 0.4)</pre>
+<pre>                └── T (0.2)  →  P(Biased ∩ T) = 0.4 × 0.2 = 0.08</pre>
+
+<p>(b) P(Biased | H) is the intersection probability for biased-and-heads divided by the total probability of heads:</p>
+
+<div class="math-block">$$P(\text{Biased} \mid H) = \frac{P(\text{Biased} \cap H)}{P(H)} = \frac{0.32}{0.30 + 0.32} = \frac{0.32}{0.62} = \frac{32}{62} = \frac{16}{31} \approx 0.516$$</div>
+
+<p><b>Interpretation:</b> Given a head, the coin is slightly more likely to be biased than fair (about 51.6% vs 48.4%). This makes sense because biased coins produce heads more often, but fair coins are more numerous (3 vs 2), so the two effects nearly balance.</p>
+
+<p><hr></p>
+
+<h3>Answer 2</h3>
+
+<p>Let D = has disease, T⁺ = positive test. Given: P(D) = 0.02, P(T⁺ | D) = 0.99, P(T⁺ | D′) = 0.03.</p>
+
+<p>(a) <b>P(T⁺):</b> Use the Law of Total Probability.</p>
+
+<p>P(T⁺) = P(T⁺ | D)·P(D) + P(T⁺ | D′)·P(D′) = 0.99 × 0.02 + 0.03 × 0.98 = 0.0198 + 0.0294 = 0.0492.</p>
+
+<p>So 4.92% of all tests come back positive.</p>
+
+<p>(b) <b>P(D | T⁺):</b> Apply Bayes&#x27; Theorem.</p>
+
+<div class="math-block">$$P(D \mid T^+) = \frac{P(T^+ \mid D)\,P(D)}{P(T^+)} = \frac{0.0198}{0.0492} \approx 0.4024$$</div>
+
+<p><b>Interpretation:</b> About 40.2% of positive tests are true positives. Even with a 99% accurate test for detecting the disease, the rarity of the disease (2%) means more than half of positive results are false positives.</p>
+
+<p><b>Pitfall:</b> Students often compute the denominator incorrectly by forgetting to include the false positive path. Every path that leads to T⁺ must be summed in the denominator.</p>
+
+<p><hr></p>
+
+<h3>Answer 3</h3>
+
+<p>(a) <b>P(white):</b> Use the Law of Total Probability.</p>
+
+<p>P(white) = P(white | I)·P(I) + P(white | II)·P(II) = (4/10)·(1/2) + (7/10)·(1/2) = 0.4·0.5 + 0.7·0.5 = 0.2 + 0.35 = 0.55.</p>
+
+<p>(b) <b>P(II | white):</b> Apply Bayes&#x27; Theorem.</p>
+
+<div class="math-block">$$P(II \mid \text{white}) = \frac{P(\text{white} \mid II)\,P(II)}{P(\text{white})} = \frac{0.7 \times 0.5}{0.55} = \frac{0.35}{0.55} = \frac{35}{55} = \frac{7}{11} \approx 0.636$$</div>
+
+<p><b>Interpretation:</b> Given a white ball, there is about a 63.6% chance it came from Urn II. This is higher than 50% (the prior) because Urn II has a higher proportion of white balls (70% vs 40%). The evidence (white) shifts the probability toward Urn II.</p>
+
+<p><hr></p>
+
+<h3>Answer 4</h3>
+
+<p>Let R = rain, L = late. Given: P(R) = 0.25, P(L | R) = 0.4, P(L | R′) = 0.1.</p>
+
+<p><b>Apply Bayes&#x27; Theorem:</b></p>
+
+<p>P(R | L) = [P(L | R)·P(R)] / [P(L | R)·P(R) + P(L | R′)·P(R′)]</p>
+
+<p>= (0.4 × 0.25) / (0.4 × 0.25 + 0.1 × 0.75) = 0.10 / (0.10 + 0.075) = 0.10 / 0.175.</p>
+
+<p>Simplify: 0.10 / 0.175 = 100/175 = 4/7 ≈ 0.571.</p>
+
+<p><b>Interpretation:</b> There is about a 57.1% chance it is raining given that Sam is late. Before knowing Sam was late, the probability of rain was only 25%. The observation that Sam is late raises the rain probability substantially, because Sam is much more likely to be late on rainy days (0.4) than on dry days (0.1).</p>
+
+<p><hr></p>
+
+<h3>Answer 5</h3>
+
+<p>(a) <b>Total defect probability:</b></p>
+
+<p>P(D) = P(D | X)·P(X) + P(D | Y)·P(Y) + P(D | Z)·P(Z)</p>
+
+<p>= 0.01 × 0.50 + 0.03 × 0.30 + 0.05 × 0.20 = 0.005 + 0.009 + 0.010 = 0.024.</p>
+
+<p>So 2.4% of all items are defective. [1 mark]</p>
+
+<p>(b) <b>P(X | D):</b> Using Bayes&#x27; Theorem:</p>
+
+<p>P(X | D) = [P(D | X)·P(X)] / P(D) = 0.005 / 0.024 = 5/24 ≈ 0.208. [3 marks]</p>
+
+<p>(c) <b>P(Z | D):</b> P(Z | D) = 0.010 / 0.024 = 10/24 = 5/12 ≈ 0.417.</p>
+
+<p>[2 marks]</p>
+
+<p><b>Why it makes sense:</b> Machine Z has the highest defect rate (5%), and it produces a small share (20%). But when an item *is* defective, Z is the most likely source (41.7%) because its defect rate is five times X&#x27;s rate. Even though Z produces fewer items, the ones it does produce are much more likely to be defective, so Z dominates the defective pool. Machine X, despite producing half of all items, accounts for only 20.8% of defects because its defect rate is so low.</p>
+
+<p>Check: 5/24 + 9/24 + 10/24 = 24/24 = 1. All probabilities sum to 1, as they should since the defective item must come from one of the three machines.</p>
+
+
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+</body>
+</html>

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 16 — Slope Fields & Graphical Solutions</title>
+<script>
+MathJax = {
+  tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body {
+    max-width: 800px; margin: 40px auto; font-family: 'Times New Roman', Georgia, serif;
+    font-size: 17px; line-height: 1.7; padding: 0 20px; color: #1a1a1a;
+  }
+  h1 { font-size: 22px; border-bottom: 2px solid #333; padding-bottom: 8px; margin-top: 36px; }
+  h2 { font-size: 19px; margin-top: 28px; color: #2c3e50; }
+  h3 { font-size: 17px; margin-top: 22px; color: #444; }
+  h4 { font-size: 16px; margin-top: 18px; }
+  p { margin: 0.6em 0; }
+  li { margin: 0.3em 0 0.3em 20px; }
+  hr { margin: 20px 0; border: none; border-top: 1px solid #ddd; }
+  .math-block { text-align: center; margin: 1em 0; overflow-x: auto; }
+  .table-line { font-family: 'Courier New', monospace; font-size: 15px; margin: 0.1em 0; }
+  pre { background: #f5f5f5; padding: 10px 14px; border-radius: 4px; overflow-x: auto; font-size: 14px; }
+  b { color: #222; }
+  table { border-collapse: collapse; margin: 16px 0; width: 100%; font-size: 15px; }
+  th { background: #2c3e50; color: #fff; padding: 8px 12px; text-align: center; font-weight: bold; }
+  td { border: 1px solid #ccc; padding: 8px 12px; text-align: center; }
+  tr:nth-child(even) { background: #f9f9f9; }
+  .nav { text-align: center; margin: 30px 0; font-size: 14px; }
+  .nav a { margin: 0 8px; color: #3498db; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  @media print { body { font-size: 15px; } }
+</style>
+</head>
+<body>
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+<h1>Lesson 16: Slope Fields and Graphical Solutions</h1>
+
+<h2>1. What Is a Slope Field?</h2>
+
+<p>A <b>slope field</b> (also called a direction field) is a visual tool for understanding a first-order differential equation without solving it algebraically. Given a differential equation of the form $\frac{dy}{dx} = f(x, y)$, the slope field is created by choosing many points in the $xy$-plane and, at each point $(x, y)$, drawing a short line segment whose slope equals $f(x, y)$—the value of the derivative at that point.</p>
+
+<p>The result is a grid of tiny tangent lines that show you the &quot;flow&quot; of solutions. Any curve that is tangent to these line segments at every point is a <b>solution curve</b> (also called an integral curve) of the differential equation. The slope field reveals the behavior of all possible solutions at once, even when an explicit formula is impossible to find.</p>
+
+<p>Slope fields matter because many differential equations cannot be solved with algebraic formulas. In those situations, the slope field gives us qualitative information: we can see whether solutions increase or decrease, where they level off, and what happens in the long run. This qualitative understanding is often as valuable as an exact formula.</p>
+
+<p><hr></p>
+
+
+<div class="visual" style="text-align:center;margin:24px 0;background:#fafaf9;padding:16px;border-radius:8px;border:1px solid #ddd;">
+<p style="font-weight:bold;color:#2c3e50;margin-bottom:12px;">Figure: Slope field for dy/dx = x + y</p>
+<svg viewBox="0 0 400 400" width="380" height="380" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#1a5276"/>
+    </marker>
+  </defs>
+  <!-- Grid -->
+  <line x1="0" y1="200" x2="400" y2="200" stroke="#ccc" stroke-width="1"/>
+  <line x1="200" y1="0" x2="200" y2="400" stroke="#ccc" stroke-width="1"/>
+  <!-- Ticks -->
+  <g font-size="11" fill="#888" text-anchor="middle">
+    <text x="50" y="215">-3</text><text x="100" y="215">-2</text><text x="150" y="215">-1</text>
+    <text x="250" y="215">1</text><text x="300" y="215">2</text><text x="350" y="215">3</text>
+    <text x="192" y="55">3</text><text x="192" y="105">2</text><text x="192" y="155">1</text>
+    <text x="186" y="253">-1</text><text x="186" y="303">-2</text><text x="186" y="353">-3</text>
+  </g>
+  <!-- Slope marks: at each grid point (x,y), slope = x+y, draw a short line -->
+  <g stroke="#1a5276" stroke-width="1.8" marker-end="url(#arrow)" opacity="0.7">
+    <line x1="48.8492070888625" y1="356.904757466825" x2="51.1507929111375" y2="343.095242533175"/>
+    <line x1="48.62718705403271" y1="306.86406472983646" x2="51.37281294596729" y2="293.13593527016354"/>
+    <line x1="48.30225062474567" y1="256.79099750101733" x2="51.69774937525433" y2="243.20900249898267"/>
+    <line x1="47.78640563788213" y1="206.6407830863536" x2="52.21359436211787" y2="193.3592169136464"/>
+    <line x1="46.869504831500294" y1="156.2609903369994" x2="53.130495168499706" y2="143.7390096630006"/>
+    <line x1="45.05025253169417" y1="104.94974746830583" x2="54.94974746830583" y2="95.05025253169417"/>
+    <line x1="43.0" y1="50.0" x2="57.0" y2="50.0"/>
+    <line x1="98.62718705403272" y1="356.86406472983646" x2="101.37281294596728" y2="343.13593527016354"/>
+    <line x1="98.30225062474567" y1="306.79099750101733" x2="101.69774937525433" y2="293.20900249898267"/>
+    <line x1="97.78640563788214" y1="256.6407830863536" x2="102.21359436211786" y2="243.3592169136464"/>
+    <line x1="96.8695048315003" y1="206.2609903369994" x2="103.1304951684997" y2="193.7390096630006"/>
+    <line x1="95.05025253169417" y1="154.94974746830584" x2="104.94974746830583" y2="145.05025253169416"/>
+    <line x1="93.0" y1="100.0" x2="107.0" y2="100.0"/>
+    <line x1="95.05025253169417" y1="45.05025253169417" x2="104.94974746830583" y2="54.94974746830583"/>
+    <line x1="148.30225062474568" y1="356.79099750101733" x2="151.69774937525432" y2="343.20900249898267"/>
+    <line x1="147.78640563788213" y1="306.6407830863536" x2="152.21359436211787" y2="293.3592169136464"/>
+    <line x1="146.8695048315003" y1="256.2609903369994" x2="153.1304951684997" y2="243.7390096630006"/>
+    <line x1="145.05025253169416" y1="204.94974746830584" x2="154.94974746830584" y2="195.05025253169416"/>
+    <line x1="143.0" y1="150.0" x2="157.0" y2="150.0"/>
+    <line x1="145.05025253169416" y1="95.05025253169417" x2="154.94974746830584" y2="104.94974746830583"/>
+    <line x1="146.8695048315003" y1="43.73900966300059" x2="153.1304951684997" y2="56.26099033699941"/>
+    <line x1="197.78640563788213" y1="356.6407830863536" x2="202.21359436211787" y2="343.3592169136464"/>
+    <line x1="196.8695048315003" y1="306.2609903369994" x2="203.1304951684997" y2="293.7390096630006"/>
+    <line x1="195.05025253169416" y1="254.94974746830584" x2="204.94974746830584" y2="245.05025253169416"/>
+    <line x1="193.0" y1="200.0" x2="207.0" y2="200.0"/>
+    <line x1="195.05025253169416" y1="145.05025253169416" x2="204.94974746830584" y2="154.94974746830584"/>
+    <line x1="196.8695048315003" y1="93.73900966300059" x2="203.1304951684997" y2="106.26099033699941"/>
+    <line x1="197.78640563788213" y1="43.35921691364641" x2="202.21359436211787" y2="56.64078308635359"/>
+    <line x1="246.8695048315003" y1="356.2609903369994" x2="253.1304951684997" y2="343.7390096630006"/>
+    <line x1="245.05025253169416" y1="304.9497474683058" x2="254.94974746830584" y2="295.0502525316942"/>
+    <line x1="243.0" y1="250.0" x2="257.0" y2="250.0"/>
+    <line x1="245.05025253169416" y1="195.05025253169416" x2="254.94974746830584" y2="204.94974746830584"/>
+    <line x1="246.8695048315003" y1="143.7390096630006" x2="253.1304951684997" y2="156.2609903369994"/>
+    <line x1="247.78640563788213" y1="93.3592169136464" x2="252.21359436211787" y2="106.6407830863536"/>
+    <line x1="248.30225062474568" y1="43.20900249898268" x2="251.69774937525432" y2="56.79099750101732"/>
+    <line x1="295.0502525316942" y1="354.9497474683058" x2="304.9497474683058" y2="345.0502525316942"/>
+    <line x1="293.0" y1="300.0" x2="307.0" y2="300.0"/>
+    <line x1="295.0502525316942" y1="245.05025253169416" x2="304.9497474683058" y2="254.94974746830584"/>
+    <line x1="296.8695048315003" y1="193.7390096630006" x2="303.1304951684997" y2="206.2609903369994"/>
+    <line x1="297.7864056378821" y1="143.3592169136464" x2="302.2135943621179" y2="156.6407830863536"/>
+    <line x1="298.3022506247457" y1="93.20900249898267" x2="301.6977493752543" y2="106.79099750101733"/>
+    <line x1="298.62718705403273" y1="43.13593527016356" x2="301.37281294596727" y2="56.86406472983644"/>
+    <line x1="343.0" y1="350.0" x2="357.0" y2="350.0"/>
+    <line x1="345.0502525316942" y1="295.0502525316942" x2="354.9497474683058" y2="304.9497474683058"/>
+    <line x1="346.8695048315003" y1="243.7390096630006" x2="353.1304951684997" y2="256.2609903369994"/>
+    <line x1="347.7864056378821" y1="193.3592169136464" x2="352.2135943621179" y2="206.6407830863536"/>
+    <line x1="348.3022506247457" y1="143.20900249898267" x2="351.6977493752543" y2="156.79099750101733"/>
+    <line x1="348.62718705403273" y1="93.13593527016356" x2="351.37281294596727" y2="106.86406472983644"/>
+    <line x1="348.8492070888625" y1="43.095242533174996" x2="351.1507929111375" y2="56.904757466825004"/>
+
+  </g>
+  <!-- Axes labels -->
+  <text x="390" y="215" font-size="13" fill="#333" font-style="italic">x</text>
+  <text x="192" y="18" font-size="13" fill="#333" font-style="italic">y</text>
+</svg>
+<p style="font-size:13px;color:#666;margin-top:8px;">Each short line shows the direction of the solution curve passing through that point. Solution curves follow the flow — they never cross.</p>
+</div>
+<h2>2. How to Read and Sketch Slope Fields</h2>
+
+<p>To construct part of a slope field by hand, you pick a set of grid points, compute the slope $m = f(x, y)$ at each point, and draw a short line segment with that slope. A segment with slope $0$ is horizontal. A segment with a positive slope tilts upward to the right. A negative slope tilts downward. A very large slope (positive or negative) produces a nearly vertical segment.</p>
+
+<h3>Example 1</h3>
+
+<p>Consider the differential equation $\frac{dy}{dx} = x + y$. Compute slopes at several points:</p>
+
+<p class="table-line">| $(x, y)$ | $m = x + y$ | Segment direction |</p>
+<p class="table-line">|<hr>|<hr>|<hr>|</p>
+<p class="table-line">| $(0, 0)$ | $0$ | Horizontal |</p>
+<p class="table-line">| $(1, 0)$ | $1$ | Up-right at $45^\circ$ |</p>
+<p class="table-line">| $(0, 1)$ | $1$ | Up-right at $45^\circ$ |</p>
+<p class="table-line">| $(-1, 0)$ | $-1$ | Down-right at $45^\circ$ |</p>
+<p class="table-line">| $(1, 1)$ | $2$ | Steeper up-right |</p>
+<p class="table-line">| $(-1, 1)$ | $0$ | Horizontal |</p>
+<p class="table-line">| $(1, -1)$ | $0$ | Horizontal |</p>
+
+<p>An <b>isocline</b> is a curve along which the slope is constant. For this equation, setting $x + y = k$ gives the line $y = -x + k$, and along this entire line the slope is $k$. The line $y = -x$ (where $k = 0$) is a special isocline where all slope segments are horizontal.</p>
+
+<p><hr></p>
+
+<h3>Example 2</h3>
+
+<p>Consider $\frac{dy}{dx} = \frac{x}{y}$. At points where $y = 0$ (the $x$-axis), the slope is undefined, so we either draw vertical segments or leave those points blank. At points where $x = 0$ (the $y$-axis), the slope is $0$, so all segments on the $y$-axis are horizontal.</p>
+
+<p>Computing a few values:</p>
+
+<p class="table-line">| $(x, y)$ | $m = x/y$ |</p>
+<p class="table-line">|<hr>|<hr>|</p>
+<p class="table-line">| $(1, 1)$ | $1$ |</p>
+<p class="table-line">| $(2, 1)$ | $2$ |</p>
+<p class="table-line">| $(1, 2)$ | $0.5$ |</p>
+<p class="table-line">| $(-1, 1)$ | $-1$ |</p>
+<p class="table-line">| $(-1, -1)$ | $1$ |</p>
+
+<p>A common mistake is to draw slope segments without regard for undefined points. Where $y=0$, the differential equation itself breaks down; solution curves cannot cross the $x$-axis.</p>
+
+<p><hr></p>
+
+<h2>3. Solution Curves</h2>
+
+<p>A <b>solution curve</b> is a smooth curve drawn through the slope field that is tangent to every slope segment it passes near. Given an initial condition $(x_0, y_0)$, the solution curve is the unique curve that passes through that point and follows the flow of the slope field.</p>
+
+<p>To sketch a solution curve:</p>
+<li>Mark the initial point $(x_0, y_0)$.</li>
+<li>Observe the direction of the slope segments at that point.</li>
+<li>Move a small distance in that direction, then check the slope at the new location.</li>
+<li>Continue, connecting these small steps into a smooth curve.</li>
+<li>The curve must never have sharp corners; it should be smooth and follow the overall flow.</li>
+
+<p>Different initial conditions produce different solution curves. Together, the family of all solution curves fills the plane (except where the differential equation is undefined). The slope field shows this entire family.</p>
+
+<p>Many students think that slope fields uniquely determine one solution. In fact, a slope field shows all possible solutions; you need an initial condition to pick out a specific one.</p>
+
+<p><hr></p>
+
+<h2>4. Equilibrium Solutions and Stability</h2>
+
+<p>An <b>equilibrium solution</b> (also called a steady-state or constant solution) is a solution of the form $y = c$ (a constant) that satisfies $\frac{dy}{dx} = 0$ for all $x$. These appear in the slope field as horizontal lines where every slope segment is flat.</p>
+
+<p>For example, consider $\frac{dy}{dx} = y(1 - y)$. Setting $\frac{dy}{dx} = 0$ gives $y(1-y) = 0$, so $y = 0$ and $y = 1$ are equilibrium solutions.</p>
+
+<p>The <b>stability</b> of an equilibrium describes what happens to solutions that start nearby:</p>
+
+<li>- A <b>stable</b> equilibrium attracts nearby solutions: if you start slightly away from it, you move toward it over time. Think of a ball resting at the bottom of a bowl—push it slightly and it rolls back.</li>
+<li>- An <b>unstable</b> equilibrium repels nearby solutions: if you start slightly away, you move farther away. Think of a ball balanced on top of a hill.</li>
+<li>- A <b>semi-stable</b> equilibrium attracts from one side but repels from the other.</li>
+
+<p>For $\frac{dy}{dx} = y(1-y)$:</p>
+<li>- Near $y = 0$: If $y$ is slightly above $0$, $\frac{dy}{dx} &gt; 0$, so $y$ increases, moving away from $0$. If $y$ is slightly below $0$, $\frac{dy}{dx} &lt; 0$, so $y$ decreases, also moving away. Thus $y = 0$ is <b>unstable</b>.</li>
+<li>- Near $y = 1$: If $y$ is slightly below $1$, $\frac{dy}{dx} &gt; 0$, so $y$ increases toward $1$. If $y$ is slightly above $1$, $\frac{dy}{dx} &lt; 0$, so $y$ decreases toward $1$. Thus $y = 1$ is <b>stable</b>.</li>
+
+<p><hr></p>
+
+<h2>5. Euler&#x27;s Method — Numerical Approximation</h2>
+
+<p><b>Euler&#x27;s method</b> is a simple numerical technique for approximating a solution curve when an exact formula is unavailable. The idea is to take small steps along the slope field, using the tangent line at each point to project forward.</p>
+
+<p>Given $\frac{dy}{dx} = f(x, y)$, an initial point $(x_0, y_0)$, and a step size $h$:</p>
+
+<div class="math-block">$$x_{n+1} = x_n + h$$</div>
+<div class="math-block">$$y_{n+1} = y_n + h \cdot f(x_n, y_n)$$</div>
+
+<p>At each step, we evaluate the slope at the current point, multiply by the step size to get the change in $y$, and add it to the current $y$. This is equivalent to following the tangent line for a distance $h$ before recomputing the slope.</p>
+
+<p>A key limitation: Euler&#x27;s method accumulates error at each step. Smaller step sizes give better accuracy but require more computation. The error is roughly proportional to $h$, so halving the step size roughly halves the error.</p>
+
+<p><hr></p>
+
+<h3>Euler&#x27;s Method Example</h3>
+
+<p><b>Problem:</b> Use Euler&#x27;s method with step size $h = 0.5$ to approximate $y(1)$ for the differential equation $\frac{dy}{dx} = x + y$ with initial condition $y(0) = 1$.</p>
+
+<p class="table-line">| $n$ | $x_n$ | $y_n$ | $f(x_n, y_n) = x_n + y_n$ | $y_{n+1} = y_n + 0.5 \cdot f$ |</p>
+<p class="table-line">|<hr>|<hr>|<hr>|<hr>|<hr>|</p>
+<p class="table-line">| $0$ | $0$ | $1$ | $0 + 1 = 1$ | $1 + 0.5(1) = 1.5$ |</p>
+<p class="table-line">| $1$ | $0.5$ | $1.5$ | $0.5 + 1.5 = 2$ | $1.5 + 0.5(2) = 2.5$ |</p>
+<p class="table-line">| $2$ | $1.0$ | $2.5$ | — | — |</p>
+
+<p>The approximation is $y(1) \approx 2.5$. The exact solution to this equation is $y = 2e^x - x - 1$, which gives $y(1) = 2e - 2 \approx 3.437$. The error is about $0.937$, which is large because the step size $h = 0.5$ is coarse. Using $h = 0.1$ would give a much better approximation.</p>
+
+<p><hr></p>
+
+<h2>Practice Problems</h2>
+
+<p><b>Problem 1</b></p>
+<p>Consider the differential equation $\frac{dy}{dx} = y - x$.</p>
+
+<p>(a) Compute the slope at each of the following points: $(0, 0)$, $(1, 0)$, $(0, 1)$, $(1, 1)$, $(-1, 0)$, $(0, -1)$, and $(2, 2)$.</p>
+
+<p>(b) Find the equation of the line along which $\frac{dy}{dx} = 0$.</p>
+
+<p>(c) Describe in words what the isoclines of this differential equation look like.</p>
+
+<p><b>Problem 2</b></p>
+<p>Consider the differential equation $\frac{dy}{dx} = y^2 - 1$.</p>
+
+<p>(a) Find all equilibrium solutions.</p>
+
+<p>(b) Determine the stability of each equilibrium by analyzing the sign of $\frac{dy}{dx}$ in the regions between equilibria.</p>
+
+<p><b>Problem 3</b></p>
+<p>A slope field for the differential equation $\frac{dy}{dx} = -\frac{x}{y}$ is drawn on the $xy$-plane. A particular solution curve passes through the point $(3, 4)$.</p>
+
+<p>(a) What is the slope of the solution curve at $(3, 4)$?</p>
+
+<p>(b) The family of solution curves for this differential equation consists of circles centered at the origin. Find the equation of the specific circle that passes through $(3, 4)$.</p>
+
+<p><b>Problem 4</b></p>
+<p>Use Euler&#x27;s method with step size $h = 0.5$ to approximate $y(1)$ for the differential equation $\frac{dy}{dx} = 2x$ with initial condition $y(0) = 0$. Compare your result with the exact solution $y = x^2$.</p>
+
+<p><b>Problem 5 (IB-style)</b></p>
+<p>Consider the differential equation $\frac{dy}{dx} = \sin y$ for $-\pi &lt; y &lt; \pi$.</p>
+
+<p>(a) Find all equilibrium solutions of the differential equation in the given range. [2 marks]</p>
+
+<p>(b) By considering the sign of $\sin y$ near $y = 0$, determine whether $y = 0$ is a stable or unstable equilibrium. Justify your answer. [3 marks]</p>
+
+<p>(c) Given that $y(0) = 0.1$, determine the value of $\lim_{x \to \infty} y(x)$, explaining your reasoning with reference to the slope field. [2 marks]</p>
+
+<p><hr></p>
+
+<h2>Answers</h2>
+
+<p><b>Answer 1</b></p>
+
+<p><b>(a)</b> Slopes at each point:</p>
+
+<p class="table-line">| $(x, y)$ | $m = y - x$ |</p>
+<p class="table-line">|<hr>|<hr>|</p>
+<p class="table-line">| $(0, 0)$ | $0$ |</p>
+<p class="table-line">| $(1, 0)$ | $-1$ |</p>
+<p class="table-line">| $(0, 1)$ | $1$ |</p>
+<p class="table-line">| $(1, 1)$ | $0$ |</p>
+<p class="table-line">| $(-1, 0)$ | $1$ |</p>
+<p class="table-line">| $(0, -1)$ | $-1$ |</p>
+<p class="table-line">| $(2, 2)$ | $0$ |</p>
+
+<p><b>(b)</b> The slope is zero when $y - x = 0$, which is the line $y = x$.</p>
+
+<p><b>(c)</b> The isoclines are lines of the form $y - x = k$, or equivalently $y = x + k$. Along each such line, the slope is constant and equal to $k$. These isoclines form a family of parallel lines with slope $1$.</p>
+
+<p><hr></p>
+
+<p><b>Answer 2</b></p>
+
+<p><b>(a)</b> Set $\frac{dy}{dx} = y^2 - 1 = 0$. This gives $y^2 = 1$, so $y = 1$ and $y = -1$ are the equilibrium solutions.</p>
+
+<p><b>(b)</b> Analyze the sign of $y^2 - 1 = (y-1)(y+1)$:</p>
+
+<p>For $y &lt; -1$: both $(y-1)$ and $(y+1)$ are negative, so their product is positive. Thus $\frac{dy}{dx} &gt; 0$, meaning $y$ is increasing, moving toward $-1$.</p>
+
+<p>For $-1 &lt; y &lt; 1$: $(y-1)$ is negative and $(y+1)$ is positive, so their product is negative. Thus $\frac{dy}{dx} &lt; 0$, meaning $y$ is decreasing. In this region, if $y$ is above $-1$, it decreases toward $-1$.</p>
+
+<p>For $y &gt; 1$: both factors are positive, so $\frac{dy}{dx} &gt; 0$, meaning $y$ is increasing, moving away from $1$.</p>
+
+<p>Conclusion: $y = -1$ is stable (solutions approach it from both sides). $y = 1$ is unstable (solutions move away from it on both sides).</p>
+
+<p><hr></p>
+
+<p><b>Answer 3</b></p>
+
+<p><b>(a)</b> At $(3, 4)$, the slope is $m = -\frac{3}{4} = -0.75$. The segment at this point points downward to the right.</p>
+
+<p><b>(b)</b> Separating the differential equation: $y\,dy = -x\,dx$. Integrating: $\frac{y^2}{2} = -\frac{x^2}{2} + C$. Multiplying by $2$: $x^2 + y^2 = 2C$, which is the equation of a circle centered at the origin with radius $\sqrt{2C}$.</p>
+
+<p>For the curve through $(3, 4)$: $3^2 + 4^2 = 9 + 16 = 25$, so $2C = 25$ and the circle is $x^2 + y^2 = 25$, a circle of radius $5$.</p>
+
+<p><hr></p>
+
+<p><b>Answer 4</b></p>
+<p>The differential equation is $\frac{dy}{dx} = 2x$, with $y(0) = 0$. Euler&#x27;s method with $h = 0.5$:</p>
+
+<p class="table-line">| $n$ | $x_n$ | $y_n$ | $f = 2x_n$ | $y_{n+1} = y_n + 0.5 \cdot 2x_n = y_n + x_n$ |</p>
+<p class="table-line">|<hr>|<hr>|<hr>|<hr>|<hr>|</p>
+<p class="table-line">| $0$ | $0$ | $0$ | $0$ | $0 + 0 = 0$ |</p>
+<p class="table-line">| $1$ | $0.5$ | $0$ | $1$ | $0 + 0.5 = 0.5$ |</p>
+<p class="table-line">| $2$ | $1.0$ | $0.5$ | — | — |</p>
+
+<p>So $y(1) \approx 0.5$.</p>
+
+<p>The exact solution is found by integrating: $y = x^2 + C$. With $y(0) = 0$, we get $C = 0$, so $y = x^2$. The exact value is $y(1) = 1$.</p>
+
+<p>The Euler approximation gives $0.5$, while the true value is $1$. The error is $0.5$, which is large because $h = 0.5$ is a coarse step size. With $h = 0.1$, Euler&#x27;s method would give a much more accurate result.</p>
+
+<p><hr></p>
+
+<p><b>Answer 5 (IB-style)</b></p>
+
+<p><b>(a)</b> Equilibrium solutions satisfy $\frac{dy}{dx} = \sin y = 0$. In the interval $(-\pi, \pi)$, the solutions to $\sin y = 0$ are $y = -\pi$, $y = 0$, and $y = \pi$. [2 marks]</p>
+
+<p><b>(b)</b> Near $y = 0$, we examine the sign of $\sin y$. For small positive $y$ (for example, $y = 0.1$), $\sin(0.1) &gt; 0$, so $\frac{dy}{dx} &gt; 0$, meaning $y$ increases—it moves away from $0$ toward larger values. For small negative $y$ (for example, $y = -0.1$), $\sin(-0.1) &lt; 0$, so $\frac{dy}{dx} &lt; 0$, meaning $y$ decreases—it also moves away from $0$, toward more negative values. Since nearby solutions on both sides move away from $y = 0$, the equilibrium is unstable. [3 marks]</p>
+
+<p><b>(c)</b> With $y(0) = 0.1$, the solution starts slightly above the unstable equilibrium at $y = 0$. Since $\sin y &gt; 0$ for $0 &lt; y &lt; \pi$, the derivative is positive, so $y$ increases. As $y$ approaches $\pi$, $\sin y$ remains positive but becomes smaller, so the growth slows. The solution approaches $y = \pi$ asymptotically. Therefore $\lim_{x \to \infty} y(x) = \pi$.</p>
+
+<p>This conclusion can be seen from the slope field: arrows above $y = 0$ all point upward toward $y = \pi$, which acts as a stable equilibrium (solutions above $\pi$ have $\sin y &lt; 0$ and move downward toward $\pi$). [2 marks]</p>
+
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+</body>
+</html>

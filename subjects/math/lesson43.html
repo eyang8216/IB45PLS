@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 43 — Function Transformations</title>
+<script>
+MathJax = {
+  tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body {
+    max-width: 800px; margin: 40px auto; font-family: 'Times New Roman', Georgia, serif;
+    font-size: 17px; line-height: 1.7; padding: 0 20px; color: #1a1a1a;
+  }
+  h1 { font-size: 22px; border-bottom: 2px solid #333; padding-bottom: 8px; margin-top: 36px; }
+  h2 { font-size: 19px; margin-top: 28px; color: #2c3e50; }
+  h3 { font-size: 17px; margin-top: 22px; color: #444; }
+  h4 { font-size: 16px; margin-top: 18px; }
+  p { margin: 0.6em 0; }
+  li { margin: 0.3em 0 0.3em 20px; }
+  hr { margin: 20px 0; border: none; border-top: 1px solid #ddd; }
+  .math-block { text-align: center; margin: 1em 0; overflow-x: auto; }
+  .table-line { font-family: 'Courier New', monospace; font-size: 15px; margin: 0.1em 0; }
+  pre { background: #f5f5f5; padding: 10px 14px; border-radius: 4px; overflow-x: auto; font-size: 14px; }
+  b { color: #222; }
+  table { border-collapse: collapse; margin: 16px 0; width: 100%; font-size: 15px; }
+  th { background: #2c3e50; color: #fff; padding: 8px 12px; text-align: center; font-weight: bold; }
+  td { border: 1px solid #ccc; padding: 8px 12px; text-align: center; }
+  tr:nth-child(even) { background: #f9f9f9; }
+  .nav { text-align: center; margin: 30px 0; font-size: 14px; }
+  .nav a { margin: 0 8px; color: #3498db; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  @media print { body { font-size: 15px; } }
+</style>
+</head>
+<body>
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+<h1>Lesson 43: Function Transformations</h1>
+
+<h2>What You Will Learn and Why It Matters</h2>
+
+<p>A <b>transformation</b> changes a function&#x27;s graph by shifting it, stretching it, or reflecting it. Instead of plotting hundreds of points for each new function, you can take a parent function you already know — like $x^2$, $\sin x$, or $e^x$ — and apply a few simple rules to produce the new graph. IB AAHL exam questions routinely test your ability to describe a sequence of transformations, to find the equation of a transformed graph, and to determine how a specific point on the original graph moves under the transformation. If you master the six basic transformations and the correct order in which to apply them, you will handle these questions quickly and accurately.</p>
+
+<p><hr></p>
+
+<h2>1. The Six Basic Transformations</h2>
+
+<p>Start with a parent function $y = f(x)$. Each of the six transformations below modifies either the input ($x$) or the output ($y$).</p>
+
+<h3>Vertical transformations (act on the output)</h3>
+
+<li>- <b>Vertical shift up by $k$:</b> Add $k$ to the output. Equation: $y = f(x) + k$. Every point on the graph moves up by $k$ units.</li>
+<li>- <b>Vertical shift down by $k$:</b> Subtract $k$. Equation: $y = f(x) - k$.</li>
+<li>- <b>Vertical stretch by factor $a$:</b> Multiply the output by $a$. Equation: $y = a \cdot f(x)$. If $a &gt; 1$, the graph gets taller. If $0 &lt; a &lt; 1$, the graph gets shorter.</li>
+<li>- <b>Reflection in the $x$-axis:</b> Negate the output. Equation: $y = -f(x)$. The graph flips over the $x$-axis.</li>
+
+<h3>Horizontal transformations (act on the input — and they feel &quot;backwards&quot;)</h3>
+
+<li>- <b>Horizontal shift right by $h$:</b> Replace $x$ with $(x - h)$. Equation: $y = f(x - h)$. Despite the minus sign, the graph moves to the right. This is the source of more mistakes than any other transformation.</li>
+<li>- <b>Horizontal shift left by $h$:</b> Replace $x$ with $(x + h)$. Equation: $y = f(x + h)$.</li>
+<li>- <b>Horizontal stretch by factor $\frac{1}{b}$:</b> Replace $x$ with $bx$. Equation: $y = f(bx)$. If $b &gt; 1$, the graph compresses horizontally. If $0 &lt; b &lt; 1$, the graph stretches horizontally.</li>
+<li>- <b>Reflection in the $y$-axis:</b> Negate the input. Equation: $y = f(-x)$. The graph flips over the $y$-axis.</li>
+
+<p><b>Why the horizontal ones feel backwards:</b> When you write $f(x - 2)$, you are asking: &quot;At what input does the function now see the value that it used to see at $x$?&quot; It sees the old value at $x - 2$, which is two units to the left of $x$. To compensate, the whole graph shifts two units to the right. Many students memorize &quot;inside does the opposite.&quot; A better understanding: horizontal transformations change the $x$ before the function acts on it, so the effect on the graph is the reverse of the arithmetic operation inside the parentheses.</p>
+
+<p><hr></p>
+
+<h2>2. Combining Multiple Transformations</h2>
+
+<p>When a function has several transformations, you must apply them in a consistent order. The safest approach is to think from the <b>inside out</b>, following BIDMAS in reverse: handle what is closest to the $x$ first, then work outward.</p>
+
+<h3>Worked Example 1</h3>
+
+<p><b>Problem:</b> Describe all transformations needed to change $f(x) = x^2$ into $g(x) = 3(x + 1)^2 - 4$.</p>
+
+<p><b>Approach:</b> Identify the operations applied, working from inside the function (closest to the $x$) outward.</p>
+
+<p><b>Step-by-step working:</b></p>
+<li>Inside the parentheses: $x$ becomes $x + 1$. This is a horizontal shift <b>left</b> by $1$ unit. (The $+1$ feels backwards — it moves the graph left.)</li>
+<li>Outside the squared term: the result is multiplied by $3$. This is a vertical stretch by factor $3$.</li>
+<li>At the very end: $4$ is subtracted. This is a vertical shift <b>down</b> by $4$ units.</li>
+
+<p><b>Why this makes sense:</b> If you pick a test point on the original graph, say $(0, 0)$ from $y = x^2$, then:</p>
+<li>- After the left shift: $(-1, 0)$</li>
+<li>- After the vertical stretch: $(-1, 0)$ (zero times anything is still zero)</li>
+<li>- After the down shift: $(-1, -4)$</li>
+<p>And indeed, $g(-1) = 3(0)^2 - 4 = -4$. The vertex has moved from $(0, 0)$ to $(-1, -4)$.</p>
+
+<p><hr></p>
+
+<h3>Worked Example 2</h3>
+
+<p><b>Problem:</b> The graph of $y = f(x)$ is translated 2 units to the right, then reflected in the $x$-axis, then stretched vertically by a factor of 3. Find the equation of the resulting graph in terms of $f$.</p>
+
+<p><b>Approach:</b> Apply each transformation in the order given, building the equation step by step.</p>
+
+<p><b>Step-by-step working:</b></p>
+<li>Translate 2 units right: replace $x$ with $x - 2$. Equation becomes $y = f(x - 2)$.</li>
+<li>Reflect in the $x$-axis: multiply the output by $-1$. Equation becomes $y = -f(x - 2)$.</li>
+<li>Stretch vertically by factor 3: multiply the output by $3$. Equation becomes $y = -3f(x - 2)$.</li>
+
+<p>The final equation is $y = -3f(x - 2)$.</p>
+
+<p><b>Common misconception:</b> Many students write $y = -3f(x + 2)$ for a right shift because they confuse the direction of the horizontal shift. A shift to the right uses $(x - 2)$, not $(x + 2)$.</p>
+
+<p><hr></p>
+
+<h3>Worked Example 3</h3>
+
+<p><b>Problem:</b> The graph of $y = f(x)$ is transformed to $y = 2f(3x - 6) + 1$. Describe the sequence of transformations in the correct order.</p>
+
+<p><b>Approach:</b> Rewrite the argument so the factor of $x$ is isolated: $3x - 6 = 3(x - 2)$. Now work from inside out.</p>
+
+<p><b>Step-by-step working:</b></p>
+<li>The expression $3(x - 2)$ means: first shift right by $2$ (from $x - 2$), then horizontally compress by factor $\frac{1}{3}$ (from the $3$ multiplying the whole bracket).</li>
+<li>Outside the function: multiply the output by $2$. This is a vertical stretch by factor $2$.</li>
+<li>Add $1$ at the end. This is a vertical shift up by $1$ unit.</li>
+
+<p><b>Why the rewrite matters:</b> If you do not factor out the $3$, you might incorrectly think the horizontal shift is $6$ units right. The rewrite $3x - 6 = 3(x - 2)$ reveals the true shift is only $2$ units right.</p>
+
+<p><hr></p>
+
+
+<div class="visual" style="text-align:center;margin:24px 0;background:#fafaf9;padding:16px;border-radius:8px;border:1px solid #ddd;">
+<p style="font-weight:bold;color:#2c3e50;margin-bottom:12px;">Figure: f(x) = x² transformed to g(x) = −2(x−1)² + 3</p>
+<svg viewBox="0 0 500 360" width="460" height="330" xmlns="http://www.w3.org/2000/svg">
+  <!-- Grid -->
+  <defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e8e8e8" stroke-width="0.5"/>
+  </pattern></defs>
+  <rect width="500" height="360" fill="url(#grid)"/>
+  <!-- Axes -->
+  <line x1="250" y1="0" x2="250" y2="360" stroke="#555" stroke-width="1.5"/>
+  <line x1="0" y1="180" x2="500" y2="180" stroke="#555" stroke-width="1.5"/>
+  <!-- Axis labels -->
+  <g font-size="12" fill="#666" text-anchor="middle">
+    <text x="250" y="15" font-style="italic">y</text>
+    <text x="490" y="195" font-style="italic">x</text>
+    <text x="130" y="195">-3</text><text x="170" y="195">-2</text><text x="210" y="195">-1</text>
+    <text x="290" y="195">1</text><text x="330" y="195">2</text><text x="370" y="195">3</text>
+    <text x="262" y="105">2</text><text x="262" y="145">1</text>
+    <text x="255" y="223">-1</text><text x="255" y="263">-2</text><text x="262" y="65">3</text>
+  </g>
+  <!-- f(x) = x² (blue, original) -->
+  <path d="M130,220 Q190,60 250,20 Q310,60 370,220" fill="none" stroke="#3498db" stroke-width="2.5" stroke-dasharray="8,4"/>
+  <text x="375" y="235" font-size="13" fill="#3498db" font-style="italic">f(x) = x²</text>
+  <!-- g(x) = -2(x-1)² + 3 (red, transformed): vertex at (1,3), downward, stretched -->
+  <path d="M170,140 Q210,20 250,60 Q290,20 330,140" fill="none" stroke="#e74c3c" stroke-width="2.5"/>
+  <text x="150" y="135" font-size="13" fill="#e74c3c" font-style="italic">g(x) = −2(x−1)² + 3</text>
+  <!-- Vertex marker -->
+  <circle cx="250" cy="20" r="4" fill="#3498db"/>
+  <circle cx="290" cy="60" r="4" fill="#e74c3c"/>
+</svg>
+<p style="font-size:13px;color:#666;margin-top:8px;">The blue dashed parabola is the original f(x). The red parabola shows: shift right 1, vertical stretch ×2, reflect across x-axis, shift up 3. Notice the vertex moves from (0,0) to (1,3).</p>
+</div>
+<h2>3. Transformations of Specific Function Families</h2>
+
+<h3>Exponential functions: $f(x) = e^x$</h3>
+
+<p>The parent graph $y = e^x$ passes through $(0, 1)$, is always positive, and increases rapidly. Transformations follow the same rules:</p>
+<li>- $y = e^{x - a}$ shifts the graph right by $a$.</li>
+<li>- $y = Ae^x$ stretches the graph vertically by factor $A$.</li>
+<li>- $y = e^x + C$ shifts the graph up by $C$. The horizontal asymptote moves from $y = 0$ to $y = C$.</li>
+
+<h3>Trigonometric functions: $y = A\sin(Bx + C) + D$</h3>
+
+<p>For a sine or cosine graph in the form $y = A\sin(Bx + C) + D$:</p>
+<li>- $|A|$ is the <b>amplitude</b>: the distance from the midline to a peak.</li>
+<li>- The <b>period</b> (length of one full cycle) is $\frac{2\pi}{|B|}$.</li>
+<li>- The <b>phase shift</b> (horizontal displacement) is $-\frac{C}{B}$. Factor out $B$ first: $Bx + C = B\!\left(x + \frac{C}{B}\right)$, so the shift is $-\frac{C}{B}$.</li>
+<li>- $D$ is the <b>vertical shift</b>. The midline moves from $y = 0$ to $y = D$.</li>
+
+<p><hr></p>
+
+<h3>Worked Example 4</h3>
+
+<p><b>Problem:</b> For the function $y = 3\sin\!\left(2x - \frac{\pi}{3}\right) + 1$, find the amplitude, period, phase shift, and vertical shift.</p>
+
+<p><b>Approach:</b> Factor the argument of sine: $2x - \frac{\pi}{3} = 2\!\left(x - \frac{\pi}{6}\right)$. Then read off each parameter.</p>
+
+<p><b>Step-by-step working:</b></p>
+<li>Amplitude: $|A| = |3| = 3$. The graph oscillates between $3$ units above and $3$ units below the midline.</li>
+<li>Period: $\frac{2\pi}{|B|} = \frac{2\pi}{2} = \pi$.</li>
+<li>Phase shift: The factorized form shows $-\frac{C}{B} = \frac{\pi}{6}$. Since it is $x - \frac{\pi}{6}$, the shift is $\frac{\pi}{6}$ to the right.</li>
+<li>Vertical shift: $D = 1$. The midline is $y = 1$. The graph ranges from $1 - 3 = -2$ to $1 + 3 = 4$.</li>
+
+<p><hr></p>
+
+<h2>Practice Problems</h2>
+
+<p><b>1.</b> Describe the sequence of transformations that maps $f(x)$ onto $g(x) = -2f(x - 1) + 3$.</p>
+
+<p><b>2.</b> The point $(2, 5)$ lies on the graph of $y = f(x)$. Determine the coordinates of the image of this point on the graph of $y = f(2x + 4)$.</p>
+
+<p><b>3.</b> The graph of $y = |x|$ is shifted 3 units to the right, then reflected in the $x$-axis, then shifted 2 units up. Find the equation of the resulting graph.</p>
+
+<p><b>4.</b> For the function $y = 4\cos(3x + \pi) - 2$, find the amplitude, the period, the phase shift (state whether left or right), and the vertical shift.</p>
+
+<p><b>5.</b> (IB Exam Style) The graph of $y = \dfrac{1}{x}$ is transformed by a vertical stretch with scale factor 2, followed by a horizontal translation of 1 unit to the left, followed by a vertical translation of 3 units down.</p>
+
+<p>(a) Write the equation of the transformed function. [2 marks]</p>
+
+<p>(b) Write down the equations of all asymptotes of the transformed graph. [2 marks]</p>
+
+<p>(c) Find the coordinates of the point on the transformed graph that corresponds to the point $(1, 1)$ on the original graph. [2 marks]</p>
+
+<p><b>6.</b> The function $f(x) = x^2$ undergoes the following transformations in order: a horizontal compression by factor $\frac{1}{2}$, a reflection in the $x$-axis, a horizontal translation 3 units to the right, and a vertical translation 1 unit up. Find the equation of the resulting function and state the coordinates of its vertex.</p>
+
+<p><hr></p>
+
+<h2>Answers</h2>
+
+<p><b>1.</b> Starting from $f(x)$: the $(x - 1)$ inside means shift <b>right</b> by 1 unit. The $-2$ multiplying $f$ means a vertical stretch by factor $2$ combined with a reflection in the $x$-axis (the negative sign). The $+3$ at the end means shift <b>up</b> by 3 units. The order matters: the horizontal shift happens first, the stretch and reflection are applied second, and the vertical shift is last. A common mistake is to apply the reflection before the stretch or to confuse the direction of the horizontal shift.</p>
+
+<p><b>2.</b> First factor the argument: $2x + 4 = 2(x + 2)$. This represents a horizontal compression by factor $\frac{1}{2}$ and a shift left by $2$. To find the new location of the point $(2, 5)$, let the original $x$ coordinate $2$ be the input to $f$. After the transformation, we need $2(x_{\text{new}} + 2) = 2$, so $x_{\text{new}} + 2 = 1$, giving $x_{\text{new}} = -1$. The $y$ coordinate is unchanged because no vertical transformation was applied. The image point is $(-1, 5)$. Many students forget to factor out the $2$ and incorrectly solve $2x + 4 = 2$ giving $x = -1$ by coincidence — but the method of factoring is essential for understanding.</p>
+
+<p><b>3.</b> Start with $y = |x|$. Shift 3 right: $y = |x - 3|$. Reflect in $x$-axis: $y = -|x - 3|$. Shift 2 up: $y = -|x - 3| + 2$. The vertex of the V-shaped graph is now at $(3, 2)$, and the V opens downward.</p>
+
+<p><b>4.</b> Factor the argument: $3x + \pi = 3\!\left(x + \frac{\pi}{3}\right)$. Amplitude: $|4| = 4$. Period: $\frac{2\pi}{3}$. Phase shift: $\frac{\pi}{3}$ to the <b>left</b> (because the factorized form has $+ \frac{\pi}{3}$ inside the brackets). Vertical shift: $2$ units <b>down</b>. The midline is $y = -2$, and the graph oscillates between $-6$ and $2$.</p>
+
+<p><b>5.</b> (a) Start with $y = \frac{1}{x}$. Vertical stretch by factor 2: $y = \frac{2}{x}$. Horizontal translation 1 unit left: $y = \frac{2}{x + 1}$. Vertical translation 3 down: $y = \frac{2}{x + 1} - 3$. [2 marks]</p>
+
+<p>(b) The original graph of $y = \frac{1}{x}$ has asymptotes at $x = 0$ (vertical) and $y = 0$ (horizontal). The horizontal shift left by 1 moves the vertical asymptote to $x = -1$. The vertical shift down by 3 moves the horizontal asymptote to $y = -3$. The vertical stretch does not affect the location of asymptotes. So the asymptotes are $x = -1$ and $y = -3$. [2 marks]</p>
+
+<p>(c) The original point $(1, 1)$ moves: left 1 to $x = 0$, then the $y$-value is stretched and shifted. Compute directly: when $x = 0$, $y = \frac{2}{0 + 1} - 3 = 2 - 3 = -1$. So the corresponding point is $(0, -1)$. [2 marks]</p>
+
+<p><b>6.</b> Start with $f(x) = x^2$. Horizontal compression by factor $\frac{1}{2}$: replace $x$ with $2x$, giving $(2x)^2 = 4x^2$. Reflection in $x$-axis: $y = -4x^2$. Horizontal translation 3 right: replace $x$ with $x - 3$, giving $y = -4(x - 3)^2$. Vertical translation 1 up: $y = -4(x - 3)^2 + 1$. The vertex was at $(0, 0)$. After shifting 3 right and 1 up, the vertex is at $(3, 1)$. The parabola opens downward because of the negative sign.</p>
+
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+</body>
+</html>

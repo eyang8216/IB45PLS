@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 29: Lesson 29: Simple Harmonic Motion I — Introducing Oscillations — IB Physics HL</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']]
+  },
+  options: {
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap');
+  
+  :root {
+    --bg: #fdfcf9;
+    --text: #1a1a1a;
+    --accent: #2c5f2d;
+    --border: #d0cec7;
+    --code-bg: #f4f3ef;
+    --callout-bg: #f0f7f0;
+    --callout-border: #2c5f2d;
+    --warning-bg: #fff8e6;
+    --warning-border: #c4941a;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  body {
+    font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid var(--accent);
+    color: var(--accent);
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 2.5rem 0 0.75rem;
+    color: #1a1a1a;
+  }
+  
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.5rem;
+  }
+  
+  p { margin: 0 0 1rem; }
+  
+  ul, ol { margin: 0 0 1rem 1.5rem; }
+  li { margin-bottom: 0.35rem; }
+  
+  code {
+    background: var(--code-bg);
+    padding: 0.15em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+    font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+  }
+  
+  pre {
+    background: var(--code-bg);
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 0 0 1rem;
+    font-size: 0.85em;
+    line-height: 1.5;
+  }
+  
+  pre code {
+    background: none;
+    padding: 0;
+    font-size: inherit;
+  }
+  
+  blockquote {
+    border-left: 4px solid var(--callout-border);
+    background: var(--callout-bg);
+    margin: 0 0 1rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+  }
+  
+  blockquote.warning {
+    border-left-color: var(--warning-border);
+    background: var(--warning-bg);
+  }
+  
+  strong { font-weight: 700; }
+  
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.5rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  
+  .nav a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+  
+  .nav a:hover { background: var(--callout-bg); }
+  
+  .worked-example, .answer {
+    background: var(--code-bg);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin: 0.75rem 0 1.25rem;
+  }
+  
+  .worked-example strong:first-child, .answer strong:first-child {
+    color: var(--accent);
+  }
+  
+  @media print {
+    body { font-size: 12pt; max-width: 100%; padding: 0; }
+    .nav { display: none; }
+    h1 { font-size: 18pt; }
+    h2 { font-size: 14pt; }
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 0 1rem;
+  }
+  
+  th, td {
+    border: 1px solid var(--border);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  
+  th {
+    background: var(--code-bg);
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L28_circuits_5.html">← Lesson 28</a>
+  <a href="L30_shm_2.html">Lesson 30 →</a>
+</nav>
+
+<h1>Lesson 29: Simple Harmonic Motion I — Introducing Oscillations</h1>
+
+<blockquote><strong>IB Data Booklet references:</strong> $a = -\omega^2 x$, $T = \frac{1}{f}$, $\omega = \frac{2\pi}{T} = 2\pi f$</blockquote>
+
+<h2>What You'll Learn</h2>
+<ul>
+<li>What an <strong>oscillation</strong> is and what makes motion <strong>periodic</strong></li>
+<li>The meaning of <strong>equilibrium position</strong>, <strong>amplitude</strong>, <strong>period</strong>, <strong>frequency</strong>, and <strong>angular frequency</strong></li>
+<li>The definition of <strong>Simple Harmonic Motion (SHM)</strong> and its defining equation: $a = -\omega^2 x$</li>
+<li>How SHM connects to uniform circular motion</li>
+</ul>
+
+<hr>
+
+<h2>1. What Is an Oscillation?</h2>
+
+<h3>What an Oscillation Is — Starting from Nothing</h3>
+
+<p>An <strong>oscillation</strong> is a motion that repeats itself over and over, going back and forth through a central position. Imagine a child on a playground swing. You give her one push, and she swings forward, slows down, stops for an instant at the highest point, then swings backward, passes through the bottom, slows down on the other side, stops, and then swings forward again. That entire back-and-forth journey — and the fact that she repeats it over and over — is an <strong>oscillation</strong>.</p>
+
+<p>Here are some oscillations you have experienced:</p>
+
+<ul>
+<li>A <strong>guitar string</strong> after you pluck it: it vibrates back and forth rapidly, producing sound.</li>
+<li>Your <strong>heartbeat</strong>: it contracts and relaxes in a repeating rhythm.</li>
+<li>A <strong>cork bobbing on water</strong> after a ripple passes: it moves up and down around its original floating level.</li>
+<li>The <strong>piston in a car engine</strong>: it moves up and down inside the cylinder thousands of times per minute.</li>
+<li>A <strong>tuning fork</strong> when struck: its prongs move inward and outward at a specific frequency.</li>
+</ul>
+
+<p>All of these have one thing in common: something moves away from a central position, returns, overshoots to the other side, and keeps repeating. That central position is called the <strong>equilibrium position</strong>.</p>
+
+<h3>The Equilibrium Position — Your "Home Base"</h3>
+
+<p>The <strong>equilibrium position</strong> is where the object would sit if it were not moving at all — the position where all forces on it cancel out. For the swing, equilibrium is hanging straight down. For the cork on water, equilibrium is where the cork naturally floats. For a mass hanging on a spring, equilibrium is where the spring's upward force exactly balances the weight.</p>
+
+<p>When an oscillating object passes through equilibrium, it is moving at its fastest. When it is farthest from equilibrium (at the extreme ends of its motion), it momentarily stops before turning around.</p>
+
+<h3>Restoring Force — What Brings You Back</h3>
+
+<p>For any oscillation to happen, there must be a <strong>restoring force</strong> — a force that always points back toward the equilibrium position. The further you are from equilibrium, the larger this force becomes (at least for SHM).</p>
+
+<p>Think about a swing. When the swing is displaced to the side, gravity pulls it back toward the bottom. The larger the angle, the stronger the component of gravity that pushes it back. This is the restoring force. Without it, the swing would never come back — it would just keep going.</p>
+
+<h3>Why This Matters</h3>
+
+<p>Oscillations are everywhere in physics. Sound is oscillating air pressure. Light is oscillating electric and magnetic fields. Radio signals carry information on oscillating electromagnetic waves. The atoms in a solid vibrate around their lattice positions. Planets orbit stars, and while that's not SHM, the mathematics of periodic motion you learn here becomes the foundation for understanding waves, alternating current electricity, quantum mechanics, and more.</p>
+
+<hr>
+
+<h2>2. Describing Oscillations — The Basic Vocabulary</h2>
+
+<p>Before we can write equations, we need words to describe what we see. Imagine watching that child on the swing. How would you describe her motion to someone who cannot see it?</p>
+
+<h3>Displacement $x$</h3>
+
+<p><strong>Displacement</strong> is how far the oscillating object is from the equilibrium position at any instant. We use the letter $x$ (in meters, m). Displacement can be positive or negative, depending on which side of equilibrium the object is on.</p>
+
+<ul>
+<li>$x = 0$ means the object is exactly at equilibrium.</li>
+<li>$x = +A$ means it is at the maximum displacement on the side we call positive.</li>
+<li>$x = -A$ means it is at the maximum displacement on the negative side.</li>
+</ul>
+
+<h3>Amplitude $A$</h3>
+
+<p>The <strong>amplitude</strong> is the maximum displacement from equilibrium. It is always a positive number. If the swing goes 1.5 meters to the right and 1.5 meters to the left, the amplitude is 1.5 m. The amplitude tells you how "big" the oscillation is — how far from center the motion reaches.</p>
+
+<p>The symbol is $A$ (or sometimes $x_0$), and it is measured in meters (m).</p>
+
+<p>Amplitude does not change over time in an ideal (undamped) oscillator. In real life, friction slowly reduces the amplitude, which is why a swing eventually stops if you don't keep pumping it.</p>
+
+<h3>Period $T$</h3>
+
+<p>The <strong>period</strong> is the time it takes to complete one full oscillation — one complete back-and-forth cycle. Start the stopwatch when the swing is at its rightmost point. Stop it when the swing returns to the rightmost point, having gone all the way to the left and back. That time is the period.</p>
+
+<p>The symbol is $T$, and it is measured in seconds (s).</p>
+
+<p>A pendulum clock uses a pendulum with a period of exactly 2 seconds (1 second each way). The second hand ticks once per swing.</p>
+
+<p>$$\boxed{T = \frac{1}{f}}$$</p>
+
+<h3>Frequency $f$</h3>
+
+<p>The <strong>frequency</strong> is the number of complete oscillations per second. If a guitar string vibrates 440 times per second, its frequency is 440 Hz (Hertz). The symbol is $f$, and it is measured in Hertz (Hz), where $1\ \mathrm{Hz} = 1\ \mathrm{s}^{-1}$.</p>
+
+<p>$$\boxed{f = \frac{1}{T}}$$</p>
+
+<p>Period and frequency are inverses. A long period means low frequency (slow oscillation). A short period means high frequency (fast oscillation).</p>
+
+<h3>Angular Frequency $\omega$</h3>
+
+<p>There is a third way to describe how fast something oscillates: <strong>angular frequency</strong>, symbol $\omega$ (the Greek letter omega). It is measured in radians per second ($\mathrm{rad\ s^{-1}}$).</p>
+
+<p>Why radians? Because SHM is deeply connected to circular motion (we will explore this shortly). One full oscillation corresponds to the object going through $2\pi$ radians of the reference circle.</p>
+
+<p>$$\boxed{\omega = \frac{2\pi}{T} = 2\pi f}$$</p>
+
+<table>
+<tr>
+<th>Quantity</th>
+<th>Symbol</th>
+<th>SI Unit</th>
+<th>Relationship</th>
+</tr>
+<tr>
+<td>Period</td>
+<td>$T$</td>
+<td>seconds (s)</td>
+<td>$T = 1/f = 2\pi/\omega$</td>
+</tr>
+<tr>
+<td>Frequency</td>
+<td>$f$</td>
+<td>Hertz (Hz)</td>
+<td>$f = 1/T = \omega/(2\pi)$</td>
+</tr>
+<tr>
+<td>Angular frequency</td>
+<td>$\omega$</td>
+<td>rad/s</td>
+<td>$\omega = 2\pi f = 2\pi/T$</td>
+</tr>
+</table>
+
+<h3>Common Misconception</h3>
+
+<p><strong>Many students confuse frequency $f$ with angular frequency $\omega$.</strong> Frequency $f$ tells you cycles per second; angular frequency $\omega$ tells you radians per second. They differ by a factor of $2\pi$. For a 1 Hz oscillation (one cycle per second), $\omega = 2\pi \approx 6.28\ \mathrm{rad/s}$. Always check which one a problem is asking for. If you see $\omega$ in a formula like $\sin(\omega t)$, you need angular frequency, not plain frequency.</p>
+
+<hr>
+
+<h2>3. What Is Simple Harmonic Motion (SHM)?</h2>
+
+<h3>The Defining Equation</h3>
+
+<p>Not all oscillations are SHM. <strong>Simple Harmonic Motion</strong> is a special kind of oscillation where the acceleration is directly proportional to the displacement from equilibrium and always directed toward equilibrium.</p>
+
+<p>Mathematically:</p>
+
+<p>$$\boxed{a = -\omega^2 x}$$</p>
+
+<p>Let's break this down piece by piece:</p>
+
+<ul>
+<li>$a$ is the acceleration at any instant (in $\mathrm{m/s^2}$).</li>
+<li>$x$ is the displacement at that instant (in m).</li>
+<li>$\omega^2$ is a positive constant (the square of the angular frequency).</li>
+<li>The <strong>minus sign</strong> is the most important part. It means: when $x$ is positive (object to the right), $a$ is negative (acceleration points left, toward equilibrium). When $x$ is negative (object to the left), $a$ is positive (acceleration points right, toward equilibrium). The acceleration always points toward $x = 0$.</li>
+</ul>
+
+<h3>What This Equation Tells Us Physically</h3>
+
+<ol>
+<li><strong>At the extremes</strong>: When $x = +A$ (maximum positive displacement), $a = -\omega^2 A$, the maximum acceleration toward equilibrium. The object is momentarily at rest but being pulled hardest.</li>
+</ol>
+
+<ol>
+<li><strong>At equilibrium</strong>: When $x = 0$, $a = 0$. There is no net force (for the mass-spring system, this is where the spring is at its natural length minus the static extension due to weight). The object passes through equilibrium at maximum speed.</li>
+</ol>
+
+<ol>
+<li><strong>In between</strong>: Acceleration grows linearly with displacement. Double the displacement, double the acceleration (in magnitude).</li>
+</ol>
+
+<h3>The SHM Test — How to Recognize SHM</h3>
+
+<p>If you encounter a system and want to know whether it undergoes SHM, ask one question:</p>
+
+<blockquote>Is the net force (or acceleration) proportional to displacement and directed toward equilibrium?</blockquote>
+
+<p>If the answer is yes, and you can write it in the form $a = -\omega^2 x$, then the motion is SHM. The value of $\omega^2$ tells you the angular frequency, and from that you can find the period: $T = 2\pi/\omega$.</p>
+
+<p>For a <strong>mass on a spring</strong>, the force is $F = -kx$ (Hooke's Law), so $a = -(k/m)x$, giving $\omega^2 = k/m$ and $T = 2\pi\sqrt{m/k}$.</p>
+
+<p>For a <strong>simple pendulum</strong> with small angles, the tangential acceleration is $a = -(g/L)x$ (where $x$ is arc length), giving $\omega^2 = g/L$ and $T = 2\pi\sqrt{L/g}$.</p>
+
+<p>More on both of these in Lesson 32.</p>
+
+<h3>Common Misconception</h3>
+
+<p><strong>Many students think any repeating motion is SHM.</strong> A bouncing basketball is not SHM. A heartbeat is not SHM. SHM requires that the restoring force be proportional to displacement, not just that the motion repeats. Only a few idealized systems (mass-spring, simple pendulum at small angles, LC circuits) truly exhibit SHM.</p>
+
+<p><strong>Many students think the minus sign in $a = -\omega^2 x$ is just a mathematical formality.</strong> It is not. The minus sign is what makes the motion oscillatory. If the sign were positive ($a = +\omega^2 x$), the object would accelerate away from equilibrium faster and faster and never return. The minus sign encodes the restoring nature of the force.</p>
+
+<hr>
+
+<h2>4. SHM as a Projection of Circular Motion</h2>
+
+<h3>The Connection to the Circle</h3>
+
+<p>This is one of the most powerful ideas in SHM: <strong>SHM is exactly the same as the projection of uniform circular motion onto a straight line.</strong></p>
+
+<p>Imagine a point P moving around a circle of radius $A$ at a constant angular speed $\omega$. Now imagine shining a light from the side so that the shadow of P falls onto a screen. The shadow moves back and forth in a straight line. That back-and-forth motion of the shadow is precisely SHM.</p>
+
+<p>Why does this help? Because everything you know about uniform circular motion can be translated into SHM:</p>
+
+<ul>
+<li>The radius of the circle becomes the <strong>amplitude</strong> $A$ of the SHM.</li>
+<li>The angular speed $\omega$ of the circular motion is exactly the <strong>angular frequency</strong> of the SHM.</li>
+<li>One full revolution ($2\pi$ radians) corresponds to one complete oscillation, so $T = 2\pi/\omega$, exactly as we wrote before.</li>
+</ul>
+
+<h3>Deriving $x(t)$ from the Circle</h3>
+
+<p>At any time $t$, the point P has swept out an angle $\theta = \omega t$ (starting from the positive x-axis). The x-coordinate (or y-coordinate, depending on your projection direction) of the shadow is:</p>
+
+<p>$$x(t) = A\cos(\omega t) \quad \text{or} \quad x(t) = A\sin(\omega t)$$</p>
+
+<p>Both describe SHM. The choice between sine and cosine just depends on where you define $t = 0$:</p>
+
+<ul>
+<li>If the oscillator starts at maximum displacement ($x = +A$ at $t = 0$), use $x = A\cos(\omega t)$.</li>
+<li>If the oscillator starts at equilibrium moving in the positive direction ($x = 0$ at $t = 0$), use $x = A\sin(\omega t)$.</li>
+</ul>
+
+<h3>Deriving $a = -\omega^2 x$ from the Circle</h3>
+
+<p>In uniform circular motion, the acceleration of the point P always points toward the center of the circle (centripetal acceleration) with magnitude $a_c = \omega^2 A$.</p>
+
+<p>When we project this acceleration onto the line of SHM, the component along the direction of motion has magnitude $\omega^2 A \cos(\omega t) = \omega^2 x$, and it always points toward the center — which, in the projection, corresponds to pointing toward $x = 0$. This gives us:</p>
+
+<p>$$a = -\omega^2 x$$</p>
+
+<p>The minus sign falls out naturally from the geometry.</p>
+
+<h3>Why This Matters</h3>
+
+<p>The circular motion analogy gives you intuition for everything:</p>
+
+<ul>
+<li>At the ends ($x = \pm A$), the circular point is moving tangentially (all velocity is perpendicular to the projection line), so the shadow appears momentarily stationary. Speed = 0.</li>
+<li>At the center ($x = 0$), the circular point is moving purely along the projection line, so the shadow moves at maximum speed. Speed = $\omega A$.</li>
+<li>The period comes from the time for one full circle: $T = 2\pi/\omega$.</li>
+</ul>
+
+<hr>
+
+<h2>Worked Examples</h2>
+
+<h3>Example 1: Identifying SHM</h3>
+
+<p><strong>Problem:</strong> A particle moves such that its acceleration is given by $a = -25x$, where $x$ is in meters and $a$ in $\mathrm{m/s^2}$. Determine whether the motion is SHM, and if so, find the angular frequency and period.</p>
+
+<p><strong>Approach:</strong> Compare the given equation to the SHM defining equation $a = -\omega^2 x$.</p>
+
+<p><strong>Solution:</strong></p>
+
+<p>The equation is $a = -25x$, which has the form $a = -(\text{constant}) \times x$. Since the acceleration is proportional to displacement and the minus sign ensures it points toward equilibrium, the motion is SHM.</p>
+
+<p>Comparing $a = -25x$ to $a = -\omega^2 x$ gives $\omega^2 = 25$, so:</p>
+
+<p>$$\omega = \sqrt{25} = 5.0\ \mathrm{rad/s}$$</p>
+
+<p>The period is:</p>
+
+<p>$$T = \frac{2\pi}{\omega} = \frac{2\pi}{5} = 0.4\pi \approx 1.26\ \mathrm{s}$$</p>
+
+<p><strong>Why this makes sense:</strong> The period of about 1.26 seconds means the particle completes roughly 0.8 oscillations per second. The angular frequency of 5 rad/s is less than $2\pi$, which means it takes more than 1 second for one cycle — consistent.</p>
+
+<hr>
+
+<h3>Example 2: From Circular Motion to SHM</h3>
+
+<p><strong>Problem:</strong> A point moves around a circle of radius 0.30 m at a constant speed, completing one revolution every 2.0 seconds. The shadow of the point projected onto a screen moves along a line. Find: (a) the amplitude of the SHM, (b) the angular frequency, (c) the maximum speed of the shadow.</p>
+
+<p><strong>Approach:</strong> The amplitude is the circle's radius. Angular frequency comes from the period. Maximum speed comes from $v_{\max} = \omega A$.</p>
+
+<p><strong>Solution:</strong></p>
+
+<p>(a) Amplitude = radius of the circle = $A = 0.30\ \mathrm{m}$.</p>
+
+<p>(b) $T = 2.0\ \mathrm{s}$, so:</p>
+<p>$$\omega = \frac{2\pi}{T} = \frac{2\pi}{2.0} = \pi \approx 3.14\ \mathrm{rad/s}$$</p>
+
+<p>(c) The speed of the point on the circle is $v = \omega A$. This is the tangential speed. The shadow's speed ranges from $0$ at the extremes to $v_{\max} = \omega A$ at equilibrium:</p>
+<p>$$v_{\max} = \omega A = \pi \times 0.30 = 0.30\pi \approx 0.94\ \mathrm{m/s}$$</p>
+
+<p><strong>Why this makes sense:</strong> The point on the circle moves at constant speed $0.94\ \mathrm{m/s}$, but its shadow only has this full speed when moving parallel to the projection line (at equilibrium). At the turning points, the shadow is momentarily still.</p>
+
+<hr>
+
+<h3>Example 3: Reading SHM from an Equation</h3>
+
+<p><strong>Problem:</strong> An oscillator has displacement $x = 0.050\sin(4.0t)$, with $x$ in meters and $t$ in seconds. Find: (a) the amplitude, (b) the angular frequency, (c) the frequency, (d) the period, (e) the maximum acceleration.</p>
+
+<p><strong>Approach:</strong> Match the given equation to the standard form $x = A\sin(\omega t)$.</p>
+
+<p><strong>Solution:</strong></p>
+
+<p>(a) Amplitude: $A = 0.050\ \mathrm{m} = 5.0\ \mathrm{cm}$.</p>
+
+<p>(b) Angular frequency: $\omega = 4.0\ \mathrm{rad/s}$.</p>
+
+<p>(c) Frequency: $f = \frac{\omega}{2\pi} = \frac{4.0}{2\pi} = \frac{2}{\pi} \approx 0.637\ \mathrm{Hz}$.</p>
+
+<p>(d) Period: $T = \frac{1}{f} = \frac{\pi}{2} \approx 1.57\ \mathrm{s}$.</p>
+
+<p>(e) Maximum acceleration: $a_{\max} = \omega^2 A = (4.0)^2 \times 0.050 = 16 \times 0.050 = 0.80\ \mathrm{m/s^2}$.</p>
+
+<p><strong>Why this makes sense:</strong> The acceleration magnitude at the extremes is $\omega^2 A$, which is the centripetal acceleration of the equivalent circular motion. Here, the equivalent circle has radius 5 cm and angular speed 4 rad/s.</p>
+
+<hr>
+
+<h3>Example 4: Finding $\omega$ from Mass-Spring Data</h3>
+
+<p><strong>Problem:</strong> A 0.200 kg mass attached to a spring oscillates horizontally on a frictionless surface. Measurements show that when the mass is displaced 0.10 m from equilibrium, the acceleration is $3.0\ \mathrm{m/s^2}$ toward equilibrium. Find: (a) the angular frequency, (b) the spring constant, (c) the period.</p>
+
+<p><strong>Approach:</strong> Use $a = -\omega^2 x$ to find $\omega$, then $k = m\omega^2$.</p>
+
+<p><strong>Solution:</strong></p>
+
+<p>(a) At $|x| = 0.10\ \mathrm{m}$, $|a| = 3.0\ \mathrm{m/s^2}$. From $|a| = \omega^2 |x|$:</p>
+<p>$$\omega^2 = \frac{|a|}{|x|} = \frac{3.0}{0.10} = 30$$</p>
+<p>$$\omega = \sqrt{30} \approx 5.48\ \mathrm{rad/s}$$</p>
+
+<p>(b) For a mass-spring system, $\omega^2 = k/m$, so:</p>
+<p>$$k = m\omega^2 = 0.200 \times 30 = 6.0\ \mathrm{N/m}$$</p>
+
+<p>(c) $T = \frac{2\pi}{\omega} = \frac{2\pi}{\sqrt{30}} \approx 1.15\ \mathrm{s}$</p>
+
+<p><strong>Why this makes sense:</strong> A spring constant of 6.0 N/m is modest — it stretches about 3.3 cm under the weight of a 200 g mass. The period just over 1 second feels reasonable for a soft spring with a medium mass.</p>
+
+<hr>
+
+<h3>Example 5: Comparing Two Oscillators</h3>
+
+<p><strong>Problem:</strong> Oscillator A has twice the amplitude of oscillator B, but the same period. Both are SHM. At the instant when A is at $x = +A/2$, where is B if both started at $x = 0$ at $t = 0$ and move in the positive direction?</p>
+
+<p><strong>Approach:</strong> Both have equation $x = A\sin(\omega t)$. Find the time when A is at $A/2$, then evaluate B's position at that same time.</p>
+
+<p><strong>Solution:</strong></p>
+
+<p>For oscillator A: $x_A = A\sin(\omega t)$. At $x_A = A/2$, we have:</p>
+<p>$$\sin(\omega t) = \frac{1}{2}$$</p>
+<p>$$\omega t = \frac{\pi}{6} \text{ (taking the first occurrence, since it starts moving positive)}$$</p>
+
+<p>At this same time, oscillator B (amplitude $A/2$):</p>
+<p>$$x_B = \frac{A}{2}\sin(\omega t) = \frac{A}{2} \times \frac{1}{2} = \frac{A}{4}$$</p>
+
+<p><strong>Why this makes sense:</strong> At the moment A is halfway to its peak, B is also "halfway" to its (smaller) peak, so B's absolute displacement is one-quarter of A's amplitude.</p>
+
+<hr>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1</h3>
+<p>A particle undergoes SHM with an amplitude of 0.12 m and a frequency of 2.5 Hz. At $t = 0$, the particle is at $x = +0.12\ \mathrm{m}$.</p>
+<p>(a) Find the angular frequency, period, and maximum acceleration.</p>
+<p>(b) Write the equation for displacement as a function of time.</p>
+<p>(c) At what displacement is the acceleration half of its maximum value?</p>
+
+<h3>Problem 2</h3>
+<p>A mass on a spring oscillates with angular frequency $8.0\ \mathrm{rad/s}$. When the mass is at $x = 0.040\ \mathrm{m}$, its acceleration is measured to be $2.56\ \mathrm{m/s^2}$ toward equilibrium. Verify that this is consistent with SHM and calculate the amplitude if the maximum speed is $0.64\ \mathrm{m/s}$.</p>
+
+<h3>Problem 3</h3>
+<p>A point moves on a circle of radius 0.25 m with a period of 3.0 s. A light projects its shadow onto a line.</p>
+<p>(a) Find the angular frequency of the resulting SHM.</p>
+<p>(b) What is the maximum speed of the shadow?</p>
+<p>(c) At what displacement(s) is the shadow's speed equal to half its maximum speed?</p>
+
+<h3>Problem 4</h3>
+<p>An object in SHM has a period of 0.50 s and an amplitude of 8.0 cm. Starting from equilibrium moving in the positive direction:</p>
+<p>(a) How long does it take to reach $x = 4.0\ \mathrm{cm}$?</p>
+<p>(b) What is the acceleration at this position?</p>
+<p>(c) What is the displacement 0.10 s after starting?</p>
+
+<h3>Problem 5</h3>
+<p>A student measures the acceleration of an oscillator at various displacements and obtains the following data:</p>
+
+<table>
+<tr>
+<th>$x$ (cm)</th>
+<th>0</th>
+<th>2.0</th>
+<th>4.0</th>
+<th>6.0</th>
+<th>8.0</th>
+</tr>
+<tr>
+<td>$a$ (m/s²)</td>
+<td>0</td>
+<td>0.80</td>
+<td>1.60</td>
+<td>2.40</td>
+<td>3.20</td>
+</tr>
+</table>
+
+<p>(a) Plot $a$ against $x$. Does this represent SHM? Explain.</p>
+<p>(b) Determine the angular frequency.</p>
+<p>(c) If the mass is 0.50 kg, find the effective spring constant.</p>
+
+<h3>Problem 6 <em>(IB Exam Style)</em></h3>
+<p>A particle moves in SHM along a straight line. Its maximum speed is $4.0\ \mathrm{m/s}$ and its maximum acceleration is $16\ \mathrm{m/s^2}$. </p>
+
+<p>(a) Calculate the angular frequency of the motion. [2 marks]</p>
+<p>(b) Determine the amplitude of the motion. [2 marks]</p>
+<p>(c) The particle has mass 0.25 kg. Calculate the maximum kinetic energy of the particle. [2 marks]</p>
+<p>(d) On a single set of axes, sketch the variation with displacement $x$ of (i) the kinetic energy and (ii) the potential energy of the particle over one full oscillation from $x = -A$ to $x = +A$. Label key values. [3 marks]</p>
+
+<hr>
+
+<h2>Answers</h2>
+
+<h3>Answer 1</h3>
+<p>(a) $\omega = 2\pi f = 2\pi(2.5) = 5\pi \approx 15.7\ \mathrm{rad/s}$.</p>
+<p>$T = 1/f = 1/2.5 = 0.40\ \mathrm{s}$.</p>
+<p>$a_{\max} = \omega^2 A = (5\pi)^2 \times 0.12 = 25\pi^2 \times 0.12 = 3\pi^2 \approx 29.6\ \mathrm{m/s^2}$.</p>
+
+<p>(b) Starting at $x = +A$ at $t = 0$ means we use cosine: $x(t) = 0.12\cos(5\pi t)$.</p>
+
+<p>(c) $a = -\omega^2 x$. Half of maximum: $|a| = \frac{1}{2}\omega^2 A = \omega^2 |x|$. So $|x| = \frac{1}{2}A = 0.060\ \mathrm{m}$. At $x = \pm 0.060\ \mathrm{m}$, the acceleration has half its maximum magnitude. </p>
+
+<p><strong>Common pitfall:</strong> Some students think "half maximum acceleration" means "half the distance." That's only true for SHM because $a \propto x$. In general, check the proportionality.</p>
+
+<hr>
+
+<h3>Answer 2</h3>
+<p>Given $a = -2.56\ \mathrm{m/s^2}$ when $x = 0.040\ \mathrm{m}$. The ratio $|a|/|x| = 2.56/0.040 = 64$. This equals $\omega^2$, and indeed $8.0^2 = 64$. The motion is consistent with SHM because $a \propto x$ with the correct constant and direction.</p>
+
+<p>$v_{\max} = \omega A$, so $A = v_{\max}/\omega = 0.64/8.0 = 0.080\ \mathrm{m} = 8.0\ \mathrm{cm}$.</p>
+
+<hr>
+
+<h3>Answer 3</h3>
+<p>(a) $\omega = 2\pi/T = 2\pi/3.0 = 2\pi/3 \approx 2.09\ \mathrm{rad/s}$.</p>
+
+<p>(b) $v_{\max} = \omega A = (2\pi/3) \times 0.25 = \pi/6 \approx 0.524\ \mathrm{m/s}$.</p>
+
+<p>(c) When $v = \frac{1}{2}v_{\max} = \frac{1}{2}\omega A$. In SHM, $v = \omega\sqrt{A^2 - x^2}$. Setting $\omega\sqrt{A^2 - x^2} = \frac{1}{2}\omega A$, we get $\sqrt{A^2 - x^2} = A/2$, so $A^2 - x^2 = A^2/4$, giving $x^2 = \frac{3}{4}A^2$, so $x = \pm \frac{\sqrt{3}}{2}A = \pm \frac{\sqrt{3}}{2} \times 0.25 \approx \pm 0.217\ \mathrm{m}$.</p>
+
+<hr>
+
+<h3>Answer 4</h3>
+<p>(a) $\omega = 2\pi/T = 2\pi/0.50 = 4\pi\ \mathrm{rad/s}$. Starting from $x = 0$ moving positive: $x = A\sin(\omega t) = 0.080\sin(4\pi t)$. Set $x = 0.040$:</p>
+<p>$0.040 = 0.080\sin(4\pi t)$ → $\sin(4\pi t) = 0.5$ → $4\pi t = \pi/6$ (first positive crossing) → $t = 1/24 \approx 0.0417\ \mathrm{s}$.</p>
+
+<p>(b) At $x = 0.040\ \mathrm{m}$: $a = -\omega^2 x = -(4\pi)^2 \times 0.040 = -16\pi^2 \times 0.040 = -0.64\pi^2 \approx -6.32\ \mathrm{m/s^2}$.</p>
+
+<p>(c) At $t = 0.10\ \mathrm{s}$: $x = 0.080\sin(4\pi \times 0.10) = 0.080\sin(0.4\pi) = 0.080 \times \sin(72^\circ) = 0.080 \times 0.951 \approx 0.076\ \mathrm{m}$. </p>
+
+<p><strong>Common pitfall:</strong> Make sure your calculator is in radian mode. $4\pi \times 0.10 = 0.4\pi$ radians, not degrees.</p>
+
+<hr>
+
+<h3>Answer 5</h3>
+<p>(a) Plotting $a$ vs $x$ yields a straight line through the origin with a negative slope (since acceleration points opposite to displacement). This is exactly the signature of SHM: $a = -(\text{constant}) \times x$. The data confirms SHM.</p>
+
+<p>(b) Slope = $\Delta a / \Delta x$. From $x = 0.020\ \mathrm{m}$ to $x = 0.080\ \mathrm{m}$, $\Delta a = 3.20 - 0.80 = 2.40\ \mathrm{m/s^2}$, $\Delta x = 0.060\ \mathrm{m}$. Slope = $2.40/0.060 = 40$. But note: $a = -\omega^2 x$, so the magnitude of the slope is $\omega^2$. Thus $\omega^2 = 40$, $\omega = \sqrt{40} = 2\sqrt{10} \approx 6.32\ \mathrm{rad/s}$.</p>
+
+<p>(c) $k = m\omega^2 = 0.50 \times 40 = 20\ \mathrm{N/m}$.</p>
+
+<hr>
+
+<h3>Answer 6 (IB Exam Style)</h3>
+
+<p>(a) $v_{\max} = \omega A$ and $a_{\max} = \omega^2 A$. Dividing: $a_{\max}/v_{\max} = \omega^2 A / (\omega A) = \omega$. So $\omega = 16/4.0 = 4.0\ \mathrm{rad/s}$. </p>
+<p><strong>[2 marks — 1 for equation, 1 for correct answer]</strong></p>
+
+<p>(b) $A = v_{\max}/\omega = 4.0/4.0 = 1.0\ \mathrm{m}$.</p>
+<p><strong>[2 marks — 1 for equation, 1 for correct answer]</strong></p>
+
+<p>(c) $E_{k,\max} = \frac{1}{2}mv_{\max}^2 = \frac{1}{2} \times 0.25 \times (4.0)^2 = 0.125 \times 16 = 2.0\ \mathrm{J}$.</p>
+<p><strong>[2 marks — 1 for formula, 1 for correct answer]</strong></p>
+
+<p>(d) Sketch: The $x$-axis runs from $-1.0$ to $+1.0$ m. Kinetic energy is a downward-opening parabola with maximum $2.0\ \mathrm{J}$ at $x = 0$ and zero at $x = \pm 1.0$ m. Potential energy is an upward-opening parabola with maximum $2.0\ \mathrm{J}$ at $x = \pm 1.0$ m and zero at $x = 0$. The two curves are mirror images, and their sum at every $x$ is $2.0\ \mathrm{J}$ (total mechanical energy, a horizontal line).</p>
+<p><strong>[3 marks — 1 for correct shape of each curve, 1 for correct key values, 1 for showing constant total energy]</strong></p>
+
+<hr>
+
+<h2>Key Takeaways</h2>
+
+<ol>
+<li><strong>An oscillation</strong> is a repeating back-and-forth motion through an equilibrium position. The <strong>restoring force</strong> always pulls the object back toward equilibrium.</li>
+</ol>
+
+<ol>
+<li><strong>Amplitude</strong> $A$ is the maximum displacement. <strong>Period</strong> $T$ is the time for one full cycle. <strong>Frequency</strong> $f = 1/T$ is cycles per second. <strong>Angular frequency</strong> $\omega = 2\pi f = 2\pi/T$.</li>
+</ol>
+
+<ol>
+<li><strong>SHM</strong> is defined by $a = -\omega^2 x$: acceleration is proportional to displacement and directed toward equilibrium. The minus sign is what makes it oscillatory, not just linear.</li>
+</ol>
+
+<ol>
+<li><strong>SHM is the projection of uniform circular motion.</strong> The radius becomes the amplitude, the angular speed becomes $\omega$, and all SHM formulas can be derived from this geometry.</li>
+</ol>
+
+<ol>
+<li>The <strong>connection to the IB Data Booklet</strong> is direct: $a = -\omega^2 x$, $T = 1/f$, $\omega = 2\pi/T = 2\pi f$. You are expected to use these relationships fluently.</li>
+</ol>
+
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L28_circuits_5.html">← Lesson 28</a>
+  <a href="L30_shm_2.html">Lesson 30 →</a>
+</nav>
+
+</body>
+</html>

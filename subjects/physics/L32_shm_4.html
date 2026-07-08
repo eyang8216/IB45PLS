@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 32: Lesson 32: Simple Harmonic Motion IV — Damping, Resonance and Q-Factor (HL) — IB Physics HL</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']]
+  },
+  options: {
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap');
+  
+  :root {
+    --bg: #fdfcf9;
+    --text: #1a1a1a;
+    --accent: #2c5f2d;
+    --border: #d0cec7;
+    --code-bg: #f4f3ef;
+    --callout-bg: #f0f7f0;
+    --callout-border: #2c5f2d;
+    --warning-bg: #fff8e6;
+    --warning-border: #c4941a;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  body {
+    font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid var(--accent);
+    color: var(--accent);
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 2.5rem 0 0.75rem;
+    color: #1a1a1a;
+  }
+  
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.5rem;
+  }
+  
+  p { margin: 0 0 1rem; }
+  
+  ul, ol { margin: 0 0 1rem 1.5rem; }
+  li { margin-bottom: 0.35rem; }
+  
+  code {
+    background: var(--code-bg);
+    padding: 0.15em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+    font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+  }
+  
+  pre {
+    background: var(--code-bg);
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 0 0 1rem;
+    font-size: 0.85em;
+    line-height: 1.5;
+  }
+  
+  pre code {
+    background: none;
+    padding: 0;
+    font-size: inherit;
+  }
+  
+  blockquote {
+    border-left: 4px solid var(--callout-border);
+    background: var(--callout-bg);
+    margin: 0 0 1rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+  }
+  
+  blockquote.warning {
+    border-left-color: var(--warning-border);
+    background: var(--warning-bg);
+  }
+  
+  strong { font-weight: 700; }
+  
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.5rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  
+  .nav a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+  
+  .nav a:hover { background: var(--callout-bg); }
+  
+  .worked-example, .answer {
+    background: var(--code-bg);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin: 0.75rem 0 1.25rem;
+  }
+  
+  .worked-example strong:first-child, .answer strong:first-child {
+    color: var(--accent);
+  }
+  
+  @media print {
+    body { font-size: 12pt; max-width: 100%; padding: 0; }
+    .nav { display: none; }
+    h1 { font-size: 18pt; }
+    h2 { font-size: 14pt; }
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 0 1rem;
+  }
+  
+  th, td {
+    border: 1px solid var(--border);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  
+  th {
+    background: var(--code-bg);
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L31_shm_3.html">← Lesson 31</a>
+  <a href="L33_wave_model_1.html">Lesson 33 →</a>
+</nav>
+
+<h1>Lesson 32: Simple Harmonic Motion IV — Damping, Resonance and Q-Factor (HL)</h1>
+
+<h2>What You'll Learn</h2>
+<ul>
+<li>Distinguish between light, heavy, and critical damping</li>
+<li>Explain resonance as the response of a system driven at its natural frequency</li>
+<li>Interpret resonance curves and understand the effect of damping on resonance width</li>
+<li>Define and calculate the Q-factor (quality factor) of an oscillator</li>
+<li>Apply resonance concepts to real-world examples including bridges, musical instruments, and MRI</li>
+</ul>
+
+<hr>
+
+<h2>1. What Happens When Friction Enters SHM?</h2>
+
+<h3>1.1 Why This Matters</h3>
+
+<p>In Lessons 29–31, we studied ideal simple harmonic motion — a mass on a spring or a pendulum swinging forever with constant amplitude. This is a beautiful model, but it is not realistic. In the real world, every oscillator loses energy. A pendulum eventually stops. A guitar string's vibration fades. A car's suspension doesn't bounce forever after hitting a bump.</p>
+
+<p>The loss of energy from an oscillating system is called <strong>damping</strong>. Understanding damping is essential because everything that oscillates in the real world is damped to some degree. Engineers design damping into systems deliberately — car shock absorbers, building earthquake dampers, and aircraft vibration controls all use controlled damping.</p>
+
+<h3>1.2 What Damping Does</h3>
+
+<p>Damping removes energy from an oscillating system, usually by converting kinetic energy to thermal energy through friction, air resistance, or internal material losses. The effect on the motion depends on how strong the damping is relative to the restoring force.</p>
+
+<p>There are three regimes of damping, distinguished by how the system returns to equilibrium:</p>
+
+<p><strong>Light damping (underdamping):</strong> The system oscillates with a gradually decreasing amplitude. Each cycle is slightly smaller than the previous one. The frequency of the damped oscillation is very slightly less than the natural frequency $\omega_0$, but for light damping the difference is negligible. Most real oscillators operate in this regime — a pendulum in air, a tuning fork, a guitar string.</p>
+
+<p><strong>Critical damping:</strong> The system returns to equilibrium in the shortest possible time WITHOUT oscillating. It crosses the equilibrium position at most once. Critical damping represents the exact threshold between oscillatory and non-oscillatory behaviour. Car suspension systems are designed to be close to critically damped — you want the car to settle quickly after a bump without bouncing.</p>
+
+<p><strong>Heavy damping (overdamping):</strong> The system returns to equilibrium slowly without oscillating. The damping force is so large that it dominates the restoring force, and the system creeps back to equilibrium. A pendulum in thick oil or a door with a very stiff hydraulic closer exhibits heavy damping.</p>
+
+<h3>1.3 The Damping Force</h3>
+
+<p>For many systems, the damping force is proportional to velocity and opposes motion: $F_{\text{damping}} = -bv$, where $b$ is the damping coefficient. The larger $b$, the stronger the damping. This is called viscous damping and applies to objects moving slowly through fluids.</p>
+
+<h3>1.4 Common Misconception</h3>
+
+<p>Many students think that "damping changes the period." For light damping, the period is essentially unchanged — the oscillations still occur at very nearly the natural frequency. What changes is the amplitude. The system loses energy, so the amplitude decays (typically exponentially: $A = A_0 e^{-\gamma t}$), but the timing between zero-crossings stays nearly constant.</p>
+
+<hr>
+
+<h2>2. Resonance — When Pushing at the Right Time Multiplies the Motion</h2>
+
+<h3>2.1 The Playground Swing Analogy</h3>
+
+<p>Think of pushing a child on a swing. If you push at random times, nothing much happens. If you push at exactly the right moment — just as the swing reaches its highest point and starts back down — each push adds a little energy, and the amplitude grows and grows. You are driving the swing at its natural frequency.</p>
+
+<p>This is resonance: when a system is driven by an external periodic force at a frequency that matches (or is close to) its natural frequency, the amplitude of oscillation becomes very large.</p>
+
+<h3>2.2 The Physics of Resonance</h3>
+
+<p>Every oscillator has a <strong>natural frequency</strong> $f_0$ — the frequency at which it oscillates when displaced and released. When an external driving force oscillates at a frequency $f_d$, the response (amplitude) of the system depends on how close $f_d$ is to $f_0$.</p>
+
+<ul>
+<li>$f_d \ll f_0$: The system barely responds. The driving is too slow; the system can keep up easily.</li>
+<li>$f_d = f_0$: <strong>Resonance.</strong> The driving force is always in phase with the motion, adding energy at the optimal moment each cycle. Amplitude becomes very large.</li>
+<li>$f_d \gg f_0$: The system cannot keep up. The amplitude is small.</li>
+</ul>
+
+<h3>2.3 The Resonance Curve</h3>
+
+<p>A graph of amplitude against driving frequency shows a peak centred at $f_0$. The height and width of this peak depend on the amount of damping:</p>
+
+<ul>
+<li><strong>Light damping:</strong> Very tall, narrow peak. The system responds strongly only to frequencies very close to $f_0$. The amplitude at resonance can be many times larger than the driving amplitude.</li>
+<li><strong>Heavy damping:</strong> Short, wide peak. The system responds over a broader range of frequencies, but the maximum amplitude is much lower.</li>
+<li><strong>No damping (ideal):</strong> The amplitude would theoretically go to infinity at resonance — the system would absorb energy indefinitely with no mechanism to lose it. In reality, some damping always exists.</li>
+</ul>
+
+<h3>2.4 Phase Relationship at Resonance</h3>
+
+<p>At resonance, the driven oscillator's displacement lags behind the driving force by exactly $90^\circ$ ($\pi/2$ radians). This means the velocity is exactly in phase with the driving force — the force pushes in the same direction as the motion at every instant, which is why energy transfer is maximised.</p>
+
+<h3>2.5 Resonance in the Real World — Helpful and Destructive</h3>
+
+<p><strong>Helpful resonance:</strong></p>
+<ul>
+<li><strong>Musical instruments:</strong> The body of a violin resonates at the frequencies of the strings, amplifying the sound. The air column in a flute resonates at the frequency determined by the player's fingering.</li>
+<li><strong>MRI (Magnetic Resonance Imaging):</strong> Radio waves at the resonant frequency of hydrogen nuclei in water molecules are used to create medical images.</li>
+<li><strong>Radio tuning:</strong> Turning the dial changes the resonant frequency of an LC circuit to match the frequency of the desired station.</li>
+</ul>
+
+<p><strong>Destructive resonance:</strong></p>
+<ul>
+<li><strong>Tacoma Narrows Bridge (1940):</strong> Wind-driven oscillations at the bridge's resonant frequency caused it to twist and collapse. This is the most famous engineering failure due to resonance.</li>
+<li><strong>Soldiers marching on a bridge:</strong> Soldiers are ordered to break step when crossing bridges to avoid driving the bridge at its resonant frequency.</li>
+<li><strong>Earthquakes:</strong> Buildings have natural frequencies. If an earthquake's ground motion matches a building's natural frequency, the building can resonate and collapse even if the ground motion itself is modest.</li>
+</ul>
+
+<hr>
+
+<h2>3. The Q-Factor — Measuring the "Quality" of Resonance</h2>
+
+<h3>3.1 What Q Measures</h3>
+
+<p>The quality factor $Q$ (or Q-factor) quantifies how underdamped an oscillator is — how "sharp" its resonance is. A high-Q oscillator rings for a long time after being struck; a low-Q oscillator dies out quickly.</p>
+
+<p>$$Q = 2\pi \frac{\text{energy stored}}{\text{energy lost per cycle}}$$</p>
+
+<p>A high Q means the oscillator loses a small fraction of its energy per cycle. A tuning fork might have $Q \sim 1,000$; a car suspension might have $Q \sim 1$.</p>
+
+<h3>3.2 Q from the Resonance Curve</h3>
+
+<p>Q can also be determined from the width of the resonance peak:</p>
+
+<p>$$Q = \frac{f_0}{\Delta f}$$</p>
+
+<p>where $f_0$ is the resonant frequency and $\Delta f$ is the <strong>bandwidth</strong> — the width of the resonance curve at an amplitude of $1/\sqrt{2}$ of the maximum (this is the "half-power" width, since power $\propto$ amplitude$^2$).</p>
+
+<p>A narrow peak (small $\Delta f$) means high Q. A broad peak (large $\Delta f$) means low Q.</p>
+
+<h3>3.3 The Physical Meaning of Q</h3>
+
+<ul>
+<li>$Q > 0.5$: Underdamped — oscillations occur</li>
+<li>$Q = 0.5$: Critically damped — fastest return to equilibrium without oscillation</li>
+<li>$Q < 0.5$: Overdamped — slow return, no oscillation</li>
+<li>High Q (hundreds or thousands): The oscillator rings for many cycles with little energy loss</li>
+</ul>
+
+<hr>
+
+<h2>Worked Examples</h2>
+
+<h3>Worked Example 32.1 — Identifying Damping Type</h3>
+
+<p><strong>Problem:</strong> A mass-spring system is set into oscillation. In medium A, the amplitude drops to half its initial value after 50 oscillations. In medium B, the system does not oscillate at all but returns slowly to equilibrium. In medium C, the system returns to equilibrium in the shortest possible time without oscillating. Identify the type of damping in each medium.</p>
+
+<p><strong>Solution:</strong></p>
+<p>Medium A: 50 oscillations with decaying amplitude = <strong>light damping</strong> (underdamped).</p>
+<p>Medium B: No oscillation, slow return = <strong>heavy damping</strong> (overdamped).</p>
+<p>Medium C: Fastest return, no oscillation = <strong>critical damping</strong>.</p>
+
+<hr>
+
+<h3>Worked Example 32.2 — Q-Factor from Resonance Curve</h3>
+
+<p><strong>Problem:</strong> A mechanical oscillator has a resonance curve centred at $f_0 = 500\text{ Hz}$. At an amplitude of $1/\sqrt{2}$ of the peak, the frequencies are $495\text{ Hz}$ and $505\text{ Hz}$. Calculate the Q-factor.</p>
+
+<p><strong>Approach:</strong> $Q = f_0/\Delta f$ where $\Delta f$ is the full width at $1/\sqrt{2}$ amplitude. $\Delta f = 505 - 495 = 10\text{ Hz}$.</p>
+
+<p><strong>Solution:</strong></p>
+<p>$$Q = \frac{500}{10} = 50$$</p>
+
+<p><strong>Why this makes sense:</strong> A Q of 50 means the oscillator is moderately high-Q — it would ring for roughly $Q/\pi \approx 16$ cycles to lose most of its energy after excitation stops. This is typical of a tuning fork or a good mechanical resonator.</p>
+
+<hr>
+
+<h3>Worked Example 32.3 — Energy Lost per Cycle</h3>
+
+<p><strong>Problem:</strong> An oscillator stores $0.20\text{ J}$ of energy and has a Q-factor of $200$. Calculate the energy lost per cycle.</p>
+
+<p><strong>Approach:</strong> Rearrange $Q = 2\pi E_{\text{stored}}/E_{\text{lost}}$ to find $E_{\text{lost}}$.</p>
+
+<p><strong>Solution:</strong></p>
+<p>$$E_{\text{lost}} = \frac{2\pi E_{\text{stored}}}{Q} = \frac{2\pi(0.20)}{200} = 6.28 \times 10^{-3}\text{ J}$$</p>
+
+<hr>
+
+<h3>Worked Example 32.4 — IB-Style Damping and Resonance</h3>
+
+<p><strong>Problem:</strong> A child on a swing (natural frequency 0.50 Hz) is being pushed by a parent.</p>
+
+<p>(a) At what frequency should the parent push for maximum amplitude? (1 mark)</p>
+
+<p>(b) The swing has light damping (Q ≈ 10). The parent pushes at exactly 0.50 Hz for 10 cycles, and the amplitude grows to 2.0 m. The parent then stops pushing. Approximately how many complete oscillations occur before the amplitude drops to about 0.1 m? Explain your reasoning. (3 marks)</p>
+
+<p><strong>Solution (a):</strong> The parent should push at the natural frequency, $0.50\text{ Hz}$, for maximum amplitude through resonance.</p>
+
+<p><strong>(b):</strong> With Q = 10, the energy decays by a factor of about $e^{-2\pi/Q} \approx e^{-0.628}$ per cycle — about half the energy per cycle. Amplitude is proportional to $\sqrt{E}$, so amplitude falls to $1/\sqrt{2} \approx 0.71$ per cycle. To fall from 2.0 m to 0.1 m (a factor of 20), roughly $\ln(20) \times Q/\pi \approx 3.0 \times 3.2 \approx 10$ cycles. More precisely: after $n$ cycles, amplitude $\approx 2.0 \times e^{-\pi n/Q}$. Set $0.1 = 2.0 e^{-\pi n/10}$, so $e^{-\pi n/10} = 0.05$, $-\pi n/10 = \ln(0.05) = -3.0$, $n = 30/\pi \approx 10$ oscillations.</p>
+
+<hr>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1</h3>
+<p>Describe and sketch the displacement-time graph for a lightly damped harmonic oscillator released from amplitude $A_0$. Label the envelope of the decay.</p>
+
+<h3>Problem 2</h3>
+<p>A car suspension system is designed to be critically damped. Explain why this is desirable, referring to both underdamping and overdamping.</p>
+
+<h3>Problem 3</h3>
+<p>A resonance curve for a driven oscillator peaks at 200 Hz with an amplitude of 5.0 cm. The frequencies at which the amplitude is $5.0/\sqrt{2} = 3.54\text{ cm}$ are 196 Hz and 204 Hz. Calculate the Q-factor.</p>
+
+<h3>Problem 4</h3>
+<p>An oscillator stores $0.50\text{ J}$ and has $Q = 100$. Calculate the power dissipated (energy lost per second) when oscillating at 400 Hz.</p>
+
+<h3>Problem 5 — IB-Style</h3>
+<p>A mechanical oscillator of mass 0.50 kg, spring constant $200\text{ N m}^{-1}$, and Q-factor 25 is driven by a variable-frequency motor.</p>
+
+<p>(a) Calculate the natural frequency of the oscillator. (2 marks)</p>
+
+<p>(b) Sketch a graph of oscillation amplitude against driving frequency for this oscillator, labelling the axes and the resonant frequency. (3 marks)</p>
+
+<p>(c) On the same axes, sketch the curve for an oscillator with the same natural frequency but Q = 5. Explain the differences. (3 marks)</p>
+
+<p>(d) The amplitude at resonance for the Q = 25 oscillator is 4.0 cm. The driving motor is switched off. Estimate the number of complete oscillations before the amplitude drops to 1.0 cm. (3 marks)</p>
+
+<hr>
+
+<h2>Answers</h2>
+
+<h3>Answer 1</h3>
+<p>The graph shows oscillations with amplitude decreasing exponentially. The envelope consists of two curves: $+A_0 e^{-\gamma t}$ (upper) and $-A_0 e^{-\gamma t}$ (lower). The oscillations are contained within this shrinking envelope. The period remains essentially constant even as the amplitude decays.</p>
+
+<h3>Answer 2</h3>
+<p>Underdamped suspension would oscillate (bounce) after hitting a bump, making the ride uncomfortable and reducing tyre contact with the road. Overdamped suspension would return too slowly — the car would not settle quickly after a bump, making handling sluggish. Critical damping provides the fastest return to equilibrium without oscillation, giving the best compromise between comfort and control.</p>
+
+<h3>Answer 3</h3>
+<p>$\Delta f = 204 - 196 = 8.0\text{ Hz}$. $Q = 200/8.0 = 25$.</p>
+
+<h3>Answer 4</h3>
+<p>Energy lost per cycle: $E_{\text{lost}} = 2\pi(0.50)/100 = 0.0314\text{ J}$. At 400 Hz, 400 cycles occur per second. Power = $0.0314 \times 400 = 12.6\text{ W}$.</p>
+
+<h3>Answer 5 — IB-Style</h3>
+<p><strong>(a)</strong> $f_0 = \frac{1}{2\pi}\sqrt{k/m} = \frac{1}{2\pi}\sqrt{200/0.50} = \frac{1}{2\pi}\sqrt{400} = 20/2\pi = 3.18\text{ Hz}$. (2 marks)</p>
+
+<p><strong>(b)</strong> (3 marks) Graph: amplitude (y-axis) vs. driving frequency (x-axis), with a peak at $f_0 = 3.18\text{ Hz}$. Axes labelled. Narrow, tall peak. (1 mark for axes, 1 for peak at correct frequency, 1 for tall narrow shape.)</p>
+
+<p><strong>(c)</strong> (3 marks) Q = 5 curve: shorter, wider peak centred at the same $f_0$. Lower maximum amplitude, broader width. The area under the curve is related to total energy absorption. (1 mark for same $f_0$, 1 for lower height, 1 for greater width with explanation.)</p>
+
+<p><strong>(d)</strong> (3 marks) $Q = 25$ means amplitude falls by factor $e^{-\pi n/25}$ over $n$ cycles. From 4.0 cm to 1.0 cm: factor of 4. $e^{-\pi n/25} = 0.25$. $-\pi n/25 = \ln(0.25) = -1.386$. $n = 1.386 \times 25/\pi = 11.0$ cycles. (1 mark for using $e^{-\pi n/Q}$ decay law, 1 mark for correct setup, 1 mark for $n \approx 11$.)</p>
+
+<hr>
+
+<h2>Key Takeaways</h2>
+
+<ol>
+<li><strong>Three damping regimes:</strong> Light (oscillations with decaying amplitude), critical (fastest return without oscillation), heavy (slow return, no oscillation).</li>
+</ol>
+
+<ol>
+<li><strong>Resonance</strong> occurs when driving frequency = natural frequency. The amplitude peaks because energy is transferred at the optimal phase.</li>
+</ol>
+
+<ol>
+<li><strong>Damping controls resonance:</strong> Light damping → tall, narrow resonance peak. Heavy damping → short, wide peak.</li>
+</ol>
+
+<ol>
+<li><strong>Q-factor:</strong> $Q = 2\pi E_{\text{stored}}/E_{\text{lost}} = f_0/\Delta f$. High Q = sharp resonance, long ringing.</li>
+</ol>
+
+<ol>
+<li><strong>Resonance can be destructive</strong> (Tacoma Narrows, earthquake-building interaction) or useful (musical instruments, MRI, radio tuning). Engineers design to either exploit or suppress it.</li>
+</ol>
+
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L31_shm_3.html">← Lesson 31</a>
+  <a href="L33_wave_model_1.html">Lesson 33 →</a>
+</nav>
+
+</body>
+</html>

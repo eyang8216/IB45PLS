@@ -1,0 +1,243 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 35: Inequality - Lorenz Curve and Gini Coefficient</title>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f8a; --border: #d0cdc4; --card-bg: #f8f5f0; --highlight: #e8f0f8; --heading: #1a3a52; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Georgia, 'Times New Roman', serif; font-size: 17px; line-height: 1.7; color: var(--text); background: var(--bg); max-width: 820px; margin: 0 auto; padding: 40px 32px 60px; }
+  nav.breadcrumb { font-size: 14px; margin-bottom: 32px; padding-bottom: 16px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  nav.breadcrumb a { color: var(--accent); text-decoration: none; } nav.breadcrumb a:hover { text-decoration: underline; }
+  h1 { font-size: 2em; color: var(--heading); margin-bottom: 8px; border-bottom: 3px solid var(--accent); padding-bottom: 10px; }
+  h2 { font-size: 1.4em; color: var(--heading); margin: 36px 0 12px; padding-left: 8px; border-left: 4px solid var(--accent); }
+  h3 { font-size: 1.15em; color: #2a4a30; margin: 24px 0 8px; }
+  p { margin: 10px 0; } ul, ol { margin: 8px 0 16px 24px; } li { margin: 5px 0; }
+  strong { color: #1a2a3a; }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 15px; }
+  th { background: var(--heading); color: white; padding: 10px 12px; text-align: left; }
+  td { padding: 8px 12px; border: 1px solid var(--border); } tr:nth-child(even) { background: var(--card-bg); }
+  .highlight-box { background: var(--highlight); border-left: 4px solid var(--accent); padding: 14px 18px; margin: 16px 0; border-radius: 0 6px 6px 0; }
+  .tip-box { background: #fffdf0; border: 1px solid #e0c860; padding: 14px 18px; margin: 20px 0; border-radius: 6px; }
+  .tip-box::before { content: "IB Exam Tip"; font-weight: bold; display: block; margin-bottom: 6px; color: #8a6d20; }
+  .problem { background: var(--card-bg); padding: 14px 18px; margin: 14px 0; border-radius: 6px; border: 1px solid var(--border); }
+  .problem strong { color: var(--accent); }
+  .answer { border-left: 3px solid #5a8a5a; padding-left: 16px; margin: 10px 0 20px; }
+  .evaluate-box { background: #f4f0ea; border: 2px solid #8a6d3b; padding: 20px 24px; margin: 28px 0; border-radius: 8px; }
+  .evaluate-box h2 { border-left-color: #8a6d3b; }
+  .claspp { color: #6a5030; font-weight: bold; margin: 10px 0 4px; }
+  hr { border: none; border-top: 1px solid var(--border); margin: 32px 0; }
+  @media print { body { font-size: 12pt; padding: 20px; max-width: 100%; } nav.breadcrumb, .no-print { display: none; } h1 { font-size: 18pt; } h2 { font-size: 14pt; } .highlight-box, .tip-box, .problem, .evaluate-box { break-inside: avoid; } a { color: var(--text); text-decoration: none; } }
+</style>
+</head>
+<body>
+
+<nav class="breadcrumb">
+  <span><a href="lesson34_economic_growth.html">Lesson 34: Economic Growth</a></span>
+  <span><a href="#">Index</a></span>
+  <span><a href="lesson36_poverty.html">Lesson 36: Poverty</a></span>
+</nav>
+
+<h1>Lesson 35: Inequality - Lorenz Curve and Gini Coefficient</h1>
+
+<h2>What You'll Learn</h2>
+<ul>
+  <li>The difference between income and wealth, and between equality and equity</li>
+  <li>How to construct and interpret Lorenz curves</li>
+  <li>How to calculate the Gini coefficient</li>
+  <li>Limitations of the Gini coefficient</li>
+  <li>How to use these tools to compare inequality across countries and time</li>
+</ul>
+
+<hr>
+
+<h2>1. Income vs Wealth</h2>
+
+<h3>Income</h3>
+<ul><li>A <strong>flow</strong> concept - money received per period</li><li>Sources: wages, rent, interest, dividends, profits, transfers</li></ul>
+
+<h3>Wealth</h3>
+<ul><li>A <strong>stock</strong> concept - value of assets owned at a point in time</li><li>Components: property, shares, bonds, savings, vehicles</li></ul>
+
+<p><strong>Why the distinction matters</strong>: Wealth inequality is typically <strong>far greater</strong> than income inequality. Wealth generates income (rent, dividends) - wealth inequality perpetuates income inequality.</p>
+
+<h2>2. Equality vs Equity</h2>
+
+<table>
+  <tr><th>Equality</th><th>Equity</th></tr>
+  <tr><td><strong>Equal outcomes</strong> - everyone receives same income/wealth</td><td><strong>Fairness</strong> - distributions are just and morally acceptable</td></tr>
+  <tr><td>Gini = 0</td><td>Does NOT require equal outcomes</td></tr>
+  <tr><td>Positive concept (measurable fact)</td><td>Normative concept (value judgment)</td></tr>
+</table>
+
+<h2>3. The Lorenz Curve</h2>
+
+<p>Graphical representation of income (or wealth) distribution (Max O. Lorenz, 1905).</p>
+
+<h3>Construction</h3>
+<ol>
+  <li>Rank households from poorest to richest</li>
+  <li>Group into quintiles (fifths) or deciles (tenths)</li>
+  <li>Plot cumulative % income (vertical) vs cumulative % population (horizontal)</li>
+</ol>
+
+<ul>
+  <li><strong>45-degree line</strong> = perfect equality (each x% of population receives x% of income)</li>
+  <li><strong>Lorenz curve</strong> bows below - further bow = greater inequality</li>
+  <li><strong>Area A</strong> = area between 45-degree line and Lorenz curve</li>
+  <li><strong>Area B</strong> = area under Lorenz curve</li>
+</ul>
+
+<div class="highlight-box">
+<strong>Worked Example</strong>:
+<table>
+  <tr><th>Quintile</th><th>% of Total Income</th></tr>
+  <tr><td>Bottom 20%</td><td>4%</td></tr>
+  <tr><td>Second 20%</td><td>9%</td></tr>
+  <tr><td>Third 20%</td><td>15%</td></tr>
+  <tr><td>Fourth 20%</td><td>24%</td></tr>
+  <tr><td>Top 20%</td><td>48%</td></tr>
+</table>
+
+<p><strong>Cumulative values to plot</strong>:</p>
+<table>
+  <tr><th>Cumulative % Population</th><th>Cumulative % Income</th></tr>
+  <tr><td>0%</td><td>0%</td></tr>
+  <tr><td>20%</td><td>4%</td></tr>
+  <tr><td>40%</td><td>13%</td></tr>
+  <tr><td>60%</td><td>28%</td></tr>
+  <tr><td>80%</td><td>52%</td></tr>
+  <tr><td>100%</td><td>100%</td></tr>
+</table>
+<p>Plot: (0,0), (20,4), (40,13), (60,28), (80,52), (100,100).</p>
+</div>
+
+<h2>4. The Gini Coefficient</h2>
+
+$$\text{Gini Coefficient} = \frac{A}{A + B}$$
+
+<p>Where A = area between 45-degree line and Lorenz curve, B = area under Lorenz curve. A + B = 0.5 (triangle area).</p>
+
+<h3>Scale Interpretation</h3>
+
+<table>
+  <tr><th>Gini Value</th><th>Meaning</th></tr>
+  <tr><td>0</td><td>Perfect equality</td></tr>
+  <tr><td>0.0-0.3</td><td>Low inequality</td></tr>
+  <tr><td>0.3-0.5</td><td>Medium inequality</td></tr>
+  <tr><td>0.5-0.7</td><td>High inequality</td></tr>
+  <tr><td>0.7-1.0</td><td>Very high inequality</td></tr>
+  <tr><td>1 (or 100)</td><td>Perfect inequality (one person has ALL income)</td></tr>
+</table>
+
+<div class="highlight-box">
+<strong>Worked Example: Gini Calculation</strong> (using data above):
+<table>
+  <tr><th>i</th><th>X (cum pop)</th><th>Y (cum inc)</th><th>X - X_prev</th><th>Y + Y_prev</th><th>Product</th></tr>
+  <tr><td>1</td><td>0.2</td><td>0.04</td><td>0.2</td><td>0.04</td><td>0.008</td></tr>
+  <tr><td>2</td><td>0.4</td><td>0.13</td><td>0.2</td><td>0.17</td><td>0.034</td></tr>
+  <tr><td>3</td><td>0.6</td><td>0.28</td><td>0.2</td><td>0.41</td><td>0.082</td></tr>
+  <tr><td>4</td><td>0.8</td><td>0.52</td><td>0.2</td><td>0.80</td><td>0.160</td></tr>
+  <tr><td>5</td><td>1.0</td><td>1.00</td><td>0.2</td><td>1.52</td><td>0.304</td></tr>
+</table>
+Sum = 0.588. Gini = 1 - 0.588 = <strong>0.412</strong> (medium-high inequality).
+</div>
+
+<h2>5. Real World Gini Examples</h2>
+
+<table>
+  <tr><th>Country</th><th>Approximate Gini</th><th>Interpretation</th></tr>
+  <tr><td>South Africa</td><td>~0.63</td><td>Highest in world - apartheid legacy</td></tr>
+  <tr><td>Brazil</td><td>~0.53</td><td>Very high - historical land concentration</td></tr>
+  <tr><td>United States</td><td>~0.41</td><td>Medium-high - rising since 1970s</td></tr>
+  <tr><td>United Kingdom</td><td>~0.35</td><td>Medium - welfare state moderates</td></tr>
+  <tr><td>Sweden</td><td>~0.28</td><td>Low - extensive redistribution</td></tr>
+</table>
+
+<h2>6. Limitations of the Gini Coefficient</h2>
+
+<h3>a) Same Gini, Different Distributions</h3>
+<p>Two countries can have identical Gini but very different underlying distributions. The Gini doesn't tell you WHERE inequality occurs.</p>
+
+<h3>b) No Absolute Income Information</h3>
+<p>Gini of 0.40 in Switzerland (GDP/capita $90K) vs Bangladesh ($2.5K) means entirely different things. Gini is purely <strong>relative</strong>.</p>
+
+<h3>c) Different Definitions of Income</h3>
+<p>Before-tax or after-tax? Including transfers? Including non-cash benefits? Comparability issues across countries.</p>
+
+<h3>d) Lifecycle Effects</h3>
+<p>Society where everyone has identical lifetime earnings but different earnings at different ages shows positive Gini. Not "unfair" inequality.</p>
+
+<h2>7. Beyond the Gini - Other Measures</h2>
+
+<table>
+  <tr><th>Measure</th><th>What It Captures</th></tr>
+  <tr><td>Palma ratio</td><td>Ratio of top 10% income share to bottom 40%</td></tr>
+  <tr><td>20:20 ratio</td><td>Ratio of top 20% to bottom 20%</td></tr>
+  <tr><td>Absolute poverty measures</td><td>Complement Gini by showing the floor</td></tr>
+</table>
+
+<div class="tip-box">
+<p>You <strong>must</strong> be able to draw and label a Lorenz curve, including 45-degree line and areas A and B. Gini formula is A/(A+B). Know it. When comparing inequality, use Gini with context (country, time, absolute income). Always mention at least ONE limitation when using Gini in an answer.</p>
+</div>
+
+<h2>Practice Problems</h2>
+
+<div class="problem"><strong>Problem 1 (Easy)</strong><br>Draw a Lorenz curve diagram and label: the 45-degree line, the Lorenz curve, Area A, and Area B. Explain what each area represents and write the Gini formula.</div>
+<div class="problem"><strong>Problem 2 (Easy)</strong><br>Country A has Gini 0.29 and GDP/capita $12,000. Country B has Gini 0.29 and GDP/capita $55,000. Are living standards of the poor necessarily similar? Explain using absolute vs relative inequality.</div>
+<div class="problem"><strong>Problem 3 (Medium)</strong><br>Calculate the Gini from: Bottom 20% = 6%, Second 20% = 10%, Third 20% = 16%, Fourth 20% = 23%, Top 20% = 45%.</div>
+<div class="problem"><strong>Problem 4 (Medium)</strong><br>Explain TWO limitations of the Gini coefficient. Use hypothetical examples.</div>
+<div class="problem"><strong>Problem 5 (Challenging)</strong><br>Country X and Y have identical Gini 0.38. X's bottom 40% earn 18% of income; Y's bottom 40% earn 22%. X GDP/capita = $48,000; Y = $8,000. Compare and evaluate inequality in the two countries.</div>
+<div class="problem"><strong>Problem 6 (IB-Style 15-mark)</strong><br>"The Gini coefficient is the single best measure of a country's inequality." Discuss this statement.</div>
+
+<h2>Answers</h2>
+
+<div class="answer"><strong>Answer 1</strong>: Diagram: 1x1 box. Horizontal = cumulative % population (0-100). Vertical = cumulative % income (0-100). <strong>45-degree line</strong>: diagonal from (0,0) to (100,100) - perfect equality. <strong>Lorenz curve</strong>: bowed below diagonal. <strong>Area A</strong>: between diagonal and Lorenz curve - degree of inequality (larger A = more inequality). <strong>Area B</strong>: under Lorenz curve. Gini = A/(A+B) = A/0.5 = 2A. Perfect equality: Lorenz IS the diagonal - A=0 - Gini=0. Perfect inequality: Lorenz runs along bottom then shoots up - B=0 - Gini=1.</div>
+
+<div class="answer"><strong>Answer 2</strong>: <strong>Not necessarily.</strong> Same Gini = similar relative distribution. But: Country A bottom quintile per capita = 0.08 x $12,000 x 5 = ~$4,800. Country B bottom quintile = 0.08 x $55,000 x 5 = ~$22,000. The poor in B are far better off in absolute terms despite identical inequality. Gini measures <strong>relative</strong> inequality, not absolute poverty - this is a key limitation.</div>
+
+<div class="answer"><strong>Answer 3</strong>: Cumulative: (0.2,0.06), (0.4,0.16), (0.6,0.32), (0.8,0.55), (1.0,1.00). Products = 0.012, 0.044, 0.096, 0.174, 0.310. Sum = 0.636. Gini = 1 - 0.636 = <strong>0.364</strong> (medium inequality). Bottom 60% earns 32% while top 20% earns 45% - moderately unequal, typical of developed countries with welfare states.</div>
+
+<div class="answer"><strong>Answer 4</strong>: <strong>1. Same Gini, different distributions</strong>: Country A (bottom 40%=15%, middle 40%=25%, top 20%=60%) vs Country B (bottom 40%=20%, middle 40%=45%, top 20%=35%) might produce similar Ginis. In A, the poor are desperate while ultra-wealthy dominate; in B, strong middle class and better-off poor. Policy responses should differ but Gini alone doesn't reveal this.<br><strong>2. Ignores absolute income</strong>: Gini 0.35 in Switzerland vs Bangladesh. Bottom quintile in Switzerland ~$25K; Bangladesh ~$500. Gini treats as equivalent "inequality" but welfare implications vastly different. Absolute poverty may be more pressing in Bangladesh despite equal Gini.</div>
+
+<div class="answer"><strong>Answer 5</strong>: <strong>Similarities</strong>: Both Gini 0.38 = moderate relative inequality.<br><strong>Critical Differences</strong>: (1) Bottom 40% share: X (18%) vs Y (22%) - Y's income more evenly distributed in lower half. X's inequality more concentrated at bottom. (2) Absolute income: X bottom 40% per capita = 0.18 x $48,000 x (100/40) = $21,600 vs Y = 0.22 x $8,000 x (100/40) = $4,400. X's poorest enjoy nearly 5x absolute income despite harsher relative inequality.<br><strong>Policy implications</strong>: Y needs growth-focused policies to raise absolute incomes. X needs redistribution-focused policies to improve relative fairness. Same Gini conceals entirely different policy priorities.</div>
+
+<div class="answer"><strong>Answer 6 (Full IB-Style)</strong>:<br>
+<strong>Introduction</strong>: Gini is the most widely recognized single-number inequality measure. "Single best" requires evaluation against alternatives.<br>
+<strong>Arguments For</strong>: (1) Simplicity - single number easily understood. (2) Comparability - standardized across countries and time. (3) Theoretical foundation - clear geometric interpretation A/(A+B). (4) Captures entire distribution - uses all income groups.<br>
+<strong>Arguments Against</strong>: (1) Same Gini, different distributions - not uniquely identifying. (2) Insensitive to extremes - most sensitive to middle; Palma ratio better captures rich-vs-poor. (3) No absolute income info - Gini 0.40 in Norway vs Niger. (4) Data quality - surveys underreport top incomes. (5) Doesn't distinguish income from wealth, pre-tax from post-tax.<br>
+<strong>What Best Depends On</strong>: International comparison/public communication = Gini is strong. Capturing plight of poorest = Palma ratio or absolute poverty measures better. Understanding structure = full Lorenz curve needed.<br>
+<strong>Conclusion</strong>: Gini is valuable and widely used, but "single best" overstates. Its strength (summarizing in one number) is also its weakness (masking structural details). Comprehensive assessment requires supplementing Gini with other measures and interpreting alongside absolute income data.</div>
+
+<div class="evaluate-box">
+<h2>Evaluate</h2>
+<p><em>"The Gini coefficient is the single best measure of a country's inequality."</em></p>
+<p class="claspp">CLASPP Analysis (175 words)</p>
+
+<p><strong>Conclusion</strong>: The statement overstates. The Gini is a useful summary measure with strong theoretical foundations and broad comparability, but it is not uniquely "best" - it has significant limitations requiring supplementation with other measures.</p>
+
+<p><strong>Long-term vs Short-term</strong>: Over the long term, Gini is excellent for tracking broad inequality trends. In the short term, however, it may miss rapid changes at extremes (surging billionaire wealth) because it is most sensitive to middle-distribution changes.</p>
+
+<p><strong>Assumptions</strong>: Assumes inequality is one-dimensional and capturable in a single number. In reality, inequality is multi-dimensional (income vs wealth, pre-tax vs post-tax, relative vs absolute), and no single measure captures all.</p>
+
+<p><strong>Stakeholders</strong>: Policymakers benefit from Gini's simplicity for target-setting. Academics find it limiting. The poor are better served by measures focusing on the bottom (Palma ratio, absolute poverty lines).</p>
+
+<p><strong>Priorities</strong>: If priority is international benchmarking, Gini is most practical. If priority is understanding lived experience of inequality, multiple measures are essential.</p>
+
+<p><strong>Pros/Cons</strong>: Pro - simple, comparable, theoretically grounded, widely available. Con - non-unique, insensitive to extremes, ignores absolute income, depends on data quality.</p>
+
+<p><strong>Overall</strong>: The Gini is a necessary but not sufficient measure of inequality.</p>
+</div>
+
+<hr>
+
+<nav class="breadcrumb">
+  <span><a href="lesson34_economic_growth.html">Lesson 34: Economic Growth</a></span>
+  <span><a href="#">Index</a></span>
+  <span><a href="lesson36_poverty.html">Lesson 36: Poverty</a></span>
+</nav>
+
+</body>
+</html>

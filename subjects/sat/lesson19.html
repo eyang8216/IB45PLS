@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 19: Circle Equations & Coordinate Geometry</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root {
+    --bg: #fafaf9;
+    --text: #1a1a1a;
+    --accent: #1a5276;
+    --trap-bg: #fff3cd;
+    --trap-border: #ffc107;
+    --pattern-bg: #d1ecf1;
+    --pattern-border: #17a2b8;
+    --card: #ffffff;
+    --border: #d0d0cb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+  h1 { font-size: 1.8rem; color: var(--accent); border-bottom: 3px solid var(--accent); padding-bottom: 0.5rem; margin-bottom: 1rem; }
+  h2 { font-size: 1.35rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+  h3 { font-size: 1.15rem; color: #333; margin: 1.5rem 0 0.5rem; }
+  p, li { margin: 0.5em 0; }
+  ul, ol { padding-left: 1.5rem; margin: 0.5em 0; }
+  .trap-box {
+    background: var(--trap-bg);
+    border-left: 4px solid var(--trap-border);
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.95rem;
+  }
+  .trap-box strong { color: #856404; }
+  .pattern-box {
+    background: var(--pattern-bg);
+    border-left: 4px solid var(--pattern-border);
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.95rem;
+  }
+  .pattern-box strong { color: #0c5460; }
+  .example {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem 1.3rem;
+    margin: 1rem 0;
+  }
+  .example h4 { color: var(--accent); margin-bottom: 0.3rem; }
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 2.5rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  .nav a { color: var(--accent); text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  code { background: #f0f0f0; padding: 0.15em 0.4em; border-radius: 3px; font-size: 0.9em; }
+  strong { color: #222; }
+  @media print {
+    body { font-size: 14px; }
+    .nav { display: none; }
+  }
+</style>
+</head>
+<body>
+<h1>Lesson 19: Circle Equations & Coordinate Geometry</h1>
+<h2>What You'll Learn</h2>
+<ul>
+<li>The standard form of a circle equation: $(x-h)^2 + (y-k)^2 = r^2$</li>
+<li>How to identify the center $(h, k)$ and radius $r$ from the equation</li>
+<li>Completing the square to convert expanded form to standard form</li>
+<li>The distance formula and how it relates to the circle equation</li>
+<li>The midpoint formula and its applications</li>
+<li>The SAT trap: $r^2$ on the right side, NOT $r$</li>
+</ul>
+<h2>SAT Context</h2>
+<p>Circle equations appear in **2–3 questions** across the SAT Math modules, primarily in the Advanced Math domain. These questions test your ability to recognize and manipulate the standard form of a circle equation. The most common format: the SAT gives an expanded equation like $x^2 + y^2 - 6x + 8y = 0$ and asks for the center and radius. Completing the square is the essential skill here. The distance and midpoint formulas also appear in coordinate geometry questions, often combined with circles. Unlike IB AAHL, which dives into conic sections in detail, the SAT limits itself to circles only — no ellipses, no hyperbolas, no parabolas in non-function form.</p>
+<hr>
+<h2>Standard Form of a Circle</h2>
+<p>The equation of a circle with center $(h, k)$ and radius $r$:</p>
+<p>$$(x - h)^2 + (y - k)^2 = r^2$$</p>
+<p>> **🚨 SAT TRAP ALERT (CRITICAL):** The right side of the equation is $r^2$, NOT $r$. If an equation says $(x-3)^2 + (y+2)^2 = 25$, the radius is $\sqrt{25} = 5$, not 25. The SAT will include 25 as an answer choice to catch students who forget this. This is one of the most reliable SAT circle traps.</p>
+<h3> Reading the Center from the Equation</h3>
+<ul>
+<li>$(x - h)^2$ → center's $x$-coordinate is $h$</li>
+<li>$(y - k)^2$ → center's $y$-coordinate is $k$</li>
+</ul>
+<p>> **🚨 SAT TRAP ALERT:** $(x + 4)^2$ means $(x - (-4))^2$, so $h = -4$, not $+4$. Similarly, $(y - 2)^2$ means $k = 2$. The sign in the equation is the OPPOSITE of the coordinate. This is the same trap as function transformations.</p>
+<h3> Worked Example 1: Reading the Equation</h3>
+<p>**Problem:** Find the center and radius of the circle $(x+5)^2 + (y-1)^2 = 49$.</p>
+<p>**Solution:**</p>
+<ul>
+<li>$x+5 = x - (-5)$, so $h = -5$</li>
+<li>$y-1$ → $k = 1$</li>
+<li>$r^2 = 49$, so $r = 7$</li>
+</ul>
+<p>**Center:** $(-5, 1)$, **Radius:** $7$</p>
+<p>**Common wrong answer:** Center $(5, -1)$ (both signs flipped) and radius 49.</p>
+<hr>
+<h2>Completing the Square for Circles</h2>
+<p>When the circle equation is given in expanded form, you must complete the square for both $x$ and $y$ terms.</p>
+<h3> Steps:</h3>
+<li>Group $x$ terms and $y$ terms</li>
+<li>Move the constant to the right side</li>
+<li>Complete the square for $x$: take half of the $x$-coefficient, square it, add to both sides</li>
+<li>Complete the square for $y$: take half of the $y$-coefficient, square it, add to both sides</li>
+<li>Rewrite as $(x-h)^2 + (y-k)^2 = r^2$</li>
+<h3> Worked Example 2: Completing the Square</h3>
+<p>**Problem:** Find the center and radius of the circle $x^2 + y^2 - 8x + 6y = 0$.</p>
+<p>**Solution:**</p>
+<li>Group: $(x^2 - 8x) + (y^2 + 6y) = 0$</li>
+<li>Complete square for $x$: half of $-8$ is $-4$, square is $16$. Add 16 to both sides.</li>
+<li>Complete square for $y$: half of $6$ is $3$, square is $9$. Add 9 to both sides.</li>
+<li>$(x^2 - 8x + 16) + (y^2 + 6y + 9) = 0 + 16 + 9$</li>
+<li>$(x - 4)^2 + (y + 3)^2 = 25$</li>
+<p>**Center:** $(4, -3)$, **Radius:** $\sqrt{25} = 5$</p>
+<p>> **🔍 PATTERN RECOGNITION:** The completed-square constants you add are always $(\frac{\text{coefficient}}{2})^2$. For $x^2 + bx$, add $(\frac{b}{2})^2$. For $x^2$ with a coefficient other than 1 (like $2x^2$), factor it out first.</p>
+<h3> Worked Example 3: With Coefficients</h3>
+<p>**Problem:** Find the center and radius of $2x^2 + 2y^2 - 12x + 8y = 24$.</p>
+<p>**Solution:** First divide everything by 2:</p>
+<p>$$x^2 + y^2 - 6x + 4y = 12$$</p>
+<p>Group: $(x^2 - 6x) + (y^2 + 4y) = 12$</p>
+<p>Complete squares:</p>
+<ul>
+<li>$x$: half of $-6$ is $-3$, square is $9$</li>
+<li>$y$: half of $4$ is $2$, square is $4$</li>
+</ul>
+<p>$$(x^2 - 6x + 9) + (y^2 + 4y + 4) = 12 + 9 + 4$$</p>
+<p>$$(x-3)^2 + (y+2)^2 = 25$$</p>
+<p>**Center:** $(3, -2)$, **Radius:** $5$</p>
+<hr>
+<h2>The Distance Formula</h2>
+<p>The distance between points $(x_1, y_1)$ and $(x_2, y_2)$:</p>
+<p>$$d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$$</p>
+<p>This is simply the Pythagorean theorem in coordinate form.</p>
+<p>> **🔍 PATTERN RECOGNITION:** The distance formula IS the circle equation rewritten. For a circle centered at $(h, k)$, the distance from any point $(x, y)$ on the circle to the center is exactly $r$. That's why: $\sqrt{(x-h)^2 + (y-k)^2} = r$, which squares to $(x-h)^2 + (y-k)^2 = r^2$.</p>
+<h3> Worked Example 4: Distance Formula</h3>
+<p>**Problem:** What is the distance between points $A(2, -1)$ and $B(5, 3)$?</p>
+<p>**Solution:**</p>
+<p>$$d = \sqrt{(5-2)^2 + (3-(-1))^2} = \sqrt{3^2 + 4^2} = \sqrt{9 + 16} = \sqrt{25} = 5$$</p>
+<p>This is a 3-4-5 right triangle.</p>
+<hr>
+<h2>The Midpoint Formula</h2>
+<p>The midpoint of the segment joining $(x_1, y_1)$ and $(x_2, y_2)$:</p>
+<p>$$\text{Midpoint} = \left(\frac{x_1 + x_2}{2}, \frac{y_1 + y_2}{2}\right)$$</p>
+<p>This gives the **average** of the $x$-coordinates and the average of the $y$-coordinates.</p>
+<h3> Applications:</h3>
+<li>Finding the midpoint of a segment</li>
+<li>Finding an endpoint when given the midpoint and one endpoint</li>
+<li>Finding the center of a circle when given the endpoints of a diameter</li>
+<h3> Worked Example 5: Midpoint</h3>
+<p>**Problem:** The endpoints of a diameter of a circle are $(-2, 4)$ and $(6, -2)$. What is the center of the circle?</p>
+<p>**Solution:** The center is the midpoint of any diameter:</p>
+<p>$$\left(\frac{-2 + 6}{2}, \frac{4 + (-2)}{2}\right) = \left(\frac{4}{2}, \frac{2}{2}\right) = (2, 1)$$</p>
+<hr>
+<h2>Equation of a Circle from Diameter Endpoints</h2>
+<p>If you know the endpoints of a diameter:</p>
+<li>Find the center (midpoint of the diameter endpoints)</li>
+<li>Find the radius (half the distance between endpoints, OR distance from center to either endpoint)</li>
+<h3> Worked Example 6: Circle from Diameter</h3>
+<p>**Problem:** Points $P(1, 2)$ and $Q(7, 10)$ are endpoints of a diameter. Find the equation of the circle.</p>
+<p>**Solution:**</p>
+<li>Center = midpoint: $\left(\frac{1+7}{2}, \frac{2+10}{2}\right) = (4, 6)$</li>
+<li>Radius = distance from center $(4, 6)$ to endpoint $(1, 2)$:</li>
+<p>$$r = \sqrt{(4-1)^2 + (6-2)^2} = \sqrt{3^2 + 4^2} = \sqrt{25} = 5$$</p>
+<li>Equation: $(x-4)^2 + (y-6)^2 = 25$</li>
+<hr>
+<h2>Determining if a Point Lies on a Circle</h2>
+<p>Plug the point's coordinates into the equation. If the equation holds true (both sides equal), the point is on the circle.</p>
+<h3> Worked Example 7: Point on Circle</h3>
+<p>**Problem:** Does the point $(5, 1)$ lie on the circle $(x-2)^2 + (y+3)^2 = 25$?</p>
+<p>**Solution:**</p>
+<p>Plug in: $(5-2)^2 + (1+3)^2 = 3^2 + 4^2 = 9 + 16 = 25$. Since $25 = 25$, the point is on the circle.</p>
+<hr>
+<h2>Practice Problems</h2>
+<h3> Problem 1</h3>
+<p>What are the center and radius of the circle $(x+3)^2 + (y-7)^2 = 16$?</p>
+<p>(A) Center $(3, -7)$, radius 4</p>
+<p>(B) Center $(-3, 7)$, radius 4</p>
+<p>(C) Center $(3, -7)$, radius 16</p>
+<p>(D) Center $(-3, 7)$, radius 16</p>
+<h3> Problem 2</h3>
+<p>Find the center and radius of $x^2 + y^2 - 4x + 10y + 20 = 0$.</p>
+<h3> Problem 3</h3>
+<p>What is the distance between the points $(-3, 5)$ and $(1, 2)$?</p>
+<h3> Problem 4</h3>
+<p>The midpoint of segment $AB$ is $(4, -1)$. If $A$ is $(1, 2)$, what are the coordinates of $B$?</p>
+<p>(A) $(2.5, 0.5)$</p>
+<p>(B) $(7, -4)$</p>
+<p>(C) $(7, 0)$</p>
+<p>(D) $(5.5, 1.5)$</p>
+<h3> Problem 5</h3>
+<p>A circle has center $(2, -1)$ and passes through the point $(5, 3)$. What is the equation of the circle?</p>
+<p>(A) $(x-2)^2 + (y+1)^2 = 5$</p>
+<p>(B) $(x-2)^2 + (y+1)^2 = 25$</p>
+<p>(C) $(x+2)^2 + (y-1)^2 = 25$</p>
+<p>(D) $(x-5)^2 + (y-3)^2 = 25$</p>
+<hr>
+<h2>Answers</h2>
+<h3> Problem 1 — Answer: (B) Center $(-3, 7)$, radius 4</h3>
+<p>$(x+3)^2 = (x-(-3))^2$ → $h = -3$. $(y-7)^2$ → $k = 7$. $r^2 = 16$ → $r = 4$.</p>
+<p>**Wrong-answer analysis:**</p>
+<ul>
+<li>(A) Center $(3, -7)$ — flipped both signs</li>
+<li>(C) Center $(3, -7)$, radius 16 — flipped signs AND forgot to take square root</li>
+<li>(D) Center $(-3, 7)$, radius 16 — correct center but forgot to take square root of 16</li>
+</ul>
+<hr>
+<h3> Problem 2 — Answer: Center $(2, -5)$, radius $3$</h3>
+<p>$$x^2 + y^2 - 4x + 10y + 20 = 0$$</p>
+<p>$$(x^2 - 4x) + (y^2 + 10y) = -20$$</p>
+<p>Complete squares:</p>
+<ul>
+<li>$x$: $(\frac{-4}{2})^2 = 4$</li>
+<li>$y$: $(\frac{10}{2})^2 = 25$</li>
+</ul>
+<p>$$(x^2 - 4x + 4) + (y^2 + 10y + 25) = -20 + 4 + 25$$</p>
+<p>$$(x-2)^2 + (y+5)^2 = 9$$</p>
+<p>Center $(2, -5)$, $r = \sqrt{9} = 3$.</p>
+<hr>
+<h3> Problem 3 — Answer: 5</h3>
+<p>$$d = \sqrt{(1-(-3))^2 + (2-5)^2} = \sqrt{4^2 + (-3)^2} = \sqrt{16 + 9} = \sqrt{25} = 5$$</p>
+<hr>
+<h3> Problem 4 — Answer: (B) $(7, -4)$</h3>
+<p>If midpoint $M(4, -1) = \left(\frac{1+x_B}{2}, \frac{2+y_B}{2}\right)$:</p>
+<p>$\frac{1+x_B}{2} = 4$ → $1+x_B = 8$ → $x_B = 7$</p>
+<p>$\frac{2+y_B}{2} = -1$ → $2+y_B = -2$ → $y_B = -4$</p>
+<p>$B$ is $(7, -4)$.</p>
+<p>**Wrong-answer analysis:**</p>
+<ul>
+<li>(A) $(2.5, 0.5)$ — found the midpoint of $A$ and the given midpoint</li>
+<li>(C) $(7, 0)$ — correct $x$ but wrong $y$ calculation</li>
+<li>(D) $(5.5, 1.5)$ — various arithmetic errors</li>
+</ul>
+<hr>
+<h3> Problem 5 — Answer: (B) $(x-2)^2 + (y+1)^2 = 25$</h3>
+<p>The radius is the distance from center $(2, -1)$ to point $(5, 3)$:</p>
+<p>$$r = \sqrt{(5-2)^2 + (3-(-1))^2} = \sqrt{3^2 + 4^2} = \sqrt{25} = 5$$</p>
+<p>So $r^2 = 25$. Using center $(h, k) = (2, -1)$: $(x-2)^2 + (y+1)^2 = 25$.</p>
+<p>**Wrong-answer analysis:**</p>
+<ul>
+<li>(A) $= 5$ — forgot to square the radius ($r^2$ not $r$)</li>
+<li>(C) $(x+2)^2 + (y-1)^2$ — flipped center signs</li>
+<li>(D) Uses the point $(5, 3)$ as the center — completely misread the problem</li>
+</ul>
+<hr>
+<h2>Key Takeaways</h2>
+<li>Standard form: $(x-h)^2 + (y-k)^2 = r^2$. The right side is $r^2$, NEVER $r$.</li>
+<li>The center $(h, k)$ has signs OPPOSITE to what appears in $(x-h)^2$ and $(y-k)^2$.</li>
+<li>Completing the square is the bridge from expanded form to standard form.</li>
+<li>The distance formula IS the Pythagorean theorem in coordinates.</li>
+<li>For a diameter, the center is the midpoint of the endpoints; the radius is half the diameter length.</li>
+<div class="nav">
+<a href="lesson18.html">← Previous Lesson</a>
+<a href="index.html">📋 All Lessons</a>
+<a href="lesson20.html">Next Lesson →</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 18 — Homogeneous DEs & Applications</title>
+<script>
+MathJax = {
+  tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body {
+    max-width: 800px; margin: 40px auto; font-family: 'Times New Roman', Georgia, serif;
+    font-size: 17px; line-height: 1.7; padding: 0 20px; color: #1a1a1a;
+  }
+  h1 { font-size: 22px; border-bottom: 2px solid #333; padding-bottom: 8px; margin-top: 36px; }
+  h2 { font-size: 19px; margin-top: 28px; color: #2c3e50; }
+  h3 { font-size: 17px; margin-top: 22px; color: #444; }
+  h4 { font-size: 16px; margin-top: 18px; }
+  p { margin: 0.6em 0; }
+  li { margin: 0.3em 0 0.3em 20px; }
+  hr { margin: 20px 0; border: none; border-top: 1px solid #ddd; }
+  .math-block { text-align: center; margin: 1em 0; overflow-x: auto; }
+  .table-line { font-family: 'Courier New', monospace; font-size: 15px; margin: 0.1em 0; }
+  pre { background: #f5f5f5; padding: 10px 14px; border-radius: 4px; overflow-x: auto; font-size: 14px; }
+  b { color: #222; }
+  table { border-collapse: collapse; margin: 16px 0; width: 100%; font-size: 15px; }
+  th { background: #2c3e50; color: #fff; padding: 8px 12px; text-align: center; font-weight: bold; }
+  td { border: 1px solid #ccc; padding: 8px 12px; text-align: center; }
+  tr:nth-child(even) { background: #f9f9f9; }
+  .nav { text-align: center; margin: 30px 0; font-size: 14px; }
+  .nav a { margin: 0 8px; color: #3498db; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  @media print { body { font-size: 15px; } }
+</style>
+</head>
+<body>
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+<h1>Lesson 18: Homogeneous Differential Equations and Applications</h1>
+
+<h2>What Is a Homogeneous Differential Equation and Why Does It Matter?</h2>
+
+<p>In Lesson 17 we learned how to solve linear differential equations using an integrating factor. But not all differential equations are linear. Some have $y^2$ terms, or products like $xy$, or fractions with both $x$ and $y$ in the numerator and denominator. Many of these are <b>homogeneous</b>, and they have their own special method of solution.</p>
+
+<p>A first-order differential equation is called <b>homogeneous</b> (in the sense used in the IB syllabus) if it can be rewritten so that the right-hand side depends only on the <b>ratio</b> of $y$ to $x$. In other words, it can be expressed as:</p>
+
+<div class="math-block">$$\boxed{\frac{dy}{dx} = f\!\left(\frac{y}{x}\right)}$$</div>
+
+<p>Think of it this way: if you scale both $x$ and $y$ by the same factor, the value of $\frac{dy}{dx}$ does not change. The only thing that matters is the proportion between $y$ and $x$, not their individual sizes.</p>
+
+<p>Why does this matter? Many real-world relationships — especially in geometry and physics — depend on proportions rather than absolute quantities. And mathematically, the homogeneity property unlocks a powerful substitution that turns the DE into a separable equation, which we already know how to solve.</p>
+
+<p><hr></p>
+
+<h2>How to Recognise a Homogeneous DE</h2>
+
+<p>To test whether a differential equation is homogeneous, replace $x$ with $kx$ and $y$ with $ky$ everywhere on the right-hand side. If every factor of $k$ cancels out completely, the equation is homogeneous.</p>
+
+<p><b>Example:</b> Test $\displaystyle\frac{dy}{dx} = \frac{x^2 + y^2}{xy}$.</p>
+
+<p>Replace $x \to kx$ and $y \to ky$:</p>
+
+<div class="math-block">$$\frac{(kx)^2 + (ky)^2}{(kx)(ky)} = \frac{k^2 x^2 + k^2 y^2}{k^2 xy} = \frac{k^2(x^2 + y^2)}{k^2(xy)} = \frac{x^2 + y^2}{xy}$$</div>
+
+<p>The $k^2$ cancels. The right-hand side is unchanged. This DE is homogeneous.</p>
+
+<p>Furthermore, we can actually rewrite the right-hand side as a function of $y/x$ alone:</p>
+
+<div class="math-block">$$\frac{x^2 + y^2}{xy} = \frac{x}{y} + \frac{y}{x} = \frac{1}{(y/x)} + \frac{y}{x}$$</div>
+
+<p>This confirms the form $f(y/x)$.</p>
+
+<p><hr></p>
+
+<h2>The Substitution: $v = \frac{y}{x}$</h2>
+
+<p>The standard method for solving a homogeneous DE $\frac{dy}{dx} = f(y/x)$ is to introduce a new variable $v$ defined by:</p>
+
+<div class="math-block">$$\boxed{v = \frac{y}{x}}$$</div>
+
+<p>This can also be written as $y = vx$.</p>
+
+<p>Now we need to express $\frac{dy}{dx}$ in terms of $v$ and $x$. Since $y = vx$, we use the <b>product rule</b> (because both $v$ and $x$ depend on $x$):</p>
+
+<div class="math-block">$$\boxed{\frac{dy}{dx} = v + x\frac{dv}{dx}}$$</div>
+
+<p>This is the crucial step. The derivative of $vx$ with respect to $x$ is $v \cdot 1 + x \cdot \frac{dv}{dx}$.</p>
+
+<p>When we substitute $y = vx$ and $\frac{dy}{dx} = v + x\frac{dv}{dx}$ into the original DE, the $v$ terms often simplify, and we are left with an equation that is <b>separable</b> — meaning all the $v$ terms can go on one side and all the $x$ terms on the other.</p>
+
+<p><hr></p>
+
+<h2>The Step-by-Step Recipe</h2>
+
+<li><b>Verify</b> the DE is homogeneous: rewrite the right-hand side as a function of $y/x$ (or confirm via the $kx$, $ky$ test).</li>
+<li><b>Substitute</b> $v = y/x$, which means $y = vx$ and $\frac{dy}{dx} = v + x\frac{dv}{dx}$.</li>
+<li><b>Replace</b> in the DE: $v + x\frac{dv}{dx} = f(v)$.</li>
+<li><b>Rearrange</b> to isolate the derivative: $x\frac{dv}{dx} = f(v) - v$.</li>
+<li><b>Separate</b> the variables: $\frac{dv}{f(v) - v} = \frac{dx}{x}$.</li>
+<li><b>Integrate</b> both sides.</li>
+<li><b>Back-substitute</b> $v = y/x$ to get the solution in terms of $x$ and $y$.</li>
+<li>If an <b>initial condition</b> is given, apply it to find the constant.</li>
+
+<p><hr></p>
+
+<h2>Worked Examples</h2>
+
+<h3>Worked Example 1: A Simple Homogeneous DE</h3>
+
+<p><b>Solve $\displaystyle\frac{dy}{dx} = \frac{x + y}{x}$.</b></p>
+
+<p><b>Approach:</b> The right side can be split: $\frac{x+y}{x} = 1 + \frac{y}{x}$. This is clearly a function of $y/x$ alone, so the DE is homogeneous. Use the substitution $v = y/x$.</p>
+
+<p><b>Step 1:</b> Verify homogeneity. The right-hand side is $1 + \frac{y}{x} = f(v)$ with $v = y/x$. Confirmed.</p>
+
+<p><b>Step 2:</b> Substitute $y = vx$ and $\frac{dy}{dx} = v + x\frac{dv}{dx}$:</p>
+
+<div class="math-block">$$v + x\frac{dv}{dx} = 1 + v$$</div>
+
+<p><b>Step 3:</b> The $v$ terms cancel on both sides:</p>
+
+<div class="math-block">$$x\frac{dv}{dx} = 1$$</div>
+
+<p><b>Step 4:</b> Separate:</p>
+
+<div class="math-block">$$dv = \frac{dx}{x}$$</div>
+
+<p><b>Step 5:</b> Integrate both sides:</p>
+
+<div class="math-block">$$\int dv = \int \frac{dx}{x} \quad\Longrightarrow\quad v = \ln|x| + C$$</div>
+
+<p><b>Step 6:</b> Back-substitute $v = \frac{y}{x}$:</p>
+
+<div class="math-block">$$\frac{y}{x} = \ln|x| + C$$</div>
+
+<p><b>Step 7:</b> Multiply by $x$:</p>
+
+<div class="math-block">$$y = x\ln|x| + Cx$$</div>
+
+<p><b>Answer: $y = x\ln|x| + Cx$</b></p>
+
+<p><hr></p>
+
+<h3>Worked Example 2: A DE with Quadratic Terms</h3>
+
+<p><b>Solve $\displaystyle\frac{dy}{dx} = \frac{x^2 + y^2}{2xy}$.</b></p>
+
+<p><b>Approach:</b> Divide the numerator and denominator by $x^2$ to express the right-hand side as a function of $y/x$:</p>
+
+<div class="math-block">$$\frac{x^2 + y^2}{2xy} = \frac{1 + (y/x)^2}{2(y/x)} = \frac{1 + v^2}{2v}$$</div>
+
+<p><b>Step 1:</b> Homogeneous confirmed. The right side is $f(v) = \frac{1+v^2}{2v}$.</p>
+
+<p><b>Step 2:</b> Substitute:</p>
+
+<div class="math-block">$$v + x\frac{dv}{dx} = \frac{1 + v^2}{2v}$$</div>
+
+<p><b>Step 3:</b> Isolate $x\frac{dv}{dx}$:</p>
+
+<div class="math-block">$$x\frac{dv}{dx} = \frac{1 + v^2}{2v} - v = \frac{1 + v^2 - 2v^2}{2v} = \frac{1 - v^2}{2v}$$</div>
+
+<p><b>Step 4:</b> Separate:</p>
+
+<div class="math-block">$$\frac{2v}{1 - v^2}\,dv = \frac{dx}{x}$$</div>
+
+<p><b>Step 5:</b> Integrate. For the left side, use the substitution $u = 1 - v^2$, so $du = -2v\,dv$:</p>
+
+<div class="math-block">$$\int \frac{2v}{1 - v^2}\,dv = -\int \frac{1}{u}\,du = -\ln|u| = -\ln|1 - v^2|$$</div>
+
+<p>The right side: $\int \frac{dx}{x} = \ln|x| + C$.</p>
+
+<p>So: $-\ln|1 - v^2| = \ln|x| + C$.</p>
+
+<p>Multiply by $-1$: $\ln|1 - v^2| = -\ln|x| - C$.</p>
+
+<p>Let $C&#x27; = -C$. Then:</p>
+
+<div class="math-block">$$\ln|1 - v^2| = -\ln|x| + C&#x27;$$</div>
+
+<p>Exponentiate: $|1 - v^2| = e^{C&#x27;} \cdot \frac{1}{|x|} = \frac{A}{|x|}$, where $A = e^{C&#x27;}$ is a positive constant. We can absorb the sign by letting $A$ be any nonzero constant and write:</p>
+
+<div class="math-block">$$1 - v^2 = \frac{A}{x}$$</div>
+
+<p><b>Step 6:</b> Back-substitute $v = y/x$:</p>
+
+<div class="math-block">$$1 - \frac{y^2}{x^2} = \frac{A}{x}$$</div>
+
+<p>Multiply through by $x^2$:</p>
+
+<div class="math-block">$$x^2 - y^2 = Ax$$</div>
+
+<p><b>Answer: $x^2 - y^2 = Ax$, or equivalently $y^2 = x^2 - Ax$</b></p>
+
+<p><hr></p>
+
+<h3>Worked Example 3: Homogeneous DE with an Initial Condition</h3>
+
+<p><b>Solve $\displaystyle\frac{dy}{dx} = \frac{y}{x} + \frac{x}{y}$, given that $y(1) = 2$.</b></p>
+
+<p><b>Approach:</b> The right side is already expressed as a function of $v = y/x$: $f(v) = v + \frac{1}{v}$.</p>
+
+<p><b>Step 1:</b> Homogeneous confirmed.</p>
+
+<p><b>Step 2:</b> Substitute:</p>
+
+<div class="math-block">$$v + x\frac{dv}{dx} = v + \frac{1}{v}$$</div>
+
+<p><b>Step 3:</b> The $v$ terms cancel:</p>
+
+<div class="math-block">$$x\frac{dv}{dx} = \frac{1}{v}$$</div>
+
+<p><b>Step 4:</b> Separate:</p>
+
+<div class="math-block">$$v\,dv = \frac{dx}{x}$$</div>
+
+<p><b>Step 5:</b> Integrate:</p>
+
+<div class="math-block">$$\int v\,dv = \int \frac{dx}{x} \quad\Longrightarrow\quad \frac{v^2}{2} = \ln|x| + C$$</div>
+
+<p><b>Step 6:</b> Back-substitute $v = y/x$:</p>
+
+<div class="math-block">$$\frac{y^2}{2x^2} = \ln|x| + C$$</div>
+
+<p>Multiply by $2x^2$:</p>
+
+<div class="math-block">$$y^2 = 2x^2(\ln|x| + C)$$</div>
+
+<p><b>Step 7:</b> Apply $y(1) = 2$. Substitute $x = 1$, $y = 2$:</p>
+
+<div class="math-block">$$4 = 2(1)^2(\ln 1 + C) = 2(0 + C) = 2C \quad\Longrightarrow\quad C = 2$$</div>
+
+<p>Therefore:</p>
+
+<div class="math-block">$$y^2 = 2x^2(\ln|x| + 2)$$</div>
+
+<p>Since $y(1) = 2$ is positive, we take the positive square root:</p>
+
+<div class="math-block">$$y = x\sqrt{2\ln|x| + 4}$$</div>
+
+<p><b>Why this makes sense:</b> At $x = 1$, $\ln 1 = 0$, so $y = 1 \times \sqrt{4} = 2$, which satisfies the initial condition.</p>
+
+<p><hr></p>
+
+<h2>Choosing the Right Method: A Decision Guide</h2>
+
+<p>When you see a first-order differential equation, ask these questions in order:</p>
+
+<li><b>Is it separable?</b> Can you write it as $\frac{dy}{dx} = g(x) \cdot h(y)$? If yes, separate variables and integrate (covered in Lesson 15).</li>
+
+<li><b>Is it linear?</b> Can you write it as $\frac{dy}{dx} + P(x)y = Q(x)$? If yes, use the integrating factor method (Lesson 17).</li>
+
+<li><b>Is it homogeneous?</b> Can you write it as $\frac{dy}{dx} = f(y/x)$? If yes, use the substitution $v = y/x$ (this lesson).</li>
+
+<li><b>If none of the above apply</b>, you may need to use Euler&#x27;s method for numerical approximation (Lesson 16), or try to rewrite the equation into one of the above forms.</li>
+
+<p>Some equations are <b>both</b> linear and separable. In that case, either method works — pick the one that seems easier.</p>
+
+<p><hr></p>
+
+<h2>Applications of Differential Equations</h2>
+
+<p>Differential equations are not just abstract puzzles. They model real systems. Here are two important applications.</p>
+
+<h3>Application 1: Newton&#x27;s Law of Cooling</h3>
+
+<p>Newton&#x27;s Law of Cooling describes how a warm object cools down in a cooler environment. The rate at which the temperature drops is proportional to the difference between the object&#x27;s temperature $T$ and the ambient (room) temperature $T_a$.</p>
+
+<div class="math-block">$$\boxed{\frac{dT}{dt} = -k(T - T_a)}$$</div>
+
+<p>Here $k &gt; 0$ is a constant (the cooling constant) that depends on the object and its surroundings. The minus sign means that when $T &gt; T_a$, the temperature decreases.</p>
+
+<p>This equation is both linear and separable. Let us solve it using the integrating factor method as a review.</p>
+
+<p>Rewrite in standard form: $\frac{dT}{dt} + kT = kT_a$.</p>
+
+<p>Here $P(t) = k$ (a constant) and $Q(t) = kT_a$. The integrating factor is $\mu = e^{\int k\,dt} = e^{kt}$.</p>
+
+<p>Multiply: $e^{kt}\frac{dT}{dt} + k e^{kt}T = kT_a e^{kt}$.</p>
+
+<p>Left side: $\frac{d}{dt}(e^{kt}T) = kT_a e^{kt}$.</p>
+
+<p>Integrate: $e^{kt}T = kT_a \int e^{kt}\,dt = kT_a \cdot \frac{1}{k}e^{kt} + C = T_a e^{kt} + C$.</p>
+
+<p>Divide by $e^{kt}$: $T = T_a + C e^{-kt}$.</p>
+
+<p>If the initial temperature is $T(0) = T_0$, then $T_0 = T_a + C$, so $C = T_0 - T_a$. The full solution is:</p>
+
+<div class="math-block">$$\boxed{T(t) = T_a + (T_0 - T_a)e^{-kt}}$$</div>
+
+<p>This formula tells you the temperature at any time $t$. As $t \to \infty$, the exponential dies away, and the temperature approaches $T_a$ — the object eventually reaches room temperature.</p>
+
+<p><hr></p>
+
+<h4>Worked Application: Cooling Coffee</h4>
+
+<p>A cup of coffee at 90°C is placed in a room at 20°C. After 5 minutes, its temperature has dropped to 60°C. Find the temperature after 15 minutes.</p>
+
+<p><b>Step 1:</b> Write the general solution. $T_a = 20$, $T_0 = 90$, so:</p>
+
+<div class="math-block">$$T(t) = 20 + (90 - 20)e^{-kt} = 20 + 70e^{-kt}$$</div>
+
+<p><b>Step 2:</b> Use the data point to find $k$. At $t = 5$, $T = 60$:</p>
+
+<div class="math-block">$$60 = 20 + 70e^{-5k} \quad\Longrightarrow\quad 40 = 70e^{-5k} \quad\Longrightarrow\quad e^{-5k} = \frac{40}{70} = \frac{4}{7}$$</div>
+
+<p><b>Step 3:</b> Find the temperature at $t = 15$. There is a clever trick: $e^{-15k} = (e^{-5k})^3$, so:</p>
+
+<div class="math-block">$$T(15) = 20 + 70 \times \left(\frac{4}{7}\right)^3 = 20 + 70 \times \frac{64}{343}$$</div>
+
+<p>Compute $70 \times \frac{64}{343} = \frac{4480}{343} \approx 13.06$.</p>
+
+<div class="math-block">$$T(15) \approx 20 + 13.06 = 33.06$$</div>
+
+<p><b>Answer: Approximately 33.1°C</b></p>
+
+<p><hr></p>
+
+<h3>Application 2: Mixing Problems</h3>
+
+<p>Consider a tank that initially holds 100 litres of water with 10 kg of salt dissolved in it. A salt-water solution with a concentration of 0.2 kg per litre flows into the tank at a rate of 5 litres per minute. The mixture is kept well stirred and flows out at the same rate of 5 litres per minute. How much salt is in the tank at time $t$?</p>
+
+<p>The key idea: the rate of change of salt equals the rate salt enters minus the rate salt leaves.</p>
+
+<p><b>Rate in:</b> (concentration of inflow) × (flow rate) = $0.2 \times 5 = 1$ kg/min.</p>
+
+<p><b>Rate out:</b> At time $t$, let $S(t)$ be the amount of salt in the tank (in kg). The volume stays constant at 100 L (because inflow equals outflow). The concentration in the tank is $\frac{S(t)}{100}$ kg/L. Salt leaves at: $\frac{S}{100} \times 5 = \frac{S}{20}$ kg/min.</p>
+
+<p>Therefore the differential equation is:</p>
+
+<div class="math-block">$$\frac{dS}{dt} = 1 - \frac{S}{20}$$</div>
+
+<p>Rewrite in standard form: $\frac{dS}{dt} + \frac{1}{20}S = 1$.</p>
+
+<p>Now solve: $P(t) = \frac{1}{20}$, so $\mu = e^{\int (1/20)\,dt} = e^{t/20}$.</p>
+
+<p>Multiply: $e^{t/20}\frac{dS}{dt} + \frac{1}{20}e^{t/20}S = e^{t/20}$.</p>
+
+<p>Left side: $\frac{d}{dt}(e^{t/20}S) = e^{t/20}$.</p>
+
+<p>Integrate: $e^{t/20}S = \int e^{t/20}\,dt = 20e^{t/20} + C$.</p>
+
+<p>Divide: $S = 20 + C e^{-t/20}$.</p>
+
+<p>Initial condition: $S(0) = 10$. So $10 = 20 + C$, which gives $C = -10$.</p>
+
+<div class="math-block">$$\boxed{S(t) = 20 - 10e^{-t/20}}$$</div>
+
+<p>As time goes on ($t \to \infty$), the exponential term vanishes, and the amount of salt approaches $20$ kg. This matches the inflow concentration times the tank volume: $0.2 \times 100 = 20$ kg.</p>
+
+<p><hr></p>
+
+<h2>Summary</h2>
+
+<p class="table-line">| Type of DE | Form | Method |</p>
+<p class="table-line">|<hr>|<hr>|<hr>|</p>
+<p class="table-line">| <b>Separable</b> | $\frac{dy}{dx} = g(x)h(y)$ | Separate variables and integrate |</p>
+<p class="table-line">| <b>Linear</b> | $\frac{dy}{dx} + P(x)y = Q(x)$ | Integrating factor $\mu = e^{\int P\,dx}$ |</p>
+<p class="table-line">| <b>Homogeneous</b> | $\frac{dy}{dx} = f(y/x)$ | Substitute $v = y/x$ |</p>
+<p class="table-line">| <b>Applications</b> | Real-world models | Identify the type, then apply its method |</p>
+
+<p><hr></p>
+
+<h2>Practice Problems</h2>
+
+<p><b>Problem 1</b></p>
+
+<p>Solve the homogeneous differential equation $\displaystyle\frac{dy}{dx} = \frac{y}{x} + \frac{x}{y}$. Write your answer as a relationship between $y$ and $x$ (you do not need to solve for $y$ explicitly).</p>
+
+<p><b>Problem 2</b></p>
+
+<p>Solve the homogeneous differential equation $\displaystyle\frac{dy}{dx} = \frac{2xy}{x^2 - y^2}$. Start by dividing the numerator and denominator by $x^2$ to express the right-hand side as a function of $v = y/x$.</p>
+
+<p><b>Problem 3</b></p>
+
+<p>Identify the type of the differential equation $\displaystyle\frac{dy}{dx} = \frac{x}{y}$ and solve it using the most appropriate method. (Hint: try separation of variables.)</p>
+
+<p><b>Problem 4</b></p>
+
+<p>Identify the type of the differential equation $\displaystyle\frac{dy}{dx} + 2y = e^{-x}$, with $y(0) = 1$, and solve it using the most appropriate method.</p>
+
+<p><b>Problem 5</b> (IB-style — Newton&#x27;s Law of Cooling)</p>
+
+<p>A body at 100°C is placed in a room maintained at a constant temperature of 25°C. After exactly 10 minutes, the body has cooled to 70°C.</p>
+
+<p>(a) Write down the differential equation that models this situation, and give its general solution. State clearly what each symbol represents. [2 marks]</p>
+
+<p>(b) Show that the cooling constant $k$ satisfies $e^{-10k} = 0.6$, and hence find the value of $k$ correct to four decimal places. [3 marks]</p>
+
+<p>(c) Find the temperature of the body after 20 minutes. [2 marks]</p>
+
+<p>(d) Determine how many minutes (to the nearest minute) it takes for the body to cool to 30°C. [2 marks]</p>
+
+<p><b>Problem 6</b> (Mixing Application)</p>
+
+<p>A tank initially contains 50 litres of pure water (so the initial amount of salt is 0 kg). A salt solution with a concentration of 0.1 kg per litre flows into the tank at a rate of 2 litres per minute. The mixture is kept well stirred and flows out at the same rate of 2 litres per minute. Let $S(t)$ be the amount of salt (in kg) in the tank at time $t$ minutes.</p>
+
+<p>(a) Write a differential equation for $S(t)$ by considering the rates at which salt enters and leaves the tank. [2 marks]</p>
+
+<p>(b) Solve the differential equation to find $S(t)$. [4 marks]</p>
+
+<p>(c) What amount of salt does the tank approach after a very long time? Explain why this value makes physical sense. [2 marks]</p>
+
+<p><hr></p>
+
+<h2>Answers</h2>
+
+<p><b>Answer 1</b></p>
+
+<p>The right side is $\frac{y}{x} + \frac{x}{y} = v + \frac{1}{v}$ with $v = y/x$. The DE is homogeneous.</p>
+
+<p>Substitute: $v + x\frac{dv}{dx} = v + \frac{1}{v}$.</p>
+
+<p>The $v$ terms cancel: $x\frac{dv}{dx} = \frac{1}{v}$.</p>
+
+<p>Separate: $v\,dv = \frac{dx}{x}$.</p>
+
+<p>Integrate: $\frac{v^2}{2} = \ln|x| + C$.</p>
+
+<p>Back-substitute $v = y/x$: $\frac{y^2}{2x^2} = \ln|x| + C$.</p>
+
+<p>Multiply by $2x^2$: $y^2 = 2x^2(\ln|x| + C)$.</p>
+
+<p>(Common pitfall: forgetting to back-substitute $v = y/x$ at the end and leaving the answer in terms of $v$.)</p>
+
+<p><hr></p>
+
+<p><b>Answer 2</b></p>
+
+<p>Divide numerator and denominator by $x^2$:</p>
+
+<div class="math-block">$$\frac{dy}{dx} = \frac{2(y/x)}{1 - (y/x)^2} = \frac{2v}{1 - v^2}$$</div>
+
+<p>where $v = y/x$. The DE is homogeneous.</p>
+
+<p>Substitute: $v + x\frac{dv}{dx} = \frac{2v}{1 - v^2}$.</p>
+
+<p>Isolate: $x\frac{dv}{dx} = \frac{2v}{1 - v^2} - v = \frac{2v - v(1 - v^2)}{1 - v^2} = \frac{2v - v + v^3}{1 - v^2} = \frac{v + v^3}{1 - v^2} = \frac{v(1 + v^2)}{1 - v^2}$.</p>
+
+<p>Separate: $\frac{1 - v^2}{v(1 + v^2)}\,dv = \frac{dx}{x}$.</p>
+
+<p>Use partial fractions on the left side: $\frac{1 - v^2}{v(1 + v^2)} = \frac{1}{v} - \frac{2v}{1 + v^2}$.</p>
+
+<p>Integrate: $\int \frac{1}{v}\,dv - \int \frac{2v}{1 + v^2}\,dv = \int \frac{dx}{x}$.</p>
+
+<p>The first integral is $\ln|v|$. For the second, use $u = 1+v^2$, $du = 2v\,dv$, so $\int \frac{2v}{1+v^2}\,dv = \ln(1+v^2)$.</p>
+
+<p>Thus: $\ln|v| - \ln(1 + v^2) = \ln|x| + \ln C$, where we write the constant as $\ln C$ for convenience.</p>
+
+<p>Combine logs: $\ln\left|\frac{v}{1 + v^2}\right| = \ln|Cx|$.</p>
+
+<p>Remove logs: $\frac{v}{1 + v^2} = Cx$.</p>
+
+<p>Back-substitute $v = y/x$:</p>
+
+<div class="math-block">$$\frac{y/x}{1 + y^2/x^2} = Cx \quad\Longrightarrow\quad \frac{y}{x} \cdot \frac{x^2}{x^2 + y^2} = Cx \quad\Longrightarrow\quad \frac{xy}{x^2 + y^2} = Cx$$</div>
+
+<p>Cancel $x$ (assuming $x \neq 0$): $\frac{y}{x^2 + y^2} = C$.</p>
+
+<p>So: $y = C(x^2 + y^2)$, or equivalently $x^2 + y^2 = \frac{y}{C}$.</p>
+
+<p><hr></p>
+
+<p><b>Answer 3</b></p>
+
+<p>The equation $\frac{dy}{dx} = \frac{x}{y}$ can be solved by separation of variables (it is also homogeneous, but separation is quicker).</p>
+
+<p>Separate: $y\,dy = x\,dx$.</p>
+
+<p>Integrate: $\frac{y^2}{2} = \frac{x^2}{2} + C$.</p>
+
+<p>Multiply by $2$: $y^2 = x^2 + 2C$. Since $2C$ is just another constant, we can write:</p>
+
+<div class="math-block">$$y^2 = x^2 + C$$</div>
+
+<p>(where the $C$ here is $2C$ from the previous line — the exact name of the constant does not matter).</p>
+
+<p><hr></p>
+
+<p><b>Answer 4</b></p>
+
+<p>The equation $\frac{dy}{dx} + 2y = e^{-x}$ is linear, with $P(x) = 2$ and $Q(x) = e^{-x}$.</p>
+
+<p>Integrating factor: $\mu = e^{\int 2\,dx} = e^{2x}$.</p>
+
+<p>Multiply: $e^{2x}\frac{dy}{dx} + 2e^{2x}y = e^{2x} \cdot e^{-x} = e^x$.</p>
+
+<p>Left side: $\frac{d}{dx}(e^{2x}y) = e^x$.</p>
+
+<p>Integrate: $e^{2x}y = \int e^x\,dx = e^x + C$.</p>
+
+<p>Divide: $y = e^{-x} + C e^{-2x}$.</p>
+
+<p>Apply $y(0) = 1$: $1 = e^0 + C \cdot e^0 = 1 + C$, so $C = 0$.</p>
+
+<p>Final answer: $y = e^{-x}$.</p>
+
+<p>(Interesting: the solution simplifies to just $e^{-x}$, with no arbitrary constant term surviving.)</p>
+
+<p><hr></p>
+
+<p><b>Answer 5</b></p>
+
+<p><b>(a)</b> Let $T(t)$ be the temperature of the body at time $t$ minutes. Let $T_a = 25$ be the ambient temperature. Newton&#x27;s Law of Cooling states:</p>
+
+<div class="math-block">$$\frac{dT}{dt} = -k(T - 25)$$</div>
+
+<p>where $k &gt; 0$ is the cooling constant. The general solution (derived in the lesson) is:</p>
+
+<div class="math-block">$$T(t) = 25 + (T_0 - 25)e^{-kt}$$</div>
+
+<p>where $T_0 = T(0) = 100$ is the initial temperature.</p>
+
+<p>[2 marks: 1 for the correct differential equation, 1 for the general solution with symbols explained.]</p>
+
+<p><b>(b)</b> Substitute $T_0 = 100$: $T(t) = 25 + 75e^{-kt}$.</p>
+
+<p>At $t = 10$, $T = 70$: $70 = 25 + 75e^{-10k}$.</p>
+
+<p>$45 = 75e^{-10k}$, so $e^{-10k} = \frac{45}{75} = 0.6$.</p>
+
+<p>Taking natural logs: $-10k = \ln(0.6)$, so $k = -\frac{\ln(0.6)}{10}$.</p>
+
+<p>Compute: $k \approx \frac{0.5108}{10} = 0.0511$ (to four decimal places: $0.0511$).</p>
+
+<p>[3 marks: 1 for setting up $T(10) = 70$, 1 for solving to get $e^{-10k} = 0.6$, 1 for the correct value of $k$.]</p>
+
+<p><b>(c)</b> At $t = 20$: $T(20) = 25 + 75e^{-20k} = 25 + 75(e^{-10k})^2 = 25 + 75(0.6)^2 = 25 + 75 \times 0.36 = 25 + 27 = 52$.</p>
+
+<p>So the temperature after 20 minutes is 52°C.</p>
+
+<p>[2 marks: 1 for using $e^{-20k} = (e^{-10k})^2$, 1 for the correct temperature.]</p>
+
+<p><b>(d)</b> Set $T(t) = 30$: $30 = 25 + 75e^{-kt}$, so $5 = 75e^{-kt}$ and $e^{-kt} = \frac{5}{75} = \frac{1}{15}$.</p>
+
+<p>Take natural logs: $-kt = \ln(1/15) = -\ln 15$, so $t = \frac{\ln 15}{k}$.</p>
+
+<p>Using $k \approx 0.05108$: $t \approx \frac{2.7081}{0.05108} \approx 53.0$.</p>
+
+<p>To the nearest minute, it takes 53 minutes.</p>
+
+<p>[2 marks: 1 for setting up the equation correctly, 1 for the correct time.]</p>
+
+<p><hr></p>
+
+<p><b>Answer 6</b></p>
+
+<p><b>(a)</b> The volume stays constant at 50 L because the inflow rate equals the outflow rate.</p>
+
+<p>Rate of salt entering: (concentration in) × (flow rate in) = $0.1 \times 2 = 0.2$ kg/min.</p>
+
+<p>Rate of salt leaving: at time $t$, the concentration in the tank is $\frac{S}{50}$ kg/L. Salt leaves at rate $\frac{S}{50} \times 2 = \frac{S}{25}$ kg/min.</p>
+
+<p>Therefore: $\frac{dS}{dt} = 0.2 - \frac{S}{25}$.</p>
+
+<p>[2 marks: 1 for the correct &quot;rate in&quot;, 1 for the correct &quot;rate out&quot; and the differential equation.]</p>
+
+<p><b>(b)</b> Write in standard form: $\frac{dS}{dt} + \frac{1}{25}S = 0.2$.</p>
+
+<p>Integrating factor: $\mu = e^{\int (1/25)\,dt} = e^{t/25}$.</p>
+
+<p>Multiply: $e^{t/25}\frac{dS}{dt} + \frac{1}{25}e^{t/25}S = 0.2e^{t/25}$.</p>
+
+<p>Left side: $\frac{d}{dt}(e^{t/25}S) = 0.2e^{t/25}$.</p>
+
+<p>Integrate: $e^{t/25}S = \int 0.2e^{t/25}\,dt = 0.2 \times 25e^{t/25} + C = 5e^{t/25} + C$.</p>
+
+<p>Divide: $S = 5 + C e^{-t/25}$.</p>
+
+<p>Apply $S(0) = 0$: $0 = 5 + C$, so $C = -5$.</p>
+
+<p>Final answer: $S(t) = 5(1 - e^{-t/25})$.</p>
+
+<p>[4 marks: 1 for standard form, 1 for the integrating factor, 1 for integration, 1 for applying initial condition.]</p>
+
+<p><b>(c)</b> As $t \to \infty$, the exponential $e^{-t/25} \to 0$, so $S(t) \to 5$ kg.</p>
+
+<p>This makes physical sense because the inflow has a concentration of $0.1$ kg/L and the tank volume is $50$ L. Over a long time, the water in the tank is completely replaced by the incoming solution, so the amount of salt should be $0.1 \times 50 = 5$ kg.</p>
+
+<p>[2 marks: 1 for identifying the limit, 1 for the physical explanation.]</p>
+
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+</body>
+</html>

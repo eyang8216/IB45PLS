@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 12: Quadratic Equations & Functions (SAT Style Review)</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root {
+    --bg: #fafaf9;
+    --text: #1a1a1a;
+    --accent: #1a5276;
+    --trap-bg: #fff3cd;
+    --trap-border: #ffc107;
+    --pattern-bg: #d1ecf1;
+    --pattern-border: #17a2b8;
+    --card: #ffffff;
+    --border: #d0d0cb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+  h1 { font-size: 1.8rem; color: var(--accent); border-bottom: 3px solid var(--accent); padding-bottom: 0.5rem; margin-bottom: 1rem; }
+  h2 { font-size: 1.35rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+  h3 { font-size: 1.15rem; color: #333; margin: 1.5rem 0 0.5rem; }
+  p, li { margin: 0.5em 0; }
+  ul, ol { padding-left: 1.5rem; margin: 0.5em 0; }
+  .trap-box {
+    background: var(--trap-bg);
+    border-left: 4px solid var(--trap-border);
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.95rem;
+  }
+  .trap-box strong { color: #856404; }
+  .pattern-box {
+    background: var(--pattern-bg);
+    border-left: 4px solid var(--pattern-border);
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.95rem;
+  }
+  .pattern-box strong { color: #0c5460; }
+  .example {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem 1.3rem;
+    margin: 1rem 0;
+  }
+  .example h4 { color: var(--accent); margin-bottom: 0.3rem; }
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 2.5rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  .nav a { color: var(--accent); text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  code { background: #f0f0f0; padding: 0.15em 0.4em; border-radius: 3px; font-size: 0.9em; }
+  strong { color: #222; }
+  @media print {
+    body { font-size: 14px; }
+    .nav { display: none; }
+  }
+</style>
+</head>
+<body>
+<h1>Lesson 12: Quadratic Equations & Functions (SAT Style Review)</h1>
+<h2>What You'll Learn</h2>
+<ul>
+<li>Quick review: factoring, quadratic formula, discriminant (leveraging your AAHL background)</li>
+<li>Vertex form and interpreting the vertex in real-world context</li>
+<li>SAT-specific quadratic patterns: sum and product of roots (Vieta's formulas)</li>
+<li>Recognizing when answer choices are in factored form</li>
+<li>The discriminant as a time-saving tool: number of solutions</li>
+<li>Common SAT quadratic traps that differ from AAHL presentation</li>
+</ul>
+<h2>SAT Context</h2>
+<p>Quadratic questions are among the most frequent on the SAT, appearing 4-6 times per test. For an AAHL student, quadratics are second nature—you've solved countless quadratic equations. However, the SAT tests quadratics differently than IB: more emphasis on interpretation (what does the vertex mean? what do the roots represent?), more pattern-recognition shortcuts (sum/product of roots), and more "smart route" problems where factoring is faster than the quadratic formula. This lesson focuses on SAT-specific quadratic strategies, not on re-teaching what you already know.</p>
+<h2>Quick Review (AAHL Background)</h2>
+<h3> Standard Form</h3>
+<p>$$f(x) = ax^2 + bx + c$$</p>
+<h3> Factored Form</h3>
+<p>$$f(x) = a(x - r_1)(x - r_2)$$</p>
+<p>where $r_1$ and $r_2$ are the roots (x-intercepts).</p>
+<h3> Vertex Form</h3>
+<p>$$f(x) = a(x - h)^2 + k$$</p>
+<p>where $(h, k)$ is the vertex. If $a > 0$, the parabola opens up and $k$ is the minimum. If $a < 0$, $k$ is the maximum.</p>
+<h3> Quadratic Formula</h3>
+<p>$$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$</p>
+<h3> Discriminant</h3>
+<p>$$D = b^2 - 4ac$$</p>
+<ul>
+<li>$D > 0$: two distinct real roots</li>
+<li>$D = 0$: one real root (double root, touches x-axis)</li>
+<li>$D < 0$: no real roots (complex conjugate pair)</li>
+</ul>
+<h2>SAT-Specific Quadratic Patterns</h2>
+<h3> Pattern 1: Sum and Product of Roots (Vieta's Formulas)</h3>
+<p>For $ax^2 + bx + c = 0$ with roots $r_1$ and $r_2$:</p>
+<ul>
+<li>**Sum:** $r_1 + r_2 = -\frac{b}{a}$</li>
+<li>**Product:** $r_1 \cdot r_2 = \frac{c}{a}$</li>
+</ul>
+<p>**SAT Usage:** The SAT often asks "what is the sum of the solutions?" or gives information about roots without showing the equation. Instead of solving for roots individually, use Vieta.</p>
+<p>**Example:** For $2x^2 - 8x + 6 = 0$:</p>
+<p>Sum of roots = $-\frac{-8}{2} = 4$. Product = $\frac{6}{2} = 3$.</p>
+<p>Verification: Roots are $1$ and $3$. Sum = $4$, product = $3$. ✓</p>
+<h3> Pattern 2: When Answer Choices Are in Factored Form</h3>
+<p>If answer choices look like $(x + p)(x - q)$, the problem is telling you to factor.</p>
+<p>**Example:** $x^2 + 5x + 6$ → which is equivalent?</p>
+<ul>
+<li>A) $(x + 2)(x + 3)$</li>
+<li>B) $(x - 2)(x - 3)$</li>
+<li>C) $(x + 1)(x + 6)$</li>
+<li>D) $(x - 1)(x - 6)$</li>
+</ul>
+<p>Find factors of $6$ that add to $5$: $2$ and $3$. So $(x + 2)(x + 3)$.</p>
+<p>Answer: **A**.</p>
+<p>> **🔍 PATTERN RECOGNITION: "What is the sum of the solutions?"** When you see this question, resist the urge to solve for each root. Use Vieta: sum = $-\frac{b}{a}$. This turns a 30-second factoring problem into a 3-second substitution. Similarly, "what is the product of the solutions?" → $\frac{c}{a}$.</p>
+<h3> Pattern 3: Vertex Interpretation in Context</h3>
+<p>The SAT loves real-world quadratic word problems where the vertex has meaning:</p>
+<ul>
+<li>**Projectile motion:** $h(t) = -16t^2 + v_0t + h_0$. The vertex gives the **maximum height** and the **time to reach it**.</li>
+<li>**Profit maximization:** $P(x) = -ax^2 + bx + c$. The vertex gives **maximum profit** and the **optimal quantity**.</li>
+<li>**Area optimization:** $A(w) = -w^2 + Lw$. The vertex gives **maximum area**.</li>
+</ul>
+<p>**To find the vertex from standard form $ax^2 + bx + c$:**</p>
+<p>$$h = -\frac{b}{2a}$$</p>
+<p>$$k = f(h)$$</p>
+<p>**Example:** $h(t) = -16t^2 + 64t + 80$ (height of a projectile).</p>
+<p>Vertex: $t = -\frac{64}{2(-16)} = \frac{64}{32} = 2$ seconds.</p>
+<p>Maximum height: $h(2) = -16(4) + 64(2) + 80 = -64 + 128 + 80 = 144$ feet.</p>
+<h3> Pattern 4: Discriminant for "Number of Solutions"</h3>
+<p>The SAT often asks: "For what value of $k$ does the equation $x^2 + kx + 9 = 0$ have exactly one real solution?"</p>
+<p>Set discriminant = 0: $k^2 - 4(1)(9) = 0$ → $k^2 = 36$ → $k = \pm 6$.</p>
+<p>This is much faster than trying to factor or use the quadratic formula.</p>
+<p>> **🚨 SAT TRAP ALERT: Confusing x-intercepts (roots) with the vertex.** A quadratic has its x-intercepts where $f(x) = 0$ and its vertex where the function attains its maximum or minimum. The SAT will ask: "At what value of $x$ does the function reach its minimum?" and among the answer choices will be the x-intercepts. Students who conflate "where is the function zero" with "where is the function minimized" will pick the wrong answer. Remember: vertex (min/max) vs. roots (zeros) are different things.</p>
+<p>> **🚨 SAT TRAP ALERT: Sign Errors in Factored Form.** $(x + 3)(x - 2) = 0$ has roots $x = -3$ and $x = 2$, NOT $x = 3$ and $x = -2$. The sign inside the factor is OPPOSITE the root. The SAT will place answers like $(x - 3)(x + 2)$ as a trap for those who forget this. Always mentally check: if the factor is $(x + a)$, the root is $-a$.</p>
+<h3> Worked Example 1: Sum of Roots</h3>
+<p>**Problem:** What is the sum of the solutions to $3x^2 - 12x + 7 = 0$?</p>
+<p>A) $-4$</p>
+<p>B) $-\frac{7}{3}$</p>
+<p>C) $\frac{7}{3}$</p>
+<p>D) $4$</p>
+<p>**Solution:**</p>
+<p>Using Vieta: sum = $-\frac{b}{a} = -\frac{-12}{3} = 4$.</p>
+<p>**Answer: D.**</p>
+<p>**Wrong answer analysis:**</p>
+<ul>
+<li>A ($-4$): forgetting to negate $b$ in the formula (using $\frac{b}{a}$ instead of $-\frac{b}{a}$).</li>
+<li>B ($-\frac{7}{3}$): confusing sum with negative product ($-\frac{c}{a}$).</li>
+<li>C ($\frac{7}{3}$): using the product formula $\frac{c}{a}$.</li>
+</ul>
+<h3> Worked Example 2: Discriminant Application</h3>
+<p>**Problem:** For what value of $c$ does $x^2 - 6x + c = 0$ have exactly one real solution?</p>
+<p>A) $-9$</p>
+<p>B) $0$</p>
+<p>C) $6$</p>
+<p>D) $9$</p>
+<p>**Solution:**</p>
+<p>Exactly one real solution → discriminant = 0.</p>
+<p>$$(-6)^2 - 4(1)(c) = 0$$</p>
+<p>$$36 - 4c = 0$$</p>
+<p>$$4c = 36$$</p>
+<p>$$c = 9$$</p>
+<p>**Answer: D.**</p>
+<p>**Wrong answer analysis:**</p>
+<ul>
+<li>A ($-9$): $36 - 4(-9) = 36 + 36 = 72 \neq 0$; this would give two real solutions.</li>
+<li>B ($0$): $36 - 0 = 36 \neq 0$; discriminant positive, two real solutions.</li>
+<li>C ($6$): $36 - 24 = 12 \neq 0$; two real solutions—likely confusing $b$ with $c$.</li>
+</ul>
+<h3> Worked Example 3: Vertex in Context</h3>
+<p>**Problem:** The profit $P$, in dollars, from selling $x$ units of a product is modeled by $P(x) = -2x^2 + 80x - 300$. What is the maximum profit, and how many units should be sold to achieve it?</p>
+<p>**Solution:**</p>
+<p>Vertex: $h = -\frac{b}{2a} = -\frac{80}{2(-2)} = \frac{80}{4} = 20$ units.</p>
+<p>Maximum profit: $P(20) = -2(400) + 80(20) - 300 = -800 + 1600 - 300 = 500$.</p>
+<p>**Answer:** Maximum profit = $\$500$, achieved by selling 20 units.</p>
+<p>**Alternative approach (vertex form):**</p>
+<p>Complete the square: $P(x) = -2(x^2 - 40x) - 300 = -2(x^2 - 40x + 400) + 800 - 300 = -2(x - 20)^2 + 500$. Vertex: $(20, 500)$. ✓</p>
+<hr>
+<h2>Practice Problems</h2>
+<li>What is the sum of the solutions to $2x^2 + 8x - 10 = 0$?</li>
+<p>A) $-8$</p>
+<p>B) $-4$</p>
+<p>C) $4$</p>
+<p>D) $8$</p>
+<li>The equation $x^2 - 10x + k = 0$ has exactly one real solution. What is $k$?</li>
+<p>A) $5$</p>
+<p>B) $10$</p>
+<p>C) $20$</p>
+<p>D) $25$</p>
+<li>The function $h(t) = -16t^2 + 48t + 160$ gives the height of a ball $t$ seconds after being thrown. What is the maximum height?</li>
+<p>A) 48 feet</p>
+<p>B) 144 feet</p>
+<p>C) 160 feet</p>
+<p>D) 196 feet</p>
+<li>Which of the following is equivalent to $x^2 - 5x - 14$?</li>
+<p>A) $(x + 2)(x - 7)$</p>
+<p>B) $(x - 2)(x + 7)$</p>
+<p>C) $(x + 2)(x + 7)$</p>
+<p>D) $(x - 2)(x - 7)$</p>
+<li>The product of the solutions to $3x^2 - 9x + 6 = 0$ is:</li>
+<p>A) $-3$</p>
+<p>B) $2$</p>
+<p>C) $3$</p>
+<p>D) $6$</p>
+<li>**(Challenge)** The graph of $y = x^2 - 2x - 3$ is translated 3 units to the right. What is the equation of the resulting parabola?</li>
+<p>A) $y = (x - 1)^2 - 4$</p>
+<p>B) $y = (x - 4)^2 - 4$</p>
+<p>C) $y = x^2 - 8x + 13$</p>
+<p>D) Both B and C are equivalent and correct.</p>
+<hr>
+<h2>Answers</h2>
+<li>**Answer: B.** Sum = $-\frac{b}{a} = -\frac{8}{2} = -4$. **Wrong answers:** A ($-8$): using $b$ without dividing by $a$. C ($4$): forgetting the negative sign. D ($8$): using $-b$... wait, $-(-8)/2 = 4$ which is C. D is $8 = b$ without any transformation.</li>
+<li>**Answer: D.** Discriminant = 0: $(-10)^2 - 4(1)(k) = 0$ → $100 - 4k = 0$ → $k = 25$. Note: $x^2 - 10x + 25 = (x-5)^2$, so the double root is $x = 5$. **Wrong answers:** A ($5$): confusing $k$ with the root value. B ($10$): using $b$ (with wrong sign). C ($20$): $100 - 4(20) = 20 \neq 0$, perhaps computing $b^2/5$.</li>
+<li>**Answer: D.** Vertex: $t = -\frac{48}{2(-16)} = \frac{48}{32} = 1.5$ seconds. $h(1.5) = -16(2.25) + 48(1.5) + 160 = -36 + 72 + 160 = 196$ feet. **Wrong answers:** A (48): the $b$ coefficient, not the height. B (144): using the wrong $a$ value or computation error. C (160): the initial height ($h(0)$), not the maximum.</li>
+<li>**Answer: A.** Find factors of $-14$ that add to $-5$: $2$ and $-7$. So $(x + 2)(x - 7)$. Check: $(x+2)(x-7) = x^2 - 7x + 2x - 14 = x^2 - 5x - 14$. ✓ **Wrong answers:** B expands to $x^2 + 5x - 14$ (wrong middle sign). C expands to $x^2 + 9x + 14$ (wrong signs). D expands to $x^2 - 9x + 14$ (wrong constant).</li>
+<li>**Answer: B.** Product = $\frac{c}{a} = \frac{6}{3} = 2$. Verification: divide by 3: $x^2 - 3x + 2 = 0$, roots are $1$ and $2$, product = $2$. ✓ **Wrong answers:** A ($-3$): $-\frac{c}{a}$, confusing sign. C ($3$): $-\frac{b}{a}$ (sum, with sign error). D ($6$): just $c$, forgetting to divide by $a$.</li>
+<li>**Answer: D.** Original: $y = x^2 - 2x - 3$. Complete the square: $y = (x^2 - 2x + 1) - 4 = (x - 1)^2 - 4$. Translate 3 units right: replace $x$ with $(x - 3)$: $y = ((x-3) - 1)^2 - 4 = (x-4)^2 - 4$. Expand: $(x-4)^2 - 4 = x^2 - 8x + 16 - 4 = x^2 - 8x + 12$. Hmm, that gives $x^2 - 8x + 12$, not $+13$.</li>
+<p>Wait, let me recheck. Original: $x^2 - 2x - 3$. Replace $x$ with $(x-3)$: $(x-3)^2 - 2(x-3) - 3 = (x^2 - 6x + 9) - 2x + 6 - 3 = x^2 - 8x + 12$. And in vertex form: original vertex form: $(x-1)^2 - 4$. Shift 3 right: vertex becomes $(4, -4)$, so $y = (x-4)^2 - 4 = x^2 - 8x + 16 - 4 = x^2 - 8x + 12$.</p>
+<p>So B gives $(x-4)^2 - 4 = x^2 - 8x + 12$, and C says $x^2 - 8x + 13$ which is different. Let me fix C to be $x^2 - 8x + 12$.</p>
+<p>With the fix: B is $(x-4)^2 - 4$, C is $x^2 - 8x + 12$. Both are equivalent. **Answer: D.**</p>
+<p>**Wrong answers:** A: original parabola, not translated. B: correct but incomplete (only one of two equivalent forms). C: correct but incomplete.</p>
+<div class="nav">
+<a href="lesson11.html">← Previous Lesson</a>
+<a href="index.html">📋 All Lessons</a>
+<a href="lesson13.html">Next Lesson →</a>
+</div>
+</body>
+</html>

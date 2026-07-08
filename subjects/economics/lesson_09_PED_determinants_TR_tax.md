@@ -1,0 +1,322 @@
+# Lesson 9: PED — Determinants, Total Revenue Test in Detail, and Tax Incidence
+
+## What You'll Learn
+
+By the end of this lesson, you will be able to:
+
+- Explain the five main determinants of price elasticity of demand
+- Apply the total revenue test to determine whether demand is elastic or inelastic from a data table
+- Analyse how PED determines the incidence of an indirect tax between consumers and producers
+- Draw and interpret tax incidence diagrams for elastic and inelastic demand
+- Explain the welfare effects of an indirect tax, including government revenue and deadweight loss
+- Evaluate real-world tax policies using PED analysis
+
+---
+
+## 1. The Determinants of PED — Why Some Goods Have Elastic Demand and Others Do Not
+
+### The Core Question
+
+In Lesson 8, you learned how to calculate PED and what the number means. The natural next question is: what makes demand for one good elastic and demand for another good inelastic? A diabetic patient will pay almost any price for insulin. A shopper choosing between two brands of breakfast cereal will switch brands over a price difference of a few pence. The same person can exhibit completely different price sensitivity depending on the good. Understanding why helps firms set prices, governments design taxes, and economists predict how markets respond to shocks.
+
+### Five Determinants of PED
+
+Economists identify five main factors that determine whether demand for a good is elastic or inelastic. A useful acronym to remember them is **SPLAT**: Substitutes, Proportion of income, Luxury versus necessity, Addiction and habit, and Time.
+
+### (1) Substitutes — Number and Closeness
+
+The most powerful determinant of PED is the availability of close substitutes. When a good has many close substitutes, consumers can easily switch if its price rises. This makes demand elastic.
+
+Consider the market for a specific brand of bottled water, such as Evian. If Evian raises its price by 30%, many consumers will switch to Buxton, Highland Spring, or a supermarket own-brand. The quantity demanded of Evian may fall by 50% or more. |PED| would be well above 1. Now consider the market for all bottled water combined. If the price of every brand of bottled water rises by 30%, consumers have fewer alternatives — they can switch to tap water, but that is a less close substitute. Demand for bottled water as a category is less elastic than demand for any single brand.
+
+The broader the definition of the good, the fewer substitutes it has and the less elastic its demand. The demand for "food" is highly inelastic because there is no substitute for food. The demand for "organic avocados from Mexico" is highly elastic because there are many substitute foods.
+
+### (2) Proportion of Income
+
+Goods that consume a large fraction of a household's budget tend to have more elastic demand. When the price of a car rises by 10%, the effect on a household's finances is substantial — the family may delay the purchase, buy a used car instead, or keep their current car longer. The quantity response is large.
+
+Goods that consume a tiny fraction of income tend to have inelastic demand. If the price of a box of matches doubles from £0.50 to £1.00, most consumers will not change their behaviour at all. The absolute expenditure is too small to justify the mental effort of adjusting. |PED| for matches is close to zero.
+
+### (3) Luxury versus Necessity
+
+Necessities are goods that consumers feel they must have, regardless of price. Basic food, water, electricity, and essential medicines are necessities. Demand for necessities tends to be inelastic — people cut back on other things before they cut back on necessities.
+
+Luxuries are goods that consumers can easily do without or defer. Designer handbags, overseas holidays, and restaurant meals are luxuries. Demand for luxuries tends to be elastic — if the price rises significantly, consumers postpone the purchase or choose a cheaper alternative.
+
+The classification of a good as a necessity or a luxury is not fixed. It depends on the consumer's income and preferences. For a person earning £20,000 per year, a car might be a luxury. For a person earning £200,000 per year, the same car might feel like a necessity.
+
+### (4) Addiction and Habit
+
+Goods that are addictive — such as cigarettes, alcohol, and certain drugs — have inelastic demand. An addicted consumer finds it extremely difficult to reduce consumption even when prices rise sharply. The physiological and psychological dependence overrides price sensitivity.
+
+Habitual goods — products that consumers buy out of routine without much thought — also tend to have inelastic demand. Many people buy the same brand of coffee or the same newspaper every day without comparing prices each time.
+
+A common mistake students make is thinking that addiction makes demand perfectly inelastic. Even addicted consumers respond to price changes to some degree. Studies show that a 10% increase in cigarette prices reduces cigarette consumption by about 3% to 5%, giving a |PED| of 0.3 to 0.5 — inelastic, but not perfectly so. Young smokers tend to have more elastic demand than older, long-term smokers.
+
+### (5) Time Period
+
+Demand is almost always more elastic in the long run than in the short run. When a price changes, consumers need time to adjust their behaviour.
+
+In the short run — the days and weeks immediately after a price increase — consumers are locked into existing patterns. If the price of petrol jumps from £1.50 to £1.80 per litre, a commuter cannot immediately change where they live, where they work, or what car they drive. They pay the higher price and grumble. Short-run |PED| for petrol might be around 0.1.
+
+In the long run — over several years — the same commuter can buy a more fuel-efficient car, move closer to work, switch to public transport, or negotiate remote working. Long-run |PED| for petrol might be 0.6 or higher. The long-run response is much larger.
+
+### A Common Misconception
+
+A common mistake students make is listing all five determinants without explaining which is the most important for the specific good in question. In an IB exam, if a question asks "Explain two reasons why demand for cigarettes is price inelastic," you should identify the two most relevant determinants (addiction and lack of close substitutes) and explain each in the context of cigarettes. Do not list all five and hope one of them counts. Precision matters.
+
+---
+
+## 2. The Total Revenue Test in Detail
+
+### What the Total Revenue Test Does
+
+The total revenue test is a practical method for determining whether demand is elastic or inelastic. You do not need to calculate percentage changes. You simply compare total revenue before and after a price change.
+
+Total revenue (TR) is the amount of money a seller receives: TR = P × Q.
+
+The logic of the test:
+
+- If price and total revenue move in opposite directions, demand is **elastic**.
+- If price and total revenue move in the same direction, demand is **inelastic**.
+- If total revenue stays the same when price changes, demand is **unit elastic**.
+
+### Worked Example 1: Multi-Row Total Revenue Test
+
+A cinema records ticket sales at various prices:
+
+| Ticket price (£) | Tickets sold per week | Total revenue (£) | Revenue change |
+|-------------------|-----------------------|-------------------|----------------|
+| 15                | 300                   | 4,500             | —              |
+| 14                | 340                   | 4,760             | +260           |
+| 13                | 390                   | 5,070             | +310           |
+| 12                | 450                   | 5,400             | +330           |
+| 11                | 520                   | 5,720             | +320           |
+| 10                | 600                   | 6,000             | +280           |
+| 9                 | 700                   | 6,300             | +300           |
+| 8                 | 820                   | 6,560             | +260           |
+| 7                 | 960                   | 6,720             | +160           |
+| 6                 | 1,120                 | 6,720             | 0              |
+| 5                 | 1,300                 | 6,500             | −220           |
+
+**Approach:** Examine whether total revenue rises or falls as the price falls.
+
+**Step 1:** From £15 down to £7, price falls and total revenue rises. Price and TR move in opposite directions, so demand is **elastic** in this range.
+
+**Step 2:** At £7 and £6, total revenue is flat at £6,720. Demand is approximately **unit elastic** at these prices.
+
+**Step 3:** From £6 down to £5, price falls and total revenue falls. Price and TR move in the same direction, so demand is **inelastic** in this range.
+
+**Step 4:** Total revenue is maximised at £6,720, which occurs at a price of £7 (or between £7 and £6). This is the unit-elastic point on the demand curve.
+
+**Why this makes sense:** When demand is elastic, cutting the price brings in enough extra customers that revenue rises despite the lower price per ticket. When demand is inelastic, cutting the price does not attract enough new customers to compensate for the lower price on all tickets. The turning point — where demand switches from elastic to inelastic — is the revenue-maximising price.
+
+### A Common Misconception
+
+A common mistake students make is looking at only two data points and concluding that demand is elastic or inelastic across the entire price range. As the worked example shows, the same demand curve can be elastic at high prices and inelastic at low prices. The total revenue test reveals the elasticity for the specific price range examined, not for the good in general. Always specify the price range when reporting elasticity.
+
+---
+
+## 3. PED and the Incidence of an Indirect Tax
+
+### What Tax Incidence Means
+
+When a government imposes an **indirect tax** — a tax on a good or service rather than on income — the legal responsibility for paying the tax to the government falls on the producer. But that does not mean the producer bears the entire economic burden. The burden of the tax is shared between consumers (who pay a higher price) and producers (who receive a lower price after tax). The division of this burden is called the **incidence** of the tax.
+
+PED is the primary factor determining how the tax burden is split. The rule is simple and powerful: **the side of the market that is less elastic bears a larger share of the tax.**
+
+### Case 1: Inelastic Demand — Consumers Bear Most of the Tax
+
+When demand is inelastic, consumers are not very responsive to price changes. If the government imposes a tax, the supply curve shifts upward by the amount of the tax. At the new equilibrium, the price consumers pay rises by almost the full amount of the tax. The price producers receive falls by only a small amount.
+
+Consider a tax of £2 per pack on cigarettes. Suppose the pre-tax price is £10 per pack. Because smokers have inelastic demand (|PED| ≈ 0.4), they continue buying almost the same quantity even at a higher price. The post-tax consumer price rises to approximately £11.70. Consumers bear about £1.70 of the £2 tax (85%). Producers bear about £0.30 (15%).
+
+Why can producers pass most of the tax to consumers? Because they know consumers will not significantly reduce their purchases. The producer's quantity sold stays roughly the same, and the producer captures most of the pre-tax price.
+
+### Case 2: Elastic Demand — Producers Bear Most of the Tax
+
+When demand is elastic, consumers are very responsive to price changes. If the government imposes a tax and producers try to pass it on as a higher consumer price, consumers sharply reduce their purchases. Faced with a collapsing customer base, producers are forced to absorb most of the tax themselves.
+
+Consider a tax of £2,000 on luxury watches with a pre-tax price of £10,000. Because luxury watch buyers have elastic demand — they can switch to other luxury goods or defer the purchase — the post-tax consumer price might rise to only about £10,600. Consumers bear £600 of the tax (30%). Producers bear £1,400 (70%).
+
+### The Tax Incidence Formula
+
+There is a precise mathematical relationship:
+
+$$\frac{\text{Consumer burden}}{\text{Producer burden}} = \frac{\text{PES}}{\text{|PED|}}$$
+
+Where PES is the price elasticity of supply.
+
+If |PED| is small (inelastic demand), the ratio is large — consumers bear more.
+If |PED| is large (elastic demand), the ratio is small — producers bear more.
+
+In the extreme case of perfectly inelastic demand (|PED| = 0), consumers bear 100% of the tax. In the extreme case of perfectly elastic demand (|PED| → ∞), producers bear 100% of the tax.
+
+### Worked Example 2: Calculating Tax Incidence
+
+The market for a good has demand Qd = 200 − 4P and supply Qs = 20 + 2P, where P is the price in pounds. The government imposes a tax of £6 per unit.
+
+**Approach:** Find the pre-tax equilibrium. Then find the post-tax equilibrium by adjusting the supply equation for the tax. Calculate the consumer price, producer price, and the division of the tax burden.
+
+**Step 1:** Pre-tax equilibrium.
+
+200 − 4P = 20 + 2P
+180 = 6P
+Pre-tax price Pe = £30.
+Pre-tax quantity Qe = 200 − 4(30) = 80 units.
+
+**Step 2:** Post-tax supply. The tax means producers receive P − 6 for each unit sold, where P is the price consumers pay. The supply equation with the tax becomes: Qs = 20 + 2(P − 6) = 20 + 2P − 12 = 8 + 2P.
+
+**Step 3:** New equilibrium.
+
+200 − 4P = 8 + 2P
+192 = 6P
+Consumer price Pc = £32.
+Producer price Pp = Pc − tax = £32 − £6 = £26.
+Post-tax quantity Qt = 200 − 4(32) = 72 units.
+
+**Step 4:** Tax incidence.
+
+Consumer burden per unit = £32 − £30 = £2.
+Producer burden per unit = £30 − £26 = £4.
+Total tax per unit = £2 + £4 = £6. ✓
+
+Consumers bear £2 of the £6 tax (33.3%).
+Producers bear £4 of the £6 tax (66.7%).
+
+**Step 5:** Verify with the elasticity ratio. At the original equilibrium (P = £30, Q = 80):
+|PED| = |(−4) × (30/80)| = |−1.5| = 1.5.
+PES = (2) × (30/80) = 0.75.
+Consumer / Producer ratio = PES / |PED| = 0.75 / 1.5 = 0.5.
+So consumers bear half of what producers bear. Total burden is £6. Consumers bear 0.5/(1+0.5) = 1/3 of £6 = £2. Producers bear 1/(1+0.5) = 2/3 of £6 = £4. ✓
+
+**Why this makes sense:** Demand is elastic (|PED| = 1.5) relative to supply (PES = 0.75). Consumers are more price-sensitive than producers in this market. When the tax is imposed, consumers cut back on their purchases relatively sharply, forcing producers to absorb more of the tax. Producers end up bearing two-thirds of the burden.
+
+### A Common Misconception
+
+A common mistake students make is thinking that who pays the tax to the government determines who bears the burden. The legal incidence (who writes the cheque to the tax authority) is not the same as the economic incidence (who ultimately ends up worse off). In almost all cases, the legal responsibility falls on producers, but the economic burden is shared according to relative elasticities. The IB exam expects you to distinguish between legal and economic incidence.
+
+---
+
+## 4. Welfare Effects of an Indirect Tax
+
+An indirect tax affects more than just prices and quantities. It redistributes surplus and creates deadweight loss. Before the tax, community surplus equals consumer surplus plus producer surplus. After the tax, four things happen:
+
+1. **Consumer surplus falls.** Consumers pay a higher price and buy fewer units.
+2. **Producer surplus falls.** Producers receive a lower price after tax and sell fewer units.
+3. **The government gains tax revenue.** Revenue = tax per unit × post-tax quantity. This is a transfer from consumers and producers to the government, not a welfare loss.
+4. **Deadweight loss arises.** The reduction in quantity — from the pre-tax equilibrium to the post-tax quantity — destroys surplus from units that are no longer traded. This surplus does not go to consumers, producers, or the government. It is lost entirely.
+
+The size of the deadweight loss depends on both PED and PES. The more elastic demand (or supply), the larger the quantity reduction from a given tax, and the larger the deadweight loss. This is why governments that want to raise revenue with minimal efficiency loss tend to tax goods with inelastic demand — cigarettes, alcohol, and petrol being the classic examples.
+
+---
+
+## 5. Real-World Applications
+
+### Cigarette Taxes
+
+Governments around the world impose high taxes on cigarettes. The stated rationale is twofold: to raise revenue and to discourage smoking (a public health goal).
+
+Because demand for cigarettes is inelastic (|PED| ≈ 0.3 to 0.5), a tax increase raises the consumer price significantly while reducing quantity only modestly. This achieves both goals reasonably well: government revenue rises substantially because the quantity fall is small. But the health goal — reducing smoking — is only partially achieved precisely because demand is inelastic. Smokers pay more but do not quit in large numbers.
+
+In Australia, a pack of 25 cigarettes costs over AUD $50, with taxes accounting for approximately 70% of the retail price. The high price has contributed to a long-term decline in smoking rates, but this has occurred gradually over decades. In the short run, each tax increase generates a revenue windfall for the government.
+
+### Sugar Tax
+
+In 2018, the United Kingdom introduced a Soft Drinks Industry Levy, commonly called the "sugar tax." The tax is levied on producers based on the sugar content of their drinks.
+
+Unlike cigarette demand, demand for sugary drinks is more elastic (|PED| estimated at around 1.0 to 1.2). The tax has been relatively successful at its primary goal: changing behaviour. Many producers reformulated their drinks to contain less sugar, avoiding the tax altogether. Consumption of high-sugar drinks fell. Revenue from the tax was lower than initially forecast, precisely because the behavioural response was large. This is an example where elastic demand served the policy goal — the government wanted to reduce consumption, not maximise revenue.
+
+---
+
+## IB Exam Tip
+
+When answering tax incidence questions, always draw the diagram. Show the original equilibrium, the supply curve shifted up by the tax amount, and label the consumer price (Pc), producer price (Pp), and post-tax quantity (Qt). Shade and label the tax revenue rectangle (tax per unit × Qt) and the deadweight loss triangle. Explicitly compare relative elasticities when explaining who bears the tax. Use the phrase "the side of the market that is less elastic bears a larger share of the tax."
+
+When discussing determinants of PED, use the SPLAT framework but select only the two or three most relevant determinants for the specific good. Do not list all five indiscriminately. Quality of explanation matters more than quantity of points.
+
+---
+
+## Practice Problems
+
+**Problem 1.** For each of the following goods, state whether demand is likely to be elastic or inelastic. Then identify the single most important determinant (from SPLAT) that explains your classification. Write your answer as a full sentence. (a) Insulin for a person with Type 1 diabetes. (b) A specific brand of breakfast cereal sold in a large supermarket. (c) Electricity for home heating during winter. (d) A luxury cruise holiday booked twelve months in advance.
+
+**Problem 2.** A firm sells handcrafted furniture. It records the following data at different prices:
+
+| Price per chair (£) | Chairs sold per month | Total revenue (£) |
+|---------------------|-----------------------|-------------------|
+| 400                 | 20                    |                   |
+| 350                 | 30                    |                   |
+| 300                 | 42                    |                   |
+| 250                 | 56                    |                   |
+| 200                 | 72                    |                   |
+| 150                 | 90                    |                   |
+| 100                 | 110                   |                   |
+
+(a) Copy the table and fill in the total revenue column. (b) Identify the price ranges where demand is elastic, approximately unit elastic, and inelastic. Use the total revenue test. (c) At approximately what price is total revenue maximised? (d) Explain why the firm should not set its price at £100 per chair, even though that sells the most chairs.
+
+**Problem 3.** A government imposes a tax of $4 per unit on a good. Before the tax, the equilibrium price was $20 and the equilibrium quantity was 500 units per week. After the tax, the consumer price rises to $22.50, the producer receives $18.50 per unit, and the quantity traded falls to 420 units per week. (a) Calculate the consumer burden and the producer burden per unit of the tax. (b) Calculate the government's weekly tax revenue. (c) Calculate the deadweight loss from the tax, assuming linear demand and supply curves. (d) What does the pattern of tax incidence tell you about the relative elasticities of demand and supply in this market? Explain your reasoning.
+
+**Problem 4.** The demand and supply for a good in a perfectly competitive market are: Qd = 300 − 5P and Qs = 60 + 3P, where P is the price in dollars. (a) Find the pre-tax equilibrium price and quantity. (b) The government imposes a tax of $8 per unit. Find the new consumer price, producer price, and quantity. (c) Calculate the consumer and producer shares of the tax, both in dollars per unit and as percentages. (d) Use the elasticity ratio formula to verify your incidence calculation.
+
+**Problem 5.** *(IB-style, 10 marks)* A city government is considering increasing the tax on petrol to reduce traffic congestion and raise revenue for public transport. The price elasticity of demand for petrol is estimated to be −0.2 in the short run and −0.7 in the long run. The current price of petrol is $3.00 per litre, and current consumption is 100 million litres per year. (a) Define the term "price elasticity of demand." (2 marks) (b) The government raises the tax such that the consumer price increases by 10% to $3.30 per litre. Using the short-run PED estimate, calculate the predicted percentage change in quantity demanded and the new quantity of petrol consumed. (3 marks) (c) Using your answer to part (b), calculate the predicted change in total consumer expenditure on petrol in the short run. (1 mark) (d) Explain why the long-run effect of the tax increase on petrol consumption is likely to be larger than the short-run effect. (4 marks)
+
+**Problem 6.** A market has demand Qd = 1,000 − 20P and supply Qs = 100 + 10P, where P is the price in pounds. The government imposes a tax of £15 per unit. (a) Calculate the pre-tax equilibrium price and quantity. (b) Calculate the post-tax equilibrium consumer price, producer price, and quantity. (c) Calculate the consumer burden and producer burden per unit of the tax. (d) Calculate the government's tax revenue and the deadweight loss. (e) The government is considering whether to instead impose the same £15 tax on a different good with more inelastic demand. Explain, using economic reasoning, how the deadweight loss and the division of the tax burden would differ for that good.
+
+---
+
+## Answers
+
+**Answer 1.** (a) Demand for insulin is **inelastic**. The most important determinant is that insulin is a **necessity** — a person with Type 1 diabetes cannot survive without it, so they will pay almost any price. Addiction or habit also plays a role because the need is physiological. (b) Demand for a specific brand of breakfast cereal is **elastic**. The most important determinant is the availability of **close substitutes** — a large supermarket carries dozens of cereal brands that are nearly identical. A small price increase causes consumers to switch brands. (c) Demand for electricity for home heating is **inelastic** in the short run. The most important determinant is the **time period** — during a cold winter, households cannot immediately switch heating systems. In the long run, they might install insulation or switch to gas, but in the short run they pay the higher electricity price. Electricity for heating is also a **necessity** in cold climates. (d) Demand for a luxury cruise booked twelve months in advance is **elastic**. The most important determinants are that a cruise is a **luxury** (easily postponed or cancelled) and the longer **time period** gives consumers many alternatives to consider — different destinations, different holiday types, or not holidaying at all. The **proportion of income** spent is also large, increasing price sensitivity.
+
+---
+
+**Answer 2.** (a) TR at each price: £400 × 20 = £8,000; £350 × 30 = £10,500; £300 × 42 = £12,600; £250 × 56 = £14,000; £200 × 72 = £14,400; £150 × 90 = £13,500; £100 × 110 = £11,000. (b) From £400 down to £200: price falls, TR rises — demand is **elastic**. From £200 down to £150: price falls, TR falls (from £14,400 to £13,500) — demand is **inelastic**. At approximately £200 to £250, TR peaks, so demand is approximately **unit elastic** in this range. Below £150: clearly inelastic. (c) Total revenue is maximised at £200 per chair, where TR = £14,400. (d) At £100 per chair, total revenue is only £11,000 — substantially below the maximum of £14,400. Although the firm sells the most chairs at £100, the price is so low that revenue suffers. At £100, demand is inelastic, meaning a price rise would increase revenue. The firm should raise its price toward £200, where revenue peaks. Moreover, at £100, the firm's profit is likely low or negative because revenue of £11,000 must cover the costs of producing 110 chairs, which are presumably higher than the costs of producing 72 chairs at £200.
+
+---
+
+**Answer 3.** (a) Consumer burden per unit = $22.50 − $20 = $2.50. Producer burden per unit = $20 − $18.50 = $1.50. Total: $2.50 + $1.50 = $4.00. ✓ (b) Tax revenue = $4 × 420 = $1,680 per week. (c) DWL = ½ × (500 − 420) × $4 = ½ × 80 × $4 = $160. The DWL triangle has base equal to the reduction in quantity (80 units) and height equal to the tax per unit ($4). (d) Consumers bear $2.50 (62.5%) and producers bear $1.50 (37.5%) of the tax. Since consumers bear more, demand is relatively more inelastic than supply. Consumers are less able to adjust their quantity demanded in response to the price increase, so producers can pass through more of the tax. The consumer-to-producer burden ratio is 2.5/1.5 = 1.67, suggesting PES/|PED| = 1.67 — supply is roughly 1.67 times as elastic as demand in this market.
+
+---
+
+**Answer 4.** (a) 300 − 5P = 60 + 3P → 240 = 8P → Pe = $30. Qe = 300 − 5(30) = 150 units. (b) Post-tax supply: Qs = 60 + 3(P − 8) = 60 + 3P − 24 = 36 + 3P. New equilibrium: 300 − 5P = 36 + 3P → 264 = 8P → Pc = $33. Pp = Pc − $8 = $25. Qt = 300 − 5(33) = 300 − 165 = 135 units. (c) Consumer burden = $33 − $30 = $3 (37.5%). Producer burden = $30 − $25 = $5 (62.5%). Consumers bear $3, producers bear $5. (d) At original equilibrium (P = $30, Q = 150): |PED| = |(−5) × (30/150)| = |−1.0| = 1.0. PES = (3) × (30/150) = 0.6. Consumer/Producer ratio = PES/|PED| = 0.6/1.0 = 0.6. So consumers bear 0.6/(1+0.6) = 37.5%. Producers bear 1/(1+0.6) = 62.5%. This matches our calculation. ✓
+
+---
+
+**Answer 5.** *(IB-style)*
+
+(a) Price elasticity of demand measures the responsiveness of quantity demanded to a change in the price of the good, calculated as the percentage change in quantity demanded divided by the percentage change in price. PED is always negative because demand curves slope downward, but the IB convention uses the absolute value for classification. (2 marks.)
+
+(b) PED (short run) = −0.2. %ΔP = +10%. Using the formula: PED = %ΔQd / %ΔP, we can rearrange: %ΔQd = PED × %ΔP = −0.2 × (+10%) = −2%. Quantity demanded falls by 2%. New quantity = 100 million × 0.98 = 98 million litres per year. (3 marks: 1 for rearranging the formula correctly, 1 for the correct percentage change in Qd, 1 for the correct new quantity.)
+
+(c) Original expenditure = $3.00 × 100 million = $300 million. New expenditure = $3.30 × 98 million = $323.4 million. Consumer expenditure rises by $23.4 million (a 7.8% increase). (1 mark.)
+
+(d) The long-run effect on petrol consumption is larger because consumers have more time to adjust their behaviour. In the short run, consumers are locked into existing patterns: they own particular cars, live at particular distances from work, and have established commuting routines. Their only short-run responses are to drive slightly less or combine trips. In the long run — over several years — consumers can purchase more fuel-efficient vehicles, switch to hybrid or electric cars, move closer to their workplaces, change jobs, or use public transport. These adjustments take time but substantially reduce petrol consumption. This illustrates the general principle that demand is more elastic in the long run than in the short run for almost all goods, and especially for goods where durable equipment (cars, heating systems) determines consumption patterns. (4 marks: 1 for identifying the time-to-adjust mechanism, 1 for short-run constraints, 1 for long-run adjustments, 1 for linking to the PED estimates of −0.2 vs −0.7.)
+
+---
+
+**Answer 6.** (a) 1,000 − 20P = 100 + 10P → 900 = 30P → Pe = £30. Qe = 1,000 − 20(30) = 400 units. (b) Post-tax supply: Qs = 100 + 10(P − 15) = 100 + 10P − 150 = −50 + 10P. New equilibrium: 1,000 − 20P = −50 + 10P → 1,050 = 30P → Pc = £35. Pp = £35 − £15 = £20. Qt = 1,000 − 20(35) = 300 units. (c) Consumer burden = £35 − £30 = £5 per unit. Producer burden = £30 − £20 = £10 per unit. Consumers bear 33.3% of the tax, producers bear 66.7%. (d) Tax revenue = £15 × 300 = £4,500. DWL = ½ × (400 − 300) × £15 = ½ × 100 × £15 = £750. (e) If the tax were imposed on a good with more inelastic demand, the deadweight loss would be smaller because the quantity reduction would be smaller — fewer transactions would be lost. The consumer share of the tax burden would be larger because, with more inelastic demand, consumers are less able to avoid the tax by reducing purchases. The producer share would be correspondingly smaller. In the extreme case of perfectly inelastic demand, there would be zero deadweight loss and consumers would bear 100% of the tax. This trade-off — between raising revenue efficiently (tax inelastic goods for low DWL) and equity (inelastic goods are often necessities that the poor depend on) — is a central dilemma of tax policy.
+
+---
+
+## Evaluate
+
+**Question:** "Governments should tax goods with inelastic demand because doing so raises more revenue with less deadweight loss." Evaluate this statement.
+
+**Model Answer:**
+
+The statement correctly identifies a valid economic principle: goods with inelastic demand provide an efficient tax base. When |PED| is low, a tax increase causes only a small reduction in quantity. Two desirable outcomes follow: government revenue is high because most transactions continue at the higher price, and deadweight loss is small because few mutually beneficial trades are destroyed. This is the logic of Ramsey taxation: to minimise the efficiency cost of raising a given amount of revenue, tax goods with the lowest combined elasticities of demand and supply. Petrol, cigarettes, and alcohol have been taxed on this principle for decades, reliably generating large revenue streams with relatively modest behavioural disruption.
+
+However, the statement ignores crucial considerations that make it unacceptable as a universal rule. First, many goods with inelastic demand are **necessities** — basic food, heating fuel, essential medicines. Taxing these goods is **regressive**: poor households spend a larger proportion of their income on necessities, so the tax burden falls disproportionately on those least able to pay. A policy that is efficient in the narrow sense of minimising deadweight loss may be grossly unfair. Efficiency and equity are both legitimate policy goals, and the statement privileges the former while ignoring the latter entirely.
+
+Second, the statement assumes revenue-raising is the only objective of taxation. Many taxes exist primarily to **change behaviour**, not to raise revenue. A sugar tax is designed to reduce consumption of sugary drinks; its success is measured by how much consumption falls, not by how much revenue it raises. If demand for sugary drinks were perfectly inelastic, the tax would raise lots of revenue and achieve zero health benefit — a policy failure by its own stated objectives. Pigouvian taxes — taxes designed to correct negative externalities — explicitly aim to reduce the taxed activity. The more elastic the demand, the better these taxes work at achieving their primary goal.
+
+Third, the statement implicitly assumes elasticities are constant and known. In reality, PED estimates come with uncertainty, and elasticities change over time. A good that appears inelastic in the short run may prove elastic in the long run as consumers find alternatives. If a government builds its fiscal plans around a tax on a good believed to have inelastic demand, and that demand turns out to be more elastic than expected, the government faces a revenue shortfall.
+
+Fourth, taxing goods with inelastic demand may create **perverse incentives** for government. If a government becomes dependent on revenue from taxes on addictive goods like cigarettes or alcohol, it faces a conflict of interest: reducing smoking (a public health goal) reduces tax revenue. This is sometimes called a "fiscal addiction" — the government itself becomes dependent on the continuation of the very behaviour it claims to want to discourage.
+
+In conclusion, the statement captures an important insight — taxing inelastic goods minimises efficiency loss — but as a universal policy rule it fails because it ignores equity, behavioural objectives, elasticity uncertainty, and perverse fiscal incentives. Good tax policy requires balancing efficiency against these other goals. The statement is a useful starting point for analysis but is far too narrow to serve as a policy prescription.
+
+---
+
+**Next Lesson:** Lesson 10 — Income Elasticity of Demand (YED) and Cross Elasticity of Demand (XED)

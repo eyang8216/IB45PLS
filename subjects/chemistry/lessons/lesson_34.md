@@ -1,0 +1,284 @@
+# Lesson 34: Electrochemical Cells — Voltaic Cells, Standard Electrode Potentials, and Spontaneity
+
+## What You'll Learn
+
+In this lesson, you will learn how to build a device that makes electricity from a chemical reaction. This device is called a voltaic cell (or galvanic cell). You will learn what an electrode is, what a half-cell is, and why a salt bridge is needed. You will learn about standard electrode potentials, which are numbers that tell you how much a substance wants to gain electrons. You will learn to calculate the voltage of a cell and to predict whether a redox reaction will happen by itself (spontaneously) or not.
+
+---
+
+## 1. What Is a Voltaic Cell?
+
+A **voltaic cell** (also called a **galvanic cell**) is a device that converts chemical energy into electrical energy. It does this by using a spontaneous redox reaction — a reaction that happens naturally, without being forced — and channelling the electrons through an external wire instead of letting them transfer directly between chemicals.
+
+Imagine you have a piece of zinc metal in a solution containing copper(II) ions. If you put the zinc directly into the solution, electrons transfer directly from zinc atoms to copper ions at the surface of the zinc. You get copper metal plating onto the zinc, and the solution gets warm — but you do not get useful electricity.
+
+Now imagine separating the two half-reactions. Put the zinc in one container (with zinc ions in solution) and the copper in a different container (with copper ions in solution). Connect the two metals with a wire. Now the electrons must travel through the wire to get from zinc to copper. This flow of electrons through the wire is an electric current, and it can do useful work — light a bulb, power a motor, and so on.
+
+But there is a problem. If you just connect the two containers with a wire, the reaction stops very quickly. Why? Because as zinc atoms become Zn²⁺ ions, the zinc container accumulates positive charge. Meanwhile, as Cu²⁺ ions become copper atoms at the copper electrode, the copper container accumulates negative charge (because positive ions are being removed from solution). The build-up of charge opposes further reaction. To keep the reaction going, we need a way to let ions move between the two containers so that electrical neutrality is maintained.
+
+This is what the **salt bridge** does.
+
+---
+
+## 2. The Parts of a Voltaic Cell
+
+A voltaic cell has several parts. Let us define each one.
+
+**Electrode:** An electrode is a solid electrical conductor (usually a metal or graphite) that dips into a solution and allows electrons to enter or leave. Every voltaic cell has two electrodes.
+
+**Half-cell:** A half-cell is one electrode plus the solution it sits in. Each half-cell hosts one half of the redox reaction — either oxidation or reduction.
+
+**Salt bridge:** A salt bridge is a tube or strip containing an electrolyte solution (often potassium nitrate, KNO₃, or sodium nitrate, NaNO₃) that connects the two half-cells. The ions in the salt bridge can move. This movement of ions completes the electrical circuit. Without a salt bridge, the circuit is broken and no current flows.
+
+**External wire (or external circuit):** This is the metal wire that connects the two electrodes. Electrons travel through this wire from one electrode to the other.
+
+**Why a salt bridge is essential:** When oxidation happens at one electrode, positive ions are produced in that solution. When reduction happens at the other electrode, positive ions are consumed from that solution. The salt bridge allows negative ions (anions) to migrate toward the half-cell that is becoming too positive, and positive ions (cations) to migrate toward the half-cell that is becoming too negative. This maintains electrical neutrality everywhere, so the reaction can continue.
+
+---
+
+## 3. Anode and Cathode — Where Oxidation and Reduction Happen
+
+Every electrochemical cell has an **anode** and a **cathode**. These words refer to the electrodes, not to anything about the solutions.
+
+**The anode** is the electrode where **oxidation** happens. A memory phrase: **AN OX** — **An**ode is for **Ox**idation.
+
+**The cathode** is the electrode where **reduction** happens. A companion phrase: **RED CAT** — **Red**uction happens at the **Cat**hode.
+
+In a **voltaic cell** (a cell that produces electricity from a spontaneous reaction):
+- The **anode** is the **negative** electrode. Why negative? Because oxidation produces electrons at the anode. Electrons build up there, giving it a relative negative charge. Electrons flow **away from the anode** through the external wire.
+- The **cathode** is the **positive** electrode. Why positive? Because reduction consumes electrons at the cathode. Electrons are pulled away from the cathode, leaving it relatively positive. Electrons flow **toward the cathode** through the external wire.
+
+**Important:** This polarity (anode = negative, cathode = positive) is true only for voltaic cells. In electrolytic cells (which you will learn about in Lesson 35), the polarity is reversed because an external power source forces the electrons to go the other way.
+
+---
+
+## 4. Standard Electrode Potentials — A Measure of "Wanting" Electrons
+
+Every half-cell has a **standard electrode potential**, given the symbol **E°**. The standard electrode potential is a number measured in volts (V). It tells you the tendency of that half-cell to undergo **reduction** — that is, how much the species on the left side of the half-equation "wants" to gain electrons.
+
+All standard electrode potentials are measured under **standard conditions**:
+- Temperature: 298 K (which is 25 °C)
+- Pressure: 100 kPa (for any gases involved)
+- Concentration of all dissolved ions: 1.0 mol dm⁻³
+
+Half-equations in electrode potential tables are always written as **reduction** processes — the species gains electrons. For example, the half-equation for zinc is written as:
+$$\ce{Zn^{2+}(aq) + 2e- <=> Zn(s)} \qquad E^\circ = -0.76\text{ V}$$
+
+The double arrow (⇌) means the reaction is reversible. The value −0.76 V tells you that the Zn²⁺/Zn half-cell has a tendency toward reduction that is 0.76 V less than that of the reference.
+
+**The reference: the Standard Hydrogen Electrode (SHE).** Scientists needed a reference point to measure all other electrode potentials against. They chose the half-reaction:
+$$\ce{2H+(aq) + 2e- <=> H2(g)} \qquad E^\circ = 0.00\text{ V}$$
+
+The SHE is assigned exactly 0.00 V. All other electrode potentials are measured relative to this. If a half-cell has a positive E°, it has a greater tendency to be reduced than H⁺ does. If it has a negative E°, it has a lesser tendency to be reduced than H⁺.
+
+**What E° values tell us:**
+- A **more positive E°** means the species on the left (the oxidised form) is a **stronger oxidising agent** — it really wants to gain electrons.
+- A **more negative E°** means the species on the right (the reduced form) is a **stronger reducing agent** — it really wants to lose electrons.
+
+In the IB Chemistry Data Booklet, you will find a table of standard electrode potentials. You will need to refer to this table to solve problems. Some key values to be familiar with:
+- F₂/F⁻: E° = +2.87 V (strongest oxidising agent in the table)
+- Li⁺/Li: E° = −3.04 V (strongest reducing agent in the table)
+- Cu²⁺/Cu: E° = +0.34 V
+- Zn²⁺/Zn: E° = −0.76 V
+- Fe³⁺/Fe²⁺: E° = +0.77 V
+
+---
+
+## 5. Calculating the Cell Potential
+
+The **cell potential**, also called the electromotive force (emf), is the voltage produced by a voltaic cell. It is given the symbol **E°_cell** and is calculated using this formula:
+
+$$E^\circ_{\text{cell}} = E^\circ_{\text{cathode}} - E^\circ_{\text{anode}}$$
+
+Both E° values are the reduction potentials taken directly from the table. The cathode is where reduction happens, so we use the E° of the half-cell that is being reduced. The anode is where oxidation happens, so we use the E° of the half-cell that is being oxidised — but we still use its reduction potential from the table.
+
+**How to decide which half-cell is the cathode:** The half-cell with the **more positive E°** will undergo reduction (it wants electrons more), so it will be the **cathode**. The other half-cell will be the anode (oxidation happens there).
+
+**What the sign of E°_cell means:**
+- If E°_cell is **positive** (greater than 0), the reaction is **spontaneous** in the forward direction. The cell produces a voltage.
+- If E°_cell is **negative** (less than 0), the reaction is **non-spontaneous** in the forward direction. To make it happen, you would need to apply an external voltage (which is electrolysis).
+
+<div class="worked">
+<strong>Worked Example 1: Calculate the cell potential for a voltaic cell made from a zinc half-cell and a copper half-cell.</strong>
+
+The cell notation is: $$\ce{Zn(s) | Zn^{2+}(aq) || Cu^{2+}(aq) | Cu(s)}$$
+
+The single vertical bars (|) represent boundaries between solid and solution. The double bar (||) represents the salt bridge.
+
+**To solve this, we need to:** look up the standard electrode potentials, decide which half-cell is the cathode, and apply the formula.
+
+From the Data Booklet:
+- Zn²⁺(aq) + 2e⁻ ⇌ Zn(s): E° = −0.76 V
+- Cu²⁺(aq) + 2e⁻ ⇌ Cu(s): E° = +0.34 V
+
+The copper half-cell has the more positive E° (+0.34 > −0.76). Therefore copper is the cathode (reduction happens here), and zinc is the anode (oxidation happens here).
+
+$$E^\circ_{\text{cell}} = E^\circ_{\text{cathode}} - E^\circ_{\text{anode}} = (+0.34\text{ V}) - (-0.76\text{ V}) = +1.10\text{ V}$$
+
+**Why this makes sense:** E°_cell is positive, so the reaction is spontaneous. This is the classic Daniell cell, and 1.10 V is indeed the voltage it produces.
+</div>
+
+<div class="worked">
+<strong>Worked Example 2: Will iron(II) ions spontaneously oxidise iodide ions to iodine? Use standard electrode potentials to decide.</strong>
+
+**To solve this, we need to:** write the proposed reaction, identify which species would be oxidised and which reduced, look up the relevant E° values, and calculate the cell potential.
+
+The proposed reaction: iron(II) ions (Fe²⁺) would need to be the oxidising agent — they would need to accept electrons from iodide ions (I⁻), becoming reduced themselves. The half-equations involved are:
+
+If Fe²⁺ is reduced: $$\ce{Fe^{2+} + 2e- -> Fe}$$ with E° = −0.45 V.
+If I⁻ is oxidised: $$\ce{2I- -> I2 + 2e-}$$. The reduction potential for I₂ + 2e⁻ ⇌ 2I⁻ is E° = +0.54 V.
+
+For the cell: cathode = Fe²⁺/Fe (where reduction would happen), anode = I₂/I⁻ (where oxidation would happen).
+
+$$E^\circ_{\text{cell}} = E^\circ_{\text{cathode}} - E^\circ_{\text{anode}} = (-0.45\text{ V}) - (+0.54\text{ V}) = -0.99\text{ V}$$
+
+**Why this makes sense:** The cell potential is negative. This means the proposed reaction is NOT spontaneous. Fe²⁺ ions cannot oxidise I⁻ ions under standard conditions. In fact, the reverse reaction (I₂ oxidising Fe to Fe²⁺) would be spontaneous.
+</div>
+
+---
+
+## 6. The Electrochemical Series — Ranking Oxidising and Reducing Agents
+
+The **electrochemical series** is the list of half-equations arranged in order of their standard electrode potentials, from most negative to most positive. This list is a powerful tool for comparing the strengths of oxidising and reducing agents.
+
+**For oxidising agents:** Look at the species on the left side of each half-equation. The more positive the E°, the stronger the oxidising agent. The strongest oxidising agent in the series (with the most positive E°) is at the bottom of the list.
+
+**For reducing agents:** Look at the species on the right side of each half-equation. The more negative the E°, the stronger the reducing agent. The strongest reducing agent in the series (with the most negative E°) is at the top of the list.
+
+**Using the series to predict reactions:** A species on the left of any half-equation can oxidise a species on the right of any half-equation that appears above it in the series. In other words: an oxidising agent can oxidise any reducing agent that has a more negative E°.
+
+**Metal reactivity:** Metals with more negative E° are more reactive. They lose electrons more easily. This is why lithium (E° = −3.04 V) is very reactive, while gold (E° = +1.50 V) is very unreactive.
+
+---
+
+## 7. What Happens Inside a Working Voltaic Cell
+
+Let us trace everything that happens in a zinc-copper cell:
+
+**At the anode (zinc electrode, negative):** Zinc atoms lose electrons and enter the solution as Zn²⁺ ions. The half-equation is:
+$$\ce{Zn(s) -> Zn^{2+}(aq) + 2e-}$$
+The zinc electrode slowly dissolves. The mass of the zinc electrode decreases.
+
+**At the cathode (copper electrode, positive):** Copper(II) ions from the solution gain electrons and become copper atoms that deposit on the electrode. The half-equation is:
+$$\ce{Cu^{2+}(aq) + 2e- -> Cu(s)}$$
+The copper electrode slowly grows. The mass of the copper electrode increases. The blue colour of the CuSO₄ solution fades because Cu²⁺ ions (which are blue) are being removed.
+
+**In the external wire:** Electrons flow from the anode (zinc) to the cathode (copper). This flow of electrons is the electric current.
+
+**In the salt bridge:** Negative ions (such as NO₃⁻ from KNO₃ in the salt bridge) migrate toward the anode half-cell to balance the positive charge of the new Zn²⁺ ions being produced. Positive ions (such as K⁺) migrate toward the cathode half-cell to replace the Cu²⁺ ions that are being consumed.
+
+**Overall cell reaction:** Adding the two half-equations:
+$$\ce{Zn(s) + Cu^{2+}(aq) -> Zn^{2+}(aq) + Cu(s)}$$
+
+---
+
+## Practice Problems
+
+**Problem 1:** Use standard electrode potentials from the IB Data Booklet to calculate the standard cell potential, E°_cell, for each of the following voltaic cells. State which electrode is the cathode and which is the anode. Write the overall cell reaction.
+(a) A cell constructed from a magnesium half-cell, Mg(s) | Mg²⁺(aq), connected to a silver half-cell, Ag⁺(aq) | Ag(s).
+(b) A cell constructed from a nickel half-cell, Ni(s) | Ni²⁺(aq), connected to a tin half-cell, Sn²⁺(aq) | Sn(s). (E° values: Ni²⁺/Ni = −0.26 V, Sn²⁺/Sn = −0.14 V.)
+
+**Problem 2:** A voltaic cell is built from an aluminium half-cell, Al(s) | Al³⁺(aq), and a lead half-cell, Pb²⁺(aq) | Pb(s). The standard electrode potentials are: Al³⁺/Al = −1.66 V and Pb²⁺/Pb = −0.13 V.
+(a) Calculate the standard cell potential, showing which half-cell is the cathode and which is the anode.
+(b) Write the half-equation that occurs at the anode and the half-equation that occurs at the cathode.
+(c) Combine these to write the overall balanced cell reaction.
+(d) State the direction of electron flow through the external wire (from which electrode to which electrode).
+
+**Problem 3:** Use standard electrode potentials to determine whether each of the following reactions is spontaneous under standard conditions. Show your calculation of E°_cell and explain what the sign tells you.
+(a) Copper metal is placed in a solution of silver nitrate: $$\ce{Cu(s) + 2Ag+(aq) -> Cu^{2+}(aq) + 2Ag(s)}$$ (E° values: Cu²⁺/Cu = +0.34 V, Ag⁺/Ag = +0.80 V.)
+(b) Iron(III) ions react with copper metal: $$\ce{2Fe^{3+}(aq) + Cu(s) -> 2Fe^{2+}(aq) + Cu^{2+}(aq)}$$ (E° values: Fe³⁺/Fe²⁺ = +0.77 V, Cu²⁺/Cu = +0.34 V.)
+
+**Problem 4:** Three metals, labelled X, Y, and Z, are investigated in the laboratory. The following observations are made:
+- When metal X is placed in a solution containing Y²⁺ ions, metal Y is deposited on X.
+- When metal Z is placed in a solution containing X²⁺ ions, metal X is deposited on Z.
+- When metal Y is placed in a solution containing Z²⁺ ions, no reaction is observed.
+Arrange the three metals in order of increasing strength as reducing agents (weakest first). Explain your reasoning, and then relate the order to the relative standard electrode potentials E° of X, Y, and Z.
+
+**Problem 5 (IB-style):** A student constructs a voltaic cell by connecting two half-cells, labelled A and B.
+- Half-cell A contains an inert platinum electrode dipping into a solution that is 1.0 mol dm⁻³ in Cr₂O₇²⁻ ions, 1.0 mol dm⁻³ in Cr³⁺ ions, and 1.0 mol dm⁻³ in H⁺ ions. The half-equation is $$\ce{Cr2O7^{2-}(aq) + 14H+(aq) + 6e- <=> 2Cr^{3+}(aq) + 7H2O(l)}$$ with E° = +1.33 V.
+- Half-cell B contains an inert platinum electrode dipping into a solution that is 1.0 mol dm⁻³ in Fe³⁺ ions and 1.0 mol dm⁻³ in Fe²⁺ ions. The half-equation is $$\ce{Fe^{3+}(aq) + e- <=> Fe^{2+}(aq)}$$ with E° = +0.77 V.
+(a) Identify which half-cell acts as the cathode, and explain your choice by comparing the standard electrode potentials. Write the reduction half-equation that occurs at the cathode.
+(b) Calculate the standard cell potential, E°_cell, of this voltaic cell.
+(c) Write the overall cell reaction by combining the two half-equations.
+(d) Draw a fully labelled diagram of this cell. Your diagram should show the two half-cells, the salt bridge, the electrodes, the external wire, and the direction of electron flow. Label the anode, the cathode, and the signs (+ and −) of each electrode.
+
+---
+
+## Answers
+
+**Answer 1.**
+
+(a) E° values: Mg²⁺/Mg = −2.37 V, Ag⁺/Ag = +0.80 V.
+The silver half-cell has the more positive E° (+0.80 > −2.37), so it is the **cathode** (reduction). The magnesium half-cell is the **anode** (oxidation).
+
+E°_cell = (+0.80) − (−2.37) = +3.17 V.
+
+Half-equations:
+Anode (oxidation): Mg(s) → Mg²⁺(aq) + 2e⁻
+Cathode (reduction): Ag⁺(aq) + e⁻ → Ag(s)
+
+To combine, multiply the cathode half by 2 so electrons match: 2Ag⁺ + 2e⁻ → 2Ag.
+Overall: Mg(s) + 2Ag⁺(aq) → Mg²⁺(aq) + 2Ag(s).
+
+(b) E° values: Ni²⁺/Ni = −0.26 V, Sn²⁺/Sn = −0.14 V.
+The tin half-cell has the more positive E° (−0.14 > −0.26), so it is the **cathode**. Nickel is the **anode**.
+
+E°_cell = (−0.14) − (−0.26) = +0.12 V.
+
+Anode (oxidation): Ni(s) → Ni²⁺(aq) + 2e⁻
+Cathode (reduction): Sn²⁺(aq) + 2e⁻ → Sn(s)
+Overall: Ni(s) + Sn²⁺(aq) → Ni²⁺(aq) + Sn(s).
+
+**Answer 2.**
+
+(a) E°(Pb²⁺/Pb) = −0.13 V is more positive than E°(Al³⁺/Al) = −1.66 V. So the lead half-cell is the **cathode** and the aluminium half-cell is the **anode**.
+
+E°_cell = (−0.13) − (−1.66) = +1.53 V.
+
+(b) Anode (oxidation at Al): Al(s) → Al³⁺(aq) + 3e⁻.
+Cathode (reduction at Pb): Pb²⁺(aq) + 2e⁻ → Pb(s).
+
+(c) Electrons: 3 vs 2. Least common multiple = 6. Multiply oxidation by 2: 2Al → 2Al³⁺ + 6e⁻. Multiply reduction by 3: 3Pb²⁺ + 6e⁻ → 3Pb.
+Overall: 2Al(s) + 3Pb²⁺(aq) → 2Al³⁺(aq) + 3Pb(s).
+
+(d) Electrons flow from the aluminium electrode (anode) to the lead electrode (cathode) through the external wire.
+
+**Answer 3.**
+
+(a) Ag⁺/Ag has E° = +0.80 V, which is more positive than Cu²⁺/Cu (+0.34 V). So Ag⁺/Ag is the cathode (Ag⁺ is reduced) and Cu²⁺/Cu is the anode (Cu is oxidised).
+E°_cell = (+0.80) − (+0.34) = +0.46 V.
+The positive value means the reaction is **spontaneous**. Copper metal will displace silver from solution, which is consistent with the well-known copper-silver displacement reaction.
+
+(b) Fe³⁺/Fe²⁺ has E° = +0.77 V, which is more positive than Cu²⁺/Cu (+0.34 V). So Fe³⁺/Fe²⁺ is the cathode (Fe³⁺ is reduced) and Cu²⁺/Cu is the anode (Cu is oxidised).
+E°_cell = (+0.77) − (+0.34) = +0.43 V.
+The positive value means this reaction is **spontaneous**. Iron(III) ions will oxidise copper metal.
+
+**Answer 4.**
+
+Let us interpret each observation:
+- X displaces Y²⁺ from solution: This means X is a stronger reducing agent than Y. X wants to lose electrons more than Y does.
+- Z displaces X²⁺ from solution: This means Z is a stronger reducing agent than X.
+- Y does NOT displace Z²⁺: This means Y is a weaker reducing agent than Z.
+
+Combining: Y is the weakest reducing agent, X is stronger, and Z is the strongest. In order of increasing strength as reducing agents (weakest first): **Y < X < Z**.
+
+A stronger reducing agent has a more negative E° (its reduced form wants to lose electrons more). Therefore: E°(Y) is the most positive, E°(X) is in the middle, and E°(Z) is the most negative.
+
+**Answer 5.**
+
+(a) The Cr₂O₇²⁻/Cr³⁺ half-cell has E° = +1.33 V, which is more positive than Fe³⁺/Fe²⁺ (+0.77 V). The half-cell with the more positive E° will undergo reduction, so **half-cell A is the cathode**. The cathode half-equation is:
+$$\ce{Cr2O7^{2-}(aq) + 14H+(aq) + 6e- -> 2Cr^{3+}(aq) + 7H2O(l)}$$
+
+(b) E°_cell = E°_cathode − E°_anode = (+1.33 V) − (+0.77 V) = +0.56 V.
+
+(c) At the anode (half-cell B), Fe²⁺ is oxidised: Fe²⁺ → Fe³⁺ + e⁻. Multiply by 6 to match 6 electrons from the cathode: 6Fe²⁺ → 6Fe³⁺ + 6e⁻.
+Add to the cathode half-equation and cancel electrons:
+$$\ce{Cr2O7^{2-}(aq) + 14H+(aq) + 6Fe^{2+}(aq) -> 2Cr^{3+}(aq) + 7H2O(l) + 6Fe^{3+}(aq)}$$
+
+(d) The diagram should show:
+- Two beakers connected by a salt bridge (labelled, e.g., "KNO₃(aq) salt bridge").
+- Left beaker: labelled "Half-cell B (Anode, −)". Contains a solution of Fe²⁺ and Fe³⁺ with a platinum electrode. The half-equation Fe²⁺ → Fe³⁺ + e⁻ is shown.
+- Right beaker: labelled "Half-cell A (Cathode, +)". Contains a solution of Cr₂O₇²⁻, Cr³⁺, and H⁺ with a platinum electrode. The half-equation Cr₂O₇²⁻ + 14H⁺ + 6e⁻ → 2Cr³⁺ + 7H₂O is shown.
+- External wire connects the two platinum electrodes.
+- An arrow on the wire shows electron flow from the anode (negative, on the left) to the cathode (positive, on the right).
+- An arrow in the salt bridge shows cation (K⁺) migration toward the cathode and anion (NO₃⁻) migration toward the anode.

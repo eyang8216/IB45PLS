@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 20 — Conjugates, Modulus & Complex Division</title>
+<script>
+MathJax = {
+  tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body {
+    max-width: 800px; margin: 40px auto; font-family: 'Times New Roman', Georgia, serif;
+    font-size: 17px; line-height: 1.7; padding: 0 20px; color: #1a1a1a;
+  }
+  h1 { font-size: 22px; border-bottom: 2px solid #333; padding-bottom: 8px; margin-top: 36px; }
+  h2 { font-size: 19px; margin-top: 28px; color: #2c3e50; }
+  h3 { font-size: 17px; margin-top: 22px; color: #444; }
+  h4 { font-size: 16px; margin-top: 18px; }
+  p { margin: 0.6em 0; }
+  li { margin: 0.3em 0 0.3em 20px; }
+  hr { margin: 20px 0; border: none; border-top: 1px solid #ddd; }
+  .math-block { text-align: center; margin: 1em 0; overflow-x: auto; }
+  .table-line { font-family: 'Courier New', monospace; font-size: 15px; margin: 0.1em 0; }
+  pre { background: #f5f5f5; padding: 10px 14px; border-radius: 4px; overflow-x: auto; font-size: 14px; }
+  b { color: #222; }
+  table { border-collapse: collapse; margin: 16px 0; width: 100%; font-size: 15px; }
+  th { background: #2c3e50; color: #fff; padding: 8px 12px; text-align: center; font-weight: bold; }
+  td { border: 1px solid #ccc; padding: 8px 12px; text-align: center; }
+  tr:nth-child(even) { background: #f9f9f9; }
+  .nav { text-align: center; margin: 30px 0; font-size: 14px; }
+  .nav a { margin: 0 8px; color: #3498db; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  @media print { body { font-size: 15px; } }
+</style>
+</head>
+<body>
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+<h1>Lesson 20: Complex Conjugates, Modulus, and Division</h1>
+
+<h2>WHAT Are Conjugates and the Modulus?</h2>
+
+<p>In Lesson 19 you learned how to add, subtract, and multiply complex numbers. But there is one operation missing: division. How do you divide by a complex number? The answer involves two new concepts: the <b>complex conjugate</b> and the <b>modulus</b>.</p>
+
+<p>The conjugate gives you a way to turn the denominator of a fraction into a plain real number. The modulus tells you the &quot;size&quot; of a complex number — how far it is from zero. Together, these ideas make complex division possible.</p>
+
+<h2>WHY These Ideas Matter</h2>
+
+<p>Without conjugates, you cannot divide complex numbers. Without the modulus, you cannot measure distances between complex numbers or draw them on a diagram (which is the topic of Lesson 21). Conjugates also appear throughout physics and engineering — for example, the complex conjugate is used to compute the power in an AC electrical circuit.</p>
+
+<p><hr></p>
+
+<h2>1. The Complex Conjugate</h2>
+
+<p>The <b>complex conjugate</b> of a complex number \(z = a + bi\) is written as \(\overline{z}\) (pronounced &quot;z bar&quot;). To find the conjugate, you keep the real part exactly the same and flip the sign of the imaginary part:</p>
+
+<div class="math-block">$$
+\boxed{\overline{z} = a - bi}$$</div>
+
+<p>Here are some examples to make this concrete:</p>
+
+<li>- If \(z = 3 + 4i\), then \(\overline{z} = 3 - 4i\).</li>
+<li>- If \(z = -2 - 5i\), then \(\overline{z} = -2 + 5i\).</li>
+<li>- If \(z = 7\) (a real number), then \(\overline{z} = 7\). A real number is its own conjugate because flipping the sign of zero does nothing.</li>
+<li>- If \(z = 6i\) (purely imaginary), then \(\overline{z} = -6i\).</li>
+
+<p><b>Common misconception:</b> Some students think the conjugate changes the sign of the real part too. It does not. Only the imaginary part changes sign.</p>
+
+<p><hr></p>
+
+<h2>2. Key Properties of the Conjugate</h2>
+
+<h3>Property 1: Multiplying a Number by Its Conjugate Gives a Real Number</h3>
+
+<p>This is the most important property. Watch what happens:</p>
+
+<div class="math-block">$$
+z \cdot \overline{z} = (a + bi)(a - bi) = a^2 - (bi)^2 = a^2 - b^2 i^2 = a^2 - b^2(-1) = a^2 + b^2$$</div>
+
+<p>The answer, \(a^2 + b^2\), is always a real number. It is always zero or positive. It can never be negative because both \(a^2\) and \(b^2\) are non-negative.</p>
+
+<p><b>Example:</b> For \(z = 3 + 4i\), we have \(z \cdot \overline{z} = 3^2 + 4^2 = 9 + 16 = 25\).</p>
+
+<h3>Property 2: Adding a Number and Its Conjugate Gives Twice the Real Part</h3>
+
+<div class="math-block">$$
+z + \overline{z} = (a + bi) + (a - bi) = 2a = 2\operatorname{Re}(z)$$</div>
+
+<p>The imaginary parts cancel out completely.</p>
+
+<h3>Property 3: Subtracting the Conjugate Gives Twice the Imaginary Part (Times \(i\))</h3>
+
+<div class="math-block">$$
+z - \overline{z} = (a + bi) - (a - bi) = 2bi = 2i \cdot \operatorname{Im}(z)$$</div>
+
+<h3>Property 4: Conjugates Play Nicely with Operations</h3>
+
+<li>- The conjugate of a sum is the sum of the conjugates: \(\overline{z + w} = \overline{z} + \overline{w}\).</li>
+<li>- The conjugate of a product is the product of the conjugates: \(\overline{z \cdot w} = \overline{z} \cdot \overline{w}\).</li>
+<li>- The conjugate of a quotient is the quotient of the conjugates: \(\overline{\left(\frac{z}{w}\right)} = \frac{\overline{z}}{\overline{w}}\).</li>
+<li>- Taking the conjugate twice returns you to the original number: \(\overline{(\overline{z})} = z\).</li>
+
+<p>These properties mean you can often simplify complicated expressions by taking conjugates at the start or at the end — the result is the same.</p>
+
+<p><hr></p>
+
+<h2>3. The Modulus</h2>
+
+<p>The <b>modulus</b> of a complex number \(z = a + bi\) is written as \(|z|\) (the same notation as absolute value). It is defined as:</p>
+
+<div class="math-block">$$
+\boxed{|z| = \sqrt{a^2 + b^2}}$$</div>
+
+<p>You can think of the modulus as the distance from the complex number to zero. (In Lesson 21, you will see this distance drawn on a diagram.)</p>
+
+<p>Notice that \(|z| = \sqrt{z \cdot \overline{z}}\), because we just showed that \(z \cdot \overline{z} = a^2 + b^2\).</p>
+
+<p><b>Examples:</b></p>
+
+<li>- \(|3 + 4i| = \sqrt{3^2 + 4^2} = \sqrt{9 + 16} = \sqrt{25} = 5\)</li>
+<li>- \(|-5 + 12i| = \sqrt{(-5)^2 + 12^2} = \sqrt{25 + 144} = \sqrt{169} = 13\)</li>
+<li>- \(|1 + i| = \sqrt{1^2 + 1^2} = \sqrt{2}\)</li>
+<li>- \(|6| = \sqrt{6^2 + 0^2} = \sqrt{36} = 6\) — the modulus of a real number is just its absolute value.</li>
+<li>- \(|2i| = \sqrt{0^2 + 2^2} = \sqrt{4} = 2\)</li>
+
+<p><b>Common misconception:</b> The modulus is always a real number, and it is always non-negative. It is never a complex number and it never has an \(i\) in it.</p>
+
+<p><hr></p>
+
+<h2>4. Dividing Complex Numbers</h2>
+
+<p>You now have all the tools to divide complex numbers. The strategy is:</p>
+
+<p><b>Multiply the numerator and denominator by the conjugate of the denominator.</b></p>
+
+<p>This works because multiplying the denominator by its conjugate gives a real number (\(c^2 + d^2\)). Once the denominator is real, you can split the fraction into real and imaginary parts.</p>
+
+<div class="math-block">$$
+\boxed{\frac{a + bi}{c + di} = \frac{(a + bi)(c - di)}{(c + di)(c - di)} = \frac{(a + bi)(c - di)}{c^2 + d^2}}$$</div>
+
+<h3>Worked Example 1 — Standard Division</h3>
+
+<p><b>Problem:</b> Evaluate \(\displaystyle \frac{3 + 2i}{1 - i}\). Give your answer in Cartesian form.</p>
+
+<p><b>Approach:</b> The denominator is \(1 - i\). Its conjugate is \(1 + i\). Multiply top and bottom by \(1 + i\).</p>
+
+<p><b>Step 1 — Multiply numerator and denominator:</b></p>
+<div class="math-block">$$
+\frac{3 + 2i}{1 - i} \cdot \frac{1 + i}{1 + i} = \frac{(3 + 2i)(1 + i)}{(1 - i)(1 + i)}$$</div>
+
+<p><b>Step 2 — Simplify the denominator:</b></p>
+<p>\((1 - i)(1 + i) = 1^2 + 1^2 = 1 + 1 = 2\). The denominator is now a real number: 2.</p>
+
+<p><b>Step 3 — Expand the numerator:</b></p>
+<p>\((3 + 2i)(1 + i) = 3(1) + 3(i) + 2i(1) + 2i(i) = 3 + 3i + 2i + 2i^2 = 3 + 5i + 2(-1) = 3 + 5i - 2 = 1 + 5i\).</p>
+
+<p><b>Step 4 — Divide each part by the denominator:</b></p>
+<div class="math-block">$$
+\frac{1 + 5i}{2} = \frac{1}{2} + \frac{5}{2}i$$</div>
+
+<p><b>Answer:</b> \(\displaystyle \frac{1}{2} + \frac{5}{2}i\).</p>
+
+<p><b>Why this makes sense:</b> We can check by multiplying back. \((\frac{1}{2} + \frac{5}{2}i)(1 - i)\) should equal \(3 + 2i\). Let us verify: \(\frac{1}{2}(1 - i) + \frac{5}{2}i(1 - i) = \frac{1}{2} - \frac{1}{2}i + \frac{5}{2}i - \frac{5}{2}i^2 = \frac{1}{2} + 2i - \frac{5}{2}(-1) = \frac{1}{2} + 2i + \frac{5}{2} = 3 + 2i\). It works.</p>
+
+<h3>Worked Example 2 — Another Division</h3>
+
+<p><b>Problem:</b> Evaluate \(\displaystyle \frac{4 - i}{2 + 3i}\). Give your answer in Cartesian form.</p>
+
+<p><b>Approach:</b> The conjugate of \(2 + 3i\) is \(2 - 3i\). Multiply top and bottom by \(2 - 3i\).</p>
+
+<p><b>Step 1 — Set up:</b></p>
+<div class="math-block">$$
+\frac{4 - i}{2 + 3i} \cdot \frac{2 - 3i}{2 - 3i} = \frac{(4 - i)(2 - 3i)}{(2 + 3i)(2 - 3i)}$$</div>
+
+<p><b>Step 2 — Denominator:</b></p>
+<p>\((2 + 3i)(2 - 3i) = 2^2 + 3^2 = 4 + 9 = 13\).</p>
+
+<p><b>Step 3 — Numerator:</b></p>
+<p>\((4 - i)(2 - 3i) = 4(2) + 4(-3i) + (-i)(2) + (-i)(-3i) = 8 - 12i - 2i + 3i^2 = 8 - 14i + 3(-1) = 8 - 14i - 3 = 5 - 14i\).</p>
+
+<p><b>Step 4 — Divide:</b></p>
+<div class="math-block">$$
+\frac{5 - 14i}{13} = \frac{5}{13} - \frac{14}{13}i$$</div>
+
+<p><b>Answer:</b> \(\displaystyle \frac{5}{13} - \frac{14}{13}i\).</p>
+
+<h3>Worked Example 3 — Combining Fractions</h3>
+
+<p><b>Problem:</b> Evaluate \(\displaystyle \frac{5}{2 + i} - \frac{5}{2 - i}\).</p>
+
+<p><b>Approach:</b> You could find a common denominator or handle each fraction separately and then subtract. Using a common denominator is cleaner here.</p>
+
+<p><b>Step 1 — Common denominator:</b></p>
+<p>The common denominator is \((2 + i)(2 - i) = 4 + 1 = 5\).</p>
+
+<p><b>Step 2 — Combine numerators:</b></p>
+<div class="math-block">$$
+\frac{5(2 - i) - 5(2 + i)}{(2 + i)(2 - i)} = \frac{10 - 5i - 10 - 5i}{5} = \frac{-10i}{5} = -2i$$</div>
+
+<p><b>Answer:</b> \(-2i\), which is purely imaginary.</p>
+
+<h3>Worked Example 4 — A Ratio Involving a Number and Its Conjugate</h3>
+
+<p><b>Problem:</b> If \(z = 2 + i\), evaluate \(\displaystyle \frac{z}{\overline{z}} + \frac{\overline{z}}{z}\).</p>
+
+<p><b>Approach:</b> First identify \(\overline{z} = 2 - i\). Then compute each fraction and add.</p>
+
+<p><b>Step 1:</b> \(\displaystyle \frac{z}{\overline{z}} = \frac{2 + i}{2 - i}\). Multiply top and bottom by \(2 + i\):</p>
+<div class="math-block">$$
+\frac{(2 + i)(2 + i)}{(2 - i)(2 + i)} = \frac{4 + 4i + i^2}{4 + 1} = \frac{4 + 4i - 1}{5} = \frac{3 + 4i}{5}$$</div>
+
+<p><b>Step 2:</b> \(\displaystyle \frac{\overline{z}}{z} = \frac{2 - i}{2 + i}\). Multiply top and bottom by \(2 - i\):</p>
+<div class="math-block">$$
+\frac{(2 - i)(2 - i)}{(2 + i)(2 - i)} = \frac{4 - 4i + i^2}{4 + 1} = \frac{4 - 4i - 1}{5} = \frac{3 - 4i}{5}$$</div>
+
+<p><b>Step 3 — Add:</b></p>
+<div class="math-block">$$
+\frac{3 + 4i}{5} + \frac{3 - 4i}{5} = \frac{3 + 4i + 3 - 4i}{5} = \frac{6}{5}$$</div>
+
+<p><b>Answer:</b> \(\displaystyle \frac{6}{5}\). The imaginary parts cancel, leaving a real number.</p>
+
+<p><b>Why this makes sense:</b> The expression \(\frac{z}{\overline{z}} + \frac{\overline{z}}{z}\) is always real for any non-zero complex number \(z\), because the two terms are conjugates of each other and their sum is twice the real part.</p>
+
+<p><hr></p>
+
+<h2>Practice Problems</h2>
+
+<p><b>Problem 1:</b> For \(z = -3 + 4i\), find the conjugate \(\overline{z}\) and the modulus \(|z|\).</p>
+
+<p><b>Problem 2:</b> Let \(z = 1 + 2i\) and \(w = 3 - i\). Compute \(\overline{z + w}\) and then verify that it equals \(\overline{z} + \overline{w}\).</p>
+
+<p><b>Problem 3:</b> Divide and simplify: \(\displaystyle \frac{2 + i}{3 - 2i}\). Give your answer in the form \(a + bi\).</p>
+
+<p><b>Problem 4:</b> Evaluate \(\displaystyle \frac{1 + i}{1 - i}\). What do you notice about the result? Explain why this happens.</p>
+
+<p><b>Problem 5 (IB Exam Style):</b> Let \(z = \dfrac{2 + i}{1 - i}\).</p>
+<p>(a) Express \(z\) in Cartesian form \(a + bi\). [3 marks]</p>
+<p>(b) Hence find the modulus \(|z|\). [2 marks]</p>
+<p>(c) Verify your answer for \(|z|\) by using the property \(\left|\dfrac{z_1}{z_2}\right| = \dfrac{|z_1|}{|z_2|}\). [1 mark]</p>
+
+<p><b>Problem 6:</b> Simplify \(\displaystyle \frac{3}{1 + i\sqrt{3}}\) and express your answer in Cartesian form.</p>
+
+<p><hr></p>
+
+<h2>Answers</h2>
+
+<p><b>Answer 1:</b> The conjugate of \(z = -3 + 4i\) is \(\overline{z} = -3 - 4i\). Only the sign of the imaginary part flips; the real part stays at \(-3\).</p>
+
+<p>The modulus is \(|z| = \sqrt{(-3)^2 + 4^2} = \sqrt{9 + 16} = \sqrt{25} = 5\).</p>
+
+<p><b>Pitfall:</b> When squaring \(-3\), remember that \((-3)^2 = 9\) (positive), not \(-9\). The square of any real number is non-negative.</p>
+
+<p><b>Answer 2:</b> First, \(z + w = (1 + 2i) + (3 - i) = 4 + i\). So \(\overline{z + w} = 4 - i\).</p>
+
+<p>Now compute \(\overline{z} = 1 - 2i\) and \(\overline{w} = 3 + i\). Their sum is \((1 - 2i) + (3 + i) = 4 - i\).</p>
+
+<p>Both methods give \(4 - i\), confirming the property \(\overline{z + w} = \overline{z} + \overline{w}\).</p>
+
+<p><b>Answer 3:</b> Multiply numerator and denominator by the conjugate of \(3 - 2i\), which is \(3 + 2i\):</p>
+
+<div class="math-block">$$
+\frac{2 + i}{3 - 2i} \cdot \frac{3 + 2i}{3 + 2i} = \frac{(2 + i)(3 + 2i)}{3^2 + 2^2} = \frac{(2 + i)(3 + 2i)}{9 + 4} = \frac{(2 + i)(3 + 2i)}{13}$$</div>
+
+<p>Expand the numerator: \(2(3) + 2(2i) + i(3) + i(2i) = 6 + 4i + 3i + 2i^2 = 6 + 7i + 2(-1) = 6 + 7i - 2 = 4 + 7i\).</p>
+
+<p>So the result is \(\displaystyle \frac{4 + 7i}{13} = \frac{4}{13} + \frac{7}{13}i\).</p>
+
+<p><b>Answer 4:</b> Multiply numerator and denominator by the conjugate of \(1 - i\), which is \(1 + i\):</p>
+
+<div class="math-block">$$
+\frac{1 + i}{1 - i} \cdot \frac{1 + i}{1 + i} = \frac{(1 + i)^2}{1^2 + 1^2} = \frac{(1 + i)^2}{2}$$</div>
+
+<p>Now \((1 + i)^2 = 1 + 2i + i^2 = 1 + 2i - 1 = 2i\).</p>
+
+<p>So \(\displaystyle \frac{2i}{2} = i\).</p>
+
+<p>The result is \(i\), which is the imaginary unit itself. This happens because \(\frac{1 + i}{1 - i} = i\) is a special ratio. More generally, for any non-zero complex number \(z\), the ratio \(\frac{z}{\overline{z}}\) always has modulus 1 — it lies on the unit circle (a concept you will explore in later lessons).</p>
+
+<p><b>Answer 5:</b></p>
+
+<p>(a) First compute \(z = \frac{2 + i}{1 - i}\). Multiply by the conjugate \(1 + i\):</p>
+
+<div class="math-block">$$
+z = \frac{(2 + i)(1 + i)}{(1 - i)(1 + i)} = \frac{(2 + i)(1 + i)}{1^2 + 1^2} = \frac{(2 + i)(1 + i)}{2}$$</div>
+
+<p>Expand the numerator: \(2(1) + 2(i) + i(1) + i(i) = 2 + 2i + i + i^2 = 2 + 3i - 1 = 1 + 3i\).</p>
+
+<p>So \(z = \frac{1 + 3i}{2} = \frac{1}{2} + \frac{3}{2}i\).</p>
+
+<p>(b) The modulus is \(|z| = \sqrt{\left(\frac{1}{2}\right)^2 + \left(\frac{3}{2}\right)^2} = \sqrt{\frac{1}{4} + \frac{9}{4}} = \sqrt{\frac{10}{4}} = \frac{\sqrt{10}}{2}\).</p>
+
+<p>(c) Check using the property: \(\left|\frac{2 + i}{1 - i}\right| = \frac{|2 + i|}{|1 - i|} = \frac{\sqrt{2^2 + 1^2}}{\sqrt{1^2 + (-1)^2}} = \frac{\sqrt{5}}{\sqrt{2}} = \sqrt{\frac{5}{2}}\).</p>
+
+<p>And \(\sqrt{\frac{5}{2}} = \frac{\sqrt{10}}{2}\), matching the result from part (b). The property holds.</p>
+
+<p><b>Pitfall:</b> When squaring fractions, square both the numerator and denominator: \(\left(\frac{1}{2}\right)^2 = \frac{1}{4}\), not \(\frac{1}{2}\).</p>
+
+<p><b>Answer 6:</b> Multiply numerator and denominator by the conjugate of \(1 + i\sqrt{3}\), which is \(1 - i\sqrt{3}\):</p>
+
+<div class="math-block">$$
+\frac{3}{1 + i\sqrt{3}} \cdot \frac{1 - i\sqrt{3}}{1 - i\sqrt{3}} = \frac{3(1 - i\sqrt{3})}{1^2 + (\sqrt{3})^2} = \frac{3(1 - i\sqrt{3})}{1 + 3} = \frac{3(1 - i\sqrt{3})}{4}$$</div>
+
+<p>Distribute the 3: \(\displaystyle \frac{3 - 3i\sqrt{3}}{4} = \frac{3}{4} - \frac{3\sqrt{3}}{4}i\).</p>
+
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+</body>
+</html>

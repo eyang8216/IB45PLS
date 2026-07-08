@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 3: Electron Configuration — Orbitals, Aufbau, Hund, Pauli — IB Chemistry HL</title>
+<script>window.MathJax = { loader: {load: ['[tex]/mhchem']}, tex: {packages: {'[+]': ['mhchem']}} };</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; --hover: #f5f0e8; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Palatino', 'Georgia', serif; background: var(--bg); color: var(--text); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; font-size: 17px; line-height: 1.7; }
+  h1 { font-size: 1.7rem; color: var(--accent); margin-bottom: 0.5rem; }
+  h2 { font-size: 1.25rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; margin: 2rem 0 1rem; }
+  h3 { font-size: 1.1rem; color: #444; margin: 1.3rem 0 0.5rem; }
+  p, li { margin-bottom: 0.6rem; }
+  ul, ol { padding-left: 1.8rem; margin-bottom: 1rem; }
+  .worked { background: #f0f7f0; border-left: 4px solid #2c5f2d; padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
+  .worked strong { color: #2c5f2d; }
+  .answer { background: #fefdf7; border: 1px solid var(--border); padding: 0.8rem 1.2rem; margin: 0.5rem 0; border-radius: 6px; }
+  .nav { display: flex; justify-content: space-between; margin: 3rem 0 1rem; padding-top: 1rem; border-top: 2px solid var(--border); font-size: 0.9rem; }
+  .nav a { color: #1a5c9e; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  .definition { background: #fdf5e6; border-left: 4px solid #d4a017; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  code { background: #f0f0f0; padding: 0.15rem 0.35rem; border-radius: 3px; font-size: 0.9em; }
+  table { border-collapse: collapse; margin: 1rem 0; width: 100%; }
+  th, td { border: 1px solid var(--border); padding: 0.5rem 0.8rem; text-align: left; }
+  th { background: #f5f0e8; }
+  @media print { body { font-size: 14px; } .nav { display: none; } }
+</style>
+</head>
+<body>
+<h1>Lesson 3: Electron Configuration — Orbitals, Aufbau, Hund, Pauli</h1>
+
+<h2>What You'll Learn</h2>
+<ul>
+  <li>Describe the hierarchy of energy levels, sub-levels, and orbitals, and state how many orbitals and electrons each sub-level can hold</li>
+  <li>Apply the Aufbau principle to write the full electron configuration for any element with atomic number 1 to 36</li>
+  <li>Use condensed notation with noble gas cores to write electron configurations quickly and correctly</li>
+  <li>Apply Hund's rule and the Pauli exclusion principle to draw orbital diagrams using box-arrow notation</li>
+  <li>Explain the chromium and copper exceptions to the expected electron filling order, with reference to the extra stability of half-filled and fully-filled d sub-levels</li>
+  <li>Write correct electron configurations for transition metal ions by removing electrons from 4s before 3d</li>
+</ul>
+
+<hr>
+<h2>1. Energy Levels, Sub-Levels, and Orbitals — The Address of an Electron</h2>
+<h3>What the hierarchy of energy levels, sub-levels, and orbitals is and why it is needed</h3>
+<p>Every electron in an atom occupies a specific region of space and has a specific energy. To describe where an electron is and how much energy it has, we use a system with three levels of organisation: the <strong>energy level</strong> (also called a shell), the <strong>sub-level</strong> (also called a subshell), and the <strong>orbital</strong>.</p>
+<p>Think of this as an address system. The energy level is like the country — it tells you broadly how far the electron is from the nucleus. The sub-level is like the city — it gives a more specific type of region. The orbital is like the street address — it specifies exactly which region of space the electron occupies.</p>
+<h3>Energy levels — the shells</h3>
+<p>Energy levels are numbered with the symbol n, where n can be 1, 2, 3, 4, and so on. The number n is called the <strong>principal quantum number</strong>. The larger the value of n, the further the electron is from the nucleus on average, and the higher its energy. Energy level 1 (n = 1) is the closest to the nucleus and has the lowest energy. Energy level 2 (n = 2) is further out and has higher energy.</p>
+<h3>Sub-levels — the types of regions within each shell</h3>
+<p>Within each energy level, there are one or more <strong>sub-levels</strong>. Sub-levels are labelled with letters: s, p, d, and f. Not every sub-level exists in every shell. The available sub-levels depend on the value of n:</p>
+<ul>
+  <li>Shell n = 1 contains only the 1s sub-level.</li>
+  <li>Shell n = 2 contains the 2s and 2p sub-levels.</li>
+  <li>Shell n = 3 contains the 3s, 3p, and 3d sub-levels.</li>
+  <li>Shell n = 4 contains the 4s, 4p, 4d, and 4f sub-levels.</li>
+</ul>
+
+<h3>Orbitals — the specific regions where electrons live</h3>
+<p>Within each sub-level, there are one or more <strong>orbitals</strong>. An orbital is a three-dimensional region of space around the nucleus where there is a high probability (about 90%) of finding an electron. Each orbital can hold a maximum of two electrons.</p>
+<p>The different sub-levels contain different numbers of orbitals:</p>
+<table>
+<tr>
+  <th>Sub-level</th>
+  <th>Number of Orbitals</th>
+  <th>Maximum Number of Electrons</th>
+</tr>
+<tr>
+  <td>-----------</td>
+  <td>-------------------</td>
+  <td>---------------------------</td>
+</tr>
+<tr>
+  <td>s</td>
+  <td>1</td>
+  <td>2</td>
+</tr>
+<tr>
+  <td>p</td>
+  <td>3</td>
+  <td>6</td>
+</tr>
+<tr>
+  <td>d</td>
+  <td>5</td>
+  <td>10</td>
+</tr>
+<tr>
+  <td>f</td>
+  <td>7</td>
+  <td>14</td>
+</tr>
+</table>
+
+<p>This means the maximum number of electrons each shell can hold is:</p>
+<ul>
+  <li>Shell n = 1: one s sub-level → 2 electrons maximum</li>
+  <li>Shell n = 2: one s and one p sub-level → 2 + 6 = 8 electrons maximum</li>
+  <li>Shell n = 3: one s, one p, and one d sub-level → 2 + 6 + 10 = 18 electrons maximum</li>
+</ul>
+
+<p>This explains why the "2, 8, 8" pattern works for elements 1 through 20 (up to calcium), but then breaks down. After calcium, the 3d sub-level starts to fill, and simple shell-counting no longer works.</p>
+<h3>The shapes of orbitals — a brief picture</h3>
+<p>An s orbital is spherical — it is the same shape in all directions around the nucleus. A p orbital has a dumbbell or figure-eight shape, with two lobes on opposite sides of the nucleus. Because there are three p orbitals in a p sub-level, they are arranged along three perpendicular axes and are labelled pₓ, p_y, and p_z. The d orbitals have more complex shapes; there are five of them in a d sub-level. For the IB examination, you do not need to draw orbital shapes, but you should know that s orbitals are spherical, p orbitals are dumbbell-shaped, and each sub-level has the number of orbitals listed in the table above.</p>
+<p>A common misconception is that an orbital is like a planet's orbit — a fixed circular path. This is incorrect. An orbital is not a path. It is a probability cloud: a region of space where the electron is likely to be found. The electron does not travel around the nucleus in a circle like a planet around the sun. Instead, it exists as a spread-out cloud of probability.</p>
+<div class="worked">
+<strong>Worked Example 1: Counting Orbitals and Electron Capacity</strong>
+<p><strong>Problem:</strong> How many orbitals are in the n = 3 shell, and what is the maximum number of electrons this shell can hold?</p>
+<p><strong>Approach:</strong> List the sub-levels in n = 3, count the orbitals in each, and multiply by 2 (since each orbital holds two electrons).</p>
+<p><strong>Solution:</strong> The n = 3 shell contains three sub-levels: 3s (1 orbital), 3p (3 orbitals), and 3d (5 orbitals). Total number of orbitals = 1 + 3 + 5 = 9. Maximum number of electrons = 9 × 2 = 18.</p>
+<p><strong>Why this makes sense:</strong> We can verify this with the formula 2n² for the maximum electron capacity of a shell. For n = 3, 2 × 3² = 2 × 9 = 18. The formula works because each shell has n² orbitals: 3² = 9, and each orbital holds 2 electrons: 9 × 2 = 18.</p>
+</div>
+
+<hr>
+<h2>2. The Order of Filling Orbitals — The Aufbau Principle</h2>
+<h3>What the Aufbau principle is and why the filling order is not what you might expect</h3>
+<p>The word "Aufbau" is German for "building up." The <strong>Aufbau principle</strong> states that electrons occupy the lowest energy orbitals first, before filling higher energy orbitals. An atom in its ground state (its lowest possible energy state) has all its electrons arranged according to this principle.</p>
+<p>You might expect the filling order to follow the shell number: 1s, then 2s, 2p, then 3s, 3p, 3d, then 4s, 4p, and so on. But this is not what happens. The actual order up to element 36 (krypton) is:</p>
+\[
+\text{1s → 2s → 2p → 3s → 3p → 4s → 3d → 4p}
+\]
+
+<p>Notice that <strong>4s fills before 3d</strong>. This happens because the 4s orbital, although it belongs to shell n = 4, penetrates closer to the nucleus on average than the 3d orbitals do. This penetration gives 4s a slightly lower energy than 3d for the elements in this region of the periodic table. This is a subtle quantum mechanical effect, but for IB, the key thing to remember is simply that 4s fills before 3d.</p>
+<h3>The diagonal rule — a mnemonic for the filling order</h3>
+<p>A helpful way to remember the filling order is to write the sub-levels in a triangular arrangement and then read the diagonals from top-right to bottom-left:</p>
+<p>```</p>
+<p>1s</p>
+<p>2s 2p</p>
+<p>3s 3p 3d</p>
+<p>4s 4p 4d 4f</p>
+<p>5s 5p 5d 5f</p>
+<p>```</p>
+<p>Reading along the diagonals (top-right to bottom-left) gives: 1s, 2s, 2p, 3s, 3p, 4s, 3d, 4p, 5s, 4d, 5p, and so on. This sequence matches the actual filling order for neutral atoms in their ground state.</p>
+<h3>Writing electron configurations — the notation</h3>
+<p>An electron configuration is written by listing each occupied sub-level followed by a superscript that tells you how many electrons are in that sub-level. For example, 1s² means the 1s sub-level contains 2 electrons. The sum of all superscripts must equal the total number of electrons in the atom, which equals the atomic number Z for a neutral atom.</p>
+<p>By convention, we write sub-levels in order of increasing n, even though the filling order may put 4s before 3d. So the configuration of iron (Z = 26) is written as 1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d⁶ — with 4s listed before 3d — even though 4s fills after 3p but before 3d.</p>
+<div class="worked">
+<strong>Worked Example 2: Writing a Full Electron Configuration</strong>
+<p><strong>Problem:</strong> Write the full electron configuration of an iron atom, which has atomic number Z = 26.</p>
+<p><strong>Approach:</strong> Iron has 26 electrons. We fill orbitals in the Aufbau order, keeping a running total of electrons as we go, until we reach 26.</p>
+<p><strong>Solution:</strong></p>
+<ul>
+  <li>1s² → 2 electrons placed (running total: 2)</li>
+  <li>2s² → 2 more (total: 4)</li>
+  <li>2p⁶ → 6 more (total: 10)</li>
+  <li>3s² → 2 more (total: 12)</li>
+  <li>3p⁶ → 6 more (total: 18)</li>
+  <li>4s² → 2 more (total: 20)</li>
+  <li>3d → we need 6 more to reach 26, so 3d⁶ (total: 26)</li>
+</ul>
+
+<p>The full configuration is: <strong>1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d⁶</strong></p>
+<p><strong>Why this makes sense:</strong> Iron is in Period 4, Group 8. The 4s² 3d⁶ configuration places it in the d-block, which is consistent with its position as a transition metal. The total number of electrons (2 + 2 + 6 + 2 + 6 + 2 + 6 = 26) matches Z.</p>
+</div>
+
+<hr>
+<h2>3. Orbital Diagrams, Hund's Rule, and the Pauli Exclusion Principle</h2>
+<h3>What orbital diagrams show and why we draw them</h3>
+<p>An <strong>orbital diagram</strong> (also called a box-arrow diagram) shows not just which sub-levels are occupied, but also how the electrons are distributed among the individual orbitals within each sub-level and the direction of each electron's spin. Orbital diagrams help us visualise two important rules: the Pauli exclusion principle and Hund's rule.</p>
+<p>In an orbital diagram, each orbital is represented by a box (or a line), and each electron is represented by an arrow (↑ or ↓). The direction of the arrow indicates the electron's spin — a quantum mechanical property that can take one of two values, which we call "spin up" (↑) and "spin down" (↓).</p>
+<h3>The Pauli exclusion principle</h3>
+<p>The Pauli exclusion principle states that no two electrons in the same atom can have exactly the same set of four quantum numbers. In the context of an orbital diagram, this means that a single orbital can hold at most two electrons, and those two electrons must have opposite spins. In a diagram, this appears as ↑↓ in one box. You can never have ↑↑ or ↓↓ in the same box.</p>
+<h3>Hund's rule</h3>
+<p>Hund's rule describes how electrons fill a sub-level that has multiple orbitals (such as p with three orbitals or d with five orbitals). The rule states that electrons will occupy separate orbitals within the sub-level before any orbital receives a second electron. Furthermore, all the unpaired electrons in a sub-level will have the same spin (all ↑ or all ↓).</p>
+<p>A useful analogy: imagine passengers boarding an empty bus. Each passenger prefers to take an empty row rather than sit next to a stranger. Only after every row has at least one passenger will people start doubling up. Similarly, electrons prefer to occupy empty orbitals before pairing up, because electrons repel each other and pairing costs energy.</p>
+<div class="worked">
+<strong>Worked Example 3: Orbital Diagram for Nitrogen</strong>
+<p><strong>Problem:</strong> Draw the orbital diagram for nitrogen (Z = 7), showing all occupied orbitals.</p>
+<p><strong>Approach:</strong> First write the electron configuration, then draw the boxes for each sub-level and place arrows according to Hund's rule and the Pauli principle.</p>
+<p><strong>Solution:</strong> Nitrogen has 7 electrons. Configuration: 1s² 2s² 2p³.</p>
+<p>```</p>
+<p>1s: [↑↓]</p>
+<p>2s: [↑↓]</p>
+<p>2p: [↑ ][↑ ][↑ ]</p>
+<p>```</p>
+<p>The three 2p electrons each occupy a different p orbital, and all three have the same spin (all ↑). This satisfies Hund's rule: the electrons spread out across the three available p orbitals before any pairing occurs.</p>
+<p><strong>Why this makes sense:</strong> The half-filled 2p sub-level (2p³) is especially stable because each electron occupies its own orbital with parallel spin, maximising what is called exchange energy. This stability explains why nitrogen has a slightly higher first ionisation energy than oxygen, which we explore in Lessons 5 and 6.</p>
+</div>
+
+<div class="worked">
+<strong>Worked Example 4: Orbital Diagram for Oxygen</strong>
+<p><strong>Problem:</strong> Draw the orbital diagram for oxygen (Z = 8), showing all occupied orbitals.</p>
+<p><strong>Approach:</strong> Oxygen has one more electron than nitrogen. Write the configuration, then fill the orbitals.</p>
+<p><strong>Solution:</strong> Oxygen has 8 electrons. Configuration: 1s² 2s² 2p⁴.</p>
+<p>```</p>
+<p>1s: [↑↓]</p>
+<p>2s: [↑↓]</p>
+<p>2p: [↑↓][↑ ][↑ ]</p>
+<p>```</p>
+<p>The fourth electron in the 2p sub-level must pair up in one of the already half-filled orbitals, because all three p orbitals already have one electron each. The paired electrons must have opposite spins (↑↓) according to the Pauli exclusion principle.</p>
+<p><strong>Why this makes sense:</strong> Now one of the p orbitals has a pair of electrons. These two electrons repel each other because they occupy the same region of space. This electron-electron repulsion makes one of them slightly easier to remove, which is why oxygen has a slightly lower first ionisation energy than nitrogen.</p>
+</div>
+
+<hr>
+<h2>4. Condensed Electron Configurations and Transition Metal Ions</h2>
+<h3>What condensed configurations are and why we use them</h3>
+<p>Writing out the full configuration for every element, especially heavier ones, becomes very repetitive. A more compact method uses a <strong>condensed electron configuration</strong>. In condensed notation, you write the symbol of the preceding noble gas (the noble gas from the previous period) in square brackets to represent all the electrons in its configuration, and then add only the electrons beyond that noble gas core.</p>
+<p>For example, neon (Ne) has the configuration 1s² 2s² 2p⁶. For sodium (Na, Z = 11), instead of writing 1s² 2s² 2p⁶ 3s¹, we write [Ne] 3s¹. The [Ne] stands for all 10 electrons of neon's configuration. Here are a few more examples:</p>
+<ul>
+  <li>Chlorine (Cl, Z = 17): [Ne] 3s² 3p⁵</li>
+  <li>Calcium (Ca, Z = 20): [Ar] 4s²</li>
+  <li>Manganese (Mn, Z = 25): [Ar] 4s² 3d⁵</li>
+  <li>Zinc (Zn, Z = 30): [Ar] 4s² 3d¹⁰</li>
+</ul>
+
+<h3>Writing configurations for transition metal ions</h3>
+<p>When a transition metal atom forms a positive ion (a cation), electrons are removed. The crucial rule is: <strong>electrons are removed from the 4s orbital before they are removed from the 3d orbital.</strong> This is because, once the 3d orbitals are occupied, the 4s orbital becomes higher in energy than the 3d orbitals. Even though 4s fills before 3d, it also empties before 3d.</p>
+<p>Consider iron (Fe, Z = 26):</p>
+<ul>
+  <li>Neutral Fe atom: [Ar] 4s² 3d⁶</li>
+  <li>Fe²⁺ ion: [Ar] 3d⁶ (both 4s electrons have been removed)</li>
+  <li>Fe³⁺ ion: [Ar] 3d⁵ (both 4s electrons and one 3d electron have been removed)</li>
+</ul>
+
+<p>A common mistake is to write Fe²⁺ as [Ar] 4s² 3d⁴ — removing electrons from 3d first. This is incorrect. Always remove from 4s first.</p>
+<div class="worked">
+<strong>Worked Example 5: Configuration of a Transition Metal Ion</strong>
+<p><strong>Problem:</strong> Write the full electron configuration and the condensed electron configuration of the copper(II) ion, Cu²⁺. Copper has atomic number Z = 29.</p>
+<p><strong>Approach:</strong> First, determine the configuration of the neutral copper atom (remembering the copper exception — see Section 5). Then remove two electrons, starting with the 4s electron.</p>
+<p><strong>Solution:</strong></p>
+<ul>
+  <li>Neutral Cu atom (Z = 29): The expected configuration would be [Ar] 4s² 3d⁹, but due to the extra stability of a fully filled d sub-level, the actual configuration is [Ar] 4s¹ 3d¹⁰.</li>
+  <li>Cu²⁺ ion: remove two electrons. First, remove the single 4s electron. Then remove one electron from the 3d sub-level. This gives [Ar] 3d⁹.</li>
+  <li>Full configuration of Cu²⁺: 1s² 2s² 2p⁶ 3s² 3p⁶ 3d⁹.</li>
+</ul>
+
+<p><strong>Why this makes sense:</strong> Copper starts with one electron in 4s and ten in 3d. The ion loses the outermost (4s) electron first, then one from the 3d. The resulting Cu²⁺ ion has a 3d⁹ configuration, which has one unpaired electron. This unpaired electron is responsible for the blue colour of many copper(II) compounds — a topic explored in detail when studying transition metal complexes.</p>
+</div>
+
+<hr>
+<h2>5. The Exceptions — Chromium and Copper</h2>
+<h3>What the exceptions are and why they happen</h3>
+<p>For almost every element from hydrogen to krypton, the Aufbau principle predicts the correct electron configuration. But there are two important exceptions: chromium (Cr, Z = 24) and copper (Cu, Z = 29). These exceptions occur because a half-filled d sub-level (d⁵) and a fully-filled d sub-level (d¹⁰) confer extra stability to the atom. When promoting one electron from the 4s orbital to the 3d set can achieve one of these stable arrangements, the atom adopts the anomalous configuration.</p>
+<h3>The chromium exception</h3>
+<p>The expected configuration for chromium, following the Aufbau order, would be:</p>
+<ul>
+  <li>Expected: [Ar] 4s² 3d⁴</li>
+</ul>
+
+<p>But the actual configuration is:</p>
+<ul>
+  <li>Actual: [Ar] 4s¹ 3d⁵</li>
+</ul>
+
+<p>One electron has moved from the 4s orbital into the 3d set. This creates a half-filled 3d sub-level (3d⁵), in which each of the five d orbitals contains exactly one electron with parallel spin. This arrangement has maximum exchange energy — a quantum mechanical stabilisation that makes the half-filled sub-level particularly stable. The energy gained by achieving this half-filled state more than compensates for the energy cost of promoting one electron from 4s to 3d.</p>
+<h3>The copper exception</h3>
+<p>The expected configuration for copper would be:</p>
+<ul>
+  <li>Expected: [Ar] 4s² 3d⁹</li>
+</ul>
+
+<p>But the actual configuration is:</p>
+<ul>
+  <li>Actual: [Ar] 4s¹ 3d¹⁰</li>
+</ul>
+
+<p>Again, one electron moves from 4s to 3d. This creates a completely filled 3d sub-level (3d¹⁰), which is also especially stable. A fully-filled sub-level has no unpaired electrons and a symmetrical electron distribution, both of which contribute to its stability.</p>
+<h3>A pattern to remember</h3>
+<p>Both exceptions follow the same pattern: if moving one electron from 4s to 3d can achieve either a half-filled d sub-level (d⁵) or a fully-filled d sub-level (d¹⁰), the atom will do so. Cr goes from d⁴ to d⁵ (half-filled). Cu goes from d⁹ to d¹⁰ (fully-filled). These are the only two exceptions you need to know for elements 1 through 36.</p>
+<hr>
+<h2>Practice Problems</h2>
+<p><strong>Problem 1:</strong> Write the full electron configuration (1s² 2s² …) of a neutral sulfur atom, which has atomic number Z = 16.</p>
+<p><strong>Problem 2:</strong> (a) Write the condensed electron configuration (using a noble gas core) of a neutral nickel atom (Z = 28). (b) Write the condensed electron configuration of the nickel(II) ion, Ni²⁺.</p>
+<p><strong>Problem 3:</strong> Draw the full orbital diagram (box-arrow notation) for a neutral phosphorus atom (Z = 15). Label each box with the orbital it represents, and ensure that your diagram clearly shows Hund's rule in action.</p>
+<p><strong>Problem 4:</strong> For each of the following electron configurations, state whether it is correct for a neutral atom in its ground state. If the configuration is incorrect, write the correct configuration and explain what is wrong. (a) [Ar] 4s² 3d⁴ (b) 1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 4p¹ (c) [Ar] 4s² 3d¹⁰</p>
+<p><strong>Problem 5 (IB-Style):</strong> The element cobalt has atomic number Z = 27 and forms the complex ion \(\ce{[Co(H2O)6]^{2+}}\) in aqueous solution. (a) Write the condensed electron configuration of a neutral cobalt atom, a Co²⁺ ion, and a Co³⁺ ion. (b) For each of the three species in part (a), state the number of unpaired electrons present. You may find it helpful to draw the orbital diagram of the 3d sub-level. (c) The element chromium (Z = 24) has the electron configuration [Ar] 4s¹ 3d⁵ rather than the expected [Ar] 4s² 3d⁴. Explain why the actual configuration is preferred, making reference to the concept of stability.</p>
+<hr>
+<h2>Answers</h2>
+<p><strong>Answer 1:</strong> Sulfur has Z = 16, so it has 16 electrons. Filling in Aufbau order: 1s² (2 e⁻), 2s² (4), 2p⁶ (10), 3s² (12), 3p⁴ (16). The full configuration is 1s² 2s² 2p⁶ 3s² 3p⁴.</p>
+<hr>
+<p><strong>Answer 2:</strong> (a) Nickel (Z = 28): The preceding noble gas is argon (Ar, Z = 18), which accounts for the first 18 electrons. The remaining 10 electrons fill 4s² then 3d⁸. The condensed configuration is [Ar] 4s² 3d⁸.</p>
+<p>(b) For Ni²⁺, we remove two electrons. Electrons are removed from 4s before 3d, so we remove both 4s electrons. The condensed configuration of Ni²⁺ is [Ar] 3d⁸.</p>
+<hr>
+<p><strong>Answer 3:</strong> Phosphorus (Z = 15): 1s² 2s² 2p⁶ 3s² 3p³.</p>
+<p>```</p>
+<p>1s: [↑↓]</p>
+<p>2s: [↑↓]</p>
+<p>2p: [↑↓][↑↓][↑↓]</p>
+<p>3s: [↑↓]</p>
+<p>3p: [↑ ][↑ ][↑ ]</p>
+<p>```</p>
+<p>Hund's rule is demonstrated in the 3p sub-level: the three electrons occupy the three separate p orbitals rather than pairing up in one or two orbitals, and all three have parallel spins (all ↑).</p>
+<hr>
+<p><strong>Answer 4:</strong> (a) Incorrect. This configuration, [Ar] 4s² 3d⁴, is what one might naively expect for chromium. But the actual ground-state configuration of chromium is [Ar] 4s¹ 3d⁵, because the half-filled 3d sub-level (d⁵) provides extra stability.</p>
+<p>(b) Incorrect. After filling 4s², the next lowest energy sub-level is 3d, not 4p. This configuration would represent an atom with Z = 19 + 2 + 1 = 22 (if 3d had zero electrons), but the actual element at Z = 22 is titanium, which has the configuration [Ar] 4s² 3d². The error is that 4p was filled before 3d, which violates the Aufbau principle.</p>
+<p>(c) Correct. This is the configuration of neutral zinc (Z = 30). After the 4s sub-level is filled (4s²), the 3d sub-level fills completely (3d¹⁰). This follows the normal Aufbau order and is not an exception.</p>
+<hr>
+<p><strong>Answer 5:</strong> (a) Cobalt (Z = 27): The preceding noble gas is argon (Z = 18). The remaining 9 electrons fill 4s² then 3d⁷. Neutral Co: [Ar] 4s² 3d⁷.</p>
+<p>Co²⁺: Remove two electrons from 4s first. This gives [Ar] 3d⁷.</p>
+<p>Co³⁺: Remove two electrons from 4s and then one from 3d. This gives [Ar] 3d⁶.</p>
+<p>(b) For counting unpaired electrons, we draw the 3d sub-level:</p>
+<p>Neutral Co (d⁷): [↑↓][↑ ][↑ ][↑ ][↑ ] → 3 unpaired electrons. (The 4s² electrons are paired.)</p>
+<p>Co²⁺ (d⁷): Same 3d arrangement as neutral Co → 3 unpaired electrons.</p>
+<p>Co³⁺ (d⁶): [↑↓][↑ ][↑ ][↑ ][↑ ] → With six d electrons, Hund's rule gives us five unpaired electrons in separate orbitals, then the sixth pairs up in the first orbital. That leaves 4 unpaired electrons.</p>
+<p>(c) The expected configuration for chromium would be [Ar] 4s² 3d⁴, but the actual configuration is [Ar] 4s¹ 3d⁵. In the actual configuration, the 3d sub-level is half-filled (d⁵), with one electron in each of the five d orbitals and all spins parallel. This half-filled arrangement has extra stability due to maximum exchange energy — a quantum mechanical effect that lowers the energy of the atom when electrons with parallel spin occupy different orbitals in the same sub-level. The energy gained by achieving this half-filled d sub-level is greater than the energy cost of promoting one electron from the 4s orbital to the 3d set, so the anomalous configuration is preferred.</p>
+
+<div class="nav">
+  <a href="lesson_02.html">← Lesson 2</a>
+  <a href="lesson_04.html">Lesson 4 →</a>
+</div>
+
+</body>
+</html>

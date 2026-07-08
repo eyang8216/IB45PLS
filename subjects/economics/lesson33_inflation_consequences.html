@@ -1,0 +1,222 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 33: Inflation — Consequences and the Phillips Curve</title>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f8a; --border: #d0cdc4; --card-bg: #f8f5f0; --highlight: #e8f0f8; --heading: #1a3a52; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Georgia, 'Times New Roman', serif; font-size: 17px; line-height: 1.7; color: var(--text); background: var(--bg); max-width: 820px; margin: 0 auto; padding: 40px 32px 60px; }
+  nav.breadcrumb { font-size: 14px; margin-bottom: 32px; padding-bottom: 16px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+  nav.breadcrumb a { color: var(--accent); text-decoration: none; } nav.breadcrumb a:hover { text-decoration: underline; }
+  h1 { font-size: 2em; color: var(--heading); margin-bottom: 8px; border-bottom: 3px solid var(--accent); padding-bottom: 10px; }
+  h2 { font-size: 1.4em; color: var(--heading); margin: 36px 0 12px; padding-left: 8px; border-left: 4px solid var(--accent); }
+  h3 { font-size: 1.15em; color: #2a4a30; margin: 24px 0 8px; }
+  p { margin: 10px 0; } ul, ol { margin: 8px 0 16px 24px; } li { margin: 5px 0; }
+  strong { color: #1a2a3a; }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 15px; }
+  th { background: var(--heading); color: white; padding: 10px 12px; text-align: left; }
+  td { padding: 8px 12px; border: 1px solid var(--border); } tr:nth-child(even) { background: var(--card-bg); }
+  .highlight-box { background: var(--highlight); border-left: 4px solid var(--accent); padding: 14px 18px; margin: 16px 0; border-radius: 0 6px 6px 0; }
+  .tip-box { background: #fffdf0; border: 1px solid #e0c860; padding: 14px 18px; margin: 20px 0; border-radius: 6px; }
+  .tip-box::before { content: "IB Exam Tip"; font-weight: bold; display: block; margin-bottom: 6px; color: #8a6d20; }
+  .problem { background: var(--card-bg); padding: 14px 18px; margin: 14px 0; border-radius: 6px; border: 1px solid var(--border); }
+  .problem strong { color: var(--accent); }
+  .answer { border-left: 3px solid #5a8a5a; padding-left: 16px; margin: 10px 0 20px; }
+  .evaluate-box { background: #f4f0ea; border: 2px solid #8a6d3b; padding: 20px 24px; margin: 28px 0; border-radius: 8px; }
+  .evaluate-box h2 { border-left-color: #8a6d3b; }
+  .claspp { color: #6a5030; font-weight: bold; margin: 10px 0 4px; }
+  hr { border: none; border-top: 1px solid var(--border); margin: 32px 0; }
+  @media print { body { font-size: 12pt; padding: 20px; max-width: 100%; } nav.breadcrumb, .no-print { display: none; } h1 { font-size: 18pt; } h2 { font-size: 14pt; } .highlight-box, .tip-box, .problem, .evaluate-box { break-inside: avoid; } a { color: var(--text); text-decoration: none; } }
+</style>
+</head>
+<body>
+
+<nav class="breadcrumb">
+  <span><a href="lesson32_inflation_measurement.html">Lesson 32: Inflation Measurement</a></span>
+  <span><a href="#">Index</a></span>
+  <span><a href="lesson34_economic_growth.html">Lesson 34: Economic Growth</a></span>
+</nav>
+
+<h1>Lesson 33: Inflation - Consequences and the Phillips Curve</h1>
+
+<h2>What You'll Learn</h2>
+<ul>
+  <li>The redistribution effects of inflation - who wins and who loses</li>
+  <li>Menu costs, shoe leather costs, and other real costs</li>
+  <li>The Short-Run Phillips Curve (SRPC) and its relationship to AD/AS</li>
+  <li>The Long-Run Phillips Curve (LRPC) - the monetarist view</li>
+  <li>Why the SRPC shifts with supply shocks</li>
+  <li>How inflation affects international competitiveness</li>
+</ul>
+
+<hr>
+
+<h2>1. Redistribution Effects: Winners and Losers</h2>
+
+<p>Unexpected inflation transfers real resources between groups. It does NOT make society poorer overall - it <strong>redistributes</strong> wealth.</p>
+
+<h3>Losers from Unexpected Inflation</h3>
+
+<table>
+  <tr><th>Group</th><th>Why They Lose</th></tr>
+  <tr><td><strong>Savers</strong></td><td>Real value of savings erodes. $10,000 saved at 2% interest with 5% inflation = real return of -3%.</td></tr>
+  <tr><td><strong>Fixed-income earners</strong></td><td>Pensioners on fixed nominal pensions see real income fall.</td></tr>
+  <tr><td><strong>Lenders/Creditors</strong></td><td>Repaid in money worth less than when they lent it.</td></tr>
+  <tr><td><strong>Workers on slow contracts</strong></td><td>Nominal wages lag behind inflation - real wages fall.</td></tr>
+  <tr><td><strong>Export-competing firms</strong></td><td>If domestic inflation exceeds trading partners', exports lose competitiveness.</td></tr>
+</table>
+
+<h3>Winners from Unexpected Inflation</h3>
+
+<table>
+  <tr><th>Group</th><th>Why They Win</th></tr>
+  <tr><td><strong>Borrowers/Debtors</strong></td><td>Repay loans with "cheaper" money.</td></tr>
+  <tr><td><strong>Government</strong></td><td>Inflation erodes real value of national debt; fiscal drag increases tax revenue.</td></tr>
+  <tr><td><strong>Asset holders</strong></td><td>Real assets (property, gold, equities) tend to rise with inflation.</td></tr>
+</table>
+
+<div class="highlight-box">
+<strong>Worked Example: The Saver's Loss</strong><br>
+A retiree has $100,000 in savings earning 1.5% interest. Inflation is 4%.<br>
+Nominal gain = $100,000 x 0.015 = $1,500<br>
+Real value erosion = $100,000 x 0.04 = $4,000 lost<br>
+Real return = 1.5% - 4% = <strong>-2.5%</strong><br>
+After one year, real purchasing power = $97,500. The retiree effectively "paid" $2,500 to hold cash.
+</div>
+
+<h2>2. Real Costs of Inflation (Even Anticipated)</h2>
+
+<h3>Menu Costs</h3>
+<p>The physical and administrative costs of changing prices: printing new menus, updating price tags, reprogramming vending machines. In hyperinflation, restaurants may change prices daily.</p>
+
+<h3>Shoe Leather Costs</h3>
+<p>The costs of minimizing cash holdings. When holding cash is costly, people make more frequent trips to withdraw smaller amounts - wearing out their "shoe leather."</p>
+
+<h3>Uncertainty and Reduced Investment</h3>
+<ul>
+  <li>When inflation is <strong>volatile</strong>, firms cannot predict future costs</li>
+  <li>Long-term contracts become risky - firms delay investment</li>
+  <li>Result: Lower potential growth (LRAS shifts right more slowly)</li>
+</ul>
+
+<h3>Fiscal Drag (Bracket Creep)</h3>
+<p>Progressive tax brackets set in nominal terms. As nominal incomes rise with inflation, workers move into higher brackets even though <strong>real</strong> income has not changed.</p>
+
+<h2>3. International Competitiveness</h2>
+<p>If domestic inflation exceeds trading partners': Exports fall (buyers switch to cheaper alternatives), imports rise, net exports (X-M) fall, AD shifts LEFT, trade deficit widens.</p>
+
+<h2>4. Winners and Losers - Summary Table</h2>
+
+<table>
+  <tr><th>Effect</th><th>Winners</th><th>Losers</th></tr>
+  <tr><td>Redistribution</td><td>Borrowers, governments, asset holders</td><td>Savers, fixed-income earners, lenders</td></tr>
+  <tr><td>Real costs</td><td>-</td><td>All firms (menu), all consumers (shoe leather), investors (uncertainty)</td></tr>
+  <tr><td>Competitiveness</td><td>Import-competing foreign firms</td><td>Domestic exporters, domestic consumers</td></tr>
+  <tr><td>Tax system</td><td>Government (fiscal drag)</td><td>Workers (bracket creep)</td></tr>
+</table>
+
+<h2>5. The Short-Run Phillips Curve (SRPC)</h2>
+
+<h3>The Trade-Off</h3>
+<p>A.W. Phillips (1958) observed an <strong>inverse relationship</strong> between wage inflation and unemployment. Generalized to price inflation-unemployment:</p>
+
+$$\pi = \pi^e - \beta(u - u_n)$$
+
+<p><strong>SRPC slopes DOWNWARD</strong> - lower unemployment associated with higher inflation.</p>
+
+<h3>Why the Trade-Off Exists (Link to AD/AS)</h3>
+<ol>
+  <li>AD increases - economy moves along SRAS - higher Y, higher P</li>
+  <li>Higher Y - lower unemployment (more workers needed)</li>
+  <li>Higher P - higher inflation</li>
+  <li>Thus: lower unemployment = higher inflation</li>
+</ol>
+
+<h3>What Shifts the SRPC?</h3>
+<table>
+  <tr><th>SRAS shift</th><th>Cause</th><th>SRPC shift</th></tr>
+  <tr><td>SRAS LEFT (cost-push)</td><td>Oil price spike, wage surge</td><td>SRPC shifts RIGHT (worse trade-off)</td></tr>
+  <tr><td>SRAS RIGHT (supply improvement)</td><td>Productivity gains, commodity price fall</td><td>SRPC shifts LEFT (better trade-off)</td></tr>
+</table>
+
+<h2>6. The Long-Run Phillips Curve (LRPC) - Monetarist View</h2>
+
+<h3>The Natural Rate Hypothesis</h3>
+<p>Friedman and Phelps argued the Phillips Curve trade-off exists only in the <strong>short run</strong>. In the long run, expected inflation adjusts to actual, and the economy returns to NRU. The LRPC is <strong>vertical</strong> at NRU.</p>
+
+<h3>The Accelerationist Mechanism</h3>
+<ol>
+  <li>Central bank expands money supply - AD up - unemployment temporarily falls below NRU</li>
+  <li>Inflation rises (workers' real wages fall initially)</li>
+  <li>Workers realize real wages have fallen - demand higher nominal wages</li>
+  <li>Nominal wages rise - SRAS shifts LEFT (cost-push)</li>
+  <li>Economy returns to NRU, but at a <strong>permanently higher inflation rate</strong></li>
+  <li>To keep unemployment below NRU again - must accelerate inflation further</li>
+</ol>
+
+<p><strong>Policy Implication</strong>: Expansionary policy cannot permanently reduce unemployment below NRU. Focus on supply-side policies to reduce the NRU itself.</p>
+
+<div class="tip-box">
+<p>The Phillips Curve is a favorite IB diagram. Practice drawing both SRPC and LRPC on the same graph. When explaining shifts, link back to AD/AS: SRAS left = SRPC shifts right. The phrase "natural rate of unemployment" is essential in LRPC answers. For "winners and losers," use categories: savers vs borrowers, fixed-income vs flexible-income, lenders vs debtors.</p>
+</div>
+
+<h2>Practice Problems</h2>
+
+<div class="problem"><strong>Problem 1 (Easy)</strong><br>Identify TWO groups that lose from unexpected inflation and explain why, with a numerical example for each.</div>
+<div class="problem"><strong>Problem 2 (Easy)</strong><br>Distinguish between menu costs and shoe leather costs of inflation. Give one real-world example of each.</div>
+<div class="problem"><strong>Problem 3 (Medium)</strong><br>Draw and explain the short-run Phillips Curve. How does the SRPC relate to the AD/AS model?</div>
+<div class="problem"><strong>Problem 4 (Medium)</strong><br>Explain how a negative supply shock (e.g., oil price spike) affects the SRPC. Use both AD/AS and Phillips Curve diagrams.</div>
+<div class="problem"><strong>Problem 5 (Challenging)</strong><br>An economy has an NRU of 5%. The government expands AD to reduce unemployment to 3%. Using the monetarist model, explain the sequence of events in both AD/AS and Phillips Curve frameworks. What happens to inflation over time if the government persists?</div>
+<div class="problem"><strong>Problem 6 (IB-Style 15-mark)</strong><br>"A low and stable inflation rate of 2% is the ideal target." Discuss this statement.</div>
+
+<h2>Answers</h2>
+
+<div class="answer"><strong>Answer 1</strong>:<br><strong>Group 1 - Savers</strong>: A saver with $50,000 earning 1% interest when inflation is 4% suffers real return of -3%: nominal earnings = $500, purchasing power loss = $2,000. Real wealth shrinks by $1,500.<br><strong>Group 2 - Fixed-income pensioners</strong>: A pensioner receiving $1,800/month with 5% inflation sees real income fall to $1,800/1.05 = $1,714 in base-year purchasing power - an annual real loss of about $1,032.</div>
+
+<div class="answer"><strong>Answer 2</strong>:<br><strong>Menu costs</strong>: Firms' costs of changing prices - printing new menus, relabeling shelves. Example: Brazil's hyperinflation in the 1990s - supermarkets employed workers whose sole job was to change price tags daily.<br><strong>Shoe leather costs</strong>: Individuals' costs of managing money during inflation - more frequent bank trips. Example: Zimbabwe 2008 - workers rushed to convert wages into goods or foreign currency the same day, spending hours in bank queues.<br><strong>Key distinction</strong>: Menu costs = firms' costs of changing prices. Shoe leather costs = individuals' costs of managing money.</div>
+
+<div class="answer"><strong>Answer 3</strong>:<br><strong>The SRPC</strong>: Downward-sloping curve with inflation rate on vertical axis and unemployment rate on horizontal. Illustrates the inverse short-run trade-off.<br><strong>Link to AD/AS</strong>: When AD shifts RIGHT: Y up, P up - unemployment falls, inflation rises (point on SRPC: lower u, higher pi). When AD shifts LEFT: Y down, P down - unemployment rises, inflation falls (point on SRPC: higher u, lower pi). The entire SRPC is traced by shifting AD along a given SRAS curve.</div>
+
+<div class="answer"><strong>Answer 4</strong>:<br>An oil price spike raises firms' production costs - SRAS shifts LEFT. New equilibrium: higher P (inflation up) AND lower Y (unemployment up) = stagflation.<br><strong>Phillips Curve</strong>: Before shock, economy on SRPC0. After shock, at any given unemployment rate, inflation is higher because SRAS shifted left. Entire SRPC shifts RIGHT to SRPC1. Economy faces higher inflation at every unemployment level.</div>
+
+<div class="answer"><strong>Answer 5</strong>:<br><strong>Phase 1 - AD Expansion</strong>: Government expands AD - AD shifts RIGHT. Y up, P up - unemployment falls 5% to 3%. On Phillips Curve: economy moves UP-LEFT along SRPC0 (u=3%, pi=4%).<br><strong>Phase 2 - Workers Adjust Expectations</strong>: Workers realize inflation is 4%, not 2% expected. Real wages fell - demand higher nominal wages. Firms pass costs - SRAS shifts LEFT.<br><strong>Phase 3 - Return to NRU</strong>: Economy returns to Yf but at higher P. Unemployment returns to 5%. SRPC shifts RIGHT to SRPC1. Economy at u=5% but pi=6%.<br><strong>Phase 4 - If Government Persists</strong>: Must expand AD again. Temporary u=3% but inflation accelerates to 8%. Workers adjust again - SRPC shifts further right. Result: accelerating inflation spiral with unemployment always returning to NRU. Only lasting solution: supply-side policies to reduce NRU itself.</div>
+
+<div class="answer"><strong>Answer 6 (Full IB-Style)</strong>:<br>
+<strong>Introduction</strong>: A 2% inflation target adopted by most major central banks. The claim requires examining costs and benefits at different inflation levels.<br>
+<strong>Arguments for 2%</strong>: (1) Avoids deflation - provides buffer; if recession hits, inflation can fall 2-3 points before crossing into deflation. (2) Greases the wheels - firms can cut real wages without cutting nominal wages. (3) Zero lower bound - with 2% baseline, nominal rates higher, more room to cut. (4) CPI overstates true inflation by ~0.5-1% due to substitution bias and quality changes - true inflation closer to 1-1.5%.<br>
+<strong>Arguments Against</strong>: (1) Why 2% specifically? Somewhat arbitrary - historically from New Zealand's 1990 pioneering target. (2) Menu/shoe leather costs still exist at 2% - prices double every ~35 years. (3) Some economists argue for 4% to give central banks more room. (4) One-size-fits-all problem - 2% may be too high for aging economies with low potential growth.<br>
+<strong>Conclusion</strong>: Low and stable inflation of ~2% is reasonable and empirically successful. But "ideal" is too strong - the optimal target depends on country-specific factors. The key word is "stable" - predictability matters more than the precise number.</div>
+
+<div class="evaluate-box">
+<h2>Evaluate</h2>
+<p><em>"A low and stable inflation rate of 2% is the ideal target."</em></p>
+<p class="claspp">CLASPP Analysis (168 words)</p>
+
+<p><strong>Conclusion</strong>: The statement has merit as a pragmatic central bank consensus, but "ideal" overstates the case. A 2% target provides a useful buffer against deflation while keeping inflation costs low, but the precise figure is conventional rather than scientifically optimal.</p>
+
+<p><strong>Long-term vs Short-term</strong>: In the short run, a 2% target anchors expectations and provides policy predictability. In the long run, even 2% erodes purchasing power significantly - prices double every ~35 years - suggesting lower might be "more ideal" if sustainable.</p>
+
+<p><strong>Assumptions</strong>: Assumes central banks can credibly target 2%, that the zero lower bound is binding, and that measured CPI accurately reflects true inflation. Also assumes costs of 2% inflation (menu costs, redistribution) are small - largely true but not universally.</p>
+
+<p><strong>Stakeholders</strong>: Savers benefit from movement toward 0%; borrowers benefit from above 0%. Central banks benefit from a clear, communicable target. Workers benefit from the "grease" effect on real wages.</p>
+
+<p><strong>Priorities</strong>: Avoiding deflation must be the highest priority given its catastrophic potential. A positive target serves this priority. Stability of the target matters as much as its level.</p>
+
+<p><strong>Pros/Cons</strong>: Pro - empirically successful, deflation insurance, expectation anchoring. Con - arbitrary number, one-size-fits-all, erodes purchasing power slowly but steadily.</p>
+
+<p><strong>Overall</strong>: 2% is a reasonable, not provably ideal, target.</p>
+</div>
+
+<hr>
+
+<nav class="breadcrumb">
+  <span><a href="lesson32_inflation_measurement.html">Lesson 32: Inflation Measurement</a></span>
+  <span><a href="#">Index</a></span>
+  <span><a href="lesson34_economic_growth.html">Lesson 34: Economic Growth</a></span>
+</nav>
+
+</body>
+</html>

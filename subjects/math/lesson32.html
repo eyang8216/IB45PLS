@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 32 — Proof by Induction: Cross-Topic Proofs</title>
+<script>
+MathJax = {
+  tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body {
+    max-width: 800px; margin: 40px auto; font-family: 'Times New Roman', Georgia, serif;
+    font-size: 17px; line-height: 1.7; padding: 0 20px; color: #1a1a1a;
+  }
+  h1 { font-size: 22px; border-bottom: 2px solid #333; padding-bottom: 8px; margin-top: 36px; }
+  h2 { font-size: 19px; margin-top: 28px; color: #2c3e50; }
+  h3 { font-size: 17px; margin-top: 22px; color: #444; }
+  h4 { font-size: 16px; margin-top: 18px; }
+  p { margin: 0.6em 0; }
+  li { margin: 0.3em 0 0.3em 20px; }
+  hr { margin: 20px 0; border: none; border-top: 1px solid #ddd; }
+  .math-block { text-align: center; margin: 1em 0; overflow-x: auto; }
+  .table-line { font-family: 'Courier New', monospace; font-size: 15px; margin: 0.1em 0; }
+  pre { background: #f5f5f5; padding: 10px 14px; border-radius: 4px; overflow-x: auto; font-size: 14px; }
+  b { color: #222; }
+  table { border-collapse: collapse; margin: 16px 0; width: 100%; font-size: 15px; }
+  th { background: #2c3e50; color: #fff; padding: 8px 12px; text-align: center; font-weight: bold; }
+  td { border: 1px solid #ccc; padding: 8px 12px; text-align: center; }
+  tr:nth-child(even) { background: #f9f9f9; }
+  .nav { text-align: center; margin: 30px 0; font-size: 14px; }
+  .nav a { margin: 0 8px; color: #3498db; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  @media print { body { font-size: 15px; } }
+</style>
+</head>
+<body>
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+<h1>Lesson 32: Proof by Induction — Cross-Topic Proofs</h1>
+
+<h2>What is Proof by Induction and Why Learn It?</h2>
+
+<p>Proof by mathematical induction is a method for proving that a statement is true for all positive integers. You cannot verify infinitely many cases one by one. Instead, induction gives you a two-step logical shortcut: prove the first case, then prove that if any case is true, the next case must also be true. Together, these two steps guarantee the statement holds for every positive integer.</p>
+
+<p>In IB AAHL, induction problems go far beyond simple sums. You will be asked to prove statements about matrices, complex numbers, derivatives, and sequences defined by recurrence relations. This lesson covers each of these cross-topic applications.</p>
+
+<h2>1. What is a Statement in Induction?</h2>
+
+<p>A <b>statement</b>, often written as $P(n)$, is a sentence that depends on a positive integer $n$ and is either true or false for each value of $n$. For example, $P(n)$ might be &quot;the $n$th power of a certain matrix has a particular form.&quot; The goal of induction is to prove that $P(n)$ is true for every $n \in \mathbb{N}$ (where $\mathbb{N}$ denotes the set of positive integers $\{1, 2, 3, \ldots\}$).</p>
+
+<h2>2. The Two Steps of Induction</h2>
+
+<p>Every induction proof has the same structure:</p>
+
+<p><b>Base case:</b> Prove that the statement is true for the first value of $n$, which is almost always $n = 1$. This is the foundation.</p>
+
+<p><b>Inductive step:</b> Assume the statement is true for some arbitrary value $n = k$. This assumption is called the <b>inductive hypothesis</b>. Then, using this hypothesis, prove that the statement must also be true for $n = k + 1$.</p>
+
+<p>If both steps succeed, then $P(1)$ is true, which forces $P(2)$ to be true, which forces $P(3)$ to be true, and so on forever. This chain reaction is the essence of induction.</p>
+
+<p>Many students think the inductive hypothesis is &quot;cheating&quot; because we assume what we want to prove. But we only assume it for $n = k$, and we prove it for $n = k + 1$. We never assume the conclusion for the very case we are trying to prove.</p>
+
+<h2>3. Matrix Induction</h2>
+
+<h3>Worked Example 1</h3>
+
+<p><b>Problem:</b> Prove that for all positive integers $n$, the following matrix power formula holds:</p>
+
+<div class="math-block">$$\begin{pmatrix} 1 &amp; 1 \\ 0 &amp; 1 \end{pmatrix}^n = \begin{pmatrix} 1 &amp; n \\ 0 &amp; 1 \end{pmatrix}$$</div>
+
+<p><b>Approach:</b> We need to verify the base case at $n = 1$, then assume the formula for $n = k$ and prove it for $n = k + 1$ by multiplying the $k$th power by the original matrix.</p>
+
+<p><b>Base case ($n = 1$):</b></p>
+
+<p>The left side is the matrix raised to the power 1, which is just the matrix itself:</p>
+
+<div class="math-block">$$\begin{pmatrix} 1 &amp; 1 \\ 0 &amp; 1 \end{pmatrix}^1 = \begin{pmatrix} 1 &amp; 1 \\ 0 &amp; 1 \end{pmatrix}$$</div>
+
+<p>The right side with $n = 1$ is:</p>
+
+<div class="math-block">$$\begin{pmatrix} 1 &amp; 1 \\ 0 &amp; 1 \end{pmatrix}$$</div>
+
+<p>Both sides match, so $P(1)$ is true.</p>
+
+<p><b>Inductive hypothesis:</b> Assume the statement is true for $n = k$. That is:</p>
+
+<div class="math-block">$$\begin{pmatrix} 1 &amp; 1 \\ 0 &amp; 1 \end{pmatrix}^k = \begin{pmatrix} 1 &amp; k \\ 0 &amp; 1 \end{pmatrix}$$</div>
+
+<p><b>Inductive step ($n = k + 1$):</b></p>
+
+<p>We start with the left side for $n = k + 1$ and rewrite it using the property of exponents:</p>
+
+<div class="math-block">$$\begin{pmatrix} 1 &amp; 1 \\ 0 &amp; 1 \end{pmatrix}^{k+1} = \begin{pmatrix} 1 &amp; 1 \\ 0 &amp; 1 \end{pmatrix}^k \cdot \begin{pmatrix} 1 &amp; 1 \\ 0 &amp; 1 \end{pmatrix}$$</div>
+
+<p>Now we replace the $k$th power using the inductive hypothesis:</p>
+
+<div class="math-block">$$= \begin{pmatrix} 1 &amp; k \\ 0 &amp; 1 \end{pmatrix} \cdot \begin{pmatrix} 1 &amp; 1 \\ 0 &amp; 1 \end{pmatrix}$$</div>
+
+<p>Next we perform the matrix multiplication. The entry in row 1, column 1 is $(1)(1) + (k)(0) = 1$. The entry in row 1, column 2 is $(1)(1) + (k)(1) = 1 + k$. The entry in row 2, column 1 is $(0)(1) + (1)(0) = 0$. The entry in row 2, column 2 is $(0)(1) + (1)(1) = 1$.</p>
+
+<div class="math-block">$$= \begin{pmatrix} 1 &amp; 1 + k \\ 0 &amp; 1 \end{pmatrix} = \begin{pmatrix} 1 &amp; k+1 \\ 0 &amp; 1 \end{pmatrix}$$</div>
+
+<p>This is exactly the formula with $n = k+1$, so $P(k+1)$ is true.</p>
+
+<p><b>Why this makes sense:</b> Each time you multiply by $\begin{pmatrix} 1 &amp; 1 \\ 0 &amp; 1 \end{pmatrix}$, you add the top-left entry to the top-right entry. The top-left stays 1, so the top-right increases by exactly 1 with each multiplication.</p>
+
+<p><hr></p>
+
+<h2>4. Complex Number Induction — De Moivre&#x27;s Theorem</h2>
+
+<h3>Worked Example 2</h3>
+
+<p><b>Problem:</b> Prove De Moivre&#x27;s theorem: $(\cos\theta + i\sin\theta)^n = \cos(n\theta) + i\sin(n\theta)$ for all positive integers $n$.</p>
+
+<p><b>Approach:</b> The base case $n = 1$ is immediate. For the inductive step, we assume the formula holds for $n = k$ and multiply by $(\cos\theta + i\sin\theta)$ once more. Then we use the trigonometric addition formulas to combine arguments.</p>
+
+<p><b>Base case ($n = 1$):</b></p>
+
+<div class="math-block">$$(\cos\theta + i\sin\theta)^1 = \cos\theta + i\sin\theta = \cos(1\cdot\theta) + i\sin(1\cdot\theta)$$</div>
+
+<p>The statement holds for $n = 1$.</p>
+
+<p><b>Inductive hypothesis:</b> Assume $(\cos\theta + i\sin\theta)^k = \cos(k\theta) + i\sin(k\theta)$.</p>
+
+<p><b>Inductive step ($n = k+1$):</b></p>
+
+<div class="math-block">$$(\cos\theta + i\sin\theta)^{k+1} = (\cos\theta + i\sin\theta)^k \cdot (\cos\theta + i\sin\theta)$$</div>
+
+<p>Substitute the inductive hypothesis:</p>
+
+<div class="math-block">$$= [\cos(k\theta) + i\sin(k\theta)] \cdot [\cos\theta + i\sin\theta]$$</div>
+
+<p>Now expand the product. Multiply each term in the first bracket by each term in the second:</p>
+
+<div class="math-block">$$= \cos(k\theta)\cos\theta + i\cos(k\theta)\sin\theta + i\sin(k\theta)\cos\theta + i^2\sin(k\theta)\sin\theta$$</div>
+
+<p>Since $i^2 = -1$, the last term becomes $-\sin(k\theta)\sin\theta$. Group the real terms together and the imaginary terms together:</p>
+
+<p>Real part: $\cos(k\theta)\cos\theta - \sin(k\theta)\sin\theta$</p>
+
+<p>Imaginary part: $i[\cos(k\theta)\sin\theta + \sin(k\theta)\cos\theta]$</p>
+
+<p>The real part is the cosine addition formula: $\cos(A+B) = \cos A \cos B - \sin A \sin B$, with $A = k\theta$ and $B = \theta$.</p>
+
+<p>The imaginary part is the sine addition formula: $\sin(A+B) = \sin A \cos B + \cos A \sin B$, with $A = k\theta$ and $B = \theta$.</p>
+
+<p>Therefore:</p>
+
+<div class="math-block">$$= \cos(k\theta + \theta) + i\sin(k\theta + \theta) = \cos((k+1)\theta) + i\sin((k+1)\theta)$$</div>
+
+<p>This proves $P(k+1)$.</p>
+
+<p><b>Why this makes sense:</b> Multiplying two complex numbers on the unit circle adds their angles. Starting at angle $\theta$, each additional multiplication adds another $\theta$, so after $n$ multiplications the angle is $n\theta$. The inductive proof formalizes this geometric intuition.</p>
+
+<p><hr></p>
+
+<h2>5. Derivative Induction</h2>
+
+<h3>Worked Example 3</h3>
+
+<p><b>Problem:</b> Prove that the $n$th derivative of $f(x) = x e^x$ is given by $f^{(n)}(x) = (x + n)e^x$ for all positive integers $n$.</p>
+
+<p><b>Approach:</b> We compute the first derivative to check the base case. Then we assume the formula for the $k$th derivative and differentiate once more to get the $(k+1)$th derivative.</p>
+
+<p><b>Base case ($n = 1$):</b></p>
+
+<p>Using the product rule, the derivative of $x e^x$ is:</p>
+
+<div class="math-block">$$f&#x27;(x) = (1)e^x + x(e^x) = e^x + x e^x = (x + 1)e^x$$</div>
+
+<p>This matches the formula with $n = 1$, since $(x + 1)e^x = (x + 1)e^x$.</p>
+
+<p><b>Inductive hypothesis:</b> Assume $f^{(k)}(x) = (x + k)e^x$.</p>
+
+<p><b>Inductive step ($n = k+1$):</b></p>
+
+<p>The $(k+1)$th derivative is the derivative of the $k$th derivative:</p>
+
+<div class="math-block">$$f^{(k+1)}(x) = \frac{d}{dx}\left[f^{(k)}(x)\right] = \frac{d}{dx}\left[(x + k)e^x\right]$$</div>
+
+<p>Apply the product rule. The derivative of $(x+k)$ is $1$, and the derivative of $e^x$ is $e^x$:</p>
+
+<div class="math-block">$$= (1)e^x + (x+k)e^x = e^x + (x+k)e^x = (x + k + 1)e^x = (x + (k+1))e^x$$</div>
+
+<p>This matches the formula for $n = k+1$.</p>
+
+<p><b>Why this makes sense:</b> Each derivative of $x e^x$ adds one more $e^x$ term. Starting with $(x+0)e^x$ at the zeroth derivative, each differentiation increments the coefficient of $e^x$ by 1.</p>
+
+<p><hr></p>
+
+<h2>6. Induction with Recurrence Relations</h2>
+
+<h3>Worked Example 4</h3>
+
+<p><b>Problem:</b> A sequence is defined by $u_1 = 1$ and $u_{n+1} = 2u_n + 1$ for $n \geq 1$. Prove that the closed form is $u_n = 2^n - 1$ for all positive integers $n$.</p>
+
+<p><b>Approach:</b> The base case checks $n=1$. The inductive step uses the recurrence relation: we express $u_{k+1}$ in terms of $u_k$, substitute the closed form for $u_k$, and simplify.</p>
+
+<p><b>Base case ($n = 1$):</b></p>
+
+<div class="math-block">$$u_1 = 1 \quad\text{and}\quad 2^1 - 1 = 2 - 1 = 1$$</div>
+
+<p>The closed form matches the given initial value.</p>
+
+<p><b>Inductive hypothesis:</b> Assume $u_k = 2^k - 1$.</p>
+
+<p><b>Inductive step ($n = k+1$):</b></p>
+
+<p>Using the recurrence relation:</p>
+
+<div class="math-block">$$u_{k+1} = 2u_k + 1$$</div>
+
+<p>Substitute the inductive hypothesis for $u_k$:</p>
+
+<div class="math-block">$$u_{k+1} = 2(2^k - 1) + 1$$</div>
+
+<p>Expand:</p>
+
+<div class="math-block">$$= 2 \cdot 2^k - 2 + 1 = 2^{k+1} - 1$$</div>
+
+<p>This is exactly the closed form with $n = k+1$.</p>
+
+<p><b>Why this makes sense:</b> The recurrence says &quot;double and add 1.&quot; If you start at 1, then double and add 1 repeatedly, you generate $1, 3, 7, 15, 31, \ldots$, which are all one less than powers of 2.</p>
+
+<p><hr></p>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1</h3>
+<p>Prove by induction that for all positive integers $n$:</p>
+
+<div class="math-block">$$\begin{pmatrix} 2 &amp; 0 \\ 0 &amp; 2 \end{pmatrix}^n = \begin{pmatrix} 2^n &amp; 0 \\ 0 &amp; 2^n \end{pmatrix}$$</div>
+
+<p>(a) State the base case $n = 1$ and verify it.</p>
+<p>(b) Write the inductive hypothesis for $n = k$.</p>
+<p>(c) Prove the inductive step from $n = k$ to $n = k+1$.</p>
+
+<h3>Problem 2</h3>
+<p>A sequence is defined by $a_1 = 3$ and $a_{n+1} = 5a_n - 8$ for $n \geq 1$.</p>
+
+<p>(a) Calculate $a_2$ and $a_3$ using the recurrence.</p>
+<p>(b) A proposed closed form is $a_n = 5^{n-1} + 2$. Prove this by induction.</p>
+
+<h3>Problem 3</h3>
+<p>Prove by induction that the $n$th derivative of $f(x) = e^{3x}$ is given by $f^{(n)}(x) = 3^n e^{3x}$ for all positive integers $n$.</p>
+
+<h3>Problem 4</h3>
+<p>Prove by induction that for all positive integers $n$:</p>
+
+<div class="math-block">$$(\cos\theta - i\sin\theta)^n = \cos(n\theta) - i\sin(n\theta)$$</div>
+
+<h3>Problem 5 (IB Exam Style)</h3>
+<p>Consider the matrix $M = \begin{pmatrix} 1 &amp; a \\ 0 &amp; 1 \end{pmatrix}$ where $a$ is a real constant.</p>
+
+<p>(a) Find $M^2$ and $M^3$. <b>[2 marks]</b></p>
+
+<p>(b) Conjecture a formula for $M^n$ for $n \in \mathbb{N}$. <b>[1 mark]</b></p>
+
+<p>(c) Prove your conjecture by mathematical induction. <b>[5 marks]</b></p>
+
+<p><hr></p>
+
+<h2>Answers</h2>
+
+<h3>Problem 1</h3>
+
+<p>(a) <b>Base case $n=1$:</b> The left side is $\begin{pmatrix} 2 &amp; 0 \\ 0 &amp; 2 \end{pmatrix}^1 = \begin{pmatrix} 2 &amp; 0 \\ 0 &amp; 2 \end{pmatrix}$. The right side is $\begin{pmatrix} 2^1 &amp; 0 \\ 0 &amp; 2^1 \end{pmatrix} = \begin{pmatrix} 2 &amp; 0 \\ 0 &amp; 2 \end{pmatrix}$. They match.</p>
+
+<p>(b) <b>Inductive hypothesis:</b> Assume $\begin{pmatrix} 2 &amp; 0 \\ 0 &amp; 2 \end{pmatrix}^k = \begin{pmatrix} 2^k &amp; 0 \\ 0 &amp; 2^k \end{pmatrix}$.</p>
+
+<p>(c) <b>Inductive step:</b> Starting with $n = k+1$, we write the $(k+1)$th power as the $k$th power times the original matrix:</p>
+
+<div class="math-block">$$\begin{pmatrix} 2 &amp; 0 \\ 0 &amp; 2 \end{pmatrix}^{k+1} = \begin{pmatrix} 2^k &amp; 0 \\ 0 &amp; 2^k \end{pmatrix} \cdot \begin{pmatrix} 2 &amp; 0 \\ 0 &amp; 2 \end{pmatrix}$$</div>
+
+<p>Multiplying gives $\begin{pmatrix} 2^k \cdot 2 + 0 \cdot 0 &amp; 2^k \cdot 0 + 0 \cdot 2 \\ 0 \cdot 2 + 2^k \cdot 0 &amp; 0 \cdot 0 + 2^k \cdot 2 \end{pmatrix} = \begin{pmatrix} 2^{k+1} &amp; 0 \\ 0 &amp; 2^{k+1} \end{pmatrix}$.</p>
+
+<p>This matches the formula with $n = k+1$, completing the inductive step. A common pitfall is forgetting that multiplying a scalar matrix by itself simply multiplies the diagonal entries.</p>
+
+<h3>Problem 2</h3>
+
+<p>(a) Using $a_1 = 3$:</p>
+<p>$a_2 = 5(3) - 8 = 15 - 8 = 7$</p>
+<p>$a_3 = 5(7) - 8 = 35 - 8 = 27$</p>
+
+<p>(b) <b>Base case $n=1$:</b> $a_1 = 3$ and $5^{1-1} + 2 = 5^0 + 2 = 1 + 2 = 3$. They match.</p>
+
+<p><b>Inductive hypothesis:</b> Assume $a_k = 5^{k-1} + 2$.</p>
+
+<p><b>Inductive step:</b> $a_{k+1} = 5a_k - 8 = 5(5^{k-1} + 2) - 8 = 5^k + 10 - 8 = 5^k + 2 = 5^{(k+1)-1} + 2$. This is exactly the closed form for $n = k+1$.</p>
+
+<h3>Problem 3</h3>
+
+<p><b>Base case $n=1$:</b> $f&#x27;(x) = 3e^{3x} = 3^1 e^{3x}$. True.</p>
+
+<p><b>Inductive hypothesis:</b> Assume $f^{(k)}(x) = 3^k e^{3x}$.</p>
+
+<p><b>Inductive step:</b> $f^{(k+1)}(x) = \frac{d}{dx}[3^k e^{3x}] = 3^k \cdot 3e^{3x} = 3^{k+1} e^{3x}$. True.</p>
+
+<p>The reason this works is that each derivative pulls down another factor of 3 from the chain rule applied to $e^{3x}$.</p>
+
+<h3>Problem 4</h3>
+
+<p><b>Base case $n=1$:</b> $(\cos\theta - i\sin\theta)^1 = \cos\theta - i\sin\theta = \cos(1\cdot\theta) - i\sin(1\cdot\theta)$. True.</p>
+
+<p><b>Inductive hypothesis:</b> Assume $(\cos\theta - i\sin\theta)^k = \cos(k\theta) - i\sin(k\theta)$.</p>
+
+<p><b>Inductive step:</b> $(\cos\theta - i\sin\theta)^{k+1} = [\cos(k\theta) - i\sin(k\theta)] \cdot [\cos\theta - i\sin\theta]$.</p>
+
+<p>Expand: $\cos(k\theta)\cos\theta - i\cos(k\theta)\sin\theta - i\sin(k\theta)\cos\theta + i^2\sin(k\theta)\sin\theta$.</p>
+
+<p>Since $i^2 = -1$, the last term is $-\sin(k\theta)\sin\theta$. Real part: $\cos(k\theta)\cos\theta - \sin(k\theta)\sin\theta = \cos(k\theta + \theta)$. Imaginary part: $-[\cos(k\theta)\sin\theta + \sin(k\theta)\cos\theta]i = -i\sin(k\theta + \theta)$. Result: $\cos((k+1)\theta) - i\sin((k+1)\theta)$.</p>
+
+<h3>Problem 5</h3>
+
+<p>(a) $M^2 = \begin{pmatrix} 1 &amp; a \\ 0 &amp; 1 \end{pmatrix}\begin{pmatrix} 1 &amp; a \\ 0 &amp; 1 \end{pmatrix} = \begin{pmatrix} 1 &amp; 2a \\ 0 &amp; 1 \end{pmatrix}$</p>
+
+<p>$M^3 = M^2 \cdot M = \begin{pmatrix} 1 &amp; 2a \\ 0 &amp; 1 \end{pmatrix}\begin{pmatrix} 1 &amp; a \\ 0 &amp; 1 \end{pmatrix} = \begin{pmatrix} 1 &amp; 3a \\ 0 &amp; 1 \end{pmatrix}$</p>
+
+<p>(b) The pattern is $M^n = \begin{pmatrix} 1 &amp; na \\ 0 &amp; 1 \end{pmatrix}$.</p>
+
+<p>(c) <b>Proof by induction:</b></p>
+
+<li>- <b>Base case $n = 1$:</b> $M^1 = \begin{pmatrix} 1 &amp; 1\cdot a \\ 0 &amp; 1 \end{pmatrix} = \begin{pmatrix} 1 &amp; a \\ 0 &amp; 1 \end{pmatrix}$, which is indeed $M$.</li>
+
+<li>- <b>Inductive hypothesis:</b> Assume $M^k = \begin{pmatrix} 1 &amp; ka \\ 0 &amp; 1 \end{pmatrix}$ for some positive integer $k$.</li>
+
+<li>- <b>Inductive step:</b> $M^{k+1} = M^k \cdot M = \begin{pmatrix} 1 &amp; ka \\ 0 &amp; 1 \end{pmatrix}\begin{pmatrix} 1 &amp; a \\ 0 &amp; 1 \end{pmatrix}$.</li>
+
+<p>Multiply: row 1 col 1 = $(1)(1) + (ka)(0) = 1$; row 1 col 2 = $(1)(a) + (ka)(1) = a + ka = (k+1)a$; row 2 col 1 = $(0)(1) + (1)(0) = 0$; row 2 col 2 = $(0)(a) + (1)(1) = 1$.</p>
+
+<p>So $M^{k+1} = \begin{pmatrix} 1 &amp; (k+1)a \\ 0 &amp; 1 \end{pmatrix}$, which matches the conjectured formula for $n = k+1$. By induction, the formula holds for all $n \in \mathbb{N}$.</p>
+
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+</body>
+</html>

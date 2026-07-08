@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 25 — Vectors: Dot Product, Cross Product, Angles</title>
+<script>
+MathJax = {
+  tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body {
+    max-width: 800px; margin: 40px auto; font-family: 'Times New Roman', Georgia, serif;
+    font-size: 17px; line-height: 1.7; padding: 0 20px; color: #1a1a1a;
+  }
+  h1 { font-size: 22px; border-bottom: 2px solid #333; padding-bottom: 8px; margin-top: 36px; }
+  h2 { font-size: 19px; margin-top: 28px; color: #2c3e50; }
+  h3 { font-size: 17px; margin-top: 22px; color: #444; }
+  h4 { font-size: 16px; margin-top: 18px; }
+  p { margin: 0.6em 0; }
+  li { margin: 0.3em 0 0.3em 20px; }
+  hr { margin: 20px 0; border: none; border-top: 1px solid #ddd; }
+  .math-block { text-align: center; margin: 1em 0; overflow-x: auto; }
+  .table-line { font-family: 'Courier New', monospace; font-size: 15px; margin: 0.1em 0; }
+  pre { background: #f5f5f5; padding: 10px 14px; border-radius: 4px; overflow-x: auto; font-size: 14px; }
+  b { color: #222; }
+  table { border-collapse: collapse; margin: 16px 0; width: 100%; font-size: 15px; }
+  th { background: #2c3e50; color: #fff; padding: 8px 12px; text-align: center; font-weight: bold; }
+  td { border: 1px solid #ccc; padding: 8px 12px; text-align: center; }
+  tr:nth-child(even) { background: #f9f9f9; }
+  .nav { text-align: center; margin: 30px 0; font-size: 14px; }
+  .nav a { margin: 0 8px; color: #3498db; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  @media print { body { font-size: 15px; } }
+</style>
+</head>
+<body>
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+<h1>Lesson 25 — Vectors: Dot Product, Cross Product, and Angles</h1>
+
+<h2>What Are Vectors?</h2>
+
+<h3>The &quot;What&quot;</h3>
+
+<p>A <b>vector</b> is a mathematical object that has both <b>magnitude</b> (size, length) and <b>direction</b>. This is different from a scalar, which is just a number with no direction. For example, &quot;the wind is blowing at 15 kilometers per hour&quot; is a scalar (speed only). &quot;The wind is blowing at 15 kilometers per hour toward the northeast&quot; is a vector (speed and direction).</p>
+
+<p>In three-dimensional space, a vector is written as an ordered triple of numbers. Each number is called a <b>component</b> of the vector. There are two common notations:</p>
+
+<p><b>Column (component) form:</b></p>
+<div class="math-block">$$\vec{v} = \begin{pmatrix} x \\ y \\ z \end{pmatrix}$$</div>
+
+<p><b>Standard basis form ($\mathbf{i}, \mathbf{j}, \mathbf{k}$):</b></p>
+<div class="math-block">$$\vec{v} = x\,\mathbf{i} + y\,\mathbf{j} + z\,\mathbf{k}$$</div>
+
+<p>Here $\mathbf{i} = \begin{pmatrix}1\\0\\0\end{pmatrix}$, $\mathbf{j} = \begin{pmatrix}0\\1\\0\end{pmatrix}$, and $\mathbf{k} = \begin{pmatrix}0\\0\\1\end{pmatrix}$ are the <b>standard basis vectors</b>. They point along the positive $x$, $y$, and $z$ axes respectively, and each has magnitude $1$.</p>
+
+<h3>The &quot;Why&quot;</h3>
+
+<p>Vectors are the language of physics, engineering, and three-dimensional geometry. Forces, velocities, displacements, and electric fields are all vectors. The operations we learn in this lesson — dot product, cross product, finding angles — are the essential tools for working with these quantities.</p>
+
+<p><hr></p>
+
+<h2>1. Magnitude of a Vector</h2>
+
+<p>The <b>magnitude</b> (also called <b>length</b> or <b>norm</b>) of a vector $\vec{v} = \begin{pmatrix}x\\y\\z\end{pmatrix}$ is the distance from the origin to the point $(x, y, z)$. By the Pythagorean theorem extended to three dimensions:</p>
+
+<div class="math-block">$$\boxed{|\vec{v}| = \sqrt{x^2 + y^2 + z^2}}$$</div>
+
+<p>For a two-dimensional vector $\begin{pmatrix}x\\y\end{pmatrix}$, the magnitude is $|\vec{v}| = \sqrt{x^2 + y^2}$.</p>
+
+<p><b>Example:</b> The magnitude of $\begin{pmatrix}2\\-3\\6\end{pmatrix}$ is $\sqrt{2^2 + (-3)^2 + 6^2} = \sqrt{4 + 9 + 36} = \sqrt{49} = 7$.</p>
+
+<p>A <b>unit vector</b> is a vector whose magnitude is exactly $1$. To create a unit vector that points in the same direction as a given vector $\vec{v}$, divide each component by the magnitude:</p>
+
+<div class="math-block">$$\hat{v} = \frac{\vec{v}}{|\vec{v}|}$$</div>
+
+<p>The hat symbol ($\hat{v}$) is standard notation for a unit vector.</p>
+
+<p><hr></p>
+
+<h2>2. The Dot Product (Scalar Product)</h2>
+
+<h3>What It Is</h3>
+
+<p>The <b>dot product</b> (also called the <b>scalar product</b>) is an operation that takes two vectors and produces a single number (a scalar). There are two equivalent ways to compute it, each useful in different situations.</p>
+
+<p><b>Algebraic definition (using components):</b></p>
+<p>If $\vec{v} = \begin{pmatrix}v_1\\v_2\\v_3\end{pmatrix}$ and $\vec{w} = \begin{pmatrix}w_1\\w_2\\w_3\end{pmatrix}$, then:</p>
+
+<div class="math-block">$$\vec{v} \cdot \vec{w} = v_1 w_1 + v_2 w_2 + v_3 w_3$$</div>
+
+<p>Multiply corresponding components and add the results.</p>
+
+<p><b>Geometric definition (using magnitudes and angle):</b></p>
+<p>If $\theta$ is the angle between $\vec{v}$ and $\vec{w}$ (with $0 \leq \theta \leq \pi$), then:</p>
+
+<div class="math-block">$$\vec{v} \cdot \vec{w} = |\vec{v}|\,|\vec{w}|\,\cos\theta$$</div>
+
+<p>These two definitions are equivalent — they give the same result. The geometric definition reveals what the dot product actually measures: it is the product of the magnitudes, scaled by the cosine of the angle between them.</p>
+
+<h3>Properties of the Dot Product</h3>
+
+<li>- <b>Commutative:</b> $\vec{v}\cdot\vec{w} = \vec{w}\cdot\vec{v}$. The order does not matter.</li>
+<li>- <b>Distributive:</b> $\vec{u}\cdot(\vec{v}+\vec{w}) = \vec{u}\cdot\vec{v} + \vec{u}\cdot\vec{w}$.</li>
+<li>- <b>Scalar multiplication:</b> $(k\vec{v})\cdot\vec{w} = k(\vec{v}\cdot\vec{w})$. You can pull a scalar factor out.</li>
+<li>- <b>Self dot product:</b> $\vec{v}\cdot\vec{v} = |\vec{v}|^2$. The dot product of a vector with itself gives the square of its magnitude.</li>
+
+<p><hr></p>
+
+<h2>3. Finding the Angle Between Two Vectors</h2>
+
+<p>The most important application of the dot product is finding the angle between two vectors. By rearranging the geometric definition:</p>
+
+<div class="math-block">$$\boxed{\cos\theta = \frac{\vec{v}\cdot\vec{w}}{|\vec{v}|\,|\vec{w}|}}$$</div>
+
+<p>To find $\theta$, compute the dot product, compute both magnitudes, divide, and then take the inverse cosine.</p>
+
+<p><hr></p>
+
+<h2>Worked Example 1: Angle Between Two Vectors</h2>
+
+<p><b>Problem:</b> Find the angle between $\vec{a} = \begin{pmatrix}1\\2\\2\end{pmatrix}$ and $\vec{b} = \begin{pmatrix}3\\0\\4\end{pmatrix}$.</p>
+
+<p><b>Approach:</b> Use the angle formula. Compute the dot product and both magnitudes, then take $\cos^{-1}$ of the result.</p>
+
+<p><b>Step 1 — Dot product:</b></p>
+<div class="math-block">$$\vec{a}\cdot\vec{b} = 1(3) + 2(0) + 2(4) = 3 + 0 + 8 = 11$$</div>
+
+<p><b>Step 2 — Magnitudes:</b></p>
+<div class="math-block">$$|\vec{a}| = \sqrt{1^2 + 2^2 + 2^2} = \sqrt{1 + 4 + 4} = \sqrt{9} = 3$$</div>
+<div class="math-block">$$|\vec{b}| = \sqrt{3^2 + 0^2 + 4^2} = \sqrt{9 + 16} = \sqrt{25} = 5$$</div>
+
+<p><b>Step 3 — Compute $\cos\theta$:</b></p>
+<div class="math-block">$$\cos\theta = \frac{11}{3 \times 5} = \frac{11}{15}$$</div>
+
+<p><b>Step 4 — Find $\theta$:</b></p>
+<div class="math-block">$$\theta = \cos^{-1}\!\left(\frac{11}{15}\right) \approx 42.8^\circ$$</div>
+
+<p><b>Why this makes sense:</b> The angle is acute (less than $90^\circ$), which is consistent with a positive dot product ($11 &gt; 0$). When the dot product is positive, the angle is acute. When it is negative, the angle is obtuse.</p>
+
+<p><hr></p>
+
+<h2>4. Orthogonal (Perpendicular) Vectors</h2>
+
+<p>Two non-zero vectors are <b>orthogonal</b> (another word for perpendicular) if the angle between them is $90^\circ$, which means $\cos\theta = 0$. From the dot product formula:</p>
+
+<div class="math-block">$$\boxed{\vec{v} \cdot \vec{w} = 0 \;\Longleftrightarrow\; \vec{v} \perp \vec{w}}$$</div>
+
+<p><b>A common misconception:</b> Students sometimes think that if the dot product is zero, one of the vectors must be the zero vector. That is not true. Two non-zero vectors can have a dot product of zero when they are perpendicular.</p>
+
+<p><hr></p>
+
+<h2>Worked Example 2: Finding a Component for Orthogonality</h2>
+
+<p><b>Problem:</b> Find the value of $k$ such that $\vec{p} = \begin{pmatrix}2\\k\\3\end{pmatrix}$ is orthogonal to $\vec{q} = \begin{pmatrix}1\\-2\\4\end{pmatrix}$.</p>
+
+<p><b>Approach:</b> For two vectors to be orthogonal, their dot product must be zero. Compute the dot product in terms of $k$, set it equal to zero, and solve.</p>
+
+<p><b>Step 1 — Compute the dot product:</b></p>
+<div class="math-block">$$\vec{p}\cdot\vec{q} = 2(1) + k(-2) + 3(4) = 2 - 2k + 12 = 14 - 2k$$</div>
+
+<p><b>Step 2 — Set equal to zero and solve:</b></p>
+<div class="math-block">$$14 - 2k = 0$$</div>
+<div class="math-block">$$2k = 14$$</div>
+<div class="math-block">$$k = 7$$</div>
+
+<p><b>Answer:</b> $k = 7$</p>
+
+<p><hr></p>
+
+<h2>5. The Cross Product (Vector Product)</h2>
+
+<h3>What It Is</h3>
+
+<p>The <b>cross product</b> (also called the <b>vector product</b>) is an operation that takes two vectors in three-dimensional space and produces a third vector. The result vector is perpendicular to both of the original vectors.</p>
+
+<p><b>A common misconception:</b> The dot product and cross product are completely different operations. The dot product produces a scalar. The cross product produces a vector. They are not interchangeable.</p>
+
+<h3>Computing the Cross Product</h3>
+
+<p>If $\vec{v} = \begin{pmatrix}v_1\\v_2\\v_3\end{pmatrix}$ and $\vec{w} = \begin{pmatrix}w_1\\w_2\\w_3\end{pmatrix}$, then:</p>
+
+<div class="math-block">$$\boxed{\vec{v} \times \vec{w} = \begin{pmatrix} v_2 w_3 - v_3 w_2 \\ v_3 w_1 - v_1 w_3 \\ v_1 w_2 - v_2 w_1 \end{pmatrix}}$$</div>
+
+<p>A convenient way to remember this uses the determinant of a matrix with $\mathbf{i}, \mathbf{j}, \mathbf{k}$ in the first row:</p>
+
+<div class="math-block">$$\vec{v} \times \vec{w} = \begin{vmatrix} \mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \\ v_1 &amp; v_2 &amp; v_3 \\ w_1 &amp; w_2 &amp; w_3 \end{vmatrix}$$</div>
+
+<h3>Key Properties of the Cross Product</h3>
+
+<li>- <b>Anti-commutative:</b> $\vec{v}\times\vec{w} = -(\vec{w}\times\vec{v})$. Swapping the order reverses the direction.</li>
+<li>- <b>Magnitude:</b> $|\vec{v}\times\vec{w}| = |\vec{v}|\,|\vec{w}|\,\sin\theta$. This is the area of the parallelogram spanned by $\vec{v}$ and $\vec{w}$.</li>
+<li>- <b>Parallel vectors:</b> If $\vec{v}$ and $\vec{w}$ are parallel (pointing in the same or opposite directions), then $\theta = 0$ or $\pi$, so $\sin\theta = 0$, and $\vec{v}\times\vec{w} = \vec{0}$.</li>
+<li>- The direction of $\vec{v}\times\vec{w}$ is given by the <b>right-hand rule</b>: point your right hand&#x27;s fingers in the direction of $\vec{v}$, curl them toward $\vec{w}$, and your thumb points in the direction of the cross product.</li>
+
+<p><hr></p>
+
+<h2>Worked Example 3: Computing a Cross Product</h2>
+
+<p><b>Problem:</b> Find $\vec{a}\times\vec{b}$ where $\vec{a} = \begin{pmatrix}2\\1\\0\end{pmatrix}$ and $\vec{b} = \begin{pmatrix}3\\-1\\2\end{pmatrix}$. Verify the result is perpendicular to both $\vec{a}$ and $\vec{b}$.</p>
+
+<p><b>Approach:</b> Use the component formula for the cross product. Then verify perpendicularity by checking that the dot product of the result with each original vector is zero.</p>
+
+<p><b>Step 1 — Compute each component:</b></p>
+<p>First component: $a_2 b_3 - a_3 b_2 = 1(2) - 0(-1) = 2$.</p>
+
+<p>Second component: $a_3 b_1 - a_1 b_3 = 0(3) - 2(2) = -4$.</p>
+
+<p>Third component: $a_1 b_2 - a_2 b_1 = 2(-1) - 1(3) = -5$.</p>
+
+<div class="math-block">$$\vec{a}\times\vec{b} = \begin{pmatrix}2\\-4\\-5\end{pmatrix}$$</div>
+
+<p><b>Step 2 — Verify perpendicularity with $\vec{a}$:</b></p>
+<p>$\vec{a}\cdot(\vec{a}\times\vec{b}) = 2(2) + 1(-4) + 0(-5) = 4 - 4 + 0 = 0$. This confirms perpendicularity.</p>
+
+<p><b>Step 3 — Verify perpendicularity with $\vec{b}$:</b></p>
+<p>$\vec{b}\cdot(\vec{a}\times\vec{b}) = 3(2) + (-1)(-4) + 2(-5) = 6 + 4 - 10 = 0$. Confirmed.</p>
+
+<p><b>Answer:</b> $\vec{a}\times\vec{b} = \begin{pmatrix}2\\-4\\-5\end{pmatrix}$</p>
+
+<p><hr></p>
+
+<h2>Worked Example 4: Area of a Triangle Using Cross Product</h2>
+
+<p><b>Problem:</b> Find the area of the triangle with vertices $A(0,0,0)$, $B(2,3,1)$, and $C(4,1,5)$.</p>
+
+<p><b>Approach:</b> The area of a triangle is half the area of the parallelogram formed by two side vectors. The area of the parallelogram is the magnitude of the cross product of those two side vectors.</p>
+
+<p><b>Step 1 — Find side vectors from $A$:</b></p>
+<div class="math-block">$$\overrightarrow{AB} = \begin{pmatrix}2-0\\3-0\\1-0\end{pmatrix} = \begin{pmatrix}2\\3\\1\end{pmatrix}$$</div>
+<div class="math-block">$$\overrightarrow{AC} = \begin{pmatrix}4-0\\1-0\\5-0\end{pmatrix} = \begin{pmatrix}4\\1\\5\end{pmatrix}$$</div>
+
+<p><b>Step 2 — Compute the cross product:</b></p>
+<div class="math-block">$$\overrightarrow{AB}\times\overrightarrow{AC} = \begin{pmatrix}3(5)-1(1)\\1(4)-2(5)\\2(1)-3(4)\end{pmatrix} = \begin{pmatrix}15-1\\4-10\\2-12\end{pmatrix} = \begin{pmatrix}14\\-6\\-10\end{pmatrix}$$</div>
+
+<p><b>Step 3 — Find the magnitude (parallelogram area):</b></p>
+<div class="math-block">$$|\overrightarrow{AB}\times\overrightarrow{AC}| = \sqrt{14^2 + (-6)^2 + (-10)^2} = \sqrt{196 + 36 + 100} = \sqrt{332}$$</div>
+
+<p><b>Step 4 — Half for triangle area:</b></p>
+<div class="math-block">$$\text{Area} = \frac{1}{2}\sqrt{332} = \sqrt{83}$$</div>
+
+<p><b>Answer:</b> The area is $\sqrt{83}$ square units.</p>
+
+<p><hr></p>
+
+<h2>Summary of Key Formulas</h2>
+
+<p class="table-line">| Concept | Formula |</p>
+<p class="table-line">|<hr><hr><hr>|<hr><hr><hr>|</p>
+<p class="table-line">| Magnitude | $|\vec{v}| = \sqrt{x^2 + y^2 + z^2}$ |</p>
+<p class="table-line">| Dot product (components) | $\vec{v}\cdot\vec{w} = v_1w_1 + v_2w_2 + v_3w_3$ |</p>
+<p class="table-line">| Dot product (geometric) | $\vec{v}\cdot\vec{w} = |\vec{v}||\vec{w}|\cos\theta$ |</p>
+<p class="table-line">| Angle between vectors | $\cos\theta = \dfrac{\vec{v}\cdot\vec{w}}{|\vec{v}||\vec{w}|}$ |</p>
+<p class="table-line">| Orthogonal test | $\vec{v}\cdot\vec{w} = 0$ |</p>
+<p class="table-line">| Cross product | $\vec{v}\times\vec{w} = \begin{pmatrix}v_2w_3-v_3w_2\\v_3w_1-v_1w_3\\v_1w_2-v_2w_1\end{pmatrix}$ |</p>
+<p class="table-line">| Cross product magnitude | $|\vec{v}\times\vec{w}| = |\vec{v}||\vec{w}|\sin\theta$ |</p>
+
+<p><hr></p>
+
+<h2>Practice Problems</h2>
+
+<p><b>Problem 1:</b> Let $\vec{a} = \begin{pmatrix}3\\-2\\4\end{pmatrix}$ and $\vec{b} = \begin{pmatrix}-1\\5\\2\end{pmatrix}$. Find:</p>
+<p>(a) The magnitude $|\vec{a}|$.</p>
+<p>(b) The dot product $\vec{a}\cdot\vec{b}$.</p>
+<p>(c) The angle between $\vec{a}$ and $\vec{b}$, in degrees to one decimal place.</p>
+
+<p><b>Problem 2:</b> Show that the vectors $\vec{u} = \begin{pmatrix}4\\-1\\2\end{pmatrix}$ and $\vec{v} = \begin{pmatrix}3\\6\\-3\end{pmatrix}$ are orthogonal.</p>
+
+<p><b>Problem 3:</b> Find the value of $p$ such that the vector $\vec{m} = \begin{pmatrix}p\\2\\-1\end{pmatrix}$ is parallel to the vector $\vec{n} = \begin{pmatrix}6\\4\\-2\end{pmatrix}$.</p>
+
+<p><b>Problem 4:</b> Compute the cross product $\vec{a}\times\vec{b}$ for $\vec{a} = \mathbf{i} - 2\mathbf{j} + 3\mathbf{k}$ and $\vec{b} = 2\mathbf{i} + \mathbf{j} - 4\mathbf{k}$. Verify that your result is perpendicular to both $\vec{a}$ and $\vec{b}$.</p>
+
+<p><b>Problem 5 (IB-style):</b> Two vectors $\vec{p}$ and $\vec{q}$ are given by $\vec{p} = \begin{pmatrix}1\\3\\-2\end{pmatrix}$ and $\vec{q} = \begin{pmatrix}4\\0\\5\end{pmatrix}$.</p>
+<p>(a) Find the area of the parallelogram formed by $\vec{p}$ and $\vec{q}$. [3 marks]</p>
+<p>(b) A triangle has two sides represented by $\vec{p}$ and $\vec{q}$. Find the area of this triangle. [1 mark]</p>
+
+<p><b>Problem 6:</b> Given that $|\vec{a}| = 4$, $|\vec{b}| = 5$, and the angle between $\vec{a}$ and $\vec{b}$ is $60^\circ$, find:</p>
+<p>(a) The dot product $\vec{a}\cdot\vec{b}$.</p>
+<p>(b) The magnitude of the cross product, $|\vec{a}\times\vec{b}|$.</p>
+<p>(c) The absolute value $|(\vec{a}+\vec{b})\cdot(\vec{a}-\vec{b})|$.</p>
+
+<p><hr></p>
+
+<h2>Answers</h2>
+
+<p><b>Answer 1:</b></p>
+
+<p><b>(a)</b> $|\vec{a}| = \sqrt{3^2 + (-2)^2 + 4^2} = \sqrt{9 + 4 + 16} = \sqrt{29}$.</p>
+
+<p><b>(b)</b> $\vec{a}\cdot\vec{b} = 3(-1) + (-2)(5) + 4(2) = -3 - 10 + 8 = -5$.</p>
+
+<p><b>(c)</b> First find $|\vec{b}| = \sqrt{(-1)^2 + 5^2 + 2^2} = \sqrt{1 + 25 + 4} = \sqrt{30}$.</p>
+
+<p>Then $\cos\theta = \frac{-5}{\sqrt{29}\sqrt{30}} \approx \frac{-5}{29.50} \approx -0.1695$.</p>
+
+<p>$\theta = \cos^{-1}(-0.1695) \approx 99.7^\circ$.</p>
+
+<p>The angle is obtuse because the dot product is negative.</p>
+
+<p><hr></p>
+
+<p><b>Answer 2:</b></p>
+
+<p>Compute the dot product: $\vec{u}\cdot\vec{v} = 4(3) + (-1)(6) + 2(-3) = 12 - 6 - 6 = 0$.</p>
+
+<p>Since the dot product is zero and both vectors are non-zero, they are orthogonal.</p>
+
+<p><hr></p>
+
+<p><b>Answer 3:</b></p>
+
+<p>If two vectors are parallel, one is a scalar multiple of the other. There exists some $k$ such that:</p>
+
+<p>$\begin{pmatrix}p\\2\\-1\end{pmatrix} = k\begin{pmatrix}6\\4\\-2\end{pmatrix}$</p>
+
+<p>From the third component: $-1 = k(-2)$, so $k = \frac{1}{2}$.</p>
+
+<p>Check the second component: $2 = \frac{1}{2}(4) = 2$, which is consistent.</p>
+
+<p>From the first component: $p = \frac{1}{2}(6) = 3$.</p>
+
+<p><b>Answer:</b> $p = 3$</p>
+
+<p><hr></p>
+
+<p><b>Answer 4:</b></p>
+
+<p>$\vec{a} = \begin{pmatrix}1\\-2\\3\end{pmatrix}$, $\vec{b} = \begin{pmatrix}2\\1\\-4\end{pmatrix}$.</p>
+
+<p>$\vec{a}\times\vec{b} = \begin{pmatrix}(-2)(-4) - (3)(1)\\(3)(2) - (1)(-4)\\(1)(1) - (-2)(2)\end{pmatrix} = \begin{pmatrix}8-3\\6+4\\1+4\end{pmatrix} = \begin{pmatrix}5\\10\\5\end{pmatrix}$.</p>
+
+<p>Verification with $\vec{a}$: $5(1) + 10(-2) + 5(3) = 5 - 20 + 15 = 0$. ✓</p>
+
+<p>Verification with $\vec{b}$: $5(2) + 10(1) + 5(-4) = 10 + 10 - 20 = 0$. ✓</p>
+
+<p>Both dot products are zero, confirming perpendicularity.</p>
+
+<p><hr></p>
+
+<p><b>Answer 5:</b></p>
+
+<p><b>(a)</b> $\vec{p}\times\vec{q} = \begin{pmatrix}3(5) - (-2)(0)\\(-2)(4) - 1(5)\\1(0) - 3(4)\end{pmatrix} = \begin{pmatrix}15\\-8-5\\-12\end{pmatrix} = \begin{pmatrix}15\\-13\\-12\end{pmatrix}$.</p>
+
+<p>The area of the parallelogram is the magnitude: $\sqrt{15^2 + (-13)^2 + (-12)^2} = \sqrt{225 + 169 + 144} = \sqrt{538}$.</p>
+
+<p><b>(b)</b> The triangle area is half the parallelogram area: $\frac{1}{2}\sqrt{538}$ square units.</p>
+
+<p><hr></p>
+
+<p><b>Answer 6:</b></p>
+
+<p><b>(a)</b> Using the geometric definition: $\vec{a}\cdot\vec{b} = |\vec{a}||\vec{b}|\cos 60^\circ = 4 \times 5 \times \frac{1}{2} = 10$.</p>
+
+<p><b>(b)</b> $|\vec{a}\times\vec{b}| = |\vec{a}||\vec{b}|\sin 60^\circ = 4 \times 5 \times \frac{\sqrt{3}}{2} = 10\sqrt{3}$.</p>
+
+<p><b>(c)</b> Expand the dot product:</p>
+
+<p>$(\vec{a}+\vec{b})\cdot(\vec{a}-\vec{b}) = \vec{a}\cdot\vec{a} - \vec{a}\cdot\vec{b} + \vec{b}\cdot\vec{a} - \vec{b}\cdot\vec{b}$</p>
+
+<p>Since the dot product is commutative, $-\vec{a}\cdot\vec{b} + \vec{b}\cdot\vec{a} = 0$.</p>
+
+<p>So the expression simplifies to $|\vec{a}|^2 - |\vec{b}|^2 = 16 - 25 = -9$.</p>
+
+<p>The absolute value is $|-9| = 9$.</p>
+
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+</body>
+</html>

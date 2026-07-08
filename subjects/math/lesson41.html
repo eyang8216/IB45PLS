@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 41 — Polynomial Theorems (Factor & Remainder)</title>
+<script>
+MathJax = {
+  tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body {
+    max-width: 800px; margin: 40px auto; font-family: 'Times New Roman', Georgia, serif;
+    font-size: 17px; line-height: 1.7; padding: 0 20px; color: #1a1a1a;
+  }
+  h1 { font-size: 22px; border-bottom: 2px solid #333; padding-bottom: 8px; margin-top: 36px; }
+  h2 { font-size: 19px; margin-top: 28px; color: #2c3e50; }
+  h3 { font-size: 17px; margin-top: 22px; color: #444; }
+  h4 { font-size: 16px; margin-top: 18px; }
+  p { margin: 0.6em 0; }
+  li { margin: 0.3em 0 0.3em 20px; }
+  hr { margin: 20px 0; border: none; border-top: 1px solid #ddd; }
+  .math-block { text-align: center; margin: 1em 0; overflow-x: auto; }
+  .table-line { font-family: 'Courier New', monospace; font-size: 15px; margin: 0.1em 0; }
+  pre { background: #f5f5f5; padding: 10px 14px; border-radius: 4px; overflow-x: auto; font-size: 14px; }
+  b { color: #222; }
+  table { border-collapse: collapse; margin: 16px 0; width: 100%; font-size: 15px; }
+  th { background: #2c3e50; color: #fff; padding: 8px 12px; text-align: center; font-weight: bold; }
+  td { border: 1px solid #ccc; padding: 8px 12px; text-align: center; }
+  tr:nth-child(even) { background: #f9f9f9; }
+  .nav { text-align: center; margin: 30px 0; font-size: 14px; }
+  .nav a { margin: 0 8px; color: #3498db; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  @media print { body { font-size: 15px; } }
+</style>
+</head>
+<body>
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+<h1>Lesson 41: Polynomial Theorems — Factor Theorem, Remainder Theorem, and Complex Roots</h1>
+
+<h2>What Are These Theorems?</h2>
+
+<p>A <b>polynomial</b> is an expression like $x^3 - 4x^2 + 2x - 5$ — it is a sum of terms where each term is a constant times a power of x. The <b>degree</b> of a polynomial is the highest power of x (e.g., the polynomial above has degree 3).</p>
+
+<p>This lesson covers three interconnected ideas:</p>
+<li>- The <b>Remainder Theorem</b>: a shortcut for finding the remainder when dividing a polynomial by (x − a).</li>
+<li>- The <b>Factor Theorem</b>: a way to check whether (x − a) divides a polynomial evenly.</li>
+<li>- The behavior of <b>complex roots</b>: how imaginary and complex numbers appear as roots of polynomial equations.</li>
+
+<p>These are core IB AAHL Topic 1 tools. They let you factor polynomials, find roots, and solve equations without always doing long division.</p>
+
+<h2>Why Learn This?</h2>
+
+<p>In IB exams, you are often asked to factor a cubic or quartic polynomial, to find an unknown coefficient given a condition, or to find all roots (including complex ones). The remainder and factor theorems give you quick methods, and the rule about complex conjugate pairs prevents you from missing roots.</p>
+
+<p><hr></p>
+
+<h2>Part 1: The Remainder Theorem</h2>
+
+<p><b>Statement:</b> When you divide a polynomial P(x) by (x − a), the remainder of that division is equal to P(a).</p>
+
+<p>In other words, you do not need to perform long division to find the remainder. Just plug x = a into the polynomial and evaluate.</p>
+
+<p><b>What does &quot;remainder&quot; mean here?</b> In polynomial division, the remainder is what is left over. If P(x) divided by (x − a) gives quotient Q(x) and remainder R, we can write:</p>
+<div class="math-block">$$P(x) = (x - a) \cdot Q(x) + R$$</div>
+<p>The remainder R is always a constant (a number, not an expression involving x) when dividing by a linear factor like (x − a).</p>
+
+<h3>Worked Example 1: Find a Remainder</h3>
+
+<p><b>Problem:</b> Find the remainder when $P(x) = x^3 - 4x^2 + 2x - 5$ is divided by (x − 3).</p>
+
+<p><b>Approach:</b> By the Remainder Theorem, the remainder equals P(3).</p>
+
+<p>$P(3) = (3)^3 - 4(3)^2 + 2(3) - 5$.</p>
+<p>$P(3) = 27 - 4(9) + 6 - 5$.</p>
+<p>$P(3) = 27 - 36 + 6 - 5$.</p>
+<p>$P(3) = -8$.</p>
+
+<p><b>Answer:</b> The remainder is <b>−8</b>. No long division was needed.</p>
+
+<h3>Worked Example 2: Find an Unknown Coefficient</h3>
+
+<p><b>Problem:</b> The polynomial $P(x) = 2x^3 + kx^2 - x + 4$ has remainder 6 when divided by (x + 1). Find the value of k.</p>
+
+<p><b>Approach:</b> First, rewrite (x + 1) in the form (x − a). Since (x + 1) = (x − (−1)), we have a = −1.</p>
+
+<p>By the Remainder Theorem, P(−1) must equal 6.</p>
+
+<p>$P(-1) = 2(-1)^3 + k(-1)^2 - (-1) + 4$.</p>
+<p>$P(-1) = 2(-1) + k(1) + 1 + 4$.</p>
+<p>$P(-1) = -2 + k + 1 + 4 = k + 3$.</p>
+
+<p>Set equal to 6:</p>
+<p>$k + 3 = 6$</p>
+<p>$k = 3$.</p>
+
+<p><b>Answer:</b> k = 3.</p>
+
+<p><hr></p>
+
+<h2>Part 2: The Factor Theorem</h2>
+
+<p><b>Statement:</b> (x − a) is a factor of P(x) <b>if and only if</b> P(a) = 0.</p>
+
+<p>This follows directly from the Remainder Theorem. If the remainder is zero, then the divisor divides the polynomial exactly, which means the divisor is a factor.</p>
+
+<p><b>What does &quot;if and only if&quot; mean?</b> It means two things:</p>
+<li>- If (x − a) is a factor, then P(a) = 0.</li>
+<li>- If P(a) = 0, then (x − a) is a factor.</li>
+
+<h3>Worked Example 3: Test Whether (x − 2) Is a Factor</h3>
+
+<p><b>Problem:</b> Is (x − 2) a factor of $P(x) = x^3 - 5x^2 + 8x - 4$?</p>
+
+<p><b>Approach:</b> Test P(2). If P(2) = 0, then (x − 2) is a factor.</p>
+
+<p>$P(2) = (2)^3 - 5(2)^2 + 8(2) - 4$.</p>
+<p>$P(2) = 8 - 5(4) + 16 - 4$.</p>
+<p>$P(2) = 8 - 20 + 16 - 4 = 0$.</p>
+
+<p><b>Answer:</b> Yes, (x − 2) is a factor because P(2) = 0.</p>
+
+<h3>Worked Example 4: Full Factorization of a Cubic</h3>
+
+<p><b>Problem:</b> Factorize $P(x) = x^3 - 3x^2 - 4x + 12$ completely.</p>
+
+<p><b>Approach:</b> We systematically test small integer values of x to find a root.</p>
+
+<p><b>Step 1: Test x = 1.</b></p>
+<p>$P(1) = 1 - 3 - 4 + 12 = 6$. Not zero, so (x − 1) is not a factor.</p>
+
+<p><b>Step 2: Test x = 2.</b></p>
+<p>$P(2) = 8 - 12 - 8 + 12 = 0$. Bingo — (x − 2) is a factor.</p>
+
+<p><b>Step 3: Divide P(x) by (x − 2).</b> We can use polynomial long division or synthetic division. The result of dividing $x^3 - 3x^2 - 4x + 12$ by (x − 2) is the quadratic $x^2 - x - 6$.</p>
+
+<p><b>Step 4: Factor the quadratic.</b></p>
+<p>$x^2 - x - 6 = (x - 3)(x + 2)$.</p>
+
+<p><b>Step 5: Write the full factorization.</b></p>
+<p>$P(x) = (x - 2)(x - 3)(x + 2)$.</p>
+
+<p><b>Answer:</b> $x^3 - 3x^2 - 4x + 12 = (x - 2)(x - 3)(x + 2)$. The roots are x = 2, x = 3, and x = −2.</p>
+
+<p><hr></p>
+
+<h2>Part 3: The Fundamental Theorem of Algebra and Complex Conjugate Roots</h2>
+
+<p>The <b>Fundamental Theorem of Algebra</b> says: every polynomial of degree n with complex coefficients has exactly n complex roots, if you count each root as many times as its multiplicity (how many times it repeats).</p>
+
+<p>For our purposes in IB AAHL, the most important consequence is about polynomials with <b>real coefficients</b> (coefficients that are ordinary real numbers, not imaginary):</p>
+
+<p><b>If a polynomial has real coefficients and a complex number a + bi is a root, then its complex conjugate a − bi is also a root.</b></p>
+
+<p>The <b>complex conjugate</b> of a number reverses the sign of the imaginary part. The conjugate of 3 + 4i is 3 − 4i. The conjugate of −2 − 5i is −2 + 5i. The conjugate of a real number (like 7) is just itself (7 − 0i = 7).</p>
+
+<p><b>Why does this matter?</b> Complex roots always come in pairs for polynomials with real coefficients. If you find one complex root, you automatically get a second one for free.</p>
+
+<h3>Worked Example 5: Find the Missing Root</h3>
+
+<p><b>Problem:</b> A cubic polynomial with real coefficients has roots at x = 2 and x = 3 + i. Find the third root.</p>
+
+<p><b>Approach:</b> Since the coefficients are real, complex roots must come in conjugate pairs. The conjugate of 3 + i is 3 − i.</p>
+
+<p><b>Answer:</b> The three roots are 2, 3 + i, and <b>3 − i</b>.</p>
+
+<h3>Worked Example 6: Build a Polynomial from Its Roots</h3>
+
+<p><b>Problem:</b> Find a polynomial with real coefficients, leading coefficient 1, that has roots 1, −2, and i.</p>
+
+<p><b>Approach:</b> Since coefficients must be real and i is a root, its conjugate −i must also be a root. So we actually have four roots: 1, −2, i, −i.</p>
+
+<p>The polynomial is the product of factors (x − root):</p>
+
+<p>$P(x) = (x - 1)(x - (-2))(x - i)(x - (-i))$</p>
+<p>$P(x) = (x - 1)(x + 2)(x - i)(x + i)$.</p>
+
+<p>Now multiply the conjugate pair: $(x - i)(x + i) = x^2 - i^2 = x^2 - (-1) = x^2 + 1$.</p>
+
+<p>Multiply the real factors: $(x - 1)(x + 2) = x^2 + 2x - x - 2 = x^2 + x - 2$.</p>
+
+<p>Now multiply these two quadratics:</p>
+<p>$P(x) = (x^2 + x - 2)(x^2 + 1)$.</p>
+<p>$= x^2(x^2 + 1) + x(x^2 + 1) - 2(x^2 + 1)$.</p>
+<p>$= x^4 + x^2 + x^3 + x - 2x^2 - 2$.</p>
+<p>$= x^4 + x^3 - x^2 + x - 2$.</p>
+
+<p><b>Answer:</b> $P(x) = x^4 + x^3 - x^2 + x - 2$.</p>
+
+<p><hr></p>
+
+<h2>Part 4: Sum and Product of Roots (Vieta&#x27;s Formulas)</h2>
+
+<p>For a quadratic $ax^2 + bx + c = 0$ with roots α and β:</p>
+<li>- Sum of roots: $\alpha + \beta = -\frac{b}{a}$.</li>
+<li>- Product of roots: $\alpha\beta = \frac{c}{a}$.</li>
+
+<p>For a cubic $ax^3 + bx^2 + cx + d = 0$ with roots α, β, γ:</p>
+
+<div class="math-block">$$\alpha + \beta + \gamma = -\frac{b}{a}$$</div>
+
+<div class="math-block">$$\alpha\beta + \alpha\gamma + \beta\gamma = \frac{c}{a}$$</div>
+
+<div class="math-block">$$\alpha\beta\gamma = -\frac{d}{a}$$</div>
+
+<p>These relationships are called <b>Vieta&#x27;s formulas</b> (or Vieta&#x27;s relations). They let you find information about the roots without solving the equation directly.</p>
+
+<h3>Worked Example 7: Roots with a Repeated Value</h3>
+
+<p><b>Problem:</b> The equation $2x^3 - 3x^2 - 12x + 20 = 0$ has two equal roots. Find all three roots.</p>
+
+<p><b>Approach:</b> Let the roots be p, p, and q (p is the value that repeats).</p>
+
+<p><b>Step 1: Use the sum formula.</b></p>
+<p>Sum = p + p + q = 2p + q = $-\frac{b}{a} = -\frac{(-3)}{2} = \frac{3}{2}$.</p>
+<p>So $2p + q = \frac{3}{2}$, which means $q = \frac{3}{2} - 2p$.</p>
+
+<p><b>Step 2: Use the product formula.</b></p>
+<p>Product = $p \cdot p \cdot q = p^2 q = -\frac{d}{a} = -\frac{20}{2} = -10$.</p>
+
+<p><b>Step 3: Substitute q from Step 1.</b></p>
+<p>$p^2 \left(\frac{3}{2} - 2p\right) = -10$.</p>
+<p>$\frac{3}{2}p^2 - 2p^3 = -10$.</p>
+
+<p>Multiply both sides by 2:</p>
+<p>$3p^2 - 4p^3 = -20$.</p>
+
+<p>Rearrange:</p>
+<p>$4p^3 - 3p^2 - 20 = 0$.</p>
+
+<p><b>Step 4: Find p.</b> Test small integers. Try p = 2: $4(8) - 3(4) - 20 = 32 - 12 - 20 = 0$. So p = 2 works.</p>
+
+<p><b>Step 5: Find q.</b></p>
+<p>$q = \frac{3}{2} - 2(2) = \frac{3}{2} - 4 = \frac{3}{2} - \frac{8}{2} = -\frac{5}{2}$.</p>
+
+<p><b>Answer:</b> The three roots are 2, 2, and $-\frac{5}{2}$.</p>
+
+<p><hr></p>
+
+<h2>Common Misconceptions</h2>
+
+<p><b>Misconception 1:</b> &quot;P(a) gives the answer when dividing by (x − a).&quot; No — P(a) gives the <b>remainder</b>, not the quotient. The quotient is still a polynomial that you would need to find through division.</p>
+
+<p><b>Misconception 2:</b> &quot;If (x − a) is a factor, then a is the only root.&quot; A polynomial can have many factors and many roots. Finding one factor is just the first step. After dividing it out, you need to factor what is left.</p>
+
+<p><b>Misconception 3:</b> &quot;Complex roots only appear when the polynomial has complex coefficients.&quot; Complex roots can appear even when all coefficients are real. For example, $x^2 + 1 = 0$ has real coefficients but roots i and −i. The rule is: if coefficients are real, complex roots come in conjugate pairs.</p>
+
+<p><b>Misconception 4:</b> &quot;The sum and product formulas only work for quadratics.&quot; They work for polynomials of any degree, though the formulas get more complicated. For a cubic there are three formulas; for a quartic there are four, and so on.</p>
+
+<p><b>Misconception 5:</b> &quot;I should test every integer to find a factor.&quot; Start with small integers: 0, ±1, ±2, ±3. Also, if the leading coefficient is not 1, try fractions of the form (factor of constant term)/(factor of leading coefficient). This is called the <b>Rational Root Theorem</b> — a useful extension of the Factor Theorem.</p>
+
+<p><hr></p>
+
+<h2>Practice Problems</h2>
+
+<p><b>1.</b> Find the remainder when $P(x) = x^4 - 3x^3 + 2x - 7$ is divided by (x + 1).</p>
+
+<p><b>2.</b> The polynomial $P(x) = x^3 + kx^2 - x - 6$ has (x − 2) as a factor. Find the value of k, then factorize P(x) completely.</p>
+
+<p><b>3.</b> Show that (x + 3) is a factor of $x^3 + 5x^2 + 8x + 6$. Then find all roots of the polynomial.</p>
+
+<p><b>4.</b> Find all roots (real and complex) of the equation $x^3 - 6x^2 + 11x - 6 = 0$.</p>
+
+<p><b>5.</b> A cubic polynomial has roots 1, −3, and 4. The leading coefficient (the coefficient of x³) is 2. Write the polynomial in standard form.</p>
+
+<p><b>6. [IB Exam Style — 7 marks]</b> The cubic equation $x^3 + px^2 + qx + 6 = 0$ has roots 1, 2, and r, where p, q, and r are real numbers.</p>
+
+<p>(a) Use the relationship between the roots and the coefficients to find the value of r. [2 marks]</p>
+
+<p>(b) Find the values of p and q. [3 marks]</p>
+
+<p>(c) Write the equation in the form $(x - 1)(x - 2)(x - r) = 0$ and verify that your values of p and q are correct. [2 marks]</p>
+
+<p><hr></p>
+
+<h2>Answers</h2>
+
+<p><b>1.</b> For (x + 1), a = −1. P(−1) = (−1)⁴ − 3(−1)³ + 2(−1) − 7 = 1 − 3(−1) − 2 − 7 = 1 + 3 − 2 − 7 = −5. The remainder is <b>−5</b>.</p>
+
+<p><b>2.</b> Since (x − 2) is a factor, P(2) = 0. P(2) = (2)³ + k(2)² − 2 − 6 = 8 + 4k − 8 = 4k. So 4k = 0 → k = 0. The polynomial is P(x) = x³ − x − 6. Divide by (x − 2) to get x² + 2x + 3. The quadratic $x^2 + 2x + 3$ has discriminant $\Delta = 4 - 12 = -8 &lt; 0$, so it has no real roots. Answer: $P(x) = (x - 2)(x^2 + 2x + 3)$.</p>
+
+<p><b>3.</b> Show P(−3) = 0: P(−3) = (−27) + 5(9) + 8(−3) + 6 = −27 + 45 − 24 + 6 = 0. Since P(−3) = 0, (x + 3) is a factor. Divide $x^3 + 5x^2 + 8x + 6$ by (x + 3) to get $x^2 + 2x + 2$. The quadratic $x^2 + 2x + 2 = 0$ gives $x = \frac{-2 \pm \sqrt{4 - 8}}{2} = \frac{-2 \pm \sqrt{-4}}{2} = \frac{-2 \pm 2i}{2} = -1 \pm i$. Roots: −3, −1 + i, −1 − i.</p>
+
+<p><b>4.</b> Test x = 1: $1 - 6 + 11 - 6 = 0$, so (x − 1) is a factor. Divide to get $x^2 - 5x + 6$, which factors as (x − 2)(x − 3). Roots: <b>1, 2, 3</b>.</p>
+
+<p><b>5.</b> The polynomial is $P(x) = 2(x - 1)(x + 3)(x - 4)$. Multiply the factors: $(x - 1)(x + 3) = x^2 + 2x - 3$. Then $(x^2 + 2x - 3)(x - 4) = x^3 - 4x^2 + 2x^2 - 8x - 3x + 12 = x^3 - 2x^2 - 11x + 12$. Multiply by 2: <b>$2x^3 - 4x^2 - 22x + 24$</b>.</p>
+
+<p><b>6.</b> (a) Product of roots: $1 \times 2 \times r = -\frac{d}{a} = -\frac{6}{1} = -6$. So $2r = -6$, hence $r = -3$. [2 marks]</p>
+
+<p>(b) Sum of roots: $1 + 2 + (-3) = 0 = -\frac{p}{1}$, so $p = 0$. Sum of pairwise products: $(1)(2) + (1)(-3) + (2)(-3) = 2 - 3 - 6 = -7 = \frac{q}{1}$, so $q = -7$. [3 marks]</p>
+
+<p>(c) $(x - 1)(x - 2)(x + 3) = (x^2 - 3x + 2)(x + 3) = x^3 + 3x^2 - 3x^2 - 9x + 2x + 6 = x^3 - 7x + 6$. This matches $x^3 + 0x^2 - 7x + 6$, confirming p = 0 and q = −7. [2 marks]</p>
+
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+</body>
+</html>

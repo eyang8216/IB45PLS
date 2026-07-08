@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 15 — Separable Differential Equations</title>
+<script>
+MathJax = {
+  tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body {
+    max-width: 800px; margin: 40px auto; font-family: 'Times New Roman', Georgia, serif;
+    font-size: 17px; line-height: 1.7; padding: 0 20px; color: #1a1a1a;
+  }
+  h1 { font-size: 22px; border-bottom: 2px solid #333; padding-bottom: 8px; margin-top: 36px; }
+  h2 { font-size: 19px; margin-top: 28px; color: #2c3e50; }
+  h3 { font-size: 17px; margin-top: 22px; color: #444; }
+  h4 { font-size: 16px; margin-top: 18px; }
+  p { margin: 0.6em 0; }
+  li { margin: 0.3em 0 0.3em 20px; }
+  hr { margin: 20px 0; border: none; border-top: 1px solid #ddd; }
+  .math-block { text-align: center; margin: 1em 0; overflow-x: auto; }
+  .table-line { font-family: 'Courier New', monospace; font-size: 15px; margin: 0.1em 0; }
+  pre { background: #f5f5f5; padding: 10px 14px; border-radius: 4px; overflow-x: auto; font-size: 14px; }
+  b { color: #222; }
+  table { border-collapse: collapse; margin: 16px 0; width: 100%; font-size: 15px; }
+  th { background: #2c3e50; color: #fff; padding: 8px 12px; text-align: center; font-weight: bold; }
+  td { border: 1px solid #ccc; padding: 8px 12px; text-align: center; }
+  tr:nth-child(even) { background: #f9f9f9; }
+  .nav { text-align: center; margin: 30px 0; font-size: 14px; }
+  .nav a { margin: 0 8px; color: #3498db; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  @media print { body { font-size: 15px; } }
+</style>
+</head>
+<body>
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+<h1>Lesson 15: Separable Differential Equations</h1>
+
+<h2>1. What Is a Differential Equation?</h2>
+
+<p>A <b>differential equation</b> is an equation that involves an unknown function together with one or more of its derivatives. The unknown is not a number—it is an entire function. To solve a differential equation means to find all functions that make the equation true.</p>
+
+<p>Differential equations matter because they describe how things change. The rate at which a population grows, the speed at which a radioactive substance decays, the temperature of a cooling object, and the motion of a vibrating spring are all governed by differential equations. In each case, the equation links the current state of a system to how that state is changing.</p>
+
+<p>The simplest differential equation looks like this:</p>
+
+<div class="math-block">$$\frac{dy}{dx} = 2x$$</div>
+
+<p>This equation says: &quot;the derivative of $y$ with respect to $x$ equals $2x$.&quot; The solution is any function $y(x)$ whose derivative is $2x$. You can find it by integrating both sides: $y = \int 2x\,dx = x^2 + C$, where $C$ is an arbitrary constant.</p>
+
+<p><hr></p>
+
+<h2>2. Order, General Solutions, and Particular Solutions</h2>
+
+<p>The <b>order</b> of a differential equation is the highest derivative that appears in it. The equation $\frac{dy}{dx} = 2x$ is <b>first order</b> because only the first derivative appears. The equation $\frac{d^2y}{dx^2} + 3y = 0$ is <b>second order</b> because the second derivative appears. In IB AAHL, we focus on first-order differential equations.</p>
+
+<p>When you solve a differential equation, you typically get a <b>general solution</b>—a family of functions that all satisfy the equation, differing from each other by a constant $C$. The general solution contains all possible solutions.</p>
+
+<p>If you are also given an <b>initial condition</b>—a specific pair of values, such as $y(1) = 5$, meaning &quot;when $x = 1$, the function value is $5$&quot;—then you can determine the specific value of $C$. The resulting single function is called a <b>particular solution</b>.</p>
+
+<p>For example, the general solution of $\frac{dy}{dx} = 2x$ is $y = x^2 + C$. If we add the initial condition $y(1) = 5$, then substituting gives $5 = 1^2 + C$, so $C = 4$. The particular solution is $y = x^2 + 4$.</p>
+
+<p><hr></p>
+
+<h2>3. What Makes a Differential Equation Separable?</h2>
+
+<p>A first-order differential equation is called <b>separable</b> if it can be written in the form:</p>
+
+<div class="math-block">$$\frac{dy}{dx} = g(x) \cdot h(y)$$</div>
+
+<p>The right-hand side must factor into a product of two functions: one that depends only on $x$, multiplied by one that depends only on $y$. The key insight is that we can &quot;separate&quot; the variables—move all $y$ expressions to one side with $dy$, and all $x$ expressions to the other side with $dx$.</p>
+
+<p>The method works because we treat $\frac{dy}{dx}$ as a ratio of differentials. Rewriting the equation gives:</p>
+
+<div class="math-block">$$\frac{1}{h(y)}\,dy = g(x)\,dx$$</div>
+
+<p>Then we integrate both sides:</p>
+
+<div class="math-block">$$\int \frac{1}{h(y)}\,dy = \int g(x)\,dx$$</div>
+
+<p>After integrating, we solve for $y$ if possible, and apply any initial condition to find the constant.</p>
+
+<p>Many students try to apply separation to equations that are not separable. Always check: can you write the right-hand side as a product $g(x) \cdot h(y)$? If $y$ appears inside a function like $\sin(y)$ or $e^y$, separation may still work—those are functions of $y$ alone. But if $x$ and $y$ appear added together, like $x + y$, separation fails and a different method is needed.</p>
+
+<p><hr></p>
+
+<h2>4. Worked Examples</h2>
+
+<h3>Worked Example 1</h3>
+
+<p><b>Problem:</b> Solve the differential equation $\frac{dy}{dx} = xy$.</p>
+
+<p><b>Approach:</b> Identify that the right-hand side is $x \cdot y$, which is a product of a function of $x$ alone and a function of $y$ alone. This is separable.</p>
+
+<p><b>Step 1:</b> Write the equation and separate variables:</p>
+
+<div class="math-block">$$\frac{dy}{dx} = x \cdot y \quad \Rightarrow \quad \frac{1}{y}\,dy = x\,dx$$</div>
+
+<p><b>Step 2:</b> Integrate both sides:</p>
+
+<div class="math-block">$$\int \frac{1}{y}\,dy = \int x\,dx$$</div>
+
+<div class="math-block">$$\ln|y| = \frac{x^2}{2} + C$$</div>
+
+<p>Notice that the constant $C$ appears on only one side. You never need two constants because they would combine into one.</p>
+
+<p><b>Step 3:</b> Solve for $y$. Exponentiate both sides:</p>
+
+<div class="math-block">$$|y| = e^{x^2/2 + C} = e^C \cdot e^{x^2/2}$$</div>
+
+<p>Since $e^C$ is an arbitrary positive constant, and the absolute value allows a sign change, we can replace $\pm e^C$ with a single new constant $A$ (which can be any nonzero real number):</p>
+
+<div class="math-block">$$y = A\,e^{x^2/2}$$</div>
+
+<p>This is the general solution. The constant $A$ can be positive, negative, or zero (checking $y=0$ confirms it is also a solution).</p>
+
+<p><b>Why this makes sense:</b> The equation says the rate of change is proportional to both $x$ and $y$. When $x$ is large, $y$ changes faster. The solution grows like $e^{x^2/2}$, which is even faster than exponential growth—consistent with the multiplying factor of $x$.</p>
+
+<p><hr></p>
+
+<h3>Worked Example 2</h3>
+
+<p><b>Problem:</b> Solve $\frac{dy}{dx} = \frac{2x}{y}$ with the initial condition $y(0) = 3$.</p>
+
+<p><b>Approach:</b> This is separable: $g(x) = 2x$ and $h(y) = \frac{1}{y}$. Multiply both sides by $y\,dx$ to separate.</p>
+
+<p><b>Step 1:</b> Separate variables:</p>
+
+<div class="math-block">$$y\,dy = 2x\,dx$$</div>
+
+<p><b>Step 2:</b> Integrate:</p>
+
+<div class="math-block">$$\int y\,dy = \int 2x\,dx$$</div>
+
+<div class="math-block">$$\frac{y^2}{2} = x^2 + C$$</div>
+
+<p><b>Step 3:</b> Multiply by $2$:</p>
+
+<div class="math-block">$$y^2 = 2x^2 + 2C$$</div>
+
+<p>Let $K = 2C$ (a new constant):</p>
+
+<div class="math-block">$$y^2 = 2x^2 + K$$</div>
+
+<p><b>Step 4:</b> Apply the initial condition $y(0) = 3$:</p>
+
+<div class="math-block">$$3^2 = 2(0)^2 + K \quad \Rightarrow \quad 9 = K$$</div>
+
+<p><b>Step 5:</b> The equation becomes $y^2 = 2x^2 + 9$. Taking the square root gives $y = \pm\sqrt{2x^2 + 9}$. Because $y(0) = 3$ is positive, we take the positive root:</p>
+
+<div class="math-block">$$y = \sqrt{2x^2 + 9}$$</div>
+
+<p>A common mistake is forgetting the $\pm$ sign and not using the initial condition to choose the correct branch. Always check the sign of $y$ at the initial point.</p>
+
+<p><b>Why this makes sense:</b> As $x$ grows large, $y \approx \sqrt{2}|x|$, so the function grows roughly linearly. The initial value determines which branch of the square root to use.</p>
+
+<p><hr></p>
+
+<h3>Worked Example 3</h3>
+
+<p><b>Problem:</b> Solve $\frac{dy}{dx} = y\cos x$ with $y(0) = 2$.</p>
+
+<p><b>Approach:</b> The right-hand side is $y \cdot \cos x$, clearly separable.</p>
+
+<p><b>Step 1:</b> Separate variables:</p>
+
+<div class="math-block">$$\frac{1}{y}\,dy = \cos x\,dx$$</div>
+
+<p><b>Step 2:</b> Integrate:</p>
+
+<div class="math-block">$$\ln|y| = \sin x + C$$</div>
+
+<p><b>Step 3:</b> Exponentiate:</p>
+
+<div class="math-block">$$|y| = e^{\sin x + C} = e^C \cdot e^{\sin x}$$</div>
+
+<p>Let $A = \pm e^C$:</p>
+
+<div class="math-block">$$y = A e^{\sin x}$$</div>
+
+<p><b>Step 4:</b> Apply $y(0) = 2$:</p>
+
+<div class="math-block">$$2 = A e^{\sin 0} = A e^0 = A$$</div>
+
+<p>So $A = 2$ and the particular solution is $y = 2e^{\sin x}$.</p>
+
+<p><b>Why this makes sense:</b> The function grows and shrinks between $2e^{-1} \approx 0.74$ and $2e^1 \approx 5.44$ as $\sin x$ oscillates, which matches the intuition that $\cos x$ drives alternating growth and decay.</p>
+
+<p><hr></p>
+
+<h3>Worked Example 4 — Exponential Growth</h3>
+
+<p><b>Problem:</b> A population $P(t)$ grows at a rate proportional to its current size: $\frac{dP}{dt} = kP$, where $k$ is a constant. The initial population is $P(0) = P_0$. Find the formula for $P(t)$.</p>
+
+<p><b>Approach:</b> This is separable with $g(t) = k$ and $h(P) = P$.</p>
+
+<p><b>Step 1:</b> Separate:</p>
+
+<div class="math-block">$$\frac{1}{P}\,dP = k\,dt$$</div>
+
+<p><b>Step 2:</b> Integrate:</p>
+
+<div class="math-block">$$\ln|P| = kt + C$$</div>
+
+<p><b>Step 3:</b> Exponentiate:</p>
+
+<div class="math-block">$$P = A e^{kt}$$</div>
+
+<p><b>Step 4:</b> Apply $P(0) = P_0$: $P_0 = A e^0 = A$, so $A = P_0$.</p>
+
+<div class="math-block">$$P(t) = P_0 e^{kt}$$</div>
+
+<p>If $k &gt; 0$, the population grows exponentially. If $k &lt; 0$, it decays exponentially. This formula underpins models of bacterial growth, radioactive decay, compound interest, and many other phenomena.</p>
+
+<p><b>Why this makes sense:</b> Exponential growth means the larger the population, the faster it grows—a positive feedback loop captured perfectly by $\frac{dP}{dt} = kP$.</p>
+
+<p><hr></p>
+
+<h3>Worked Example 5 — Implicit Solution</h3>
+
+<p><b>Problem:</b> Solve $\frac{dy}{dx} = \frac{x}{y^2 + 1}$.</p>
+
+<p><b>Approach:</b> The right-hand side factors as $x \cdot \frac{1}{y^2+1}$, so this is separable.</p>
+
+<p><b>Step 1:</b> Separate:</p>
+
+<div class="math-block">$$(y^2 + 1)\,dy = x\,dx$$</div>
+
+<p><b>Step 2:</b> Integrate:</p>
+
+<div class="math-block">$$\frac{y^3}{3} + y = \frac{x^2}{2} + C$$</div>
+
+<p>At this point, we cannot easily solve for $y$ in terms of $x$ using elementary functions. That is acceptable. We leave the solution in <b>implicit form</b>: an equation relating $x$ and $y$ that defines the solution curve.</p>
+
+<p><b>Why this makes sense:</b> Not every differential equation yields a nice explicit formula for $y$. The implicit form still defines a valid relationship between $x$ and $y$, and you can use it to find specific values or analyze the behavior of solutions.</p>
+
+<p><hr></p>
+
+<h2>Practice Problems</h2>
+
+<p><b>Problem 1</b></p>
+<p>Solve the differential equation $\frac{dy}{dx} = 3x^2 \cdot y$. Write the general solution.</p>
+
+<p><b>Problem 2</b></p>
+<p>Solve the differential equation with the given initial condition: $\frac{dy}{dx} = \frac{x}{y}$, with $y(2) = 4$.</p>
+
+<p><b>Problem 3</b></p>
+<p>Solve the differential equation $\frac{dy}{dx} = \frac{y}{x}$ with the initial condition $y(1) = 5$.</p>
+
+<p><b>Problem 4</b></p>
+<p>A radioactive substance decays at a rate proportional to its mass. Let the mass at time $t$ (measured in days) be $m(t)$ grams. Initially the mass is $100$ grams, and after $5$ days the mass is $80$ grams. Find the mass after $10$ days.</p>
+
+<p><b>Problem 5 (IB-style)</b></p>
+<p>Consider the differential equation $\frac{dy}{dx} = y^2 \sin x$ with the initial condition $y(0) = 1$.</p>
+
+<p>(a) Show that the differential equation is separable. [1 mark]</p>
+
+<p>(b) Find the particular solution to the differential equation, giving $y$ explicitly in terms of $x$. [5 marks]</p>
+
+<p>(c) State the domain of the solution. [1 mark]</p>
+
+<p><hr></p>
+
+<h2>Answers</h2>
+
+<p><b>Answer 1</b></p>
+<p>The equation is $\frac{dy}{dx} = 3x^2 \cdot y$. Here $g(x) = 3x^2$ and $h(y) = y$, so the equation is separable.</p>
+
+<p>Separate: $\frac{1}{y}\,dy = 3x^2\,dx$.</p>
+
+<p>Integrate both sides: $\ln|y| = x^3 + C$.</p>
+
+<p>Solve for $y$: $|y| = e^{x^3+C} = e^C e^{x^3}$, so $y = A e^{x^3}$ where $A$ is an arbitrary constant (which can be positive, negative, or zero).</p>
+
+<p>The general solution is $y = A e^{x^3}$.</p>
+
+<p><hr></p>
+
+<p><b>Answer 2</b></p>
+<p>The equation is $\frac{dy}{dx} = \frac{x}{y}$. Separate variables by multiplying both sides by $y\,dx$: $y\,dy = x\,dx$.</p>
+
+<p>Integrate both sides: $\frac{y^2}{2} = \frac{x^2}{2} + C$.</p>
+
+<p>Multiply by $2$: $y^2 = x^2 + 2C$. Let $K = 2C$, so $y^2 = x^2 + K$.</p>
+
+<p>Apply the initial condition $y(2) = 4$: $4^2 = 2^2 + K$, giving $16 = 4 + K$, so $K = 12$.</p>
+
+<p>Thus $y^2 = x^2 + 12$. Since $y(2) = 4 &gt; 0$, we take the positive square root: $y = \sqrt{x^2 + 12}$.</p>
+
+<p>A common mistake is to forget the $\pm$ sign when taking the square root. Always use the initial condition to determine which branch is correct.</p>
+
+<p><hr></p>
+
+<p><b>Answer 3</b></p>
+<p>The equation is $\frac{dy}{dx} = \frac{y}{x}$. Separate: $\frac{1}{y}\,dy = \frac{1}{x}\,dx$.</p>
+
+<p>Integrate: $\ln|y| = \ln|x| + C$.</p>
+
+<p>This can be rewritten as $\ln|y| = \ln|x| + \ln(e^C) = \ln(e^C |x|)$, so $|y| = e^C |x|$.</p>
+
+<p>Let $A = \pm e^C$: $y = A x$.</p>
+
+<p>Apply $y(1) = 5$: $5 = A \cdot 1$, so $A = 5$. The particular solution is $y = 5x$.</p>
+
+<p>Note that this solution is a straight line through the origin. The differential equation $\frac{dy}{dx} = \frac{y}{x}$ says the slope at any point equals the ratio $y/x$, which is exactly what straight lines through the origin satisfy.</p>
+
+<p><hr></p>
+
+<p><b>Answer 4</b></p>
+<p>The decay is modeled by $\frac{dm}{dt} = -km$, where $k &gt; 0$ is the decay constant. The negative sign indicates that the mass decreases over time.</p>
+
+<p>Separate: $\frac{1}{m}\,dm = -k\,dt$. Integrate: $\ln|m| = -kt + C$. Exponentiate: $m = A e^{-kt}$.</p>
+
+<p>Apply $m(0) = 100$: $100 = A e^0 = A$, so $m(t) = 100 e^{-kt}$.</p>
+
+<p>Apply $m(5) = 80$: $80 = 100 e^{-5k}$, so $e^{-5k} = 0.8$. Taking the natural log: $-5k = \ln(0.8)$, so $k = -\frac{\ln(0.8)}{5}$.</p>
+
+<p>For the mass after $10$ days, substitute $t = 10$:</p>
+
+<p>$m(10) = 100 e^{-10k} = 100 \left(e^{-5k}\right)^2 = 100 \times (0.8)^2 = 100 \times 0.64 = 64$ grams.</p>
+
+<p>The mass after $10$ days is $64$ grams. Notice that we did not need to compute $k$ explicitly—using the fact that $e^{-10k} = (e^{-5k})^2$ allowed us to use the given $80$-gram datum directly.</p>
+
+<p><hr></p>
+
+<p><b>Answer 5 (IB-style)</b></p>
+
+<p><b>(a)</b> The right-hand side is $y^2 \sin x$, which can be written as $(\sin x) \cdot (y^2)$. This is a product of a function of $x$ alone, $g(x) = \sin x$, and a function of $y$ alone, $h(y) = y^2$. Therefore the differential equation is separable. [1 mark]</p>
+
+<p><b>(b)</b> Separate variables: $\frac{1}{y^2}\,dy = \sin x\,dx$.</p>
+
+<p>Integrate both sides: $\int y^{-2}\,dy = \int \sin x\,dx$.</p>
+
+<p>$-y^{-1} = -\cos x + C$, which simplifies to $-\frac{1}{y} = -\cos x + C$.</p>
+
+<p>Multiply by $-1$: $\frac{1}{y} = \cos x - C$.</p>
+
+<p>Apply the initial condition $y(0) = 1$: $\frac{1}{1} = \cos 0 - C$, so $1 = 1 - C$, giving $C = 0$.</p>
+
+<p>Thus $\frac{1}{y} = \cos x$, and the particular solution is $y = \frac{1}{\cos x} = \sec x$. [5 marks]</p>
+
+<p>A common error is mishandling the constant when applying the initial condition. The equation after integration is $-\frac{1}{y} = -\cos x + C$, and substituting $y=1, x=0$ gives $-1 = -1 + C$, so $C = 0$. Another common error is losing the negative sign when integrating $y^{-2}$; the integral is $-y^{-1}$, not $y^{-1}$.</p>
+
+<p><b>(c)</b> The solution is $y = \sec x$, which is defined when $\cos x \neq 0$. This means $x \neq \frac{\pi}{2} + n\pi$ for any integer $n$. Since the initial condition is at $x = 0$, the domain containing the initial point is $\left(-\frac{\pi}{2}, \frac{\pi}{2}\right)$. [1 mark]</p>
+
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+</body>
+</html>

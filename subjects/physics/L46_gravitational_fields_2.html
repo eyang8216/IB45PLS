@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 46: Lesson 46: Gravitational Fields II — Potential & Orbits — IB Physics HL</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']]
+  },
+  options: {
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap');
+  
+  :root {
+    --bg: #fdfcf9;
+    --text: #1a1a1a;
+    --accent: #2c5f2d;
+    --border: #d0cec7;
+    --code-bg: #f4f3ef;
+    --callout-bg: #f0f7f0;
+    --callout-border: #2c5f2d;
+    --warning-bg: #fff8e6;
+    --warning-border: #c4941a;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  body {
+    font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid var(--accent);
+    color: var(--accent);
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 2.5rem 0 0.75rem;
+    color: #1a1a1a;
+  }
+  
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.5rem;
+  }
+  
+  p { margin: 0 0 1rem; }
+  
+  ul, ol { margin: 0 0 1rem 1.5rem; }
+  li { margin-bottom: 0.35rem; }
+  
+  code {
+    background: var(--code-bg);
+    padding: 0.15em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+    font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+  }
+  
+  pre {
+    background: var(--code-bg);
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 0 0 1rem;
+    font-size: 0.85em;
+    line-height: 1.5;
+  }
+  
+  pre code {
+    background: none;
+    padding: 0;
+    font-size: inherit;
+  }
+  
+  blockquote {
+    border-left: 4px solid var(--callout-border);
+    background: var(--callout-bg);
+    margin: 0 0 1rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+  }
+  
+  blockquote.warning {
+    border-left-color: var(--warning-border);
+    background: var(--warning-bg);
+  }
+  
+  strong { font-weight: 700; }
+  
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.5rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  
+  .nav a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+  
+  .nav a:hover { background: var(--callout-bg); }
+  
+  .worked-example, .answer {
+    background: var(--code-bg);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin: 0.75rem 0 1.25rem;
+  }
+  
+  .worked-example strong:first-child, .answer strong:first-child {
+    color: var(--accent);
+  }
+  
+  @media print {
+    body { font-size: 12pt; max-width: 100%; padding: 0; }
+    .nav { display: none; }
+    h1 { font-size: 18pt; }
+    h2 { font-size: 14pt; }
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 0 1rem;
+  }
+  
+  th, td {
+    border: 1px solid var(--border);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  
+  th {
+    background: var(--code-bg);
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L45_gravitational_fields_1.html">← Lesson 45</a>
+  <a href="L47_gravitational_fields_3.html">Lesson 47 →</a>
+</nav>
+
+<h1>Lesson 46: Gravitational Fields II — Potential & Orbits</h1>
+
+<h2>What You'll Learn</h2>
+<ul>
+<li>Gravitational potential V = −GM/r (scalar)</li>
+<li>Potential difference and work done: W = mΔV</li>
+<li>Equipotential surfaces in gravitational fields</li>
+<li>Field as potential gradient: g = −ΔV/Δr</li>
+<li>Orbital velocity and Kepler's Third Law</li>
+</ul>
+
+<hr>
+
+<h2>1. Gravitational Potential V</h2>
+
+<h3>Definition</h3>
+
+<p>Gravitational potential at a point is the <strong>work done per unit mass</strong> to bring a small test mass from <strong>infinity</strong> to that point.</p>
+
+<p>$$V = -\frac{GM}{r}$$</p>
+
+<p>where:</p>
+<ul>
+<li><strong>V</strong> = gravitational potential (J/kg)</li>
+<li><strong>r</strong> = distance from centre of mass M (m)</li>
+<li>The reference point is infinity: V(∞) = 0</li>
+</ul>
+
+<h3>Why Negative?</h3>
+
+<ul>
+<li>Gravity is <strong>attractive</strong> — you must do work AGAINST gravity to move a mass away</li>
+<li>As a mass falls toward Earth, gravity does positive work → potential decreases</li>
+<li>Since V(∞) = 0, all finite r values give V < 0</li>
+<li>The more negative V is, the more tightly bound you are</li>
+</ul>
+
+<h3>Key Properties</h3>
+
+<table>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>Sign</td>
+<td>Always negative (for point mass)</td>
+</tr>
+<tr>
+<td>Scalar</td>
+<td>Potential is a scalar, not a vector</td>
+</tr>
+<tr>
+<td>Superposition</td>
+<td>V_total = V₁ + V₂ + ... (simple addition!)</td>
+</tr>
+<tr>
+<td>Reference</td>
+<td>V = 0 at r = ∞</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>2. Gravitational Potential Difference and Work Done</h2>
+
+<h3>Work Done</h3>
+
+<p>To move a mass m from point A to point B:</p>
+
+<p>$$W = m(V_B - V_A) = m\Delta V$$</p>
+
+<ul>
+<li>If ΔV > 0 (moving to higher potential): work must be done <strong>on</strong> the mass (against gravity)</li>
+<li>If ΔV < 0 (moving to lower potential): gravity does work, mass gains KE</li>
+</ul>
+
+<h3>Lifting Mass from Earth's Surface</h3>
+
+<p>To move from r = R (surface) to r = R + h:</p>
+
+<p>$$\Delta V = -\frac{GM}{R+h} - \left(-\frac{GM}{R}\right) = GM\left(\frac{1}{R} - \frac{1}{R+h}\right)$$</p>
+
+<p>$$W = m\Delta V = GMm\left(\frac{1}{R} - \frac{1}{R+h}\right)$$</p>
+
+<p>For small h (h ≪ R), this simplifies to W ≈ mgh as expected.</p>
+
+<hr>
+
+<h2>3. Equipotential Surfaces</h2>
+
+<p>Equipotential surfaces are surfaces where V is constant.</p>
+
+<h3>Properties</h3>
+
+<ul>
+<li><strong>Perpendicular to field lines</strong> everywhere</li>
+<li>Moving along an equipotential requires <strong>no work</strong> (ΔV = 0)</li>
+<li>Closer spacing = stronger field</li>
+<li>For a point mass, equipotentials are concentric spheres</li>
+</ul>
+
+<pre><code>
+Field lines:   → → → → → (inward toward mass)
+               ↓ ↓ ↓ ↓ ↓
+Equipotentials: — — — — — (perpendicular to field lines)
+</code></pre>
+
+<h3>Field as Potential Gradient</h3>
+
+<p>The field strength is the negative gradient of the potential:</p>
+
+<p>$$g = -\frac{\Delta V}{\Delta r}$$</p>
+
+<p>In 1D: the steeper the V vs r graph, the stronger the g field.</p>
+
+<pre><code>
+V
+|
+|    ╲
+|      ╲___  (V = −GM/r, getting less negative with r)
+|          ╲___
+|              ╲___
+0├─────────────────────→ r
+|         (V → 0 as r → ∞)
+</code></pre>
+
+<p>The slope of this curve = −g. Steeper slope → stronger field.</p>
+
+<hr>
+
+<h2>4. Orbital Motion</h2>
+
+<h3>Centripetal Force = Gravity</h3>
+
+<p>For a satellite in circular orbit:</p>
+
+<p>$$\frac{GMm}{r^2} = \frac{mv^2}{r}$$</p>
+
+<h3>Orbital Velocity</h3>
+
+<p>$$v = \sqrt{\frac{GM}{r}}$$</p>
+
+<p>Key insights:</p>
+<ul>
+<li>Orbital speed depends only on r, not on satellite mass</li>
+<li>Lower orbit → faster speed</li>
+<li>Geostationary orbit requires a specific r (~42,000 km from Earth centre)</li>
+</ul>
+
+<h3>Orbital Period — Kepler's Third Law</h3>
+
+<p>From v = 2πr/T and v = √(GM/r):</p>
+
+<p>$$\frac{2\pi r}{T} = \sqrt{\frac{GM}{r}}$$</p>
+
+<p>$$T^2 = \frac{4\pi^2}{GM} r^3$$</p>
+
+<p>$$T^2 \propto r^3$$</p>
+
+<p>This is <strong>Kepler's Third Law</strong>: the square of the period is proportional to the cube of the semi-major axis (radius for circular orbits).</p>
+
+<hr>
+
+<h2>5. Geostationary Orbits</h2>
+
+<p>A geostationary satellite:</p>
+<ul>
+<li>Orbits above Earth's equator</li>
+<li>Has period T = 24 hours = 86400 s</li>
+<li>Appears stationary from Earth's surface</li>
+<li>Used for communications, weather monitoring</li>
+</ul>
+
+<h3>Finding r for Geostationary Orbit</h3>
+
+<p>$$r^3 = \frac{GMT^2}{4\pi^2} = \frac{6.67 \times 10^{-11} \times 5.97 \times 10^{24} \times (86400)^2}{4\pi^2}$$</p>
+
+<p>$$r^3 = 7.54 \times 10^{22} \text{ m}^3$$</p>
+
+<p>$$r \approx 4.22 \times 10^7 \text{ m}$$</p>
+
+<p>Altitude = r − R_Earth ≈ 4.22×10⁷ − 6.37×10⁶ ≈ <strong>3.58 × 10⁷ m ≈ 35,800 km</strong></p>
+
+<hr>
+
+<h2>Worked Examples</h2>
+
+<h3>Worked Example 46.1 — Gravitational Potential at Height</h3>
+
+<p><strong>Problem:</strong> Calculate the gravitational potential at the Earth's surface and at the altitude of the ISS (400 km). M_Earth = 5.97 × 10²⁴ kg, R = 6.37 × 10⁶ m.</p>
+
+<p><strong>Solution:</strong></p>
+
+<p>At surface:</p>
+<p>$$V_{\text{surface}} = -\frac{GM}{R} = -\frac{6.67 \times 10^{-11} \times 5.97 \times 10^{24}}{6.37 \times 10^6}$$</p>
+<p>$$V_{\text{surface}} = -\frac{3.98 \times 10^{14}}{6.37 \times 10^6} = -6.25 \times 10^7 \text{ J/kg}$$</p>
+
+<p>At 400 km altitude (r = 6.77 × 10⁶ m):</p>
+<p>$$V_{\text{ISS}} = -\frac{3.98 \times 10^{14}}{6.77 \times 10^6} = -5.88 \times 10^7 \text{ J/kg}$$</p>
+
+<p>ΔV = (−5.88 − (−6.25)) × 10⁷ = <strong>+3.7 × 10⁶ J/kg</strong> (less negative = higher potential)</p>
+
+<hr>
+
+<h3>Worked Example 46.2 — Work to Lift a Satellite</h3>
+
+<p><strong>Problem:</strong> A 2000 kg satellite is launched from Earth's surface to an altitude of 300 km. How much work is done against gravity? M_Earth = 6.0 × 10²⁴ kg, R = 6.37 × 10⁶ m. Use G = 6.67 × 10⁻¹¹.</p>
+
+<p><strong>Solution:</strong></p>
+
+<p>$$W = m\Delta V = m \times \left[-\frac{GM}{R+h} - \left(-\frac{GM}{R}\right)\right]$$</p>
+
+<p>$$W = GMm \left(\frac{1}{R} - \frac{1}{R+h}\right)$$</p>
+
+<p>R + h = 6.37×10⁶ + 3.00×10⁵ = 6.67 × 10⁶ m</p>
+
+<p>$$W = 6.67 \times 10^{-11} \times 6.0 \times 10^{24} \times 2000 \times \left(\frac{1}{6.37 \times 10^6} - \frac{1}{6.67 \times 10^6}\right)$$</p>
+
+<p>$$\frac{1}{6.37 \times 10^6} - \frac{1}{6.67 \times 10^6} = 1.570 \times 10^{-7} - 1.499 \times 10^{-7} = 7.06 \times 10^{-9}$$</p>
+
+<p>$$W = 8.00 \times 10^{17} \times 7.06 \times 10^{-9} = \mathbf{5.65 \times 10^9 \text{ J}}$$</p>
+
+<p>Approximately: W ≈ mgh = 2000 × 10 × 3×10⁵ = 6.0 × 10⁹ J — close, validating mgh for small heights.</p>
+
+<hr>
+
+<h3>Worked Example 46.3 — Orbital Speed and Period</h3>
+
+<p><strong>Problem:</strong> A satellite orbits Earth at altitude 500 km. Find:</p>
+<p>(a) its orbital speed</p>
+<p>(b) its orbital period</p>
+<p>M_Earth = 5.97 × 10²⁴ kg, R = 6.37 × 10⁶ m.</p>
+
+<p><strong>Solution:</strong></p>
+
+<p>r = R + h = 6.37×10⁶ + 5.00×10⁵ = 6.87 × 10⁶ m</p>
+
+<p><strong>(a)</strong></p>
+<p>$$v = \sqrt{\frac{GM}{r}} = \sqrt{\frac{6.67 \times 10^{-11} \times 5.97 \times 10^{24}}{6.87 \times 10^6}}$$</p>
+<p>$$v = \sqrt{\frac{3.98 \times 10^{14}}{6.87 \times 10^6}} = \sqrt{5.79 \times 10^7} = \mathbf{7.61 \times 10^3 \text{ m/s} = 7.61 \text{ km/s}}$$</p>
+
+<p><strong>(b)</strong></p>
+<p>$$T = \frac{2\pi r}{v} = \frac{2\pi \times 6.87 \times 10^6}{7.61 \times 10^3} = \frac{4.32 \times 10^7}{7.61 \times 10^3} = \mathbf{5670 \text{ s} \approx 94.5 \text{ minutes}}$$</p>
+
+<hr>
+
+<h3>Worked Example 46.4 — Geostationary Orbit</h3>
+
+<p><strong>Problem:</strong> Verify that a satellite at r = 4.22 × 10⁷ m from Earth's centre is geostationary. M_Earth = 5.97 × 10²⁴ kg.</p>
+
+<p><strong>Solution:</strong></p>
+
+<p>Using Kepler's Third Law:</p>
+<p>$$T = \sqrt{\frac{4\pi^2 r^3}{GM}} = \sqrt{\frac{4\pi^2 \times (4.22 \times 10^7)^3}{6.67 \times 10^{-11} \times 5.97 \times 10^{24}}}$$</p>
+
+<p>$$T = \sqrt{\frac{4\pi^2 \times 7.52 \times 10^{22}}{3.98 \times 10^{14}}} = \sqrt{\frac{2.97 \times 10^{24}}{3.98 \times 10^{14}}}$$</p>
+
+<p>$$T = \sqrt{7.46 \times 10^9} = 8.64 \times 10^4 \text{ s} = \mathbf{86400 \text{ s} = 24 \text{ hours}}$$</p>
+
+<p>✓ Confirmed!</p>
+
+<hr>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1</h3>
+<p>(a) Calculate the gravitational potential at a point 8.0 × 10⁷ m from the centre of Earth. (M = 6.0 × 10²⁴ kg)</p>
+<p>(b) A 500 kg spacecraft moves from this point to r = 1.0 × 10⁸ m. Calculate the work done.</p>
+<p>(c) Does gravity do this work or must the spacecraft's engines provide it? Explain.</p>
+
+<h3>Problem 2</h3>
+<p>A satellite is in a circular orbit of radius 7.0 × 10⁶ m around Earth (M = 6.0 × 10²⁴ kg). Calculate:</p>
+<p>(a) the orbital speed</p>
+<p>(b) the period</p>
+<p>(c) the gravitational potential at the orbit</p>
+
+<h3>Problem 3</h3>
+<p>Two satellites orbit Earth at radii r₁ and r₂ where r₂ = 4r₁. Find the ratio:</p>
+<p>(a) v₁ : v₂ (orbital speeds)</p>
+<p>(b) T₁ : T₂ (periods)</p>
+
+<h3>Problem 4</h3>
+<p>The Moon orbits Earth at mean distance 3.84 × 10⁸ m with period 27.3 days.</p>
+<p>(a) Use this data to calculate the mass of Earth. (G = 6.67 × 10⁻¹¹)</p>
+<p>(b) The Moon's orbital speed is about 1.02 km/s. Verify this using your calculated mass.</p>
+
+<h3>Problem 5 (IB-Style — Satellite Energy)</h3>
+<p>A 1500 kg satellite is in a circular orbit at altitude 2000 km above Earth. M_Earth = 5.97 × 10²⁴ kg, R_Earth = 6.37 × 10⁶ m, G = 6.67 × 10⁻¹¹.</p>
+
+<p><strong>(a)</strong> Calculate the gravitational potential V at the satellite's orbit.</p>
+<p><strong>(b)</strong> Determine the satellite's orbital speed and kinetic energy.</p>
+<p><strong>(c)</strong> The satellite fires its thrusters briefly, increasing its speed by 10% while still at the same radius. Explain what happens to the orbit shape.</p>
+<p><strong>(d)</strong> Calculate the minimum additional energy required for the satellite to escape Earth's gravity entirely from its original orbit. (This is the escape energy from the orbit, not from the surface.)</p>
+
+<hr>
+
+<h2>Answers</h2>
+
+<h3>Answer 1</h3>
+<p><strong>(a)</strong> V = −GM/r = −(6.67×10⁻¹¹)(6.0×10²⁴)/(8.0×10⁷) = −4.0×10¹⁴/8.0×10⁷ = <strong>−5.0 × 10⁶ J/kg</strong></p>
+
+<p><strong>(b)</strong> ΔV = V_final − V_initial = [−GM/(1.0×10⁸)] − [−GM/(8.0×10⁷)]</p>
+<p>= (−4.0×10¹⁴/1.0×10⁸) − (−5.0×10⁶) = −4.0×10⁶ + 5.0×10⁶ = +1.0×10⁶ J/kg</p>
+<p>W = mΔV = 500 × 1.0×10⁶ = <strong>5.0 × 10⁸ J</strong></p>
+
+<p><strong>(c)</strong> ΔV is positive (moving to higher potential, farther from Earth), so work must be done <strong>against</strong> gravity. The spacecraft's engines must provide this energy.</p>
+
+<hr>
+
+<h3>Answer 2</h3>
+<p><strong>(a)</strong> v = √(GM/r) = √(6.67×10⁻¹¹ × 6.0×10²⁴ / 7.0×10⁶) = √(4.0×10¹⁴/7.0×10⁶) = √(5.71×10⁷) = <strong>7.56 × 10³ m/s</strong></p>
+
+<p><strong>(b)</strong> T = 2πr/v = 2π(7.0×10⁶)/7.56×10³ = 4.40×10⁷/7.56×10³ = <strong>5810 s ≈ 97 min</strong></p>
+
+<p><strong>(c)</strong> V = −GM/r = −4.0×10¹⁴/7.0×10⁶ = <strong>−5.71 × 10⁷ J/kg</strong></p>
+
+<hr>
+
+<h3>Answer 3</h3>
+<p><strong>(a)</strong> v ∝ 1/√r. v₁/v₂ = √(r₂/r₁) = √(4r₁/r₁) = √4 = <strong>2 : 1</strong> (inner satellite is twice as fast)</p>
+
+<p><strong>(b)</strong> T ∝ r^(3/2). T₁/T₂ = (r₁/r₂)^(3/2) = (1/4)^(3/2) = 1/8 = <strong>1 : 8</strong> (inner satellite period is 8× shorter)</p>
+
+<hr>
+
+<h3>Answer 4</h3>
+<p><strong>(a)</strong> T = 27.3 × 86400 = 2.36 × 10⁶ s</p>
+<p>M = 4π²r³/(GT²) = 4π²(3.84×10⁸)³/[6.67×10⁻¹¹(2.36×10⁶)²]</p>
+<p>= 4π²(5.66×10²⁵)/(6.67×10⁻¹¹ × 5.57×10¹²) = 2.23×10²⁷/371 = <strong>6.02 × 10²⁴ kg</strong> ✓</p>
+
+<p><strong>(b)</strong> v = 2πr/T = 2π(3.84×10⁸)/2.36×10⁶ = 2.41×10⁹/2.36×10⁶ = 1.02 × 10³ m/s = <strong>1.02 km/s</strong> ✓</p>
+
+<hr>
+
+<h3>Answer 5 (IB-Style)</h3>
+<p><strong>(a)</strong> r = 6.37×10⁶ + 2.00×10⁶ = 8.37×10⁶ m</p>
+<p>V = −GM/r = −(6.67×10⁻¹¹)(5.97×10²⁴)/8.37×10⁶ = −3.98×10¹⁴/8.37×10⁶ = <strong>−4.76 × 10⁷ J/kg</strong></p>
+
+<p><strong>(b)</strong> v = √(GM/r) = √(3.98×10¹⁴/8.37×10⁶) = √(4.76×10⁷) = 6.90 × 10³ m/s</p>
+<p>KE = ½mv² = ½ × 1500 × (6.90×10³)² = 750 × 4.76×10⁷ = <strong>3.57 × 10¹⁰ J</strong></p>
+
+<p><strong>(c)</strong> The speed increase at constant radius means the satellite now has excess speed for a circular orbit at that r. The orbit becomes <strong>elliptical</strong>, with the firing point becoming the <strong>perigee</strong> (closest approach), and the satellite will rise to a higher apogee on the opposite side. If it fired retro-rockets (slowing down), the firing point would become the apogee.</p>
+
+<p><strong>(d)</strong> Escape from this orbit requires total energy E ≥ 0.</p>
+<p>Total orbital energy E = −GMm/(2r) = ½ × m × V = ½ × 1500 × (−4.76×10⁷) = −3.57×10¹⁰ J</p>
+<p>To escape, energy must go from −3.57×10¹⁰ to 0, so <strong>ΔE = +3.57 × 10¹⁰ J</strong> needed.</p>
+
+<hr>
+
+<h2>Key Takeaways</h2>
+
+<table>
+<tr>
+<th>Concept</th>
+<th>Equation</th>
+<th>Notes</th>
+</tr>
+<tr>
+<td>Gravitational potential</td>
+<td>V = −GM/r</td>
+<td>Scalar, negative, V(∞) = 0</td>
+</tr>
+<tr>
+<td>Work done</td>
+<td>W = mΔV</td>
+<td>Positive work to lift mass</td>
+</tr>
+<tr>
+<td>Equipotentials</td>
+<td>Perpendicular to g</td>
+<td>No work along equipotential</td>
+</tr>
+<tr>
+<td>Field from potential</td>
+<td>g = −ΔV/Δr</td>
+<td>Steeper V curve = stronger g</td>
+</tr>
+<tr>
+<td>Orbital velocity</td>
+<td>v = √(GM/r)</td>
+<td>Independent of satellite mass</td>
+</tr>
+<tr>
+<td>Kepler's 3rd Law</td>
+<td>T² ∝ r³</td>
+<td>T² = 4π²r³/(GM)</td>
+</tr>
+<tr>
+<td>Geostationary orbit</td>
+<td>r ≈ 4.22×10⁷ m</td>
+<td>T = 24 hours, above equator</td>
+</tr>
+</table>
+
+<blockquote><strong>IB Data Booklet:</strong> V = −GM/r, g = −ΔV/Δr, and orbital equations are in Sub-topic 6.2 and 6.1 (HL). The relationship T² ∝ r³ is fundamental. Remember that potential is a scalar (adds directly for multiple masses) while field is a vector.</blockquote>
+
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L45_gravitational_fields_1.html">← Lesson 45</a>
+  <a href="L47_gravitational_fields_3.html">Lesson 47 →</a>
+</nav>
+
+</body>
+</html>

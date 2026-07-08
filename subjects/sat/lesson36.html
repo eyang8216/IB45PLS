@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 36: Comparisons &amp; Logical Structure</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root {
+    --bg: #fafaf9;
+    --text: #1a1a1a;
+    --accent: #1a5276;
+    --trap-bg: #fff3cd;
+    --trap-border: #ffc107;
+    --pattern-bg: #d1ecf1;
+    --pattern-border: #17a2b8;
+    --card: #ffffff;
+    --border: #d0d0cb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+  h1 { font-size: 1.8rem; color: var(--accent); border-bottom: 3px solid var(--accent); padding-bottom: 0.5rem; margin-bottom: 1rem; }
+  h2 { font-size: 1.35rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+  h3 { font-size: 1.15rem; color: #333; margin: 1.5rem 0 0.5rem; }
+  p, li { margin: 0.5em 0; }
+  ul, ol { padding-left: 1.5rem; margin: 0.5em 0; }
+  .trap-box {
+    background: var(--trap-bg);
+    border-left: 4px solid var(--trap-border);
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.95rem;
+  }
+  .trap-box strong { color: #856404; }
+  .pattern-box {
+    background: var(--pattern-bg);
+    border-left: 4px solid var(--pattern-border);
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.95rem;
+  }
+  .pattern-box strong { color: #0c5460; }
+  .example {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem 1.3rem;
+    margin: 1rem 0;
+  }
+  .example h4 { color: var(--accent); margin-bottom: 0.3rem; }
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 2.5rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  .nav a { color: var(--accent); text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  code { background: #f0f0f0; padding: 0.15em 0.4em; border-radius: 3px; font-size: 0.9em; }
+  strong { color: #222; }
+  @media print {
+    body { font-size: 14px; }
+    .nav { display: none; }
+  }
+</style>
+</head>
+<body>
+<h1>Lesson 36: Comparisons & Logical Structure</h1>
+<h2>What You'll Learn</h2>
+<p>Comparisons are everywhere on the SAT — and they're easy to get wrong. You'll learn to form correct comparative and superlative adjectives, avoid illogical comparisons that pair unlike things, use "like" vs. "as" correctly, and spot missing comparison terms that can completely change a sentence's meaning. This lesson connects grammar (Standard English Conventions) with logic (Expression of Ideas) — a key SAT intersection.</p>
+<h2>SAT Context</h2>
+<p>Comparison questions straddle two domains: Standard English Conventions (grammatical correctness of comparison forms) and Expression of Ideas (logical comparisons that make sense). You'll see them in both the grammar and rhetoric sections. The SAT particularly loves illogical comparisons — comparing a person's salary to a person instead of to another salary. Expect 2-4 comparison questions per test.</p>
+<hr>
+<h2>Comparative vs. Superlative Forms</h2>
+<h3> The Basic Rules</h3>
+<p>| Type | Form | When to Use |</p>
+<p>|------|------|-------------|</p>
+<p>| **Comparative** | -er or more ___ | Comparing 2 things |</p>
+<p>| **Superlative** | -est or most ___ | Comparing 3+ things |</p>
+<p>**Comparative (2 things):**</p>
+<ul>
+<li>She is **taller than** her sister.</li>
+<li>This route is **more scenic than** the highway.</li>
+<li>Of the two candidates, she is the **stronger**.</li>
+</ul>
+<p>**Superlative (3+ things):**</p>
+<ul>
+<li>She is the **tallest** in her class.</li>
+<li>This is the **most scenic** route in the state.</li>
+<li>Of all the candidates, she is the **strongest**.</li>
+</ul>
+<h3> When to Use -er/-est vs. more/most</h3>
+<p>**Short adjectives (1 syllable):** use -er / -est</p>
+<ul>
+<li>tall → taller → tallest</li>
+<li>fast → faster → fastest</li>
+</ul>
+<p>**Long adjectives (3+ syllables):** use more / most</p>
+<ul>
+<li>beautiful → more beautiful → most beautiful</li>
+<li>intelligent → more intelligent → most intelligent</li>
+</ul>
+<p>**Two-syllable adjectives:** can go either way; the SAT accepts both</p>
+<ul>
+<li>simple → simpler / more simple</li>
+<li>clever → cleverer / more clever</li>
+</ul>
+<h3> Double Comparatives — ALWAYS Wrong!</h3>
+<p>**WRONG:** She is **more taller** than her sister.</p>
+<p>**WRONG:** This is the **most fastest** car.</p>
+<p>**RIGHT:** She is **taller** than her sister.</p>
+<p>**RIGHT:** This is the **fastest** car.</p>
+<p>Never combine more/most with -er/-est. Pick one form.</p>
+<p>> **🚨 SAT TRAP ALERT:** The SAT sometimes hides double comparatives in longer sentences. "The new design is more sleeker and efficient." Check each adjective: "more sleeker" is a double comparative → wrong.</p>
+<hr>
+<h2>Illogical Comparisons</h2>
+<p>The most important rule of comparisons: **You must compare things of the same category.** Comparing unlike things creates an illogical comparison.</p>
+<h3> The Classic SAT Trap</h3>
+<p>**WRONG:** Her salary is higher than her boss.</p>
+<ul>
+<li>Comparing "salary" to "boss" (a person). You can't compare money to a person!</li>
+</ul>
+<p>**RIGHT:** Her salary is higher than **her boss's**.</p>
+<ul>
+<li>"Her boss's" = her boss's salary. Comparing salary to salary. ✓</li>
+</ul>
+<p>**RIGHT:** Her salary is higher than **that of** her boss.</p>
+<ul>
+<li>"That of" = "the salary of." ✓</li>
+</ul>
+<h3> More Illogical Comparison Examples</h3>
+<p>**WRONG:** The population of China is larger than India.</p>
+<ul>
+<li>Comparing "population" to "India" (a country).</li>
+</ul>
+<p>**RIGHT:** The population of China is larger than **that of** India.</p>
+<p>**RIGHT:** The population of China is larger than **India's**.</p>
+<p>**WRONG:** The climate in California is warmer than Oregon.</p>
+<ul>
+<li>Comparing "climate" to "Oregon."</li>
+</ul>
+<p>**RIGHT:** The climate in California is warmer than **that of** Oregon.</p>
+<p>**RIGHT:** The climate in California is warmer than **the climate in** Oregon.</p>
+<p>**WRONG:** Unlike last year's event, more people attended this year's festival.</p>
+<ul>
+<li>Comparing "last year's event" to "more people." Not parallel.</li>
+</ul>
+<p>**RIGHT:** Unlike last year's event, this year's festival attracted more people.</p>
+<ul>
+<li>Comparing "event" to "festival." ✓</li>
+</ul>
+<p>> **🔍 PATTERN RECOGNITION:** When you see "than" on the SAT, ask: "What's on the left side? What's on the right side? Are they the same KIND of thing?" If the left side is a quality (salary, population, climate) and the right side is an entity (person, country, place), it's wrong.</p>
+<hr>
+<h2>Like vs. As</h2>
+<h3> Like = Preposition (Compares Nouns/Pronouns)</h3>
+<p>Use "like" to compare two nouns or pronouns. "Like" is followed by a noun, not a clause with a verb.</p>
+<p>**RIGHT:** She runs **like** a cheetah.</p>
+<p>("Like" + noun "cheetah" — comparing nouns.)</p>
+<p>**RIGHT:** He looks **like** his father.</p>
+<p>**RIGHT:** Like her mother, she became a doctor.</p>
+<h3> As = Conjunction (Compares Clauses/Actions)</h3>
+<p>Use "as" (or "as if," "as though") to compare actions or clauses — when there's a verb in the comparison.</p>
+<p>**RIGHT:** She runs **as** a cheetah does.</p>
+<p>("As" + clause "a cheetah does" — comparing actions.)</p>
+<p>**RIGHT:** He performed **as** we expected.</p>
+<p>**RIGHT:** She acted **as if** she owned the place.</p>
+<p>> **🚨 SAT TRAP ALERT:** In casual speech, people often use "like" where "as" is grammatically correct: "It looks like it's going to rain." On the SAT, this should be: "It looks as if it's going to rain" (because "it's going to rain" is a clause with a verb).</p>
+<h3> Quick Test</h3>
+<ul>
+<li>If what follows contains a verb (a clause) → use **as / as if / as though**</li>
+<li>If what follows is just a noun → use **like**</li>
+</ul>
+<hr>
+<h2>More...Than vs. As...As</h2>
+<p>**More...than** = inequality</p>
+<ul>
+<li>She is **more** experienced **than** her colleague.</li>
+</ul>
+<p>**As...as** = equality</p>
+<ul>
+<li>She is **as** experienced **as** her colleague.</li>
+</ul>
+<p>**WRONG:** She is **more** experienced **as** her colleague.</p>
+<p>**WRONG:** She is **as** experienced **than** her colleague.</p>
+<p>These pairs must stay together: more/than, as/as, less/than.</p>
+<hr>
+<h2>Missing Comparison Terms — Ambiguity!</h2>
+<p>The SAT loves to test sentences where a missing word creates ambiguity:</p>
+<p>**AMBIGUOUS:** I like pizza more than my sister.</p>
+<ul>
+<li>Meaning 1: I like pizza more than my sister likes pizza. (I enjoy pizza more than she does.)</li>
+<li>Meaning 2: I like pizza more than I like my sister. (I prefer pizza over my sister.)</li>
+</ul>
+<p>The missing word changes the meaning entirely. The SAT wants clarity:</p>
+<p>**CLEAR:** I like pizza more than my sister **does**.</p>
+<p>**CLEAR:** I like pizza more than **I like** my sister.</p>
+<p>**AMBIGUOUS:** The coach praised Maria more than Jen.</p>
+<ul>
+<li>Who praised whom? Or who got more praise?</li>
+</ul>
+<p>**CLEAR:** The coach praised Maria more than **he praised** Jen.</p>
+<p>**CLEAR:** The coach praised Maria more than Jen **did**.</p>
+<p>> **🔍 PATTERN RECOGNITION:** When a comparison sentence ends with just a noun ("than my sister," "than Jen"), the SAT may test whether it's ambiguous. Adding a verb ("does," "did," "is," "was") clarifies the meaning.</p>
+<hr>
+<h3> Worked Example 1</h3>
+<p>**Question:** The fuel efficiency of hybrid vehicles is significantly better than __________.</p>
+<p>A) conventional vehicles</p>
+<p>B) that of conventional vehicles</p>
+<p>C) what conventional vehicles have</p>
+<p>D) conventional vehicles do</p>
+<p>**Answer:** B — "that of conventional vehicles"</p>
+<p>**Explanation:** The sentence compares "the fuel efficiency of hybrid vehicles" to something. We need to compare fuel efficiency to fuel efficiency, not to vehicles. "That of conventional vehicles" uses "that" as a pronoun standing for "the fuel efficiency," creating a parallel comparison. Options A and C compare efficiency to vehicles. Option D compares efficiency to an action ("vehicles do"), which is also illogical.</p>
+<hr>
+<h3> Worked Example 2</h3>
+<p>**Question:** Among the three applicants, Maria was clearly the __________ qualified for the position.</p>
+<p>A) more</p>
+<p>B) most</p>
+<p>C) best</p>
+<p>D) better</p>
+<p>**Answer:** B — "most"</p>
+<p>**Explanation:** "Among the three applicants" signals a comparison involving three or more things. The superlative form "most" is required. "More" and "better" are comparative forms (for two things). "Best" is a superlative, but "most qualified" (not "best qualified") is the idiomatic collocation.</p>
+<hr>
+<h3> Worked Example 3</h3>
+<p>**Question:** The director communicated the changes to the staff, and they responded exactly __________ he had hoped they would.</p>
+<p>A) like</p>
+<p>B) as</p>
+<p>C) as if</p>
+<p>D) than</p>
+<p>**Answer:** B — "as"</p>
+<p>**Explanation:** What follows is a clause with a verb: "he had hoped they would." When comparing clauses/actions, use "as" (not "like"). Option C ("as if") would imply the response only seemed like what he hoped but wasn't quite it. "As" means it matched precisely. "Than" is for inequality comparisons.</p>
+<hr>
+<h2>Practice Problems</h2>
+<h3> Problem 1</h3>
+<p>The architecture of the new library is __________ than the old building, which had been constructed in the 1960s.</p>
+<p>A) more modern</p>
+<p>B) most modern</p>
+<p>C) moderner</p>
+<p>D) more moderner</p>
+<h3> Problem 2</h3>
+<p>Unlike __________, the company's revenue this year exceeded all expectations.</p>
+<p>A) last year</p>
+<p>B) what happened last year</p>
+<p>C) last year's revenue</p>
+<p>D) the year before it</p>
+<h3> Problem 3</h3>
+<p>The biologist observed that the cells divided exactly __________ the model had predicted.</p>
+<p>A) like</p>
+<p>B) as</p>
+<p>C) than</p>
+<p>D) similar</p>
+<h3> Problem 4</h3>
+<p>The coach praised the new player more than __________.</p>
+<p>A) the veteran players</p>
+<p>B) the veteran players did</p>
+<p>C) he did the veteran players</p>
+<p>D) both B and C are clear, but they have different meanings</p>
+<h3> Problem 5</h3>
+<p>This year's graduating class is the __________ in the school's fifty-year history.</p>
+<p>A) larger</p>
+<p>B) most large</p>
+<p>C) largest</p>
+<p>D) more large</p>
+<h3> Problem 6</h3>
+<p>The nutritional content of fresh vegetables is generally superior to __________.</p>
+<p>A) frozen vegetables</p>
+<p>B) that of frozen vegetables</p>
+<p>C) what frozen vegetables contain</p>
+<p>D) frozen vegetables have</p>
+<hr>
+<h2>Answers</h2>
+<h3> Problem 1 — Answer: A ("more modern")</h3>
+<p>**Why A is correct:** "Modern" is a two-syllable adjective, and the comparative (comparing two buildings) can use "more modern." The sentence says "than," which signals a comparative structure (not superlative). "More modern" is grammatically correct.</p>
+<p>**Why others are wrong:**</p>
+<ul>
+<li>B ("most modern"): Superlative form — but "than" signals a comparative, not a superlative.</li>
+<li>C ("moderner"): While some two-syllable adjectives can take -er, "moderner" is awkward and nonstandard.</li>
+<li>D ("more moderner"): Double comparative — "more" and "-er" together is always wrong.</li>
+</ul>
+<hr>
+<h3> Problem 2 — Answer: C ("last year's revenue")</h3>
+<p>**Why C is correct:** "Unlike X, Y" requires X and Y to be the same category. Y = "the company's revenue this year." X must also be a revenue: "last year's revenue." Now we're comparing revenue to revenue — logical and parallel.</p>
+<p>**Why others are wrong:**</p>
+<ul>
+<li>A ("last year"): Compares revenue to a time period — illogical. "Unlike last year, the company's revenue..." makes it sound like "last year" and "revenue" are comparable things.</li>
+<li>B ("what happened last year"): Vague and not parallel with "the company's revenue."</li>
+<li>D ("the year before it"): Same issue as A — comparing revenue to a year.</li>
+</ul>
+<hr>
+<h3> Problem 3 — Answer: B ("as")</h3>
+<p>**Why B is correct:** "The model had predicted" is a clause with a verb. When comparing actions/clauses, use "as." "Exactly as the model had predicted" is correct.</p>
+<p>**Why others are wrong:**</p>
+<ul>
+<li>A ("like"): "Like" is a preposition followed by nouns, not clauses with verbs. "Like the model had predicted" is grammatically incorrect on the SAT.</li>
+<li>C ("than"): "Than" signals inequality. "Exactly than" doesn't make sense — "exactly" needs an equality comparison.</li>
+<li>D ("similar"): "Exactly similar" is awkward, and "similar" would need "to" — "similar to what the model had predicted."</li>
+</ul>
+<hr>
+<h3> Problem 4 — Answer: D ("both B and C are clear, but they have different meanings")</h3>
+<p>**Why D is correct:** Both B and C fix the ambiguity, but they mean different things:</p>
+<ul>
+<li>B ("the coach praised the new player more than the veteran players did") = The coach praised the new player more than the veteran players praised the new player.</li>
+<li>C ("the coach praised the new player more than he did the veteran players") = The coach praised the new player more than the coach praised the veteran players.</li>
+</ul>
+<p>Both are grammatically correct. Which one is "right" depends on the intended meaning.</p>
+<p>**Why others are wrong:**</p>
+<ul>
+<li>A: Ambiguous — could mean either B's meaning or C's meaning.</li>
+</ul>
+<hr>
+<h3> Problem 5 — Answer: C ("largest")</h3>
+<p>**Why C is correct:** "In the school's fifty-year history" implies a comparison among many graduating classes (50 of them). For comparisons involving three or more, use the superlative: "largest." The word "the" before the blank also signals a superlative.</p>
+<p>**Why others are wrong:**</p>
+<ul>
+<li>A ("larger"): Comparative form is for two items. Fifty years requires superlative.</li>
+<li>B ("most large"): While "most" + adjective can form the superlative, "largest" is the standard and expected form for one-syllable adjectives.</li>
+<li>D ("more large"): Comparative (two items) and awkward form — "larger" would be the proper comparative.</li>
+</ul>
+<hr>
+<h3> Problem 6 — Answer: B ("that of frozen vegetables")</h3>
+<p>**Why B is correct:** The comparison is "the nutritional content of fresh vegetables" to something. "That of frozen vegetables" uses "that" as a pronoun for "the nutritional content," creating a parallel, logical comparison. Nutritional content compared to nutritional content.</p>
+<p>**Why others are wrong:**</p>
+<ul>
+<li>A: Compares nutritional content to frozen vegetables themselves — illogical.</li>
+<li>C: Wordy and less direct than B, though the meaning is close. "Superior to what frozen vegetables contain" is grammatically acceptable but B is more succinct and parallel.</li>
+<li>D: "Superior to frozen vegetables have" — grammatically incomplete; "have what?"</li>
+</ul>
+<div class="nav">
+<a href="lesson35.html">← Previous Lesson</a>
+<a href="index.html">📋 All Lessons</a>
+<a href="lesson37.html">Next Lesson →</a>
+</div>
+</body>
+</html>

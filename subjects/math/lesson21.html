@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 21 — Argand Diagram & Geometric Interpretation</title>
+<script>
+MathJax = {
+  tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body {
+    max-width: 800px; margin: 40px auto; font-family: 'Times New Roman', Georgia, serif;
+    font-size: 17px; line-height: 1.7; padding: 0 20px; color: #1a1a1a;
+  }
+  h1 { font-size: 22px; border-bottom: 2px solid #333; padding-bottom: 8px; margin-top: 36px; }
+  h2 { font-size: 19px; margin-top: 28px; color: #2c3e50; }
+  h3 { font-size: 17px; margin-top: 22px; color: #444; }
+  h4 { font-size: 16px; margin-top: 18px; }
+  p { margin: 0.6em 0; }
+  li { margin: 0.3em 0 0.3em 20px; }
+  hr { margin: 20px 0; border: none; border-top: 1px solid #ddd; }
+  .math-block { text-align: center; margin: 1em 0; overflow-x: auto; }
+  .table-line { font-family: 'Courier New', monospace; font-size: 15px; margin: 0.1em 0; }
+  pre { background: #f5f5f5; padding: 10px 14px; border-radius: 4px; overflow-x: auto; font-size: 14px; }
+  b { color: #222; }
+  table { border-collapse: collapse; margin: 16px 0; width: 100%; font-size: 15px; }
+  th { background: #2c3e50; color: #fff; padding: 8px 12px; text-align: center; font-weight: bold; }
+  td { border: 1px solid #ccc; padding: 8px 12px; text-align: center; }
+  tr:nth-child(even) { background: #f9f9f9; }
+  .nav { text-align: center; margin: 30px 0; font-size: 14px; }
+  .nav a { margin: 0 8px; color: #3498db; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  @media print { body { font-size: 15px; } }
+</style>
+</head>
+<body>
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+<h1>Lesson 21: The Argand Diagram and Geometric Interpretation</h1>
+
+<h2>WHAT Is the Argand Diagram?</h2>
+
+<p>The <b>Argand diagram</b> is a flat plane where you can draw complex numbers as points or arrows. It looks exactly like the ordinary \((x, y)\) coordinate plane you have used in algebra, but the axes have different meanings:</p>
+
+<li>- The <b>horizontal axis</b> (what used to be the \(x\)-axis) represents the <b>real part</b> of a complex number.</li>
+<li>- The <b>vertical axis</b> (what used to be the \(y\)-axis) represents the <b>imaginary part</b> of a complex number.</li>
+
+<p>So a complex number \(z = a + bi\) gets plotted at the point with coordinates \((a, b)\). You can also think of it as an arrow (a vector) starting at the origin \((0, 0)\) and ending at \((a, b)\).</p>
+
+
+<div class="visual" style="text-align:center;margin:24px 0;background:#fafaf9;padding:16px;border-radius:8px;border:1px solid #ddd;">
+<p style="font-weight:bold;color:#2c3e50;margin-bottom:12px;">Figure: The Argand diagram — complex numbers as points in the plane</p>
+<svg viewBox="0 0 440 400" width="400" height="360" xmlns="http://www.w3.org/2000/svg">
+  <!-- Grid -->
+  <defs><pattern id="ag" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#eee" stroke-width="0.5"/>
+  </pattern></defs>
+  <rect width="440" height="400" fill="url(#ag)"/>
+  <!-- Axes -->
+  <line x1="220" y1="0" x2="220" y2="400" stroke="#555" stroke-width="1.5"/>
+  <line x1="0" y1="200" x2="440" y2="200" stroke="#555" stroke-width="1.5"/>
+  <text x="430" y="205" font-size="13" fill="#333" font-weight="bold">Re</text>
+  <text x="210" y="15" font-size="13" fill="#333" font-weight="bold">Im</text>
+  <!-- z₁ = 3 + 2i -->
+  <line x1="220" y1="200" x2="340" y2="120" stroke="#2980b9" stroke-width="2"/>
+  <circle cx="340" cy="120" r="5" fill="#2980b9"/>
+  <text x="310" y="108" font-size="13" fill="#2980b9" font-weight="bold">z₁ = 3+2i</text>
+  <!-- z₂ = −1 + 3i -->
+  <line x1="220" y1="200" x2="180" y2="80" stroke="#e74c3c" stroke-width="2"/>
+  <circle cx="180" cy="80" r="5" fill="#e74c3c"/>
+  <text x="120" y="72" font-size="13" fill="#e74c3c" font-weight="bold">z₂ = −1+3i</text>
+  <!-- z₃ = −2 − i -->
+  <line x1="220" y1="200" x2="140" y2="240" stroke="#27ae60" stroke-width="2"/>
+  <circle cx="140" cy="240" r="5" fill="#27ae60"/>
+  <text x="68" y="252" font-size="13" fill="#27ae60" font-weight="bold">z₃ = −2−i</text>
+  <!-- |z₁| arc -->
+  <path d="M340,120 A164,164 0 0,0 220,200" fill="none" stroke="#bbb" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="300" y="175" font-size="11" fill="#888">|z₁| = √13</text>
+  <!-- Tick marks -->
+  <g font-size="10" fill="#999" text-anchor="middle">
+    <text x="100" y="215">-3</text><text x="140" y="215">-2</text><text x="180" y="215">-1</text>
+    <text x="260" y="215">1</text><text x="300" y="215">2</text><text x="340" y="215">3</text>
+    <text x="232" y="125">2i</text><text x="232" y="85">3i</text><text x="232" y="165">1i</text>
+    <text x="225" y="243">-i</text><text x="225" y="283">-2i</text>
+  </g>
+</svg>
+<p style="font-size:13px;color:#666;margin-top:8px;">The horizontal axis is the real part. The vertical axis is the imaginary part. The distance from the origin is the modulus |z|.</p>
+</div>
+<h2>WHY Use the Argand Diagram?</h2>
+
+<p>Drawing complex numbers on a plane turns abstract algebra into something you can see. Addition looks like vector addition. The modulus becomes a length you can measure with a ruler. The argument becomes an angle you can measure with a protractor. Locus problems — which ask &quot;where are all the points that satisfy a certain condition?&quot; — become questions about circles, lines, and rays that you can sketch and reason about geometrically. This visual approach is heavily tested in IB exams.</p>
+
+<p><hr></p>
+
+<h2>1. Plotting Complex Numbers</h2>
+
+<p>To plot \(z = a + bi\), go \(a\) units along the horizontal (real) axis and \(b\) units along the vertical (imaginary) axis.</p>
+
+<p><b>Examples:</b></p>
+<li>- \(z = 2 + 3i\) is at the point \((2, 3)\).</li>
+<li>- \(z = -3 + i\) is at \((-3, 1)\).</li>
+<li>- \(z = 3 - 2i\) is at \((3, -2)\).</li>
+<li>- \(z = -1 - i\) is at \((-1, -1)\).</li>
+
+<p>A real number like \(z = 4\) lies on the horizontal axis. A purely imaginary number like \(z = 5i\) lies on the vertical axis.</p>
+
+<p><hr></p>
+
+<h2>2. Addition as Vector Addition</h2>
+
+<p>When you add two complex numbers, you add their real parts and their imaginary parts separately. On the Argand diagram, this is exactly the same as adding two vectors using the <b>parallelogram rule</b> or the <b>tip-to-tail method</b>.</p>
+
+<p><b>Worked Example:</b> Let \(z_1 = 2 + i\) and \(z_2 = 1 + 3i\). Their sum is \(z_1 + z_2 = (2 + 1) + (1 + 3)i = 3 + 4i\).</p>
+
+<p>Geometrically, you can draw an arrow for \(z_1\) from the origin to \((2, 1)\), then draw an arrow for \(z_2\) starting at the tip of \(z_1\). The arrow from the origin to the final tip lands at \((3, 4)\), which is exactly \(z_1 + z_2\).</p>
+
+<p><hr></p>
+
+<h2>3. The Modulus as Distance</h2>
+
+<p>In Lesson 20, you learned that \(|z| = \sqrt{a^2 + b^2}\). On the Argand diagram, this formula should look familiar — it is the distance from the origin \((0, 0)\) to the point \((a, b)\), found using the Pythagorean theorem.</p>
+
+<p>More generally, the distance between any two complex numbers \(z = a + bi\) and \(w = c + di\) is given by:</p>
+
+<div class="math-block">$$
+\boxed{|z - w| = \sqrt{(a - c)^2 + (b - d)^2}}$$</div>
+
+<p>This is just the Pythagorean distance between the two points \((a, b)\) and \((c, d)\).</p>
+
+<p><b>Worked Example:</b> Find the distance between \(z = 3 + 4i\) and \(w = -1 + i\).</p>
+
+<p><b>Approach:</b> Subtract \(w\) from \(z\), then find the modulus of the result.</p>
+
+<p><b>Step 1:</b> \(z - w = (3 + 4i) - (-1 + i) = (3 + 1) + (4 - 1)i = 4 + 3i\).</p>
+
+<p><b>Step 2:</b> \(|z - w| = \sqrt{4^2 + 3^2} = \sqrt{16 + 9} = \sqrt{25} = 5\).</p>
+
+<p><b>Answer:</b> The distance is 5 units.</p>
+
+<p><hr></p>
+
+<h2>4. The Argument</h2>
+
+<p>The <b>argument</b> of a complex number \(z = a + bi\) is the angle that the arrow from the origin to \((a, b)\) makes with the positive real axis. The argument is measured counterclockwise and is written as \(\arg(z)\).</p>
+
+<div class="math-block">$$
+\boxed{\tan(\arg(z)) = \frac{b}{a}}$$</div>
+
+<p>To find the argument, you compute \(\arctan(b/a)\), but you must then adjust for the quadrant. The calculator&#x27;s arctan function only returns angles between \(-\frac{\pi}{2}\) and \(\frac{\pi}{2}\) (that is, between \(-90^\circ\) and \(90^\circ\)), which only covers quadrants I and IV correctly. Here is how to handle each case:</p>
+
+<li>- <b>Quadrant I:</b> \(a &gt; 0\) and \(b &gt; 0\). The angle is simply \(\arctan(b/a)\). This is already correct.</li>
+<li>- <b>Quadrant II:</b> \(a &lt; 0\) and \(b &gt; 0\). The calculator gives a negative angle, but the actual angle is in the second quadrant. Add \(\pi\) (or \(180^\circ\)) to the calculator&#x27;s result.</li>
+<li>- <b>Quadrant III:</b> \(a &lt; 0\) and \(b &lt; 0\). The calculator gives a positive angle (because negative divided by negative is positive), but the actual angle is in the third quadrant. Add \(\pi\) (or \(180^\circ\)), or equivalently subtract \(\pi\) if you prefer a negative angle.</li>
+<li>- <b>Quadrant IV:</b> \(a &gt; 0\) and \(b &lt; 0\). The calculator gives a negative angle, which is already correct for the fourth quadrant.</li>
+
+<p>The IB convention is to give the <b>principal argument</b> in the range \((-\pi, \pi]\), which means between \(-180^\circ\) and \(180^\circ\) (not including \(-180^\circ\), including \(180^\circ\)).</p>
+
+<p><b>Common misconception:</b> Many students take \(\arctan(b/a)\) and stop, forgetting to check which quadrant the point is in. This gives the wrong answer whenever \(a\) is negative.</p>
+
+<h3>Worked Examples for Argument</h3>
+
+<p><b>Example 1:</b> \(z = 1 + i\). Here \(a = 1 &gt; 0\) and \(b = 1 &gt; 0\) (Quadrant I). \(\arg(z) = \arctan(1/1) = \arctan(1) = \frac{\pi}{4}\) (which is \(45^\circ\)).</p>
+
+<p><b>Example 2:</b> \(z = -1 + i\). Here \(a = -1 &lt; 0\) and \(b = 1 &gt; 0\) (Quadrant II). The calculator gives \(\arctan(1/(-1)) = \arctan(-1) = -\frac{\pi}{4}\). But the point is in quadrant II, so we add \(\pi\): \(\arg(z) = -\frac{\pi}{4} + \pi = \frac{3\pi}{4}\) (which is \(135^\circ\)).</p>
+
+<p><b>Example 3:</b> \(z = -1 - i\). Here \(a = -1 &lt; 0\) and \(b = -1 &lt; 0\) (Quadrant III). The calculator gives \(\arctan((-1)/(-1)) = \arctan(1) = \frac{\pi}{4}\). But the point is in quadrant III, so the principal argument is \(-\pi + \frac{\pi}{4} = -\frac{3\pi}{4}\) (which is \(-135^\circ\)).</p>
+
+<p><b>Example 4:</b> \(z = 1 - i\). Here \(a = 1 &gt; 0\) and \(b = -1 &lt; 0\) (Quadrant IV). \(\arg(z) = \arctan(-1/1) = -\frac{\pi}{4}\) (which is \(-45^\circ\)).</p>
+
+<p><hr></p>
+
+<h2>5. Locus Problems on the Argand Diagram</h2>
+
+<p>A <b>locus</b> (plural: loci) is the set of all points that satisfy a given condition. Drawing loci on the Argand diagram is a major IB topic because it connects algebra and geometry.</p>
+
+<h3>Locus 1: A Circle Centered at the Origin</h3>
+
+<p>The condition \(|z| = r\) means &quot;the distance from \(z\) to the origin is \(r\).&quot; All points at a fixed distance from a center form a circle. So \(|z| = r\) is a circle with radius \(r\), centered at \((0, 0)\).</p>
+
+<div class="math-block">$$
+\boxed{|z| = r}$$</div>
+
+<p><b>Example:</b> \(|z| = 3\) is a circle of radius 3 centered at the origin.</p>
+
+<h3>Locus 2: A Circle Centered at Any Point</h3>
+
+<p>The condition \(|z - a| = r\) means &quot;the distance from \(z\) to the fixed complex number \(a\) is \(r\).&quot; This is a circle with radius \(r\) centered at the point representing \(a\).</p>
+
+<div class="math-block">$$
+\boxed{|z - a| = r}$$</div>
+
+<p><b>Example:</b> \(|z - (2 + i)| = 3\) is a circle of radius 3 centered at \((2, 1)\).</p>
+
+<h3>Locus 3: The Perpendicular Bisector</h3>
+
+<p>The condition \(|z - a| = |z - b|\) means &quot;the distance from \(z\) to \(a\) equals the distance from \(z\) to \(b\).&quot; The set of all points equidistant from two fixed points is the <b>perpendicular bisector</b> of the line segment connecting them.</p>
+
+<div class="math-block">$$
+\boxed{|z - a| = |z - b|}$$</div>
+
+<h3>Worked Locus Example: Perpendicular Bisector</h3>
+
+<p><b>Problem:</b> Describe the locus given by \(|z - i| = |z - 3|\).</p>
+
+<p><b>Approach:</b> Let \(z = x + yi\). Write both sides as distances and set them equal.</p>
+
+<p><b>Step 1 — Express each side in terms of \(x\) and \(y\):</b></p>
+<p>\(z - i = x + yi - i = x + (y - 1)i\). So \(|z - i| = \sqrt{x^2 + (y - 1)^2}\).</p>
+<p>\(z - 3 = (x - 3) + yi\). So \(|z - 3| = \sqrt{(x - 3)^2 + y^2}\).</p>
+
+<p><b>Step 2 — Set them equal and square both sides (removing square roots):</b></p>
+<div class="math-block">$$
+x^2 + (y - 1)^2 = (x - 3)^2 + y^2$$</div>
+
+<p><b>Step 3 — Expand:</b></p>
+<div class="math-block">$$
+x^2 + y^2 - 2y + 1 = x^2 - 6x + 9 + y^2$$</div>
+
+<p><b>Step 4 — Cancel \(x^2\) and \(y^2\) from both sides:</b></p>
+<div class="math-block">$$
+-2y + 1 = -6x + 9$$</div>
+
+<p><b>Step 5 — Rearrange:</b></p>
+<div class="math-block">$$
+6x - 2y = 8 \quad\Longrightarrow\quad 3x - y = 4 \quad\Longrightarrow\quad y = 3x - 4$$</div>
+
+<p><b>Answer:</b> The locus is the straight line \(y = 3x - 4\). This is the perpendicular bisector of the segment joining the points \(i = (0, 1)\) and \(3 = (3, 0)\).</p>
+
+<h3>Locus 4: A Ray (Half-Line)</h3>
+
+<p>The condition \(\arg(z - a) = \theta\) means &quot;the arrow from \(a\) to \(z\) makes an angle \(\theta\) with the positive real axis.&quot; This describes a <b>ray</b> (a half-line) that starts at \(a\) and extends outward at angle \(\theta\). The point \(a\) itself is not included (the ray is open at its starting point).</p>
+
+<div class="math-block">$$
+\boxed{\arg(z - a) = \theta}$$</div>
+
+<p><b>Example:</b> \(\arg(z - 1) = \frac{\pi}{3}\) is a ray starting at \((1, 0)\) pointing at an angle of \(60^\circ\).</p>
+
+<p><hr></p>
+
+<h2>6. Worked Example: Full Locus Problem</h2>
+
+<p><b>Problem:</b> Describe geometrically the locus of points \(z\) satisfying \(|z - 3| = |z + i|\).</p>
+
+<p><b>Approach:</b> Let \(z = x + yi\) and convert to a Cartesian equation.</p>
+
+<p><b>Step 1 — Write each side:</b></p>
+<p>\(|z - 3| = |(x - 3) + yi| = \sqrt{(x - 3)^2 + y^2}\).</p>
+<p>\(|z + i| = |x + (y + 1)i| = \sqrt{x^2 + (y + 1)^2}\).</p>
+
+<p><b>Step 2 — Equate and square:</b></p>
+<div class="math-block">$$
+(x - 3)^2 + y^2 = x^2 + (y + 1)^2$$</div>
+
+<p><b>Step 3 — Expand:</b></p>
+<p>\(x^2 - 6x + 9 + y^2 = x^2 + y^2 + 2y + 1\).</p>
+
+<p><b>Step 4 — Cancel \(x^2\) and \(y^2\):</b></p>
+<p>\(-6x + 9 = 2y + 1\).</p>
+
+<p><b>Step 5 — Solve for \(y\):</b></p>
+<p>\(2y = -6x + 8\), so \(y = -3x + 4\).</p>
+
+<p><b>Answer:</b> The locus is the straight line \(y = -3x + 4\). This is the perpendicular bisector of the segment joining \(3 = (3, 0)\) and \(-i = (0, -1)\).</p>
+
+<p><hr></p>
+
+<h2>Practice Problems</h2>
+
+<p><b>Problem 1:</b> Plot the complex numbers \(z_1 = 2 + 3i\) and \(z_2 = -3 + i\) on an Argand diagram. Then find \(|z_1 - z_2|\) and explain what this value represents.</p>
+
+<p><b>Problem 2:</b> Find the modulus and the principal argument of \(z = -\sqrt{3} + i\). Give the argument in radians.</p>
+
+<p><b>Problem 3:</b> Describe geometrically the locus given by \(|z + 2 - i| = 4\). State the center and radius.</p>
+
+<p><b>Problem 4:</b> Find the Cartesian equation of the locus \(|z - 1| = |z - i|\). What shape is the locus?</p>
+
+<p><b>Problem 5 (IB Exam Style):</b> The point \(z\) lies on the circle \(|z - 3| = 2\).</p>
+<p>(a) Sketch the circle on an Argand diagram. [1 mark]</p>
+<p>(b) By considering the geometry of the Argand diagram, find the maximum possible value of \(|z|\). [3 marks]</p>
+<p>(c) Find the minimum possible value of \(|z|\). [2 marks]</p>
+
+<p><b>Problem 6:</b> On the same Argand diagram, sketch the region defined by both of these conditions: \(|z - 2| \leq 3\) and \(0 \leq \arg(z) \leq \frac{\pi}{4}\). Describe the region in words.</p>
+
+<p><hr></p>
+
+<h2>Answers</h2>
+
+<p><b>Answer 1:</b> On the Argand diagram, \(z_1 = 2 + 3i\) is at \((2, 3)\) and \(z_2 = -3 + i\) is at \((-3, 1)\).</p>
+
+<p>Now compute \(z_1 - z_2 = (2 + 3i) - (-3 + i) = 5 + 2i\).</p>
+
+<p>The modulus is \(|z_1 - z_2| = \sqrt{5^2 + 2^2} = \sqrt{25 + 4} = \sqrt{29}\).</p>
+
+<p>This value, \(\sqrt{29}\) (approximately 5.39), is the straight-line distance between the two points \((2, 3)\) and \((-3, 1)\) on the Argand diagram.</p>
+
+<p><b>Answer 2:</b> The modulus is \(|z| = \sqrt{(-\sqrt{3})^2 + 1^2} = \sqrt{3 + 1} = \sqrt{4} = 2\).</p>
+
+<p>For the argument: \(\tan\theta = \frac{1}{-\sqrt{3}} = -\frac{1}{\sqrt{3}}\). The basic reference angle (ignoring the negative sign) is \(\arctan(1/\sqrt{3}) = \frac{\pi}{6}\) (which is \(30^\circ\)).</p>
+
+<p>Now check the quadrant: \(a = -\sqrt{3} &lt; 0\) and \(b = 1 &gt; 0\). This is Quadrant II. We must add \(\pi\) to the calculator&#x27;s result. The calculator would give \(\arctan(-1/\sqrt{3}) = -\frac{\pi}{6}\), so \(\arg(z) = -\frac{\pi}{6} + \pi = \frac{5\pi}{6}\) (which is \(150^\circ\)).</p>
+
+<p><b>Pitfall:</b> If you simply compute \(\arctan(1/(-\sqrt{3}))\) without adjusting for the quadrant, you get \(-\frac{\pi}{6}\), which is wrong. Always draw a quick sketch of the quadrant.</p>
+
+<p><b>Answer 3:</b> Rewrite: \(|z + 2 - i| = |z - (-2 + i)| = 4\). This is in the form \(|z - a| = r\) with center \(a = -2 + i\) and radius \(r = 4\).</p>
+
+<p>Geometrically, this describes a circle centered at the point \((-2, 1)\) on the Argand diagram with a radius of 4 units.</p>
+
+<p><b>Answer 4:</b> Let \(z = x + yi\). Then \(|z - 1| = |(x - 1) + yi| = \sqrt{(x - 1)^2 + y^2}\) and \(|z - i| = |x + (y - 1)i| = \sqrt{x^2 + (y - 1)^2}\).</p>
+
+<p>Set them equal and square: \((x - 1)^2 + y^2 = x^2 + (y - 1)^2\).</p>
+
+<p>Expand: \(x^2 - 2x + 1 + y^2 = x^2 + y^2 - 2y + 1\).</p>
+
+<p>Cancel \(x^2\), \(y^2\), and \(1\) from both sides: \(-2x = -2y\), so \(y = x\).</p>
+
+<p>The locus is the line \(y = x\). This is the perpendicular bisector of the line segment connecting the points \((1, 0)\) (representing \(1\)) and \((0, 1)\) (representing \(i\)). It bisects the segment at \((0.5, 0.5)\) at a \(45^\circ\) angle.</p>
+
+<p><b>Answer 5:</b></p>
+
+<p>(a) The circle \(|z - 3| = 2\) has center at \((3, 0)\) and radius 2.</p>
+
+<p>(b) The quantity \(|z|\) is the distance from the origin \((0, 0)\) to the point \(z\). Since \(z\) must lie on the circle, we want the farthest point on the circle from the origin.</p>
+
+<p>The center of the circle is at \((3, 0)\), which is 3 units from the origin. The circle extends 2 units in every direction from its center. The point on the circle farthest from the origin lies on the line connecting the origin to the center, on the far side of the circle. Its distance is the distance to the center plus the radius: \(3 + 2 = 5\).</p>
+
+<p>So the maximum value of \(|z|\) is 5.</p>
+
+<p>(c) The point on the circle closest to the origin lies on the same line, but on the near side of the circle. Its distance is the distance to the center minus the radius: \(3 - 2 = 1\).</p>
+
+<p>So the minimum value of \(|z|\) is 1.</p>
+
+<p><b>Why this makes sense:</b> The origin is at \((0, 0)\) and the circle is centered at \((3, 0)\) with radius 2. The circle touches the point \((1, 0)\) at its closest approach and extends to \((5, 0)\) at its farthest reach.</p>
+
+<p><b>Answer 6:</b> The condition \(|z - 2| \leq 3\) describes all points inside or on the circle centered at \((2, 0)\) with radius 3. This is a filled disk.</p>
+
+<p>The condition \(0 \leq \arg(z) \leq \frac{\pi}{4}\) describes all points whose position vectors make an angle between \(0^\circ\) and \(45^\circ\) with the positive real axis. This is an infinite wedge (a sector) in the first quadrant.</p>
+
+<p>The region satisfying both conditions is the intersection: the part of the wedge (from angle \(0\) to \(\frac{\pi}{4}\)) that also lies inside the disk centered at \((2, 0)\) of radius 3.</p>
+
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+</body>
+</html>

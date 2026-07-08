@@ -1,0 +1,204 @@
+#!/usr/bin/env python3
+"""Build index.html from lesson listing."""
+html = '''<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAT 1600 — Complete Course (50 Lessons)</title>
+<style>
+  :root {
+    --bg: #fafaf9; --text: #1a1a1a; --accent: #1a5276;
+    --math: #0d7377; --english: #7b2d8b; --strategy: #c44536;
+    --light: #e8f0f8; --border: #d0d0cb; --card: #ffffff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16px; line-height: 1.7; color: var(--text); background: var(--bg);
+    max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem;
+  }
+  h1 { font-size: 2rem; color: var(--accent); border-bottom: 3px solid var(--accent); padding-bottom: 0.5rem; margin-bottom: 0.3rem; }
+  .subtitle { color: #666; font-style: italic; margin-bottom: 1.5rem; }
+  .goal-box {
+    background: linear-gradient(135deg, #1a5276, #0d7377);
+    color: white; padding: 1.5rem 2rem; border-radius: 12px; margin-bottom: 2rem;
+    font-size: 1.1rem; text-align: center;
+  }
+  .goal-box .number { font-size: 3.5rem; font-weight: 900; display: block; line-height: 1; }
+  h2 { font-size: 1.3rem; margin: 2.5rem 0 0.8rem; padding-bottom: 0.3rem; border-bottom: 1px solid var(--border); }
+  h2.math { color: var(--math); }
+  h2.english { color: var(--english); }
+  h2.strategy { color: var(--strategy); }
+  .unit-intro {
+    background: var(--light); padding: 0.8rem 1.2rem; border-radius: 6px;
+    margin-bottom: 1rem; font-size: 0.9rem;
+  }
+  .lesson-grid {
+    display: grid; grid-template-columns: 55px 1fr 80px;
+    gap: 0; border: 1px solid var(--border); border-radius: 8px;
+    overflow: hidden; margin-bottom: 0.4rem; background: var(--card);
+  }
+  .lesson-grid .num {
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 1.05rem; color: white;
+  }
+  .num.math-bg { background: var(--math); }
+  .num.eng-bg { background: var(--english); }
+  .num.strat-bg { background: var(--strategy); }
+  .lesson-grid .info { padding: 0.7rem 1rem; border-right: 1px solid var(--border); }
+  .lesson-grid .info strong { display: block; margin-bottom: 0.15rem; }
+  .lesson-grid .info span { font-size: 0.82rem; color: #666; }
+  .lesson-grid .links {
+    display: flex; flex-direction: column; justify-content: center;
+    gap: 0.2rem; padding: 0.4rem 0.6rem;
+  }
+  .lesson-grid .links a {
+    font-size: 0.78rem; color: var(--accent); text-decoration: none;
+    padding: 0.15rem 0; border-bottom: 1px dotted var(--border);
+  }
+  .lesson-grid .links a:hover { text-decoration: underline; }
+  .stats { display: flex; gap: 1.5rem; margin: 1.5rem 0; flex-wrap: wrap; }
+  .stat-box {
+    background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+    padding: 0.8rem 1.2rem; text-align: center; min-width: 90px;
+  }
+  .stat-box .number { font-size: 1.6rem; color: var(--accent); font-weight: bold; }
+  .stat-box .label { font-size: 0.75rem; color: #666; text-transform: uppercase; letter-spacing: 0.05em; }
+  .key { margin: 1rem 0 1.5rem; padding: 0.8rem 1rem; background: var(--light); border-radius: 6px; font-size: 0.85rem; }
+  .footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.82rem; color: #888; text-align: center; }
+  @media (max-width: 700px) {
+    .lesson-grid { grid-template-columns: 40px 1fr; }
+    .lesson-grid .links { grid-column: 1 / -1; flex-direction: row; padding: 0.3rem 0.6rem; gap: 0.5rem; border-top: 1px solid var(--border); }
+  }
+</style>
+</head>
+<body>
+
+<h1>SAT 1600 — Complete Course</h1>
+<p class="subtitle">50 lessons covering every concept on the SAT. Built for a perfect score.<br>
+Math: AAHL-level foundation + SAT-specific data analysis & geometry. English: Full build from scratch.<br>
+Every lesson includes: concept explanations, SAT Trap Alerts, pattern recognition, worked examples, and 5+ practice problems with full solutions.</p>
+
+<div class="goal-box">
+  <span class="number">1600</span>
+  Target Score &middot; Zero Mistakes &middot; Absolute Precision
+</div>
+
+<div class="stats">
+  <div class="stat-box"><div class="number">50</div><div class="label">Lessons</div></div>
+  <div class="stat-box"><div class="number">100</div><div class="label">Files (.md + .html)</div></div>
+  <div class="stat-box"><div class="number">250+</div><div class="label">Practice Problems</div></div>
+  <div class="stat-box"><div class="number">25</div><div class="label">Math Lessons</div></div>
+  <div class="stat-box"><div class="number">25</div><div class="label">English Lessons</div></div>
+</div>
+
+<div class="key">
+  Each lesson: <strong>.html</strong> (MathJax rendering, SAT-styled, print-friendly) and <strong>.md</strong> (markdown source).
+  <br><span style="color:var(--math);">■ Math</span> &middot; <span style="color:var(--english);">■ English</span> &middot; <span style="color:var(--strategy);">■ Strategy</span>
+</div>
+
+<!-- ==================== MATH ==================== -->
+
+<h2 class="math">▎SAT MATH — Building on AAHL (Lessons 1–25)</h2>
+<div class="unit-intro"><strong>Prerequisite:</strong> IB AAHL complete. Calculus, complex numbers, vectors, matrices, proofs, probability distributions, advanced trig — all mastered. These lessons focus on SAT-specific content not covered in AAHL: data analysis, basic geometry, SAT problem-solving patterns, and test strategy.</div>
+
+<h3>Unit 1: SAT Math Foundations & Problem Solving</h3>
+<div class="unit-intro">Strategy, linear word problems, ratios, percentages, unit conversion — the building blocks of SAT math fluency.</div>
+<div class="lesson-grid"><div class="num math-bg">1</div><div class="info"><strong>SAT Math Strategy & Desmos Mastery</strong><span>Calculator tricks, pacing, question types, adaptive modules</span></div><div class="links"><a href="lesson1.html">.html</a><a href="lesson1.md">.md</a></div></div>
+<div class="lesson-grid"><div class="num math-bg">2</div><div class="info"><strong>Linear Word Problems & Interpretation</strong><span>Translating English to equations, slope as rate, intercept meaning</span></div><div class="links"><a href="lesson2.html">.html</a><a href="lesson2.md">.md</a></div></div>
+<div class="lesson-grid"><div class="num math-bg">3</div><div class="info"><strong>Ratios, Rates & Proportions</strong><span>Direct proportion, inverse proportion, rate tables, cross-multiplication</span></div><div class="links"><a href="lesson3.html">.html</a><a href="lesson3.md">.md</a></div></div>
+<div class="lesson-grid"><div class="num math-bg">4</div><div class="info"><strong>Percentages & Percent Change</strong><span>Percent increase/decrease, successive percents, percent of percent</span></div><div class="links"><a href="lesson4.html">.html</a><a href="lesson4.md">.md</a></div></div>
+<div class="lesson-grid"><div class="num math-bg">5</div><div class="info"><strong>Unit Conversion & Dimensional Analysis</strong><span>Factor-label method, compound units, SAT unit traps</span></div><div class="links"><a href="lesson5.html">.html</a><a href="lesson5.md">.md</a></div></div>
+
+<h3>Unit 2: Data Analysis & Statistics</h3>
+<div class="unit-intro"><strong>100% new content.</strong> AAHL covers probability distributions but not data interpretation. SAT heavily tests scatterplots, tables, margin of error, and statistical reasoning.</div>
+<div class="lesson-grid"><div class="num math-bg">6</div><div class="info"><strong>Scatterplots & Line of Best Fit</strong><span>Correlation, slope interpretation, predictions, r vs r²</span></div><div class="links"><a href="lesson6.html">.html</a><a href="lesson6.md">.md</a></div></div>
+<div class="lesson-grid"><div class="num math-bg">7</div><div class="info"><strong>Two-Way Tables & Frequency Analysis</strong><span>Joint frequency, marginal frequency, conditional relative frequency</span></div><div class="links"><a href="lesson7.html">.html</a><a href="lesson7.md">.md</a></div></div>
+<div class="lesson-grid"><div class="num math-bg">8</div><div class="info"><strong>Data Interpretation from Graphs & Tables</strong><span>Bar graphs, histograms, dot plots, box plots, data reasoning</span></div><div class="links"><a href="lesson8.html">.html</a><a href="lesson8.md">.md</a></div></div>
+<div class="lesson-grid"><div class="num math-bg">9</div><div class="info"><strong>Statistical Claims & Margin of Error</strong><span>Sampling methods, bias, margin of error interpretation, valid conclusions</span></div><div class="links"><a href="lesson9.html">.html</a><a href="lesson9.md">.md</a></div></div>
+<div class="lesson-grid"><div class="num math-bg">10</div><div class="info"><strong>Center, Spread & Standard Deviation</strong><span>Mean vs median, range, IQR, standard deviation interpretation</span></div><div class="links"><a href="lesson10.html">.html</a><a href="lesson10.md">.md</a></div></div>
+
+<h3>Unit 3: Advanced Math — SAT Style</h3>
+<div class="unit-intro"><strong>Review with SAT twist.</strong> AAHL covers quadratics, exponentials, functions at a much deeper level. These lessons focus on SAT-specific question formats, common traps, and time-saving shortcuts.</div>
+<div class="lesson-grid"><div class="num math-bg">11</div><div class="info"><strong>Linear Inequalities & Systems of Inequalities</strong><span>Graphing regions, boundary lines, systems, optimization word problems</span></div><div class="links"><a href="lesson11.html">.html</a><a href="lesson11.md">.md</a></div></div>
+<div class="lesson-grid"><div class="num math-bg">12</div><div class="info"><strong>Quadratic Equations & Functions (SAT Review)</strong><span>Factoring, vertex form, discriminant, SAT-specific quadratic patterns</span></div><div class="links"><a href="lesson12.html">.html</a><a href="lesson12.md">.md</a></div></div>
+<div class="lesson-grid"><div class="num math-bg">13</div><div class="info"><strong>Exponential Growth & Decay</strong><span>Percent-based growth, A=P(1±r)^t, doubling time, half-life, SAT contexts</span></div><div class="links"><a href="lesson13.html">.html</a><a href="lesson13.md">.md</a></div></div>
+<div class="lesson-grid"><div class="num math-bg">14</div><div class="info"><strong>Function Notation & Graph Interpretation</strong><span>f(x) notation, composite functions, graph reading, zeros and intercepts</span></div><div class="links"><a href="lesson14.html">.html</a><a href="lesson14.md">.md</a></div></div>
+<div class="lesson-grid"><div class="num math-bg">15</div><div class="info"><strong>Isolating Variables & Equivalent Expressions</strong><span>Literal equations, algebraic manipulation, equivalent form recognition</span></div><div class="links"><a href="lesson15.html">.html</a><a href="lesson15.md">.md</a></div></div>
+
+<h3>Unit 4: Geometry & Trigonometry (SAT Level)</h3>
+<div class="unit-intro"><strong>Mostly new content.</strong> AAHL covers advanced trig (compound angles, identities, radians) but skips basic geometry. These lessons cover lines, angles, triangles, circles, area, volume, and right-triangle trig — all at the SAT level.</div>
+<div class="lesson-grid"><div class="num math-bg">16</div><div class="info"><strong>Geometry: Lines, Angles & Triangles</strong><span>Parallel lines, angle sums, similar triangles, congruence, special right triangles</span></div><div class="links"><a href="lesson16.html">.html</a><a href="lesson16.md">.md</a></div></div>
+<div class="lesson-grid"><div class="num math-bg">17</div><div class="info"><strong>Geometry: Right Triangles & Trigonometry</strong><span>SOHCAHTOA, special ratios (30-60-90, 45-45-90), sine and cosine of complementary angles</span></div><div class="links"><a href="lesson17.html">.html</a><a href="lesson17.md">.md</a></div></div>
+<div class="lesson-grid"><div class="num math-bg">18</div><div class="info"><strong>Geometry: Circles — Arcs, Chords, Sectors</strong><span>Arc length, sector area, central/inscribed angles, tangent properties</span></div><div class="links"><a href="lesson18.html">.html</a><a href="lesson18.md">.md</a></div></div>
+<div class="lesson-grid"><div class="num math-bg">19</div><div class="info"><strong>Circle Equations & Coordinate Geometry</strong><span>(x-h)²+(y-k)²=r², completing the square, distance, midpoint formulas</span></div><div class="links"><a href="lesson19.html">.html</a><a href="lesson19.md">.md</a></div></div>
+<div class="lesson-grid"><div class="num math-bg">20</div><div class="info"><strong>Area, Perimeter & Volume</strong><span>Composite shapes, 3D volume, surface area, cross-sections, SAT formula sheet</span></div><div class="links"><a href="lesson20.html">.html</a><a href="lesson20.md">.md</a></div></div>
+<div class="lesson-grid"><div class="num math-bg">21</div><div class="info"><strong>Complex Numbers (SAT Level)</strong><span>i²=-1, addition/multiplication, conjugates. AAHL covers this deeply — quick review.</span></div><div class="links"><a href="lesson21.html">.html</a><a href="lesson21.md">.md</a></div></div>
+
+<h3>Unit 5: SAT Math Strategy & Test-Taking</h3>
+<div class="unit-intro"><strong>Strategy is the difference between 1500 and 1600.</strong> Pattern recognition, trap-spotting, backsolving, time management, and the psychology of adaptive testing.</div>
+<div class="lesson-grid"><div class="num strat-bg">22</div><div class="info"><strong>Pattern Recognition & Common SAT Traps</strong><span>Distractor patterns, sign errors, unit mismatches, "NOT" questions, answer choice analysis</span></div><div class="links"><a href="lesson22.html">.html</a><a href="lesson22.md">.md</a></div></div>
+<div class="lesson-grid"><div class="num strat-bg">23</div><div class="info"><strong>Time Management & Backsolving</strong><span>Per-question pacing, when to skip, backsolving from choices, plugging in numbers</span></div><div class="links"><a href="lesson23.html">.html</a><a href="lesson23.md">.md</a></div></div>
+<div class="lesson-grid"><div class="num strat-bg">24</div><div class="info"><strong>Full Math Module 1 Practice & Strategy</strong><span>Timed Module 1 simulation, question-type distribution, easy/medium calibration</span></div><div class="links"><a href="lesson24.html">.html</a><a href="lesson24.md">.md</a></div></div>
+<div class="lesson-grid"><div class="num strat-bg">25</div><div class="info"><strong>Math Module 2 — Hard Questions & Adaptive Strategy</strong><span>Hard module patterns, time pressure, when Module 2 gets harder — what it means</span></div><div class="links"><a href="lesson25.html">.html</a><a href="lesson25.md">.md</a></div></div>
+
+<!-- ==================== ENGLISH ==================== -->
+
+<h2 class="english">▎SAT READING & WRITING — Full Build (Lessons 26–50)</h2>
+<div class="unit-intro"><strong>Starting from zero.</strong> No prior formal SAT English prep. Everything is taught from first principles: grammar, rhetoric, reading comprehension, and test strategy. All 4 domains of the digital SAT Reading & Writing section.</div>
+
+<h3>Unit 6: Standard English Conventions — Grammar</h3>
+<div class="unit-intro"><strong>~26% of verbal score.</strong> The most rule-based, learnable section. Master these and you lock in ~11-12 free questions.</div>
+<div class="lesson-grid"><div class="num eng-bg">26</div><div class="info"><strong>Subject-Verb Agreement</strong><span>Singular/plural, intervening phrases, neither/nor, collective nouns, inverted sentences</span></div><div class="links"><a href="lesson26.html">.html</a><a href="lesson26.md">.md</a></div></div>
+<div class="lesson-grid"><div class="num eng-bg">27</div><div class="info"><strong>Pronoun Agreement & Ambiguity</strong><span>Antecedent clarity, number agreement, ambiguous "they," who vs. whom</span></div><div class="links"><a href="lesson27.html">.html</a><a href="lesson27.md">.md</a></div></div>
+<div class="lesson-grid"><div class="num eng-bg">28</div><div class="info"><strong>Verb Tense, Mood & Aspect</strong><span>Consistency, sequence of tenses, subjunctive mood, would/could/should</span></div><div class="links"><a href="lesson28.html">.html</a><a href="lesson28.md">.md</a></div></div>
+<div class="lesson-grid"><div class="num eng-bg">29</div><div class="info"><strong>Modifier Placement</strong><span>Dangling modifiers, misplaced modifiers, squinting modifiers, correction strategies</span></div><div class="links"><a href="lesson29.html">.html</a><a href="lesson29.md">.md</a></div></div>
+<div class="lesson-grid"><div class="num eng-bg">30</div><div class="info"><strong>Parallelism & Parallel Structure</strong><span>Lists, comparisons, correlative conjunctions (not only/but also, either/or)</span></div><div class="links"><a href="lesson30.html">.html</a><a href="lesson30.md">.md</a></div></div>
+<div class="lesson-grid"><div class="num eng-bg">31</div><div class="info"><strong>Comma Usage — Complete Guide</strong><span>Lists, FANBOYS, nonrestrictive clauses, introductory phrases, appositives</span></div><div class="links"><a href="lesson31.html">.html</a><a href="lesson31.md">.md</a></div></div>
+<div class="lesson-grid"><div class="num eng-bg">32</div><div class="info"><strong>Semicolons, Colons, Dashes & Parentheses</strong><span>When to use each, common SAT patterns, semicolon vs. period distinction</span></div><div class="links"><a href="lesson32.html">.html</a><a href="lesson32.md">.md</a></div></div>
+<div class="lesson-grid"><div class="num eng-bg">33</div><div class="info"><strong>Apostrophes & Possessives</strong><span>Singular possessive, plural possessive, its vs. it's, joint possession</span></div><div class="links"><a href="lesson33.html">.html</a><a href="lesson33.md">.md</a></div></div>
+<div class="lesson-grid"><div class="num eng-bg">34</div><div class="info"><strong>Sentence Boundaries</strong><span>Fragments, run-on sentences, comma splices, correct separation methods</span></div><div class="links"><a href="lesson34.html">.html</a><a href="lesson34.md">.md</a></div></div>
+<div class="lesson-grid"><div class="num eng-bg">35</div><div class="info"><strong>Frequently Confused Words & Idioms</strong><span>affect/effect, lie/lay, who/whom, fewer/less, SAT's favorite confusables</span></div><div class="links"><a href="lesson35.html">.html</a><a href="lesson35.md">.md</a></div></div>
+<div class="lesson-grid"><div class="num eng-bg">36</div><div class="info"><strong>Comparisons & Logical Structure</strong><span>Like vs. as, comparative/superlative forms, illogical comparisons, missing terms</span></div><div class="links"><a href="lesson36.html">.html</a><a href="lesson36.md">.md</a></div></div>
+
+<h3>Unit 7: Expression of Ideas — Rhetoric & Organization</h3>
+<div class="unit-intro"><strong>~20% of verbal score.</strong> Transitions, rhetorical synthesis (the new "notes" question type), and information relevance. These questions test your ability to organize and express ideas effectively.</div>
+<div class="lesson-grid"><div class="num eng-bg">37</div><div class="info"><strong>Transitions & Logical Sequence</strong><span>Addition, contrast, cause-effect, emphasis, sequence — full transition taxonomy</span></div><div class="links"><a href="lesson37.html">.html</a><a href="lesson37.md">.md</a></div></div>
+<div class="lesson-grid"><div class="num eng-bg">38</div><div class="info"><strong>Rhetorical Synthesis (Notes Questions)</strong><span>The new digital SAT question type: synthesizing bullet-point notes to meet a goal</span></div><div class="links"><a href="lesson38.html">.html</a><a href="lesson38.md">.md</a></div></div>
+<div class="lesson-grid"><div class="num eng-bg">39</div><div class="info"><strong>Adding, Deleting & Revising Information</strong><span>Relevance to main idea, supporting details, data inclusion, conciseness</span></div><div class="links"><a href="lesson39.html">.html</a><a href="lesson39.md">.md</a></div></div>
+
+<h3>Unit 8: Craft & Structure — How Texts Work</h3>
+<div class="unit-intro"><strong>~28% of verbal score.</strong> Words in context, text structure and purpose, cross-text connections. Tests your ability to analyze how authors build arguments and use language.</div>
+<div class="lesson-grid"><div class="num eng-bg">40</div><div class="info"><strong>Words in Context (Vocabulary)</strong><span>Using context clues, multiple-meaning words, academic vocabulary, SAT word patterns</span></div><div class="links"><a href="lesson40.html">.html</a><a href="lesson40.md">.md</a></div></div>
+<div class="lesson-grid"><div class="num eng-bg">41</div><div class="info"><strong>Text Structure, Purpose & Tone</strong><span>Identifying overall structure, paragraph function, author's purpose, tonal shifts</span></div><div class="links"><a href="lesson41.html">.html</a><a href="lesson41.md">.md</a></div></div>
+<div class="lesson-grid"><div class="num eng-bg">42</div><div class="info"><strong>Cross-Text Connections (Paired Passages)</strong><span>Comparing arguments, identifying agreement/disagreement, synthesis questions</span></div><div class="links"><a href="lesson42.html">.html</a><a href="lesson42.md">.md</a></div></div>
+
+<h3>Unit 9: Information & Ideas — Reading Comprehension</h3>
+<div class="unit-intro"><strong>~26% of verbal score.</strong> Main idea, supporting details, command of evidence, and inferences. The core reading comprehension skills that the SAT tests on every passage.</div>
+<div class="lesson-grid"><div class="num eng-bg">43</div><div class="info"><strong>Main Idea & Central Claims</strong><span>Distinguishing main idea from supporting detail, thesis identification, global questions</span></div><div class="links"><a href="lesson43.html">.html</a><a href="lesson43.md">.md</a></div></div>
+<div class="lesson-grid"><div class="num eng-bg">44</div><div class="info"><strong>Specific Details & Literal Comprehension</strong><span>Fact-finding in passages, avoiding misinterpretation, detail-oriented reading</span></div><div class="links"><a href="lesson44.html">.html</a><a href="lesson44.md">.md</a></div></div>
+<div class="lesson-grid"><div class="num eng-bg">45</div><div class="info"><strong>Command of Evidence (Textual)</strong><span>Finding the line that proves the answer, evidence-based reasoning, quote selection</span></div><div class="links"><a href="lesson45.html">.html</a><a href="lesson45.md">.md</a></div></div>
+<div class="lesson-grid"><div class="num eng-bg">46</div><div class="info"><strong>Command of Evidence (Quantitative)</strong><span>Interpreting graphs and charts in reading passages, data as evidence, graph-text synthesis</span></div><div class="links"><a href="lesson46.html">.html</a><a href="lesson46.md">.md</a></div></div>
+<div class="lesson-grid"><div class="num eng-bg">47</div><div class="info"><strong>Inferences from Text</strong><span>Reading between the lines, logical conclusions, avoiding over-inference, SAT inference rules</span></div><div class="links"><a href="lesson47.html">.html</a><a href="lesson47.md">.md</a></div></div>
+
+<h3>Unit 10: Verbal Strategy & Full Test Integration</h3>
+<div class="unit-intro"><strong>The craft of test-taking.</strong> Reading strategies, process of elimination, time management for verbal sections, and full-test integration. These lessons turn knowledge into score.</div>
+<div class="lesson-grid"><div class="num strat-bg">48</div><div class="info"><strong>Passage Mapping & Active Reading</strong><span>Annotation strategies, passage types (literature, science, social science, humanities), skimming vs. deep reading</span></div><div class="links"><a href="lesson48.html">.html</a><a href="lesson48.md">.md</a></div></div>
+<div class="lesson-grid"><div class="num strat-bg">49</div><div class="info"><strong>Verbal Time Management & POE Mastery</strong><span>Per-question pacing, process of elimination, trap answer patterns, guessing strategy</span></div><div class="links"><a href="lesson49.html">.html</a><a href="lesson49.md">.md</a></div></div>
+<div class="lesson-grid"><div class="num strat-bg">50</div><div class="info"><strong>Full SAT Integration — Putting It All Together</strong><span>Full test strategy, section order, stamina, pre-test routine, final checklist for 1600</span></div><div class="links"><a href="lesson50.html">.html</a><a href="lesson50.md">.md</a></div></div>
+
+<div class="footer">
+  <p>SAT 1600 Complete Course — 50 Lessons. Built for precision. Built for perfection.</p>
+  <p>250+ practice problems with full solutions and wrong-answer analysis. Math uses AAHL foundation. English starts from zero.</p>
+  <p><a href="../study_plan.md">10-Week Study Plan</a> &middot; <a href="../syllabus_overview.md">Full Syllabus Tracker</a></p>
+</div>
+
+</body>
+</html>'''
+
+import os
+path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'index.html')
+with open(path, 'w') as f:
+    f.write(html)
+print(f'✅ index.html written ({len(html)} chars)')

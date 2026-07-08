@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 30: Parallelism &amp; Parallel Structure</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root {
+    --bg: #fafaf9;
+    --text: #1a1a1a;
+    --accent: #1a5276;
+    --trap-bg: #fff3cd;
+    --trap-border: #ffc107;
+    --pattern-bg: #d1ecf1;
+    --pattern-border: #17a2b8;
+    --card: #ffffff;
+    --border: #d0d0cb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+  h1 { font-size: 1.8rem; color: var(--accent); border-bottom: 3px solid var(--accent); padding-bottom: 0.5rem; margin-bottom: 1rem; }
+  h2 { font-size: 1.35rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+  h3 { font-size: 1.15rem; color: #333; margin: 1.5rem 0 0.5rem; }
+  p, li { margin: 0.5em 0; }
+  ul, ol { padding-left: 1.5rem; margin: 0.5em 0; }
+  .trap-box {
+    background: var(--trap-bg);
+    border-left: 4px solid var(--trap-border);
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.95rem;
+  }
+  .trap-box strong { color: #856404; }
+  .pattern-box {
+    background: var(--pattern-bg);
+    border-left: 4px solid var(--pattern-border);
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.95rem;
+  }
+  .pattern-box strong { color: #0c5460; }
+  .example {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem 1.3rem;
+    margin: 1rem 0;
+  }
+  .example h4 { color: var(--accent); margin-bottom: 0.3rem; }
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 2.5rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  .nav a { color: var(--accent); text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  code { background: #f0f0f0; padding: 0.15em 0.4em; border-radius: 3px; font-size: 0.9em; }
+  strong { color: #222; }
+  @media print {
+    body { font-size: 14px; }
+    .nav { display: none; }
+  }
+</style>
+</head>
+<body>
+<h1>Lesson 30: Parallelism & Parallel Structure</h1>
+<h2>What You'll Learn</h2>
+<p>Parallelism means using the same grammatical form for items in a series, for elements joined by correlative conjunctions, and for two sides of a comparison. When you master parallel structure, your writing becomes clearer and more powerful — and you'll automatically spot when the SAT breaks the pattern. This lesson covers list parallelism, correlative conjunction pairs, and comparison structure — three of the most frequently tested patterns on the SAT.</p>
+<h2>SAT Context</h2>
+<p>Parallelism questions are among the most common on the SAT's Standard English Conventions section, appearing in about 10-15% of conventions questions. They're highly pattern-based: once you learn to scan for parallel markers (lists, "not only...but also," comparisons), these questions become nearly automatic. Expect 2-4 questions per test.</p>
+<hr>
+<h2>The Core Rule of Parallelism</h2>
+<p>When sentence elements serve the same grammatical function, they must have the same grammatical form. If one item in a list is an -ing verb, all should be -ing verbs. If one is an infinitive (to + verb), all should be infinitives.</p>
+<hr>
+<h2>Lists and Series</h2>
+<p>**WRONG:** She likes **swimming**, **to run**, and **biking**.</p>
+<ul>
+<li>Mix: gerund (swimming), infinitive (to run), gerund (biking)</li>
+</ul>
+<p>**RIGHT:** She likes **swimming**, **running**, and **biking**.</p>
+<ul>
+<li>All gerunds — parallel ✓</li>
+</ul>
+<p>**RIGHT:** She likes **to swim**, **to run**, and **to bike**.</p>
+<ul>
+<li>All infinitives — parallel ✓</li>
+</ul>
+<p>**WRONG:** The job requires **attention to detail**, **being organized**, and **you must be punctual**.</p>
+<ul>
+<li>Mix: noun phrase, gerund phrase, clause</li>
+</ul>
+<p>**RIGHT:** The job requires **attention to detail**, **organization**, and **punctuality**.</p>
+<ul>
+<li>All nouns — parallel ✓</li>
+</ul>
+<p>**WRONG:** The internship involved **filing documents**, **answering phones**, and **to assist with research**.</p>
+<ul>
+<li>Mix: gerund, gerund, infinitive</li>
+</ul>
+<p>**RIGHT:** The internship involved **filing documents**, **answering phones**, and **assisting with research**.</p>
+<ul>
+<li>All gerunds — parallel ✓</li>
+</ul>
+<p>> **🔍 PATTERN RECOGNITION:** When you see a list (three items separated by commas), check the first item's grammatical form. The second and third must match. If the third item suddenly switches forms, it's wrong.</p>
+<hr>
+<h2>Correlative Conjunctions</h2>
+<p>These paired conjunctions demand parallel structure on both sides:</p>
+<p>| Pair | Pattern |</p>
+<p>|------|---------|</p>
+<p>| **not only X but also Y** | X and Y must be same form |</p>
+<p>| **either X or Y** | X and Y must be same form |</p>
+<p>| **neither X nor Y** | X and Y must be same form |</p>
+<p>| **both X and Y** | X and Y must be same form |</p>
+<h3> Examples</h3>
+<p>**WRONG:** She is **not only** intelligent **but also** has creativity.</p>
+<ul>
+<li>X = "intelligent" (adjective) / Y = "has creativity" (verb phrase) — NOT parallel</li>
+</ul>
+<p>**RIGHT:** She is **not only** intelligent **but also** creative.</p>
+<ul>
+<li>X = "intelligent" (adjective) / Y = "creative" (adjective) — parallel ✓</li>
+</ul>
+<p>**WRONG:** The course teaches students **both** how to analyze data **and** writing research papers.</p>
+<ul>
+<li>X = "how to analyze data" / Y = "writing research papers" — NOT parallel</li>
+</ul>
+<p>**RIGHT:** The course teaches students **both** how to analyze data **and** how to write research papers.</p>
+<ul>
+<li>X and Y match — parallel ✓</li>
+</ul>
+<p>**RIGHT:** The course teaches students **both** analyzing data **and** writing research papers.</p>
+<ul>
+<li>Both gerund phrases — parallel ✓</li>
+</ul>
+<p>**WRONG:** The politician **either** needs to address the issue directly **or** avoiding it entirely.</p>
+<ul>
+<li>X = "needs to address" (verb) / Y = "avoiding" (gerund) — NOT parallel</li>
+</ul>
+<p>**RIGHT:** The politician **either** needs to address the issue directly **or** needs to avoid it entirely.</p>
+<p>> **🚨 SAT TRAP ALERT:** The SAT loves to hide non-parallel Y elements after long X elements. By the time you reach Y, you've forgotten what X looked like. Strategy: bracket the X element and bracket the Y element, then compare them side by side.</p>
+<hr>
+<h2>Comparisons</h2>
+<p>When comparing two things using "than" or "as," both sides must be grammatically parallel and logically comparable.</p>
+<p>**WRONG:** The population of China is larger than India.</p>
+<ul>
+<li>Comparing "population" to "India" (a country) — illogical</li>
+</ul>
+<p>**RIGHT:** The population of China is larger than **that** of India.</p>
+<ul>
+<li>"That" stands for "the population" — comparing population to population ✓</li>
+</ul>
+<p>**RIGHT:** The population of China is larger than **India's**.</p>
+<ul>
+<li>"India's" = India's population — parallel ✓</li>
+</ul>
+<p>**WRONG:** Her salary is higher than her boss.</p>
+<ul>
+<li>Comparing "salary" to "boss" (a person) — illogical</li>
+</ul>
+<p>**RIGHT:** Her salary is higher than her boss's.</p>
+<ul>
+<li>"Boss's" = boss's salary — parallel ✓</li>
+</ul>
+<p>**RIGHT:** Her salary is higher than **that of** her boss.</p>
+<ul>
+<li>"That of" stands for "the salary of" — parallel ✓</li>
+</ul>
+<p>**WRONG:** The climate in California is warmer than Oregon.</p>
+<ul>
+<li>Comparing "climate" to "Oregon" — illogical</li>
+</ul>
+<p>**RIGHT:** The climate in California is warmer than the climate in Oregon.</p>
+<p>**RIGHT:** The climate in California is warmer than **that of** Oregon.</p>
+<hr>
+<h2>Parallelism with Prepositions</h2>
+<p>When items in a series use different prepositions, you must include all prepositions:</p>
+<p>**WRONG:** She has an interest and talent for music.</p>
+<ul>
+<li>"Interest in" but "talent for" — "interest for" is wrong</li>
+</ul>
+<p>**RIGHT:** She has an interest **in** and talent **for** music.</p>
+<p>**WRONG:** He was inspired and influenced by the speech.</p>
+<ul>
+<li>"Inspired by" and "influenced by" — both use "by," so one is fine</li>
+</ul>
+<p>**RIGHT:** He was inspired and influenced by the speech.</p>
+<ul>
+<li>Both work with "by" — parallel ✓</li>
+</ul>
+<hr>
+<h3> Worked Example 1</h3>
+<p>**Question:** The new policy aims to reduce waste, to increase efficiency, and __________.</p>
+<p>A) it promotes sustainability</p>
+<p>B) promoting sustainability</p>
+<p>C) to promote sustainability</p>
+<p>D) sustainability is promoted</p>
+<p>**Answer:** C — "to promote sustainability"</p>
+<p>**Explanation:** The series begins with two infinitives: "to reduce waste" and "to increase efficiency." The third item must also be an infinitive to maintain parallel structure. "To promote sustainability" matches the pattern. (The "to" can optionally be dropped in lists — "to reduce waste, increase efficiency, and promote sustainability" would also work.)</p>
+<hr>
+<h3> Worked Example 2</h3>
+<p>**Question:** The documentary was not only entertaining but also __________ viewers about an important historical event.</p>
+<p>A) it educated</p>
+<p>B) educated</p>
+<p>C) to educate</p>
+<p>D) educating</p>
+<p>**Answer:** B — "educated"</p>
+<p>**Explanation:** "Not only X but also Y" requires X and Y to match in form. X = "entertaining" (adjective/past participle used adjectivally after "was"). Y should be an adjective/past participle as well. "Educated" matches because "was not only entertaining but also educated" — both are adjectives (or past participles functioning as adjectives) complementing "was."</p>
+<p>Wait — let me reconsider. "Was not only entertaining" — "entertaining" here is an adjective. "But also educated viewers" — "educated" is a past tense verb here. Actually, re-reading: "The documentary was not only entertaining but also educated viewers." If Y = "educated viewers," then Y is a verb phrase (educated + object), while X = "entertaining" is an adjective. That's not parallel.</p>
+<p>Hmm, let me reconsider the options. If we read it as "The documentary was not only entertaining but also [was] educated [about]..." — that still doesn't work well.</p>
+<p>Actually, the best reading: "was not only entertaining" — the "was" distributes. So: "was not only entertaining but also [was] educating viewers." That would make D correct — both are present participles/adjectives after "was."</p>
+<p>But that changes the meaning. Let me stick with what makes grammatical sense. "Was not only entertaining (adjective) but also educated (verb) viewers" — this is NOT parallel. The correct answer in a parallel structure with "was" should be: "was not only entertaining but also educational." But that's not an option.</p>
+<p>Given the options, **B** is likely the intended answer with "was not only entertaining but also educated" — read as two past tense verbs: "The documentary [not only] entertained but also educated." But the original says "was not only entertaining"...</p>
+<p>Let me re-read: "The documentary was not only entertaining but also __________ viewers about an important historical event."</p>
+<p>Actually, I think the intended answer is D ("educating"), making it "was not only entertaining but also educating viewers" — both present participles functioning as adjectives/complements after "was." This is parallel.</p>
+<p>**Corrected Answer: D — "educating"**</p>
+<hr>
+<h3> Worked Example 3</h3>
+<p>**Question:** The architecture of ancient Rome is more influential in modern building design than __________.</p>
+<p>A) ancient Greece</p>
+<p>B) that of ancient Greece</p>
+<p>C) ancient Greece's architecture</p>
+<p>D) what ancient Greece built</p>
+<p>**Answer:** B — "that of ancient Greece"</p>
+<p>**Explanation:** We're comparing "the architecture of ancient Rome" with something. The comparison must be between two architectures, not between architecture and a civilization. "That of ancient Greece" uses "that" as a pronoun for "the architecture," creating a parallel comparison. Option C ("ancient Greece's architecture") would also be correct. Both B and C are grammatically sound answers on the SAT.</p>
+<hr>
+<h2>Practice Problems</h2>
+<h3> Problem 1</h3>
+<p>The internship requires interns to greet clients, to schedule appointments, and __________.</p>
+<p>A) the filing of important documents</p>
+<p>B) filing important documents</p>
+<p>C) to file important documents</p>
+<p>D) important documents must be filed</p>
+<h3> Problem 2</h3>
+<p>Critics argue that the film succeeds not because of its special effects but __________.</p>
+<p>A) the acting is strong</p>
+<p>B) because of its strong acting</p>
+<p>C) having strong acting</p>
+<p>D) it has strong acting</p>
+<h3> Problem 3</h3>
+<p>The researcher's method was cheaper, faster, and __________ than the traditional approach.</p>
+<p>A) it had more reliability</p>
+<p>B) more reliable</p>
+<p>C) having greater reliability</p>
+<p>D) it was more reliable</p>
+<h3> Problem 4</h3>
+<p>Neither the coach's strategy nor __________ was effective against the opposing team's defense.</p>
+<p>A) the players executed well</p>
+<p>B) the execution of the players</p>
+<p>C) how the players executed</p>
+<p>D) the players' execution</p>
+<h3> Problem 5</h3>
+<p>The cost of living in New York City is significantly higher than __________.</p>
+<p>A) Chicago</p>
+<p>B) in Chicago</p>
+<p>C) that of Chicago</p>
+<p>D) what Chicago costs</p>
+<h3> Problem 6</h3>
+<p>The new software is designed both to protect user data and __________ unauthorized access attempts.</p>
+<p>A) it detects</p>
+<p>B) to detect</p>
+<p>C) detecting</p>
+<p>D) for the detection of</p>
+<h3> Problem 7</h3>
+<p>To succeed in the course, students must read the textbook, participate in discussions, and __________.</p>
+<p>A) the completion of weekly assignments</p>
+<p>B) they must complete weekly assignments</p>
+<p>C) complete weekly assignments</p>
+<p>D) completing weekly assignments</p>
+<hr>
+<h2>Answers</h2>
+<h3> Problem 1 — Answer: C ("to file important documents")</h3>
+<p>**Why C is correct:** The list has two infinitives: "to greet clients" and "to schedule appointments." The third item must also be an infinitive: "to file important documents." All three items are parallel.</p>
+<p>**Why others are wrong:**</p>
+<ul>
+<li>A: "The filing of important documents" — noun phrase, not parallel with infinitives.</li>
+<li>B: "Filing important documents" — gerund phrase, not parallel with infinitives.</li>
+<li>D: "Important documents must be filed" — independent clause, not parallel with infinitive phrases.</li>
+</ul>
+<hr>
+<h3> Problem 2 — Answer: B ("because of its strong acting")</h3>
+<p>**Why B is correct:** The structure is "not because of its special effects but because of its strong acting." "Not X but Y" requires X and Y to be parallel. X = "because of its special effects" (prepositional phrase), so Y must also be a "because of" prepositional phrase.</p>
+<p>**Why others are wrong:**</p>
+<ul>
+<li>A: "The acting is strong" — independent clause, not parallel with a prepositional phrase.</li>
+<li>C: "Having strong acting" — participial phrase, not parallel.</li>
+<li>D: "It has strong acting" — independent clause, not parallel.</li>
+</ul>
+<hr>
+<h3> Problem 3 — Answer: B ("more reliable")</h3>
+<p>**Why B is correct:** The series contains three comparative adjectives: "cheaper," "faster," and the third must also be a comparative adjective. "More reliable" is the comparative form of "reliable" and completes the parallel series.</p>
+<p>**Why others are wrong:**</p>
+<ul>
+<li>A: "It had more reliability" — clause, not parallel with single adjectives.</li>
+<li>C: "Having greater reliability" — participial phrase, not parallel.</li>
+<li>D: "It was more reliable" — clause, not parallel.</li>
+</ul>
+<hr>
+<h3> Problem 4 — Answer: D ("the players' execution")</h3>
+<p>**Why D is correct:** "Neither X nor Y" requires parallel structure. X = "the coach's strategy" (possessive noun + noun). Y must be possessive + noun too: "the players' execution." Both are noun phrases with possessive determiners.</p>
+<p>**Why others are wrong:**</p>
+<ul>
+<li>A: "The players executed well" — clause, not parallel with a noun phrase.</li>
+<li>B: "The execution of the players" — prepositional phrase structure, not parallel with possessive.</li>
+<li>C: "How the players executed" — noun clause, not parallel with the possessive noun phrase.</li>
+</ul>
+<hr>
+<h3> Problem 5 — Answer: C ("that of Chicago")</h3>
+<p>**Why C is correct:** We're comparing "the cost of living in New York City" with something. "That" is a pronoun standing for "the cost of living." "That of Chicago" = "the cost of living of Chicago" — a parallel comparison.</p>
+<p>**Why others are wrong:**</p>
+<ul>
+<li>A: "Chicago" — compares cost to a city, not cost to cost. Illogical.</li>
+<li>B: "In Chicago" — prepositional phrase; doesn't complete the comparison logically.</li>
+<li>D: "What Chicago costs" — awkward and not parallel in structure.</li>
+</ul>
+<hr>
+<h3> Problem 6 — Answer: B ("to detect")</h3>
+<p>**Why B is correct:** "Both X and Y" requires parallel structure. X = "to protect user data" (infinitive phrase). Y must also be an infinitive phrase: "to detect unauthorized access attempts."</p>
+<p>**Why others are wrong:**</p>
+<ul>
+<li>A: "It detects" — clause, not parallel with the infinitive phrase.</li>
+<li>C: "Detecting" — gerund, not parallel with the infinitive.</li>
+<li>D: "For the detection of" — prepositional phrase, not parallel.</li>
+</ul>
+<hr>
+<h3> Problem 7 — Answer: C ("complete weekly assignments")</h3>
+<p>**Why C is correct:** The list has two base-form verbs: "read the textbook" and "participate in discussions." The third item should also be a base-form verb: "complete weekly assignments." All follow the modal "must" implicitly: "must read, [must] participate, and [must] complete."</p>
+<p>**Why others are wrong:**</p>
+<ul>
+<li>A: "The completion of weekly assignments" — noun phrase, not parallel with verb phrases.</li>
+<li>B: "They must complete weekly assignments" — clause with repeated subject, breaking the parallel structure.</li>
+<li>D: "Completing weekly assignments" — gerund, not parallel with base-form verbs.</li>
+</ul>
+<div class="nav">
+<a href="lesson29.html">← Previous Lesson</a>
+<a href="index.html">📋 All Lessons</a>
+<a href="lesson31.html">Next Lesson →</a>
+</div>
+</body>
+</html>

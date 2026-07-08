@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 22 — Polar Form & Euler's Formula</title>
+<script>
+MathJax = {
+  tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body {
+    max-width: 800px; margin: 40px auto; font-family: 'Times New Roman', Georgia, serif;
+    font-size: 17px; line-height: 1.7; padding: 0 20px; color: #1a1a1a;
+  }
+  h1 { font-size: 22px; border-bottom: 2px solid #333; padding-bottom: 8px; margin-top: 36px; }
+  h2 { font-size: 19px; margin-top: 28px; color: #2c3e50; }
+  h3 { font-size: 17px; margin-top: 22px; color: #444; }
+  h4 { font-size: 16px; margin-top: 18px; }
+  p { margin: 0.6em 0; }
+  li { margin: 0.3em 0 0.3em 20px; }
+  hr { margin: 20px 0; border: none; border-top: 1px solid #ddd; }
+  .math-block { text-align: center; margin: 1em 0; overflow-x: auto; }
+  .table-line { font-family: 'Courier New', monospace; font-size: 15px; margin: 0.1em 0; }
+  pre { background: #f5f5f5; padding: 10px 14px; border-radius: 4px; overflow-x: auto; font-size: 14px; }
+  b { color: #222; }
+  table { border-collapse: collapse; margin: 16px 0; width: 100%; font-size: 15px; }
+  th { background: #2c3e50; color: #fff; padding: 8px 12px; text-align: center; font-weight: bold; }
+  td { border: 1px solid #ccc; padding: 8px 12px; text-align: center; }
+  tr:nth-child(even) { background: #f9f9f9; }
+  .nav { text-align: center; margin: 30px 0; font-size: 14px; }
+  .nav a { margin: 0 8px; color: #3498db; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  @media print { body { font-size: 15px; } }
+</style>
+</head>
+<body>
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+<h1>Lesson 22: Polar Form and Euler&#x27;s Formula</h1>
+
+<h2>What Are Complex Numbers in Polar Form?</h2>
+
+<h3>The &quot;What&quot; — A New Way to Describe Complex Numbers</h3>
+
+<p>Until now, every complex number has been written in <b>Cartesian form</b>: $z = a + bi$, where $a$ and $b$ are real numbers. The number $a$ tells us how far left or right to go on the complex plane. The number $b$ tells us how far up or down. This is exactly the same idea as $(x, y)$ coordinates on a graph.</p>
+
+<p>There is another way to describe the position of a point on the complex plane. Instead of saying &quot;go right by $a$ units and up by $b$ units,&quot; we can say:</p>
+
+<li>- Start at the origin.</li>
+<li>- Face the point from the origin (this gives a direction, measured as an angle from the positive real axis).</li>
+<li>- Walk a certain distance in that direction.</li>
+
+<p>This is <b>polar form</b>. A complex number in polar form is specified by two things:</p>
+
+<li>- $r$ — the <b>modulus</b>, which is the distance from the origin to the point. It is always a non-negative real number.</li>
+<li>- $\theta$ — the <b>argument</b>, which is the angle from the positive real axis to the line connecting the origin to the point. It is measured in radians (or degrees), usually between $-\pi$ and $\pi$.</li>
+
+<p>The polar form of a complex number $z$ is written as:</p>
+
+<div class="math-block">$$z = r(\cos\theta + i\sin\theta)$$</div>
+
+<p>The shorthand $r\operatorname{cis}\theta$ means exactly the same thing: $r(\cos\theta + i\sin\theta)$.</p>
+
+<h3>The &quot;Why&quot; — Multiplication Becomes Simple</h3>
+
+<p>Multiplying complex numbers in Cartesian form requires expanding brackets (FOIL), collecting terms, and remembering that $i^2 = -1$. Division in Cartesian form requires multiplying numerator and denominator by the complex conjugate.</p>
+
+<p>Polar form turns multiplication into a much simpler operation: <b>multiply the moduli, add the arguments</b>. Division becomes: <b>divide the moduli, subtract the arguments</b>. This geometric insight — that multiplying complex numbers corresponds to rotating and scaling — is one of the most powerful ideas in complex analysis.</p>
+
+<p><hr></p>
+
+<h2>1. From Cartesian to Polar Form</h2>
+
+<p>Any non-zero complex number $z = a + bi$ can be converted to polar form by finding its modulus and argument.</p>
+
+<h3>The Modulus</h3>
+
+<p>The modulus of $z = a + bi$ is the distance from the point $(a, b)$ to the origin $(0, 0)$. By the Pythagorean theorem:</p>
+
+<div class="math-block">$$r = |z| = \sqrt{a^2 + b^2}$$</div>
+
+<p>The modulus is always a non-negative real number. It is never negative because it represents a distance.</p>
+
+<h3>The Argument</h3>
+
+<p>The argument of $z$, written $\arg(z)$, is the angle $\theta$ that the line from the origin to $(a, b)$ makes with the positive real axis. The tangent of this angle is $\frac{b}{a}$. However, using $\theta = \arctan\left(\frac{b}{a}\right)$ directly is dangerous — the arctan function on a calculator only returns angles between $-\frac{\pi}{2}$ and $\frac{\pi}{2}$, which means it cannot distinguish between Quadrant I and Quadrant III, or between Quadrant II and Quadrant IV.</p>
+
+<p><b>A common misconception:</b> Many students compute $\arctan\left(\frac{b}{a}\right)$ and accept whatever the calculator gives them. This is wrong. You must always check which quadrant the point $(a, b)$ lies in and adjust the angle accordingly:</p>
+
+<li>- If $a &gt; 0$ and $b \geq 0$: Quadrant I, $\theta = \arctan\left(\frac{b}{a}\right)$.</li>
+<li>- If $a &lt; 0$: Quadrant II or III, $\theta = \arctan\left(\frac{b}{a}\right) + \pi$ (or $\arctan\left(\frac{b}{a}\right) - \pi$, whichever keeps the answer in the principal range).</li>
+<li>- If $a &gt; 0$ and $b &lt; 0$: Quadrant IV, $\theta = \arctan\left(\frac{b}{a}\right)$ (which will be negative).</li>
+<li>- If $a = 0$ and $b &gt; 0$: $\theta = \frac{\pi}{2}$.</li>
+<li>- If $a = 0$ and $b &lt; 0$: $\theta = -\frac{\pi}{2}$.</li>
+
+<h3>Converting from Polar to Cartesian</h3>
+
+<p>To go back from polar form $z = r(\cos\theta + i\sin\theta)$ to Cartesian form $z = a + bi$, compute:</p>
+
+<div class="math-block">$$a = r\cos\theta, \quad b = r\sin\theta$$</div>
+
+<p>This follows directly from the definition of sine and cosine in a right triangle with hypotenuse $r$.</p>
+
+<p><hr></p>
+
+<h2>Worked Example 1: Cartesian to Polar</h2>
+
+<p><b>Problem:</b> Express $z = -1 + i\sqrt{3}$ in polar form $r(\cos\theta + i\sin\theta)$.</p>
+
+<p><b>Approach:</b> To put a complex number in polar form, we need two numbers: the modulus $r$ and the argument $\theta$. The modulus comes from the Pythagorean theorem. The argument comes from $\arctan$ with a quadrant check.</p>
+
+<p><b>Step 1 — Find the modulus:</b></p>
+<div class="math-block">$$r = \sqrt{(-1)^2 + (\sqrt{3})^2} = \sqrt{1 + 3} = \sqrt{4} = 2$$</div>
+
+<p><b>Step 2 — Find the basic angle:</b></p>
+<div class="math-block">$$\tan\theta = \frac{b}{a} = \frac{\sqrt{3}}{-1} = -\sqrt{3}$$</div>
+
+<p>The reference angle whose tangent is $\sqrt{3}$ (ignoring the negative sign for now) is $\frac{\pi}{3}$, because $\tan\frac{\pi}{3} = \sqrt{3}$.</p>
+
+<p><b>Step 3 — Adjust for quadrant:</b> Since $a = -1$ (negative) and $b = \sqrt{3}$ (positive), the point lies in Quadrant II. In Quadrant II, the argument is $\pi$ minus the reference angle:</p>
+<div class="math-block">$$\theta = \pi - \frac{\pi}{3} = \frac{2\pi}{3}$$</div>
+
+<p><b>Answer:</b></p>
+<div class="math-block">$$z = 2\left(\cos\frac{2\pi}{3} + i\sin\frac{2\pi}{3}\right)$$</div>
+
+<p><b>Why this makes sense:</b> The modulus is $2$, meaning the point is $2$ units from the origin. The argument is $\frac{2\pi}{3}$, which is $120^\circ$ — this points into the second quadrant, exactly where $(-1, \sqrt{3})$ should be.</p>
+
+<p><hr></p>
+
+<h2>Worked Example 2: Polar to Cartesian</h2>
+
+<p><b>Problem:</b> Express $z = 4\left(\cos\frac{5\pi}{6} + i\sin\frac{5\pi}{6}\right)$ in Cartesian form $a + bi$.</p>
+
+<p><b>Approach:</b> We need to evaluate $\cos\frac{5\pi}{6}$ and $\sin\frac{5\pi}{6}$, then multiply each by the modulus $4$.</p>
+
+<p><b>Step 1 — Evaluate the trigonometric functions:</b> The angle $\frac{5\pi}{6}$ is in Quadrant II (it is $150^\circ$). The reference angle is $\frac{\pi}{6}$.</p>
+
+<div class="math-block">$$\cos\frac{5\pi}{6} = -\cos\frac{\pi}{6} = -\frac{\sqrt{3}}{2}$$</div>
+
+<div class="math-block">$$\sin\frac{5\pi}{6} = \sin\frac{\pi}{6} = \frac{1}{2}$$</div>
+
+<p><b>Step 2 — Multiply by the modulus:</b></p>
+<div class="math-block">$$a = 4\left(-\frac{\sqrt{3}}{2}\right) = -2\sqrt{3}$$</div>
+
+<div class="math-block">$$b = 4\left(\frac{1}{2}\right) = 2$$</div>
+
+<p><b>Answer:</b> $z = -2\sqrt{3} + 2i$</p>
+
+<p><b>Why this makes sense:</b> The modulus $4$ and argument $\frac{5\pi}{6}$ place the point in the second quadrant, with $a$ negative and $b$ positive. Our Cartesian form has $a = -2\sqrt{3} \approx -3.46$ (negative) and $b = 2$ (positive), which fits.</p>
+
+<p><hr></p>
+
+<h2>2. Euler&#x27;s Formula</h2>
+
+<h3>What It Is</h3>
+
+<p>One of the most important formulas in all of mathematics links exponential functions with trigonometric functions:</p>
+
+<div class="math-block">$$e^{i\theta} = \cos\theta + i\sin\theta$$</div>
+
+<p>This is called <b>Euler&#x27;s formula</b>. The number $e$ is the mathematical constant approximately equal to $2.71828$ (the base of natural logarithms). The letter $i$ is the imaginary unit. The letter $\theta$ is any real number, representing an angle in radians.</p>
+
+<h3>Why It Matters</h3>
+
+<p>Euler&#x27;s formula turns complex number multiplication into exponent arithmetic. Instead of manipulating sines and cosines, you can use the familiar rules of exponents:</p>
+
+<li>- $e^{i\theta_1} \cdot e^{i\theta_2} = e^{i(\theta_1 + \theta_2)}$ — multiplying adds the angles.</li>
+<li>- $(e^{i\theta})^n = e^{in\theta}$ — raising to a power multiplies the angle.</li>
+
+<p>Using Euler&#x27;s formula, we can write any complex number in <b>exponential form</b>:</p>
+
+<div class="math-block">$$z = re^{i\theta}$$</div>
+
+<p>where $r$ is the modulus and $\theta$ is the argument. This is exactly equivalent to the polar form $r(\cos\theta + i\sin\theta)$.</p>
+
+<h3>Special Values to Memorize</h3>
+
+<p>Certain complex numbers appear so frequently that you should know their exponential forms without calculation:</p>
+
+<li>- $i = e^{i\pi/2}$ (modulus $1$, argument $\frac{\pi}{2}$)</li>
+<li>- $-1 = e^{i\pi}$ (modulus $1$, argument $\pi$)</li>
+<li>- $-i = e^{-i\pi/2}$ (modulus $1$, argument $-\frac{\pi}{2}$)</li>
+<li>- $1 + i = \sqrt{2}\,e^{i\pi/4}$ (modulus $\sqrt{2}$, argument $\frac{\pi}{4}$)</li>
+<li>- $1 - i = \sqrt{2}\,e^{-i\pi/4}$ (modulus $\sqrt{2}$, argument $-\frac{\pi}{4}$)</li>
+<li>- $\sqrt{3} + i = 2e^{i\pi/6}$ (modulus $2$, argument $\frac{\pi}{6}$)</li>
+<li>- $1 + i\sqrt{3} = 2e^{i\pi/3}$ (modulus $2$, argument $\frac{\pi}{3}$)</li>
+
+<p><hr></p>
+
+<h2>3. Multiplication in Polar and Exponential Form</h2>
+
+<p>If $z_1 = r_1(\cos\theta_1 + i\sin\theta_1)$ and $z_2 = r_2(\cos\theta_2 + i\sin\theta_2)$, then their product is:</p>
+
+<div class="math-block">$$z_1 z_2 = r_1 r_2 \bigl(\cos(\theta_1 + \theta_2) + i\sin(\theta_1 + \theta_2)\bigr)$$</div>
+
+<p>In exponential form, this becomes even more compact:</p>
+
+<div class="math-block">$$z_1 z_2 = r_1 e^{i\theta_1} \cdot r_2 e^{i\theta_2} = r_1 r_2\, e^{i(\theta_1 + \theta_2)}$$</div>
+
+<p><b>The rule:</b> When multiplying two complex numbers, multiply their moduli and add their arguments. This is the geometric meaning of complex multiplication — it is a scaling (by the product of moduli) combined with a rotation (by the sum of the angles).</p>
+
+<p><hr></p>
+
+<h2>Worked Example 3: Multiplication in Exponential Form</h2>
+
+<p><b>Problem:</b> Given $z_1 = 2e^{i\pi/4}$ and $z_2 = 3e^{i\pi/3}$, find $z_1 z_2$ in both exponential and Cartesian forms.</p>
+
+<p><b>Approach:</b> For exponential form, multiply the moduli and add the arguments directly. For Cartesian form, convert the result using Euler&#x27;s formula.</p>
+
+<p><b>Step 1 — Multiply in exponential form:</b></p>
+<div class="math-block">$$z_1 z_2 = 2 \cdot 3 \cdot e^{i(\pi/4 + \pi/3)} = 6e^{i\cdot 7\pi/12}$$</div>
+
+<p><b>Step 2 — Convert to Cartesian form:</b></p>
+<div class="math-block">$$z_1 z_2 = 6\left(\cos\frac{7\pi}{12} + i\sin\frac{7\pi}{12}\right)$$</div>
+
+<p>This is an acceptable answer. If numerical values were needed, we could compute $\cos\frac{7\pi}{12}$ and $\sin\frac{7\pi}{12}$ using known angle formulas, but leaving it in this form is often preferred.</p>
+
+<p><b>Answer:</b> Exponential: $6e^{i\cdot 7\pi/12}$. Cartesian: $6\left(\cos\frac{7\pi}{12} + i\sin\frac{7\pi}{12}\right)$.</p>
+
+<p><b>Why this makes sense:</b> The product has modulus $6$, which is the product of $2$ and $3$. Its argument is $\frac{7\pi}{12}$, which is the sum of $\frac{\pi}{4}$ and $\frac{\pi}{3}$. Both results align with the multiplication rule.</p>
+
+<p><hr></p>
+
+<h2>4. Division in Polar and Exponential Form</h2>
+
+<p>If $z_1 = r_1 e^{i\theta_1}$ and $z_2 = r_2 e^{i\theta_2}$ (with $z_2 \neq 0$), then:</p>
+
+<div class="math-block">$$\frac{z_1}{z_2} = \frac{r_1}{r_2}\, e^{i(\theta_1 - \theta_2)}$$</div>
+
+<p><b>The rule:</b> When dividing two complex numbers, divide their moduli and subtract the argument of the denominator from the argument of the numerator.</p>
+
+<p><hr></p>
+
+<h2>5. Why Multiplying by $i$ Rotates by $90^\circ$</h2>
+
+<p>The number $i$ can be written in polar form. Its modulus is $|i| = \sqrt{0^2 + 1^2} = 1$. Its argument is $\frac{\pi}{2}$ because it lies on the positive imaginary axis. Therefore:</p>
+
+<div class="math-block">$$i = 1 \cdot e^{i\pi/2}$$</div>
+
+<p>When we multiply any complex number $z = re^{i\theta}$ by $i$:</p>
+
+<div class="math-block">$$i \cdot z = e^{i\pi/2} \cdot re^{i\theta} = r e^{i(\theta + \pi/2)}$$</div>
+
+<p>The modulus stays the same (multiplying by $1$). The argument increases by $\frac{\pi}{2}$ radians, which is exactly $90^\circ$ counterclockwise. This explains geometrically why multiplying by $i$ rotates a complex number by $90^\circ$.</p>
+
+<p><hr></p>
+
+<h2>Practice Problems</h2>
+
+<p><b>Problem 1:</b> Express the complex number $z = 4 - 4i$ in polar form $r(\cos\theta + i\sin\theta)$ and in exponential form $re^{i\theta}$.</p>
+
+<p><b>Problem 2:</b> Convert the complex number $z = 5e^{i\cdot 3\pi/4}$ to Cartesian form $a + bi$. Give exact values, not decimal approximations.</p>
+
+<p><b>Problem 3:</b> Let $z_1 = 2e^{i\pi/6}$ and $z_2 = 4e^{-i\pi/3}$. Find the product $z_1 z_2$ in both exponential form and Cartesian form.</p>
+
+<p><b>Problem 4:</b> Express the complex number $z = -\sqrt{2} - i\sqrt{2}$ in exponential form $re^{i\theta}$.</p>
+
+<p><b>Problem 5 (IB-style):</b> A complex number $z$ is given by $z = 1 - i\sqrt{3}$.</p>
+<p>(a) Find the modulus and argument of $z$. [2 marks]</p>
+<p>(b) Hence, or otherwise, write $\frac{1}{z}$ in the form $r(\cos\theta + i\sin\theta)$, where $r &gt; 0$ and $-\pi &lt; \theta \leq \pi$. [3 marks]</p>
+
+<p><b>Problem 6:</b> Two non-zero complex numbers $z_1$ and $z_2$ have moduli $|z_1| = 3$ and $|z_2| = 2$. Their arguments are $\arg(z_1) = \frac{\pi}{3}$ and $\arg(z_2) = \frac{5\pi}{6}$. Find the modulus and argument of the quotient $\frac{z_1}{z_2}$.</p>
+
+<p><hr></p>
+
+<h2>Answers</h2>
+
+<p><b>Answer 1:</b></p>
+
+<p>We have $a = 4$ and $b = -4$.</p>
+
+<p>The modulus is $r = \sqrt{4^2 + (-4)^2} = \sqrt{16 + 16} = \sqrt{32} = 4\sqrt{2}$.</p>
+
+<p>For the argument: $\tan\theta = \frac{-4}{4} = -1$. Since $a &gt; 0$ and $b &lt; 0$, the point is in Quadrant IV. In Quadrant IV, the argument equals the arctan value (which is negative): $\theta = -\frac{\pi}{4}$.</p>
+
+<p>Polar form: $z = 4\sqrt{2}\left(\cos\left(-\frac{\pi}{4}\right) + i\sin\left(-\frac{\pi}{4}\right)\right)$.</p>
+
+<p>Exponential form: $z = 4\sqrt{2}\,e^{-i\pi/4}$.</p>
+
+<p><b>Common pitfall:</b> Many students give $\theta = \frac{7\pi}{4}$ instead of $-\frac{\pi}{4}$. While $\frac{7\pi}{4}$ represents the same direction, the principal argument is typically given in the range $(-\pi, \pi]$, so $-\frac{\pi}{4}$ is the standard choice.</p>
+
+<p><hr></p>
+
+<p><b>Answer 2:</b></p>
+
+<p>We use Euler&#x27;s formula: $e^{i\cdot 3\pi/4} = \cos\frac{3\pi}{4} + i\sin\frac{3\pi}{4}$.</p>
+
+<p>The angle $\frac{3\pi}{4}$ is in Quadrant II. The reference angle is $\frac{\pi}{4}$.</p>
+
+<p>$\cos\frac{3\pi}{4} = -\frac{\sqrt{2}}{2},\quad \sin\frac{3\pi}{4} = \frac{\sqrt{2}}{2}$</p>
+
+<p>Multiply by the modulus $5$:</p>
+
+<p>$z = 5\left(-\frac{\sqrt{2}}{2} + i\frac{\sqrt{2}}{2}\right) = -\frac{5\sqrt{2}}{2} + \frac{5\sqrt{2}}{2}i$</p>
+
+<p><hr></p>
+
+<p><b>Answer 3:</b></p>
+
+<p>In exponential form, we multiply the moduli and add the arguments:</p>
+
+<p>$z_1 z_2 = 2 \cdot 4 \cdot e^{i(\pi/6 + (-\pi/3))} = 8e^{-i\pi/6}$</p>
+
+<p>For Cartesian form, we use Euler&#x27;s formula with $\theta = -\frac{\pi}{6}$:</p>
+
+<p>$\cos\left(-\frac{\pi}{6}\right) = \frac{\sqrt{3}}{2},\quad \sin\left(-\frac{\pi}{6}\right) = -\frac{1}{2}$</p>
+
+<p>$z_1 z_2 = 8\left(\frac{\sqrt{3}}{2} - i\frac{1}{2}\right) = 4\sqrt{3} - 4i$</p>
+
+<p><b>Why this makes sense:</b> The argument $-\frac{\pi}{6}$ places the result in Quadrant IV, meaning the real part should be positive and the imaginary part negative. Indeed, $4\sqrt{3} &gt; 0$ and $-4 &lt; 0$, so the quadrant is correct.</p>
+
+<p><hr></p>
+
+<p><b>Answer 4:</b></p>
+
+<p>We have $a = -\sqrt{2}$ and $b = -\sqrt{2}$, both negative, so the point is in Quadrant III.</p>
+
+<p>Modulus: $r = \sqrt{(-\sqrt{2})^2 + (-\sqrt{2})^2} = \sqrt{2 + 2} = \sqrt{4} = 2$.</p>
+
+<p>For the argument: $\tan\theta = \frac{-\sqrt{2}}{-\sqrt{2}} = 1$. The reference angle whose tangent is $1$ is $\frac{\pi}{4}$.</p>
+
+<p>Since the point is in Quadrant III, the argument is $-\pi + \frac{\pi}{4} = -\frac{3\pi}{4}$. (Alternatively, $\pi + \frac{\pi}{4} = \frac{5\pi}{4}$, but the principal argument is typically $-\frac{3\pi}{4}$.)</p>
+
+<p>Exponential form: $z = 2e^{-i3\pi/4}$.</p>
+
+<p><hr></p>
+
+<p><b>Answer 5:</b></p>
+
+<p><b>(a)</b> Modulus: $|z| = \sqrt{1^2 + (-\sqrt{3})^2} = \sqrt{1 + 3} = \sqrt{4} = 2$.</p>
+
+<p>For the argument: $\tan\theta = \frac{-\sqrt{3}}{1} = -\sqrt{3}$. The reference angle is $\frac{\pi}{3}$. Since $a = 1 &gt; 0$ and $b = -\sqrt{3} &lt; 0$, the point is in Quadrant IV, so $\theta = -\frac{\pi}{3}$.</p>
+
+<p>Thus $|z| = 2$ and $\arg(z) = -\frac{\pi}{3}$.</p>
+
+<p><b>(b)</b> We can write $z = 2e^{-i\pi/3}$. Then:</p>
+
+<p>$\frac{1}{z} = \frac{1}{2e^{-i\pi/3}} = \frac{1}{2}e^{i\pi/3}$</p>
+
+<p>The modulus of $\frac{1}{z}$ is $\frac{1}{2}$. The argument is $\frac{\pi}{3}$.</p>
+
+<p>In the form $r(\cos\theta + i\sin\theta)$:</p>
+
+<p>$\frac{1}{z} = \frac{1}{2}\left(\cos\frac{\pi}{3} + i\sin\frac{\pi}{3}\right)$</p>
+
+<p><hr></p>
+
+<p><b>Answer 6:</b></p>
+
+<p>For division, we divide the moduli and subtract the arguments:</p>
+
+<p>$\left|\frac{z_1}{z_2}\right| = \frac{|z_1|}{|z_2|} = \frac{3}{2}$</p>
+
+<p>$\arg\!\left(\frac{z_1}{z_2}\right) = \arg(z_1) - \arg(z_2) = \frac{\pi}{3} - \frac{5\pi}{6}$</p>
+
+<p>To subtract, find a common denominator:</p>
+
+<p>$\frac{\pi}{3} = \frac{2\pi}{6}$, so $\frac{2\pi}{6} - \frac{5\pi}{6} = -\frac{3\pi}{6} = -\frac{\pi}{2}$.</p>
+
+<p>The modulus is $\frac{3}{2}$ and the argument is $-\frac{\pi}{2}$.</p>
+
+<div class="nav"><a href="index.html">← Back to Index</a></div>
+</body>
+</html>
