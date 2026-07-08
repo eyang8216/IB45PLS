@@ -21,7 +21,7 @@ app.config.update(
 )
 
 # OpenRouter API key
-OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY", "")
+OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY", "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")
 
 # Gemini API key (free tier)
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
@@ -235,7 +235,7 @@ def security_headers(response):
         "style-src 'self' 'unsafe-inline'; "
         "img-src 'self' data:; "
         "font-src 'self' data:; "
-        "connect-src 'self'; "
+        "connect-src 'self' https://openrouter.ai; "
         "frame-ancestors 'none'; "
         "form-action 'self'"
     )
@@ -710,6 +710,18 @@ def config():
     return jsonify({"api_configured": bool(OPENROUTER_API_KEY or GEMINI_API_KEY)})
 
 
+@app.route("/api-config")
+@login_required
+def api_config():
+    """Return API key and prompts to the browser for client-side AI calls."""
+    return jsonify({
+        "openrouter_key": OPENROUTER_API_KEY,
+        "system_prompt": SYSTEM_PROMPT,
+        "grading_rubric": IB_LANG_LIT_RUBRIC,
+        "free_models": FREE_MODELS,
+    })
+
+
 """
 New routes added for Phase 1-3: Chinese/English paper practice, dashboard, SAT
 Inserted before `if __name__ == "__main__":` in app.py
@@ -957,8 +969,41 @@ IMPORTANT: Return ONLY valid JSON, no other text."""
         return jsonify({"error": f"Grading failed: {e}"}), 500
 
 # ═══════════════════════════════════════════════════════════
-# ROUTE: TRACK LESSON VIEW (AJAX endpoint)
+# ROUTE: SAVE GRADING RESULT (client-side AI → server storage)
 # ═══════════════════════════════════════════════════════════
+
+@app.route("/save-result", methods=["POST"])
+@login_required
+def save_result():
+    """Save a grading result from client-side AI to user's history."""
+    data = request.get_json()
+    if not data:
+        return jsonify({"error": "No data provided."}), 400
+
+    username = session.get("user", "")
+    user_data = get_user_data(username)
+
+    result_type = data.get("type", "mock")  # "mock" or "sat"
+
+    if result_type == "mock":
+        user_data.setdefault("mock_attempts", []).append({
+            "date": time.strftime("%Y-%m-%d %H:%M:%S"),
+            "subject": data.get("subject", ""),
+            "mode": data.get("mode", ""),
+            "prompt_id": data.get("prompt_id", ""),
+            "prompt_title": data.get("prompt_title", ""),
+            "essay_preview": (data.get("essay_preview", "") or "")[:300],
+            "scores": data.get("scores", {})
+        })
+    elif result_type == "sat":
+        user_data.setdefault("sat_attempts", []).append({
+            "date": time.strftime("%Y-%m-%d %H:%M:%S"),
+            "module": data.get("module", ""),
+            "feedback": (data.get("feedback", "") or "")[:2000]
+        })
+
+    save_user_data(username, user_data)
+    return jsonify({"ok": True})
 
 @app.route("/track", methods=["POST"])
 @login_required

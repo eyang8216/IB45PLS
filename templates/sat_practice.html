@@ -53,7 +53,62 @@ textarea:focus{border-color:var(--accent)}
 <script>
 var csrf = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 var currentTest = '', currentModule = '', timerInterval = null, timeLeft = 0;
-var isTimed = true;
+var apiKey = '', freeModels = [];
+
+// Load API config
+fetch('/api-config').then(function(r){return r.json()}).then(function(cfg){
+  apiKey = cfg.openrouter_key || '';
+  freeModels = cfg.free_models || ['meta-llama/llama-3.3-70b-instruct:free'];
+});
+
+async function callAI(messages, modelIdx) {
+  if (!apiKey) throw new Error('API not configured');
+  if (modelIdx >= freeModels.length) throw new Error('All models failed');
+  var resp = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json','Authorization':'Bearer '+apiKey},
+    body: JSON.stringify({model:freeModels[modelIdx],messages:messages,temperature:0.5,max_tokens:1500})
+  });
+  if (resp.status === 429 || !resp.ok) {
+    await new Promise(function(r){setTimeout(r,1500)});
+    return callAI(messages, modelIdx + 1);
+  }
+  var data = await resp.json();
+  return data.choices[0].message.content;
+}
+
+async function submitSAT(){
+  clearInterval(timerInterval);
+  document.getElementById('submitBtn').disabled = true;
+  document.getElementById('loading').style.display = 'block';
+  var answers = document.getElementById('answers').value;
+  var questions = document.getElementById('questions').textContent;
+
+  var prompt = 'You are an SAT tutor grading a practice test.\n\n' +
+    'Here are the questions:\n' + questions.substring(0, 3000) + '\n\n' +
+    'Student answers:\n' + answers.substring(0, 3000) + '\n\n' +
+    'Please grade this, provide a score estimate, and give feedback on strengths and areas to improve.';
+
+  try {
+    var reply = await callAI([
+      {role:'system', content:'You are a helpful SAT tutor. Grade the student\'s answers and give constructive feedback.'},
+      {role:'user', content: prompt}
+    ], 0);
+
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('results').innerHTML = '<h2>📊 Results</h2><div style="background:white;border-radius:12px;padding:1.5rem;margin-top:1rem;white-space:pre-wrap">'+escapeHtml(reply)+'</div>';
+    document.getElementById('results').scrollIntoView({behavior:'smooth'});
+
+    fetch('/save-result', {
+      method:'POST',
+      headers:{'Content-Type':'application/json','X-CSRF-Token':csrf},
+      body: JSON.stringify({type:'sat', module:currentModule, feedback:reply})
+    }).catch(function(){});
+  } catch(e) {
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('results').innerHTML = '<h2>📊 Results</h2><p style="color:red">❌ Grading failed. Please try again. ('+escapeHtml(e.message||'Error')+')</p>';
+  }
+}
 
 function startTest(test, mod){
   currentTest = test; currentModule = mod;
@@ -89,23 +144,6 @@ function updateTimerDisplay(){
   document.getElementById('timer').textContent = '⏱ '+String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
 }
 
-function submitSAT(){
-  clearInterval(timerInterval);
-  document.getElementById('submitBtn').disabled = true;
-  document.getElementById('loading').style.display = 'block';
-  var answers = document.getElementById('answers').value;
-  var questions = document.getElementById('questions').textContent;
-
-  fetch('/sat/grade', {
-    method:'POST',
-    headers:{'Content-Type':'application/json','X-CSRF-Token':csrf},
-    body: JSON.stringify({answers:answers, questions:questions, module:currentModule})
-  }).then(r=>r.json()).then(data=>{
-    document.getElementById('loading').style.display = 'none';
-    document.getElementById('results').innerHTML = '<h2>📊 Results</h2><div style="background:white;border-radius:12px;padding:1.5rem;margin-top:1rem;white-space:pre-wrap">'+(data.response||data.error||'Error')+'</div>';
-    document.getElementById('results').scrollIntoView({behavior:'smooth'});
-  });
-}
 
 function escapeHtml(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML;}
 </script>

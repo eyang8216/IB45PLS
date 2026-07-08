@@ -52,54 +52,99 @@ textarea:focus{border-color:#1a1a2e}
 
 <script>
 var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-function submitEssay(){
+var apiKey = '', rubricText = '', freeModels = [];
+
+// Load API config
+fetch('/api-config').then(function(r){return r.json()}).then(function(cfg){
+  apiKey = cfg.openrouter_key || '';
+  rubricText = cfg.grading_rubric || '';
+  freeModels = cfg.free_models || ['meta-llama/llama-3.3-70b-instruct:free'];
+});
+
+async function callAI(messages, modelIdx) {
+  if (!apiKey) throw new Error('API not configured');
+  if (modelIdx >= freeModels.length) throw new Error('All models failed');
+  var resp = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json','Authorization':'Bearer '+apiKey},
+    body: JSON.stringify({model:freeModels[modelIdx],messages:messages,temperature:0.7,max_tokens:1024})
+  });
+  if (resp.status === 429 || !resp.ok) {
+    await new Promise(function(r){setTimeout(r,1500)});
+    return callAI(messages, modelIdx + 1);
+  }
+  var data = await resp.json();
+  return {reply: data.choices[0].message.content, model: freeModels[modelIdx]};
+}
+
+async function submitEssay(){
   var essay = document.getElementById('essay').value.trim();
   if(essay.length < 50){ alert('Please write at least 50 characters.'); return; }
   document.getElementById('submitBtn').disabled = true;
   document.getElementById('loading').style.display = 'block';
   document.getElementById('results').style.display = 'none';
-  
-  fetch('/grade', {
-    method:'POST',
-    headers:{'Content-Type':'application/json','X-CSRF-Token':csrfToken},
-    body: JSON.stringify({
-      essay: essay,
-      passage: {{ (prompt.passage or "") | tojson }},
-      prompt: {{ prompt.prompt | tojson }},
-      subject: '{{ subject }}',
-      mode: '{{ mode }}',
-      prompt_id: '{{ prompt.id }}',
-      prompt_title: '{{ prompt.title }}'
-    })
-  }).then(r=>r.json()).then(data=>{
-    document.getElementById('loading').style.display = 'none';
-    document.getElementById('submitBtn').disabled = false;
-    if(data.error){ document.getElementById('resultContent').innerHTML='<p style="color:red">❌ '+data.error+'</p>'; }
-    else{
-      var html = '<div class="total-score">Total: '+data.total+'/20</div>';
-      var crits = [
-        {key:'criterion_a',label:'A: Understanding & Interpretation'},
-        {key:'criterion_b',label:'B: Analysis & Evaluation'},
-        {key:'criterion_c',label:'C: Focus & Organization'},
-        {key:'criterion_d',label:'D: Language'}
-      ];
-      crits.forEach(function(c){
-        var d = data[c.key] || {};
-        var stars = '';
-        for(var i=0;i<5;i++) stars += i<d.score ? '★' : '☆';
-        html += '<div class="result-card"><div class="criterion"><span class="name">'+c.label+'</span><span class="stars">'+stars+'</span><span class="score">'+d.score+'/5</span></div><p class="comment">'+escapeHtml(d.comment||'')+'</p></div>';
-      });
-      html += '<div class="result-card"><strong>💬 Overall Feedback:</strong><p style="margin-top:.5rem;color:#555">'+escapeHtml(data.overall_feedback||'')+'</p></div>';
-      document.getElementById('resultContent').innerHTML = html;
+
+  var passage = {{ (prompt.passage or "") | tojson }};
+  var promptText = {{ prompt.prompt | tojson }};
+  var subject = '{{ subject }}';
+  var mode = '{{ mode }}';
+  var promptId = '{{ prompt.id }}';
+  var promptTitle = '{{ prompt.title }}';
+
+  var gradingPrompt = 'You are an IB examiner for Language A: Language and Literature SL.\n\n' +
+    'The student was given this task:\n\nPASSAGE/TEXT:\n' + passage + '\n\nPROMPT:\n' + promptText +
+    '\n\nThe student wrote this response:\n---\n' + essay + '\n---\n\n' + rubricText +
+    '\n\nIMPORTANT: Return ONLY valid JSON, no other text.';
+
+  try {
+    var result = await callAI([
+      {role:'system',content:'You are a strict but fair IB examiner. Return only valid JSON.'},
+      {role:'user',content:gradingPrompt}
+    ], 0);
+
+    // Parse JSON from reply
+    var clean = result.reply.trim();
+    if (clean.startsWith('```')) {
+      clean = clean.replace(/^```\w*\n?/, '').replace(/\n?```$/, '');
     }
+    var scores = JSON.parse(clean);
+
+    // Display results
+    var html = '<div class="total-score">Total: '+scores.total+'/20</div>';
+    var crits = [
+      {key:'criterion_a',label:'A: Understanding & Interpretation'},
+      {key:'criterion_b',label:'B: Analysis & Evaluation'},
+      {key:'criterion_c',label:'C: Focus & Organization'},
+      {key:'criterion_d',label:'D: Language'}
+    ];
+    crits.forEach(function(c){
+      var d = scores[c.key] || {};
+      var stars = '';
+      for(var i=0;i<5;i++) stars += i<d.score ? '★' : '☆';
+      html += '<div class="result-card"><div class="criterion"><span class="name">'+c.label+'</span><span class="stars">'+stars+'</span><span class="score">'+d.score+'/5</span></div><p class="comment">'+escapeHtml(d.comment||'')+'</p></div>';
+    });
+    html += '<div class="result-card"><strong>💬 Overall Feedback:</strong><p style="margin-top:.5rem;color:#555">'+escapeHtml(scores.overall_feedback||'')+'</p></div>';
+    document.getElementById('resultContent').innerHTML = html;
     document.getElementById('results').style.display = 'block';
     document.getElementById('results').scrollIntoView({behavior:'smooth'});
-  }).catch(function(){
-    document.getElementById('loading').style.display = 'none';
-    document.getElementById('submitBtn').disabled = false;
-    document.getElementById('resultContent').innerHTML='<p style="color:red">❌ Connection error.</p>';
+
+    // Save to server
+    fetch('/save-result', {
+      method:'POST',
+      headers:{'Content-Type':'application/json','X-CSRF-Token':csrfToken},
+      body: JSON.stringify({
+        type:'mock', subject:subject, mode:mode,
+        prompt_id:promptId, prompt_title:promptTitle,
+        essay_preview: essay.substring(0,300), scores:scores
+      })
+    }).catch(function(){}); // fire-and-forget
+
+  } catch(e) {
+    document.getElementById('resultContent').innerHTML='<p style="color:red">❌ Grading failed. Please try again. ('+escapeHtml(e.message||'Error')+')</p>';
     document.getElementById('results').style.display = 'block';
-  });
+  }
+  document.getElementById('loading').style.display = 'none';
+  document.getElementById('submitBtn').disabled = false;
 }
 function escapeHtml(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML;}
 </script></body></html>
