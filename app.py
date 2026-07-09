@@ -56,6 +56,10 @@ USERS = {
     "EthanYang": {
         "password_hash": generate_password_hash("IB45", method="pbkdf2:sha256"),
         "name": "Ethan Yang",
+    },
+    "cynthia": {
+        "password_hash": "pbkdf2:sha256:1000000$J2iCGUzR82eYLMRO$fcd5f658093594e43fec661da6c1b9b7b7a96ee51ef3f3578e8fa501d333577f",
+        "name": "Cynthia",
     }
 }
 
