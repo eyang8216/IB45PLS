@@ -91,6 +91,7 @@ SUBJECTS = {
         "folder": "subjects/chemistry",
         "index": "index.html",
         "description": "IB Chemistry HL — 41 lessons",
+        "total_lessons": 41,
         "subfolder": "lessons"
     },
     "physics": {
@@ -100,7 +101,7 @@ SUBJECTS = {
         "folder": "subjects/physics",
         "index": "index.html",
         "description": "IB Physics HL — 67 lessons",
-        "total_lessons": 41
+        "total_lessons": 67
     },
     "math": {
         "name": "Math AA HL",
@@ -109,7 +110,7 @@ SUBJECTS = {
         "folder": "subjects/math",
         "index": "index.html",
         "description": "IB Math AA HL — 50 lessons",
-        "total_lessons": 67
+        "total_lessons": 50
     },
     "chinese": {
         "name": "Chinese Lang Lit SL",
@@ -118,7 +119,7 @@ SUBJECTS = {
         "folder": "subjects/chinese",
         "index": "index.html",
         "description": "IB Chinese Lang & Lit SL — Paper 1 & 2 practice",
-        "total_lessons": 50
+        "total_lessons": 7
     },
     "english": {
         "name": "English Lang Lit SL",
@@ -127,7 +128,7 @@ SUBJECTS = {
         "folder": "subjects/english",
         "index": "index.html",
         "description": "IB English Lang & Lit SL — Paper 1 practice",
-        "total_lessons": 7
+        "total_lessons": 3
     },
     "sat": {
         "name": "SAT Prep",
@@ -136,7 +137,7 @@ SUBJECTS = {
         "folder": "subjects/sat",
         "index": "index.html",
         "description": "SAT — 50 lessons + 5 practice tests",
-        "total_lessons": 3
+        "total_lessons": 50
     },
     "biology": {
         "name": "Biology HL",
