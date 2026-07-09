@@ -836,6 +836,7 @@ def get_user_data(username):
 
 def save_user_data(username, data):
     """Save user data to JSON file."""
+    os.makedirs(DATA_DIR, exist_ok=True)
     filepath = os.path.join(DATA_DIR, f"{username}.json")
     with open(filepath, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2, default=str)
