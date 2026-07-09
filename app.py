@@ -554,6 +554,46 @@ def home():
     return render_template("index.html", csrf_token=generate_csrf_token())
 
 
+# SAT ROUTES
+# ═══════════════════════════════════════════════════════════
+
+@app.route("/subjects/sat/")
+@login_required
+def sat_index():
+    track_lesson_view(session.get("user",""), "sat", "index")
+    sat_dir = os.path.join(os.path.dirname(__file__), "subjects", "sat")
+    # Serve the lessons index if it exists
+    index_path = os.path.join(sat_dir, "index.html")
+    if os.path.exists(index_path):
+        with open(index_path, "r", encoding="utf-8") as f:
+            content = f.read()
+        content = inject_into_html(content, "sat")
+        return content, 200, {"Content-Type": "text/html; charset=utf-8"}
+    abort(404)
+
+@app.route("/subjects/sat/<path:filename>")
+@login_required
+def sat_lesson(filename):
+    track_lesson_view(session.get("user",""), "sat", filename)
+    sat_dir = os.path.join(os.path.dirname(__file__), "subjects", "sat")
+    filepath = os.path.join(sat_dir, filename)
+    if not os.path.exists(filepath):
+        abort(404)
+    if filename.endswith(".html"):
+        with open(filepath, "r", encoding="utf-8") as f:
+            content = f.read()
+        content = inject_into_html(content, "sat")
+        return content, 200, {"Content-Type": "text/html; charset=utf-8"}
+    return send_from_directory(sat_dir, filename)
+
+@app.route("/subjects/sat/practice")
+@login_required
+def sat_practice():
+    tests = load_sat_tests()
+    return render_template("sat_practice.html",
+        tests=tests,
+        csrf_token=generate_csrf_token())
+
 @app.route("/subjects/<subject>/")
 @app.route("/subjects/<subject>/<path:filename>")
 @login_required
@@ -1097,45 +1137,6 @@ def dashboard():
         csrf_token=generate_csrf_token())
 
 # ═══════════════════════════════════════════════════════════
-# SAT ROUTES
-# ═══════════════════════════════════════════════════════════
-
-@app.route("/subjects/sat/")
-@login_required
-def sat_index():
-    track_lesson_view(session.get("user",""), "sat", "index")
-    sat_dir = os.path.join(os.path.dirname(__file__), "subjects", "sat")
-    # Serve the lessons index if it exists
-    index_path = os.path.join(sat_dir, "index.html")
-    if os.path.exists(index_path):
-        with open(index_path, "r", encoding="utf-8") as f:
-            content = f.read()
-        content = inject_into_html(content, "sat")
-        return content, 200, {"Content-Type": "text/html; charset=utf-8"}
-    abort(404)
-
-@app.route("/subjects/sat/<path:filename>")
-@login_required
-def sat_lesson(filename):
-    track_lesson_view(session.get("user",""), "sat", filename)
-    sat_dir = os.path.join(os.path.dirname(__file__), "subjects", "sat")
-    filepath = os.path.join(sat_dir, filename)
-    if not os.path.exists(filepath):
-        abort(404)
-    if filename.endswith(".html"):
-        with open(filepath, "r", encoding="utf-8") as f:
-            content = f.read()
-        content = inject_into_html(content, "sat")
-        return content, 200, {"Content-Type": "text/html; charset=utf-8"}
-    return send_from_directory(sat_dir, filename)
-
-@app.route("/subjects/sat/practice")
-@login_required
-def sat_practice():
-    tests = load_sat_tests()
-    return render_template("sat_practice.html",
-        tests=tests,
-        csrf_token=generate_csrf_token())
 
 @app.route("/sat/grade", methods=["POST"])
 @login_required
