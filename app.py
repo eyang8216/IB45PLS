@@ -570,7 +570,7 @@ def serve_subject(subject, filename="index.html"):
             with open(filepath, 'r', encoding='utf-8') as f:
                 content = f.read()
             content = inject_into_html(content, subject)
-            return Response(content, mimetype='text/html')
+            return content, 200, {'Content-Type': 'text/html; charset=utf-8'}
         abort(404)
 
     filepath = os.path.join(folder, filename)
@@ -581,7 +581,7 @@ def serve_subject(subject, filename="index.html"):
         with open(filepath, 'r', encoding='utf-8') as f:
             content = f.read()
         content = inject_into_html(content, subject)
-        return Response(content, mimetype='text/html')
+        return content, 200, {'Content-Type': 'text/html; charset=utf-8'}
 
     return send_from_directory(folder, filename)
 
@@ -1106,7 +1106,7 @@ def sat_index():
         with open(index_path, "r", encoding="utf-8") as f:
             content = f.read()
         content = inject_into_html(content, "sat")
-        return Response(content, mimetype="text/html")
+        return content, 200, {"Content-Type": "text/html; charset=utf-8"}
     abort(404)
 
 @app.route("/subjects/sat/<path:filename>")
@@ -1121,7 +1121,7 @@ def sat_lesson(filename):
         with open(filepath, "r", encoding="utf-8") as f:
             content = f.read()
         content = inject_into_html(content, "sat")
-        return Response(content, mimetype="text/html")
+        return content, 200, {"Content-Type": "text/html; charset=utf-8"}
     return send_from_directory(sat_dir, filename)
 
 @app.route("/subjects/sat/practice")
