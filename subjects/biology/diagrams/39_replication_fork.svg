@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 620">
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="6" refX="9" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#333"/></marker>
+    <marker id="arrowG" markerWidth="9" markerHeight="6" refX="9" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#1a6b3c"/></marker>
+    <marker id="arrowR" markerWidth="9" markerHeight="6" refX="9" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#e53935"/></marker>
+    <marker id="arrowBl" markerWidth="9" markerHeight="6" refX="9" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#1565c0"/></marker>
+  </defs>
+  <rect width="600" height="620" fill="#fff"/>
+  <text x="300" y="26" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#1a6b3c">The DNA Replication Fork</text>
+  <text x="300" y="44" text-anchor="middle" font-family="Arial" font-size="11" fill="#666" font-style="italic">Multi-enzyme replisome at the replication fork</text>
+
+  <!-- Parent DNA double helix at top -->
+  <text x="300" y="66" text-anchor="middle" font-family="Arial" font-size="10" fill="#333">Parental DNA</text>
+  <!-- Top strand (5' to 3' left to right) -->
+  <line x1="60" y1="74" x2="540" y2="74" stroke="#1565c0" stroke-width="2.5"/>
+  <line x1="60" y1="80" x2="540" y2="80" stroke="#e53935" stroke-width="2.5"/>
+  <text x="560" y="78" font-family="Arial" font-size="8" fill="#666">3' 5'</text>
+
+  <!-- Fork region - strands separate -->
+  <!-- Left side: 5'→3' (leading strand template, runs 3'→5') -->
+  <!-- Leading strand side (left, goes down) -->
+  <line x1="300" y1="74" x2="80" y2="350" stroke="#1565c0" stroke-width="2.5"/>
+  <line x1="300" y1="80" x2="250" y2="160" stroke="#e53935" stroke-width="2.5"/>
+  <text x="35" y="220" font-family="Arial" font-size="8" fill="#1565c0">3' (template)</text>
+  <text x="35" y="235" font-family="Arial" font-size="8" fill="#e53935">5' (new) ←</text>
+
+  <!-- Leading strand new synthesis (continuous) -->
+  <line x1="290" y1="100" x2="85" y2="345" stroke="#e53935" stroke-width="2.5" stroke-dasharray="6,2"/>
+
+  <!-- Right side: lagging strand template -->
+  <line x1="300" y1="74" x2="520" y2="350" stroke="#e53935" stroke-width="2.5"/>
+  <line x1="300" y1="80" x2="340" y2="160" stroke="#1565c0" stroke-width="2.5"/>
+  <text x="540" y="220" font-family="Arial" font-size="8" fill="#e53935">5' (template)</text>
+
+  <!-- Lagging strand Okazaki fragments -->
+  <rect x="350" y="170" width="30" height="6" rx="2" fill="#81c784" opacity="0.9"/>
+  <rect x="385" y="200" width="32" height="6" rx="2" fill="#81c784" opacity="0.9"/>
+  <rect x="420" y="230" width="30" height="6" rx="2" fill="#81c784" opacity="0.9"/>
+  <rect x="460" y="260" width="28" height="6" rx="2" fill="#81c784" opacity="0.9"/>
+  <text x="565" y="230" font-family="Arial" font-size="9" fill="#1a6b3c" font-style="italic">Okazaki</text>
+  <text x="565" y="242" font-family="Arial" font-size="9" fill="#1a6b3c" font-style="italic">fragments</text>
+
+  <!-- RNA primers on lagging -->
+  <rect x="350" y="170" width="10" height="6" rx="1" fill="#ff8f00" opacity="0.9"/>
+  <rect x="385" y="200" width="10" height="6" rx="1" fill="#ff8f00" opacity="0.9"/>
+  <rect x="420" y="230" width="10" height="6" rx="1" fill="#ff8f00" opacity="0.9"/>
+  <rect x="460" y="260" width="10" height="6" rx="1" fill="#ff8f00" opacity="0.9"/>
+
+  <text x="330" y="176" font-family="Arial" font-size="7" fill="#ff8f00">RNA primer</text>
+
+  <!-- Helicase at the fork -->
+  <circle cx="300" cy="95" r="18" fill="#43a047" opacity="0.3" stroke="#1a6b3c" stroke-width="2"/>
+  <text x="300" y="98" text-anchor="middle" font-family="Arial" font-size="9" font-weight="bold" fill="#1a6b3c">Helicase</text>
+
+  <!-- SSBs on both strands -->
+  <circle cx="265" cy="130" r="7" fill="#1565c0" opacity="0.4" stroke="#1565c0" stroke-width="1.5"/>
+  <circle cx="250" cy="160" r="7" fill="#1565c0" opacity="0.4" stroke="#1565c0" stroke-width="1.5"/>
+  <circle cx="335" cy="130" r="7" fill="#1565c0" opacity="0.4" stroke="#1565c0" stroke-width="1.5"/>
+  <circle cx="350" cy="155" r="7" fill="#1565c0" opacity="0.4" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="220" y="114" font-family="Arial" font-size="8" fill="#1565c0" font-weight="bold">SSB</text>
+  <text x="220" y="145" font-family="Arial" font-size="8" fill="#1565c0" font-weight="bold">SSB</text>
+  <text x="370" y="114" font-family="Arial" font-size="8" fill="#1565c0" font-weight="bold">SSB</text>
+
+  <!-- Gyrase ahead of fork -->
+  <ellipse cx="300" cy="64" rx="22" ry="8" fill="#6a1b9a" opacity="0.3" stroke="#6a1b9a" stroke-width="1.5"/>
+  <text x="305" y="53" font-family="Arial" font-size="9" font-weight="bold" fill="#6a1b9a">DNA Gyrase</text>
+  <text x="305" y="63" font-family="Arial" font-size="7" fill="#6a1b9a">(relieves supercoils)</text>
+
+  <!-- Primase -->
+  <rect x="440" y="190" width="50" height="18" rx="4" fill="#ff8f00" opacity="0.25" stroke="#ff8f00" stroke-width="1.5"/>
+  <text x="465" y="202" text-anchor="middle" font-family="Arial" font-size="9" font-weight="bold" fill="#ff8f00">Primase</text>
+
+  <!-- DNA Pol III labels -->
+  <rect x="140" y="240" width="55" height="18" rx="4" fill="#1a6b3c" opacity="0.2" stroke="#1a6b3c" stroke-width="1.5"/>
+  <text x="167" y="253" text-anchor="middle" font-family="Arial" font-size="9" font-weight="bold" fill="#1a6b3c">DNA Pol III</text>
+  <text x="167" y="275" text-anchor="middle" font-family="Arial" font-size="7" fill="#333">(5'→3' synthesis)</text>
+
+  <text x="460" y="290" font-family="Arial" font-size="9" font-weight="bold" fill="#1a6b3c">DNA Pol III ↓</text>
+
+  <!-- DNA Pol I and Ligase labels -->
+  <rect x="400" y="310" width="50" height="16" rx="3" fill="#1565c0" opacity="0.2" stroke="#1565c0" stroke-width="1"/>
+  <text x="425" y="322" text-anchor="middle" font-family="Arial" font-size="7" fill="#1565c0">DNA Pol I</text>
+
+  <rect x="470" y="310" width="50" height="16" rx="3" fill="#43a047" opacity="0.2" stroke="#1a6b3c" stroke-width="1"/>
+  <text x="495" y="322" text-anchor="middle" font-family="Arial" font-size="7" fill="#1a6b3c">DNA Ligase</text>
+
+  <!-- Arrows for direction -->
+  <line x1="205" y1="110" x2="160" y2="110" stroke="#e53935" stroke-width="2" marker-end="url(#arrowR)"/>
+  <text x="230" y="103" font-family="Arial" font-size="7" fill="#e53935">5'→3'</text>
+
+  <!-- Key below -->
+  <line x1="30" y1="370" x2="570" y2="370" stroke="#ddd" stroke-width="1"/>
+
+  <text x="300" y="390" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#333">Enzyme Functions Summary</text>
+
+  <rect x="20" y="400" width="560" height="215" rx="6" fill="none" stroke="#ddd" stroke-width="1"/>
+
+  <!-- Enzyme row 1 -->
+  <circle cx="55" cy="425" r="8" fill="#43a047" opacity="0.3" stroke="#1a6b3c" stroke-width="1.5"/>
+  <text x="75" y="428" font-family="Arial" font-size="11" font-weight="bold" fill="#1a6b3c">Helicase</text>
+  <text x="160" y="428" font-family="Arial" font-size="10" fill="#555">Unwinds double helix; breaks H-bonds. Uses ATP.</text>
+
+  <circle cx="55" cy="450" r="8" fill="#1565c0" opacity="0.4" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="75" y="453" font-family="Arial" font-size="11" font-weight="bold" fill="#1565c0">SSBs</text>
+  <text x="140" y="453" font-family="Arial" font-size="10" fill="#555">Coat ssDNA; prevent reannealing and degradation.</text>
+
+  <circle cx="55" cy="475" r="8" fill="#6a1b9a" opacity="0.3" stroke="#6a1b9a" stroke-width="1.5"/>
+  <text x="75" y="478" font-family="Arial" font-size="11" font-weight="bold" fill="#6a1b9a">Gyrase</text>
+  <text x="152" y="478" font-family="Arial" font-size="10" fill="#555">Relieves supercoiling tension ahead of fork.</text>
+
+  <rect x="42" y="496" width="26" height="14" rx="3" fill="#ff8f00" opacity="0.4" stroke="#ff8f00" stroke-width="1"/>
+  <text x="75" y="506" font-family="Arial" font-size="11" font-weight="bold" fill="#ff8f00">Primase</text>
+  <text x="157" y="506" font-family="Arial" font-size="10" fill="#555">Synthesizes RNA primers; provides 3'-OH for Pol III.</text>
+
+  <rect x="42" y="520" width="26" height="14" rx="3" fill="#1a6b3c" opacity="0.2" stroke="#1a6b3c" stroke-width="1"/>
+  <text x="75" y="530" font-family="Arial" font-size="11" font-weight="bold" fill="#1a6b3c">Pol III</text>
+  <text x="140" y="530" font-family="Arial" font-size="10" fill="#555">Main DNA synthesis (5'→3'); 3'→5' exonuclease proofreading.</text>
+
+  <rect x="42" y="544" width="26" height="14" rx="3" fill="#1565c0" opacity="0.2" stroke="#1565c0" stroke-width="1"/>
+  <text x="75" y="554" font-family="Arial" font-size="11" font-weight="bold" fill="#1565c0">Pol I</text>
+  <text x="140" y="554" font-family="Arial" font-size="10" fill="#555">Removes RNA primers; replaces with DNA.</text>
+
+  <rect x="42" y="568" width="26" height="14" rx="3" fill="#81c784" opacity="0.6" stroke="#1a6b3c" stroke-width="1"/>
+  <text x="75" y="578" font-family="Arial" font-size="11" font-weight="bold" fill="#1a6b3c">Ligase</text>
+  <text x="140" y="578" font-family="Arial" font-size="10" fill="#555">Seals nicks between Okazaki fragments (phosphodiester bonds).</text>
+
+  <!-- Direction annotations -->
+  <line x1="540" y1="420" x2="580" y2="420" stroke="#333" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="545" y="415" font-family="Arial" font-size="8" fill="#333">5'→3' synthesis</text>
+  <line x1="540" y1="435" x2="585" y2="435" stroke="#1565c0" stroke-width="1.5" marker-end="url(#arrowBl)"/>
+  <text x="545" y="430" font-family="Arial" font-size="8" fill="#1565c0">Leading: continuous</text>
+  <line x1="540" y1="448" x2="585" y2="448" stroke="#e53935" stroke-width="1.5" marker-end="url(#arrowR)"/>
+  <text x="545" y="460" font-family="Arial" font-size="8" fill="#e53935">Lagging: fragmented</text>
+</svg>

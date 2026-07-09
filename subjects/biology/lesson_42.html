@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 42: Mutations and Gene Editing (D1.3) — IB Biology HL</title>
+<script>window.MathJax = { tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] } };</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #1a6b3c; --border: #c4d4a9; --highlight: #e8f5e9; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Palatino', 'Georgia', serif; background: var(--bg); color: var(--text); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; font-size: 17px; line-height: 1.7; }
+  h1 { font-size: 1.7rem; color: var(--accent); margin-bottom: 0.5rem; }
+  h2 { font-size: 1.25rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; margin: 2rem 0 1rem; }
+  h3 { font-size: 1.1rem; color: #444; margin: 1.3rem 0 0.5rem; }
+  p, li { margin-bottom: 0.6rem; }
+  ul, ol { padding-left: 1.8rem; margin-bottom: 1rem; }
+  .worked { background: #e8f5e9; border-left: 4px solid #1a6b3c; padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
+  .worked strong { color: #1a6b3c; }
+  .answer { background: #fefdf7; border: 1px solid var(--border); padding: 0.8rem 1.2rem; margin: 0.5rem 0; border-radius: 6px; }
+  .nav { display: flex; justify-content: space-between; margin: 3rem 0 1rem; padding-top: 1rem; border-top: 2px solid var(--border); font-size: 0.9rem; }
+  .nav a { color: #1a5c9e; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  .definition { background: #fff8e1; border-left: 4px solid #e6a817; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  .tip { background: #e3f2fd; border-left: 4px solid #1976d2; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  table { border-collapse: collapse; margin: 0.8rem 0; width: 100%; }
+  th, td { border: 1px solid var(--border); padding: 0.4rem 0.6rem; text-align: left; }
+  th { background: #f0f5e8; }
+  @media print { body { font-size: 14px; } .nav { display: none; } }
+</style>
+</head>
+<body>
+
+
+<h2>What You'll Learn</h2>
+
+<ul>
+<li>Types of mutations: substitution (silent, missense, nonsense), insertion, deletion, and frameshift</li>
+<li>Causes of mutations: spontaneous errors, chemical mutagens, radiation, and carcinogens</li>
+<li>Sickle cell anemia as a case study: the mutation, the molecular effect, and the heterozygote advantage</li>
+<li>The consequences of mutations: neutral, beneficial, and harmful</li>
+<li>CRISPR-Cas9: the bacterial immune system turned gene-editing tool</li>
+<li>gRNA design, Cas9 cutting, and the cell's repair pathways (NHEJ vs HDR)</li>
+<li>Applications of CRISPR: curing diseases, engineering crops, gene drives</li>
+<li>Ethical issues: germline editing, designer babies, off-target effects, equity, and ecological risks</li>
+<li>Somatic gene therapy vs germline editing</li>
+</ul>
+<hr>
+
+<h2>1. What Is a Mutation?</h2>
+
+<div class="definition">
+
+<p><strong>Mutation:</strong> A permanent change in the nucleotide sequence of DNA. Mutations can occur in coding regions (affecting protein sequence), regulatory regions (affecting gene expression), or non-coding regions (may have no effect). Mutations are the ultimate source of all genetic variation and the raw material for evolution.</p>
+
+</div>
+
+<p><strong>Analogy:</strong> DNA is like an instruction manual for building and operating a cell. A mutation is a typographical error in that manual. Some typos don't change the meaning (silent mutations), some change a word slightly (missense), some turn a sentence into nonsense (nonsense), and some scramble everything that follows (frameshift).</p>
+
+<hr>
+
+<h2>2. Types of Mutations</h2>
+
+<h3>2.1 Substitution (Point Mutation)</h3>
+
+<p>A single nucleotide is replaced by a different nucleotide.</p>
+
+<table>
+<tr>
+<td>Type</td>
+<td>What happens</td>
+<td>Effect on protein</td>
+<td>Example</td>
+</tr>
+<tr>
+<td>Silent</td>
+<td>New codon codes for the <strong>same</strong> amino acid (due to degeneracy of the genetic code)</td>
+<td>No change** to the amino acid sequence. Protein is identical.</td>
+<td>GAA → GAG: both code for Glutamate.</td>
+</tr>
+<tr>
+<td>Missense</td>
+<td>New codon codes for a <strong>different</strong> amino acid</td>
+<td>Protein has <strong>one amino acid changed</strong>. Effect ranges from negligible to severe.</td>
+<td>GAG → GTG: Glutamate → Valine. This is the <strong>sickle cell mutation</strong>.</td>
+</tr>
+<tr>
+<td>Nonsense</td>
+<td>New codon is a <strong>stop codon</strong> (UAA, UAG, UGA)</td>
+<td>Translation terminates <strong>prematurely</strong> → <strong>truncated protein</strong>. Usually non-functional.</td>
+<td>CAG (Gln) → UAG (STOP). Severe consequence.</td>
+</tr>
+</table>
+
+<p><strong>Draw and label:</strong> A diagram showing a short gene sequence and its translation. Then show the three substitution outcomes:</p>
+<ul>
+<li>Original: ...TTC... → ...AAG... → Lys</li>
+<li>Silent: ...TTT... → ...AAA... → Lys (same amino acid)</li>
+<li>Missense: ...ATC... → ...UAG... → Ile instead of Lys (changed)</li>
+<li>Nonsense: ...ATC... → ...UAG... → STOP (truncation — wait, that example doesn't work. Let me use: TAC (Tyr) → TAA (STOP))</li>
+</ul>
+<h3>2.2 Insertion and Deletion (Indels)</h3>
+
+<p><strong>Insertion:</strong> One or more nucleotides are added to the DNA sequence.</p>
+<p><strong>Deletion:</strong> One or more nucleotides are removed.</p>
+
+<p>If the number of inserted/deleted nucleotides is <strong>not a multiple of 3</strong>, the result is a <strong>frameshift mutation</strong> — the reading frame of the ribosome shifts, and <strong>every codon downstream</strong> is read incorrectly.</p>
+
+<p><strong>Analogy:</strong> Imagine the sentence "THE FAT CAT ATE THE RAT." A deletion of the first "E" shifts everything: "THF ATC ATA TET HER AT..." — every three-letter word after the deletion is nonsense. This is exactly what happens in a frameshift.</p>
+
+<p>If the insertion or deletion is a multiple of 3, the reading frame is preserved downstream, but one or more amino acids are added/removed. This is usually less severe than a frameshift.</p>
+
+<p><strong>Draw and label:</strong> A diagram comparing:</p>
+<ul>
+<li>Original: THE | FAT | CAT | ATE | THE | RAT</li>
+<li>Deletion of E (not multiple of 3): THF | ATC | ATA | TET | HER | AT → frameshift, all words changed</li>
+<li>Deletion of FAT (3 letters): THE | CAT | ATE | THE | RAT → one word missing, but rest preserved</li>
+</ul>
+<div class="worked">
+
+<p><strong>Frameshift Analysis</strong></p>
+
+<p>Original DNA template: 3'-TAC TTT GGA CGC ATT-5'</p>
+<p>Original mRNA: 5'-AUG AAA CCU GCG UAA-3'</p>
+<p>Original polypeptide: Met-Lys-Pro-Ala (STOP at UAA)</p>
+
+<p>A deletion removes the 4th nucleotide (the first T of TTT).</p>
+
+<p>(a) Write the new mRNA sequence.</p>
+<p>(b) Translate the new mRNA.</p>
+<p>(c) Compare the two polypeptides.</p>
+
+<p><strong>Answers:</strong></p>
+<p>(a) New template: 3'-TAC TTG GAC GCA TT-5' (removed first T from TTT, so TTT→TTG — wait, the deletion is in the template strand. Let me be more careful.)</p>
+
+<p>Original template (3'→5'): TAC | TTT | GGA | CGC | ATT</p>
+<p>Delete the 4th base (first T in the second codon): TAC | TTG | GAC | GCA | TT (the last codon loses a base)</p>
+<p>New template: 3'-TAC TTG GAC GCA TT-5'</p>
+
+<p>New mRNA (5'→3'): AUG | AAC | CUG | CGU | AA</p>
+<p>(Wait - I need to redo. Template: TAC TTG GAC GCA TT. mRNA: AUG AAC CUG CGU AA — the last "codon" only has 2 bases.)</p>
+
+<p>Actually let me reconsider. Deletion of one base shifts everything downstream:</p>
+<p>Original: TAC-TTT-GGA-CGC-ATT</p>
+<p>After deletion of first T in TTT: TAC-TTG-GAC-GCA-TT</p>
+<p>mRNA: AUG-AAC-CUG-CGU-AA</p>
+
+<p>(b) New polypeptide: Met-Asn-Leu-Arg — and then what? The ribosome reaches "AA" which isn't a complete codon. In reality, it would read into the next codon (whatever follows) until it hits a stop. But with our truncated sequence: AUG (Met), AAC (Asn), CUG (Leu), CGU (Arg), and then "AA" plus whatever follows would form additional codons until a stop is encountered.</p>
+
+<p>The key point: every amino acid after the deletion site is different from the original. Original: Met-<strong>Lys-Pro-Ala</strong>-STOP. New: Met-<strong>Asn-Leu-Arg</strong>-? The frameshift completely changed the sequence.</p>
+
+<p>(c) The original and new polypeptides are completely different after the mutation site. The frameshift not only changes amino acids but also likely introduces a premature stop codon or eliminates the original stop, producing a non-functional protein.</p>
+
+</div>
+
+<hr>
+
+<h2>3. Causes of Mutations</h2>
+
+<h3>3.1 Spontaneous Mutations</h3>
+
+<p>Even without external agents, mutations occur naturally:</p>
+<ul>
+<li><strong>DNA polymerase errors:</strong> Despite proofreading (3'→5' exonuclease), DNA Pol III makes about 1 error per 10⁹ bases replicated. The error rate after proofreading is ~10⁻⁹ to 10⁻¹⁰ per base pair per replication.</li>
+<li><strong>Tautomeric shifts:</strong> Bases can temporarily exist in rare tautomeric forms that pair incorrectly (e.g., a rare enol form of thymine pairs with guanine instead of adenine).</li>
+<li><strong>Depurination:</strong> The bond between a purine base (A or G) and the deoxyribose sugar can hydrolyse spontaneously, leaving an apurinic site.</li>
+<li><strong>Deamination:</strong> Cytosine can spontaneously deaminate to uracil. If unrepaired, this creates a C→U transition.</li>
+</ul>
+<h3>3.2 Induced Mutations (Mutagens)</h3>
+
+<p>A <strong>mutagen</strong> is any agent that increases the rate of mutation above the spontaneous background level.</p>
+
+<p>#### Chemical Mutagens</p>
+
+<table>
+<tr>
+<td>Mutagen</td>
+<td>Mechanism</td>
+<td>Source</td>
+</tr>
+<tr>
+<td>Nitrosamines</td>
+<td>Alkylate DNA; cause mispairing</td>
+<td>Tobacco smoke, cured meats</td>
+</tr>
+<tr>
+<td>Benzopyrene</td>
+<td>Intercalates between bases; forms bulky DNA adducts that distort the helix</td>
+<td>Tobacco smoke, charred meat</td>
+</tr>
+<tr>
+<td>Aflatoxin</td>
+<td>Forms DNA adducts; causes G→T transversions</td>
+<td>Mouldy peanuts, grains (produced by <em>Aspergillus</em> fungus)</td>
+</tr>
+<tr>
+<td>Base analogs** (e.g., 5-bromouracil)</td>
+<td>Mimics thymine but can mispair with guanine</td>
+<td>Laboratory mutagenesis</td>
+</tr>
+<tr>
+<td>Ethidium bromide</td>
+<td>Intercalates between bases, causing indels during replication</td>
+<td>Laboratory DNA staining</td>
+</tr>
+</table>
+
+<p>#### Radiation</p>
+
+<table>
+<tr>
+<td>Type</td>
+<td>Mechanism</td>
+<td>Source</td>
+</tr>
+<tr>
+<td>UV radiation</td>
+<td>Causes <strong>thymine dimers</strong> — covalent bonds between adjacent thymines on the same strand. This distorts the helix and blocks replication/transcription.</td>
+<td>Sunlight, tanning beds</td>
+</tr>
+<tr>
+<td>Ionising radiation** (X-rays, γ-rays, α-particles)</td>
+<td>Causes <strong>double-strand breaks</strong> (the most dangerous type of DNA damage) and base oxidation.</td>
+<td>Medical imaging, radon gas, cosmic rays, nuclear accidents</td>
+</tr>
+</table>
+
+<p><strong>Draw and label:</strong> A diagram of a thymine dimer. Show two adjacent thymines on the same DNA strand with covalent bonds (cyclobutane ring) linking them. Label: "UV-induced thymine dimer — blocks DNA polymerase, distorts helix."</p>
+
+<div class="definition">
+
+<p><strong>Carcinogen:</strong> A mutagen that specifically leads to cancer. Not all mutagens are carcinogens (some cause mutations that don't lead to cancer), but many carcinogens are mutagens (they cause the mutations that initiate and drive tumour development).</p>
+
+</div>
+
+<div class="tip">
+
+<p><strong>Paper 1:</strong> "Distinguish between a mutagen and a carcinogen." → A mutagen is any agent that causes changes to the DNA sequence. A carcinogen is a mutagen that specifically leads to cancer. All carcinogens are mutagens (broadly speaking), but not all mutagens cause cancer.</p>
+
+</div>
+
+<hr>
+
+<h2>4. Sickle Cell Anemia: A Case Study in Mutation</h2>
+
+<p>Sickle cell anemia is the classic IB example of a point mutation with profound consequences — and a fascinating evolutionary story.</p>
+
+<h3>4.1 The Mutation</h3>
+
+<ul>
+<li><strong>Gene:</strong> β-globin gene (HBB) on chromosome 11.</li>
+<li><strong>Mutation:</strong> A single base substitution in the coding strand: <strong>GAG → GTG</strong>.</li>
+<li><strong>In mRNA:</strong> GAG → <strong>GUG</strong>.</li>
+<li><strong>Amino acid change:</strong> <strong>Glutamate (Glu) → Valine (Val)</strong> at position 6 of the β-globin chain.</li>
+<li><strong>Type:</strong> <strong>Missense mutation.</strong></li>
+</ul>
+<h3>4.2 The Molecular and Cellular Effect</h3>
+
+<p>Normal hemoglobin (HbA) is a tetramer: 2 α-globin + 2 β-globin chains. The β-globin has a glutamate at position 6 — a hydrophilic (water-loving), negatively charged amino acid that sits on the surface of the protein.</p>
+
+<p>In sickle cell hemoglobin (HbS), the glutamate is replaced by valine — a hydrophobic (water-hating) amino acid. This creates a <strong>sticky hydrophobic patch</strong> on the hemoglobin surface.</p>
+
+<p><strong>Consequence at low oxygen tension (e.g., high altitude, exercise, dehydration):</strong></p>
+<ol>
+<li>Deoxygenated HbS molecules aggregate via the hydrophobic valine patches.</li>
+<li>They polymerise into long, rigid fibres.</li>
+<li>These fibres distort the red blood cell into a <strong>sickle (crescent) shape</strong>.</li>
+<li>Sickled RBCs are:</li>
+</ol>
+<ul>
+<li><strong>Fragile</strong> → haemolyse easily → <strong>anaemia</strong>.</li>
+<li><strong>Less flexible</strong> → block small capillaries → <strong>painful vaso-occlusive crises</strong>, organ damage (spleen, kidneys, brain, lungs).</li>
+<li>Removed faster by the spleen → <strong>chronic anaemia</strong>.</li>
+</ul>
+<p><strong>Draw and label:</strong> A diagram comparing:</p>
+<ul>
+<li>Normal RBC: biconcave disc, flexible, flowing smoothly through a capillary.</li>
+<li>Sickled RBC: crescent-shaped, rigid, stuck in a capillary, blocking blood flow. Downstream tissue shown as oxygen-starved.</li>
+</ul>
+<h3>4.3 The Heterozygote Advantage</h3>
+
+<p><strong>Genotypes:</strong></p>
+<ul>
+<li><strong>HbA/HbA:</strong> Normal hemoglobin. Susceptible to malaria.</li>
+<li><strong>HbA/HbS:</strong> Heterozygous (sickle cell <strong>trait</strong>). Generally asymptomatic (some sickling under extreme conditions). <strong>Resistant to malaria.</strong></li>
+<li><strong>HbS/HbS:</strong> Homozygous. Sickle cell <strong>disease</strong>. Severe anemia, pain crises, reduced life expectancy.</li>
+</ul>
+<p><strong>Why are heterozygotes resistant to malaria?</strong></p>
+<p>The malaria parasite (<em>Plasmodium falciparum</em>) spends part of its life cycle inside red blood cells. In HbA/HbS individuals:</p>
+<ul>
+<li>Parasitised RBCs tend to sickle (the parasite lowers oxygen tension).</li>
+<li>Sickled cells are removed by the spleen — eliminating the parasite along with the cell.</li>
+<li>Potassium levels may be altered in HbS-containing cells, inhibiting parasite growth.</li>
+<li>The immune system may clear infected sickled cells more efficiently.</li>
+</ul>
+<p><strong>Evolutionary consequence:</strong> In malaria-endemic regions (sub-Saharan Africa, parts of India, the Mediterranean), the HbS allele frequency can be as high as 10-20%. The <strong>heterozygote advantage</strong> (balancing selection) maintains the allele despite the lethality of the homozygous state. This is a classic example of <strong>balanced polymorphism</strong>.</p>
+
+<p><strong>Analogy:</strong> The sickle cell allele is like a genetic "seatbelt." In a world without car crashes (malaria), wearing a seatbelt might be slightly inconvenient (mild trait). In a world with frequent crashes (malaria), the seatbelt saves your life. But having two seatbelts (homozygous) somehow strangles you. The best situation is exactly one seatbelt.</p>
+
+<hr>
+
+<h2>5. Consequences of Mutations</h2>
+
+<p>Not all mutations are bad. Evolution depends on them.</p>
+
+<table>
+<tr>
+<td>Category</td>
+<td>Description</td>
+<td>Examples</td>
+</tr>
+<tr>
+<td>Neutral</td>
+<td>No effect on fitness. Silent mutations, mutations in non-coding DNA, or missense mutations that don't alter protein function.</td>
+<td>Silent mutation in a codon; SNP in an intron that doesn't affect splicing</td>
+</tr>
+<tr>
+<td>Beneficial</td>
+<td>Increases fitness. Rare but essential for adaptation and evolution.</td>
+<td>Antibiotic resistance in bacteria; lactose tolerance in humans (persistence of lactase into adulthood); sickle cell trait in malaria regions; CCR5-Δ32 mutation conferring HIV resistance</td>
+</tr>
+<tr>
+<td>Harmful</td>
+<td>Decreases fitness. Causes genetic disease or increased susceptibility.</td>
+<td>Cystic fibrosis (CFTR ΔF508 deletion); Huntington's disease (CAG repeat expansion); sickle cell disease (homozygous); many cancers</td>
+</tr>
+</table>
+
+<div class="worked">
+
+<p><strong>Classifying Mutations</strong></p>
+
+<p>Classify each scenario and state whether the mutation is likely neutral, beneficial, or harmful:</p>
+
+<p>(a) A substitution in the third base of a codon changes GAU to GAC. Both code for aspartate.</p>
+<p>(b) A deletion of three nucleotides removes a single amino acid from a non-critical loop region of a protein.</p>
+<p>(c) A substitution creates a premature stop codon in the first exon of the <em>BRCA1</em> tumour suppressor gene.</p>
+<p>(d) In a population of bacteria exposed to an antibiotic, a mutation in the ribosomal protein gene prevents antibiotic binding while still allowing ribosome function.</p>
+
+<p><strong>Answers:</strong></p>
+<p>(a) <strong>Silent mutation.</strong> The amino acid is unchanged → protein identical → <strong>neutral.</strong></p>
+<p>(b) <strong>In-frame deletion.</strong> One amino acid missing. If the loop region is non-critical for folding/function, likely <strong>neutral</strong> (or mildly deleterious).</p>
+<p>(c) <strong>Nonsense mutation.</strong> Premature stop codon → truncated, non-functional BRCA1 protein. Loss of tumour suppressor function → increased cancer risk. <strong>Harmful.</strong></p>
+<p>(d) <strong>Missense mutation</strong> that confers antibiotic resistance. Allows survival and reproduction in antibiotic environment. <strong>Beneficial</strong> (for the bacteria — harmful for us!).</p>
+
+</div>
+
+<hr>
+
+<h2>6. CRISPR-Cas9: Rewriting the Code of Life</h2>
+
+<p>CRISPR-Cas9 is the most transformative tool in molecular biology since PCR. It allows scientists to <strong>edit genes with unprecedented precision, efficiency, and low cost</strong>.</p>
+
+<h3>6.1 The Natural Origin: A Bacterial Immune System</h3>
+
+<p>CRISPR (Clustered Regularly Interspaced Short Palindromic Repeats) was discovered as part of the bacterial adaptive immune system against viruses (bacteriophages).</p>
+
+<p><strong>How it works naturally in bacteria:</strong></p>
+<ol>
+<li>When a bacterium survives a viral infection, it incorporates a short fragment of the viral DNA into its own genome at the CRISPR locus (as a "spacer").</li>
+<li>The CRISPR locus is transcribed into a long RNA, which is processed into short <strong>crRNAs</strong> (CRISPR RNAs), each containing one spacer sequence.</li>
+<li>The crRNA complexes with <strong>Cas9</strong> (CRISPR-associated protein 9), a nuclease.</li>
+<li>The crRNA guides Cas9 to complementary viral DNA. Cas9 cuts both strands of the invading DNA, destroying the virus.</li>
+<li>This is <strong>adaptive immunity</strong> — the bacterium "remembers" past infections and can rapidly destroy the same virus if it attacks again.</li>
+</ol>
+<p><strong>Analogy:</strong> The CRISPR locus is like a library of "mug shots" (viral DNA fragments). Cas9 is the police officer. The crRNA is the officer holding a mug shot, scanning crowds (incoming DNA) for a match. If found, Cas9 "arrests" (cuts) the suspect DNA.</p>
+
+<h3>6.2 CRISPR-Cas9 as a Gene-Editing Tool</h3>
+
+<p>Scientists adapted this system for gene editing by creating a simplified version:</p>
+
+<p><strong>Components:</strong></p>
+<ol>
+<li><strong>Cas9 nuclease:</strong> The "molecular scissors." Cuts both strands of DNA at a specific site.</li>
+<li><strong>Guide RNA (gRNA):</strong> A synthetic RNA (~20 nucleotides) designed to be complementary to the target DNA sequence. The gRNA is a fusion of the crRNA and tracrRNA (trans-activating CRISPR RNA) into a single molecule.</li>
+</ol>
+<p><strong>Mechanism:</strong></p>
+<ol>
+<li><strong>Design:</strong> Scientists design a gRNA complementary to the specific gene/sequence they want to edit.</li>
+<li><strong>Binding:</strong> The gRNA-Cas9 complex scans the genome. The gRNA base-pairs with complementary DNA. Cas9 requires a <strong>PAM sequence</strong> (Protospacer Adjacent Motif — typically NGG, where N is any base) adjacent to the target sequence. This ensures Cas9 only cuts where the gRNA binds AND the PAM is present.</li>
+<li><strong>Cutting:</strong> Cas9 makes a <strong>double-strand break (DSB)</strong> precisely 3-4 nucleotides upstream of the PAM.</li>
+<li><strong>Repair:</strong> The cell's DNA repair machinery fixes the break. Two pathways:</li>
+</ol>
+<p><strong>a) Non-Homologous End Joining (NHEJ):</strong></p>
+<ul>
+<li>The "quick and dirty" repair pathway.</li>
+<li>The broken ends are directly ligated together without a template.</li>
+<li><strong>Error-prone:</strong> Often results in small insertions or deletions (indels) at the break site.</li>
+<li>Indels in a coding sequence → frameshift → gene <strong>knockout</strong> (the gene is disrupted and non-functional).</li>
+<li>Used when the goal is to <strong>inactivate</strong> a gene.</li>
+</ul>
+<p><strong>b) Homology-Directed Repair (HDR):</strong></p>
+<ul>
+<li>The "precise" repair pathway.</li>
+<li>Requires a <strong>homologous template</strong> — a donor DNA molecule with sequences matching the regions flanking the break, but containing the desired edit in between.</li>
+<li>The cell uses the donor template to repair the break accurately.</li>
+<li>Used when the goal is to <strong>correct a mutation</strong> or <strong>insert a specific sequence.</strong></li>
+</ul>
+<p><strong>Draw and label:</strong> A comprehensive CRISPR-Cas9 diagram:</p>
+<ul>
+<li>Cas9 protein (labelled) with gRNA (labelled).</li>
+<li>gRNA base-paired to target DNA sequence. Label the PAM sequence (NGG).</li>
+<li>Scissors symbol showing the double-strand cut site.</li>
+<li>Below: two paths —</li>
+<li>Path 1 (NHEJ): Broken ends rejoined with indels → "Gene knockout."</li>
+<li>Path 2 (HDR): Donor DNA template present → homology-directed repair → "Gene correction / precise edit."</li>
+</ul>
+<div class="tip">
+
+<p><strong>Paper 2:</strong> "Explain how CRISPR-Cas9 can be used to knock out a gene." → Design a gRNA complementary to a coding exon of the target gene. Introduce gRNA + Cas9 into cells. Cas9 creates a double-strand break. The cell repairs via NHEJ, introducing random indels → frameshift mutations → premature stop codons → non-functional protein. The gene is knocked out.</p>
+
+</div>
+
+<h3>6.3 Applications of CRISPR-Cas9</h3>
+
+<table>
+<tr>
+<td>Application</td>
+<td>How CRISPR is used</td>
+<td>Status</td>
+</tr>
+<tr>
+<td>Correcting genetic diseases</td>
+<td>Repair disease-causing mutations using HDR with a correct template</td>
+<td>Clinical trials: sickle cell disease (CTX001 therapy — ex vivo editing of hematopoietic stem cells), cystic fibrosis, muscular dystrophy</td>
+</tr>
+<tr>
+<td>Cancer immunotherapy</td>
+<td>Edit T-cells to enhance tumour recognition (knock out PD-1, engineer CAR-T cells)</td>
+<td>Clinical trials ongoing</td>
+</tr>
+<tr>
+<td>Disease-resistant crops</td>
+<td>Edit genes to confer resistance to fungi, viruses, drought</td>
+<td>Some approved (non-browning mushrooms, GABA-enriched tomatoes in Japan)</td>
+</tr>
+<tr>
+<td>Gene drives</td>
+<td>Use CRISPR to spread a genetic modification through an entire population (by ensuring all offspring inherit the edited allele)</td>
+<td>Proposed for malaria mosquito control. Lab demonstrations successful. Not yet released in the wild.</td>
+</tr>
+<tr>
+<td>Disease models</td>
+<td>Create animal models (mice, zebrafish) with specific mutations to study disease mechanisms</td>
+<td>Widely used in research</td>
+</tr>
+<tr>
+<td>Xenotransplantation</td>
+<td>Edit pig genomes to remove endogenous retroviruses and reduce immunogenicity for organ transplantation</td>
+<td>Early clinical development</td>
+</tr>
+</table>
+
+<h3>6.4 Gene Drives</h3>
+
+<p>A <strong>gene drive</strong> is a genetic system that ensures a particular gene is inherited by more than the normal 50% of offspring — it "drives" itself through a population.</p>
+
+<p><strong>How CRISPR gene drives work:</strong></p>
+<ol>
+<li>Insert the CRISPR-Cas9 system (both Cas9 gene + gRNA gene) into the target locus on one chromosome.</li>
+<li>When the organism reproduces, the CRISPR system on the modified chromosome cuts the <strong>unmodified</strong> (wild-type) chromosome at the target site.</li>
+<li>The cell repairs the break using the modified chromosome as a template (HDR).</li>
+<li>Result: the offspring is <strong>homozygous</strong> for the modification — both chromosomes carry the gene drive.</li>
+<li>Over generations, the gene drive spreads exponentially.</li>
+</ol>
+<p><strong>Application — malaria control:</strong></p>
+<ul>
+<li>Engineer mosquitoes with a gene drive that:</li>
+<li>Makes them resistant to the <em>Plasmodium</em> parasite (so they can't transmit malaria), OR</li>
+<li>Skews sex ratios toward males (reducing the population), OR</li>
+<li>Causes female sterility.</li>
+<li>Release into wild populations → the gene drive spreads → malaria transmission is reduced or eliminated.</li>
+</ul>
+<p><strong>Analogy:</strong> A gene drive is like a computer virus for genes. Once released into a population, it copies itself onto the matching chromosome in every generation, ensuring near-100% inheritance instead of the usual 50%. It spreads whether or not it benefits the organism.</p>
+
+<hr>
+
+<h2>7. Ethical Issues in Gene Editing</h2>
+
+<h3>7.1 Somatic vs Germline Editing</h3>
+
+<table>
+<tr>
+<td></td>
+<td>Somatic Gene Therapy</td>
+<td>Germline Editing</td>
+</tr>
+<tr>
+<td>Cells edited</td>
+<td>Body cells (e.g., blood stem cells, lung cells)</td>
+<td>Germ cells (sperm, eggs) or embryos</td>
+</tr>
+<tr>
+<td>Heritable?</td>
+<td>No** — affects only the treated individual</td>
+<td>Yes** — passed to all future generations</td>
+</tr>
+<tr>
+<td>Consent</td>
+<td>The patient can consent</td>
+<td>Future generations cannot consent</td>
+</tr>
+<tr>
+<td>Regulatory status</td>
+<td>Generally accepted (with oversight)</td>
+<td>Heavily restricted or banned in most countries</td>
+</tr>
+<tr>
+<td>Example</td>
+<td>CTX001 for sickle cell (editing patient's blood stem cells ex vivo, then reinfusing)</td>
+<td>The 2018 case of He Jiankui, who edited embryos resulting in the birth of twin girls (CCR5 gene for HIV resistance) — widely condemned</td>
+</tr>
+</table>
+
+<h3>7.2 Key Ethical Concerns</h3>
+
+<p><strong>1. Germline Editing and "Designer Babies"</strong></p>
+<ul>
+<li>Editing embryos creates heritable changes that will affect all future generations.</li>
+<li>The line between "therapy" (correcting disease) and "enhancement" (selecting for intelligence, height, athletic ability, eye colour) is blurry.</li>
+<li>Concerns about a new form of eugenics and increasing social inequality ("only the rich can afford gene-edited children").</li>
+</ul>
+<p><strong>2. Off-Target Effects</strong></p>
+<ul>
+<li>The gRNA may bind to sequences that are similar (but not identical) to the target, causing Cas9 to cut at unintended sites.</li>
+<li>Off-target mutations could inactivate tumour suppressor genes or activate oncogenes → cancer risk.</li>
+<li>Current research focuses on improving gRNA specificity and using "high-fidelity" Cas9 variants.</li>
+</ul>
+<p><strong>3. Equity of Access</strong></p>
+<ul>
+<li>CRISPR therapies (e.g., CTX001 for sickle cell) are extremely expensive (~$2 million+ per patient).</li>
+<li>Will these treatments only be available to the wealthy in developed countries, while the majority of sickle cell patients live in sub-Saharan Africa and India?</li>
+</ul>
+<p><strong>4. Ecological Risks of Gene Drives</strong></p>
+<ul>
+<li>Once released, a gene drive could spread uncontrollably across national borders.</li>
+<li>Unforeseen ecological consequences: what happens if we eliminate a mosquito species? Effects on food webs (fish, birds, bats that eat mosquitoes)?</li>
+<li>Could the gene drive mutate and have unintended effects in the target species or jump to other species (horizontal gene transfer)?</li>
+<li>Who decides whether to release a gene drive? Global governance is lacking.</li>
+</ul>
+<p><strong>5. Informed Consent</strong></p>
+<ul>
+<li>Germline editing affects future generations who cannot consent.</li>
+<li>The 2018 He Jiankui case is a stark example of violating ethical norms — no proper regulatory approval, inadequate informed consent, uncertain medical necessity (CCR5-Δ32 provides HIV resistance, but the twins were not at high risk for HIV).</li>
+</ul>
+<div class="tip">
+
+<p><strong>Paper 2 Nature of Science / Ethics question:</strong> "Discuss the ethical considerations of using CRISPR-Cas9 for human germline editing." Structure your answer around: (1) distinction between somatic and germline, (2) potential benefits (eliminating devastating genetic diseases from a family line), (3) risks (off-target effects, unknown long-term consequences), (4) consent issues (future generations), (5) slippery slope to enhancement/eugenics, (6) regulatory approaches (moratorium vs cautious research).</p>
+
+</div>
+
+<hr>
+
+<h2>Common Misconceptions</h2>
+
+<table>
+<tr>
+<td>Misconception</td>
+<td>Reality</td>
+</tr>
+<tr>
+<td>"All mutations are harmful."</td>
+<td>Most mutations are <strong>neutral</strong>. Some are beneficial (and are the raw material for evolution). Only a fraction cause disease.</td>
+</tr>
+<tr>
+<td>"Frameshift mutations only occur from insertions."</td>
+<td>Both insertions AND deletions cause frameshifts — if the number of bases added/removed is not a multiple of 3.</td>
+</tr>
+<tr>
+<td>"Sickle cell heterozygotes are completely immune to malaria."</td>
+<td>They are <strong>resistant</strong>, not immune. They can still contract malaria, but they are much less likely to develop severe, life-threatening disease.</td>
+</tr>
+<tr>
+<td>"CRISPR was invented by scientists."</td>
+<td>CRISPR is a <strong>natural bacterial immune system</strong> that scientists <strong>adapted</strong> for gene editing. Jennifer Doudna and Emmanuelle Charpentier (Nobel Prize 2020) showed how to reprogram it.</td>
+</tr>
+<tr>
+<td>"CRISPR always edits the right gene."</td>
+<td>Off-target effects are a major concern. The gRNA can bind to similar sequences elsewhere in the genome.</td>
+</tr>
+<tr>
+<td>"Somatic gene therapy changes are passed to children."</td>
+<td>Somatic therapy edits <strong>body cells</strong> only. These changes are <strong>not</strong> heritable. Only germline editing is heritable.</td>
+</tr>
+<tr>
+<td>"Gene drives are already being used in the wild."</td>
+<td>Gene drives have been demonstrated in laboratory settings but have <strong>not yet been released into wild populations</strong>. Extensive safety testing and regulatory frameworks are still under development.</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1: Mutation Types</h3>
+
+<p>Original DNA template strand: 3'-TAC GGA TCA CCT-5'</p>
+
+<p>For each of the following mutations to the template strand, identify the type of mutation (silent, missense, nonsense, or frameshift) and describe the effect on the polypeptide:</p>
+
+<p>(a) Position 6: C → T (3'-TAC GGA TTA CCT-5')</p>
+<p>(b) Position 4: G → C (3'-TAC CCA TCA CCT-5')</p>
+<p>(c) Insertion of A after position 3 (3'-TAC A GGA TCA CCT-5')</p>
+<p>(d) Deletion of positions 4-6 (3'-TAC TCA CCT-5')</p>
+
+<hr>
+
+<h3>Problem 2: Sickle Cell Anemia</h3>
+
+<p>(a) Describe the mutation that causes sickle cell anemia at the DNA, mRNA, and protein levels.</p>
+<p>(b) Explain why the sickle cell allele is maintained at high frequency in malaria-endemic regions despite being lethal in the homozygous state.</p>
+<p>(c) A couple, both heterozygous for the sickle cell allele (HbA/HbS), plan to have children. State the probability that their child will:</p>
+<p>(i) Have sickle cell disease.</p>
+<p>(ii) Be resistant to malaria.</p>
+<p>(iii) Be susceptible to malaria and not have sickle cell disease.</p>
+
+<hr>
+
+<h3>Problem 3: CRISPR-Cas9</h3>
+
+<p>(a) Describe the roles of Cas9 and the guide RNA in CRISPR gene editing.</p>
+<p>(b) Explain the difference between NHEJ and HDR repair pathways and when each would be used in gene editing.</p>
+<p>(c) A researcher wants to correct a single point mutation in the CFTR gene that causes cystic fibrosis. Which repair pathway should she promote, and what additional component must she provide?</p>
+
+<hr>
+
+<h3>Problem 4: Gene Drives</h3>
+
+<p>(a) Explain how a CRISPR-based gene drive ensures that a genetic modification is inherited by more than 50% of offspring.</p>
+<p>(b) Discuss one potential benefit and one potential risk of using a gene drive to control malaria-transmitting mosquitoes.</p>
+<p>(c) Explain why gene drives are considered particularly risky from an ecological perspective compared to other genetic modifications.</p>
+
+<hr>
+
+<h3>Problem 5: Ethical Analysis</h3>
+
+<p>A biotech company proposes to offer CRISPR-based "genetic enhancement" to healthy parents who want their children to have specific traits (e.g., increased height, reduced risk of Alzheimer's, blue eyes). The editing would be performed on embryos (germline editing).</p>
+
+<p>(a) Distinguish between this proposal and somatic gene therapy for a child with sickle cell disease.</p>
+<p>(b) Discuss TWO ethical arguments in favour of allowing such enhancements.</p>
+<p>(c) Discuss TWO ethical arguments against allowing such enhancements.</p>
+<p>(d) Explain why germline editing raises issues of intergenerational justice that somatic therapy does not.</p>
+
+<hr>
+
+<h2>Answers</h2>
+
+<h3>Answer 1</h3>
+
+<p><strong>Original:</strong> Template 3'-TAC GGA TCA CCT-5' → mRNA 5'-AUG CCU AGU GGA-3' → Met-Pro-Ser-Gly</p>
+
+<p>(a) Position 6: C→T in template. New template: 3'-TAC GGA TTA CCT-5' → mRNA: 5'-AUG CCU AAU GGA-3'. Codon 3: AGU (Ser) → AAU (<strong>Asn</strong>). <strong>Missense mutation</strong> — one amino acid changes (Ser → Asn).</p>
+
+<p>(b) Position 4: G→C in template. New template: 3'-TAC CCA TCA CCT-5' → mRNA: 5'-AUG GGU AGU GGA-3'. Codon 2: CCU (Pro) → GGU (<strong>Gly</strong>). <strong>Missense mutation</strong> — Pro → Gly.</p>
+
+<p>(c) Insertion of A after position 3. New template: 3'-TAC A GGA TCA CCT-5' — wait, an insertion shifts everything. Let me re-index: Original: T(1)-A(2)-C(3)-G(4)-G(5)-A(6)-T(7)-C(8)-A(9)-C(10)-C(11)-T(12). Insert A after position 3: T-A-C-<strong>A</strong>-G-G-A-T-C-A-C-C-T. mRNA: 5'-AUG <strong>U</strong>CC UAG UGG A-3'. (Wait, let me recalculate. Template: TAC A GGA TCA CCT → template read 3'→5': TAC|AGG|ATC|ACC|T → mRNA: AUG|UCC|UAG|UGG|A. UAG is a STOP codon.)</p>
+
+<p>mRNA: AUG (Met) — UCC (Ser) — UAG (<strong>STOP</strong>). The insertion created a frameshift that introduced a premature stop codon at position 3. <strong>Frameshift → nonsense (premature stop)</strong>. The polypeptide is truncated: Met-Ser-STOP (only 2 amino acids instead of 4).</p>
+
+<p>(d) Deletion of positions 4-6 (GGA). New template: 3'-TAC TCA CCT-5' → mRNA: 5'-AUG AGU GGA-3'. <strong>In-frame deletion (3 bases, multiple of 3)</strong> — the codon for Pro (CCU) is deleted. Polypeptide: Met-Ser-Gly (3 amino acids instead of 4, but the reading frame is preserved for the remaining codons).</p>
+
+<hr>
+
+<h3>Answer 2</h3>
+
+<p>(a) <strong>DNA level:</strong> Substitution in the β-globin gene: GAG → GTG in the coding strand (CTC → CAC in the template strand).</p>
+<p><strong>mRNA level:</strong> GAG → GUG.</p>
+<p><strong>Protein level:</strong> Glutamate (Glu, a hydrophilic, negatively charged amino acid) → Valine (Val, a hydrophobic amino acid) at position 6 of the β-globin chain. This is a <strong>missense mutation</strong>.</p>
+
+<p>(b) The sickle cell allele is maintained by <strong>balancing selection</strong> — the <strong>heterozygote advantage</strong>. HbA/HbS individuals are resistant to malaria (they can still contract it but are much less likely to die from it), while HbA/HbA individuals are susceptible. In malaria-endemic regions, the fitness of heterozygotes is higher than either homozygote (HbA/HbA die from malaria; HbS/HbS die from sickle cell disease). This maintains both alleles in the population.</p>
+
+<p>(c) Punnett square for HbA/HbS × HbA/HbS:</p>
+
+<table>
+<tr>
+<td></td>
+<td>HbA</td>
+<td>HbS</td>
+</tr>
+<tr>
+<td>HbA</td>
+<td>HbA/HbA</td>
+<td>HbA/HbS</td>
+</tr>
+<tr>
+<td>HbS</td>
+<td>HbA/HbS</td>
+<td>HbS/HbS</td>
+</tr>
+</table>
+
+<p>(i) Sickle cell disease (HbS/HbS): <strong>¼ or 25%</strong>.</p>
+<p>(ii) Malaria resistant (HbA/HbS heterozygotes): <strong>½ or 50%</strong>.</p>
+<p>(iii) Susceptible to malaria and no sickle cell disease (HbA/HbA): <strong>¼ or 25%</strong>.</p>
+
+<hr>
+
+<h3>Answer 3</h3>
+
+<p>(a) <strong>Cas9</strong> is a nuclease that creates a double-strand break in DNA. <strong>Guide RNA (gRNA)</strong> is a synthetic RNA (~20 nucleotides) complementary to the target DNA sequence. The gRNA binds to Cas9 and guides it to the specific genomic locus by base-pairing with the complementary DNA. Cas9 only cuts when the gRNA is bound AND a PAM sequence (NGG) is adjacent to the target.</p>
+
+<p>(b) <strong>NHEJ (Non-Homologous End Joining):</strong> The cell directly ligates the broken ends without a template. This is error-prone and often introduces small indels → frameshift → gene knockout. Used when the goal is to <strong>inactivate</strong> a gene.</p>
+<p><strong>HDR (Homology-Directed Repair):</strong> The cell uses a homologous donor DNA template to accurately repair the break. Used when the goal is to <strong>correct a mutation</strong> or insert a specific sequence.</p>
+
+<p>(c) She should promote <strong>HDR</strong>. She must provide a <strong>donor DNA template</strong> containing the correct (wild-type) CFTR sequence flanked by homology arms matching the regions on either side of the break. The cell will use this template to repair the Cas9-induced break, replacing the mutant sequence with the correct one.</p>
+
+<hr>
+
+<h3>Answer 4</h3>
+
+<p>(a) A CRISPR gene drive cassette (containing Cas9 + gRNA genes) is inserted into one chromosome at the target locus. In a heterozygous organism (one modified, one wild-type chromosome), the Cas9 and gRNA are expressed. The gRNA-Cas9 complex cuts the <strong>wild-type chromosome</strong> at the target site. The cell repairs the break using the <strong>modified chromosome as an HDR template</strong>, copying the gene drive cassette onto the wild-type chromosome. Both chromosomes now carry the drive → the organism is homozygous. This happens in the germline, so all gametes carry the drive → all offspring inherit it → >99% inheritance instead of 50%.</p>
+
+<p>(b) <strong>Benefit:</strong> Could drastically reduce or eliminate malaria transmission, saving hundreds of thousands of lives annually, particularly children under 5 in sub-Saharan Africa. This would be a more sustainable and equitable intervention than drugs, bed nets, or insecticide spraying, which require ongoing effort and resources.</p>
+
+<p><strong>Risk:</strong> Unintended ecological consequences. Mosquitoes are part of food webs — their elimination/reduction could affect species that depend on them (fish, birds, bats). Additionally, the gene drive could mutate or spread to non-target mosquito species. Once released, it may be impossible to recall.</p>
+
+<p>(c) Gene drives are <strong>self-propagating</strong> — they spread through a population even if they reduce fitness. Unlike standard GMOs (which can be contained or will die out without selection), a gene drive is designed to spread to every individual in the population and across national borders. There is no effective "undo" button. Ecological impacts (trophic cascades, effects on pollination, competition with other species) are unpredictable and could be irreversible.</p>
+
+<hr>
+
+<h3>Answer 5</h3>
+
+<p>(a) <strong>Somatic gene therapy</strong> edits body cells (e.g., blood stem cells) of an existing individual with a disease. The changes affect only that individual and are <strong>not inherited</strong>. The patient (or guardians) can consent. <strong>Germline enhancement</strong> edits embryos to introduce traits into children who don't yet exist and have no medical need. Changes are <strong>heritable</strong> — affecting all future generations who cannot consent.</p>
+
+<p>(b) Arguments in favour:</p>
+<ul>
+<li><strong>Parental autonomy:</strong> Parents already shape their children's traits through education, nutrition, and environment. Genetic enhancement is an extension of this — parents should have the right to give their children the best possible start.</li>
+<li><strong>Reducing suffering:</strong> If we can eliminate genetic predispositions to diseases (Alzheimer's, cancer) or confer beneficial traits (resistance to infectious diseases), we have a moral obligation to do so, just as we vaccinate children today.</li>
+</ul>
+<p>(c) Arguments against:</p>
+<ul>
+<li><strong>Inequality and eugenics:</strong> Genetic enhancements would be expensive, accessible only to the wealthy. This would create a genetic "upper class," deepening social inequality and potentially leading to a new form of eugenics where certain genetic traits are valued over others.</li>
+<li><strong>Unpredictable consequences and loss of diversity:</strong> We don't fully understand the pleiotropic effects of genes — a gene variant that increases height might also increase cancer risk. Eliminating genetic variation (even for "negative" traits) reduces the gene pool's resilience. The CCR5-Δ32 mutation (HIV resistance) also increases susceptibility to West Nile virus — genes often have trade-offs.</li>
+</ul>
+<p>(d) Germline editing makes changes that will be passed to all future descendants. These future generations have no say in decisions that will affect their genetic makeup, their health, and potentially their identity. This raises <strong>intergenerational justice</strong> concerns: do current generations have the right to make irreversible genetic decisions for all future humanity? Somatic therapy does not raise this issue because the changes die with the treated individual.</p>
+
+<hr>
+
+<h2>Key Takeaways</h2>
+
+<table>
+<tr>
+<td>Concept</td>
+<td>Summary</td>
+</tr>
+<tr>
+<td>Substitution</td>
+<td>Silent (same amino acid), missense (different amino acid), nonsense (premature stop).</td>
+</tr>
+<tr>
+<td>Indels</td>
+<td>Insertions/deletions. Frameshift if not multiple of 3 → all downstream codons changed.</td>
+</tr>
+<tr>
+<td>Mutagens</td>
+<td>Chemical (nitrosamines, benzopyrene), radiation (UV → thymine dimers; ionising → double-strand breaks).</td>
+</tr>
+<tr>
+<td>Sickle cell</td>
+<td>GAG→GTG, Glu→Val at position 6 of β-globin. HbS polymerises at low O₂ → sickled RBCs. Heterozygote advantage vs malaria.</td>
+</tr>
+<tr>
+<td>CRISPR-Cas9</td>
+<td>gRNA guides Cas9 to target → double-strand break. NHEJ → indels/knockout. HDR (+ donor template) → precise edit.</td>
+</tr>
+<tr>
+<td>Gene drive</td>
+<td>CRISPR cassette copies itself to wild-type chromosome via HDR → >99% inheritance → spreads through population.</td>
+</tr>
+<tr>
+<td>Somatic vs germline</td>
+<td>Somatic: body cells only, not inherited. Germline: embryos/gametes, heritable, affects future generations.</td>
+</tr>
+<tr>
+<td>Ethics</td>
+<td>Off-target effects, designer babies, equity, consent of future generations, ecological risks of gene drives.</td>
+</tr>
+</table>
+
+<hr>
+
+<p><em>End of Lesson 42 — You've completed the D1 and C4 modules!</em></p>
+
+<div class="nav"><a href="lesson_41.html">&#8592; Lesson 41</a><a href="index.html">&#8962; Index</a><a href="lesson_43.html">Lesson 43 &#8594;</a></div>
+
+</body>
+</html>

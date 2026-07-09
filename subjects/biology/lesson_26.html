@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 26: Enzymes and Metabolism II ⚠️ HL (C1.1) — IB Biology HL</title>
+<script>window.MathJax = { tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] } };</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #1a6b3c; --border: #c4d4a9; --highlight: #e8f5e9; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Palatino', 'Georgia', serif; background: var(--bg); color: var(--text); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; font-size: 17px; line-height: 1.7; }
+  h1 { font-size: 1.7rem; color: var(--accent); margin-bottom: 0.5rem; }
+  h2 { font-size: 1.25rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; margin: 2rem 0 1rem; }
+  h3 { font-size: 1.1rem; color: #444; margin: 1.3rem 0 0.5rem; }
+  p, li { margin-bottom: 0.6rem; }
+  ul, ol { padding-left: 1.8rem; margin-bottom: 1rem; }
+  .worked { background: #e8f5e9; border-left: 4px solid #1a6b3c; padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
+  .worked strong { color: #1a6b3c; }
+  .answer { background: #fefdf7; border: 1px solid var(--border); padding: 0.8rem 1.2rem; margin: 0.5rem 0; border-radius: 6px; }
+  .nav { display: flex; justify-content: space-between; margin: 3rem 0 1rem; padding-top: 1rem; border-top: 2px solid var(--border); font-size: 0.9rem; }
+  .nav a { color: #1a5c9e; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  .definition { background: #fff8e1; border-left: 4px solid #e6a817; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  .tip { background: #e3f2fd; border-left: 4px solid #1976d2; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  table { border-collapse: collapse; margin: 0.8rem 0; width: 100%; }
+  th, td { border: 1px solid var(--border); padding: 0.4rem 0.6rem; text-align: left; }
+  th { background: #f0f5e8; }
+  @media print { body { font-size: 14px; } .nav { display: none; } }
+</style>
+</head>
+<body>
+
+
+<h2>What You'll Learn</h2>
+
+<p>By the end of this HL lesson, you will:</p>
+<ul>
+<li>Master Michaelis-Menten kinetics: the hyperbolic rate vs [S] curve, Vmax, and Km</li>
+<li>Construct and interpret Lineweaver-Burk plots (double reciprocal plots)</li>
+<li>Use L-B plots to distinguish competitive from non-competitive inhibition</li>
+<li>Design experiments to determine Km and Vmax experimentally</li>
+<li>Understand mechanism-based (suicide) inhibitors with penicillin as the classic example</li>
+<li>Explain allosteric regulation, sigmoidal kinetics, and cooperativity</li>
+<li>Analyze ATCase as a model allosteric enzyme and hemoglobin as an allosteric protein</li>
+</ul>
+<hr>
+
+<h2>1. Michaelis-Menten Kinetics</h2>
+
+<h3>The Foundational Equation</h3>
+
+<p>In 1913, Leonor Michaelis and Maud Menten derived an equation describing how reaction rate depends on substrate concentration for a simple enzyme-catalyzed reaction. Their model assumes:</p>
+
+<p style="text-align:center;margin:0.8rem 0;">$$E + S \underset{k_{-1}}{\stackrel{k_1}{\rightleftharpoons}} ES \xrightarrow{k_{cat}} E + P$$</p>
+
+<p>The key assumption: the ES complex reaches a <strong>steady state</strong> — its concentration remains constant because it forms as fast as it breaks down. This leads to:</p>
+
+<p style="text-align:center;margin:0.8rem 0;">$$v = \frac{V_{max}[S]}{K_m + [S]}$$</p>
+
+<p><strong>Where:</strong></p>
+<ul>
+<li><strong>v</strong> = initial reaction rate (velocity) at given [S]</li>
+<li><strong>Vmax</strong> = maximum possible rate (all active sites saturated)</li>
+<li><strong>Km</strong> = Michaelis constant = [S] at which v = Vmax/2</li>
+<li><strong>[S]</strong> = substrate concentration</li>
+</ul>
+<h3>The Rate vs [S] Curve</h3>
+
+<p><strong>Draw and label this graph:</strong></p>
+
+<p>```</p>
+<p>Rate (v)</p>
+<p>^</p>
+<table>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+</table>
+<p>└──────────────────────────────────────────────→ [S]</p>
+<table>
+<tr>
+</tr>
+<tr>
+</tr>
+</table>
+
+<p>Shape: RECTANGULAR HYPERBOLA</p>
+<p>```</p>
+
+<h3>Three Kinetic Regimes</h3>
+
+<table>
+<tr>
+<td>Regime</td>
+<td>[S] relative to Km</td>
+<td>Rate behavior</td>
+<td>Kinetic order</td>
+</tr>
+<tr>
+<td>Low [S]</td>
+<td>[S] ≪ Km</td>
+<td>v ≈ (Vmax/Km)[S] — rate proportional to [S]</td>
+<td>First-order</td>
+</tr>
+<tr>
+<td>[S] = Km</td>
+<td>[S] = Km</td>
+<td>v = Vmax/2</td>
+<td>—</td>
+</tr>
+<tr>
+<td>High [S]</td>
+<td>[S] ≫ Km</td>
+<td>v ≈ Vmax — rate independent of [S]</td>
+<td>Zero-order</td>
+</tr>
+</table>
+
+<p><strong>When [S] ≪ Km</strong>: The denominator ≈ Km (since [S] is negligible). So v = Vmax[S]/Km, meaning rate increases linearly with [S]. Adding more substrate directly increases rate.</p>
+
+<p><strong>When [S] = Km</strong>: v = Vmax × Km / (Km + Km) = Vmax/2. This is the <strong>definition</strong> of Km.</p>
+
+<p><strong>When [S] ≫ Km</strong>: The denominator ≈ [S]. So v = Vmax[S]/[S] = Vmax. Rate plateaus.</p>
+
+<div class="definition">
+
+<p><strong>Km (Michaelis constant)</strong>: The substrate concentration at which the reaction rate is exactly half of Vmax. Km has units of concentration (typically μM or mM). Crucially, Km is an <strong>inverse measure of enzyme-substrate affinity</strong> — a low Km means the enzyme reaches half Vmax at low [S], indicating high affinity for the substrate. A high Km means weak binding; more substrate is needed.</p>
+
+</div>
+
+<h3>What Km Actually Tells You</h3>
+
+<p>For many enzymes, Km approximates the <strong>dissociation constant</strong> of the ES complex (especially when kcat ≪ k₋₁):</p>
+
+<p style="text-align:center;margin:0.8rem 0;">$$K_m \approx \frac{k_{-1}}{k_1} = K_d$$</p>
+
+<p><strong>Analogy:</strong> Think of Km as the "stickiness" of an enzyme for its substrate:</p>
+<ul>
+<li><strong>Low Km</strong> (~μM or nM): The enzyme grabs substrate tightly, like a magnet. Even at low concentrations, most enzymes are busy. Example: hexokinase has Km ~0.1 mM for glucose — it works efficiently even when glucose is scarce.</li>
+<li><strong>High Km</strong> (~mM): The enzyme needs a lot of substrate to work efficiently, like a weak handshake. Example: glucokinase has Km ~10 mM for glucose — it only works when glucose is abundant (after a meal).</li>
+</ul>
+<h3>The Three Meanings of Vmax</h3>
+
+<p>Vmax is the theoretical maximum rate when every enzyme molecule is occupied by substrate. It depends on:</p>
+
+<p style="text-align:center;margin:0.8rem 0;">$$V_{max} = k_{cat}[E]_{total}$$</p>
+
+<p>Where kcat (turnover number) is the number of substrate molecules converted to product per enzyme active site per second when saturated.</p>
+
+<table>
+<tr>
+<td>Enzyme</td>
+<td>kcat (s⁻¹)</td>
+<td>Meaning</td>
+</tr>
+<tr>
+<td>Carbonic anhydrase</td>
+<td>600,000</td>
+<td>One of the fastest enzymes known; converts 600K CO₂ per second</td>
+</tr>
+<tr>
+<td>Catalase</td>
+<td>40,000,000</td>
+<td>Turnover number so high it's nearly diffusion-limited</td>
+</tr>
+<tr>
+<td>Lysozyme</td>
+<td>0.5</td>
+<td>Moderate; "slow" enzyme</td>
+</tr>
+</table>
+
+<div class="tip">
+
+<p><strong>IB Exam Tip (Paper 1 & 2):</strong> You don't need to memorize the Michaelis-Menten equation, but you MUST understand what Km and Vmax mean, how to read the hyperbolic curve, and the relationship: <strong>Km = [S] at half Vmax</strong>. This is a favorite HL question — especially interpreting what a low vs high Km means for enzyme affinity.</p>
+
+</div>
+
+<hr>
+
+<h2>2. The Lineweaver-Burk Plot (Double Reciprocal)</h2>
+
+<h3>Why Transform the Data?</h3>
+
+<p>The Michaelis-Menten curve is hyperbolic, making it difficult to accurately determine Vmax (it's an asymptote — you never quite reach it) and Km (must find exactly Vmax/2 on a curve).</p>
+
+<p>Hans Lineweaver and Dean Burk devised a linear transformation by taking the reciprocals of both sides of the Michaelis-Menten equation:</p>
+
+<p style="text-align:center;margin:0.8rem 0;">$$\frac{1}{v} = \frac{K_m}{V_{max}} \cdot \frac{1}{[S]} + \frac{1}{V_{max}}$$</p>
+
+<p>This has the form <strong>y = mx + c</strong> (a straight line!):</p>
+
+<ul>
+<li><strong>y</strong> = 1/v</li>
+<li><strong>x</strong> = 1/[S]</li>
+<li><strong>slope (m)</strong> = Km/Vmax</li>
+<li><strong>y-intercept (c)</strong> = 1/Vmax</li>
+<li><strong>x-intercept</strong> = −1/Km</li>
+</ul>
+<h3>Drawing the Lineweaver-Burk Plot</h3>
+
+<p><strong>Draw and label:</strong></p>
+
+<p>```</p>
+<p>1/v</p>
+<p>^</p>
+<table>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+</table>
+<p>──────┼──────────────→ 1/[S]</p>
+<p>╱    |</p>
+<p>╱     |</p>
+<p>↑</p>
+<p>x-intercept     y-intercept</p>
+<p>= −1/Km         = 1/Vmax</p>
+<p>```</p>
+
+<p><strong>Key features to label:</strong></p>
+<ol>
+<li><strong>y-intercept</strong> = 1/Vmax — the point where the line crosses the y-axis (1/[S] = 0, meaning infinite [S])</li>
+<li><strong>x-intercept</strong> = −1/Km — where the line crosses the x-axis (1/v = 0, meaning infinite rate); this is NEGATIVE — extend the line leftwards</li>
+<li><strong>Slope</strong> = Km/Vmax — steeper slope means higher Km/Vmax ratio</li>
+</ol>
+<h3>How to Construct a Lineweaver-Burk Plot</h3>
+
+<div class="worked">
+
+<p><strong>Worked Example: From Data to L-B Plot</strong></p>
+
+<p>A student measures initial rate at various substrate concentrations:</p>
+
+<table>
+<tr>
+<td>[S] (mM)</td>
+<td>1/[S] (mM⁻¹)</td>
+<td>v (μmol/min)</td>
+<td>1/v (min/μmol)</td>
+</tr>
+<tr>
+<td>0.5</td>
+<td>2.000</td>
+<td>2.0</td>
+<td>0.500</td>
+</tr>
+<tr>
+<td>1.0</td>
+<td>1.000</td>
+<td>3.3</td>
+<td>0.303</td>
+</tr>
+<tr>
+<td>2.0</td>
+<td>0.500</td>
+<td>5.0</td>
+<td>0.200</td>
+</tr>
+<tr>
+<td>5.0</td>
+<td>0.200</td>
+<td>7.1</td>
+<td>0.141</td>
+</tr>
+<tr>
+<td>10.0</td>
+<td>0.100</td>
+<td>8.3</td>
+<td>0.120</td>
+</tr>
+</table>
+
+<p>Plot 1/v (y-axis) vs 1/[S] (x-axis). The data should form a straight line.</p>
+
+<p>From the graph:</p>
+<ul>
+<li><strong>y-intercept ≈ 0.100</strong> → Vmax = 1/0.100 = <strong>10.0 μmol/min</strong></li>
+<li><strong>x-intercept ≈ −0.50</strong> → Km = −1/(−0.50) = <strong>2.0 mM</strong></li>
+</ul>
+<p>Or using slope: slope = (0.303 − 0.120)/(1.000 − 0.100) = 0.183/0.900 = 0.203</p>
+<p>Km = slope × Vmax = 0.203 × 10.0 = <strong>2.03 mM</strong> ✓</p>
+
+</div>
+
+<hr>
+
+<h2>3. Effects of Inhibitors on Lineweaver-Burk Plots</h2>
+
+<p>This is a <strong>high-yield HL concept</strong> — the effect of inhibitors on L-B plots is nearly guaranteed to appear on your exam.</p>
+
+<h3>Competitive Inhibition on L-B Plot</h3>
+
+<p><strong>Draw this plot with two lines:</strong></p>
+
+<p>```</p>
+<p>1/v</p>
+<p>^</p>
+<table>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+</table>
+<p>──────┼───┼──────────→ 1/[S]</p>
+<p>╱    |   |</p>
+<p>╱     |   |</p>
+<p>↑   ↑</p>
+<p>Same      Different</p>
+<p>y-int     x-intercepts</p>
+<p>```</p>
+
+<p><strong>Key features:</strong></p>
+<ul>
+<li>Both lines share the <strong>same y-intercept</strong> (same 1/Vmax → Vmax unchanged)</li>
+<li>The inhibited line has a <strong>different (less negative) x-intercept</strong> → −1/Km shifts → apparent Km <strong>increases</strong></li>
+<li>The inhibited line is <strong>steeper</strong> (greater slope = Km/Vmax; Vmax same, Km larger)</li>
+<li><strong>Interpretation:</strong> At infinite [S] (y-intercept), enough substrate overwhelms the inhibitor</li>
+</ul>
+<h3>Non-Competitive Inhibition on L-B Plot</h3>
+
+<p><strong>Draw this plot with two lines:</strong></p>
+
+<p>```</p>
+<p>1/v</p>
+<p>^</p>
+<table>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+</table>
+<p>──────┼────┼─────────→ 1/[S]</p>
+<p>╱    |    |</p>
+<p>╱     |    |</p>
+<p>↑    ↑</p>
+<p>Different Same</p>
+<p>y-intercepts x-intercept</p>
+<p>```</p>
+
+<p><strong>Key features:</strong></p>
+<ul>
+<li>Lines share the <strong>same x-intercept</strong> (same −1/Km → Km unchanged)</li>
+<li>The inhibited line has a <strong>higher y-intercept</strong> → 1/Vmax larger → Vmax <strong>decreases</strong></li>
+<li>Lines may be <strong>parallel or nearly parallel</strong> (slope = Km/Vmax; Km same, Vmax smaller → larger slope)</li>
+<li><strong>Interpretation:</strong> No amount of substrate can restore full activity because some enzymes are permanently disabled</li>
+</ul>
+<h3>Visual Summary Table</h3>
+
+<table>
+<tr>
+<td>Inhibition type</td>
+<td>y-intercept (1/Vmax)</td>
+<td>x-intercept (−1/Km)</td>
+<td>Vmax</td>
+<td>Km</td>
+</tr>
+<tr>
+<td>None</td>
+<td>Reference</td>
+<td>Reference</td>
+<td>Reference</td>
+<td>Reference</td>
+</tr>
+<tr>
+<td>Competitive</td>
+<td>SAME</td>
+<td>DIFFERENT** (less negative)</td>
+<td>Unchanged</td>
+<td>Increased</td>
+</tr>
+<tr>
+<td>Non-competitive</td>
+<td>DIFFERENT** (higher)</td>
+<td>SAME</td>
+<td>Decreased</td>
+<td>Unchanged</td>
+</tr>
+</table>
+
+<p><strong>Mnemonic for L-B plots:</strong> "Competitive = Common y-intercept. Non-competitive = Not-common y-intercept" or "Competitors share the y."</p>
+
+<div class="tip">
+
+<p><strong>IB Exam Tip (Paper 1):</strong> You may be shown L-B plots with multiple lines and asked to identify inhibitor type. Look first at the <strong>y-intercepts</strong>: if they're the same → competitive. If they're different → non-competitive. This is a 1-mark question that is always answered by checking the y-intercept convergence.</p>
+
+</div>
+
+<hr>
+
+<h2>4. Designing Experiments to Determine Km and Vmax</h2>
+
+<h3>Experimental Design</h3>
+
+<p>To determine Km and Vmax for an enzyme:</p>
+
+<ol>
+<li><strong>Fix enzyme concentration</strong> — use the same amount of enzyme in every tube</li>
+<li><strong>Vary substrate concentration</strong> — use at least 6-8 different [S] values, spanning approximately 0.2×Km to 5×Km (you may not know Km beforehand, so go from very low to very high)</li>
+<li><strong>Control other variables</strong> — constant temperature (water bath), constant pH (buffer), constant ionic strength</li>
+<li><strong>Measure initial rate (v₀)</strong> at each [S]:</li>
+</ol>
+<ul>
+<li>Take measurements early (first 10% of reaction)</li>
+<li>Measure product appearance or substrate disappearance</li>
+<li>Plot [Product] vs Time; slope of initial linear portion = v₀</li>
+</ul>
+<ol>
+<li><strong>Plot v vs [S]</strong> → estimate Vmax and Km from hyperbolic curve</li>
+<li><strong>Plot 1/v vs 1/[S]</strong> → Lineweaver-Burk → more accurate determination</li>
+</ol>
+<h3>Practical Considerations</h3>
+
+<table>
+<tr>
+<td>Issue</td>
+<td>Solution</td>
+</tr>
+<tr>
+<td>Cannot reach saturation</td>
+<td>Substrate may have limited solubility; sometimes impossible to reach true Vmax. L-B extrapolation helps.</td>
+</tr>
+<tr>
+<td>Substrate inhibition</td>
+<td>At very high [S], some enzymes are inhibited. Avoid these concentrations.</td>
+</tr>
+<tr>
+<td>Product inhibition</td>
+<td>Only measure initial rate, before product accumulates.</td>
+</tr>
+<tr>
+<td>Temperature fluctuations</td>
+<td>Use thermostatted water bath (±0.1°C)</td>
+</tr>
+<tr>
+<td>pH drift</td>
+<td>Use buffer at optimal pH; verify buffer capacity is adequate</td>
+</tr>
+</table>
+
+<h3>Statistical Note</h3>
+
+<p>Modern practice uses <strong>non-linear regression</strong> (fitting the Michaelis-Menten equation directly to v vs [S] data) rather than Lineweaver-Burk, because:</p>
+<ul>
+<li>L-B plots distort error structure (small v values get disproportionately large 1/v errors)</li>
+<li>Points at low [S] (high 1/[S]) have excessive leverage on the regression</li>
+</ul>
+<p>However, L-B plots remain excellent for <strong>visualizing</strong> inhibitor effects, which is why IB emphasizes them.</p>
+
+<hr>
+
+<h2>5. Mechanism-Based (Suicide) Inhibitors</h2>
+
+<h3>What Makes Them "Suicide"?</h3>
+
+<p>Mechanism-based inhibitors are a special class of <strong>irreversible</strong> inhibitors. They enter the active site like a normal substrate and the enzyme begins to catalyze a reaction — but instead of producing a normal product, the enzyme converts the inhibitor into a <strong>highly reactive intermediate that forms a covalent bond</strong> with the enzyme, permanently inactivating it.</p>
+
+<p><strong>Analogy:</strong> A spy (inhibitor) infiltrates an enemy base (active site) by pretending to be a friend (substrate). Once inside, the spy detonates a bomb (forms covalent bond), destroying both the base and himself. The enzyme is "tricked" into catalyzing its own destruction.</p>
+
+<h3>The General Mechanism</h3>
+
+<p>```</p>
+<p>Step 1: E + I ⇌ E·I        (inhibitor binds like substrate)</p>
+<p>Step 2: E·I → E-I (covalent)  (enzyme converts inhibitor to reactive species</p>
+<p>that permanently attaches)</p>
+<p>Step 3: Enzyme is dead      (irreversibly inactivated)</p>
+<p>```</p>
+
+<p>Unlike competitive or non-competitive inhibitors, suicide inhibitors <strong>permanently inactivate</strong> the enzyme. Recovery requires synthesis of new enzyme molecules.</p>
+
+<h3>Penicillin: The Classic Example</h3>
+
+<p><strong>Penicillin</strong> is arguably the most famous mechanism-based inhibitor in biochemistry and medicine.</p>
+
+<p><strong>The target enzyme:</strong> <strong>Transpeptidase</strong> (also called penicillin-binding protein, PBP) — a bacterial enzyme that cross-links peptidoglycan strands in the bacterial cell wall.</p>
+
+<p><strong>How it works:</strong></p>
+
+<ol>
+<li><strong>Structural mimicry</strong>: Penicillin contains a β-lactam ring that mimics the D-Ala-D-Ala dipeptide tail of peptidoglycan — the normal substrate of transpeptidase.</li>
+</ol>
+<ol>
+<li><strong>Binding</strong>: Penicillin enters the active site of transpeptidase. The enzyme recognizes it as a substrate.</li>
+</ol>
+<ol>
+<li><strong>Suicide</strong>: The enzyme's catalytic serine residue attacks the β-lactam ring, opening it — but instead of releasing a product, the ring opening creates a covalent penicilloyl-enzyme complex. The enzyme is permanently acylated and inactivated.</li>
+</ol>
+<ol>
+<li><strong>Consequence</strong>: Without functional transpeptidase, bacteria cannot cross-link their peptidoglycan cell wall. As bacteria grow and divide, the cell wall weakens → osmotic lysis → bacterial death.</li>
+</ol>
+<p>```</p>
+<p>Normal reaction:</p>
+<p>Transpeptidase + D-Ala-D-Ala → cross-linked peptidoglycan + enzyme (free)</p>
+
+<p>With penicillin:</p>
+<p>Transpeptidase + Penicillin → Penicilloyl-Enzyme (COVALENT, DEAD)</p>
+<p>```</p>
+
+<p><strong>Why penicillin is selective:</strong> Human cells don't have peptidoglycan cell walls or transpeptidase. The drug targets a structure unique to bacteria → selective toxicity.</p>
+
+<div class="definition">
+
+<p><strong>Mechanism-based (suicide) inhibitor</strong>: An unreactive molecule that binds to an enzyme's active site and is converted by the enzyme's normal catalytic mechanism into a reactive species that covalently and irreversibly inactivates the enzyme. The enzyme participates in its own destruction.</p>
+
+</div>
+
+<h3>Other Suicide Inhibitor Examples</h3>
+
+<table>
+<tr>
+<td>Drug</td>
+<td>Target Enzyme</td>
+<td>Condition</td>
+<td>Mechanism</td>
+</tr>
+<tr>
+<td>Penicillin</td>
+<td>Transpeptidase</td>
+<td>Bacterial infection</td>
+<td>β-lactam ring opens → covalent acyl-enzyme</td>
+</tr>
+<tr>
+<td>Aspirin</td>
+<td>COX-1/COX-2</td>
+<td>Inflammation/pain</td>
+<td>Acetylates serine residue in active site</td>
+</tr>
+<tr>
+<td>5-Fluorouracil</td>
+<td>Thymidylate synthase</td>
+<td>Cancer</td>
+<td>Converted to F-dUMP → covalent complex</td>
+</tr>
+<tr>
+<td>Vigabatrin</td>
+<td>GABA transaminase</td>
+<td>Epilepsy</td>
+<td>Forms covalent adduct with PLP cofactor</td>
+</tr>
+<tr>
+<td>Allopurinol</td>
+<td>Xanthine oxidase</td>
+<td>Gout</td>
+<td>Converted to alloxanthine which tightly binds</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>6. Allosteric Regulation</h2>
+
+<h3>Beyond Simple Michaelis-Menten</h3>
+
+<p>Many enzymes do NOT follow Michaelis-Menten kinetics. Instead, they show <strong>sigmoidal (S-shaped)</strong> rate vs [S] curves, indicating <strong>cooperativity</strong>. These are <strong>allosteric enzymes</strong>.</p>
+
+<div class="definition">
+
+<p><strong>Allosteric enzyme</strong>: An enzyme whose activity is regulated by the reversible binding of an effector molecule at a site different from the active site (an <strong>allosteric site</strong>). Allosteric enzymes typically have <strong>quaternary structure</strong> (multiple subunits) and display <strong>cooperativity</strong> — binding of substrate to one subunit influences substrate binding to other subunits.</p>
+
+</div>
+
+<h3>Sigmoidal vs Hyperbolic Kinetics</h3>
+
+<p><strong>Draw and label both curves:</strong></p>
+
+<p>```</p>
+<p>Rate (v)</p>
+<p>^</p>
+<table>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+</table>
+<p>└──────────────────────────→ [S]</p>
+<p>```</p>
+
+<h3>The Molecular Basis of Cooperativity</h3>
+
+<p>Allosteric enzymes exist in (at least) two conformational states:</p>
+
+<ul>
+<li><strong>T-state (Tense)</strong>: Low affinity for substrate; the "off" or less active conformation. More stable in the absence of substrate.</li>
+<li><strong>R-state (Relaxed)</strong>: High affinity for substrate; the "on" or more active conformation. Stabilized by substrate binding.</li>
+</ul>
+<p><strong>The MWC (Monod-Wyman-Changeux) Concerted Model</strong>:</p>
+
+<p>```</p>
+<p>T-state (low affinity)           R-state (high affinity)</p>
+<p>┌──┐ ┌──┐                       ┌──┐ ┌──┐</p>
+<p>│  │ │  │     + Substrate       │██│ │██│</p>
+<p>│  │ │  │   ─────────────→      │██│ │██│</p>
+<p>└──┘ └──┘                       └──┘ └──┘</p>
+
+<p>All subunits switch together (concerted transition).</p>
+<p>At low [S]: mostly T-state → low activity.</p>
+<p>As [S] increases: more enzymes switch to R-state → sudden activity surge.</p>
+<p>```</p>
+
+<p><strong>How sigmoidicity emerges:</strong></p>
+
+<ol>
+<li>At very low [S], most enzymes are in T-state → rate is low (lag phase)</li>
+<li>As [S] increases, some subunits bind substrate → shift equilibrium toward R-state</li>
+<li>Once a few enzymes are in R-state, substrate binds more readily to remaining sites → cooperative surge</li>
+<li>At high [S], all enzymes are in R-state → saturation → Vmax</li>
+</ol>
+<p><strong>Analogy:</strong> An allosteric enzyme is like a reluctant dancer at a party. At first (low music/substrate), no one dances. Then a few brave souls start → suddenly the energy shifts → everyone rushes to the dance floor (cooperative transition). The response to the "music" (substrate) is not gradual but explosive.</p>
+
+<hr>
+
+<h2>7. ATCase: The Model Allosteric Enzyme</h2>
+
+<h3>Aspartate Transcarbamoylase (ATCase)</h3>
+
+<p>ATCase catalyzes the first committed step in pyrimidine biosynthesis (CTP, UTP — needed for RNA and DNA):</p>
+
+<p style="text-align:center;margin:0.8rem 0;">$$\text{Carbamoyl phosphate} + \text{Aspartate} \xrightarrow{ATCase} \text{N-carbamoylaspartate}$$</p>
+
+<p>ATCase is the textbook example of allosteric regulation, studied extensively by John Gerhart and Howard Schachman.</p>
+
+<h3>Structure</h3>
+
+<p>ATCase has a complex quaternary structure:</p>
+<ul>
+<li><strong>2 catalytic trimers</strong> (c₃ × 2 = 6 catalytic subunits): Contain the active sites where aspartate binds</li>
+<li><strong>3 regulatory dimers</strong> (r₂ × 3 = 6 regulatory subunits): Contain the allosteric sites</li>
+</ul>
+<p>Total: 12 subunits. The catalytic and regulatory subunits can be separated experimentally.</p>
+
+<h3>Kinetics: Sigmoidal</h3>
+
+<p>The rate vs [aspartate] curve for ATCase is <strong>sigmoidal</strong>, not hyperbolic. This makes metabolic sense: pyrimidines are needed in large amounts during cell division, so the pathway should be sharply "on" or "off," not gradually responsive.</p>
+
+<h3>Allosteric Effectors</h3>
+
+<table>
+<tr>
+<td>Effector</td>
+<td>Type</td>
+<td>Binding Site</td>
+<td>Effect on Kinetics</td>
+</tr>
+<tr>
+<td>CTP** (end product)</td>
+<td>Inhibitor** (negative effector)</td>
+<td>Regulatory subunits</td>
+<td>Shifts curve right → more aspartate needed; favors T-state</td>
+</tr>
+<tr>
+<td>ATP** (purine)</td>
+<td>Activator** (positive effector)</td>
+<td>Regulatory subunits</td>
+<td>Shifts curve left → less aspartate needed; favors R-state</td>
+</tr>
+</table>
+
+<p><strong>Why ATP activates:</strong> Cells need balanced pools of purines (ATP, GTP) and pyrimidines (CTP, UTP). When ATP is abundant, the cell signals "we have purines, make pyrimidines to balance." ATP binding favors the R-state → ATCase more active → more pyrimidines made.</p>
+
+<p><strong>Why CTP inhibits:</strong> CTP is the end product. High CTP means "enough pyrimidines — stop making more." CTP binding stabilizes the T-state → ATCase less active.</p>
+
+<h3>The Physiological Logic</h3>
+
+<p>```</p>
+<p>High ATP, low CTP → ATCase activated → pyrimidine synthesis ON</p>
+<p>High CTP          → ATCase inhibited  → pyrimidine synthesis OFF</p>
+<p>```</p>
+
+<p>This dual regulation ensures balanced nucleotide pools — one of the most elegant examples of metabolic homeostasis.</p>
+
+<p><strong>Draw this:</strong></p>
+
+<p>```</p>
+<p>Rate</p>
+<p>^</p>
+<table>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+</table>
+<p>└──────────────────────────────→ [Aspartate]</p>
+<p>```</p>
+
+<div class="tip">
+
+<p><strong>IB Exam Tip (Paper 2):</strong> If asked about allosteric regulation, ATCase is the perfect example. Mention: (1) its quaternary structure (catalytic + regulatory subunits), (2) sigmoidal kinetics indicating cooperativity, (3) CTP as feedback inhibitor, (4) ATP as heterotropic activator, (5) the T↔R equilibrium model.</p>
+
+</div>
+
+<hr>
+
+<h2>8. Hemoglobin as an Allosteric Protein</h2>
+
+<h3>Hemoglobin: Enzyme or Not?</h3>
+
+<p>Hemoglobin is <strong>not an enzyme</strong> — it binds O₂ reversibly without chemically transforming it. However, hemoglobin is the classic example of an <strong>allosteric protein</strong> displaying cooperativity.</p>
+
+<h3>Structure and Cooperativity</h3>
+
+<p>Hemoglobin is a tetramer: α₂β₂ (two α-globin and two β-globin subunits). Each subunit contains a heme group with an Fe²⁺ that binds one O₂ molecule.</p>
+
+<p><strong>Positive cooperativity:</strong> When one subunit binds O₂, the remaining subunits bind O₂ more easily. When one subunit releases O₂, others release more easily.</p>
+
+<h3>The Oxygen Dissociation Curve — Sigmoidal</h3>
+
+<p><strong>Draw and label:</strong></p>
+
+<p>```</p>
+<p>% O₂ Saturation</p>
+<p>^</p>
+<table>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+<tr>
+</tr>
+</table>
+<p>└────────────────────────────────→ PO₂ (partial pressure of O₂)</p>
+<p>```</p>
+
+<p><strong>The curve is sigmoidal</strong> because of cooperativity. Compare with <strong>myoglobin</strong> (monomeric O₂-binding protein in muscle) — its curve is <strong>hyperbolic</strong> (no cooperativity).</p>
+
+<p><strong>The Bohr Effect:</strong> H⁺ and CO₂ are <strong>allosteric effectors</strong> of hemoglobin:</p>
+<ul>
+<li>High H⁺ (low pH) and high CO₂ → decrease O₂ affinity → curve shifts <strong>right</strong> → more O₂ released in tissues (where CO₂ and H⁺ are high)</li>
+<li>Low H⁺ (high pH) and low CO₂ → increase O₂ affinity → curve shifts <strong>left</strong> → more O₂ loaded in lungs</li>
+</ul>
+<p><strong>2,3-BPG (bisphosphoglycerate):</strong> Another allosteric effector — binds to deoxyhemoglobin, stabilizing the T-state → reduces O₂ affinity. Production increases at high altitude to enhance O₂ unloading.</p>
+
+<h3>T ↔ R Transition in Hemoglobin</h3>
+
+<ul>
+<li><strong>T-state (deoxyhemoglobin)</strong>: Low O₂ affinity; stabilized by salt bridges between subunits. The iron atom is slightly out of the heme plane.</li>
+<li><strong>R-state (oxyhemoglobin)</strong>: High O₂ affinity; iron moves into heme plane upon O₂ binding → pulls proximal histidine → triggers conformational changes propagated to other subunits.</li>
+</ul>
+<p>The transition is concerted (MWC model): all four subunits switch between T and R states together.</p>
+
+<hr>
+
+<h2>9. Worked Examples</h2>
+
+<div class="worked">
+
+<p><strong>Worked Example 1: L-B Plot Analysis</strong></p>
+
+<p>An enzyme is assayed with and without an inhibitor. Lineweaver-Burk plots give:</p>
+
+<table>
+<tr>
+<td>Condition</td>
+<td>y-intercept (min/nmol)</td>
+<td>x-intercept (mM⁻¹)</td>
+</tr>
+<tr>
+<td>No inhibitor</td>
+<td>0.050</td>
+<td>−0.25</td>
+</tr>
+<tr>
+<td>+Inhibitor</td>
+<td>0.050</td>
+<td>−0.10</td>
+</tr>
+</table>
+
+<p><strong>a) Identify the type of inhibitor. [1]</strong></p>
+<p><strong>b) Calculate Vmax for the uninhibited reaction. [1]</strong></p>
+<p><strong>c) Calculate Km with and without inhibitor. [2]</strong></p>
+<p><strong>d) Explain the molecular basis for your answer to (a). [2]</strong></p>
+
+<p><strong>Answer:</strong></p>
+
+<p><strong>a)</strong> <strong>Competitive inhibitor.</strong> The y-intercept is identical (0.050) for both conditions — this is the hallmark of competitive inhibition on L-B plots.</p>
+
+<p><strong>b)</strong> Vmax = 1/(y-intercept) = 1/0.050 = <strong>20 nmol/min</strong></p>
+
+<p><strong>c)</strong></p>
+<ul>
+<li>Without inhibitor: x-intercept = −1/Km → −0.25 = −1/Km → Km = 1/0.25 = <strong>4.0 mM</strong></li>
+<li>With inhibitor: x-intercept = −1/Km,app → −0.10 = −1/Km,app → Km,app = 1/0.10 = <strong>10.0 mM</strong></li>
+</ul>
+<p>The apparent Km increased from 4.0 to 10.0 mM with inhibitor.</p>
+
+<p><strong>d)</strong> The inhibitor resembles the substrate and competes for the same active site. It binds reversibly, preventing substrate binding. Increasing [S] can overcome inhibition (at infinite [S], same Vmax is reached → same y-intercept). However, more substrate is needed to reach half Vmax → Km appears larger (x-intercept shifts).</p>
+
+</div>
+
+<div class="worked">
+
+<p><strong>Worked Example 2: Sigmoidal Kinetics</strong></p>
+
+<p>Enzyme X shows a sigmoidal rate vs [S] curve. Enzyme Y shows hyperbolic kinetics. Both reach the same Vmax.</p>
+
+<p><strong>a) What structural feature likely accounts for the difference? [1]</strong></p>
+<p><strong>b) How would the presence of a negative allosteric effector change Enzyme X's curve? [2]</strong></p>
+<p><strong>c) Why would a metabolic enzyme involved in a committed regulatory step be more likely to resemble Enzyme X than Enzyme Y? [2]</strong></p>
+
+<p><strong>Answer:</strong></p>
+
+<p><strong>a)</strong> Enzyme X likely has <strong>quaternary structure</strong> (multiple subunits) and displays <strong>cooperativity</strong>, where substrate binding to one subunit increases the affinity of other subunits. Enzyme Y is likely monomeric or has independently acting subunits.</p>
+
+<p><strong>b)</strong> A negative allosteric effector would <strong>shift the sigmoidal curve to the right</strong>. The enzyme would require higher [S] to achieve the same rate because the effector stabilizes the T-state (low-affinity conformation). The curve would remain sigmoidal but with increased apparent Km.</p>
+
+<p><strong>c)</strong> Committed regulatory steps benefit from <strong>switch-like behavior</strong>. A hyperbolic enzyme responds gradually to [S] — rate changes smoothly. A sigmoidal enzyme shows a sharp transition from low to high activity over a narrow [S] range, making it function more like an "on/off switch." This allows tight control: below a threshold [S], little flux through the pathway; above threshold, pathway is fully active. This prevents wasteful intermediate accumulation when substrate is scarce while allowing rapid production when needed.</p>
+
+</div>
+
+<hr>
+
+<h2>Practice Problems</h2>
+
+<h3>Question 1 (Paper 1 Style — HL)</h3>
+
+<p>The Lineweaver-Burk plot for an enzyme in the presence of inhibitor X shows lines with the same x-intercept but different y-intercepts compared to the uninhibited enzyme. Inhibitor X is:</p>
+
+<p>A. A competitive inhibitor</p>
+<p>B. A non-competitive inhibitor</p>
+<p>C. An uncompetitive inhibitor</p>
+<p>D. An allosteric activator</p>
+
+<p><details></p>
+<p><summary>Answer</summary></p>
+
+<p><strong>B.</strong> Same x-intercept (−1/Km) = Km unchanged. Different y-intercept (1/Vmax) = Vmax changed (decreased). This pattern is diagnostic for non-competitive inhibition.</p>
+
+<p></details></p>
+
+<h3>Question 2 (Paper 1 Style — HL)</h3>
+
+<p>Penicillin is an effective antibiotic because it:</p>
+
+<p>A. Competitively inhibits transpeptidase by resembling D-Ala-D-Ala</p>
+<p>B. Non-competitively inhibits bacterial ribosomes</p>
+<p>C. Acts as a mechanism-based inhibitor that covalently inactivates transpeptidase</p>
+<p>D. Denatures bacterial proteins at the active site</p>
+
+<p><details></p>
+<p><summary>Answer</summary></p>
+
+<p><strong>C.</strong> Penicillin is a suicide inhibitor. It enters the transpeptidase active site (structurally mimicking D-Ala-D-Ala), but the enzyme's catalytic mechanism converts penicillin into a reactive species that forms a covalent penicilloyl-enzyme complex, irreversibly inactivating the enzyme. A is tempting but incorrect — penicillin goes beyond competition; it causes permanent covalent modification.</p>
+
+<p></details></p>
+
+<h3>Question 3 (Paper 2 Style — Data Analysis)</h3>
+
+<p>The following data were obtained for an enzyme with and without an inhibitor:</p>
+
+<table>
+<tr>
+<td>[S] (mM)</td>
+<td>v₀, no inhibitor (μmol/min)</td>
+<td>v₀, +inhibitor (μmol/min)</td>
+</tr>
+<tr>
+<td>1.0</td>
+<td>2.5</td>
+<td>1.1</td>
+</tr>
+<tr>
+<td>2.0</td>
+<td>4.0</td>
+<td>2.0</td>
+</tr>
+<tr>
+<td>4.0</td>
+<td>5.7</td>
+<td>3.3</td>
+</tr>
+<tr>
+<td>8.0</td>
+<td>7.3</td>
+<td>5.0</td>
+</tr>
+<tr>
+<td>16.0</td>
+<td>8.5</td>
+<td>7.0</td>
+</tr>
+</table>
+
+<p><strong>a) Explain how you would determine whether this is competitive or non-competitive inhibition using these data alone (without plotting). [2]</strong></p>
+<p><strong>b) Estimate Vmax in the absence of inhibitor. [1]</strong></p>
+<p><strong>c) Predict the effect of doubling the enzyme concentration on both Km and Vmax. [2]</strong></p>
+
+<p><details></p>
+<p><summary>Answer</summary></p>
+
+<p><strong>a)</strong> Look at whether the rate with inhibitor approaches the rate without inhibitor at high [S]. At 16 mM [S], v₀ without inhibitor = 8.5, and with inhibitor = 7.0. These have not converged. As [S] increases from 1 to 16 mM, the gap narrows (2.5→1.1 is a 56% reduction; 8.5→7.0 is an 18% reduction) but hasn't closed. To distinguish: extrapolate. If Vmax values converge, it's competitive. If they remain different, it's non-competitive. Based on the trend of narrowing but not equalizing, this is most consistent with <strong>non-competitive</strong> inhibition (Vmax appears different).</p>
+
+<p>Alternatively, construct L-B plot: same x-intercept → non-competitive; same y-intercept → competitive.</p>
+
+<p><strong>b)</strong> Vmax without inhibitor appears to be approaching approximately <strong>10 μmol/min</strong> at saturation.</p>
+
+<p><strong>c)</strong> Doubling [E] doubles Vmax (Vmax = kcat[E]total). Km is <strong>unchanged</strong> — Km is an intrinsic property of the enzyme-substrate interaction, independent of enzyme concentration.</p>
+
+<p></details></p>
+
+<h3>Question 4 (Paper 2 Style — Extended Response)</h3>
+
+<p><strong>Explain the mechanism of allosteric regulation using ATCase as an example. Include reference to quaternary structure, cooperativity, and the physiological significance of regulation by ATP and CTP. [7]</strong></p>
+
+<p><details></p>
+<p><summary>Answer</summary></p>
+
+<p><strong>Quaternary structure (1-2 marks):</strong> ATCase consists of 12 subunits — 6 catalytic subunits (organized as 2 trimers) containing the active sites for aspartate and carbamoyl phosphate, and 6 regulatory subunits (organized as 3 dimers) that bind allosteric effectors. This separation of catalytic and regulatory functions is characteristic of allosteric enzymes.</p>
+
+<p><strong>Cooperativity and kinetics (2-3 marks):</strong> ATCase displays sigmoidal (not hyperbolic) kinetics. The enzyme exists in equilibrium between a low-affinity T-state (tense) and high-affinity R-state (relaxed). Substrate binding to one catalytic subunit shifts the equilibrium toward the R-state, making it easier for remaining subunits to bind substrate — this is positive cooperativity. The sigmoidal curve provides switch-like behavior: below a threshold [aspartate], activity is very low; above it, activity rises sharply.</p>
+
+<p><strong>Allosteric effectors (2-3 marks):</strong></p>
+<ul>
+<li><strong>CTP</strong> (the end product of the pyrimidine pathway) is a <strong>negative allosteric effector</strong>. It binds to regulatory subunits and stabilizes the T-state → shifts the sigmoidal curve right → more aspartate needed to achieve same rate → pathway slows when pyrimidines are abundant. This is classic end-product/feedback inhibition.</li>
+<li><strong>ATP</strong> (a purine) is a <strong>positive allosteric effector</strong>. It binds to regulatory subunits and stabilizes the R-state → shifts curve left → less aspartate needed → pathway accelerates. This balances purine and pyrimidine pools: when ATP is high, the cell signals "make more pyrimidines."</li>
+</ul>
+<p><strong>Physiological significance (1 mark):</strong> This dual regulation ensures balanced nucleotide pools for DNA and RNA synthesis, preventing wasteful overproduction while allowing rapid response to metabolic demands.</p>
+
+<p></details></p>
+
+<h3>Question 5 (Paper 1 Style — HL)</h3>
+
+<p>An allosteric enzyme displays which of the following?</p>
+
+<p>I. A hyperbolic rate vs [S] curve</p>
+<p>II. Quaternary structure</p>
+<p>III. Cooperativity between subunits</p>
+
+<p>A. I only</p>
+<p>B. I and II only</p>
+<p>C. II and III only</p>
+<p>D. I, II, and III</p>
+
+<p><details></p>
+<p><summary>Answer</summary></p>
+
+<p><strong>C.</strong> Allosteric enzymes display <strong>sigmoidal</strong>, not hyperbolic, kinetics (eliminating I). They require quaternary structure (multiple subunits) for cooperativity — a monomer cannot show cooperativity. Cooperativity is the defining feature: binding at one subunit affects binding at others.</p>
+
+<p></details></p>
+
+<hr>
+
+<h2>Common Misconceptions</h2>
+
+<table>
+<tr>
+<td>Misconception</td>
+<td>Reality</td>
+</tr>
+<tr>
+<td>"Km is the substrate concentration at Vmax"</td>
+<td>Km is the [S] at <strong>half</strong> Vmax, not full Vmax.</td>
+</tr>
+<tr>
+<td>"A low Km means weak substrate binding"</td>
+<td>A <strong>low</strong> Km means <strong>high</strong> affinity — less substrate needed to reach half Vmax.</td>
+</tr>
+<tr>
+<td>"Lineweaver-Burk x-intercept is +1/Km"</td>
+<td>The x-intercept is at <strong>−1/Km</strong>. The line extends into negative x-values.</td>
+</tr>
+<tr>
+<td>"All enzymes follow Michaelis-Menten kinetics"</td>
+<td>Allosteric enzymes show sigmoidal kinetics. Only simple (usually monomeric) enzymes are hyperbolic.</td>
+</tr>
+<tr>
+<td>"Km changes when you add more enzyme"</td>
+<td>Km is independent of enzyme concentration. Vmax increases with [E].</td>
+</tr>
+<tr>
+<td>"Suicide inhibitors are just competitive inhibitors that bind tightly"</td>
+<td>They are irreversibly covalently bound. The enzyme chemically transforms them into a reactive species — fundamentally different from reversible competitive inhibition.</td>
+</tr>
+<tr>
+<td>"Hemoglobin is an enzyme"</td>
+<td>Hemoglobin is an allosteric transport protein. It binds O₂ reversibly without chemically modifying it.</td>
+</tr>
+<tr>
+<td>"Cooperativity means all subunits bind simultaneously"</td>
+<td>Cooperativity means binding to one subunit affects the affinity of other subunits — binding is sequential or concerted but not simultaneous.</td>
+</tr>
+<tr>
+<td>"Non-competitive inhibitors change Km"</td>
+<td>Pure non-competitive inhibitors change Vmax only. Km remains unchanged.</td>
+</tr>
+<tr>
+<td>"The L-B plot is the most accurate way to determine Km"</td>
+<td>Non-linear regression of the hyperbolic curve is actually more accurate; L-B is useful for visualization.</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>Equations Reference</h2>
+
+<table>
+<tr>
+<td>Equation</td>
+<td>Use</td>
+</tr>
+<tr>
+<td>$$v = \frac{V_{max}[S]}{K_m + [S]}$$END</td>
+<td>Michaelis-Menten: rate at any [S]</td>
+</tr>
+<tr>
+<td>$$\frac{1}{v} = \frac{K_m}{V_{max}} \cdot \frac{1}{[S]} + \frac{1}{V_{max}}$$END</td>
+<td>Lineweaver-Burk: linear transformation</td>
+</tr>
+<tr>
+<td>$$V_{max} = k_{cat}[E]_{total}$$END</td>
+<td>Vmax depends on enzyme concentration and turnover number</td>
+</tr>
+<tr>
+<td>$$K_m = [S] \text{ when } v = V_{max}/2$$END</td>
+<td>Operational definition of Km</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>Key Terms Summary</h2>
+
+<table>
+<tr>
+<td>Term</td>
+<td>Definition</td>
+</tr>
+<tr>
+<td>Km</td>
+<td>Substrate concentration at half Vmax; inverse measure of enzyme-substrate affinity</td>
+</tr>
+<tr>
+<td>Vmax</td>
+<td>Maximum reaction rate when all enzyme active sites are saturated</td>
+</tr>
+<tr>
+<td>kcat</td>
+<td>Turnover number — substrate molecules converted per active site per second at saturation</td>
+</tr>
+<tr>
+<td>Lineweaver-Burk plot</td>
+<td>Double reciprocal plot (1/v vs 1/[S]); linearizes Michaelis-Menten data</td>
+</tr>
+<tr>
+<td>Suicide inhibitor</td>
+<td>Substrate analog converted by enzyme into reactive species that covalently inactivates it</td>
+</tr>
+<tr>
+<td>Allosteric enzyme</td>
+<td>Multi-subunit enzyme regulated by effector binding at sites distinct from active site</td>
+</tr>
+<tr>
+<td>Cooperativity</td>
+<td>Binding at one subunit affects binding affinity at other subunits</td>
+</tr>
+<tr>
+<td>T-state</td>
+<td>Tense, low-affinity conformation of allosteric enzyme</td>
+</tr>
+<tr>
+<td>R-state</td>
+<td>Relaxed, high-affinity conformation of allosteric enzyme</td>
+</tr>
+<tr>
+<td>Sigmoidal kinetics</td>
+<td>S-shaped rate vs [S] curve characteristic of cooperative enzymes</td>
+</tr>
+<tr>
+<td>ATCase</td>
+<td>Aspartate transcarbamoylase; model allosteric enzyme for pyrimidine synthesis</td>
+</tr>
+<tr>
+<td>CTP</td>
+<td>End-product inhibitor of ATCase</td>
+</tr>
+<tr>
+<td>ATP</td>
+<td>Heterotropic activator of ATCase (balances purine/pyrimidine pools)</td>
+</tr>
+<tr>
+<td>Bohr effect</td>
+<td>pH/CO₂ modulation of hemoglobin's O₂ affinity</td>
+</tr>
+</table>
+
+<hr>
+
+<p><em>In Lesson 27, we begin Cell Respiration — glycolysis, the link reaction, Krebs cycle, and the elegant architecture of the mitochondrion.</em></p>
+
+<div class="nav"><a href="lesson_25.html">&#8592; Lesson 25</a><a href="index.html">&#8962; Index</a><a href="lesson_27.html">Lesson 27 &#8594;</a></div>
+
+</body>
+</html>

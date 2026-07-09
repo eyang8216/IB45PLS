@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" font-family="Arial, sans-serif">
+  <rect width="600" height="500" fill="#fff"/>
+  <text x="300" y="26" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">DNA Methylation: Gene Silencing at CpG Islands</text>
+
+  <!-- Panel 1: Unmethylated - Active -->
+  <text x="150" y="52" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a6b3c">Unmethylated — Active Gene</text>
+
+  <!-- DNA strand -->
+  <rect x="30" y="65" width="240" height="6" rx="3" fill="#1565c0"/>
+
+  <!-- CpG site unmethylated -->
+  <g transform="translate(60,68)">
+    <circle cx="0" cy="0" r="8" fill="#fff" stroke="#333" stroke-width="1.5"/>
+    <text x="0" y="4" text-anchor="middle" font-size="8" fill="#333">CpG</text>
+  </g>
+  <g transform="translate(130,68)">
+    <circle cx="0" cy="0" r="8" fill="#fff" stroke="#333" stroke-width="1.5"/>
+    <text x="0" y="4" text-anchor="middle" font-size="8" fill="#333">CpG</text>
+  </g>
+  <g transform="translate(210,68)">
+    <circle cx="0" cy="0" r="8" fill="#fff" stroke="#333" stroke-width="1.5"/>
+    <text x="0" y="4" text-anchor="middle" font-size="8" fill="#333">CpG</text>
+  </g>
+
+  <text x="150" y="92" text-anchor="middle" font-size="10" fill="#1a6b3c">CpG island — unmethylated</text>
+
+  <!-- Promoter -->
+  <rect x="70" y="100" width="120" height="14" rx="2" fill="#43a047"/>
+  <text x="130" y="111" text-anchor="middle" font-size="10" fill="#fff">Promoter Active</text>
+
+  <!-- RNA Pol -->
+  <g transform="translate(130,130)">
+    <ellipse cx="0" cy="0" rx="30" ry="15" fill="#43a047" opacity="0.8"/>
+    <text x="0" y="-3" text-anchor="middle" font-size="9" fill="#fff">RNAP II</text>
+    <text x="0" y="8" text-anchor="middle" font-size="7" fill="#fff">transcribing</text>
+  </g>
+
+  <!-- mRNA -->
+  <path d="M160 130 Q220 140 260 130" fill="none" stroke="#1a6b3c" stroke-width="2"/>
+  <text x="210" y="142" text-anchor="middle" font-size="10" fill="#1a6b3c">mRNA →</text>
+
+  <!-- nucleosomes -->
+  <g transform="translate(90,155)">
+    <circle cx="0" cy="0" r="12" fill="#81c784" opacity="0.6"/>
+    <text x="0" y="4" text-anchor="middle" font-size="7" fill="#333">euchrom</text>
+  </g>
+  <g transform="translate(170,155)">
+    <circle cx="0" cy="0" r="12" fill="#81c784" opacity="0.6"/>
+    <text x="0" y="4" text-anchor="middle" font-size="7" fill="#333">euchrom</text>
+  </g>
+
+  <!-- Status -->
+  <rect x="50" y="178" width="160" height="22" rx="3" fill="#1a6b3c" opacity="0.15"/>
+  <text x="130" y="194" text-anchor="middle" font-size="11" fill="#1a6b3c" font-weight="bold">GENE ACTIVE ✓</text>
+
+  <!-- Panel 2: Methylated - Silenced -->
+  <text x="450" y="52" text-anchor="middle" font-size="13" font-weight="bold" fill="#e53935">Methylated — Silenced Gene</text>
+
+  <rect x="330" y="65" width="240" height="6" rx="3" fill="#1565c0"/>
+
+  <!-- Methylated CpG -->
+  <g transform="translate(365,62)">
+    <circle cx="0" cy="0" r="8" fill="#e53935" stroke="#333" stroke-width="1.5"/>
+    <text x="0" y="4" text-anchor="middle" font-size="6" fill="#fff">CH₃</text>
+  </g>
+  <g transform="translate(435,62)">
+    <circle cx="0" cy="0" r="8" fill="#e53935" stroke="#333" stroke-width="1.5"/>
+    <text x="0" y="4" text-anchor="middle" font-size="6" fill="#fff">CH₃</text>
+  </g>
+  <g transform="translate(515,62)">
+    <circle cx="0" cy="0" r="8" fill="#e53935" stroke="#333" stroke-width="1.5"/>
+    <text x="0" y="4" text-anchor="middle" font-size="6" fill="#fff">CH₃</text>
+  </g>
+
+  <text x="450" y="92" text-anchor="middle" font-size="10" fill="#e53935">CpG island — methylated</text>
+
+  <!-- MeCP2 binding -->
+  <g transform="translate(450,110)">
+    <ellipse cx="0" cy="0" rx="18" ry="12" fill="#e53935" opacity="0.8"/>
+    <text x="0" y="4" text-anchor="middle" font-size="8" fill="#fff">MeCP2</text>
+  </g>
+
+  <!-- HDAC recruited -->
+  <g transform="translate(450,133)">
+    <ellipse cx="0" cy="0" rx="20" ry="12" fill="#ff8f00" opacity="0.8"/>
+    <text x="0" y="4" text-anchor="middle" font-size="7" fill="#fff">HDAC</text>
+  </g>
+
+  <!-- Arrows from MeCP2 to HDAC -->
+  <line x1="450" y1="122" x2="450" y2="131" stroke="#e53935" stroke-width="1.5"/>
+
+  <!-- Compacted chromatin -->
+  <g transform="translate(410,160)">
+    <ellipse cx="0" cy="0" rx="15" ry="10" fill="#bbb"/>
+  </g>
+  <g transform="translate(440,158)">
+    <ellipse cx="0" cy="0" rx="15" ry="10" fill="#999"/>
+  </g>
+  <g transform="translate(470,160)">
+    <ellipse cx="0" cy="0" rx="15" ry="10" fill="#bbb"/>
+  </g>
+  <g transform="translate(500,158)">
+    <ellipse cx="0" cy="0" rx="15" ry="10" fill="#777"/>
+  </g>
+
+  <text x="450" y="190" text-anchor="middle" font-size="10" fill="#e53935">Chromatin compaction — heterochromatin</text>
+
+  <!-- Blocked -->
+  <rect x="350" y="200" width="200" height="22" rx="3" fill="#e53935" opacity="0.15"/>
+  <text x="450" y="216" text-anchor="middle" font-size="11" fill="#e53935" font-weight="bold">GENE SILENCED ✗</text>
+
+  <!-- Step arrows between panels -->
+  <g stroke="#333" stroke-width="2">
+    <line x1="280" y1="70" x2="320" y2="70"/>
+    <polygon points="320,65 330,70 320,75" fill="#333"/>
+  </g>
+
+  <!-- The mechanism -->
+  <rect x="30" y="250" width="540" height="235" rx="8" fill="none" stroke="#ddd" stroke-width="2"/>
+  <text x="300" y="275" text-anchor="middle" font-size="13" font-weight="bold" fill="#333">Mechanism of DNA Methylation Silencing</text>
+
+  <!-- Steps -->
+  <g font-size="10" fill="#333">
+    <!-- Step 1 -->
+    <circle cx="55" cy="300" r="12" fill="#1565c0"/>
+    <text x="55" y="304" text-anchor="middle" font-size="10" fill="#fff" font-weight="bold">1</text>
+    <text x="80" y="298" font-size="10">DNMTs add –CH₃ to cytosine at CpG sites</text>
+
+    <!-- Step 2 -->
+    <circle cx="55" cy="330" r="12" fill="#e53935"/>
+    <text x="55" y="334" text-anchor="middle" font-size="10" fill="#fff" font-weight="bold">2</text>
+    <text x="80" y="328" font-size="10">Methyl-CpG-binding proteins (MeCP2) bind</text>
+
+    <!-- Step 3 -->
+    <circle cx="55" cy="360" r="12" fill="#ff8f00"/>
+    <text x="55" y="364" text-anchor="middle" font-size="10" fill="#fff" font-weight="bold">3</text>
+    <text x="80" y="358" font-size="10">MeCP2 recruits HDACs — remove acetyl groups from histones</text>
+
+    <!-- Step 4 -->
+    <circle cx="55" cy="390" r="12" fill="#6a1b9a"/>
+    <text x="55" y="394" text-anchor="middle" font-size="10" fill="#fff" font-weight="bold">4</text>
+    <text x="80" y="388" font-size="10">Histones become more +ve → DNA wraps tighter</text>
+
+    <!-- Step 5 -->
+    <circle cx="55" cy="420" r="12" fill="#999"/>
+    <text x="55" y="424" text-anchor="middle" font-size="10" fill="#fff" font-weight="bold">5</text>
+    <text x="80" y="418" font-size="10">Chromatin compaction → transcription factors blocked → SILENCED</text>
+  </g>
+
+  <!-- Examples -->
+  <text x="300" y="460" text-anchor="middle" font-size="9" fill="#666">Key examples: X-inactivation (female mammals) · Genomic imprinting (e.g., IGF2) · Permanent silencing in differentiated cells</text>
+</svg>

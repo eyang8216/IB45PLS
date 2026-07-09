@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" font-family="Arial, sans-serif">
+  <rect width="600" height="400" fill="#fff"/>
+  <text x="300" y="26" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">Enhancer Action via DNA Looping</text>
+
+  <!-- DNA line with loop -->
+  <path d="M30 140 L100 140 Q100 80 180 80 Q260 80 260 140 Q260 60 340 60 Q420 60 420 140 L570 140" fill="none" stroke="#1565c0" stroke-width="3"/>
+
+  <!-- Enhancer region -->
+  <rect x="30" y="132" width="70" height="16" rx="3" fill="#ff8f00"/>
+  <text x="65" y="144" text-anchor="middle" font-size="10" fill="#fff" font-weight="bold">Enhancer</text>
+
+  <text x="65" y="165" text-anchor="middle" font-size="9" fill="#ff8f00">Far upstream</text>
+
+  <!-- Activator proteins at enhancer -->
+  <g transform="translate(45,108)">
+    <ellipse cx="0" cy="0" rx="18" ry="10" fill="#ff8f00" opacity="0.8"/>
+    <text x="0" y="4" text-anchor="middle" font-size="7" fill="#fff">Activator</text>
+  </g>
+  <g transform="translate(75,106)">
+    <ellipse cx="0" cy="0" rx="18" ry="10" fill="#ff8f00" opacity="0.8"/>
+    <text x="0" y="4" text-anchor="middle" font-size="7" fill="#fff">Activator</text>
+  </g>
+
+  <!-- Promoter -->
+  <rect x="440" y="128" width="80" height="16" rx="3" fill="#43a047"/>
+  <text x="480" y="140" text-anchor="middle" font-size="10" fill="#fff" font-weight="bold">Promoter</text>
+
+  <!-- TSS -->
+  <polygon points="530,144 540,136 540,152" fill="#e53935"/>
+  <text x="550" y="140" font-size="9" fill="#e53935">+1 TSS</text>
+
+  <!-- Mediator complex -->
+  <g transform="translate(480,95)">
+    <rect x="-25" y="-12" width="50" height="24" rx="5" fill="#6a1b9a" opacity="0.7"/>
+    <text x="0" y="4" text-anchor="middle" font-size="9" fill="#fff">Mediator</text>
+  </g>
+
+  <!-- RNAP II -->
+  <g transform="translate(480,70)">
+    <ellipse cx="0" cy="0" rx="30" ry="14" fill="#43a047" opacity="0.8"/>
+    <text x="0" y="-2" text-anchor="middle" font-size="9" fill="#fff">RNAP II</text>
+    <text x="0" y="9" text-anchor="middle" font-size="7" fill="#fff">+GTFs</text>
+  </g>
+
+  <!-- Interaction arrows from activators to mediator -->
+  <path d="M85 100 Q200 40 440 95" fill="none" stroke="#ff8f00" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="260" y="48" text-anchor="middle" font-size="10" fill="#ff8f00">DNA looping — activator interacts with mediator</text>
+
+  <!-- Looping highlight -->
+  <path d="M100 140 Q180 190 260 140" fill="none" stroke="#ff8f00" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="180" y="200" text-anchor="middle" font-size="9" fill="#ff8f00" font-style="italic">Looping out intervening DNA</text>
+
+  <!-- Transcription -->
+  <defs><marker id="arrowT" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#1a6b3c"/></marker></defs>
+  <line x1="530" y1="144" x2="570" y2="144" stroke="#1a6b3c" stroke-width="2" marker-end="url(#arrowT)"/>
+
+  <!-- mRNA -->
+  <path d="M540 147 Q560 160 575 152" fill="none" stroke="#1a6b3c" stroke-width="1.5"/>
+  <text x="565" y="170" font-size="8" fill="#1a6b3c">mRNA</text>
+
+  <!-- Key features box -->
+  <rect x="30" y="250" width="540" height="135" rx="8" fill="none" stroke="#ddd" stroke-width="2"/>
+  <text x="300" y="275" text-anchor="middle" font-size="12" font-weight="bold" fill="#333">Key Features of Enhancers</text>
+
+  <g font-size="10" fill="#333">
+    <text x="50" y="300">• Can be thousands of base pairs away from the gene they regulate</text>
+    <text x="50" y="320">• Function independently of orientation — work in both directions</text>
+    <text x="50" y="340">• Work through DNA looping — proteins at enhancer contact transcription machinery at promoter</text>
+    <text x="50" y="360">• Bind activator transcription factors that recognise specific DNA sequences</text>
+    <text x="50" y="380">• Mediator complex bridges enhancer-bound activators to RNA Polymerase II</text>
+  </g>
+</svg>

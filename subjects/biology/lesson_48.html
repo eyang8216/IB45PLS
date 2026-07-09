@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 48: Reproduction II — Plants (D3.1) ⚠️ HL — IB Biology HL</title>
+<script>window.MathJax = { tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] } };</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #1a6b3c; --border: #c4d4a9; --highlight: #e8f5e9; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Palatino', 'Georgia', serif; background: var(--bg); color: var(--text); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; font-size: 17px; line-height: 1.7; }
+  h1 { font-size: 1.7rem; color: var(--accent); margin-bottom: 0.5rem; }
+  h2 { font-size: 1.25rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; margin: 2rem 0 1rem; }
+  h3 { font-size: 1.1rem; color: #444; margin: 1.3rem 0 0.5rem; }
+  p, li { margin-bottom: 0.6rem; }
+  ul, ol { padding-left: 1.8rem; margin-bottom: 1rem; }
+  .worked { background: #e8f5e9; border-left: 4px solid #1a6b3c; padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
+  .worked strong { color: #1a6b3c; }
+  .answer { background: #fefdf7; border: 1px solid var(--border); padding: 0.8rem 1.2rem; margin: 0.5rem 0; border-radius: 6px; }
+  .nav { display: flex; justify-content: space-between; margin: 3rem 0 1rem; padding-top: 1rem; border-top: 2px solid var(--border); font-size: 0.9rem; }
+  .nav a { color: #1a5c9e; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  .definition { background: #fff8e1; border-left: 4px solid #e6a817; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  .tip { background: #e3f2fd; border-left: 4px solid #1976d2; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  table { border-collapse: collapse; margin: 0.8rem 0; width: 100%; }
+  th, td { border: 1px solid var(--border); padding: 0.4rem 0.6rem; text-align: left; }
+  th { background: #f0f5e8; }
+  @media print { body { font-size: 14px; } .nav { display: none; } }
+</style>
+</head>
+<body>
+
+
+<h2>What You'll Learn</h2>
+
+<p>Plants don't just passively grow — they actively reproduce using structures that are as sophisticated as anything in the animal kingdom. From the intricate double fertilization unique to flowering plants to the ability to measure night length with molecular precision, plant reproduction reveals nature's ingenuity at every level. This lesson explores flower structure, pollination, seed development, and the remarkable photoperiodic control of flowering.</p>
+
+<p>By the end of this lesson, you will be able to:</p>
+
+<ul>
+<li>Identify and describe the functions of flower structures (sepals, petals, stamens, carpels)</li>
+<li>Explain pollination, distinguishing self-pollination from cross-pollination</li>
+<li>Describe double fertilization and its outcomes (zygote + endosperm)</li>
+<li>Outline seed and fruit development and dispersal mechanisms</li>
+<li>Distinguish between short-day, long-day, and day-neutral plants</li>
+<li>Explain the role of phytochrome (Pr and Pfr) in photoperiodism</li>
+</ul>
+<hr>
+
+<h2>1. Flower Structure: The Reproductive Organs</h2>
+
+<p>Flowers are the reproductive structures of angiosperms (flowering plants). A complete flower contains four whorls of modified leaves.</p>
+
+<h3>1.1 The Four Whorls</h3>
+
+<table>
+<tr>
+<td>Whorl</td>
+<td>Structure</td>
+<td>Function</td>
+</tr>
+<tr>
+<td>Calyx</td>
+<td>Sepals** (usually green)</td>
+<td>Protect the developing flower bud before it opens</td>
+</tr>
+<tr>
+<td>Corolla</td>
+<td>Petals** (often brightly colored)</td>
+<td>Attract pollinators (insects, birds) with color, pattern, scent, and nectar guides</td>
+</tr>
+<tr>
+<td>Androecium</td>
+<td>Stamens** (male reproductive organs)</td>
+<td>Produce and release pollen (male gametophyte)</td>
+</tr>
+<tr>
+<td>Gynoecium</td>
+<td>Carpels/Pistil** (female reproductive organs)</td>
+<td>Receive pollen; house ovules; develop into fruit</td>
+</tr>
+</table>
+
+<p><strong>Draw and label a longitudinal section of a flower</strong>: Start from the bottom — receptacle (flower base). Going inward: sepals (outermost), petals, then stamens surrounding the central pistil. Label each structure clearly.</p>
+
+<h3>1.2 The Stamen: Male Reproductive Organ</h3>
+
+<p>Each stamen consists of:</p>
+
+<table>
+<tr>
+<td>Part</td>
+<td>Structure</td>
+<td>Function</td>
+</tr>
+<tr>
+<td>Anther</td>
+<td>Usually two-lobed, four pollen sacs</td>
+<td>Produces pollen grains** through meiosis of microspore mother cells → microspores → pollen grains (male gametophytes). Each pollen grain contains a tube nucleus and a generative nucleus (which divides to form two sperm cells).</td>
+</tr>
+<tr>
+<td>Filament</td>
+<td>Slender stalk</td>
+<td>Positions the anther for effective pollen dispersal (to contact pollinators or release into wind)</td>
+</tr>
+</table>
+
+<h3>1.3 The Carpel/Pistil: Female Reproductive Organ</h3>
+
+<p>The gynoecium may consist of one carpel or multiple fused carpels. A single pistil or each carpel has:</p>
+
+<table>
+<tr>
+<td>Part</td>
+<td>Structure</td>
+<td>Function</td>
+</tr>
+<tr>
+<td>Stigma</td>
+<td>Sticky tip at the top</td>
+<td>Receives pollen** during pollination. Sticky surface or feathery (wind-pollinated) to trap pollen grains.</td>
+</tr>
+<tr>
+<td>Style</td>
+<td>Elongated stalk</td>
+<td>Connects stigma to ovary; pollen tube grows through the style.</td>
+</tr>
+<tr>
+<td>Ovary</td>
+<td>Swollen base</td>
+<td>Contains <strong>ovules</strong>. After fertilization, the ovary develops into the <strong>fruit</strong>.</td>
+</tr>
+<tr>
+<td>Ovules</td>
+<td>Within the ovary</td>
+<td>Each ovule contains the female gametophyte (<strong>embryo sac</strong>) with the egg cell and two polar nuclei. After fertilization, each ovule develops into a <strong>seed</strong>.</td>
+</tr>
+</table>
+
+<p><strong>Draw and label the internal structure of an ovule</strong>: Draw the ovule attached to the ovary wall by the funiculus. Label: "Integuments" (outer layers → become seed coat), "Micropyle" (small opening for pollen tube entry), "Embryo sac," "Egg cell," "Two polar nuclei" (central cell), "Synergids" (flanking the egg).</p>
+
+<hr>
+
+<h2>2. Pollination: Getting Pollen to the Stigma</h2>
+
+<p><strong>Pollination</strong> is the transfer of pollen grains from the anther to the stigma. It is NOT the same as fertilization — pollination is just the delivery; fertilization happens later when the sperm and egg fuse.</p>
+
+<h3>2.1 Types of Pollination</h3>
+
+<table>
+<tr>
+<td>Type</td>
+<td>Description</td>
+</tr>
+<tr>
+<td>Self-pollination</td>
+<td>Pollen from a flower's anther lands on the same flower's stigma or another flower on the same plant</td>
+</tr>
+<tr>
+<td>Cross-pollination</td>
+<td>Pollen from the anther of one plant lands on the stigma of a different plant of the same species</td>
+</tr>
+</table>
+
+<h3>2.2 Pollination Vectors</h3>
+
+<table>
+<tr>
+<td>Vector</td>
+<td>Flower Adaptations</td>
+<td>Examples</td>
+</tr>
+<tr>
+<td>Insects** (bees, butterflies, moths, beetles, flies)</td>
+<td>Brightly colored petals (often UV patterns visible to insects), scent, nectar guides, nectar reward</td>
+<td>Roses, orchids, sunflowers</td>
+</tr>
+<tr>
+<td>Birds** (hummingbirds)</td>
+<td>Red/orange tubular flowers, abundant dilute nectar, no strong scent (birds have poor smell)</td>
+<td>Trumpet vine, fuchsia</td>
+</tr>
+<tr>
+<td>Wind</td>
+<td>Small, inconspicuous petals or none, large feathery stigmas, abundant lightweight pollen, anthers hanging outside flower</td>
+<td>Grasses, wheat, maize, oak, birch</td>
+</tr>
+<tr>
+<td>Water</td>
+<td>Pollen released underwater and drifts to female flowers</td>
+<td>Seagrasses, some aquatic plants</td>
+</tr>
+<tr>
+<td>Bats</td>
+<td>Large, pale, night-blooming flowers, strong fruity scent, abundant nectar</td>
+<td>Some cacti, baobab</td>
+</tr>
+</table>
+
+<h3>2.3 Promoting Cross-Pollination</h3>
+
+<p>Many plants have mechanisms to avoid self-pollination and promote cross-pollination:</p>
+
+<table>
+<tr>
+<td>Mechanism</td>
+<td>How It Works</td>
+<td>Example</td>
+</tr>
+<tr>
+<td>Dioecy</td>
+<td>Separate male and female plants (individual plants are either male or female)</td>
+<td>Holly, asparagus, date palm</td>
+</tr>
+<tr>
+<td>Dichogamy</td>
+<td>Male and female parts of the same flower mature at different times</td>
+<td>Protandry (anthers mature first): many Asteraceae; Protogyny (stigma matures first): some grasses</td>
+</tr>
+<tr>
+<td>Self-incompatibility</td>
+<td>Biochemical mechanism prevents pollen from fertilizing ovules of the same plant — pollen tube growth is blocked if pollen and stigma share the same self-incompatibility (S) alleles</td>
+<td>Many fruit trees (apple, cherry), Brassicas</td>
+</tr>
+<tr>
+<td>Heterostyly</td>
+<td>Different flower morphs have different style lengths (pin vs. thrum) → promotes cross-pollination between morphs</td>
+<td>Primula (primrose)</td>
+</tr>
+</table>
+
+<div class="tip">
+<p><strong>IB Exam Tip (Paper 1)</strong>: Be clear that cross-pollination (not self-pollination) promotes genetic variation. Self-pollination is essentially a form of inbreeding — it reduces genetic diversity. Mechanisms that promote cross-pollination are adaptations to increase genetic variation in offspring.</p>
+</div>
+
+<hr>
+
+<h2>3. Double Fertilization: Unique to Angiosperms</h2>
+
+<p>Double fertilization is the hallmark of flowering plants. Watch the numbers — they're specific and testable.</p>
+
+<h3>3.1 Pollen Tube Growth</h3>
+
+<ol>
+<li>When a compatible pollen grain lands on the stigma, it absorbs water and germinates.</li>
+<li>The <strong>tube nucleus</strong> directs the growth of a <strong>pollen tube</strong> that grows down the style, through the micropyle, into the embryo sac.</li>
+<li>During pollen tube growth, the generative nucleus divides by mitosis to produce <strong>two sperm cells</strong> (male gametes).</li>
+</ol>
+<h3>3.2 The Two Fertilization Events</h3>
+
+<p>When the pollen tube reaches the embryo sac and discharges its contents:</p>
+
+<table>
+<tr>
+<td>Fertilization Event</td>
+<td>What Fuses</td>
+<td>Product</td>
+<td>Ploidy</td>
+</tr>
+<tr>
+<td>First fertilization</td>
+<td>One sperm (n) + <strong>Egg cell</strong> (n)</td>
+<td>Zygote<strong> (2n) → develops into the </strong>embryo</td>
+<td>Diploid (2n)</td>
+</tr>
+<tr>
+<td>Second fertilization</td>
+<td>One sperm (n) + <strong>Two polar nuclei</strong> (n + n)</td>
+<td>Endosperm nucleus<strong> (3n) → develops into </strong>endosperm</td>
+<td>Triploid (3n)</td>
+</tr>
+</table>
+
+<p><strong>Draw and label double fertilization</strong>: Draw the embryo sac inside the ovule. Show the pollen tube entering through the micropyle. Label: "Pollen tube," "Two sperm cells," "Egg cell (n)," "Two polar nuclei (n + n)." Below: "Sperm + Egg → Zygote (2n) → Embryo. Sperm + 2 polar nuclei → Endosperm (3n) — nutrient tissue."</p>
+
+<div class="definition">
+<p><strong>Double fertilization</strong>: A unique feature of angiosperms where two fertilization events occur in a single embryo sac: one sperm fertilizes the egg to form the diploid zygote, and the second sperm fuses with the two polar nuclei to form the triploid endosperm.</p>
+</div>
+
+<h3>3.3 Why Triploid Endosperm?</h3>
+
+<p>The <strong>endosperm</strong> is a nutrient-rich tissue that nourishes the developing embryo. It can be thought of as "packed lunch" for the embryo.</p>
+
+<p>Having <strong>3n</strong> endosperm means:</p>
+<ul>
+<li>More copies of genes for nutrient production → more efficient synthesis of starch, proteins, and lipids.</li>
+<li>The triploid nature may contribute to the vigor and abundance of the endosperm.</li>
+</ul>
+<p>In some seeds (e.g., maize, wheat, coconut), the endosperm persists and is the main nutrient store. In others (e.g., beans, peas), the embryo absorbs the endosperm during development and stores nutrients in the <strong>cotyledons</strong> (seed leaves).</p>
+
+<hr>
+
+<h2>4. Seed and Fruit Development</h2>
+
+<h3>4.1 From Ovule to Seed</h3>
+
+<p>After fertilization:</p>
+
+<table>
+<tr>
+<td>Ovule Structure</td>
+<td>Develops Into...</td>
+</tr>
+<tr>
+<td>Zygote** (2n)</td>
+<td>Embryo** — consists of:</td>
+</tr>
+<tr>
+<td></td>
+<td>— <strong>Plumule</strong>: embryonic shoot (develops into stem and leaves)</td>
+</tr>
+<tr>
+<td></td>
+<td>— <strong>Radicle</strong>: embryonic root</td>
+</tr>
+<tr>
+<td></td>
+<td>— <strong>Cotyledon(s)</strong>: seed leaves (monocots: 1; dicots: 2) — absorb or store nutrients</td>
+</tr>
+<tr>
+<td>Endosperm** (3n)</td>
+<td>Nutrient tissue for the embryo (may be absorbed by cotyledons in some species)</td>
+</tr>
+<tr>
+<td>Integuments</td>
+<td>Seed coat (testa)** — tough, protective outer layer</td>
+</tr>
+<tr>
+<td>Micropyle</td>
+<td>Small pore in seed coat for water uptake during germination</td>
+</tr>
+</table>
+
+<p><strong>Draw and label a seed (e.g., bean)</strong>: Draw a kidney-shaped seed. Label: "Testa (seed coat)," "Micropyle" (tiny hole), "Hilum" (scar where seed was attached to ovary), "Embryo" showing "Plumule," "Radicle," and "Cotyledons."</p>
+
+<h3>4.2 From Ovary to Fruit</h3>
+
+<p>The <strong>fruit</strong> is a mature ovary. Its primary function is to <strong>protect seeds</strong> and <strong>aid in their dispersal</strong>.</p>
+
+<table>
+<tr>
+<td>Fruit Type</td>
+<td>Description</td>
+<td>Examples</td>
+</tr>
+<tr>
+<td>Fleshy fruits</td>
+<td>Ovary wall (pericarp) becomes soft, often sweet and colorful — attracts animals for dispersal</td>
+<td>Tomato, apple, peach, cucumber</td>
+</tr>
+<tr>
+<td>Dry dehiscent fruits</td>
+<td>Dry ovary that splits open at maturity to release seeds</td>
+<td>Pea pod, poppy capsule</td>
+</tr>
+<tr>
+<td>Dry indehiscent fruits</td>
+<td>Dry ovary that does NOT split open; seed is dispersed with the fruit</td>
+<td>Achene (sunflower), nut (acorn), grain/ caryopsis (maize — fruit wall fused to seed coat)</td>
+</tr>
+</table>
+
+<h3>4.3 Seed Dispersal</h3>
+
+<p>Plants have evolved diverse mechanisms to disperse seeds:</p>
+
+<table>
+<tr>
+<td>Method</td>
+<td>Adaptations</td>
+<td>Examples</td>
+</tr>
+<tr>
+<td>Wind</td>
+<td>Lightweight seeds, wings (maple samara), or plumes/parachutes (dandelion pappus)</td>
+<td>Maple, dandelion, orchid, sycamore</td>
+</tr>
+<tr>
+<td>Animal (external)</td>
+<td>Hooks or barbs that attach to fur/feathers</td>
+<td>Burdock, cocklebur</td>
+</tr>
+<tr>
+<td>Animal (internal)</td>
+<td>Fleshy, edible fruit; seeds pass through digestive tract unharmed (scarification may even aid germination)</td>
+<td>Tomato, blackberry, apple</td>
+</tr>
+<tr>
+<td>Water</td>
+<td>Buoyant, waterproof fruits or seeds</td>
+<td>Coconut, water lily</td>
+</tr>
+<tr>
+<td>Explosive/mechanical</td>
+<td>Tension builds in drying fruit walls → sudden release flings seeds</td>
+<td>Touch-me-not (Impatiens), gorse, pea pods</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>5. Photoperiodism: How Plants Measure Day Length</h2>
+
+<p><strong>Photoperiodism</strong> is the response of plants to the relative lengths of day and night. It controls flowering in many species, ensuring that flowering occurs at the appropriate season.</p>
+
+<h3>5.1 Critical Discovery: It's Night Length, Not Day Length</h3>
+
+<p>Early researchers thought plants measured day length. However, experiments showed that it is actually the <strong>uninterrupted dark period</strong> (night length) that matters.</p>
+
+<p><strong>Classic experiment</strong>:</p>
+<ul>
+<li>Short-day plant (chrysanthemum): given a long night (14 hours dark), it flowers. If a brief flash of light interrupts the long night, <strong>it does NOT flower</strong>.</li>
+<li>Long-day plant (spinach): given a short night (8 hours dark), it flowers. Adding a brief interruption of the night with light <strong>promotes flowering</strong> even more.</li>
+</ul>
+<p><strong>Conclusion</strong>: Plants measure the length of the <strong>uninterrupted dark period</strong>, not the light period. A night interruption (night break) with just a few minutes of light cancels the effect of the long night.</p>
+
+<h3>5.2 Categories of Plants</h3>
+
+<table>
+<tr>
+<td>Category</td>
+<td>When They Flower</td>
+<td>Night Requirement</td>
+<td>Examples</td>
+</tr>
+<tr>
+<td>Short-day plants (SDP)</td>
+<td>Flower when the night is <strong>LONG</strong> (exceeds a critical length) — typically autumn/winter</td>
+<td>Night must be longer than a critical duration</td>
+<td>Chrysanthemum, poinsettia, soybean, rice, strawberry, tobacco (some varieties)</td>
+</tr>
+<tr>
+<td>Long-day plants (LDP)</td>
+<td>Flower when the night is <strong>SHORT</strong> (less than a critical length) — typically spring/summer</td>
+<td>Night must be shorter than a critical duration</td>
+<td>Spinach, clover, lettuce, wheat (spring varieties), Arabidopsis</td>
+</tr>
+<tr>
+<td>Day-neutral plants</td>
+<td>Flower regardless of day/night length</td>
+<td>No night length requirement</td>
+<td>Tomato, cucumber, maize, many weeds</td>
+</tr>
+</table>
+
+<div class="tip">
+<p><strong>IB Exam Tip (Paper 1)</strong>: Don't be fooled by the names — short-day plants actually need <strong>long nights</strong> to flower. The name is historical (they flower when days are short), but the mechanism is night-length dependent. "Short-day plant" = "long-night plant." "Long-day plant" = "short-night plant."</p>
+</div>
+
+<h3>5.3 Practical Application: Controlling Flowering</h3>
+
+<p>Commercial growers manipulate photoperiod to control flowering:</p>
+
+<ul>
+<li><strong>Chrysanthemums</strong> (SDP — naturally flower in autumn): To produce flowers year-round for the cut flower market, growers artificially extend nights using blackout curtains during long summer days. To prevent flowering (keep plants vegetative), they interrupt the long night with a brief flash of light.</li>
+<li><strong>Poinsettias</strong> (SDP — naturally flower in winter): Commercial growers provide artificially long nights (~14 hours) by covering plants with black cloth in late afternoon. Even a brief light interruption can ruin the crop.</li>
+</ul>
+<hr>
+
+<h2>6. The Phytochrome System: The Molecular Mechanism</h2>
+
+<p>Plants measure night length using <strong>phytochrome</strong>, a photoreceptor protein. Phytochrome exists in two interconvertible forms:</p>
+
+<h3>6.1 The Two Forms</h3>
+
+<table>
+<tr>
+<td>Form</td>
+<td>Name</td>
+<td>Absorption Peak</td>
+<td>Biological Activity</td>
+</tr>
+<tr>
+<td>Pr</td>
+<td>Phytochrome red</td>
+<td>Absorbs <strong>red light</strong> at ~660 nm</td>
+<td>Biologically **inactive</td>
+</tr>
+<tr>
+<td>Pfr</td>
+<td>Phytochrome far-red</td>
+<td>Absorbs <strong>far-red light</strong> at ~730 nm</td>
+<td>Biologically **active</td>
+</tr>
+</table>
+
+<h3>6.2 Interconversion</h3>
+
+<p>The two forms are photoconvertible:</p>
+
+<ul>
+<li><strong>Red light (660 nm)</strong> converts <strong>Pr → Pfr</strong></li>
+<li><strong>Far-red light (730 nm)</strong> converts <strong>Pfr → Pr</strong></li>
+<li>In <strong>darkness</strong>, Pfr slowly and spontaneously <strong>reverts to Pr</strong> over several hours</li>
+</ul>
+<p><strong>Draw and label</strong>: Draw a cycle diagram. Pr on one side, Pfr on the other. Arrow labeled "Red light (660 nm)" going from Pr → Pfr. Arrow labeled "Far-red light (730 nm)" going from Pfr → Pr. Arrow labeled "Dark reversion (slow)" going from Pfr → Pr. Label: "Pr — inactive form," "Pfr — active form."</p>
+
+<h3>6.3 How Phytochrome Measures Night Length</h3>
+
+<p>The key insight: <strong>Pfr is the biologically active form, and it slowly reverts to Pr in the dark</strong>. By measuring how much Pfr remains at the end of the night, the plant knows how long the night has been.</p>
+
+<p><strong>During the day</strong>: Sunlight is rich in red light → most phytochrome is converted to <strong>Pfr</strong>. The plant has high Pfr levels.</p>
+
+<p><strong>During the night</strong>: No light → Pfr slowly reverts to Pr (dark reversion). The longer the night, the more Pfr reverts to Pr.</p>
+
+<p><strong>At dawn</strong>: The plant measures the Pfr/Pr ratio:</p>
+<ul>
+<li><strong>Short night</strong> (e.g., 8 hours): Some Pfr reverted, but significant Pfr remains → high Pfr/Pr ratio at dawn.</li>
+<li><strong>Long night</strong> (e.g., 14 hours): Most Pfr has reverted to Pr → low Pfr/Pr ratio at dawn.</li>
+</ul>
+<h3>6.4 Pfr and Flowering Response</h3>
+
+<table>
+<tr>
+<td>Plant Type</td>
+<td>Effect of High Pfr (at dawn)</td>
+<td>Flowering Response</td>
+</tr>
+<tr>
+<td>Short-day plant (SDP)</td>
+<td>Pfr <strong>INHIBITS</strong> flowering</td>
+<td>High Pfr (short night) → NO flowering; Low Pfr (long night) → FLOWERING</td>
+</tr>
+<tr>
+<td>Long-day plant (LDP)</td>
+<td>Pfr <strong>PROMOTES</strong> flowering</td>
+<td>High Pfr (short night) → FLOWERING; Low Pfr (long night) → NO flowering</td>
+</tr>
+</table>
+
+<h3>6.5 The Night Break Experiment — Explained</h3>
+
+<p><strong>SDP during a long night</strong>, given a brief flash of red light in the middle:</p>
+<ol>
+<li>Before the flash: Pfr has been reverting to Pr in the dark.</li>
+<li>Red light flash: Pr is rapidly converted back to <strong>Pfr</strong>.</li>
+<li>After the flash: Pfr starts reverting again, but the night is now effectively "short" — not enough time for all Pfr to revert.</li>
+<li>End of night: Significant <strong>Pfr remains</strong> → plant "thinks" it was a short night → SDP does <strong>NOT</strong> flower.</li>
+</ol>
+<p><strong>What if you follow the red flash with far-red light?</strong></p>
+<ul>
+<li>Red flash: Pr → Pfr</li>
+<li>Far-red flash immediately after: Pfr → Pr (reverses the effect)</li>
+<li>Result: The far-red cancels the red light effect → plant "thinks" it's still a long night → SDP <strong>flowers</strong>.</li>
+</ul>
+<p>This red/far-red reversibility is the classic proof that phytochrome is the photoreceptor.</p>
+
+<div class="worked">
+<p><strong>Worked Example: Explaining Experimental Results</strong></p>
+
+<p>A researcher grows chrysanthemums (short-day plants) under the following light regimes:</p>
+
+<table>
+<tr>
+<td>Treatment</td>
+<td>Light Regime</td>
+<td>Result</td>
+</tr>
+<tr>
+<td>A</td>
+<td>10 hours light, 14 hours dark</td>
+<td>Flowering</td>
+</tr>
+<tr>
+<td>B</td>
+<td>10 hours light, 14 hours dark with 5-minute red light in middle of dark period</td>
+<td>No flowering</td>
+</tr>
+<tr>
+<td>C</td>
+<td>10 hours light, 14 hours dark with 5-minute red light, then 5-minute far-red light in middle</td>
+<td>Flowering</td>
+</tr>
+</table>
+
+<p><strong>Explain each result:</strong></p>
+
+<p><strong>A</strong>: 14 hours of uninterrupted dark = long night. Most Pfr reverts to Pr → low Pfr at dawn. In SDP, low Pfr promotes flowering → flowering occurs. ✓</p>
+
+<p><strong>B</strong>: The red light flash in the middle of the night rapidly converts remaining Pr → Pfr. The night is "interrupted" — only two short dark periods (e.g., 7 hours each) instead of one long one. Not enough time for all Pfr to revert → significant Pfr at dawn. High Pfr inhibits flowering in SDP → no flowering. ✓</p>
+
+<p><strong>C</strong>: The red flash creates Pfr, but the immediately following far-red flash converts it back to Pr. The far-red cancels the effect of the red light. The plant "perceives" an uninterrupted long night → low Pfr at dawn → flowering. ✓</p>
+</div>
+
+<div class="tip">
+<p><strong>IB Exam Tip (Paper 1 & 2)</strong>: The red/far-red reversibility experiment is classic. You must know: (1) Red light = promotes Pfr formation = the effect depends on the plant type (inhibits SDP flowering, promotes LDP flowering). (2) Far-red light reverses the effect of red light. (3) If you're asked to design an experiment about photoperiodism, include a red light treatment and a red + far-red treatment to demonstrate phytochrome involvement.</p>
+</div>
+
+<hr>
+
+<h2>7. Summary: Plant Reproduction at a Glance</h2>
+
+<table>
+<tr>
+<td>Process</td>
+<td>Key Structures</td>
+<td>Key Events</td>
+</tr>
+<tr>
+<td>Pollination</td>
+<td>Anther → Stigma</td>
+<td>Transfer of pollen; vectors: insects, wind, birds, water</td>
+</tr>
+<tr>
+<td>Pollen tube growth</td>
+<td>Stigma → Style → Ovary → Micropyle</td>
+<td>Tube nucleus guides growth; generative nucleus divides → 2 sperm</td>
+</tr>
+<tr>
+<td>Double fertilization</td>
+<td>Embryo sac (egg + polar nuclei)</td>
+<td>Sperm + Egg → Zygote (2n); Sperm + 2 polar nuclei → Endosperm (3n)</td>
+</tr>
+<tr>
+<td>Seed development</td>
+<td>Ovule</td>
+<td>Zygote → Embryo; Integuments → Testa; Endosperm → nutrient tissue</td>
+</tr>
+<tr>
+<td>Fruit development</td>
+<td>Ovary</td>
+<td>Mature ovary → Fruit; aids seed dispersal</td>
+</tr>
+<tr>
+<td>Photoperiodism</td>
+<td>Leaves (phytochrome)</td>
+<td>Pr ⇄ Pfr; measures night length; controls flowering time</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>8. Common Misconceptions</h2>
+
+<table>
+<tr>
+<td>Misconception</td>
+<td>Reality</td>
+</tr>
+<tr>
+<td>"Pollination is the same as fertilization"</td>
+<td>Pollination = transfer of pollen to stigma. Fertilization = fusion of sperm and egg. They are separate events that may be separated by hours or days.</td>
+</tr>
+<tr>
+<td>"The pollen grain is the male gamete"</td>
+<td>The pollen grain is the <strong>male gametophyte</strong> — it contains the tube nucleus and a generative nucleus, which divides to produce two sperm (the actual male gametes).</td>
+</tr>
+<tr>
+<td>"Double fertilization produces two embryos"</td>
+<td>No — it produces one <strong>embryo</strong> (2n) and one <strong>endosperm</strong> (3n). The endosperm is nutritive tissue, not an embryo.</td>
+</tr>
+<tr>
+<td>"The fruit is just the ovary wall"</td>
+<td>In true fruits, yes — but some "fruits" (like apples and strawberries) include accessory tissue (receptacle) — these are "false fruits" or accessory fruits.</td>
+</tr>
+<tr>
+<td>"Short-day plants flower when days are short"</td>
+<td>They flower when <strong>nights are long</strong>. The mechanism detects night length, not day length. The name is misleading.</td>
+</tr>
+<tr>
+<td>"Plants measure day length to flower"</td>
+<td>Plants measure the length of the <strong>uninterrupted dark period</strong> using phytochrome.</td>
+</tr>
+<tr>
+<td>"Phytochrome is in the flowers"</td>
+<td>Phytochrome is located in the <strong>leaves</strong>, where light is perceived. The flowering signal (florigen) is then transmitted to the shoot apical meristem.</td>
+</tr>
+<tr>
+<td>"All plants are photoperiodic"</td>
+<td>Many plants are <strong>day-neutral</strong> and flower based on other cues (age, temperature, developmental stage) rather than photoperiod.</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>9. Practice Problems</h2>
+
+<h3>Problem 1: Flower Structure</h3>
+
+<p><strong>(a)</strong> Draw and label a diagram of a longitudinal section through a typical insect-pollinated flower. [4 marks]</p>
+<p><strong>(b)</strong> Explain how the structure of a wind-pollinated flower differs from an insect-pollinated flower. [3 marks]</p>
+
+<h3>Problem 2: Double Fertilization</h3>
+
+<p><strong>(a)</strong> Describe the events of double fertilization in a flowering plant. [3 marks]</p>
+<p><strong>(b)</strong> Explain why the endosperm is triploid (3n). [2 marks]</p>
+<p><strong>(c)</strong> State what happens to the integuments and the ovary after fertilization. [2 marks]</p>
+
+<h3>Problem 3: Cross-Pollination Mechanisms</h3>
+
+<p><strong>(a)</strong> Explain why cross-pollination is advantageous compared to self-pollination. [2 marks]</p>
+<p><strong>(b)</strong> Describe TWO mechanisms that promote cross-pollination in flowering plants. [4 marks]</p>
+
+<h3>Problem 4: Photoperiodism</h3>
+
+<p>A researcher investigates flowering in a short-day plant (SDP) species. The critical night length for this species is 12 hours.</p>
+
+<p><strong>(a)</strong> State whether this species will flower under each of the following light regimes: [4 marks]</p>
+
+<table>
+<tr>
+<td>Regime</td>
+<td>Light (hours)</td>
+<td>Dark (hours)</td>
+<td>Flowers? (Y/N)</td>
+</tr>
+<tr>
+<td>1</td>
+<td>14</td>
+<td>10</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>10</td>
+<td>14</td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>10</td>
+<td>14 (with 5 min red light in middle of dark)</td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>10</td>
+<td>14 (with 5 min red + 5 min far-red in middle of dark)</td>
+<td></td>
+</tr>
+</table>
+
+<p><strong>(b)</strong> Explain your answer for regime 3 by referring to the phytochrome system. [3 marks]</p>
+
+<h3>Problem 5: Seed Dispersal</h3>
+
+<p><strong>(a)</strong> Describe how fleshy fruits aid in seed dispersal. [2 marks]</p>
+<p><strong>(b)</strong> Explain the advantages of seed dispersal for plant species. [3 marks]</p>
+
+<hr>
+
+<h2>10. Answers</h2>
+
+<h3>Answer 1</h3>
+
+<p><strong>(a)</strong> [4 marks for correctly drawn and labeled diagram]</p>
+<ul>
+<li>Drawing showing: receptacle at base [1]</li>
+<li>Sepals (outermost, green), petals (inner to sepals, colored) [1]</li>
+<li>Stamens: anther and filament labeled [1]</li>
+<li>Carpel/pistil: stigma (sticky top), style (stalk), ovary (swollen base containing ovules) [1]</li>
+</ul>
+<p><strong>(b)</strong> Wind-pollinated flowers typically have [1 each, max 3]:</p>
+<ul>
+<li>Small, inconspicuous, or absent petals (no need to attract insects)</li>
+<li>Large, feathery stigmas (to catch airborne pollen)</li>
+<li>Anthers hanging outside the flower on long filaments (to release pollen into wind)</li>
+<li>Production of large quantities of lightweight, smooth pollen</li>
+<li>No nectar or scent (no need to reward pollinators)</li>
+</ul>
+<h3>Answer 2</h3>
+
+<p><strong>(a)</strong> The pollen tube grows into the embryo sac and discharges two sperm cells [1]. One sperm fertilizes the egg cell (n + n) → diploid zygote (2n) → develops into embryo [1]. The second sperm fuses with the two polar nuclei (n + n + n) → triploid endosperm nucleus (3n) → develops into endosperm (nutrient tissue). [1]</p>
+
+<p><strong>(b)</strong> The endosperm is triploid because one haploid sperm (n) fuses with the two haploid polar nuclei (n + n), giving n + n + n = 3n [1]. The triploid nature may provide metabolic advantages for efficient nutrient synthesis to support the developing embryo. [1]</p>
+
+<p><strong>(c)</strong> Integuments → <strong>seed coat (testa)</strong>, which protects the embryo [1]. Ovary → <strong>fruit</strong>, which protects seeds and aids dispersal [1].</p>
+
+<h3>Answer 3</h3>
+
+<p><strong>(a)</strong> Cross-pollination increases <strong>genetic variation</strong> in the offspring [1]. This produces populations with a wider range of genotypes, increasing the chance that some individuals can survive environmental changes or disease outbreaks. Self-pollination reduces genetic diversity — essentially inbreeding. [1]</p>
+
+<p><strong>(b)</strong> Any two of the following (2 marks each):</p>
+<ul>
+<li><strong>Dioecy</strong>: Male and female flowers are on separate plants, so pollen must travel from a male plant to a female plant — self-pollination is impossible.</li>
+<li><strong>Dichogamy</strong>: Anthers and stigmas of the same flower mature at different times. Protandry: anthers release pollen before the stigma is receptive. Protogyny: stigma is receptive before anthers release pollen.</li>
+<li><strong>Self-incompatibility</strong>: A genetic mechanism where pollen tube growth is blocked if the pollen grain and stigma share the same self-incompatibility (S) alleles. This prevents self-fertilization.</li>
+<li><strong>Heterostyly</strong>: Different flower morphs have different style lengths (pin-eyed vs. thrum-eyed), physically separating anthers and stigmas and promoting cross-pollination between morphs.</li>
+</ul>
+<h3>Answer 4</h3>
+
+<p><strong>(a)</strong></p>
+
+<table>
+<tr>
+<td>Regime</td>
+<td>Light (hours)</td>
+<td>Dark (hours)</td>
+<td>Flowers? (Y/N)</td>
+</tr>
+<tr>
+<td>1</td>
+<td>14</td>
+<td>10</td>
+<td>N</td>
+</tr>
+<tr>
+<td>2</td>
+<td>10</td>
+<td>14</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>3</td>
+<td>10</td>
+<td>14 (with 5 min red light in middle)</td>
+<td>N</td>
+</tr>
+<tr>
+<td>4</td>
+<td>10</td>
+<td>14 (with red + far-red in middle)</td>
+<td>Y</td>
+</tr>
+</table>
+
+<p>[1 mark per correct answer; total 4]</p>
+
+<p><strong>(b)</strong> In regime 3, the red light flash in the middle of the 14-hour dark period converts Pr (accumulated during the first 7 hours of darkness) rapidly to Pfr [1]. This effectively "resets" the night — instead of one long 14-hour dark period, the plant experiences two short 7-hour periods. There is insufficient time for all Pfr to revert to Pr before dawn [1]. For a short-day plant, high Pfr levels at dawn inhibit flowering → the plant does not flower. [1]</p>
+
+<h3>Answer 5</h3>
+
+<p><strong>(a)</strong> Fleshy fruits are typically brightly colored and sweet/nutritious when ripe, attracting animals (birds, mammals) to eat them [1]. The seeds pass through the animal's digestive tract unharmed (often with the seed coat scarified, which may aid germination) and are deposited at a distance from the parent plant in feces. [1]</p>
+
+<p><strong>(b)</strong> Advantages of seed dispersal [1 each]:</p>
+<ul>
+<li><strong>Reduces competition</strong>: Seedlings are less likely to compete with the parent plant or each other for light, water, and nutrients.</li>
+<li><strong>Colonization of new habitats</strong>: Seeds may reach favorable environments where the species can establish.</li>
+<li><strong>Reduces predation</strong>: Seed and seedling predators (herbivores, pathogens) concentrated near the parent plant are avoided by dispersed offspring.</li>
+<li><strong>Gene flow</strong>: Dispersal mixes genes between populations, maintaining genetic diversity.</li>
+</ul>
+<hr>
+
+<h2>11. Key Terms Summary</h2>
+
+<table>
+<tr>
+<td>Term</td>
+<td>Definition</td>
+</tr>
+<tr>
+<td>Sepal</td>
+<td>Outermost leaf-like flower structure; protects the developing bud</td>
+</tr>
+<tr>
+<td>Petal</td>
+<td>Often brightly colored flower structure; attracts pollinators</td>
+</tr>
+<tr>
+<td>Stamen</td>
+<td>Male reproductive organ; consists of anther (produces pollen) and filament</td>
+</tr>
+<tr>
+<td>Carpel/Pistil</td>
+<td>Female reproductive organ; consists of stigma, style, and ovary</td>
+</tr>
+<tr>
+<td>Anther</td>
+<td>Structure at the tip of the stamen where pollen is produced</td>
+</tr>
+<tr>
+<td>Stigma</td>
+<td>Sticky tip of the carpel that receives pollen</td>
+</tr>
+<tr>
+<td>Ovary</td>
+<td>Swollen base of carpel containing ovules; develops into fruit</td>
+</tr>
+<tr>
+<td>Ovule</td>
+<td>Structure within ovary containing the female gametophyte; develops into seed</td>
+</tr>
+<tr>
+<td>Pollination</td>
+<td>Transfer of pollen from anther to stigma</td>
+</tr>
+<tr>
+<td>Self-pollination</td>
+<td>Pollen transferred to stigma of same flower or same plant</td>
+</tr>
+<tr>
+<td>Cross-pollination</td>
+<td>Pollen transferred to stigma of a different plant</td>
+</tr>
+<tr>
+<td>Pollen tube</td>
+<td>Tubular structure growing from pollen grain through style to ovule</td>
+</tr>
+<tr>
+<td>Double fertilization</td>
+<td>Both sperm cells fuse: one with egg → zygote (2n), one with polar nuclei → endosperm (3n)</td>
+</tr>
+<tr>
+<td>Endosperm</td>
+<td>Triploid (3n) nutrient tissue nourishing the developing embryo</td>
+</tr>
+<tr>
+<td>Embryo</td>
+<td>Diploid (2n) structure with plumule, radicle, and cotyledon(s)</td>
+</tr>
+<tr>
+<td>Testa</td>
+<td>Seed coat; develops from integuments</td>
+</tr>
+<tr>
+<td>Fruit</td>
+<td>Mature ovary; aids in seed protection and dispersal</td>
+</tr>
+<tr>
+<td>Photoperiodism</td>
+<td>Response of plants to the relative lengths of day and night</td>
+</tr>
+<tr>
+<td>Short-day plant (SDP)</td>
+<td>Flowers when night is long (exceeds critical night length)</td>
+</tr>
+<tr>
+<td>Long-day plant (LDP)</td>
+<td>Flowers when night is short (less than critical night length)</td>
+</tr>
+<tr>
+<td>Day-neutral plant</td>
+<td>Flowers regardless of night length</td>
+</tr>
+<tr>
+<td>Phytochrome</td>
+<td>Photoreceptor protein that measures night length</td>
+</tr>
+<tr>
+<td>Pr</td>
+<td>Inactive form of phytochrome; absorbs red light (660 nm); converts to Pfr</td>
+</tr>
+<tr>
+<td>Pfr</td>
+<td>Active form of phytochrome; absorbs far-red light (730 nm); converts to Pr in dark</td>
+</tr>
+<tr>
+<td>Critical night length</td>
+<td>Minimum (for SDP) or maximum (for LDP) dark period required for flowering</td>
+</tr>
+<tr>
+<td>Dioecy</td>
+<td>Male and female flowers on separate individual plants</td>
+</tr>
+<tr>
+<td>Dichogamy</td>
+<td>Male and female parts of the same flower mature at different times</td>
+</tr>
+</table>
+
+<div class="nav"><a href="lesson_47.html">&#8592; Lesson 47</a><a href="index.html">&#8962; Index</a><a href="lesson_49.html">Lesson 49 &#8594;</a></div>
+
+</body>
+</html>

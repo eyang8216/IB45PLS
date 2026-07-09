@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 53: Stability and Change (D4.2) — Ecosystem Resilience, Tipping Points, Keystone Species & Biogeochemical Cycles — IB Biology HL</title>
+<script>window.MathJax = { tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] } };</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #1a6b3c; --border: #c4d4a9; --highlight: #e8f5e9; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Palatino', 'Georgia', serif; background: var(--bg); color: var(--text); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; font-size: 17px; line-height: 1.7; }
+  h1 { font-size: 1.7rem; color: var(--accent); margin-bottom: 0.5rem; }
+  h2 { font-size: 1.25rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; margin: 2rem 0 1rem; }
+  h3 { font-size: 1.1rem; color: #444; margin: 1.3rem 0 0.5rem; }
+  p, li { margin-bottom: 0.6rem; }
+  ul, ol { padding-left: 1.8rem; margin-bottom: 1rem; }
+  .worked { background: #e8f5e9; border-left: 4px solid #1a6b3c; padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
+  .worked strong { color: #1a6b3c; }
+  .answer { background: #fefdf7; border: 1px solid var(--border); padding: 0.8rem 1.2rem; margin: 0.5rem 0; border-radius: 6px; }
+  .nav { display: flex; justify-content: space-between; margin: 3rem 0 1rem; padding-top: 1rem; border-top: 2px solid var(--border); font-size: 0.9rem; }
+  .nav a { color: #1a5c9e; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  .definition { background: #fff8e1; border-left: 4px solid #e6a817; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  .tip { background: #e3f2fd; border-left: 4px solid #1976d2; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  table { border-collapse: collapse; margin: 0.8rem 0; width: 100%; }
+  th, td { border: 1px solid var(--border); padding: 0.4rem 0.6rem; text-align: left; }
+  th { background: #f0f5e8; }
+  @media print { body { font-size: 14px; } .nav { display: none; } }
+</style>
+</head>
+<body>
+
+
+<h2>What You'll Learn</h2>
+
+<ul>
+<li>The concepts of ecosystem stability: resistance and resilience</li>
+<li>How negative and positive feedback loops operate in ecosystems</li>
+<li>Tipping points and alternative stable states</li>
+<li>The role of keystone species and trophic cascades</li>
+<li>How disturbance and succession shape ecosystem dynamics (intermediate disturbance hypothesis)</li>
+<li>How biogeochemical cycles (carbon and nitrogen) interact with ecosystem stability</li>
+</ul>
+<hr>
+
+<h2>1. Ecosystem Stability: Resistance and Resilience</h2>
+
+<h3>Defining Stability</h3>
+
+<div class="definition">
+
+<p><strong>Ecosystem stability</strong> has two components:</p>
+
+<ul>
+<li><strong>Resistance:</strong> The ability of an ecosystem to <strong>withstand</strong> a disturbance without changing its structure or function. A highly resistant ecosystem simply absorbs the shock.</li>
+<li><strong>Resilience:</strong> The ability of an ecosystem to <strong>recover</strong> after a disturbance and return to its original state. A highly resilient ecosystem bounces back quickly.</li>
+</ul>
+</div>
+
+<p>> <strong>Analogy:</strong> Imagine two buildings hit by an earthquake. A <strong>resistant</strong> building has deep foundations and reinforced walls — it barely shakes and shows no cracks. A <strong>resilient</strong> building may suffer damage but is designed with flexible joints so it can be quickly repaired and returned to service. The ideal ecosystem has both, but there's often a trade-off.</p>
+
+<h3>Biodiversity and Stability</h3>
+
+<p>Higher biodiversity generally increases both resistance and resilience:</p>
+
+<table>
+<tr>
+<td>Mechanism</td>
+<td>How It Enhances Stability</td>
+</tr>
+<tr>
+<td>Functional redundancy</td>
+<td>Multiple species perform similar ecological roles (e.g., several pollinators, several decomposers) → if one species is lost, others compensate</td>
+</tr>
+<tr>
+<td>Response diversity</td>
+<td>Different species within a functional group respond differently to the same disturbance → some will survive any given stress</td>
+</tr>
+<tr>
+<td>Portfolio effect</td>
+<td>As with a diversified financial portfolio, statistical averaging across many species dampens fluctuations in total ecosystem function</td>
+</tr>
+<tr>
+<td>Trophic complexity</td>
+<td>Multiple pathways in food webs → disturbance in one pathway can be buffered by alternative pathways</td>
+</tr>
+</table>
+
+<p>> <strong>Important caveat:</strong> It's not just the <em>number</em> of species but their <em>functional diversity</em> that matters. Losing a keystone species (see Section 4) can devastate stability even if many other species remain.</p>
+
+<hr>
+
+<h2>2. Feedback Mechanisms in Ecosystems</h2>
+
+<h3>Negative Feedback: The Stabilising Force</h3>
+
+<p>Negative feedback loops <strong>counteract change</strong> and promote stability. They are the ecosystem equivalent of homeostasis.</p>
+
+<div class="worked">
+
+<p><strong>Example: Predator-Prey Oscillations (Lotka-Volterra Dynamics)</strong></p>
+
+<ol>
+<li>Prey population <strong>increases</strong> (more food/resources).</li>
+<li>More prey → predators have abundant food → predator population <strong>increases</strong>.</li>
+<li>More predators → prey consumption increases → prey population <strong>decreases</strong>.</li>
+<li>Less prey → predators starve or reproduce less → predator population <strong>decreases</strong>.</li>
+<li>Fewer predators → prey population <strong>increases</strong> again.</li>
+</ol>
+<p>→ Populations oscillate around an equilibrium. Neither goes extinct (in theory).</p>
+
+<p>> <strong>Draw and label:</strong> Two overlapping sine waves — prey (higher amplitude, peaks slightly before predator) and predator (lower amplitude, peaks slightly after prey). Label axes: Time (x-axis), Population size (y-axis). Classic hare-lynx cycle from Hudson Bay Company fur-trapping records is the classic data set.</p>
+
+<p><strong>Real example: Canadian lynx and snowshoe hare:</strong></p>
+<p>Hudson Bay Company fur-trapping records (~1845–1935) show roughly 10-year cycles of lynx and hare abundance. The hare cycle drives the lynx cycle with a slight lag.</p>
+
+</div>
+
+<p><strong>Other Examples of Negative Feedback:</strong></p>
+
+<table>
+<tr>
+<td>System</td>
+<td>Mechanism</td>
+</tr>
+<tr>
+<td>Plant-herbivore</td>
+<td>More plants → more herbivores → more plant consumption → fewer plants → fewer herbivores</td>
+</tr>
+<tr>
+<td>Density-dependent factors</td>
+<td>High population → increased competition, disease, predation → population declines → competition/disease/predation decreases</td>
+</tr>
+<tr>
+<td>Carbon cycle (short term)</td>
+<td>More atmospheric CO₂ → plants grow faster (CO₂ fertilisation) → more carbon sequestered in biomass → slight reduction in atmospheric CO₂ (partial negative feedback — note: this is overwhelmed by emissions)</td>
+</tr>
+<tr>
+<td>Thermoregulation in Gaia hypothesis</td>
+<td>Daisyworld model — dark daisies warm planet → white daisies favoured → planet cools → dark daisies favoured → system self-regulates</td>
+</tr>
+</table>
+
+<h3>Positive Feedback: The Destabilising Force</h3>
+
+<p>Positive feedback loops <strong>amplify change</strong> — they push the ecosystem away from equilibrium and can cause rapid, dramatic shifts.</p>
+
+<p>> <strong>Positive feedback is NOT "good" feedback.</strong> Think of it as a snowball rolling downhill: the further it goes, the bigger and faster it gets. In ecosystems, positive feedback can drive systems past <strong>tipping points</strong>.</p>
+
+<div class="worked">
+
+<p><strong>Example 1: Permafrost Melt — A Climate Positive Feedback</strong></p>
+
+<ol>
+<li>Global warming → permafrost (frozen soil in Arctic) <strong>thaws</strong>.</li>
+<li>Thawing permafrost releases trapped <strong>methane (CH₄)</strong> and <strong>CO₂</strong> from decomposed organic matter frozen for millennia.</li>
+<li>Methane and CO₂ are greenhouse gases → <strong>more warming</strong>.</li>
+<li>More warming → <strong>more permafrost thaws</strong>.</li>
+<li>→ More greenhouse gases released → <strong>more warming...</strong></li>
+</ol>
+<p>This is a positive feedback loop because the output (warming) amplifies the input (thawing), which amplifies the output even more. An estimated 1,400–1,600 gigatonnes of carbon are locked in permafrost — roughly double the carbon currently in the atmosphere.</p>
+
+</div>
+
+<div class="worked">
+
+<p><strong>Example 2: Deforestation-Rainfall Feedback</strong></p>
+
+<ol>
+<li><strong>Deforestation</strong> → fewer trees transpiring water into the atmosphere.</li>
+<li>Less transpiration → less atmospheric moisture → <strong>reduced rainfall</strong>.</li>
+<li>Reduced rainfall → trees stressed → more trees die → more deforestation/degradation.</li>
+<li>→ Even less transpiration → even less rainfall...</li>
+</ol>
+<p>This feedback loop explains why the Amazon rainforest may be approaching a tipping point: if enough forest is cleared, the region may no longer generate sufficient rainfall to sustain a rainforest → transition to savanna.</p>
+
+</div>
+
+<div class="worked">
+
+<p><strong>Example 3: Algal Bloom — Eutrophication Cascade</strong></p>
+
+<ol>
+<li>Nutrient runoff (fertilisers, sewage) enters lake → <strong>algal bloom</strong>.</li>
+<li>Algae eventually die and sink → <strong>decomposition</strong> by aerobic bacteria.</li>
+<li>Decomposition consumes <strong>dissolved oxygen</strong> → hypoxia/anoxia.</li>
+<li>Low oxygen → <strong>fish and other aerobic organisms die</strong>.</li>
+<li>Dead organisms → <strong>more decomposition</strong> → more oxygen consumed.</li>
+<li>→ More death, more decomposition...</li>
+</ol>
+<p>This feedback can rapidly tip a clear, oxygen-rich lake into a turbid, anoxic, algae-dominated state.</p>
+
+</div>
+
+<hr>
+
+<h2>3. Tipping Points and Alternative Stable States</h2>
+
+<div class="definition">
+
+<p>A <strong>tipping point</strong> (or critical threshold) is a point beyond which an ecosystem undergoes an abrupt, often <strong>irreversible</strong> shift to an <strong>alternative stable state</strong>. Once crossed, simply removing the original stressor may NOT restore the original ecosystem.</p>
+
+</div>
+
+<p>> <strong>Analogy:</strong> Think of pushing a boulder up a hill. As long as you haven't reached the crest (tipping point), removing your push lets the boulder roll back to where it started. But once you push it past the crest, the boulder rolls down the other side into a completely different valley. Getting it back requires enormous effort — much more than the push that sent it over.</p>
+
+<h3>Examples of Alternative Stable States</h3>
+
+<table>
+<tr>
+<td>Ecosystem</td>
+<td>State 1 (Original)</td>
+<td>State 2 (Alternative)</td>
+<td>Tipping Mechanism</td>
+</tr>
+<tr>
+<td>Coral reefs</td>
+<td>Coral-dominated, high biodiversity, clear water</td>
+<td>Algae-dominated, low biodiversity, turbid water</td>
+<td>Overfishing of herbivores + nutrient runoff → algae outcompete coral; once algae dominate, coral larvae cannot settle</td>
+</tr>
+<tr>
+<td>Shallow lakes</td>
+<td>Clear water, submerged macrophytes, diverse fish</td>
+<td>Turbid water, phytoplankton-dominated, few fish species</td>
+<td>Nutrient loading → algal blooms → loss of macrophytes → sediment re-suspension → turbidity self-maintaining</td>
+</tr>
+<tr>
+<td>Savanna-forest</td>
+<td>Open savanna with scattered trees</td>
+<td>Dense forest with closed canopy</td>
+<td>Fire suppression → tree seedlings survive → canopy closes → grasses shaded out → fire cannot spread → forest persists</td>
+</tr>
+<tr>
+<td>Kelp forests</td>
+<td>Kelp-dominated, sea otters present, few urchins</td>
+<td>Urchin barrens, sea otters absent, kelp destroyed</td>
+<td>Otter removal → urchin population explosion → kelp grazed to extinction → urchins persist on drift algae</td>
+</tr>
+</table>
+
+<h3>Characteristics of Tipping Points</h3>
+
+<ul>
+<li><strong>Hysteresis:</strong> The path from State 1 → State 2 is different from the path from State 2 → State 1. Recovery requires a much greater reduction in the stressor than the level that caused the collapse.</li>
+<li><strong>Early warning signals:</strong> Before a tipping point, ecosystems may show <strong>critical slowing down</strong> — recovery from small perturbations takes longer and longer.</li>
+<li><strong>Irreversibility:</strong> For practical purposes (human timescales), the shift may be irreversible.</li>
+</ul>
+<hr>
+
+<h2>4. Keystone Species and Trophic Cascades</h2>
+
+<div class="definition">
+
+<p>A <strong>keystone species</strong> is a species whose impact on its ecosystem is <strong>disproportionately large</strong> relative to its abundance or biomass. Removing a keystone species triggers significant changes throughout the ecosystem.</p>
+
+</div>
+
+<p>> <strong>Analogy:</strong> In a stone arch, the <strong>keystone</strong> at the top is not the largest stone, but if you remove it, the entire arch collapses. Similarly, a keystone species may not be the most abundant organism, but its removal causes the ecosystem structure to unravel.</p>
+
+<h3>The Classic Example: Sea Otters, Urchins, and Kelp</h3>
+
+<table>
+<tr>
+<td>Component</td>
+<td>Role</td>
+</tr>
+<tr>
+<td>Sea otter (<em>Enhydra lutris</em>)</td>
+<td>Keystone predator — eats sea urchins</td>
+</tr>
+<tr>
+<td>Sea urchin (Strongylocentrotus)</td>
+<td>Herbivore — eats kelp</td>
+</tr>
+<tr>
+<td>Kelp (Macrocystis)</td>
+<td>Foundation species — forms underwater forest providing habitat for fish, invertebrates</td>
+</tr>
+</table>
+
+<p><strong>The cascade:</strong></p>
+<ul>
+<li><strong>With otters:</strong> Otters eat urchins → urchin population controlled → kelp forest thrives → high biodiversity</li>
+<li><strong>Without otters (hunted for fur, 18th-19th centuries):</strong> Urchin population explodes → kelp eaten to bare rock → "urchin barren" → biodiversity plummets</li>
+<li><strong>Otters reintroduced (protected since 1911):</strong> Urchins controlled → kelp recovers → biodiversity returns</li>
+</ul>
+<p>> <strong>Draw and label:</strong> Three-panel diagram: (Left) Healthy kelp forest with otters, few urchins, abundant fish. (Centre) Trophic cascade arrows: Otter removal ↑ → Urchins ↑↑ → Kelp ↓↓. (Right) Urchin barren — bare rock, no kelp, few fish. Below, reverse arrows showing restoration.</p>
+
+<h3>Wolves in Yellowstone</h3>
+
+<p>Another powerful example of a keystone species and trophic cascade:</p>
+
+<p><strong>Before 1920s:</strong> Wolves present in Yellowstone.</p>
+<p><strong>1920s–1995:</strong> Wolves exterminated. Elk population grew unchecked → overgrazed willows and aspen along streams → riverbanks eroded → beavers declined (no wood for dams, no willows to eat) → fewer ponds → reduced biodiversity.</p>
+
+<p><strong>1995–1996:</strong> 31 wolves reintroduced from Canada.</p>
+
+<p><strong>After reintroduction:</strong></p>
+<ul>
+<li>Elk behaviour changed — elk avoided open areas near streams (risk of wolf predation)</li>
+<li>Willows and aspen recovered along waterways</li>
+<li>Beavers returned — wood for dams, willows for food</li>
+<li>Beaver ponds created wetland habitat → amphibians, fish, waterfowl increased</li>
+<li>Riverbanks stabilised → less erosion → streams became more meandering</li>
+<li>Coyote numbers decreased (wolves kill coyotes) → small mammal populations (mice, voles) increased → more food for raptors, foxes, badgers</li>
+</ul>
+<p>This is a <strong>trophic cascade</strong> — changes at the top of the food web ripple down through multiple trophic levels. It's also an example of a <strong>behaviourally mediated</strong> cascade (wolves changed elk behaviour, not just elk numbers).</p>
+
+<hr>
+
+<h2>5. Succession and Disturbance</h2>
+
+<h3>Ecological Succession</h3>
+
+<p><strong>Succession</strong> is the directional, reasonably predictable change in species composition of an ecosystem over time following a disturbance.</p>
+
+<table>
+<tr>
+<td>Type</td>
+<td>Starting Point</td>
+<td>Example</td>
+</tr>
+<tr>
+<td>Primary succession</td>
+<td>Bare rock or substrate with no soil (no previous community)</td>
+<td>Lava flow, glacial retreat, sand dune formation</td>
+</tr>
+<tr>
+<td>Secondary succession</td>
+<td>Existing soil present; previous community removed</td>
+<td>Abandoned farmland, forest after fire, cleared forest</td>
+</tr>
+</table>
+
+<p><strong>Typical sequence (secondary succession, temperate forest):</strong></p>
+<ol>
+<li>Bare soil → pioneer species (annual weeds, grasses — fast-growing, r-selected)</li>
+<li>Grasses and herbaceous perennials dominate</li>
+<li>Shrubs and small trees establish</li>
+<li>Fast-growing (pioneer) trees (e.g., birch, aspen)</li>
+<li>Climax community: slow-growing, shade-tolerant trees (e.g., oak, maple, beech)</li>
+</ol>
+<h3>Disturbance and the Landscape Mosaic</h3>
+
+<p>Disturbances (fire, storms, floods, disease outbreaks, human clearing) prevent any single patch from reaching a climax state. Instead, the landscape becomes a <strong>mosaic</strong> of patches at different successional stages.</p>
+
+<h3>The Intermediate Disturbance Hypothesis</h3>
+
+<div class="definition">
+
+<p>The <strong>intermediate disturbance hypothesis</strong> proposes that <strong>species diversity is highest at intermediate levels of disturbance</strong>.</p>
+
+<ul>
+<li><strong>Low disturbance:</strong> Competitive exclusion — a few dominant species outcompete all others → low diversity</li>
+<li><strong>High disturbance:</strong> Only disturbance-tolerant pioneer species can survive → low diversity</li>
+<li><strong>Intermediate disturbance:</strong> A mix of early-, mid-, and late-successional species coexist → <strong>maximum diversity</strong></li>
+</ul>
+</div>
+
+<p>> <strong>Draw and label:</strong> A hump-shaped curve: disturbance frequency/intensity on x-axis, species diversity on y-axis. Label: "Low disturbance (competitive exclusion)" on left, "Intermediate disturbance (maximum diversity)" at peak, "High disturbance (only pioneers survive)" on right.</p>
+
+<h3>Fire-Maintained Ecosystems</h3>
+
+<p>Some ecosystems actually <strong>depend on</strong> fire:</p>
+
+<ul>
+<li><strong>Serotinous cones:</strong> Lodgepole pine (<em>Pinus contorta</em>) and many other conifers have cones sealed with resin. Only high temperatures from fire melt the resin and release seeds.</li>
+<li><strong>Fire-stimulated germination:</strong> Some seeds require smoke or heat to break dormancy.</li>
+<li><strong>Nutrient release:</strong> Fire rapidly recycles nutrients tied up in biomass into ash (available to plants).</li>
+<li><strong>Competition reduction:</strong> Fire clears understory, reducing competition for new seedlings.</li>
+</ul>
+<p>Without periodic fire, these ecosystems would be replaced by different species. Fire suppression (a common management practice for decades) can actually reduce biodiversity in fire-adapted ecosystems and build up fuel loads, leading to catastrophic fires when they eventually occur.</p>
+
+<hr>
+
+<h2>6. Biogeochemical Cycles and Stability</h2>
+
+<h3>The Carbon Cycle and Climate Feedbacks</h3>
+
+<p>The carbon cycle involves exchanges between four major reservoirs:</p>
+
+<table>
+<tr>
+<td>Reservoir</td>
+<td>Carbon Stored (approximate)</td>
+</tr>
+<tr>
+<td>Atmosphere</td>
+<td>~870 GtC (as CO₂ and CH₄)</td>
+</tr>
+<tr>
+<td>Ocean</td>
+<td>~38,000 GtC (dissolved CO₂, bicarbonate, carbonate, marine organisms)</td>
+</tr>
+<tr>
+<td>Terrestrial biosphere</td>
+<td>~2,500 GtC (biomass + soil organic matter)</td>
+</tr>
+<tr>
+<td>Lithosphere</td>
+<td>>60,000,000 GtC (fossil fuels, carbonate rocks)</td>
+</tr>
+</table>
+
+<p><strong>Key Carbon Fluxes:</strong></p>
+
+<table>
+<tr>
+<td>Flux</td>
+<td>Rate (GtC/year)</td>
+<td>Direction</td>
+</tr>
+<tr>
+<td>Photosynthesis</td>
+<td>~120</td>
+<td>Atmosphere → Biosphere</td>
+</tr>
+<tr>
+<td>Respiration</td>
+<td>~120</td>
+<td>Biosphere → Atmosphere</td>
+</tr>
+<tr>
+<td>Ocean uptake</td>
+<td>~92</td>
+<td>Atmosphere → Ocean</td>
+</tr>
+<tr>
+<td>Ocean release</td>
+<td>~90</td>
+<td>Ocean → Atmosphere</td>
+</tr>
+<tr>
+<td>Fossil fuel combustion</td>
+<td>~10 (and growing)</td>
+<td>Lithosphere → Atmosphere</td>
+</tr>
+<tr>
+<td>Deforestation</td>
+<td>~1–2</td>
+<td>Biosphere → Atmosphere</td>
+</tr>
+</table>
+
+<p><strong>Stability-relevant carbon feedbacks:</strong></p>
+
+<ul>
+<li><strong>Ocean as carbon sink:</strong> The ocean absorbs ~25% of anthropogenic CO₂ emissions. However, warmer water holds less dissolved CO₂ → as oceans warm, their capacity as a carbon sink declines → <strong>positive feedback</strong> on warming.</li>
+<li><strong>Forests as carbon sinks/sources:</strong> Healthy forests are net carbon sinks. But deforestation, drought stress, and warming (increasing respiration rates) can turn forests into net carbon <strong>sources</strong>.</li>
+<li><strong>CO₂ fertilisation effect:</strong> Higher atmospheric CO₂ increases photosynthetic rates in some plants (C3 plants) → partial negative feedback. However, this effect is limited by other factors (nutrients, water).</li>
+</ul>
+<p>> <strong>Draw and label:</strong> A diagram of the carbon cycle showing boxes (reservoirs: Atmosphere, Ocean, Terrestrial Biosphere, Lithosphere/Fossil Fuels) connected by arrows (fluxes: Photosynthesis, Respiration, Ocean exchange, Fossil fuel combustion, Deforestation). Add red arrows for anthropogenic fluxes.</p>
+
+<h3>The Nitrogen Cycle and Stability</h3>
+
+<p>The nitrogen cycle is crucial for ecosystem productivity but human alterations have created significant stability problems:</p>
+
+<p><strong>Key Nitrogen Processes:</strong></p>
+
+<table>
+<tr>
+<td>Process</td>
+<td>Description</td>
+<td>Organisms Involved</td>
+</tr>
+<tr>
+<td>Nitrogen fixation</td>
+<td>N₂ (atmospheric) → NH₃/NH₄⁺ (ammonia/ammonium)</td>
+<td>Free-living bacteria (<em>Azotobacter</em>), symbiotic bacteria (<em>Rhizobium</em> in legume root nodules), cyanobacteria</td>
+</tr>
+<tr>
+<td>Nitrification</td>
+<td>NH₄⁺ → NO₂⁻ (nitrite) → NO₃⁻ (nitrate)</td>
+<td>Nitrifying bacteria (<em>Nitrosomonas</em>, <em>Nitrobacter</em>)</td>
+</tr>
+<tr>
+<td>Assimilation</td>
+<td>Plants take up NO₃⁻ and NH₄⁺ to make amino acids, proteins, nucleic acids</td>
+<td>Plants, fungi, bacteria</td>
+</tr>
+<tr>
+<td>Ammonification</td>
+<td>Dead organic matter → NH₄⁺ (decomposition)</td>
+<td>Decomposers (bacteria, fungi)</td>
+</tr>
+<tr>
+<td>Denitrification</td>
+<td>NO₃⁻ → N₂ (returns to atmosphere)</td>
+<td>Denitrifying bacteria (<em>Pseudomonas</em>) — anaerobic conditions</td>
+</tr>
+</table>
+
+<p><strong>How Nitrogen Disrupts Stability:</strong></p>
+
+<table>
+<tr>
+<td>Problem</td>
+<td>Mechanism</td>
+</tr>
+<tr>
+<td>Eutrophication</td>
+<td>Excess nitrogen (fertiliser runoff) enters water bodies → algal blooms → hypoxia → fish kills → ecosystem degradation</td>
+</tr>
+<tr>
+<td>N₂O emissions</td>
+<td>Nitrous oxide is a potent greenhouse gas (~300× the warming potential of CO₂ per molecule) and also depletes stratospheric ozone</td>
+</tr>
+<tr>
+<td>Soil acidification</td>
+<td>Excess ammonium deposition → nitrification produces H⁺ ions → soil pH drops → aluminium mobilised → toxic to plants and aquatic life</td>
+</tr>
+<tr>
+<td>Biodiversity loss</td>
+<td>Nitrogen deposition favours nitrophilous (nitrogen-loving) species at the expense of species adapted to low-nitrogen conditions → shifts in plant community composition</td>
+</tr>
+</table>
+
+<p><strong>The Haber-Bosch process</strong> (industrial nitrogen fixation for fertiliser) now fixes more nitrogen than all natural terrestrial processes combined — fundamentally altering the global nitrogen cycle. This is one of the nine <strong>planetary boundaries</strong> identified by Rockström et al. (2009) as having been exceeded beyond safe operating limits.</p>
+
+<hr>
+
+<h2>7. Common Misconceptions</h2>
+
+<table>
+<tr>
+<td>Misconception</td>
+<td>Reality</td>
+</tr>
+<tr>
+<td>"Stable ecosystems never change"</td>
+<td>Stability is dynamic — ecosystems fluctuate naturally around an equilibrium. High stability means resistance to large shifts, not absence of change</td>
+</tr>
+<tr>
+<td>"More biodiversity = always more stable"</td>
+<td>Generally true, but depends on functional diversity. Adding many species that perform the same function may not increase stability as much as adding species with different functions</td>
+</tr>
+<tr>
+<td>"Positive feedback is good, negative feedback is bad"</td>
+<td>In ecological terms: negative feedback = stabilising (homeostasis-like); positive feedback = destabilising (amplifying change). The terms are value-neutral in science</td>
+</tr>
+<tr>
+<td>"Once a tipping point is crossed, there's no going back"</td>
+<td>"Irreversible" often means "irreversible on human timescales." Given enough time and the right conditions, recovery may be possible — but it is extremely difficult and slow</td>
+</tr>
+<tr>
+<td>"Keystone species are always top predators"</td>
+<td>Keystone species can be predators (sea otter, wolf), herbivores (elephant — creates savanna by knocking down trees), mutualists (fig trees — fruit for many species year-round), or ecosystem engineers (beaver)</td>
+</tr>
+<tr>
+<td>"Climax community is the 'final' stage of succession"</td>
+<td>The "climax" concept is outdated. Modern ecology recognises that disturbance is ongoing → most landscapes are a mosaic of patches at different successional stages</td>
+</tr>
+<tr>
+<td>"Fire is always destructive to ecosystems"</td>
+<td>Fire-dependent ecosystems (chaparral, savanna, boreal forest, Mediterranean shrubland) require fire for regeneration and biodiversity maintenance</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1 (Resistance vs Resilience)</h3>
+
+<p>A coral reef experiences a bleaching event due to elevated sea temperatures. Reef A loses 80% of its coral cover but recovers to 90% of its original state within 8 years. Reef B loses only 20% of its coral cover but takes 20 years to recover. Compare the resistance and resilience of the two reefs.</p>
+
+<p><details></p>
+<p><summary><strong>Answer</strong></summary></p>
+
+<ul>
+<li><strong>Reef A:</strong> Low resistance (lost 80% — heavily affected by the disturbance) but <strong>high resilience</strong> (recovered to 90% in just 8 years). Reef A is easily damaged but bounces back quickly.</li>
+<li><strong>Reef B:</strong> <strong>High resistance</strong> (lost only 20% — withstood the disturbance well) but low resilience (very slow recovery — 20 years). Reef B absorbs the shock well but recovers slowly.</li>
+</ul>
+<p>This illustrates the trade-off often seen between resistance and resilience. Which is "better" depends on the disturbance regime: if disturbances are rare, resilience matters more; if frequent, resistance is crucial.</p>
+
+<p></details></p>
+
+<h3>Problem 2 (Feedback Loops)</h3>
+
+<p>Classify each scenario as negative or positive feedback and explain:</p>
+<p>(a) Warmer temperatures → more forest fires → CO₂ released → more warming.</p>
+<p>(b) Increased plant growth → more carbon sequestered in biomass → less atmospheric CO₂ → less warming.</p>
+<p>(c) Melting Arctic sea ice → darker ocean surface exposed (lower albedo) → more solar radiation absorbed → more warming → more ice melts.</p>
+
+<p><details></p>
+<p><summary><strong>Answer</strong></summary></p>
+
+<p>(a) <strong>Positive feedback</strong> — the response (CO₂ release) amplifies the original stimulus (warming), leading to more warming. Self-reinforcing cycle.</p>
+
+<p>(b) <strong>Negative feedback</strong> — the response (carbon sequestration) counteracts the original stimulus (higher CO₂/warming). This is a stabilising mechanism. (However, at current emission rates, this negative feedback is insufficient to offset anthropogenic emissions.)</p>
+
+<p>(c) <strong>Positive feedback</strong> — ice melt reduces albedo (reflectivity), causing more absorption of solar radiation, causing more warming, causing more melting. This is the <strong>ice-albedo feedback</strong>, one of the most significant positive feedbacks in the Arctic climate system. It explains why the Arctic is warming ~3-4× faster than the global average (Arctic amplification).</p>
+
+<p></details></p>
+
+<h3>Problem 3 (Trophic Cascade)</h3>
+
+<p>Explain how the removal of wolves from Yellowstone National Park led to a trophic cascade affecting not just elk but also beavers, stream morphology, and bird populations. Then explain the changes that occurred after wolf reintroduction in 1995.</p>
+
+<p><details></p>
+<p><summary><strong>Answer</strong></summary></p>
+
+<p><strong>Removal of wolves (pre-1995):</strong></p>
+<ol>
+<li>Wolves exterminated → elk population increased and elk behaviour changed (no longer avoided open areas).</li>
+<li>Elk overbrowsed willow and aspen saplings along streams.</li>
+<li>Loss of riparian vegetation → riverbanks eroded, streams became wider and shallower with less shade.</li>
+<li>Beavers declined — no willow for food, no aspen for dam construction.</li>
+<li>Without beaver dams → fewer ponds → less wetland habitat → reduced amphibian, fish, and waterfowl populations.</li>
+<li>Reduced riparian vegetation also meant fewer nesting sites for songbirds.</li>
+</ol>
+<p><strong>Wolf reintroduction (post-1995):</strong></p>
+<ol>
+<li>Wolves present → elk behaviour changed (avoided open streamside areas — "landscape of fear").</li>
+<li>Reduced browsing pressure → willow and aspen recovered along streams.</li>
+<li>Riparian recovery → beavers returned (wood for dams, willow for food).</li>
+<li>Beaver dams created ponds → wetland habitat restored.</li>
+<li>Amphibians, fish, waterfowl, and songbird populations increased.</li>
+<li>Stabilised riverbanks → streams became more meandering, cooler (shaded), with more pool habitat.</li>
+</ol>
+<p>This illustrates a <strong>behaviourally mediated trophic cascade</strong> — wolves affected elk behaviour (risk avoidance) as much as elk numbers.</p>
+
+<p></details></p>
+
+<h3>Problem 4 (Intermediate Disturbance Hypothesis)</h3>
+
+<p>A ecologist surveys three forest patches with different fire frequencies: Patch X burns every 2 years, Patch Y burns every 15 years, and Patch Z burns every 100 years. Rank the patches by expected species diversity and explain using the intermediate disturbance hypothesis.</p>
+
+<p><details></p>
+<p><summary><strong>Answer</strong></summary></p>
+
+<p><strong>Expected diversity: Y > X ≈ Z (Patch Y highest)</strong></p>
+
+<ul>
+<li><strong>Patch X (high disturbance — fire every 2 years):</strong> Only fire-tolerant pioneer species (grasses, fire-resistant shrubs, species with serotinous cones) can establish and reproduce before the next fire. Late-successional species cannot survive. <strong>Low diversity.</strong></li>
+</ul>
+<ul>
+<li><strong>Patch Y (intermediate disturbance — fire every 15 years):</strong> Enough time for some mid-successional species to establish, but not enough time for competitive exclusion by a few dominant late-successional species. The landscape contains a mix of pioneer, mid-successional, and recovering late-successional patches. <strong>Highest diversity.</strong></li>
+</ul>
+<ul>
+<li><strong>Patch Z (low disturbance — fire every 100 years):</strong> Competitive exclusion occurs — a few dominant, shade-tolerant species (e.g., mature climax trees) outcompete others for light, nutrients, and space. Understory diversity may also be low due to deep shade. <strong>Lower diversity</strong> (though note: old-growth forests can have high structural diversity — the hypothesis applies to species richness, which may initially decline as competitive dominants take over).</li>
+</ul>
+<p></details></p>
+
+<h3>Problem 5 (Nitrogen Cycle)</h3>
+
+<p>A farmer applies excessive nitrogen fertiliser to a field adjacent to a lake. Trace the pathway by which this can lead to fish kills in the lake, explaining the role of each nitrogen transformation involved.</p>
+
+<p><details></p>
+<p><summary><strong>Answer</strong></summary></p>
+
+<ol>
+<li><strong>Fertiliser application:</strong> Excess NH₄⁺ and NO₃⁻ applied; crops cannot absorb all of it.</li>
+</ol>
+<ol>
+<li><strong>Runoff:</strong> Rain washes surplus nitrogen into the adjacent lake.</li>
+</ol>
+<ol>
+<li><strong>Eutrophication:</strong> Nitrogen (often with phosphorus) stimulates explosive growth of algae and cyanobacteria — <strong>algal bloom</strong>.</li>
+</ol>
+<ol>
+<li><strong>Algae die and sink:</strong> The bloom is unsustainable; algae deplete nutrients in surface water and die. Dead organic matter sinks to the lake bottom.</li>
+</ol>
+<ol>
+<li><strong>Decomposition (ammonification):</strong> Decomposer bacteria break down the dead algae → release NH₄⁺. This process consumes <strong>dissolved oxygen</strong> (aerobic respiration by bacteria).</li>
+</ol>
+<ol>
+<li><strong>Nitrification:</strong> Nitrifying bacteria convert NH₄⁺ → NO₃⁻, which also consumes dissolved oxygen.</li>
+</ol>
+<ol>
+<li><strong>Hypoxia/anoxia:</strong> Dissolved oxygen levels plummet, especially in deeper water. Fish and other aerobic organisms either flee (if mobile) or die.</li>
+</ol>
+<ol>
+<li><strong>Fish kill:</strong> Mass mortality of fish. Further decomposition of dead fish consumes even more oxygen → <strong>positive feedback loop</strong> of eutrophication.</li>
+</ol>
+<ol>
+<li><strong>Long-term:</strong> The lake may shift to an alternative stable state: turbid, algae-dominated, with low biodiversity. Recovery is difficult because sediments continue to release stored nutrients.</li>
+</ol>
+<p><strong>Key nitrogen transformations involved:</strong> Ammonification (decomposition → NH₄⁺), Nitrification (NH₄⁺ → NO₃⁻, consuming O₂), and potentially Denitrification (NO₃⁻ → N₂) in anaerobic sediments, which can produce N₂O, a greenhouse gas.</p>
+
+<p></details></p>
+
+<hr>
+
+<h2>Summary</h2>
+
+<table>
+<tr>
+<td>Concept</td>
+<td>Key Points</td>
+</tr>
+<tr>
+<td>Stability</td>
+<td>Resistance (withstand disturbance) + Resilience (recover after disturbance)</td>
+</tr>
+<tr>
+<td>Negative feedback</td>
+<td>Counteracts change → stabilising (predator-prey cycles, density dependence)</td>
+</tr>
+<tr>
+<td>Positive feedback</td>
+<td>Amplifies change → destabilising (permafrost melt, ice-albedo, eutrophication)</td>
+</tr>
+<tr>
+<td>Tipping points</td>
+<td>Threshold beyond which ecosystem shifts to alternative stable state; often irreversible (hysteresis)</td>
+</tr>
+<tr>
+<td>Keystone species</td>
+<td>Disproportionate impact; removal triggers trophic cascade (sea otter → urchin → kelp; wolves in Yellowstone)</td>
+</tr>
+<tr>
+<td>Succession</td>
+<td>Directional change in species composition; intermediate disturbance → maximum diversity</td>
+</tr>
+<tr>
+<td>Carbon cycle</td>
+<td>Ocean and forest sinks; feedbacks with climate can turn sinks into sources</td>
+</tr>
+<tr>
+<td>Nitrogen cycle</td>
+<td>Human fixation (Haber-Bosch) exceeds natural; eutrophication, N₂O, acidification</td>
+</tr>
+</table>
+
+<hr>
+
+<p><em>Next: Climate Change — the greenhouse effect, evidence for climate change, impacts on biodiversity, and mitigation/adaptation strategies.</em></p>
+
+<div class="nav"><a href="lesson_52.html">&#8592; Lesson 52</a><a href="index.html">&#8962; Index</a><a href="lesson_54.html">Lesson 54 &#8594;</a></div>
+
+</body>
+</html>

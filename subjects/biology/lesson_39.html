@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 39: DNA Replication (D1.1) — IB Biology HL</title>
+<script>window.MathJax = { tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] } };</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #1a6b3c; --border: #c4d4a9; --highlight: #e8f5e9; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Palatino', 'Georgia', serif; background: var(--bg); color: var(--text); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; font-size: 17px; line-height: 1.7; }
+  h1 { font-size: 1.7rem; color: var(--accent); margin-bottom: 0.5rem; }
+  h2 { font-size: 1.25rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; margin: 2rem 0 1rem; }
+  h3 { font-size: 1.1rem; color: #444; margin: 1.3rem 0 0.5rem; }
+  p, li { margin-bottom: 0.6rem; }
+  ul, ol { padding-left: 1.8rem; margin-bottom: 1rem; }
+  .worked { background: #e8f5e9; border-left: 4px solid #1a6b3c; padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
+  .worked strong { color: #1a6b3c; }
+  .answer { background: #fefdf7; border: 1px solid var(--border); padding: 0.8rem 1.2rem; margin: 0.5rem 0; border-radius: 6px; }
+  .nav { display: flex; justify-content: space-between; margin: 3rem 0 1rem; padding-top: 1rem; border-top: 2px solid var(--border); font-size: 0.9rem; }
+  .nav a { color: #1a5c9e; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  .definition { background: #fff8e1; border-left: 4px solid #e6a817; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  .tip { background: #e3f2fd; border-left: 4px solid #1976d2; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  table { border-collapse: collapse; margin: 0.8rem 0; width: 100%; }
+  th, td { border: 1px solid var(--border); padding: 0.4rem 0.6rem; text-align: left; }
+  th { background: #f0f5e8; }
+  @media print { body { font-size: 14px; } .nav { display: none; } }
+</style>
+</head>
+<body>
+
+
+<h2>What You'll Learn</h2>
+
+<ul>
+<li>The Meselson-Stahl experiment — the most elegant experiment in biology that proved semiconservative replication</li>
+<li>Every enzyme at the replication fork: helicase, SSBs, gyrase, primase, DNA polymerase III & I, ligase</li>
+<li>Leading vs lagging strand synthesis and why Okazaki fragments exist</li>
+<li>PCR: the polymerase chain reaction from denaturation to extension</li>
+<li>Gel electrophoresis: how DNA fragments are separated by size</li>
+<li>DNA sequencing: Sanger dideoxy method and next-generation sequencing</li>
+<li>Telomeres, the end-replication problem, and telomerase</li>
+<li>The telomere theory of aging and its link to cancer</li>
+</ul>
+<hr>
+
+<h2>1. The Problem: How Does DNA Replicate?</h2>
+
+<p>When Watson and Crick published the double helix structure in 1953, they ended their paper with one of the greatest understatements in science: "It has not escaped our notice that the specific pairing we have postulated immediately suggests a possible copying mechanism for the genetic material."</p>
+
+<p>The question: When DNA replicates, what happens to the original strands? Three hypotheses emerged:</p>
+
+<p><strong>Draw and label:</strong> Three diagrams showing the three models:</p>
+
+<ol>
+<li><strong>Conservative:</strong> The original double helix stays intact. An entirely new double helix is made. After replication: one "old-old" molecule and one "new-new" molecule.</li>
+<li><strong>Semiconservative:</strong> Each strand separates and serves as a template. Each new double helix contains one original strand and one newly synthesised strand. After replication: two "old-new" hybrid molecules.</li>
+<li><strong>Dispersive:</strong> The original strands are fragmented, and each new molecule is a patchwork of old and new DNA segments randomly interspersed.</li>
+</ol>
+<p>Which one was correct? Enter Meselson and Stahl, 1958.</p>
+
+<hr>
+
+<h2>2. The Meselson-Stahl Experiment: Proving Semiconservative Replication</h2>
+
+<p>This is arguably the most beautiful experiment in molecular biology, and <strong>IB loves it</strong>. Know every detail.</p>
+
+<h3>2.1 The Principle: Density Distinguishes Old from New</h3>
+
+<p>Nitrogen exists in two stable isotopes:</p>
+<ul>
+<li><strong>¹⁴N:</strong> The common, "light" isotope (99.6% of natural nitrogen).</li>
+<li><strong>¹⁵N:</strong> The rare, "heavy" isotope (0.4%).</li>
+</ul>
+<p>DNA contains nitrogen (in the nitrogenous bases: A, T, C, G). If you grow bacteria in a medium with ¹⁵N (as NH₄Cl), their DNA will be "heavy." If you grow them in ¹⁴N, their DNA will be "light."</p>
+
+<p><strong>CsCl density gradient centrifugation:</strong> When a caesium chloride (CsCl) solution is spun at very high speed (ultracentrifugation, ~50,000 rpm), Cs⁺ ions are so heavy that they form a <strong>density gradient</strong> — denser at the bottom, lighter at the top. DNA molecules float to the position in the tube where their density matches the surrounding CsCl density. Heavy DNA sinks lower; light DNA floats higher.</p>
+
+<p><strong>Analogy:</strong> Imagine dropping different types of wood into a tank where the water gets saltier (denser) as you go deeper. Balsa wood floats near the top; oak sinks deeper. DNA molecules find their "density layer" the same way.</p>
+
+<h3>2.2 The Experiment: Step by Step</h3>
+
+<p><strong>Step 1: Grow bacteria in ¹⁵N medium for many generations.</strong></p>
+<ul>
+<li>All DNA is heavy (¹⁵N-¹⁵N).</li>
+<li>Centrifuge → <strong>one band low in the tube</strong> (heavy).</li>
+</ul>
+<p><strong>Step 2: Transfer bacteria to ¹⁴N medium (the "pulse").</strong></p>
+<ul>
+<li>Allow exactly ONE round of DNA replication (one generation).</li>
+<li>Centrifuge → <strong>one band at intermediate position</strong> (between heavy and light).</li>
+</ul>
+<p>This immediately <strong>rules out the conservative model</strong>. If replication were conservative, you'd see TWO bands: one heavy (original) and one light (new). Instead, you see one intermediate band — meaning each DNA molecule is a hybrid (one heavy strand, one light strand).</p>
+
+<p>But does it rule out dispersive? Not yet. In the dispersive model, after one generation, each molecule would be half-heavy, half-light — also intermediate.</p>
+
+<p><strong>Step 3: Allow a SECOND round of replication in ¹⁴N medium.</strong></p>
+<ul>
+<li>Centrifuge → <strong>TWO bands: one at light position, one at intermediate position.</strong></li>
+</ul>
+<p>This is the killer. Let's compare:</p>
+
+<table>
+<tr>
+<td>Model</td>
+<td>Expected after 2 generations in ¹⁴N</td>
+</tr>
+<tr>
+<td>Semiconservative</td>
+<td>One light band (¹⁴N-¹⁴N) + one intermediate band (¹⁴N-¹⁵N). Ratio 1:1. ✅</td>
+</tr>
+<tr>
+<td>Dispersive</td>
+<td>One band at ¼-heavy position, but still a single band (all molecules are mixtures of ¼ heavy and ¾ light). ❌</td>
+</tr>
+<tr>
+<td>Conservative</td>
+<td>Already ruled out in Step 2. ❌</td>
+</tr>
+</table>
+
+<p><strong>The result:</strong> Two bands (one light, one intermediate) → <strong>semiconservative replication confirmed</strong>.</p>
+
+<p><strong>Draw and label:</strong> A diagram showing:</p>
+<ul>
+<li>Test tubes after each generation, with bands at heavy, intermediate, and light positions.</li>
+<li>Below each tube, a molecular diagram of the DNA: Generation 0 = two red strands (heavy). Generation 1 = one red + one blue strand (intermediate). Generation 2 = two all-blue molecules (light) + two red-blue molecules (intermediate).</li>
+</ul>
+<div class="definition">
+
+<p><strong>Semiconservative replication:</strong> Each daughter DNA molecule consists of one strand from the parent molecule and one newly synthesised complementary strand. The parental strands are conserved (not degraded) but separated.</p>
+
+</div>
+
+<div class="tip">
+
+<p><strong>Paper 1 classic:</strong> "What result from Meselson and Stahl's experiment ruled out the dispersive model?" Answer: After two generations in ¹⁴N, two bands (light and intermediate) were observed. The dispersive model predicts a single band of continuously changing density.</p>
+
+</div>
+
+<hr>
+
+<h2>3. The Replication Fork: A Molecular Machine</h2>
+
+<p>DNA replication is carried out by a <strong>multi-enzyme complex</strong> called the <strong>replisome</strong>. Let's tour each enzyme's job at the replication fork.</p>
+
+<p><strong>Draw and label:</strong> A detailed diagram of a replication fork. Show:</p>
+<ul>
+<li>The parental DNA double helix being unwound at the fork.</li>
+<li>Helicase at the fork point.</li>
+<li>SSBs coating the separated strands.</li>
+<li>Gyrase ahead of the fork, relieving supercoils.</li>
+<li>Primase laying down RNA primers.</li>
+<li>DNA Polymerase III on both strands, with arrows showing synthesis direction (5'→3' on both, but leading is continuous toward fork, lagging is fragmented away from fork).</li>
+<li>Okazaki fragments on the lagging strand.</li>
+<li>DNA Polymerase I replacing primers.</li>
+<li>DNA Ligase sealing nicks.</li>
+</ul>
+<h3>3.1 Helicase: The Unzipper</h3>
+
+<p><strong>Helicase</strong> binds at the <strong>origin of replication</strong> and uses energy from ATP hydrolysis to break the hydrogen bonds between complementary base pairs. It literally unzips the double helix, creating a <strong>replication fork</strong> — a Y-shaped region where the two strands are separated.</p>
+
+<p><strong>Analogy:</strong> Helicase is like a zipper pull moving along a jacket. The "teeth" are hydrogen bonds between base pairs.</p>
+
+<h3>3.2 Single-Strand Binding Proteins (SSBs): The Stabilisers</h3>
+
+<p>Once separated, the two single-stranded DNA (ssDNA) templates want to snap back together (reanneal) because the complementary bases want to hydrogen-bond. <strong>SSBs</strong> coat the exposed ssDNA, keeping the strands separated and protecting them from degradation by nucleases.</p>
+
+<p><strong>Analogy:</strong> SSBs are like spacers you wedge between pages of a book to keep them apart while you're copying them.</p>
+
+<h3>3.3 DNA Gyrase (Topoisomerase): The Tension Reliever</h3>
+
+<p>As helicase unwinds the DNA ahead of the fork, the still-helical DNA ahead becomes <strong>overwound</strong> — it's like twisting a rubber band until it forms supercoils. If not relieved, this tension would stop replication. <strong>DNA gyrase</strong> (a type II topoisomerase) cuts both strands, allows them to unwind (relieving the tension), and reseals them. This prevents the entire chromosome from tangling.</p>
+
+<p><strong>Analogy:</strong> Gyrase is like untwisting a garden hose that's gotten kinked — you cut it, let it untwist, and reconnect it.</p>
+
+<div class="tip">
+
+<p><strong>Paper 1:</strong> "Which enzyme relieves supercoiling tension ahead of the replication fork?" → <strong>DNA gyrase</strong> (or topoisomerase). Note: in prokaryotes, the specific enzyme is DNA gyrase; in eukaryotes, the general term topoisomerase is used. Both are acceptable unless IB specifies.</p>
+
+</div>
+
+<h3>3.4 Primase: The Starter</h3>
+
+<p>DNA polymerases cannot start a new strand from nothing — they can only <strong>add nucleotides to an existing 3'-OH group</strong>. Enter <strong>primase</strong>, which is actually an <strong>RNA polymerase</strong>. It synthesises a short RNA primer (~10 nucleotides long) complementary to the template. This provides the free 3'-OH that DNA polymerase needs to start.</p>
+
+<p><strong>Analogy:</strong> Primase is like laying down a starter track so the main train (DNA polymerase) can begin moving.</p>
+
+<h3>3.5 DNA Polymerase III: The Main Builder</h3>
+
+<p><strong>DNA Polymerase III</strong> is the workhorse of replication. It's a large, multi-subunit enzyme with a sliding clamp that keeps it attached to the DNA. Key properties:</p>
+
+<ul>
+<li><strong>Synthesises 5' → 3':</strong> It adds deoxyribonucleoside triphosphates (dNTPs: dATP, dTTP, dGTP, dCTP) to the free 3'-OH of the growing strand. The energy comes from cleaving two phosphate groups (pyrophosphate) from the dNTP.</li>
+<li><strong>Requires a primer:</strong> Cannot initiate de novo (unlike primase).</li>
+<li><strong>Reads template 3' → 5':</strong> The template strand is read in the 3' → 5' direction so that the new strand grows 5' → 3'.</li>
+<li><strong>Proofreading (3' → 5' exonuclease activity):</strong> If an incorrect base is inserted, DNA Pol III can detect the mismatch, reverse direction, remove the wrong nucleotide (using its 3'→5' exonuclease), and try again. This reduces the error rate from ~10⁻⁵ to ~10⁻⁹ per base pair.</li>
+</ul>
+<h3>3.6 Leading vs Lagging Strand</h3>
+
+<p>Because DNA polymerase can only synthesise 5' → 3', and the two template strands run <strong>antiparallel</strong>, the two strands are synthesised differently:</p>
+
+<p><strong>Leading Strand (Continuous):</strong></p>
+<ul>
+<li>Template runs 3' → 5' into the fork.</li>
+<li>DNA Pol III synthesises continuously <strong>toward</strong> the replication fork.</li>
+<li>Only <strong>one RNA primer</strong> is needed.</li>
+<li>Synthesis is smooth and fast.</li>
+</ul>
+<p><strong>Lagging Strand (Discontinuous):</strong></p>
+<ul>
+<li>Template runs 5' → 3' into the fork.</li>
+<li>DNA Pol III must synthesise <strong>away from</strong> the fork, in short bursts.</li>
+<li>This creates <strong>Okazaki fragments</strong> (~1000-2000 nucleotides in prokaryotes, ~100-200 in eukaryotes).</li>
+<li><strong>Each fragment needs its own RNA primer.</strong></li>
+<li>Synthesis is stuttery and slower.</li>
+</ul>
+<p><strong>Draw and label:</strong> A close-up of the lagging strand showing multiple Okazaki fragments, each starting with an RNA primer (in a different colour). Arrows showing Pol III synthesising each fragment away from the fork.</p>
+
+<h3>3.7 DNA Polymerase I: The Cleaner</h3>
+
+<p>Once the new DNA is synthesised, the RNA primers are still embedded in it. <strong>DNA Polymerase I</strong> removes the RNA primers (using its 5'→3' exonuclease activity) and replaces them with DNA nucleotides. Note: this is a different enzyme from Pol III with a different exonuclease direction (5'→3' vs 3'→5').</p>
+
+<h3>3.8 DNA Ligase: The Sealer</h3>
+
+<p>After Pol I replaces the primers, there are <strong>nicks</strong> (breaks in the sugar-phosphate backbone) between adjacent Okazaki fragments and at the primer replacement sites. <strong>DNA Ligase</strong> seals these nicks by forming phosphodiester bonds, creating a continuous DNA strand.</p>
+
+<p><strong>Analogy:</strong> If Pol III lays the bricks, Pol I replaces temporary scaffolding with bricks, and Ligase is the mortar that glues everything together.</p>
+
+<hr>
+
+<h3>Summary: Enzymes at the Replication Fork</h3>
+
+<table>
+<tr>
+<td>Enzyme</td>
+<td>Function</td>
+<td>Direction/Notes</td>
+</tr>
+<tr>
+<td>Helicase</td>
+<td>Unwinds double helix; breaks H-bonds</td>
+<td>ATP-dependent</td>
+</tr>
+<tr>
+<td>SSBs</td>
+<td>Stabilise ssDNA; prevent reannealing</td>
+<td>Coat exposed strands</td>
+</tr>
+<tr>
+<td>DNA Gyrase / Topoisomerase</td>
+<td>Relieves supercoiling ahead of fork</td>
+<td>Cuts and reseals DNA</td>
+</tr>
+<tr>
+<td>Primase</td>
+<td>Synthesises RNA primer (~10 nt)</td>
+<td>RNA polymerase</td>
+</tr>
+<tr>
+<td>DNA Polymerase III</td>
+<td>Main DNA synthesis; proofreads</td>
+<td>5'→3' synthesis; 3'→5' exonuclease</td>
+</tr>
+<tr>
+<td>DNA Polymerase I</td>
+<td>Removes RNA primers; replaces with DNA</td>
+<td>5'→3' exonuclease</td>
+</tr>
+<tr>
+<td>DNA Ligase</td>
+<td>Seals nicks; forms phosphodiester bonds</td>
+<td>Joins Okazaki fragments</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>4. PCR: Polymerase Chain Reaction</h2>
+
+<p>PCR is <strong>DNA replication in a test tube</strong>. It allows you to amplify a specific DNA sequence from a tiny starting amount to billions of copies.</p>
+
+<h3>4.1 The Three-Step Cycle</h3>
+
+<p>Each cycle consists of three temperature steps, repeated 25-35 times:</p>
+
+<p><strong>Step 1: Denaturation (~95°C, 30 seconds)</strong></p>
+<ul>
+<li>Heat breaks hydrogen bonds between complementary strands.</li>
+<li>Double-stranded DNA separates into two single strands.</li>
+<li>This replaces the need for helicase.</li>
+</ul>
+<p><strong>Step 2: Annealing (~50-65°C, 30 seconds)</strong></p>
+<ul>
+<li>Temperature is lowered to allow <strong>primers</strong> (short, synthetic DNA oligonucleotides ~18-25 bases) to bind (anneal) to complementary sequences flanking the target region.</li>
+<li>Two primers: a forward primer (binds to one strand) and a reverse primer (binds to the other strand).</li>
+<li>This defines the boundaries of the amplified region.</li>
+</ul>
+<p><strong>Step 3: Extension (~72°C, 1-2 minutes)</strong></p>
+<ul>
+<li><strong>Taq polymerase</strong> (from the thermophilic bacterium <em>Thermus aquaticus</em>, which lives in hot springs) synthesises new DNA from the 3' end of each primer.</li>
+<li>Taq is <strong>thermostable</strong> — it survives the 95°C denaturation step. (E. coli DNA polymerase would be destroyed at this temperature.)</li>
+<li>Extension at 72°C — Taq's optimal temperature.</li>
+</ul>
+<h3>4.2 Exponential Amplification</h3>
+
+<p>Each cycle <strong>doubles</strong> the number of DNA molecules in the target region:</p>
+
+<p style="text-align:center;margin:0.8rem 0;">$$ \text{Copies} = 2^n $$</p>
+
+<p>where $$n$$ is the number of cycles. After 30 cycles: $$2^{30} \approx 1.07 \times 10^9$$ copies — over a billion.</p>
+
+<p><strong>Draw and label:</strong> A diagram showing three cycles of PCR. Cycle 1: 1 dsDNA → 2 dsDNA. Cycle 2: 2 → 4. Cycle 3: 4 → 8. Use different colours for original template vs newly synthesised strands.</p>
+
+<h3>4.3 Components of a PCR Reaction</h3>
+
+<table>
+<tr>
+<td>Component</td>
+<td>Purpose</td>
+</tr>
+<tr>
+<td>Template DNA</td>
+<td>The DNA containing the target sequence to amplify</td>
+</tr>
+<tr>
+<td>Forward & reverse primers</td>
+<td>Define the boundaries of amplification; provide free 3'-OH</td>
+</tr>
+<tr>
+<td>Taq polymerase</td>
+<td>Thermostable DNA polymerase</td>
+</tr>
+<tr>
+<td>dNTPs** (dATP, dTTP, dGTP, dCTP)</td>
+<td>Building blocks for new DNA</td>
+</tr>
+<tr>
+<td>Buffer** (with Mg²⁺)</td>
+<td>Mg²⁺ is a cofactor for Taq polymerase</td>
+</tr>
+<tr>
+<td>Thermal cycler</td>
+<td>Machine that rapidly changes temperature between steps</td>
+</tr>
+</table>
+
+<h3>4.4 Applications of PCR</h3>
+
+<table>
+<tr>
+<td>Application</td>
+<td>How PCR is used</td>
+</tr>
+<tr>
+<td>Forensics (DNA profiling)</td>
+<td>Amplify STR (short tandem repeat) loci from tiny amounts of DNA at crime scenes (blood, hair, saliva)</td>
+</tr>
+<tr>
+<td>Genetic testing</td>
+<td>Detect disease-causing mutations (e.g., cystic fibrosis, Huntington's)</td>
+</tr>
+<tr>
+<td>Disease diagnosis</td>
+<td>Detect viral/bacterial DNA (e.g., HIV, COVID-19, tuberculosis) in patient samples</td>
+</tr>
+<tr>
+<td>Ancient DNA</td>
+<td>Amplify degraded DNA from fossils, mummies, extinct species (Neanderthal genome)</td>
+</tr>
+<tr>
+<td>Paternity testing</td>
+<td>Amplify polymorphic loci to compare child's DNA with alleged father</td>
+</tr>
+<tr>
+<td>Research</td>
+<td>Clone genes, prepare DNA for sequencing</td>
+</tr>
+</table>
+
+<div class="worked">
+
+<p><strong>PCR Calculation</strong></p>
+
+<p>A forensic sample contains approximately 50 copies of a target DNA sequence. The analyst runs PCR for 28 cycles.</p>
+
+<p>(a) Assuming 100% efficiency, how many copies will be produced?</p>
+<p>(b) If the sample is contaminated with 5 copies of a different person's DNA (which also amplifies), what is the ratio of target:contaminant after 28 cycles?</p>
+
+<p><strong>Answers:</strong></p>
+<p>(a) $$50 \times 2^{28} = 50 \times 268{,}435{,}456 \approx \mathbf{1.34 \times 10^{10}}$$ copies.</p>
+<p>(b) Both amplify by the same factor ($$2^{28}$$). Ratio remains 50:5 = <strong>10:1</strong>. PCR amplifies everything equally — it cannot selectively amplify only the target DNA unless the primers are specific to the target.</p>
+
+</div>
+
+<div class="tip">
+
+<p><strong>Paper 2:</strong> "Explain why Taq polymerase is used in PCR rather than DNA polymerase from E. coli." → Taq is thermostable; it does not denature at 95°C (the denaturation step). E. coli DNA polymerase would be irreversibly denatured at this temperature, requiring fresh enzyme to be added after each cycle (which is how early PCR was done — expensive and inefficient).</p>
+
+</div>
+
+<hr>
+
+<h2>5. Gel Electrophoresis</h2>
+
+<p>Once you've amplified DNA (or cut it with restriction enzymes), you need to separate and visualise the fragments. This is the job of <strong>gel electrophoresis</strong>.</p>
+
+<h3>5.1 How It Works</h3>
+
+<ol>
+<li><strong>Prepare agarose gel:</strong> Agarose (a polysaccharide from seaweed) is poured into a mould and allowed to set, forming a porous matrix. The pore size depends on agarose concentration (higher % = smaller pores = better for separating small fragments).</li>
+</ol>
+<ol>
+<li><strong>Load samples:</strong> DNA samples mixed with loading dye are pipetted into wells at one end of the gel. A <strong>DNA ladder</strong> (mixture of fragments of known sizes) is loaded in one well as a reference.</li>
+</ol>
+<ol>
+<li><strong>Apply electric field:</strong> The gel is placed in a buffer-filled tank with electrodes. The wells are at the <strong>negative (cathode) end</strong>. DNA is negatively charged (due to phosphate groups in the backbone), so it migrates toward the <strong>positive (anode) end</strong>.</li>
+</ol>
+<ol>
+<li><strong>Separation by size:</strong> Smaller fragments move through the gel pores more easily and travel <strong>faster/further</strong>. Larger fragments are slowed by the gel matrix. After a set time, fragments are separated into <strong>bands</strong>, each representing a population of DNA molecules of the same size.</li>
+</ol>
+<ol>
+<li><strong>Visualisation:</strong> The gel is stained with a fluorescent dye (e.g., ethidium bromide or SYBR Safe) that binds to DNA and fluoresces under UV light. Bands appear as glowing lines.</li>
+</ol>
+<p><strong>Draw and label:</strong> A gel electrophoresis diagram. Show:</p>
+<ul>
+<li>Wells at the top (negative end).</li>
+<li>A ladder lane with bands at known sizes (label: "100 bp, 200 bp, 300 bp, 500 bp, 1000 bp").</li>
+<li>Sample lanes with bands at various positions.</li>
+<li>An arrow indicating direction of DNA migration (→ toward +).</li>
+<li>Labels: "Smaller fragments (migrate further)," "Larger fragments (migrate less)."</li>
+</ul>
+<h3>5.2 Interpreting a Gel</h3>
+
+<p>The distance migrated is inversely proportional to the log of the fragment size. By comparing to the ladder, you can estimate the size of unknown fragments.</p>
+
+<div class="tip">
+
+<p><strong>Paper 1:</strong> "Why does DNA move toward the positive electrode?" → DNA has a negative charge due to its phosphate backbone. Opposite charges attract. "Why do smaller fragments move further?" → The agarose gel acts as a molecular sieve; smaller fragments navigate through the pores more easily.</p>
+
+</div>
+
+<hr>
+
+<h2>6. DNA Sequencing: Reading the Code</h2>
+
+<h3>6.1 Sanger (Dideoxy) Sequencing</h3>
+
+<p>Developed by Frederick Sanger in 1977 (his second Nobel Prize), this method uses modified nucleotides to determine DNA sequence.</p>
+
+<p><strong>The key trick: dideoxynucleotides (ddNTPs)</strong></p>
+
+<p>Normal dNTPs have a hydroxyl (-OH) group on the 3' carbon of the deoxyribose sugar. This 3'-OH is essential for forming the phosphodiester bond to the next nucleotide.</p>
+
+<p><strong>Dideoxynucleotides (ddNTPs)</strong> lack this 3'-OH (they have -H instead). When DNA polymerase incorporates a ddNTP, <strong>chain termination occurs</strong> — no further nucleotides can be added because there's no 3'-OH to attack the next dNTP.</p>
+
+<p><strong>The procedure:</strong></p>
+<ol>
+<li><strong>Four separate reactions</strong>, each containing:</li>
+</ol>
+<ul>
+<li>Template DNA (single-stranded)</li>
+<li>Primer</li>
+<li>DNA polymerase</li>
+<li>All four normal dNTPs</li>
+<li>A small amount of <strong>one</strong> ddNTP (ddATP in tube A, ddTTP in tube T, etc.)</li>
+<li>Each ddNTP is labelled with a different fluorescent dye</li>
+</ul>
+<ol>
+<li>In each tube, DNA polymerase synthesises new strands. Occasionally (randomly), a ddNTP is incorporated instead of a dNTP, terminating that particular strand.</li>
+</ol>
+<ol>
+<li>The result in each tube: a set of fragments of <strong>every possible length</strong>, each ending in the specific ddNTP for that tube.</li>
+</ol>
+<ol>
+<li><strong>Separation:</strong> All four reactions are run in adjacent lanes on a capillary gel (modern version) or polyacrylamide gel (classic). Fragments are separated by size (single-nucleotide resolution).</li>
+</ol>
+<ol>
+<li><strong>Reading the sequence:</strong> The shortest fragment (terminated at position 1) migrates fastest. Read the bands from bottom to top → this gives the sequence of the <strong>synthesised strand</strong> (5'→3'). The template strand is complementary.</li>
+</ol>
+<p><strong>Analogy:</strong> Imagine copying a sentence but occasionally your pen runs out of ink at random positions. By collecting all the partial copies and noting which letter the pen died on, you can reconstruct the entire sentence.</p>
+
+<p><strong>Draw and label:</strong> A Sanger sequencing gel with four lanes (A, T, C, G). Show bands at each position. Below the gel, write the sequence read from bottom to top. Label: "ddATP terminates at A positions," etc.</p>
+
+<h3>6.2 Next-Generation Sequencing (NGS) — Overview</h3>
+
+<p>Sanger sequencing is accurate but can only sequence one fragment at a time. <strong>Next-generation sequencing</strong> (also called massively parallel sequencing) can sequence <strong>millions of fragments simultaneously</strong>.</p>
+
+<p><strong>Key features:</strong></p>
+<ul>
+<li>DNA is fragmented and each fragment is attached to a solid surface.</li>
+<li>Each fragment is amplified in place (bridge amplification) to create a cluster of identical DNA molecules.</li>
+<li>Sequencing-by-synthesis: as each nucleotide is added to the growing strand, a fluorescent signal is detected. Different colours for A, T, C, G.</li>
+<li>A camera records the colour at each cluster after each cycle, building up the sequence for millions of clusters in parallel.</li>
+</ul>
+<p><strong>Advantages:</strong> Much faster and cheaper per base than Sanger. Enables whole-genome sequencing, metagenomics, and transcriptomics (RNA-Seq).</p>
+
+<table>
+<tr>
+<td>Feature</td>
+<td>Sanger Sequencing</td>
+<td>Next-Generation Sequencing</td>
+</tr>
+<tr>
+<td>Throughput</td>
+<td>One fragment at a time</td>
+<td>Millions in parallel</td>
+</tr>
+<tr>
+<td>Read length</td>
+<td>Long (800-1000 bp)</td>
+<td>Short (50-300 bp, but improving)</td>
+</tr>
+<tr>
+<td>Accuracy per read</td>
+<td>Very high</td>
+<td>Good (but higher error rate)</td>
+</tr>
+<tr>
+<td>Cost per genome</td>
+<td>Very high</td>
+<td>Low (~$1000 for human genome)</td>
+</tr>
+<tr>
+<td>Best for</td>
+<td>Small-scale projects, validating NGS results</td>
+<td>Whole genomes, transcriptomes</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>7. Telomeres and the End-Replication Problem</h2>
+
+<h3>7.1 What Are Telomeres?</h3>
+
+<p><strong>Telomeres</strong> are repetitive DNA sequences at the ends of linear chromosomes. In humans, the repeat is <strong>TTAGGG</strong>, repeated thousands of times. Telomeres don't code for proteins — they are protective caps.</p>
+
+<p><strong>Functions of telomeres:</strong></p>
+<ul>
+<li><strong>Protect chromosome ends</strong> from being recognised as double-strand breaks (which would trigger DNA repair mechanisms that fuse chromosomes).</li>
+<li><strong>Prevent loss of coding genes</strong> during replication (see below).</li>
+<li><strong>Limit the number of cell divisions</strong> (cellular senescence).</li>
+</ul>
+<h3>7.2 The End-Replication Problem</h3>
+
+<p>Linear chromosomes have a problem that circular bacterial chromosomes don't: <strong>the very ends cannot be fully replicated.</strong></p>
+
+<p>Here's why, specifically on the <strong>lagging strand</strong>:</p>
+
+<ol>
+<li>The lagging strand is synthesised as Okazaki fragments, each needing an RNA primer.</li>
+<li>After the last Okazaki fragment is made, there is an RNA primer at the very end.</li>
+<li>DNA Pol I removes this terminal primer, but it <strong>cannot replace it with DNA</strong> because there's no 3'-OH upstream for it to extend from. (On internal Okazaki fragments, the adjacent fragment provides the 3'-OH for Pol I and ligase to complete the job.)</li>
+<li>Result: after each round of replication, the daughter strand is <strong>slightly shorter</strong> at the 5' end. The chromosome loses ~50-200 base pairs per replication.</li>
+</ol>
+<p><strong>Analogy:</strong> Imagine painting a floor starting from the wall, but you can only paint by standing on an unpainted spot. When you reach the far wall, you can't paint the last strip because you'd have to stand on already-painted floor. Each time you repaint, the unpainted strip gets wider.</p>
+
+<p><strong>Draw and label:</strong> A diagram showing a chromosome end before and after replication. Before: long telomere (TTAGGG repeats). After one round: the lagging strand daughter molecule is shorter at the 5' end. After multiple rounds: telomere progressively shortens. When telomere is gone, coding genes are lost → cell enters senescence.</p>
+
+<h3>7.3 Telomerase: The Solution (in Some Cells)</h3>
+
+<p><strong>Telomerase</strong> is a <strong>reverse transcriptase</strong> — it makes DNA from an RNA template. It carries its own <strong>built-in RNA molecule</strong> (TERC — telomerase RNA component) that serves as a template for synthesising telomeric DNA repeats.</p>
+
+<p><strong>Mechanism:</strong></p>
+<ol>
+<li>Telomerase binds to the 3' overhang of the telomere (the G-rich strand is longer than the C-rich strand).</li>
+<li>Using its internal RNA template (complementary to TTAGGG), telomerase extends the 3' end by adding TTAGGG repeats.</li>
+<li>Telomerase translocates (moves) and repeats — adding many repeats.</li>
+<li>Now that the 3' strand is extended, primase can lay down an RNA primer on the extended region, and DNA polymerase can fill in the complementary C-rich strand. The end-replication problem is solved.</li>
+</ol>
+<p><strong>Where is telomerase active?</strong></p>
+<ul>
+<li><strong>Germ cells</strong> (sperm, eggs) — so offspring inherit full-length telomeres.</li>
+<li><strong>Stem cells</strong> — to maintain their capacity for many divisions.</li>
+<li><strong>Cancer cells</strong> (~85-90% of cancers have upregulated telomerase) — this gives them <strong>unlimited replicative potential</strong> (immortality). Without telomerase, cancer cells would eventually senesce after ~50-70 divisions (the Hayflick limit).</li>
+<li><strong>NOT active in most somatic cells</strong> — which is why they have a limited lifespan.</li>
+</ul>
+<h3>7.4 Telomere Theory of Aging</h3>
+
+<p>As somatic cells divide throughout life, their telomeres shorten. When telomeres become critically short, the cell recognises this as DNA damage and enters <strong>senescence</strong> (irreversible cell cycle arrest) or <strong>apoptosis</strong> (programmed cell death).</p>
+
+<p>This progressive loss of functional cells in tissues contributes to aging. Evidence:</p>
+<ul>
+<li>Telomere length correlates with lifespan across species.</li>
+<li>Individuals with shorter telomeres have higher mortality from age-related diseases.</li>
+<li>Progeria (premature aging syndromes) often involve defective telomere maintenance.</li>
+<li>Lifestyle factors (chronic stress, smoking, poor diet, lack of exercise) are associated with accelerated telomere shortening.</li>
+</ul>
+<p>However, telomere shortening is <strong>one factor</strong> among many in aging (others include oxidative damage, mitochondrial decline, and epigenetic changes).</p>
+
+<div class="definition">
+
+<p><strong>Hayflick limit:</strong> The number of times a normal somatic cell can divide before telomere shortening causes senescence (~50-70 divisions for human fibroblasts).</p>
+
+</div>
+
+<hr>
+
+<h2>Common Misconceptions</h2>
+
+<table>
+<tr>
+<td>Misconception</td>
+<td>Reality</td>
+</tr>
+<tr>
+<td>"DNA polymerase can start a new strand from scratch."</td>
+<td>DNA polymerase <strong>requires a primer</strong> with a free 3'-OH. Only primase (RNA polymerase) can start de novo.</td>
+</tr>
+<tr>
+<td>"The leading and lagging strands use different DNA polymerases."</td>
+<td>Both use DNA Pol III for main synthesis and DNA Pol I for primer replacement. The difference is in how synthesis proceeds (continuous vs fragmented), not the enzyme.</td>
+</tr>
+<tr>
+<td>"Okazaki fragments are only on the lagging strand in eukaryotes."</td>
+<td>Okazaki fragments exist on the lagging strand in ALL organisms — both prokaryotes and eukaryotes. They're just shorter in eukaryotes.</td>
+</tr>
+<tr>
+<td>"PCR uses DNA helicase to separate strands."</td>
+<td>PCR uses <strong>heat</strong> (95°C) to denature DNA, avoiding the need for helicase.</td>
+</tr>
+<tr>
+<td>"The Meselson-Stahl experiment directly showed semiconservative replication after one generation."</td>
+<td>After one generation, the intermediate band could be explained by BOTH semiconservative and dispersive models. It took two generations to distinguish them.</td>
+</tr>
+<tr>
+<td>"Telomerase elongates both strands of the telomere."</td>
+<td>Telomerase extends only the 3' G-rich strand. The complementary C-rich strand is then filled in by conventional DNA replication machinery.</td>
+</tr>
+<tr>
+<td>"Gel electrophoresis separates DNA by charge."</td>
+<td>All DNA fragments have the same charge-to-mass ratio. Separation is by <strong>size</strong> — smaller fragments navigate the gel pores faster.</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1: Meselson-Stahl</h3>
+
+<p>Meselson and Stahl grew E. coli in ¹⁵N medium for many generations, then transferred them to ¹⁴N medium. DNA was extracted after 0, 1, and 2 generations and centrifuged in CsCl.</p>
+
+<p>(a) Describe the banding pattern observed after 0, 1, and 2 generations.</p>
+<p>(b) Explain why the result after 2 generations ruled out the dispersive model.</p>
+<p>(c) Predict the banding pattern after 3 generations in ¹⁴N medium. Show the ratio of light to intermediate bands.</p>
+
+<hr>
+
+<h3>Problem 2: Replication Enzymes</h3>
+
+<p>For each scenario, identify which enzyme or protein is affected and predict the consequence:</p>
+
+<p>(a) A mutation inactivates primase.</p>
+<p>(b) DNA ligase is inhibited by a drug.</p>
+<p>(c) Helicase is denatured.</p>
+<p>(d) SSBs are absent.</p>
+<p>(e) DNA gyrase is non-functional.</p>
+
+<hr>
+
+<h3>Problem 3: PCR and Gel Electrophoresis</h3>
+
+<p>A forensic scientist has a DNA sample from a crime scene. The target region is 400 bp long.</p>
+
+<p>(a) List all components needed for PCR amplification of this region.</p>
+<p>(b) Explain why the primers must be specific to the target region.</p>
+<p>(c) After PCR, the scientist runs gel electrophoresis. The DNA ladder has bands at 100, 200, 300, 400, 500, and 1000 bp. Draw and explain the expected result if amplification was successful.</p>
+<p>(d) The scientist also loads a negative control (no template DNA). What should this lane show, and why is this control important?</p>
+
+<hr>
+
+<h3>Problem 4: Telomeres</h3>
+
+<p>(a) Explain the end-replication problem and why it specifically affects linear chromosomes but not circular chromosomes.</p>
+<p>(b) Describe how telomerase solves this problem.</p>
+<p>(c) Explain why cancer cells often have high telomerase activity while most somatic cells do not.</p>
+<p>(d) Suggest why mice have much longer telomeres than humans but shorter lifespans. What does this tell us about the telomere theory of aging?</p>
+
+<hr>
+
+<h3>Problem 5: Sanger Sequencing</h3>
+
+<p>A Sanger sequencing reaction produces the following bands (read from bottom of gel to top):</p>
+<p>Lane ddA: bands at positions 1, 4, 7</p>
+<p>Lane ddT: bands at positions 2, 5, 9</p>
+<p>Lane ddC: bands at positions 3, 8, 10</p>
+<p>Lane ddG: band at position 6</p>
+
+<p>(a) Determine the sequence of the synthesised strand (5'→3').</p>
+<p>(b) Determine the sequence of the template strand (3'→5').</p>
+<p>(c) Explain why ddNTPs terminate chain elongation.</p>
+
+<hr>
+
+<h2>Answers</h2>
+
+<h3>Answer 1</h3>
+
+<p>(a) <strong>0 generations:</strong> One band at the heavy (¹⁵N) position. <strong>1 generation:</strong> One band at intermediate position (hybrid ¹⁵N-¹⁴N). <strong>2 generations:</strong> Two bands — one at the light position and one at the intermediate position (1:1 ratio).</p>
+
+<p>(b) The dispersive model predicts that DNA is fragmented and randomly reassorted. After two generations in ¹⁴N, all molecules would be ¼ heavy and ¾ light — producing a <strong>single band</strong> at ¼-heavy position. Meselson and Stahl observed <strong>two distinct bands</strong>, which can only be explained by the semiconservative model where some molecules are entirely light and others are hybrid.</p>
+
+<p>(c) <strong>3 generations:</strong> Semi-conservative replication means hybrid molecules (¹⁵N-¹⁴N) separate and each strand serves as a template. The ¹⁵N strand gets a new ¹⁴N complement → hybrid. The ¹⁴N strand gets a new ¹⁴N complement → light. Light molecules (¹⁴N-¹⁴N) replicate to produce two light molecules each. Result: <strong>3 light : 1 intermediate</strong> (75% light, 25% intermediate). The intermediate band gets progressively fainter with each generation.</p>
+
+<hr>
+
+<h3>Answer 2</h3>
+
+<p>(a) <strong>Primase inactivated → no RNA primers.</strong> DNA polymerase III cannot initiate synthesis. Replication cannot begin. No new DNA synthesised.</p>
+
+<p>(b) <strong>DNA ligase inhibited → nicks not sealed.</strong> Okazaki fragments remain unjoined on the lagging strand. The new strand is fragmented and non-functional.</p>
+
+<p>(c) <strong>Helicase denatured → DNA not unwound.</strong> The replication fork cannot form. Parental strands remain hydrogen-bonded. No replication.</p>
+
+<p>(d) <strong>SSBs absent → ssDNA reanneals.</strong> The separated template strands immediately re-form hydrogen bonds. DNA polymerase cannot access the template. Replication stalls.</p>
+
+<p>(e) <strong>DNA gyrase non-functional → supercoiling builds up.</strong> Torsional stress ahead of the fork increases until the DNA physically cannot unwind further. Replication arrests. The chromosome may break.</p>
+
+<hr>
+
+<h3>Answer 3</h3>
+
+<p>(a) Components: template DNA (crime scene sample), forward and reverse primers specific to the 400 bp target, Taq polymerase, dNTPs (dATP, dTTP, dGTP, dCTP), buffer with Mg²⁺, thermal cycler.</p>
+
+<p>(b) Primers define the boundaries of the amplified region. If they are not specific, they may bind to other regions of the genome, amplifying unwanted DNA and producing multiple bands (or no band at all if they don't bind). Specificity ensures only the target region is amplified.</p>
+
+<p>(c) The successful amplification should show a single band at <strong>400 bp</strong> (migrating to the same position as the 400 bp ladder band). If the amplification worked well, this band should be bright (high concentration of DNA). No other bands should be present.</p>
+
+<p>(d) The negative control lane should show <strong>no bands</strong>. This confirms that the PCR reagents (primers, Taq, dNTPs, water) are not contaminated with template DNA. If a band appears, the reagents are contaminated and results from sample lanes are unreliable.</p>
+
+<hr>
+
+<h3>Answer 4</h3>
+
+<p>(a) On the lagging strand of a linear chromosome, the terminal RNA primer is removed by DNA Pol I but cannot be replaced with DNA (no upstream 3'-OH to extend from). This means the 5' end of the newly synthesised strand is shorter than the template — the chromosome shortens with each replication. Circular chromosomes (bacteria) have no ends, so the lagging strand can be completed all the way around.</p>
+
+<p>(b) Telomerase is a reverse transcriptase with its own RNA template. It binds to the 3' overhang of the G-rich telomere strand and extends it by adding TTAGGG repeats (using the RNA template). After the 3' strand is extended, primase can add a primer and conventional replication machinery fills in the complementary C-rich strand. The net result: telomere length is maintained or even increased.</p>
+
+<p>(c) Cancer cells divide uncontrollably. Without telomerase, they would hit the Hayflick limit after ~50-70 divisions and enter senescence — halting tumour growth. Upregulation of telomerase allows cancer cells to bypass this limit, achieving <strong>unlimited replicative potential</strong> (a hallmark of cancer). Normal somatic cells silence telomerase, limiting their division capacity as a tumour-suppression mechanism.</p>
+
+<p>(d) Mice have longer telomeres but shorter lifespans — this tells us that telomere length is not the sole determinant of aging. Mice likely die of other causes (predation, cancer, metabolic rate-related oxidative damage) before telomere shortening becomes limiting. The telomere theory is a <strong>contributing</strong> factor to aging, not the only mechanism.</p>
+
+<hr>
+
+<h3>Answer 5</h3>
+
+<p>(a) Read from bottom (smallest) to top: position 1 = A, 2 = T, 3 = C, 4 = A, 5 = T, 6 = G, 7 = A, 8 = C, 9 = T, 10 = C.</p>
+<p>Synthesised strand (5'→3'): <strong>5'-ATCAGTACT C-3'</strong> (wait — let me recount: pos1=A, 2=T, 3=C, 4=A, 5=T, 6=G, 7=A, 8=C, 9=T, 10=C → <strong>5'-ATCATGACT C-3'</strong> — actually let me recheck: the band at position 6 is ddG, so position 6 = G. Sequence: A-T-C-A-T-G-A-C-T-C → <strong>5'-ATCATGACTC-3'</strong>.)</p>
+
+<p>Let me recheck carefully: pos1=A, pos2=T, pos3=C, pos4=A, pos5=T, pos6=G, pos7=A, pos8=C, pos9=T, pos10=C.</p>
+<p><strong>5'-ATCATGACTC-3'</strong> — wait, pos 4=A, pos 5=T, so it's ATC<strong>AT</strong>GACTC. Let me verify: 1A, 2T, 3C, 4A, 5T, 6G, 7A, 8C, 9T, 10C. Yes: <strong>5'-ATCATGACTC-3'</strong>.</p>
+
+<p>(b) The template strand is complementary and antiparallel:</p>
+<p><strong>3'-TAGTACTGAG-5'</strong> (complementary to 5'-ATCATGACTC-3').</p>
+
+<p>(c) ddNTPs lack the 3'-OH group (they have a 3'-H instead). The 3'-OH is required for the nucleophilic attack on the incoming dNTP's α-phosphate, which forms the phosphodiester bond. Without 3'-OH, no further nucleotides can be added → chain termination.</p>
+
+<hr>
+
+<h2>Key Takeaways</h2>
+
+<table>
+<tr>
+<td>Concept</td>
+<td>Summary</td>
+</tr>
+<tr>
+<td>Meselson-Stahl</td>
+<td>¹⁵N → ¹⁴N shift. 1 gen: one intermediate band (rules out conservative). 2 gen: light + intermediate bands (rules out dispersive → semiconservative confirmed).</td>
+</tr>
+<tr>
+<td>Replication enzymes</td>
+<td>Helicase (unzip), SSBs (stabilise), Gyrase (relieve supercoils), Primase (RNA primer), Pol III (synthesise + proofread 3'→5'), Pol I (replace primers), Ligase (seal nicks).</td>
+</tr>
+<tr>
+<td>Leading vs lagging</td>
+<td>Leading: continuous toward fork, 1 primer. Lagging: Okazaki fragments away from fork, many primers. Both synthesised 5'→3'.</td>
+</tr>
+<tr>
+<td>PCR</td>
+<td>Denature 95°C, Anneal 50-65°C, Extend 72°C with Taq. $$2^n$$ amplification.</td>
+</tr>
+<tr>
+<td>Gel electrophoresis</td>
+<td>DNA (−) → (+) electrode. Smaller = faster/further. Ladder for sizing.</td>
+</tr>
+<tr>
+<td>Sanger sequencing</td>
+<td>ddNTPs (no 3'-OH) terminate chains. Four reactions, separate by size, read sequence.</td>
+</tr>
+<tr>
+<td>NGS</td>
+<td>Massively parallel. Millions of fragments simultaneously. Bridge amplification + sequencing-by-synthesis.</td>
+</tr>
+<tr>
+<td>Telomeres</td>
+<td>TTAGGG repeats. End-replication problem: lagging strand can't replicate to end → progressive shortening.</td>
+</tr>
+<tr>
+<td>Telomerase</td>
+<td>Reverse transcriptase with RNA template. Active in germ cells, stem cells, cancer cells. Extends telomeres → immortality.</td>
+</tr>
+</table>
+
+<hr>
+
+<p><em>End of Lesson 39 — Next: Protein Synthesis I (D1.2)</em></p>
+
+<div class="nav"><a href="lesson_38.html">&#8592; Lesson 38</a><a href="index.html">&#8962; Index</a><a href="lesson_40.html">Lesson 40 &#8594;</a></div>
+
+</body>
+</html>

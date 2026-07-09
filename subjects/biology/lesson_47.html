@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 47: Reproduction I (D3.1) — IB Biology HL</title>
+<script>window.MathJax = { tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] } };</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #1a6b3c; --border: #c4d4a9; --highlight: #e8f5e9; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Palatino', 'Georgia', serif; background: var(--bg); color: var(--text); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; font-size: 17px; line-height: 1.7; }
+  h1 { font-size: 1.7rem; color: var(--accent); margin-bottom: 0.5rem; }
+  h2 { font-size: 1.25rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; margin: 2rem 0 1rem; }
+  h3 { font-size: 1.1rem; color: #444; margin: 1.3rem 0 0.5rem; }
+  p, li { margin-bottom: 0.6rem; }
+  ul, ol { padding-left: 1.8rem; margin-bottom: 1rem; }
+  .worked { background: #e8f5e9; border-left: 4px solid #1a6b3c; padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
+  .worked strong { color: #1a6b3c; }
+  .answer { background: #fefdf7; border: 1px solid var(--border); padding: 0.8rem 1.2rem; margin: 0.5rem 0; border-radius: 6px; }
+  .nav { display: flex; justify-content: space-between; margin: 3rem 0 1rem; padding-top: 1rem; border-top: 2px solid var(--border); font-size: 0.9rem; }
+  .nav a { color: #1a5c9e; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  .definition { background: #fff8e1; border-left: 4px solid #e6a817; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  .tip { background: #e3f2fd; border-left: 4px solid #1976d2; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  table { border-collapse: collapse; margin: 0.8rem 0; width: 100%; }
+  th, td { border: 1px solid var(--border); padding: 0.4rem 0.6rem; text-align: left; }
+  th { background: #f0f5e8; }
+  @media print { body { font-size: 14px; } .nav { display: none; } }
+</style>
+</head>
+<body>
+
+
+<h2>What You'll Learn</h2>
+
+<p>Reproduction is the defining characteristic of life — the process by which organisms produce offspring and ensure the continuation of their species. This lesson explores the biology of human reproduction from gamete formation through fertilization to early embryonic development, including the elegant hormonal control of the menstrual cycle.</p>
+
+<p>By the end of this lesson, you will be able to:</p>
+
+<ul>
+<li>Compare the advantages of asexual and sexual reproduction</li>
+<li>Describe spermatogenesis and oogenesis in detail</li>
+<li>Explain the process of fertilization, including the acrosome and cortical reactions</li>
+<li>Outline early embryonic development from zygote to blastocyst implantation</li>
+<li>Describe hormonal control of the menstrual cycle (FSH, LH, estrogen, progesterone)</li>
+<li>Explain the role of hCG in early pregnancy</li>
+<li>Discuss the principles and ethical considerations of IVF</li>
+</ul>
+<hr>
+
+<h2>1. Asexual vs. Sexual Reproduction</h2>
+
+<h3>1.1 Asexual Reproduction</h3>
+
+<p><strong>Asexual reproduction</strong> produces offspring genetically <strong>identical</strong> to the parent (clones), without the fusion of gametes.</p>
+
+<table>
+<tr>
+<td>Feature</td>
+<td>Detail</td>
+</tr>
+<tr>
+<td>Genetic variation</td>
+<td>None — offspring are clones</td>
+</tr>
+<tr>
+<td>Number of parents</td>
+<td>One</td>
+</tr>
+<tr>
+<td>Speed</td>
+<td>Fast — no need to find a mate</td>
+</tr>
+<tr>
+<td>Energy cost</td>
+<td>Low — no gamete production, no mating behaviors</td>
+</tr>
+</table>
+
+<p><strong>Examples in nature</strong>:</p>
+<ul>
+<li><strong>Binary fission</strong> in bacteria (and some protoctists): cell divides into two identical cells</li>
+<li><strong>Budding</strong> in yeast and Hydra: a small outgrowth develops and detaches</li>
+<li><strong>Runners</strong> in strawberries: horizontal stems grow new plants at nodes</li>
+<li><strong>Parthenogenesis</strong> in aphids: females produce offspring from unfertilized eggs (in summer, when food is abundant)</li>
+<li><strong>Tubers</strong> in potatoes: underground storage stems produce new plants</li>
+</ul>
+<p><strong>Advantages</strong>:</p>
+<ul>
+<li><strong>Rapid population growth</strong>: In stable, favorable environments, a single organism can quickly colonize.</li>
+<li><strong>No mate required</strong>: Useful in sparsely populated environments or for sessile organisms.</li>
+<li><strong>All genes passed on</strong>: Every offspring gets 100% of the parent's genome — beneficial alleles are never diluted.</li>
+</ul>
+<p><strong>Disadvantages</strong>:</p>
+<ul>
+<li><strong>No genetic variation</strong>: If the environment changes (disease, climate), the entire clonal population is equally vulnerable. One pathogen could wipe out everyone.</li>
+</ul>
+<h3>1.2 Sexual Reproduction</h3>
+
+<p><strong>Sexual reproduction</strong> involves the fusion of two haploid gametes (fertilization) to produce a genetically <strong>unique</strong> diploid zygote.</p>
+
+<table>
+<tr>
+<td>Feature</td>
+<td>Detail</td>
+</tr>
+<tr>
+<td>Genetic variation</td>
+<td>High — offspring are genetically unique</td>
+</tr>
+<tr>
+<td>Number of parents</td>
+<td>Two (typically)</td>
+</tr>
+<tr>
+<td>Speed</td>
+<td>Slower — must find a mate, produce gametes</td>
+</tr>
+<tr>
+<td>Energy cost</td>
+<td>High — gamete production, mating behaviors, often parental care</td>
+</tr>
+</table>
+
+<p><strong>Advantages</strong>:</p>
+<ul>
+<li><strong>Genetic variation</strong>: Produces populations with diverse genotypes, increasing the chance that some individuals will survive environmental changes.</li>
+<li><strong>Elimination of harmful mutations</strong>: Recombination can separate deleterious mutations, and sexual reproduction can purge them through selection.</li>
+<li><strong>Adaptation to changing environments</strong>: The "Red Queen hypothesis" — sexual reproduction allows species to keep up in the coevolutionary arms race against pathogens.</li>
+</ul>
+<p><strong>Analogy</strong>: Asexual reproduction is like printing thousands of identical copies of one book. If a page has a typo, every copy has it. Sexual reproduction is like shuffling pages from two different editions to create unique new versions — some may have errors, but the variety ensures some copies will be readable even under changing criteria.</p>
+
+<div class="tip">
+<p><strong>IB Exam Tip (Paper 2)</strong>: When asked to evaluate asexual vs. sexual reproduction, always consider the <strong>environment</strong>. Asexual reproduction is advantageous in stable environments (aphids in summer); sexual reproduction is advantageous in changing or unpredictable environments (most vertebrates). Mention specific examples.</p>
+</div>
+
+<hr>
+
+<h2>2. Gametogenesis: Making Sperm and Eggs</h2>
+
+<p><strong>Gametogenesis</strong> is the formation of gametes through meiosis. In humans, this occurs in the gonads — <strong>testes</strong> (spermatogenesis) and <strong>ovaries</strong> (oogenesis).</p>
+
+<h3>2.1 Spermatogenesis: Continuous Production</h3>
+
+<p>Spermatogenesis occurs in the <strong>seminiferous tubules</strong> of the testes, beginning at puberty and continuing throughout life.</p>
+
+<p>#### Location and Support</p>
+
+<ul>
+<li><strong>Seminiferous tubules</strong>: Coiled tubes within the testes where sperm develop.</li>
+<li><strong>Sertoli cells</strong>: "Nurse cells" that nourish and support developing sperm. They also form the <strong>blood-testis barrier</strong>, secrete fluid to transport sperm, and phagocytose discarded cytoplasm.</li>
+<li><strong>Leydig cells</strong> (interstitial cells): Located between seminiferous tubules; produce <strong>testosterone</strong> in response to LH.</li>
+</ul>
+<p><strong>Draw and label</strong>: Draw a cross-section of a seminiferous tubule. Label: "Lumen" (center), "Spermatogonia" (at periphery), "Developing spermatocytes," "Spermatids" (near lumen), "Sertoli cell" (large supporting cell extending from periphery to lumen), "Leydig cells" (in spaces between tubules).</p>
+
+<p>#### The Process: From Spermatogonium to Spermatozoon</p>
+
+<table>
+<tr>
+<td>Stage</td>
+<td>Ploidy</td>
+<td>Chromosomes</td>
+<td>Location in Tubule</td>
+</tr>
+<tr>
+<td>Spermatogonium** (stem cell)</td>
+<td>2n</td>
+<td>46 (single chromatids)</td>
+<td>Periphery (next to basement membrane)</td>
+</tr>
+<tr>
+<td>Mitosis → more spermatogonia</td>
+<td>2n</td>
+<td>46</td>
+<td>Periphery</td>
+</tr>
+<tr>
+<td>Growth → **Primary spermatocyte</td>
+<td>2n</td>
+<td>46 (after S phase: 92 chromatids)</td>
+<td>Moving inward</td>
+</tr>
+<tr>
+<td>Meiosis I<strong> → 2 </strong>secondary spermatocytes</td>
+<td>n</td>
+<td>23 (each with 2 chromatids)</td>
+<td>Further inward</td>
+</tr>
+<tr>
+<td>Meiosis II<strong> → 4 </strong>spermatids</td>
+<td>n</td>
+<td>23 (single chromatids)</td>
+<td>Near lumen</td>
+</tr>
+<tr>
+<td>Spermiogenesis<strong> (differentiation) → </strong>spermatozoa</td>
+<td>n</td>
+<td>23</td>
+<td>Released into lumen</td>
+</tr>
+</table>
+
+<p><strong>Spermiogenesis</strong> (not to be confused with spermatogenesis) is the differentiation of round spermatids into streamlined spermatozoa. Key changes:</p>
+<ul>
+<li>Formation of the <strong>acrosome</strong> (Golgi-derived vesicle containing hydrolytic enzymes)</li>
+<li>Formation of the <strong>flagellum</strong> (from centriole; microtubules in 9+2 arrangement)</li>
+<li>Condensation of the nucleus (DNA tightly packed with protamines)</li>
+<li>Shedding of most cytoplasm (phagocytosed by Sertoli cells)</li>
+<li>Mitochondria cluster around the midpiece (energy for flagellar movement)</li>
+</ul>
+<p><strong>Production rate</strong>: Millions of sperm per day. Continuous from puberty. The entire process takes about 64–72 days in humans.</p>
+
+<h3>2.2 Oogenesis: A Lifetime Supply, Rationed Out</h3>
+
+<p>Oogenesis is remarkably different from spermatogenesis — in timing, quantity, and asymmetry.</p>
+
+<p>#### Key Facts:</p>
+
+<ul>
+<li>Female mammals are born with <strong>all their primary oocytes</strong> — about 1–2 million at birth, declining to ~400,000 by puberty.</li>
+<li>Only about <strong>400–500 will be ovulated</strong> in a reproductive lifetime.</li>
+<li>Oocytes are arrested in <strong>prophase I</strong> from fetal development until ovulation (potentially decades).</li>
+<li>Meiosis only completes if fertilization occurs.</li>
+</ul>
+<p>#### The Process</p>
+
+<table>
+<tr>
+<td>Stage</td>
+<td>Ploidy</td>
+<td>When?</td>
+<td>Notes</td>
+</tr>
+<tr>
+<td>Oogonium** (stem cell)</td>
+<td>2n</td>
+<td>Fetal development</td>
+<td>Divide by mitosis</td>
+</tr>
+<tr>
+<td>Growth → **Primary oocyte</td>
+<td>2n</td>
+<td>Fetal development</td>
+<td>Enters meiosis I, **arrests in prophase I</td>
+</tr>
+<tr>
+<td>Meiosis I completed</td>
+<td>n (×2)</td>
+<td>At <strong>ovulation</strong> (triggered by LH surge)</td>
+<td>Asymmetric division<strong>: large </strong>secondary oocyte<strong> + tiny </strong>first polar body</td>
+</tr>
+<tr>
+<td>Secondary oocyte</td>
+<td>n</td>
+<td>Released at ovulation</td>
+<td>Arrests in metaphase II</td>
+</tr>
+<tr>
+<td>Meiosis II completed</td>
+<td>n</td>
+<td>Only if <strong>fertilization</strong> occurs</td>
+<td>Asymmetric division: large <strong>ovum</strong> + tiny **second polar body</td>
+</tr>
+</table>
+
+<p><strong>Draw and label</strong>: Create a flow diagram:</p>
+<ul>
+<li>Oogonium (2n) → Primary oocyte (2n, arrested in prophase I) → Meiosis I at ovulation → Secondary oocyte (n, arrested in metaphase II) + First polar body → Meiosis II at fertilization → Ovum (n) + Second polar body. First polar body may or may not divide.</li>
+</ul>
+<p><strong>The asymmetry</strong>: Unlike spermatogenesis (4 equal gametes), oogenesis produces <strong>one large gamete</strong> (with all the cytoplasm, organelles, and nutrients) and <strong>two tiny polar bodies</strong> that degenerate. This ensures the ovum has maximum resources for early development.</p>
+
+<div class="definition">
+<p><strong>Polar body</strong>: A small haploid cell produced during oogenesis that contains a nucleus but very little cytoplasm. Polar bodies do not develop into functional gametes and degenerate. Their purpose is to discard the extra set of chromosomes while preserving cytoplasm for the ovum.</p>
+</div>
+
+<h3>2.3 Comparison: Spermatogenesis vs. Oogenesis</h3>
+
+<table>
+<tr>
+<td>Feature</td>
+<td>Spermatogenesis</td>
+<td>Oogenesis</td>
+</tr>
+<tr>
+<td>Location</td>
+<td>Seminiferous tubules of testes</td>
+<td>Ovaries</td>
+</tr>
+<tr>
+<td>When begins</td>
+<td>Puberty</td>
+<td>Fetal development</td>
+</tr>
+<tr>
+<td>Duration</td>
+<td>Continuous from puberty</td>
+<td>Arrested in prophase I until ovulation; completed at fertilization</td>
+</tr>
+<tr>
+<td>Number from one parent cell</td>
+<td>4 spermatozoa</td>
+<td>1 ovum (+ 2–3 polar bodies)</td>
+</tr>
+<tr>
+<td>Size of gametes</td>
+<td>Small (head ~5 μm), motile</td>
+<td>Large (~120 μm), non-motile, nutrient-rich</td>
+</tr>
+<tr>
+<td>Number produced</td>
+<td>Millions per day</td>
+<td>~1 per month; ~400–500 in a lifetime</td>
+</tr>
+<tr>
+<td>Meiosis</td>
+<td>Complete and continuous</td>
+<td>Arrested at prophase I and metaphase II</td>
+</tr>
+<tr>
+<td>Symmetry</td>
+<td>Symmetric division</td>
+<td>Asymmetric division</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>3. Fertilization: When Sperm Meets Egg</h2>
+
+<p>Fertilization is the fusion of male and female gametes to form a diploid zygote. It's a multistep process, not a single event.</p>
+
+<h3>3.1 The Journey of Sperm</h3>
+
+<p>Of the ~200–300 million sperm deposited in the vagina, only a few hundred reach the egg in the oviduct (fallopian tube). Most are lost to:</p>
+<ul>
+<li>Acidic vaginal environment (sperm are buffered by seminal fluid)</li>
+<li>Wrong oviduct (the egg is only in one)</li>
+<li>The tortuous journey through the cervix and uterus</li>
+</ul>
+<h3>3.2 Capacitation</h3>
+
+<p>Before sperm can fertilize, they must undergo <strong>capacitation</strong> in the female reproductive tract:</p>
+<ul>
+<li>Removal of glycoproteins and seminal plasma proteins from the sperm surface</li>
+<li>Increased membrane fluidity</li>
+<li>Hyperactivation of flagellar movement</li>
+</ul>
+<h3>3.3 The Steps of Fertilization</h3>
+
+<p><strong>Step 1: Penetration of the Corona Radiata</strong></p>
+
+<p>The egg is surrounded by two layers:</p>
+<ul>
+<li><strong>Corona radiata</strong>: Outer layer of follicular cells (granulosa cells). Sperm use flagellar motion and enzymes to work through.</li>
+<li><strong>Zona pellucida</strong>: Inner glycoprotein layer (extracellular matrix).</li>
+</ul>
+<p><strong>Step 2: Acrosome Reaction</strong></p>
+
+<p>When sperm reach the zona pellucida:</p>
+<ol>
+<li>Sperm bind to ZP3 glycoproteins of the zona pellucida.</li>
+<li>This triggers the <strong>acrosome reaction</strong> — the acrosome (enzyme-filled cap) releases its contents:</li>
+</ol>
+<ul>
+<li><strong>Acrosin</strong> and other proteolytic enzymes</li>
+<li><strong>Hyaluronidase</strong></li>
+</ul>
+<ol>
+<li>These enzymes digest a path through the zona pellucida, allowing the sperm to reach the egg's plasma membrane.</li>
+</ol>
+<p><strong>Draw and label</strong>: Draw a sperm approaching the egg. Label: "Sperm head," "Acrosome releasing enzymes," "Corona radiata," "Zona pellucida," "Plasma membrane of egg."</p>
+
+<p><strong>Step 3: Membrane Fusion</strong></p>
+
+<p>The sperm plasma membrane fuses with the egg plasma membrane. The sperm nucleus, centriole, and some cytoplasm enter the egg. The sperm flagellum and mitochondria are usually left outside and degenerate (why mitochondrial DNA is maternally inherited).</p>
+
+<p><strong>Step 4: Cortical Reaction — Block to Polyspermy</strong></p>
+
+<p>Within seconds of the first sperm entering:</p>
+<ol>
+<li><strong>Cortical granules</strong> (vesicles just beneath the egg membrane) fuse with the plasma membrane and release their contents.</li>
+<li>Released enzymes modify the zona pellucida:</li>
+</ol>
+<ul>
+<li>ZP3 glycoproteins are modified → sperm can no longer bind.</li>
+<li>The zona pellucida <strong>hardens</strong> → the <strong>fertilization membrane</strong> forms.</li>
+</ul>
+<ol>
+<li>This is the <strong>block to polyspermy</strong> — preventing multiple sperm from fertilizing the egg (which would result in triploidy — 3n — lethal).</li>
+</ol>
+<div class="definition">
+<p><strong>Polyspermy</strong>: Fertilization of an egg by more than one sperm. Results in a triploid (3n) or polyploid zygote, which is usually non-viable. The cortical reaction is a fast block to polyspermy.</p>
+</div>
+
+<p><strong>Step 5: Completion of Meiosis II</strong></p>
+
+<p>The entry of the sperm triggers the secondary oocyte to complete meiosis II → ovum + second polar body. The sperm nucleus decondenses → male pronucleus. The ovum's nucleus → female pronucleus. The two pronuclei fuse → <strong>zygote</strong> (2n).</p>
+
+<hr>
+
+<h2>4. Early Embryonic Development</h2>
+
+<h3>4.1 Cleavage: Rapid Divisions Without Growth</h3>
+
+<p>After fertilization, the zygote undergoes <strong>cleavage</strong> — rapid mitotic divisions without cell growth. The zygote gets smaller with each division (the total volume stays the same as the original egg).</p>
+
+<table>
+<tr>
+<td>Stage</td>
+<td>Cell Number</td>
+<td>Timing (approx.)</td>
+</tr>
+<tr>
+<td>Zygote</td>
+<td>1 cell</td>
+<td>Day 0 (fertilization)</td>
+</tr>
+<tr>
+<td>2-cell stage</td>
+<td>2</td>
+<td>~Day 1</td>
+</tr>
+<tr>
+<td>4-cell stage</td>
+<td>4</td>
+<td>~Day 2</td>
+</tr>
+<tr>
+<td>8-cell stage</td>
+<td>8</td>
+<td>~Day 3</td>
+</tr>
+<tr>
+<td>Morula</td>
+<td>~16–32 cells (solid ball)</td>
+<td>~Day 4</td>
+</tr>
+<tr>
+<td>Blastocyst</td>
+<td>Hollow ball with inner cell mass</td>
+<td>~Day 5–6</td>
+</tr>
+</table>
+
+<h3>4.2 The Blastocyst</h3>
+
+<p>The blastocyst has two distinct cell populations:</p>
+
+<table>
+<tr>
+<td>Structure</td>
+<td>Fate</td>
+</tr>
+<tr>
+<td>Inner cell mass** (embryoblast)</td>
+<td>Develops into the <strong>embryo</strong> and eventually the fetus</td>
+</tr>
+<tr>
+<td>Trophoblast** (outer layer)</td>
+<td>Develops into the <strong>placenta</strong> and fetal membranes (chorion)</td>
+</tr>
+</table>
+
+<p>The blastocyst also contains a fluid-filled cavity (blastocoel).</p>
+
+<p><strong>Draw and label</strong>: Draw a cross-section of a blastocyst. Label: "Trophoblast" (outer cells), "Inner cell mass" (cluster of cells inside), "Blastocoel" (fluid-filled cavity), "Zona pellucida" (thin outer shell — starts to thin).</p>
+
+<h3>4.3 Implantation (~Day 7)</h3>
+
+<ol>
+<li>The blastocyst <strong>hatches</strong> from the zona pellucida.</li>
+<li>The trophoblast cells adhere to the <strong>endometrium</strong> (lining of the uterus).</li>
+<li>Trophoblast cells differentiate into:</li>
+</ol>
+<ul>
+<li><strong>Syncytiotrophoblast</strong>: Invades the endometrium, erodes maternal blood vessels → establishes nutrient exchange.</li>
+<li><strong>Cytotrophoblast</strong>: Inner layer of trophoblast cells.</li>
+</ul>
+<ol>
+<li>The trophoblast begins secreting <strong>hCG</strong> (human chorionic gonadotropin) — the "pregnancy hormone" that maintains the corpus luteum.</li>
+</ol>
+<hr>
+
+<h2>5. Hormonal Control of the Menstrual Cycle</h2>
+
+<p>The menstrual cycle averages <strong>28 days</strong> and is controlled by a carefully orchestrated interplay of hormones from the hypothalamus, pituitary gland, and ovaries.</p>
+
+<h3>5.1 The Key Players</h3>
+
+<table>
+<tr>
+<td>Hormone</td>
+<td>Source</td>
+<td>Target</td>
+<td>Function</td>
+</tr>
+<tr>
+<td>GnRH** (gonadotropin-releasing hormone)</td>
+<td>Hypothalamus</td>
+<td>Anterior pituitary</td>
+<td>Stimulates release of FSH and LH</td>
+</tr>
+<tr>
+<td>FSH** (follicle-stimulating hormone)</td>
+<td>Anterior pituitary</td>
+<td>Ovary (follicle)</td>
+<td>Stimulates follicle development</td>
+</tr>
+<tr>
+<td>LH** (luteinizing hormone)</td>
+<td>Anterior pituitary</td>
+<td>Ovary</td>
+<td>Triggers ovulation; stimulates corpus luteum</td>
+</tr>
+<tr>
+<td>Estrogen</td>
+<td>Developing follicle (granulosa cells)</td>
+<td>Uterus; pituitary</td>
+<td>Thickens endometrium; negative/positive feedback on FSH/LH</td>
+</tr>
+<tr>
+<td>Progesterone</td>
+<td>Corpus luteum (after ovulation)</td>
+<td>Uterus</td>
+<td>Maintains endometrium; inhibits FSH and LH</td>
+</tr>
+<tr>
+<td>hCG** (human chorionic gonadotropin)</td>
+<td>Trophoblast of embryo</td>
+<td>Corpus luteum</td>
+<td>Maintains corpus luteum in early pregnancy</td>
+</tr>
+</table>
+
+<h3>5.2 The Phases — Day by Day</h3>
+
+<p>#### Follicular Phase (Day 1–13)</p>
+
+<ol>
+<li><strong>Day 1–5</strong>: Menstruation — endometrium sheds. Estrogen and progesterone are low → negative feedback on hypothalamus/pituitary is lifted → <strong>FSH begins to rise</strong>.</li>
+</ol>
+<ol>
+<li><strong>Day 5–13</strong>: FSH stimulates several <strong>follicles</strong> to develop in the ovary. Each follicle contains a primary oocyte.</li>
+</ol>
+<ol>
+<li>Growing follicles produce <strong>estrogen</strong>. Initially, estrogen exerts <strong>negative feedback</strong> on the pituitary → FSH levels moderate.</li>
+</ol>
+<ol>
+<li>By day 12–13, one <strong>dominant follicle</strong> emerges (the others degenerate — atresia). Estrogen levels rise sharply.</li>
+</ol>
+<p>#### Ovulation (Day 14)</p>
+
+<ol>
+<li>When estrogen reaches a sustained high level, the feedback switches from <strong>negative to POSITIVE</strong>.</li>
+<li>The positive feedback triggers a massive surge of <strong>LH</strong> (and to a lesser extent, FSH) from the anterior pituitary.</li>
+<li>The <strong>LH surge</strong> triggers:</li>
+</ol>
+<ul>
+<li>Completion of <strong>meiosis I</strong> in the primary oocyte → secondary oocyte + first polar body</li>
+<li>Rupture of the follicle wall → <strong>ovulation</strong></li>
+<li>The secondary oocyte (arrested at metaphase II) is released into the oviduct</li>
+</ul>
+<p><strong>Draw and label</strong>: Plot hormone levels on a graph (X axis: days 1–28). Show:</p>
+<ul>
+<li>FSH: rises days 1–5, decreases, small peak with LH surge at day 14</li>
+<li>LH: massive spike at day 14 (LH surge), low otherwise</li>
+<li>Estrogen: gradual rise through follicular phase, peaks just before day 14, dips after ovulation, smaller rise during luteal phase</li>
+<li>Progesterone: very low before ovulation, rises sharply after ovulation (from corpus luteum), drops at day 28 if no pregnancy</li>
+</ul>
+<p>#### Luteal Phase (Day 15–28)</p>
+
+<ol>
+<li>After ovulation, the ruptured follicle transforms into the <strong>corpus luteum</strong> ("yellow body").</li>
+</ol>
+<ol>
+<li>The corpus luteum secretes <strong>progesterone</strong> (and some estrogen).</li>
+</ol>
+<ol>
+<li>Progesterone:</li>
+</ol>
+<ul>
+<li><strong>Maintains the endometrium</strong> — thick, vascular, glandular, ready for implantation</li>
+<li><strong>Inhibits FSH and LH</strong> (negative feedback) → prevents new follicle development</li>
+</ul>
+<ol>
+<li><strong>If no fertilization</strong>: The corpus luteum degenerates after ~10–12 days → progesterone and estrogen levels drop → the endometrium can no longer be maintained → it sloughs off (menstruation, day 1 of next cycle). The drop in progesterone lifts inhibition on FSH → cycle restarts.</li>
+</ol>
+<ol>
+<li><strong>If fertilization occurs</strong>: The developing trophoblast secretes <strong>hCG</strong>, which acts like LH and <strong>maintains the corpus luteum</strong> → continued progesterone secretion → endometrium maintained → no menstruation.</li>
+</ol>
+<div class="worked">
+<p><strong>Worked Example: Understanding Feedback</strong></p>
+
+<p><strong>Question</strong>: A woman takes high-dose estrogen pills every day for contraception. Explain how this prevents pregnancy.</p>
+
+<p><strong>Answer</strong>:</p>
+<ol>
+<li>High estrogen levels are maintained constantly.</li>
+<li>This exerts <strong>negative feedback</strong> on the anterior pituitary.</li>
+<li>FSH and LH secretion are suppressed.</li>
+<li>Without FSH, follicles do not develop. Without the LH surge, ovulation does not occur.</li>
+<li>No egg is released → fertilization cannot occur → no pregnancy.</li>
+</ol>
+<p>This is the principle behind combined oral contraceptive pills (estrogen + progestin).</p>
+</div>
+
+<div class="tip">
+<p><strong>IB Exam Tip (Paper 2)</strong>: You MUST be able to describe the switch from negative to positive feedback of estrogen on LH. The key: LOW estrogen = negative feedback (suppresses LH). SUSTAINED HIGH estrogen = positive feedback (triggers LH surge). This is one of the few examples of positive feedback in human physiology. The mechanism: high estrogen increases GnRH receptor sensitivity in the pituitary and increases GnRH pulse frequency from the hypothalamus.</p>
+</div>
+
+<hr>
+
+<h2>6. In Vitro Fertilization (IVF)</h2>
+
+<p><strong>IVF</strong> (in vitro fertilization) is a technique to help individuals or couples conceive when natural fertilization is not possible.</p>
+
+<h3>6.1 The IVF Process</h3>
+
+<table>
+<tr>
+<td>Step</td>
+<td>Description</td>
+</tr>
+<tr>
+<td>1. Ovarian stimulation</td>
+<td>Woman takes FSH (and sometimes LH) injections for ~10–14 days to stimulate multiple follicles to develop (superovulation). Monitored by ultrasound.</td>
+</tr>
+<tr>
+<td>2. Egg retrieval</td>
+<td>Under sedation, a needle is guided through the vaginal wall into the ovaries. Mature oocytes are aspirated from follicles.</td>
+</tr>
+<tr>
+<td>3. Fertilization</td>
+<td>Eggs and sperm are combined in a petri dish. Alternatively, <strong>ICSI</strong> (intracytoplasmic sperm injection): a single sperm is injected directly into the egg for severe male infertility.</td>
+</tr>
+<tr>
+<td>4. Embryo culture</td>
+<td>Fertilized eggs (zygotes) are cultured for 3–5 days. Embryos are graded for quality.</td>
+</tr>
+<tr>
+<td>5. Embryo transfer</td>
+<td>Usually 1–2 embryos are transferred to the uterus via a catheter. Remaining viable embryos may be frozen (cryopreserved) for future cycles.</td>
+</tr>
+<tr>
+<td>6. Luteal support</td>
+<td>Progesterone supplements are given to support the endometrium until the placenta takes over.</td>
+</tr>
+<tr>
+<td>7. Pregnancy test</td>
+<td>~2 weeks after transfer, hCG levels are measured.</td>
+</tr>
+</table>
+
+<h3>6.2 Ethical Considerations</h3>
+
+<table>
+<tr>
+<td>Issue</td>
+<td>Arguments</td>
+</tr>
+<tr>
+<td>Spare embryos</td>
+<td>What happens to embryos that are not transferred? Freezing? Donation? Research? Destruction? Different ethical/religious views on the moral status of the embryo.</td>
+</tr>
+<tr>
+<td>Selective reduction</td>
+<td>If multiple embryos implant, reducing the number to avoid risk of multiple births raises ethical concerns about ending potential lives.</td>
+</tr>
+<tr>
+<td>Surrogacy</td>
+<td>A surrogate carries a pregnancy for intended parents. Issues include exploitation, legal parentage, and commercialization of reproduction.</td>
+</tr>
+<tr>
+<td>Access and cost</td>
+<td>IVF is expensive and not equally available. Should it be publicly funded?</td>
+</tr>
+<tr>
+<td>Genetic screening</td>
+<td>Preimplantation genetic diagnosis (PGD) allows screening for genetic diseases. Controversial for non-medical selection (e.g., sex selection).</td>
+</tr>
+<tr>
+<td>Age limits</td>
+<td>Should there be an upper age limit for IVF?</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>7. Summary: Integration of Reproduction</h2>
+
+<table>
+<tr>
+<td>Process</td>
+<td>What Happens</td>
+<td>Key Control</td>
+</tr>
+<tr>
+<td>Spermatogenesis</td>
+<td>Spermatogonia → primary spermatocyte → meiosis → 4 spermatozoa</td>
+<td>Testosterone from Leydig cells (LH-stimulated); Sertoli cells (FSH-stimulated)</td>
+</tr>
+<tr>
+<td>Oogenesis</td>
+<td>Oogonia → primary oocyte (arrested prophase I) → ovulation → secondary oocyte (arrested metaphase II) → fertilization → ovum</td>
+<td>FSH (follicle development), LH surge (ovulation)</td>
+</tr>
+<tr>
+<td>Fertilization</td>
+<td>Sperm penetrates corona radiata → acrosome reaction → membrane fusion → cortical reaction → zygote</td>
+<td>Species-specific recognition (ZP3)</td>
+</tr>
+<tr>
+<td>Early development</td>
+<td>Zygote → cleavage → morula → blastocyst → implantation</td>
+<td>Cell division is autonomous; hCG for maternal support</td>
+</tr>
+<tr>
+<td>Menstrual cycle</td>
+<td>Follicular phase → ovulation → luteal phase → menstruation (or pregnancy)</td>
+<td>FSH, LH, estrogen, progesterone, hCG</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>8. Common Misconceptions</h2>
+
+<table>
+<tr>
+<td>Misconception</td>
+<td>Reality</td>
+</tr>
+<tr>
+<td>"Spermatogenesis and oogenesis are symmetric"</td>
+<td>Spermatogenesis produces 4 equal gametes; oogenesis produces 1 large gamete + 2–3 polar bodies (asymmetric).</td>
+</tr>
+<tr>
+<td>"Women produce new eggs throughout life"</td>
+<td>Females are born with all their primary oocytes. No new oocytes are produced after birth. (Stem cell research suggests possible exceptions, but this remains the standard understanding.)</td>
+</tr>
+<tr>
+<td>"The menstrual cycle is always 28 days"</td>
+<td>The average is ~28 days but normal cycles range from 21–35 days. Only ovulation day is relatively consistent (~day 14 before the next period).</td>
+</tr>
+<tr>
+<td>"Estrogen always exerts negative feedback"</td>
+<td>Estrogen exerts <strong>negative feedback</strong> at low/moderate levels, but switches to <strong>positive feedback</strong> at sustained high levels → LH surge.</td>
+</tr>
+<tr>
+<td>"hCG is produced by the mother"</td>
+<td>hCG is produced by the <strong>trophoblast</strong> of the developing embryo — it is an embryonic signal to the mother.</td>
+</tr>
+<tr>
+<td>"Fertilization happens in the uterus"</td>
+<td>Fertilization typically occurs in the <strong>oviduct</strong> (fallopian tube). The blastocyst then travels to the uterus for implantation.</td>
+</tr>
+<tr>
+<td>"The cortical reaction is slow"</td>
+<td>The cortical reaction begins <strong>within seconds</strong> of the first sperm fusing with the egg membrane.</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>9. Practice Problems</h2>
+
+<h3>Problem 1: Gametogenesis Comparison</h3>
+
+<p><strong>(a)</strong> State the ploidy and chromosome number of a human primary spermatocyte and a human secondary oocyte. [2 marks]</p>
+<p><strong>(b)</strong> Explain why oogenesis produces only one functional gamete per primary oocyte, while spermatogenesis produces four. [2 marks]</p>
+<p><strong>(c)</strong> Compare the timing of meiosis in spermatogenesis and oogenesis. [2 marks]</p>
+
+<h3>Problem 2: Fertilization</h3>
+
+<p><strong>(a)</strong> Describe the acrosome reaction and explain its importance. [3 marks]</p>
+<p><strong>(b)</strong> Explain how polyspermy is prevented. [3 marks]</p>
+
+<h3>Problem 3: Hormonal Control</h3>
+
+<p><strong>(a)</strong> Explain how the LH surge is triggered. [3 marks]</p>
+<p><strong>(b)</strong> After ovulation, the corpus luteum forms. Describe its hormonal role and its fate if pregnancy does NOT occur. [3 marks]</p>
+
+<h3>Problem 4: hCG and Pregnancy</h3>
+
+<p><strong>(a)</strong> Explain why hCG is called the "pregnancy hormone" and describe its role in early pregnancy. [3 marks]</p>
+<p><strong>(b)</strong> Pregnancy tests detect hCG in urine. Explain why this is an effective test for pregnancy. [2 marks]</p>
+
+<h3>Problem 5: IVF Ethics</h3>
+
+<p>Discuss the ethical issues surrounding the creation of spare embryos during IVF. [4 marks]</p>
+
+<hr>
+
+<h2>10. Answers</h2>
+
+<h3>Answer 1</h3>
+
+<p><strong>(a)</strong> Primary spermatocyte: diploid (2n), 46 chromosomes [1]. Secondary oocyte: haploid (n), 23 chromosomes (each with 2 chromatids, arrested in metaphase II). [1]</p>
+
+<p><strong>(b)</strong> Oogenesis is <strong>asymmetric</strong> — during meiosis I, almost all the cytoplasm goes to one daughter cell (secondary oocyte), while the other (first polar body) gets very little and degenerates [1]. This preserves the maximum amount of cytoplasm, organelles, and nutrients in the ovum to support early embryonic development. Spermatogenesis is symmetric — all four products differentiate into functional sperm. [1]</p>
+
+<p><strong>(c)</strong> In spermatogenesis, meiosis is continuous — primary spermatocyte enters and completes meiosis without long interruptions [1]. In oogenesis, meiosis is arrested twice: primary oocyte arrests in <strong>prophase I</strong> from fetal development until ovulation (triggered by LH surge); secondary oocyte arrests in <strong>metaphase II</strong> until fertilization [1].</p>
+
+<h3>Answer 2</h3>
+
+<p><strong>(a)</strong> The acrosome reaction is triggered when sperm contact the zona pellucida (ZP3 glycoproteins) [1]. The acrosome, a vesicle containing hydrolytic enzymes (acrosin, hyaluronidase), releases its contents by exocytosis [1]. These enzymes digest a path through the zona pellucida, allowing the sperm to reach and fuse with the egg's plasma membrane. Without the acrosome reaction, sperm cannot penetrate the zona pellucida. [1]</p>
+
+<p><strong>(b)</strong> When the first sperm fuses with the egg membrane, calcium waves are triggered in the egg [1]. This causes <strong>cortical granules</strong> (vesicles beneath the egg membrane) to fuse with the membrane and release their contents [1]. The released enzymes modify ZP3 glycoproteins (sperm can no longer bind) and cause the zona pellucida to <strong>harden</strong> into the fertilization membrane — the <strong>block to polyspermy</strong>. [1]</p>
+
+<h3>Answer 3</h3>
+
+<p><strong>(a)</strong> During the follicular phase, the developing follicle produces increasing amounts of estrogen [1]. When estrogen reaches a sustained high level (around day 12–13), the feedback on the pituitary and hypothalamus switches from <strong>negative to positive</strong> [1]. This positive feedback increases GnRH pulse frequency and pituitary sensitivity, triggering the massive <strong>LH surge</strong> that causes ovulation ~24–36 hours later. [1]</p>
+
+<p><strong>(b)</strong> The corpus luteum secretes <strong>progesterone</strong> and some estrogen; progesterone maintains the thickened, vascular endometrium (prepares for implantation) [1]. It also exerts <strong>negative feedback</strong> on the pituitary, suppressing FSH and LH to prevent new follicle development [1]. If no hCG signal is received (no pregnancy), the corpus luteum degenerates after ~10–12 days → progesterone drops → endometrium sheds → menstruation → cycle restarts. [1]</p>
+
+<h3>Answer 4</h3>
+
+<p><strong>(a)</strong> hCG is secreted by the <strong>trophoblast</strong> cells of the developing embryo, beginning around the time of implantation (~day 7) [1]. It acts like LH, binding to LH receptors on the corpus luteum to <strong>maintain it</strong> [1]. This ensures continued progesterone secretion, which maintains the endometrium and prevents menstruation — sustaining the pregnancy until the placenta develops and takes over progesterone production (~8–10 weeks). [1]</p>
+
+<p><strong>(b)</strong> hCG is produced only by embryonic tissue (trophoblast), not by the mother's body under normal (non-pregnant) conditions [1]. Its presence in urine is therefore a specific indicator of pregnancy. It is detectable from about day 10–14 after fertilization. [1]</p>
+
+<h3>Answer 5</h3>
+
+<p>Arguments for and against spare embryos:</p>
+
+<p><strong>Concerns</strong>: Spare embryos raise questions about the moral status of the embryo — some believe life begins at conception and that destroying embryos is ethically wrong [1]. The fate of unused embryos (freezing indefinitely, donation to research, donation to other couples, or destruction) is ethically contentious [1].</p>
+
+<p><strong>Responses</strong>: Others argue that early-stage embryos (blastocyst, ~100 cells, no nervous system) do not have the same moral status as a person, and that the benefit of helping infertile couples outweighs concerns [1]. Regulations in many countries require informed consent from the couple regarding the disposition of spare embryos. Cryopreservation gives couples the option for future pregnancies without additional ovarian stimulation and egg retrieval [1].</p>
+
+<hr>
+
+<h2>11. Key Terms Summary</h2>
+
+<table>
+<tr>
+<td>Term</td>
+<td>Definition</td>
+</tr>
+<tr>
+<td>Asexual reproduction</td>
+<td>Production of genetically identical offspring from one parent</td>
+</tr>
+<tr>
+<td>Sexual reproduction</td>
+<td>Production of genetically unique offspring via fusion of gametes</td>
+</tr>
+<tr>
+<td>Spermatogenesis</td>
+<td>Formation of sperm in seminiferous tubules; continuous from puberty</td>
+</tr>
+<tr>
+<td>Oogenesis</td>
+<td>Formation of ova; asymmetric, arrested meiosis, limited number</td>
+</tr>
+<tr>
+<td>Seminiferous tubules</td>
+<td>Coiled tubules in testes where spermatogenesis occurs</td>
+</tr>
+<tr>
+<td>Sertoli cells</td>
+<td>Nourish developing sperm in seminiferous tubules</td>
+</tr>
+<tr>
+<td>Leydig cells</td>
+<td>Produce testosterone in response to LH</td>
+</tr>
+<tr>
+<td>Acrosome</td>
+<td>Enzyme-filled cap on sperm head for penetrating egg layers</td>
+</tr>
+<tr>
+<td>Acrosome reaction</td>
+<td>Release of acrosomal enzymes when sperm contacts zona pellucida</td>
+</tr>
+<tr>
+<td>Cortical reaction</td>
+<td>Release of cortical granule contents → zona pellucida hardens → blocks polyspermy</td>
+</tr>
+<tr>
+<td>Zygote</td>
+<td>Diploid cell from fusion of sperm and egg</td>
+</tr>
+<tr>
+<td>Cleavage</td>
+<td>Rapid mitotic divisions without growth after fertilization</td>
+</tr>
+<tr>
+<td>Morula</td>
+<td>Solid ball of ~16–32 cells</td>
+</tr>
+<tr>
+<td>Blastocyst</td>
+<td>Hollow ball with inner cell mass and trophoblast</td>
+</tr>
+<tr>
+<td>Inner cell mass</td>
+<td>Cells that develop into the embryo</td>
+</tr>
+<tr>
+<td>Trophoblast</td>
+<td>Outer blastocyst cells that form placenta; secretes hCG</td>
+</tr>
+<tr>
+<td>Endometrium</td>
+<td>Inner lining of the uterus</td>
+</tr>
+<tr>
+<td>FSH</td>
+<td>Follicle-stimulating hormone; stimulates follicle development</td>
+</tr>
+<tr>
+<td>LH</td>
+<td>Luteinizing hormone; surge triggers ovulation</td>
+</tr>
+<tr>
+<td>Estrogen</td>
+<td>Produced by follicle; thickens endometrium; positive feedback → LH surge</td>
+</tr>
+<tr>
+<td>Progesterone</td>
+<td>Produced by corpus luteum; maintains endometrium; inhibits FSH/LH</td>
+</tr>
+<tr>
+<td>Corpus luteum</td>
+<td>Follicle remnant after ovulation; produces progesterone</td>
+</tr>
+<tr>
+<td>hCG</td>
+<td>Human chorionic gonadotropin; embryonic signal maintains corpus luteum</td>
+</tr>
+<tr>
+<td>Menstrual cycle</td>
+<td>~28-day cycle of follicle development, ovulation, and endometrium changes</td>
+</tr>
+<tr>
+<td>IVF</td>
+<td>In vitro fertilization — fertilization outside the body followed by embryo transfer</td>
+</tr>
+<tr>
+<td>ICSI</td>
+<td>Intracytoplasmic sperm injection — single sperm injected into egg</td>
+</tr>
+</table>
+
+<div class="nav"><a href="lesson_46.html">&#8592; Lesson 46</a><a href="index.html">&#8962; Index</a><a href="lesson_48.html">Lesson 48 &#8594;</a></div>
+
+</body>
+</html>

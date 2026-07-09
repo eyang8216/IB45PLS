@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" font-family="Arial, sans-serif">
+  <rect width="600" height="600" fill="#fff"/>
+  <text x="300" y="24" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">Alternative Splicing: One Pre-mRNA → Multiple Proteins</text>
+  <text x="300" y="44" text-anchor="middle" font-size="12" fill="#666">Human CALCA Gene: Calcitonin vs CGRP</text>
+
+  <!-- Pre-mRNA -->
+  <text x="300" y="70" text-anchor="middle" font-size="11" font-weight="bold" fill="#1565c0">Pre-mRNA (CALCA gene)</text>
+  <rect x="30" y="78" width="540" height="20" rx="4" fill="#1565c0" opacity="0.15" stroke="#1565c0" stroke-width="1.5"/>
+
+  <!-- Exons -->
+  <rect x="45" y="82" width="50" height="12" rx="2" fill="#43a047"/>
+  <text x="70" y="92" text-anchor="middle" font-size="9" fill="#fff" font-weight="bold">E1</text>
+
+  <rect x="145" y="82" width="50" height="12" rx="2" fill="#43a047"/>
+  <text x="170" y="92" text-anchor="middle" font-size="9" fill="#fff" font-weight="bold">E2</text>
+
+  <rect x="245" y="82" width="50" height="12" rx="2" fill="#43a047"/>
+  <text x="270" y="92" text-anchor="middle" font-size="9" fill="#fff" font-weight="bold">E3</text>
+
+  <rect x="345" y="82" width="50" height="12" rx="2" fill="#1565c0"/>
+  <text x="370" y="92" text-anchor="middle" font-size="9" fill="#fff" font-weight="bold">E4</text>
+
+  <rect x="445" y="82" width="50" height="12" rx="2" fill="#e53935"/>
+  <text x="470" y="92" text-anchor="middle" font-size="9" fill="#fff" font-weight="bold">E5</text>
+
+  <rect x="510" y="82" width="50" height="12" rx="2" fill="#e53935"/>
+  <text x="535" y="92" text-anchor="middle" font-size="9" fill="#fff" font-weight="bold">E6</text>
+
+  <!-- Introns -->
+  <line x1="95" y1="88" x2="145" y2="88" stroke="#999" stroke-width="1.5"/>
+  <line x1="195" y1="88" x2="245" y2="88" stroke="#999" stroke-width="1.5"/>
+  <line x1="295" y1="88" x2="345" y2="88" stroke="#999" stroke-width="1.5"/>
+  <line x1="395" y1="88" x2="445" y2="88" stroke="#999" stroke-width="1.5"/>
+  <line x1="495" y1="88" x2="510" y2="88" stroke="#999" stroke-width="1.5"/>
+
+  <!-- Splitting paths -->
+  <g transform="translate(0,0)">
+    <!-- Path to thyroid -->
+    <path d="M300 118 L300 140 L150 140 L150 165" fill="none" stroke="#1a6b3c" stroke-width="2"/>
+    <text x="225" y="135" text-anchor="middle" font-size="10" fill="#1a6b3c">In thyroid cells</text>
+
+    <!-- Path to neurons -->
+    <path d="M300 118 L300 140 L450 140 L450 165" fill="none" stroke="#e53935" stroke-width="2"/>
+    <text x="375" y="135" text-anchor="middle" font-size="10" fill="#e53935">In neurons</text>
+  </g>
+
+  <!-- Thyroid: Calcitonin -->
+  <rect x="30" y="170" width="240" height="190" rx="6" fill="#1a6b3c" opacity="0.08" stroke="#1a6b3c" stroke-width="1.5"/>
+  <text x="150" y="195" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a6b3c">Calcitonin mRNA</text>
+
+  <!-- Spliced exons for calcitonin -->
+  <rect x="55" y="205" width="40" height="14" rx="2" fill="#43a047"/>
+  <text x="75" y="216" text-anchor="middle" font-size="8" fill="#fff">E1</text>
+  <rect x="100" y="205" width="40" height="14" rx="2" fill="#43a047"/>
+  <text x="120" y="216" text-anchor="middle" font-size="8" fill="#fff">E2</text>
+  <rect x="145" y="205" width="40" height="14" rx="2" fill="#43a047"/>
+  <text x="165" y="216" text-anchor="middle" font-size="8" fill="#fff">E3</text>
+  <rect x="190" y="205" width="40" height="14" rx="2" fill="#1565c0"/>
+  <text x="210" y="216" text-anchor="middle" font-size="8" fill="#fff">E4</text>
+
+  <text x="150" y="238" text-anchor="middle" font-size="9" fill="#1a6b3c">Exons 1-2-3-4 spliced together</text>
+  <text x="150" y="253" text-anchor="middle" font-size="9" fill="#e53935">Exons 5 and 6 excluded</text>
+
+  <!-- Protein -->
+  <rect x="70" y="270" width="160" height="28" rx="4" fill="#1a6b3c" opacity="0.2"/>
+  <text x="150" y="290" text-anchor="middle" font-size="10" fill="#1a6b3c" font-weight="bold">Calcitonin (32 aa)</text>
+
+  <text x="150" y="315" text-anchor="middle" font-size="9" fill="#333">Hormone that lowers blood Ca²⁺</text>
+  <text x="150" y="330" text-anchor="middle" font-size="9" fill="#333">Produced in thyroid C-cells</text>
+
+  <!-- Neuron: CGRP -->
+  <rect x="330" y="170" width="240" height="190" rx="6" fill="#e53935" opacity="0.08" stroke="#e53935" stroke-width="1.5"/>
+  <text x="450" y="195" text-anchor="middle" font-size="12" font-weight="bold" fill="#e53935">CGRP mRNA</text>
+
+  <!-- Spliced exons for CGRP -->
+  <rect x="355" y="205" width="40" height="14" rx="2" fill="#43a047"/>
+  <text x="375" y="216" text-anchor="middle" font-size="8" fill="#fff">E1</text>
+  <rect x="400" y="205" width="40" height="14" rx="2" fill="#43a047"/>
+  <text x="420" y="216" text-anchor="middle" font-size="8" fill="#fff">E2</text>
+  <rect x="445" y="205" width="40" height="14" rx="2" fill="#43a047"/>
+  <text x="465" y="216" text-anchor="middle" font-size="8" fill="#fff">E3</text>
+  <rect x="490" y="205" width="40" height="14" rx="2" fill="#e53935"/>
+  <text x="510" y="216" text-anchor="middle" font-size="8" fill="#fff">E5</text>
+  <rect x="525" y="225" width="32" height="14" rx="2" fill="#e53935"/>
+  <text x="541" y="236" text-anchor="middle" font-size="8" fill="#fff">E6</text>
+
+  <text x="450" y="238" text-anchor="middle" font-size="9" fill="#e53935">Exons 1-2-3-5-6 spliced together</text>
+  <text x="450" y="253" text-anchor="middle" font-size="9" fill="#1a6b3c">Exon 4 excluded</text>
+
+  <!-- Protein -->
+  <rect x="370" y="270" width="160" height="28" rx="4" fill="#e53935" opacity="0.2"/>
+  <text x="450" y="290" text-anchor="middle" font-size="10" fill="#e53935" font-weight="bold">CGRP (37 aa)</text>
+
+  <text x="450" y="315" text-anchor="middle" font-size="9" fill="#333">Neurotransmitter / vasodilator</text>
+  <text x="450" y="330" text-anchor="middle" font-size="9" fill="#333">Produced in sensory neurons</text>
+
+  <!-- Splicing types -->
+  <text x="300" y="400" text-anchor="middle" font-size="13" font-weight="bold" fill="#333">Types of Alternative Splicing</text>
+  <rect x="30" y="412" width="540" height="80" rx="6" fill="none" stroke="#ddd" stroke-width="1.5"/>
+
+  <g font-size="9" fill="#333">
+    <text x="50" y="432">• <tspan font-weight="bold">Exon skipping</tspan> — most common; exon excluded (e.g., CALCA exon 4 in neurons)</text>
+    <text x="50" y="450">• <tspan font-weight="bold">Alternative 5' or 3' splice sites</tspan> — different splice site chosen → exon shorter/longer</text>
+    <text x="50" y="468">• <tspan font-weight="bold">Mutually exclusive exons</tspan> — one of two exons included, never both</text>
+    <text x="50" y="486">• <tspan font-weight="bold">Intron retention</tspan> — intron kept in mature mRNA (rare in mammals, common in plants)</text>
+  </g>
+
+  <!-- Dscam note -->
+  <rect x="30" y="505" width="540" height="45" rx="6" fill="#6a1b9a" opacity="0.08" stroke="#6a1b9a" stroke-width="1"/>
+  <text x="300" y="525" text-anchor="middle" font-size="10" fill="#6a1b9a" font-weight="bold">Extreme Example: Drosophila Dscam gene</text>
+  <text x="300" y="542" text-anchor="middle" font-size="9" fill="#333">12 × 48 × 33 × 2 = 38,016 possible isoforms from a single gene — involved in neuronal self-recognition</text>
+
+  <!-- Key insight -->
+  <text x="300" y="575" text-anchor="middle" font-size="10" fill="#666">~20,000 genes → ~100,000+ proteins. Alternative splicing resolves the paradox.</text>
+</svg>

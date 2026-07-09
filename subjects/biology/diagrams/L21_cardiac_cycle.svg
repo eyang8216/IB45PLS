@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 550" width="600" height="550">
+  <rect width="600" height="550" fill="#fff"/>
+  <text x="300" y="28" text-anchor="middle" font-family="Arial" font-size="17" font-weight="bold" fill="#333">Cardiac Cycle — Pressure Graph (Wiggers Diagram)</text>
+
+  <!-- Axes -->
+  <line x1="60" y1="380" x2="560" y2="380" stroke="#333" stroke-width="2"/>
+  <line x1="60" y1="60" x2="60" y2="380" stroke="#333" stroke-width="2"/>
+  <text x="310" y="410" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">Time (one cardiac cycle ~0.8 s)</text>
+  <text x="30" y="220" text-anchor="middle" font-family="Arial" font-size="12" fill="#333" transform="rotate(-90,30,220)">Pressure (mmHg)</text>
+
+  <!-- Y-axis labels -->
+  <text x="52" y="380" text-anchor="end" font-family="Arial" font-size="9" fill="#333">0</text>
+  <text x="52" y="300" text-anchor="end" font-family="Arial" font-size="9" fill="#333">40</text>
+  <text x="52" y="220" text-anchor="end" font-family="Arial" font-size="9" fill="#333">80</text>
+  <text x="52" y="140" text-anchor="end" font-family="Arial" font-size="9" fill="#333">120</text>
+
+  <!-- Grid -->
+  <line x1="60" y1="300" x2="555" y2="300" stroke="#eee" stroke-width="1"/>
+  <line x1="60" y1="220" x2="555" y2="220" stroke="#eee" stroke-width="1"/>
+  <line x1="60" y1="140" x2="555" y2="140" stroke="#eee" stroke-width="1"/>
+
+  <!-- Aortic pressure trace -->
+  <path d="M60,235 Q120,233 180,200 Q220,175 260,150 Q280,143 300,156 Q310,162 320,158 Q350,170 380,185 Q440,200 500,220 Q540,228 555,225" fill="none" stroke="#e53935" stroke-width="2.5"/>
+  <text x="480" y="178" font-family="Arial" font-size="10" fill="#e53935">Aortic Pressure</text>
+
+  <!-- Ventricular pressure trace -->
+  <path d="M60,370 Q100,365 140,355 Q180,300 220,240 Q240,190 260,155 Q270,148 280,160 Q290,172 300,168 Q320,185 350,210 Q400,260 450,310 Q500,345 555,365" fill="none" stroke="#1a6b3c" stroke-width="2.5"/>
+  <text x="350" y="285" font-family="Arial" font-size="10" fill="#1a6b3c">Left Ventricular Pressure</text>
+
+  <!-- Atrial pressure trace -->
+  <path d="M60,350 Q80,348 100,340 Q110,335 115,345 Q125,355 145,348 Q175,340 210,338 Q250,342 280,345 Q320,340 360,338 Q400,342 440,340 Q480,338 555,345" fill="none" stroke="#1565c0" stroke-width="2"/>
+  <text x="500" y="335" font-family="Arial" font-size="9" fill="#1565c0">Atrial P</text>
+
+  <!-- Phase labels -->
+  <rect x="70" y="440" width="80" height="20" rx="3" fill="#e8f5e9" stroke="#43a047" stroke-width="1"/>
+  <text x="110" y="454" text-anchor="middle" font-family="Arial" font-size="8" fill="#333">Atrial Systole</text>
+
+  <rect x="170" y="440" width="110" height="20" rx="3" fill="#fce4ec" stroke="#e53935" stroke-width="1"/>
+  <text x="225" y="454" text-anchor="middle" font-family="Arial" font-size="8" fill="#333">Ventricular Systole</text>
+
+  <rect x="300" y="440" width="120" height="20" rx="3" fill="#e3f2fd" stroke="#1565c0" stroke-width="1"/>
+  <text x="360" y="454" text-anchor="middle" font-family="Arial" font-size="8" fill="#333">Diastole (relaxation)</text>
+
+  <!-- Heart sounds -->
+  <text x="175" y="475" font-family="Arial" font-size="10" fill="#333">S1 "LUB"</text>
+  <text x="310" y="475" font-family="Arial" font-size="10" fill="#333">S2 "DUB"</text>
+
+  <!-- ECG trace below -->
+  <text x="60" y="500" font-family="Arial" font-size="10" font-weight="bold" fill="#333">ECG:</text>
+  <!-- P wave -->
+  <path d="M100,510 Q115,498 130,510" fill="none" stroke="#333" stroke-width="1.5"/>
+  <text x="112" y="523" text-anchor="middle" font-family="Arial" font-size="7" fill="#333">P</text>
+  <!-- QRS -->
+  <path d="M155,510 Q160,515 162,490 L170,530 Q175,510 185,510" fill="none" stroke="#333" stroke-width="2"/>
+  <text x="165" y="523" text-anchor="middle" font-family="Arial" font-size="7" fill="#333">QRS</text>
+  <!-- T -->
+  <path d="M300,510 Q330,490 360,510" fill="none" stroke="#333" stroke-width="1.5"/>
+  <text x="330" y="523" text-anchor="middle" font-family="Arial" font-size="7" fill="#333">T</text>
+
+  <!-- Valve events -->
+  <line x1="160" y1="60" x2="160" y2="380" stroke="#333" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="160" y="55" text-anchor="middle" font-family="Arial" font-size="7" fill="#e53935">AV close</text>
+
+  <line x1="260" y1="60" x2="260" y2="380" stroke="#333" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="260" y="55" text-anchor="middle" font-family="Arial" font-size="7" fill="#1a6b3c">Semilunar open</text>
+
+  <line x1="310" y1="60" x2="310" y2="380" stroke="#333" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="310" y="55" text-anchor="middle" font-family="Arial" font-size="7" fill="#e53935">Semilunar close</text>
+
+  <line x1="460" y1="60" x2="460" y2="380" stroke="#333" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="460" y="55" text-anchor="middle" font-family="Arial" font-size="7" fill="#1a6b3c">AV open</text>
+
+  <text x="500" y="500" font-family="Arial" font-size="9" fill="#333">Dicrotic notch →</text>
+</svg>

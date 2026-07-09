@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 49: Inheritance I (D3.2) — Mendel's Laws, Monohybrid & Dihybrid Crosses, Sex Linkage & Pedigrees — IB Biology HL</title>
+<script>window.MathJax = { tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] } };</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #1a6b3c; --border: #c4d4a9; --highlight: #e8f5e9; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Palatino', 'Georgia', serif; background: var(--bg); color: var(--text); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; font-size: 17px; line-height: 1.7; }
+  h1 { font-size: 1.7rem; color: var(--accent); margin-bottom: 0.5rem; }
+  h2 { font-size: 1.25rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; margin: 2rem 0 1rem; }
+  h3 { font-size: 1.1rem; color: #444; margin: 1.3rem 0 0.5rem; }
+  p, li { margin-bottom: 0.6rem; }
+  ul, ol { padding-left: 1.8rem; margin-bottom: 1rem; }
+  .worked { background: #e8f5e9; border-left: 4px solid #1a6b3c; padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
+  .worked strong { color: #1a6b3c; }
+  .answer { background: #fefdf7; border: 1px solid var(--border); padding: 0.8rem 1.2rem; margin: 0.5rem 0; border-radius: 6px; }
+  .nav { display: flex; justify-content: space-between; margin: 3rem 0 1rem; padding-top: 1rem; border-top: 2px solid var(--border); font-size: 0.9rem; }
+  .nav a { color: #1a5c9e; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  .definition { background: #fff8e1; border-left: 4px solid #e6a817; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  .tip { background: #e3f2fd; border-left: 4px solid #1976d2; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  table { border-collapse: collapse; margin: 0.8rem 0; width: 100%; }
+  th, td { border: 1px solid var(--border); padding: 0.4rem 0.6rem; text-align: left; }
+  th { background: #f0f5e8; }
+  @media print { body { font-size: 14px; } .nav { display: none; } }
+</style>
+</head>
+<body>
+
+
+<h2>What You'll Learn</h2>
+
+<ul>
+<li>Why Gregor Mendel chose pea plants and how his experimental design enabled the discovery of inheritance patterns</li>
+<li>The Law of Segregation and the Law of Independent Assortment</li>
+<li>Key genetic terminology: gene, allele, locus, genotype, phenotype, homozygous, heterozygous, dominant, recessive, codominant, carrier</li>
+<li>How to construct and interpret monohybrid and dihybrid Punnett squares</li>
+<li>The test cross as a diagnostic tool</li>
+<li>Multiple alleles using the ABO blood group system</li>
+<li>Sex determination and X-linked recessive inheritance</li>
+<li>How to analyse pedigrees and determine inheritance patterns</li>
+</ul>
+<hr>
+
+<h2>1. Mendel and the Birth of Genetics</h2>
+
+<h3>Why Pea Plants?</h3>
+
+<p>Gregor Mendel (1822–1884), an Augustinian friar in Brno (modern Czech Republic), spent years crossing pea plants (<em>Pisum sativum</em>) in the monastery garden. Had he chosen almost any other organism, genetics might have been delayed by decades. Mendel's choice of pea plants was brilliant for several reasons:</p>
+
+<table>
+<tr>
+<td>Advantage</td>
+<td>Explanation</td>
+</tr>
+<tr>
+<td>Short generation time</td>
+<td>One generation per growing season; multiple crosses per year</td>
+</tr>
+<tr>
+<td>Many offspring</td>
+<td>Each cross produced hundreds of seeds → large sample sizes → reliable ratios</td>
+</tr>
+<tr>
+<td>Easy to cross-pollinate</td>
+<td>Pea flowers have both male and female parts; Mendel could remove stamens (emasculation) and transfer pollen with a paintbrush</td>
+</tr>
+<tr>
+<td>Discrete traits</td>
+<td>Each trait had two clearly distinct forms (tall vs dwarf, round vs wrinkled seed, yellow vs green seed, purple vs white flower, green vs yellow pod, smooth vs constricted pod, axial vs terminal flower) — no "blending"</td>
+</tr>
+<tr>
+<td>True-breeding lines</td>
+<td>Mendel first established pure-breeding lines by self-pollinating for many generations</td>
+</tr>
+</table>
+
+<p>> <strong>Draw and label:</strong> A diagram showing a pea flower with labels for stamen (male, produces pollen), carpel/pistil (female, contains ovules), and petals. Add an arrow showing cross-pollination: pollen from one plant's stamen being transferred to another plant's carpel after emasculation (removal of stamens from the recipient flower).</p>
+
+<h3>Mendel's Experimental Approach</h3>
+
+<p>Mendel studied <strong>seven traits</strong>, each with two contrasting forms. For each trait, he:</p>
+
+<ol>
+<li>Established <strong>true-breeding (pure-breeding) lines</strong> — plants that, when self-pollinated, always produced offspring identical to the parent for that trait.</li>
+<li>Performed <strong>P-generation cross</strong>: crossed two true-breeding plants differing in one trait (e.g., tall × dwarf).</li>
+<li>Observed the <strong>F₁ (first filial) generation</strong>: all offspring showed only one parental trait (e.g., all tall — the other trait seemed to "disappear").</li>
+<li>Self-pollinated the F₁ plants to produce the <strong>F₂ (second filial) generation</strong>: the "lost" trait reappeared in approximately ¼ of offspring.</li>
+</ol>
+<p>```</p>
+<p>P:    Tall (TT)   ×   Dwarf (tt)</p>
+<p>↓</p>
+<p>F₁:          All Tall (Tt)</p>
+<p>↓  (self-pollinate)</p>
+<p>F₂:    3 Tall : 1 Dwarf</p>
+<p>```</p>
+
+<p>This 3:1 ratio was consistent across all seven traits. Mendel's genius was to <strong>count</strong> the offspring and notice mathematical patterns where others saw only variation.</p>
+
+<div class="tip">
+
+<hr>
+
+<h2>2. The Law of Segregation</h2>
+
+<h3>What It States</h3>
+
+<p>Each organism possesses <strong>two alleles</strong> (versions of a gene) for each trait. During gamete formation (meiosis), these two alleles <strong>separate (segregate)</strong> so that each gamete carries only <strong>one</strong> allele for each gene. At fertilisation, the offspring receives one allele from each parent, restoring the pair.</p>
+
+<p>> <strong>Analogy:</strong> Think of each gene as a pair of shoes (two alleles). When making gametes, you take one shoe from each pair and put it into the gamete "suitcase." The offspring gets one suitcase from each parent, reassembling a complete pair of shoes.</p>
+
+<h3>Key Terminology</h3>
+
+<div class="definition">
+
+<table>
+<tr>
+<td>Term</td>
+<td>Definition</td>
+</tr>
+<tr>
+<td>Gene</td>
+<td>A segment of DNA that codes for a specific polypeptide or functional RNA; the unit of heredity</td>
+</tr>
+<tr>
+<td>Allele</td>
+<td>One specific version of a gene (e.g., tall allele vs dwarf allele of the height gene)</td>
+</tr>
+<tr>
+<td>Locus** (pl. loci)</td>
+<td>The specific physical location of a gene on a chromosome</td>
+</tr>
+<tr>
+<td>Genotype</td>
+<td>The genetic makeup of an organism — the combination of alleles it possesses (e.g., TT, Tt, tt)</td>
+</tr>
+<tr>
+<td>Phenotype</td>
+<td>The observable characteristics of an organism, resulting from genotype + environment</td>
+</tr>
+<tr>
+<td>Homozygous</td>
+<td>Having two identical alleles at a locus (TT = homozygous dominant; tt = homozygous recessive)</td>
+</tr>
+<tr>
+<td>Heterozygous</td>
+<td>Having two different alleles at a locus (Tt)</td>
+</tr>
+<tr>
+<td>Dominant allele</td>
+<td>An allele that is expressed in the phenotype of a heterozygote (masks the recessive allele)</td>
+</tr>
+<tr>
+<td>Recessive allele</td>
+<td>An allele only expressed in the phenotype when homozygous (no dominant allele present)</td>
+</tr>
+<tr>
+<td>Codominant</td>
+<td>Both alleles are expressed equally in the heterozygote (neither is dominant or recessive)</td>
+</tr>
+<tr>
+<td>Carrier</td>
+<td>An individual heterozygous for a recessive allele; they do not show the trait but can pass it to offspring</td>
+</tr>
+</table>
+
+</div>
+
+<p>> <strong>Crucial distinction:</strong> Dominance is about the relationship between alleles in a heterozygote — it is NOT about which allele is more common in a population. The allele for polydactyly (extra fingers) is dominant but rare; the allele for five fingers is recessive but nearly universal.</p>
+
+<h3>Connecting Segregation to Meiosis</h3>
+
+<p>The Law of Segregation has a direct cytological basis in meiosis:</p>
+
+<ul>
+<li>Homologous chromosomes pair in prophase I → each homologue carries one allele of the gene</li>
+<li>Anaphase I separates homologous chromosomes → alleles segregate into different cells</li>
+<li>Each gamete receives one of the two homologues → one allele per gamete</li>
+</ul>
+<p>> <strong>Draw and label:</strong> A pair of homologous chromosomes, one carrying allele A (from mother) and one carrying allele a (from father). Show meiosis I separating the homologues into two daughter cells → each cell contains one allele. Label: "Anaphase I — segregation of alleles."</p>
+
+<hr>
+
+<h2>3. The Law of Independent Assortment</h2>
+
+<h3>What It States</h3>
+
+<p>Alleles of different genes (located on different chromosomes) assort <strong>independently</strong> of one another during gamete formation. The allele a gamete receives for one gene does not influence which allele it receives for another gene.</p>
+
+<h3>Cytological Basis</h3>
+
+<p>During metaphase I of meiosis, homologous chromosome pairs (bivalents) align randomly on the metaphase plate. The orientation of one pair is <strong>independent</strong> of the orientation of any other pair.</p>
+
+<p>> <strong>Analogy:</strong> Imagine shuffling two separate decks of cards — the card you draw from deck 1 has no influence on the card you draw from deck 2. Similarly, which allele of gene A goes into a gamete is independent of which allele of gene B goes in, provided genes A and B are on different chromosomes.</p>
+
+<p>> <strong>Draw and label:</strong> Two bivalent pairs (chromosome 1 pair and chromosome 2 pair) aligned on the metaphase plate. Show two possible orientations: (1) both maternal chromosomes on the same side, and (2) maternal chromosome 1 and paternal chromosome 2 on the same side. Label: "Independent assortment — 2ⁿ possible combinations where n = number of chromosome pairs."</p>
+
+<h3>Important Limitation (HL Preview)</h3>
+
+<p>The Law of Independent Assortment applies only to genes on <strong>different chromosomes</strong> or genes that are <strong>far apart on the same chromosome</strong>. Genes close together on the same chromosome are <strong>linked</strong> and tend to be inherited together (see Lesson 50).</p>
+
+<hr>
+
+<h2>4. Monohybrid Crosses</h2>
+
+<h3>The Classic 3:1 Cross</h3>
+
+<p>A monohybrid cross follows the inheritance of <strong>one gene</strong> with two alleles.</p>
+
+<div class="worked">
+
+<p><strong>Example:</strong> In pea plants, tall (T) is dominant to dwarf (t). Cross two heterozygous tall plants (Tt × Tt).</p>
+
+<p><strong>Step 1 — Determine gametes:</strong> Each parent (Tt) produces gametes T and t in equal proportion (1:1).</p>
+
+<p><strong>Step 2 — Punnett square:</strong></p>
+
+<table>
+<tr>
+<td></td>
+<td>T</td>
+<td>t</td>
+</tr>
+<tr>
+<td>T</td>
+<td>TT</td>
+<td>Tt</td>
+</tr>
+<tr>
+<td>t</td>
+<td>Tt</td>
+<td>tt</td>
+</tr>
+</table>
+
+<p><strong>Step 3 — Results:</strong></p>
+<ul>
+<li><strong>Genotypic ratio:</strong> 1 TT : 2 Tt : 1 tt (1:2:1)</li>
+<li><strong>Phenotypic ratio:</strong> 3 Tall : 1 Dwarf (3:1)</li>
+</ul>
+<p><strong>Step 4 — Interpretation:</strong> ¾ of offspring are tall (TT or Tt); ¼ are dwarf (tt).</p>
+
+</div>
+
+<div class="tip">
+
+<h3>The Test Cross</h3>
+
+<p>A <strong>test cross</strong> determines whether an individual showing the dominant phenotype is homozygous dominant or heterozygous.</p>
+
+<p><strong>Method:</strong> Cross the individual of unknown genotype with a <strong>homozygous recessive</strong> individual.</p>
+
+<div class="worked">
+
+<p><strong>Example:</strong> A tall pea plant could be TT or Tt. Cross it with a dwarf (tt) plant.</p>
+
+<p><strong>Scenario A — If the tall plant is TT (homozygous):</strong></p>
+
+<table>
+<tr>
+<td></td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr>
+<td>t</td>
+<td>Tt</td>
+<td>Tt</td>
+</tr>
+<tr>
+<td>t</td>
+<td>Tt</td>
+<td>Tt</td>
+</tr>
+</table>
+
+<p>All offspring are tall (Tt). <strong>Conclusion:</strong> Unknown genotype is TT.</p>
+
+<p><strong>Scenario B — If the tall plant is Tt (heterozygous):</strong></p>
+
+<table>
+<tr>
+<td></td>
+<td>T</td>
+<td>t</td>
+</tr>
+<tr>
+<td>t</td>
+<td>Tt</td>
+<td>tt</td>
+</tr>
+<tr>
+<td>t</td>
+<td>Tt</td>
+<td>tt</td>
+</tr>
+</table>
+
+<p>Half offspring tall (Tt), half dwarf (tt). <strong>Conclusion:</strong> Unknown genotype is Tt.</p>
+
+<p><strong>Golden Rule:</strong> If ANY offspring show the recessive phenotype, the unknown parent MUST be heterozygous.</p>
+
+</div>
+
+<hr>
+
+<h2>5. Dihybrid Crosses</h2>
+
+<p>A dihybrid cross follows <strong>two genes</strong> simultaneously (on different chromosomes).</p>
+
+<div class="worked">
+
+<p><strong>Example:</strong> In pea plants: round seed (R) dominant to wrinkled (r); yellow seed (Y) dominant to green (y). Cross two plants heterozygous for both traits: RrYy × RrYy.</p>
+
+<p><strong>Step 1 — Determine gametes:</strong> Each parent (RrYy) produces four gamete types in equal proportion (due to independent assortment): RY, Ry, rY, ry.</p>
+
+<p>> Use the <strong>FOIL method</strong> (First, Outside, Inside, Last) to find gametes: (R or r) × (Y or y) → RY, Ry, rY, ry.</p>
+
+<p><strong>Step 2 — Punnett square (4×4):</strong></p>
+
+<table>
+<tr>
+<td></td>
+<td>RY</td>
+<td>Ry</td>
+<td>rY</td>
+<td>ry</td>
+</tr>
+<tr>
+<td>RY</td>
+<td>RRYY</td>
+<td>RRYy</td>
+<td>RrYY</td>
+<td>RrYy</td>
+</tr>
+<tr>
+<td>Ry</td>
+<td>RRYy</td>
+<td>RRyy</td>
+<td>RrYy</td>
+<td>Rryy</td>
+</tr>
+<tr>
+<td>rY</td>
+<td>RrYY</td>
+<td>RrYy</td>
+<td>rrYY</td>
+<td>rrYy</td>
+</tr>
+<tr>
+<td>ry</td>
+<td>RrYy</td>
+<td>Rryy</td>
+<td>rrYy</td>
+<td>rryy</td>
+</tr>
+</table>
+
+<p><strong>Step 3 — Count phenotypes:</strong></p>
+<ul>
+<li>Round, Yellow (R_Y_): 9</li>
+<li>Round, Green (R_yy): 3</li>
+<li>Wrinkled, Yellow (rrY_): 3</li>
+<li>Wrinkled, Green (rryy): 1</li>
+</ul>
+<p><strong>F₂ Phenotypic Ratio:</strong> <strong>9 : 3 : 3 : 1</strong></p>
+
+</div>
+
+<div class="tip">
+
+<hr>
+
+<h2>6. Multiple Alleles: ABO Blood Groups</h2>
+
+<p>Some genes have <strong>more than two alleles</strong> in the population (though any individual still has only two). The ABO blood group system is the classic IB example.</p>
+
+<h3>The Three Alleles</h3>
+
+<table>
+<tr>
+<td>Allele</td>
+<td>Product</td>
+<td>Relationship</td>
+</tr>
+<tr>
+<td>Iᴬ</td>
+<td>Produces A antigen on red blood cell surface</td>
+<td>Codominant with Iᴮ; dominant over i</td>
+</tr>
+<tr>
+<td>Iᴮ</td>
+<td>Produces B antigen on red blood cell surface</td>
+<td>Codominant with Iᴬ; dominant over i</td>
+</tr>
+<tr>
+<td>i</td>
+<td>Produces no antigen (null allele)</td>
+<td>Recessive to both Iᴬ and Iᴮ</td>
+</tr>
+</table>
+
+<h3>Genotypes and Phenotypes</h3>
+
+<table>
+<tr>
+<td>Genotype</td>
+<td>Blood Type (Phenotype)</td>
+<td>Antigens on RBCs</td>
+<td>Antibodies in Plasma</td>
+<td>Can Receive From</td>
+<td>Can Donate To</td>
+</tr>
+<tr>
+<td>IᴬIᴬ or Iᴬi</td>
+<td>Type A</td>
+<td>A antigen</td>
+<td>Anti-B antibodies</td>
+<td>A, O</td>
+<td>A, AB</td>
+</tr>
+<tr>
+<td>IᴮIᴮ or Iᴮi</td>
+<td>Type B</td>
+<td>B antigen</td>
+<td>Anti-A antibodies</td>
+<td>B, O</td>
+<td>B, AB</td>
+</tr>
+<tr>
+<td>IᴬIᴮ</td>
+<td>Type AB</td>
+<td>A and B antigens</td>
+<td>No antibodies</td>
+<td>A, B, AB, O</td>
+<td>AB only</td>
+</tr>
+<tr>
+<td>ii</td>
+<td>Type O</td>
+<td>No antigens</td>
+<td>Anti-A and Anti-B</td>
+<td>O only</td>
+<td>A, B, AB, O</td>
+</tr>
+</table>
+
+<ul>
+<li><strong>Type AB</strong> = universal recipient (no antibodies, so won't attack any transfused blood)</li>
+<li><strong>Type O</strong> = universal donor (no antigens, so recipient antibodies won't attack)</li>
+</ul>
+<p>> <strong>Draw and label:</strong> A red blood cell for each blood type: Type A (triangle = A antigen), Type B (circle = B antigen), Type AB (both triangles and circles), Type O (no antigens).</p>
+
+<div class="worked">
+
+<p><strong>Example:</strong> A mother with blood type A (genotype Iᴬi) and a father with blood type B (genotype Iᴮi) have children. What blood types are possible?</p>
+
+<table>
+<tr>
+<td></td>
+<td>Iᴬ</td>
+<td>i</td>
+</tr>
+<tr>
+<td>Iᴮ</td>
+<td>IᴬIᴮ (AB)</td>
+<td>Iᴮi (B)</td>
+</tr>
+<tr>
+<td>i</td>
+<td>Iᴬi (A)</td>
+<td>ii (O)</td>
+</tr>
+</table>
+
+<p><strong>Result:</strong> All four blood types are possible: A, B, AB, O — each with ¼ probability.</p>
+
+</div>
+
+<hr>
+
+<h2>7. Sex Determination</h2>
+
+<h3>The XX/XY System</h3>
+
+<p>In humans and most mammals:</p>
+
+<ul>
+<li><strong>Females</strong> have two X chromosomes: <strong>XX</strong> (homogametic — produce only X-bearing eggs)</li>
+<li><strong>Males</strong> have one X and one Y chromosome: <strong>XY</strong> (heterogametic — produce 50% X-bearing sperm, 50% Y-bearing sperm)</li>
+</ul>
+<p>The <strong>SRY gene</strong> (Sex-determining Region of the Y chromosome) triggers testis development. Without it, the default developmental pathway produces ovaries.</p>
+
+<p>> <strong>Note:</strong> The Y chromosome is much smaller than the X and carries fewer genes (~70-200 vs ~800-900 on X). Most genes on the X chromosome have no counterpart on the Y.</p>
+
+<div class="worked">
+
+<p><strong>Example:</strong> Probability of a couple having a son?</p>
+
+<table>
+<tr>
+<td></td>
+<td>X (mother)</td>
+<td>X (mother)</td>
+</tr>
+<tr>
+<td>X (father)</td>
+<td>XX (female)</td>
+<td>XX (female)</td>
+</tr>
+<tr>
+<td>Y (father)</td>
+<td>XY (male)</td>
+<td>XY (male)</td>
+</tr>
+</table>
+
+<p><strong>Result:</strong> 50% female, 50% male. The father's sperm determines sex.</p>
+
+</div>
+
+<hr>
+
+<h2>8. Sex Linkage</h2>
+
+<h3>What Is Sex Linkage?</h3>
+
+<p><strong>Sex-linked genes</strong> are located on sex chromosomes (usually the X chromosome). Because males have only one X chromosome, they express any allele on it — even recessive ones — since there is no second X to potentially carry a dominant masking allele.</p>
+
+<p>> <strong>Analogy:</strong> Think of the X and Y chromosomes as two different books. The X chromosome is a complete encyclopedia; the Y chromosome is a thin pamphlet. Males have one encyclopedia and one pamphlet; if the encyclopedia has a typo (recessive allele) on page X, there's no backup copy in the pamphlet to correct it. Females have two encyclopedias, so a typo in one can be corrected by the other.</p>
+
+<h3>X-Linked Recessive Traits</h3>
+
+<p>Key characteristics of X-linked recessive inheritance:</p>
+<ul>
+<li><strong>More common in males</strong> (only need one recessive allele to express the trait)</li>
+<li><strong>Cannot be passed father-to-son</strong> (father gives Y, not X, to his son)</li>
+<li><strong>Affected father → all daughters are carriers</strong> (daughters get father's X)</li>
+<li><strong>Carrier female → 50% of sons affected</strong></li>
+<li><strong>Females can be affected</strong> only if they inherit the recessive allele from both parents (affected father + carrier/affected mother)</li>
+</ul>
+<h3>Example 1: Red-Green Color Blindness</h3>
+
+<p>Red-green color blindness is the inability to distinguish red and green hues. It results from mutations in genes encoding photopigments (opsins) in cone cells on the X chromosome. Affects ~8% of males and ~0.6% of females of European descent.</p>
+
+<div class="worked">
+
+<p><strong>Cross 1 — Carrier female × Normal male:</strong></p>
+
+<p>Let Xᴺ = normal allele, Xⁿ = color-blind allele.</p>
+
+<table>
+<tr>
+<td></td>
+<td>Xᴺ (mother)</td>
+<td>Xⁿ (mother)</td>
+</tr>
+<tr>
+<td>Xᴺ (father)</td>
+<td>XᴺXᴺ (normal ♀)</td>
+<td>XᴺXⁿ (carrier ♀)</td>
+</tr>
+<tr>
+<td>Y (father)</td>
+<td>XᴺY (normal ♂)</td>
+<td>XⁿY (color-blind ♂)</td>
+</tr>
+</table>
+
+<p><strong>Result:</strong> 50% of sons color-blind; 0% of daughters color-blind (but 50% carriers).</p>
+
+</div>
+
+<div class="worked">
+
+<p><strong>Cross 2 — Carrier female × Affected male:</strong></p>
+
+<table>
+<tr>
+<td></td>
+<td>Xᴺ (mother)</td>
+<td>Xⁿ (mother)</td>
+</tr>
+<tr>
+<td>Xⁿ (father)</td>
+<td>XᴺXⁿ (carrier ♀)</td>
+<td>XⁿXⁿ (color-blind ♀)</td>
+</tr>
+<tr>
+<td>Y (father)</td>
+<td>XᴺY (normal ♂)</td>
+<td>XⁿY (color-blind ♂)</td>
+</tr>
+</table>
+
+<p><strong>Result:</strong> 50% of sons color-blind, 50% normal. 50% of daughters color-blind, 50% carriers. <strong>A color-blind female is possible!</strong></p>
+
+</div>
+
+<h3>Example 2: Hemophilia</h3>
+
+<p>Hemophilia is a blood-clotting disorder caused by deficiency of clotting factor VIII (hemophilia A) or factor IX (hemophilia B). The genes for both factors are on the X chromosome.</p>
+
+<ul>
+<li><strong>Consequence:</strong> Minor injuries cause prolonged bleeding; spontaneous internal bleeding into joints.</li>
+<li><strong>Historical note:</strong> Queen Victoria was a carrier; her descendants spread hemophilia through European royal families (the "Royal Disease").</li>
+</ul>
+<div class="worked">
+
+<p><strong>Cross — Carrier female × Normal male (as in Queen Victoria and Prince Albert):</strong></p>
+
+<p>Let Xᴴ = normal clotting allele, Xʰ = hemophilia allele.</p>
+
+<table>
+<tr>
+<td></td>
+<td>Xᴴ (Victoria)</td>
+<td>Xʰ (Victoria)</td>
+</tr>
+<tr>
+<td>Xᴴ (Albert)</td>
+<td>XᴴXᴴ (normal ♀)</td>
+<td>XᴴXʰ (carrier ♀)</td>
+</tr>
+<tr>
+<td>Y (Albert)</td>
+<td>XᴴY (normal ♂)</td>
+<td>XʰY (hemophiliac ♂)</td>
+</tr>
+</table>
+
+<p><strong>Result:</strong> 50% chance of hemophiliac son, 50% chance of carrier daughter. Victoria's son Leopold had hemophilia; daughters Alice and Beatrice were carriers who spread it to the Russian, Spanish, and German royal families.</p>
+
+</div>
+
+<h3>Why No Father-to-Son Transmission?</h3>
+
+<p>The father contributes either an <strong>X</strong> (producing a daughter) or a <strong>Y</strong> (producing a son). An X-linked allele can only travel on the X chromosome. Since sons receive the Y from their father, they cannot inherit X-linked traits from him.</p>
+
+<p>> <strong>Key pattern:</strong> In a pedigree, if you see an affected father with an affected son, the trait CANNOT be X-linked recessive.</p>
+
+<hr>
+
+<h2>9. Pedigree Analysis</h2>
+
+<p>A <strong>pedigree</strong> is a family tree showing the inheritance of a particular trait across generations.</p>
+
+<h3>Pedigree Symbols</h3>
+
+<table>
+<tr>
+<td>Symbol</td>
+<td>Meaning</td>
+</tr>
+<tr>
+<td>□</td>
+<td>Unaffected male</td>
+</tr>
+<tr>
+<td>○</td>
+<td>Unaffected female</td>
+</tr>
+<tr>
+<td>■</td>
+<td>Affected male</td>
+</tr>
+<tr>
+<td>●</td>
+<td>Affected female</td>
+</tr>
+<tr>
+<td>◐</td>
+<td>Carrier (heterozygous) — half-filled</td>
+</tr>
+<tr>
+<td>□—○</td>
+<td>Mating (horizontal line)</td>
+</tr>
+<tr>
+<td>├──┤</td>
+<td>Siblings (horizontal line connects to vertical)</td>
+</tr>
+<tr>
+<td>I, II, III</td>
+<td>Generations (Roman numerals)</td>
+</tr>
+<tr>
+<td>○</td>
+<td>Deceased</td>
+</tr>
+</table>
+
+<p>> <strong>Draw and label:</strong> A sample three-generation pedigree showing all key symbols.</p>
+
+<h3>Determining the Inheritance Pattern</h3>
+
+<div class="definition">
+
+<p><strong>Step-by-step analysis of a pedigree:</strong></p>
+
+<ol>
+<li><strong>Autosomal dominant:</strong></li>
+</ol>
+<ul>
+<li>Appears in <strong>every generation</strong> (no skipping)</li>
+<li>Males and females affected <strong>equally</strong></li>
+<li>Affected individual has at least one affected parent</li>
+<li>Two affected parents can have an unaffected child (if both heterozygous)</li>
+</ul>
+<ol>
+<li><strong>Autosomal recessive:</strong></li>
+</ol>
+<ul>
+<li><strong>Skips generations</strong> (affected children born to unaffected parents)</li>
+<li>Males and females affected <strong>equally</strong></li>
+<li>Two unaffected parents can have an affected child (both must be carriers)</li>
+<li>Consanguinity (related parents) increases probability</li>
+</ul>
+<ol>
+<li><strong>X-linked recessive:</strong></li>
+</ol>
+<ul>
+<li><strong>More males affected</strong> than females</li>
+<li><strong>Never father-to-son</strong> transmission</li>
+<li>Affected father → all daughters are carriers</li>
+<li>Carrier mother → ~50% of sons affected</li>
+<li>Can skip generations via carrier females</li>
+</ul>
+<ol>
+<li><strong>X-linked dominant:</strong></li>
+</ol>
+<ul>
+<li>Affected father → <strong>all daughters affected</strong>, <strong>no sons affected</strong></li>
+<li>Affected mother → 50% of children affected (regardless of sex)</li>
+<li>Does not skip generations (but may appear to if male-to-male transmission is absent)</li>
+</ul>
+</div>
+
+<div class="worked">
+
+<p><strong>Example:</strong> Analyse this pedigree pattern:</p>
+
+<p>```</p>
+<p>I:    □──────○</p>
+<p>│</p>
+<p>II: ┌──┴─────┐</p>
+<p>■       ◐──────□</p>
+<p>│        │</p>
+<p>III: ○  ■   ┌─┴──┐</p>
+<p>○    ■</p>
+<p>```</p>
+
+<ul>
+<li><strong>Observation:</strong> More males affected (3 males, 0 females affected); appears to skip generation I → II (unaffected parents produce affected son in II — wait, I said more males affected and it skips); an affected male in II has an affected grandson through a carrier daughter.</li>
+<li><strong>Key clue:</strong> The affected male in generation II passes the trait to his grandson through an unaffected (carrier) daughter. No father-to-son. More males affected.</li>
+<li><strong>Conclusion:</strong> <strong>X-linked recessive.</strong></li>
+</ul>
+</div>
+
+<div class="worked">
+
+<p><strong>Example 2:</strong></p>
+
+<p>```</p>
+<p>I:    ■──────○</p>
+<p>│</p>
+<p>II: ┌──┴──────────┐</p>
+<p>■     ○──────□</p>
+<p>│        │</p>
+<p>III: ■  ○   ○  ■</p>
+<p>```</p>
+
+<ul>
+<li><strong>Observation:</strong> Appears in every generation; males and females both affected; affected father (I) → affected son (II) — father-to-son transmission present.</li>
+<li><strong>Conclusion:</strong> <strong>Autosomal dominant.</strong> (Father-to-son transmission rules out X-linked.)</li>
+</ul>
+</div>
+
+<hr>
+
+<h2>10. Common Misconceptions</h2>
+
+<table>
+<tr>
+<td>Misconception</td>
+<td>Reality</td>
+</tr>
+<tr>
+<td>"Dominant alleles are more common in the population"</td>
+<td>Dominance ≠ frequency. Polydactyly is dominant but rare; five-fingered condition is recessive but nearly universal</td>
+</tr>
+<tr>
+<td>"Recessive alleles are 'weaker' or 'worse'"</td>
+<td>Recessive alleles are simply not expressed in heterozygotes. Many recessive alleles produce perfectly functional proteins</td>
+</tr>
+<tr>
+<td>"Each trait is controlled by only one gene"</td>
+<td>Most traits are polygenic (controlled by many genes) — see Lesson 50</td>
+</tr>
+<tr>
+<td>"Offspring always show a blend of parental traits"</td>
+<td>Mendel's discrete 3:1 ratios disproved blending inheritance for Mendelian traits</td>
+</tr>
+<tr>
+<td>"The father determines sex because his sperm are 'stronger'"</td>
+<td>Sex is determined randomly — X-bearing and Y-bearing sperm are produced in equal numbers</td>
+</tr>
+<tr>
+<td>"Color blindness means seeing in black and white"</td>
+<td>True achromatopsia (complete color blindness) is extremely rare; most color blindness is red-green deficiency</td>
+</tr>
+<tr>
+<td>"A pedigree showing only males affected must be X-linked"</td>
+<td>Could be autosomal with chance clustering. Look for father-to-son transmission to rule out X-linkage</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1 (Monohybrid Cross)</h3>
+
+<p>In guinea pigs, rough coat (R) is dominant to smooth coat (r). A heterozygous rough-coated guinea pig is crossed with a smooth-coated guinea pig. What are the expected genotypic and phenotypic ratios of the offspring?</p>
+
+<p><details></p>
+<p><summary><strong>Answer</strong></summary></p>
+
+<p><strong>Parental genotypes:</strong> Rr × rr</p>
+
+<p><strong>Gametes:</strong> R, r (from Rr) and r, r (from rr)</p>
+
+<table>
+<tr>
+<td></td>
+<td>R</td>
+<td>r</td>
+</tr>
+<tr>
+<td>r</td>
+<td>Rr</td>
+<td>rr</td>
+</tr>
+<tr>
+<td>r</td>
+<td>Rr</td>
+<td>rr</td>
+</tr>
+</table>
+
+<ul>
+<li><strong>Genotypic ratio:</strong> 1 Rr : 1 rr (1:1)</li>
+<li><strong>Phenotypic ratio:</strong> 1 rough : 1 smooth (1:1)</li>
+</ul>
+<p>This is a test cross situation — the 1:1 ratio confirms the rough parent is heterozygous.</p>
+
+<p></details></p>
+
+<h3>Problem 2 (Dihybrid Cross)</h3>
+
+<p>In pea plants, tall (T) is dominant to dwarf (t) and purple flowers (P) is dominant to white flowers (p). Two plants heterozygous for both traits are crossed. What proportion of offspring will be <strong>dwarf with purple flowers</strong>?</p>
+
+<p><details></p>
+<p><summary><strong>Answer</strong></summary></p>
+
+<p><strong>Cross:</strong> TtPp × TtPp</p>
+
+<p>For dwarf (tt): probability = ¼ (from monohybrid Tt × Tt → 1:2:1, so ¼ tt)</p>
+<p>For purple (P_): probability = ¾ (PP or Pp from monohybrid Pp × Pp)</p>
+
+<p>Since the genes are on different chromosomes (independent assortment):</p>
+<p><strong>Probability of dwarf AND purple</strong> = ¼ × ¾ = <strong>3/16</strong></p>
+
+<p>This matches the 9:3:3:1 ratio — wrinkled purple (3/16).</p>
+
+<p></details></p>
+
+<h3>Problem 3 (Blood Groups)</h3>
+
+<p>A woman with blood type AB claims that a man with blood type O is the father of her child, who has blood type O. Is this possible? Explain.</p>
+
+<p><details></p>
+<p><summary><strong>Answer</strong></summary></p>
+
+<p><strong>Mother:</strong> AB (genotype IᴬIᴮ) — gametes: Iᴬ or Iᴮ</p>
+<p><strong>Alleged father:</strong> O (genotype ii) — gametes: all i</p>
+
+<p>Possible offspring genotypes: Iᴬi (Type A) or Iᴮi (Type B). It is <strong>impossible</strong> for this couple to produce a Type O (ii) child because the mother cannot contribute an i allele (she has none).</p>
+
+<p>The man with blood type O <strong>cannot</strong> be the biological father. However, a man with blood type A (Iᴬi), B (Iᴮi), or O (ii) could be the father if the mother were Type A or B heterozygous — but not with an AB mother.</p>
+
+<p></details></p>
+
+<h3>Problem 4 (X-Linked Recessive)</h3>
+
+<p>Red-green color blindness is X-linked recessive. A woman with normal vision whose father was color-blind marries a man with normal vision. What is the probability that:</p>
+<p>(a) Their son will be color-blind?</p>
+<p>(b) Their daughter will be color-blind?</p>
+<p>(c) Their daughter will be a carrier?</p>
+
+<p><details></p>
+<p><summary><strong>Answer</strong></summary></p>
+
+<p><strong>Woman:</strong> Her father was color-blind (XⁿY), so she must have received his Xⁿ. She has normal vision, so her other X is Xᴺ. Genotype: <strong>XᴺXⁿ</strong> (carrier).</p>
+
+<p><strong>Man:</strong> Normal vision → <strong>XᴺY</strong></p>
+
+<table>
+<tr>
+<td></td>
+<td>Xᴺ (mother)</td>
+<td>Xⁿ (mother)</td>
+</tr>
+<tr>
+<td>Xᴺ (father)</td>
+<td>XᴺXᴺ (normal ♀)</td>
+<td>XᴺXⁿ (carrier ♀)</td>
+</tr>
+<tr>
+<td>Y (father)</td>
+<td>XᴺY (normal ♂)</td>
+<td>XⁿY (color-blind ♂)</td>
+</tr>
+</table>
+
+<p>(a) Son color-blind: <strong>½ (50%)</strong></p>
+<p>(b) Daughter color-blind: <strong>0</strong> (all daughters have at least one Xᴺ from father)</p>
+<p>(c) Daughter carrier: <strong>½ (50%)</strong></p>
+
+<p></details></p>
+
+<h3>Problem 5 (Pedigree Analysis)</h3>
+
+<p>A pedigree shows the following: In generation I, an affected male mates with an unaffected female. They have 4 children in generation II: 2 affected males, 1 unaffected male, and 1 unaffected female. One affected male in II mates with an unaffected female and has 3 children in III: 1 affected female, 1 unaffected male, and 1 unaffected female. What is the most likely mode of inheritance?</p>
+
+<p><details></p>
+<p><summary><strong>Answer</strong></summary></p>
+
+<p><strong>Analysis:</strong></p>
+<ul>
+<li>Appears in every generation (I, II, III) → suggests <strong>dominant</strong></li>
+<li>Males AND females affected (affected female in III) → likely <strong>autosomal</strong>, not X-linked</li>
+<li>Affected father (II) → affected daughter (III) and unaffected children — consistent with autosomal dominant (affected parent heterozygous Aa × unaffected aa → 50% affected)</li>
+<li>No father-to-son transmission shown, but that could be chance with small sample size</li>
+</ul>
+<p><strong>Most likely:</strong> <strong>Autosomal dominant</strong></p>
+
+<p>If it were X-linked dominant: affected father (II) would give his X to ALL daughters → all daughters affected. But here, one daughter is unaffected, so it cannot be X-linked dominant.</p>
+
+<p>If it were X-linked recessive: the affected female in III would need an affected father AND a carrier/affected mother. The mother (who married in) is unaffected, and carrier frequency for most X-linked recessive disorders is low, making this unlikely.</p>
+
+<p></details></p>
+
+<hr>
+
+<h2>Summary</h2>
+
+<table>
+<tr>
+<td>Concept</td>
+<td>Key Points</td>
+</tr>
+<tr>
+<td>Law of Segregation</td>
+<td>Two alleles per gene; separate in meiosis; each gamete gets one; restore pair at fertilisation</td>
+</tr>
+<tr>
+<td>Law of Independent Assortment</td>
+<td>Alleles of different genes (different chromosomes) assort independently</td>
+</tr>
+<tr>
+<td>Monohybrid cross</td>
+<td>3:1 phenotype (dominant); 1:2:1 genotype; test cross uses homozygous recessive</td>
+</tr>
+<tr>
+<td>Dihybrid cross</td>
+<td>9:3:3:1 phenotype (unlinked genes, complete dominance)</td>
+</tr>
+<tr>
+<td>ABO blood groups</td>
+<td>3 alleles (Iᴬ, Iᴮ, i); codominance of Iᴬ and Iᴮ; Type AB = universal recipient; Type O = universal donor</td>
+</tr>
+<tr>
+<td>Sex linkage (X-linked recessive)</td>
+<td>More males affected; no father-to-son; carrier female → 50% affected sons</td>
+</tr>
+<tr>
+<td>Pedigree analysis</td>
+<td>Check: male=female ratio, generation skipping, father-to-son transmission to determine pattern</td>
+</tr>
+</table>
+
+<hr>
+
+<p><em>In the next lesson, we explore HL extension topics: linked genes, recombination frequencies and gene mapping, polygenic inheritance, and the chi-squared test in genetics.</em></p>
+
+<div class="nav"><a href="lesson_48.html">&#8592; Lesson 48</a><a href="index.html">&#8962; Index</a><a href="lesson_50.html">Lesson 50 &#8594;</a></div>
+
+</body>
+</html>

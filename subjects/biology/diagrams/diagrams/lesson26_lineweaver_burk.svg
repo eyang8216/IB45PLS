@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 440" width="600" height="440">
+  <rect width="600" height="440" fill="#fff"/>
+  <text x="300" y="26" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#333">Lineweaver-Burk Plot — Competitive vs Non-Competitive Inhibition</text>
+
+  <!-- LEFT: Competitive -->
+  <text x="150" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1565c0">Competitive Inhibition</text>
+
+  <!-- Axes -->
+  <line x1="40" y1="350" x2="290" y2="350" stroke="#333" stroke-width="2"/>
+  <line x1="40" y1="350" x2="40" y2="60" stroke="#333" stroke-width="2"/>
+  <text x="165" y="385" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#333">1/[S] →</text>
+  <text x="18" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#333" transform="rotate(-90,18,210)">1/v₀ →</text>
+
+  <!-- Normal line -->
+  <line x1="60" y1="330" x2="270" y2="80" stroke="#1a6b3c" stroke-width="2.5"/>
+  <!-- +Competitive -- same y-intercept, steeper -->
+  <line x1="60" y1="330" x2="270" y2="40" stroke="#e53935" stroke-width="2.5"/>
+
+  <!-- y-intercept highlight -->
+  <circle cx="60" cy="330" r="4" fill="#ff8f00"/>
+  <text x="65" y="325" font-family="Arial, sans-serif" font-size="11" fill="#ff8f00" font-weight="bold">1/Vmax (same)</text>
+
+  <!-- x-intercepts -->
+  <circle cx="145" cy="350" r="4" fill="#1a6b3c"/>
+  <text x="142" y="365" font-family="Arial, sans-serif" font-size="9" fill="#1a6b3c">−1/Km</text>
+  <circle cx="120" cy="350" r="4" fill="#e53935"/>
+  <text x="110" y="370" font-family="Arial, sans-serif" font-size="9" fill="#e53935">−1/Km (inhib)</text>
+
+  <!-- Legend -->
+  <line x1="50" y1="395" x2="80" y2="395" stroke="#1a6b3c" stroke-width="2.5"/><text x="85" y="399" font-family="Arial, sans-serif" font-size="10" fill="#1a6b3c">No inhibitor</text>
+  <line x1="50" y1="410" x2="80" y2="410" stroke="#e53935" stroke-width="2.5"/><text x="85" y="414" font-family="Arial, sans-serif" font-size="10" fill="#e53935">+ Compet. inhibitor</text>
+
+  <!-- Key -->
+  <rect x="45" y="420" width="200" height="18" rx="3" fill="none" stroke="#1565c0" stroke-width="1"/>
+  <text x="145" y="433" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#1565c0" font-weight="bold">Y-intercepts EQUAL → Competitive</text>
+
+  <!-- Divider -->
+  <line x1="305" y1="50" x2="305" y2="430" stroke="#ddd" stroke-width="1.5"/>
+
+  <!-- RIGHT: Non-Competitive -->
+  <text x="455" y="55" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#6a1b9a">Non-Competitive Inhibition</text>
+
+  <!-- Axes -->
+  <line x1="320" y1="350" x2="570" y2="350" stroke="#333" stroke-width="2"/>
+  <line x1="320" y1="350" x2="320" y2="60" stroke="#333" stroke-width="2"/>
+  <text x="445" y="385" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#333">1/[S] →</text>
+  <text x="298" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#333" transform="rotate(-90,298,210)">1/v₀ →</text>
+
+  <!-- Normal line -->
+  <line x1="340" y1="330" x2="550" y2="80" stroke="#1a6b3c" stroke-width="2.5"/>
+  <!-- +Non-competitive -- different y-intercept, same x-intercept -->
+  <line x1="340" y1="280" x2="550" y2="130" stroke="#6a1b9a" stroke-width="2.5"/>
+
+  <!-- y-intercepts -->
+  <circle cx="340" cy="330" r="4" fill="#1a6b3c"/>
+  <text x="340" y="345" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#1a6b3c">1/Vmax</text>
+  <circle cx="340" cy="280" r="4" fill="#6a1b9a"/>
+  <text x="340" y="275" text-anchor="end" font-family="Arial, sans-serif" font-size="9" fill="#6a1b9a">1/Vmax (inhib) ↑</text>
+
+  <!-- x-intercept - same -->
+  <circle cx="425" cy="350" r="4" fill="#ff8f00"/>
+  <text x="425" y="365" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#ff8f00" font-weight="bold">−1/Km (same)</text>
+
+  <line x1="330" y1="395" x2="360" y2="395" stroke="#1a6b3c" stroke-width="2.5"/><text x="365" y="399" font-family="Arial, sans-serif" font-size="10" fill="#1a6b3c">No inhibitor</text>
+  <line x1="330" y1="410" x2="360" y2="410" stroke="#6a1b9a" stroke-width="2.5"/><text x="365" y="414" font-family="Arial, sans-serif" font-size="10" fill="#6a1b9a">+ Non-comp. inhibitor</text>
+
+  <rect x="325" y="420" width="200" height="18" rx="3" fill="none" stroke="#6a1b9a" stroke-width="1"/>
+  <text x="425" y="433" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6a1b9a" font-weight="bold">Y-intercepts DIFFER → Non-competitive</text>
+
+  <!-- Mnemonic -->
+  <text x="300" y="46" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#555" font-style="italic">"Competitors share the Y"</text>
+</svg>

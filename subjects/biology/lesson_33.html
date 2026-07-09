@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 33: Neural Signaling II ⚠️ HL (C2.2) — IB Biology HL</title>
+<script>window.MathJax = { tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] } };</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #1a6b3c; --border: #c4d4a9; --highlight: #e8f5e9; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Palatino', 'Georgia', serif; background: var(--bg); color: var(--text); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; font-size: 17px; line-height: 1.7; }
+  h1 { font-size: 1.7rem; color: var(--accent); margin-bottom: 0.5rem; }
+  h2 { font-size: 1.25rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; margin: 2rem 0 1rem; }
+  h3 { font-size: 1.1rem; color: #444; margin: 1.3rem 0 0.5rem; }
+  p, li { margin-bottom: 0.6rem; }
+  ul, ol { padding-left: 1.8rem; margin-bottom: 1rem; }
+  .worked { background: #e8f5e9; border-left: 4px solid #1a6b3c; padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
+  .worked strong { color: #1a6b3c; }
+  .answer { background: #fefdf7; border: 1px solid var(--border); padding: 0.8rem 1.2rem; margin: 0.5rem 0; border-radius: 6px; }
+  .nav { display: flex; justify-content: space-between; margin: 3rem 0 1rem; padding-top: 1rem; border-top: 2px solid var(--border); font-size: 0.9rem; }
+  .nav a { color: #1a5c9e; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  .definition { background: #fff8e1; border-left: 4px solid #e6a817; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  .tip { background: #e3f2fd; border-left: 4px solid #1976d2; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  table { border-collapse: collapse; margin: 0.8rem 0; width: 100%; }
+  th, td { border: 1px solid var(--border); padding: 0.4rem 0.6rem; text-align: left; }
+  th { background: #f0f5e8; }
+  @media print { body { font-size: 14px; } .nav { display: none; } }
+</style>
+</head>
+<body>
+
+
+<h2>What You'll Learn</h2>
+
+<p>A single neuron in your brain may receive input from 10,000 other neurons. Some whisper "fire!", some shout "don't!", and the neuron must integrate this cacophony of signals to make a binary decision: fire or don't fire. This is the essence of neural computation. In this lesson — the HL extension of neural signaling — you'll learn how neurons perform this integration, how the pattern of firing encodes information, and how synapses physically change to store memories. By the end, you'll understand:</p>
+
+<ul>
+<li>How graded potentials differ from action potentials and why this distinction is fundamental</li>
+<li>The arithmetic of the neuron: spatial and temporal summation at the axon hillock</li>
+<li>How to read oscilloscope traces and extract meaningful information from neural recordings</li>
+<li>Why a stronger stimulus produces higher-frequency firing, not larger action potentials</li>
+<li>How synapses get stronger (LTP) and weaker (LTD) — the cellular basis of learning and memory</li>
+<li>The critical role of NMDA receptors as "coincidence detectors"</li>
+</ul>
+<hr>
+
+<h2>1. Graded Potentials: The Input Language of Neurons</h2>
+
+<p>Before we dive into integration, we need to understand the signals being integrated. Graded potentials are the "whispers" that dendrites and the soma receive — fundamentally different from action potentials.</p>
+
+<div class="definition">
+
+<p><strong>Graded potential</strong> — A local, non-propagated change in membrane potential whose amplitude is <strong>proportional to stimulus intensity</strong> and that <strong>decays with distance</strong> from the site of stimulation. Unlike action potentials, graded potentials are NOT all-or-none.</p>
+
+</div>
+
+<h3>1.1 Properties of Graded Potentials</h3>
+
+<table>
+<tr>
+<td>Property</td>
+<td>Graded Potential</td>
+<td>Action Potential</td>
+</tr>
+<tr>
+<td>Amplitude</td>
+<td>Variable — proportional to stimulus</td>
+<td>Fixed — all-or-none (~100 mV)</td>
+</tr>
+<tr>
+<td>Propagation</td>
+<td>Local — decays with distance (decremental)</td>
+<td>Propagates without decay (non-decremental)</td>
+</tr>
+<tr>
+<td>Summation</td>
+<td>Can summate (temporal + spatial)</td>
+<td>Cannot summate (refractory periods)</td>
+</tr>
+<tr>
+<td>Ion channels</td>
+<td>Ligand-gated or mechanically-gated</td>
+<td>Voltage-gated Na⁺ and K⁺</td>
+</tr>
+<tr>
+<td>Site of initiation</td>
+<td>Dendrites and soma (postsynaptic)</td>
+<td>Axon hillock</td>
+</tr>
+<tr>
+<td>Distance traveled</td>
+<td>Short — a few mm at most</td>
+<td>Long — up to 1 meter</td>
+</tr>
+<tr>
+<td>Refractory period</td>
+<td>None</td>
+<td>Absolute + relative</td>
+</tr>
+</table>
+
+<p><strong>Analogies:</strong></p>
+<ul>
+<li><strong>Graded potential</strong> is like a ripple in a pond — it starts where the stone hits, fades as it spreads, and bigger stones make bigger ripples</li>
+<li><strong>Action potential</strong> is like a line of dominoes — once knocked, each domino falls fully and the signal propagates without weakening</li>
+</ul>
+<h3>1.2 Types of Graded Potentials</h3>
+
+<p><strong>EPSP — Excitatory Postsynaptic Potential:</strong></p>
+<ul>
+<li><strong>Depolarization</strong> (membrane moves toward threshold, e.g., from −70 to −60 mV)</li>
+<li>Typically caused by <strong>Na⁺ influx</strong> through ligand-gated channels (e.g., glutamate binding to AMPA receptors)</li>
+<li>Makes the neuron <strong>more likely</strong> to fire an action potential</li>
+<li>Amplitude typically 0.1-10 mV (at the soma; larger at the synapse)</li>
+</ul>
+<p><strong>IPSP — Inhibitory Postsynaptic Potential:</strong></p>
+<ul>
+<li><strong>Hyperpolarization</strong> (membrane moves away from threshold, e.g., from −70 to −75 mV)</li>
+<li>Caused by <strong>Cl⁻ influx</strong> (e.g., GABA binding to GABA_A receptors) or <strong>K⁺ efflux</strong> (e.g., certain metabotropic receptors opening K⁺ channels)</li>
+<li>Makes the neuron <strong>less likely</strong> to fire an action potential</li>
+</ul>
+<p><strong>Draw and label:</strong> A graph showing membrane potential traces:</p>
+<ul>
+<li>Top trace: An EPSP. Show depolarization from −70 to −60 mV. It rises and then decays back to baseline over ~10-20 ms.</li>
+<li>Bottom trace: An IPSP. Show hyperpolarization from −70 to −75 mV. Similar time course.</li>
+<li>Label both: "Graded — amplitude proportional to stimulus" and "Decays with distance from synapse"</li>
+</ul>
+<h3>1.3 Why Graded Potentials Decay</h3>
+
+<p>Graded potentials decay with distance because of two passive electrical properties of the membrane:</p>
+
+<ol>
+<li><strong>Membrane resistance (R_m):</strong> The membrane is "leaky" — ions leak out through channels, so the charge dissipates as it spreads. High membrane resistance (few open channels) = less decay. Low membrane resistance = more decay.</li>
+</ol>
+<ol>
+<li><strong>Internal (axial) resistance (R_a):</strong> The cytoplasm resists current flow. A thin dendrite has higher internal resistance than a thick axon.</li>
+</ol>
+<p>The <strong>length constant (λ)</strong> is the distance over which the potential decays to 37% of its original amplitude. Larger λ = potential spreads further. This depends on the ratio of membrane resistance to internal resistance:</p>
+
+<p style="text-align:center;margin:0.8rem 0;">$$\lambda \propto \sqrt{\frac{R_m}{R_a}}$$</p>
+
+<p>For IB purposes, the key concept is: <strong>graded potentials decay over distance</strong> and the decay is greater in thin processes with leaky membranes. This is why most synapses are on dendrites close to the soma — if a synapse is too far out on a dendrite, its EPSP may decay to insignificance by the time it reaches the axon hillock.</p>
+
+<hr>
+
+<h2>2. Summation: The Arithmetic of the Neuron</h2>
+
+<p>A single EPSP is rarely enough to bring a neuron to threshold. The neuron must <strong>sum</strong> (add together) many inputs to decide whether to fire. This is called <strong>synaptic integration</strong> and it occurs primarily at the <strong>axon hillock</strong>.</p>
+
+<div class="definition">
+
+<p><strong>Summation</strong> — The process by which multiple postsynaptic potentials combine to produce a larger change in membrane potential at the axon hillock.</p>
+
+</div>
+
+<h3>2.1 Spatial Summation</h3>
+
+<p><strong>Spatial summation</strong> occurs when EPSPs (or IPSPs) from <strong>multiple different synapses</strong> arrive at approximately the same time and add together.</p>
+
+<ul>
+<li>Imagine three friends all pushing a stalled car at the same time from different positions — their forces add together to move the car</li>
+<li>Synapse A produces +3 mV EPSP, Synapse B produces +4 mV EPSP, Synapse C produces +5 mV EPSP</li>
+<li>If all arrive simultaneously at the hillock: 3 + 4 + 5 = <strong>+12 mV depolarization</strong> — possibly enough to reach threshold (−70 + 12 = −58 mV, which is above −55 mV threshold)</li>
+</ul>
+<p><strong>Draw and label:</strong> A neuron with three different presynaptic inputs (labeled A, B, C) synapsing at different locations on the dendrites. Show the EPSP from each individual synapse (small, subthreshold depolarizations) and then the combined EPSP at the axon hillock (larger, potentially suprathreshold).</p>
+
+<h3>2.2 Temporal Summation</h3>
+
+<p><strong>Temporal summation</strong> occurs when EPSPs from a <strong>single synapse</strong> arrive in rapid succession and add together.</p>
+
+<ul>
+<li>Imagine one friend pushing the car repeatedly, each push coming before the car has stopped moving from the previous one — the pushes accumulate</li>
+<li>If Synapse A fires at t=0 ms (+3 mV), t=5 ms (+3 mV before first EPSP decays), and t=10 ms (+3 mV), the combined depolarization might reach ~+8-9 mV</li>
+</ul>
+<p><strong>Draw and label:</strong> A single synapse firing three times in quick succession. Show three EPSPs that overlap and add to produce a larger depolarization than any single EPSP.</p>
+
+<h3>2.3 Combining Spatial and Temporal Summation</h3>
+
+<p>Real neurons use both simultaneously. Thousands of synapses, some firing multiple times — the axon hillock is continuously integrating this complex pattern of inputs.</p>
+
+<h3>2.4 IPSPs Subtract from the Sum</h3>
+
+<p>Inhibition matters! An IPSP arriving at the same time as EPSPs reduces the net depolarization. This is <strong>algebraic summation:</strong></p>
+<ul>
+<li>Two EPSPs (+5 mV each) + one IPSP (−3 mV) = +7 mV net depolarization</li>
+<li>If IPSPs are strong enough or numerous enough, they can prevent the neuron from reaching threshold entirely</li>
+</ul>
+<p><strong>Draw and label:</strong> A neuron receiving:</p>
+<ul>
+<li>2 excitatory inputs (green) producing EPSPs</li>
+<li>1 inhibitory input (red) producing an IPSP</li>
+<li>The resulting summed potential at the axon hillock (blue) — smaller than the sum of EPSPs alone</li>
+</ul>
+<div class="worked">
+
+<p><strong>Worked Example: Predicting Whether a Neuron Fires</strong></p>
+
+<p><strong>Scenario:</strong> A neuron has a resting potential of −70 mV and a threshold of −55 mV. In one 10 ms window, it receives the following synaptic inputs, all of which reach the axon hillock simultaneously:</p>
+
+<ul>
+<li>Synapse 1 (excitatory): EPSP of +5 mV</li>
+<li>Synapse 2 (excitatory): EPSP of +4 mV</li>
+<li>Synapse 3 (inhibitory): IPSP of −3 mV</li>
+<li>Synapse 4 (excitatory): EPSP of +6 mV</li>
+</ul>
+<p><strong>(a)</strong> What is the net depolarization at the axon hillock?</p>
+<p><strong>(b)</strong> Does the neuron reach threshold and fire an action potential?</p>
+<p><strong>(c)</strong> If Synapse 3 (inhibitory) were silenced, would the neuron fire?</p>
+
+<p><strong>Answers:</strong></p>
+
+<p><strong>(a)</strong> Net = (+5) + (+4) + (−3) + (+6) = <strong>+12 mV</strong></p>
+<p>Membrane potential: −70 + 12 = <strong>−58 mV</strong></p>
+
+<p><strong>(b)</strong> No. −58 mV is below the threshold of −55 mV. Despite strong excitation, the single IPSP is enough to prevent firing.</p>
+
+<p><strong>(c)</strong> Without Synapse 3: Net = (+5) + (+4) + (+6) = +15 mV</p>
+<p>Membrane potential: −70 + 15 = <strong>−55 mV</strong></p>
+<p>Yes — exactly at threshold, so the neuron would fire.</p>
+
+<p><strong>IB significance:</strong> This demonstrates how a single inhibitory synapse can veto the combined input of multiple excitatory synapses. This is the basis of <strong>lateral inhibition</strong> in sensory processing (sharpening contrast) and the balanced excitation/inhibition that prevents seizures.</p>
+
+</div>
+
+<div class="tip">
+
+<p><strong>Paper 1 Tip:</strong> A common question asks: "Where does summation occur?" The answer is the <strong>axon hillock</strong> — this is where the integrated signal determines whether threshold is reached. Summation begins in the dendrites but the "decision point" is the hillock.</p>
+
+<p><strong>Paper 2 Tip:</strong> If given a diagram of a neuron with multiple inputs, you may be asked to predict whether an action potential will fire. Calculate the net depolarization (EPSP sum minus IPSP sum) and compare to threshold (usually given as −55 mV or a 15 mV depolarization from rest).</p>
+
+</div>
+
+<hr>
+
+<h2>3. Oscilloscope Traces: Reading the Neural Code</h2>
+
+<p>The IB expects you to be able to interpret oscilloscope recordings of neural activity. This is a core skill for Paper 2 data-analysis questions.</p>
+
+<h3>3.1 What the Oscilloscope Shows</h3>
+
+<p>An oscilloscope connected to a neuron displays <strong>membrane potential (voltage) on the y-axis</strong> and <strong>time on the x-axis</strong>. You can identify:</p>
+
+<ul>
+<li><strong>Resting potential:</strong> The baseline voltage</li>
+<li><strong>EPSPs:</strong> Small upward (depolarizing) bumps that don't reach threshold</li>
+<li><strong>IPSPs:</strong> Small downward (hyperpolarizing) dips</li>
+<li><strong>Action potentials:</strong> Large, rapid spikes of stereotyped shape</li>
+<li><strong>Threshold:</strong> The voltage at which the spike initiates</li>
+<li><strong>Amplitude:</strong> The height of the action potential (from resting to peak, typically ~100 mV)</li>
+<li><strong>Duration:</strong> The width of the action potential (typically 1-2 ms)</li>
+<li><strong>Frequency:</strong> Number of action potentials per unit time (Hz = APs/second)</li>
+<li><strong>After-hyperpolarization:</strong> The dip below resting potential following the spike</li>
+</ul>
+<p><strong>Draw and label:</strong> An oscilloscope trace showing:</p>
+<ul>
+<li>The baseline (resting potential) clearly marked at −70 mV</li>
+<li>One or two subthreshold EPSPs (small bumps)</li>
+<li>Three action potentials of varying spacing</li>
+<li>Labels for: threshold (−55 mV), amplitude, and after-hyperpolarization</li>
+<li>A scale bar: vertical = 20 mV, horizontal = 10 ms</li>
+</ul>
+<h3>3.2 Measuring from Oscilloscope Traces</h3>
+
+<div class="worked">
+
+<p><strong>Worked Example: Oscilloscope Analysis</strong></p>
+
+<p><strong>Scenario:</strong> Below is data from an oscilloscope recording. The resting potential is −70 mV.</p>
+
+<table>
+<tr>
+<td>Time (ms)</td>
+<td>Membrane potential (mV)</td>
+</tr>
+<tr>
+<td>0</td>
+<td>−70</td>
+</tr>
+<tr>
+<td>2</td>
+<td>−68 (EPSP begins)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>−63</td>
+</tr>
+<tr>
+<td>6</td>
+<td>−67 (EPSP decays)</td>
+</tr>
+<tr>
+<td>8</td>
+<td>−70</td>
+</tr>
+<tr>
+<td>10</td>
+<td>−55</td>
+</tr>
+<tr>
+<td>10.5</td>
+<td>−30</td>
+</tr>
+<tr>
+<td>11</td>
+<td>+30</td>
+</tr>
+<tr>
+<td>11.5</td>
+<td>+10</td>
+</tr>
+<tr>
+<td>12</td>
+<td>−40</td>
+</tr>
+<tr>
+<td>12.5</td>
+<td>−65</td>
+</tr>
+<tr>
+<td>13</td>
+<td>−75</td>
+</tr>
+<tr>
+<td>15</td>
+<td>−70</td>
+</tr>
+</table>
+
+<p><strong>(a)</strong> What type of event occurs at 10-13 ms?</p>
+<p><strong>(b)</strong> What is the amplitude of this event?</p>
+<p><strong>(c)</strong> What is the approximate duration?</p>
+<p><strong>(d)</strong> How large was the EPSP that preceded the event?</p>
+<p><strong>(e)</strong> Why does the membrane go to −75 mV at 13 ms?</p>
+
+<p><strong>Answers:</strong></p>
+
+<p><strong>(a)</strong> An <strong>action potential</strong> — the rapid depolarization from −55 mV (threshold) to +30 mV followed by repolarization is the classic AP signature.</p>
+
+<p><strong>(b)</strong> Amplitude = Peak − Resting = +30 − (−70) = <strong>100 mV</strong></p>
+
+<p><strong>(c)</strong> Duration ≈ from threshold (10 ms) to return to resting (15 ms) ≈ <strong>5 ms</strong>. Note: the actual spike is narrower (threshold to repolarization ≈ 2.5 ms), but the after-hyperpolarization extends the total event.</p>
+
+<p><strong>(d)</strong> The EPSP peaked at −63 mV from a baseline of −70 mV → EPSP amplitude = <strong>7 mV</strong>. This was subthreshold (threshold is −55 mV), so no AP was triggered directly — the AP at 10 ms must have been triggered by additional EPSPs arriving later.</p>
+
+<p><strong>(e)</strong> This is the <strong>after-hyperpolarization</strong> (undershoot). Voltage-gated K⁺ channels are slow to close, so excess K⁺ efflux drives the membrane below resting potential. This is the relative refractory period.</p>
+
+</div>
+
+<hr>
+
+<h2>4. Frequency Coding: How Stimulus Intensity is Encoded</h2>
+
+<p>If all action potentials have the same amplitude, how does the nervous system distinguish a weak stimulus from a strong one?</p>
+
+<div class="definition">
+
+<p><strong>Frequency coding</strong> — The encoding of stimulus intensity by the <strong>frequency</strong> (rate) of action potential firing. A more intense stimulus produces a higher frequency of action potentials; the amplitude of individual action potentials remains constant.</p>
+
+</div>
+
+<h3>4.1 The Principle</h3>
+
+<p>Think of a fire alarm:</p>
+<ul>
+<li>A small fire might trigger one alarm pulse per second</li>
+<li>A massive fire triggers many pulses per second</li>
+<li>Each individual alarm sound is equally loud — what changes is the rate</li>
+</ul>
+<p>Similarly:</p>
+<ul>
+<li>A light touch on your skin fires sensory neurons at ~10-20 Hz</li>
+<li>Firm pressure fires them at ~100+ Hz</li>
+<li>Each action potential is identical in amplitude (~100 mV)</li>
+</ul>
+<h3>4.2 Why Frequency, Not Amplitude?</h3>
+
+<p>The all-or-none property of the action potential means amplitude is fixed. But the <strong>refractory period</strong> sets a maximum firing rate:</p>
+
+<ul>
+<li>Absolute refractory period: ~1 ms → theoretical maximum ~1,000 Hz</li>
+<li>Relative refractory period extends this → practical maximum in most neurons: ~200-500 Hz</li>
+<li>Within this range, the neuron can fire at any frequency proportional to stimulus intensity</li>
+</ul>
+<h3>4.3 Mechanisms of Frequency Coding</h3>
+
+<p><strong>At the receptor level:</strong> A stronger stimulus:</p>
+<ul>
+<li>Produces a larger <strong>receptor (generator) potential</strong> (graded)</li>
+<li>The larger generator potential reaches threshold faster</li>
+<li>After the first AP and refractory period, the membrane is still above threshold → second AP fires sooner → shorter inter-spike interval → higher frequency</li>
+</ul>
+<p><strong>At the synaptic level:</strong> A stronger presynaptic stimulus releases more neurotransmitter, producing a larger EPSP that reaches threshold faster, leading to higher-frequency firing in the postsynaptic neuron.</p>
+
+<p><strong>Draw and label:</strong> Two oscilloscope traces, one above the other:</p>
+<ul>
+<li>Top trace: "Weak stimulus" — 2 action potentials in 100 ms = 20 Hz</li>
+<li>Bottom trace: "Strong stimulus" — 8 action potentials in 100 ms = 80 Hz</li>
+<li>Both traces show APs of identical amplitude</li>
+<li>Label: "Amplitude constant — Frequency varies with stimulus intensity"</li>
+</ul>
+<div class="tip">
+
+<p><strong>Paper 1 Tip:</strong> A classic trick question: "How does a neuron encode a more intense stimulus?" Options include "larger action potentials" (WRONG), "more action potentials per second" (CORRECT), and "longer action potentials" (WRONG). Remember: amplitude is constant, frequency varies.</p>
+
+</div>
+
+<hr>
+
+<h2>5. Synaptic Plasticity: The Cellular Basis of Learning and Memory</h2>
+
+<p>Neurons that fire together, wire together. This famous phrase captures the essence of synaptic plasticity — the ability of synapses to strengthen or weaken over time based on their activity patterns. This is the mechanism underlying learning, memory formation, and brain development.</p>
+
+<div class="definition">
+
+<p><strong>Synaptic plasticity</strong> — The ability of synapses to change their strength (the magnitude of the postsynaptic response to a presynaptic input) in response to patterns of activity. The two major forms are <strong>long-term potentiation (LTP)</strong> — strengthening — and <strong>long-term depression (LTD)</strong> — weakening.</p>
+
+</div>
+
+<h3>5.1 Long-Term Potentiation (LTP)</h3>
+
+<p>LTP is the cellular model for memory formation. It was first discovered in the <strong>hippocampus</strong> (a brain region critical for memory) and has since been found throughout the brain.</p>
+
+<p><strong>The Cast of Molecular Characters:</strong></p>
+<ul>
+<li><strong>AMPA receptor (AMPAR):</strong> A ligand-gated Na⁺ channel that opens when <strong>glutamate</strong> binds. This is the "workhorse" receptor that produces the EPSP during normal synaptic transmission.</li>
+<li><strong>NMDA receptor (NMDAR):</strong> A ligand-gated channel permeable to Na⁺ AND Ca²⁺. It requires TWO conditions to open: (1) glutamate binding AND (2) depolarization to remove the <strong>Mg²⁺ block</strong>. This makes it a <strong>coincidence detector</strong>.</li>
+<li><strong>Ca²⁺:</strong> The critical second messenger that triggers LTP. It enters through the NMDA receptor.</li>
+<li><strong>CaMKII:</strong> Calcium/calmodulin-dependent protein kinase II — activated by Ca²⁺, it phosphorylates targets that strengthen the synapse.</li>
+</ul>
+<p><strong>The Mechanism of LTP (Step-by-Step):</strong></p>
+
+<p><strong>Phase 1 — Baseline (Weak Stimulation):</strong></p>
+<ol>
+<li>Presynaptic terminal releases glutamate</li>
+<li>Glutamate binds to both AMPA and NMDA receptors</li>
+<li>AMPA receptors open → Na⁺ enters → small EPSP (e.g., +5 mV)</li>
+<li>NMDA receptors have glutamate bound but the channel is <strong>blocked by Mg²⁺</strong> — no ions flow through</li>
+<li>The synapse is "normal" — no plasticity is triggered</li>
+</ol>
+<p><strong>Phase 2 — Induction (High-Frequency Stimulation / Tetanus):</strong></p>
+<ol>
+<li>The presynaptic neuron fires at high frequency (e.g., 100 Hz for 1 second)</li>
+<li>Each AP releases glutamate, and successive EPSPs <strong>summate</strong> spatially and temporally</li>
+<li>The postsynaptic membrane becomes <strong>strongly depolarized</strong> (e.g., to −30 mV)</li>
+<li>This depolarization <strong>expels the Mg²⁺ ion</strong> from the NMDA receptor pore (Mg²⁺ is positively charged and repelled by the positive interior)</li>
+<li>Now, with glutamate bound AND Mg²⁺ expelled, the NMDA receptor opens</li>
+<li><strong>Ca²⁺</strong> (and Na⁺) flows in through the NMDA receptor</li>
+</ol>
+<p><strong>Phase 3 — Expression (Synaptic Strengthening):</strong></p>
+<ol>
+<li>The rise in intracellular Ca²⁺ activates <strong>CaMKII</strong> (via calmodulin)</li>
+<li>CaMKII phosphorylates AMPA receptors, <strong>increasing their conductance</strong> (each channel passes more current when open)</li>
+<li>CaMKII also triggers the <strong>insertion of additional AMPA receptors</strong> into the postsynaptic membrane from intracellular stores</li>
+<li>Result: For the same amount of glutamate release, the postsynaptic EPSP is now <strong>larger</strong> (e.g., +10 mV instead of +5 mV)</li>
+<li>The synapse has been <strong>potentiated</strong> (strengthened) — and this can last for hours, days, or even years</li>
+</ol>
+<p><strong>The Mg²⁺ Block — The Key to Coincidence Detection:</strong></p>
+
+<p>The NMDA receptor is a <strong>molecular coincidence detector.</strong> It only opens when:</p>
+<ul>
+<li><strong>Condition 1:</strong> Glutamate is bound (indicating the presynaptic neuron fired — signal "1")</li>
+<li><strong>Condition 2:</strong> The postsynaptic neuron is depolarized (indicating it received other strong inputs and is active — signal "2")</li>
+</ul>
+<p>When both conditions are met simultaneously, the synapse is strengthened. This implements a fundamental learning rule: <strong>neurons that fire together, wire together.</strong></p>
+
+<p><strong>Draw and label:</strong> A detailed diagram of an excitatory synapse undergoing LTP:</p>
+
+<p><strong>Panel A — Before LTP (weak stimulation):</strong></p>
+<ul>
+<li>Glutamate shown binding to AMPAR and NMDAR</li>
+<li>AMPAR: open, Na⁺ entering, small EPSP</li>
+<li>NMDAR: Mg²⁺ blocking the pore despite glutamate binding</li>
+<li>Postsynaptic membrane at −65 mV (not enough to expel Mg²⁺)</li>
+</ul>
+<p><strong>Panel B — During LTP induction (high-frequency stimulation):</strong></p>
+<ul>
+<li>Multiple glutamate molecules (from rapid firing)</li>
+<li>Strong depolarization (membrane at −30 mV)</li>
+<li>Mg²⁺ expelled from NMDA receptor</li>
+<li>Ca²⁺ flowing in through NMDA receptor</li>
+<li>Label: "Coincidence detection: Glutamate + Depolarization"</li>
+</ul>
+<p><strong>Panel C — After LTP (potentiated):</strong></p>
+<ul>
+<li>Increased number of AMPA receptors in membrane (show additional receptors)</li>
+<li>Larger Na⁺ influx for same glutamate release</li>
+<li>Larger EPSP amplitude</li>
+<li>Label: "Potentiated synapse — more AMPA receptors inserted"</li>
+</ul>
+<div class="worked">
+
+<p><strong>Worked Example: LTP as a Memory Mechanism</strong></p>
+
+<p><strong>Scenario:</strong> Explain how LTP at hippocampal synapses could underlie the formation of a memory for a new fact (e.g., learning that "Paris is the capital of France").</p>
+
+<p><strong>Step-by-step reasoning:</strong></p>
+
+<ol>
+<li>When you first hear "Paris is the capital of France," specific neurons in the hippocampus and cortex are activated simultaneously (those representing "Paris," "capital," and "France")</li>
+<li>Synapses connecting these co-active neurons receive correlated input — presynaptic and postsynaptic neurons fire together</li>
+<li>This strong, correlated activity triggers <strong>LTP</strong> at these specific synapses (NMDA receptor coincidence detection, Ca²⁺ influx, AMPA receptor insertion)</li>
+<li>The strengthened synapses form a <strong>cell assembly</strong> — a network of neurons whose connections have been reinforced</li>
+<li>Later, when you hear "Paris" again, the strengthened synapses cause the associated neurons ("capital," "France") to fire more readily</li>
+<li>The memory is <strong>retrieved</strong> through reactivation of this cell assembly</li>
+</ol>
+<p><strong>Key IB point:</strong> LTP is the leading cellular model for memory. Memories are thought to be stored as patterns of strengthened synapses (increased synaptic weights) in specific neural circuits. The hippocampus is critical for forming new declarative memories, and LTP in hippocampal synapses (especially at CA3→CA1 Schaffer collateral synapses) is the most studied model system.</p>
+
+</div>
+
+<h3>5.2 Long-Term Depression (LTD)</h3>
+
+<p>If LTP is "turning up the volume" on a synapse, LTD is "turning it down." Not all experiences should strengthen synapses — the brain must also forget, refine, and recalibrate.</p>
+
+<p><strong>Induction:</strong></p>
+<ul>
+<li>Triggered by <strong>low-frequency stimulation</strong> (e.g., 1-5 Hz for several minutes)</li>
+<li>Produces a <strong>small, slow rise</strong> in postsynaptic Ca²⁺ (through NMDARs or voltage-gated Ca²⁺ channels)</li>
+<li>Low Ca²⁺ levels activate <strong>phosphatases</strong> (e.g., calcineurin, PP1) instead of kinases</li>
+</ul>
+<p><strong>Expression:</strong></p>
+<ul>
+<li>Phosphatases <strong>dephosphorylate</strong> AMPA receptors (reducing their conductance)</li>
+<li>AMPA receptors are <strong>removed</strong> from the membrane by endocytosis</li>
+<li>Result: For the same glutamate release, the EPSP is <strong>smaller</strong> — the synapse is depressed</li>
+</ul>
+<p><strong>Functions of LTD:</strong></p>
+<ul>
+<li><strong>Forgetting</strong> irrelevant information</li>
+<li><strong>Refining neural circuits</strong> during development (pruning excess synapses)</li>
+<li><strong>Cerebellar motor learning</strong> — LTD at parallel fiber→Purkinje cell synapses is essential for learning coordinated movements</li>
+<li><strong>Habituation</strong> — learning to ignore repeated, harmless stimuli</li>
+</ul>
+<h3>5.3 LTP vs. LTD Comparison</h3>
+
+<table>
+<tr>
+<td>Feature</td>
+<td>LTP</td>
+<td>LTD</td>
+</tr>
+<tr>
+<td>Stimulation pattern</td>
+<td>High-frequency (50-100 Hz)</td>
+<td>Low-frequency (1-5 Hz)</td>
+</tr>
+<tr>
+<td>Ca²⁺ signal</td>
+<td>Large, rapid rise</td>
+<td>Small, slow rise</td>
+</tr>
+<tr>
+<td>Key enzyme</td>
+<td>CaMKII (kinase)</td>
+<td>Calcineurin / PP1 (phosphatase)</td>
+</tr>
+<tr>
+<td>AMPA receptor change</td>
+<td>Phosphorylated + inserted</td>
+<td>Dephosphorylated + removed</td>
+</tr>
+<tr>
+<td>Effect on EPSP</td>
+<td>Larger</td>
+<td>Smaller</td>
+</tr>
+<tr>
+<td>Synaptic change</td>
+<td>Strengthened</td>
+<td>Weakened</td>
+</tr>
+<tr>
+<td>Functional role</td>
+<td>Memory formation</td>
+<td>Forgetting, refinement</td>
+</tr>
+</table>
+
+<div class="tip">
+
+<p><strong>Paper 1 Tip:</strong> The IB may ask about the role of the NMDA receptor. The key phrase is <strong>"coincidence detector"</strong> — it requires both glutamate binding AND postsynaptic depolarization (to remove Mg²⁺). This is a favorite HL concept.</p>
+
+<p><strong>Paper 2 Tip:</strong> If given experimental data — e.g., applying an NMDA receptor blocker (like APV) and showing that LTP is prevented — you must explain that blocking NMDARs prevents Ca²⁺ influx, so CaMKII is not activated and AMPA receptors are not inserted.</p>
+
+</div>
+
+<hr>
+
+<h2>6. Integration at the Axon Hillock — The Full Picture</h2>
+
+<p>Let's now put it all together. The axon hillock is where:</p>
+
+<ol>
+<li><strong>Graded potentials</strong> (EPSPs and IPSPs) from thousands of synapses arrive</li>
+<li>These are <strong>summated</strong> both spatially (across synapses) and temporally (across time)</li>
+<li>IPSPs <strong>subtract</strong> from the EPSP sum</li>
+<li>If the net depolarization at the hillock reaches <strong>threshold</strong> (~−55 mV), an action potential is triggered</li>
+<li>The AP propagates along the axon (saltatory if myelinated) to the synaptic terminals</li>
+</ol>
+<p>The hillock has the <strong>highest density of voltage-gated Na⁺ channels</strong> in the neuron, making it the most excitable region and the site where the "decision" is made.</p>
+
+<p><strong>Draw and label:</strong> A comprehensive diagram showing:</p>
+<ul>
+<li>A neuron with multiple synaptic inputs on dendrites and soma</li>
+<li>Each synapse labeled as excitatory (green EPSP) or inhibitory (red IPSP)</li>
+<li>Arrows showing graded potentials traveling toward the soma/hillock</li>
+<li>At the hillock: a graph showing the summed potential approaching (and reaching) threshold</li>
+<li>An action potential emerging from the hillock and propagating down the axon</li>
+<li>Label: "Integration at axon hillock — threshold reached → AP fired"</li>
+</ul>
+<hr>
+
+<h2>7. Common Misconceptions</h2>
+
+<table>
+<tr>
+<td>Misconception</td>
+<td>Reality</td>
+</tr>
+<tr>
+<td>"Graded potentials and action potentials are the same thing, just different sizes."</td>
+<td>They are fundamentally different. Graded potentials are local, decay with distance, and vary in amplitude. Action potentials are all-or-none, propagate without decay, and have fixed amplitude.</td>
+</tr>
+<tr>
+<td>"A stronger stimulus produces a larger action potential."</td>
+<td>No.<strong> AP amplitude is constant. A stronger stimulus increases AP </strong>frequency** (frequency coding).</td>
+</tr>
+<tr>
+<td>"Spatial summation means adding EPSPs from the same synapse."</td>
+<td>Spatial summation involves <strong>different synapses</strong>. Temporal summation involves the <strong>same synapse</strong> firing repeatedly.</td>
+</tr>
+<tr>
+<td>"NMDA receptors always open when glutamate binds."</td>
+<td>No.** At resting potential, the NMDA receptor pore is blocked by Mg²⁺. The postsynaptic cell must also be depolarized to expel the Mg²⁺.</td>
+</tr>
+<tr>
+<td>"LTP is the only form of synaptic plasticity."</td>
+<td>LTD is equally important — weakening synapses is critical for forgetting, refining circuits, and maintaining balance.</td>
+</tr>
+<tr>
+<td>"All EPSPs are the same size."</td>
+<td>EPSP amplitude varies — it depends on the amount of neurotransmitter released, the number of postsynaptic receptors, and the distance of the synapse from the soma.</td>
+</tr>
+<tr>
+<td>"The axon hillock is just the start of the axon."</td>
+<td>It's the <strong>integration zone</strong> — the site with the highest Na⁺ channel density where the decision to fire is made.</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>8. Practice Problems</h2>
+
+<h3>Problem 1 (Paper 1 Style — Multiple Choice)</h3>
+
+<p>At the resting membrane potential, NMDA receptors do not conduct ions even when glutamate binds because:</p>
+
+<p>A. NMDA receptors are voltage-gated and only open during depolarization.</p>
+<p>B. The NMDA receptor pore is blocked by Mg²⁺ ions.</p>
+<p>C. NMDA receptors are only found on presynaptic terminals.</p>
+<p>D. Glutamate is an inhibitory neurotransmitter at NMDA receptors.</p>
+
+<p><strong>Answer:</strong> <strong>B</strong>. NMDA receptors are ligand-gated (they require glutamate), but at resting potential (~−70 mV), extracellular Mg²⁺ ions are drawn into the pore and block it. Depolarization repels the Mg²⁺, allowing the channel to conduct. This is the basis of coincidence detection.</p>
+
+<hr>
+
+<h3>Problem 2 (Paper 1 Style — Multiple Choice)</h3>
+
+<p>A neuron receives EPSPs from three synapses simultaneously. The EPSPs are +4 mV, +6 mV, and +3 mV. At the same time, it receives an IPSP of −5 mV. If the resting potential is −70 mV and threshold is −55 mV, what happens?</p>
+
+<p>A. The neuron fires an action potential.</p>
+<p>B. The neuron does not fire.</p>
+<p>C. The neuron fires twice.</p>
+<p>D. The neuron hyperpolarizes.</p>
+
+<p><strong>Answer:</strong> <strong>B</strong>. Net depolarization = (+4 +6 +3) + (−5) = +8 mV. Membrane potential = −70 + 8 = −62 mV. This is below the threshold of −55 mV, so no action potential fires.</p>
+
+<hr>
+
+<h3>Problem 3 (Paper 2 Style — Data Analysis)</h3>
+
+<p>Researchers stimulated a presynaptic neuron with either low-frequency (5 Hz) or high-frequency (100 Hz) stimulation and measured the EPSP amplitude in the postsynaptic neuron before and after stimulation.</p>
+
+<table>
+<tr>
+<td>Condition</td>
+<td>EPSP before (mV)</td>
+<td>EPSP after (mV)</td>
+</tr>
+<tr>
+<td>Low-frequency (5 Hz, 15 min)</td>
+<td>5.0</td>
+<td>3.2</td>
+</tr>
+<tr>
+<td>High-frequency (100 Hz, 1 sec)</td>
+<td>5.0</td>
+<td>8.7</td>
+</tr>
+<tr>
+<td>High-frequency + APV (NMDA blocker)</td>
+<td>5.0</td>
+<td>5.1</td>
+</tr>
+</table>
+
+<p><strong>(a)</strong> Identify the type of plasticity induced by each condition. [2 marks]</p>
+<p><strong>(b)</strong> Explain the cellular mechanism responsible for the change in EPSP after high-frequency stimulation. [4 marks]</p>
+<p><strong>(c)</strong> Explain why APV (an NMDA receptor antagonist) prevents the high-frequency effect. [2 marks]</p>
+
+<p><strong>Answers:</strong></p>
+
+<p><strong>(a)</strong></p>
+<ul>
+<li>Low-frequency (5 Hz): <strong>LTD</strong> — EPSP decreased from 5.0 to 3.2 mV (synaptic weakening)</li>
+<li>High-frequency (100 Hz): <strong>LTP</strong> — EPSP increased from 5.0 to 8.7 mV (synaptic strengthening)</li>
+</ul>
+<p>[2 marks]</p>
+
+<p><strong>(b)</strong> High-frequency stimulation causes LTP through:</p>
+<ol>
+<li>Rapid successive EPSPs summate, strongly depolarizing the postsynaptic membrane [1 mark]</li>
+<li>The depolarization expels Mg²⁺ from NMDA receptors → glutamate-bound NMDARs open → <strong>Ca²⁺ influx</strong> [1 mark]</li>
+<li>High Ca²⁺ activates <strong>CaMKII</strong> (a kinase), which phosphorylates AMPA receptors, increasing their conductance [1 mark]</li>
+<li>CaMKII also triggers <strong>insertion of additional AMPA receptors</strong> into the postsynaptic membrane from intracellular vesicles → larger EPSP for the same glutamate release [1 mark]</li>
+</ol>
+<p>[4 marks]</p>
+
+<p><strong>(c)</strong> APV blocks NMDA receptors, preventing Ca²⁺ influx through these channels. Without the Ca²⁺ signal, CaMKII is not activated, so AMPA receptors are not phosphorylated or inserted. The synapse cannot be potentiated. This demonstrates that NMDAR activation is <strong>necessary</strong> for LTP induction. [2 marks]</p>
+
+<hr>
+
+<h3>Problem 4 (Paper 2 Style — Long Answer)</h3>
+
+<p>Explain how a postsynaptic neuron integrates multiple synaptic inputs to determine whether it will fire an action potential. [6 marks]</p>
+
+<p><strong>Model Answer:</strong></p>
+
+<ol>
+<li>The postsynaptic neuron receives <strong>excitatory inputs</strong> (producing EPSPs — depolarization via Na⁺ influx) and <strong>inhibitory inputs</strong> (producing IPSPs — hyperpolarization via Cl⁻ influx or K⁺ efflux) at synapses distributed across its dendrites and soma [1 mark]</li>
+<li>These postsynaptic potentials are <strong>graded</strong> — their amplitude is proportional to neurotransmitter release and they <strong>decay with distance</strong> as they spread passively toward the soma [1 mark]</li>
+<li>The neuron performs <strong>spatial summation</strong> — EPSPs and IPSPs from different synapses arriving at approximately the same time are added together [1 mark]</li>
+<li>The neuron also performs <strong>temporal summation</strong> — EPSPs from the same synapse arriving in rapid succession overlap and add together if each arrives before the previous one decays [1 mark]</li>
+<li>IPSPs <strong>algebraically subtract</strong> from EPSPs — the net change in membrane potential at the <strong>axon hillock</strong> is the sum of all excitatory and inhibitory inputs [1 mark]</li>
+<li>If the net depolarization at the axon hillock reaches <strong>threshold</strong> (approximately −55 mV), voltage-gated Na⁺ channels open in sufficient numbers to trigger an all-or-none action potential. If not, no action potential occurs. [1 mark]</li>
+</ol>
+<p>[6 marks]</p>
+
+<hr>
+
+<h3>Problem 5 (Paper 2 Style — Application)</h3>
+
+<p>A student records from a sensory neuron responding to touch. When they apply a light touch, they observe 3 action potentials in 100 ms. When they apply firm pressure, they observe 15 action potentials in 100 ms. The amplitude of individual action potentials is the same in both cases.</p>
+
+<p><strong>(a)</strong> Calculate the firing frequency for light touch and firm pressure. [1 mark]</p>
+<p><strong>(b)</strong> Explain why the action potential amplitude is the same despite different stimulus intensities. [2 marks]</p>
+<p><strong>(c)</strong> Explain the mechanism by which a stronger stimulus produces higher-frequency firing at the level of the sensory receptor. [3 marks]</p>
+
+<p><strong>Answers:</strong></p>
+
+<p><strong>(a)</strong> Light touch: 3 AP / 0.1 s = <strong>30 Hz</strong>. Firm pressure: 15 AP / 0.1 s = <strong>150 Hz</strong>. [1 mark]</p>
+
+<p><strong>(b)</strong> Action potentials are <strong>all-or-none</strong> events. Once threshold is reached, voltage-gated Na⁺ channels open in a positive-feedback loop that drives the membrane to approximately the same peak voltage (~+30 to +40 mV) regardless of stimulus intensity. The Na⁺ channel inactivation and K⁺ channel activation that terminate the AP are also independent of stimulus intensity. Stimulus intensity is encoded by firing <strong>frequency</strong>, not amplitude. [2 marks]</p>
+
+<p><strong>(c)</strong> A stronger stimulus produces a larger <strong>receptor (generator) potential</strong> in the sensory receptor. This larger graded depolarization reaches threshold <strong>faster</strong> after the first action potential. During the relative refractory period, the membrane is closer to threshold because of the larger sustained generator potential. Therefore, the <strong>inter-spike interval</strong> is shorter, and more action potentials are generated per unit time. The stronger the stimulus, the shorter the interval between successive APs, resulting in higher frequency. [3 marks]</p>
+
+<hr>
+
+<h2>9. Key Terms Quick Reference</h2>
+
+<table>
+<tr>
+<td>Term</td>
+<td>Definition</td>
+</tr>
+<tr>
+<td>Graded potential</td>
+<td>Local, decremental change in membrane potential proportional to stimulus</td>
+</tr>
+<tr>
+<td>EPSP</td>
+<td>Excitatory postsynaptic potential — depolarization via Na⁺ influx</td>
+</tr>
+<tr>
+<td>IPSP</td>
+<td>Inhibitory postsynaptic potential — hyperpolarization via Cl⁻ influx or K⁺ efflux</td>
+</tr>
+<tr>
+<td>Spatial summation</td>
+<td>Adding EPSPs/IPSPs from different synapses arriving simultaneously</td>
+</tr>
+<tr>
+<td>Temporal summation</td>
+<td>Adding EPSPs from the same synapse arriving in rapid succession</td>
+</tr>
+<tr>
+<td>Axon hillock</td>
+<td>Integration zone with highest Na⁺ channel density — site of AP initiation</td>
+</tr>
+<tr>
+<td>Frequency coding</td>
+<td>Encoding stimulus intensity as AP firing rate (frequency), not amplitude</td>
+</tr>
+<tr>
+<td>Synaptic plasticity</td>
+<td>Activity-dependent change in synaptic strength</td>
+</tr>
+<tr>
+<td>LTP</td>
+<td>Long-term potentiation — synapse strengthened (more AMPARs inserted)</td>
+</tr>
+<tr>
+<td>LTD</td>
+<td>Long-term depression — synapse weakened (AMPARs removed)</td>
+</tr>
+<tr>
+<td>NMDA receptor</td>
+<td>Glutamate-gated Ca²⁺ channel blocked by Mg²⁺ at rest; coincidence detector</td>
+</tr>
+<tr>
+<td>AMPA receptor</td>
+<td>Glutamate-gated Na⁺ channel; mediates baseline EPSP</td>
+</tr>
+<tr>
+<td>CaMKII</td>
+<td>Kinase activated by Ca²⁺-calmodulin; phosphorylates AMPARs in LTP</td>
+</tr>
+<tr>
+<td>Mg²⁺ block</td>
+<td>At resting potential, Mg²⁺ blocks NMDA receptor pore; removed by depolarization</td>
+</tr>
+<tr>
+<td>Coincidence detector</td>
+<td>NMDA receptor requires both glutamate AND depolarization to open</td>
+</tr>
+<tr>
+<td>After-hyperpolarization</td>
+<td>Undershoot below resting potential due to slow K⁺ channel closure</td>
+</tr>
+</table>
+
+<hr>
+
+<p>This HL extension builds on the fundamentals from Lesson 32 to give you a complete picture of neural computation. The concepts of summation, frequency coding, and synaptic plasticity are not just exam material — they explain how your brain processes information, learns, and remembers. Understanding LTP and the NMDA receptor's role as a coincidence detector is one of the most satisfying intellectual achievements in biology, connecting molecular events to the phenomenon of memory.</p>
+
+<div class="nav"><a href="lesson_32.html">&#8592; Lesson 32</a><a href="index.html">&#8962; Index</a><a href="lesson_34.html">Lesson 34 &#8594;</a></div>
+
+</body>
+</html>

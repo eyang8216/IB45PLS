@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500">
+  <rect width="600" height="500" fill="#fff"/>
+  <text x="300" y="26" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#1a6b3c">Telomere Shortening &amp; the End-Replication Problem</text>
+  <text x="300" y="44" text-anchor="middle" font-family="Arial" font-size="11" fill="#666" font-style="italic">Why linear chromosomes shorten with each replication</text>
+
+  <!-- Before replication -->
+  <text x="300" y="72" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#333">Before Replication</text>
+
+  <rect x="60" y="82" width="480" height="65" rx="6" fill="#e8f5e9" stroke="#81c784" stroke-width="1.5"/>
+
+  <!-- Chromosome -->
+  <line x1="100" y1="100" x2="500" y2="100" stroke="#333" stroke-width="3"/>
+  <line x1="100" y1="110" x2="500" y2="110" stroke="#333" stroke-width="3"/>
+
+  <!-- Telomere regions -->
+  <rect x="100" y="92" width="80" height="26" rx="3" fill="#e53935" opacity="0.3"/>
+  <text x="140" y="109" text-anchor="middle" font-family="Arial" font-size="8" fill="#e53935" font-weight="bold">Telomere</text>
+  <text x="140" y="122" text-anchor="middle" font-family="Arial" font-size="7" fill="#c62828">(TTAGGG)ₙ</text>
+
+  <rect x="420" y="92" width="80" height="26" rx="3" fill="#e53935" opacity="0.3"/>
+  <text x="460" y="109" text-anchor="middle" font-family="Arial" font-size="8" fill="#e53935" font-weight="bold">Telomere</text>
+  <text x="460" y="122" text-anchor="middle" font-family="Arial" font-size="7" fill="#c62828">(TTAGGG)ₙ</text>
+
+  <text x="300" y="136" text-anchor="middle" font-family="Arial" font-size="9" fill="#555">Coding genes are protected by long telomere repeats at both ends</text>
+
+  <!-- After 1 round -->
+  <text x="300" y="168" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#333">After 1 Round of Replication</text>
+
+  <rect x="60" y="178" width="480" height="80" rx="6" fill="#fff3e0" stroke="#ffcc80" stroke-width="1.5"/>
+
+  <!-- Original parent strand -->
+  <line x1="100" y1="196" x2="500" y2="196" stroke="#333" stroke-width="3"/>
+  <line x1="100" y1="206" x2="500" y2="206" stroke="#333" stroke-width="3"/>
+
+  <!-- Shorter daughter -->
+  <line x1="115" y1="225" x2="500" y2="225" stroke="#e53935" stroke-width="2"/>
+  <line x1="100" y1="235" x2="500" y2="235" stroke="#e53935" stroke-width="2"/>
+
+  <!-- Gap indicator -->
+  <line x1="100" y1="190" x2="100" y2="245" stroke="#1565c0" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <text x="90" y="260" font-family="Arial" font-size="8" fill="#e53935" font-weight="bold">→ Shortened</text>
+
+  <!-- Annotation -->
+  <text x="300" y="252" text-anchor="middle" font-family="Arial" font-size="9" fill="#555">Lagging strand daughter is shorter at 5' end → lost some telomere repeats</text>
+
+  <!-- After multiple rounds -->
+  <text x="300" y="290" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#333">After Many Rounds (e.g., 50+ in somatic cells)</text>
+
+  <rect x="60" y="300" width="480" height="70" rx="6" fill="#ffebee" stroke="#ef9a9a" stroke-width="1.5"/>
+
+  <line x1="160" y1="320" x2="500" y2="320" stroke="#333" stroke-width="2.5"/>
+  <line x1="160" y1="330" x2="500" y2="330" stroke="#333" stroke-width="2.5"/>
+
+  <!-- Danger zone -->
+  <rect x="160" y="315" width="40" height="20" rx="2" fill="#e53935" opacity="0.4"/>
+  <text x="180" y="329" text-anchor="middle" font-family="Arial" font-size="7" fill="#c62828">⚠</text>
+
+  <text x="300" y="358" text-anchor="middle" font-family="Arial" font-size="9" fill="#555">Telomere critically short → coding genes at risk → DNA damage response →</text>
+  <text x="300" y="372" text-anchor="middle" font-family="Arial" font-size="10" fill="#e53935" font-weight="bold">Cell cycle arrest → Senescence or Apoptosis</text>
+
+  <!-- The mechanism -->
+  <text x="300" y="405" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#333">The End-Replication Problem</text>
+
+  <rect x="40" y="416" width="520" height="75" rx="6" fill="none" stroke="#ccc" stroke-width="1"/>
+
+  <circle cx="65" cy="440" r="9" fill="#43a047" opacity="0.3" stroke="#1a6b3c" stroke-width="1.5"/>
+  <text x="65" y="444" text-anchor="middle" font-family="Arial" font-size="9" fill="#1a6b3c">1</text>
+  <text x="85" y="444" font-family="Arial" font-size="9" fill="#555">Last RNA primer on 5' end of lagging strand cannot be filled.</text>
+
+  <circle cx="65" cy="462" r="9" fill="#43a047" opacity="0.3" stroke="#1a6b3c" stroke-width="1.5"/>
+  <text x="65" y="466" text-anchor="middle" font-family="Arial" font-size="9" fill="#1a6b3c">2</text>
+  <text x="85" y="466" font-family="Arial" font-size="9" fill="#555">Removing primer creates a 3' overhang with missing complementary strand.</text>
+
+  <circle cx="65" cy="484" r="9" fill="#43a047" opacity="0.3" stroke="#1a6b3c" stroke-width="1.5"/>
+  <text x="65" y="488" text-anchor="middle" font-family="Arial" font-size="9" fill="#1a6b3c">3</text>
+  <text x="85" y="488" font-family="Arial" font-size="9" fill="#555">Each round: ~50-200 bp lost. Telomere shortens with each division.</text>
+
+</svg>

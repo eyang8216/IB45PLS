@@ -8,6 +8,20 @@ header h1{font-size:1.5rem;font-weight:600}header p{opacity:.8;margin-top:.3rem}
 header a{color:white;text-decoration:underline;opacity:.7;font-size:.85rem}
 .container{max-width:1000px;margin:0 auto;padding:1.5rem}
 h2{font-size:1.2rem;margin:1.5rem 0 1rem;color:var(--accent);border-bottom:2px solid var(--accent);padding-bottom:.3rem}
+
+/* Progress bars */
+.progress-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem;margin-bottom:1rem}
+.progress-card{background:white;border:1px solid var(--border);border-radius:10px;padding:1rem}
+.progress-card .subj-header{display:flex;align-items:center;gap:.5rem;margin-bottom:.5rem}
+.progress-card .subj-header .icon{font-size:1.2rem}
+.progress-card .subj-header strong{font-size:.95rem}
+.progress-bar-wrap{background:#eee;border-radius:20px;height:10px;overflow:hidden;margin:.3rem 0}
+.progress-bar-fill{height:100%;border-radius:20px;transition:width .3s}
+.progress-bar-fill.low{background:#e74c3c}
+.progress-bar-fill.mid{background:#f39c12}
+.progress-bar-fill.high{background:#27ae60}
+.progress-card .subj-stats{font-size:.8rem;color:#888;display:flex;justify-content:space-between}
+
 .attempts-list{list-style:none}
 .attempts-list li{background:white;border:1px solid var(--border);border-radius:8px;padding:1rem;margin-bottom:.6rem}
 .attempts-list .meta{font-size:.8rem;color:#888;margin-bottom:.3rem}
@@ -26,6 +40,21 @@ h2{font-size:1.2rem;margin:1.5rem 0 1rem;color:var(--accent);border-bottom:2px s
 <p>Welcome, {{ user_name }} · <a href="/">← Back to Lessons</a> · <a href="/logout">Logout</a></p>
 </header>
 <div class="container">
+
+<h2>📚 Lesson Progress</h2>
+{% if subject_progress %}
+<div class="progress-grid">
+{% for key, subj in subject_progress.items() %}
+<div class="progress-card">
+<div class="subj-header"><span class="icon">{{ subj.icon }}</span><strong>{{ subj.name }}</strong></div>
+<div class="progress-bar-wrap">
+<div class="progress-bar-fill {% if subj.pct < 30 %}low{% elif subj.pct < 70 %}mid{% else %}high{% endif %}" style="width:{{ subj.pct }}%"></div>
+</div>
+<div class="subj-stats"><span>{{ subj.viewed }}/{{ subj.total }} lessons viewed</span><span>{{ subj.pct }}%</span></div>
+</div>
+{% endfor %}
+</div>
+{% else %}<p class="empty">No lesson views yet. Start studying to track your progress!</p>{% endif %}
 
 <h2>📝 Lang Lit Mock Attempts</h2>
 {% if mock_attempts %}
@@ -55,7 +84,7 @@ h2{font-size:1.2rem;margin:1.5rem 0 1rem;color:var(--accent);border-bottom:2px s
 </li>
 {% endfor %}
 </ul>
-{% else %}<p class="empty">No mock attempts yet. Try a Paper 1 practice!</p>{% endif %}
+{% else %}<p class="empty">No mock attempts yet. Try a Paper 1 or Paper 2 practice!</p>{% endif %}
 
 <h2>🎓 SAT Attempts</h2>
 {% if sat_attempts %}

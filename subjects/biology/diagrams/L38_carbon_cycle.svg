@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 540" width="600" height="540">
+  <rect width="600" height="540" fill="white"/>
+  <text x="300" y="28" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#333">L38c — The Carbon Cycle</text>
+
+  <!-- Atmosphere Box (center) -->
+  <rect x="210" y="55" width="180" height="55" rx="8" fill="#e8f0fe" stroke="#1565c0" stroke-width="2.5"/>
+  <text x="300" y="78" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#1565c0">Atmosphere</text>
+  <text x="300" y="98" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">CO₂ (~860 Pg C)</text>
+
+  <!-- Terrestrial Biomass -->
+  <rect x="45" y="195" width="155" height="55" rx="6" fill="#e8f5e9" stroke="#1a6b3c" stroke-width="2"/>
+  <text x="122" y="218" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#1a6b3c">Plants &amp; Animals</text>
+  <text x="122" y="240" text-anchor="middle" font-family="Arial" font-size="11" fill="#333">~560 Pg C (biomass)</text>
+
+  <!-- Ocean -->
+  <rect x="400" y="195" width="155" height="55" rx="6" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+  <text x="477" y="218" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#1565c0">Ocean</text>
+  <text x="477" y="240" text-anchor="middle" font-family="Arial" font-size="11" fill="#333">~38,000 Pg C</text>
+
+  <!-- Fossil Fuels -->
+  <rect x="45" y="340" width="155" height="55" rx="6" fill="#fff3e0" stroke="#ff8f00" stroke-width="2"/>
+  <text x="122" y="363" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#ff8f00">Fossil Fuels</text>
+  <text x="122" y="385" text-anchor="middle" font-family="Arial" font-size="11" fill="#333">Coal, Oil, Gas</text>
+
+  <!-- Soil/Decomposers -->
+  <rect x="400" y="340" width="155" height="55" rx="6" fill="#f3e5f5" stroke="#6a1b9a" stroke-width="2"/>
+  <text x="477" y="363" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#6a1b9a">Soil/Decomposers</text>
+  <text x="477" y="385" text-anchor="middle" font-family="Arial" font-size="11" fill="#333">~1,500 Pg C</text>
+
+  <!-- Arrows with labels -->
+  <defs><marker id="ca" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0,0 8,3 0,6" fill="#333"/></marker></defs>
+
+  <!-- Atmosphere → Plants (Photosynthesis) -->
+  <path d="M260,110 L200,150 L160,190" fill="none" stroke="#1a6b3c" stroke-width="2.5" marker-end="url(#ca)"/>
+  <text x="175" y="142" font-family="Arial" font-size="10" fill="#1a6b3c" font-weight="bold">Photosynthesis (120)</text>
+
+  <!-- Plants → Atmosphere (Respiration) -->
+  <path d="M135,195 L170,155 L240,115" fill="none" stroke="#e53935" stroke-width="2.5" marker-end="url(#ca)"/>
+  <text x="135" y="155" font-family="Arial" font-size="10" fill="#e53935">Respiration (60)</text>
+
+  <!-- Atmosphere ↔ Ocean -->
+  <path d="M340,82 L430,82 L475,190" fill="none" stroke="#1565c0" stroke-width="2" marker-end="url(#ca)"/>
+  <text x="380" y="105" font-family="Arial" font-size="10" fill="#1565c0">Ocean uptake (90)</text>
+  <path d="M475,195 L435,140 L350,110" fill="none" stroke="#1565c0" stroke-width="2" marker-end="url(#ca)"/>
+  <text x="410" y="155" font-family="Arial" font-size="10" fill="#1565c0">Outgassing (90)</text>
+
+  <!-- Fossil Fuels → Atmosphere (Combustion) -->
+  <path d="M110,340 L90,280 L180,140 L240,110" fill="none" stroke="#e53935" stroke-width="2.5" marker-end="url(#ca)"/>
+  <text x="80" y="230" font-family="Arial" font-size="10" fill="#e53935" font-weight="bold">Combustion (9)</text>
+
+  <!-- Plants → Soil (Death/Decomposition) -->
+  <path d="M160,240 L200,270 L300,310 L400,345" fill="none" stroke="#6a1b9a" stroke-width="2" marker-end="url(#ca)"/>
+  <text x="280" y="300" font-family="Arial" font-size="9" fill="#6a1b9a">Death/Decomposition</text>
+
+  <!-- Soil → Atmosphere (Decomp respiration) -->
+  <path d="M440,340 L380,280 L350,150 L305,112" fill="none" stroke="#e53935" stroke-width="2" marker-end="url(#ca)"/>
+  <text x="385" y="230" font-family="Arial" font-size="10" fill="#e53935">Decomp. respiration</text>
+
+  <!-- Sedimentation (small) -->
+  <path d="M460,395 L460,460 Q460,480 430,480 L250,480 Q220,480 220,460 L220,430" fill="none" stroke="#999" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="340" y="475" font-family="Arial" font-size="9" fill="#999">Sedimentation (0.2) — Geological timescale</text>
+
+  <!-- Bottom note -->
+  <text x="300" y="520" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">All fluxes in Pg C yr⁻¹ (petagrams). Red arrows = key anthropogenic influence.</text>
+</svg>

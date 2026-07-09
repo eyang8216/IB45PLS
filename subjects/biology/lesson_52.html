@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 52: Natural Selection (D4.1) — Darwin, Selection Types, and Hardy-Weinberg — IB Biology HL</title>
+<script>window.MathJax = { tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] } };</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #1a6b3c; --border: #c4d4a9; --highlight: #e8f5e9; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Palatino', 'Georgia', serif; background: var(--bg); color: var(--text); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; font-size: 17px; line-height: 1.7; }
+  h1 { font-size: 1.7rem; color: var(--accent); margin-bottom: 0.5rem; }
+  h2 { font-size: 1.25rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; margin: 2rem 0 1rem; }
+  h3 { font-size: 1.1rem; color: #444; margin: 1.3rem 0 0.5rem; }
+  p, li { margin-bottom: 0.6rem; }
+  ul, ol { padding-left: 1.8rem; margin-bottom: 1rem; }
+  .worked { background: #e8f5e9; border-left: 4px solid #1a6b3c; padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
+  .worked strong { color: #1a6b3c; }
+  .answer { background: #fefdf7; border: 1px solid var(--border); padding: 0.8rem 1.2rem; margin: 0.5rem 0; border-radius: 6px; }
+  .nav { display: flex; justify-content: space-between; margin: 3rem 0 1rem; padding-top: 1rem; border-top: 2px solid var(--border); font-size: 0.9rem; }
+  .nav a { color: #1a5c9e; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  .definition { background: #fff8e1; border-left: 4px solid #e6a817; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  .tip { background: #e3f2fd; border-left: 4px solid #1976d2; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  table { border-collapse: collapse; margin: 0.8rem 0; width: 100%; }
+  th, td { border: 1px solid var(--border); padding: 0.4rem 0.6rem; text-align: left; }
+  th { background: #f0f5e8; }
+  @media print { body { font-size: 14px; } .nav { display: none; } }
+</style>
+</head>
+<body>
+
+
+<h2>What You'll Learn</h2>
+
+<ul>
+<li>How Darwin and Wallace independently developed the theory of natural selection</li>
+<li>The key observations and inferences that underpin natural selection</li>
+<li>Contrasts between natural selection, artificial selection, and Lamarckian inheritance</li>
+<li>Antibiotic resistance as a modern example of natural selection in action</li>
+<li>The peppered moth as a classic case study of directional selection</li>
+<li>Types of natural selection: directional, stabilising, disruptive, sexual, and frequency-dependent</li>
+<li>The Hardy-Weinberg principle and how to use it to calculate allele and genotype frequencies</li>
+</ul>
+<hr>
+
+<h2>1. Darwin, Wallace, and the Theory of Natural Selection</h2>
+
+<h3>The Historical Context</h3>
+
+<p>By the early 19th century, several lines of evidence pointed toward evolution:</p>
+<ul>
+<li>The <strong>fossil record</strong> showed organisms that no longer existed</li>
+<li><strong>Comparative anatomy</strong> revealed similar structures in different species (homologous structures)</li>
+<li><strong>Biogeography</strong> showed that similar environments on different continents hosted different but ecologically equivalent species</li>
+<li><strong>Selective breeding</strong> showed that species could change dramatically under human direction</li>
+</ul>
+<p>What was missing was a <strong>mechanism</strong> — a natural process that could explain how species change over time without supernatural intervention.</p>
+
+<h3>Charles Darwin (1809–1882)</h3>
+
+<p>Darwin's five-year voyage on <strong>HMS Beagle</strong> (1831–1836) was formative:</p>
+
+<ul>
+<li><strong>Galápagos Islands:</strong> Observed that each island had its own distinct species of mockingbirds and finches, similar to mainland species but clearly different — suggesting descent from a common ancestor with modification on each island.</li>
+<li><strong>South American fossils:</strong> Found fossils of extinct giant armadillos (glyptodonts) in the same regions where smaller modern armadillos lived — suggesting descent with modification.</li>
+<li><strong>Coral atolls:</strong> His theory of atoll formation (subsidence of volcanic islands with coral growth keeping pace) demonstrated his ability to think in terms of slow, cumulative change over vast time spans.</li>
+</ul>
+<p>Darwin gathered evidence for over 20 years before publishing. He was prompted to finally publish in 1858 when:</p>
+
+<h3>Alfred Russel Wallace (1823–1913)</h3>
+
+<p>Wallace, a naturalist working in the Malay Archipelago (modern Indonesia), independently arrived at the theory of natural selection. In 1858, while suffering from malaria, he wrote out his theory and sent it to Darwin for comment. Darwin was stunned — Wallace's ideas were nearly identical to his own.</p>
+
+<p>The solution was a <strong>joint presentation</strong> to the Linnean Society of London on <strong>1 July 1858</strong>, with papers by both men read (neither was present — Darwin was mourning the death of a son; Wallace was still in Southeast Asia). Darwin then rushed to complete <strong>"On the Origin of Species"</strong> (1859).</p>
+
+<p>> <strong>Note for IB:</strong> Darwin and Wallace are credited as co-discoverers, but Darwin's name predominates because he had accumulated far more evidence over decades. Wallace graciously acknowledged Darwin's priority and even titled his own later book <em>Darwinism</em>.</p>
+
+<hr>
+
+<h2>2. Darwin's Observations and Inferences</h2>
+
+<p>Natural selection rests on four observations and two inferences:</p>
+
+<table>
+<tr>
+<td>#</td>
+<td>Type</td>
+<td>Statement</td>
+</tr>
+<tr>
+<td>O1</td>
+<td>Observation</td>
+<td>Overproduction<em>*: All species produce more offspring than can survive to maturity (inspired partly by Thomas Malthus' </em>Essay on the Principle of Population*)</td>
+</tr>
+<tr>
+<td>O2</td>
+<td>Observation</td>
+<td>Variation**: Individuals within a species show variation in their characteristics</td>
+</tr>
+<tr>
+<td>O3</td>
+<td>Observation</td>
+<td>Heritability**: Much of this variation is heritable — offspring resemble their parents</td>
+</tr>
+<tr>
+<td>O4</td>
+<td>Observation</td>
+<td>Struggle for existence**: Resources are limited → competition for survival</td>
+</tr>
+<tr>
+<td>I1</td>
+<td>Inference</td>
+<td>Differential survival and reproduction**: Individuals with traits better suited to their environment are more likely to survive and reproduce (higher fitness)</td>
+</tr>
+<tr>
+<td>I2</td>
+<td>Inference</td>
+<td>Descent with modification**: Over many generations, the population accumulates advantageous traits and changes — evolution by natural selection</td>
+</tr>
+</table>
+
+<p>> <strong>Analogy:</strong> Imagine 1,000 runners in a marathon (overproduction). They vary in speed, endurance, and strategy (variation). Training and genetics influence performance (heritability). Only the top finishers get prize money to support future training (struggle + differential success). Over years of marathons, the average speed of competitors increases (descent with modification).</p>
+
+<div class="tip">
+
+<hr>
+
+<h2>3. Contrasting Theories of Evolution</h2>
+
+<h3>Darwin/Wallace vs Lamarck</h3>
+
+<p><strong>Jean-Baptiste Lamarck (1744–1829)</strong> proposed the <strong>inheritance of acquired characteristics</strong>:</p>
+
+<ul>
+<li>Organisms change during their lifetime in response to environmental demands (use and disuse)</li>
+<li>These acquired changes are passed to offspring</li>
+<li>Classic (incorrect) example: Giraffes stretch their necks to reach high leaves → necks lengthen → offspring inherit longer necks</li>
+</ul>
+<p><strong>Why Lamarck was wrong:</strong></p>
+<ul>
+<li>Acquired characteristics (e.g., building muscle through exercise, losing a limb) do NOT alter the DNA in gametes</li>
+<li>Only changes to DNA in germ-line cells (cells that produce gametes) can be inherited</li>
+<li>The <strong>Weismann barrier</strong> separates somatic cells from germ-line cells</li>
+</ul>
+<p><strong>The Darwin/Wallace (correct) mechanism:</strong></p>
+<ul>
+<li>Variation in neck length already exists in the giraffe population (random genetic variation)</li>
+<li>Giraffes with longer necks can reach more food → survive and reproduce more</li>
+<li>Genes for longer necks are passed to offspring → population shifts toward longer necks over generations</li>
+</ul>
+<p>> <strong>Draw and label:</strong> Two-panel comparison: (Left) Lamarck — giraffe stretches, neck grows, long-necked offspring. (Right) Darwin — population has varied neck lengths, short-necked giraffes starve, long-necked survive and reproduce, population shifts. Label each panel clearly.</p>
+
+<h3>Natural Selection vs Artificial Selection</h3>
+
+<table>
+<tr>
+<td>Feature</td>
+<td>Natural Selection</td>
+<td>Artificial Selection</td>
+</tr>
+<tr>
+<td>Selective agent</td>
+<td>Environment (predators, climate, food availability, disease)</td>
+<td>Humans (breeders, farmers)</td>
+</tr>
+<tr>
+<td>Traits selected</td>
+<td>Those that increase survival and reproduction (fitness)</td>
+<td>Those desired by humans (yield, appearance, temperament)</td>
+</tr>
+<tr>
+<td>Timescale</td>
+<td>Very long (thousands to millions of years)</td>
+<td>Relatively short (decades to centuries)</td>
+</tr>
+<tr>
+<td>Outcome</td>
+<td>Adaptation to environment</td>
+<td>Breeds/varieties suited to human needs</td>
+</tr>
+</table>
+
+<p><strong>Examples of artificial selection as evidence for evolution:</strong></p>
+<ul>
+<li><strong>Dogs</strong> (<em>Canis lupus familiaris</em>): All breeds (from Chihuahua to Great Dane) descended from the grey wolf through ~15,000 years of selective breeding</li>
+<li><strong><em>Brassica oleracea</em>:</strong> A single wild mustard species produced kale, cabbage, broccoli, cauliflower, Brussels sprouts, and kohlrabi through selection for different plant parts (leaves, terminal buds, lateral buds, flowers, stem)</li>
+<li><strong>Maize</strong> (<em>Zea mays</em>): Domesticated from teosinte (<em>Zea mays</em> ssp. <em>parviglumis</em>) ~9,000 years ago — teosinte has tiny, hard seeds on a fragile stalk; maize has large, soft kernels on a robust cob</li>
+</ul>
+<p>> <strong>Draw and label:</strong> The <em>Brassica oleracea</em> radiation diagram showing wild mustard in the centre and arrows pointing to kale (leaves selected), cabbage (terminal bud), Brussels sprouts (lateral buds), broccoli (flower buds), and kohlrabi (stem).</p>
+
+<hr>
+
+<h2>4. Antibiotic Resistance: Natural Selection in Real Time</h2>
+
+<p>Antibiotic resistance is one of the best-demonstrated examples of natural selection because it occurs rapidly enough to observe directly.</p>
+
+<h3>The Mechanism</h3>
+
+<ol>
+<li><strong>Random mutation:</strong> In a large bacterial population, random mutations occur during DNA replication. By chance, a mutation in a single bacterium confers resistance to an antibiotic. This could be:</li>
+</ol>
+<ul>
+<li>An enzyme that <strong>degrades</strong> the antibiotic (e.g., β-lactamase breaks down penicillin)</li>
+<li>An <strong>altered target site</strong> (e.g., modified ribosomal protein so antibiotic can't bind)</li>
+<li>An <strong>efflux pump</strong> that actively exports the antibiotic from the cell</li>
+<li>A <strong>modified membrane protein</strong> that prevents antibiotic entry</li>
+</ul>
+<ol>
+<li><strong>Selective pressure applied:</strong> Antibiotic administered → kills sensitive bacteria. The resistant bacterium survives.</li>
+</ol>
+<ol>
+<li><strong>Reproduction:</strong> The resistant bacterium reproduces (binary fission — rapid, asexual). All its descendants inherit the resistance gene.</li>
+</ol>
+<ol>
+<li><strong>Population shift:</strong> The bacterial population becomes predominantly resistant. The antibiotic is no longer effective.</li>
+</ol>
+<p>> <strong>Crucial point:</strong> The mutation for resistance existed <strong>before</strong> the antibiotic was applied. Bacteria do NOT "develop" resistance in response to antibiotics — that would be Lamarckian. Antibiotics simply <strong>select</strong> for pre-existing resistant variants.</p>
+
+<h3>Horizontal Gene Transfer: Accelerating Resistance Spread</h3>
+
+<p>Bacteria can transfer resistance genes <strong>horizontally</strong> (between living bacteria, not just vertically from parent to offspring):</p>
+
+<table>
+<tr>
+<td>Mechanism</td>
+<td>Description</td>
+</tr>
+<tr>
+<td>Conjugation</td>
+<td>Direct cell-to-cell contact via <strong>sex pilus</strong> → plasmid (circular DNA) carrying resistance genes transferred from donor to recipient</td>
+</tr>
+<tr>
+<td>Transformation</td>
+<td>Bacteria take up <strong>naked DNA</strong> from the environment (released by dead bacteria) and incorporate it into their genome</td>
+</tr>
+<tr>
+<td>Transduction</td>
+<td>A <strong>bacteriophage</strong> (virus that infects bacteria) accidentally packages bacterial DNA (including resistance genes) and transfers it to another bacterium</td>
+</tr>
+</table>
+
+<p>> <strong>Draw and label:</strong> Three diagrams showing: (1) Conjugation — two bacteria connected by pilus, plasmid crossing; (2) Transformation — free DNA entering bacterium; (3) Transduction — bacteriophage injecting DNA from previous host into new host.</p>
+
+<h3>Strategies to Combat Antibiotic Resistance</h3>
+
+<table>
+<tr>
+<td>Strategy</td>
+<td>Rationale</td>
+</tr>
+<tr>
+<td>Finish the full course</td>
+<td>Stopping early leaves partially-resistant bacteria alive → these can evolve full resistance</td>
+</tr>
+<tr>
+<td>Reduce unnecessary use</td>
+<td>Do NOT prescribe antibiotics for viral infections (colds, flu, most sore throats) — antibiotics kill bacteria, not viruses</td>
+</tr>
+<tr>
+<td>Combination therapy</td>
+<td>Use two or more antibiotics simultaneously → probability of a bacterium having resistance to both = (probability of resistance to A) × (probability of resistance to B) — much lower</td>
+</tr>
+<tr>
+<td>Develop new antibiotics</td>
+<td>Pharmaceutical research for novel classes of antibiotics (but discovery rate has declined)</td>
+</tr>
+<tr>
+<td>Phage therapy</td>
+<td>Use bacteriophages (viruses specific to bacteria) as an alternative to antibiotics</td>
+</tr>
+<tr>
+<td>Infection control</td>
+<td>Hand washing, sterilisation, isolation of infected patients to reduce transmission</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>5. The Peppered Moth (<em>Biston betularia</em>)</h2>
+
+<p>The peppered moth is the classic textbook example of natural selection with a directly observable environmental change.</p>
+
+<h3>The Story</h3>
+
+<table>
+<tr>
+<td>Era</td>
+<td>Environment</td>
+<td>Dominant Form</td>
+<td>Mechanism</td>
+</tr>
+<tr>
+<td>Pre-industrial (before ~1800)</td>
+<td>Trees covered in pale lichens → light, mottled bark</td>
+<td>Light (typica) form** — well camouflaged against lichen-covered trees</td>
+<td>Dark (carbonaria) form rare (<1%) — conspicuous against light bark → eaten by birds</td>
+</tr>
+<tr>
+<td>Industrial Revolution (~1850–1950)</td>
+<td>Soot from coal burning killed lichens, darkened tree trunks</td>
+<td>Dark (carbonaria) form** — frequency rose to >98% in polluted areas</td>
+<td>Light form now conspicuous against dark bark → eaten by birds; dark form camouflaged</td>
+</tr>
+<tr>
+<td>Clean Air Acts (post-1950s)</td>
+<td>Pollution reduced, lichens returned, trees lighter again</td>
+<td>Light form increasing again</td>
+<td>Selection pressure reversed</td>
+</tr>
+</table>
+
+<h3>Kettlewell's Experiments</h3>
+
+<p><strong>Bernard Kettlewell</strong> (1950s) provided experimental evidence for bird predation as the selective agent:</p>
+
+<ul>
+<li><strong>Mark-recapture experiments:</strong> Released equal numbers of light and dark moths in both polluted and unpolluted woodlands. Recaptured significantly more of the camouflaged form in each environment.</li>
+<li><strong>Direct observation:</strong> Filmed birds preferentially eating the conspicuous form.</li>
+</ul>
+<p>This is a clear case of <strong>directional selection</strong> driven by an environmental change, with the selective agent (bird predation) experimentally confirmed.</p>
+
+<hr>
+
+<h2>6. Types of Natural Selection</h2>
+
+<h3>1. Directional Selection</h3>
+
+<p>Selection <strong>favours one extreme</strong> of the phenotypic range → the population mean shifts in that direction.</p>
+
+<p><strong>Characteristics:</strong></p>
+<ul>
+<li>Mean phenotype shifts</li>
+<li>Variance may decrease (extreme selected against) but not always</li>
+<li>Occurs when environment changes or population migrates to new environment</li>
+</ul>
+<p><strong>Examples:</strong></p>
+<ul>
+<li>Peppered moth (from light to dark during industrialisation)</li>
+<li>Antibiotic resistance (toward resistance)</li>
+<li>Pesticide resistance in insects</li>
+<li>Increase in horse body size over evolutionary time (from small forest browser to large grassland grazer)</li>
+</ul>
+<p>> <strong>Draw and label:</strong> A bell curve before and after directional selection. Original curve: mean at centre. Arrow = selection pressure on one tail. After: curve shifted toward the favoured extreme.</p>
+
+<h3>2. Stabilising Selection</h3>
+
+<p>Selection <strong>favours the intermediate phenotype</strong> → extremes selected against → mean stays the same, variance decreases.</p>
+
+<p><strong>Characteristics:</strong></p>
+<ul>
+<li>Mean phenotype unchanged</li>
+<li>Variance decreases (distribution narrows)</li>
+<li>Occurs in stable environments where the current average is well-adapted</li>
+</ul>
+<p><strong>Examples:</strong></p>
+<ul>
+<li><strong>Human birth weight:</strong> Babies with very low birth weight have higher mortality (underdeveloped organs, difficulty maintaining temperature); babies with very high birth weight have higher mortality (birthing complications, cephalopelvic disproportion). Intermediate birth weight (~3.4 kg) has highest survival.</li>
+<li><strong>Gall fly (<em>Eurosta solidaginis</em>) gall size:</strong> Gall flies lay eggs in goldenrod stems → larvae induce gall formation. Small galls are easily penetrated by parasitic wasps; large galls are eaten by woodpeckers. Intermediate gall size yields highest larval survival.</li>
+</ul>
+<p>> <strong>Draw and label:</strong> Bell curve before and after stabilising selection. Both tails trimmed by selection. After: narrower, taller curve centred at same mean.</p>
+
+<h3>3. Disruptive Selection</h3>
+
+<p>Selection <strong>favours both extremes</strong> → intermediate phenotype selected against → may lead to bimodal distribution or even speciation.</p>
+
+<p><strong>Characteristics:</strong></p>
+<ul>
+<li>Mean may stay the same but population becomes bimodal</li>
+<li>Variance increases</li>
+<li>Can lead to speciation if extremes become reproductively isolated</li>
+</ul>
+<p><strong>Examples:</strong></p>
+<ul>
+<li><strong>Black-bellied seedcracker finch (<em>Pyrenestes ostrinus</em>)</strong> in Cameroon: Feeds on seeds of two types — hard seeds (require large beak) and soft seeds (small beak sufficient). Birds with intermediate beak size are inefficient at cracking both seed types → lower survival. Population dimorphic: large-beaked and small-beaked morphs.</li>
+<li><strong>African swallowtail butterfly (<em>Papilio dardanus</em>):</strong> Females mimic different toxic butterfly species. Intermediate (non-mimetic) forms are eaten by predators.</li>
+</ul>
+<p>> <strong>Draw and label:</strong> Bell curve before and after disruptive selection. Centre selected against → dip in the middle. After: bimodal distribution with two peaks.</p>
+
+<hr>
+
+<h2>7. Sexual Selection</h2>
+
+<p><strong>Sexual selection</strong> is a special form of natural selection that acts on an organism's ability to obtain a mate and reproduce. It explains traits that seem to reduce survival (e.g., the peacock's enormous tail — heavy, conspicuous to predators, energetically costly).</p>
+
+<h3>Intrasexual Selection (Competition)</h3>
+
+<p>Competition <strong>within one sex</strong> (usually males) for access to mates:</p>
+
+<table>
+<tr>
+<td>Example</td>
+<td>Mechanism</td>
+</tr>
+<tr>
+<td>Red deer (Cervus elaphus)</td>
+<td>Males (stags) fight with antlers during the rut → larger antlers → more wins → more access to females (harem)</td>
+</tr>
+<tr>
+<td>Elephant seals (Mirounga)</td>
+<td>Massive size dimorphism — males (~2,300 kg) far larger than females (~500 kg). Males fight brutally for beach territory; dominant male (beachmaster) may father 90% of pups</td>
+</tr>
+<tr>
+<td>Gorillas</td>
+<td>Silverback males compete for control of a harem of females</td>
+</tr>
+</table>
+
+<p><strong>Outcome:</strong> Selection for <strong>weapons</strong> (antlers, large body size, canine teeth) and <strong>dominance displays</strong> → pronounced <strong>sexual dimorphism</strong> (males and females look different).</p>
+
+<h3>Intersexual Selection (Mate Choice)</h3>
+
+<p><strong>Mate choice</strong>, usually by females, based on traits that signal genetic quality:</p>
+
+<table>
+<tr>
+<td>Example</td>
+<td>Trait</td>
+<td>Proposed Explanation</td>
+</tr>
+<tr>
+<td>Peacock (<em>Pavo cristatus</em>)</td>
+<td>Elaborate train (tail feathers)</td>
+<td>Honest signal hypothesis:** Only a healthy, parasite-free male can grow and maintain such a costly ornament → signals "good genes"</td>
+</tr>
+<tr>
+<td>Bowerbirds</td>
+<td>Males build elaborate bowers (structures) decorated with colourful objects</td>
+<td>Female inspects bower quality → indicates male cognitive ability, health, and territory quality</td>
+</tr>
+<tr>
+<td>Frogs</td>
+<td>Complex calls</td>
+<td>Call duration and complexity correlate with male size and health → females prefer longer/more complex calls</td>
+</tr>
+</table>
+
+<h3>The Handicap Principle</h3>
+
+<p>Proposed by Amotz Zahavi: costly, extravagant traits are <strong>honest signals</strong> of genetic quality precisely <strong>because</strong> they are costly. A weak, sick, or genetically inferior male cannot "fake" a large ornament or vigorous display — only a truly fit male can afford the energetic and survival cost. Females that choose males with such handicaps produce offspring with superior genes.</p>
+
+<hr>
+
+<h2>8. Frequency-Dependent Selection</h2>
+
+<h3>Negative Frequency-Dependent Selection</h3>
+
+<p>The <strong>rare phenotype has an advantage</strong>. Fitness <strong>increases</strong> as the phenotype becomes rarer.</p>
+
+<p><strong>Example: Scale-eating cichlid fish (<em>Perissodus microlepis</em>) in Lake Tanganyika:</strong></p>
+<ul>
+<li>Some individuals have mouths that open to the <strong>left</strong>, others to the <strong>right</strong> (genetically determined)</li>
+<li>They attack other fish from behind, biting scales off one side</li>
+<li>Prey fish learn to guard against the more common attack direction</li>
+<li>The <strong>rare morph</strong> encounters less-prepared prey → higher feeding success</li>
+<li>As the rare morph becomes common, prey shift their guarding → the other morph becomes rare and gains advantage</li>
+<li><strong>Result:</strong> Oscillation — frequencies cycle but neither morph fixes. This <strong>maintains polymorphism</strong>.</li>
+</ul>
+<h3>Positive Frequency-Dependent Selection</h3>
+
+<p>The <strong>common phenotype has an advantage</strong>. Fitness <strong>increases</strong> as the phenotype becomes more common.</p>
+
+<p><strong>Example: Müllerian mimicry:</strong></p>
+<ul>
+<li>Unrelated toxic butterfly species evolve similar warning colouration (e.g., <em>Heliconius</em> butterflies in South America — all orange-black with similar patterns)</li>
+<li>Predators learn to avoid a particular warning pattern</li>
+<li>The more individuals share the pattern, the faster predators learn → each individual benefits from the commonness of the pattern</li>
+<li>Rare patterns are less recognised → higher predation → selected against</li>
+</ul>
+<hr>
+
+<h2>9. The Hardy-Weinberg Principle</h2>
+
+<h3>What It Is</h3>
+
+<p>The Hardy-Weinberg principle describes a <strong>non-evolving population</strong> — a null model against which we can test whether evolution is occurring.</p>
+
+<div class="definition">
+
+<p>For a gene with two alleles (A and a) at frequencies <strong>p</strong> and <strong>q</strong> (where p + q = 1):</p>
+
+<ul>
+<li><strong>Allele frequencies:</strong> p + q = 1</li>
+<li><strong>Genotype frequencies:</strong> p² + 2pq + q² = 1</li>
+</ul>
+<p>Where:</p>
+<ul>
+<li><strong>p²</strong> = frequency of homozygous dominant (AA)</li>
+<li><strong>2pq</strong> = frequency of heterozygous (Aa)</li>
+<li><strong>q²</strong> = frequency of homozygous recessive (aa)</li>
+</ul>
+</div>
+
+<h3>The Five Conditions for Hardy-Weinberg Equilibrium</h3>
+
+<p>If <strong>any</strong> of these conditions is violated, the population is evolving at that locus:</p>
+
+<table>
+<tr>
+<td>Condition</td>
+<td>What it means</td>
+<td>What violates it</td>
+</tr>
+<tr>
+<td>1. Large population size</td>
+<td>No genetic drift (random changes in allele frequency)</td>
+<td>Small populations — drift can eliminate alleles by chance</td>
+</tr>
+<tr>
+<td>2. Random mating</td>
+<td>Individuals mate without regard to genotype</td>
+<td>Assortative mating, inbreeding, sexual selection</td>
+</tr>
+<tr>
+<td>3. No mutation</td>
+<td>No new alleles created</td>
+<td>Mutation creates new alleles</td>
+</tr>
+<tr>
+<td>4. No migration (gene flow)</td>
+<td>No alleles entering or leaving</td>
+<td>Immigration/emigration changes allele frequencies</td>
+</tr>
+<tr>
+<td>5. No natural selection</td>
+<td>All genotypes have equal fitness</td>
+<td>Differential survival/reproduction</td>
+</tr>
+</table>
+
+<p>> <strong>Key insight:</strong> Because at least one of these conditions is almost always violated in real populations, Hardy-Weinberg equilibrium rarely holds perfectly in nature. That's the point — deviation from equilibrium is evidence for evolution.</p>
+
+<h3>Uses of Hardy-Weinberg</h3>
+
+<ol>
+<li><strong>Calculate allele frequencies</strong> from genotype data</li>
+<li><strong>Estimate carrier frequency</strong> for recessive genetic diseases</li>
+<li><strong>Test whether evolution is occurring</strong> at a locus</li>
+</ol>
+<div class="worked">
+
+<p><strong>Example 1: Calculating allele frequencies from genotypes</strong></p>
+
+<p>A population of 100 pea plants: 36 are TT (tall), 48 are Tt (tall), 16 are tt (dwarf).</p>
+
+<p><strong>Step 1 — Count alleles:</strong></p>
+<ul>
+<li>36 TT plants = 72 T alleles</li>
+<li>48 Tt plants = 48 T alleles and 48 t alleles</li>
+<li>16 tt plants = 32 t alleles</li>
+<li>Total T alleles = 72 + 48 = 120</li>
+<li>Total t alleles = 48 + 32 = 80</li>
+<li>Total alleles = 200 (100 plants × 2 alleles each)</li>
+</ul>
+<p><strong>Step 2 — Calculate frequencies:</strong></p>
+<ul>
+<li>p = frequency of T = 120/200 = <strong>0.60</strong></li>
+<li>q = frequency of t = 80/200 = <strong>0.40</strong></li>
+</ul>
+<p><strong>Check:</strong> p + q = 0.60 + 0.40 = 1.00 ✓</p>
+
+</div>
+
+<div class="worked">
+
+<p><strong>Example 2: Estimating carrier frequency</strong></p>
+
+<p>Cystic fibrosis (CF) is an autosomal recessive disorder. In a population, approximately 1 in 2,500 newborns has CF. Estimate the frequency of carriers (heterozygotes).</p>
+
+<p><strong>Step 1 — Identify what we know:</strong></p>
+<p>CF is recessive → affected individuals are homozygous recessive (aa = q²)</p>
+<p>q² = 1/2500 = 0.0004</p>
+
+<p><strong>Step 2 — Calculate q:</strong></p>
+<p>q = √0.0004 = <strong>0.02</strong></p>
+
+<p><strong>Step 3 — Calculate p:</strong></p>
+<p>p = 1 − q = 1 − 0.02 = <strong>0.98</strong></p>
+
+<p><strong>Step 4 — Calculate carrier frequency (2pq):</strong></p>
+<p>2pq = 2 × 0.98 × 0.02 = <strong>0.0392</strong></p>
+
+<p><strong>Interpretation:</strong> Approximately 3.92% of the population (~1 in 26 individuals) are carriers of the CF allele.</p>
+
+</div>
+
+<div class="worked">
+
+<p><strong>Example 3: Testing for evolution</strong></p>
+
+<p>A population of flowers: 500 red (RR), 400 pink (Rr), 100 white (rr). Is this population in Hardy-Weinberg equilibrium?</p>
+
+<p><strong>Step 1 — Observed genotype frequencies:</strong></p>
+<ul>
+<li>RR: 500/1000 = 0.50</li>
+<li>Rr: 400/1000 = 0.40</li>
+<li>rr: 100/1000 = 0.10</li>
+</ul>
+<p><strong>Step 2 — Calculate allele frequencies:</strong></p>
+<ul>
+<li>p = freq(R) = (500×2 + 400) / 2000 = 1400/2000 = 0.70</li>
+<li>q = freq(r) = (100×2 + 400) / 2000 = 600/2000 = 0.30</li>
+</ul>
+<p><strong>Step 3 — Expected genotype frequencies under H-W:</strong></p>
+<ul>
+<li>Expected RR = p² = (0.70)² = 0.49 → 0.49 × 1000 = 490</li>
+<li>Expected Rr = 2pq = 2 × 0.70 × 0.30 = 0.42 → 420</li>
+<li>Expected rr = q² = (0.30)² = 0.09 → 90</li>
+</ul>
+<p><strong>Step 4 — Compare observed vs expected:</strong></p>
+<p>Observed: 500, 400, 100. Expected: 490, 420, 90.</p>
+
+<p>Differences suggest possible non-random mating or selection. A χ² test would determine statistical significance.</p>
+
+</div>
+
+<div class="tip">
+
+<hr>
+
+<h2>10. Common Misconceptions</h2>
+
+<table>
+<tr>
+<td>Misconception</td>
+<td>Reality</td>
+</tr>
+<tr>
+<td>"Evolution is 'just a theory'"</td>
+<td>In science, a theory is a well-substantiated explanation supported by extensive evidence. Evolution by natural selection is as well-established as the theory of gravity or germ theory of disease</td>
+</tr>
+<tr>
+<td>"Individuals evolve"</td>
+<td>Populations evolve; individuals develop. Natural selection acts on individuals, but evolutionary change occurs across generations in populations</td>
+</tr>
+<tr>
+<td>"Natural selection creates perfect adaptation"</td>
+<td>Selection works with existing variation — it cannot create "perfect" solutions, only "good enough" ones. Constraints include available genetic variation, developmental constraints, and trade-offs</td>
+</tr>
+<tr>
+<td>"Organisms develop traits because they need them"</td>
+<td>Variation is random with respect to need. Selection favours those who already have advantageous traits</td>
+</tr>
+<tr>
+<td>"Antibiotics cause bacteria to mutate and become resistant"</td>
+<td>Mutations occur randomly before antibiotic exposure. Antibiotics select for pre-existing resistant variants</td>
+</tr>
+<tr>
+<td>"Hardy-Weinberg equilibrium means no evolution"</td>
+<td>Hardy-Weinberg is a null model — it describes what happens when evolution is NOT occurring. Deviations indicate evolution</td>
+</tr>
+<tr>
+<td>"If p² + 2pq + q² = 1, the population is in equilibrium"</td>
+<td>The formula ALWAYS equals 1 for any two-allele system. Being in H-W equilibrium requires that genotype frequencies precisely match p², 2pq, q² based on the allele frequencies</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1 (Darwin's Observations)</h3>
+
+<p>State Darwin's four observations and the two inferences he drew from them that together constitute the theory of natural selection.</p>
+
+<p><details></p>
+<p><summary><strong>Answer</strong></summary></p>
+
+<p><strong>Observations:</strong></p>
+<ol>
+<li>Overproduction: Species produce more offspring than can survive.</li>
+<li>Variation: Individuals within a species vary in their characteristics.</li>
+<li>Heritability: Much variation is heritable (passed to offspring).</li>
+<li>Struggle for existence: Limited resources → competition.</li>
+</ol>
+<p><strong>Inferences:</strong></p>
+<ol>
+<li>Differential survival/reproduction: Individuals with advantageous traits are more likely to survive and reproduce (natural selection).</li>
+<li>Descent with modification: Over generations, advantageous traits accumulate in the population → population changes (evolution).</li>
+</ol>
+<p></details></p>
+
+<h3>Problem 2 (Antibiotic Resistance)</h3>
+
+<p>Explain how a population of <em>Staphylococcus aureus</em> becomes resistant to methicillin (MRSA). Include: the origin of resistance, the role of selection, and the role of horizontal gene transfer.</p>
+
+<p><details></p>
+<p><summary><strong>Answer</strong></summary></p>
+
+<ol>
+<li><strong>Origin of resistance:</strong> Random mutation in the bacterial chromosome produces a modified penicillin-binding protein (PBP2a, encoded by the <em>mecA</em> gene) that methicillin cannot bind to. This mutation occurs by chance, NOT in response to the antibiotic.</li>
+</ol>
+<ol>
+<li><strong>Selection:</strong> When methicillin is administered, it kills sensitive <em>S. aureus</em> bacteria (those with normal PBPs). Bacteria carrying the <em>mecA</em> gene survive because methicillin cannot inhibit their cell wall synthesis. These resistant bacteria reproduce by binary fission → all descendants inherit <em>mecA</em> → population becomes resistant. This is natural selection.</li>
+</ol>
+<ol>
+<li><strong>Horizontal gene transfer:</strong> The <em>mecA</em> gene is carried on a mobile genetic element (SCC<em>mec</em>) that can be transferred between bacteria via conjugation. This accelerates the spread of resistance through the <em>S. aureus</em> population and even to other <em>Staphylococcus</em> species.</li>
+</ol>
+<p></details></p>
+
+<h3>Problem 3 (Types of Selection)</h3>
+
+<p>For each scenario, identify the type of natural selection (directional, stabilising, or disruptive):</p>
+<p>(a) Cliff swallows with intermediate wing lengths have highest survival during storms.</p>
+<p>(b) A drought favours finches with very large beaks (for large hard seeds) and very small beaks (for small seeds).</p>
+<p>(c) As climate warms, plants that flower earlier in spring have higher reproductive success.</p>
+
+<p><details></p>
+<p><summary><strong>Answer</strong></summary></p>
+
+<p>(a) <strong>Stabilising selection</strong> — intermediate phenotype has highest fitness; extremes selected against.</p>
+
+<p>(b) <strong>Disruptive selection</strong> — both extremes favoured; intermediate disadvantage. (This matches the black-bellied seedcracker finch example.)</p>
+
+<p>(c) <strong>Directional selection</strong> — one extreme (earlier flowering) favoured; population mean shifts toward earlier flowering.</p>
+
+<p></details></p>
+
+<h3>Problem 4 (Hardy-Weinberg)</h3>
+
+<p>In a population of 500 individuals, 20 have sickle cell anaemia (homozygous recessive, HbˢHbˢ). The sickle cell allele (Hbˢ) is maintained in the population because heterozygotes (HbᴬHbˢ) have resistance to malaria.</p>
+
+<p>(a) Calculate the frequency of the sickle cell allele (q).</p>
+<p>(b) Calculate the expected number of heterozygous individuals.</p>
+<p>(c) Explain why the Hardy-Weinberg conditions are unlikely to hold for this locus in a malaria-endemic region.</p>
+
+<p><details></p>
+<p><summary><strong>Answer</strong></summary></p>
+
+<p>(a) q² = 20/500 = 0.04. q = √0.04 = <strong>0.20</strong>. (p = 0.80)</p>
+
+<p>(b) Expected heterozygote frequency = 2pq = 2 × 0.80 × 0.20 = 0.32.</p>
+<p>Expected number = 0.32 × 500 = <strong>160 heterozygotes</strong>.</p>
+
+<p>(c) In a malaria-endemic region, <strong>natural selection</strong> is acting:</p>
+<ul>
+<li>HbᴬHbˢ (heterozygotes) have a selective advantage (malaria resistance without sickle cell disease)</li>
+<li>HbˢHbˢ (homozygous recessive) are selected against (sickle cell anaemia → reduced survival)</li>
+<li>HbᴬHbᴬ are selected against in malarial areas (susceptible to malaria)</li>
+</ul>
+<p>This violates Hardy-Weinberg condition #5 (no natural selection) → the population is NOT in equilibrium. This is <strong>balancing selection</strong> (heterozygote advantage), which maintains both alleles in the population.</p>
+
+<p></details></p>
+
+<h3>Problem 5 (Hardy-Weinberg Trap)</h3>
+
+<p>16% of a population displays a recessive trait (aa). What percentage of the population is heterozygous? Many students incorrectly answer 48%. Explain why and provide the correct answer.</p>
+
+<p><details></p>
+<p><summary><strong>Answer</strong></summary></p>
+
+<p><strong>The trap:</strong> Students see 16% recessive and think p = 0.6, q = 0.4, so 2pq = 2(0.6)(0.4) = 0.48 = 48%.</p>
+
+<p><strong>Why this is WRONG:</strong> 16% is q² (the frequency of homozygous recessive), NOT q.</p>
+
+<p><strong>Correct approach:</strong></p>
+<p>q² = 0.16 → q = √0.16 = 0.4</p>
+<p>p = 1 − q = 0.6</p>
+<p>2pq = 2 × 0.6 × 0.4 = 0.48 = <strong>48%</strong></p>
+
+<p>In this case, the numbers coincidentally give the same answer. But if the recessive phenotype frequency were, say, 4%:</p>
+
+<p>Student trap: p=0.8, q=0.2, 2pq = 2(0.8)(0.2) = 0.32 = 32% ❌</p>
+<p>Correct: q²=0.04, q=0.2, p=0.8, 2pq = 2(0.8)(0.2) = 0.32 = 32% ✓</p>
+
+<p>The general rule: <strong>always go through q² → q → p → then calculate genotype frequencies.</strong> Never assume q = frequency of recessive phenotype.</p>
+
+<p></details></p>
+
+<hr>
+
+<h2>Summary</h2>
+
+<table>
+<tr>
+<td>Concept</td>
+<td>Key Points</td>
+</tr>
+<tr>
+<td>Darwin & Wallace</td>
+<td>Co-discoverers (1858); Darwin's <em>On the Origin of Species</em> (1859); mechanism = natural selection</td>
+</tr>
+<tr>
+<td>Natural selection</td>
+<td>Overproduction + Variation + Heritability + Struggle → Differential survival → Evolution</td>
+</tr>
+<tr>
+<td>Lamarck vs Darwin</td>
+<td>Lamarck = inheritance of acquired traits (WRONG); Darwin = selection on existing variation (CORRECT)</td>
+</tr>
+<tr>
+<td>Antibiotic resistance</td>
+<td>Random mutation → antibiotic selects resistant bacteria → population shifts; HGT accelerates spread</td>
+</tr>
+<tr>
+<td>Peppered moth</td>
+<td>Directional selection driven by pollution → bird predation as selective agent (Kettlewell)</td>
+</tr>
+<tr>
+<td>Selection types</td>
+<td>Directional (one extreme), Stabilising (intermediate), Disruptive (both extremes), Sexual (mate competition/choice), Frequency-dependent</td>
+</tr>
+<tr>
+<td>Hardy-Weinberg</td>
+<td>p+q=1; p²+2pq+q²=1; null model; 5 conditions: large pop, random mating, no mutation, no migration, no selection</td>
+</tr>
+</table>
+
+<hr>
+
+<p><em>Next: Ecosystem stability, feedback mechanisms, tipping points, keystone species, succession, and biogeochemical cycles.</em></p>
+
+<div class="nav"><a href="lesson_51.html">&#8592; Lesson 51</a><a href="index.html">&#8962; Index</a><a href="lesson_53.html">Lesson 53 &#8594;</a></div>
+
+</body>
+</html>

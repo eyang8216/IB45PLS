@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 480" width="600" height="480">
+  <rect width="600" height="480" fill="white"/>
+  <text x="300" y="28" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#333">L43a — The Cell Cycle</text>
+
+  <!-- Circle representing the cycle -->
+  <circle cx="300" cy="250" r="195" fill="none" stroke="#333" stroke-width="2.5"/>
+
+  <!-- G1 Phase (bottom right) -->
+  <path d="M300,55 A195,195 0 0,0 495,250" fill="none" stroke="#1a6b3c" stroke-width="28" stroke-linecap="butt"/>
+  <text x="430" y="110" font-family="Arial" font-size="18" font-weight="bold" fill="white">G₁ Phase</text>
+  <text x="430" y="132" font-family="Arial" font-size="12" fill="white">Growth, protein synthesis</text>
+  <text x="430" y="148" font-family="Arial" font-size="12" fill="white">~10 hours</text>
+
+  <!-- S Phase (top) -->
+  <path d="M495,250 A195,195 0 0,0 300,55" fill="none" stroke="#1565c0" stroke-width="28" stroke-linecap="butt"/>
+  <text x="345" y="55" font-family="Arial" font-size="18" font-weight="bold" fill="white">S Phase</text>
+  <text x="345" y="77" font-family="Arial" font-size="12" fill="white">DNA replication</text>
+  <text x="345" y="93" font-family="Arial" font-size="12" fill="white">~8 hours</text>
+
+  <!-- G2 Phase (top left) -->
+  <path d="M300,55 A195,195 0 0,0 105,250" fill="none" stroke="#ff8f00" stroke-width="28" stroke-linecap="butt"/>
+  <text x="170" y="115" font-family="Arial" font-size="18" font-weight="bold" fill="white">G₂ Phase</text>
+  <text x="170" y="137" font-family="Arial" font-size="12" fill="white">Prep. for division</text>
+  <text x="170" y="153" font-family="Arial" font-size="12" fill="white">~4 hours</text>
+
+  <!-- M Phase (bottom left) -->
+  <path d="M105,250 A195,195 0 0,0 300,445" fill="none" stroke="#e53935" stroke-width="28" stroke-linecap="butt"/>
+  <text x="155" y="330" font-family="Arial" font-size="18" font-weight="bold" fill="white">M Phase</text>
+  <text x="155" y="352" font-family="Arial" font-size="12" fill="white">Mitosis +</text>
+  <text x="155" y="368" font-family="Arial" font-size="12" fill="white">Cytokinesis</text>
+  <text x="155" y="384" font-family="Arial" font-size="12" fill="white">~1 hour</text>
+
+  <!-- Center: Interphase label -->
+  <circle cx="300" cy="250" r="55" fill="white" stroke="#333" stroke-width="2"/>
+  <text x="300" y="242" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#333">Interphase</text>
+  <text x="300" y="260" text-anchor="middle" font-family="Arial" font-size="11" fill="#666">(G₁+S+G₂)</text>
+  <text x="300" y="278" text-anchor="middle" font-family="Arial" font-size="11" fill="#666">~23 hours</text>
+
+  <!-- Checkpoints -->
+  <g fill="#e53935">
+    <circle cx="418" cy="195" r="6"/><circle cx="270" cy="98" r="6"/><circle cx="195" cy="295" r="6"/>
+  </g>
+  <g font-family="Arial" font-size="11" fill="#e53935" font-weight="bold">
+    <text x="435" y="198">G₁ restriction point</text>
+    <text x="290" y="95">G₂/M checkpoint</text>
+    <text x="210" y="310">Metaphase checkpoint</text>
+  </g>
+
+  <!-- G0 label -->
+  <path d="M495,250 Q540,250 550,280 Q560,310 540,330 Q520,350 500,340" fill="none" stroke="#6a1b9a" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="560" y="310" font-family="Arial" font-size="13" font-weight="bold" fill="#6a1b9a">G₀</text>
+  <text x="560" y="327" font-family="Arial" font-size="10" fill="#6a1b9a">Quiescent</text>
+  <text x="560" y="341" font-family="Arial" font-size="10" fill="#6a1b9a">(exit cycle)</text>
+
+  <!-- Bottom key -->
+  <rect x="30" y="425" width="540" height="42" rx="6" fill="#fafafa" stroke="#ccc" stroke-width="1"/>
+  <text x="300" y="443" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">G₁=growth | S=synthesis (DNA replication, 4C DNA) | G₂=preparation | M=mitosis (nuclear) + cytokinesis (cytoplasmic) | G₀=exit</text>
+  <text x="300" y="460" text-anchor="middle" font-family="Arial" font-size="11" fill="#e53935">● = checkpoint: monitors conditions, DNA integrity, chromosome attachment</text>
+</svg>

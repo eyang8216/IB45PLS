@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 16: Membranes and Membrane Transport (B2.1) — IB Biology HL</title>
+<script>window.MathJax = { tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] } };</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #1a6b3c; --border: #c4d4a9; --highlight: #e8f5e9; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Palatino', 'Georgia', serif; background: var(--bg); color: var(--text); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; font-size: 17px; line-height: 1.7; }
+  h1 { font-size: 1.7rem; color: var(--accent); margin-bottom: 0.5rem; }
+  h2 { font-size: 1.25rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; margin: 2rem 0 1rem; }
+  h3 { font-size: 1.1rem; color: #444; margin: 1.3rem 0 0.5rem; }
+  p, li { margin-bottom: 0.6rem; }
+  ul, ol { padding-left: 1.8rem; margin-bottom: 1rem; }
+  .worked { background: #e8f5e9; border-left: 4px solid #1a6b3c; padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
+  .worked strong { color: #1a6b3c; }
+  .answer { background: #fefdf7; border: 1px solid var(--border); padding: 0.8rem 1.2rem; margin: 0.5rem 0; border-radius: 6px; }
+  .nav { display: flex; justify-content: space-between; margin: 3rem 0 1rem; padding-top: 1rem; border-top: 2px solid var(--border); font-size: 0.9rem; }
+  .nav a { color: #1a5c9e; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  .definition { background: #fff8e1; border-left: 4px solid #e6a817; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  .tip { background: #e3f2fd; border-left: 4px solid #1976d2; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  table { border-collapse: collapse; margin: 0.8rem 0; width: 100%; }
+  th, td { border: 1px solid var(--border); padding: 0.4rem 0.6rem; text-align: left; }
+  th { background: #f0f5e8; }
+  @media print { body { font-size: 14px; } .nav { display: none; } }
+</style>
+</head>
+<body>
+
+
+<h2>What You'll Learn</h2>
+<ul>
+<li>The fluid mosaic model: why membranes are "fluid" and why they are "mosaic"</li>
+<li>Phospholipid bilayer structure and the amphipathic nature of phospholipids</li>
+<li>Cholesterol's role as a membrane fluidity buffer in animal cells</li>
+<li>Membrane proteins: integral (transmembrane) and peripheral — their structures and functions</li>
+<li>The glycocalyx: carbohydrate chains on glycoproteins and glycolipids for cell recognition</li>
+<li>Channel proteins, carrier proteins, pumps, and receptor proteins</li>
+<li>Passive transport: simple diffusion, facilitated diffusion (channel-mediated and carrier-mediated)</li>
+<li>Osmosis: water potential, hypertonic/hypotonic/isotonic solutions, and their effects on animal and plant cells</li>
+<li>Active transport: the Na⁺/K⁺ pump (3 Na⁺ out, 2 K⁺ in per ATP), secondary active transport (co-transport)</li>
+<li>Bulk transport: endocytosis (phagocytosis, pinocytosis, receptor-mediated) and exocytosis</li>
+<li>Factors affecting membrane fluidity: temperature, fatty acid saturation, and cholesterol</li>
+<li>Experimental evidence: freeze-fracture electron microscopy</li>
+</ul>
+<hr>
+
+<h2>1. The Fluid Mosaic Model</h2>
+
+<h3>1.1 Historical Context</h3>
+
+<p>In 1972, <strong>S.J. Singer and Garth Nicolson</strong> proposed the <strong>fluid mosaic model</strong> of cell membranes. This model replaced earlier ideas (like the Davson-Danielli "sandwich" model of a continuous protein layer on either side of a phospholipid bilayer) and remains the accepted description of membrane structure.</p>
+
+<div class="definition">
+
+<p><strong>Fluid mosaic model</strong>: The model of cell membrane structure in which a fluid phospholipid bilayer contains a mosaic pattern of embedded proteins. The lipids and many proteins can move laterally within the plane of the membrane, giving it a fluid character.</p>
+
+</div>
+
+<h3>1.2 Why "Fluid"?</h3>
+
+<p>The membrane behaves as a <strong>two-dimensional liquid</strong>. Phospholipids and many proteins are in constant lateral motion within their leaflet (monolayer). This fluidity is essential for:</p>
+<ul>
+<li>Membrane flexibility and self-sealing</li>
+<li>Diffusion of membrane proteins (e.g., receptors clustering after ligand binding)</li>
+<li>Vesicle budding and fusion (endocytosis, exocytosis)</li>
+<li>Cell division (cytokinesis)</li>
+</ul>
+<p><strong>What makes it fluid?</strong></p>
+<ul>
+<li>Unsaturated fatty acid tails (kinked → prevent tight packing)</li>
+<li>Cholesterol (at low temperatures, prevents crystallization)</li>
+<li>Moderate temperatures that provide sufficient kinetic energy</li>
+</ul>
+<h3>1.3 Why "Mosaic"?</h3>
+
+<p>The membrane is studded with <strong>proteins</strong> of diverse shapes, sizes, and functions, like tiles in a mosaic artwork. These proteins are not uniformly distributed — different membrane regions have different protein compositions.</p>
+
+<p><strong>Analogy</strong>: Imagine a sea of phospholipids (the "water") with protein "icebergs" floating in it. The icebergs can drift around, and some span the entire depth (transmembrane proteins) while others float near the surface (peripheral proteins).</p>
+
+<p><strong>Diagram to draw in your notes</strong> (draw this large — it's the foundation for everything in this lesson):</p>
+<ol>
+<li>A double row of phospholipids (circle heads + wavy tails).</li>
+<li>Several proteins of different shapes embedded:</li>
+</ol>
+<ul>
+<li>A <strong>transmembrane protein</strong> spanning both layers (draw as a blob crossing the bilayer).</li>
+<li>A <strong>peripheral protein</strong> on the inner surface.</li>
+<li>A <strong>glycoprotein</strong> with carbohydrate chains (branching structures) on the extracellular side.</li>
+<li>A <strong>glycolipid</strong> with carbohydrate chains.</li>
+</ul>
+<ol>
+<li><strong>Cholesterol</strong> molecules (rigid rectangular shape) wedged between phospholipids.</li>
+<li>Labels: "Extracellular," "Cytoplasm," "Phospholipid bilayer," "Integral protein," "Peripheral protein," "Glycoprotein," "Glycolipid," "Cholesterol," "Glycocalyx."</li>
+</ol>
+<hr>
+
+<h2>2. Membrane Components</h2>
+
+<h3>2.1 Phospholipids: The Bilayer Foundation</h3>
+
+<p>As covered in Lesson 13, phospholipids are <strong>amphipathic</strong>: hydrophilic phosphate heads face the aqueous environments (extracellular fluid and cytoplasm), while hydrophobic fatty acid tails face each other in the membrane interior.</p>
+
+<p><strong>Key structural features:</strong></p>
+<ul>
+<li>The bilayer is typically <strong>5-10 nm thick</strong>.</li>
+<li>The hydrophobic core (~3-4 nm) is a barrier to polar and charged molecules.</li>
+<li>Phospholipids can move laterally (side-to-side) very rapidly (~10⁷ times per second for a given phospholipid), but <strong>flip-flop</strong> (moving from one leaflet to the other) is extremely rare without enzyme assistance (flippases).</li>
+<li>The two leaflets have <strong>different phospholipid compositions</strong> — the outer leaflet is rich in phosphatidylcholine and sphingomyelin; the inner leaflet is rich in phosphatidylserine and phosphatidylethanolamine. This asymmetry is functionally important (e.g., exposure of phosphatidylserine on the outer leaflet signals apoptosis).</li>
+</ul>
+<h3>2.2 Cholesterol: The Fluidity Buffer</h3>
+
+<p>Cholesterol is found in animal cell membranes (not in most bacterial membranes or plant cell plasma membranes, though plants have related phytosterols). It comprises up to <strong>~50% of membrane lipid</strong> in some animal cells.</p>
+
+<p><strong>How cholesterol modulates fluidity:</strong></p>
+<ul>
+<li><strong>At high temperatures</strong>: Cholesterol's rigid ring system restricts phospholipid tail movement → <strong>decreases fluidity</strong>, reducing membrane permeability.</li>
+<li><strong>At low temperatures</strong>: Cholesterol's bulky rings prevent phospholipid tails from packing into a crystalline gel → <strong>maintains fluidity</strong>, preventing the membrane from solidifying.</li>
+</ul>
+<p><strong>Analogy</strong>: Cholesterol is like the thermostat in your house — it keeps things from getting too hot or too cold.</p>
+
+<h3>2.3 Membrane Proteins</h3>
+
+<p>Membrane proteins are responsible for most membrane functions. They can be classified by their association with the lipid bilayer.</p>
+
+<p>#### 2.3.1 Integral (Transmembrane) Proteins</p>
+
+<p>These proteins are <strong>embedded within the lipid bilayer</strong>, often spanning it completely. They are amphipathic: the regions in contact with the hydrophobic membrane core have <strong>hydrophobic amino acid residues</strong> (often arranged as α-helices with hydrophobic R-groups facing outward), while the regions exposed to aqueous environments have <strong>hydrophilic residues</strong>.</p>
+
+<p><strong>Types:</strong></p>
+<ul>
+<li><strong>Single-pass</strong>: Crosses the membrane once.</li>
+<li><strong>Multi-pass</strong>: Crosses the membrane multiple times (e.g., 7-transmembrane receptors like rhodopsin and GPCRs).</li>
+</ul>
+<p><strong>Functions:</strong></p>
+<ul>
+<li><strong>Channel proteins</strong>: Form aqueous pores for ion passage.</li>
+<li><strong>Carrier proteins</strong>: Bind solutes and undergo conformational changes to transport them.</li>
+<li><strong>Pumps</strong>: Use ATP to actively transport solutes against their gradients.</li>
+<li><strong>Receptors</strong>: Bind signaling molecules and transmit signals into the cell.</li>
+<li><strong>Cell adhesion molecules</strong>: Bind to other cells or the extracellular matrix.</li>
+</ul>
+<p>#### 2.3.2 Peripheral Proteins</p>
+
+<p>These are associated with the membrane surface but <strong>do not penetrate the hydrophobic core</strong>. They are attached to integral proteins or to phospholipid head groups via non-covalent interactions (H-bonds, ionic bonds) or lipid anchors.</p>
+
+<p><strong>Functions:</strong></p>
+<ul>
+<li>Structural support (e.g., spectrin and ankyrin in the red blood cell membrane cytoskeleton)</li>
+<li>Signal transduction (e.g., G-proteins associated with the inner leaflet)</li>
+<li>Enzyme activity (e.g., some kinases)</li>
+<li>Vesicle trafficking (e.g., clathrin, COPI, COPII coat proteins)</li>
+</ul>
+<h3>2.4 Glycoproteins and Glycolipids: The Glycocalyx</h3>
+
+<p>Carbohydrate chains are attached to proteins (glycoproteins) or lipids (glycolipids) on the <strong>extracellular face</strong> of the plasma membrane. Collectively, these carbohydrate chains form the <strong>glycocalyx</strong> — a fuzzy, sugar-rich coat surrounding many cells.</p>
+
+<p><strong>Functions:</strong></p>
+<ul>
+<li><strong>Cell-cell recognition</strong>: Carbohydrate patterns serve as identification tags (e.g., ABO blood group antigens).</li>
+<li><strong>Cell adhesion</strong>: Glycoproteins help cells stick together and to the extracellular matrix.</li>
+<li><strong>Protection</strong>: The glycocalyx provides a physical barrier against mechanical and chemical damage.</li>
+<li><strong>Signaling</strong>: Some carbohydrate chains participate in receptor-ligand interactions.</li>
+</ul>
+<hr>
+
+<h2>3. Membrane Transport: The Problem and the Solutions</h2>
+
+<h3>3.1 The Permeability Problem</h3>
+
+<p>The phospholipid bilayer is a formidable barrier. Its permeability to different molecules depends on their chemical properties:</p>
+
+<table>
+<tr>
+<td>Molecule Type</td>
+<td>Permeability</td>
+<td>Reason</td>
+</tr>
+<tr>
+<td>Small, nonpolar** (O₂, CO₂, N₂)</td>
+<td>High</td>
+<td>Can dissolve in and diffuse through the hydrophobic core</td>
+</tr>
+<tr>
+<td>Small, uncharged polar** (H₂O, urea, glycerol)</td>
+<td>Low to moderate</td>
+<td>Slightly soluble in lipid; slow diffusion</td>
+</tr>
+<tr>
+<td>Large, uncharged polar** (glucose, sucrose)</td>
+<td>Very low</td>
+<td>Too large and polar to dissolve in lipid core</td>
+</tr>
+<tr>
+<td>Ions** (Na⁺, K⁺, Cl⁻, Ca²⁺)</td>
+<td>Extremely low (essentially zero)</td>
+<td>Charged — cannot enter hydrophobic core; also surrounded by hydration shell of water molecules</td>
+</tr>
+</table>
+
+<p>Therefore, the cell needs specialized <strong>transport proteins</strong> to move polar molecules, large molecules, and ions across the membrane.</p>
+
+<hr>
+
+<h2>4. Passive Transport: Down the Gradient, No Energy Required</h2>
+
+<p><strong>Passive transport</strong> is the movement of molecules across a membrane <strong>down their concentration gradient</strong> (from high to low concentration) without the expenditure of metabolic energy (ATP). The driving force is the <strong>concentration gradient</strong> itself (and, for ions, the electrochemical gradient).</p>
+
+<h3>4.1 Simple Diffusion</h3>
+
+<p>Small, nonpolar molecules (O₂, CO₂) and very small polar molecules (H₂O, though slowly) can diffuse directly through the phospholipid bilayer.</p>
+
+<p><strong>Key features:</strong></p>
+<ul>
+<li>No transport protein needed.</li>
+<li>Rate depends on: concentration gradient, temperature, membrane surface area, and lipid composition.</li>
+<li><strong>Not saturable</strong> — rate increases linearly with concentration gradient.</li>
+<li><strong>Not specific</strong> — any molecule small and nonpolar enough can pass.</li>
+</ul>
+<h3>4.2 Facilitated Diffusion</h3>
+
+<p>For molecules that cannot pass through the lipid bilayer directly (ions, glucose, amino acids), <strong>transport proteins</strong> provide a pathway. Facilitated diffusion is still <strong>passive</strong> — no ATP is used — but it requires a protein.</p>
+
+<p>Two types of transport proteins mediate facilitated diffusion:</p>
+
+<p>#### 4.2.1 Channel-Mediated Facilitated Diffusion</p>
+
+<p><strong>Channel proteins</strong> form aqueous pores through the membrane. When open, they allow specific ions (or water) to flow through down their electrochemical gradient.</p>
+
+<p><strong>Key features:</strong></p>
+<ul>
+<li><strong>Highly selective</strong> — only specific ions fit through (e.g., K⁺ channels select for K⁺ over Na⁺ by a factor of ~10,000).</li>
+<li><strong>Gated</strong> — channels can open and close in response to stimuli:</li>
+<li><strong>Voltage-gated</strong>: Open/close in response to changes in membrane potential (e.g., Na⁺ and K⁺ channels in action potentials).</li>
+<li><strong>Ligand-gated</strong>: Open when a specific molecule binds (e.g., acetylcholine receptor at the neuromuscular junction).</li>
+<li><strong>Mechanically-gated</strong>: Open in response to mechanical force (e.g., stretch-activated channels in sensory cells).</li>
+<li><strong>Very fast transport</strong> (up to 10⁶-10⁸ ions per second — near the diffusion limit).</li>
+<li><strong>Not saturable</strong> in the traditional sense — rate depends on concentration gradient.</li>
+</ul>
+<p><strong>Examples:</strong></p>
+<ul>
+<li><strong>Aquaporins</strong>: Water channels that dramatically increase membrane water permeability. Important in kidney (water reabsorption), plant roots, and many other tissues.</li>
+<li><strong>Ion channels</strong>: Na⁺, K⁺, Ca²⁺, Cl⁻ channels — essential for nerve impulses, muscle contraction, and cell signaling.</li>
+</ul>
+<p>#### 4.2.2 Carrier-Mediated Facilitated Diffusion</p>
+
+<p><strong>Carrier proteins</strong> (also called transporters or permeases) bind the solute on one side of the membrane, undergo a <strong>conformational change</strong>, and release it on the other side.</p>
+
+<p><strong>Key features:</strong></p>
+<ul>
+<li><strong>Specific</strong> — each carrier binds a particular solute or class of solutes.</li>
+<li><strong>Saturable</strong> — there are a finite number of carriers, so at high solute concentrations, transport rate plateaus (Vmax).</li>
+<li><strong>Slower</strong> than channels (~10² to 10⁴ molecules per second).</li>
+<li>Operates like an enzyme (Michaelis-Menten kinetics: Km, Vmax).</li>
+</ul>
+<p><strong>Example: GLUT4 glucose transporter</strong></p>
+<ul>
+<li>Found in muscle and adipose tissue.</li>
+<li>Insulin stimulates the translocation of GLUT4-containing vesicles to the plasma membrane → increased glucose uptake after a meal.</li>
+<li>GLUT4 facilitates the diffusion of glucose down its concentration gradient (blood glucose high → cell glucose low).</li>
+</ul>
+<p><strong>Analogy for channels vs carriers:</strong></p>
+<ul>
+<li>A <strong>channel</strong> is like a tunnel through a mountain — cars (ions) drive straight through without stopping.</li>
+<li>A <strong>carrier</strong> is like a ferry — it loads cars on one side, physically moves (changes shape), and unloads them on the other side.</li>
+</ul>
+<hr>
+
+<h2>5. Osmosis: The Special Case of Water Diffusion</h2>
+
+<h3>5.1 Definition</h3>
+
+<p><strong>Osmosis</strong> is the net movement of water molecules through a <strong>selectively permeable membrane</strong> from a region of <strong>lower solute concentration</strong> (higher water potential) to a region of <strong>higher solute concentration</strong> (lower water potential).</p>
+
+<div class="definition">
+
+<p><strong>Osmosis</strong>: The passive movement of water across a selectively permeable membrane from a region of lower solute concentration (higher water potential, Ψ) to a region of higher solute concentration (lower water potential), down the water potential gradient.</p>
+
+</div>
+
+<h3>5.2 Water Potential (Ψ)</h3>
+
+<p><strong>Water potential</strong> (Ψ, Greek letter psi) is a measure of the potential energy of water — its tendency to move. Pure water at atmospheric pressure has Ψ = 0 (by convention). Adding solutes <strong>lowers</strong> water potential (makes it more negative): Ψ = Ψ_s (solute potential, always negative or zero) + Ψ_p (pressure potential, can be positive).</p>
+
+<p><strong>Key principle</strong>: Water moves from regions of <strong>higher water potential</strong> (less negative) to regions of <strong>lower water potential</strong> (more negative).</p>
+
+<h3>5.3 Tonicity: Effects on Cells</h3>
+
+<p><strong>Tonicity</strong> describes the effect of a solution on cell volume. It depends on the concentration of <strong>non-penetrating solutes</strong> (solutes that cannot cross the membrane).</p>
+
+<div class="definition">
+
+<p><strong>Isotonic</strong>: A solution with the same solute concentration (same water potential) as the cell cytoplasm. No net water movement; cell volume unchanged.</p>
+<p><strong>Hypertonic</strong>: A solution with a higher solute concentration (lower water potential) than the cell cytoplasm. Water moves out; cell shrinks.</p>
+<p><strong>Hypotonic</strong>: A solution with a lower solute concentration (higher water potential) than the cell cytoplasm. Water moves in; cell swells.</p>
+
+</div>
+
+<p>#### Effects on Animal Cells</p>
+
+<table>
+<tr>
+<td>Solution</td>
+<td>Effect</td>
+<td>Mechanism</td>
+</tr>
+<tr>
+<td>Isotonic</td>
+<td>Normal cell volume</td>
+<td>No net water movement</td>
+</tr>
+<tr>
+<td>Hypertonic</td>
+<td>Crenation** — cell shrinks and develops a spiky appearance</td>
+<td>Water exits cell by osmosis; cytoplasm becomes concentrated</td>
+</tr>
+<tr>
+<td>Hypotonic</td>
+<td>Lysis** — cell swells and may burst</td>
+<td>Water enters cell; plasma membrane cannot withstand excessive swelling</td>
+</tr>
+</table>
+
+<p>#### Effects on Plant Cells (which have a cell wall)</p>
+
+<table>
+<tr>
+<td>Solution</td>
+<td>Effect</td>
+<td>Mechanism</td>
+</tr>
+<tr>
+<td>Isotonic</td>
+<td>Cell slightly flaccid (limp)</td>
+<td>No net water movement; insufficient turgor for full support</td>
+</tr>
+<tr>
+<td>Hypertonic</td>
+<td>Plasmolysis** — cell membrane pulls away from cell wall</td>
+<td>Water exits cell; vacuole shrinks; plasma membrane detaches from cell wall</td>
+</tr>
+<tr>
+<td>Hypotonic</td>
+<td>Turgid** — cell swollen but intact; cell wall prevents bursting</td>
+<td>Water enters cell; vacuole expands; cell contents push against rigid cell wall → <strong>turgor pressure</strong> provides structural support</td>
+</tr>
+</table>
+
+<p><strong>Diagram to draw</strong>: Three plant cells side by side:</p>
+<ol>
+<li><strong>Turgid</strong>: Large vacuole, plasma membrane pressed against cell wall. Label: "Hypotonic environment → turgid."</li>
+<li><strong>Flaccid</strong>: Vacuole not fully expanded, membrane not pressing forcefully. Label: "Isotonic environment → flaccid."</li>
+<li><strong>Plasmolyzed</strong>: Vacuole shrunk, plasma membrane pulled away from cell wall (gaps visible). Label: "Hypertonic environment → plasmolysis."</li>
+</ol>
+<p><strong>Why turgor pressure matters</strong>: The rigid plant cell wall allows plant cells to tolerate hypotonic environments without bursting. Instead, they become turgid, which is actually the <strong>normal, healthy state</strong> for most plant cells. Turgor pressure provides structural support for non-woody plants — this is why plants wilt when they lose turgor (lack of water).</p>
+
+<div class="tip">
+
+<p><strong>IB Exam Tip</strong>: When comparing effects of solutions on animal vs plant cells, ALWAYS mention the <strong>cell wall</strong> as the reason why plant cells don't burst in hypotonic solutions. The cell wall exerts a counter-pressure (pressure potential, Ψ_p) that eventually balances the osmotic inflow of water.</p>
+
+</div>
+
+<hr>
+
+<h2>6. Active Transport: Against the Gradient, ATP Required</h2>
+
+<p><strong>Active transport</strong> moves solutes <strong>against their concentration gradient</strong> (from low to high concentration). This requires <strong>energy</strong> — either directly from ATP hydrolysis (<strong>primary active transport</strong>) or indirectly from an ion gradient established by primary active transport (<strong>secondary active transport</strong>).</p>
+
+<h3>6.1 Primary Active Transport: The Na⁺/K⁺ Pump</h3>
+
+<p>The <strong>sodium-potassium pump</strong> (Na⁺/K⁺-ATPase) is the classic example of primary active transport. It is found in the plasma membrane of virtually all animal cells.</p>
+
+<p><strong>Structure</strong>: An integral membrane protein with binding sites for Na⁺, K⁺, and ATP.</p>
+
+<p><strong>Function (per cycle, consuming 1 ATP):</strong></p>
+<ol>
+<li>3 Na⁺ bind from the cytoplasm (intracellular side).</li>
+<li>ATP is hydrolyzed → ADP + Pi. The phosphate group is transferred to the pump (phosphorylation).</li>
+<li>Phosphorylation causes a conformational change → the pump opens to the extracellular side.</li>
+<li>3 Na⁺ are released outside the cell (they have low affinity for the phosphorylated pump).</li>
+<li>2 K⁺ bind from the extracellular side.</li>
+<li>The phosphate group is released (dephosphorylation).</li>
+<li>Dephosphorylation causes another conformational change → the pump opens to the cytoplasm.</li>
+<li>2 K⁺ are released inside the cell.</li>
+</ol>
+<p><strong>Net result</strong>: 3 Na⁺ OUT, 2 K⁺ IN, per ATP hydrolyzed.</p>
+
+<p><strong>Why this matters:</strong></p>
+<ul>
+<li>The pump is <strong>electrogenic</strong> — it moves 3 positive charges out and only 2 in, creating a net outward current. This contributes to the <strong>resting membrane potential</strong> (~-70 mV in neurons).</li>
+<li>It establishes steep Na⁺ and K⁺ concentration gradients:</li>
+<li>[Na⁺]outside >> [Na⁺]inside</li>
+<li>[K⁺]inside >> [K⁺]outside</li>
+<li>These gradients are the <strong>energy source for secondary active transport</strong> and are essential for nerve impulse conduction.</li>
+</ul>
+<div class="definition">
+
+<p><strong>Na⁺/K⁺-ATPase (sodium-potassium pump)</strong>: A primary active transporter that uses the energy of ATP hydrolysis to move 3 Na⁺ out of the cell and 2 K⁺ into the cell against their concentration gradients. It is electrogenic and maintains the resting membrane potential.</p>
+
+</div>
+
+<h3>6.2 Secondary Active Transport (Co-transport)</h3>
+
+<p>Secondary active transport uses the <strong>energy stored in an ion gradient</strong> (usually Na⁺) established by primary active transport to move another solute against its concentration gradient.</p>
+
+<p>There are two types:</p>
+
+<p>#### Symport (Co-transport)</p>
+
+<p>The driving ion (e.g., Na⁺) and the transported solute move in the <strong>same direction</strong> across the membrane.</p>
+
+<p><strong>Example: Glucose-Na⁺ symport in the small intestine</strong></p>
+<ul>
+<li>On the <strong>apical (lumen-facing)</strong> surface of intestinal epithelial cells, a symport protein couples the "downhill" flow of Na⁺ (into the cell) with the "uphill" transport of glucose (also into the cell).</li>
+<li>Na⁺ flows down its concentration gradient (established by the Na⁺/K⁺ pump on the basolateral surface), and this provides the energy to pull glucose against its gradient.</li>
+<li>Glucose then exits the cell on the basolateral side via <strong>GLUT2</strong> (facilitated diffusion).</li>
+</ul>
+<p><strong>Analogy</strong>: A water wheel (Na⁺ flowing downhill) turning a mill that grinds grain (glucose being pulled uphill).</p>
+
+<p>#### Antiport (Exchange)</p>
+
+<p>The driving ion and the transported solute move in <strong>opposite directions</strong>.</p>
+
+<p><strong>Example: Na⁺/Ca²⁺ exchanger in cardiac muscle cells</strong></p>
+<ul>
+<li>Na⁺ flows into the cell (downhill), driving Ca²⁺ out of the cell (uphill).</li>
+<li>Important for removing Ca²⁺ after each heartbeat to allow muscle relaxation.</li>
+</ul>
+<hr>
+
+<h2>7. Bulk Transport: Moving Large Cargo</h2>
+
+<p>For molecules that are too large to pass through channels or carriers (proteins, polysaccharides, entire microorganisms), cells use vesicle-mediated <strong>bulk transport</strong>.</p>
+
+<h3>7.1 Endocytosis: Taking In</h3>
+
+<p>The plasma membrane invaginates (folds inward) and pinches off to form an intracellular vesicle containing extracellular material.</p>
+
+<table>
+<tr>
+<td>Type</td>
+<td>Description</td>
+<td>Example</td>
+</tr>
+<tr>
+<td>Phagocytosis** ("cell eating")</td>
+<td>Engulfment of large particles (bacteria, cell debris) by pseudopodia. The resulting vesicle is a <strong>phagosome</strong>.</td>
+<td>White blood cells (macrophages, neutrophils) engulfing bacteria</td>
+</tr>
+<tr>
+<td>Pinocytosis** ("cell drinking")</td>
+<td>Non-specific uptake of extracellular fluid and dissolved solutes via small vesicles.</td>
+<td>Most cells constitutively perform pinocytosis</td>
+</tr>
+<tr>
+<td>Receptor-mediated endocytosis</td>
+<td>Specific uptake of ligands (molecules) that bind to receptors on the cell surface. Receptors cluster in <strong>clathrin-coated pits</strong>.</td>
+<td>LDL (low-density lipoprotein) uptake via LDL receptors; iron uptake via transferrin receptors</td>
+</tr>
+</table>
+
+<p><strong>Receptor-mediated endocytosis of LDL — a detailed example:</strong></p>
+<ol>
+<li>LDL particles (carrying cholesterol) bind to LDL receptors on the cell surface.</li>
+<li>Receptors cluster in clathrin-coated pits.</li>
+<li>The pit invaginates and pinches off as a clathrin-coated vesicle.</li>
+<li>The clathrin coat is shed; the vesicle fuses with an endosome.</li>
+<li>The acidic endosome environment causes LDL to dissociate from its receptor.</li>
+<li>Receptors are recycled to the plasma membrane.</li>
+<li>LDL is delivered to lysosomes, where cholesterol is released for cellular use.</li>
+</ol>
+<p><strong>Genetic defect</strong>: Familial hypercholesterolemia — mutations in the LDL receptor gene → LDL cannot be taken up by cells → high blood LDL cholesterol → premature atherosclerosis and heart attacks.</p>
+
+<h3>7.2 Exocytosis: Releasing Out</h3>
+
+<p>Intracellular vesicles fuse with the plasma membrane, releasing their contents into the extracellular space. The vesicle membrane becomes part of the plasma membrane.</p>
+
+<p><strong>Two pathways:</strong></p>
+
+<table>
+<tr>
+<td>Pathway</td>
+<td>Description</td>
+<td>Example</td>
+</tr>
+<tr>
+<td>Constitutive secretion</td>
+<td>Continuous, unregulated release</td>
+<td>Secretion of extracellular matrix proteins (collagen), antibodies by plasma cells</td>
+</tr>
+<tr>
+<td>Regulated secretion</td>
+<td>Vesicles stored; released only in response to a signal</td>
+<td>Insulin<strong> release from pancreatic β-cells (triggered by high blood glucose → Ca²⁺ influx → vesicle fusion); </strong>neurotransmitter** release at synapses (triggered by Ca²⁺ influx during action potential)</td>
+</tr>
+</table>
+
+<p><strong>Diagram to draw</strong>: A cell membrane with:</p>
+<ul>
+<li>An invaginating clathrin-coated pit (endocytosis) on one side.</li>
+<li>A vesicle fusing with the membrane and releasing contents (exocytosis) on the other side.</li>
+<li>Arrows showing the direction of membrane flow.</li>
+</ul>
+<hr>
+
+<h2>8. Membrane Fluidity: Factors and Regulation</h2>
+
+<p>Membrane fluidity is crucial for proper membrane function. Cells regulate it by adjusting membrane composition.</p>
+
+<h3>8.1 Factors Affecting Fluidity</h3>
+
+<table>
+<tr>
+<td>Factor</td>
+<td>Effect on Fluidity</td>
+<td>Mechanism</td>
+</tr>
+<tr>
+<td>Temperature ↑</td>
+<td>Increases fluidity</td>
+<td>More kinetic energy → more phospholipid movement</td>
+</tr>
+<tr>
+<td>Temperature ↓</td>
+<td>Decreases fluidity</td>
+<td>Less kinetic energy → phospholipids pack more tightly; may gel</td>
+</tr>
+<tr>
+<td>Unsaturated fatty acids (more)</td>
+<td>Increases fluidity</td>
+<td>Cis double bonds create kinks → prevent tight packing</td>
+</tr>
+<tr>
+<td>Saturated fatty acids (more)</td>
+<td>Decreases fluidity</td>
+<td>Straight chains → pack tightly → more rigid</td>
+</tr>
+<tr>
+<td>Cholesterol (at high temp)</td>
+<td>Decreases fluidity</td>
+<td>Rigid rings restrain phospholipid movement</td>
+</tr>
+<tr>
+<td>Cholesterol (at low temp)</td>
+<td>Increases fluidity</td>
+<td>Prevents tight packing → inhibits gel formation</td>
+</tr>
+<tr>
+<td>Fatty acid chain length (shorter)</td>
+<td>Increases fluidity</td>
+<td>Shorter tails have fewer van der Waals interactions</td>
+</tr>
+<tr>
+<td>Fatty acid chain length (longer)</td>
+<td>Decreases fluidity</td>
+<td>Longer tails have more van der Waals interactions → pack more tightly</td>
+</tr>
+</table>
+
+<h3>8.2 Homeoviscous Adaptation</h3>
+
+<p>Organisms can adjust their membrane lipid composition in response to temperature changes to maintain optimal fluidity — a process called <strong>homeoviscous adaptation</strong>.</p>
+
+<p><strong>Example: Cold-water fish</strong></p>
+<ul>
+<li>Fish living in near-freezing waters have membranes with a high proportion of <strong>polyunsaturated fatty acids</strong> (many kinks → prevents membrane from solidifying at low temperatures).</li>
+<li>If the same fish were placed in warm water, it would increase the proportion of saturated fatty acids in its membranes to prevent excessive fluidity.</li>
+</ul>
+<hr>
+
+<h2>9. Experimental Evidence: Freeze-Fracture Electron Microscopy</h2>
+
+<p>One of the most important pieces of experimental evidence supporting the fluid mosaic model came from <strong>freeze-fracture electron microscopy</strong>.</p>
+
+<h3>9.1 The Technique</h3>
+
+<ol>
+<li>Cells are rapidly frozen in liquid nitrogen (~−196°C).</li>
+<li>The frozen block is fractured (split) with a knife. The fracture tends to pass through the <strong>middle of the lipid bilayer</strong> — the weakest point, where hydrophobic tails meet.</li>
+<li>The exposed faces are coated with a thin layer of platinum and carbon (to create a replica).</li>
+<li>The organic material is dissolved away, and the metal replica is examined under an electron microscope.</li>
+</ol>
+<h3>9.2 The Result</h3>
+
+<p>The fracture faces show <strong>numerous particles (bumps and pits)</strong> embedded in a smooth background. These particles are the <strong>transmembrane proteins</strong> that were pulled out of one leaflet or the other during the fracture.</p>
+
+<p><strong>What this proved:</strong></p>
+<ul>
+<li>Proteins are <strong>embedded within</strong> the lipid bilayer (not just coating the surface, as earlier models proposed).</li>
+<li>Proteins span the membrane — they appear on both fracture faces.</li>
+<li>The distribution of proteins is <strong>mosaic-like</strong> — not uniform.</li>
+</ul>
+<p><strong>Diagram to draw</strong>: A schematic of freeze-fracture:</p>
+<ol>
+<li>A bilayer with embedded proteins.</li>
+<li>A fracture plane splitting the bilayer down the middle.</li>
+<li>Two resulting faces: the <strong>P-face</strong> (protoplasmic face, the inner leaflet exposed) and the <strong>E-face</strong> (extracellular face, the outer leaflet exposed).</li>
+<li>Bumps on both faces representing transmembrane proteins.</li>
+</ol>
+<div class="tip">
+
+<p><strong>IB Exam Tip</strong>: Be able to explain how freeze-fracture EM supports the fluid mosaic model. Specifically: (1) the technique splits the bilayer, (2) particles (proteins) are visible embedded in the fracture faces, (3) this proves proteins penetrate the hydrophobic core of the membrane, consistent with the fluid mosaic model and inconsistent with earlier models where proteins only coated the surfaces.</p>
+
+</div>
+
+<hr>
+
+<h2>10. Worked Examples</h2>
+
+<div class="worked">
+
+<p><strong>Worked Example 1: Predicting Water Movement</strong></p>
+
+<p>A red blood cell (internal solute concentration ~300 mOsm) is placed in a solution of 200 mM NaCl. Assuming NaCl does not cross the membrane, predict what will happen to the cell and explain why.</p>
+
+<p><strong>Solution:</strong></p>
+
+<p>Step 1: Determine the osmolarity of the external solution. NaCl dissociates into Na⁺ and Cl⁻, so 200 mM NaCl ≈ 400 mOsm (approximately, ignoring non-ideal behavior).</p>
+
+<p>Step 2: Compare: Internal = ~300 mOsm, External = ~400 mOsm. The external solution has a <strong>higher solute concentration</strong> (lower water potential).</p>
+
+<p>Step 3: Water will move from the region of higher water potential (inside the cell, 300 mOsm) to the region of lower water potential (outside, 400 mOsm).</p>
+
+<p>Step 4: Water exits the cell → the cell <strong>shrinks</strong>. This is <strong>crenation</strong> (the cell develops a spiky appearance as it loses volume).</p>
+
+<p>Step 5: The external solution is <strong>hypertonic</strong> relative to the red blood cell cytoplasm.</p>
+
+</div>
+
+<div class="worked">
+
+<p><strong>Worked Example 2: Na⁺/K⁺ Pump Stoichiometry</strong></p>
+
+<p>A neuron's Na⁺/K⁺ pump consumes 1 ATP per cycle. If the pump operates at 100 cycles per second, how many Na⁺ ions are exported and how many K⁺ ions are imported in one minute? What is the net charge movement per minute?</p>
+
+<p><strong>Solution:</strong></p>
+
+<p>Per cycle: 3 Na⁺ out, 2 K⁺ in.</p>
+
+<p>In one minute (60 seconds) at 100 cycles/s:</p>
+<ul>
+<li>Na⁺ exported: 100 × 60 × 3 = <strong>18,000 Na⁺ ions</strong></li>
+<li>K⁺ imported: 100 × 60 × 2 = <strong>12,000 K⁺ ions</strong></li>
+</ul>
+<p>Net charge movement: Each cycle moves (3+) out and (2+) in = net +1 out per cycle.</p>
+<ul>
+<li>Per minute: 100 × 60 × 1 = <strong>6,000 net positive charges moved outward</strong>.</li>
+</ul>
+<p>This net outward movement of positive charge makes the pump <strong>electrogenic</strong> and contributes to the negative resting membrane potential.</p>
+
+</div>
+
+<div class="worked">
+
+<p><strong>Worked Example 3: Freeze-Fracture Interpretation</strong></p>
+
+<p>A researcher performs freeze-fracture EM on two membrane samples. Sample A shows a high density of protein particles on both fracture faces. Sample B shows very few particles. What can you infer about the function of each membrane?</p>
+
+<p><strong>Solution:</strong></p>
+
+<p>Sample A has many transmembrane proteins, suggesting it is a <strong>metabolically active membrane</strong> with extensive transport, signaling, or enzymatic functions. Possible identities: plasma membrane of a metabolically active cell (e.g., intestinal epithelial cell with many transporters), inner mitochondrial membrane (packed with ETC complexes and ATP synthase), or thylakoid membrane.</p>
+
+<p>Sample B has few transmembrane proteins, suggesting it is a membrane with <strong>primarily barrier function</strong> rather than transport/signaling. Possible identities: myelin sheath (which insulates axons and has very low protein content, mostly lipid), or a purely protective outer membrane.</p>
+
+</div>
+
+<hr>
+
+<h2>11. Practice Problems</h2>
+
+<h3>Problem 1 (Easy)</h3>
+<p>List the components of the fluid mosaic model and briefly state the function of each.</p>
+
+<h3>Problem 2 (Easy)</h3>
+<p>Distinguish between simple diffusion, facilitated diffusion, and active transport in terms of: (a) requirement for a transport protein, (b) direction relative to concentration gradient, (c) requirement for ATP.</p>
+
+<h3>Problem 3 (Medium)</h3>
+<p>A plant cell is placed in a hypertonic solution. Describe what happens and name the process. Explain why the outcome is different from an animal cell in the same solution.</p>
+
+<h3>Problem 4 (Medium)</h3>
+<p>Explain how the Na⁺/K⁺ pump contributes to secondary active transport of glucose in the small intestine.</p>
+
+<h3>Problem 5 (Hard)</h3>
+<p>Describe how membrane fluidity is affected by (a) increasing temperature, (b) increasing the proportion of unsaturated fatty acids, (c) the presence of cholesterol at low temperatures. For each, explain the molecular basis of the effect.</p>
+
+<hr>
+
+<h2>12. Practice Problem Answers</h2>
+
+<h3>Answer 1</h3>
+
+<table>
+<tr>
+<td>Component</td>
+<td>Function</td>
+</tr>
+<tr>
+<td>Phospholipid bilayer</td>
+<td>Forms the basic barrier; hydrophobic core blocks passage of polar/charged molecules</td>
+</tr>
+<tr>
+<td>Cholesterol</td>
+<td>Fluidity buffer — decreases fluidity at high temp, increases at low temp</td>
+</tr>
+<tr>
+<td>Integral (transmembrane) proteins</td>
+<td>Transport (channels, carriers, pumps), receptors, cell adhesion</td>
+</tr>
+<tr>
+<td>Peripheral proteins</td>
+<td>Structural support, signal transduction, enzymatic activity</td>
+</tr>
+<tr>
+<td>Glycoproteins</td>
+<td>Cell recognition, adhesion, glycocalyx formation</td>
+</tr>
+<tr>
+<td>Glycolipids</td>
+<td>Cell recognition, membrane stability</td>
+</tr>
+</table>
+
+<h3>Answer 2</h3>
+
+<table>
+<tr>
+<td>Feature</td>
+<td>Simple Diffusion</td>
+<td>Facilitated Diffusion</td>
+<td>Active Transport</td>
+</tr>
+<tr>
+<td>Transport protein required?</td>
+<td>No</td>
+<td>Yes (channel or carrier)</td>
+<td>Yes (pump or carrier)</td>
+</tr>
+<tr>
+<td>Direction relative to gradient?</td>
+<td>Down (high → low)</td>
+<td>Down (high → low)</td>
+<td>Up (low → high)</td>
+</tr>
+<tr>
+<td>ATP required?</td>
+<td>No</td>
+<td>No</td>
+<td>Yes (directly or indirectly)</td>
+</tr>
+</table>
+
+<h3>Answer 3</h3>
+<p>When a plant cell is placed in a hypertonic solution:</p>
+<ol>
+<li>The external solution has a lower water potential (higher solute concentration) than the cell interior.</li>
+<li>Water moves out of the cell by <strong>osmosis</strong>.</li>
+<li>The central vacuole shrinks as it loses water.</li>
+<li>The plasma membrane pulls away from the cell wall — this is <strong>plasmolysis</strong>.</li>
+<li>The cell becomes flaccid; the plant wilts.</li>
+</ol>
+<p>The outcome is different from an animal cell because:</p>
+<ul>
+<li>Animal cells have <strong>no cell wall</strong>. In a hypertonic solution, an animal cell undergoes <strong>crenation</strong> (shrinks and develops a spiky shape) but does not detach from any wall.</li>
+<li>Plant cells have a rigid <strong>cellulose cell wall</strong>. As water exits, the plasma membrane detaches from the wall because the wall maintains its shape. The space between the membrane and wall fills with the hypertonic solution.</li>
+<li>The cell wall prevents the plant cell from shrinking uniformly like an animal cell.</li>
+</ul>
+<h3>Answer 4</h3>
+
+<p>The absorption of glucose from the small intestine involves the coordinated action of primary and secondary active transport:</p>
+
+<ol>
+<li>The <strong>Na⁺/K⁺ pump</strong> (primary active transport) on the <strong>basolateral</strong> (blood-facing) membrane uses ATP to pump 3 Na⁺ out of the epithelial cell and 2 K⁺ in. This maintains a low intracellular [Na⁺].</li>
+</ol>
+<ol>
+<li>The resulting Na⁺ gradient (high [Na⁺] in the intestinal lumen, low [Na⁺] inside the cell) is a store of potential energy.</li>
+</ol>
+<ol>
+<li>On the <strong>apical</strong> (lumen-facing) membrane, the <strong>Na⁺/glucose symporter</strong> (SGLT1) uses the "downhill" flow of Na⁺ into the cell to drive the "uphill" co-transport of glucose into the cell. This is <strong>secondary active transport</strong> — it does not use ATP directly but depends on the Na⁺ gradient established by the Na⁺/K⁺ pump.</li>
+</ol>
+<ol>
+<li>Glucose then exits the cell on the basolateral side via <strong>GLUT2</strong> (facilitated diffusion) down its concentration gradient into the blood.</li>
+</ol>
+<p>If the Na⁺/K⁺ pump is inhibited (e.g., by ouabain), the Na⁺ gradient dissipates, and glucose uptake is abolished — demonstrating the dependence of secondary on primary active transport.</p>
+
+<h3>Answer 5</h3>
+
+<p><strong>(a) Increasing temperature:</strong> Increases membrane fluidity. Higher temperature increases the kinetic energy of phospholipids, causing their fatty acid tails to move more vigorously. The increased motion disrupts van der Waals interactions between tails, making the membrane more fluid and permeable.</p>
+
+<p><strong>(b) Increasing unsaturated fatty acids:</strong> Increases membrane fluidity. The <strong>cis double bonds</strong> in unsaturated fatty acids introduce kinks (~30° bends) in the hydrocarbon chains. These kinks prevent the fatty acid tails from packing closely together, reducing van der Waals interactions between adjacent phospholipids. The result is a more fluid, less ordered membrane.</p>
+
+<p><strong>(c) Cholesterol at low temperatures:</strong> Increases membrane fluidity. At low temperatures, phospholipid tails slow down and tend to pack into a crystalline gel state (ordered, rigid). Cholesterol's bulky, rigid steroid ring system intercalates between phospholipids and <strong>prevents them from packing tightly together</strong>. By disrupting the ordered packing, cholesterol maintains the membrane in a fluid, liquid-crystalline state that would otherwise solidify at low temperatures.</p>
+
+<hr>
+
+<h2>13. Common Misconceptions</h2>
+
+<table>
+<tr>
+<td>Misconception</td>
+<td>Reality</td>
+</tr>
+<tr>
+<td>"All membrane proteins are fixed in place"</td>
+<td>Many proteins are mobile within the plane of the membrane (lateral diffusion). This was demonstrated by the Frye-Edidin experiment (1970): mouse and human cell fusion → proteins from both cells intermixed over time.</td>
+</tr>
+<tr>
+<td>"Facilitated diffusion uses ATP"</td>
+<td>It does NOT. Facilitated diffusion is <strong>passive</strong> — it moves solutes down their gradient. The "facilitation" is the protein, not energy.</td>
+</tr>
+<tr>
+<td>"The Na⁺/K⁺ pump equalizes Na⁺ and K⁺ concentrations"</td>
+<td>The pump does the opposite — it <strong>creates and maintains</strong> the concentration differences by constantly pumping against the gradients.</td>
+</tr>
+<tr>
+<td>"Osmosis is just diffusion of water"</td>
+<td>It is, but the key addition is the <strong>selectively permeable membrane</strong>. Without the membrane, solutes and water would simply mix. The membrane's selective permeability creates the osmotic effect.</td>
+</tr>
+<tr>
+<td>"Plant cells burst in hypotonic solutions like animal cells do"</td>
+<td>The <strong>cell wall</strong> prevents bursting. Instead, the cell becomes <strong>turgid</strong>, which is the normal, healthy state.</td>
+</tr>
+<tr>
+<td>"Endocytosis and exocytosis balance each other perfectly at all times"</td>
+<td>The rates vary. During growth, exocytosis exceeds endocytosis (net membrane addition). During phagocytosis, endocytosis can exceed exocytosis. The cell regulates these processes.</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>14. Key Terms Summary</h2>
+
+<table>
+<tr>
+<td>Term</td>
+<td>Definition</td>
+</tr>
+<tr>
+<td>Fluid mosaic model</td>
+<td>Membrane model: fluid phospholipid bilayer with mosaic of embedded proteins</td>
+</tr>
+<tr>
+<td>Integral protein</td>
+<td>Protein embedded in the hydrophobic core of the membrane</td>
+</tr>
+<tr>
+<td>Peripheral protein</td>
+<td>Protein associated with membrane surface; not penetrating the core</td>
+</tr>
+<tr>
+<td>Glycocalyx</td>
+<td>Carbohydrate-rich coat on extracellular surface; cell recognition</td>
+</tr>
+<tr>
+<td>Simple diffusion</td>
+<td>Passive movement of molecules directly through the bilayer</td>
+</tr>
+<tr>
+<td>Facilitated diffusion</td>
+<td>Passive transport via channel or carrier proteins</td>
+</tr>
+<tr>
+<td>Osmosis</td>
+<td>Net movement of water across a selectively permeable membrane</td>
+</tr>
+<tr>
+<td>Hypertonic</td>
+<td>Solution with higher solute concentration (lower Ψ) than cell</td>
+</tr>
+<tr>
+<td>Hypotonic</td>
+<td>Solution with lower solute concentration (higher Ψ) than cell</td>
+</tr>
+<tr>
+<td>Isotonic</td>
+<td>Solution with same solute concentration (same Ψ) as cell</td>
+</tr>
+<tr>
+<td>Plasmolysis</td>
+<td>Detachment of plasma membrane from cell wall in hypertonic solution</td>
+</tr>
+<tr>
+<td>Na⁺/K⁺ pump</td>
+<td>Primary active transporter; 3 Na⁺ out, 2 K⁺ in, per ATP</td>
+</tr>
+<tr>
+<td>Secondary active transport</td>
+<td>Co-transport using energy of ion gradient (e.g., Na⁺/glucose symport)</td>
+</tr>
+<tr>
+<td>Endocytosis</td>
+<td>Uptake of material by invagination of plasma membrane</td>
+</tr>
+<tr>
+<td>Exocytosis</td>
+<td>Release of material by vesicle fusion with plasma membrane</td>
+</tr>
+<tr>
+<td>Freeze-fracture EM</td>
+<td>Technique splitting bilayer; revealed transmembrane proteins</td>
+</tr>
+</table>
+
+<hr>
+
+<p>This concludes Lesson 16. You now understand membrane structure (fluid mosaic), all modes of membrane transport (passive, active, bulk), osmosis and tonicity, and the experimental evidence supporting the model. In the next lesson, we explore organelles and compartmentalization.</p>
+
+<div class="nav"><a href="lesson_15.html">&#8592; Lesson 15</a><a href="index.html">&#8962; Index</a><a href="lesson_17.html">Lesson 17 &#8594;</a></div>
+
+</body>
+</html>

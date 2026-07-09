@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 51: Homeostasis (D3.3) — Maintaining the Internal Environment — IB Biology HL</title>
+<script>window.MathJax = { tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] } };</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #1a6b3c; --border: #c4d4a9; --highlight: #e8f5e9; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Palatino', 'Georgia', serif; background: var(--bg); color: var(--text); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; font-size: 17px; line-height: 1.7; }
+  h1 { font-size: 1.7rem; color: var(--accent); margin-bottom: 0.5rem; }
+  h2 { font-size: 1.25rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; margin: 2rem 0 1rem; }
+  h3 { font-size: 1.1rem; color: #444; margin: 1.3rem 0 0.5rem; }
+  p, li { margin-bottom: 0.6rem; }
+  ul, ol { padding-left: 1.8rem; margin-bottom: 1rem; }
+  .worked { background: #e8f5e9; border-left: 4px solid #1a6b3c; padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
+  .worked strong { color: #1a6b3c; }
+  .answer { background: #fefdf7; border: 1px solid var(--border); padding: 0.8rem 1.2rem; margin: 0.5rem 0; border-radius: 6px; }
+  .nav { display: flex; justify-content: space-between; margin: 3rem 0 1rem; padding-top: 1rem; border-top: 2px solid var(--border); font-size: 0.9rem; }
+  .nav a { color: #1a5c9e; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  .definition { background: #fff8e1; border-left: 4px solid #e6a817; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  .tip { background: #e3f2fd; border-left: 4px solid #1976d2; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  table { border-collapse: collapse; margin: 0.8rem 0; width: 100%; }
+  th, td { border: 1px solid var(--border); padding: 0.4rem 0.6rem; text-align: left; }
+  th { background: #f0f5e8; }
+  @media print { body { font-size: 14px; } .nav { display: none; } }
+</style>
+</head>
+<body>
+
+
+<h2>What You'll Learn</h2>
+
+<ul>
+<li>The definition of homeostasis and why it is essential for life</li>
+<li>Negative feedback as the fundamental control mechanism (vs positive feedback)</li>
+<li>Thermoregulation: how endotherms and ectotherms control body temperature</li>
+<li>Blood glucose regulation: the roles of insulin and glucagon, and the pathophysiology of diabetes</li>
+<li>Osmoregulation: the kidney nephron and the role of ADH</li>
+<li>Leptin, melatonin, and the hormonal control of appetite and circadian rhythms</li>
+</ul>
+<hr>
+
+<h2>1. What Is Homeostasis?</h2>
+
+<div class="definition">
+
+<p><strong>Homeostasis</strong> is the maintenance of a relatively constant internal environment within narrow limits, despite changes in the external environment. It is a dynamic equilibrium — not a fixed state, but continuous adjustments around a set point.</p>
+
+</div>
+
+<p>> <strong>Analogy:</strong> Think of homeostasis as a thermostat in a room. When the temperature drops below the set point (e.g., 21°C), the thermostat detects the deviation and turns on the heater. When the temperature rises above the set point, the heater turns off. The temperature oscillates slightly around 21°C — never perfectly constant, but always within an acceptable range. The body works the same way but for dozens of variables simultaneously.</p>
+
+<h3>Key Variables Under Homeostatic Control</h3>
+
+<table>
+<tr>
+<td>Variable</td>
+<td>Normal Range / Set Point</td>
+<td>Why It Must Be Controlled</td>
+</tr>
+<tr>
+<td>Core body temperature</td>
+<td>~36.5–37.5°C</td>
+<td>Enzymes denature >40°C; metabolic reactions too slow <35°C</td>
+</tr>
+<tr>
+<td>Blood pH</td>
+<td>7.35–7.45</td>
+<td>Enzyme function is pH-dependent; acidosis/alkalosis disrupts cellular processes</td>
+</tr>
+<tr>
+<td>Blood glucose</td>
+<td>~90 mg/100 mL (~5 mM)</td>
+<td>Brain depends almost entirely on glucose; hypoglycemia → coma; hyperglycemia → osmotic damage</td>
+</tr>
+<tr>
+<td>Blood CO₂</td>
+<td>~40 mmHg partial pressure</td>
+<td>CO₂ + H₂O → carbonic acid → affects blood pH (respiratory acidosis/alkalosis)</td>
+</tr>
+<tr>
+<td>Water balance (osmolality)</td>
+<td>~285–295 mOsm/kg</td>
+<td>Cells shrink (crenation) in hypertonic solutions; swell and burst (lysis) in hypotonic solutions</td>
+</tr>
+<tr>
+<td>Blood O₂</td>
+<td>~95–100% saturation</td>
+<td>Cellular respiration requires O₂ as final electron acceptor</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>2. Negative Feedback: The Universal Control Mechanism</h2>
+
+<h3>The Negative Feedback Loop</h3>
+
+<div class="definition">
+
+<p><strong>Negative feedback</strong> is a control mechanism in which a change from the set point triggers a response that <strong>counteracts (reverses)</strong> the change, returning the system to the set point.</p>
+
+</div>
+
+<p>> <strong>Draw and label:</strong> A circular diagram of a negative feedback loop: (1) Stimulus — change from set point, (2) Receptor/Sensor — detects the change, (3) Signal — nerve impulse or hormone, (4) Integrator/Control Centre — processes information (often hypothalamus), (5) Effector — carries out the response (muscle or gland), (6) Response — counteracts the original stimulus, (7) Return to set point — feedback is "negative" because response opposes stimulus.</p>
+
+<h3>The Five Components</h3>
+
+<table>
+<tr>
+<td>Component</td>
+<td>Role</td>
+<td>Examples</td>
+</tr>
+<tr>
+<td>Stimulus</td>
+<td>Deviation from the set point</td>
+<td>Rise in blood glucose after a meal; drop in body temperature in cold weather</td>
+</tr>
+<tr>
+<td>Receptor/Sensor</td>
+<td>Detects the deviation</td>
+<td>β-cells in pancreatic islets (detect high glucose); thermoreceptors in skin and hypothalamus</td>
+</tr>
+<tr>
+<td>Signal</td>
+<td>Communicates deviation to integrator</td>
+<td>Nerve impulse (action potential); hormone (e.g., insulin released into blood)</td>
+</tr>
+<tr>
+<td>Integrator/Control Centre</td>
+<td>Processes information and coordinates response</td>
+<td>Hypothalamus (temperature, osmolality); pancreas (glucose)</td>
+</tr>
+<tr>
+<td>Effector</td>
+<td>Carries out the corrective response</td>
+<td>Skeletal muscle (shivering); sweat glands; liver cells (glycogen synthesis/breakdown)</td>
+</tr>
+</table>
+
+<h3>Positive Feedback: The Exception</h3>
+
+<p>In <strong>positive feedback</strong>, the response <strong>amplifies</strong> the original stimulus rather than counteracting it. This is used for processes that must be completed rapidly and definitively.</p>
+
+<table>
+<tr>
+<td>Process</td>
+<td>Positive Feedback Mechanism</td>
+</tr>
+<tr>
+<td>Childbirth</td>
+<td>Baby's head presses on cervix → nerve signal to hypothalamus → oxytocin release → stronger uterine contractions → more pressure on cervix → more oxytocin → cycle continues until birth</td>
+</tr>
+<tr>
+<td>Blood clotting</td>
+<td>Damaged vessel releases clotting factors → platelets adhere and release MORE factors → attract MORE platelets → plug forms rapidly</td>
+</tr>
+<tr>
+<td>Action potential</td>
+<td>Depolarisation opens voltage-gated Na⁺ channels → Na⁺ enters → further depolarisation → opens MORE Na⁺ channels → explosive depolarisation</td>
+</tr>
+<tr>
+<td>Lactation</td>
+<td>Baby suckles → oxytocin release → milk ejection → baby continues suckling</td>
+</tr>
+</table>
+
+<div class="tip">
+
+<hr>
+
+<h2>3. Thermoregulation</h2>
+
+<h3>Endotherms vs Ectotherms</h3>
+
+<table>
+<tr>
+<td>Feature</td>
+<td>Endotherms (e.g., mammals, birds)</td>
+<td>Ectotherms (e.g., reptiles, amphibians, fish)</td>
+</tr>
+<tr>
+<td>Heat source</td>
+<td>Metabolic heat production (internal)</td>
+<td>External environment (behavioural)</td>
+</tr>
+<tr>
+<td>Metabolic rate</td>
+<td>High (5–10× higher than ectotherms of same size)</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>Mitochondria density</td>
+<td>High (generate more metabolic heat)</td>
+<td>Lower</td>
+</tr>
+<tr>
+<td>Brown adipose tissue</td>
+<td>Present (non-shivering thermogenesis)</td>
+<td>Absent</td>
+</tr>
+<tr>
+<td>Thermoneutral zone</td>
+<td>Range of ambient temperatures where metabolic rate is minimal</td>
+<td>N/A (metabolic rate varies with temperature)</td>
+</tr>
+<tr>
+<td>Behavioural thermoregulation</td>
+<td>Supplementary (seeking shade, huddling)</td>
+<td>Primary (basking, shade-seeking, burrowing)</td>
+</tr>
+<tr>
+<td>Energy cost</td>
+<td>High (need more food)</td>
+<td>Low</td>
+</tr>
+<tr>
+<td>Activity in cold</td>
+<td>Can remain active</td>
+<td>Sluggish or inactive</td>
+</tr>
+</table>
+
+<p><strong>Brown adipose tissue (BAT)</strong> contains <strong>thermogenin (UCP1 — uncoupling protein 1)</strong> in the inner mitochondrial membrane. UCP1 allows protons to leak back across the membrane without passing through ATP synthase → energy from the proton gradient is released as <strong>heat</strong> rather than used for ATP synthesis. This is <strong>non-shivering thermogenesis</strong>.</p>
+
+<h3>Temperature Receptors</h3>
+
+<ul>
+<li><strong>Peripheral thermoreceptors:</strong> In skin — detect environmental (shell) temperature</li>
+<li><strong>Central thermoreceptors:</strong> In hypothalamus — detect core blood temperature</li>
+<li>The <strong>hypothalamus</strong> integrates signals from both and compares them to the set point (~37°C)</li>
+</ul>
+<h3>Responses to Heat (Hyperthermia)</h3>
+
+<table>
+<tr>
+<td>Response</td>
+<td>Mechanism</td>
+</tr>
+<tr>
+<td>Vasodilation</td>
+<td>Arterioles in skin dilate → more warm blood flows near skin surface → heat lost by radiation and convection</td>
+</tr>
+<tr>
+<td>Sweating</td>
+<td>Sweat glands secrete water + salts onto skin → evaporation absorbs latent heat of vaporisation (~2.4 kJ/g water) → cooling</td>
+</tr>
+<tr>
+<td>Panting** (dogs, birds)</td>
+<td>Rapid shallow breathing → evaporation from respiratory surfaces → cooling (dogs lack sweat glands over most of body)</td>
+</tr>
+<tr>
+<td>Behavioural</td>
+<td>Seeking shade, stretching out (increased surface area for heat loss), reduced activity, drinking cold water</td>
+</tr>
+<tr>
+<td>Piloerection reduced</td>
+<td>Hair lies flat → less insulation → more heat loss</td>
+</tr>
+</table>
+
+<h3>Responses to Cold (Hypothermia)</h3>
+
+<table>
+<tr>
+<td>Response</td>
+<td>Mechanism</td>
+</tr>
+<tr>
+<td>Vasoconstriction</td>
+<td>Arterioles in skin constrict → blood shunted away from skin to core → heat conserved</td>
+</tr>
+<tr>
+<td>Shivering thermogenesis</td>
+<td>Skeletal muscles contract rapidly and involuntarily → ATP hydrolysis + muscle activity generate heat (can increase heat production 5×)</td>
+</tr>
+<tr>
+<td>Non-shivering thermogenesis</td>
+<td>Brown adipose tissue → UCP1 uncouples oxidative phosphorylation → energy released as heat (especially important in infants and hibernating animals)</td>
+</tr>
+<tr>
+<td>Piloerection</td>
+<td>Arrector pili muscles contract → hairs stand up → traps insulating layer of air (goosebumps — minimal effect in humans but significant in furry mammals)</td>
+</tr>
+<tr>
+<td>Behavioural</td>
+<td>Curling up (reduced surface area), huddling, seeking shelter, putting on clothing, increased voluntary activity</td>
+</tr>
+</table>
+
+<h3>Countercurrent Heat Exchange</h3>
+
+<p>In limbs of endotherms in cold environments (e.g., arctic foxes, penguins, whales), arteries carrying warm blood to the extremity run <strong>adjacent</strong> to veins carrying cool blood back to the core.</p>
+
+<p>> <strong>Draw and label:</strong> An artery (red, warm) running parallel to a vein (blue, cool) in a limb. Show heat transfer arrows from artery to vein along the length. At the extremity, arterial blood has been cooled (conserving core heat) while venous blood has been warmed (preventing cold blood from cooling the core). Label: "Countercurrent heat exchange — arterial blood warms venous return, conserving core temperature."</p>
+
+<p>This arrangement means that heat from arterial blood is transferred to venous blood before it reaches the extremity, so:</p>
+<ul>
+<li>The <strong>extremity can be much cooler</strong> than the core (reducing heat loss to the environment)</li>
+<li>The <strong>core stays warm</strong> because venous return has been pre-warmed</li>
+</ul>
+<hr>
+
+<h2>4. Blood Glucose Regulation</h2>
+
+<h3>The Glucose Set Point</h3>
+
+<p>Fasting blood glucose: ~90 mg/100 mL (~5 mmol/L). After a meal, it rises temporarily; between meals, it must not fall too low because the <strong>brain depends almost entirely on glucose</strong> for energy (cannot metabolise fatty acids).</p>
+
+<h3>The Pancreatic Islets</h3>
+
+<p>The pancreas contains clusters of endocrine cells called <strong>islets of Langerhans</strong>:</p>
+
+<table>
+<tr>
+<td>Cell Type</td>
+<td>Hormone Secreted</td>
+<td>Stimulus</td>
+<td>Effect</td>
+</tr>
+<tr>
+<td>α-cells (alpha)</td>
+<td>Glucagon</td>
+<td>Low blood glucose</td>
+<td>↑ blood glucose</td>
+</tr>
+<tr>
+<td>β-cells (beta)</td>
+<td>Insulin</td>
+<td>High blood glucose</td>
+<td>↓ blood glucose</td>
+</tr>
+</table>
+
+<p>> <strong>Draw and label:</strong> A cross-section of the pancreas showing an islet of Langerhans surrounded by exocrine acinar cells. Label α-cells (periphery of islet), β-cells (centre of islet), and blood capillary.</p>
+
+<h3>Insulin Signalling Cascade</h3>
+
+<p>When blood glucose rises (after a meal):</p>
+
+<ol>
+<li>Glucose enters β-cells via <strong>GLUT2 transporters</strong> (not insulin-dependent).</li>
+<li>Increased glucose metabolism → ↑ ATP in β-cell.</li>
+<li>ATP closes <strong>K⁺-ATP channels</strong> → membrane depolarises.</li>
+<li>Voltage-gated <strong>Ca²⁺ channels open</strong> → Ca²⁺ enters.</li>
+<li>Ca²⁺ triggers <strong>exocytosis of insulin-containing vesicles</strong>.</li>
+<li>Insulin travels in blood to target cells (muscle, liver, adipose tissue).</li>
+</ol>
+<p><strong>At the target cell:</strong></p>
+
+<ol>
+<li>Insulin binds to <strong>insulin receptor</strong> (a receptor tyrosine kinase).</li>
+<li>Intracellular signalling cascade (phosphorylation events).</li>
+<li><strong>GLUT4 vesicles</strong> translocate to the cell membrane → glucose uptake.</li>
+<li>Activation of <strong>glycogen synthase</strong> → glycogen synthesis (glycogenesis).</li>
+<li>Activation of <strong>glycolysis</strong> → glucose broken down for energy.</li>
+</ol>
+<h3>Glucagon Signalling</h3>
+
+<p>When blood glucose falls (between meals, fasting, exercise):</p>
+
+<ol>
+<li>α-cells detect low glucose → secrete <strong>glucagon</strong>.</li>
+<li>Glucagon binds to receptors on liver cells.</li>
+<li>Activates <strong>adenylyl cyclase</strong> → cAMP → protein kinase A cascade.</li>
+<li>Activates <strong>glycogen phosphorylase</strong> → breaks down glycogen → glucose-1-phosphate → glucose released into blood (glycogenolysis).</li>
+<li>Promotes <strong>gluconeogenesis</strong> — synthesis of glucose from non-carbohydrate sources (amino acids, lactate, glycerol).</li>
+</ol>
+<p>> <strong>Analogy:</strong> Insulin is the "storage manager" — after a meal, it tells cells to take up glucose and store it as glycogen. Glucagon is the "emergency supply officer" — when glucose is low, it tells the liver to break down glycogen and release glucose. Together, they maintain glucose within a tight range.</p>
+
+<hr>
+
+<h2>5. Diabetes Mellitus</h2>
+
+<p>Diabetes is a disorder of blood glucose regulation characterised by chronic <strong>hyperglycemia</strong> (high blood glucose).</p>
+
+<h3>Type I Diabetes</h3>
+
+<table>
+<tr>
+<td>Feature</td>
+<td>Description</td>
+</tr>
+<tr>
+<td>Cause</td>
+<td>Autoimmune destruction** of pancreatic β-cells by the body's own immune system (autoantibodies against β-cell antigens)</td>
+</tr>
+<tr>
+<td>Contributing factors</td>
+<td>Genetic susceptibility (certain HLA genes) + environmental trigger (viral infection suspected — e.g., coxsackievirus, rubella)</td>
+</tr>
+<tr>
+<td>Onset</td>
+<td>Usually childhood/adolescence (hence formerly "juvenile diabetes") — rapid onset</td>
+</tr>
+<tr>
+<td>Insulin production</td>
+<td>Little or none — β-cells destroyed</td>
+</tr>
+<tr>
+<td>Treatment</td>
+<td>Insulin injections** (subcutaneous), insulin pump (continuous subcutaneous insulin infusion), islet cell transplantation (experimental)</td>
+</tr>
+<tr>
+<td>Without treatment</td>
+<td>Hyperglycemia → glucose in urine (glycosuria), osmotic diuresis, dehydration, weight loss (cells starving despite high blood glucose), ketoacidosis (fat breakdown → ketone bodies → blood pH drops → life-threatening)</td>
+</tr>
+</table>
+
+<h3>Type II Diabetes</h3>
+
+<table>
+<tr>
+<td>Feature</td>
+<td>Description</td>
+</tr>
+<tr>
+<td>Cause</td>
+<td>Insulin resistance** — target cells (muscle, liver, adipose) do not respond properly to insulin; β-cells initially compensate by producing MORE insulin (hyperinsulinemia), but eventually become exhausted</td>
+</tr>
+<tr>
+<td>Risk factors</td>
+<td>Obesity (especially visceral/abdominal fat), sedentary lifestyle, high-sugar/high-fat diet, genetic predisposition, age, ethnicity</td>
+</tr>
+<tr>
+<td>Onset</td>
+<td>Usually adulthood (increasingly in children due to obesity epidemic) — gradual onset</td>
+</tr>
+<tr>
+<td>Treatment progression</td>
+<td>1. Diet modification + exercise (improves insulin sensitivity); 2. Oral medications (e.g., metformin — reduces liver glucose production, increases insulin sensitivity); 3. Insulin injections (if β-cells eventually fail)</td>
+</tr>
+</table>
+
+<h3>Consequences of Chronic Hyperglycemia</h3>
+
+<ul>
+<li>Damage to blood vessels (microvascular and macrovascular)</li>
+<li>Diabetic retinopathy → blindness</li>
+<li>Diabetic nephropathy → kidney failure</li>
+<li>Diabetic neuropathy → loss of sensation, especially in feet → injuries unnoticed → infections → amputation</li>
+<li>Increased risk of cardiovascular disease and stroke</li>
+</ul>
+<h3>Hypoglycemia</h3>
+
+<p>Excessively low blood glucose (<70 mg/100 mL) → brain starved of glucose → confusion, shakiness, sweating, loss of consciousness, coma, death if severe and prolonged. Can result from too much insulin (diabetic overdose), prolonged fasting, or insulin-secreting tumours.</p>
+
+<hr>
+
+<h2>6. Osmoregulation and the Kidney</h2>
+
+<h3>The Nephron: Functional Unit</h3>
+
+<p>Each kidney contains ~1 million <strong>nephrons</strong>. A nephron is a microscopic tubule that filters blood and modifies the filtrate to produce urine.</p>
+
+<p>> <strong>Draw and label:</strong> A nephron showing: (1) <strong>Renal corpuscle</strong> — glomerulus (capillary knot) + Bowman's capsule, (2) <strong>Proximal convoluted tubule (PCT)</strong>, (3) <strong>Loop of Henle</strong> — descending limb (thin) and ascending limb (thick), (4) <strong>Distal convoluted tubule (DCT)</strong>, (5) <strong>Collecting duct</strong>. Show associated blood vessels: afferent arteriole (into glomerulus), efferent arteriole (out), peritubular capillaries.</p>
+
+<h3>1. Glomerular Filtration</h3>
+
+<p>Blood enters the glomerulus via the <strong>afferent arteriole</strong> (wider) and exits via the <strong>efferent arteriole</strong> (narrower). This creates <strong>high hydrostatic pressure</strong> in the glomerular capillaries.</p>
+
+<ul>
+<li><strong>What passes through:</strong> Water, ions (Na⁺, K⁺, Cl⁻, etc.), glucose, amino acids, urea, creatinine — all small molecules</li>
+<li><strong>What is retained:</strong> Red blood cells, white blood cells, platelets, large plasma proteins (albumin, globulins) — too large for filtration slits</li>
+<li><strong>Filtrate composition:</strong> ~Plasma minus proteins</li>
+<li><strong>Glomerular filtration rate (GFR):</strong> ~125 mL/min (~180 L/day — entire plasma volume filtered ~60× per day!)</li>
+</ul>
+<h3>2. Proximal Convoluted Tubule (PCT)</h3>
+
+<p>The PCT reabsorbs <strong>~70% of the filtrate volume</strong>:</p>
+
+<table>
+<tr>
+<td>Substance</td>
+<td>Mechanism</td>
+</tr>
+<tr>
+<td>Glucose</td>
+<td>Co-transport with Na⁺ (SGLT proteins) → all reabsorbed (healthy individual)</td>
+</tr>
+<tr>
+<td>Amino acids</td>
+<td>Co-transport with Na⁺ → all reabsorbed</td>
+</tr>
+<tr>
+<td>Na⁺</td>
+<td>Active transport (Na⁺/K⁺-ATPase on basolateral membrane) → most reabsorbed</td>
+</tr>
+<tr>
+<td>Water</td>
+<td>Follows solutes by osmosis (PCT walls highly permeable to water)</td>
+</tr>
+<tr>
+<td>Cl⁻</td>
+<td>Follows Na⁺ electrochemically</td>
+</tr>
+</table>
+
+<p>The PCT cells have <strong>microvilli</strong> (brush border) → huge surface area for reabsorption, and many <strong>mitochondria</strong> → ATP for active transport.</p>
+
+<h3>3. Loop of Henle: The Countercurrent Multiplier</h3>
+
+<p>The loop of Henle creates a <strong>concentration gradient</strong> in the kidney medulla (increasing from cortex → deep medulla), which allows production of concentrated urine.</p>
+
+<table>
+<tr>
+<td>Limb</td>
+<td>Permeability to Water</td>
+<td>Permeability to Ions</td>
+<td>What Happens</td>
+</tr>
+<tr>
+<td>Descending limb</td>
+<td>High** (many aquaporins)</td>
+<td>Low</td>
+<td>Water leaves by osmosis (drawn out by high medullary solute concentration) → filtrate becomes increasingly concentrated</td>
+</tr>
+<tr>
+<td>Ascending limb** (thin)</td>
+<td>Low</td>
+<td>Passive Na⁺/Cl⁻ efflux</td>
+<td>NaCl diffuses out down concentration gradient</td>
+</tr>
+<tr>
+<td>Ascending limb** (thick)</td>
+<td>Impermeable</td>
+<td>Active transport** of Na⁺, K⁺, Cl⁻ out</td>
+<td>NaCl actively pumped into medullary interstitium → maintains high solute concentration in medulla</td>
+</tr>
+</table>
+
+<p>> <strong>Why "countercurrent multiplier"?</strong> The descending and ascending limbs run in opposite directions and are close together. NaCl pumped out of the ascending limb increases the interstitial solute concentration, which draws water out of the descending limb, further concentrating the filtrate entering the ascending limb, which provides more NaCl to pump out. The effect <strong>multiplies</strong> down the loop.</p>
+
+<h3>4. Distal Convoluted Tubule (DCT)</h3>
+
+<p>Fine-tuning of Na⁺ (reabsorption), K⁺ (secretion), and pH regulation (H⁺ secretion or HCO₃⁻ reabsorption). Controlled by <strong>aldosterone</strong> (increases Na⁺ reabsorption and K⁺ secretion).</p>
+
+<h3>5. Collecting Duct and ADH</h3>
+
+<p>The collecting duct's permeability to water is controlled by <strong>antidiuretic hormone (ADH, also called vasopressin)</strong>:</p>
+
+<ul>
+<li><strong>High blood solute concentration (dehydration):</strong> Osmoreceptors in hypothalamus detect high osmolality → hypothalamus signals posterior pituitary → ADH released → ADH binds to receptors on collecting duct cells → <strong>aquaporin-2 (AQP2) vesicles</strong> inserted into apical membrane → water channels open → water reabsorbed from collecting duct into hypertonic medulla → <strong>small volume of concentrated urine</strong>.</li>
+</ul>
+<ul>
+<li><strong>Low blood solute concentration (overhydration):</strong> Osmoreceptors detect low osmolality → ADH secretion suppressed → aquaporins removed from membrane → collecting duct impermeable to water → water stays in filtrate → <strong>large volume of dilute urine</strong>.</li>
+</ul>
+<p>> <strong>Draw and label:</strong> Collecting duct cell: (1) Without ADH — aquaporins stored in cytoplasmic vesicles. (2) With ADH — ADH binds to receptor → cAMP signalling cascade → vesicles fuse with apical membrane → aquaporins inserted → water enters cell → exits via basolateral aquaporins.</p>
+
+<hr>
+
+<h2>7. Leptin and Appetite Control</h2>
+
+<h3>Leptin: The Satiety Hormone</h3>
+
+<ul>
+<li><strong>Produced by:</strong> <strong>Adipose (fat) tissue</strong> — more body fat → more leptin</li>
+<li><strong>Target:</strong> <strong>Hypothalamus</strong> (arcuate nucleus)</li>
+<li><strong>Effect:</strong> Suppresses appetite, increases energy expenditure</li>
+<li><strong>Function:</strong> Long-term signal of energy reserves — tells the brain how much fat is stored</li>
+<li><strong>Normal physiology:</strong> Weight gain → more leptin → less appetite → weight loss. Weight loss → less leptin → more appetite → weight gain. This is a negative feedback loop for body weight.</li>
+</ul>
+<h3>The ob/ob Mouse</h3>
+
+<p>A landmark discovery: mice with a mutation in the <strong>ob gene</strong> (now known as the <em>Lep</em> gene) cannot produce functional leptin. These <strong>ob/ob mice</strong>:</p>
+<ul>
+<li>Have no leptin signal → brain thinks body is starving</li>
+<li>Eat voraciously (hyperphagia)</li>
+<li>Become massively obese</li>
+<li>Have low metabolic rate</li>
+<li>When injected with leptin → lose weight dramatically</li>
+</ul>
+<h3>Leptin Resistance in Humans</h3>
+
+<p>Most obese humans have <strong>high</strong> (not low) leptin levels — the problem is <strong>leptin resistance</strong>, analogous to insulin resistance in Type II diabetes. The hypothalamus does not respond to the leptin signal, so appetite remains high despite adequate fat stores.</p>
+
+<h3>Ghrelin: The Hunger Hormone</h3>
+
+<ul>
+<li><strong>Produced by:</strong> Stomach (when empty)</li>
+<li><strong>Effect:</strong> Stimulates appetite</li>
+<li>Levels rise before meals and fall after eating</li>
+<li>Works in opposition to leptin (short-term meal initiation vs long-term energy balance)</li>
+</ul>
+<hr>
+
+<h2>8. Melatonin and Circadian Rhythms</h2>
+
+<h3>The Circadian Clock</h3>
+
+<p><strong>Circadian rhythms</strong> are ~24-hour biological cycles that govern sleep-wake patterns, hormone secretion, body temperature, and metabolism. The <strong>master clock</strong> is the <strong>suprachiasmatic nucleus (SCN)</strong> in the hypothalamus.</p>
+
+<h3>Melatonin Synthesis and Secretion</h3>
+
+<ul>
+<li><strong>Produced by:</strong> <strong>Pineal gland</strong> (a small endocrine gland deep in the brain)</li>
+<li><strong>Synthesis pathway:</strong> Tryptophan → serotonin → N-acetylserotonin → <strong>melatonin</strong></li>
+<li><strong>Pattern:</strong> Synthesis INCREASES in darkness, DECREASES in light → melatonin is the "hormone of darkness"</li>
+<li><strong>Peak:</strong> ~2–4 AM in humans</li>
+<li><strong>Function:</strong> Signals darkness to the body → promotes sleep onset, regulates timing of sleep-wake cycle</li>
+</ul>
+<h3>The Light Detection Pathway</h3>
+
+<ol>
+<li>Light detected by <strong>intrinsically photosensitive retinal ganglion cells (ipRGCs)</strong> in the retina — these contain the photopigment <strong>melanopsin</strong> (distinct from rod and cone opsins).</li>
+<li>Signal travels via the <strong>retinohypothalamic tract</strong> to the SCN.</li>
+<li>SCN signals to the <strong>pineal gland</strong> via sympathetic nervous system.</li>
+<li>In light: SCN inhibits melatonin synthesis. In darkness: inhibition removed → melatonin produced.</li>
+</ol>
+<p>> <strong>Key point:</strong> This is NOT the same pathway as vision. Even blind people with retinal damage may retain functional ipRGCs and maintain circadian entrainment.</p>
+
+<h3>Circadian Rhythm Disruption</h3>
+
+<table>
+<tr>
+<td>Disruption</td>
+<td>Mechanism</td>
+<td>Consequences</td>
+</tr>
+<tr>
+<td>Jet lag</td>
+<td>Rapid travel across time zones → internal clock out of sync with local light-dark cycle</td>
+<td>Fatigue, insomnia, digestive issues, impaired cognitive performance (takes ~1 day per time zone to adjust)</td>
+</tr>
+<tr>
+<td>Shift work</td>
+<td>Working at night, sleeping during day → chronic misalignment of circadian clock with behaviour</td>
+<td>Increased risk of cardiovascular disease, metabolic disorders (obesity, diabetes), depression, certain cancers (IARC classifies shift work as "probably carcinogenic")</td>
+</tr>
+<tr>
+<td>Blue light exposure at night</td>
+<td>Screens emit blue-rich light → ipRGCs activated → SCN interprets as daylight → melatonin suppressed → difficulty sleeping</td>
+<td>Sleep onset delayed, reduced sleep quality</td>
+</tr>
+</table>
+
+<div class="tip">
+
+<hr>
+
+<h2>9. Common Misconceptions</h2>
+
+<table>
+<tr>
+<td>Misconception</td>
+<td>Reality</td>
+</tr>
+<tr>
+<td>"Homeostasis means keeping everything constant"</td>
+<td>It means keeping variables within a tolerable range — there is continuous oscillation around the set point</td>
+</tr>
+<tr>
+<td>"Positive feedback is 'bad' feedback"</td>
+<td>Positive feedback is essential for specific physiological processes (childbirth, clotting, action potentials). It is not inherently pathological</td>
+</tr>
+<tr>
+<td>"Endotherms are 'warm-blooded' and ectotherms are 'cold-blooded'"</td>
+<td>An ectotherm basking in the sun may have a higher body temperature than an endotherm. The distinction is about the SOURCE of heat, not the temperature itself</td>
+</tr>
+<tr>
+<td>"Sweating cools because the sweat is cold"</td>
+<td>Sweating cools through <strong>evaporative cooling</strong> — heat is absorbed as water changes from liquid to gas</td>
+</tr>
+<tr>
+<td>"All glucose is reabsorbed in the kidney"</td>
+<td>In a healthy person, yes — glucose should not appear in urine. In diabetics, blood glucose exceeds the renal threshold (~180 mg/100mL) → glucose appears in urine (glycosuria)</td>
+</tr>
+<tr>
+<td>"ADH makes you produce more urine"</td>
+<td>ADH = <strong>anti</strong>-diuretic hormone — it REDUCES urine volume by increasing water reabsorption</td>
+</tr>
+<tr>
+<td>"Melatonin makes you sleep"</td>
+<td>Melatonin does not induce sleep directly — it signals that it is nighttime, facilitating the transition to sleep and synchronising the circadian clock</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1 (Negative Feedback)</h3>
+
+<p>A student measures her body temperature at rest (37.1°C). She then exercises vigorously for 30 minutes and her core temperature rises to 38.2°C. Describe the negative feedback responses that will return her temperature to normal, naming the receptor, integrator, and effectors involved.</p>
+
+<p><details></p>
+<p><summary><strong>Answer</strong></summary></p>
+
+<p><strong>Stimulus:</strong> Core body temperature rises above set point (~37°C).</p>
+
+<p><strong>Receptor:</strong> Central thermoreceptors in the hypothalamus detect elevated blood temperature; peripheral thermoreceptors in the skin also send signals.</p>
+
+<p><strong>Integrator:</strong> Hypothalamus (thermoregulatory centre) compares input to set point and coordinates response.</p>
+
+<p><strong>Effectors and Responses:</strong></p>
+<ol>
+<li><strong>Vasodilation</strong> — arterioles in skin dilate → more blood flows near skin surface → heat lost by radiation and convection.</li>
+<li><strong>Sweating</strong> — sweat glands secrete sweat onto skin surface → evaporation absorbs latent heat → cooling.</li>
+<li><strong>Behavioural</strong> — reduced activity, seeking cooler environment, removing clothing.</li>
+</ol>
+<p><strong>Outcome:</strong> Heat loss increases, body temperature falls back toward set point → negative feedback (response counteracts original stimulus).</p>
+
+<p></details></p>
+
+<h3>Problem 2 (Diabetes)</h3>
+
+<p>Compare and contrast Type I and Type II diabetes mellitus. Include: cause, age of onset, insulin levels, and treatment for each.</p>
+
+<p><details></p>
+<p><summary><strong>Answer</strong></summary></p>
+
+<table>
+<tr>
+<td>Feature</td>
+<td>Type I Diabetes</td>
+<td>Type II Diabetes</td>
+</tr>
+<tr>
+<td>Cause</td>
+<td>Autoimmune destruction of pancreatic β-cells</td>
+<td>Insulin resistance in target cells; eventual β-cell exhaustion</td>
+</tr>
+<tr>
+<td>Contributing factors</td>
+<td>Genetic susceptibility + environmental trigger (viral)</td>
+<td>Obesity, sedentary lifestyle, high-sugar diet, genetics</td>
+</tr>
+<tr>
+<td>Typical age of onset</td>
+<td>Childhood/adolescence</td>
+<td>Adulthood (increasingly in children)</td>
+</tr>
+<tr>
+<td>Insulin levels at diagnosis</td>
+<td>Very low or absent (β-cells destroyed)</td>
+<td>Normal or high (β-cells compensating for resistance)</td>
+</tr>
+<tr>
+<td>Treatment</td>
+<td>Insulin injections/pump (essential for survival)</td>
+<td>Diet/exercise → metformin (oral) → insulin (if β-cells fail)</td>
+</tr>
+<tr>
+<td>Body weight</td>
+<td>Often normal or underweight at diagnosis</td>
+<td>Often overweight/obese</td>
+</tr>
+</table>
+
+<p><strong>Key contrast:</strong> Type I = not enough insulin produced; Type II = cells don't respond to insulin (resistance).</p>
+
+<p></details></p>
+
+<h3>Problem 3 (Nephron Function)</h3>
+
+<p>A drug inhibits the Na⁺/K⁺/2Cl⁻ co-transporter in the thick ascending limb of the loop of Henle. Predict the effect on: (a) the medullary osmotic gradient, (b) water reabsorption from the collecting duct, and (c) urine volume and concentration.</p>
+
+<p><details></p>
+<p><summary><strong>Answer</strong></summary></p>
+
+<p>(a) <strong>Medullary osmotic gradient:</strong> The thick ascending limb actively transports Na⁺, K⁺, and Cl⁻ out of the filtrate into the medullary interstitium, which is essential for creating and maintaining the high solute concentration in the medulla. Inhibiting this transporter would <strong>reduce or abolish the medullary osmotic gradient</strong>.</p>
+
+<p>(b) <strong>Water reabsorption in collecting duct:</strong> Water reabsorption from the collecting duct depends on the hypertonic medullary interstitium drawing water out by osmosis. Without this gradient, even if ADH is present and aquaporins are inserted, <strong>water reabsorption would be greatly reduced</strong> because there is no osmotic driving force.</p>
+
+<p>(c) <strong>Urine:</strong> <strong>Large volume of dilute urine</strong> — similar to the effect of loop diuretics like furosemide, which target this exact transporter.</p>
+
+<p></details></p>
+
+<h3>Problem 4 (ADH)</h3>
+
+<p>A student drinks 1 litre of water rapidly. Explain the sequence of events that leads to production of a large volume of dilute urine. Include the roles of osmoreceptors, the hypothalamus, posterior pituitary, ADH, aquaporins, and the collecting duct.</p>
+
+<p><details></p>
+<p><summary><strong>Answer</strong></summary></p>
+
+<ol>
+<li>Drinking 1L water → water absorbed from gut into blood → <strong>blood solute concentration decreases</strong> (blood becomes more dilute, osmolality falls).</li>
+<li><strong>Osmoreceptors</strong> in the hypothalamus detect the decrease in blood osmolality.</li>
+<li>Hypothalamus signals the <strong>posterior pituitary</strong> to <strong>reduce/cease ADH secretion</strong>.</li>
+<li>Low ADH → <strong>aquaporin-2 (AQP2) channels are removed</strong> from the apical membrane of collecting duct cells (internalised into vesicles).</li>
+<li>Collecting duct becomes <strong>impermeable to water</strong>.</li>
+<li>Water remains in the filtrate rather than being reabsorbed → <strong>large volume of dilute urine</strong> produced.</li>
+<li>Excess water is eliminated → blood osmolality returns to normal → <strong>negative feedback</strong>.</li>
+</ol>
+<p></details></p>
+
+<h3>Problem 5 (Thermoregulation)</h3>
+
+<p>An arctic fox has short ears, a thick fur coat, and countercurrent heat exchange in its legs. Explain how each of these adaptations helps the fox conserve heat in its extremely cold environment.</p>
+
+<p><details></p>
+<p><summary><strong>Answer</strong></summary></p>
+
+<p><strong>Short ears:</strong> Ears have a large surface area-to-volume ratio, making them sites of significant heat loss. Short ears <strong>reduce surface area</strong> → less heat lost to the environment.</p>
+
+<p><strong>Thick fur coat:</strong> Fur traps a layer of still air next to the skin. Air is a poor conductor of heat (good insulator). The trapped air reduces heat loss by <strong>convection</strong> and <strong>conduction</strong>. Additionally, piloerection can fluff the fur to trap more air.</p>
+
+<p><strong>Countercurrent heat exchange in legs:</strong> Arteries carrying warm blood to the feet run adjacent to veins carrying cool blood back to the body. <strong>Heat transfers from the warm arterial blood to the cool venous blood</strong> along the length of the limb:</p>
+<ul>
+<li>Blood reaching the feet is already cooled → less heat lost to the cold ground (smaller temperature gradient between foot and environment).</li>
+<li>Blood returning to the body has been pre-warmed → prevents cold venous blood from cooling the core.</li>
+</ul>
+<p>This system allows the fox's feet to be much cooler than its core (sometimes near 0°C) while the core stays warm (~38°C), dramatically reducing heat loss from extremities.</p>
+
+<p></details></p>
+
+<hr>
+
+<h2>Summary</h2>
+
+<table>
+<tr>
+<td>System</td>
+<td>Receptor</td>
+<td>Integrator</td>
+<td>Hormone/Signal</td>
+<td>Effector</td>
+<td>Response</td>
+</tr>
+<tr>
+<td>Thermoregulation</td>
+<td>Skin + hypothalamic thermoreceptors</td>
+<td>Hypothalamus</td>
+<td>Nerve signals</td>
+<td>Blood vessels, sweat glands, skeletal muscle</td>
+<td>Vasodilation/constriction, sweating, shivering</td>
+</tr>
+<tr>
+<td>Blood glucose</td>
+<td>Pancreatic α- and β-cells</td>
+<td>Pancreatic islets</td>
+<td>Insulin (↓), Glucagon (↑)</td>
+<td>Liver, muscle, adipose</td>
+<td>Glucose uptake/storage or glycogen breakdown/release</td>
+</tr>
+<tr>
+<td>Osmoregulation</td>
+<td>Hypothalamic osmoreceptors</td>
+<td>Hypothalamus + post. pituitary</td>
+<td>ADH</td>
+<td>Collecting duct</td>
+<td>Aquaporin insertion → water reabsorption</td>
+</tr>
+<tr>
+<td>Appetite</td>
+<td>Adipose (leptin), Stomach (ghrelin)</td>
+<td>Hypothalamus</td>
+<td>Leptin, Ghrelin</td>
+<td>Feeding behaviour, metabolism</td>
+<td>Appetite regulation</td>
+</tr>
+<tr>
+<td>Circadian rhythm</td>
+<td>ipRGCs (melanopsin)</td>
+<td>SCN → Pineal gland</td>
+<td>Melatonin</td>
+<td>Brain (sleep centres)</td>
+<td>Sleep-wake timing</td>
+</tr>
+</table>
+
+<hr>
+
+<p><em>Next: Natural Selection — Darwin and Wallace, antibiotic resistance, peppered moths, types of selection, sexual selection, and the Hardy-Weinberg principle.</em></p>
+
+<div class="nav"><a href="lesson_50.html">&#8592; Lesson 50</a><a href="index.html">&#8962; Index</a><a href="lesson_52.html">Lesson 52 &#8594;</a></div>
+
+</body>
+</html>

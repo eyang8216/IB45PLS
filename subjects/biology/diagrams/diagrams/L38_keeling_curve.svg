@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="600" height="450">
+  <rect width="600" height="450" fill="white"/>
+  <text x="300" y="28" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#333">L38e — Keeling Curve (Mauna Loa CO₂, 1958–2024)</text>
+
+  <!-- Axes -->
+  <line x1="65" y1="350" x2="555" y2="350" stroke="#333" stroke-width="2"/>
+  <line x1="65" y1="350" x2="65" y2="55" stroke="#333" stroke-width="2"/>
+  <text x="310" y="380" text-anchor="middle" font-family="Arial" font-size="14" fill="#333">Year</text>
+  <text x="28" y="210" text-anchor="middle" font-family="Arial" font-size="13" fill="#333" transform="rotate(-90,28,210)">Atmospheric CO₂ (ppm)</text>
+
+  <!-- X-axis ticks -->
+  <g font-family="Arial" font-size="11" fill="#666" text-anchor="middle">
+    <text x="90" y="370">1960</text><text x="180" y="370">1970</text><text x="270" y="370">1980</text>
+    <text x="360" y="370">1990</text><text x="450" y="370">2000</text><text x="540" y="370">2020</text>
+  </g>
+
+  <!-- Y-axis ticks -->
+  <g font-family="Arial" font-size="10" fill="#666" text-anchor="end">
+    <text x="60" y="354">310</text><text x="60" y="294">330</text><text x="60" y="234">350</text>
+    <text x="60" y="174">370</text><text x="60" y="114">390</text><text x="60" y="65">410</text>
+  </g>
+
+  <!-- Grid lines -->
+  <line x1="65" y1="114" x2="555" y2="114" stroke="#ddd" stroke-width="0.5"/>
+  <line x1="65" y1="174" x2="555" y2="174" stroke="#ddd" stroke-width="0.5"/>
+  <line x1="65" y1="234" x2="555" y2="234" stroke="#ddd" stroke-width="0.5"/>
+  <line x1="65" y1="294" x2="555" y2="294" stroke="#ddd" stroke-width="0.5"/>
+
+  <!-- Keeling curve - sawtooth -->
+  <path d="M65,345 Q75,340 85,342 Q95,339 105,338 Q115,333 125,335 Q135,330 145,332 Q155,325 160,328
+           Q170,322 180,325 Q190,317 200,320 Q210,312 220,315 Q230,307 240,310 Q250,302 260,305
+           Q270,296 280,299 Q290,290 300,293 Q310,284 320,287 Q330,278 340,281 Q350,272 360,275
+           Q370,266 380,269 Q390,260 400,263 Q410,254 420,257 Q430,248 440,251 Q450,242 460,245
+           Q470,235 480,239 Q490,229 500,233 Q510,223 520,227 Q530,218 545,220"
+        fill="none" stroke="#e53935" stroke-width="2.2"/>
+
+  <!-- Clean up - better curve -->
+  <!-- Overwrite with clean sawtooth -->
+  <path d="M65,346 L68,340 L71,344 L74,338 L77,342 L80,336 L83,340 L86,333 L89,338 L92,331 L95,335 L98,328
+           L101,333 L104,326 L107,330 L110,323 L113,328 L116,320 L119,325 L122,318 L125,322 L128,314
+           L131,319 L134,312 L137,316 L140,308 L143,313 L146,306 L149,310 L152,302 L155,307 L158,300
+           L161,304 L164,296 L167,301 L170,293 L173,298 L176,290 L179,295 L182,286 L185,291 L188,283
+           L191,288 L194,279 L197,284 L200,276 L203,280 L206,272 L209,277 L212,268 L215,273 L218,264
+           L221,269 L224,261 L227,266 L230,257 L233,262 L236,253 L239,258 L242,250 L245,254 L248,246
+           L251,251 L254,242 L257,247 L260,238 L263,243 L266,235 L269,239 L272,231 L275,236 L278,227
+           L281,232 L284,224 L287,228 L290,220 L293,225 L296,216 L299,221 L302,212 L305,217 L308,208
+           L311,213 L314,205 L317,209 L320,201 L323,205 L326,197 L329,201 L332,193 L335,198 L338,189
+           L341,194 L344,186 L347,190 L350,182 L353,186 L356,178 L359,182 L362,174 L365,178 L368,170
+           L371,174 L374,166 L377,170 L380,162 L383,166 L386,158 L389,162 L392,154 L395,158 L398,150
+           L401,154 L404,146 L407,150 L410,142 L413,146 L416,138 L419,142 L422,134 L425,138 L428,130
+           L431,134 L434,126 L437,130 L440,122 L443,126 L446,118 L449,122 L452,114 L455,118 L458,110
+           L461,114 L464,106 L467,110 L470,102 L473,106 L476,98  L479,102 L482,94  L485,98  L488,90
+           L491,94  L494,86  L497,90  L500,82  L503,86  L506,78  L509,82  L512,74  L515,78  L518,70
+           L521,74  L524,66  L527,70  L530,62  L533,66  L536,58  L539,62  L542,54  L545,58"
+        fill="none" stroke="#e53935" stroke-width="2.5"/>
+
+  <!-- Overall trend line -->
+  <line x1="66" y1="343" x2="545" y2="56" stroke="#333" stroke-width="1.5" stroke-dasharray="6,3"/>
+
+  <!-- Labels -->
+  <text x="250" y="195" font-family="Arial" font-size="13" font-weight="bold" fill="#333">Anthropogenic increase</text>
+  <text x="250" y="210" font-family="Arial" font-size="11" fill="#555">from fossil fuel burning</text>
+
+  <text x="150" y="360" font-family="Arial" font-size="11" fill="#e53935">↑ Northern winter</text>
+  <text x="140" y="330" font-family="Arial" font-size="11" fill="#e53935">↓ Northern summer</text>
+
+  <!-- Labels on curve -->
+  <text x="410" y="140" font-family="Arial" font-size="11" fill="#e53935" transform="rotate(-38,410,140)">~420 ppm (2024)</text>
+
+  <!-- Seasonal note -->
+  <rect x="65" y="390" width="495" height="45" rx="6" fill="#fafafa" stroke="#ccc" stroke-width="1"/>
+  <text x="300" y="410" text-anchor="middle" font-family="Arial" font-size="12" fill="#333" font-weight="bold">Seasonal sawtooth: May peak (winter respiration) → September trough (summer photosynthesis)</text>
+  <text x="300" y="428" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">Amplitude ~5-6 ppm. Dominated by Northern Hemisphere forests (more land mass). Mauna Loa Observatory, Hawaii.</text>
+</svg>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 420" width="600" height="420">
+  <defs>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#1565c0"/></marker>
+    <marker id="arrowRed" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#e53935"/></marker>
+  </defs>
+  <rect width="600" height="420" fill="#fff"/>
+  <text x="300" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333">Activation Energy: Uncatalyzed vs Enzyme-Catalyzed Reaction</text>
+
+  <!-- Axes -->
+  <line x1="80" y1="360" x2="560" y2="360" stroke="#333" stroke-width="2"/>
+  <line x1="80" y1="360" x2="80" y2="50" stroke="#333" stroke-width="2"/>
+  <text x="320" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#333">Progress of Reaction →</text>
+  <text x="20" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#333" transform="rotate(-90,20,210)">Free Energy (G) →</text>
+
+  <!-- Uncatalyzed curve - high hump -->
+  <path d="M100,340 Q180,340 220,200 Q260,60 340,80 Q420,100 520,120" fill="none" stroke="#e53935" stroke-width="3" stroke-dasharray="8,4"/>
+  <!-- Catalyzed curve - lower hump -->
+  <path d="M100,340 Q180,340 260,240 Q320,160 400,130 Q480,110 520,120" fill="none" stroke="#1a6b3c" stroke-width="3"/>
+
+  <!-- Transition state labels -->
+  <line x1="220" y1="200" x2="220" y2="55" stroke="#e53935" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="260" y1="240" x2="330" y2="55" stroke="#1a6b3c" stroke-width="1" stroke-dasharray="4,4"/>
+
+  <text x="220" y="48" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#e53935">Transition State</text>
+  <text x="220" y="48" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#e53935" dy="16">(uncatalyzed)</text>
+
+  <!-- Ea arrows -->
+  <line x1="175" y1="330" x2="175" y2="200" stroke="#e53935" stroke-width="2" marker-end="url(#arrowRed)"/>
+  <line x1="155" y1="330" x2="155" y2="200" stroke="#e53935" stroke-width="2" marker-start="url(#arrowRed)"/>
+  <text x="152" y="270" text-anchor="end" font-family="Arial, sans-serif" font-size="13" fill="#e53935" font-weight="bold">Eₐ (uncatalyzed)</text>
+  <text x="148" y="286" text-anchor="end" font-family="Arial, sans-serif" font-size="11" fill="#e53935">Large</text>
+
+  <line x1="210" y1="330" x2="210" y2="245" stroke="#1a6b3c" stroke-width="2" marker-end="url(#arrowBlue)"/>
+  <text x="213" y="292" text-anchor="start" font-family="Arial, sans-serif" font-size="13" fill="#1a6b3c" font-weight="bold">Eₐ (catalyzed)</text>
+  <text x="213" y="308" text-anchor="start" font-family="Arial, sans-serif" font-size="11" fill="#1a6b3c">Smaller</text>
+
+  <!-- ΔG label -->
+  <line x1="440" y1="120" x2="440" y2="340" stroke="#333" stroke-width="2"/>
+  <line x1="435" y1="120" x2="445" y2="120" stroke="#333" stroke-width="2"/>
+  <line x1="435" y1="340" x2="445" y2="340" stroke="#333" stroke-width="2"/>
+  <text x="448" y="235" text-anchor="start" font-family="Arial, sans-serif" font-size="13" fill="#333" font-weight="bold">ΔG</text>
+  <text x="448" y="252" text-anchor="start" font-family="Arial, sans-serif" font-size="11" fill="#333">Identical for</text>
+  <text x="448" y="267" text-anchor="start" font-family="Arial, sans-serif" font-size="11" fill="#333">both pathways</text>
+
+  <!-- Reactants / Products -->
+  <text x="95" y="378" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#333" font-weight="bold">Reactants</text>
+  <text x="525" y="378" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#333" font-weight="bold">Products</text>
+
+  <!-- Legend -->
+  <line x1="200" y1="410" x2="240" y2="410" stroke="#e53935" stroke-width="3" stroke-dasharray="8,4"/>
+  <text x="246" y="414" font-family="Arial, sans-serif" font-size="11" fill="#e53935">Uncatalyzed</text>
+  <line x1="340" y1="410" x2="380" y2="410" stroke="#1a6b3c" stroke-width="3"/>
+  <text x="386" y="414" font-family="Arial, sans-serif" font-size="11" fill="#1a6b3c">Enzyme-Catalyzed</text>
+</svg>

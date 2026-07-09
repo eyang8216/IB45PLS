@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 29: Photosynthesis I — Light to Chemical Energy (C1.3) — IB Biology HL</title>
+<script>window.MathJax = { tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] } };</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #1a6b3c; --border: #c4d4a9; --highlight: #e8f5e9; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Palatino', 'Georgia', serif; background: var(--bg); color: var(--text); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; font-size: 17px; line-height: 1.7; }
+  h1 { font-size: 1.7rem; color: var(--accent); margin-bottom: 0.5rem; }
+  h2 { font-size: 1.25rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; margin: 2rem 0 1rem; }
+  h3 { font-size: 1.1rem; color: #444; margin: 1.3rem 0 0.5rem; }
+  p, li { margin-bottom: 0.6rem; }
+  ul, ol { padding-left: 1.8rem; margin-bottom: 1rem; }
+  .worked { background: #e8f5e9; border-left: 4px solid #1a6b3c; padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
+  .worked strong { color: #1a6b3c; }
+  .answer { background: #fefdf7; border: 1px solid var(--border); padding: 0.8rem 1.2rem; margin: 0.5rem 0; border-radius: 6px; }
+  .nav { display: flex; justify-content: space-between; margin: 3rem 0 1rem; padding-top: 1rem; border-top: 2px solid var(--border); font-size: 0.9rem; }
+  .nav a { color: #1a5c9e; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  .definition { background: #fff8e1; border-left: 4px solid #e6a817; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  .tip { background: #e3f2fd; border-left: 4px solid #1976d2; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  table { border-collapse: collapse; margin: 0.8rem 0; width: 100%; }
+  th, td { border: 1px solid var(--border); padding: 0.4rem 0.6rem; text-align: left; }
+  th { background: #f0f5e8; }
+  @media print { body { font-size: 14px; } .nav { display: none; } }
+</style>
+</head>
+<body>
+
+
+<h2>What You'll Learn</h2>
+
+<p>By the end of this lesson, you will be able to:</p>
+
+<ul>
+<li><strong>Write and explain</strong> the overall equation for photosynthesis, identifying the source of each product</li>
+<li><strong>Describe chloroplast structure</strong> and relate each compartment to its function</li>
+<li><strong>Trace the path of electrons</strong> through the light-dependent reactions: PSII → ETC → PSI → NADP⁺</li>
+<li><strong>Explain where O₂ comes from</strong> (water, not CO₂!) and the experimental proof</li>
+<li><strong>Distinguish</strong> non-cyclic and cyclic photophosphorylation</li>
+<li><strong>Calculate Rf values</strong> from chromatography and identify pigments by colour and Rf</li>
+<li><strong>Interpret absorption and action spectra</strong>, linking them to Engelmann's experiment</li>
+<li><strong>Analyse limiting factors</strong> (light, CO₂, temperature) on photosynthetic rate</li>
+</ul>
+<hr>
+
+<h2>1. The Big Picture: What Photosynthesis Achieves</h2>
+
+<p>Photosynthesis is arguably the most important biochemical process on Earth. Every year, it converts approximately 100–150 billion tonnes of CO₂ into organic matter and produces the oxygen that sustains aerobic life — including you, right now, breathing oxygen that was almost certainly made by photosynthesis.</p>
+
+<h3>The Overall Equation</h3>
+
+<p style="text-align:center;margin:0.8rem 0;">$$6\text{CO}_2 + 6\text{H}_2\text{O} + \text{light energy} \rightarrow \text{C}_6\text{H}_{12}\text{O}_6 + 6\text{O}_2$$</p>
+
+<p>Or, in words:</p>
+
+<p><strong>Carbon dioxide + Water + Light → Glucose + Oxygen</strong></p>
+
+<div class="definition">
+
+<p><strong>Photosynthesis</strong>: The process by which photoautotrophic organisms (plants, algae, cyanobacteria) convert light energy into chemical energy stored in carbon compounds, using CO₂ as the carbon source and H₂O as the electron source, releasing O₂ as a by-product.</p>
+
+</div>
+
+<h3>The Two Stages: A Division of Labour</h3>
+
+<p>Photosynthesis is not one reaction but <strong>two linked sets of reactions</strong>, occurring in different parts of the chloroplast:</p>
+
+<table>
+<tr>
+<td>Stage</td>
+<td>Location</td>
+<td>Inputs</td>
+<td>Outputs</td>
+<td>Depends on Light?</td>
+</tr>
+<tr>
+<td>Light-dependent reactions</td>
+<td>Thylakoid membrane</td>
+<td>H₂O, NADP⁺, ADP, Pi, light</td>
+<td>O₂, NADPH, ATP</td>
+<td>Yes** — directly</td>
+</tr>
+<tr>
+<td>Light-independent reactions (Calvin cycle)</td>
+<td>Stroma</td>
+<td>CO₂, ATP, NADPH</td>
+<td>Carbohydrate (G3P → glucose), ADP, NADP⁺</td>
+<td>No** — but depends on products of light reactions</td>
+</tr>
+</table>
+
+<p><strong>Analogy</strong>: Think of a factory with two departments. The <strong>power station</strong> (thylakoid membrane) uses sunlight to generate electricity (ATP) and charge batteries (NADPH). The <strong>assembly line</strong> (stroma) uses that electricity and those charged batteries to assemble CO₂ into sugar molecules. The assembly line doesn't need direct sunlight — it just needs the power and batteries from the power station.</p>
+
+<hr>
+
+<h2>2. Chloroplast Structure: Form Follows Function</h2>
+
+<p><strong>Draw and label</strong>: A detailed cross-section of a chloroplast, showing:</p>
+
+<ul>
+<li><strong>Outer membrane</strong>: Smooth, permeable to small molecules (contains porins)</li>
+<li><strong>Inner membrane</strong>: Less permeable, contains specific transporters</li>
+<li><strong>Intermembrane space</strong>: Narrow space between outer and inner membranes</li>
+<li><strong>Thylakoid membrane</strong>: Folded into flattened sacs (thylakoids). Stacks of thylakoids = <strong>grana</strong> (singular: granum). Contains photosystems, ETC proteins, and ATP synthase.</li>
+<li><strong>Thylakoid lumen</strong>: The interior space of thylakoids — becomes acidic (pH ~5) during light reactions</li>
+<li><strong>Stroma thylakoids (lamellae)</strong>: Connect grana together</li>
+<li><strong>Stroma</strong>: The aqueous fluid surrounding thylakoids. Contains Calvin cycle enzymes, chloroplast DNA (circular, ~120–160 kbp), 70S ribosomes, starch grains, plastoglobuli (lipid droplets)</li>
+<li><strong>Starch grain</strong>: Storage of excess photosynthate as insoluble starch</li>
+<li><strong>Chloroplast DNA</strong>: Located in the stroma, often in multiple copies</li>
+</ul>
+<h3>Structure–Function Relationships</h3>
+
+<table>
+<tr>
+<td>Structural Feature</td>
+<td>Function</td>
+</tr>
+<tr>
+<td>Thylakoid membrane folded into grana</td>
+<td>Massive surface area** for housing photosystems, ETC, and ATP synthase</td>
+</tr>
+<tr>
+<td>Thylakoid lumen very small volume</td>
+<td>Rapid build-up of H⁺ gradient (small volume → large ΔpH from few H⁺)</td>
+</tr>
+<tr>
+<td>Stroma surrounding thylakoids</td>
+<td>Calvin cycle enzymes have immediate access to ATP and NADPH diffusing from thylakoid membrane</td>
+</tr>
+<tr>
+<td>Inner membrane impermeable</td>
+<td>Maintains controlled chemical environment in stroma (pH ~8 in light)</td>
+</tr>
+<tr>
+<td>Chloroplast DNA + 70S ribosomes</td>
+<td>Semi-autonomous — chloroplast can synthesise some of its own proteins (endosymbiotic origin)</td>
+</tr>
+</table>
+
+<div class="tip">
+
+<p><strong>IB Exam Tip (Paper 2)</strong>: When asked to relate chloroplast structure to function, always mention: (1) large surface area of thylakoid membrane, (2) small thylakoid lumen volume for rapid H⁺ gradient formation, (3) proximity of stroma to thylakoids for efficient diffusion of ATP/NADPH to Calvin cycle enzymes.</p>
+
+</div>
+
+<hr>
+
+<h2>3. The Light-Dependent Reactions: Step by Step</h2>
+
+<p>The light-dependent reactions convert light energy into chemical energy (ATP and NADPH), releasing O₂ from water.</p>
+
+<p><strong>Draw and label</strong>: A Z-scheme diagram showing Photosystem II (P680), the electron transport chain (Q → cytochrome b6f → plastocyanin), Photosystem I (P700), ferredoxin, and ferredoxin-NADP⁺ reductase. Show water splitting at PSII and NADP⁺ reduction at the end. Show H⁺ pumping at b6f and H⁺ flow through ATP synthase.</p>
+
+<hr>
+
+<h3>3.1 Photosystem II (PSII): Water Splitting</h3>
+
+<p>Photosystem II is where it all begins — despite its name, it was discovered second (PSI was discovered first, hence the naming).</p>
+
+<p>#### The Antenna Complex</p>
+
+<p>Each photosystem contains an <strong>antenna complex</strong> (light-harvesting complex, LHCII) — 200–300 molecules of chlorophyll a, chlorophyll b, and carotenoids arranged in a protein scaffold. These pigments act like a funnel:</p>
+
+<p><strong>Analogy</strong>: Imagine a stadium full of people catching tennis balls (photons) and tossing them toward a single player in the centre (the reaction centre). Each pigment molecule absorbs a photon and passes the energy — not the electron, just the energy — to a neighbouring pigment via <strong>resonance energy transfer</strong>. The energy "hops" from pigment to pigment until it reaches the reaction centre.</p>
+
+<p>#### The Reaction Centre: P680</p>
+
+<p>At the heart of PSII is a <strong>special pair</strong> of chlorophyll a molecules — <strong>P680</strong> (named because it absorbs light maximally at 680 nm). When energy reaches P680, one of its electrons is excited to a higher energy level and captured by <strong>pheophytin</strong> (a chlorophyll molecule with Mg²⁺ replaced by 2H⁺ — essentially chlorophyll without its magnesium).</p>
+
+<div class="definition">
+
+<p><strong>P680⁺</strong>: After losing its electron, P680 becomes P680⁺ — the most powerful biological oxidant known (redox potential ~+1.2 V). It is so electron-hungry that it can pull electrons from <strong>water</strong>, a molecule that is ordinarily very stable.</p>
+
+</div>
+
+<p>#### The Oxygen-Evolving Complex (OEC)</p>
+
+<p>The OEC contains a <strong>Mn₄CaO₅ cluster</strong> — four manganese ions, one calcium ion, and five oxygen atoms arranged in a precise geometry. This is the catalytic site for water oxidation:</p>
+
+<p style="text-align:center;margin:0.8rem 0;">$$2\text{H}_2\text{O} \rightarrow \text{O}_2 + 4\text{H}^+ + 4\text{e}^-$$</p>
+
+<p><strong>Four electrons</strong> are extracted from two water molecules, releasing <strong>four H⁺</strong> into the thylakoid lumen and <strong>one O₂</strong>. The OEC cycles through five oxidation states (S₀ to S₄, the <strong>Kok cycle</strong>) to accomplish this — but for IB, the key point is: <strong>O₂ comes from water, and the OEC is the catalyst.</strong></p>
+
+<div class="tip">
+
+<p><strong>IB Exam Tip (Paper 1)</strong>: The statement "oxygen produced in photosynthesis comes from CO₂" is a classic distractor. <strong>O₂ comes from the splitting of H₂O at PSII.</strong> This was proven by Ruben and Kamen (1941) using ¹⁸O-labelled water. When plants were given H₂¹⁸O, the O₂ released was ¹⁸O₂. When given C¹⁸O₂, no ¹⁸O₂ was released.</p>
+
+</div>
+
+<hr>
+
+<h3>3.2 The Electron Transport Chain (ETC)</h3>
+
+<p>After pheophytin captures the electron from P680, it passes it through a series of carriers:</p>
+
+<p><strong>P680 → Pheophytin → QA (plastoquinone firmly bound) → QB (plastoquinone mobile) → Q pool</strong></p>
+
+<p>QB accepts <strong>two electrons</strong> (one at a time) and picks up <strong>two H⁺ from the stroma</strong> to become <strong>plastoquinol (QH₂)</strong>. QH₂ then detaches and diffuses through the thylakoid membrane to the <strong>cytochrome b6f complex</strong>.</p>
+
+<p>#### Cytochrome b6f Complex</p>
+
+<div class="definition">
+
+<p><strong>Cytochrome b6f complex</strong>: Analogous to mitochondrial Complex III. It accepts electrons from plastoquinol (QH₂) and passes them to <strong>plastocyanin (PC)</strong>, a small copper-containing protein in the thylakoid lumen. As electrons flow through, <strong>H⁺ are pumped from the stroma into the thylakoid lumen</strong>, building the proton gradient.</p>
+
+</div>
+
+<p>The b6f complex operates via a <strong>Q cycle</strong> similar to mitochondrial Complex III, doubling H⁺ pumping efficiency.</p>
+
+<p><strong>Plastocyanin (PC)</strong> is a small (~10.5 kDa) soluble protein in the thylakoid lumen. Its copper ion cycles between Cu⁺ (reduced) and Cu²⁺ (oxidised). PC shuttles electrons from b6f to PSI.</p>
+
+<hr>
+
+<h3>3.3 Photosystem I (PSI): NADP⁺ Reduction</h3>
+
+<p>PSI has its own antenna complex (LHCI) funneling energy to the reaction centre <strong>P700</strong> (absorption maximum at 700 nm).</p>
+
+<p>When P700 is excited, its electron is passed through a series of carriers:</p>
+
+<p><strong>P700 → A₀ (chlorophyll) → A₁ (phylloquinone) → Fe-S clusters (Fx, FA, FB) → Ferredoxin (Fd)</strong></p>
+
+<p><strong>Ferredoxin</strong> is a small, soluble, iron-sulfur protein in the stroma. It transfers electrons to <strong>ferredoxin-NADP⁺ reductase (FNR)</strong>:</p>
+
+<p style="text-align:center;margin:0.8rem 0;">$$\text{NADP}^+ + 2\text{H}^+ + 2\text{e}^- \xrightarrow{\text{FNR}} \text{NADPH} + \text{H}^+$$</p>
+
+<p>The H⁺ used here come from the <strong>stroma</strong>, contributing to the pH gradient (removing H⁺ from stroma raises its pH).</p>
+
+<p><strong>P700⁺</strong> (after losing its electron) is reduced by the electron arriving via plastocyanin — completing the electron circuit from water to NADP⁺.</p>
+
+<hr>
+
+<h3>3.4 The Complete Non-Cyclic Pathway</h3>
+
+<p><strong>Draw and label</strong>: A complete Z-scheme showing:</p>
+
+<ol>
+<li><strong>H₂O → O₂ + 4H⁺ + 4e⁻</strong> (OEC at PSII)</li>
+<li><strong>P680 excited → pheophytin → Q → b6f → PC</strong> (electron transport)</li>
+<li><strong>H⁺ pumped at b6f</strong> into lumen</li>
+<li><strong>P700 excited → Fd → FNR → NADPH</strong> (PSI)</li>
+<li><strong>H⁺ gradient drives ATP synthase</strong> (chemiosmosis)</li>
+</ol>
+<table>
+<tr>
+<td>Feature</td>
+<td>Value</td>
+</tr>
+<tr>
+<td>Electron source</td>
+<td>H₂O (via OEC)</td>
+</tr>
+<tr>
+<td>Final electron acceptor</td>
+<td>NADP⁺</td>
+</tr>
+<tr>
+<td>H⁺ pumped per 2e⁻</td>
+<td>~4–6 at b6f + 4 from water splitting = ~8–10 total</td>
+</tr>
+<tr>
+<td>Products</td>
+<td>O₂, NADPH, ATP</td>
+</tr>
+</table>
+
+<p><strong>Non-cyclic photophosphorylation</strong> is so named because electrons travel <strong>one-way</strong>: from water → PSII → ETC → PSI → NADP⁺. They do not cycle back.</p>
+
+<hr>
+
+<h3>3.5 Cyclic Photophosphorylation</h3>
+
+<p>Sometimes the Calvin cycle needs <strong>more ATP than NADPH</strong>. The Calvin cycle consumes ATP and NADPH in a <strong>9:6 ratio</strong> (3:2) per 3 CO₂ fixed. But non-cyclic electron flow produces them in roughly equal amounts. The solution? <strong>Cyclic electron flow.</strong></p>
+
+<p><strong>Draw and label</strong>: The cyclic pathway — electrons from PSI → ferredoxin → back to cytochrome b6f → plastocyanin → PSI. Show H⁺ pumping at b6f and ATP synthesis, but NO NADPH production and NO O₂ production.</p>
+
+<div class="definition">
+
+<p><strong>Cyclic photophosphorylation</strong>: Electrons from excited P700 are passed to ferredoxin, but instead of reducing NADP⁺, they return to the cytochrome b6f complex. This pumps additional H⁺ into the lumen, producing <strong>extra ATP</strong> without generating NADPH. No water is split, so <strong>no O₂ is produced</strong>.</p>
+
+</div>
+
+<table>
+<tr>
+<td>Feature</td>
+<td>Non-Cyclic</td>
+<td>Cyclic</td>
+</tr>
+<tr>
+<td>Photosystems involved</td>
+<td>PSII + PSI</td>
+<td>PSI only</td>
+</tr>
+<tr>
+<td>Electron source</td>
+<td>H₂O</td>
+<td>P700 (recycled)</td>
+</tr>
+<tr>
+<td>Final e⁻ acceptor</td>
+<td>NADP⁺</td>
+<td>P700⁺</td>
+</tr>
+<tr>
+<td>O₂ produced?</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>NADPH produced?</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>ATP produced?</td>
+<td>Yes</td>
+<td>Yes (extra)</td>
+</tr>
+</table>
+
+<div class="tip">
+
+<p><strong>IB Exam Tip (Paper 2)</strong>: If asked why cyclic photophosphorylation exists, explain that the Calvin cycle requires ATP and NADPH in a ratio of 3:2, but non-cyclic flow produces them at approximately 1:1. Cyclic flow makes up the ATP deficit.</p>
+
+</div>
+
+<hr>
+
+<h2>4. Chemiosmosis in Chloroplasts</h2>
+
+<p>The thylakoid membrane is the site of <strong>photophosphorylation</strong> — ATP synthesis driven by light.</p>
+
+<h3>The Proton Gradient</h3>
+
+<p>During light reactions, H⁺ accumulate in the thylakoid lumen from three sources:</p>
+
+<ol>
+<li><strong>Water splitting</strong> at PSII: 4 H⁺ released per 2 H₂O → O₂</li>
+<li><strong>H⁺ pumping</strong> by cytochrome b6f: ~4 H⁺ per 2 electrons</li>
+<li><strong>NADP⁺ reduction</strong> in stroma: consumes H⁺ from stroma (contributes to gradient)</li>
+</ol>
+<table>
+<tr>
+<td>Compartment</td>
+<td>Approximate pH (Dark)</td>
+<td>Approximate pH (Light)</td>
+</tr>
+<tr>
+<td>Stroma</td>
+<td>~7.0</td>
+<td>~8.0</td>
+</tr>
+<tr>
+<td>Thylakoid lumen</td>
+<td>~7.0</td>
+<td>~5.0</td>
+</tr>
+</table>
+
+<p>That's a <strong>ΔpH of ~3 units</strong> — a 1000-fold difference in H⁺ concentration! Combined with the electrical potential (~30 mV), this creates a <strong>proton motive force</strong> of approximately <strong>200 mV</strong>.</p>
+
+<h3>ATP Synthase: CF₀CF₁</h3>
+
+<p><strong>Draw and label</strong>: Chloroplast ATP synthase (CF₀CF₁) — structurally similar to mitochondrial ATP synthase but located in the thylakoid membrane with CF₁ facing the <strong>stroma</strong> (not the matrix, as in mitochondria).</p>
+
+<ul>
+<li><strong>CF₀</strong>: The membrane-embedded proton channel (c-ring, ~14 subunits in chloroplasts)</li>
+<li><strong>CF₁</strong>: The catalytic head in the stroma (α₃β₃ hexamer), where ADP + Pi → ATP</li>
+</ul>
+<p>H⁺ flow from lumen (high [H⁺]) through CF₀ → rotation of c-ring and γ subunit → conformational changes in β subunits → ATP synthesised and released into the stroma.</p>
+
+<p><strong>Analogy</strong>: The thylakoid lumen is like a bathtub filling with water (H⁺). ATP synthase is the drain plug — the only way out. As water rushes through the drain, it spins a turbine (CF₀ rotor), which drives a generator (CF₁ catalytic head) to charge batteries (ADP → ATP).</p>
+
+<hr>
+
+<h2>5. The Calvin Cycle: Preview</h2>
+
+<p>The Calvin cycle uses the ATP and NADPH from the light reactions to fix CO₂ into carbohydrate. It occurs in the <strong>stroma</strong> and is also called the <strong>light-independent reactions</strong> or <strong>dark reactions</strong> (though "dark" is misleading — it occurs in light and dark, as long as ATP and NADPH are available).</p>
+
+<h3>The Three Phases (Brief Overview)</h3>
+
+<ol>
+<li><strong>Carboxylation</strong>: CO₂ + RuBP (5C) → 2 × 3-PGA (3C), catalysed by <strong>RuBisCO</strong></li>
+<li><strong>Reduction</strong>: 3-PGA → G3P, using ATP and NADPH</li>
+<li><strong>Regeneration</strong>: G3P rearranged to regenerate RuBP</li>
+</ol>
+<p>The Calvin cycle is covered in depth in Lesson 30. For now, understand that it is the "synthesis" half of photosynthesis — converting inorganic carbon (CO₂) into organic carbon (sugar).</p>
+
+<hr>
+
+<h2>6. Chromatography: Separating Photosynthetic Pigments</h2>
+
+<p>Chloroplasts contain multiple pigments that absorb different wavelengths of light. <strong>Chromatography</strong> separates them based on their <strong>solubility</strong> in a particular solvent.</p>
+
+<h3>The Method</h3>
+
+<ol>
+<li><strong>Extract pigments</strong>: Grind leaf tissue with <strong>acetone</strong> (or propanone) — this dissolves the hydrophobic pigments</li>
+<li><strong>Spot the extract</strong>: Apply a concentrated spot of pigment extract near the bottom of chromatography paper (or a TLC plate)</li>
+<li><strong>Develop</strong>: Place the paper in a jar with solvent (e.g., petroleum ether : acetone mixture). The solvent must be <strong>below the pigment spot</strong>.</li>
+<li><strong>Wait</strong>: Solvent rises by capillary action, carrying pigments at different rates</li>
+<li><strong>Remove and mark</strong>: When the solvent front nears the top, remove the paper and immediately mark the solvent front with a pencil</li>
+</ol>
+<h3>Rf Values</h3>
+
+<div class="definition">
+
+<p><strong>Rf (retention factor)</strong>: A dimensionless ratio used to identify compounds in chromatography.</p>
+
+<p style="text-align:center;margin:0.8rem 0;">$$R_f = \frac{\text{distance travelled by pigment}}{\text{distance travelled by solvent front}}$$</p>
+
+<p>Rf is always between 0 and 1. Each pigment has a characteristic Rf under specific solvent conditions.</p>
+
+</div>
+
+<div class="worked">
+
+<p><strong>Worked Example: Calculating Rf</strong></p>
+
+<p>A chromatography strip shows:</p>
+<ul>
+<li>Solvent front moved 12.0 cm from origin</li>
+<li>A yellow-orange spot moved 11.4 cm</li>
+<li>A blue-green spot moved 6.0 cm</li>
+<li>A yellow-green spot moved 4.8 cm</li>
+<li>A yellow spot moved 2.4 cm</li>
+</ul>
+<p>Calculate Rf for each pigment.</p>
+
+<p><strong>Solution</strong>:</p>
+
+<ul>
+<li>Yellow-orange (β-carotene): Rf = 11.4 / 12.0 = <strong>0.95</strong></li>
+<li>Blue-green (chlorophyll a): Rf = 6.0 / 12.0 = <strong>0.50</strong></li>
+<li>Yellow-green (chlorophyll b): Rf = 4.8 / 12.0 = <strong>0.40</strong></li>
+<li>Yellow (xanthophyll): Rf = 2.4 / 12.0 = <strong>0.20</strong></li>
+</ul>
+</div>
+
+<h3>Pigments in Order of Decreasing Rf</h3>
+
+<table>
+<tr>
+<td>Pigment</td>
+<td>Colour</td>
+<td>Rf (approximate)</td>
+<td>Function</td>
+</tr>
+<tr>
+<td>β-carotene</td>
+<td>Orange</td>
+<td>~0.95 (highest)</td>
+<td>Accessory pigment, photoprotection</td>
+</tr>
+<tr>
+<td>Pheophytin</td>
+<td>Grey</td>
+<td>~0.70</td>
+<td>Electron acceptor in PSII reaction centre</td>
+</tr>
+<tr>
+<td>Chlorophyll a</td>
+<td>Blue-green</td>
+<td>~0.50</td>
+<td>Primary pigment — reaction centre + antenna</td>
+</tr>
+<tr>
+<td>Chlorophyll b</td>
+<td>Yellow-green</td>
+<td>~0.40</td>
+<td>Accessory pigment — antenna only</td>
+</tr>
+<tr>
+<td>Xanthophylls</td>
+<td>Yellow</td>
+<td>~0.20 (lowest)</td>
+<td>Accessory pigment, photoprotection (violaxanthin cycle)</td>
+</tr>
+</table>
+
+<p><strong>Why different Rf values?</strong> Pigments with higher Rf values are <strong>more soluble</strong> in the non-polar mobile solvent and/or <strong>less adsorbed</strong> to the polar stationary phase (paper). β-carotene is a pure hydrocarbon — very non-polar — so it races ahead. Xanthophylls have -OH groups — more polar — so they lag behind.</p>
+
+<div class="tip">
+
+<p><strong>IB Exam Tip (Paper 1)</strong>: The colour you see on the chromatogram is the colour the pigment <strong>reflects</strong> (does not absorb). Chlorophyll a looks blue-green because it absorbs red and blue light, reflecting green. If a multiple-choice question asks what colour light a plant uses least, the answer is <strong>green</strong> (~500–550 nm).</p>
+
+</div>
+
+<hr>
+
+<h2>7. Absorption and Action Spectra</h2>
+
+<h3>Absorption Spectrum</h3>
+
+<p>An <strong>absorption spectrum</strong> is a graph of how much light a pigment absorbs at each wavelength. It is measured using a <strong>spectrophotometer</strong>.</p>
+
+<p><strong>Draw and label</strong>: An absorption spectrum graph with wavelength (400–700 nm) on the x-axis and absorbance on the y-axis. Plot curves for:</p>
+<ul>
+<li><strong>Chlorophyll a</strong>: Peaks at ~430 nm (blue) and ~662 nm (red), trough at ~500–600 nm</li>
+<li><strong>Chlorophyll b</strong>: Peaks at ~453 nm (blue) and ~642 nm (red)</li>
+<li><strong>Carotenoids</strong>: Broad absorption from ~400–500 nm (blue-violet), no absorption above ~520 nm</li>
+</ul>
+<p><strong>Key observation</strong>: All photosynthetic pigments absorb <strong>blue and red</strong> light strongly, and <strong>green light</strong> (~500–550 nm) poorly. Green light is reflected — which is why leaves look green.</p>
+
+<h3>Action Spectrum</h3>
+
+<p>An <strong>action spectrum</strong> is a graph of the <strong>rate of photosynthesis</strong> at each wavelength of light. It is measured by illuminating a plant (or algal suspension) with different wavelengths of equal intensity and measuring O₂ production or CO₂ uptake.</p>
+
+<p><strong>Draw and label</strong>: An action spectrum overlaying the absorption spectrum. The action spectrum should closely match the combined absorption spectrum of all pigments, with peaks in blue (~430 nm) and red (~660 nm), and a trough in green (~550 nm).</p>
+
+<h3>Engelmann's Experiment (1882)</h3>
+
+<div class="definition">
+
+<p><strong>Engelmann's experiment</strong>: Theodor Engelmann used a filamentous alga (<em>Spirogyra</em>) and aerobic bacteria to determine which wavelengths of light drive photosynthesis. He placed the alga on a microscope slide, illuminated it with a spectrum of light (using a prism), and added aerobic bacteria that cluster where O₂ concentration is highest.</p>
+
+</div>
+
+<p><strong>Draw and label</strong>: Engelmann's experimental setup — a filament of Spirogyra illuminated by a spectrum (rainbow) from a prism. Aerobic bacteria (drawn as tiny dots) cluster most densely in the <strong>blue</strong> and <strong>red</strong> regions of the spectrum, exactly where chlorophyll absorbs light. Few bacteria are found in the green region.</p>
+
+<p><strong>Conclusion</strong>: The action spectrum of photosynthesis matches the absorption spectrum of chlorophyll. The wavelengths that chlorophyll absorbs best are the wavelengths that drive photosynthesis most effectively. This was the first experimental evidence linking light absorption to photosynthetic oxygen production.</p>
+
+<div class="tip">
+
+<p><strong>IB Exam Tip (Paper 2)</strong>: In a "describe and explain" question about Engelmann's experiment, you must: (1) describe the method (alga + prism + bacteria), (2) state the results (bacteria clustered at blue and red), and (3) explain the conclusion (photosynthesis is driven by wavelengths that chlorophyll absorbs).</p>
+
+</div>
+
+<hr>
+
+<h2>8. Limiting Factors of Photosynthesis</h2>
+
+<p>A <strong>limiting factor</strong> is the factor that is in shortest supply and therefore restricts the rate of a process. When a factor is limiting, increasing it increases the rate of photosynthesis. When it is no longer limiting, increasing it has no further effect.</p>
+
+<h3>8.1 Light Intensity</h3>
+
+<p><strong>Draw and label</strong>: A graph of photosynthetic rate vs light intensity. The curve rises linearly at first, then plateaus.</p>
+
+<ul>
+<li><strong>Linear phase</strong>: Light is the limiting factor — more photons → more excitation of PSII and PSI → faster electron flow</li>
+<li><strong>Plateau (light saturation point)</strong>: Another factor (CO₂ or temperature) becomes limiting. Adding more light does nothing.</li>
+<li><strong>Very high light</strong>: <strong>Photoinhibition</strong> — excess light damages PSII (D1 protein degradation). Rate may actually decrease.</li>
+</ul>
+<p><strong>The compensation point</strong>: The light intensity at which CO₂ uptake (photosynthesis) equals CO₂ release (respiration). Net gas exchange = 0.</p>
+
+<h3>8.2 Carbon Dioxide Concentration</h3>
+
+<p><strong>Draw and label</strong>: A graph of photosynthetic rate vs [CO₂]. Similar shape to light curve — linear then plateau.</p>
+
+<ul>
+<li>CO₂ is the substrate for RuBisCO in the Calvin cycle</li>
+<li>At low [CO₂], RuBisCO's active sites are not saturated → rate limited by [CO₂]</li>
+<li>At high [CO₂], RuBisCO is saturated → another factor limits</li>
+<li><strong>CO₂ compensation point</strong>: [CO₂] at which photosynthesis = photorespiration + respiration</li>
+</ul>
+<h3>8.3 Temperature</h3>
+
+<p><strong>Draw and label</strong>: A graph of photosynthetic rate vs temperature. The curve rises to an optimum (~25–30°C for C3 plants), then falls sharply.</p>
+
+<p>Temperature affects photosynthesis at multiple levels:</p>
+
+<table>
+<tr>
+<td>Effect</td>
+<td>Mechanism</td>
+</tr>
+<tr>
+<td>Enzyme kinetics** (low temp)</td>
+<td>Calvin cycle enzymes work slower — RuBisCO turnover ~3 CO₂/s at 25°C</td>
+</tr>
+<tr>
+<td>Membrane fluidity** (low temp)</td>
+<td>Thylakoid membrane becomes less fluid — electron transport slows</td>
+</tr>
+<tr>
+<td>Photorespiration** (high temp)</td>
+<td>RuBisCO oxygenase activity increases relative to carboxylase; stomata close → [CO₂] drops inside leaf</td>
+</tr>
+<tr>
+<td>Enzyme denaturation** (very high temp)</td>
+<td>Proteins unfold; thylakoid membranes disrupted</td>
+</tr>
+</table>
+
+<div class="tip">
+
+<p><strong>IB Exam Tip (Paper 2)</strong>: When the question asks "Explain why temperature affects the rate of photosynthesis," you must mention: (1) enzyme-catalysed reactions in the Calvin cycle are temperature-dependent (Q₁₀ ~2), (2) at high temperatures, photorespiration increases because RuBisCO's specificity for CO₂ vs O₂ decreases and stomata close, and (3) at very high temperatures, enzymes denature and membrane integrity is lost.</p>
+
+</div>
+
+<h3>8.4 Combined Effects</h3>
+
+<p>In nature, limiting factors interact. On a sunny day at noon, light is abundant, but CO₂ may be limiting if stomata are partially closed. At dawn, light is limiting while CO₂ is ample. The factor that limits photosynthesis changes throughout the day and across seasons.</p>
+
+<hr>
+
+<h2>Common Misconceptions</h2>
+
+<table>
+<tr>
+<td>Misconception</td>
+<td>Reality</td>
+</tr>
+<tr>
+<td>"O₂ released during photosynthesis comes from CO₂"</td>
+<td>O₂ comes from the <strong>splitting of H₂O</strong> at PSII (proven by ¹⁸O tracer experiments)</td>
+</tr>
+<tr>
+<td>"The light-independent reactions only happen at night"</td>
+<td>They occur in <strong>both light and dark</strong> as long as ATP and NADPH are available. "Light-independent" means they don't need light directly, not that they only occur in darkness.</td>
+</tr>
+<tr>
+<td>"Plants photosynthesise during the day and respire at night"</td>
+<td>Plants <strong>respire 24 hours a day</strong>. Photosynthesis occurs only in light. During the day, photosynthesis typically exceeds respiration (net O₂ release); at night, only respiration occurs (net O₂ uptake).</td>
+</tr>
+<tr>
+<td>"Chlorophyll is the only photosynthetic pigment"</td>
+<td>Accessory pigments (chlorophyll b, carotenoids) broaden the spectrum of light that can be used. Carotenoids also provide photoprotection.</td>
+</tr>
+<tr>
+<td>"The Calvin cycle produces glucose directly"</td>
+<td>The Calvin cycle produces <strong>G3P</strong> (a triose phosphate). Two G3P molecules can condense to form glucose, but this occurs outside the Calvin cycle.</td>
+</tr>
+<tr>
+<td>"Green light is useless for photosynthesis"</td>
+<td>Green light is absorbed <strong>less efficiently</strong>, but it is not useless. It penetrates deeper into leaves and can drive photosynthesis in lower cell layers.</td>
+</tr>
+<tr>
+<td>"Increasing light always increases photosynthesis"</td>
+<td>Beyond the <strong>light saturation point</strong>, more light has no effect — another factor is limiting. At very high intensities, photoinhibition can reduce the rate.</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1: Chloroplast Structure–Function</h3>
+
+<p>A student draws a chloroplast and labels the thylakoid membrane, stroma, and grana. For each of these three structures, state <strong>one</strong> specific feature and explain how that feature relates to its function in photosynthesis.</p>
+
+<hr>
+
+<h3>Problem 2: Tracing Electrons</h3>
+
+<p>Describe the complete path of an electron in <strong>non-cyclic photophosphorylation</strong>, starting from water and ending at NADP⁺. Name each carrier or complex the electron passes through and state whether energy is gained (from light) or lost at each stage.</p>
+
+<hr>
+
+<h3>Problem 3: Chromatography and Rf</h3>
+
+<p>A student performs paper chromatography on a spinach leaf extract. The solvent front moves 15.0 cm from the origin. The student observes four pigment bands at 14.1 cm (orange), 7.2 cm (blue-green), 6.0 cm (yellow-green), and 2.7 cm (yellow).</p>
+
+<p>(a) Calculate the Rf value for each pigment.</p>
+
+<p>(b) Identify each pigment by name.</p>
+
+<p>(c) Explain why the pigments separate based on their chemical properties.</p>
+
+<hr>
+
+<h3>Problem 4: Absorption and Action Spectra</h3>
+
+<p>Explain how Engelmann's experiment using <em>Spirogyra</em> and aerobic bacteria provided evidence for the relationship between the absorption spectrum of chlorophyll and the action spectrum of photosynthesis.</p>
+
+<hr>
+
+<h3>Problem 5: Limiting Factors Analysis</h3>
+
+<p>A student investigates the effect of CO₂ concentration on the rate of photosynthesis in <em>Elodea</em> at 20°C under saturating light. The rate increases with [CO₂] up to 0.1%, then plateaus. The student then raises the temperature to 30°C and observes that the rate at 0.1% CO₂ increases further.</p>
+
+<p>(a) Explain why the rate plateaued at 20°C.</p>
+
+<p>(b) Explain why raising the temperature increased the rate at saturating CO₂.</p>
+
+<p>(c) Predict what would happen if the temperature were raised to 45°C. Justify your answer.</p>
+
+<hr>
+
+<h2>Answers</h2>
+
+<h3>Answer 1</h3>
+
+<table>
+<tr>
+<td>Structure</td>
+<td>Feature</td>
+<td>Function</td>
+</tr>
+<tr>
+<td>Thylakoid membrane</td>
+<td>Folded into grana stacks — provides **large surface area</td>
+<td>Accommodates many copies of photosystems, ETC complexes, and ATP synthase, maximising light capture and electron transport capacity</td>
+</tr>
+<tr>
+<td>Stroma</td>
+<td>Aqueous compartment surrounding thylakoids — contains Calvin cycle enzymes, chloroplast DNA, and 70S ribosomes</td>
+<td>Calvin cycle enzymes have immediate access to ATP and NADPH diffusing from thylakoid membrane. The stroma is the site of CO₂ fixation and carbohydrate synthesis.</td>
+</tr>
+<tr>
+<td>Grana</td>
+<td>Stacks of thylakoid discs</td>
+<td>Stacking brings PSII complexes into close proximity, facilitating energy transfer between antenna complexes. Grana structure also creates a large membrane surface area within a small volume.</td>
+</tr>
+</table>
+
+<h3>Answer 2</h3>
+
+<p>The path of an electron in non-cyclic photophosphorylation:</p>
+
+<ol>
+<li><strong>H₂O → OEC (Mn₄CaO₅)</strong>: Water is split at the oxygen-evolving complex of PSII. Electron extracted from water (energy input: strong oxidant P680⁺ drives this).</li>
+</ol>
+<ol>
+<li><strong>P680 (PSII reaction centre)</strong>: Light energy excites electron in P680 chlorophyll a special pair. Electron jumps to higher energy level (energy gained from photon).</li>
+</ol>
+<ol>
+<li><strong>Pheophytin</strong>: Primary electron acceptor — captures excited electron from P680.</li>
+</ol>
+<ol>
+<li><strong>QA → QB (plastoquinones)</strong>: Electron passes through firmly-bound QA to mobile QB. After 2 electrons, QB picks up 2H⁺ from stroma → QH₂.</li>
+</ol>
+<ol>
+<li><strong>Cytochrome b6f complex</strong>: QH₂ donates electrons. Energy released is used to pump H⁺ from stroma into lumen (energy lost as heat/work).</li>
+</ol>
+<ol>
+<li><strong>Plastocyanin (PC)</strong>: Mobile copper protein in lumen shuttles electrons to PSI.</li>
+</ol>
+<ol>
+<li><strong>P700 (PSI reaction centre)</strong>: Light excites electron (energy gained from second photon).</li>
+</ol>
+<ol>
+<li><strong>A₀ → A₁ → Fe-S clusters</strong>: Electron passes through phylloquinone and iron-sulfur centres within PSI.</li>
+</ol>
+<ol>
+<li><strong>Ferredoxin (Fd)</strong>: Soluble Fe-S protein in stroma — mobile electron carrier.</li>
+</ol>
+<ol>
+<li><strong>Ferredoxin-NADP⁺ reductase (FNR)</strong>: Catalyses NADP⁺ + 2H⁺ + 2e⁻ → NADPH + H⁺.</li>
+</ol>
+<h3>Answer 3</h3>
+
+<p><strong>(a) Rf calculations</strong>:</p>
+<ul>
+<li>Orange: Rf = 14.1 / 15.0 = <strong>0.94</strong> → β-carotene</li>
+<li>Blue-green: Rf = 7.2 / 15.0 = <strong>0.48</strong> → Chlorophyll a</li>
+<li>Yellow-green: Rf = 6.0 / 15.0 = <strong>0.40</strong> → Chlorophyll b</li>
+<li>Yellow: Rf = 2.7 / 15.0 = <strong>0.18</strong> → Xanthophyll</li>
+</ul>
+<p><strong>(b) Identifications</strong>: As in the table above — β-carotene (orange, highest Rf), chlorophyll a (blue-green), chlorophyll b (yellow-green), xanthophyll (yellow, lowest Rf).</p>
+
+<p><strong>(c) Why separation occurs</strong>: Pigments separate because they have different <strong>solubilities</strong> in the mobile phase (non-polar solvent) and different <strong>affinities</strong> for the stationary phase (polar paper). β-carotene is a pure hydrocarbon (very non-polar) — it dissolves readily in the mobile solvent and interacts weakly with paper, so it travels farthest. Xanthophylls contain -OH groups (more polar) — they interact more strongly with the paper and dissolve less readily in the solvent, so they travel the least distance.</p>
+
+<h3>Answer 4</h3>
+
+<p><strong>Engelmann's experiment</strong>:</p>
+
+<ul>
+<li><strong>Method</strong>: Engelmann placed a filament of the green alga <em>Spirogyra</em> on a microscope slide, illuminated it with light that had been passed through a prism (creating a spectrum from violet to red along the length of the alga), and added a suspension of aerobic bacteria that cluster where O₂ concentration is highest.</li>
+</ul>
+<ul>
+<li><strong>Results</strong>: The bacteria clustered most densely in the <strong>blue</strong> (~430 nm) and <strong>red</strong> (~660 nm) regions of the spectrum. Very few bacteria were found in the green region (~550 nm).</li>
+</ul>
+<ul>
+<li><strong>Explanation</strong>: Oxygen is produced by the light-dependent reactions of photosynthesis. The bacteria clustered where O₂ was being produced most rapidly, which corresponds to the wavelengths where chlorophyll absorbs light most strongly.</li>
+</ul>
+<ul>
+<li><strong>Conclusion</strong>: The <strong>action spectrum</strong> of photosynthesis (which wavelengths drive the highest photosynthetic rate) matches the <strong>absorption spectrum</strong> of chlorophyll. This provided the first experimental evidence that the light absorbed by chlorophyll is the light that drives photosynthesis.</li>
+</ul>
+<h3>Answer 5</h3>
+
+<p><strong>(a)</strong> At 20°C and 0.1% CO₂, the rate plateaued because CO₂ was no longer the limiting factor. RuBisCO was saturated with CO₂. The limiting factor was likely <strong>temperature</strong> — the Calvin cycle enzymes (including RuBisCO) were operating at a rate limited by the temperature-dependent kinetics at 20°C. Light was saturating (stated) and CO₂ was saturating (at plateau), so temperature became the bottleneck.</p>
+
+<p><strong>(b)</strong> Raising the temperature to 30°C increased the kinetic energy of enzyme and substrate molecules, increasing the frequency of successful collisions. This raised the turnover rate of Calvin cycle enzymes (Q₁₀ effect — rate roughly doubles per 10°C rise within optimal range). At 20°C, temperature was the limiting factor; at 30°C, the enzymes can work faster, so the maximum rate increases.</p>
+
+<p><strong>(c)</strong> At 45°C, the rate would <strong>decrease sharply</strong>. This is because:</p>
+<ul>
+<li>RuBisCO and other Calvin cycle enzymes would begin to <strong>denature</strong> (lose tertiary structure)</li>
+<li>At high temperatures, RuBisCO's <strong>oxygenase activity increases</strong> relative to carboxylase activity → photorespiration increases, wasting fixed carbon</li>
+<li>Stomata close at very high temperatures → CO₂ entry is restricted</li>
+<li>Thylakoid membranes may lose integrity, disrupting the proton gradient</li>
+</ul>
+<hr>
+
+<h2>Summary</h2>
+
+<ul>
+<li><strong>Overall equation</strong>: 6CO₂ + 6H₂O + light → C₆H₁₂O₆ + 6O₂</li>
+<li><strong>Two stages</strong>: Light-dependent (thylakoid membrane → ATP + NADPH + O₂) + Calvin cycle (stroma → carbohydrate)</li>
+<li><strong>Chloroplast structure</strong>: Thylakoid membrane (large SA for photosystems/ETC/ATP synthase), stroma (Calvin cycle)</li>
+<li><strong>PSII</strong>: P680 excited → pheophytin; P680⁺ oxidises H₂O at OEC → O₂ + 4H⁺ + 4e⁻</li>
+<li><strong>ETC</strong>: Q → b6f (H⁺ pumped) → PC</li>
+<li><strong>PSI</strong>: P700 excited → Fd → FNR → NADPH</li>
+<li><strong>Chemiosmosis</strong>: H⁺ gradient (lumen pH ~5 vs stroma ~8) drives ATP synthase (CF₀CF₁)</li>
+<li><strong>Cyclic photophosphorylation</strong>: PSI only → extra ATP, no NADPH/O₂</li>
+<li><strong>Chromatography</strong>: Rf values separate pigments by solubility — β-carotene (highest), chlorophyll a, chlorophyll b, xanthophylls (lowest)</li>
+<li><strong>Absorption spectrum</strong>: Chlorophyll a peaks at ~430 nm (blue) and ~662 nm (red); green not absorbed</li>
+<li><strong>Action spectrum</strong>: Matches absorption spectrum (Engelmann's experiment)</li>
+<li><strong>Limiting factors</strong>: Light intensity, CO₂ concentration, temperature — the factor in shortest supply limits the rate</li>
+</ul>
+<div class="nav"><a href="lesson_28.html">&#8592; Lesson 28</a><a href="index.html">&#8962; Index</a><a href="lesson_30.html">Lesson 30 &#8594;</a></div>
+
+</body>
+</html>

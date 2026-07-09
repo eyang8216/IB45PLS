@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 3: Nucleic Acids II — RNA, Nucleosomes & ATP ⚠️ HL (A1.2) — IB Biology HL</title>
+<script>window.MathJax = { tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] } };</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #1a6b3c; --border: #c4d4a9; --highlight: #e8f5e9; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Palatino', 'Georgia', serif; background: var(--bg); color: var(--text); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; font-size: 17px; line-height: 1.7; }
+  h1 { font-size: 1.7rem; color: var(--accent); margin-bottom: 0.5rem; }
+  h2 { font-size: 1.25rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; margin: 2rem 0 1rem; }
+  h3 { font-size: 1.1rem; color: #444; margin: 1.3rem 0 0.5rem; }
+  p, li { margin-bottom: 0.6rem; }
+  ul, ol { padding-left: 1.8rem; margin-bottom: 1rem; }
+  .worked { background: #e8f5e9; border-left: 4px solid #1a6b3c; padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
+  .worked strong { color: #1a6b3c; }
+  .answer { background: #fefdf7; border: 1px solid var(--border); padding: 0.8rem 1.2rem; margin: 0.5rem 0; border-radius: 6px; }
+  .nav { display: flex; justify-content: space-between; margin: 3rem 0 1rem; padding-top: 1rem; border-top: 2px solid var(--border); font-size: 0.9rem; }
+  .nav a { color: #1a5c9e; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  .definition { background: #fff8e1; border-left: 4px solid #e6a817; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  .tip { background: #e3f2fd; border-left: 4px solid #1976d2; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  table { border-collapse: collapse; margin: 0.8rem 0; width: 100%; }
+  th, td { border: 1px solid var(--border); padding: 0.4rem 0.6rem; text-align: left; }
+  th { background: #f0f5e8; }
+  @media print { body { font-size: 14px; } .nav { display: none; } }
+</style>
+</head>
+<body>
+
+
+<h2>What You'll Learn</h2>
+
+<ul>
+<li>The structure of RNA — ribose sugar, uracil, single-stranded nature</li>
+<li>The three types of RNA (mRNA, tRNA, rRNA) — their structures and specific functions</li>
+<li>A full comparison of DNA vs. RNA</li>
+<li>Nucleosome structure: histone octamer, H1 linker, DNA wrapping</li>
+<li>How "beads-on-a-string" chromatin condenses into chromosomes</li>
+<li>Epigenetic implications of nucleosome positioning — gene accessibility</li>
+<li>ATP as a nucleotide derivative — its structure and role as energy currency</li>
+</ul>
+<hr>
+
+<h2>3.1 RNA: The Other Nucleic Acid</h2>
+
+<p>In Lesson 2, we learned that DNA stores genetic information like a permanent library archive. But cells need working copies of specific instructions to make proteins. That's RNA's job.</p>
+
+<p><strong>RNA (ribonucleic acid)</strong> is structurally similar to DNA but with three key differences — and each difference has a functional reason.</p>
+
+<h3>Difference 1: Ribose Instead of Deoxyribose</h3>
+
+<p>RNA's sugar is <strong>ribose</strong>, which has an –OH group at the <strong>2′ carbon</strong>. DNA has deoxyribose, with just an –H at the 2′ carbon.</p>
+
+<p>This single oxygen atom makes RNA dramatically less stable than DNA. The 2′ –OH can participate in a chemical reaction that breaks the phosphodiester backbone (alkaline hydrolysis). DNA, lacking this –OH, is far more resistant to degradation.</p>
+
+<p><strong>Why this matters:</strong> DNA is the long-term archive — it must be stable for the lifetime of a cell (or organism). RNA is a temporary molecule — it's made when needed and degraded when no longer required. The instability of RNA is actually a <em>feature</em>: it allows cells to rapidly adjust which proteins they produce. If a gene needs to be turned off, the cell simply stops making its mRNA and degrades existing copies.</p>
+
+<h3>Difference 2: Uracil Instead of Thymine</h3>
+
+<p>RNA uses <strong>uracil (U)</strong> instead of thymine (T). Both uracil and thymine are pyrimidines (single-ring bases) and both pair with adenine (A). The only difference is that thymine has a methyl (–CH₃) group at one position and uracil does not.</p>
+
+<p>In RNA: A pairs with U (via 2 H-bonds, just like A–T in DNA).</p>
+
+<p><strong>Why uracil?</strong> One hypothesis: cytosine can spontaneously deaminate (lose an amine group) to become uracil. If DNA used uracil, the cell could not distinguish between "real uracil" and "cytosine-turned-into-uracil" — mutations would accumulate. By using thymine (methylated uracil) in DNA, the cell can recognize uracil as a "damaged base" and repair it. RNA, being temporary, doesn't need this safeguard.</p>
+
+<h3>Difference 3: Usually Single-Stranded</h3>
+
+<p>DNA is almost always double-stranded. RNA is typically single-stranded. However, RNA can fold back on itself to form local double-stranded regions (stem-loop or hairpin structures). This is especially important in tRNA (see below).</p>
+
+<p><strong>Why single-stranded?</strong> RNA's primary job is to carry information from DNA to the ribosome (mRNA) or to function catalytically/structurally. Being single-stranded allows RNA to adopt complex 3D shapes (like proteins!) and to base-pair with other nucleic acid strands transiently.</p>
+
+<div class="definition">
+
+<p><strong>RNA (Ribonucleic Acid):</strong> A single-stranded polynucleotide composed of nucleotides with ribose sugar, phosphate groups, and nitrogenous bases (adenine, uracil, cytosine, guanine). RNA functions in protein synthesis (mRNA, tRNA, rRNA) and can have catalytic activity (ribozymes).</p>
+
+</div>
+
+<hr>
+
+<h2>3.2 The Three Types of RNA</h2>
+
+<p>Every cell makes three major types of RNA, each with a distinct structure and function in protein synthesis. Think of them as a team: one carries the instructions, one delivers the raw materials, and one builds the product.</p>
+
+<h3>Messenger RNA (mRNA)</h3>
+
+<p><strong>Structure:</strong></p>
+<ul>
+<li>Linear, single-stranded molecule</li>
+<li>Length varies from hundreds to thousands of nucleotides, depending on the protein it encodes</li>
+<li>In eukaryotes: has a 5′ cap (modified guanine nucleotide) and a 3′ poly-A tail (a string of ~200 adenines) for stability and export from the nucleus</li>
+</ul>
+<p><strong>Function:</strong> mRNA carries the genetic instructions for a specific protein from the DNA (in the nucleus) to the ribosome (in the cytoplasm). It is a <strong>transcript</strong> — a copy of a gene.</p>
+
+<p><strong>Analogy:</strong> mRNA is like a photocopy of a specific page from a reference book (DNA) that you take to the workshop (ribosome). The book stays safely in the library (nucleus); only the copy goes where the work happens.</p>
+
+<p><strong>Key IB fact:</strong> mRNA is synthesized during <strong>transcription</strong>, when RNA polymerase reads a DNA template strand and assembles a complementary RNA strand. The sequence of bases in mRNA (read in groups of three, called codons) determines the amino acid sequence of the protein.</p>
+
+<h3>Transfer RNA (tRNA)</h3>
+
+<p><strong>Structure:</strong></p>
+<ul>
+<li>Relatively small: about 75–90 nucleotides</li>
+<li>Folds into a distinctive <strong>cloverleaf shape</strong> (in 2D) or <strong>L-shape</strong> (in 3D) due to intramolecular base pairing</li>
+<li>Has an <strong>anticodon</strong> at one end — a triplet of bases complementary to an mRNA codon</li>
+<li>Has an amino acid attachment site at the 3′ end (always the sequence CCA)</li>
+</ul>
+<p><strong>Function:</strong> tRNA acts as an <strong>adaptor molecule</strong>. It "reads" the mRNA codon via its anticodon and delivers the corresponding amino acid to the ribosome. Each tRNA is specific to one amino acid.</p>
+
+<p><strong>Analogy:</strong> tRNA is like a translator who knows two languages — it reads the nucleotide "language" (codon) and delivers the amino acid "language" (protein building block).</p>
+
+<p><strong>Draw this:</strong> Draw a cloverleaf shape (three loops). Label:</p>
+<ul>
+<li>The bottom loop: "Anticodon (3 bases complementary to mRNA codon)"</li>
+<li>The top stem: "Amino acid attachment site (CCA-3′)"</li>
+<li>The other two loops: "D-loop" and "TΨC-loop" (you can mention these help with ribosome binding)</li>
+</ul>
+<h3>Ribosomal RNA (rRNA)</h3>
+
+<p><strong>Structure:</strong></p>
+<ul>
+<li>The most abundant RNA in cells (makes up ~80% of cellular RNA)</li>
+<li>Folded into complex 3D structures with extensive intramolecular base pairing</li>
+<li>Combined with ribosomal proteins to form ribosomes</li>
+</ul>
+<p><strong>Function:</strong> rRNA forms the structural and catalytic core of the ribosome. The ribosome is the molecular machine that translates mRNA into protein. Critically, rRNA has <strong>catalytic activity</strong> — the peptidyl transferase activity that forms peptide bonds between amino acids is carried out by rRNA, not protein. This makes the ribosome a <strong>ribozyme</strong> (an RNA molecule with enzymatic function).</p>
+
+<p><strong>Analogy:</strong> If the ribosome is a factory assembly line, rRNA is the factory structure and machinery itself — the conveyor belt and welding equipment. mRNA is the blueprint, and tRNA delivers the parts.</p>
+
+<div class="tip">
+
+<p><strong>IB Exam Tip — HL distinction:</strong> The catalytic role of rRNA is a key HL concept. Be able to state that "the peptidyl transferase activity of the ribosome is due to rRNA, making the ribosome a ribozyme." This is often tested as a one-mark question or part of a larger question about translation.</p>
+
+</div>
+
+<hr>
+
+<h2>3.3 DNA vs. RNA: Complete Comparison Table</h2>
+
+<table>
+<tr>
+<td>Feature</td>
+<td>DNA</td>
+<td>RNA</td>
+</tr>
+<tr>
+<td>Full name</td>
+<td>Deoxyribonucleic acid</td>
+<td>Ribonucleic acid</td>
+</tr>
+<tr>
+<td>Sugar</td>
+<td>Deoxyribose (H at 2′ carbon)</td>
+<td>Ribose (OH at 2′ carbon)</td>
+</tr>
+<tr>
+<td>Bases</td>
+<td>A, T, C, G</td>
+<td>A, U, C, G</td>
+</tr>
+<tr>
+<td>Strands</td>
+<td>Double-stranded (usually)</td>
+<td>Single-stranded (usually)</td>
+</tr>
+<tr>
+<td>Structure</td>
+<td>Double helix</td>
+<td>Various (linear, folded, cloverleaf)</td>
+</tr>
+<tr>
+<td>Location in eukaryotes</td>
+<td>Nucleus (also mitochondria, chloroplasts)</td>
+<td>Nucleus (synthesized), cytoplasm (functions)</td>
+</tr>
+<tr>
+<td>Stability</td>
+<td>Chemically stable (long-term)</td>
+<td>Less stable (temporary); susceptible to alkaline hydrolysis</td>
+</tr>
+<tr>
+<td>Function</td>
+<td>Permanent genetic information storage</td>
+<td>Temporary information carrier (mRNA), adaptor (tRNA), structural/catalytic (rRNA)</td>
+</tr>
+<tr>
+<td>Length</td>
+<td>Very long (millions of base pairs)</td>
+<td>Variable (tRNA ~75 nt; mRNA up to thousands; rRNA varies)</td>
+</tr>
+<tr>
+<td>Base pairing</td>
+<td>A=T, C≡G</td>
+<td>A=U, C≡G (intramolecular or with DNA during transcription)</td>
+</tr>
+<tr>
+<td>Replication</td>
+<td>Yes (semi-conservative)</td>
+<td>Only by special enzymes (RNA-dependent RNA polymerase in some viruses)</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>3.4 Nucleosomes: How DNA Is Packaged (HL Only)</h2>
+
+<h3>The Packaging Problem</h3>
+
+<p>A single human cell contains about 2 meters of DNA. The nucleus is about 6 micrometers (µm) in diameter. To fit 2 meters into 6 µm, DNA must be compacted about 10,000-fold. This is like fitting a 20 km string into a tennis ball. How is this possible?</p>
+
+<p>The answer: <strong>DNA is wrapped around proteins called histones to form nucleosomes, which are further coiled and folded into chromosomes.</strong></p>
+
+<h3>Histone Proteins</h3>
+
+<p><strong>Histones</strong> are small, positively charged proteins. They are rich in the amino acids lysine and arginine, which carry positive charges at cellular pH. This positive charge attracts the negatively charged phosphate groups of DNA (remember, phosphates are negatively charged), enabling tight binding.</p>
+
+<p>There are five major histone types:</p>
+
+<table>
+<tr>
+<td>Histone</td>
+<td>Role</td>
+</tr>
+<tr>
+<td>H2A</td>
+<td>Part of the core octamer</td>
+</tr>
+<tr>
+<td>H2B</td>
+<td>Part of the core octamer</td>
+</tr>
+<tr>
+<td>H3</td>
+<td>Part of the core octamer</td>
+</tr>
+<tr>
+<td>H4</td>
+<td>Part of the core octamer</td>
+</tr>
+<tr>
+<td>H1</td>
+<td>Linker histone — binds to DNA where it enters/exits the nucleosome</td>
+</tr>
+</table>
+
+<h3>The Histone Octamer</h3>
+
+<p>At the center of each nucleosome is a <strong>histone octamer</strong> — a protein complex made of eight histone proteins: two copies each of H2A, H2B, H3, and H4.</p>
+
+<p><strong>Draw this:</strong> Draw a cylinder or barrel shape. Label it "Histone octamer: 2×(H2A + H2B + H3 + H4)."</p>
+
+<h3>DNA Wrapping Around the Octamer</h3>
+
+<p>DNA wraps around the histone octamer approximately <strong>1.65 times</strong> — about <strong>146 base pairs</strong> of DNA per nucleosome. The DNA is wound around the outside of the octamer like thread around a spool.</p>
+
+<p>This DNA-octamer complex is called a <strong>nucleosome core particle</strong>.</p>
+
+<h3>The H1 Linker Histone</h3>
+
+<p>Between nucleosome core particles, there is a stretch of <strong>linker DNA</strong> (about 20–80 base pairs, depending on species and cell type). The <strong>H1 histone</strong> binds to this linker DNA at the point where DNA enters and exits the nucleosome. H1 acts like a clamp, holding the wrapped DNA in place and facilitating further compaction.</p>
+
+<p><strong>Draw this:</strong> Draw several nucleosomes in a row. Each looks like a bead on a string — the "bead" is the histone octamer with DNA wrapped around it, and the "string" is linker DNA. Label H1 at the point where linker DNA meets the nucleosome.</p>
+
+<h3>The "Beads-on-a-String" Model</h3>
+
+<p>When viewed under an electron microscope at low salt concentration, chromatin looks like a string of beads. Each "bead" is a nucleosome (~11 nm in diameter). This is the <strong>10 nm fiber</strong> — the first level of DNA compaction.</p>
+
+<p>This compaction level alone reduces DNA length by about <strong>7-fold</strong>.</p>
+
+<h3>Higher-Order Compaction: The 30 nm Fiber</h3>
+
+<p>At physiological salt concentrations, the 10 nm fiber coils into a thicker <strong>30 nm fiber</strong> (also called the solenoid). H1 histones interact with each other to bring adjacent nucleosomes together, forming a helical coil. This achieves about <strong>50-fold compaction</strong>.</p>
+
+<h3>From 30 nm Fiber to Metaphase Chromosome</h3>
+
+<p>During cell division (mitosis/meiosis), DNA must be maximally compacted:</p>
+
+<ol>
+<li>The 30 nm fiber forms loops attached to a <strong>protein scaffold</strong>.</li>
+<li>These loops are further coiled and folded.</li>
+<li>The final result is the highly condensed <strong>metaphase chromosome</strong> — about 10,000-fold shorter than the naked DNA.</li>
+</ol>
+<p><strong>Draw this summary diagram (important for IB):</strong></p>
+
+<p>```</p>
+<p>Naked DNA double helix (2 nm)</p>
+<p>↓ wraps around histone octamers</p>
+<p>"Beads-on-a-string" / 10 nm fiber (7× compaction)</p>
+<p>↓ coils with H1 interactions</p>
+<p>30 nm solenoid fiber (50× compaction)</p>
+<p>↓ loops on protein scaffold</p>
+<p>Looped domains</p>
+<p>↓ further coiling</p>
+<p>Metaphase chromosome (10,000× compaction)</p>
+<p>```</p>
+
+<div class="definition">
+
+<p><strong>Nucleosome</strong>: The basic unit of DNA packaging in eukaryotes, consisting of ~146 base pairs of DNA wrapped around a histone octamer (2× H2A, H2B, H3, H4), with H1 binding at the entry/exit point of linker DNA.</p>
+
+<p><strong>Chromatin</strong>: The complex of DNA and histone proteins that makes up eukaryotic chromosomes. Exists in two forms: euchromatin (less condensed, actively transcribed) and heterochromatin (highly condensed, transcriptionally inactive).</p>
+
+</div>
+
+<hr>
+
+<h2>3.5 Epigenetic Implications of Nucleosome Positioning</h2>
+
+<p>This is a fascinating HL topic that bridges molecular biology and genetics. It also appears frequently on Paper 2.</p>
+
+<h3>What Is Epigenetics?</h3>
+
+<p><strong>Epigenetics</strong> refers to heritable changes in gene expression that do NOT involve changes to the DNA sequence itself. In other words: the same DNA sequence can produce different outcomes depending on how it's packaged.</p>
+
+<h3>Nucleosome Positioning Controls Gene Accessibility</h3>
+
+<p>For a gene to be <strong>transcribed</strong>, RNA polymerase and transcription factors must physically access the DNA. If DNA is tightly wrapped in nucleosomes, the gene is inaccessible — it's "off." If the nucleosomes are repositioned or removed, the DNA is exposed — the gene can be "on."</p>
+
+<p>Two main epigenetic mechanisms modify nucleosome positioning:</p>
+
+<h3>1. Histone Acetylation</h3>
+
+<p>Acetyl groups (–COCH₃) can be added to lysine residues in histone tails (the flexible N-terminal ends of histones that protrude from the nucleosome). This is catalyzed by enzymes called <strong>histone acetyltransferases (HATs)</strong>.</p>
+
+<p><strong>Effect:</strong> Acetylation neutralizes the positive charge on lysine, reducing the histone's affinity for negatively charged DNA. The chromatin becomes less tightly packed (<strong>euchromatin</strong>), allowing transcription. Acetylation = gene activation.</p>
+
+<p>Histone deacetylases (HDACs) remove acetyl groups, tightening chromatin and repressing transcription.</p>
+
+<h3>2. Histone Methylation</h3>
+
+<p>Methyl groups (–CH₃) can be added to histones. The effect depends on <em>which</em> residue is methylated and <em>how many</em> methyl groups are added. Some methylation patterns activate genes; others repress them. This is more complex than acetylation.</p>
+
+<h3>Key Concept: The Histone Code</h3>
+
+<p>The pattern of chemical modifications on histone tails constitutes a "code" that influences chromatin structure and gene expression. This code is:</p>
+
+<ul>
+<li><strong>Heritable</strong> through cell division — daughter cells inherit the modification patterns.</li>
+<li><strong>Reversible</strong> — enzymes can add or remove modifications in response to environmental signals.</li>
+<li><strong>Environmentally influenced</strong> — diet, stress, toxins, and other factors can alter the histone code.</li>
+</ul>
+<div class="tip">
+
+<p><strong>IB Exam Tip:</strong> "Explain how nucleosome structure relates to gene expression" is a classic HL question. Structure your answer: (1) describe the nucleosome, (2) explain that tightly packed nucleosomes block transcription, (3) explain that acetylation loosens chromatin and allows transcription. You can also mention methylation.</p>
+
+</div>
+
+<hr>
+
+<h2>3.6 ATP: A Nucleotide Derivative</h2>
+
+<h3>Structure of ATP</h3>
+
+<p>ATP (adenosine triphosphate) looks very much like a nucleotide because it IS a modified nucleotide:</p>
+
+<ul>
+<li><strong>Adenine</strong> — the nitrogenous base</li>
+<li><strong>Ribose</strong> — the pentose sugar (note: ribose, not deoxyribose)</li>
+<li><strong>Three phosphate groups</strong> — attached in a chain to the 5′ carbon of ribose</li>
+</ul>
+<p>The three phosphates are labeled alpha (α), beta (β), and gamma (γ), with the gamma phosphate being the outermost one.</p>
+
+<p><strong>Draw this:</strong> Draw adenine as a purine (hexagon + pentagon). Attach it to a ribose pentagon (at 1′). From the 5′ carbon, draw a line with three circles labeled P (phosphates). Label them α, β, γ from closest to ribose to farthest.</p>
+
+<h3>Why ATP Is the "Energy Currency"</h3>
+
+<p>The bonds connecting the phosphate groups — especially the bond between the beta and gamma phosphates — are <strong>high-energy bonds</strong>. When this bond is broken by hydrolysis:</p>
+
+<p><strong>ATP + H₂O → ADP + Pi + energy</strong> (Pi = inorganic phosphate)</p>
+
+<p>This reaction releases about <strong>30.5 kJ mol⁻¹</strong> of free energy under standard conditions.</p>
+
+<p><strong>Why so much energy?</strong> The three phosphate groups all carry negative charges, which repel each other strongly (like trying to push three magnets together with the same poles facing). Breaking off one phosphate relieves this electrostatic repulsion, releasing energy — similar to releasing a compressed spring.</p>
+
+<h3>ATP ↔ ADP Cycling</h3>
+
+<p>ATP is not stored in large quantities. Instead, cells continuously regenerate ATP from ADP and Pi using energy from cellular respiration (or photosynthesis in plants):</p>
+
+<p><strong>ADP + Pi + energy → ATP + H₂O</strong></p>
+
+<p>This is a phosphorylation reaction (condensation), catalyzed by <strong>ATP synthase</strong>.</p>
+
+<p>The ATP pool turns over very rapidly — a typical cell contains only a few seconds' supply of ATP, but regenerates it continuously. Your body turns over approximately your own body weight in ATP every day!</p>
+
+<h3>Other Nucleotide Derivatives (Briefly)</h3>
+
+<p>ATP is not the only nucleotide used in energy metabolism. Others include:</p>
+
+<ul>
+<li><strong>GTP</strong> (guanosine triphosphate) — used in protein synthesis and signal transduction</li>
+<li><strong>CTP</strong> — used in lipid synthesis</li>
+<li><strong>UTP</strong> — used in carbohydrate metabolism</li>
+</ul>
+<p>These are all nucleoside triphosphates and serve similar roles as energy carriers in specific pathways.</p>
+
+<div class="definition">
+
+<p><strong>ATP (Adenosine Triphosphate):</strong> A nucleotide derivative consisting of adenine, ribose, and three phosphate groups. It is the universal energy currency of cells — the hydrolysis of its terminal phosphate bond provides energy for cellular work (synthesis, transport, movement).</p>
+
+</div>
+
+<hr>
+
+<h2>3.7 Worked Examples</h2>
+
+<div class="worked">
+
+<p><strong>Question 1 (DNA vs RNA):</strong> Compare and contrast the structures of DNA and RNA. (4 marks)</p>
+
+<p><strong>Solution:</strong></p>
+
+<p>Similarities (choose 1–2):</p>
+<ul>
+<li>Both are polynucleotides with a sugar-phosphate backbone and nitrogenous bases. ✓</li>
+<li>Both contain the bases adenine, cytosine, and guanine. ✓</li>
+</ul>
+<p>Differences (choose 2–3 distinct ones):</p>
+<ul>
+<li>DNA has deoxyribose sugar; RNA has ribose sugar (extra –OH at 2′). ✓</li>
+<li>DNA is usually double-stranded; RNA is usually single-stranded. ✓</li>
+<li>DNA uses thymine; RNA uses uracil instead. ✓</li>
+<li>DNA is chemically more stable; RNA is more susceptible to hydrolysis. ✓</li>
+</ul>
+</div>
+
+<div class="worked">
+
+<p><strong>Question 2 (Nucleosomes):</strong> A length of DNA contains 1,460 base pairs. How many nucleosomes would be needed to package this DNA, assuming 146 bp of DNA wrap around each nucleosome core and 30 bp of linker DNA between nucleosomes?</p>
+
+<p><strong>Solution:</strong></p>
+
+<p>Step 1: Each nucleosome unit (core + linker) covers: 146 + 30 = 176 bp.</p>
+
+<p>Step 2: Number of nucleosomes = Total bp ÷ bp per nucleosome unit</p>
+<p>= 1,460 ÷ 176 = 8.295...</p>
+
+<p>Step 3: Since you can't have partial nucleosomes, approximately 8 nucleosomes would package this DNA.</p>
+
+<p><strong>Answer:</strong> Approximately 8 nucleosomes.</p>
+
+<p><em>Note:</em> Real linker DNA lengths vary, so this is an approximation.</p>
+
+</div>
+
+<hr>
+
+<h2>3.8 Practice Problems</h2>
+
+<h3>Problem 1 (Paper 1 — Multiple Choice)</h3>
+
+<p>Which component is found in ATP but NOT in a DNA nucleotide?</p>
+
+<p>A. Adenine</p>
+<p>B. Ribose</p>
+<p>C. Phosphate</p>
+<p>D. Deoxyribose</p>
+
+<p><details></p>
+<p><summary>Answer</summary></p>
+
+<p><strong>B.</strong> Ribose. DNA contains deoxyribose. ATP contains ribose. Both contain adenine and phosphate.</p>
+
+<p></details></p>
+
+<h3>Problem 2 (Paper 1 — Multiple Choice)</h3>
+
+<p>What is the role of histone H1 in chromatin structure?</p>
+
+<p>A. It forms the core octamer around which DNA wraps.</p>
+<p>B. It binds linker DNA where it enters and exits the nucleosome, stabilizing higher-order structure.</p>
+<p>C. It catalyzes the acetylation of other histones.</p>
+<p>D. It unwinds DNA for transcription.</p>
+
+<p><details></p>
+<p><summary>Answer</summary></p>
+
+<p><strong>B.</strong> H1 is the linker histone. The core octamer is H2A, H2B, H3, H4 (×2).</p>
+
+<p></details></p>
+
+<h3>Problem 3 (Paper 2 — 2 marks)</h3>
+
+<p>Distinguish between the structure and function of mRNA and tRNA.</p>
+
+<p><details></p>
+<p><summary>Model Answer</summary></p>
+
+<ul>
+<li>mRNA is a linear, single-stranded molecule that carries the genetic code (in codons) from DNA to the ribosome. ✓</li>
+<li>tRNA is a folded, cloverleaf-shaped molecule with an anticodon at one end and an amino acid attachment site at the other; it delivers amino acids to the ribosome during translation. ✓</li>
+<li>mRNA varies greatly in length; tRNA is short (~75–90 nucleotides). ✓</li>
+</ul>
+<p></details></p>
+
+<hr>
+
+<h2>3.9 Common Misconceptions</h2>
+
+<table>
+<tr>
+<td>Misconception</td>
+<td>The Truth</td>
+</tr>
+<tr>
+<td>"RNA is always single-stranded and never base-pairs."</td>
+<td>RNA folds into complex shapes with intramolecular base pairing (e.g., tRNA, rRNA). Some viruses have double-stranded RNA genomes.</td>
+</tr>
+<tr>
+<td>"All RNA is translated into protein."</td>
+<td>Only mRNA is translated. tRNA and rRNA are functional RNA molecules that are never translated.</td>
+</tr>
+<tr>
+<td>"Nucleosomes are found in bacteria."</td>
+<td>Nucleosomes are unique to eukaryotes. Bacteria have naked, circular DNA (though it still compacts using different proteins).</td>
+</tr>
+<tr>
+<td>"Histone acetylation changes the DNA sequence."</td>
+<td>Epigenetic modifications affect chromatin structure, not the DNA sequence itself.</td>
+</tr>
+<tr>
+<td>"ATP is the only energy-carrying nucleotide."</td>
+<td>GTP, CTP, and UTP also serve as energy carriers in specific pathways.</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>3.10 Key Terms Checklist</h2>
+
+<ul>
+<li>[ ] Nucleotide vs. nucleoside</li>
+<li>[ ] Ribose vs. deoxyribose</li>
+<li>[ ] Uracil (vs. thymine)</li>
+<li>[ ] mRNA — codon, 5′ cap, poly-A tail</li>
+<li>[ ] tRNA — anticodon, amino acid attachment site, cloverleaf</li>
+<li>[ ] rRNA — ribozyme, peptidyl transferase</li>
+<li>[ ] Histone proteins (H2A, H2B, H3, H4, H1)</li>
+<li>[ ] Histone octamer</li>
+<li>[ ] Nucleosome core particle (~146 bp)</li>
+<li>[ ] Linker DNA</li>
+<li>[ ] 10 nm fiber (beads-on-a-string)</li>
+<li>[ ] 30 nm fiber (solenoid)</li>
+<li>[ ] Metaphase chromosome</li>
+<li>[ ] Euchromatin vs. heterochromatin</li>
+<li>[ ] Histone acetylation (HATs, HDACs)</li>
+<li>[ ] Histone methylation</li>
+<li>[ ] Epigenetics</li>
+<li>[ ] ATP, ADP, Pi</li>
+<li>[ ] ATP hydrolysis (~30.5 kJ mol⁻¹)</li>
+</ul>
+<hr>
+
+<h2>Cross-References</h2>
+
+<ul>
+<li><strong>Lesson 2 (A1.2)</strong> — DNA structure: nucleotides, complementary base pairing, double helix</li>
+<li><strong>Lesson 6 (A2.2 HL)</strong> — Ribosome structure: 70S vs 80S, A, P, E sites</li>
+<li><strong>Transcription & Translation (future lessons)</strong> — mRNA synthesis, tRNA function, rRNA catalysis</li>
+<li><strong>Cell Division (future lessons)</strong> — Chromosome condensation during mitosis/meiosis</li>
+<li><strong>Gene Expression (future lessons)</strong> — Epigenetic regulation of transcription</li>
+</ul>
+<hr>
+
+<p><em>You've now covered the full scope of nucleic acids for HL. Remember: DNA stores information, RNA does the work, nucleosomes package the DNA, and ATP powers everything. These molecules are the hardware of life — and you understand them from the atomic level up.</em></p>
+
+<div class="nav"><a href="lesson_02.html">&#8592; Lesson 2</a><a href="index.html">&#8962; Index</a><a href="lesson_04.html">Lesson 4 &#8594;</a></div>
+
+</body>
+</html>

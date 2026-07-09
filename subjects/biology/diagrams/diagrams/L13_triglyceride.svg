@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 520" width="600" height="520">
+  <defs>
+    <style>
+      text { font-family: Arial, sans-serif; }
+      .title { font-size: 18px; font-weight: bold; fill: #1a6b3c; text-anchor: middle; }
+      .label { font-size: 13px; fill: #333; text-anchor: middle; }
+      .small { font-size: 11px; fill: #555; text-anchor: middle; }
+      .bold { font-weight: bold; }
+    </style>
+  </defs>
+  <rect width="600" height="520" fill="#fff"/>
+
+  <!-- Title -->
+  <text x="300" y="30" class="title">Triglyceride Structure — Glycerol + 3 Fatty Acids</text>
+
+  <!-- Glycerol backbone -->
+  <text x="300" y="62" class="label bold" fill="#1565c0">Glycerol Backbone</text>
+
+  <!-- C1 -->
+  <circle cx="210" cy="115" r="6" fill="#333"/>
+  <text x="210" y="108" class="small">C1</text>
+  <!-- C2 -->
+  <circle cx="300" cy="80" r="6" fill="#333"/>
+  <text x="300" y="73" class="small">C2</text>
+  <!-- C3 -->
+  <circle cx="390" cy="115" r="6" fill="#333"/>
+  <text x="390" y="108" class="small">C3</text>
+
+  <!-- Bonds between glycerol carbons -->
+  <line x1="216" y1="115" x2="294" y2="80" stroke="#333" stroke-width="2"/>
+  <line x1="306" y1="80" x2="384" y2="115" stroke="#333" stroke-width="2"/>
+
+  <!-- C1 ester bond -->
+  <line x1="210" y1="121" x2="210" y2="160" stroke="#e53935" stroke-width="2.5"/>
+  <text x="160" y="145" class="small" fill="#e53935" font-weight="bold">Ester bond</text>
+  <!-- -COO- on C1 -->
+  <text x="190" y="148" class="small" fill="#e53935">—COO—</text>
+
+  <!-- C2 ester bond -->
+  <line x1="300" y1="86" x2="300" y2="135" stroke="#e53935" stroke-width="2.5"/>
+  <text x="240" y="115" class="small" fill="#e53935" font-weight="bold">Ester bond</text>
+  <text x="282" y="118" class="small" fill="#e53935">—COO—</text>
+
+  <!-- C3 ester bond -->
+  <line x1="390" y1="121" x2="390" y2="160" stroke="#e53935" stroke-width="2.5"/>
+  <text x="430" y="145" class="small" fill="#e53935" font-weight="bold">Ester bond</text>
+  <text x="408" y="148" class="small" fill="#e53935">—COO—</text>
+
+  <!-- Fatty Acid 1 - zigzag -->
+  <polyline points="210,160 200,175 215,190 205,205 215,220 205,235 215,250 205,265 215,280" fill="none" stroke="#1a6b3c" stroke-width="2.5"/>
+  <text x="160" y="230" class="small" fill="#1a6b3c">Fatty Acid 1</text>
+
+  <!-- Fatty Acid 2 - zigzag -->
+  <polyline points="300,135 290,150 305,165 295,180 305,195 295,210 305,225 295,240 305,255" fill="none" stroke="#1a6b3c" stroke-width="2.5"/>
+  <text x="250" y="210" class="small" fill="#1a6b3c">Fatty Acid 2</text>
+
+  <!-- Fatty Acid 3 - zigzag with double bond (unsaturated) -->
+  <polyline points="390,160 380,175 395,190 385,205 395,220" fill="none" stroke="#ff8f00" stroke-width="2.5"/>
+  <!-- double bond marker -->
+  <line x1="383" y1="202" x2="398" y2="195" stroke="#ff8f00" stroke-width="2.5"/>
+  <line x1="383" y1="208" x2="398" y2="201" stroke="#ff8f00" stroke-width="2.5"/>
+  <polyline points="395,220 385,235 395,250 385,265 395,280" fill="none" stroke="#ff8f00" stroke-width="2.5"/>
+  <text x="430" y="230" class="small" fill="#ff8f00">Fatty Acid 3</text>
+  <text x="430" y="243" class="small" fill="#ff8f00">(unsaturated, C=C)</text>
+
+  <!-- Reaction equation -->
+  <text x="300" y="320" class="label bold" fill="#1565c0">Condensation Reaction (×3)</text>
+  <text x="300" y="345" class="label">Glycerol + 3 Fatty Acids → Triglyceride + 3 H₂O</text>
+
+  <!-- Water molecules -->
+  <text x="140" y="385" class="small" fill="#1565c0">3 H₂O released</text>
+  <text x="140" y="400" class="small" fill="#555">(one per ester bond formed)</text>
+
+  <!-- Legend box -->
+  <rect x="380" y="365" width="200" height="105" rx="5" fill="#f5f5f5" stroke="#ccc" stroke-width="1"/>
+  <text x="480" y="382" class="small bold">Legend</text>
+  <line x1="395" y1="395" x2="430" y2="395" stroke="#333" stroke-width="2"/>
+  <text x="435" y="398" class="small">Glycerol carbon</text>
+  <line x1="395" y1="415" x2="430" y2="415" stroke="#e53935" stroke-width="2.5"/>
+  <text x="435" y="418" class="small">Ester bond (—COO—)</text>
+  <line x1="395" y1="435" x2="430" y2="435" stroke="#1a6b3c" stroke-width="2"/>
+  <text x="435" y="438" class="small">Saturated FA tail</text>
+  <line x1="395" y1="455" x2="430" y2="455" stroke="#ff8f00" stroke-width="2"/>
+  <text x="435" y="458" class="small">Unsaturated FA tail</text>
+
+  <!-- summary at bottom -->
+  <text x="300" y="500" class="small" fill="#333">Ester bonds link each fatty acid to glycerol via condensation; 3 H₂O released per triglyceride formed</text>
+</svg>

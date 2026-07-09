@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>{{ prompt.title }} — {{ subject_name }}</title>
 <meta name="csrf-token" content="{{ csrf_token }}">
-<style>:root{--bg:#fafaf8;--text:#1a1a1a;--accent:#1a1a2e;--border:#ddd;--success:#27ae60}
+<style>:root{--bg:#fafaf8;--text:#1a1a1a;--accent:#1a1a2e;--border:#ddd;--success:#27ae60;--warn:#e67e22}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:Georgia,'Times New Roman',serif;font-size:17px;line-height:1.7;color:var(--text);background:var(--bg);max-width:900px;margin:0 auto;padding:2rem 1.5rem}
 .nav-bar{display:flex;align-items:center;gap:1rem;padding:.6rem 1.2rem;margin:-2rem -1.5rem 1.5rem;background:linear-gradient(135deg,#1a1a2e,#16213e);color:white;font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:.9rem}
@@ -14,6 +14,8 @@ h2{font-size:1.2rem;margin:1.5rem 0 .7rem;color:#1a1a2e}
 textarea{width:100%;min-height:300px;border:2px solid var(--border);border-radius:12px;padding:1.2rem;font-family:Georgia,serif;font-size:1rem;line-height:1.7;resize:vertical;outline:none;margin-bottom:1rem}
 textarea:focus{border-color:#1a1a2e}
 .btn{display:inline-block;background:linear-gradient(135deg,#1a1a2e,#16213e);color:white;padding:.8rem 2rem;border:none;border-radius:10px;font-size:1.05rem;cursor:pointer;font-weight:600}.btn:hover{opacity:.9}.btn:disabled{opacity:.5}
+.btn-gen{background:linear-gradient(135deg,var(--warn),#d35400);margin-right:.5rem;font-size:.9rem;padding:.5rem 1.2rem}
+.not-saved{background:#fff3cd;border:1px solid #ffc107;border-radius:8px;padding:.8rem 1rem;margin-bottom:1rem;font-size:.9rem;color:#856404}
 .results{display:none;margin-top:2rem}
 .result-card{background:white;border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:1rem}
 .criterion{display:flex;align-items:center;gap:1rem;margin-bottom:.5rem}
@@ -35,12 +37,19 @@ textarea:focus{border-color:#1a1a2e}
 <h1>{{ prompt.title }}</h1>
 <span class="paper-badge">{{ paper }}</span>
 
-{% if prompt.passage %}<div class="passage-box">{{ prompt.passage }}</div>{% elif prompt.works %}<div class="passage-box"><strong>Prescribed Works:</strong> {{ prompt.works | join(' · ') }}</div>{% endif %}
+{% if subject in ('chinese','english') %}
+<button class="btn btn-gen" id="genBtn" onclick="generatePrompt()">🔄 Generate New Prompt</button>
+{% endif %}
 
-<div class="prompt-box"><strong>📝 Prompt:</strong><br>{{ prompt.prompt }}</div>
+<div id="promptArea">
+{% if prompt.passage %}<div class="passage-box" id="passageBox">{{ prompt.passage }}</div>{% elif prompt.works %}<div class="passage-box" id="passageBox"><strong>Prescribed Works:</strong> {{ prompt.works | join(' · ') }}</div>{% endif %}
+<div class="prompt-box" id="promptBox"><strong>📝 Prompt:</strong><br>{{ prompt.prompt }}</div>
+</div>
+
+<div class="not-saved">⚠️ <strong>Note:</strong> Your writing is <strong>not saved</strong> on this page. Write your essay in your own document (Google Docs, Word, etc.), then paste it into the box below for AI marking only. This page only stores your grades, not your full essays.</div>
 
 <h2>Your Response</h2>
-<textarea id="essay" placeholder="Write your analysis here..."></textarea>
+<textarea id="essay" placeholder="Paste your essay here for marking..."></textarea>
 <button class="btn" id="submitBtn" onclick="submitEssay()">Submit for Grading</button>
 
 <div class="loading" id="loading"><div class="spinner"></div><p>AI is grading your essay...</p></div>
@@ -53,28 +62,77 @@ textarea:focus{border-color:#1a1a2e}
 <script>
 var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 var apiKey = '', rubricText = '', freeModels = [];
+var subject = '{{ subject }}';
+var mode = '{{ mode }}';
 
-// Load API config
 fetch('/api-config').then(function(r){return r.json()}).then(function(cfg){
   apiKey = cfg.openrouter_key || '';
   rubricText = cfg.grading_rubric || '';
   freeModels = cfg.free_models || ['meta-llama/llama-3.3-70b-instruct:free'];
 });
 
-async function callAI(messages, modelIdx) {
+async function callAI(messages, modelIdx, maxTokens) {
   if (!apiKey) throw new Error('API not configured');
   if (modelIdx >= freeModels.length) throw new Error('All models failed');
   var resp = await fetch('https://openrouter.ai/api/v1/chat/completions', {
     method: 'POST',
     headers: {'Content-Type':'application/json','Authorization':'Bearer '+apiKey},
-    body: JSON.stringify({model:freeModels[modelIdx],messages:messages,temperature:0.7,max_tokens:1024})
+    body: JSON.stringify({model:freeModels[modelIdx],messages:messages,temperature:0.7,max_tokens:maxTokens||1024})
   });
   if (resp.status === 429 || !resp.ok) {
     await new Promise(function(r){setTimeout(r,1500)});
-    return callAI(messages, modelIdx + 1);
+    return callAI(messages, modelIdx + 1, maxTokens);
   }
   var data = await resp.json();
   return {reply: data.choices[0].message.content, model: freeModels[modelIdx]};
+}
+
+async function generatePrompt() {
+  var btn = document.getElementById('genBtn');
+  btn.disabled = true;
+  btn.textContent = '⏳ Generating...';
+
+  var genPrompt = '';
+  if (subject === 'english' && mode === 'paper1') {
+    genPrompt = 'You are an IB English Language and Literature teacher. Generate a NEW Paper 1 practice prompt. Include: 1) A short unseen passage (200-400 words, any text type - ad, article, opinion piece, extract). 2) A guiding question for analysis. Return the passage first, then the prompt question. Label them clearly with "PASSAGE:" and "PROMPT:".';
+  } else if (subject === 'chinese' && mode === 'paper1') {
+    genPrompt = '你是一位IB中文语言与文学老师。请生成一个新的Paper 1练习题目。包括：1) 一段200-400字的短文（任何文本类型）。2) 一个引导性问题。先给出短文，再给出题目。用"PASSAGE:"和"PROMPT:"标记。全部用中文。';
+  } else if (subject === 'chinese' && mode === 'paper2') {
+    genPrompt = '你是一位IB中文语言与文学老师。请生成一个新的Paper 2比较分析题目。包括：1) 列出两部作品（可以是IB常见作品）。2) 一个比较分析的问题。用"WORKS:"和"PROMPT:"标记。全部用中文。';
+  } else {
+    btn.disabled = false; btn.textContent = '🔄 Generate New Prompt'; return;
+  }
+
+  try {
+    var result = await callAI([
+      {role:'system',content:'You are an IB teacher creating practice materials. Be creative and varied.'},
+      {role:'user',content:genPrompt}
+    ], 0, 1500);
+
+    var reply = result.reply;
+    // Parse passage and prompt from the response
+    var passageMatch = reply.match(/PASSAGE:?\s*\n?([\s\S]*?)(?=PROMPT:?\s*\n?|WORKS:?\s*\n?|$)/i);
+    var promptMatch = reply.match(/PROMPT:?\s*\n?([\s\S]*?)$/i);
+    var worksMatch = reply.match(/WORKS:?\s*\n?([\s\S]*?)(?=PROMPT:?\s*\n?|$)/i);
+
+    var passage = passageMatch ? passageMatch[1].trim() : '';
+    var promptText = promptMatch ? promptMatch[1].trim() : '';
+    var works = worksMatch ? worksMatch[1].trim() : '';
+
+    if (mode === 'paper2' && works) {
+      document.getElementById('passageBox').innerHTML = '<strong>Prescribed Works:</strong> ' + escapeHtml(works);
+    } else if (passage) {
+      document.getElementById('passageBox').textContent = passage;
+    }
+    if (promptText) {
+      document.getElementById('promptBox').innerHTML = '<strong>📝 Prompt:</strong><br>' + escapeHtml(promptText);
+    }
+    btn.textContent = '✅ Prompt Generated';
+    setTimeout(function(){ btn.textContent = '🔄 Generate New Prompt'; }, 2000);
+  } catch(e) {
+    alert('Failed to generate prompt: ' + (e.message || 'Error'));
+  }
+  btn.disabled = false;
 }
 
 async function submitEssay(){
@@ -84,10 +142,8 @@ async function submitEssay(){
   document.getElementById('loading').style.display = 'block';
   document.getElementById('results').style.display = 'none';
 
-  var passage = {{ (prompt.passage or "") | tojson }};
-  var promptText = {{ prompt.prompt | tojson }};
-  var subject = '{{ subject }}';
-  var mode = '{{ mode }}';
+  var passage = document.getElementById('passageBox') ? document.getElementById('passageBox').textContent : '';
+  var promptText = document.getElementById('promptBox') ? document.getElementById('promptBox').textContent : '';
   var promptId = '{{ prompt.id }}';
   var promptTitle = '{{ prompt.title }}';
 
@@ -100,16 +156,14 @@ async function submitEssay(){
     var result = await callAI([
       {role:'system',content:'You are a strict but fair IB examiner. Return only valid JSON.'},
       {role:'user',content:gradingPrompt}
-    ], 0);
+    ], 0, 1024);
 
-    // Parse JSON from reply
     var clean = result.reply.trim();
     if (clean.startsWith('```')) {
       clean = clean.replace(/^```\w*\n?/, '').replace(/\n?```$/, '');
     }
     var scores = JSON.parse(clean);
 
-    // Display results
     var html = '<div class="total-score">Total: '+scores.total+'/20</div>';
     var crits = [
       {key:'criterion_a',label:'A: Understanding & Interpretation'},
@@ -128,7 +182,6 @@ async function submitEssay(){
     document.getElementById('results').style.display = 'block';
     document.getElementById('results').scrollIntoView({behavior:'smooth'});
 
-    // Save to server
     fetch('/save-result', {
       method:'POST',
       headers:{'Content-Type':'application/json','X-CSRF-Token':csrfToken},
@@ -137,8 +190,7 @@ async function submitEssay(){
         prompt_id:promptId, prompt_title:promptTitle,
         essay_preview: essay.substring(0,300), scores:scores
       })
-    }).catch(function(){}); // fire-and-forget
-
+    }).catch(function(){});
   } catch(e) {
     document.getElementById('resultContent').innerHTML='<p style="color:red">❌ Grading failed. Please try again. ('+escapeHtml(e.message||'Error')+')</p>';
     document.getElementById('results').style.display = 'block';

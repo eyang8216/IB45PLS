@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 46: Water Potential (D2.3) — IB Biology HL</title>
+<script>window.MathJax = { tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] } };</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #1a6b3c; --border: #c4d4a9; --highlight: #e8f5e9; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Palatino', 'Georgia', serif; background: var(--bg); color: var(--text); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; font-size: 17px; line-height: 1.7; }
+  h1 { font-size: 1.7rem; color: var(--accent); margin-bottom: 0.5rem; }
+  h2 { font-size: 1.25rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; margin: 2rem 0 1rem; }
+  h3 { font-size: 1.1rem; color: #444; margin: 1.3rem 0 0.5rem; }
+  p, li { margin-bottom: 0.6rem; }
+  ul, ol { padding-left: 1.8rem; margin-bottom: 1rem; }
+  .worked { background: #e8f5e9; border-left: 4px solid #1a6b3c; padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
+  .worked strong { color: #1a6b3c; }
+  .answer { background: #fefdf7; border: 1px solid var(--border); padding: 0.8rem 1.2rem; margin: 0.5rem 0; border-radius: 6px; }
+  .nav { display: flex; justify-content: space-between; margin: 3rem 0 1rem; padding-top: 1rem; border-top: 2px solid var(--border); font-size: 0.9rem; }
+  .nav a { color: #1a5c9e; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  .definition { background: #fff8e1; border-left: 4px solid #e6a817; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  .tip { background: #e3f2fd; border-left: 4px solid #1976d2; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  table { border-collapse: collapse; margin: 0.8rem 0; width: 100%; }
+  th, td { border: 1px solid var(--border); padding: 0.4rem 0.6rem; text-align: left; }
+  th { background: #f0f5e8; }
+  @media print { body { font-size: 14px; } .nav { display: none; } }
+</style>
+</head>
+<body>
+
+
+<h2>What You'll Learn</h2>
+
+<p>Why does water move from soil into root hairs, up 100-meter-tall redwood trees, and from a wilting plant cell's vacuole into the surrounding solution? The answer to all these questions lies in <strong>water potential (ψ)</strong> — a quantitative measure of water's tendency to move. Understanding water potential allows you to predict the direction of water movement in any biological system with mathematical precision.</p>
+
+<p>By the end of this lesson, you will be able to:</p>
+
+<ul>
+<li>Define water potential (ψ) and its component potentials (ψₛ, ψₚ)</li>
+<li>Use the water potential equation ψ = ψₛ + ψₚ to solve problems</li>
+<li>Calculate solute potential using ψₛ = −iCRT</li>
+<li>Predict water movement between cells and solutions</li>
+<li>Explain plant cell behavior in hypotonic, isotonic, and hypertonic solutions</li>
+<li>Apply water potential concepts to transpiration and translocation</li>
+</ul>
+<hr>
+
+<h2>1. Water Potential: The Basics</h2>
+
+<h3>1.1 What is Water Potential?</h3>
+
+<p><strong>Water potential (ψ, the Greek letter psi)</strong> is the measure of the potential energy of water — essentially, the tendency of water to move from one place to another.</p>
+
+<div class="definition">
+<p><strong>Water potential (ψ)</strong>: A measure of the potential energy of water per unit volume relative to pure water at standard temperature and pressure. It determines the direction of water movement: water always moves from regions of <strong>higher</strong> water potential to regions of <strong>lower</strong> (more negative) water potential. Unit: <strong>kPa</strong> (kilopascals) or <strong>MPa</strong> (megapascals). 1 MPa = 1000 kPa.</p>
+</div>
+
+<p><strong>The fundamental rule</strong>: Water always flows from HIGH ψ → LOW ψ (less negative → more negative).</p>
+
+<p><strong>Analogy</strong>: Think of water potential like altitude on a mountain. Water always flows downhill — from high altitude (high water potential) to low altitude (low water potential). Pure water is at the "top of the mountain" (ψ = 0). Adding solutes or applying tension takes you "downhill."</p>
+
+<h3>1.2 The Reference Point: Pure Water</h3>
+
+<p>At standard temperature (25°C) and atmospheric pressure, <strong>pure water has a water potential of ψ = 0 kPa</strong>. This is the maximum possible water potential — nothing in biology ever has a higher (more positive) water potential than pure water.</p>
+
+<p>Why? Because any addition of solutes OR application of negative pressure lowers water potential (makes it more negative). So in biological systems, water potentials are typically negative.</p>
+
+<h3>1.3 The Water Potential Equation</h3>
+
+<p>Water potential has two main components:</p>
+
+<p style="text-align:center;margin:0.8rem 0;">$$\psi = \psi_s + \psi_p$$</p>
+
+<p>Where:</p>
+<ul>
+<li><strong>ψₛ = solute potential</strong> (also called osmotic potential, ψₒ): The effect of dissolved solutes on water potential. ALWAYS negative or zero.</li>
+<li><strong>ψₚ = pressure potential</strong>: The effect of physical pressure on water potential. Can be positive (turgor pressure), zero, or negative (tension).</li>
+</ul>
+<hr>
+
+<h2>2. Solute Potential (ψₛ)</h2>
+
+<h3>2.1 Why Solutes Lower Water Potential</h3>
+
+<p>When solutes dissolve in water:</p>
+<ol>
+<li>Solute particles become surrounded by hydration shells of water molecules.</li>
+<li>These water molecules are now "tied up" interacting with solutes — they have reduced freedom of movement.</li>
+<li>The entropy (randomness) of the water molecules is reduced.</li>
+<li>This decreases the water's potential energy → lower (more negative) water potential.</li>
+</ol>
+<p><strong>Analogy</strong>: Think of water molecules as people at a party. In pure water, everyone can move freely around the room. Adding solutes is like adding people who grab onto others and don't let go — the more "grabbers" (solutes), the less freely everyone can move, and the lower the "party potential."</p>
+
+<h3>2.2 The Solute Potential Equation</h3>
+
+<p style="text-align:center;margin:0.8rem 0;">$$\psi_s = -iCRT$$</p>
+
+<p>Where:</p>
+
+<table>
+<tr>
+<td>Symbol</td>
+<td>Meaning</td>
+<td>Unit</td>
+</tr>
+<tr>
+<td>i</td>
+<td>Ionization constant — number of particles the solute dissociates into in solution</td>
+<td>Dimensionless</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Molar concentration of solute</td>
+<td>mol L⁻¹ (M)</td>
+</tr>
+<tr>
+<td>R</td>
+<td>Pressure constant</td>
+<td>0.00831 L MPa mol⁻¹ K⁻¹</td>
+</tr>
+<tr>
+<td>T</td>
+<td>Temperature</td>
+<td>Kelvin (K)</td>
+</tr>
+</table>
+
+<p><strong>Important values of i</strong>:</p>
+<ul>
+<li><strong>Glucose, sucrose</strong>: i = 1 (do not dissociate — remain as one particle)</li>
+<li><strong>NaCl</strong>: i = 2 (dissociates into Na⁺ and Cl⁻)</li>
+<li><strong>CaCl₂</strong>: i = 3 (dissociates into Ca²⁺ and 2Cl⁻)</li>
+</ul>
+<p><strong>Temperature in Kelvin</strong>: $$T(K) = T(°C) + 273$$</p>
+
+<div class="tip">
+<p><strong>IB Exam Tip (Paper 1 & 2)</strong>: You must memorize the solute potential equation and the value of R (0.00831 L MPa mol⁻¹ K⁻¹). IB will usually provide R, but you must know how to use it. Also, watch the units — the equation gives ψₛ in <strong>MPa</strong>. If the question asks for kPa, multiply by 1000.</p>
+</div>
+
+<div class="worked">
+<p><strong>Worked Example 1: Calculating Solute Potential</strong></p>
+
+<p>Calculate the solute potential of a 0.15 M sucrose solution at 20°C.</p>
+
+<p><strong>Given</strong>:</p>
+<ul>
+<li>Sucrose: i = 1 (does not dissociate)</li>
+<li>C = 0.15 M</li>
+<li>R = 0.00831 L MPa mol⁻¹ K⁻¹</li>
+<li>T = 20 + 273 = 293 K</li>
+</ul>
+<p><strong>Calculation</strong>:</p>
+<p style="text-align:center;margin:0.8rem 0;">$$\psi_s = -iCRT$$</p>
+<p style="text-align:center;margin:0.8rem 0;">$$\psi_s = -(1) \times (0.15) \times (0.00831) \times (293)$$</p>
+<p style="text-align:center;margin:0.8rem 0;">$$\psi_s = -0.365 \text{ MPa}$$</p>
+<p style="text-align:center;margin:0.8rem 0;">$$\psi_s = -365 \text{ kPa}$$</p>
+
+<p><strong>Interpretation</strong>: The solute potential of this solution is −0.365 MPa. Water would tend to move from pure water (ψ = 0) into this solution (ψ = −0.365).</p>
+
+<hr>
+
+<p><strong>Worked Example 2: Comparing NaCl and Glucose</strong></p>
+
+<p>Calculate the solute potential of 0.1 M NaCl and 0.1 M glucose at 25°C. Which has the lower (more negative) solute potential? Why?</p>
+
+<p><strong>NaCl</strong>:</p>
+<ul>
+<li>i = 2, C = 0.1 M, T = 298 K</li>
+<li>ψₛ = −(2)(0.1)(0.00831)(298) = −0.495 MPa</li>
+</ul>
+<p><strong>Glucose</strong>:</p>
+<ul>
+<li>i = 1, C = 0.1 M, T = 298 K</li>
+<li>ψₛ = −(1)(0.1)(0.00831)(298) = −0.248 MPa</li>
+</ul>
+<p><strong>Answer</strong>: NaCl has a more negative solute potential (−0.495 vs −0.248 MPa) because each NaCl dissociates into 2 particles (i = 2), effectively doubling the solute concentration. This is why salt is a better food preservative than sugar at the same molar concentration.</p>
+</div>
+
+<hr>
+
+<h2>3. Pressure Potential (ψₚ)</h2>
+
+<p>Pressure potential is the physical pressure on water. Unlike solute potential, it can be positive, zero, or negative.</p>
+
+<h3>3.1 Positive Pressure Potential: Turgor</h3>
+
+<p>When water enters a plant cell, the cell swells, and the plasma membrane presses against the rigid cell wall. The cell wall pushes back, creating a positive hydrostatic pressure inside the cell. This is <strong>turgor pressure</strong>.</p>
+
+<ul>
+<li><strong>Turgid cell</strong>: ψₚ is positive (typically +0.5 to +1.5 MPa in well-watered plants).</li>
+<li>This is what makes non-woody plants stand upright — the collective turgor of all their cells acts like an inflatable skeleton.</li>
+<li>When plants wilt, they've lost turgor pressure (ψₚ drops toward zero).</li>
+</ul>
+<h3>3.2 Zero Pressure Potential</h3>
+
+<ul>
+<li>In an open container of solution at atmospheric pressure: ψₚ = 0.</li>
+<li>In a flaccid plant cell (incipient plasmolysis — just about to plasmolyze): ψₚ ≈ 0.</li>
+</ul>
+<h3>3.3 Negative Pressure Potential: Tension</h3>
+
+<p>In the xylem of transpiring plants, water is under <strong>tension</strong> (negative pressure). As water evaporates from leaves, it pulls water up the xylem — like sucking on a straw. This creates negative ψₚ (e.g., −1 to −3 MPa or even lower in tall trees).</p>
+
+<hr>
+
+<h2>4. Osmosis in Water Potential Terms</h2>
+
+<p><strong>Osmosis</strong> is the net movement of water across a <strong>selectively permeable membrane</strong> from a region of higher water potential to a region of lower water potential.</p>
+
+<p><strong>Equilibrium</strong>: Water moves until the water potential is equal on both sides of the membrane. At equilibrium, there's no NET movement of water, but water molecules still move back and forth equally in both directions.</p>
+
+<div class="definition">
+<p><strong>Osmosis redefined</strong>: Net movement of water from high ψ → low ψ across a selectively permeable membrane. Movement stops when ψ is equal on both sides (equilibrium).</p>
+</div>
+
+<hr>
+
+<h2>5. Plant Cells in Different Solutions</h2>
+
+<p>The behavior of plant cells in various solutions is a classic IB topic that perfectly illustrates water potential.</p>
+
+<h3>5.1 Hypotonic Solution (Higher ψ Outside → Water Enters)</h3>
+
+<p>When a plant cell is placed in a solution with <strong>higher</strong> (less negative) water potential than the cell contents:</p>
+
+<ol>
+<li>Water enters the cell by osmosis (high ψ → low ψ).</li>
+<li>The vacuole swells; the cytoplasm and plasma membrane press against the cell wall.</li>
+<li><strong>Pressure potential (ψₚ) builds up</strong> as the cell wall resists expansion.</li>
+<li>As ψₚ increases, ψ_cell (ψₛ + ψₚ) increases.</li>
+<li>Net movement stops when: <strong>ψ_cell = ψ_solution</strong>.</li>
+</ol>
+<p>At this point, the cell is <strong>turgid</strong> — firm and fully hydrated. This is the normal, healthy state for plant cells.</p>
+
+<p><strong>Draw and label</strong>: Draw a plant cell with the vacuole filling most of the cell, plasma membrane pressed firmly against the cell wall. Label: "Turgid cell," "ψₚ = positive," "Cell wall resists expansion," "ψ_cell = ψ_solution."</p>
+
+<h3>5.2 Isotonic Solution (Equal ψ → No Net Movement)</h3>
+
+<p>When ψ_solution = ψ_cell:</p>
+
+<ul>
+<li>No NET movement of water (dynamic equilibrium).</li>
+<li>The cell is <strong>flaccid</strong> — ψₚ = 0 (cell wall is not stretched).</li>
+<li>If ψ is just at the point where the membrane barely touches the wall, this is <strong>incipient plasmolysis</strong>.</li>
+</ul>
+<p><strong>Draw and label</strong>: Draw a plant cell where the plasma membrane is starting to pull away from the cell wall at the corners. Label: "Incipient plasmolysis," "ψₚ ≈ 0," "Plasma membrane beginning to pull away."</p>
+
+<h3>5.3 Hypertonic Solution (Lower ψ Outside → Water Leaves)</h3>
+
+<p>When a plant cell is placed in a solution with <strong>lower</strong> (more negative) water potential:</p>
+
+<ol>
+<li>Water leaves the cell by osmosis.</li>
+<li>The vacuole shrinks; the plasma membrane pulls away from the cell wall.</li>
+<li>This is <strong>plasmolysis</strong> — the cell membrane separates from the cell wall.</li>
+<li>The space between the cell wall and membrane fills with the external solution.</li>
+<li>The cell becomes <strong>flaccid</strong> and the plant <strong>wilts</strong>.</li>
+</ol>
+<p><strong>Draw and label</strong>: Draw a plant cell with the plasma membrane visibly separated from the cell wall. The vacuole is shrunken. Label: "Plasmolyzed cell," "Extracellular solution in space between wall and membrane," "Plasma membrane retracted," "ψₛ inside very negative, water drawn out."</p>
+
+<div class="definition">
+<p><strong>Plasmolysis</strong>: The shrinkage of the cytoplasm and plasma membrane away from the cell wall that occurs when a plant cell is placed in a hypertonic solution (ψ_outside < ψ_inside). Water leaves the cell by osmosis. Plasmolysis is usually irreversible — the cell dies.</p>
+</div>
+
+<h3>5.4 Animal Cells: The Critical Difference</h3>
+
+<p>Animal cells lack a cell wall, so their behavior is different:</p>
+
+<table>
+<tr>
+<td>Solution Type</td>
+<td>Water Movement</td>
+<td>Animal Cell Response</td>
+</tr>
+<tr>
+<td>Hypotonic** (higher ψ outside)</td>
+<td>Water enters cell</td>
+<td>Lysis** — cell swells and bursts (no cell wall to resist)</td>
+</tr>
+<tr>
+<td>Isotonic** (equal ψ)</td>
+<td>No net movement</td>
+<td>Normal, healthy state</td>
+</tr>
+<tr>
+<td>Hypertonic** (lower ψ outside)</td>
+<td>Water leaves cell</td>
+<td>Crenation** — cell shrinks, membrane becomes shriveled</td>
+</tr>
+</table>
+
+<p><strong>Clinical relevance</strong>: This is why IV fluids are isotonic saline (0.9% NaCl, approximately isotonic to blood plasma). Hypotonic IV fluids would cause red blood cells to lyse; hypertonic fluids would cause crenation.</p>
+
+<hr>
+
+<h2>6. Water Movement in Roots</h2>
+
+<h3>6.1 The Water Potential Gradient from Soil to Xylem</h3>
+
+<p>Water moves from soil into the root and eventually into the xylem along a water potential gradient:</p>
+
+<p style="text-align:center;margin:0.8rem 0;">$$\psi_{soil} > \psi_{root\ hair} > \psi_{cortex} > \psi_{xylem}$$</p>
+
+<p>Each step represents a slightly lower (more negative) water potential, driving water inward.</p>
+
+<p><strong>Why is ψ_xylem more negative?</strong> The transpiration stream (evaporation from leaves) creates tension that pulls water up the xylem, lowering ψₚ in the xylem (negative pressure) → lowering ψ_xylem overall → drawing water from surrounding tissues.</p>
+
+<h3>6.2 Pathways Through the Root</h3>
+
+<p>Water crosses the root cortex through two pathways:</p>
+
+<table>
+<tr>
+<td>Pathway</td>
+<td>Route</td>
+<td>Membrane Crossing?</td>
+</tr>
+<tr>
+<td>Apoplast</td>
+<td>Through cell <strong>walls</strong> (cellulose mesh) and intercellular spaces</td>
+<td>No — water stays outside cell membranes until the Casparian strip</td>
+</tr>
+<tr>
+<td>Symplast</td>
+<td>Through <strong>cytoplasms</strong>, connected by plasmodesmata (cytoplasmic bridges)</td>
+<td>Yes — enters at root hair cell, stays within membranes</td>
+</tr>
+</table>
+
+<p><strong>Draw and label</strong>: Draw a cross-section of a root. Label: "Root hair," "Epidermis," "Cortex," "Endodermis," "Casparian strip," "Xylem." Show the apoplast pathway as arrows going through cell walls. Show the symplast pathway as arrows going through cytoplasm connected by plasmodesmata. At the endodermis, show the Casparian strip blocking the apoplast pathway, forcing water into the symplast.</p>
+
+<h3>6.3 The Casparian Strip: The Gatekeeper</h3>
+
+<p>The <strong>Casparian strip</strong> is a band of <strong>suberin</strong> (a waxy, waterproof substance) embedded in the radial and transverse cell walls of the <strong>endodermis</strong> (the innermost layer of the cortex).</p>
+
+<p><strong>Function</strong>:</p>
+<ul>
+<li><strong>Blocks the apoplast pathway</strong>: Water cannot pass through the Casparian strip.</li>
+<li><strong>Forces water into the symplast</strong>: Water must cross the plasma membrane of endodermal cells to continue.</li>
+<li><strong>Selective access to the xylem</strong>: The plasma membrane controls which solutes enter the xylem. Harmful substances and excess ions are excluded.</li>
+</ul>
+<p>This is the plant's equivalent of a border checkpoint — everything entering the vascular cylinder must go through a controlled gate.</p>
+
+<hr>
+
+<h2>7. The Transpiration Stream in Water Potential Terms</h2>
+
+<p>The Cohesion-Tension theory describes how water moves up plants, sometimes 100+ meters. In water potential terms:</p>
+
+<ol>
+<li><strong>Evaporation from mesophyll cells</strong>: As water evaporates from the moist cell walls of spongy mesophyll cells into air spaces, the water potential of those cells becomes more negative (lower ψ).</li>
+</ol>
+<ol>
+<li><strong>Water drawn from xylem</strong>: The mesophyll cells draw water from surrounding cells and ultimately from the xylem because their ψ is lower.</li>
+</ol>
+<ol>
+<li><strong>Tension transmitted down xylem</strong>: As water is pulled out of xylem vessels, it creates a negative ψₚ (tension) in the xylem. This tension is transmitted down the entire xylem column because:</li>
+</ol>
+<ul>
+<li><strong>Cohesion</strong>: Water molecules stick together via hydrogen bonds.</li>
+<li><strong>Adhesion</strong>: Water molecules stick to xylem walls (capillarity).</li>
+</ul>
+<ol>
+<li><strong>Water pulled from roots</strong>: The tension extends to the roots, lowering ψ in root xylem → water flows in from the soil (higher ψ).</li>
+</ol>
+<p><strong>The gradient</strong>:</p>
+<p style="text-align:center;margin:0.8rem 0;">$$\psi_{soil} \text{ (~0 to −0.01 MPa)} \rightarrow \psi_{root\ xylem} \text{ (~−0.2 MPa)} \rightarrow \psi_{stem\ xylem} \text{ (~−0.5 to −1 MPa)} \rightarrow \psi_{leaf} \text{ (~−1 to −3 MPa)} \rightarrow \psi_{atmosphere} \text{ (~−100 MPa)}$$</p>
+
+<p>The massive gradient between the leaf and the atmosphere is the ultimate driver of the transpiration stream.</p>
+
+<hr>
+
+<h2>8. Translocation in Water Potential Terms</h2>
+
+<p>The <strong>Pressure-Flow Hypothesis</strong> explains phloem transport using water potential:</p>
+
+<h3>At the Source (e.g., leaf — sugar is being produced):</h3>
+
+<ol>
+<li>Sucrose is actively loaded into sieve tube elements (companion cells use ATP to pump H⁺, creating a gradient for sucrose co-transport).</li>
+<li>High sucrose concentration → <strong>very negative ψₛ</strong>.</li>
+<li>Water enters from the adjacent xylem by osmosis (higher ψ in xylem → lower ψ in phloem).</li>
+<li>Water entry increases the volume of phloem sap → <strong>high positive ψₚ</strong> builds up.</li>
+</ol>
+<h3>At the Sink (e.g., growing root tip — sugar is being consumed/stored):</h3>
+
+<ol>
+<li>Sucrose is actively unloaded and used (respiration) or stored (starch).</li>
+<li>Sucrose concentration decreases → <strong>less negative ψₛ</strong> (higher).</li>
+<li>Water leaves the phloem and returns to the xylem (higher ψ in phloem → lower ψ in xylem).</li>
+<li><strong>ψₚ drops</strong> at the sink.</li>
+</ol>
+<h3>The Pressure Gradient:</h3>
+
+<p style="text-align:center;margin:0.8rem 0;">$$\psi_p\text{ (source)} > \psi_p\text{ (sink)}$$</p>
+
+<p>This pressure difference drives the bulk flow of phloem sap from source to sink — like squeezing a tube of toothpaste from one end.</p>
+
+<p><strong>Draw and label</strong>: Draw two connected sieve tubes. At left (source, leaf): High sucrose concentration → low ψₛ → water enters from xylem → High ψₚ. At right (sink, root): Low sucrose concentration → high ψₛ → water returns to xylem → Low ψₚ. Draw arrow showing flow from high ψₚ to low ψₚ.</p>
+
+<hr>
+
+<h2>9. Summary of Water Potential in Plants</h2>
+
+<table>
+<tr>
+<td>Location</td>
+<td>ψₛ (due to solutes)</td>
+<td>ψₚ (due to pressure)</td>
+<td>Total ψ</td>
+</tr>
+<tr>
+<td>Soil** (moist)</td>
+<td>~0 (few solutes)</td>
+<td>~0 (atmospheric)</td>
+<td>~0 to −0.01 MPa</td>
+</tr>
+<tr>
+<td>Root cell** (cortex)</td>
+<td>−0.5 to −1.0 MPa</td>
+<td>+0.1 to +0.5 (turgid)</td>
+<td>~−0.3 to −0.6 MPa</td>
+</tr>
+<tr>
+<td>Xylem** (transpiring)</td>
+<td>~−0.1 MPa</td>
+<td>Negative** (−1 to −3)</td>
+<td>−1 to −3 MPa</td>
+</tr>
+<tr>
+<td>Leaf mesophyll</td>
+<td>−1 to −2 MPa</td>
+<td>~0 to +0.5</td>
+<td>−1 to −3 MPa</td>
+</tr>
+<tr>
+<td>Phloem (source)</td>
+<td>−1.5 to −2 MPa (high sugar)</td>
+<td>Positive** (+1 to +2)</td>
+<td>−0.5 to 0 MPa</td>
+</tr>
+<tr>
+<td>Atmosphere</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>~−100 MPa (very dry)</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>10. Common Misconceptions</h2>
+
+<table>
+<tr>
+<td>Misconception</td>
+<td>Reality</td>
+</tr>
+<tr>
+<td>"Water always moves toward higher solute concentration"</td>
+<td>Water moves toward <strong>lower water potential</strong>. If pressure potential is high enough (turgor), water can move away from high solute concentration.</td>
+</tr>
+<tr>
+<td>"Water potential can be positive"</td>
+<td>In biological systems under atmospheric pressure, water potential is typically zero or negative. Positive ψ is possible under pressure (e.g., turgid cells), but total ψ usually remains negative.</td>
+</tr>
+<tr>
+<td>"A hypotonic solution has a lower water potential"</td>
+<td>Hypotonic means <strong>higher</strong> ψ (less negative) relative to the cell. Hypertonic means <strong>lower</strong> ψ (more negative).</td>
+</tr>
+<tr>
+<td>"The solute potential equation always gives a positive number"</td>
+<td>The minus sign in ψₛ = −iCRT means ψₛ is <strong>always negative</strong> (or zero for pure water).</td>
+</tr>
+<tr>
+<td>"Plasmolysis is the same as being flaccid"</td>
+<td>A flaccid cell has ψₚ ≈ 0 but the membrane may still touch the wall. Plasmolysis is when the membrane has visibly pulled away from the wall.</td>
+</tr>
+<tr>
+<td>"Water in xylem is pushed up by root pressure"</td>
+<td>Root pressure makes a minor contribution. The main driving force for transpiration is the tension created by evaporation from leaves (negative ψₚ).</td>
+</tr>
+<tr>
+<td>"The Casparian strip blocks all water flow"</td>
+<td>It blocks the <strong>apoplast</strong> pathway only. Water still moves through the <strong>symplast</strong> pathway (through cells).</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>11. Practice Problems</h2>
+
+<h3>Problem 1: Simple Water Potential</h3>
+
+<p>Two adjacent plant cells, A and B, have the following:</p>
+<ul>
+<li>Cell A: ψₛ = −0.8 MPa, ψₚ = +0.5 MPa</li>
+<li>Cell B: ψₛ = −0.6 MPa, ψₚ = +0.3 MPa</li>
+</ul>
+<p><strong>(a)</strong> Calculate the total water potential of each cell. [2 marks]</p>
+<p><strong>(b)</strong> State the direction of net water movement between cells A and B. Explain. [2 marks]</p>
+
+<h3>Problem 2: Solute Potential Calculation</h3>
+
+<p>Calculate the solute potential (in MPa) of the following solutions at 25°C:</p>
+
+<p><strong>(a)</strong> 0.2 M glucose [2 marks]</p>
+<p><strong>(b)</strong> 0.2 M NaCl [2 marks]</p>
+<p><strong>(c)</strong> Explain the difference between your answers to (a) and (b). [1 mark]</p>
+
+<h3>Problem 3: Plant Cell Behavior</h3>
+
+<p>A plant cell with ψₛ = −0.9 MPa and ψₚ = +0.4 MPa (turgid) is placed in a sucrose solution with ψ = −0.3 MPa.</p>
+
+<p><strong>(a)</strong> State and explain whether the solution is hypotonic, isotonic, or hypertonic relative to the cell. [2 marks]</p>
+<p><strong>(b)</strong> Predict what will happen to the cell. [2 marks]</p>
+<p><strong>(c)</strong> Describe what would happen to an animal cell placed in the same sucrose solution. [2 marks]</p>
+
+<h3>Problem 4: Casparian Strip</h3>
+
+<p><strong>(a)</strong> Describe the location and composition of the Casparian strip. [2 marks]</p>
+<p><strong>(b)</strong> Explain the function of the Casparian strip in terms of water and solute movement. [3 marks]</p>
+
+<h3>Problem 5: Pressure-Flow Hypothesis</h3>
+
+<p><strong>(a)</strong> Explain how water potential drives the movement of phloem sap from source to sink. [4 marks]</p>
+<p><strong>(b)</strong> A plant's leaves are removed. Predict and explain the effect on phloem transport. [2 marks]</p>
+
+<hr>
+
+<h2>12. Answers</h2>
+
+<h3>Answer 1</h3>
+
+<p><strong>(a)</strong> Cell A: ψ = −0.8 + 0.5 = <strong>−0.3 MPa</strong> [1]. Cell B: ψ = −0.6 + 0.3 = <strong>−0.3 MPa</strong> [1].</p>
+
+<p><strong>(b)</strong> No net movement — cells A and B have equal water potential (−0.3 MPa) [1]. At equilibrium, water molecules still move in both directions equally, but there is no NET flow. [1]</p>
+
+<h3>Answer 2</h3>
+
+<p><strong>(a)</strong> Glucose: i = 1, T = 298 K.</p>
+<p>ψₛ = −(1)(0.2)(0.00831)(298) = −<strong>0.495 MPa</strong> [2 — 1 for correct setup, 1 for correct answer]</p>
+
+<p><strong>(b)</strong> NaCl: i = 2, T = 298 K.</p>
+<p>ψₛ = −(2)(0.2)(0.00831)(298) = −<strong>0.990 MPa</strong> [2]</p>
+
+<p><strong>(c)</strong> NaCl dissociates into 2 ions (Na⁺ and Cl⁻), so i = 2, effectively doubling the number of solute particles compared to glucose (i = 1) at the same molar concentration. More particles → lower (more negative) solute potential. [1]</p>
+
+<h3>Answer 3</h3>
+
+<p><strong>(a)</strong> Cell ψ = −0.9 + 0.4 = −0.5 MPa. Solution ψ = −0.3 MPa. The solution has <strong>higher</strong> (less negative) water potential than the cell → the solution is <strong>hypotonic</strong> relative to the cell. [2]</p>
+
+<p><strong>(b)</strong> Water will enter the cell by osmosis (high ψ outside → low ψ inside) [1]. The cell will become more turgid. ψₚ will increase until ψ_cell = ψ_solution (−0.3 MPa), at which point net water movement stops. [1]</p>
+
+<p><strong>(c)</strong> An animal cell has no cell wall, so ψₚ cannot build up significantly [1]. Water would continue entering the cell until it swells and <strong>lyses</strong> (bursts) because there is no rigid wall to resist the influx of water. [1]</p>
+
+<h3>Answer 4</h3>
+
+<p><strong>(a)</strong> The Casparian strip is located in the <strong>endodermis</strong> (innermost layer of the root cortex), embedded in the radial and transverse cell walls of endodermal cells [1]. It is composed of <strong>suberin</strong> (a waxy, waterproof substance). [1]</p>
+
+<p><strong>(b)</strong> The Casparian strip blocks the <strong>apoplast pathway</strong> (movement through cell walls), forcing water and solutes to cross the plasma membrane of endodermal cells (symplast pathway) [1]. This provides a selective barrier — the plasma membrane controls which solutes can enter the vascular cylinder [1]. Harmful substances and excess ions can be excluded; essential minerals are selectively transported. [1]</p>
+
+<h3>Answer 5</h3>
+
+<p><strong>(a)</strong> At the source, sucrose is actively loaded into sieve tubes → high solute concentration → very negative ψₛ [1]. Water enters from the xylem (higher ψ → lower ψ) → volume increases → high positive ψₚ builds up [1]. At the sink, sucrose is unloaded → solute concentration decreases → ψₛ becomes less negative → water leaves the phloem to the xylem → ψₚ drops [1]. The pressure difference (high ψₚ at source, low ψₚ at sink) drives bulk flow of phloem sap from source to sink. [1]</p>
+
+<p><strong>(b)</strong> Leaves are the main source of sucrose (from photosynthesis). Removing leaves eliminates the source [1]. Without sucrose loading into phloem, there is no osmotic gradient to draw water from the xylem, no pressure buildup, and therefore no pressure-driven flow from leaves to sinks. Translocation would essentially stop until new sources (e.g., mobilized starch reserves) are activated. [1]</p>
+
+<hr>
+
+<h2>13. Key Terms Summary</h2>
+
+<table>
+<tr>
+<td>Term</td>
+<td>Symbol</td>
+<td>Definition</td>
+</tr>
+<tr>
+<td>Water potential</td>
+<td>ψ</td>
+<td>Measure of water's potential energy; water moves from high ψ → low ψ</td>
+</tr>
+<tr>
+<td>Solute potential</td>
+<td>ψₛ</td>
+<td>Component of ψ due to dissolved solutes; always ≤ 0</td>
+</tr>
+<tr>
+<td>Pressure potential</td>
+<td>ψₚ</td>
+<td>Component of ψ due to physical pressure; can be +, 0, or −</td>
+</tr>
+<tr>
+<td>Ionization constant</td>
+<td>i</td>
+<td>Number of particles a solute dissociates into (NaCl = 2, glucose = 1)</td>
+</tr>
+<tr>
+<td>Pressure constant</td>
+<td>R</td>
+<td>0.00831 L MPa mol⁻¹ K⁻¹</td>
+</tr>
+<tr>
+<td>Osmosis</td>
+<td>—</td>
+<td>Net movement of water from high ψ → low ψ across a selectively permeable membrane</td>
+</tr>
+<tr>
+<td>Turgor</td>
+<td>—</td>
+<td>Positive pressure inside a plant cell when ψₚ > 0; cell is firm</td>
+</tr>
+<tr>
+<td>Plasmolysis</td>
+<td>—</td>
+<td>Plasma membrane pulls away from cell wall when cell is in hypertonic solution</td>
+</tr>
+<tr>
+<td>Incipient plasmolysis</td>
+<td>—</td>
+<td>Point where ψₚ = 0; membrane just begins to pull away</td>
+</tr>
+<tr>
+<td>Flaccid</td>
+<td>—</td>
+<td>Cell with ψₚ ≈ 0; not turgid</td>
+</tr>
+<tr>
+<td>Hypotonic</td>
+<td>—</td>
+<td>Solution with higher ψ (less negative) relative to cell</td>
+</tr>
+<tr>
+<td>Hypertonic</td>
+<td>—</td>
+<td>Solution with lower ψ (more negative) relative to cell</td>
+</tr>
+<tr>
+<td>Isotonic</td>
+<td>—</td>
+<td>Solution with equal ψ to cell</td>
+</tr>
+<tr>
+<td>Apoplast pathway</td>
+<td>—</td>
+<td>Water movement through cell walls (non-living pathway)</td>
+</tr>
+<tr>
+<td>Symplast pathway</td>
+<td>—</td>
+<td>Water movement through cytoplasm via plasmodesmata (living pathway)</td>
+</tr>
+<tr>
+<td>Casparian strip</td>
+<td>—</td>
+<td>Suberin band in endodermis that blocks apoplast, forces symplast entry</td>
+</tr>
+<tr>
+<td>Cohesion-tension theory</td>
+<td>—</td>
+<td>Evaporation creates tension, transmitted by cohesive water column → pulls water up xylem</td>
+</tr>
+<tr>
+<td>Pressure-flow hypothesis</td>
+<td>—</td>
+<td>Phloem sap flows from high ψₚ (source) to low ψₚ (sink)</td>
+</tr>
+</table>
+
+<div class="nav"><a href="lesson_45.html">&#8592; Lesson 45</a><a href="index.html">&#8962; Index</a><a href="lesson_47.html">Lesson 47 &#8594;</a></div>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+  <defs>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#1565c0"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="300" y="28" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#1a6b3c">Water Molecule Polarity</text>
+
+  <!-- Oxygen atom (large circle) -->
+  <circle cx="300" cy="200" r="60" fill="#e53935" fill-opacity="0.2" stroke="#e53935" stroke-width="3"/>
+  <text x="300" y="207" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold" fill="#e53935">O</text>
+
+  <!-- Hydrogen 1 (upper left ~10 o'clock) -->
+  <circle cx="210" cy="130" r="35" fill="#1565c0" fill-opacity="0.15" stroke="#1565c0" stroke-width="3"/>
+  <text x="210" y="137" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1565c0">H</text>
+
+  <!-- Hydrogen 2 (upper right ~2 o'clock) -->
+  <circle cx="390" cy="130" r="35" fill="#1565c0" fill-opacity="0.15" stroke="#1565c0" stroke-width="3"/>
+  <text x="390" y="137" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1565c0">H</text>
+
+  <!-- Covalent bond lines O-H -->
+  <line x1="255" y1="175" x2="222" y2="145" stroke="#333" stroke-width="3"/>
+  <line x1="345" y1="175" x2="378" y2="145" stroke="#333" stroke-width="3"/>
+
+  <!-- Bond angle arc -->
+  <path d="M 240 155 A 50 50 0 0 0 360 155" fill="none" stroke="#ff8f00" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="305" y="148" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#ff8f00">104.5°</text>
+
+  <!-- Partial charges -->
+  <text x="300" y="275" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="bold" fill="#e53935">δ⁻</text>
+  <text x="165" y="100" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold" fill="#1565c0">δ⁺</text>
+  <text x="435" y="100" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold" fill="#1565c0">δ⁺</text>
+
+  <!-- Electron cloud note -->
+  <text x="300" y="310" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#555">Oxygen pulls electrons → partial negative charge</text>
+  <text x="300" y="330" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#555">Hydrogens have partial positive charges</text>
+
+  <!-- Dipole arrow -->
+  <line x1="300" y1="265" x2="300" y2="355" stroke="#6a1b9a" stroke-width="2" marker-end="url(#arrowBlue)"/>
+  <text x="315" y="320" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#6a1b9a">Dipole</text>
+</svg>

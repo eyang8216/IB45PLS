@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 27: Cell Respiration I (C1.2) — IB Biology HL</title>
+<script>window.MathJax = { tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] } };</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #1a6b3c; --border: #c4d4a9; --highlight: #e8f5e9; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Palatino', 'Georgia', serif; background: var(--bg); color: var(--text); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; font-size: 17px; line-height: 1.7; }
+  h1 { font-size: 1.7rem; color: var(--accent); margin-bottom: 0.5rem; }
+  h2 { font-size: 1.25rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; margin: 2rem 0 1rem; }
+  h3 { font-size: 1.1rem; color: #444; margin: 1.3rem 0 0.5rem; }
+  p, li { margin-bottom: 0.6rem; }
+  ul, ol { padding-left: 1.8rem; margin-bottom: 1rem; }
+  .worked { background: #e8f5e9; border-left: 4px solid #1a6b3c; padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
+  .worked strong { color: #1a6b3c; }
+  .answer { background: #fefdf7; border: 1px solid var(--border); padding: 0.8rem 1.2rem; margin: 0.5rem 0; border-radius: 6px; }
+  .nav { display: flex; justify-content: space-between; margin: 3rem 0 1rem; padding-top: 1rem; border-top: 2px solid var(--border); font-size: 0.9rem; }
+  .nav a { color: #1a5c9e; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  .definition { background: #fff8e1; border-left: 4px solid #e6a817; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  .tip { background: #e3f2fd; border-left: 4px solid #1976d2; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  table { border-collapse: collapse; margin: 0.8rem 0; width: 100%; }
+  th, td { border: 1px solid var(--border); padding: 0.4rem 0.6rem; text-align: left; }
+  th { background: #f0f5e8; }
+  @media print { body { font-size: 14px; } .nav { display: none; } }
+</style>
+</head>
+<body>
+
+
+<h2>What You'll Learn</h2>
+
+<p>By the end of this lesson, you will:</p>
+<ul>
+<li>Understand ATP structure and why it is the universal energy currency of cells</li>
+<li>Explain energy coupling and why phosphate bonds are "high energy"</li>
+<li>Write the overall equation for aerobic respiration and trace the four stages</li>
+<li>Master glycolysis: every step, all intermediates, net ATP and NADH yield</li>
+<li>Describe mitochondrial structure with precise membrane and compartment terminology</li>
+<li>Explain the link reaction converting pyruvate to acetyl-CoA</li>
+<li>Detail the Krebs cycle: inputs, outputs, and how it runs twice per glucose</li>
+<li>Appreciate how oxidative decarboxylation progressively strips energy from glucose</li>
+</ul>
+<hr>
+
+<h2>1. ATP: The Energy Currency</h2>
+
+<h3>Why Cells Need ATP</h3>
+
+<p>A cell is not a furnace — it cannot use the energy from burning glucose directly to power its activities. Instead, energy from glucose oxidation is first converted into a universal, portable, "spendable" form: <strong>ATP (adenosine triphosphate)</strong>.</p>
+
+<p><strong>Analogy:</strong> Imagine you sell your car for cash, but every shop only accepts gift cards. You can't spend car-money directly — you must convert it into the right currency. Similarly, cells convert the chemical energy in glucose into ATP, which is the only "currency" that most cellular processes accept (active transport, muscle contraction, biosynthesis, etc.).</p>
+
+<h3>ATP Structure</h3>
+
+<p><strong>Draw and label:</strong></p>
+
+<p>```</p>
+<p>ATP (Adenosine Triphosphate)</p>
+
+<p>Adenine</p>
+<p>│</p>
+<p>┌───┴────┐</p>
+<p>│  N   N │</p>
+<p>│   ╲ ╱  │</p>
+<p>│    C   │</p>
+<p>│   ╱ ╲  │</p>
+<p>│  N   N │</p>
+<p>└───┬────┘</p>
+<p>│</p>
+<p>Ribose ── O ── P ── O ── P ── O ── P</p>
+<p>│           ║       ║       ║</p>
+<p>│           O       O       O</p>
+<p>│</p>
+<p>(OH)</p>
+
+<p>←── Adenosine ──→←─── Triphosphate ───→</p>
+<p>```</p>
+
+<p>ATP consists of three components:</p>
+<ol>
+<li><strong>Adenine</strong> — a nitrogenous base (also found in DNA and RNA)</li>
+<li><strong>Ribose</strong> — a five-carbon sugar (same as in RNA)</li>
+<li><strong>Three phosphate groups</strong> — linked in a chain by phosphoanhydride bonds</li>
+</ol>
+<p><strong>Adenosine</strong> = adenine + ribose. <strong>ATP</strong> = adenosine + three phosphates.</p>
+
+<h3>Why Are Phosphate Bonds "High Energy"?</h3>
+
+<p>The phosphoanhydride bonds linking the phosphate groups are called "high-energy" bonds. But this term is misleading — the bonds themselves are not unusually strong. The <strong>energy comes from what happens when they break</strong>.</p>
+
+<p><strong>Three reasons ATP hydrolysis releases so much energy (ΔG°' ≈ −30.5 kJ/mol):</strong></p>
+
+<ol>
+<li><strong>Electrostatic repulsion</strong>: At physiological pH (~7.4), phosphates carry multiple negative charges (each phosphate group has ~3-4 negative charges). These like charges repel each other violently. Hydrolyzing ATP → ADP + Pi relieves this repulsion — like releasing a compressed spring.</li>
+</ol>
+<ol>
+<li><strong>Resonance stabilization</strong>: Inorganic phosphate (Pi) has more resonance structures (electron delocalization) than the phosphate groups in ATP. This means Pi is more stable — the products are at a lower energy state than the reactant. More resonance = more stability = energy released upon formation.</li>
+</ol>
+<ol>
+<li><strong>Ionization and solvation</strong>: The products (ADP and Pi) are more extensively solvated (surrounded by water molecules) than ATP, which also contributes to the favorable free energy change.</li>
+</ol>
+<p><strong>ATP hydrolysis reaction:</strong></p>
+
+<p style="text-align:center;margin:0.8rem 0;">$$\text{ATP} + \text{H}_2\text{O} \rightarrow \text{ADP} + \text{P}_i \quad \Delta G°' = -30.5 \text{ kJ/mol}$$</p>
+
+<div class="definition">
+
+<p><strong>ATP (Adenosine Triphosphate)</strong>: The universal energy currency of cells. Hydrolysis of ATP to ADP + Pi releases ~30.5 kJ/mol of free energy under standard conditions, which is coupled to energetically unfavorable cellular processes.</p>
+
+</div>
+
+<hr>
+
+<h2>2. Energy Coupling</h2>
+
+<h3>The Problem</h3>
+
+<p>Many essential cellular reactions are <strong>thermodynamically unfavorable</strong> — they have a positive ΔG and would not occur spontaneously. Examples: protein synthesis, active transport against a gradient, muscle contraction.</p>
+
+<h3>The Solution: Coupling</h3>
+
+<p>Cells couple the unfavorable reaction to ATP hydrolysis. The combined reaction has a <strong>net negative ΔG</strong> and proceeds spontaneously.</p>
+
+<p><strong>Analogy:</strong> You need to push a heavy box uphill (unfavorable, positive ΔG). A friend with a truck (ATP hydrolysis, negative ΔG) attaches a rope and pulls. The truck does the "work" — the net process goes forward because the truck's downhill pull is stronger than the box's uphill resistance.</p>
+
+<p><strong>Example: Glutamine synthesis</strong></p>
+
+<p>Reaction 1 (unfavorable): Glutamate + NH₃ → Glutamine, ΔG°' = +14 kJ/mol</p>
+<p>Reaction 2 (favorable): ATP → ADP + Pi, ΔG°' = −30.5 kJ/mol</p>
+
+<p>Coupled: Glutamate + NH₃ + ATP → Glutamine + ADP + Pi, ΔG°' = −16.5 kJ/mol (NET FAVORABLE!)</p>
+
+<p><strong>Mechanism:</strong> ATP phosphorylates glutamate (forms glutamyl-phosphate intermediate), which is then attacked by NH₃. The phosphate acts as a "good leaving group" — it's the molecular equivalent of greasing the wheels.</p>
+
+<div class="definition">
+
+<p><strong>Energy coupling</strong>: The process by which the energy released from an exergonic reaction (usually ATP hydrolysis) is used to drive an endergonic reaction, such that the overall process is thermodynamically favorable.</p>
+
+</div>
+
+<hr>
+
+<h2>3. Overview of Aerobic Respiration</h2>
+
+<h3>The Big Picture Equation</h3>
+
+<p style="text-align:center;margin:0.8rem 0;">$$\text{C}_6\text{H}_{12}\text{O}_6 + 6\text{O}_2 \rightarrow 6\text{CO}_2 + 6\text{H}_2\text{O} + \text{Energy} (\sim 30-32 \text{ ATP})$$</p>
+
+<p>This is the same as burning glucose in a fire, except cells do it in a controlled, stepwise manner — capturing energy in ATP rather than releasing it all as heat.</p>
+
+<h3>The Four Stages</h3>
+
+<p><strong>Draw this overview diagram:</strong></p>
+
+<p>```</p>
+<p>GLYCOLYSIS           LINK REACTION        KREBS CYCLE         OXIDATIVE</p>
+<p>(Cytoplasm)          (Matrix)             (Matrix)            PHOSPHORYLATION</p>
+<p>(Inner membrane)</p>
+
+<p>Glucose (6C)  →  2 Pyruvate (3C)  →  2 Acetyl-CoA (2C)  →  CO₂  →  ETC + ATP</p>
+<p>↓                   ↓                      ↓                        synthase</p>
+<p>2 ATP              2 NADH            6 NADH + 2 FADH₂           ~26-28 ATP</p>
+<p>2 NADH                                + 2 ATP (GTP)</p>
+<p>```</p>
+
+<h3>Stage-by-Stage Summary</h3>
+
+<table>
+<tr>
+<td>Stage</td>
+<td>Location</td>
+<td>Input per Glucose</td>
+<td>Output per Glucose</td>
+<td>ATP (net)</td>
+<td>Reduced Coenzymes</td>
+</tr>
+<tr>
+<td>Glycolysis</td>
+<td>Cytoplasm</td>
+<td>1 Glucose (6C)</td>
+<td>2 Pyruvate (3C)</td>
+<td>2 (net)</td>
+<td>2 NADH</td>
+</tr>
+<tr>
+<td>Link Reaction</td>
+<td>Mitochondrial matrix</td>
+<td>2 Pyruvate (3C)</td>
+<td>2 Acetyl-CoA (2C)</td>
+<td>0</td>
+<td>2 NADH</td>
+</tr>
+<tr>
+<td>Krebs Cycle</td>
+<td>Mitochondrial matrix</td>
+<td>2 Acetyl-CoA (2C)</td>
+<td>4 CO₂</td>
+<td>2 (GTP)</td>
+<td>6 NADH + 2 FADH₂</td>
+</tr>
+<tr>
+<td>Oxidative Phosphorylation</td>
+<td>Inner mitochondrial membrane</td>
+<td>10 NADH + 2 FADH₂</td>
+<td>H₂O</td>
+<td>~26-28</td>
+<td>—</td>
+</tr>
+</table>
+
+<p><strong>Grand totals:</strong> ~30-32 ATP per glucose + 6 CO₂ + 6 H₂O</p>
+
+<hr>
+
+<h2>4. Glycolysis in Detail</h2>
+
+<h3>Location and Overview</h3>
+
+<p>Glycolysis ("sugar splitting") occurs in the <strong>cytoplasm</strong> and does NOT require oxygen — it is the universal first step of glucose catabolism in virtually all organisms.</p>
+
+<p><strong>The two phases:</strong></p>
+
+<ol>
+<li><strong>Energy Investment Phase</strong> (Steps 1-5): 2 ATP consumed to phosphorylate glucose and split the 6-carbon sugar into two 3-carbon molecules</li>
+<li><strong>Energy Payoff Phase</strong> (Steps 6-10): 4 ATP produced by substrate-level phosphorylation + 2 NADH</li>
+</ol>
+<p><strong>Net: 2 ATP, 2 NADH, 2 pyruvate per glucose</strong></p>
+
+<h3>The Ten Steps of Glycolysis</h3>
+
+<p><strong>Draw and label this pathway:</strong></p>
+
+<p>```</p>
+<p>GLYCOLYSIS — The Ten Steps</p>
+
+<p>ENERGY INVESTMENT PHASE:</p>
+
+<p>Step 1: Glucose ───→ Glucose-6-phosphate</p>
+<p>Enzyme: Hexokinase</p>
+<p>ATP → ADP (1 ATP used)</p>
+<p>Reason: Traps glucose in cell (G6P can't cross membrane)</p>
+
+<p>Step 2: Glucose-6-phosphate ───→ Fructose-6-phosphate</p>
+<p>Enzyme: Phosphoglucose isomerase</p>
+<p>(Isomerization — aldose to ketose)</p>
+
+<p>Step 3: Fructose-6-phosphate ───→ Fructose-1,6-bisphosphate</p>
+<p>Enzyme: Phosphofructokinase (PFK)</p>
+<p>ATP → ADP (1 ATP used)</p>
+<p>★ KEY REGULATORY STEP — the committed step of glycolysis</p>
+
+<p>Step 4: Fructose-1,6-bisphosphate ───→ DHAP + G3P</p>
+<p>Enzyme: Aldolase</p>
+<p>(6C splits into two 3C sugars)</p>
+
+<p>Step 5: DHAP ⇌ G3P</p>
+<p>Enzyme: Triose phosphate isomerase</p>
+<p>(DHAP converted to G3P so both can proceed)</p>
+
+<p>ENERGY PAYOFF PHASE:</p>
+
+<p>Step 6: G3P ───→ 1,3-Bisphosphoglycerate</p>
+<p>Enzyme: G3P dehydrogenase</p>
+<p>NAD⁺ → NADH + H⁺ (×2, one per G3P)</p>
+<p>(Oxidation + phosphorylation — first energy capture)</p>
+
+<p>Step 7: 1,3-BPG ───→ 3-Phosphoglycerate</p>
+<p>Enzyme: Phosphoglycerate kinase</p>
+<p>ADP → ATP (×2) ← FIRST ATP PRODUCED</p>
+<p>(Substrate-level phosphorylation)</p>
+
+<p>Step 8: 3-PG ───→ 2-Phosphoglycerate</p>
+<p>Enzyme: Phosphoglycerate mutase</p>
+<p>(Phosphate shift: C3 → C2)</p>
+
+<p>Step 9: 2-PG ───→ Phosphoenolpyruvate (PEP)</p>
+<p>Enzyme: Enolase</p>
+<p>H₂O removed (dehydration → high-energy phosphate)</p>
+
+<p>Step 10: PEP ───→ Pyruvate</p>
+<p>Enzyme: Pyruvate kinase</p>
+<p>ADP → ATP (×2) ← SECOND ATP PRODUCED</p>
+<p>(Substrate-level phosphorylation — highly exergonic, irreversible)</p>
+<p>```</p>
+
+<h3>The Accounting</h3>
+
+<table>
+<tr>
+<td>Phase</td>
+<td>ATP Used</td>
+<td>ATP Produced</td>
+<td>NADH Produced</td>
+</tr>
+<tr>
+<td>Investment</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Payoff</td>
+<td>0</td>
+<td>4</td>
+<td>2</td>
+</tr>
+<tr>
+<th>NET per glucose</th>
+<th>2</th>
+<th>4</th>
+<th>2 NADH</th>
+</tr>
+</table>
+
+<p>Net ATP: 4 − 2 = <strong>2 ATP per glucose</strong></p>
+<p>Net NADH: <strong>2 NADH per glucose</strong></p>
+
+<h3>Key Regulatory Step: Phosphofructokinase (PFK)</h3>
+
+<p><strong>PFK (Step 3)</strong> is the most important control point in glycolysis:</p>
+
+<ul>
+<li><strong>Inhibited by ATP</strong> (high energy → slow glycolysis down)</li>
+<li><strong>Inhibited by citrate</strong> (Krebs cycle intermediate — feedback)</li>
+<li><strong>Activated by AMP</strong> (low energy → speed glycolysis up)</li>
+<li><strong>Activated by fructose-2,6-bisphosphate</strong> (hormonal regulation in liver)</li>
+</ul>
+<div class="definition">
+
+<p><strong>Substrate-level phosphorylation</strong>: The direct synthesis of ATP from ADP using energy released from a coupled exergonic reaction — phosphate is transferred from a high-energy phosphorylated intermediate directly to ADP. Contrast with oxidative phosphorylation (which uses the proton gradient and ATP synthase).</p>
+
+</div>
+
+<div class="tip">
+
+<p><strong>IB Exam Tip (Paper 2):</strong> For glycolysis, you must know: (1) location = cytoplasm, (2) net yield = 2 ATP + 2 NADH + 2 pyruvate, (3) phosphorylation of glucose uses 2 ATP, (4) oxidation of G3P produces NADH, (5) the term "substrate-level phosphorylation" refers to ATP made directly in Steps 7 and 10. You do NOT need to name all ten enzymes, but knowing hexokinase, PFK, and pyruvate kinase is beneficial.</p>
+
+</div>
+
+<hr>
+
+<h2>5. Mitochondrial Structure</h2>
+
+<h3>The Powerhouse — But WHY?</h3>
+
+<p>The mitochondrion's structure is exquisitely adapted for its function in oxidative phosphorylation. Every membrane fold and compartment serves a purpose.</p>
+
+<p><strong>Draw and label a cross-section:</strong></p>
+
+<p>```</p>
+<p>MITOCHONDRION</p>
+
+<p>Outer membrane  ════════════════════════════════</p>
+<p>║                               ║</p>
+<p>Intermembrane   ║  ╔═══════════════════╗        ║</p>
+<p>space           ║  ║                   ║        ║</p>
+<p>║  ║    MATRIX         ║        ║</p>
+<p>Inner membrane  ║  ║  (Krebs cycle,    ║        ║</p>
+<p>(CRISTAE)       ║  ║   link reaction,  ║        ║</p>
+<p>║  ║   mtDNA,          ║        ║</p>
+<p>╔══════╗   ║  ║   ribosomes)      ║        ║</p>
+<p>║CRISTA║   ║  ║                   ║        ║</p>
+<p>╚══════╝   ║  ╚═══════════════════╝        ║</p>
+<p>║                               ║</p>
+<p>════════════════════════════════</p>
+<p>```</p>
+
+<h3>Structure-Function Table</h3>
+
+<table>
+<tr>
+<td>Structure</td>
+<td>Description</td>
+<td>Function</td>
+<td>Adaptation</td>
+</tr>
+<tr>
+<td>Outer membrane</td>
+<td>Smooth, porous</td>
+<td>Separates mitochondrion from cytoplasm</td>
+<td>Contains <strong>porins</strong> — channels allowing passage of small molecules and ions</td>
+</tr>
+<tr>
+<td>Inner membrane</td>
+<td>Highly folded into **cristae</td>
+<td>Site of ETC and ATP synthase</td>
+<td>Cristae <strong>increase surface area</strong> for more ETC complexes and ATP synthase; impermeable to H⁺ (maintains gradient)</td>
+</tr>
+<tr>
+<td>Intermembrane space</td>
+<td>Space between outer and inner membranes</td>
+<td>Accumulates H⁺ during ETC</td>
+<td>Low pH (~7.0 vs ~7.8 in matrix); small volume → H⁺ concentration changes rapidly</td>
+</tr>
+<tr>
+<td>Matrix</td>
+<td>Dense solution inside inner membrane</td>
+<td>Contains enzymes for link reaction, Krebs cycle, fatty acid oxidation</td>
+<td>Contains mitochondrial DNA (circular, prokaryotic-like), ribosomes (70S), tRNA; high protein concentration</td>
+</tr>
+</table>
+
+<h3>The Cristae: Surface Area Maximization</h3>
+
+<p>The inner membrane of a single liver mitochondrion has approximately <strong>5× the surface area</strong> of the outer membrane due to cristae folding. This matters because:</p>
+
+<ul>
+<li>Each crista is packed with <strong>thousands of ETC complexes</strong> and <strong>hundreds of ATP synthase molecules</strong></li>
+<li>More surface area = more ETC = more proton pumping = more ATP production</li>
+<li>Cells with high energy demands (muscle, sperm, kidney) have mitochondria with <strong>more densely packed cristae</strong></li>
+</ul>
+<div class="tip">
+
+<p><strong>IB Exam Tip (Paper 1):</strong> Common distractor — "The Krebs cycle occurs on the inner mitochondrial membrane." It occurs in the <strong>matrix</strong>. The ETC is on the inner membrane. Another: "The ETC occurs in the intermembrane space." No — the ETC is embedded <strong>in</strong> the inner membrane, and pumps H⁺ <strong>into</strong> the intermembrane space.</p>
+
+</div>
+
+<hr>
+
+<h2>6. The Link Reaction</h2>
+
+<h3>Bridging Glycolysis and the Krebs Cycle</h3>
+
+<p>Pyruvate produced in the cytoplasm must enter the mitochondrion. Once inside the matrix, it undergoes the <strong>link reaction</strong> (also called pyruvate decarboxylation or the pyruvate dehydrogenase complex).</p>
+
+<p><strong>The reaction:</strong></p>
+
+<p style="text-align:center;margin:0.8rem 0;">$$\text{Pyruvate (3C)} + \text{CoA} + \text{NAD}^+ \rightarrow \text{Acetyl-CoA (2C)} + \text{CO}_2 + \text{NADH} + \text{H}^+$$</p>
+
+<p><strong>Draw this:</strong></p>
+
+<p>```</p>
+<p>CH₃</p>
+<p>│</p>
+<p>C=O         Pyruvate (3C)</p>
+<p>│</p>
+<p>COO⁻</p>
+
+<p>↓  Pyruvate dehydrogenase complex</p>
+
+<p>CH₃</p>
+<p>│</p>
+<p>C=O         +  CO₂ ↑ (one carbon lost as CO₂)</p>
+<p>│                   +  NADH + H⁺</p>
+<p>S-CoA               (NAD⁺ reduced)</p>
+
+<p>Acetyl-CoA (2C)</p>
+<p>```</p>
+
+<h3>What Happens:</h3>
+
+<ol>
+<li><strong>Decarboxylation</strong>: Pyruvate loses one carbon as CO₂ (this is the first CO₂ released in respiration)</li>
+<li><strong>Oxidation</strong>: The remaining 2-carbon fragment is oxidized; electrons are captured by NAD⁺ → NADH</li>
+<li><strong>Coenzyme A attachment</strong>: The 2-carbon acetyl group is attached to <strong>coenzyme A (CoA)</strong> via a high-energy thioester bond</li>
+</ol>
+<h3>The Pyruvate Dehydrogenase Complex</h3>
+
+<p>This is one of the largest enzyme complexes known — a multi-enzyme assembly of three enzymes (E1, E2, E3) plus five coenzymes (TPP, lipoic acid, CoA, FAD, NAD⁺). The complex channels substrates between active sites, increasing efficiency and preventing side reactions.</p>
+
+<h3>Accounting (per glucose)</h3>
+
+<p>Since <strong>2 pyruvate</strong> are produced per glucose, the link reaction runs <strong>twice</strong>:</p>
+
+<table>
+<tr>
+<td>Input</td>
+<td>Output (×2)</td>
+</tr>
+<tr>
+<td>2 Pyruvate (3C each)</td>
+<td>2 Acetyl-CoA (2C each)</td>
+</tr>
+<tr>
+<td>2 CoA</td>
+<td>—</td>
+</tr>
+<tr>
+<td>2 NAD⁺</td>
+<td>2 NADH</td>
+</tr>
+<tr>
+<td>—</td>
+<td>2 CO₂</td>
+</tr>
+</table>
+
+<p><strong>Per glucose: 2 acetyl-CoA, 2 NADH, 2 CO₂</strong></p>
+
+<hr>
+
+<h2>7. The Krebs Cycle (Citric Acid Cycle)</h2>
+
+<h3>Overview</h3>
+
+<p>The Krebs cycle (discovered by Hans Krebs, 1937) completes the oxidation of glucose. The 2-carbon acetyl group enters the cycle by combining with a 4-carbon acceptor (oxaloacetate), and through a series of eight enzyme-catalyzed reactions, two carbons are released as CO₂, the 4-carbon acceptor is regenerated, and energy is captured as NADH, FADH₂, and GTP.</p>
+
+<p><strong>Location:</strong> Mitochondrial matrix (soluble enzymes, not membrane-bound)</p>
+
+<p><strong>Draw and label the Krebs cycle:</strong></p>
+
+<p>```</p>
+<p>KREBS CYCLE</p>
+<p>(Citric Acid Cycle)</p>
+
+<p>Acetyl-CoA (2C)</p>
+<p>│</p>
+<p>↓</p>
+<p>Oxaloacetate (4C) ────→ Citrate (6C)</p>
+<p>↑                       │</p>
+<p>│                       ↓</p>
+<p>│                  Isocitrate (6C)</p>
+<p>│                       │</p>
+<p>│                       ↓ CO₂ + NADH</p>
+<p>│              α-Ketoglutarate (5C)</p>
+<p>│                       │</p>
+<p>│                       ↓ CO₂ + NADH</p>
+<p>│                  Succinyl-CoA (4C)</p>
+<p>│                       │</p>
+<p>│                       ↓ GTP (→ ATP)</p>
+<p>│                   Succinate (4C)</p>
+<p>│                       │</p>
+<p>│                       ↓ FADH₂</p>
+<p>│                   Fumarate (4C)</p>
+<p>│                       │</p>
+<p>│                       ↓</p>
+<p>└─────────────── Malate (4C)</p>
+<p>```</p>
+
+<h3>The Eight Steps — One Turn</h3>
+
+<table>
+<tr>
+<td>Step</td>
+<td>Reaction</td>
+<td>Enzyme</td>
+<td>Carbon Change</td>
+<td>Products</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Acetyl-CoA + Oxaloacetate → Citrate</td>
+<td>Citrate synthase</td>
+<td>2C + 4C → 6C</td>
+<td>CoA-SH</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Citrate → Isocitrate</td>
+<td>Aconitase</td>
+<td>6C → 6C</td>
+<td>— (isomerization)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Isocitrate → α-Ketoglutarate</td>
+<td>Isocitrate dehydrogenase</td>
+<td>6C → 5C</td>
+<td>CO₂ + NADH</td>
+</tr>
+<tr>
+<td>4</td>
+<td>α-KG → Succinyl-CoA</td>
+<td>α-KG dehydrogenase</td>
+<td>5C → 4C</td>
+<td>CO₂ + NADH</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Succinyl-CoA → Succinate</td>
+<td>Succinyl-CoA synthetase</td>
+<td>4C → 4C</td>
+<td>GTP** (→ATP)</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Succinate → Fumarate</td>
+<td>Succinate dehydrogenase</td>
+<td>4C → 4C</td>
+<td>FADH₂</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Fumarate → Malate</td>
+<td>Fumarase</td>
+<td>4C → 4C</td>
+<td>— (hydration)</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Malate → Oxaloacetate</td>
+<td>Malate dehydrogenase</td>
+<td>4C → 4C</td>
+<td>NADH</td>
+</tr>
+</table>
+
+<h3>Products Per Turn of the Cycle</h3>
+
+<table>
+<tr>
+<td>Product</td>
+<td>Per Turn</td>
+<td>Per Glucose (2 turns)</td>
+</tr>
+<tr>
+<td>CO₂</td>
+<td>2</td>
+<td>4</td>
+</tr>
+<tr>
+<td>NADH</td>
+<td>3</td>
+<td>6</td>
+</tr>
+<tr>
+<td>FADH₂</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>GTP (→ATP)</td>
+<td>1</td>
+<td>2</td>
+</tr>
+</table>
+
+<p><strong>Key observations:</strong></p>
+<ul>
+<li>The two carbons entering as acetyl-CoA are <strong>not</strong> the same two carbons released as CO₂ in the same turn — they remain in the cycle intermediates. The CO₂ comes from oxaloacetate carbons from the <strong>previous</strong> turn.</li>
+<li>Oxaloacetate is truly catalytic — it's regenerated each turn</li>
+<li>The cycle runs only under aerobic conditions, although O₂ is not directly used — it's needed to re-oxidize NADH and FADH₂ in the ETC</li>
+</ul>
+<div class="definition">
+
+<p><strong>Krebs Cycle (Citric Acid Cycle)</strong>: A cyclical series of eight enzyme-catalyzed reactions in the mitochondrial matrix that completely oxidizes the acetyl group of acetyl-CoA to 2 CO₂, capturing energy as 3 NADH, 1 FADH₂, and 1 GTP per turn.</p>
+
+</div>
+
+<hr>
+
+<h2>8. The Progressive Energy Stripping</h2>
+
+<h3>Where the Energy Goes</h3>
+
+<p>The complete oxidation of glucose can be thought of as a carefully controlled "combustion" where electrons are progressively stripped and carried to oxygen by electron carriers:</p>
+
+<table>
+<tr>
+<td>Stage</td>
+<td>Electrons captured by</td>
+<td>Total per glucose</td>
+</tr>
+<tr>
+<td>Glycolysis</td>
+<td>2 NADH</td>
+<td>2 NADH</td>
+</tr>
+<tr>
+<td>Link Reaction</td>
+<td>2 NADH</td>
+<td>4 NADH cumulative</td>
+</tr>
+<tr>
+<td>Krebs Cycle</td>
+<td>6 NADH + 2 FADH₂</td>
+<td>10 NADH + 2 FADH₂ cumulative</td>
+</tr>
+</table>
+
+<p>All these reduced coenzymes carry <strong>high-energy electrons</strong> to the electron transport chain, where the real ATP bonanza happens (~2.5 ATP per NADH, ~1.5 ATP per FADH₂).</p>
+
+<h3>Carbon Tracking</h3>
+
+<table>
+<tr>
+<td>Stage</td>
+<td>Carbon Fate</td>
+</tr>
+<tr>
+<td>Glucose</td>
+<td>6 carbons</td>
+</tr>
+<tr>
+<td>After glycolysis</td>
+<td>2 × 3C (pyruvate) — all 6 carbons still present</td>
+</tr>
+<tr>
+<td>After link reaction</td>
+<td>2 × 2C (acetyl-CoA) + 2 CO₂ (2 carbons gone)</td>
+</tr>
+<tr>
+<td>After Krebs (2 turns)</td>
+<td>4 CO₂ released + oxaloacetate regenerated</td>
+</tr>
+</table>
+
+<p><strong>Total CO₂ released:</strong> 2 (link) + 4 (Krebs) = <strong>6 CO₂ per glucose</strong> — all 6 original carbons are now fully oxidized.</p>
+
+<hr>
+
+<h2>9. Worked Examples</h2>
+
+<div class="worked">
+
+<p><strong>Worked Example 1: ATP Accounting</strong></p>
+
+<p>Calculate the net ATP produced from one glucose molecule given:</p>
+<ul>
+<li>Glycolysis: net 2 ATP + 2 NADH</li>
+<li>Link reaction: 2 NADH</li>
+<li>Krebs: 2 GTP + 6 NADH + 2 FADH₂</li>
+<li>Each NADH yields ~2.5 ATP in oxidative phosphorylation</li>
+<li>Each FADH₂ yields ~1.5 ATP in oxidative phosphorylation</li>
+</ul>
+<p><strong>Answer:</strong></p>
+
+<p>Direct ATP/GTP: 2 (glycolysis) + 2 (Krebs GTP) = <strong>4 ATP</strong></p>
+
+<p>From NADH: 10 NADH × 2.5 = <strong>25 ATP</strong></p>
+
+<p>From FADH₂: 2 FADH₂ × 1.5 = <strong>3 ATP</strong></p>
+
+<p><strong>Total: 4 + 25 + 3 = ~32 ATP per glucose</strong></p>
+
+<p>(Note: The 2 NADH from glycolysis may yield only ~1.5 ATP each if the glycerol-3-phosphate shuttle is used instead of malate-aspartate shuttle, reducing total to ~30 ATP. IB accepts the range 30-32.)</p>
+
+</div>
+
+<div class="worked">
+
+<p><strong>Worked Example 2: Tracing Radioactive Carbon</strong></p>
+
+<p>If glucose labeled with ¹⁴C at carbon-1 is metabolized, where does the label first appear as CO₂?</p>
+
+<p><strong>Answer:</strong></p>
+
+<p>Carbon-1 of glucose becomes the methyl group of pyruvate (if carbon-1 is the aldehyde carbon). In the link reaction, pyruvate is decarboxylated — the carboxyl group (−COO⁻) is lost as CO₂. However, the carboxyl group of pyruvate corresponds to carbons 3 and 4 of glucose, not carbon 1.</p>
+
+<p>Carbon-1 of glucose ends up as the methyl carbon of acetyl-CoA and enters the Krebs cycle. In the first turn, this carbon is NOT released — acetyl-CoA carbons remain in cycle intermediates. The labeled CO₂ first appears in the <strong>second turn</strong> of the Krebs cycle.</p>
+
+<p>This is the "CO₂ paradox": the CO₂ released in the Krebs cycle comes from oxaloacetate carbons, not directly from the acetyl-CoA that just entered.</p>
+
+</div>
+
+<hr>
+
+<h2>Practice Problems</h2>
+
+<h3>Question 1 (Paper 1 Style)</h3>
+
+<p>Which row correctly identifies the location of glycolysis and the Krebs cycle?</p>
+
+<table>
+<tr>
+<td></td>
+<td>Glycolysis</td>
+<td>Krebs Cycle</td>
+</tr>
+<tr>
+<td>A</td>
+<td>Mitochondrial matrix</td>
+<td>Cytoplasm</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Cytoplasm</td>
+<td>Inner mitochondrial membrane</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Cytoplasm</td>
+<td>Mitochondrial matrix</td>
+</tr>
+<tr>
+<td>D</td>
+<td>Inner mitochondrial membrane</td>
+<td>Intermembrane space</td>
+</tr>
+</table>
+
+<p><details></p>
+<p><summary>Answer</summary></p>
+
+<p><strong>C.</strong> Glycolysis occurs in the cytoplasm. The Krebs cycle occurs in the mitochondrial matrix. The inner membrane is the site of the ETC and ATP synthase. The link reaction also occurs in the matrix.</p>
+
+<p></details></p>
+
+<h3>Question 2 (Paper 2 Style)</h3>
+
+<p><strong>Outline the link reaction, including its location, inputs, and outputs. [4]</strong></p>
+
+<p><details></p>
+<p><summary>Answer</summary></p>
+
+<ol>
+<li>The link reaction occurs in the <strong>mitochondrial matrix</strong></li>
+<li>Input: <strong>pyruvate (3C)</strong> from glycolysis enters the mitochondrion</li>
+<li>Pyruvate is <strong>decarboxylated</strong> — one carbon atom is removed as CO₂</li>
+<li>The remaining 2-carbon fragment is <strong>oxidized</strong> — NAD⁺ is reduced to <strong>NADH + H⁺</strong></li>
+<li>The 2-carbon acetyl group is attached to <strong>coenzyme A (CoA)</strong>, forming <strong>acetyl-CoA</strong></li>
+<li>The reaction is catalyzed by the <strong>pyruvate dehydrogenase complex</strong></li>
+<li>Per glucose, this reaction occurs <strong>twice</strong>, producing: 2 acetyl-CoA + 2 NADH + 2 CO₂</li>
+</ol>
+<p></details></p>
+
+<h3>Question 3 (Paper 2 Style — Data Analysis)</h3>
+
+<p>An experiment measures oxygen consumption by isolated mitochondria provided with different substrates:</p>
+
+<table>
+<tr>
+<td>Substrate</td>
+<td>O₂ consumed (arbitrary units)</td>
+</tr>
+<tr>
+<td>None</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Pyruvate</td>
+<td>25</td>
+</tr>
+<tr>
+<td>Citrate</td>
+<td>22</td>
+</tr>
+<tr>
+<td>Acetyl-CoA</td>
+<td>20</td>
+</tr>
+<tr>
+<td>Succinate</td>
+<td>15</td>
+</tr>
+</table>
+
+<p><strong>a) Explain why pyruvate causes the greatest increase in O₂ consumption. [2]</strong></p>
+<p><strong>b) Predict the effect of adding an inhibitor of the link reaction on O₂ consumption with pyruvate as substrate. [1]</strong></p>
+<p><strong>c) Succinate produces FADH₂ but not NADH. Explain why it still supports O₂ consumption, albeit less. [2]</strong></p>
+
+<p><details></p>
+<p><summary>Answer</summary></p>
+
+<p><strong>a)</strong> Pyruvate enters the link reaction (producing 1 NADH), then the resulting acetyl-CoA enters the Krebs cycle (producing 3 NADH + 1 FADH₂ + 1 GTP). This generates the most reduced coenzymes per molecule → most electrons fed into the ETC → most O₂ consumed. Citrate enters further along and misses the link reaction NADH. Acetyl-CoA misses both link reaction and the citrate synthase step.</p>
+
+<p><strong>b)</strong> O₂ consumption would <strong>decrease significantly</strong> — pyruvate could not be converted to acetyl-CoA. Only the basal rate would remain (or pyruvate might be reduced to lactate, consuming no O₂).</p>
+
+<p><strong>c)</strong> Succinate is oxidized to fumarate by succinate dehydrogenase (Complex II of ETC), producing FADH₂. FADH₂ feeds electrons directly into the ETC at Complex II → electrons flow to Complexes III and IV → H⁺ pumped → O₂ reduced to H₂O. However, succinate bypasses Complex I, so fewer H⁺ are pumped per electron pair → less O₂ consumption (less ATP made) than with NADH-linked substrates.</p>
+
+<p></details></p>
+
+<h3>Question 4 (Paper 1 Style)</h3>
+
+<p>How many molecules of CO₂ are produced from one molecule of glucose during the link reaction and the Krebs cycle combined?</p>
+
+<p>A. 2</p>
+<p>B. 4</p>
+<p>C. 6</p>
+<p>D. 8</p>
+
+<p><details></p>
+<p><summary>Answer</summary></p>
+
+<p><strong>C. 6 total.</strong> The link reaction produces 2 CO₂ (one per pyruvate, two pyruvates per glucose). The Krebs cycle produces 4 CO₂ (two per turn, two turns per glucose). Total: 2 + 4 = 6 CO₂ — all six carbon atoms of glucose are fully oxidized to CO₂.</p>
+
+<p></details></p>
+
+<h3>Question 5 (Paper 2 Style — Extended Response)</h3>
+
+<p><strong>Describe the structural adaptations of the mitochondrion for oxidative phosphorylation. [5]</strong></p>
+
+<p><details></p>
+<p><summary>Answer</summary></p>
+
+<ol>
+<li><strong>Inner membrane folded into cristae</strong> — this massively increases surface area, accommodating thousands of electron transport chain complexes and hundreds of ATP synthase molecules per mitochondrion. More surface area = more capacity for oxidative phosphorylation.</li>
+</ol>
+<ol>
+<li><strong>Inner membrane is impermeable to H⁺</strong> — unlike the outer membrane (which has porins), the inner membrane is a tight permeability barrier. This allows the proton gradient to be maintained; H⁺ pumped into the intermembrane space cannot freely diffuse back except through ATP synthase.</li>
+</ol>
+<ol>
+<li><strong>Intermembrane space is small</strong> — the narrow intermembrane space has a small volume, so pumping H⁺ into it causes a rapid and large change in H⁺ concentration, efficiently establishing the proton motive force.</li>
+</ol>
+<ol>
+<li><strong>Matrix contains Krebs cycle enzymes at high concentration</strong> — the matrix is packed with enzymes, facilitating rapid substrate channeling from the link reaction through the Krebs cycle to produce NADH and FADH₂ in close proximity to the ETC.</li>
+</ol>
+<ol>
+<li><strong>ETC complexes and ATP synthase are precisely organized in the inner membrane</strong> — supercomplexes (respirasomes) bring Complexes I, III, and IV together for efficient electron transfer. ATP synthase dimers are arranged in rows along crista edges, optimizing proton capture and ATP production.</li>
+</ol>
+<p></details></p>
+
+<hr>
+
+<h2>Common Misconceptions</h2>
+
+<table>
+<tr>
+<td>Misconception</td>
+<td>Reality</td>
+</tr>
+<tr>
+<td>"Glycolysis occurs in the mitochondrion"</td>
+<td>Glycolysis is cytoplasmic. Only the link reaction, Krebs cycle, and oxidative phosphorylation are mitochondrial.</td>
+</tr>
+<tr>
+<td>"The Krebs cycle directly uses O₂"</td>
+<td>The Krebs cycle itself uses no O₂. It requires aerobic conditions because NADH and FADH₂ must be re-oxidized by the ETC, which requires O₂ as the final electron acceptor.</td>
+</tr>
+<tr>
+<td>"ATP is produced in the Krebs cycle by oxidative phosphorylation"</td>
+<td>The GTP produced (Step 5) is substrate-level phosphorylation, not oxidative phosphorylation. ATP from the ETC is oxidative phosphorylation.</td>
+</tr>
+<tr>
+<td>"The CO₂ released in the Krebs cycle comes directly from acetyl-CoA"</td>
+<td>The two carbons of acetyl-CoA remain in the cycle intermediates during the first turn. The CO₂ comes from oxaloacetate carbons.</td>
+</tr>
+<tr>
+<td>"All 32 ATP are made in the mitochondrion"</td>
+<td>2 ATP from glycolysis are made in the cytoplasm. The rest are mitochondrial.</td>
+</tr>
+<tr>
+<td>"FADH₂ is a soluble electron carrier like NADH"</td>
+<td>FADH₂ is tightly bound to succinate dehydrogenase (Complex II). It is not freely diffusible.</td>
+</tr>
+<tr>
+<td>"Coenzyme A is an enzyme"</td>
+<td>Coenzyme A is a coenzyme — a non-protein organic molecule that assists enzymes. It carries acyl groups.</td>
+</tr>
+<tr>
+<td>"Pyruvate enters the Krebs cycle directly"</td>
+<td>Pyruvate must first be converted to acetyl-CoA via the link reaction. It does not enter the cycle directly.</td>
+</tr>
+<tr>
+<td>"The outer membrane is the site of ATP synthesis"</td>
+<td>The inner membrane (cristae) is the site of oxidative phosphorylation.</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>Key Terms Summary</h2>
+
+<table>
+<tr>
+<td>Term</td>
+<td>Definition</td>
+</tr>
+<tr>
+<td>ATP</td>
+<td>Adenosine triphosphate; universal energy currency</td>
+</tr>
+<tr>
+<td>Substrate-level phosphorylation</td>
+<td>Direct ATP synthesis from a phosphorylated intermediate</td>
+</tr>
+<tr>
+<td>Oxidative phosphorylation</td>
+<td>ATP synthesis using the proton gradient and ATP synthase</td>
+</tr>
+<tr>
+<td>Glycolysis</td>
+<td>Cytoplasmic pathway splitting glucose (6C) into 2 pyruvate (3C); net 2 ATP + 2 NADH</td>
+</tr>
+<tr>
+<td>Pyruvate</td>
+<td>3-carbon end product of glycolysis</td>
+</tr>
+<tr>
+<td>Acetyl-CoA</td>
+<td>2-carbon acetyl group attached to coenzyme A; enters Krebs cycle</td>
+</tr>
+<tr>
+<td>Link reaction</td>
+<td>Pyruvate → acetyl-CoA + CO₂ + NADH (in matrix)</td>
+</tr>
+<tr>
+<td>Krebs cycle</td>
+<td>Cyclic pathway oxidizing acetyl-CoA to 2 CO₂; produces 3 NADH, 1 FADH₂, 1 GTP per turn</td>
+</tr>
+<tr>
+<td>Cristae</td>
+<td>Folds of inner mitochondrial membrane increasing surface area</td>
+</tr>
+<tr>
+<td>Matrix</td>
+<td>Innermost mitochondrial compartment; site of link reaction and Krebs cycle</td>
+</tr>
+<tr>
+<td>Intermembrane space</td>
+<td>Space between inner and outer membranes; H⁺ accumulates here</td>
+</tr>
+<tr>
+<td>NAD⁺/NADH</td>
+<td>Soluble electron carrier; NADH carries high-energy electrons to ETC</td>
+</tr>
+<tr>
+<td>FAD/FADH₂</td>
+<td>Membrane-bound electron carrier in Complex II</td>
+</tr>
+<tr>
+<td>GTP</td>
+<td>Guanosine triphosphate; energetically equivalent to ATP; produced in Krebs cycle</td>
+</tr>
+</table>
+
+<hr>
+
+<p><em>In Lesson 28, we dive into HL detail — every glycolysis intermediate named, PFK regulation, the electron transport chain complexes I-IV, chemiosmosis, rotational catalysis, anaerobic pathways, and lipid/protein catabolism.</em></p>
+
+<div class="nav"><a href="lesson_26.html">&#8592; Lesson 26</a><a href="index.html">&#8962; Index</a><a href="lesson_28.html">Lesson 28 &#8594;</a></div>
+
+</body>
+</html>

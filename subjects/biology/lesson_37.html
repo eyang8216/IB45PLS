@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 37: Populations and Communities (C4.1) — IB Biology HL</title>
+<script>window.MathJax = { tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] } };</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #1a6b3c; --border: #c4d4a9; --highlight: #e8f5e9; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Palatino', 'Georgia', serif; background: var(--bg); color: var(--text); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; font-size: 17px; line-height: 1.7; }
+  h1 { font-size: 1.7rem; color: var(--accent); margin-bottom: 0.5rem; }
+  h2 { font-size: 1.25rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; margin: 2rem 0 1rem; }
+  h3 { font-size: 1.1rem; color: #444; margin: 1.3rem 0 0.5rem; }
+  p, li { margin-bottom: 0.6rem; }
+  ul, ol { padding-left: 1.8rem; margin-bottom: 1rem; }
+  .worked { background: #e8f5e9; border-left: 4px solid #1a6b3c; padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
+  .worked strong { color: #1a6b3c; }
+  .answer { background: #fefdf7; border: 1px solid var(--border); padding: 0.8rem 1.2rem; margin: 0.5rem 0; border-radius: 6px; }
+  .nav { display: flex; justify-content: space-between; margin: 3rem 0 1rem; padding-top: 1rem; border-top: 2px solid var(--border); font-size: 0.9rem; }
+  .nav a { color: #1a5c9e; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  .definition { background: #fff8e1; border-left: 4px solid #e6a817; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  .tip { background: #e3f2fd; border-left: 4px solid #1976d2; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  table { border-collapse: collapse; margin: 0.8rem 0; width: 100%; }
+  th, td { border: 1px solid var(--border); padding: 0.4rem 0.6rem; text-align: left; }
+  th { background: #f0f5e8; }
+  @media print { body { font-size: 14px; } .nav { display: none; } }
+</style>
+</head>
+<body>
+
+
+<h2>What You'll Learn</h2>
+
+<ul>
+<li>How ecologists sample populations using quadrats, transects, and mark-recapture</li>
+<li>The Lincoln index for estimating population size and its critical assumptions</li>
+<li>Exponential (J-curve) vs logistic (S-curve) population growth models</li>
+<li>Density-dependent vs density-independent limiting factors</li>
+<li>The five major types of species interactions: competition, predation/herbivory, mutualism, commensalism, and parasitism</li>
+<li>Primary vs secondary ecological succession</li>
+<li>The intermediate disturbance hypothesis</li>
+<li>Chi-squared testing for species associations</li>
+<li>r-strategists vs K-strategists: a full comparison</li>
+<li>Survivorship curves: Types I, II, and III</li>
+</ul>
+<hr>
+
+<h2>1. Why Study Populations and Communities?</h2>
+
+<p>Imagine you're a wildlife manager in the Serengeti. You need to know how many wildebeest exist, whether they're increasing or decreasing, what limits their growth, and how they interact with lions, grasses, and acacia trees. <strong>Population ecology</strong> gives you the tools to answer these questions. A <strong>population</strong> is all the individuals of one species living in a defined area at the same time. A <strong>community</strong> is all the populations of different species living and interacting in that same area.</p>
+
+<p>This chapter connects directly to <strong>conservation biology</strong>, <strong>pest management</strong>, and <strong>understanding epidemics</strong> — all hot topics for IB Paper 1 and 2 questions.</p>
+
+<div class="definition">
+
+<p><strong>Population</strong>: A group of organisms of the same species living in the same area at the same time, capable of interbreeding.</p>
+<p><strong>Community</strong>: All populations of different species living and interacting in a particular area.</p>
+<p><strong>Ecosystem</strong>: A community plus its abiotic (non-living) environment — energy flow, nutrient cycles, physical conditions.</p>
+
+</div>
+
+<hr>
+
+<h2>2. Sampling Populations</h2>
+
+<p>You can't count every daisy in a meadow or every fish in a lake. Ecologists use <strong>sampling methods</strong> to estimate population size.</p>
+
+<h3>2.1 Quadrats: Random Sampling</h3>
+
+<p>A <strong>quadrat</strong> is a square frame (often 0.5 m × 0.5 m or 1 m × 1 m) placed on the ground. You count every individual of your target species within the frame.</p>
+
+<p><strong>Random sampling procedure:</strong></p>
+<ol>
+<li>Divide the study area into a grid using two tape measures as axes.</li>
+<li>Generate random coordinates (random number generator, dice, or random number table).</li>
+<li>Place the quadrat at each random coordinate.</li>
+<li>Count individuals within the quadrat. Record presence/absence for each quadrat.</li>
+<li>Repeat until you have enough samples (ideally 30+ for reliable statistics).</li>
+<li>Calculate mean density per quadrat, then multiply by total area:</li>
+</ol>
+<p style="text-align:center;margin:0.8rem 0;">$$ \text{Estimated population} = \frac{\text{mean count per quadrat}}{\text{quadrat area}} \times \text{total study area} $$</p>
+
+<p><strong>Draw and label:</strong> A diagram showing a 10 m × 10 m study area divided into a numbered grid, with quadrats placed at random positions. Label one axis "X-coordinate (m)" and the other "Y-coordinate (m)." Show a quadrat frame with dimensions.</p>
+
+<div class="tip">
+
+<p><strong>Paper 1 & 2 tip:</strong> Random sampling removes <strong>observer bias</strong>. If you deliberately place quadrats where the species is abundant, you overestimate population size. IB often asks: "Explain why random sampling is used" — the answer is "to avoid bias and obtain a representative sample."</p>
+
+</div>
+
+<h3>2.2 Belt Transects for Zonation</h3>
+
+<p>When organisms show <strong>zonation</strong> — a change in species distribution along an environmental gradient (e.g., from shoreline to inland, from valley to mountain top) — use a <strong>belt transect</strong>.</p>
+
+<p><strong>Procedure:</strong></p>
+<ol>
+<li>Lay a measuring tape along the gradient (the <strong>transect line</strong>).</li>
+<li>Place quadrats at regular intervals along the line (e.g., every 2 metres).</li>
+<li>Record all species present and their abundance in each quadrat.</li>
+<li>Also measure the environmental variable (e.g., soil moisture, light intensity, salinity).</li>
+<li>Graph species abundance against distance along the transect.</li>
+</ol>
+<p><strong>Draw and label:</strong> A belt transect diagram from a rocky shore. Show the sea at one end and land at the other. Above the transect line, draw zones with different species: barnacles (upper shore), mussels (mid shore), kelp (lower shore). Label "supralittoral," "midlittoral," and "sublittoral" zones.</p>
+
+<div class="worked">
+
+<p><strong>Example: Zonation on a Rocky Shore</strong></p>
+
+<p>A student lays a 30 m transect from the high-tide mark toward the sea. She records barnacle coverage (%) in 1 m² quadrats every 3 m:</p>
+
+<table>
+<tr>
+<td>Distance (m)</td>
+<td>Barnacle cover (%)</td>
+</tr>
+<tr>
+<td>0</td>
+<td>85</td>
+</tr>
+<tr>
+<td>3</td>
+<td>78</td>
+</tr>
+<tr>
+<td>6</td>
+<td>62</td>
+</tr>
+<tr>
+<td>9</td>
+<td>45</td>
+</tr>
+<tr>
+<td>12</td>
+<td>30</td>
+</tr>
+<tr>
+<td>15</td>
+<td>18</td>
+</tr>
+<tr>
+<td>18</td>
+<td>8</td>
+</tr>
+<tr>
+<td>21</td>
+<td>3</td>
+</tr>
+<tr>
+<td>24</td>
+<td>0</td>
+</tr>
+<tr>
+<td>27</td>
+<td>0</td>
+</tr>
+<tr>
+<td>30</td>
+<td>0</td>
+</tr>
+</table>
+
+<p><strong>Question:</strong> Describe the pattern. <strong>Answer:</strong> Barnacle cover decreases with distance from the high-tide mark, dropping from 85% to 0% over 30 m. This shows zonation — barnacles are most abundant in the upper intertidal zone.</p>
+
+</div>
+
+<h3>2.3 Mark-Recapture (Lincoln Index)</h3>
+
+<p>For mobile animals, mark-recapture is the method of choice. You can't put a quadrat around a rabbit.</p>
+
+<p><strong>Procedure:</strong></p>
+<ol>
+<li><strong>Capture:</strong> Trap a sample of animals (n₁). Count them.</li>
+<li><strong>Mark:</strong> Mark each animal in a harmless, permanent way (ear tag, paint spot, leg band). Ensure the mark won't affect survival or behaviour.</li>
+<li><strong>Release:</strong> Return marked animals to the population. Allow time for <strong>random mixing</strong> — marked animals must redistribute throughout the population.</li>
+<li><strong>Recapture:</strong> Trap a second sample (n₂). Count how many are marked (n₃).</li>
+<li><strong>Calculate:</strong> Apply the <strong>Lincoln index</strong>:</li>
+</ol>
+<p style="text-align:center;margin:0.8rem 0;">$$ N = \frac{n_1 \times n_2}{n_3} $$</p>
+
+<p>Where:</p>
+<ul>
+<li>$$N$$ = estimated total population size</li>
+<li>$$n_1$$ = number captured and marked in first sample</li>
+<li>$$n_2$$ = number captured in second sample</li>
+<li>$$n_3$$ = number of marked individuals in second sample</li>
+</ul>
+<p><strong>The logic:</strong> The proportion of marked individuals in the second sample should equal the proportion of marked individuals in the whole population:</p>
+
+<p style="text-align:center;margin:0.8rem 0;">$$ \frac{n_3}{n_2} = \frac{n_1}{N} \quad \implies \quad N = \frac{n_1 \times n_2}{n_3} $$</p>
+
+<div class="worked">
+
+<p><strong>Example: Estimating a Rabbit Population</strong></p>
+
+<p>A student traps 40 rabbits, tags them, and releases them. Two weeks later, she traps 35 rabbits. Of these, 14 are tagged. Estimate the population size.</p>
+
+<p style="text-align:center;margin:0.8rem 0;">$$ N = \frac{n_1 \times n_2}{n_3} = \frac{40 \times 35}{14} = \frac{1400}{14} = 100 $$</p>
+
+<p><strong>Answer:</strong> The estimated rabbit population is 100 individuals.</p>
+
+</div>
+
+<p>#### Critical Assumptions of Mark-Recapture</p>
+
+<p>If any assumption is violated, the estimate becomes unreliable. IB loves testing these:</p>
+
+<table>
+<tr>
+<td>Assumption</td>
+<td>If violated...</td>
+<td>Effect on N</td>
+</tr>
+<tr>
+<td>No migration** into or out of population between samples</td>
+<td>Immigration adds unmarked individuals; emigration removes marked ones</td>
+<td>Overestimates (more unmarked → lower n₃ → higher N)</td>
+</tr>
+<tr>
+<td>No births or deaths** between samples</td>
+<td>Births add unmarked; deaths may remove marked</td>
+<td>Overestimates</td>
+</tr>
+<tr>
+<td>Marks are not lost** between samples</td>
+<td>Marked individuals counted as unmarked</td>
+<td>Overestimates</td>
+</tr>
+<tr>
+<td>Marked individuals mix randomly** with unmarked</td>
+<td>Clumping of marked individuals skews recapture</td>
+<td>Unpredictable</td>
+</tr>
+<tr>
+<td>Mark does not affect survival** or recapture probability</td>
+<td>Marked individuals may avoid traps (trap-shy) or become trap-happy</td>
+<td>Overestimates (trap-shy → fewer recaptured)</td>
+</tr>
+<tr>
+<td>Sampling is random</td>
+<td>Non-random sampling biases composition</td>
+<td>Unpredictable</td>
+</tr>
+</table>
+
+<div class="tip">
+
+<p><strong>Paper 2 data-based question tip:</strong> You'll often be given mark-recapture data and asked to calculate N, then discuss <strong>why the estimate might be inaccurate</strong>. Always link your answer to a specific violated assumption — "The estimate may be too high because immigration of unmarked individuals from a neighbouring field would reduce the proportion of marked individuals in the second sample."</p>
+
+</div>
+
+<hr>
+
+<h2>3. Population Growth Models</h2>
+
+<h3>3.1 Exponential Growth (J-Curve)</h3>
+
+<p>Imagine a single bacterium in a flask of nutrient broth. It divides every 20 minutes. After 20 min: 2 cells. After 40 min: 4. After 1 hour: 8. After 10 hours: over 1 billion. This is <strong>exponential growth</strong> — the population increases at a constant <em>rate per individual</em>.</p>
+
+<p><strong>When does it occur?</strong></p>
+<ul>
+<li>Resources are <strong>unlimited</strong></li>
+<li>No competition, no predation, no disease</li>
+<li>Examples: pioneer species colonising a new habitat; bacteria in a fresh culture; invasive species in a new environment</li>
+</ul>
+<p><strong>The equation:</strong></p>
+
+<p style="text-align:center;margin:0.8rem 0;">$$ N_t = N_0 \times e^{rt} $$</p>
+
+<p>Where:</p>
+<ul>
+<li>$$N_t$$ = population size at time $$t$$</li>
+<li>$$N_0$$ = initial population size</li>
+<li>$$r$$ = intrinsic rate of natural increase (per capita)</li>
+<li>$$t$$ = time</li>
+<li>$$e$$ = Euler's number (≈ 2.718)</li>
+</ul>
+<p><strong>Draw and label:</strong> A graph with time on the x-axis and population size on the y-axis. Draw a J-shaped curve starting almost flat, then curving sharply upward. Label: "Exponential Growth (J-Curve)," "No carrying capacity," "Resources unlimited."</p>
+
+<div class="worked">
+
+<p><strong>Exponential Growth Calculation</strong></p>
+
+<p>A bacterial population starts with 100 cells and has an intrinsic growth rate r = 0.03 per minute. Calculate the population after 200 minutes.</p>
+
+<p style="text-align:center;margin:0.8rem 0;">$$ N_t = N_0 \times e^{rt} = 100 \times e^{0.03 \times 200} = 100 \times e^6 $$</p>
+<p style="text-align:center;margin:0.8rem 0;">$$ e^6 \approx 403.4 $$</p>
+<p style="text-align:center;margin:0.8rem 0;">$$ N_t \approx 100 \times 403.4 = 40{,}340 \text{ cells} $$</p>
+
+</div>
+
+<p>In reality, no population can grow exponentially forever. Resources run out.</p>
+
+<h3>3.2 Logistic Growth (S-Curve)</h3>
+
+<p><strong>Logistic growth</strong> models what actually happens: a population grows quickly at first, then growth slows as it approaches the environment's <strong>carrying capacity (K)</strong> — the maximum population size that the environment can sustain indefinitely.</p>
+
+<p><strong>Phases of the S-curve:</strong></p>
+<ol>
+<li><strong>Lag phase:</strong> Slow growth as individuals acclimate and reproduce slowly.</li>
+<li><strong>Exponential (log) phase:</strong> Rapid growth, resources abundant, few limits.</li>
+<li><strong>Transitional phase:</strong> Growth slows as resources become limiting.</li>
+<li><strong>Plateau (stationary) phase:</strong> Population fluctuates around K. Birth rate ≈ death rate.</li>
+</ol>
+<p><strong>The logistic growth equation:</strong></p>
+
+<p style="text-align:center;margin:0.8rem 0;">$$ \frac{dN}{dt} = rN \left(1 - \frac{N}{K}\right) $$</p>
+
+<ul>
+<li>When N is small, $$\frac{N}{K} \approx 0$$, so $$\frac{dN}{dt} \approx rN$$ — near-exponential growth.</li>
+<li>When N = K, $$\frac{N}{K} = 1$$, so $$\frac{dN}{dt} = 0$$ — no growth.</li>
+<li>When N > K, growth becomes negative (population declines).</li>
+</ul>
+<p><strong>Draw and label:</strong> A graph with time on x-axis, population on y-axis. Draw the S-shaped (sigmoid) curve. Label: "Lag phase," "Exponential phase," "Transitional phase," "Stationary phase," and draw a horizontal dashed line labelled "Carrying Capacity (K)." Add a dotted J-curve to show how exponential growth would continue without limits.</p>
+
+<div class="definition">
+
+<p><strong>Carrying Capacity (K)</strong>: The maximum population size of a species that an environment can support sustainably, given the available food, water, space, and other resources.</p>
+
+</div>
+
+<div class="tip">
+
+<p><strong>Paper 1 tip:</strong> The logistic equation $$\frac{dN}{dt} = rN(1 - \frac{N}{K})$$ is an HL-specific detail. Know that $$(1 - \frac{N}{K})$$ represents the "unused portion of carrying capacity" — it's the brake on growth. As N approaches K, this factor approaches zero.</p>
+
+</div>
+
+<hr>
+
+<h2>4. Factors Limiting Population Growth</h2>
+
+<h3>4.1 Density-Dependent Factors</h3>
+
+<p>These factors have an effect whose <strong>intensity increases as population density increases</strong>. They act as <strong>negative feedback</strong> — the denser the population, the stronger the limiting effect.</p>
+
+<table>
+<tr>
+<td>Factor</td>
+<td>How it works</td>
+<td>Example</td>
+</tr>
+<tr>
+<td>Food availability</td>
+<td>More individuals → less food per individual → starvation, lower fertility</td>
+<td>Deer on an island run out of browse</td>
+</tr>
+<tr>
+<td>Disease</td>
+<td>Higher density → easier transmission → more deaths</td>
+<td>Myxomatosis spread rapidly in dense rabbit populations</td>
+</tr>
+<tr>
+<td>Predation</td>
+<td>More prey → predators eat more (or more predators are attracted)</td>
+<td>Lynx-hare cycles</td>
+</tr>
+<tr>
+<td>Competition (intraspecific)</td>
+<td>More individuals → more competition for mates, territory, resources</td>
+<td>Wolves fighting for territory</td>
+</tr>
+<tr>
+<td>Accumulation of waste</td>
+<td>Higher density → toxic waste builds up faster</td>
+<td>Yeast in fermentation poisoned by ethanol</td>
+</tr>
+</table>
+
+<h3>4.2 Density-Independent Factors</h3>
+
+<p>These factors affect a population <strong>regardless of its density</strong>. A flood kills a percentage of the population whether there are 10 individuals or 10,000.</p>
+
+<table>
+<tr>
+<td>Factor</td>
+<td>Example</td>
+</tr>
+<tr>
+<td>Fire</td>
+<td>Bushfire kills most organisms in its path</td>
+</tr>
+<tr>
+<td>Flood</td>
+<td>Flash flood sweeps away stream insects</td>
+</tr>
+<tr>
+<td>Drought</td>
+<td>Extended dry period kills plants</td>
+</tr>
+<tr>
+<td>Temperature extremes</td>
+<td>Unusually cold winter kills birds</td>
+</tr>
+<tr>
+<td>Volcanic eruption</td>
+<td>Lava covers all life in its path</td>
+</tr>
+<tr>
+<td>Human activity</td>
+<td>Pesticide spray kills all insects in a field</td>
+</tr>
+</table>
+
+<div class="tip">
+
+<p><strong>Paper 1 classic question:</strong> "Classify the following as density-dependent or density-independent: (a) a cheetah kills more gazelles when gazelles are abundant; (b) a hurricane destroys a coral reef."</p>
+<p>(a) Density-dependent — predation intensifies with prey density. (b) Density-independent — the hurricane's destructive force doesn't depend on how many corals are present.</p>
+
+</div>
+
+<hr>
+
+<h2>5. Species Interactions in Communities</h2>
+
+<p>Ecologists classify interactions by their effect on each species: positive (+), negative (−), or neutral (0).</p>
+
+<h3>5.1 Competition (−/−)</h3>
+
+<p>Both species are harmed because they use the same limited resource.</p>
+
+<ul>
+<li><strong>Intraspecific competition:</strong> Same species (e.g., two male deer fighting for mates).</li>
+<li><strong>Interspecific competition:</strong> Different species (e.g., lions and hyenas competing for the same prey).</li>
+</ul>
+<p><strong>Competitive exclusion principle:</strong> Two species cannot occupy exactly the same ecological niche indefinitely. One will outcompete the other → local extinction, or <strong>niche partitioning</strong> occurs (they specialise on slightly different resources).</p>
+
+<p><strong>Example:</strong> Warblers in a spruce forest (MacArthur's study). Five warbler species all eat insects in the same trees, but each species feeds in a different part of the tree (top branches, middle, lower branches, trunk) — niche partitioning allows coexistence.</p>
+
+<h3>5.2 Predation and Herbivory (+/−)</h3>
+
+<p>One species benefits, the other is harmed.</p>
+
+<ul>
+<li><strong>Predation:</strong> Predator kills and eats prey (+/−). Example: wolf kills elk.</li>
+<li><strong>Herbivory:</strong> Herbivore eats plant (+/−). Example: caterpillar eats leaf.</li>
+</ul>
+<p><strong>Coevolution:</strong> Predators and prey evolve in response to each other. Faster gazelles select for faster cheetahs; better-camouflaged prey select for sharper-eyed predators. This is an <strong>evolutionary arms race</strong>.</p>
+
+<p><strong>Predator-prey cycles:</strong> Lynx and snowshoe hare populations oscillate with a ~10-year period. When hares are abundant, lynx increase (more food). More lynx → hares decline. Fewer hares → lynx starve and decline. Fewer lynx → hares recover. Cycle repeats. <strong>Draw and label:</strong> A graph showing two overlapping sine-like waves — lynx peak lags slightly behind the hare peak.</p>
+
+<h3>5.3 Mutualism (+/+)</h3>
+
+<p>Both species benefit from the interaction. Neither can survive or reproduce as well without the other in many cases.</p>
+
+<table>
+<tr>
+<td>Example</td>
+<td>Species A</td>
+<td>Species B</td>
+<td>How each benefits</td>
+</tr>
+<tr>
+<td>Rhizobium + legumes</td>
+<td>Nitrogen-fixing bacteria</td>
+<td>Legume plant (pea, bean, clover)</td>
+<td>Bacteria get sugars from plant; plant gets fixed nitrogen</td>
+</tr>
+<tr>
+<td>Mycorrhizae</td>
+<td>Fungi on roots</td>
+<td>Plant</td>
+<td>Fungi get sugars; plant gets enhanced water and phosphate absorption</td>
+</tr>
+<tr>
+<td>Coral + zooxanthellae</td>
+<td>Photosynthetic algae</td>
+<td>Coral polyp</td>
+<td>Algae get protected environment + CO₂; coral gets sugars + O₂</td>
+</tr>
+<tr>
+<td>Pollination</td>
+<td>Bee</td>
+<td>Flowering plant</td>
+<td>Bee gets nectar; plant gets pollen transferred</td>
+</tr>
+</table>
+
+<h3>5.4 Commensalism (+/0)</h3>
+
+<p>One species benefits; the other is <strong>unaffected</strong>.</p>
+
+<table>
+<tr>
+<td>Example</td>
+<td>Beneficiary</td>
+<td>Unaffected host</td>
+<td>How it works</td>
+</tr>
+<tr>
+<td>Barnacles on whales</td>
+<td>Barnacles</td>
+<td>Whale</td>
+<td>Barnacles get mobile substrate for filter-feeding; whale neither helped nor harmed</td>
+</tr>
+<tr>
+<td>Remora on sharks</td>
+<td>Remora fish</td>
+<td>Shark</td>
+<td>Remora gets transport + scraps of shark's food; shark unaffected</td>
+</tr>
+<tr>
+<td>Epiphytes on trees</td>
+<td>Orchids, bromeliads</td>
+<td>Rainforest tree</td>
+<td>Epiphyte gets access to light; tree not significantly harmed</td>
+</tr>
+</table>
+
+<div class="tip">
+
+<p><strong>Paper 1 trick:</strong> IB sometimes asks whether commensalism truly exists in nature. The host may experience a tiny cost — so some ecologists argue most "+/0" interactions are actually +/− or +/+. Be prepared to discuss this nuance.</p>
+
+</div>
+
+<h3>5.5 Parasitism (+/−)</h3>
+
+<p>The parasite benefits; the host is harmed (but usually not killed immediately, unlike predation).</p>
+
+<ul>
+<li><strong>Endoparasites</strong> live inside the host: tapeworms, <em>Plasmodium</em> (malaria), liver flukes.</li>
+<li><strong>Ectoparasites</strong> live on the host's surface: ticks, fleas, lice, leeches.</li>
+</ul>
+<p><strong>Distinction from predation:</strong> Predators kill prey quickly and consume multiple prey over a lifetime. Parasites typically live on/inside a single host for extended periods and usually do not kill the host (at least not immediately — a dead host is a dead-end for a parasite).</p>
+
+<p><strong>Parasitoids</strong> (like many wasps) are a special case: they lay eggs inside a host, and the larvae eventually kill and consume the host — this is functionally predation but biologically parasitism.</p>
+
+<hr>
+
+<h3>Summary Table of Species Interactions</h3>
+
+<table>
+<tr>
+<td>Interaction</td>
+<td>Species A</td>
+<td>Species B</td>
+<td>Key Example</td>
+</tr>
+<tr>
+<td>Competition</td>
+<td>−</td>
+<td>−</td>
+<td>Lions vs hyenas</td>
+</tr>
+<tr>
+<td>Predation</td>
+<td>+</td>
+<td>−</td>
+<td>Wolf kills elk</td>
+</tr>
+<tr>
+<td>Herbivory</td>
+<td>+</td>
+<td>−</td>
+<td>Caterpillar eats leaf</td>
+</tr>
+<tr>
+<td>Mutualism</td>
+<td>+</td>
+<td>+</td>
+<td>Bees + flowers</td>
+</tr>
+<tr>
+<td>Commensalism</td>
+<td>+</td>
+<td>0</td>
+<td>Barnacles on whale</td>
+</tr>
+<tr>
+<td>Parasitism</td>
+<td>+</td>
+<td>−</td>
+<td>Tapeworm in human gut</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>6. Ecological Succession</h2>
+
+<p><strong>Succession</strong> is the gradual, directional change in species composition of a community over time. It's a story of colonisation, competition, and eventual stability.</p>
+
+<h3>6.1 Primary Succession</h3>
+
+<p><strong>Definition:</strong> Succession that begins on a <strong>bare, lifeless substrate with no soil</strong> — think bare rock, cooled lava, or land exposed by a retreating glacier.</p>
+
+<p><strong>Stages (classic example: glacier retreat in Glacier Bay, Alaska):</strong></p>
+
+<ol>
+<li><strong>Bare rock:</strong> No life. No soil. Harsh conditions.</li>
+<li><strong>Pioneer community:</strong> Lichens and mosses colonise bare rock. Lichens secrete acids that weather the rock into tiny particles. Mosses trap dust and moisture. Dead lichens/mosses decompose into the first thin organic layer. This is the <strong>beginning of soil formation</strong>.</li>
+<li><strong>Grasses and herbs:</strong> As soil deepens (now can hold water and nutrients), wind-blown seeds of grasses, dandelions, and other small herbs germinate. Their roots further break up rock and their dead biomass builds soil.</li>
+<li><strong>Shrubs:</strong> Small woody plants establish. They shade out some grasses. More organic matter from leaf litter.</li>
+<li><strong>Early-successional trees:</strong> Fast-growing, light-demanding trees like birch, aspen, or alder arrive. They are <strong>r-strategists</strong> — produce many lightweight seeds, grow quickly, short lifespan.</li>
+<li><strong>Climax community:</strong> Shade-tolerant, slow-growing trees like spruce or hemlock eventually dominate. They are <strong>K-strategists</strong> — fewer seeds, longer lifespan. This is a <strong>self-perpetuating community</strong> in equilibrium with the climate.</li>
+</ol>
+<p><strong>Draw and label:</strong> A timeline showing each stage with representative organisms. Start with "0 years: bare rock," then "5-10 years: lichens and mosses," "20-50 years: grasses and herbs," "50-100 years: shrubs," "100-200 years: young forest (birch/aspen)," "200+ years: climax spruce-hemlock forest."</p>
+
+<p><strong>Key features of primary succession:</strong></p>
+<ul>
+<li><strong>Very slow</strong> — soil must be created from scratch (centuries to millennia).</li>
+<li><strong>Biomass increases</strong> over time.</li>
+<li><strong>Biodiversity increases</strong>, then may level off or slightly decrease at climax.</li>
+<li><strong>Soil depth and organic content increase</strong> steadily.</li>
+</ul>
+<h3>6.2 Secondary Succession</h3>
+
+<p><strong>Definition:</strong> Succession that occurs in an area where <strong>soil already exists</strong> but the previous community has been destroyed by a disturbance (fire, flood, landslide, abandoned farmland, logging).</p>
+
+<p><strong>Why is it faster?</strong></p>
+<ul>
+<li>Soil is already present (contains seeds, roots, nutrients, mycorrhizae).</li>
+<li>The seed bank in the soil can germinate immediately.</li>
+<li>Pioneer species arrive faster because there's no need to create soil.</li>
+</ul>
+<p><strong>Example: After a forest fire:</strong></p>
+<ol>
+<li><strong>Year 1:</strong> Annual grasses and "fire-followers" (flowers whose seeds are stimulated by fire) dominate.</li>
+<li><strong>Years 2-5:</strong> Perennial grasses and shrubs establish.</li>
+<li><strong>Years 5-20:</strong> Fast-growing trees (pine, aspen) colonise.</li>
+<li><strong>Years 20-100:</strong> Shade-tolerant hardwoods (oak, maple) replace the pioneers.</li>
+<li><strong>100-200+ years:</strong> Climax forest returns.</li>
+</ol>
+<p>Secondary succession can take decades to a century or two — much faster than primary succession. But it still takes a long time.</p>
+
+<div class="worked">
+
+<p><strong>Comparing Primary and Secondary Succession</strong></p>
+
+<table>
+<tr>
+<td>Feature</td>
+<td>Primary Succession</td>
+<td>Secondary Succession</td>
+</tr>
+<tr>
+<td>Starting substrate</td>
+<td>Bare rock, no soil</td>
+<td>Soil present</td>
+</tr>
+<tr>
+<td>Speed</td>
+<td>Very slow (centuries–millennia)</td>
+<td>Faster (decades–centuries)</td>
+</tr>
+<tr>
+<td>Pioneer species</td>
+<td>Lichens, mosses</td>
+<td>Grasses, weeds, annuals</td>
+</tr>
+<tr>
+<td>Initial soil</td>
+<td>None — must be created</td>
+<td>Already present</td>
+</tr>
+<tr>
+<td>Seed bank</td>
+<td>None — seeds must arrive</td>
+<td>Present in soil</td>
+</tr>
+<tr>
+<td>Example</td>
+<td>Glacier retreat, volcanic lava</td>
+<td>After forest fire, abandoned farmland</td>
+</tr>
+</table>
+
+</div>
+
+<h3>6.3 Intermediate Disturbance Hypothesis</h3>
+
+<p><strong>Question:</strong> Where is biodiversity highest — in a stable climax community or in a frequently disturbed one?</p>
+
+<p><strong>Answer (the hypothesis):</strong> Biodiversity is highest at <strong>intermediate levels of disturbance</strong>.</p>
+
+<ul>
+<li><strong>Low disturbance:</strong> Competitive exclusion occurs. A few dominant species outcompete all others → low diversity.</li>
+<li><strong>High disturbance:</strong> Only a few hardy, fast-colonising pioneer species can survive → low diversity.</li>
+<li><strong>Intermediate disturbance:</strong> Disturbances open gaps, preventing competitive exclusion, but are infrequent enough that many species can establish. Both early- and late-successional species coexist → <strong>maximum biodiversity</strong>.</li>
+</ul>
+<p><strong>Classic example:</strong> In a tropical rainforest, tree-fall gaps (created when a large tree falls, opening the canopy) create patches at different successional stages throughout the forest. This mosaic of microhabitats supports very high biodiversity.</p>
+
+<p><strong>Another example:</strong> Intertidal zones. If waves batter the rocks too frequently, only barnacles survive. If too calm, mussels outcompete everything. Intermediate wave action allows barnacles, mussels, algae, and other species to all find niches.</p>
+
+<div class="tip">
+
+<p><strong>Paper 2:</strong> You may be given a graph showing species richness vs disturbance frequency (an inverted U-shaped curve). Describe it: "Species richness is low at low disturbance, peaks at intermediate disturbance, and declines again at high disturbance." Then explain using competitive exclusion and the inability of slow-growing species to survive frequent disturbance.</p>
+
+</div>
+
+<hr>
+
+<h2>7. Chi-Squared Test for Species Association</h2>
+
+<p>IB expects you to know how to use the <strong>chi-squared ($$\chi^2$$) test</strong> to determine whether two species are associated (found together more or less often than by chance alone).</p>
+
+<h3>7.1 The Logic</h3>
+
+<p>You sample quadrats in a habitat and record whether Species A and Species B are present or absent in each quadrat. Then you ask: "Is the pattern I observe different from what I'd expect if the two species were distributed independently?"</p>
+
+<h3>7.2 Procedure</h3>
+
+<ol>
+<li><strong>State hypotheses:</strong></li>
+</ol>
+<ul>
+<li><strong>H₀ (null):</strong> There is no association between Species A and Species B (they are distributed independently).</li>
+<li><strong>H₁ (alternative):</strong> There is an association between the two species.</li>
+</ul>
+<ol>
+<li><strong>Create a contingency table</strong> from observed data:</li>
+</ol>
+<table>
+<tr>
+<td></td>
+<td>Species B present</td>
+<td>Species B absent</td>
+<td>Row total</td>
+</tr>
+<tr>
+<td>Species A present</td>
+<td>a</td>
+<td>b</td>
+<td>a+b</td>
+</tr>
+<tr>
+<td>Species A absent</td>
+<td>c</td>
+<td>d</td>
+<td>c+d</td>
+</tr>
+<tr>
+<td>Column total</td>
+<td>a+c</td>
+<td>b+d</td>
+<td>N (total quadrats)</td>
+</tr>
+</table>
+
+<ol>
+<li><strong>Calculate expected values</strong> for each cell:</li>
+</ol>
+<p style="text-align:center;margin:0.8rem 0;">$$ \text{Expected} = \frac{\text{row total} \times \text{column total}}{\text{grand total}} $$</p>
+
+<ol>
+<li><strong>Calculate $$\chi^2$$:</strong></li>
+</ol>
+<p style="text-align:center;margin:0.8rem 0;">$$ \chi^2 = \sum \frac{(O - E)^2}{E} $$</p>
+
+<ol>
+<li><strong>Determine degrees of freedom:</strong></li>
+</ol>
+<p style="text-align:center;margin:0.8rem 0;">$$ df = (\text{number of rows} - 1) \times (\text{number of columns} - 1) $$</p>
+
+<p>For a 2 × 2 table: $$df = 1$$.</p>
+
+<ol>
+<li><strong>Compare to critical value</strong> at $$p = 0.05$$:</li>
+</ol>
+<table>
+<tr>
+<td>df</td>
+<td>Critical value (p=0.05)</td>
+</tr>
+<tr>
+<td>1</td>
+<td>3.841</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5.991</td>
+</tr>
+<tr>
+<td>3</td>
+<td>7.815</td>
+</tr>
+</table>
+
+<ul>
+<li>If $$\chi^2 >$$ critical value → <strong>reject H₀</strong> → there is a significant association.</li>
+<li>If $$\chi^2 <$$ critical value → <strong>fail to reject H₀</strong> → no evidence of association.</li>
+</ul>
+<div class="worked">
+
+<p><strong>Chi-Squared Worked Example</strong></p>
+
+<p>A student samples 50 quadrats in a grassland and records presence/absence of Species X (a grass) and Species Y (a herb).</p>
+
+<p><strong>Observed data:</strong></p>
+
+<table>
+<tr>
+<td></td>
+<td>Y present</td>
+<td>Y absent</td>
+<td>Row total</td>
+</tr>
+<tr>
+<td>X present</td>
+<td>18</td>
+<td>7</td>
+<td>25</td>
+</tr>
+<tr>
+<td>X absent</td>
+<td>5</td>
+<td>20</td>
+<td>25</td>
+</tr>
+<tr>
+<td>Column total</td>
+<td>23</td>
+<td>27</td>
+<td>50</td>
+</tr>
+</table>
+
+<p><strong>Step 1:</strong> H₀ = no association between X and Y. H₁ = association exists.</p>
+
+<p><strong>Step 2:</strong> Calculate expected values:</p>
+<ul>
+<li>E(X present, Y present) = (25 × 23) / 50 = 11.5</li>
+<li>E(X present, Y absent) = (25 × 27) / 50 = 13.5</li>
+<li>E(X absent, Y present) = (25 × 23) / 50 = 11.5</li>
+<li>E(X absent, Y absent) = (25 × 27) / 50 = 13.5</li>
+</ul>
+<p><strong>Step 3:</strong> Calculate χ²:</p>
+<ul>
+<li>(18 − 11.5)² / 11.5 = 3.674</li>
+<li>(7 − 13.5)² / 13.5 = 3.130</li>
+<li>(5 − 11.5)² / 11.5 = 3.674</li>
+<li>(20 − 13.5)² / 13.5 = 3.130</li>
+</ul>
+<p>χ² = 3.674 + 3.130 + 3.674 + 3.130 = <strong>13.61</strong></p>
+
+<p><strong>Step 4:</strong> df = (2−1)(2−1) = 1. Critical value at p=0.05 = 3.841.</p>
+
+<p><strong>Step 5:</strong> 13.61 > 3.841 → <strong>reject H₀</strong>. There is a significant association between Species X and Species Y.</p>
+
+<p><strong>Interpretation:</strong> Species X and Y are positively associated (they co-occur more often than expected by chance). This could mean they have similar habitat requirements, or one facilitates the other.</p>
+
+</div>
+
+<div class="tip">
+
+<p><strong>Paper 2 chi-squared tip:</strong> You'll likely need to do this on a data-based question. Show all steps clearly. Always state the null hypothesis, calculate expected values, compute χ², compare to the critical value, and write a conclusion that refers to the original biological question. If you forget the critical value, ask yourself: "For df=1, I need χ² > 3.84 for significance."</p>
+
+</div>
+
+<hr>
+
+<h2>8. Reproductive Strategies: r-Strategists vs K-Strategists</h2>
+
+<p>The names come from the logistic growth equation: <strong>r</strong> is the intrinsic rate of increase; <strong>K</strong> is the carrying capacity. r-strategists are "selected" (by evolution) to maximise r — grow fast. K-strategists are selected to persist near K — use resources efficiently.</p>
+
+<table>
+<tr>
+<td>Trait</td>
+<td>r-Strategist</td>
+<td>K-Strategist</td>
+</tr>
+<tr>
+<td>Body size</td>
+<td>Small</td>
+<td>Large</td>
+</tr>
+<tr>
+<td>Lifespan</td>
+<td>Short</td>
+<td>Long</td>
+</tr>
+<tr>
+<td>Age at first reproduction</td>
+<td>Early (days/weeks)</td>
+<td>Late (years/decades)</td>
+</tr>
+<tr>
+<td>Number of offspring</td>
+<td>Many (hundreds/thousands)</td>
+<td>Few (1-10 in a lifetime)</td>
+</tr>
+<tr>
+<td>Parental care</td>
+<td>None or minimal</td>
+<td>Extensive</td>
+</tr>
+<tr>
+<td>Offspring survival rate</td>
+<td>Very low</td>
+<td>High</td>
+</tr>
+<tr>
+<td>Growth pattern</td>
+<td>Rapid, then population crashes</td>
+<td>Grow slowly to near K</td>
+</tr>
+<tr>
+<td>Population stability</td>
+<td>Unstable, fluctuates wildly</td>
+<td>Stable near K</td>
+</tr>
+<tr>
+<td>Environment</td>
+<td>Unstable/unpredictable</td>
+<td>Stable/predictable</td>
+</tr>
+<tr>
+<td>Competitive ability</td>
+<td>Poor — rely on rapid colonisation</td>
+<td>Strong — excel at competing for resources</td>
+</tr>
+<tr>
+<td>Survivorship curve</td>
+<td>Type III</td>
+<td>Type I</td>
+</tr>
+<tr>
+<td>Examples</td>
+<td>Bacteria, insects, weeds, mice, dandelion</td>
+<td>Elephants, whales, humans, eagles, oak trees</td>
+</tr>
+</table>
+
+<p><strong>Analogy:</strong> r-strategists are like a startup company that tries to grow as fast as possible, spending little on each venture, expecting most to fail. K-strategists are like an established corporation that invests heavily in a few carefully managed projects.</p>
+
+<div class="tip">
+
+<p><strong>Paper 1:</strong> Know that many species fall on a <strong>continuum</strong> between r and K extremes. A sea turtle lays hundreds of eggs (r-like) but is large and long-lived (K-like). IB may ask: "Explain why most pest species are r-strategists." Answer: They reproduce rapidly, colonise quickly, and can reach outbreak population sizes before controls are applied.</p>
+
+</div>
+
+<hr>
+
+<h2>9. Survivorship Curves</h2>
+
+<p>A <strong>survivorship curve</strong> plots the number of individuals surviving (log scale, y-axis) against age (x-axis). Three classic types:</p>
+
+<h3>Type I: High Survivorship Until Old Age</h3>
+
+<p>Most individuals survive to old age; mortality is concentrated in the elderly.</p>
+
+<ul>
+<li><strong>Shape:</strong> Convex — stays high, then drops steeply near maximum lifespan.</li>
+<li><strong>Strategy:</strong> K-strategists with extensive parental care and few offspring.</li>
+<li><strong>Examples:</strong> Humans (in developed countries), elephants, whales, large mammals.</li>
+</ul>
+<p><strong>Draw and label:</strong> A graph with "% of maximum lifespan" on x-axis and "log number surviving" on y-axis. Curve I stays near the top, then plunges sharply near 100%.</p>
+
+<h3>Type II: Constant Mortality Rate</h3>
+
+<p>The probability of dying is roughly the same at any age.</p>
+
+<ul>
+<li><strong>Shape:</strong> Straight diagonal line (on a log scale).</li>
+<li><strong>Strategy:</strong> Intermediate.</li>
+<li><strong>Examples:</strong> Many birds, some reptiles, small mammals like squirrels, hydra.</li>
+</ul>
+<h3>Type III: Very High Early Mortality</h3>
+
+<p>Most individuals die young; those that survive to adulthood have a good chance of living a full lifespan.</p>
+
+<ul>
+<li><strong>Shape:</strong> Concave — steep initial drop, then flattens.</li>
+<li><strong>Strategy:</strong> r-strategists — produce massive numbers of offspring with little or no parental care.</li>
+<li><strong>Examples:</strong> Fish (millions of eggs, few survive), plants (thousands of seeds), insects, oysters, sea turtles.</li>
+</ul>
+<p><strong>Draw and label:</strong> All three curves on the same graph. Label Type I (humans), Type II (birds), Type III (oysters/fish). Note that the y-axis is logarithmic — this is essential because a linear scale would make Type III's initial drop almost unreadable.</p>
+
+<div class="worked">
+
+<p><strong>Interpreting a Survivorship Curve</strong></p>
+
+<p>A graph shows a curve that drops sharply in the first year (from 1000 to about 10 survivors), then declines very slowly for the remaining lifespan.</p>
+
+<p><strong>Questions:</strong></p>
+<ol>
+<li>What type of survivorship curve is this? <strong>Type III.</strong></li>
+<li>What reproductive strategy does this suggest? <strong>r-strategist.</strong></li>
+<li>Give an example organism. <strong>Cod fish, dandelion, or sea urchin.</strong></li>
+<li>Explain the ecological logic. "Most offspring die young because there is no parental care and they are vulnerable to predation/starvation. Those that survive past the vulnerable early stage are large enough to avoid most predators and live close to their maximum lifespan."</li>
+</ol>
+</div>
+
+<hr>
+
+<h2>Common Misconceptions</h2>
+
+<table>
+<tr>
+<td>Misconception</td>
+<td>Reality</td>
+</tr>
+<tr>
+<td>"The Lincoln index always gives the exact population size."</td>
+<td>It's an <strong>estimate</strong> with uncertainty. It relies on assumptions that are often violated in the field.</td>
+</tr>
+<tr>
+<td>"Logistic growth is the only growth pattern in nature."</td>
+<td>Many populations show irregular fluctuations around K, not a smooth S-curve. Predator-prey cycles and environmental variation cause deviations.</td>
+</tr>
+<tr>
+<td>"Carrying capacity is a fixed number."</td>
+<td>K can change — seasons, climate change, human activity, or removal of a predator can alter K.</td>
+</tr>
+<tr>
+<td>"Competition is always between different species."</td>
+<td>Intraspecific competition (within a species) is often more intense because individuals have identical niches.</td>
+</tr>
+<tr>
+<td>"Parasites want to kill their hosts."</td>
+<td>A dead host is bad for most parasites. They evolve to <strong>moderate</strong> virulence — enough to access nutrients, but not so much that the host dies before the parasite can reproduce and transmit.</td>
+</tr>
+<tr>
+<td>"Primary and secondary succession end at the same climax community."</td>
+<td>The climax depends on climate and soil — different regions have different climax communities. Also, the "climax" concept has been challenged — many ecologists now see communities as constantly changing in response to disturbances.</td>
+</tr>
+<tr>
+<td>"Mutualism is just both species being nice to each other."</td>
+<td>Mutualism is <strong>selfish cooperation</strong> — each species benefits itself. If "cheating" (taking the benefit without giving back) becomes profitable, natural selection may favour it.</td>
+</tr>
+<tr>
+<td>"r-strategists are 'worse' than K-strategists."</td>
+<td>Each strategy is optimal in its environment. In an unstable environment, r-strategists thrive while K-strategists cannot recover from disturbances fast enough.</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1: Lincoln Index</h3>
+
+<p>A biologist studying a population of woodlice uses mark-recapture. On day 1, she captures 85 woodlice, marks them with a tiny dot of non-toxic paint, and releases them. On day 3, she captures 92 woodlice, of which 23 are marked.</p>
+
+<p>(a) Estimate the population size.</p>
+<p>(b) Between day 1 and day 3, heavy rain fell. The paint was partially water-soluble. Explain how this would affect the estimate.</p>
+<p>(c) The woodlice population is adjacent to a compost heap where unmarked woodlice have been breeding. Explain how immigration from the compost heap would affect the estimate.</p>
+
+<hr>
+
+<h3>Problem 2: Population Growth</h3>
+
+<p>A population of water fleas (<em>Daphnia</em>) grows exponentially with r = 0.25 per day. The initial population is 50.</p>
+
+<p>(a) Calculate the population after 10 days.</p>
+<p>(b) What is the doubling time? (Use: $$t_{double} = \frac{\ln 2}{r}$$)</p>
+<p>(c) Why can't this population sustain exponential growth indefinitely? Name two density-dependent factors that would eventually limit it.</p>
+
+<hr>
+
+<h3>Problem 3: Species Interactions</h3>
+
+<p>For each scenario, name the type of interaction and give the (+/−/0) notation:</p>
+
+<p>(a) A tick feeds on a dog's blood.</p>
+<p>(b) A clownfish lives among the tentacles of a sea anemone. The clownfish gets protection; the anemone gets cleaned and may be defended from predators.</p>
+<p>(c) Cattle egrets follow grazing cattle and eat insects stirred up by the cattle's movement. The cattle are unaffected.</p>
+<p>(d) Two species of barnacle compete for space on the same rock.</p>
+<p>(e) A Venus flytrap captures and digests an insect.</p>
+
+<hr>
+
+<h3>Problem 4: Chi-Squared Test</h3>
+
+<p>An ecologist samples 60 quadrats in a forest and records the presence/absence of fern species F and moss species M.</p>
+
+<table>
+<tr>
+<td></td>
+<td>M present</td>
+<td>M absent</td>
+<td>Total</td>
+</tr>
+<tr>
+<td>F present</td>
+<td>28</td>
+<td>8</td>
+<td>36</td>
+</tr>
+<tr>
+<td>F absent</td>
+<td>12</td>
+<td>12</td>
+<td>24</td>
+</tr>
+<tr>
+<td>Total</td>
+<td>40</td>
+<td>20</td>
+<td>60</td>
+</tr>
+</table>
+
+<p>Test whether there is a significant association between the fern and the moss at the p = 0.05 level.</p>
+
+<hr>
+
+<h3>Problem 5: Succession and Life History</h3>
+
+<p>A volcanic eruption creates a new island of bare lava.</p>
+
+<p>(a) What type of succession will occur? Explain your reasoning.</p>
+<p>(b) Predict whether the pioneer species will be r-strategists or K-strategists. Justify your answer with reference to at least three life-history traits.</p>
+<p>(c) 200 years later, a climax forest has developed. Compare the survivorship curves of the pioneer species and the climax tree species.</p>
+
+<hr>
+
+<h2>Answers</h2>
+
+<h3>Answer 1</h3>
+
+<p>(a) $$N = \frac{n_1 \times n_2}{n_3} = \frac{85 \times 92}{23} = \frac{7820}{23} \approx 340$$ woodlice.</p>
+
+<p>(b) If rain removed some paint, then some marked woodlice would be counted as unmarked in the second sample. This means n₃ is <strong>lower</strong> than it should be. A smaller denominator makes N larger → the population would be <strong>overestimated</strong>.</p>
+
+<p>(c) Immigration of unmarked woodlice from the compost heap dilutes the proportion of marked individuals. More unmarked individuals → n₃ appears lower in proportion → population is <strong>overestimated</strong>.</p>
+
+<hr>
+
+<h3>Answer 2</h3>
+
+<p>(a) $$N_t = N_0 \times e^{rt} = 50 \times e^{0.25 \times 10} = 50 \times e^{2.5}$$</p>
+<p>$$e^{2.5} \approx 12.18$$</p>
+<p>$$N_t \approx 50 \times 12.18 = 609$$ water fleas.</p>
+
+<p>(b) $$t_{double} = \frac{\ln 2}{r} = \frac{0.693}{0.25} = 2.77$$ days.</p>
+
+<p>(c) Exponential growth cannot continue indefinitely because resources are finite. Density-dependent factors that would limit it:</p>
+<ul>
+<li>Food depletion (algae in the water) as populations increase.</li>
+<li>Accumulation of metabolic wastes (ammonia) that become toxic at high densities.</li>
+<li>Increased disease transmission in dense populations.</li>
+</ul>
+<hr>
+
+<h3>Answer 3</h3>
+
+<p>(a) Parasitism (+/−).</p>
+<p>(b) Mutualism (+/+).</p>
+<p>(c) Commensalism (+/0).</p>
+<p>(d) Competition (−/−).</p>
+<p>(e) Predation (+/−) — note: a Venus flytrap is a plant acting as a predator.</p>
+
+<hr>
+
+<h3>Answer 4</h3>
+
+<p><strong>Step 1:</strong> H₀: No association between fern F and moss M. H₁: There is an association.</p>
+
+<p><strong>Step 2:</strong> Expected values:</p>
+
+<table>
+<tr>
+<td>Cell</td>
+<td>O</td>
+<td>E = (row × col) / total</td>
+</tr>
+<tr>
+<td>F present, M present</td>
+<td>28</td>
+<td>(36 × 40) / 60 = 24</td>
+</tr>
+<tr>
+<td>F present, M absent</td>
+<td>8</td>
+<td>(36 × 20) / 60 = 12</td>
+</tr>
+<tr>
+<td>F absent, M present</td>
+<td>12</td>
+<td>(24 × 40) / 60 = 16</td>
+</tr>
+<tr>
+<td>F absent, M absent</td>
+<td>12</td>
+<td>(24 × 20) / 60 = 8</td>
+</tr>
+</table>
+
+<p><strong>Step 3:</strong> χ² contributions:</p>
+<ul>
+<li>(28 − 24)² / 24 = 16/24 = 0.667</li>
+<li>(8 − 12)² / 12 = 16/12 = 1.333</li>
+<li>(12 − 16)² / 16 = 16/16 = 1.000</li>
+<li>(12 − 8)² / 8 = 16/8 = 2.000</li>
+</ul>
+<p>χ² = 0.667 + 1.333 + 1.000 + 2.000 = <strong>5.000</strong></p>
+
+<p><strong>Step 4:</strong> df = 1, critical value = 3.841.</p>
+
+<p><strong>Step 5:</strong> 5.000 > 3.841 → <strong>reject H₀</strong>. There is a significant association between fern F and moss M. They occur together more often than expected by chance (positive association).</p>
+
+<hr>
+
+<h3>Answer 5</h3>
+
+<p>(a) <strong>Primary succession</strong> — the lava is bare rock with no soil. Life must colonise from scratch, and soil must be created through weathering and organic matter accumulation over centuries.</p>
+
+<p>(b) The pioneer species will be <strong>r-strategists</strong>. Three traits:</p>
+<ul>
+<li><strong>Many offspring:</strong> Produce large numbers of lightweight seeds/spores to maximise chance of reaching the island.</li>
+<li><strong>Fast reproduction:</strong> Reach reproductive maturity quickly to establish a population before resources are claimed by competitors.</li>
+<li><strong>Small body size:</strong> Lichens and mosses are small, requiring few resources, and can survive on bare rock with minimal soil and nutrients.</li>
+</ul>
+<p>(c) Pioneer species (r-strategists) would show a <strong>Type III survivorship curve</strong>: high juvenile mortality, but survivors live a moderate lifespan. Climax tree species (K-strategists) would show a <strong>Type I survivorship curve</strong>: most individuals survive to maturity due to investment in each offspring (large seeds with nutrient reserves), then mortality increases in old age.</p>
+
+<hr>
+
+<h2>Key Takeaways</h2>
+
+<table>
+<tr>
+<td>Concept</td>
+<td>Summary</td>
+</tr>
+<tr>
+<td>Quadrat sampling</td>
+<td>Random placement avoids bias; belt transects reveal zonation along gradients.</td>
+</tr>
+<tr>
+<td>Lincoln index</td>
+<td>$$N = n_1 \times n_2 / n_3$$. Assumptions: no migration, no births/deaths, marks permanent, random mixing.</td>
+</tr>
+<tr>
+<td>Exponential growth</td>
+<td>$$N_t = N_0 e^{rt}$$. J-curve. Only possible with unlimited resources.</td>
+</tr>
+<tr>
+<td>Logistic growth</td>
+<td>$$\frac{dN}{dt} = rN(1 - N/K)$$. S-curve. Approaches carrying capacity K.</td>
+</tr>
+<tr>
+<td>Density-dependent factors</td>
+<td>Effect increases with density: food, disease, predation.</td>
+</tr>
+<tr>
+<td>Density-independent factors</td>
+<td>Effect is same regardless of density: fire, flood, temperature.</td>
+</tr>
+<tr>
+<td>Species interactions</td>
+<td>Competition (−/−), predation (+/−), mutualism (+/+), commensalism (+/0), parasitism (+/−).</td>
+</tr>
+<tr>
+<td>Succession</td>
+<td>Primary (bare rock, no soil, slow) vs secondary (soil present, faster).</td>
+</tr>
+<tr>
+<td>Intermediate disturbance</td>
+<td>Maximum biodiversity at moderate disturbance levels.</td>
+</tr>
+<tr>
+<td>Chi-squared</td>
+<td>Tests association. χ² > critical value → significant association.</td>
+</tr>
+<tr>
+<td>r vs K</td>
+<td>r: many offspring, no care, unstable environments, Type III. K: few offspring, extensive care, stable environments, Type I.</td>
+</tr>
+<tr>
+<td>Survivorship curves</td>
+<td>Type I (late mortality), Type II (constant), Type III (early mortality).</td>
+</tr>
+</table>
+
+<hr>
+
+<p><em>End of Lesson 37 — Next: Transfers of Energy and Matter (C4.2)</em></p>
+
+<div class="nav"><a href="lesson_36.html">&#8592; Lesson 36</a><a href="index.html">&#8962; Index</a><a href="lesson_38.html">Lesson 38 &#8594;</a></div>
+
+</body>
+</html>

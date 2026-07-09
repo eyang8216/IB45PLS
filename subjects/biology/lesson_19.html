@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 19: Gas Exchange I — Human Ventilation and Fick's Law (B3.1) — IB Biology HL</title>
+<script>window.MathJax = { tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] } };</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #1a6b3c; --border: #c4d4a9; --highlight: #e8f5e9; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Palatino', 'Georgia', serif; background: var(--bg); color: var(--text); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; font-size: 17px; line-height: 1.7; }
+  h1 { font-size: 1.7rem; color: var(--accent); margin-bottom: 0.5rem; }
+  h2 { font-size: 1.25rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; margin: 2rem 0 1rem; }
+  h3 { font-size: 1.1rem; color: #444; margin: 1.3rem 0 0.5rem; }
+  p, li { margin-bottom: 0.6rem; }
+  ul, ol { padding-left: 1.8rem; margin-bottom: 1rem; }
+  .worked { background: #e8f5e9; border-left: 4px solid #1a6b3c; padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
+  .worked strong { color: #1a6b3c; }
+  .answer { background: #fefdf7; border: 1px solid var(--border); padding: 0.8rem 1.2rem; margin: 0.5rem 0; border-radius: 6px; }
+  .nav { display: flex; justify-content: space-between; margin: 3rem 0 1rem; padding-top: 1rem; border-top: 2px solid var(--border); font-size: 0.9rem; }
+  .nav a { color: #1a5c9e; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  .definition { background: #fff8e1; border-left: 4px solid #e6a817; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  .tip { background: #e3f2fd; border-left: 4px solid #1976d2; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  table { border-collapse: collapse; margin: 0.8rem 0; width: 100%; }
+  th, td { border: 1px solid var(--border); padding: 0.4rem 0.6rem; text-align: left; }
+  th { background: #f0f5e8; }
+  @media print { body { font-size: 14px; } .nav { display: none; } }
+</style>
+</head>
+<body>
+
+
+<h2>What You'll Learn</h2>
+<ul>
+<li>The principles of gas exchange and why organisms need it</li>
+<li>Fick's Law of Diffusion and how each variable affects the rate</li>
+<li>The common features shared by all gas exchange surfaces</li>
+<li>The complete anatomy of the human ventilation system from nasal cavity to alveoli</li>
+<li>The detailed mechanism of inhalation and exhalation</li>
+<li>The specialized cells of the alveoli and their roles</li>
+<li>The causes and consequences of emphysema and lung cancer</li>
+</ul>
+<hr>
+
+<h2>Why Gas Exchange Matters</h2>
+
+<p>Every cell in your body needs a constant supply of oxygen (O₂) and must continuously eliminate carbon dioxide (CO₂). Oxygen is the final electron acceptor in aerobic respiration — without it, the electron transport chain grinds to a halt, and your cells can only produce 2 ATP per glucose molecule instead of ~36. That's like switching from a power plant to a flickering candle.</p>
+
+<p>But here's the problem: oxygen is a gas. It must move from the air outside your body, through layers of tissue and fluid, into your blood, and finally into the mitochondria deep inside your cells. Carbon dioxide must make the reverse journey. This entire process is <strong>gas exchange</strong>.</p>
+
+<p><strong>Why unicellular organisms don't need special systems:</strong> A single-celled organism like an amoeba lives in water and has a surface area large enough relative to its tiny volume that simple diffusion across its cell membrane suffices. Oxygen simply drifts in; CO₂ drifts out. No lungs, no gills, no problem.</p>
+
+<p><strong>Why multicellular organisms do:</strong> As organisms get larger, their volume (and therefore their number of respiring cells) increases faster than their surface area. Think of a cube: if you double the side length, surface area increases 4× (2²) but volume increases 8× (2³). Every cell buried deep inside your body is millimeters or centimeters away from the external environment — far too far for diffusion to be effective (diffusion is only useful over distances of about 1 mm or less). So large organisms evolved specialized gas exchange systems.</p>
+
+<hr>
+
+<h2>Fick's Law of Diffusion</h2>
+
+<p>Fick's Law is the mathematical description of what determines the rate at which a gas diffuses across a membrane. You don't need to memorize it in IB Biology, but you absolutely must understand what each factor means:</p>
+
+<p style="text-align:center;margin:0.8rem 0;">$$\text{Rate of diffusion} = \frac{\text{Surface Area} \times \text{Concentration Gradient} \times \text{Diffusion Coefficient}}{\text{Thickness of Membrane}}$$</p>
+
+<p>Or in symbols:</p>
+
+<p style="text-align:center;margin:0.8rem 0;">$$\text{Rate} = \frac{SA \times \Delta P \times D}{d}$$</p>
+
+<p>Let's break down each component with analogies:</p>
+
+<h3>1. Surface Area (SA) — The "Door Size"</h3>
+
+<p><strong>What it means:</strong> The total area of the gas exchange surface available for diffusion.</p>
+
+<p><strong>Analogy:</strong> Imagine trying to empty a crowded stadium. If there's one narrow exit door, people trickle out slowly. If you open ten wide doors, the crowd pours out fast. A larger surface area provides more "doors" for gas molecules to pass through simultaneously.</p>
+
+<p><strong>In the human lung:</strong> The alveoli (tiny air sacs) provide a staggering total surface area of about <strong>70 m²</strong> — roughly the floor area of a studio apartment or half a tennis court, all folded up inside your chest. This enormous area is achieved by repeated branching: trachea → bronchi → bronchioles → millions of alveoli.</p>
+
+<p><strong>If SA doubles, rate doubles.</strong> Direct proportion.</p>
+
+<h3>2. Concentration Gradient (ΔP) — The "Steepness of the Hill"</h3>
+
+<p><strong>What it means:</strong> The difference in partial pressure (or concentration) of the gas on the two sides of the membrane. The bigger the difference, the faster the net diffusion.</p>
+
+<p><strong>Analogy:</strong> Picture a ball at the top of a steep hill vs. a gentle slope. On the steep hill, it rolls down fast. On the gentle slope, it rolls slowly. The concentration gradient is the "steepness" that drives diffusion. If concentrations are equal on both sides, there's no net movement (though molecules still move randomly in both directions — there's just no net flux).</p>
+
+<p><strong>In the human lung:</strong> Blood arriving at the lungs has a low pO₂ (partial pressure of oxygen, about 5.3 kPa) and high pCO₂ (about 6.1 kPa). Alveolar air has high pO₂ (about 13.3 kPa) and low pCO₂ (about 5.3 kPa). These steep gradients ensure rapid O₂ uptake and CO₂ removal.</p>
+
+<p><strong>If ΔP doubles, rate doubles.</strong> Direct proportion.</p>
+
+<h3>3. Diffusion Coefficient (D) — The "Ease of Travel"</h3>
+
+<p><strong>What it means:</strong> A constant that depends on the properties of the gas (molecular size, solubility in the membrane) and the membrane itself (how permeable it is).</p>
+
+<p><strong>Analogy:</strong> Walking through air is easy; walking through waist-deep water is harder; walking through thick mud is hardest. The diffusion coefficient reflects how "easy" it is for a particular gas to pass through a particular barrier.</p>
+
+<p><strong>Key point:</strong> CO₂ is about 20× more soluble in lipid membranes than O₂. This means CO₂ diffuses much more readily across cell membranes than O₂ does. This is why even when lung disease reduces diffusion capacity, CO₂ removal is often less affected than O₂ uptake — interestingly, many lung disease patients have normal CO₂ levels but low O₂ levels.</p>
+
+<h3>4. Membrane Thickness (d) — The "Distance to Travel"</h3>
+
+<p><strong>What it means:</strong> The distance a gas molecule must diffuse from one side of the exchange surface to the other.</p>
+
+<p><strong>Analogy:</strong> Crossing a narrow stream takes one step; crossing a wide river takes many steps and much more time. A thinner membrane means gas molecules cross faster.</p>
+
+<p><strong>In the human lung:</strong> The alveolar-capillary barrier is extraordinarily thin — just <strong>0.2 to 0.5 μm</strong> (micrometers). That's about 1/200th the thickness of a sheet of paper. It consists of: the alveolar epithelial cell, a shared basement membrane, and the capillary endothelial cell — three layers, but so thin that the total distance is microscopic.</p>
+
+<p><strong>If thickness doubles, rate halves.</strong> Inverse proportion.</p>
+
+<div class="definition">
+
+<p><strong>Fick's Law Summary:</strong> The rate of diffusion across a membrane is <strong>directly proportional</strong> to surface area, concentration gradient, and the diffusion coefficient, and <strong>inversely proportional</strong> to membrane thickness. Evolution has optimized all four factors in gas exchange organs.</p>
+
+</div>
+
+<hr>
+
+<h2>Common Features of All Gas Exchange Surfaces</h2>
+
+<p>Regardless of whether you're looking at human lungs, fish gills, insect tracheae, or plant leaves, all gas exchange surfaces share the same fundamental features. This is a classic example of <strong>convergent evolution</strong> — different lineages independently arrived at the same solution because the physical requirements of diffusion are universal.</p>
+
+<h3>1. Large Surface Area to Volume Ratio</h3>
+
+<p>Gas exchange surfaces are always highly folded, branched, or flattened to maximize the area available for diffusion relative to the volume they occupy. The human lung achieves this through ~300 million alveoli; fish gills through thousands of lamellae; plant leaves through the spongy mesophyll with its intricate network of air spaces.</p>
+
+<h3>2. Thin — Minimal Diffusion Distance</h3>
+
+<p>The barrier between the external medium (air or water) and the blood (or internal fluid) is always as thin as possible — typically just one or two cells thick. In the mammalian lung, the alveolar and capillary walls together are less than 1 μm.</p>
+
+<h3>3. Moist</h3>
+
+<p>Gases must dissolve in liquid before they can diffuse across a biological membrane (cell membranes are lipid bilayers, but gas exchange occurs through the aqueous layer lining the surface first). This is why the alveolar surface is coated with a thin film of fluid containing surfactant. It's also why terrestrial vertebrates had to internalize their gas exchange surfaces — if our lungs were exposed to dry air, they would desiccate. The moisture requirement is automatic for aquatic organisms.</p>
+
+<h3>4. Permeable to Gases</h3>
+
+<p>The membrane must allow O₂ and CO₂ to pass through. Biological membranes are inherently permeable to small, nonpolar gas molecules. Some specialized gas exchange surfaces have additional adaptations like pores (stomata in plants, spiracles in insects).</p>
+
+<h3>5. Well-Vascularized (or in close contact with transport system)</h3>
+
+<p>There needs to be an efficient transport system to carry gases to and from the exchange surface — otherwise the concentration gradient would quickly diminish. In vertebrates, this means a dense capillary network. In insects, the tracheoles directly contact individual cells.</p>
+
+<div class="tip">
+<p><strong>IB Exam Tip:</strong> Be prepared to name and explain these five features for any gas exchange surface. Examiners love asking: "Explain how the alveolus is adapted for gas exchange" or "Describe the common features of gas exchange surfaces." Always connect each feature back to Fick's Law.</p>
+</div>
+
+<hr>
+
+<h2>The Human Ventilation System: Anatomy</h2>
+
+<p>Let's trace the path of an air molecule from the outside world into the depths of your lungs. Think of this as a journey through a branching system of tubes that gets progressively narrower and more numerous.</p>
+
+<h3>1. Nasal Cavity (Nose)</h3>
+
+<p>Your nostrils (nares) are the entry points. The nasal cavity is lined with:</p>
+
+<ul>
+<li><strong>Hairs</strong> that filter out large particles (dust, pollen)</li>
+<li><strong>Ciliated epithelium</strong> with goblet cells — these produce sticky mucus that traps smaller particles and pathogens. The cilia beat rhythmically to sweep mucus toward the pharynx where it's swallowed (yes, you swallow most of the mucus your airways produce — about 1-2 liters per day)</li>
+<li><strong>A rich blood supply</strong> close to the surface that warms incoming air to body temperature</li>
+<li><strong>Moist surfaces</strong> that humidify the air, preventing the delicate lung tissues from drying out</li>
+</ul>
+<p><strong>Why breathing through your nose is better than your mouth:</strong> The nose filters, warms, and humidifies air — the mouth does none of these efficiently.</p>
+
+<h3>2. Pharynx (Throat)</h3>
+
+<p>A shared passageway for both air and food. The pharynx branches into the trachea (air) and the esophagus (food). The <strong>epiglottis</strong>, a flap of cartilage, covers the opening of the trachea during swallowing to prevent food from entering the airway. When you "swallow the wrong way" and cough violently, that's the epiglottis failing its job momentarily.</p>
+
+<h3>3. Larynx (Voice Box)</h3>
+
+<p>Below the pharynx, the larynx contains the <strong>vocal cords</strong> (vocal folds). As air passes over them, they vibrate to produce sound. The larynx is supported by cartilage — in males, the thyroid cartilage is more prominent, forming the "Adam's apple." The larynx is essentially the gateway to the lower respiratory tract.</p>
+
+<h3>4. Trachea (Windpipe)</h3>
+
+<p>The trachea is a tube about 10-12 cm long and 2 cm in diameter, extending from the larynx down into the chest where it splits (bifurcates) into the two bronchi.</p>
+
+<p><strong>Key structural features:</strong></p>
+<ul>
+<li><strong>C-shaped rings of hyaline cartilage:</strong> These are incomplete rings — open at the back where the trachea lies against the esophagus. They prevent the trachea from collapsing during inhalation (when internal pressure drops below atmospheric) while still allowing the esophagus to expand when you swallow a large bolus of food. If the rings were complete O-rings, you couldn't swallow properly.</li>
+<li><strong>Ciliated epithelium with goblet cells:</strong> The same mucociliary escalator as in the nasal cavity. Goblet cells secrete mucus that traps microorganisms and debris; cilia beat upward toward the pharynx at about 1-2 cm per minute, continuously clearing the airways. This is called the <strong>mucociliary escalator</strong>.</li>
+<li><strong>Smooth muscle</strong> at the back (where the cartilage ring is open) allows slight constriction/dilation.</li>
+</ul>
+<h3>5. Bronchi (Singular: Bronchus)</h3>
+
+<p>The trachea divides into the <strong>right primary bronchus</strong> and <strong>left primary bronchus</strong> at a point called the carina. The right bronchus is wider, shorter, and more vertical than the left — this is why inhaled foreign objects (like a peanut accidentally breathed in) more often end up in the right lung.</p>
+
+<p>Bronchi are similar in structure to the trachea but have complete rings of cartilage (rather than C-shaped) and smaller diameter.</p>
+
+<h3>6. Bronchioles</h3>
+
+<p>The bronchi branch repeatedly into smaller and smaller <strong>bronchioles</strong>. Key changes as you go deeper:</p>
+
+<ul>
+<li><strong>Cartilage disappears</strong> — replaced by smooth muscle that can constrict or dilate to regulate airflow</li>
+<li><strong>Diameter decreases</strong> with each branching</li>
+<li><strong>Number increases exponentially</strong> — the total cross-sectional area increases dramatically, which slows airflow and allows more time for gas exchange</li>
+</ul>
+<p>The smallest bronchioles are called <strong>terminal bronchioles</strong>, and they lead into <strong>respiratory bronchioles</strong> which have occasional alveoli budding from their walls.</p>
+
+<h3>7. Alveoli (Singular: Alveolus)</h3>
+
+<p>The alveoli are the functional endpoint of the respiratory system — tiny, grape-like clusters of air sacs where gas exchange actually occurs.</p>
+
+<p><strong>Key statistics:</strong></p>
+<ul>
+<li>Approximately <strong>300 million</strong> alveoli per lung</li>
+<li>Total surface area: <strong>~70 m²</strong> (about the size of a tennis court singles court)</li>
+<li>Diameter of each alveolus: about <strong>200-300 μm</strong></li>
+<li>Wall thickness (alveolar-capillary barrier): <strong>0.2-0.5 μm</strong></li>
+</ul>
+<p>Each alveolus is surrounded by an extensive network of <strong>pulmonary capillaries</strong> — so dense that blood in the capillaries is separated from air in the alveolus by essentially nothing more than two ultra-thin cells and a shared basement membrane. This is the <strong>blood-gas barrier</strong>.</p>
+
+<div class="definition">
+
+<p><strong>Diagram to Draw — The Respiratory Tree:</strong></p>
+<p>Draw a branching tree-like structure. Label:</p>
+<ul>
+<li>Nasal cavity → Pharynx → Larynx</li>
+<li>Trachea (with C-shaped cartilage rings — draw as incomplete circles on the front)</li>
+<li>Left and right primary bronchi</li>
+<li>Branching bronchioles (getting smaller and more numerous)</li>
+<li>Terminal clusters of alveoli (draw as tiny bunches of grapes)</li>
+</ul>
+<p>This hierarchical branching is called the <strong>bronchial tree</strong> — from one trachea to two bronchi to thousands of bronchioles to millions of alveoli, maximizing surface area.</p>
+</div>
+
+<hr>
+
+<h2>Detailed Structure of the Alveoli</h2>
+
+<p>Let's zoom in on a single alveolus. The wall is composed of two major cell types:</p>
+
+<h3>Type I Pneumocytes (Squamous Alveolar Cells)</h3>
+
+<ul>
+<li><strong>Shape:</strong> Extremely thin and flat (squamous), like a fried egg</li>
+<li><strong>Coverage:</strong> ~95% of the alveolar surface area</li>
+<li><strong>Function:</strong> These are the cells <strong>through which gas exchange occurs</strong>. Their extreme thinness (as little as 0.1 μm in places) minimizes the diffusion distance — a direct adaptation for Fick's Law.</li>
+<li><strong>Specialization:</strong> Very few organelles — they're essentially living diffusion membranes. Their cytoplasm is spread so thin that the nucleus is the only bulge.</li>
+<li><strong>Vulnerability:</strong> Type I cells are fragile and easily damaged by inhaled toxins (including cigarette smoke). They cannot divide to replace themselves.</li>
+</ul>
+<h3>Type II Pneumocytes (Great Alveolar Cells / Septal Cells)</h3>
+
+<ul>
+<li><strong>Shape:</strong> Cuboidal (cube-shaped), thicker and more rounded</li>
+<li><strong>Coverage:</strong> ~5% of the alveolar surface area (by number they're more numerous, but they're much smaller in surface coverage)</li>
+<li><strong>Function #1:</strong> <strong>Secrete pulmonary surfactant</strong> — this is absolutely critical (see below). Surfactant is packaged in lamellar bodies (visible under electron microscopy as concentric whorls) and released onto the alveolar surface.</li>
+<li><strong>Function #2:</strong> <strong>Act as stem cells</strong> — when Type I cells are damaged, Type II cells can divide and differentiate into new Type I cells to repair the alveolar wall.</li>
+<li><strong>Function #3:</strong> Contribute to immune defense by secreting antimicrobial proteins.</li>
+</ul>
+<h3>Pulmonary Surfactant — The Life-Saving Detergent</h3>
+
+<p><strong>What is it?</strong> A complex mixture of phospholipids (mostly <strong>dipalmitoylphosphatidylcholine</strong>, or DPPC) and proteins secreted by Type II pneumocytes. It forms a monomolecular film on the thin layer of fluid that lines the alveoli.</p>
+
+<p><strong>Why is it necessary?</strong> Water molecules are strongly attracted to each other by hydrogen bonds, creating <strong>surface tension</strong>. In a tiny sphere like an alveolus, surface tension acts to collapse the sphere — like a water droplet trying to pull itself into the smallest possible shape. This is described by the <strong>Law of Laplace</strong>:</p>
+
+<p style="text-align:center;margin:0.8rem 0;">$$P = \frac{2T}{r}$$</p>
+
+<p>Where P is the collapsing pressure, T is surface tension, and r is the radius. The smaller the alveolus, the greater the collapsing pressure. Without surfactant, small alveoli would collapse and empty into larger ones (a condition called <strong>atelectasis</strong>).</p>
+
+<p><strong>How surfactant works:</strong> The phospholipid molecules position themselves at the air-water interface with their hydrophilic heads in the water and hydrophobic tails pointing into the air. This disrupts the cohesive forces between water molecules, dramatically reducing surface tension. Moreover, surfactants become more effective when the alveolar surface area decreases (during exhalation), because the surfactant molecules become more concentrated — this prevents collapse when alveoli are smallest.</p>
+
+<p><strong>Clinical significance — Infant Respiratory Distress Syndrome (IRDS):</strong></p>
+
+<p>Type II pneumocytes mature late in fetal development — they only begin producing adequate surfactant around <strong>week 35 of gestation</strong>. Babies born prematurely (especially before 28-30 weeks) may lack sufficient surfactant. Their alveoli collapse with each exhalation, requiring enormous effort to re-inflate. These infants struggle to breathe, develop hypoxia, and without treatment, may die.</p>
+
+<p><strong>Treatment:</strong> Administering artificial surfactant directly into the infant's airways, combined with mechanical ventilation (CPAP — continuous positive airway pressure to keep alveoli open). The mother may also be given <strong>corticosteroids</strong> before premature delivery to accelerate fetal lung maturation and surfactant production.</p>
+
+<h3>The Alveolar-Capillary Network</h3>
+
+<p>Each alveolus is wrapped in a basket-like network of pulmonary capillaries. The capillaries are so dense that in cross-section, it looks like blood is flowing through a continuous sheet interrupted only by occasional supporting posts (this is sometimes described as a "sheet-flow" model).</p>
+
+<p><strong>Key adaptation:</strong> Both the capillary endothelial cells and the Type I pneumocytes rest on a <strong>fused basement membrane</strong> — meaning the two cell layers share a single basement membrane rather than each having their own. This eliminates one layer, further reducing diffusion distance. The total blood-gas barrier (from alveolar air to erythrocyte in the capillary) is only about 0.5-0.6 μm.</p>
+
+<hr>
+
+<h2>The Mechanism of Ventilation</h2>
+
+<p>Ventilation is the physical movement of air into and out of the lungs. It's entirely driven by <strong>pressure differences</strong> — air always flows from regions of higher pressure to regions of lower pressure. Your respiratory muscles don't push or pull air directly; they change the volume of the thoracic cavity, which changes the pressure, and air moves in response.</p>
+
+<div class="definition">
+
+<p><strong>Boyle's Law (relevant foundation):</strong> At constant temperature, the pressure of a gas is inversely proportional to its volume. Increase volume → pressure decreases. Decrease volume → pressure increases. This is the physical principle underlying ventilation.</p>
+
+<p style="text-align:center;margin:0.8rem 0;">$$P \propto \frac{1}{V}$$</p>
+</div>
+
+<h3>Inhalation (Inspiration) — Active Process</h3>
+
+<p>Inhalation at rest is an <strong>active</strong> process requiring muscle contraction. Here's the sequence:</p>
+
+<ol>
+<li><strong>The diaphragm contracts and flattens.</strong> At rest, the diaphragm is dome-shaped, bulging upward into the thoracic cavity. When it contracts, it flattens and descends, increasing the vertical dimension of the thoracic cavity (like pulling down on the plunger of a syringe). This is responsible for about 75% of the volume increase during quiet breathing.</li>
+</ol>
+<ol>
+<li><strong>The external intercostal muscles contract.</strong> These muscles run diagonally downward and forward between the ribs. When they contract, they pull the ribcage <strong>upward and outward</strong>, increasing both the anteroposterior (front-to-back) and lateral (side-to-side) dimensions of the thoracic cavity. (Think of lifting a bucket handle — the handle moves up and out.)</li>
+</ol>
+<ol>
+<li><strong>Thoracic volume increases.</strong> The combined actions of the diaphragm and external intercostals expand the thoracic cavity in all three dimensions.</li>
+</ol>
+<ol>
+<li><strong>Intrapulmonary pressure decreases.</strong> As the thoracic cavity expands, the lungs (which are stuck to the inside of the chest wall by the pleural membranes — more on this below) are stretched and expand as well. By Boyle's Law, when lung volume increases, the pressure inside the lungs (intrapulmonary/alveolar pressure) drops below atmospheric pressure. At rest, this pressure drops to about <strong>-1 mmHg</strong> relative to atmospheric (which is 760 mmHg at sea level).</li>
+</ol>
+<ol>
+<li><strong>Air rushes in.</strong> Since alveolar pressure is now lower than atmospheric pressure, air flows down its pressure gradient through the airways and into the lungs until pressures equalize.</li>
+</ol>
+<p><strong>The Pleural Membranes:</strong> The lungs are not directly attached to the ribcage by any physical connections. Instead, each lung is surrounded by two layers of pleural membrane:</p>
+<ul>
+<li><strong>Visceral pleura:</strong> Sticks tightly to the lung surface</li>
+<li><strong>Parietal pleura:</strong> Lines the inside of the chest wall</li>
+</ul>
+<p>Between them is the <strong>pleural cavity</strong>, filled with a thin layer of pleural fluid. This fluid creates surface tension that holds the two layers together like two wet glass slides — you can slide them past each other but can't pull them directly apart. This means when the chest wall expands, the lungs are pulled along with it. The intrapleural pressure is always slightly negative (about -4 mmHg at rest) relative to alveolar pressure, keeping the lungs inflated against their elastic recoil.</p>
+
+<p><strong>Forced/Deep Inhalation:</strong> Additional muscles are recruited:</p>
+<ul>
+<li><strong>Sternocleidomastoid</strong> (lifts the sternum)</li>
+<li><strong>Scalene muscles</strong> (lift the first two ribs)</li>
+<li><strong>Pectoralis minor</strong> (lifts ribs)</li>
+</ul>
+<h3>Exhalation (Expiration) — Mostly Passive (at rest)</h3>
+
+<p>Quiet exhalation is a <strong>passive</strong> process — it doesn't require muscle contraction. Instead, it's driven by elastic recoil:</p>
+
+<ol>
+<li><strong>The diaphragm relaxes.</strong> The muscle returns to its dome shape, moving upward and decreasing the vertical dimension.</li>
+</ol>
+<ol>
+<li><strong>The external intercostal muscles relax.</strong> The ribcage moves down and inward due to gravity and the elastic recoil of the costal cartilages.</li>
+</ol>
+<ol>
+<li><strong>Thoracic volume decreases.</strong> As the thoracic cavity shrinks, the lungs are compressed.</li>
+</ol>
+<ol>
+<li><strong>Intrapulmonary pressure increases.</strong> By Boyle's Law, decreasing lung volume increases alveolar pressure — now it rises to about <strong>+1 mmHg</strong> above atmospheric pressure.</li>
+</ol>
+<ol>
+<li><strong>Air is expelled.</strong> Air flows out of the lungs, down the pressure gradient, until internal and external pressures equalize again.</li>
+</ol>
+<p><strong>Forced Exhalation:</strong> During exercise, coughing, or blowing out candles, exhalation becomes <strong>active</strong>:</p>
+<ul>
+<li><strong>Internal intercostal muscles</strong> contract, pulling the ribs downward and inward more forcefully</li>
+<li><strong>Abdominal muscles</strong> (rectus abdominis, obliques) contract, pushing the abdominal organs upward against the diaphragm, forcing it even higher</li>
+</ul>
+<div class="definition">
+
+<p><strong>Summary Table — Inhalation vs. Exhalation:</strong></p>
+
+<table>
+<tr>
+<td>Feature</td>
+<td>Inhalation</td>
+<td>Exhalation (Quiet)</td>
+</tr>
+<tr>
+<td>Diaphragm</td>
+<td>Contracts, flattens, moves down</td>
+<td>Relaxes, domes, moves up</td>
+</tr>
+<tr>
+<td>External Intercostals</td>
+<td>Contract</td>
+<td>Relax</td>
+</tr>
+<tr>
+<td>Internal Intercostals</td>
+<td>Relaxed</td>
+<td>Relaxed (contract in forced)</td>
+</tr>
+<tr>
+<td>Ribcage</td>
+<td>Up and out</td>
+<td>Down and in</td>
+</tr>
+<tr>
+<td>Thoracic Volume</td>
+<td>Increases</td>
+<td>Decreases</td>
+</tr>
+<tr>
+<td>Lung Pressure</td>
+<td>Decreases below atmospheric</td>
+<td>Increases above atmospheric</td>
+</tr>
+<tr>
+<td>Air Movement</td>
+<td>Into lungs</td>
+<td>Out of lungs</td>
+</tr>
+<tr>
+<td>Energy Required</td>
+<td>Yes (active)</td>
+<td>No (passive)</td>
+</tr>
+</table>
+
+</div>
+
+<hr>
+
+<h2>Common Misconceptions</h2>
+
+<h3>Myth #1: "The lungs are like balloons that inflate because air is pushed into them."</h3>
+
+<p><strong>Reality:</strong> Air is not pushed into the lungs — it is drawn in by the pressure difference created when the thoracic cavity expands. The lungs are passively stretched open by the expanding chest wall. There is no force "pushing" air from outside; air flows in spontaneously down the pressure gradient.</p>
+
+<h3>Myth #2: "The diaphragm pushes air out when it contracts."</h3>
+
+<p><strong>Reality:</strong> Exactly backwards. The diaphragm contracts during <strong>inhalation</strong>, flattening downward. During exhalation, it <strong>relaxes</strong>. Think: "contract = inhale."</p>
+
+<h3>Myth #3: "Oxygen is actively transported across the alveolar membrane."</h3>
+
+<p><strong>Reality:</strong> Gas exchange at the alveoli is entirely passive — simple diffusion. No active transport, no carrier proteins, no energy required. Oxygen and CO₂ simply diffuse down their concentration gradients.</p>
+
+<h3>Myth #4: "We breathe to get oxygen and get rid of CO₂ equally."</h3>
+
+<p><strong>Reality:</strong> While both occur, the primary driver of breathing rate at rest is CO₂ levels, not O₂ levels. Chemoreceptors in the medulla oblongata and carotid/aortic bodies are exquisitely sensitive to pCO₂ and pH (which reflects CO₂). Elevated CO₂ triggers increased breathing rate long before O₂ drops to dangerous levels. This is why you can hold your breath longer after hyperventilating (you've blown off CO₂, so the urge to breathe is delayed) — but this is dangerous because you might run out of O₂ before the CO₂ drive kicks in.</p>
+
+<hr>
+
+<h2>Emphysema</h2>
+
+<h3>What Is Emphysema?</h3>
+
+<p>Emphysema is a chronic, progressive lung disease in which the alveolar walls are gradually destroyed. The delicate walls between adjacent alveoli break down, causing the small individual air sacs to merge into fewer, larger, and less functional air spaces.</p>
+
+<h3>Pathophysiology — The Molecular Story</h3>
+
+<ol>
+<li><strong>Trigger:</strong> The primary cause is cigarette smoke (responsible for ~80-90% of cases). A rare genetic cause is <strong>alpha-1 antitrypsin deficiency</strong> (AAT is a protein that normally inhibits elastase).</li>
+</ol>
+<ol>
+<li><strong>Inflammatory Response:</strong> Cigarette smoke irritates the airways, causing chronic inflammation. Inflammatory cells, especially <strong>neutrophils</strong> and macrophages, are recruited to the lungs.</li>
+</ol>
+<ol>
+<li><strong>Elastase Release:</strong> These inflammatory cells release <strong>elastase</strong>, a proteolytic enzyme that breaks down <strong>elastin</strong> — the protein that gives lung tissue its elasticity. Normally, elastase is kept in check by alpha-1 antitrypsin, but in smokers the balance is tipped:</li>
+</ol>
+<ul>
+<li>More elastase is released (more inflammatory cells)</li>
+<li>Alpha-1 antitrypsin is inactivated by oxidants in cigarette smoke</li>
+</ul>
+<ol>
+<li><strong>Alveolar Wall Destruction:</strong> Elastin in the alveolar walls is degraded. Without elastin, the walls lose their structural integrity and rupture. Adjacent alveoli merge (septal wall breakdown).</li>
+</ol>
+<ol>
+<li><strong>Consequences of the Structural Damage:</strong></li>
+</ol>
+<ul>
+<li><strong>Reduced surface area for gas exchange:</strong> Fewer, larger air sacs mean less total membrane area available for diffusion. By Fick's Law, this directly reduces the rate of O₂ uptake and CO₂ removal.</li>
+</ul>
+<ul>
+<li><strong>Loss of elastic recoil:</strong> Healthy lungs are like a stretched rubber band — they recoil passively to push air out. Emphysematous lungs have lost this elasticity, like an old, stretched-out rubber band. This makes <strong>exhalation particularly difficult</strong> — patients must actively force air out using accessory muscles.</li>
+</ul>
+<ul>
+<li><strong>Air trapping:</strong> Because the small airways tend to collapse during exhalation (loss of elastic support that normally holds them open), air gets trapped in the enlarged alveolar spaces. Patients breathe in but can't fully breathe out. This leads to the characteristic <strong>barrel chest</strong> — the ribcage is permanently expanded.</li>
+</ul>
+<ul>
+<li><strong>Hyperinflation:</strong> The lungs are chronically overinflated, flattening the diaphragm and making it mechanically disadvantaged — it can't contract effectively for inhalation either.</li>
+</ul>
+<h3>Symptoms</h3>
+<ul>
+<li><strong>Shortness of breath (dyspnea):</strong> Initially only with exertion, eventually at rest</li>
+<li><strong>Chronic cough:</strong> Often with sputum production (many emphysema patients also have chronic bronchitis — together called COPD)</li>
+<li><strong>Barrel chest:</strong> Increased anteroposterior diameter of the chest</li>
+<li><strong>Prolonged exhalation:</strong> Pursed-lip breathing (patients instinctively purse their lips to create back-pressure that keeps airways open during exhalation)</li>
+<li><strong>Weight loss and muscle wasting:</strong> The increased work of breathing consumes significant energy</li>
+<li><strong>Hypoxemia:</strong> Low blood O₂, with cyanosis in advanced disease</li>
+</ul>
+<h3>Why Emphysema Is Largely Preventable</h3>
+
+<p>The single most effective prevention is <strong>not smoking</strong> (and avoiding secondhand smoke). The damage is irreversible — once alveolar walls are destroyed, they don't regenerate. Treatment can slow progression and manage symptoms, but there is no cure.</p>
+
+<hr>
+
+<h2>Lung Cancer</h2>
+
+<h3>What Is Lung Cancer?</h3>
+
+<p>Lung cancer is the uncontrolled proliferation of abnormal cells in lung tissue. These cells divide without normal regulatory control, forming tumors that can obstruct airways, invade surrounding tissue, and metastasize (spread) to other organs.</p>
+
+<h3>Carcinogens in Tobacco Smoke</h3>
+
+<p>Tobacco smoke contains over 7,000 chemicals, of which at least 70 are known carcinogens (cancer-causing agents). The most significant include:</p>
+
+<ul>
+<li><strong>Polycyclic aromatic hydrocarbons (PAHs)</strong> — notably <strong>benzopyrene</strong>: These are produced by incomplete combustion of organic material (tobacco). Benzopyrene is a potent mutagen — it intercalates into DNA and, after metabolic activation in the liver, forms bulky adducts that cause mutations. The most famous is a specific mutation in the <strong>p53 tumor suppressor gene</strong> (a G→T transversion at codon 249), found in a high percentage of smoking-related lung cancers. p53 is the "guardian of the genome" — when it's mutated, cells with damaged DNA can continue dividing.</li>
+</ul>
+<ul>
+<li><strong>Nitrosamines</strong> (tobacco-specific nitrosamines, TSNAs): Formed from nicotine and other tobacco alkaloids during curing and burning. These are powerful alkylating agents that add methyl or ethyl groups to DNA bases, causing mispairing during replication.</li>
+</ul>
+<ul>
+<li><strong>Other carcinogens:</strong> Benzene, formaldehyde, polonium-210 (a radioactive element concentrated in tobacco leaves from phosphate fertilizers), arsenic, cadmium, chromium.</li>
+</ul>
+<h3>How Cancer Develops — The Multi-Step Process</h3>
+
+<ol>
+<li><strong>Initiation:</strong> A carcinogen causes a mutation in a critical gene (proto-oncogene → oncogene, or tumor suppressor gene inactivation) in a single cell. This mutation gives the cell a growth advantage.</li>
+</ol>
+<ol>
+<li><strong>Promotion:</strong> Continued exposure to irritants (more smoking) stimulates the mutated cell to divide. With each division, there's a chance of additional mutations accumulating.</li>
+</ol>
+<ol>
+<li><strong>Progression:</strong> Further mutations accumulate over years or decades. The cells become increasingly abnormal: loss of contact inhibition, ability to invade surrounding tissues (malignancy), ability to stimulate angiogenesis (new blood vessel growth to feed the tumor).</li>
+</ol>
+<ol>
+<li><strong>Metastasis:</strong> Cancer cells enter the bloodstream or lymphatic system and establish secondary tumors in other organs — most commonly the brain, bones, liver, and adrenal glands.</li>
+</ol>
+<h3>Types of Lung Cancer</h3>
+
+<ul>
+<li><strong>Small cell lung cancer (SCLC):</strong> ~15% of cases. Strongly linked to smoking. Aggressive, early metastasis. Arises from neuroendocrine cells.</li>
+<li><strong>Non-small cell lung cancer (NSCLC):</strong> ~85% of cases. Includes adenocarcinoma (most common in non-smokers), squamous cell carcinoma (strongly linked to smoking, often central/airway), and large cell carcinoma.</li>
+</ul>
+<h3>Consequences</h3>
+
+<ul>
+<li><strong>Airway obstruction:</strong> Tumors can physically block bronchi, causing collapse of the downstream lung (atelectasis) and recurrent infections</li>
+<li><strong>Hemoptysis:</strong> Coughing up blood from tumor erosion into blood vessels</li>
+<li><strong>Pleural effusion:</strong> Fluid accumulation in the pleural cavity</li>
+<li><strong>Paraneoplastic syndromes:</strong> Tumors secrete hormone-like substances causing distant effects (e.g., SIADH, hypercalcemia)</li>
+<li><strong>Metastasis:</strong> Spread to brain (neurological symptoms), bone (pain, pathological fractures), liver (jaundice, failure)</li>
+</ul>
+<h3>Risk Factors</h3>
+
+<ul>
+<li><strong>Smoking:</strong> By far the most significant — responsible for ~85% of lung cancers. The risk increases with pack-years (number of packs per day × years smoked). The risk drops significantly after quitting, though never quite to never-smoker levels.</li>
+<li><strong>Secondhand smoke:</strong> Increases risk by 20-30%</li>
+<li><strong>Radon gas:</strong> A naturally occurring radioactive gas that can accumulate in buildings</li>
+<li><strong>Asbestos exposure:</strong> Synergistic with smoking (asbestos + smoking multiplies risk, doesn't just add)</li>
+<li><strong>Air pollution</strong></li>
+<li><strong>Genetic factors</strong></li>
+</ul>
+<hr>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1: Fick's Law Application</h3>
+<p>A patient has a lung disease that reduces their alveolar surface area from 70 m² to 35 m² and doubles the alveolar-capillary membrane thickness from 0.5 μm to 1.0 μm. Assuming the concentration gradient and diffusion coefficient remain unchanged, by what factor does their rate of O₂ diffusion change?</p>
+
+<p><details></p>
+<p><summary><b>Click for Answer</b></summary></p>
+
+<p>Using Fick's Law: Rate ∝ SA / d</p>
+
+<p>Original: Rate ∝ 70 / 0.5 = 140</p>
+
+<p>After disease: Rate ∝ 35 / 1.0 = 35</p>
+
+<p>Change: 35/140 = 0.25</p>
+
+<p><strong>The rate of O₂ diffusion drops to 25% of normal</strong> — a 4-fold decrease. This would cause severe hypoxemia, especially during exercise when O₂ demand is higher.</p>
+
+<p><em>IB Note: Always show both the SA change (halved) and the thickness change (doubled) independently, then combine. Halving SA halves the rate; doubling thickness halves it again. Combined effect: 1/2 × 1/2 = 1/4.</em></p>
+<p></details></p>
+
+<hr>
+
+<h3>Problem 2: Ventilation Mechanism</h3>
+<p>Describe the sequence of events during a deep (forced) inhalation, naming the muscles involved and explaining how pressure changes produce airflow.</p>
+
+<p><details></p>
+<p><summary><b>Click for Answer</b></summary></p>
+
+<ol>
+<li><strong>Diaphragm contracts and flattens</strong> → increases vertical dimension of thoracic cavity.</li>
+<li><strong>External intercostal muscles contract</strong> → ribcage moves upward and outward, increasing anteroposterior and lateral dimensions.</li>
+<li>During forced inhalation, <strong>accessory muscles</strong> are also recruited:</li>
+</ol>
+<ul>
+<li>Sternocleidomastoid lifts the sternum</li>
+<li>Scalene muscles lift the first two ribs</li>
+<li>Pectoralis minor assists in lifting ribs</li>
+</ul>
+<ol>
+<li>Combined effect: <strong>Thoracic volume increases substantially.</strong></li>
+<li>The parietal pleura is stuck to the chest wall; the visceral pleura is stuck to the lungs. The pleural fluid holds them together → <strong>lungs expand</strong> as chest wall expands.</li>
+<li>By Boyle's Law: increased volume → <strong>alveolar pressure drops below atmospheric pressure</strong> (falls significantly lower than during quiet breathing, perhaps to -3 or -4 mmHg).</li>
+<li><strong>Air flows from high pressure (atmosphere) to low pressure (alveoli)</strong> through the airways until pressures equalize.</li>
+</ol>
+<p>Key marks: name the muscles, link volume to pressure (Boyle's Law), mention the pleural membranes, state the direction of airflow.</p>
+<p></details></p>
+
+<hr>
+
+<h3>Problem 3: Type I vs Type II Pneumocytes</h3>
+<p>Compare and contrast Type I and Type II pneumocytes. For each, describe structure, relative abundance, and function.</p>
+
+<p><details></p>
+<p><summary><b>Click for Answer</b></summary></p>
+
+<table>
+<tr>
+<td>Feature</td>
+<td>Type I Pneumocytes</td>
+<td>Type II Pneumocytes</td>
+</tr>
+<tr>
+<td>Shape</td>
+<td>Extremely thin, flat (squamous)</td>
+<td>Cuboidal (cube-shaped)</td>
+</tr>
+<tr>
+<td>Surface Coverage</td>
+<td>~95% of alveolar surface</td>
+<td>~5% of alveolar surface</td>
+</tr>
+<tr>
+<td>Organelles</td>
+<td>Few — mostly just thin cytoplasm</td>
+<td>Many — mitochondria, ER, prominent lamellar bodies</td>
+</tr>
+<tr>
+<td>Primary Function</td>
+<td>Site of gas exchange — minimal diffusion distance</td>
+<td>Secrete pulmonary surfactant; stem cells for repair</td>
+</tr>
+<tr>
+<td>Mitotic Ability</td>
+<td>Cannot divide</td>
+<td>Can divide and differentiate into Type I cells</td>
+</tr>
+<tr>
+<td>Vulnerability</td>
+<td>Easily damaged by toxins</td>
+<td>More resistant</td>
+</tr>
+</table>
+
+<p>Both are epithelial cells lining the alveoli. They work in complementary fashion: Type I cells provide the vast surface for efficient gas exchange (Fick's Law — maximize SA, minimize d), while Type II cells maintain the functional integrity of that surface by reducing surface tension (preventing collapse) and replacing damaged Type I cells.</p>
+
+<p><em>Bonus mark: Mention that surfactant is stored in lamellar bodies visible by electron microscopy, and that it's composed mainly of DPPC phospholipid.</em></p>
+<p></details></p>
+
+<hr>
+
+<h3>Problem 4: Emphysema Explanation</h3>
+<p>Explain how emphysema affects gas exchange, making specific reference to Fick's Law. Include the molecular mechanism of alveolar wall breakdown.</p>
+
+<p><details></p>
+<p><summary><b>Click for Answer</b></summary></p>
+
+<p><strong>Molecular Mechanism:</strong></p>
+<p>Cigarette smoke triggers chronic inflammation → neutrophils and macrophages recruited to lungs → these cells release <strong>elastase</strong> (a protease). Normally, alpha-1 antitrypsin inhibits elastase, but in smokers, (a) more elastase is produced and (b) oxidants in smoke inactivate alpha-1 antitrypsin. The net effect: <strong>elastase destroys elastin</strong> in the alveolar walls → alveolar septa break down → adjacent alveoli merge.</p>
+
+<p><strong>Consequences for Gas Exchange (Fick's Law):</strong></p>
+
+<ol>
+<li><strong>Reduced Surface Area (SA):</strong> Fewer, larger air sacs mean much less total membrane for diffusion. Fick's Law: Rate ∝ SA, so reduced SA directly reduces diffusion rate.</li>
+</ol>
+<ol>
+<li><strong>Potentially Increased Diffusion Distance (d):</strong> The destruction of capillary beds alongside alveolar walls may increase the effective diffusion distance, though this is secondary to SA loss. Rate ∝ 1/d.</li>
+</ol>
+<ol>
+<li><strong>Reduced Concentration Gradient (ΔP):</strong> Air trapping (inability to exhale fully) means stale air with low pO₂ and high pCO₂ remains in the lungs, reducing the gradient between alveolar air and incoming blood. Rate ∝ ΔP.</li>
+</ol>
+<ol>
+<li><strong>Loss of Elastic Recoil:</strong> Exhalation becomes an active process because the lungs cannot passively recoil. This increases the work of breathing.</li>
+</ol>
+<p><strong>Result:</strong> Hypoxemia (low blood O₂), dyspnea (shortness of breath), especially on exertion.</p>
+<p></details></p>
+
+<hr>
+
+<h3>Problem 5: Carcinogens and Cancer</h3>
+<p>Describe the role of two specific carcinogens found in tobacco smoke in the development of lung cancer. Explain why the link between smoking and lung cancer is considered causal, not just correlational.</p>
+
+<p><details></p>
+<p><summary><b>Click for Answer</b></summary></p>
+
+<p><strong>Carcinogen 1 — Benzopyrene (a PAH):</strong></p>
+<p>Benzopyrene intercalates into DNA. After metabolic activation by enzymes in the liver (cytochrome P450 system), it forms bulky DNA adducts. These adducts distort the DNA helix and cause mutations during replication. A specific G→T transversion in the <strong>p53 tumor suppressor gene</strong> (codon 249) is a hallmark of smoking-related lung cancers. p53 normally halts the cell cycle when DNA damage is detected or triggers apoptosis — when inactivated, cells with damaged DNA continue dividing.</p>
+
+<p><strong>Carcinogen 2 — Tobacco-Specific Nitrosamines (TSNAs):</strong></p>
+<p>Formed from nicotine during curing and burning. These are alkylating agents that add alkyl groups (methyl, ethyl) to DNA bases. Alkylated bases mispair during DNA replication — for example, O⁶-methylguanine pairs with thymine instead of cytosine, causing G→A transitions. Accumulation of such mutations in proto-oncogenes (converting them to oncogenes) and tumor suppressor genes (inactivating them) drives carcinogenesis.</p>
+
+<p><strong>Evidence for Causation (not just correlation):</strong></p>
+<ol>
+<li><strong>Dose-response relationship:</strong> More pack-years = higher cancer risk</li>
+<li><strong>Temporal relationship:</strong> Smoking precedes cancer development by decades</li>
+<li><strong>Biological plausibility:</strong> Specific carcinogens identified, specific mutations found</li>
+<li><strong>Reversibility:</strong> Risk decreases after quitting (though not to never-smoker level)</li>
+<li><strong>Experimental evidence:</strong> Tobacco tar applied to animal skin causes tumors</li>
+<li><strong>Specificity of mutations:</strong> The p53 mutation spectrum in smokers' lung cancers differs from that in non-smokers</li>
+</ol>
+<p>These fulfill <strong>Hill's criteria for causation</strong>, moving the link from correlation to established causal relationship.</p>
+<p></details></p>
+
+<hr>
+
+<h2>Key Takeaways</h2>
+
+<ul>
+<li><strong>Fick's Law</strong> dictates that gas exchange rate depends on surface area, concentration gradient, membrane permeability, and membrane thickness — evolution optimizes all four.</li>
+<li>All gas exchange surfaces share five features: large SA:V, thin, moist, permeable, well-vascularized.</li>
+<li>Air follows this path: nasal cavity → pharynx → larynx → trachea → bronchi → bronchioles → alveoli.</li>
+<li>Inhalation is <strong>active</strong> (diaphragm + external intercostals contract → volume up → pressure down → air in). Quiet exhalation is <strong>passive</strong> (muscles relax → elastic recoil).</li>
+<li>Type I pneumocytes (thin, gas exchange) vs Type II pneumocytes (cuboidal, surfactant secretion, stem cells).</li>
+<li><strong>Surfactant</strong> reduces surface tension, preventing alveolar collapse — critical for premature infants (IRDS).</li>
+<li><strong>Emphysema:</strong> Elastase destroys elastin → alveolar walls break down → reduced SA, loss of recoil, air trapping. Smoking is the primary cause.</li>
+<li><strong>Lung cancer:</strong> Carcinogens (benzopyrene, nitrosamines) cause mutations in p53 and other genes → uncontrolled cell division → tumors, obstruction, metastasis. Strong causal link with smoking.</li>
+</ul>
+<hr>
+
+<p><em>In Lesson 20, we'll extend gas exchange to plants, insects, and fish, and explore the fascinating molecular behavior of hemoglobin.</em></p>
+
+<div class="nav"><a href="lesson_18.html">&#8592; Lesson 18</a><a href="index.html">&#8962; Index</a><a href="lesson_20.html">Lesson 20 &#8594;</a></div>
+
+</body>
+</html>

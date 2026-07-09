@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 45: Gene Expression (D2.2) ⚠️ HL — IB Biology HL</title>
+<script>window.MathJax = { tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] } };</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #1a6b3c; --border: #c4d4a9; --highlight: #e8f5e9; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Palatino', 'Georgia', serif; background: var(--bg); color: var(--text); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; font-size: 17px; line-height: 1.7; }
+  h1 { font-size: 1.7rem; color: var(--accent); margin-bottom: 0.5rem; }
+  h2 { font-size: 1.25rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; margin: 2rem 0 1rem; }
+  h3 { font-size: 1.1rem; color: #444; margin: 1.3rem 0 0.5rem; }
+  p, li { margin-bottom: 0.6rem; }
+  ul, ol { padding-left: 1.8rem; margin-bottom: 1rem; }
+  .worked { background: #e8f5e9; border-left: 4px solid #1a6b3c; padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
+  .worked strong { color: #1a6b3c; }
+  .answer { background: #fefdf7; border: 1px solid var(--border); padding: 0.8rem 1.2rem; margin: 0.5rem 0; border-radius: 6px; }
+  .nav { display: flex; justify-content: space-between; margin: 3rem 0 1rem; padding-top: 1rem; border-top: 2px solid var(--border); font-size: 0.9rem; }
+  .nav a { color: #1a5c9e; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  .definition { background: #fff8e1; border-left: 4px solid #e6a817; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  .tip { background: #e3f2fd; border-left: 4px solid #1976d2; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  table { border-collapse: collapse; margin: 0.8rem 0; width: 100%; }
+  th, td { border: 1px solid var(--border); padding: 0.4rem 0.6rem; text-align: left; }
+  th { background: #f0f5e8; }
+  @media print { body { font-size: 14px; } .nav { display: none; } }
+</style>
+</head>
+<body>
+
+
+<h2>What You'll Learn</h2>
+
+<p>Having the same DNA in every cell of your body raises a profound question: why does a neuron look and act completely differently from a liver cell? The answer is <strong>gene expression</strong> — the selective activation and silencing of genes. This lesson explores the molecular machinery that controls which genes are expressed in which cells and under what conditions, from the elegant simplicity of the lac operon to the complex layers of epigenetic regulation.</p>
+
+<p>By the end of this lesson, you will be able to:</p>
+
+<ul>
+<li>Describe the roles of promoters, enhancers, silencers, and transcription factors in eukaryotic gene regulation</li>
+<li>Explain how the lac operon works as a model of prokaryotic gene regulation</li>
+<li>Distinguish between epigenetic mechanisms (DNA methylation, histone modification)</li>
+<li>Explain how differential gene expression enables cell differentiation</li>
+<li>Describe how alternative splicing produces multiple proteins from one gene</li>
+<li>Link environmental factors to changes in gene expression</li>
+</ul>
+<hr>
+
+<h2>1. The Landscape of Gene Regulation</h2>
+
+<h3>1.1 Why Regulate Genes?</h3>
+
+<p>A typical human cell expresses only about 30–40% of its ~20,000 protein-coding genes at any given time. The rest are either permanently silenced (e.g., hemoglobin genes in neurons) or temporarily inactive. This selective expression is essential because:</p>
+
+<ul>
+<li><strong>Energy efficiency</strong>: Making proteins costs ATP; don't make proteins you don't need.</li>
+<li><strong>Cell specialization</strong>: Different cell types need different proteins.</li>
+<li><strong>Responsiveness</strong>: Cells must adapt to changing conditions (nutrients, stress, signals).</li>
+</ul>
+<p><strong>Analogy</strong>: Think of the genome as a massive library. Every cell has the complete library, but each cell type only reads the books relevant to its job. A chef reads cookbooks; a mechanic reads repair manuals. The books are all there, but which ones are accessed differs.</p>
+
+<hr>
+
+<h2>2. Eukaryotic Gene Regulation: Regulatory DNA Sequences</h2>
+
+<h3>2.1 The Core Promoter: "The Landing Pad"</h3>
+
+<p>Every gene has a <strong>promoter</strong> — a DNA sequence immediately upstream (before) the transcription start site. It is where RNA polymerase and the basal transcription machinery assemble.</p>
+
+<p><strong>The TATA Box</strong>:</p>
+
+<p>A conserved DNA sequence (consensus: TATAAAA) located about 25–30 base pairs upstream of the transcription start site. The TATA box is the core element where <strong>general transcription factors</strong> (like TBP — TATA-binding protein) bind, positioning RNA polymerase II at the correct starting point.</p>
+
+<p><strong>Draw and label</strong>: Draw a segment of DNA. Mark the transcription start site (+1). About 25 bp upstream, draw a box labeled "TATA box." Above it, draw a complex of proteins labeled "General transcription factors (TFIID, TBP)" and "RNA polymerase II." Label: "Core promoter — where basal transcription machinery assembles."</p>
+
+<h3>2.2 Enhancers: "The Volume Knobs"</h3>
+
+<p><strong>Enhancers</strong> are DNA sequences that can be located far from the gene they regulate — upstream, downstream, or even within introns. They bind <strong>activator transcription factors</strong> and boost transcription dramatically.</p>
+
+<p><strong>Key features</strong>:</p>
+<ul>
+<li>Can be thousands of base pairs away from the promoter</li>
+<li>Function independently of orientation</li>
+<li>Work through <strong>DNA looping</strong>: proteins bound to the enhancer physically interact with proteins at the promoter by looping out the intervening DNA</li>
+</ul>
+<p><strong>Analogy</strong>: An enhancer is like a remote control — you don't need to be next to the TV (promoter) to turn up the volume; you can do it from across the room.</p>
+
+<p><strong>Draw and label</strong>: Show a gene with its promoter. Far upstream, draw an enhancer. Draw a looping DNA molecule with activator proteins bound to the enhancer and interacting with the transcription machinery at the promoter. Label: "Enhancer," "Activator proteins," "DNA looping," "Promoter," "Transcription start site."</p>
+
+<h3>2.3 Silencers: "The Mute Buttons"</h3>
+
+<p><strong>Silencers</strong> are DNA sequences that bind <strong>repressor proteins</strong> to reduce or shut down transcription. Like enhancers, they can act at a distance. Repressor proteins may:</p>
+<ul>
+<li>Block the binding of activators</li>
+<li>Recruit enzymes that modify chromatin to a repressed state (e.g., histone deacetylases)</li>
+</ul>
+<hr>
+
+<h2>3. Transcription Factors: The Key Regulators</h2>
+
+<p><strong>Transcription factors</strong> are proteins that bind to specific DNA sequences and control the rate of transcription. They are the "readers" of regulatory DNA sequences.</p>
+
+<h3>3.1 Structural Features</h3>
+
+<table>
+<tr>
+<td>Domain</td>
+<td>Function</td>
+</tr>
+<tr>
+<td>DNA-binding domain</td>
+<td>Recognizes and binds a specific DNA sequence (e.g., helix-turn-helix, zinc finger, leucine zipper)</td>
+</tr>
+<tr>
+<td>Activation domain</td>
+<td>Interacts with other transcription factors or RNA polymerase to stimulate transcription</td>
+</tr>
+<tr>
+<td>Ligand-binding domain** (some)</td>
+<td>Binds a signal molecule (e.g., hormone) that controls the factor's activity</td>
+</tr>
+</table>
+
+<h3>3.2 Activators vs. Repressors</h3>
+
+<table>
+<tr>
+<th></th>
+<th>Activators</th>
+<th>Repressors</th>
+</tr>
+<tr>
+<td>Effect</td>
+<td>Increase transcription</td>
+<td>Decrease transcription</td>
+</tr>
+<tr>
+<td>Mechanism</td>
+<td>Recruit RNA polymerase; recruit co-activators; remodel chromatin to open state</td>
+<td>Block RNA polymerase binding; recruit histone deacetylases (HDACs) to close chromatin</td>
+</tr>
+<tr>
+<td>Binding site</td>
+<td>Enhancers (sometimes promoters)</td>
+<td>Silencers (sometimes promoters)</td>
+</tr>
+</table>
+
+<div class="tip">
+<p><strong>IB Exam Tip (Paper 2)</strong>: When explaining how a specific gene is expressed only in certain cells, use this logic: (1) the gene's enhancer requires a specific combination of activator transcription factors, (2) those activators are only expressed in certain cell types, (3) therefore the gene is only transcribed in those cells. This is the basis of differential gene expression.</p>
+</div>
+
+<hr>
+
+<h2>4. Environmental Influence on Gene Expression</h2>
+
+<p>Genes are not destiny. The environment profoundly shapes which genes are expressed and when.</p>
+
+<h3>4.1 Himalayan Rabbits: Temperature-Sensitive Gene Expression</h3>
+
+<p>Himalayan rabbits are a classic example of environmental influence:</p>
+
+<ul>
+<li>The gene encoding <strong>tyrosinase</strong> (an enzyme in melanin production) has a temperature-sensitive mutation.</li>
+<li>At normal body temperature (warm: ~35–37°C), the enzyme is <strong>inactive</strong> → no melanin → white fur.</li>
+<li>At cooler temperatures (ears, nose, feet, tail: <30°C), the enzyme is <strong>active</strong> → melanin produced → black/dark fur.</li>
+</ul>
+<p><strong>Experiment</strong>: If you shave a patch of white fur on a Himalayan rabbit and keep the patch cool (ice pack), the fur grows back black. This shows that the <strong>genotype is the same</strong> (same tyrosinase gene) but the <strong>phenotype changes</strong> with environment (temperature).</p>
+
+<div class="definition">
+<p><strong>Phenotypic plasticity</strong>: The ability of a single genotype to produce different phenotypes in response to different environmental conditions.</p>
+</div>
+
+<h3>4.2 Light and Plant Gene Expression</h3>
+
+<p>Light triggers massive changes in gene expression during plant development:</p>
+
+<ul>
+<li><strong>Photomorphogenesis</strong>: When a seedling emerges from soil into light, photoreceptors (phytochromes) detect light and trigger expression of genes for:</li>
+<li>Chlorophyll synthesis</li>
+<li>Photosynthetic enzymes (Rubisco)</li>
+<li>Leaf expansion proteins</li>
+<li>Stem elongation inhibition</li>
+</ul>
+<p>Before light exposure, the seedling is etiolated (pale, elongated) — expressing genes for rapid stem elongation to reach light. After light exposure, a completely different gene set is activated.</p>
+
+<h3>4.3 pH and Bacterial Gene Expression</h3>
+
+<p>Bacteria constantly adjust gene expression based on environmental pH:</p>
+
+<ul>
+<li><strong>Acid tolerance genes</strong>: E. coli in acidic environments (e.g., stomach) upregulate genes for amino acid decarboxylases that produce amines to neutralize acid.</li>
+<li><strong>Virulence genes</strong>: Some pathogenic bacteria only express toxin genes when they detect the slightly acidic pH of the host.</li>
+</ul>
+<hr>
+
+<h2>5. The Lac Operon: A Masterpiece of Prokaryotic Gene Regulation</h2>
+
+<p>The <strong>lac operon</strong> in E. coli, discovered by François Jacob and Jacques Monod (Nobel Prize, 1965), is the classic model of gene regulation. It exemplifies both <strong>negative</strong> and <strong>positive</strong> control.</p>
+
+<h3>5.1 The Structure</h3>
+
+<p>The lac operon contains three structural genes needed for lactose metabolism:</p>
+
+<table>
+<tr>
+<td>Gene</td>
+<td>Protein</td>
+<td>Function</td>
+</tr>
+<tr>
+<td>lacZ</td>
+<td>β-galactosidase</td>
+<td>Breaks lactose into glucose + galactose; also converts some lactose to allolactose (the inducer)</td>
+</tr>
+<tr>
+<td>lacY</td>
+<td>Permease</td>
+<td>Transports lactose into the cell across the plasma membrane</td>
+</tr>
+<tr>
+<td>lacA</td>
+<td>Transacetylase</td>
+<td>Adds acetyl group to certain sugars; role less clear</td>
+</tr>
+</table>
+
+<p>Upstream of these genes are:</p>
+<ul>
+<li><strong>Promoter (P)</strong>: Where RNA polymerase binds</li>
+<li><strong>Operator (O)</strong>: Where the repressor protein binds; overlaps the promoter</li>
+</ul>
+<p>External to the operon, the <strong>lacI gene</strong> (constitutively expressed) produces the <strong>lac repressor protein</strong>.</p>
+
+<p><strong>Draw and label the lac operon</strong>: Draw a line representing DNA. From left: "lacI gene" → "Promoter (P)" → "Operator (O)" → "lacZ" → "lacY" → "lacA." Above the operator, draw the repressor protein. Label: "Operon = promoter + operator + structural genes."</p>
+
+<h3>5.2 Scenario 1: No Lactose — The Operon is OFF</h3>
+
+<p>When lactose is absent:</p>
+<ol>
+<li>The lac repressor protein (lacI product) forms a tetramer and binds tightly to the operator.</li>
+<li>The operator overlaps with the promoter — the bound repressor <strong>physically blocks</strong> RNA polymerase from binding.</li>
+<li>Transcription is prevented → no enzymes are made.</li>
+</ol>
+<p><strong>This is negative regulation</strong> — the default state is "off" unless the repressor is removed.</p>
+
+<p><strong>Why is this efficient?</strong> If there's no lactose to metabolize, making β-galactosidase and permease would be a waste of energy and amino acids.</p>
+
+<h3>5.3 Scenario 2: Lactose Present, No Glucose — The Operon is ON</h3>
+
+<p>When lactose is present and glucose is absent:</p>
+<ol>
+<li>A small amount of permease (leaky expression) allows some lactose to enter the cell.</li>
+<li>Residual β-galactosidase converts some lactose to <strong>allolactose</strong> (the natural inducer).</li>
+<li>Allolactose binds to the lac repressor → <strong>conformational change</strong> → repressor releases the operator.</li>
+<li>RNA polymerase can now bind the promoter → transcription begins → all three genes are transcribed.</li>
+<li>The mRNA is polycistronic (one mRNA, multiple proteins) — translated into all three enzymes.</li>
+</ol>
+<p><strong>This is still negative regulation</strong> (removing a repressor), but now it's "derepressed."</p>
+
+<h3>5.4 Scenario 3: Both Glucose AND Lactose Present — Low Activity</h3>
+
+<p>E. coli prefers glucose over lactose (glucose is easier to metabolize). When both sugars are available, the lac operon is only weakly expressed even though lactose is present. This is <strong>catabolite repression</strong> — mediated by <strong>positive regulation</strong>:</p>
+
+<ol>
+<li>When glucose is low, <strong>cAMP</strong> (cyclic AMP) levels rise.</li>
+<li>cAMP binds to <strong>CAP</strong> (catabolite activator protein), forming a cAMP-CAP complex.</li>
+<li>The cAMP-CAP complex binds to a site near the lac promoter and <strong>bends the DNA</strong> — this recruits RNA polymerase more efficiently.</li>
+<li>When glucose is high → cAMP is low → cAMP-CAP doesn't form → even though lactose is present, transcription is only weak.</li>
+</ol>
+<p><strong>This is positive regulation</strong> — the cAMP-CAP complex actively enhances transcription.</p>
+
+<h3>5.5 Summary Table: Lac Operon States</h3>
+
+<table>
+<tr>
+<td>Glucose</td>
+<td>Lactose</td>
+<td>Repressor Bound?</td>
+<td>cAMP-CAP Bound?</td>
+<td>Transcription Level</td>
+</tr>
+<tr>
+<td>Present</td>
+<td>Absent</td>
+<td>Yes (blocks)</td>
+<td>No</td>
+<td>OFF** (not needed)</td>
+</tr>
+<tr>
+<td>Present</td>
+<td>Present</td>
+<td>No (allolactose)</td>
+<td>No (low cAMP)</td>
+<td>Low** (catabolite repression)</td>
+</tr>
+<tr>
+<td>Absent</td>
+<td>Absent</td>
+<td>Yes (blocks)</td>
+<td>Yes (high cAMP)</td>
+<td>OFF** (repressor blocks, CAP can't help)</td>
+</tr>
+<tr>
+<td>Absent</td>
+<td>Present</td>
+<td>No (allolactose)</td>
+<td>Yes (high cAMP)</td>
+<td>HIGH** (fully induced)</td>
+</tr>
+</table>
+
+<div class="worked">
+<p><strong>Worked Example: Predicting Lac Operon Behavior</strong></p>
+
+<p>A researcher creates an E. coli mutant where the operator sequence is deleted.</p>
+
+<p><strong>Question 1</strong>: How will lac operon expression change?</p>
+<p><strong>Answer</strong>: Without the operator, the repressor protein has nowhere to bind. Transcription will be <strong>constitutive</strong> (always on), regardless of lactose presence. The cell will waste energy making lactose-metabolizing enzymes even when no lactose is available.</p>
+
+<p><strong>Question 2</strong>: Would the cAMP-CAP system still work?</p>
+<p><strong>Answer</strong>: Yes. The cAMP-CAP complex would still bind its site and enhance transcription when glucose is low. So expression would be: baseline (no CAP) when glucose is present, and enhanced (with CAP) when glucose is absent — but it would never be completely off.</p>
+
+<p><strong>Question 3</strong>: What if the lacI gene were deleted instead?</p>
+<p><strong>Answer</strong>: Same result — no repressor protein is made, so the operon is constitutively ON. The operator site is still there, but with no repressor to occupy it, RNA polymerase has unimpeded access.</p>
+</div>
+
+<div class="tip">
+<p><strong>IB Exam Tip (Paper 1 & 2)</strong>: The lac operon is a favorite IB topic. You MUST be able to: (1) name the three structural genes and their products, (2) explain the role of the operator and repressor, (3) identify allolactose as the inducer, (4) explain WHY it's efficient (only make enzymes when needed), (5) explain catabolite repression via cAMP-CAP. Look for questions that present a mutant scenario and ask you to predict the effect on operon expression.</p>
+</div>
+
+<hr>
+
+<h2>6. Epigenetics: Beyond the DNA Sequence</h2>
+
+<p><strong>Epigenetics</strong> refers to heritable changes in gene expression that do NOT involve changes to the underlying DNA sequence. The DNA stays the same; how accessible it is to transcription machinery changes.</p>
+
+<h3>6.1 DNA Methylation: Gene Silencing</h3>
+
+<p><strong>What</strong>: Addition of a methyl group (–CH₃) to cytosine bases, typically in <strong>CpG dinucleotides</strong> (cytosine followed by guanine).</p>
+
+<p><strong>Who</strong>: DNA methyltransferases (DNMTs) are the enzymes that add methyl groups.</p>
+
+<p><strong>Where</strong>: CpG islands — regions with high CpG density, often near gene promoters.</p>
+
+<p><strong>Mechanism</strong>:</p>
+<ol>
+<li>DNMTs add –CH₃ to cytosine → 5-methylcytosine.</li>
+<li>Methyl-CpG-binding proteins (e.g., MeCP2) bind the methylated DNA.</li>
+<li>MeCP2 recruits <strong>histone deacetylases (HDACs)</strong> and other chromatin-remodeling proteins.</li>
+<li>These enzymes remove acetyl groups from histones → histones become more positively charged → DNA wraps more tightly → <strong>chromatin compaction</strong> → transcription factors and RNA polymerase cannot access the promoter → <strong>gene silenced</strong>.</li>
+</ol>
+<p><strong>Analogy</strong>: DNA methylation is like putting a "DO NOT READ" sticky note on a book in the library. The text hasn't changed, but access is blocked.</p>
+
+<p><strong>Key examples of DNA methylation</strong>:</p>
+<ul>
+<li><strong>X-inactivation</strong>: In female mammals, one X chromosome is randomly inactivated in each cell by heavy methylation → dosage compensation (equal X-linked gene expression with XY males).</li>
+<li><strong>Genomic imprinting</strong>: Certain genes are methylated differently depending on whether they come from the mother or father. Example: IGF2 (insulin-like growth factor 2) — only the paternal allele is expressed; the maternal allele is methylated and silenced.</li>
+</ul>
+<h3>6.2 Histone Modification: Controlling Chromatin Structure</h3>
+
+<p><strong>Histone acetylation</strong> is the most well-studied histone modification:</p>
+
+<table>
+<tr>
+<td>Process</td>
+<td>Enzyme</td>
+<td>Effect on Chromatin</td>
+<td>Effect on Transcription</td>
+</tr>
+<tr>
+<td>Acetylation** (add –COCH₃)</td>
+<td>HATs (histone acetyltransferases)</td>
+<td>Loosens DNA-histone interaction</td>
+<td>Activation** (euchromatin)</td>
+</tr>
+<tr>
+<td>Deacetylation** (remove –COCH₃)</td>
+<td>HDACs (histone deacetylases)</td>
+<td>Tightens DNA-histone interaction</td>
+<td>Repression** (heterochromatin)</td>
+</tr>
+</table>
+
+<p><strong>Mechanism</strong>: Lysine residues on histone tails are positively charged, attracting the negatively charged DNA phosphate backbone. Acetylation neutralizes the positive charge → reduces histone-DNA attraction → chromatin opens → transcription factors can access DNA.</p>
+
+<p><strong>Draw and label</strong>: Draw two nucleosome states side by side:</p>
+<ul>
+<li>Left: "Acetylated histones — euchromatin" — show DNA loosely wrapped, with acetyl groups (–Ac) on histone tails, RNA polymerase accessing DNA.</li>
+<li>Right: "Deacetylated histones — heterochromatin" — show DNA tightly wrapped, histones closely packed, RNA polymerase blocked.</li>
+</ul>
+<div class="definition">
+<p><strong>Euchromatin</strong>: Loosely packed, transcriptionally active chromatin. Genes can be expressed.</p>
+<p><strong>Heterochromatin</strong>: Tightly packed, transcriptionally inactive chromatin. Genes are silenced.</p>
+</div>
+
+<h3>6.3 Epigenetic Inheritance</h3>
+
+<p>Some epigenetic marks can be passed through cell divisions (mitotic inheritance) and even, in some cases, across generations (meiotic inheritance). This means that an environmental exposure experienced by a parent could potentially affect gene expression in offspring — without any change to DNA sequence.</p>
+
+<hr>
+
+<h2>7. Differentiation Through Differential Gene Expression</h2>
+
+<h3>7.1 The Core Principle</h3>
+
+<p>Every somatic cell in your body has the <strong>exact same DNA sequence</strong>. Yet:</p>
+
+<ul>
+<li>A <strong>red blood cell precursor (erythroblast)</strong> expresses hemoglobin genes at very high levels but does not express neurotransmitter synthesis genes.</li>
+<li>A <strong>neuron</strong> expresses genes for neurotransmitter synthesis and ion channels but does not express hemoglobin genes.</li>
+<li>A <strong>pancreatic β-cell</strong> expresses the insulin gene; no other cell type does.</li>
+</ul>
+<p><strong>How?</strong> Different sets of transcription factors are active in different cell types. These transcription factors bind to different enhancers, activating different sets of genes.</p>
+
+<p><strong>Analogy</strong>: Every musician in an orchestra has the complete score, but each only plays their own part. The violinist doesn't play the trumpet part, even though it's printed in the score. The "conductor" (transcription factors) tells each cell which "part" of the genome to "play."</p>
+
+<h3>7.2 The Erythroblast Example</h3>
+
+<p>During red blood cell differentiation:</p>
+<ol>
+<li>A hematopoietic stem cell receives signals (erythropoietin) that activate specific transcription factors (e.g., GATA-1).</li>
+<li>GATA-1 binds to enhancers of globin genes (α-globin, β-globin clusters).</li>
+<li>These enhancers loop to the globin gene promoters → transcription activated.</li>
+<li>Simultaneously, GATA-1 represses genes associated with other lineages.</li>
+<li>Result: Massive production of hemoglobin; cell loses its nucleus (in mammals) and becomes a dedicated oxygen carrier.</li>
+</ol>
+<hr>
+
+<h2>8. Alternative Splicing: One Gene, Many Proteins</h2>
+
+<p>The human genome has ~20,000 protein-coding genes — far fewer than the number of distinct proteins in the human body (~100,000+). <strong>Alternative splicing</strong> helps resolve this paradox.</p>
+
+<h3>8.1 How It Works</h3>
+
+<p>After transcription, the pre-mRNA contains exons and introns. Splicing removes introns and joins exons. In alternative splicing, <strong>different combinations of exons</strong> are included in the mature mRNA:</p>
+
+<ul>
+<li>Exon skipping</li>
+<li>Alternative 5' or 3' splice sites</li>
+<li>Mutually exclusive exons</li>
+<li>Intron retention</li>
+</ul>
+<p><strong>Analogy</strong>: Think of a movie editing room. The raw footage (pre-mRNA) has many scenes. The editor can produce different versions of the movie (mature mRNA) by including or excluding different scenes (exons) — a theatrical release, a director's cut, a TV edit — all from the same raw footage, but with different content.</p>
+
+<h3>8.2 The Drosophila Dscam Gene</h3>
+
+<p>The extreme example: the <strong>Dscam</strong> gene (Down syndrome cell adhesion molecule) in Drosophila:</p>
+<ul>
+<li>Contains 4 clusters of alternative exons</li>
+<li>12 × 48 × 33 × 2 = <strong>38,016</strong> possible isoforms from a single gene</li>
+<li>Dscam proteins are involved in neuronal wiring — the diversity allows neurons to recognize self vs. non-self</li>
+</ul>
+<h3>8.3 Human Calcitonin/CGRP Gene</h3>
+
+<p>The human <strong>CALCA</strong> gene produces different proteins in different tissues through alternative splicing:</p>
+
+<ul>
+<li>In <strong>thyroid cells</strong>: Exons 1-2-3-4 are spliced → <strong>calcitonin</strong> (32 amino acids, regulates calcium levels, lowers blood Ca²⁺).</li>
+<li>In <strong>neurons</strong>: Exons 1-2-3-5-6 are spliced → <strong>CGRP</strong> (calcitonin gene-related peptide, 37 amino acids, neurotransmitter/vasodilator).</li>
+</ul>
+<p>Same gene, same pre-mRNA, but different choices of which exons to include → completely different proteins with different functions in different tissues.</p>
+
+<div class="tip">
+<p><strong>IB Exam Tip (Paper 2)</strong>: If asked "How can the human genome have only ~20,000 genes but produce ~100,000 proteins?", the answer should include alternative splicing. Explain that different combinations of exons from the same pre-mRNA produce different protein isoforms — and give a specific example (calcitonin/CGRP or Dscam).</p>
+</div>
+
+<hr>
+
+<h2>9. Summary: Levels of Gene Regulation</h2>
+
+<p>Gene expression is controlled at multiple levels:</p>
+
+<table>
+<tr>
+<td>Level</td>
+<td>Mechanism</td>
+<td>Example</td>
+</tr>
+<tr>
+<td>Chromatin</td>
+<td>DNA methylation, histone acetylation</td>
+<td>X-inactivation</td>
+</tr>
+<tr>
+<td>Transcription</td>
+<td>Promoters, enhancers, silencers, transcription factors</td>
+<td>Lac operon, tissue-specific genes</td>
+</tr>
+<tr>
+<td>Post-transcription</td>
+<td>Alternative splicing</td>
+<td>Calcitonin/CGRP</td>
+</tr>
+<tr>
+<td>mRNA stability</td>
+<td>Poly-A tail length, RNA-binding proteins</td>
+<td>Iron-responsive elements in ferritin/transferrin receptor</td>
+</tr>
+<tr>
+<td>Translation</td>
+<td>Regulatory proteins blocking ribosome binding</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Post-translation</td>
+<td>Protein modification, degradation</td>
+<td>Ubiquitin-proteasome pathway</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>10. Common Misconceptions</h2>
+
+<table>
+<tr>
+<td>Misconception</td>
+<td>Reality</td>
+</tr>
+<tr>
+<td>"Different cell types have different DNA"</td>
+<td>All somatic cells have the <strong>same DNA</strong>. Differences come from which genes are expressed.</td>
+</tr>
+<tr>
+<td>"The lac operon is ON when lactose is present, regardless of glucose"</td>
+<td>The lac operon has both negative (repressor) and positive (cAMP-CAP) control. Even with lactose present, if glucose is also present, transcription is weak.</td>
+</tr>
+<tr>
+<td>"DNA methylation changes the DNA sequence"</td>
+<td>Methylation adds a group to cytosine but does NOT change the base sequence. The A-T-G-C sequence remains the same.</td>
+</tr>
+<tr>
+<td>"Epigenetic marks last forever"</td>
+<td>Some epigenetic marks are reversible. For example, histone acetylation and deacetylation are dynamic and responsive to signals.</td>
+</tr>
+<tr>
+<td>"Each gene produces one protein"</td>
+<td>Alternative splicing means one gene can produce multiple protein isoforms (sometimes thousands).</td>
+</tr>
+<tr>
+<td>"Enhancers must be next to the gene they regulate"</td>
+<td>Enhancers can be thousands of base pairs away; they work through DNA looping.</td>
+</tr>
+<tr>
+<td>"The repressor binds the inducer"</td>
+<td>The repressor binds the <strong>operator DNA</strong>. The inducer (allolactose) binds the <strong>repressor</strong>, causing it to release the operator.</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>11. Practice Problems</h2>
+
+<h3>Problem 1: The Lac Operon</h3>
+
+<p><strong>(a)</strong> Name the three structural genes of the lac operon and state the function of each protein. [3 marks]</p>
+<p><strong>(b)</strong> Explain why the lac operon is considered an example of both negative and positive regulation. [3 marks]</p>
+<p><strong>(c)</strong> An E. coli mutant has a defective lacI gene producing a repressor that cannot bind allolactose. Predict and explain the effect on lac operon expression. [2 marks]</p>
+
+<h3>Problem 2: Eukaryotic Gene Regulation</h3>
+
+<p><strong>(a)</strong> Distinguish between the roles of a promoter and an enhancer. [2 marks]</p>
+<p><strong>(b)</strong> Explain how an enhancer located thousands of base pairs away from a gene can influence its transcription. [2 marks]</p>
+<p><strong>(c)</strong> The β-globin gene is expressed only in erythroblasts. Explain this specificity in terms of transcription factors. [2 marks]</p>
+
+<h3>Problem 3: Epigenetics</h3>
+
+<p><strong>(a)</strong> Explain how DNA methylation leads to gene silencing. [3 marks]</p>
+<p><strong>(b)</strong> Distinguish between the roles of HATs and HDACs in regulating gene expression. [2 marks]</p>
+<p><strong>(c)</strong> In female mammals, one X chromosome is inactivated in each cell. Explain the role of epigenetics in this process. [2 marks]</p>
+
+<h3>Problem 4: Alternative Splicing</h3>
+
+<p>The CALCA gene in humans can produce calcitonin in thyroid cells and CGRP in neurons.</p>
+<p><strong>(a)</strong> Explain how alternative splicing of the same pre-mRNA can produce two different proteins. [3 marks]</p>
+<p><strong>(b)</strong> Explain why alternative splicing is important in explaining the discrepancy between the number of human genes (~20,000) and the number of human proteins (~100,000+). [2 marks]</p>
+
+<h3>Problem 5: Environmental Effects</h3>
+
+<p>Himalayan rabbits have white body fur but black fur on their ears, nose, feet, and tail.</p>
+<p><strong>(a)</strong> Explain the molecular basis of this temperature-dependent fur color. [3 marks]</p>
+<p><strong>(b)</strong> Describe an experiment that could demonstrate that this is due to gene expression, not a different genotype. [2 marks]</p>
+
+<hr>
+
+<h2>12. Answers</h2>
+
+<h3>Answer 1</h3>
+
+<p><strong>(a)</strong> lacZ — β-galactosidase: breaks lactose into glucose + galactose; also produces allolactose (inducer) [1]. lacY — permease: transports lactose into the cell [1]. lacA — transacetylase: acetylates certain sugars; role in lactose metabolism less clear [1].</p>
+
+<p><strong>(b)</strong> Negative regulation: The lac repressor (lacI product) binds to the operator and blocks RNA polymerase. When allolactose binds the repressor, it releases the operator and transcription proceeds (derepression) [1]. Positive regulation: The cAMP-CAP complex binds near the promoter and enhances transcription by recruiting RNA polymerase more efficiently [1]. Both mechanisms operate simultaneously — repression prevents wasteful expression when lactose is absent; CAP ensures glucose is preferred when available. [1]</p>
+
+<p><strong>(c)</strong> The repressor would bind the operator normally but would never release it — allolactose cannot bind and induce the conformational change [1]. Result: The lac operon would remain <strong>permanently OFF</strong> (uninducible), even in the presence of lactose. The bacteria would be unable to metabolize lactose. [1]</p>
+
+<h3>Answer 2</h3>
+
+<p><strong>(a)</strong> Promoter: located immediately upstream of the transcription start site; where RNA polymerase and general transcription factors assemble to initiate transcription [1]. Enhancer: can be located far from the gene (upstream, downstream, or within introns); binds activator transcription factors and increases transcription rate. [1]</p>
+
+<p><strong>(b)</strong> DNA looping allows proteins bound to the enhancer to physically interact with the transcription machinery at the promoter [1]. The intervening DNA loops out, bringing the enhancer-bound activator proteins into contact with Mediator complex and RNA polymerase at the promoter, stimulating transcription initiation. [1]</p>
+
+<p><strong>(c)</strong> The β-globin gene has enhancer elements that are recognized by erythroblast-specific transcription factors (e.g., GATA-1) [1]. These transcription factors are only expressed in the erythroid lineage. In other cell types, the necessary activator combination is absent, so the β-globin gene remains transcriptionally silent. [1]</p>
+
+<h3>Answer 3</h3>
+
+<p><strong>(a)</strong> DNA methyltransferases (DNMTs) add methyl groups to cytosine bases, typically at CpG dinucleotides near promoters [1]. Methyl-CpG-binding proteins (e.g., MeCP2) bind to methylated DNA and recruit histone deacetylases (HDACs) [1]. HDACs remove acetyl groups from histones, causing chromatin compaction → transcription factors and RNA polymerase are excluded → gene is silenced [1].</p>
+
+<p><strong>(b)</strong> HATs (histone acetyltransferases) add acetyl groups to lysine residues on histone tails → neutralizes positive charge → loosens histone-DNA interaction → chromatin opens → transcription activated [1]. HDACs (histone deacetylases) remove acetyl groups → restores positive charge → tightens chromatin → transcription repressed [1].</p>
+
+<p><strong>(c)</strong> One X chromosome is heavily methylated at CpG islands in its promoters, silencing most genes on that chromosome [1]. This methylation pattern is mitotically heritable, so all descendants of a cell maintain the same inactivated X. This ensures dosage compensation between XX females and XY males. [1]</p>
+
+<h3>Answer 4</h3>
+
+<p><strong>(a)</strong> In thyroid cells, the pre-mRNA is spliced to include exons 1-2-3-4, producing the mRNA for calcitonin [1]. In neurons, the pre-mRNA is spliced to include exons 1-2-3-5-6, producing the mRNA for CGRP (exon 4 is excluded; exons 5 and 6 are included instead) [1]. Different splicing patterns are achieved by tissue-specific splicing factors that recognize different splice sites in the pre-mRNA. [1]</p>
+
+<p><strong>(b)</strong> Alternative splicing allows a single gene to produce multiple different mRNA molecules (and thus multiple different proteins) by combining exons in different ways [1]. This means the protein-coding capacity of the genome far exceeds the number of genes. With ~20,000 genes, alternative splicing can generate well over 100,000 distinct protein isoforms. [1]</p>
+
+<h3>Answer 5</h3>
+
+<p><strong>(a)</strong> The tyrosinase enzyme responsible for melanin production has a temperature-sensitive form in Himalayan rabbits [1]. At the warmer core body temperature, tyrosinase is inactive → no melanin → white fur [1]. At cooler extremities (ears, nose, feet, tail), the temperature is lower and tyrosinase is active → melanin produced → dark fur [1].</p>
+
+<p><strong>(b)</strong> Shave a patch of white fur from the rabbit's back and keep that area cooled (e.g., with an ice pack) as the fur regrows [1]. If the regrown fur is black, this demonstrates that the gene for melanin production is present and functional (same genotype), but its expression is temperature-dependent [1].</p>
+
+<hr>
+
+<h2>13. Key Terms Summary</h2>
+
+<table>
+<tr>
+<td>Term</td>
+<td>Definition</td>
+</tr>
+<tr>
+<td>Promoter</td>
+<td>DNA sequence near transcription start site where RNA polymerase and general transcription factors bind</td>
+</tr>
+<tr>
+<td>TATA box</td>
+<td>Core promoter element (TATAAA) ~25–30 bp upstream; binds TBP</td>
+</tr>
+<tr>
+<td>Enhancer</td>
+<td>Distant regulatory DNA sequence that binds activator transcription factors to increase transcription</td>
+</tr>
+<tr>
+<td>Silencer</td>
+<td>Regulatory DNA sequence that binds repressor proteins to decrease transcription</td>
+</tr>
+<tr>
+<td>Transcription factor</td>
+<td>Protein that binds specific DNA sequences and regulates transcription</td>
+</tr>
+<tr>
+<td>Operator</td>
+<td>DNA sequence in the lac operon where the repressor protein binds</td>
+</tr>
+<tr>
+<td>Allolactose</td>
+<td>The natural inducer of the lac operon; binds repressor, causing it to release the operator</td>
+</tr>
+<tr>
+<td>cAMP-CAP</td>
+<td>Complex formed when cAMP binds CAP; positively regulates lac operon in low glucose</td>
+</tr>
+<tr>
+<td>Epigenetics</td>
+<td>Heritable changes in gene expression without changes to DNA sequence</td>
+</tr>
+<tr>
+<td>DNA methylation</td>
+<td>Addition of –CH₃ to cytosine (CpG sites); associated with gene silencing</td>
+</tr>
+<tr>
+<td>Histone acetylation</td>
+<td>Addition of acetyl groups to histone lysines by HATs; associated with active chromatin</td>
+</tr>
+<tr>
+<td>HDAC</td>
+<td>Histone deacetylase; removes acetyl groups, promotes chromatin compaction</td>
+</tr>
+<tr>
+<td>Euchromatin</td>
+<td>Loosely packed, transcriptionally active chromatin</td>
+</tr>
+<tr>
+<td>Heterochromatin</td>
+<td>Tightly packed, transcriptionally inactive chromatin</td>
+</tr>
+<tr>
+<td>Alternative splicing</td>
+<td>Different exon combinations from one pre-mRNA → multiple protein isoforms</td>
+</tr>
+<tr>
+<td>Differential gene expression</td>
+<td>Different cell types express different genes despite identical DNA</td>
+</tr>
+<tr>
+<td>Photomorphogenesis</td>
+<td>Light-triggered developmental changes in plants via altered gene expression</td>
+</tr>
+<tr>
+<td>X-inactivation</td>
+<td>Epigenetic silencing of one X chromosome in female mammals</td>
+</tr>
+</table>
+
+<div class="nav"><a href="lesson_44.html">&#8592; Lesson 44</a><a href="index.html">&#8962; Index</a><a href="lesson_46.html">Lesson 46 &#8594;</a></div>
+
+</body>
+</html>

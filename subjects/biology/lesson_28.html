@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 28: Cell Respiration II — The Complete Pathway ⚠️ HL (C1.2) — IB Biology HL</title>
+<script>window.MathJax = { tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] } };</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #1a6b3c; --border: #c4d4a9; --highlight: #e8f5e9; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Palatino', 'Georgia', serif; background: var(--bg); color: var(--text); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; font-size: 17px; line-height: 1.7; }
+  h1 { font-size: 1.7rem; color: var(--accent); margin-bottom: 0.5rem; }
+  h2 { font-size: 1.25rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; margin: 2rem 0 1rem; }
+  h3 { font-size: 1.1rem; color: #444; margin: 1.3rem 0 0.5rem; }
+  p, li { margin-bottom: 0.6rem; }
+  ul, ol { padding-left: 1.8rem; margin-bottom: 1rem; }
+  .worked { background: #e8f5e9; border-left: 4px solid #1a6b3c; padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
+  .worked strong { color: #1a6b3c; }
+  .answer { background: #fefdf7; border: 1px solid var(--border); padding: 0.8rem 1.2rem; margin: 0.5rem 0; border-radius: 6px; }
+  .nav { display: flex; justify-content: space-between; margin: 3rem 0 1rem; padding-top: 1rem; border-top: 2px solid var(--border); font-size: 0.9rem; }
+  .nav a { color: #1a5c9e; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  .definition { background: #fff8e1; border-left: 4px solid #e6a817; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  .tip { background: #e3f2fd; border-left: 4px solid #1976d2; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  table { border-collapse: collapse; margin: 0.8rem 0; width: 100%; }
+  th, td { border: 1px solid var(--border); padding: 0.4rem 0.6rem; text-align: left; }
+  th { background: #f0f5e8; }
+  @media print { body { font-size: 14px; } .nav { display: none; } }
+</style>
+</head>
+<body>
+
+
+<h2>What You'll Learn</h2>
+
+<p>By the end of this lesson, you will be able to:</p>
+
+<ul>
+<li><strong>Name every intermediate</strong> in glycolysis and the Krebs cycle, in order</li>
+<li><strong>Identify regulatory enzymes</strong> — especially PFK — and explain how ATP/AMP control respiration</li>
+<li><strong>Trace electrons</strong> from NADH and FADH₂ through all four complexes of the ETC</li>
+<li><strong>Explain chemiosmosis</strong>: how a proton gradient of ~200 mV drives ATP synthase</li>
+<li><strong>Calculate total ATP yield</strong>: why the answer is "30–32, not 38"</li>
+<li><strong>Describe anaerobic pathways</strong>: lactate fermentation, ethanol fermentation, and the Cori cycle</li>
+<li><strong>Trace lipid and protein entry</strong> into the respiratory pathway, including β-oxidation and deamination</li>
+</ul>
+<hr>
+
+<h2>1. Glycolysis: The 10-Step Pay-Off</h2>
+
+<p>Glycolysis ("sugar splitting") occurs in the <strong>cytosol</strong>. It does not require oxygen; every living cell on Earth — from bacteria to your brain — runs some version of it. It is the most ancient metabolic pathway, dating back over 3 billion years.</p>
+
+<h3>The Big Picture</h3>
+
+<p>Glucose (6C) is split into two triose phosphates, then oxidized to two molecules of <strong>pyruvate</strong> (3C each). The net products per glucose are:</p>
+
+<p style="text-align:center;margin:0.8rem 0;">$$ \text{Glucose} + 2\text{NAD}^+ + 2\text{ADP} + 2\text{P}_i \rightarrow 2\text{ Pyruvate} + 2\text{NADH} + 2\text{H}^+ + 2\text{ATP} + 2\text{H}_2\text{O} $$</p>
+
+<table>
+<tr>
+<td>Product</td>
+<td>Net Yield</td>
+</tr>
+<tr>
+<td>ATP</td>
+<td>2 (substrate-level phosphorylation)</td>
+</tr>
+<tr>
+<td>NADH</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Pyruvate</td>
+<td>2</td>
+</tr>
+</table>
+
+<p>But the real beauty is in the step-by-step chemistry. The IB expects you to know <strong>every intermediate by name</strong>, the enzymes that catalyse each committed step, and exactly where ATP is consumed and produced.</p>
+
+<h3>Why It Helps: The "Investment and Pay-Off" Analogy</h3>
+
+<p>Imagine you want to split a £10 note into two £5 notes, but the machine charges £2 to operate. You feed in £2 (the <strong>investment phase</strong>), the machine splits the £10 into two £5 notes and gives you back £4 (the <strong>pay-off phase</strong>). Net gain: £2. Glycolysis works the same way: it invests <strong>2 ATP</strong> in the first half, then produces <strong>4 ATP</strong> in the second half, netting <strong>2 ATP</strong>.</p>
+
+<hr>
+
+<h3>Phase 1: Energy Investment (Steps 1–5)</h3>
+
+<p>We invest 2 ATP to phosphorylate glucose and split it into two 3-carbon molecules.</p>
+
+<p>#### Step 1: Glucose → Glucose-6-Phosphate (G6P)</p>
+
+<p><strong>Enzyme</strong>: <strong>Hexokinase</strong> (adds phosphate from ATP)</p>
+
+<div class="definition">
+
+<p><strong>Hexokinase</strong>: The enzyme that phosphorylates glucose as soon as it enters the cell. By adding a charged phosphate group, glucose is "trapped" — it cannot diffuse back out through GLUT transporters. This is the first committed step. Hexokinase has a low Kₘ for glucose (~0.1 mM), meaning it works at maximal rate even when glucose is scarce.</p>
+
+</div>
+
+<p><strong>Draw and label</strong>: A cell membrane with a GLUT transporter. Glucose enters, and hexokinase immediately adds a phosphate (from ATP → ADP), converting glucose to G6P. Label: "Phosphate traps glucose inside the cell."</p>
+
+<ul>
+<li>ATP consumed: <strong>1</strong></li>
+<li>Reaction: Glucose + ATP → Glucose-6-phosphate + ADP</li>
+<li>ΔG°′ ≈ −16.7 kJ mol⁻¹ (irreversible under cellular conditions)</li>
+</ul>
+<p>#### Step 2: Glucose-6-Phosphate → Fructose-6-Phosphate (F6P)</p>
+
+<p><strong>Enzyme</strong>: <strong>Phosphoglucose isomerase</strong></p>
+
+<p>This is an isomerisation — an aldose (glucose, with an aldehyde group) becomes a ketose (fructose, with a ketone group). No ATP consumed; freely reversible.</p>
+
+<p><strong>Why the isomerisation?</strong> The next step requires a primary alcohol at C-1 for phosphorylation. Glucose has its carbonyl at C-1, but fructose has it at C-2, leaving C-1 free. Clever biochemistry.</p>
+
+<p>#### Step 3: Fructose-6-Phosphate → Fructose-1,6-Bisphosphate (F1,6BP)</p>
+
+<p><strong>Enzyme</strong>: <strong>Phosphofructokinase (PFK)</strong> ⭐</p>
+
+<div class="definition">
+
+<p><strong>Phosphofructokinase (PFK)</strong>: The <strong>rate-limiting enzyme of glycolysis</strong> and the most important regulatory point. PFK catalyses the second phosphorylation: F6P + ATP → F1,6BP + ADP. It is allosterically <strong>inhibited by ATP</strong> and <strong>activated by AMP</strong>. When the cell has plenty of ATP, glycolysis slows down. When ATP is being consumed rapidly (AMP rises), glycolysis speeds up.</p>
+
+</div>
+
+<ul>
+<li>ATP consumed: <strong>1</strong> (total so far: <strong>2 ATP invested</strong>)</li>
+<li>ΔG°′ ≈ −14.2 kJ mol⁻¹</li>
+<li>This is the <strong>committed step</strong> of glycolysis — once F1,6BP is made, the molecule is destined to become pyruvate.</li>
+</ul>
+<div class="tip">
+
+<p><strong>IB Exam Tip (Paper 1)</strong>: Multiple-choice questions love testing PFK regulation. Remember: ATP = inhibitor (high energy → don't need more), AMP = activator (low energy → make more). Citrate also inhibits PFK — if the Krebs cycle is backed up, citrate accumulates and feeds back to slow glycolysis.</p>
+
+</div>
+
+<p><strong>Draw and label</strong>: A graph of PFK activity vs [ATP], showing a sigmoidal (S-shaped) curve that shifts right with AMP. Label the curve as "allosteric regulation — cooperative binding."</p>
+
+<p>#### Step 4: Fructose-1,6-Bisphosphate → DHAP + G3P</p>
+
+<p><strong>Enzyme</strong>: <strong>Aldolase</strong></p>
+
+<p>The 6-carbon sugar is cleaved into two 3-carbon molecules:</p>
+
+<ul>
+<li><strong>Dihydroxyacetone phosphate (DHAP)</strong> — a ketose</li>
+<li><strong>Glyceraldehyde-3-phosphate (G3P)</strong> — an aldose</li>
+</ul>
+<p>This is the split that gives glycolysis its name (lysis = splitting). The reaction is reversible but is pulled forward because G3P is rapidly consumed in subsequent steps.</p>
+
+<p>#### Step 5: DHAP ⇌ G3P</p>
+
+<p><strong>Enzyme</strong>: <strong>Triose phosphate isomerase (TIM)</strong></p>
+
+<p>DHAP is converted to G3P so that <strong>both</strong> 3-carbon fragments can proceed through the pay-off phase. This means every step from here onward happens <strong>twice per glucose</strong> (once for each G3P molecule).</p>
+
+<div class="definition">
+
+<p><strong>Triose phosphate isomerase (TIM)</strong> is considered a "perfect" enzyme — its catalytic rate is limited only by the rate of substrate diffusion. The k_cat/Kₘ is ~10⁹ M⁻¹s⁻¹, essentially the diffusion limit.</p>
+
+</div>
+
+<p><strong>Summary of Phase 1</strong>: 2 ATP consumed, one 6C sugar split into two × 3C (both as G3P).</p>
+
+<hr>
+
+<h3>Phase 2: Energy Pay-Off (Steps 6–10)</h3>
+
+<p>Each G3P is oxidised and converted to pyruvate, generating ATP and NADH. Since there are two G3P per glucose, <strong>multiply ATP and NADH yields by 2</strong>.</p>
+
+<p>#### Step 6: G3P → 1,3-Bisphosphoglycerate (1,3-BPG)</p>
+
+<p><strong>Enzyme</strong>: <strong>Glyceraldehyde-3-phosphate dehydrogenase (GAPDH)</strong></p>
+
+<p>This is the <strong>only oxidation step in glycolysis</strong> — where NAD⁺ is reduced to NADH.</p>
+
+<ul>
+<li>G3P + NAD⁺ + Pi → 1,3-BPG + NADH + H⁺</li>
+<li>The aldehyde group of G3P is oxidised to a carboxylic acid, which is immediately phosphorylated.</li>
+<li>The product, 1,3-BPG, contains a <strong>high-energy acyl phosphate bond</strong> (ΔG°′ of hydrolysis ≈ −49 kJ mol⁻¹).</li>
+</ul>
+<p><strong>Draw and label</strong>: Show G3P (aldehyde) being oxidised by NAD⁺ to form a carboxylic acid-phosphate anhydride (1,3-BPG). Label the high-energy bond with a squiggle (~).</p>
+
+<ul>
+<li>NADH produced: <strong>1 per G3P = 2 per glucose</strong></li>
+</ul>
+<p>#### Step 7: 1,3-BPG → 3-Phosphoglycerate (3-PG)</p>
+
+<p><strong>Enzyme</strong>: <strong>Phosphoglycerate kinase</strong></p>
+
+<div class="definition">
+
+<p><strong>Substrate-level phosphorylation (first site)</strong>: The high-energy phosphate from 1,3-BPG is transferred directly to ADP to make ATP. This is called substrate-level phosphorylation because the phosphate comes from a substrate molecule (1,3-BPG), not from the ETC or proton gradient.</p>
+
+</div>
+
+<ul>
+<li>1,3-BPG + ADP → 3-PG + ATP</li>
+<li>ATP produced: <strong>1 per G3P = 2 per glucose</strong></li>
+<li>Net ATP so far: −2 + 2 = <strong>0</strong> (break-even point!)</li>
+</ul>
+<p>The name "phosphoglycerate kinase" is misleading — in cells, this enzyme runs in the direction of ATP production (the reverse of what "kinase" usually implies).</p>
+
+<p>#### Step 8: 3-PG → 2-Phosphoglycerate (2-PG)</p>
+
+<p><strong>Enzyme</strong>: <strong>Phosphoglycerate mutase</strong></p>
+
+<p>The phosphate group is moved from carbon 3 to carbon 2. This is a simple isomerisation that sets up the next step — the phosphate must be on C-2 for the dehydration reaction to occur.</p>
+
+<p>#### Step 9: 2-PG → Phosphoenolpyruvate (PEP)</p>
+
+<p><strong>Enzyme</strong>: <strong>Enolase</strong></p>
+
+<p>A water molecule is removed (dehydration), converting 2-PG into PEP. This reaction <strong>redistributes energy</strong> within the molecule: the phosphate ester bond (low energy, ΔG°′ ≈ −13 kJ mol⁻¹) is converted into an <strong>enol phosphate bond</strong> (high energy, ΔG°′ ≈ −62 kJ mol⁻¹).</p>
+
+<p><strong>Draw and label</strong>: Show 2-PG losing H₂O, with the phosphate group moving from a low-energy ester to a high-energy enol position. Label: "Enolase converts a low-energy phosphate into a high-energy phosphate — no ATP required."</p>
+
+<div class="tip">
+
+<p><strong>IB Exam Tip (Paper 2)</strong>: If asked why enolase is important even though no ATP is produced, explain that it converts a low-energy phosphate into a high-energy phosphate, making the next step (ATP production) thermodynamically favourable. Fluoride inhibits enolase — this is why fluoride is added to blood collection tubes (to stop glycolysis and preserve blood glucose levels).</p>
+
+</div>
+
+<p>#### Step 10: PEP → Pyruvate</p>
+
+<p><strong>Enzyme</strong>: <strong>Pyruvate kinase</strong> ⭐</p>
+
+<div class="definition">
+
+<p><strong>Substrate-level phosphorylation (second site)</strong>: The high-energy phosphate from PEP is transferred to ADP, producing ATP and pyruvate. This is the second ATP-generating step of glycolysis. Pyruvate kinase is regulated: activated by F1,6BP (feed-forward activation) and inhibited by ATP, alanine, and glucagon signalling (phosphorylation).</p>
+
+</div>
+
+<ul>
+<li>PEP + ADP → Pyruvate + ATP</li>
+<li>ATP produced: <strong>1 per G3P = 2 per glucose</strong></li>
+<li>ΔG°′ ≈ −31.4 kJ mol⁻¹ (irreversible)</li>
+</ul>
+<p>The product is initially <strong>enol-pyruvate</strong>, which spontaneously tautomerises to the more stable <strong>keto-pyruvate</strong>.</p>
+
+<hr>
+
+<h3>Glycolysis: Complete Summary Table</h3>
+
+<table>
+<tr>
+<td>Step</td>
+<td>Substrate</td>
+<td>Product</td>
+<td>Enzyme</td>
+<td>ATP</td>
+<td>NADH</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Glucose</td>
+<td>G6P</td>
+<td>Hexokinase</td>
+<td>−1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>2</td>
+<td>G6P</td>
+<td>F6P</td>
+<td>Phosphoglucose isomerase</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>3</td>
+<td>F6P</td>
+<td>F1,6BP</td>
+<td>PFK** ⭐</td>
+<td>−1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>4</td>
+<td>F1,6BP</td>
+<td>DHAP + G3P</td>
+<td>Aldolase</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>5</td>
+<td>DHAP</td>
+<td>G3P</td>
+<td>Triose phosphate isomerase</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>6</td>
+<td>G3P</td>
+<td>1,3-BPG</td>
+<td>GAPDH</td>
+<td>0</td>
+<td>+1 (×2)</td>
+</tr>
+<tr>
+<td>7</td>
+<td>1,3-BPG</td>
+<td>3-PG</td>
+<td>Phosphoglycerate kinase</td>
+<td>+1 (×2)</td>
+<td>0</td>
+</tr>
+<tr>
+<td>8</td>
+<td>3-PG</td>
+<td>2-PG</td>
+<td>Phosphoglycerate mutase</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>9</td>
+<td>2-PG</td>
+<td>PEP</td>
+<td>Enolase</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>10</td>
+<td>PEP</td>
+<td>Pyruvate</td>
+<td>Pyruvate kinase ⭐</td>
+<td>+1 (×2)</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Net</td>
+<td>Glucose</td>
+<td>2 Pyruvate</td>
+<td>—</td>
+<td>+2</td>
+<td>+2</td>
+</tr>
+</table>
+
+<hr>
+
+<h3>Substrate-Level Phosphorylation: The Two Sites</h3>
+
+<div class="worked">
+
+<p><strong>Worked Example: Identifying SLP steps</strong></p>
+
+<p><strong>Question</strong>: Name the two steps of glycolysis where substrate-level phosphorylation occurs, and state the ATP yield at each.</p>
+
+<p><strong>Step-by-step</strong>:</p>
+
+<ol>
+<li><strong>Step 7</strong>: 1,3-BPG → 3-PG, catalysed by phosphoglycerate kinase.</li>
+</ol>
+<ul>
+<li>The high-energy acyl phosphate bond (ΔG°′ ≈ −49 kJ mol⁻¹) is cleaved.</li>
+<li>The released phosphate is transferred to ADP → ATP.</li>
+<li>Yield: 1 ATP per G3P × 2 G3P/glucose = <strong>2 ATP per glucose</strong>.</li>
+</ul>
+<ol>
+<li><strong>Step 10</strong>: PEP → Pyruvate, catalysed by pyruvate kinase.</li>
+</ol>
+<ul>
+<li>The high-energy enol phosphate bond (ΔG°′ ≈ −62 kJ mol⁻¹) is cleaved.</li>
+<li>Phosphate transferred to ADP → ATP.</li>
+<li>Yield: 1 ATP per PEP × 2 PEP/glucose = <strong>2 ATP per glucose</strong>.</li>
+</ul>
+<p><strong>Total SLP ATP in glycolysis</strong>: 4 ATP produced − 2 ATP invested = <strong>net 2 ATP</strong>.</p>
+
+</div>
+
+<hr>
+
+<h2>2. The Link Reaction: Pyruvate Enters the Mitochondrion</h2>
+
+<p>Pyruvate cannot directly enter the Krebs cycle. First it must be oxidatively decarboxylated in the <strong>mitochondrial matrix</strong>.</p>
+
+<p><strong>Enzyme complex</strong>: <strong>Pyruvate dehydrogenase complex (PDC)</strong> — one of the largest enzyme complexes known (MW ~9.5 million Da), containing three enzymes (E1, E2, E3) and five coenzymes.</p>
+
+<h3>The Reaction</h3>
+
+<p>Pyruvate (3C) + CoA + NAD⁺ → Acetyl-CoA (2C) + CO₂ + NADH + H⁺</p>
+
+<p>Three things happen simultaneously:</p>
+<ol>
+<li><strong>Decarboxylation</strong>: CO₂ is removed (carbon 1 of pyruvate)</li>
+<li><strong>Oxidation</strong>: The remaining 2C fragment is oxidised; electrons reduce NAD⁺ → NADH</li>
+<li><strong>CoA attachment</strong>: The acetyl group (CH₃CO−) is attached to coenzyme A via a high-energy thioester bond</li>
+</ol>
+<p><strong>Per glucose</strong>: 2 pyruvate → 2 acetyl-CoA + 2 CO₂ + 2 NADH</p>
+
+<p style="text-align:center;margin:0.8rem 0;">$$ 2\text{ Pyruvate} + 2\text{CoA} + 2\text{NAD}^+ \rightarrow 2\text{ Acetyl-CoA} + 2\text{CO}_2 + 2\text{NADH} + 2\text{H}^+ $$</p>
+
+<div class="tip">
+
+<p><strong>IB Exam Tip (Paper 2)</strong>: If asked to state the location of the link reaction, write "mitochondrial matrix." In eukaryotes, pyruvate is transported into the matrix by a specific pyruvate/H⁺ symporter in the inner mitochondrial membrane.</p>
+
+</div>
+
+<hr>
+
+<h2>3. The Krebs Cycle (Citric Acid Cycle) in Depth</h2>
+
+<p>The Krebs cycle occurs in the <strong>mitochondrial matrix</strong>. It completes the oxidation of the acetyl group to CO₂, producing electron carriers (NADH, FADH₂) and one GTP (equivalent to ATP) per turn.</p>
+
+<p>Since one glucose produces <strong>2 acetyl-CoA</strong>, the cycle turns <strong>twice per glucose</strong>.</p>
+
+<p><strong>Draw and label</strong>: A circular diagram of the Krebs cycle with all eight intermediates named. Show inputs (acetyl-CoA, H₂O, NAD⁺, FAD, GDP) and outputs (CO₂, NADH, FADH₂, GTP) at each step. Arrows should be labelled with enzyme names.</p>
+
+<hr>
+
+<h3>Step-by-Step Through the Cycle</h3>
+
+<p>#### Step 1: Acetyl-CoA + Oxaloacetate → Citrate</p>
+
+<p><strong>Enzyme</strong>: <strong>Citrate synthase</strong></p>
+
+<div class="definition">
+
+<p><strong>Citrate synthase</strong> catalyses the condensation of acetyl-CoA (2C) with oxaloacetate (4C) to form citrate (6C). The thioester bond of acetyl-CoA is hydrolysed, providing the energy to drive this otherwise endergonic reaction. This is the <strong>rate-limiting step</strong> of the Krebs cycle and is inhibited by ATP, NADH, and citrate (feedback inhibition).</p>
+
+</div>
+
+<ul>
+<li>Oxaloacetate (4C) + Acetyl-CoA (2C) → Citrate (6C) + CoA</li>
+<li>ΔG°′ ≈ −31.5 kJ mol⁻¹ (irreversible)</li>
+</ul>
+<p><strong>Analogy</strong>: Think of the cycle as a merry-go-round. Oxaloacetate is the "seat" waiting at the boarding point. Acetyl-CoA is the "rider" who jumps on. They fuse to form citrate — the ride begins.</p>
+
+<p>#### Step 2: Citrate → Isocitrate</p>
+
+<p><strong>Enzyme</strong>: <strong>Aconitase</strong></p>
+
+<p>This is an isomerisation in two steps: dehydration (removing H₂O to form <em>cis</em>-aconitate) followed by rehydration (adding H₂O back differently to form isocitrate). The -OH group is moved from C-3 (in citrate) to C-4 (in isocitrate), setting up the molecule for oxidative decarboxylation.</p>
+
+<ul>
+<li>No energy carriers produced</li>
+</ul>
+<p>#### Step 3: Isocitrate → α-Ketoglutarate</p>
+
+<p><strong>Enzyme</strong>: <strong>Isocitrate dehydrogenase</strong> ⭐</p>
+
+<p>This is the <strong>first oxidative decarboxylation</strong>:</p>
+
+<ul>
+<li>Isocitrate (6C) + NAD⁺ → α-Ketoglutarate (5C) + CO₂ + NADH + H⁺</li>
+<li>Products: <strong>1 NADH, 1 CO₂</strong></li>
+</ul>
+<p>Isocitrate dehydrogenase is a key regulatory enzyme: <strong>activated by ADP</strong>, <strong>inhibited by ATP and NADH</strong>. This links Krebs cycle flux to the cell's energy needs.</p>
+
+<p><strong>Per glucose (2 turns): 2 NADH, 2 CO₂</strong></p>
+
+<p>#### Step 4: α-Ketoglutarate → Succinyl-CoA</p>
+
+<p><strong>Enzyme</strong>: <strong>α-Ketoglutarate dehydrogenase complex</strong></p>
+
+<p>This is the <strong>second oxidative decarboxylation</strong>, mechanistically very similar to pyruvate dehydrogenase:</p>
+
+<ul>
+<li>α-Ketoglutarate (5C) + CoA + NAD⁺ → Succinyl-CoA (4C) + CO₂ + NADH + H⁺</li>
+<li>Products: <strong>1 NADH, 1 CO₂</strong></li>
+</ul>
+<p>The product, succinyl-CoA, has a <strong>high-energy thioester bond</strong> — similar to acetyl-CoA. This sets up the only substrate-level phosphorylation of the Krebs cycle.</p>
+
+<p><strong>Per glucose (2 turns): 2 NADH, 2 CO₂</strong></p>
+
+<p>#### Step 5: Succinyl-CoA → Succinate</p>
+
+<p><strong>Enzyme</strong>: <strong>Succinyl-CoA synthetase</strong></p>
+
+<div class="definition">
+
+<p><strong>Substrate-level phosphorylation (Krebs cycle)</strong>: The thioester bond of succinyl-CoA is cleaved, and the energy released drives the synthesis of GTP from GDP + Pi. In mammals, GTP is readily converted to ATP by nucleoside diphosphate kinase (GTP + ADP ⇌ GDP + ATP).</p>
+
+</div>
+
+<ul>
+<li>Succinyl-CoA (4C) + GDP + Pi → Succinate (4C) + GTP + CoA</li>
+<li>Products: <strong>1 GTP (→ ATP)</strong></li>
+</ul>
+<p><strong>Per glucose (2 turns): 2 GTP ≈ 2 ATP</strong></p>
+
+<p>This is the <strong>only step of the Krebs cycle that directly produces a high-energy phosphate</strong>.</p>
+
+<p>#### Step 6: Succinate → Fumarate</p>
+
+<p><strong>Enzyme</strong>: <strong>Succinate dehydrogenase</strong></p>
+
+<div class="definition">
+
+<p><strong>Succinate dehydrogenase is Complex II of the ETC.</strong> This is the only Krebs cycle enzyme embedded in the inner mitochondrial membrane (all others are in the matrix). It oxidises succinate to fumarate and transfers electrons to FAD (not NAD⁺) because the redox potential of succinate/fumarate is not negative enough to reduce NAD⁺.</p>
+
+</div>
+
+<ul>
+<li>Succinate + FAD → Fumarate + FADH₂</li>
+<li>Products: <strong>1 FADH₂</strong></li>
+</ul>
+<p>The FADH₂ produced remains bound to the enzyme and feeds electrons directly into the ETC via ubiquinone — bypassing Complex I.</p>
+
+<p><strong>Per glucose (2 turns): 2 FADH₂</strong></p>
+
+<p><strong>Draw and label</strong>: The inner mitochondrial membrane showing succinate dehydrogenase (Complex II) with its FAD cofactor, passing electrons directly to ubiquinone (Q). Label: "Complex II = succinate dehydrogenase — FADH₂ electrons enter ETC downstream of Complex I."</p>
+
+<p>#### Step 7: Fumarate → Malate</p>
+
+<p><strong>Enzyme</strong>: <strong>Fumarase</strong> (fumarate hydratase)</p>
+
+<p>A water molecule is added across the double bond of fumarate:</p>
+
+<ul>
+<li>Fumarate + H₂O → Malate</li>
+</ul>
+<p>No energy carriers are produced. This step simply hydrates fumarate to create a hydroxyl group for the final oxidation.</p>
+
+<p>#### Step 8: Malate → Oxaloacetate</p>
+
+<p><strong>Enzyme</strong>: <strong>Malate dehydrogenase</strong></p>
+
+<ul>
+<li>Malate + NAD⁺ → Oxaloacetate + NADH + H⁺</li>
+<li>Products: <strong>1 NADH</strong></li>
+</ul>
+<p>Oxaloacetate is regenerated — ready to accept the next acetyl-CoA. This reaction is thermodynamically unfavourable under standard conditions (ΔG°′ ≈ +29.7 kJ mol⁻¹), but it is pulled forward because oxaloacetate is rapidly consumed by citrate synthase and NADH is consumed by the ETC.</p>
+
+<p><strong>Per glucose (2 turns): 2 NADH</strong></p>
+
+<hr>
+
+<h3>Krebs Cycle: Complete Per-Glucose Accounting</h3>
+
+<p><strong>Overall per acetyl-CoA</strong>:</p>
+
+<p style="text-align:center;margin:0.8rem 0;">$$ \text{Acetyl-CoA} + 3\text{NAD}^+ + \text{FAD} + \text{GDP} + \text{P}_i + 2\text{H}_2\text{O} \rightarrow 2\text{CO}_2 + 3\text{NADH} + \text{FADH}_2 + \text{GTP} + \text{CoA} + 3\text{H}^+ $$</p>
+
+<table>
+<tr>
+<td>Step</td>
+<td>Substrate</td>
+<td>Product</td>
+<td>Products (per turn)</td>
+<td>Products (per glucose)</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Acetyl-CoA + OAA</td>
+<td>Citrate</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Citrate</td>
+<td>Isocitrate</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Isocitrate</td>
+<td>α-Ketoglutarate</td>
+<td>1 NADH + 1 CO₂</td>
+<td>2 NADH + 2 CO₂</td>
+</tr>
+<tr>
+<td>4</td>
+<td>α-Ketoglutarate</td>
+<td>Succinyl-CoA</td>
+<td>1 NADH + 1 CO₂</td>
+<td>2 NADH + 2 CO₂</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Succinyl-CoA</td>
+<td>Succinate</td>
+<td>1 GTP</td>
+<td>2 GTP (≈ 2 ATP)</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Succinate</td>
+<td>Fumarate</td>
+<td>1 FADH₂</td>
+<td>2 FADH₂</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Fumarate</td>
+<td>Malate</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Malate</td>
+<td>Oxaloacetate</td>
+<td>1 NADH</td>
+<td>2 NADH</td>
+</tr>
+<tr>
+<td>Total</td>
+<td>—</td>
+<td>—</td>
+<td>3 NADH + 1 FADH₂ + 1 GTP + 2 CO₂</td>
+<td>6 NADH + 2 FADH₂ + 2 ATP + 4 CO₂</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>4. The Electron Transport Chain (ETC)</h2>
+
+<h3>Location and Principle</h3>
+
+<p>The ETC is embedded in the <strong>inner mitochondrial membrane</strong>. Its cristae (foldings) massively increase surface area for housing the protein complexes.</p>
+
+<p><strong>Draw and label</strong>: A cross-section of the inner mitochondrial membrane showing all four complexes (I–IV), plus ATP synthase (Complex V). Show the path of electrons from NADH through I→Q→III→cyt c→IV→O₂, and from FADH₂ through II→Q→III→cyt c→IV→O₂. Show H⁺ pumping at I, III, and IV. Label the matrix and intermembrane space.</p>
+
+<p><strong>Core principle</strong>: Electrons are passed through a series of redox carriers of progressively higher (more positive) reduction potential. At each transfer, energy is released and used to pump H⁺ from the matrix to the intermembrane space. The final electron acceptor is <strong>O₂</strong>, which is reduced to H₂O.</p>
+
+<hr>
+
+<h3>Complex I: NADH Dehydrogenase</h3>
+
+<div class="definition">
+
+<p><strong>Complex I (NADH:ubiquinone oxidoreductase)</strong> is the entry point for electrons from NADH. It contains a flavin mononucleotide (FMN) cofactor and multiple iron-sulfur (Fe-S) clusters. It transfers electrons from NADH to ubiquinone (Q) and uses the released energy to pump <strong>4 H⁺</strong> across the membrane.</p>
+
+</div>
+
+<ul>
+<li>NADH + H⁺ + Q → NAD⁺ + QH₂ (ubiquinol)</li>
+<li><strong>4 H⁺ pumped</strong> from matrix to intermembrane space</li>
+<li>MW ~1,000,000 Da, 45+ subunits (one of the largest membrane proteins)</li>
+</ul>
+<p>The electrons travel: NADH → FMN → Fe-S clusters (7+ centres) → ubiquinone (Q)</p>
+
+<p><strong>Analogy</strong>: Complex I is like a hydroelectric dam operator. The energy released as electrons "flow downhill" through the Fe-S clusters is harnessed to pump protons uphill — against both concentration and electrical gradients.</p>
+
+<hr>
+
+<h3>Complex II: Succinate Dehydrogenase</h3>
+
+<div class="definition">
+
+<p><strong>Complex II (succinate:ubiquinone oxidoreductase)</strong> is the Krebs cycle enzyme succinate dehydrogenase. It oxidises FADH₂ and passes electrons to ubiquinone. <strong>Crucially, Complex II does NOT pump H⁺.</strong> This is why FADH₂ yields fewer ATP than NADH.</p>
+
+</div>
+
+<ul>
+<li>FADH₂ + Q → FAD + QH₂</li>
+<li><strong>0 H⁺ pumped</strong></li>
+<li>Contains FAD, Fe-S clusters, and a heme b group</li>
+</ul>
+<p>The electrons travel: Succinate → FAD → Fe-S clusters → ubiquinone (Q)</p>
+
+<p><strong>Why no H⁺ pumping?</strong> The redox potential of the succinate/fumarate couple (+0.031 V) is higher than NAD⁺/NADH (−0.32 V) — there is less energy released when FADH₂ passes electrons to Q, so there is insufficient free energy to drive H⁺ pumping.</p>
+
+<hr>
+
+<h3>Ubiquinone (Coenzyme Q, Q)</h3>
+
+<p>Ubiquinone is a <strong>mobile electron carrier</strong> — a small, hydrophobic molecule that diffuses freely within the inner mitochondrial membrane. It shuttles electrons from Complex I and Complex II to Complex III.</p>
+
+<ul>
+<li>Q + 2e⁻ + 2H⁺ (from matrix) → QH₂ (ubiquinol)</li>
+<li>QH₂ is fully reduced and carries two electrons</li>
+</ul>
+<hr>
+
+<h3>Complex III: Cytochrome bc1</h3>
+
+<div class="definition">
+
+<p><strong>Complex III (cytochrome bc1 complex, ubiquinol:cytochrome c oxidoreductase)</strong> accepts electrons from ubiquinol (QH₂) and passes them to cytochrome c. It operates via the <strong>Q cycle</strong> — a mechanism that doubles the number of H⁺ pumped per electron transferred. <strong>4 H⁺ are pumped</strong> per pair of electrons.</p>
+
+</div>
+
+<ul>
+<li>QH₂ + 2 cyt c (oxidised) → Q + 2 cyt c (reduced) + 4 H⁺ (pumped)</li>
+<li><strong>4 H⁺ pumped</strong></li>
+</ul>
+<h3>The Q Cycle (For IB HL — Simplified)</h3>
+
+<p><strong>Draw and label</strong>: A diagram showing the two rounds of the Q cycle at Complex III. Round 1: QH₂ from the Q pool is oxidised — one electron goes to cyt c (via Fe-S → cyt c₁), the other goes to a Q molecule bound at the Qᵢ site, forming a semiquinone. Two H⁺ are released to the intermembrane space. Round 2: A second QH₂ is oxidised the same way. The semiquinone at Qᵢ is now fully reduced to QH₂. Net: 2 QH₂ oxidised → 1 QH₂ regenerated + 2 cyt c reduced + 4 H⁺ pumped.</p>
+
+<p>For IB, you should know: the Q cycle <strong>couples electron transfer to H⁺ pumping</strong> and doubles the efficiency — 4 H⁺ pumped for every 2 electrons passing through.</p>
+
+<hr>
+
+<h3>Cytochrome c</h3>
+
+<p>Cytochrome c is a <strong>small, soluble protein</strong> (MW ~12,000 Da) located in the <strong>intermembrane space</strong>, loosely associated with the outer face of the inner membrane. It carries a single electron via its heme iron (Fe²⁺ ⇌ Fe³⁺). It shuttles electrons from Complex III to Complex IV.</p>
+
+<div class="tip">
+
+<p><strong>IB Exam Tip (Paper 1)</strong>: Cytochrome c is often used in molecular biology as a molecular clock (its amino acid sequence is highly conserved across species). Also, release of cytochrome c into the cytoplasm triggers apoptosis (programmed cell death).</p>
+
+</div>
+
+<hr>
+
+<h3>Complex IV: Cytochrome c Oxidase</h3>
+
+<div class="definition">
+
+<p><strong>Complex IV (cytochrome c oxidase)</strong> is the terminal oxidase. It accepts electrons from cytochrome c and transfers them to O₂, the final electron acceptor. <strong>2 H⁺ are pumped</strong> per pair of electrons (some sources say 4; IB uses 2 per 2e⁻). The reduction of O₂ to H₂O consumes 4 H⁺ from the matrix.</p>
+
+</div>
+
+<ul>
+<li>4 cyt c (reduced) + O₂ + 8 H⁺ (matrix) → 4 cyt c (oxidised) + 2 H₂O + 4 H⁺ (pumped)</li>
+<li><strong>2 H⁺ pumped</strong> (per 2e⁻, though note: per full O₂→2H₂O, 4 H⁺ are pumped)</li>
+</ul>
+<p>The electrons travel: cytochrome c → Cu_A → heme a → heme a₃ → Cu_B → O₂</p>
+
+<p><strong>The oxygen chemistry</strong>: O₂ binds to heme a₃ and Cu_B, receiving four electrons and four protons to form two water molecules. This is the only reaction in the body that consumes O₂ for energy production.</p>
+
+<div class="tip">
+
+<p><strong>IB Exam Tip (Paper 2)</strong>: Cyanide (CN⁻) and carbon monoxide (CO) are lethal because they bind to cytochrome c oxidase (specifically heme a₃), blocking electron transfer to O₂. The ETC grinds to a halt, the proton gradient collapses, and ATP synthesis stops. Death occurs within minutes.</p>
+
+</div>
+
+<hr>
+
+<h3>ETC Summary Table</h3>
+
+<table>
+<tr>
+<td>Complex</td>
+<td>Name</td>
+<td>Electron Donor</td>
+<td>Electron Acceptor</td>
+<td>H⁺ Pumped (per 2e⁻)</td>
+</tr>
+<tr>
+<td>I</td>
+<td>NADH dehydrogenase</td>
+<td>NADH</td>
+<td>Ubiquinone (Q)</td>
+<td>4</td>
+</tr>
+<tr>
+<td>II</td>
+<td>Succinate dehydrogenase</td>
+<td>FADH₂</td>
+<td>Ubiquinone (Q)</td>
+<td>0</td>
+</tr>
+<tr>
+<td>III</td>
+<td>Cytochrome bc1</td>
+<td>Ubiquinol (QH₂)</td>
+<td>Cytochrome c</td>
+<td>4</td>
+</tr>
+<tr>
+<td>IV</td>
+<td>Cytochrome c oxidase</td>
+<td>Cytochrome c</td>
+<td>O₂ → H₂O</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Total (NADH)</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Total (FADH₂)</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>6</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>5. Chemiosmosis and ATP Synthase</h2>
+
+<h3>The Proton Gradient</h3>
+
+<p>All that H⁺ pumping creates an <strong>electrochemical gradient</strong> across the inner mitochondrial membrane — the <strong>proton motive force (pmf)</strong>.</p>
+
+<table>
+<tr>
+<td>Compartment</td>
+<td>Approximate pH</td>
+</tr>
+<tr>
+<td>Matrix</td>
+<td>~7.4</td>
+</tr>
+<tr>
+<td>Intermembrane space</td>
+<td>~7.0</td>
+</tr>
+</table>
+
+<p>The pH difference (ΔpH ≈ 0.4) plus the electrical potential ( membrane potential Δψ ≈ −150 to −200 mV, negative inside) combine to create a proton motive force of approximately <strong>180–220 mV</strong>.</p>
+
+<p><strong>Analogy</strong>: The intermembrane space is like a reservoir of water behind a dam. The protons "want" to flow back into the matrix. The only way through is via ATP synthase — which harnesses the flow to drive ATP synthesis, like a turbine.</p>
+
+<hr>
+
+<h3>ATP Synthase (Complex V): Rotary Motor</h3>
+
+<p><strong>Draw and label</strong>: A detailed diagram of ATP synthase showing:</p>
+<ul>
+<li><strong>F₀ domain</strong>: embedded in the membrane. The <strong>c-ring</strong> (8–15 c-subunits, depending on species; mammalian mitochondria have 8). Each c-subunit has a binding site for one H⁺. The <strong>a-subunit</strong> forms two half-channels — one open to the intermembrane space, one open to the matrix.</li>
+<li><strong>Stator</strong>: peripheral stalk (b₂ and δ subunits) that holds the F₁ head stationary.</li>
+<li><strong>F₁ domain</strong>: protruding into the matrix. The <strong>α₃β₃ hexamer</strong> — three α and three β subunits arranged alternately like segments of an orange. The three β subunits are the catalytic sites. Each β subunit adopts a different conformation at any given moment, rotating through three states as the γ subunit shaft turns.</li>
+<li><strong>γ subunit</strong>: the central shaft, connected to the c-ring. As H⁺ flow through the F₀ channel, the c-ring rotates, spinning γ inside the α₃β₃ hexamer.</li>
+</ul>
+<h3>The Binding Change Mechanism</h3>
+
+<div class="definition">
+
+<p><strong>Binding change mechanism</strong> (Paul Boyer, Nobel Prize 1997): ATP synthesis is driven by conformational changes in the β subunits, not by the energy of ADP + Pi binding. The three β subunits cycle through three states:</p>
+
+<ol>
+<li><strong>Open (O)</strong>: Releases ATP; loosely binds ADP + Pi</li>
+<li><strong>Loose (L)</strong>: Tightens grip on ADP + Pi</li>
+<li><strong>Tight (T)</strong>: Compresses ADP + Pi to form ATP</li>
+</ol>
+<p>Each 360° rotation of the γ subunit produces 3 ATP (one per β subunit going through the T state). If the c-ring has 8 subunits, then 8 H⁺ flowing through = 1 full rotation = 3 ATP, meaning <strong>~2.7 H⁺ per ATP</strong> (8/3). With 10 c-subunits, ~3.3 H⁺/ATP. The IB accepts <strong>~3–4 H⁺ per ATP</strong>.</p>
+
+</div>
+
+<p><strong>Analogy</strong>: Imagine a three-chambered revolving door. Each chamber (β subunit) holds ADP + Pi. As people (H⁺) push through the entrance, the door rotates 120°. One chamber is now squeezed shut — ATP forms. Another chamber opens to release ATP and pick up fresh ADP + Pi. Continuous rotation = continuous ATP production.</p>
+
+<hr>
+
+<h2>6. Total ATP Yield: The 30–32 Calculation</h2>
+
+<p>This is one of the most important calculations in IB Biology HL. Let's break it down systematically.</p>
+
+<h3>Assumptions</h3>
+
+<ul>
+<li>Each NADH pumps 10 H⁺ (4 at I + 4 at III + 2 at IV)</li>
+<li>Each FADH₂ pumps 6 H⁺ (0 at II + 4 at III + 2 at IV)</li>
+<li>~4 H⁺ required per ATP (accounts for ATP synthase + Pi import + ATP export)</li>
+<li>Therefore: 1 NADH ≈ 10/4 = <strong>2.5 ATP</strong>; 1 FADH₂ ≈ 6/4 = <strong>1.5 ATP</strong></li>
+</ul>
+<h3>The Calculation</h3>
+
+<table>
+<tr>
+<td>Stage</td>
+<td>ATP</td>
+<td>NADH</td>
+<td>FADH₂</td>
+<td>ATP Equivalent</td>
+</tr>
+<tr>
+<td>Glycolysis</td>
+<td>2</td>
+<td>2 (cytosolic)</td>
+<td>—</td>
+<td>2 + (2 × 2.5 = 5) or (2 × 1.5 = 3)</td>
+</tr>
+<tr>
+<td>Link Reaction</td>
+<td>—</td>
+<td>2 (matrix)</td>
+<td>—</td>
+<td>2 × 2.5 = 5</td>
+</tr>
+<tr>
+<td>Krebs Cycle</td>
+<td>2</td>
+<td>6 (matrix)</td>
+<td>2</td>
+<td>2 + (6 × 2.5 = 15) + (2 × 1.5 = 3)</td>
+</tr>
+<tr>
+<td>Total</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>30–32</td>
+</tr>
+</table>
+
+<div class="worked">
+
+<p><strong>Worked Example: Explaining the range</strong></p>
+
+<p><strong>Question</strong>: Why is the ATP yield per glucose stated as "30–32" rather than a precise number?</p>
+
+<p><strong>Answer</strong>: The uncertainty comes from <strong>cytosolic NADH</strong>. NADH produced during glycolysis (step 6, GAPDH) is in the cytosol. Since the inner mitochondrial membrane is impermeable to NADH, the reducing equivalents must be shuttled into the matrix:</p>
+
+<ul>
+<li><strong>Glycerol-3-phosphate shuttle</strong> (predominant in muscle): Transfers electrons from cytosolic NADH to FADH₂ inside the mitochondrion. Each cytosolic NADH then yields only <strong>1.5 ATP</strong>. Total = 2 + 3 + 5 + 2 + 15 + 3 = <strong>~30 ATP</strong>.</li>
+</ul>
+<ul>
+<li><strong>Malate-aspartate shuttle</strong> (predominant in liver, heart, kidney): Transfers electrons to matrix NAD⁺, generating matrix NADH. Each cytosolic NADH then yields <strong>2.5 ATP</strong>. Total = 2 + 5 + 5 + 2 + 15 + 3 = <strong>~32 ATP</strong>.</li>
+</ul>
+<p>Thus the range: <strong>30–32 ATP per glucose</strong>.</p>
+
+</div>
+
+<div class="tip">
+
+<p><strong>IB Exam Tip (Paper 1 & 2)</strong>: The old textbook value of "38 ATP" is incorrect for eukaryotes. Modern textbooks use 30–32. The discrepancy arose because early estimates used outdated H⁺/ATP ratios and ignored the cost of transporting ADP/Pi/ATP across the inner membrane. For IB, know 30–32 and be able to explain the shuttle system.</p>
+
+</div>
+
+<hr>
+
+<h2>7. Anaerobic Respiration</h2>
+
+<p>When O₂ is limiting, the ETC cannot operate. NADH accumulates and NAD⁺ becomes depleted. Without NAD⁺, glycolysis stops at step 6 (GAPDH needs NAD⁺). <strong>Anaerobic respiration solves this by regenerating NAD⁺</strong>, allowing glycolysis (and its 2 ATP) to continue.</p>
+
+<h3>Lactate Fermentation (Animals, Some Bacteria)</h3>
+
+<p><strong>Enzyme</strong>: <strong>Lactate dehydrogenase (LDH)</strong></p>
+
+<ul>
+<li>Pyruvate + NADH + H⁺ → Lactate + NAD⁺</li>
+<li>NAD⁺ is regenerated — glycolysis can continue</li>
+<li>Net ATP from glycolysis only: <strong>2 per glucose</strong></li>
+</ul>
+<p><strong>Draw and label</strong>: The conversion of pyruvate to lactate, showing NADH being oxidised to NAD⁺. Label: "Lactate dehydrogenase regenerates NAD⁺ so glycolysis can continue producing 2 ATP."</p>
+
+<div class="definition">
+
+<p><strong>The Cori Cycle</strong>: Lactate produced by muscles during intense exercise travels via the bloodstream to the liver. There, hepatocytes convert lactate back to glucose (gluconeogenesis, requiring 6 ATP). Glucose returns to muscles. This shifts the "metabolic burden" of lactate clearance from muscle to liver.</p>
+
+</div>
+
+<p><strong>Oxygen debt</strong>: After strenuous exercise, breathing remains elevated even though muscles are at rest. This "excess post-exercise oxygen consumption" (EPOC) reflects:</p>
+<ul>
+<li>Re-oxygenation of myoglobin and haemoglobin</li>
+<li>Conversion of lactate back to glucose (Cori cycle)</li>
+<li>Restoration of ATP/phosphocreatine reserves</li>
+<li>Re-establishment of ion gradients</li>
+</ul>
+<h3>Ethanol Fermentation (Yeast, Some Plants)</h3>
+
+<p><strong>Two enzymes required</strong>:</p>
+
+<ol>
+<li><strong>Pyruvate decarboxylase</strong>: Pyruvate → Ethanal (acetaldehyde) + CO₂</li>
+</ol>
+<ul>
+<li>This is an irreversible decarboxylation</li>
+<li>Requires thiamine pyrophosphate (TPP) as cofactor</li>
+</ul>
+<ol>
+<li><strong>Alcohol dehydrogenase</strong>: Ethanal + NADH + H⁺ → Ethanol + NAD⁺</li>
+</ol>
+<ul>
+<li>NAD⁺ is regenerated</li>
+</ul>
+<p>Net: Pyruvate + NADH + H⁺ → Ethanol + CO₂ + NAD⁺ (2 ATP from glycolysis)</p>
+
+<p><strong>Draw and label</strong>: The two-step ethanol fermentation pathway, with CO₂ release at step 1 and NAD⁺ regeneration at step 2. Label: "CO₂ released in ethanol fermentation makes bread rise."</p>
+
+<div class="tip">
+
+<p><strong>IB Exam Tip (Paper 2)</strong>: When comparing lactate and ethanol fermentation, note that ethanol fermentation releases CO₂ (one per pyruvate), while lactate fermentation does not. This is why bread rises (CO₂ bubbles) and sparkling wine is fizzy.</p>
+
+</div>
+
+<h3>Why No Krebs/ETC in Anaerobic Conditions?</h3>
+
+<p>Without O₂ as the final electron acceptor, the ETC backs up. NADH cannot be oxidised, NAD⁺ is depleted, and the Krebs cycle stops (isocitrate dehydrogenase, α-ketoglutarate dehydrogenase, and malate dehydrogenase all require NAD⁺). Glycolysis is the only remaining ATP source.</p>
+
+<hr>
+
+<h2>8. Lipid and Protein Entry into Respiration</h2>
+
+<h3>Lipids: β-Oxidation</h3>
+
+<p><strong>Draw and label</strong>: A triglyceride being broken down: glycerol (→ G3P → glycolysis) and three fatty acid chains (→ β-oxidation in mitochondrial matrix).</p>
+
+<p><strong>Glycerol</strong>: Converted to glycerol-3-phosphate (by glycerol kinase, 1 ATP), then oxidised to DHAP (by glycerol-3-phosphate dehydrogenase, producing 1 FADH₂ in the glycerol-3-phosphate shuttle or 1 NADH). DHAP enters glycolysis at step 5.</p>
+
+<p><strong>Fatty acids</strong>: Transported into the mitochondrial matrix via the <strong>carnitine shuttle</strong>. Once inside, undergo <strong>β-oxidation</strong> — a repetitive cycle that removes 2-carbon units as acetyl-CoA:</p>
+
+<ul>
+<li>Each cycle: Fatty acyl-CoA (nC) → Fatty acyl-CoA (n−2C) + Acetyl-CoA + <strong>1 NADH + 1 FADH₂</strong></li>
+<li>Acetyl-CoA enters Krebs cycle</li>
+</ul>
+<div class="worked">
+
+<p><strong>Worked Example: ATP from palmitate (16:0)</strong></p>
+
+<p>Palmitate is a 16-carbon saturated fatty acid. How many ATP from one palmitate?</p>
+
+<p><strong>Step-by-step</strong>:</p>
+
+<ol>
+<li><strong>Activation</strong>: Palmitate + ATP + CoA → Palmitoyl-CoA + AMP + PPi</li>
+</ol>
+<ul>
+<li>Cost: equivalent to <strong>2 ATP</strong> (ATP → AMP uses two high-energy bonds)</li>
+</ul>
+<ol>
+<li><strong>β-Oxidation cycles</strong>: 16C chain → 7 cycles (each removes 2C)</li>
+</ol>
+<ul>
+<li>The 7th cycle produces the final 2 acetyl-CoA</li>
+<li>Products: <strong>8 acetyl-CoA + 7 NADH + 7 FADH₂</strong></li>
+</ul>
+<ol>
+<li><strong>ATP accounting</strong>:</li>
+</ol>
+<ul>
+<li>8 Acetyl-CoA → Krebs: 8 × (3 NADH + 1 FADH₂ + 1 GTP) = 24 NADH + 8 FADH₂ + 8 GTP</li>
+<li>Total NADH: 7 + 24 = 31 → 31 × 2.5 = 77.5 ATP</li>
+<li>Total FADH₂: 7 + 8 = 15 → 15 × 1.5 = 22.5 ATP</li>
+<li>Total GTP: 8 → 8 ATP</li>
+<li><strong>Gross total</strong>: 77.5 + 22.5 + 8 = 108 ATP</li>
+<li><strong>Minus activation</strong>: 108 − 2 = <strong>106 ATP</strong></li>
+</ul>
+<p>Compare this to glucose (~30–32 ATP). Per gram, fat yields more than double the ATP of carbohydrate — which is why fat is the body's long-term energy store.</p>
+
+</div>
+
+<h3>Proteins: Deamination</h3>
+
+<p><strong>Draw and label</strong>: An amino acid with its amino group (−NH₂) being removed. The carbon skeleton enters at various points: pyruvate, acetyl-CoA, or Krebs cycle intermediates, depending on the amino acid.</p>
+
+<p><strong>Step 1: Deamination</strong>: The −NH₂ group is removed (often as glutamate → α-ketoglutarate + NH₄⁺, via transamination with α-ketoglutarate).</p>
+
+<p><strong>Step 2: The urea cycle</strong>: NH₄⁺ is converted to urea in the liver (requires ATP — the urea cycle costs ~3–4 ATP per urea molecule). Urea is excreted in urine.</p>
+
+<p><strong>Step 3: Carbon skeleton entry</strong>:</p>
+
+<table>
+<tr>
+<td>Amino Acid Type</td>
+<td>Enters as</td>
+<td>Example</td>
+</tr>
+<tr>
+<td>Glucogenic</td>
+<td>Pyruvate or Krebs intermediate</td>
+<td>Alanine → pyruvate; Glutamate → α-ketoglutarate</td>
+</tr>
+<tr>
+<td>Ketogenic</td>
+<td>Acetyl-CoA</td>
+<td>Leucine, Lysine</td>
+</tr>
+<tr>
+<td>Both</td>
+<td>Both</td>
+<td>Isoleucine, Phenylalanine, Tryptophan</td>
+</tr>
+</table>
+
+<div class="tip">
+
+<p><strong>IB Exam Tip (Paper 1)</strong>: The distinction between glucogenic and ketogenic amino acids is not required in detail, but you should know that amino acid carbon skeletons can enter respiration at multiple points — unlike glucose (one entry at glycolysis) or fatty acids (one entry at acetyl-CoA).</p>
+
+</div>
+
+<hr>
+
+<h2>Common Misconceptions</h2>
+
+<table>
+<tr>
+<td>Misconception</td>
+<td>Reality</td>
+</tr>
+<tr>
+<td>"Glycolysis produces 4 ATP net"</td>
+<td>Glycolysis <strong>grosses</strong> 4 ATP but <strong>nets</strong> 2 ATP (2 invested in phase 1)</td>
+</tr>
+<tr>
+<td>"The Krebs cycle produces CO₂ from oxygen"</td>
+<td>The CO₂ comes from the carbon skeleton of acetyl-CoA, <strong>not</strong> from inhaled O₂. O₂ becomes H₂O at Complex IV.</td>
+</tr>
+<tr>
+<td>"38 ATP per glucose"</td>
+<td>The correct value is <strong>30–32 ATP</strong> in eukaryotes due to shuttle costs and updated H⁺/ATP ratios</td>
+</tr>
+<tr>
+<td>"FADH₂ produces the same ATP as NADH"</td>
+<td>FADH₂ enters at Complex II (no H⁺ pumping at II), bypasses Complex I, and yields fewer ATP (~1.5 vs ~2.5)</td>
+</tr>
+<tr>
+<td>"Anaerobic respiration produces no ATP"</td>
+<td>It produces <strong>2 ATP per glucose</strong> from glycolysis, plus it regenerates NAD⁺ so glycolysis can continue</td>
+</tr>
+<tr>
+<td>"The ETC makes ATP directly"</td>
+<td>The ETC creates a <strong>proton gradient</strong>; ATP synthase uses this gradient to make ATP (oxidative phosphorylation, not ETC alone)</td>
+</tr>
+<tr>
+<td>"Lactate is a waste product"</td>
+<td>Lactate is an important fuel — it can be converted back to pyruvate in the heart and brain, and to glucose in the liver (Cori cycle)</td>
+</tr>
+<tr>
+<td>"All steps of the Krebs cycle produce energy carriers"</td>
+<td>Steps 1, 2, 7, and 8 (citrate synthase, aconitase, fumarase, malate dehydrogenase) do NOT directly produce GTP/NADH/FADH₂ except as noted</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1: Glycolysis Intermediates</h3>
+
+<p>List the 10 intermediates of glycolysis in order, and identify the two steps where ATP is consumed and the two steps where ATP is produced by substrate-level phosphorylation.</p>
+
+<hr>
+
+<h3>Problem 2: Krebs Cycle Accounting</h3>
+
+<p>For one molecule of glucose undergoing complete aerobic oxidation, calculate:</p>
+
+<p>(a) The number of NADH molecules produced in the Krebs cycle.</p>
+
+<p>(b) The number of FADH₂ molecules produced in the Krebs cycle.</p>
+
+<p>(c) The number of CO₂ molecules released.</p>
+
+<p>(d) The number of GTP (→ ATP) molecules produced by substrate-level phosphorylation.</p>
+
+<hr>
+
+<h3>Problem 3: ETC Tracing</h3>
+
+<p>A student claims "FADH₂ produces the same number of ATP as NADH because both feed electrons into the ETC." Explain why this statement is incorrect, tracing the entry points of NADH and FADH₂ through the ETC complexes.</p>
+
+<hr>
+
+<h3>Problem 4: ATP Yield Calculation</h3>
+
+<p>Calculate the total ATP yield from the complete oxidation of one glucose molecule. Show your working clearly, stating any assumptions about shuttle systems and H⁺/ATP ratios.</p>
+
+<hr>
+
+<h3>Problem 5: Anaerobic Pathways</h3>
+
+<p>Compare lactate fermentation and ethanol fermentation in terms of:</p>
+<p>(a) The enzymes involved</p>
+<p>(b) The products formed</p>
+<p>(c) Whether CO₂ is released</p>
+<p>(d) The organisms that carry out each pathway</p>
+
+<hr>
+
+<h2>Answers</h2>
+
+<h3>Answer 1</h3>
+
+<p>The 10 intermediates in order: <strong>Glucose → Glucose-6-phosphate (G6P) → Fructose-6-phosphate (F6P) → Fructose-1,6-bisphosphate (F1,6BP) → Dihydroxyacetone phosphate (DHAP) + Glyceraldehyde-3-phosphate (G3P) → [DHAP → G3P] → 1,3-Bisphosphoglycerate (1,3-BPG) → 3-Phosphoglycerate (3-PG) → 2-Phosphoglycerate (2-PG) → Phosphoenolpyruvate (PEP) → Pyruvate</strong></p>
+
+<p><strong>ATP consumed</strong>: Step 1 (hexokinase: glucose → G6P) and Step 3 (PFK: F6P → F1,6BP). Total: 2 ATP invested.</p>
+
+<p><strong>ATP produced by SLP</strong>: Step 7 (phosphoglycerate kinase: 1,3-BPG → 3-PG, 2 ATP per glucose) and Step 10 (pyruvate kinase: PEP → pyruvate, 2 ATP per glucose). Total: 4 ATP gross, 2 ATP net.</p>
+
+<hr>
+
+<h3>Answer 2</h3>
+
+<p>For one glucose (two turns of the Krebs cycle):</p>
+
+<p>(a) <strong>NADH produced</strong>: 3 per turn × 2 = <strong>6 NADH</strong> (from isocitrate dehydrogenase, α-ketoglutarate dehydrogenase, and malate dehydrogenase)</p>
+
+<p>(b) <strong>FADH₂ produced</strong>: 1 per turn × 2 = <strong>2 FADH₂</strong> (from succinate dehydrogenase)</p>
+
+<p>(c) <strong>CO₂ released</strong>: 2 per turn × 2 = <strong>4 CO₂</strong> (from isocitrate dehydrogenase and α-ketoglutarate dehydrogenase). Note: the link reaction also releases 2 CO₂, making a total of 6 CO₂ per glucose.</p>
+
+<p>(d) <strong>GTP (→ ATP)</strong>: 1 per turn × 2 = <strong>2 GTP ≈ 2 ATP</strong> (from succinyl-CoA synthetase)</p>
+
+<hr>
+
+<h3>Answer 3</h3>
+
+<p>The statement is incorrect because NADH and FADH₂ enter the ETC at <strong>different complexes</strong>, leading to different numbers of H⁺ pumped.</p>
+
+<ul>
+<li><strong>NADH</strong> enters at <strong>Complex I</strong> (NADH dehydrogenase). Complex I pumps 4 H⁺. Electrons then pass to Q → Complex III (4 H⁺ pumped) → cyt c → Complex IV (2 H⁺ pumped). Total: <strong>10 H⁺ pumped</strong>. At ~4 H⁺ per ATP, this yields ~<strong>2.5 ATP per NADH</strong>.</li>
+</ul>
+<ul>
+<li><strong>FADH₂</strong> enters at <strong>Complex II</strong> (succinate dehydrogenase). Complex II does <strong>not pump H⁺</strong>. Electrons pass to Q → Complex III (4 H⁺) → cyt c → Complex IV (2 H⁺). Total: <strong>6 H⁺ pumped</strong>. At ~4 H⁺ per ATP, this yields ~<strong>1.5 ATP per FADH₂</strong>.</li>
+</ul>
+<p>The difference arises because FADH₂ bypasses Complex I and the 4 H⁺ it would have pumped. The redox potential of succinate/fumarate is insufficiently negative to reduce NAD⁺, so FAD accepts the electrons instead.</p>
+
+<hr>
+
+<h3>Answer 4</h3>
+
+<p><strong>Assumptions</strong>: Malate-aspartate shuttle (cytosolic NADH → matrix NADH, 2.5 ATP each); ~4 H⁺ per ATP; 10 H⁺ per matrix NADH, 6 H⁺ per FADH₂.</p>
+
+<p><strong>Calculation</strong>:</p>
+
+<table>
+<tr>
+<td>Source</td>
+<td>ATP / Equivalent</td>
+<td>Subtotal</td>
+</tr>
+<tr>
+<td>Glycolysis SLP</td>
+<td>2 ATP</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Glycolysis NADH (cytosolic)</td>
+<td>2 × 2.5</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Link reaction NADH (matrix)</td>
+<td>2 × 2.5</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Krebs cycle SLP (GTP)</td>
+<td>2 × 1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Krebs cycle NADH</td>
+<td>6 × 2.5</td>
+<td>15</td>
+</tr>
+<tr>
+<td>Krebs cycle FADH₂</td>
+<td>2 × 1.5</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Total</td>
+<td>—</td>
+<td>32 ATP</td>
+</tr>
+</table>
+
+<p>If the glycerol-3-phosphate shuttle is used (muscle), cytosolic NADH yields FADH₂ (1.5 ATP each), reducing total to <strong>30 ATP</strong>.</p>
+
+<p>The range is therefore <strong>30–32 ATP per glucose</strong>.</p>
+
+<hr>
+
+<h3>Answer 5</h3>
+
+<table>
+<tr>
+<td>Feature</td>
+<td>Lactate Fermentation</td>
+<td>Ethanol Fermentation</td>
+</tr>
+<tr>
+<td>(a) Enzymes</td>
+<td>One**: Lactate dehydrogenase (LDH)</td>
+<td>Two**: Pyruvate decarboxylase + Alcohol dehydrogenase</td>
+</tr>
+<tr>
+<td>(b) Products</td>
+<td>Lactate + NAD⁺</td>
+<td>Ethanol + CO₂ + NAD⁺</td>
+</tr>
+<tr>
+<td>(c) CO₂ released?</td>
+<td>No</td>
+<td>Yes** — one CO₂ per pyruvate</td>
+</tr>
+<tr>
+<td>(d) Organisms</td>
+<td>Animals (muscle cells, RBCs), some bacteria (Lactobacillus)</td>
+<td>Yeast (Saccharomyces cerevisiae), some plants under anoxia</td>
+</tr>
+</table>
+
+<p><strong>Key similarity</strong>: Both pathways regenerate NAD⁺ from NADH, allowing glycolysis to continue producing 2 ATP per glucose in the absence of oxygen.</p>
+
+<p><strong>Key difference</strong>: Ethanol fermentation is irreversible (CO₂ is lost), while lactate can be reconverted to pyruvate when O₂ becomes available.</p>
+
+<hr>
+
+<h2>Summary</h2>
+
+<ul>
+<li><strong>Glycolysis</strong>: 10 steps in cytosol; net 2 ATP, 2 NADH; regulated at PFK (ATP inhibits, AMP activates)</li>
+<li><strong>Link reaction</strong>: Pyruvate → Acetyl-CoA (matrix); 2 NADH, 2 CO₂ per glucose</li>
+<li><strong>Krebs cycle</strong>: 8 steps in matrix; 6 NADH, 2 FADH₂, 2 GTP, 4 CO₂ per glucose</li>
+<li><strong>ETC</strong>: Complexes I–IV; NADH → 10 H⁺ pumped; FADH₂ → 6 H⁺ pumped</li>
+<li><strong>Chemiosmosis</strong>: Proton motive force (~200 mV) drives ATP synthase (rotary catalysis, binding change mechanism, ~3–4 H⁺/ATP)</li>
+<li><strong>Total ATP</strong>: 30–32 per glucose (range due to shuttle system)</li>
+<li><strong>Anaerobic</strong>: Lactate (animals) or ethanol (yeast); both regenerate NAD⁺ for glycolysis</li>
+<li><strong>Lipids</strong>: β-oxidation produces acetyl-CoA + NADH + FADH₂; palmitate → 106 ATP</li>
+<li><strong>Proteins</strong>: Deamination removes −NH₂; carbon skeletons enter at various points</li>
+</ul>
+<div class="nav"><a href="lesson_27.html">&#8592; Lesson 27</a><a href="index.html">&#8962; Index</a><a href="lesson_29.html">Lesson 29 &#8594;</a></div>
+
+</body>
+</html>

@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 38: Transfers of Energy and Matter (C4.2) — IB Biology HL</title>
+<script>window.MathJax = { tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] } };</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #1a6b3c; --border: #c4d4a9; --highlight: #e8f5e9; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Palatino', 'Georgia', serif; background: var(--bg); color: var(--text); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; font-size: 17px; line-height: 1.7; }
+  h1 { font-size: 1.7rem; color: var(--accent); margin-bottom: 0.5rem; }
+  h2 { font-size: 1.25rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; margin: 2rem 0 1rem; }
+  h3 { font-size: 1.1rem; color: #444; margin: 1.3rem 0 0.5rem; }
+  p, li { margin-bottom: 0.6rem; }
+  ul, ol { padding-left: 1.8rem; margin-bottom: 1rem; }
+  .worked { background: #e8f5e9; border-left: 4px solid #1a6b3c; padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
+  .worked strong { color: #1a6b3c; }
+  .answer { background: #fefdf7; border: 1px solid var(--border); padding: 0.8rem 1.2rem; margin: 0.5rem 0; border-radius: 6px; }
+  .nav { display: flex; justify-content: space-between; margin: 3rem 0 1rem; padding-top: 1rem; border-top: 2px solid var(--border); font-size: 0.9rem; }
+  .nav a { color: #1a5c9e; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  .definition { background: #fff8e1; border-left: 4px solid #e6a817; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  .tip { background: #e3f2fd; border-left: 4px solid #1976d2; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  table { border-collapse: collapse; margin: 0.8rem 0; width: 100%; }
+  th, td { border: 1px solid var(--border); padding: 0.4rem 0.6rem; text-align: left; }
+  th { background: #f0f5e8; }
+  @media print { body { font-size: 14px; } .nav { display: none; } }
+</style>
+</head>
+<body>
+
+
+<h2>What You'll Learn</h2>
+
+<ul>
+<li>How energy flows through ecosystems — from sunlight to producers to consumers to decomposers</li>
+<li>Why only ~10% of energy transfers between trophic levels and where the 90% goes</li>
+<li>Food chains, food webs, and the different types of ecological pyramids</li>
+<li>The carbon cycle: pools, fluxes, and the Keeling curve</li>
+<li>The nitrogen cycle: fixation, nitrification, assimilation, ammonification, denitrification</li>
+<li>Gross and net primary productivity (GPP, NPP, R)</li>
+<li>Sankey diagrams for visualising energy flow</li>
+<li>How to measure NPP using harvest methods, CO₂ flux, and satellite NDVI</li>
+</ul>
+<hr>
+
+<h2>1. Energy Flow: The One-Way Street</h2>
+
+<p>Unlike matter (which cycles), energy flows <strong>one way</strong> through ecosystems. It enters as sunlight, is converted by producers, passes through consumers, and is ultimately lost as <strong>heat</strong> at every step. You can't recycle heat back into chemical energy — that's the Second Law of Thermodynamics in action.</p>
+
+<h3>The Energy Pathway</h3>
+
+<p><strong>Sunlight → Producers → Primary Consumers → Secondary Consumers → Tertiary Consumers → Decomposers</strong></p>
+
+<p>At every arrow, most energy is lost.</p>
+
+<p><strong>Analogy:</strong> Imagine pouring water through a series of leaky buckets stacked on top of each other. Only about 10% of the water from one bucket makes it into the bucket below. The other 90% leaks out (as heat). By the time you reach the fourth bucket, there's barely a trickle.</p>
+
+<h3>Why So Little Transfer? (~10% efficiency)</h3>
+
+<p>When a gazelle eats grass, only about 10% of the grass's energy becomes gazelle biomass. Here's where the 90% goes:</p>
+
+<ol>
+<li><strong>Not all consumed:</strong> A herbivore doesn't eat the entire plant — roots and woody stems are often left behind.</li>
+<li><strong>Not all digested:</strong> What passes through the gut undigested is excreted as <strong>faeces</strong>. Cellulose is hard to digest; much plant material exits as fibre.</li>
+<li><strong>Respiration:</strong> Of the energy that IS absorbed, a large portion is used for cellular respiration — powering movement, maintaining body temperature (in endotherms), active transport, biosynthesis. Respiration converts chemical energy to ATP, and ultimately all of it is lost as <strong>heat</strong>.</li>
+<li><strong>Excretion:</strong> Nitrogenous waste (urea, uric acid) still contains some energy that is lost.</li>
+</ol>
+<p><strong>The 10% Rule:</strong> Only about <strong>10%</strong> (range: 5-20%) of the energy at one trophic level is converted into biomass at the next level. This is called <strong>ecological efficiency</strong>.</p>
+
+<div class="definition">
+
+<p><strong>Trophic level:</strong> A feeding position in a food chain.</p>
+<ul>
+<li><strong>Trophic Level 1:</strong> Producers (autotrophs — plants, algae, cyanobacteria)</li>
+<li><strong>Trophic Level 2:</strong> Primary consumers (herbivores)</li>
+<li><strong>Trophic Level 3:</strong> Secondary consumers (carnivores that eat herbivores)</li>
+<li><strong>Trophic Level 4:</strong> Tertiary consumers (carnivores that eat other carnivores)</li>
+<li><strong>Decomposers:</strong> Bacteria and fungi that break down dead organic matter at ALL levels, returning nutrients to the soil.</li>
+</ul>
+</div>
+
+<p><strong>Draw and label:</strong> A diagram showing an energy pyramid with four levels. At the base (TL1): "Producers — 10,000 kJ m⁻² yr⁻¹." TL2: "Primary consumers — 1,000 kJ." TL3: "Secondary consumers — 100 kJ." TL4: "Tertiary consumers — 10 kJ." Arrows pointing upward showing the ~90% loss as "Heat (respiration)."</p>
+
+<hr>
+
+<h2>2. Food Chains and Food Webs</h2>
+
+<h3>Food Chains</h3>
+
+<p>A <strong>food chain</strong> is a simple, linear sequence showing "who eats whom."</p>
+
+<p><strong>Example (grassland):</strong></p>
+<p style="text-align:center;margin:0.8rem 0;">$$ \text{Grass} \rightarrow \text{Grasshopper} \rightarrow \text{Frog} \rightarrow \text{Snake} \rightarrow \text{Hawk} $$</p>
+
+<ul>
+<li>Arrow direction = direction of <strong>energy flow</strong> (NOT "is eaten by").</li>
+<li>Each step = one trophic level.</li>
+</ul>
+<p><strong>Limitations of food chains:</strong></p>
+<ul>
+<li>Real ecosystems are rarely simple linear chains.</li>
+<li>Most organisms eat more than one type of food.</li>
+<li>Decomposers are usually omitted from chains but are essential.</li>
+</ul>
+<h3>Food Webs</h3>
+
+<p>A <strong>food web</strong> is a network of interconnected food chains. It reflects the reality that most organisms have varied diets.</p>
+
+<p><strong>Draw and label:</strong> A food web for a pond ecosystem. Include: algae (producer), water fleas/Daphnia (primary consumer), small fish (secondary consumer), large fish (tertiary consumer), heron (quaternary consumer). Add detritus → bacteria → water fleas as a detrital pathway. Use arrows showing energy flow direction.</p>
+
+<p><strong>Why are food webs more stable than simple food chains?</strong></p>
+<ul>
+<li>If one prey species declines, a predator can switch to an alternative food source.</li>
+<li>Redundancy: multiple species at each trophic level creates resilience.</li>
+</ul>
+<div class="tip">
+
+<p><strong>Paper 1:</strong> "Explain why food chains rarely exceed 4-5 trophic levels." Answer: Because ~90% of energy is lost at each level, there is insufficient energy to support a sixth level. The top predator would get only ~0.01% of the original producer energy — not enough to sustain a viable population.</p>
+
+</div>
+
+<hr>
+
+<h2>3. Ecological Pyramids</h2>
+
+<p>Pyramids are graphical representations of the structure of ecosystems. Three types:</p>
+
+<h3>3.1 Pyramids of Energy</h3>
+
+<p><strong>What it shows:</strong> Energy content at each trophic level, typically in <strong>kJ m⁻² yr⁻¹</strong>.</p>
+
+<p><strong>Shape:</strong> <strong>Always pyramid-shaped</strong> (never inverted). Energy must decrease at each level due to the second law of thermodynamics.</p>
+
+<p><strong>Why is it per unit area per year?</strong> Because productivity depends on both space and time. A productive system generates more energy per square metre per year.</p>
+
+<p><strong>Draw and label:</strong> A pyramid of energy with four levels. The base is wide and each successive level is narrower. Label each bar with kJ values. Add an arrow on the side showing "Energy lost as heat (~90% per level)."</p>
+
+<h3>3.2 Pyramids of Biomass</h3>
+
+<p><strong>What it shows:</strong> The <strong>dry mass</strong> of living organisms at each trophic level (g m⁻² or kg m⁻²).</p>
+
+<p><strong>Shape:</strong> <strong>Usually</strong> pyramid-shaped. However, pyramids of biomass can be <strong>inverted</strong> in aquatic ecosystems.</p>
+
+<p><strong>Why inverted?</strong> In some aquatic systems (e.g., the open ocean), phytoplankton have a very high turnover rate — they reproduce so quickly that their standing biomass at any single moment is low, even though they produce enough energy to support a larger biomass of zooplankton. It's like having $$10 in your wallet but spending $$100 every day — your "standing cash" is low but your "cash flow" is high.</p>
+
+<p><strong>Classic example:</strong> In the English Channel, the biomass of phytoplankton at any moment is about 4 g m⁻², but zooplankton biomass is 21 g m⁻². This is possible because phytoplankton reproduce rapidly and are consumed quickly.</p>
+
+<p><strong>Draw and label:</strong> Two biomass pyramids side by side: (a) A forest: wide producer base (trees), narrow herbivores, narrower carnivores — normal pyramid. (b) Open ocean: narrow phytoplankton base, wider zooplankton, narrower fish — inverted pyramid. Label: "High turnover rate of phytoplankton allows inverted biomass pyramid."</p>
+
+<h3>3.3 Pyramids of Numbers</h3>
+
+<p><strong>What it shows:</strong> The <strong>count</strong> of individual organisms at each trophic level.</p>
+
+<p><strong>Shape:</strong> Can be <strong>upright, partially inverted, or fully inverted</strong>.</p>
+
+<table>
+<tr>
+<td>Scenario</td>
+<td>Shape</td>
+<td>Example</td>
+</tr>
+<tr>
+<td>Grassland</td>
+<td>Upright</td>
+<td>Many grass plants → fewer grasshoppers → fewer frogs → one hawk</td>
+</tr>
+<tr>
+<td>Single tree</td>
+<td>Inverted</td>
+<td>One oak tree → thousands of caterpillars → dozens of blue tits</td>
+</tr>
+<tr>
+<td>Parasites</td>
+<td>Inverted</td>
+<td>One fox → hundreds of fleas</td>
+</tr>
+</table>
+
+<div class="definition">
+
+<p><strong>Pyramid of Energy:</strong> Always upright. Shows energy per unit area per unit time.</p>
+<p><strong>Pyramid of Biomass:</strong> Usually upright, but can invert in aquatic systems with high phytoplankton turnover.</p>
+<p><strong>Pyramid of Numbers:</strong> Most variable; depends on organism sizes.</p>
+
+</div>
+
+<div class="tip">
+
+<p><strong>Paper 2 data question tip:</strong> If asked to draw a pyramid from data, always:</p>
+<ol>
+<li>Draw bars to scale.</li>
+<li>Label each bar with the trophic level name and value.</li>
+<li>Label axes: "Trophic Level" on x-axis and the appropriate unit on y-axis.</li>
+<li>Make bars the same width and centred.</li>
+</ol>
+</div>
+
+<hr>
+
+<h2>4. Primary Productivity: GPP, NPP, and R</h2>
+
+<h3>4.1 Definitions</h3>
+
+<p>Plants capture only about <strong>1-2%</strong> of the sunlight that reaches them (the rest is reflected, transmitted, or the wrong wavelength). This captured energy is <strong>gross primary production (GPP)</strong>.</p>
+
+<p><strong>The key equation:</strong></p>
+
+<p style="text-align:center;margin:0.8rem 0;">$$ NPP = GPP - R $$</p>
+
+<p>Where:</p>
+<ul>
+<li><strong>GPP (Gross Primary Production):</strong> Total chemical energy fixed by photosynthesis (glucose produced). Units: kJ m⁻² yr⁻¹ or g C m⁻² yr⁻¹.</li>
+<li><strong>R (Respiration):</strong> Energy used by the plant itself for cellular respiration — to stay alive, grow, transport nutrients, repair tissues. About 50-60% of GPP is used for respiration.</li>
+<li><strong>NPP (Net Primary Production):</strong> Energy available to the next trophic level (herbivores). This is GPP minus what the plant uses for itself. NPP is new plant biomass — leaves, stems, roots, fruits.</li>
+</ul>
+<p><strong>Analogy:</strong> GPP is your gross salary. R is your rent, food, bills (what you need to spend to stay alive). NPP is your disposable income — what you can invest or give to others.</p>
+
+<div class="definition">
+
+<p><strong>GPP:</strong> The rate at which producers convert solar energy into chemical energy (total photosynthesis).</p>
+<p><strong>NPP:</strong> The rate at which energy is incorporated into producer biomass, available to consumers.</p>
+<p><strong>R:</strong> Energy used by producers for their own metabolic processes.</p>
+
+</div>
+
+<div class="worked">
+
+<p><strong>NPP Calculation</strong></p>
+
+<p>A wheat field has a GPP of 30,000 kJ m⁻² yr⁻¹. The wheat plants use 18,000 kJ m⁻² yr⁻¹ for respiration.</p>
+
+<p>Calculate:</p>
+<p>(a) The NPP.</p>
+<p>(b) Assuming 10% ecological efficiency, how much energy is available to primary consumers?</p>
+<p>(c) What percentage of GPP is available to primary consumers?</p>
+
+<p><strong>Answers:</strong></p>
+<p>(a) NPP = GPP − R = 30,000 − 18,000 = <strong>12,000 kJ m⁻² yr⁻¹</strong>.</p>
+<p>(b) Energy to primary consumers = 10% of NPP = 0.10 × 12,000 = <strong>1,200 kJ m⁻² yr⁻¹</strong>.</p>
+<p>(c) Percentage = (1,200 / 30,000) × 100 = <strong>4%</strong> of GPP reaches primary consumers.</p>
+
+<p>Notice: only 4% of the original fixed energy reaches herbivores — far less than the "10% rule" which applies to NPP, not GPP.</p>
+
+</div>
+
+<h3>4.2 Measuring NPP</h3>
+
+<p>Three methods, each with pros and cons:</p>
+
+<p><strong>1. Harvest Method (Destructive):</strong></p>
+<ul>
+<li>Cut and dry all plant material from sample plots at the start and end of a growing season.</li>
+<li>Change in dry biomass = NPP (accounting for what herbivores ate and what died).</li>
+<li>Pros: Direct and accurate for small areas.</li>
+<li>Cons: Destructive, labour-intensive, doesn't account for below-ground production or consumption by herbivores.</li>
+</ul>
+<p><strong>2. CO₂ Flux (Gas Exchange):</strong></p>
+<ul>
+<li>Measure CO₂ uptake (photosynthesis) and CO₂ release (respiration) using sealed chambers over vegetation.</li>
+<li>Net CO₂ uptake = NPP (in carbon units).</li>
+<li>Pros: Non-destructive, can measure continuously.</li>
+<li>Cons: Measures only above-ground gas exchange; challenging at large scales.</li>
+</ul>
+<p><strong>3. Satellite Imagery (NDVI):</strong></p>
+<ul>
+<li><strong>NDVI (Normalized Difference Vegetation Index):</strong> Satellites measure reflected light. Healthy, dense vegetation reflects more near-infrared (NIR) and less red light than sparse or stressed vegetation.</li>
+</ul>
+<p style="text-align:center;margin:0.8rem 0;">$$ NDVI = \frac{NIR - Red}{NIR + Red} $$</p>
+
+<ul>
+<li>High NDVI ≈ dense, photosynthetically active vegetation ≈ high NPP.</li>
+<li>Pros: Global scale, continuous monitoring, non-destructive.</li>
+<li>Cons: Cloud cover interference, doesn't directly measure carbon — it's a proxy (correlates with NPP but isn't a direct measurement).</li>
+</ul>
+<p><strong>Draw and label:</strong> A world map showing NDVI values. Tropical rainforests (Amazon, Congo, Southeast Asia) = dark green. Deserts (Sahara, Australian outback) = brown/yellow. Boreal forests and temperate regions = medium green.</p>
+
+<hr>
+
+<h2>5. Sankey Diagrams for Energy Flow</h2>
+
+<p>A <strong>Sankey diagram</strong> is a flow diagram where the width of the arrows is proportional to the quantity of energy flowing. They visually demonstrate how energy is partitioned at each trophic level.</p>
+
+<p><strong>Draw and label:</strong> A Sankey diagram for a producer → primary consumer transfer:</p>
+
+<ol>
+<li>Start with a wide arrow labelled "NPP = 1000 kJ m⁻² yr⁻¹" going to "Primary Consumer."</li>
+<li>Branch it into:</li>
+</ol>
+<ul>
+<li>Narrow arrow going up: "New biomass (secondary production) = 100 kJ" (10%)</li>
+<li>Wider arrow going down: "Not consumed = 500 kJ"</li>
+<li>Medium arrow going down: "Faeces (not digested) = 200 kJ"</li>
+<li>Medium arrow going down: "Respiration (heat) = 200 kJ"</li>
+</ul>
+<p>The arrow widths should visually reflect these proportions.</p>
+
+<div class="tip">
+
+<p><strong>Paper 2:</strong> If asked to draw a Sankey diagram, ensure arrow widths are roughly proportional to the values. Label each branch clearly with what the energy is used for and the amount. Include units.</p>
+
+</div>
+
+<hr>
+
+<h2>6. The Carbon Cycle</h2>
+
+<p>Carbon is the backbone of all organic molecules. Unlike energy, carbon (and other nutrients) <strong>cycles</strong> through ecosystems. It moves between different <strong>pools</strong> (reservoirs) via <strong>fluxes</strong> (processes that transfer carbon between pools).</p>
+
+<h3>6.1 Carbon Pools (Reservoirs)</h3>
+
+<table>
+<tr>
+<td>Pool</td>
+<td>Approximate Size (Pg C)</td>
+<td>Form</td>
+</tr>
+<tr>
+<td>Atmosphere</td>
+<td>~860</td>
+<td>CO₂, CH₄</td>
+</tr>
+<tr>
+<td>Ocean (surface + deep)</td>
+<td>~38,000</td>
+<td>Dissolved CO₂, HCO₃⁻, CO₃²⁻</td>
+</tr>
+<tr>
+<td>Fossil fuels</td>
+<td>~5,000-10,000</td>
+<td>Coal, oil, natural gas (not actively cycling)</td>
+</tr>
+<tr>
+<td>Terrestrial biomass</td>
+<td>~560</td>
+<td>Carbohydrates, lipids, proteins in living organisms</td>
+</tr>
+<tr>
+<td>Soil organic matter</td>
+<td>~1,500</td>
+<td>Humus, decomposing material</td>
+</tr>
+<tr>
+<td>Sedimentary rocks</td>
+<td>~60,000,000</td>
+<td>Limestone (CaCO₃), dolomite — largest but slowest pool</td>
+</tr>
+</table>
+
+<h3>6.2 Carbon Fluxes</h3>
+
+<table>
+<tr>
+<td>Flux</td>
+<td>Approximate Rate (Pg C yr⁻¹)</td>
+<td>Process</td>
+</tr>
+<tr>
+<td>Photosynthesis** (atmosphere → biomass)</td>
+<td>~120</td>
+<td>Plants, algae, cyanobacteria fix CO₂ into glucose</td>
+</tr>
+<tr>
+<td>Respiration** (biomass → atmosphere)</td>
+<td>~120</td>
+<td>All organisms break down glucose, releasing CO₂</td>
+</tr>
+<tr>
+<td>Ocean-atmosphere exchange</td>
+<td>~90 each way</td>
+<td>CO₂ dissolves in and out of ocean surface (equilibrium)</td>
+</tr>
+<tr>
+<td>Combustion** (fossil fuels → atmosphere)</td>
+<td>~9</td>
+<td>Burning coal, oil, gas adds "new" CO₂ to active cycle</td>
+</tr>
+<tr>
+<td>Decomposition** (biomass → atmosphere + soil)</td>
+<td>~60</td>
+<td>Bacteria and fungi break down dead organic matter</td>
+</tr>
+<tr>
+<td>Sedimentation** (biomass → rocks)</td>
+<td>~0.2</td>
+<td>Dead organisms form limestone, coal, oil over millions of years</td>
+</tr>
+<tr>
+<td>Volcanic activity** (rocks → atmosphere)</td>
+<td>~0.1</td>
+<td>CO₂ released from Earth's interior</td>
+</tr>
+</table>
+
+<p><strong>Draw and label:</strong> A large carbon cycle diagram. Place "Atmosphere (CO₂)" in the centre. Draw arrows:</p>
+<ul>
+<li>From Atmosphere to Plants: "Photosynthesis (120 Pg C/yr)"</li>
+<li>From Plants to Atmosphere: "Respiration (60 Pg C/yr)"</li>
+<li>From Atmosphere to Ocean: "Dissolution (90 Pg C/yr)"</li>
+<li>From Ocean to Atmosphere: "Outgassing (90 Pg C/yr)"</li>
+<li>From Fossil Fuels to Atmosphere: "Combustion (9 Pg C/yr)"</li>
+<li>From Plants/Animals to Soil/Decomposers: "Death/Decomposition"</li>
+<li>From Soil/Decomposers to Atmosphere: "Decomposition respiration"</li>
+<li>From Ocean to Sediments: "Sedimentation"</li>
+</ul>
+<h3>6.3 The Keeling Curve</h3>
+
+<p>The <strong>Keeling Curve</strong> is the longest continuous record of atmospheric CO₂, measured at the <strong>Mauna Loa Observatory</strong> in Hawaii since 1958 by Charles David Keeling.</p>
+
+<p><strong>Two key features:</strong></p>
+
+<ol>
+<li><strong>Upward trend (anthropogenic signal):</strong> CO₂ has risen from ~315 ppm in 1958 to over 420 ppm today. The slope is increasing — we're adding CO₂ faster each decade. This is primarily from fossil fuel combustion and deforestation.</li>
+</ol>
+<ol>
+<li><strong>Seasonal oscillation (natural signal):</strong> CO₂ rises in Northern Hemisphere winter (respiration dominates, less photosynthesis) and falls in summer (photosynthesis dominates, drawing down CO₂). The amplitude is about 5-6 ppm. This is the "breathing of the biosphere" — dominated by Northern Hemisphere forests because there's more land mass in the north.</li>
+</ol>
+<p><strong>Draw and label:</strong> A graph with years on the x-axis (1958-present) and CO₂ concentration on the y-axis (310-420 ppm). Draw a saw-tooth line trending upward. Label the overall up-trend as "Anthropogenic increase from fossil fuels" and the seasonal wiggles as "Seasonal oscillation — Northern Hemisphere photosynthesis in summer draws down CO₂."</p>
+
+<div class="worked">
+
+<p><strong>Keeling Curve Analysis</strong></p>
+
+<p>The Keeling curve shows CO₂ at Mauna Loa was 316 ppm in January 1959 and 412 ppm in January 2020.</p>
+
+<p>(a) Calculate the average annual increase.</p>
+<p>(b) Explain why the seasonal oscillation is larger in the Northern Hemisphere than the Southern Hemisphere.</p>
+<p>(c) Why is Mauna Loa a good location for this measurement?</p>
+
+<p><strong>Answers:</strong></p>
+<p>(a) Increase = 412 − 316 = 96 ppm over 61 years. Average = 96 / 61 ≈ <strong>1.57 ppm yr⁻¹</strong>.</p>
+<p>(b) The Northern Hemisphere has more land mass and more vegetation. In summer, the vast boreal and temperate forests of North America, Europe, and Asia photosynthesise intensely, drawing down atmospheric CO₂. In winter, respiration dominates. The Southern Hemisphere has more ocean and less land/vegetation, so its seasonal signal is weaker.</p>
+<p>(c) Mauna Loa is at high altitude (~3,400 m) in the middle of the Pacific Ocean, far from major pollution sources. Air is well-mixed, representing global average CO₂. The remote location avoids local industrial or vegetation signals.</p>
+</div>
+
+<hr>
+
+<h2>7. The Nitrogen Cycle</h2>
+
+<p>Nitrogen is essential for amino acids, proteins, and nucleic acids (DNA/RNA). The atmosphere is 78% N₂, but this triple-bonded form (N≡N) is biologically <strong>inert</strong> — organisms can't use it directly. The nitrogen cycle converts N₂ into usable forms and back again.</p>
+
+<h3>7.1 The Five Key Processes</h3>
+
+<p><strong>Draw and label:</strong> A complete nitrogen cycle diagram. Show:</p>
+
+<p><strong>1. Nitrogen Fixation (N₂ → NH₄⁺ / NH₃)</strong></p>
+
+<p>The conversion of atmospheric N₂ into ammonia (NH₃) or ammonium (NH₄⁺). This is the <strong>entry point</strong> of nitrogen into ecosystems.</p>
+
+<p>Three pathways:</p>
+<ul>
+<li><strong>Biological fixation by symbionts:</strong> <em>Rhizobium</em> bacteria live inside root nodules of legumes (peas, beans, clover, alfalfa). The plant provides sugars; the bacteria provide fixed nitrogen. This is a classic mutualism (+/+). <em>Frankia</em> bacteria do the same in alder trees.</li>
+<li><strong>Biological fixation by free-living bacteria:</strong> <em>Azotobacter</em> (aerobic, in soil) and <em>Clostridium</em> (anaerobic) fix nitrogen independently.</li>
+<li><strong>Industrial fixation (Haber process):</strong> Humans fix N₂ + H₂ → NH₃ at high temperature and pressure (used to manufacture fertilisers). This now exceeds natural fixation rates.</li>
+</ul>
+<p><strong>2. Nitrification (NH₄⁺ → NO₂⁻ → NO₃⁻)</strong></p>
+
+<p>A two-step oxidation process by chemoautotrophic bacteria:</p>
+
+<p style="text-align:center;margin:0.8rem 0;">$$ \text{NH}_4^+ \xrightarrow{\textit{Nitrosomonas}} \text{NO}_2^- \xrightarrow{\textit{Nitrobacter}} \text{NO}_3^- $$</p>
+
+<ul>
+<li><em>Nitrosomonas</em> oxidises ammonium to nitrite (NO₂⁻).</li>
+<li><em>Nitrobacter</em> oxidises nitrite to nitrate (NO₃⁻).</li>
+<li>These bacteria are <strong>chemoautotrophs</strong> — they get energy from oxidising inorganic nitrogen compounds (not from light).</li>
+</ul>
+<p>Nitrate (NO₃⁻) is the form most easily taken up by plant roots.</p>
+
+<p><strong>3. Assimilation (NO₃⁻ → organic N)</strong></p>
+
+<p>Plants absorb nitrate (and some ammonium) through their roots and incorporate it into amino acids, proteins, and nucleic acids. Animals get their nitrogen by <strong>eating plants</strong> (or eating other animals).</p>
+
+<p><strong>4. Ammonification (Organic N → NH₄⁺)</strong></p>
+
+<p>When organisms die (or excrete waste), <strong>decomposers</strong> (bacteria and fungi) break down organic nitrogen compounds (proteins, DNA, urea) back into ammonium (NH₄⁺). This ammonium re-enters the cycle — it can be nitrified or reassimilated.</p>
+
+<p><strong>5. Denitrification (NO₃⁻ → N₂)</strong></p>
+
+<p>Under <strong>anaerobic</strong> (oxygen-poor) conditions — such as waterlogged soils, wetlands, and sediments — denitrifying bacteria (e.g., <em>Pseudomonas</em>) use nitrate as an electron acceptor in respiration, converting it back to N₂ gas. This returns nitrogen to the atmosphere, closing the cycle.</p>
+
+<p style="text-align:center;margin:0.8rem 0;">$$ \text{NO}_3^- \rightarrow \text{NO}_2^- \rightarrow \text{NO} \rightarrow \text{N}_2\text{O} \rightarrow \text{N}_2 $$</p>
+
+<div class="tip">
+
+<p><strong>Paper 1:</strong> "Which process in the nitrogen cycle requires anaerobic conditions?" → <strong>Denitrification</strong>. "Name a bacterium involved in denitrification." → <strong>Pseudomonas</strong>. "Which process converts ammonium to nitrite?" → <strong>Nitrification</strong>, catalysed by <strong>Nitrosomonas</strong>.</p>
+
+</div>
+
+<h3>7.2 Summary Table: The Nitrogen Cycle</h3>
+
+<table>
+<tr>
+<td>Process</td>
+<td>Input</td>
+<td>Output</td>
+<td>Organisms</td>
+<td>Conditions</td>
+</tr>
+<tr>
+<td>Nitrogen fixation</td>
+<td>N₂</td>
+<td>NH₄⁺ / NH₃</td>
+<td>Rhizobium<em> (symbiotic), </em>Azotobacter* (free-living)</td>
+<td>Aerobic/anaerobic</td>
+</tr>
+<tr>
+<td>Nitrification</td>
+<td>NH₄⁺</td>
+<td>NO₂⁻ → NO₃⁻</td>
+<td>Nitrosomonas<em>, </em>Nitrobacter</td>
+<td>Aerobic</td>
+</tr>
+<tr>
+<td>Assimilation</td>
+<td>NO₃⁻, NH₄⁺</td>
+<td>Amino acids, proteins</td>
+<td>Plants, then animals through diet</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Ammonification</td>
+<td>Organic N</td>
+<td>NH₄⁺</td>
+<td>Decomposers (bacteria, fungi)</td>
+<td>Aerobic/anaerobic</td>
+</tr>
+<tr>
+<td>Denitrification</td>
+<td>NO₃⁻</td>
+<td>N₂</td>
+<td>Pseudomonas</td>
+<td>Anaerobic</td>
+</tr>
+</table>
+
+<div class="worked">
+
+<p><strong>Nitrogen Cycle Application</strong></p>
+
+<p>A farmer plants a crop of maize. After harvest, she plants clover (a legume) as a "green manure" instead of leaving the field bare.</p>
+
+<p>(a) Explain the benefit of planting clover.</p>
+<p>(b) After ploughing the clover into the soil, what process converts the clover's proteins into a form usable by the next maize crop? Name the organisms and the processes.</p>
+
+<p><strong>Answers:</strong></p>
+<p>(a) Clover is a legume that forms a mutualistic relationship with <em>Rhizobium</em> bacteria in root nodules. The bacteria fix atmospheric N₂ into ammonium, enriching the soil with nitrogen. This reduces the need for synthetic nitrogen fertiliser (Haber process).</p>
+
+<p>(b) Decomposers (bacteria and fungi) carry out <strong>ammonification</strong> — breaking down clover proteins into ammonium (NH₄⁺). Then, <strong>nitrification</strong> by <em>Nitrosomonas</em> and <em>Nitrobacter</em> converts NH₄⁺ → NO₂⁻ → NO₃⁻, which the maize crop can absorb and assimilate into its own proteins.</p>
+
+</div>
+
+<hr>
+
+<h2>8. Energy Flow in Practice: Comparing Ecosystems</h2>
+
+<p>Different ecosystems have vastly different productivity:</p>
+
+<table>
+<tr>
+<td>Ecosystem</td>
+<td>NPP (g C m⁻² yr⁻¹)</td>
+<td>Key features</td>
+</tr>
+<tr>
+<td>Tropical rainforest</td>
+<td>2,000-3,000</td>
+<td>Warm, wet, year-round growing season</td>
+</tr>
+<tr>
+<td>Coral reef</td>
+<td>2,500</td>
+<td>Shallow, clear water, symbiotic algae</td>
+</tr>
+<tr>
+<td>Temperate forest</td>
+<td>1,200-1,600</td>
+<td>Seasonal, moderate</td>
+</tr>
+<tr>
+<td>Agricultural land</td>
+<td>600-800</td>
+<td>Fertilised, but monoculture</td>
+</tr>
+<tr>
+<td>Grassland</td>
+<td>500-800</td>
+<td>Seasonal drought</td>
+</tr>
+<tr>
+<td>Tundra</td>
+<td>100-200</td>
+<td>Cold, short growing season</td>
+</tr>
+<tr>
+<td>Desert</td>
+<td>50-100</td>
+<td>Water-limited</td>
+</tr>
+<tr>
+<td>Open ocean</td>
+<td>50-150</td>
+<td>Nutrient-limited except upwelling zones</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>Common Misconceptions</h2>
+
+<table>
+<tr>
+<td>Misconception</td>
+<td>Reality</td>
+</tr>
+<tr>
+<td>"Matter and energy both cycle in ecosystems."</td>
+<td>Energy <strong>flows</strong> one way and is lost as heat. Matter <strong>cycles</strong> (carbon, nitrogen, water).</td>
+</tr>
+<tr>
+<td>"The 10% rule means 10% of energy at one level becomes biomass at the next."</td>
+<td>The 10% refers to the proportion of <strong>consumed energy</strong> that becomes new biomass. If an organism doesn't consume all of the level below, even less is transferred.</td>
+</tr>
+<tr>
+<td>"Pyramids of biomass are always pyramid-shaped."</td>
+<td>They can be inverted in aquatic ecosystems where phytoplankton have very high turnover rates.</td>
+</tr>
+<tr>
+<td>"Burning fossil fuels just speeds up the natural carbon cycle."</td>
+<td>Fossil fuel carbon has been locked away for millions of years. Burning it adds <strong>new</strong> CO₂ to the active cycling pool, increasing atmospheric concentration.</td>
+</tr>
+<tr>
+<td>"Denitrification is bad because it removes nitrogen from soil."</td>
+<td>Denitrification is essential — it completes the cycle and prevents toxic nitrate accumulation. However, in agricultural soils, it can represent a loss of fertiliser nitrogen.</td>
+</tr>
+<tr>
+<td>"All bacteria in the nitrogen cycle are decomposers."</td>
+<td>Nitrifying bacteria are <strong>chemoautotrophs</strong> — they oxidise inorganic compounds for energy. Nitrogen-fixing bacteria also use energy (from plant sugars or soil organic matter, depending on type).</td>
+</tr>
+<tr>
+<td>"GPP = NPP + R, so NPP is always less than GPP."</td>
+<td>True — but if R exceeds GPP (e.g., under stress, drought, or in deep shade), NPP can be negative (net carbon loss).</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1: Energy Transfer</h3>
+
+<p>In a grassland ecosystem, producers fix 50,000 kJ m⁻² yr⁻¹ (GPP). Producer respiration uses 30,000 kJ m⁻² yr⁻¹. Assuming 10% ecological efficiency at each transfer:</p>
+
+<p>(a) Calculate NPP.</p>
+<p>(b) Calculate energy available to primary, secondary, and tertiary consumers.</p>
+<p>(c) Explain why this ecosystem cannot support a quaternary consumer.</p>
+
+<hr>
+
+<h3>Problem 2: Pyramids</h3>
+
+<p>Explain why each of the following can occur:</p>
+
+<p>(a) A pyramid of biomass is inverted in an aquatic ecosystem.</p>
+<p>(b) A pyramid of numbers for a single oak tree is inverted compared to a pyramid of numbers for a grassland.</p>
+<p>(c) A pyramid of energy is never inverted.</p>
+
+<hr>
+
+<h3>Problem 3: Carbon Cycle</h3>
+
+<p>Atmospheric CO₂ at Mauna Loa was 355 ppm in 1990 and 412 ppm in 2020.</p>
+
+<p>(a) Calculate the rate of increase in ppm per year.</p>
+<p>(b) Explain the seasonal "sawtooth" pattern in the Keeling curve.</p>
+<p>(c) Identify one carbon pool that is not part of the active carbon cycle on human timescales, and explain why.</p>
+
+<hr>
+
+<h3>Problem 4: Nitrogen Cycle</h3>
+
+<p>A waterlogged field shows yellowing (chlorosis) of crop leaves, suggesting nitrogen deficiency despite recent application of ammonium-based fertiliser.</p>
+
+<p>(a) Explain why the nitrogen may be unavailable to the plants.</p>
+<p>(b) Name the process and the bacteria responsible.</p>
+<p>(c) Suggest a practical solution and explain how it would help.</p>
+
+<hr>
+
+<h3>Problem 5: NPP Measurement</h3>
+
+<p>A researcher wants to measure NPP in a grassland. She uses three methods:</p>
+
+<p>(i) Harvest method: clips and dries all above-ground biomass in 1 m² plots at the start and end of the season.</p>
+<p>(ii) CO₂ flux: measures CO₂ exchange using a sealed chamber over a plot.</p>
+<p>(iii) Satellite NDVI: downloads satellite data for the region.</p>
+
+<p>(a) For each method, identify one limitation.</p>
+<p>(b) The harvest method gives NPP = 800 g C m⁻² yr⁻¹. The CO₂ flux method gives 950 g C m⁻² yr⁻¹. Suggest a reason for the discrepancy.</p>
+
+<hr>
+
+<h2>Answers</h2>
+
+<h3>Answer 1</h3>
+
+<p>(a) NPP = GPP − R = 50,000 − 30,000 = <strong>20,000 kJ m⁻² yr⁻¹</strong>.</p>
+
+<p>(b) Energy available:</p>
+<ul>
+<li>Primary consumers: 0.10 × 20,000 = <strong>2,000 kJ m⁻² yr⁻¹</strong></li>
+<li>Secondary consumers: 0.10 × 2,000 = <strong>200 kJ m⁻² yr⁻¹</strong></li>
+<li>Tertiary consumers: 0.10 × 200 = <strong>20 kJ m⁻² yr⁻¹</strong></li>
+</ul>
+<p>(c) A quaternary consumer would receive only 0.10 × 20 = <strong>2 kJ m⁻² yr⁻¹</strong>. This is insufficient energy to sustain a viable population — the ecological efficiency losses mean there simply isn't enough energy at the fifth trophic level. This is why most food chains have at most 4-5 levels.</p>
+
+<hr>
+
+<h3>Answer 2</h3>
+
+<p>(a) Phytoplankton reproduce extremely rapidly, so their <strong>turnover rate</strong> is very high. At any single moment, standing biomass is low, but the <strong>productivity</strong> is high enough to support a larger biomass of slow-growing zooplankton. This creates an inverted biomass pyramid.</p>
+
+<p>(b) One oak tree (producer) supports thousands of herbivorous insects (caterpillars, aphids), which support dozens of insectivorous birds. The pyramid of numbers has a narrow base (1 tree) and wider higher levels — it's inverted. In a grassland, many grass plants support fewer herbivores and even fewer carnivores — this is an upright pyramid.</p>
+
+<p>(c) Energy is always lost as heat at each trophic level (second law of thermodynamics). The energy available to a higher level must be less than that at the lower level. Therefore, a pyramid of energy is always upright — it's a physical necessity, not a biological observation.</p>
+
+<hr>
+
+<h3>Answer 3</h3>
+
+<p>(a) Increase = 412 − 355 = 57 ppm over 30 years. Rate = 57 / 30 = <strong>1.9 ppm yr⁻¹</strong>.</p>
+
+<p>(b) In Northern Hemisphere summer, increased photosynthesis by forests draws down CO₂ (lower values). In winter, respiration dominates and CO₂ rises. Because the Northern Hemisphere has more land mass and vegetation than the Southern Hemisphere, this seasonal signal is globally visible. The result is a "sawtooth" pattern superimposed on the overall rising trend.</p>
+
+<p>(c) <strong>Sedimentary rocks (limestone, CaCO₃)</strong> and <strong>fossil fuel deposits</strong> are carbon pools that cycle on geological timescales (millions of years), not human timescales. They are only accessed through volcanic activity, weathering, or — in the case of fossil fuels — human extraction and combustion.</p>
+
+<hr>
+
+<h3>Answer 4</h3>
+
+<p>(a) In waterlogged (anaerobic) soil, denitrifying bacteria convert nitrate (NO₃⁻) to N₂ gas, which is lost to the atmosphere. Even though ammonium (NH₄⁺) was applied, it would normally be converted by nitrification to NO₃⁻ — but under anaerobic conditions, the NO₃⁻ is then denitrified. The nitrogen literally escapes as gas.</p>
+
+<p>(b) <strong>Denitrification</strong>, carried out by <strong>Pseudomonas</strong> (and other anaerobic bacteria).</p>
+
+<p>(c) <strong>Solution: Drain the field</strong> (install drainage pipes or ditches). This introduces oxygen into the soil, inhibiting denitrification and allowing nitrification to proceed normally, making nitrogen available to crops. Alternatively, apply nitrate-based fertiliser more frequently in smaller doses.</p>
+
+<hr>
+
+<h3>Answer 5</h3>
+
+<p>(a) Limitations:</p>
+<ul>
+<li><strong>Harvest method:</strong> Destructive, only measures above-ground biomass at two time points, misses biomass consumed by herbivores between measurements, doesn't account for root production/death.</li>
+<li><strong>CO₂ flux:</strong> The sealed chamber creates an artificial microenvironment (altered temperature, humidity, wind) that may affect photosynthesis and respiration rates. Only measures gas exchange at one small location.</li>
+<li><strong>Satellite NDVI:</strong> NDVI is a proxy, not a direct measure of carbon. It can be affected by cloud cover, and it measures "greenness" which correlates with but doesn't directly equal NPP. It integrates over a large pixel area, missing fine-scale variation.</li>
+</ul>
+<p>(b) The CO₂ flux method gives a higher estimate (950 vs 800 g C m⁻² yr⁻¹). This could be because the harvest method only measures <strong>above-ground biomass</strong>, missing root production. If roots account for ~15% of NPP, that's ~150 g C m⁻² yr⁻¹ — this could explain most of the discrepancy. Additionally, the harvest method may miss biomass eaten by herbivores between measurements.</p>
+
+<hr>
+
+<h2>Key Takeaways</h2>
+
+<table>
+<tr>
+<td>Concept</td>
+<td>Summary</td>
+</tr>
+<tr>
+<td>Energy flow</td>
+<td>One-way. Sunlight → producers → consumers. ~90% lost as heat at each trophic level.</td>
+</tr>
+<tr>
+<td>Food webs</td>
+<td>Interconnected food chains; provide ecosystem resilience through dietary redundancy.</td>
+</tr>
+<tr>
+<td>Pyramids</td>
+<td>Energy: always upright. Biomass: sometimes inverted (aquatic). Numbers: highly variable.</td>
+</tr>
+<tr>
+<td>NPP = GPP − R</td>
+<td>NPP is what's available to consumers. Measured by harvest, CO₂ flux, or satellite NDVI.</td>
+</tr>
+<tr>
+<td>Carbon cycle</td>
+<td>Pools: atmosphere, ocean, biomass, soil, fossil fuels, rocks. Fluxes: photosynthesis, respiration, combustion, ocean exchange.</td>
+</tr>
+<tr>
+<td>Keeling curve</td>
+<td>Rising CO₂ trend (anthropogenic) + seasonal oscillation (biosphere breathing).</td>
+</tr>
+<tr>
+<td>Nitrogen cycle</td>
+<td>Fixation (N₂→NH₄⁺), nitrification (NH₄⁺→NO₃⁻), assimilation, ammonification, denitrification (NO₃⁻→N₂, anaerobic).</td>
+</tr>
+<tr>
+<td>Sankey diagrams</td>
+<td>Arrow width proportional to energy flow; show energy partitioning at each trophic level.</td>
+</tr>
+</table>
+
+<hr>
+
+<p><em>End of Lesson 38 — Next: DNA Replication (D1.1)</em></p>
+
+<div class="nav"><a href="lesson_37.html">&#8592; Lesson 37</a><a href="index.html">&#8962; Index</a><a href="lesson_39.html">Lesson 39 &#8594;</a></div>
+
+</body>
+</html>

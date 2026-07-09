@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 17: Organelles and Compartmentalization (B2.2) — IB Biology HL</title>
+<script>window.MathJax = { tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] } };</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #1a6b3c; --border: #c4d4a9; --highlight: #e8f5e9; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Palatino', 'Georgia', serif; background: var(--bg); color: var(--text); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; font-size: 17px; line-height: 1.7; }
+  h1 { font-size: 1.7rem; color: var(--accent); margin-bottom: 0.5rem; }
+  h2 { font-size: 1.25rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; margin: 2rem 0 1rem; }
+  h3 { font-size: 1.1rem; color: #444; margin: 1.3rem 0 0.5rem; }
+  p, li { margin-bottom: 0.6rem; }
+  ul, ol { padding-left: 1.8rem; margin-bottom: 1rem; }
+  .worked { background: #e8f5e9; border-left: 4px solid #1a6b3c; padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
+  .worked strong { color: #1a6b3c; }
+  .answer { background: #fefdf7; border: 1px solid var(--border); padding: 0.8rem 1.2rem; margin: 0.5rem 0; border-radius: 6px; }
+  .nav { display: flex; justify-content: space-between; margin: 3rem 0 1rem; padding-top: 1rem; border-top: 2px solid var(--border); font-size: 0.9rem; }
+  .nav a { color: #1a5c9e; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  .definition { background: #fff8e1; border-left: 4px solid #e6a817; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  .tip { background: #e3f2fd; border-left: 4px solid #1976d2; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  table { border-collapse: collapse; margin: 0.8rem 0; width: 100%; }
+  th, td { border: 1px solid var(--border); padding: 0.4rem 0.6rem; text-align: left; }
+  th { background: #f0f5e8; }
+  @media print { body { font-size: 14px; } .nav { display: none; } }
+</style>
+</head>
+<body>
+
+
+<h2>What You'll Learn</h2>
+<ul>
+<li>Why compartmentalization matters: separating incompatible reactions, concentrating enzymes, and maintaining specialized environments</li>
+<li>The nucleus: nuclear envelope, nuclear pores, nucleolus, and chromatin organization</li>
+<li>The endomembrane system: rough ER, smooth ER, Golgi apparatus, and vesicle trafficking</li>
+<li>Protein targeting: signal peptides, SRP, and translocation into the ER</li>
+<li>Golgi function: protein modification (glycosylation), sorting, and packaging</li>
+<li>Vesicle trafficking pathways: COPII (ER → Golgi), COPI (Golgi → ER), clathrin-coated (Golgi → PM/lysosomes)</li>
+<li>Lysosomes: hydrolytic enzymes, acidic pH (H⁺-ATPase), phagocytosis, autophagy, and autolysis</li>
+<li>Mitochondria: outer and inner membranes, cristae, matrix — each compartment's role in respiration</li>
+<li>Chloroplasts: thylakoid membrane, grana, stroma — where light and dark reactions occur</li>
+<li>Vacuoles: plant central vacuole (turgor pressure, storage) and contractile vacuoles in protists</li>
+<li>Peroxisomes: oxidative enzymes, H₂O₂ production and breakdown, β-oxidation, detoxification</li>
+</ul>
+<hr>
+
+<h2>1. Why Compartmentalization? The Logic of Membrane-Bound Organelles</h2>
+
+<p>Eukaryotic cells are defined by the presence of <strong>membrane-bound organelles</strong> — internal compartments that divide the cell into specialized regions. This is arguably the single most important innovation in eukaryotic evolution.</p>
+
+<h3>1.1 The Advantages of Compartmentalization</h3>
+
+<table>
+<tr>
+<td>Advantage</td>
+<td>Explanation</td>
+<td>Example</td>
+</tr>
+<tr>
+<td>Separation of incompatible reactions</td>
+<td>Some metabolic processes would interfere with each other if they occurred in the same space</td>
+<td>Fatty acid synthesis (cytoplasm) and fatty acid oxidation/β-oxidation (mitochondrial matrix and peroxisomes) are kept separate</td>
+</tr>
+<tr>
+<td>Concentration of enzymes and substrates</td>
+<td>By confining enzymes to a small volume, reaction rates increase</td>
+<td>Krebs cycle enzymes are concentrated in the mitochondrial matrix</td>
+</tr>
+<tr>
+<td>Specialized environments</td>
+<td>Different pH, ion concentrations, or redox conditions can be maintained in different compartments</td>
+<td>Lysosomes maintain pH ~5 (optimal for hydrolytic enzymes); cytoplasm is pH ~7.2</td>
+</tr>
+<tr>
+<td>Localization of functions</td>
+<td>Specific processes occur in specific places, improving efficiency</td>
+<td>Transcription in nucleus, translation in cytoplasm, modification in Golgi</td>
+</tr>
+<tr>
+<td>Protection</td>
+<td>Potentially harmful molecules are sequestered</td>
+<td>Lysosomes contain digestive enzymes that would destroy the cell if released; reactive oxygen species are confined to peroxisomes</td>
+</tr>
+<tr>
+<td>Regulation</td>
+<td>Transport between compartments can be controlled, providing additional regulatory points</td>
+<td>Nuclear pore complex controls what enters and exits the nucleus</td>
+</tr>
+</table>
+
+<p><strong>Analogy</strong>: A eukaryotic cell is like a modern factory with separate rooms for different tasks (welding room, paint room, assembly line, quality control, shipping department). A prokaryotic cell is like a single open-plan workshop where everything happens in the same room. The factory is more efficient, but also more complex to coordinate.</p>
+
+<hr>
+
+<h2>2. The Nucleus: Information Headquarters</h2>
+
+<h3>2.1 Structure</h3>
+
+<p>The nucleus is the largest organelle in most eukaryotic cells (~5-10 μm in diameter). It is surrounded by the <strong>nuclear envelope</strong>, which consists of:</p>
+
+<ul>
+<li><strong>Two parallel phospholipid bilayers</strong> (outer and inner nuclear membranes).</li>
+<li>The outer membrane is continuous with the <strong>rough endoplasmic reticulum (RER)</strong> and has ribosomes on its cytoplasmic surface.</li>
+<li>The inner membrane is lined by the <strong>nuclear lamina</strong> — a meshwork of intermediate filament proteins (lamins) that provides structural support.</li>
+</ul>
+<h3>2.2 Nuclear Pores</h3>
+
+<p>The nuclear envelope is perforated by <strong>nuclear pore complexes (NPCs)</strong> — large protein assemblies (~125 MDa in vertebrates) that form channels through the envelope.</p>
+
+<p><strong>Function:</strong> The NPCs control the selective transport of molecules between the nucleus and cytoplasm:</p>
+<ul>
+<li><strong>Small molecules</strong> (< ~40 kDa): Pass freely by diffusion.</li>
+<li><strong>Large molecules</strong> (proteins, mRNA, ribosome subunits): Require active, signal-mediated transport.</li>
+<li><strong>Import</strong>: Proteins destined for the nucleus carry a <strong>nuclear localization signal (NLS)</strong> — a short amino acid sequence recognized by import receptors (importins).</li>
+<li><strong>Export</strong>: mRNA and ribosomal subunits are exported through NPCs after processing.</li>
+</ul>
+<p><strong>Diagram to draw</strong>: A cross-section of the nuclear envelope showing:</p>
+<ul>
+<li>Outer membrane (continuous with RER).</li>
+<li>Inner membrane with nuclear lamina.</li>
+<li>Nuclear pore complexes (draw as channel-like structures spanning both membranes).</li>
+<li>Arrows: "mRNA export," "Ribosome subunit export," "Protein import (NLS)."</li>
+</ul>
+<h3>2.3 Nucleolus</h3>
+
+<p>The nucleolus is a dense, non-membrane-bound structure within the nucleus. It is the site of:</p>
+
+<ul>
+<li><strong>rRNA synthesis</strong>: The genes encoding ribosomal RNA (rRNA) are transcribed by RNA polymerase I.</li>
+<li><strong>Ribosome assembly</strong>: rRNA combines with ribosomal proteins (imported from the cytoplasm) to form the small (40S) and large (60S) ribosomal subunits.</li>
+<li>These subunits are then exported through nuclear pores to the cytoplasm for final assembly during translation.</li>
+</ul>
+<p>Cells active in protein synthesis (e.g., pancreatic acinar cells, lymphocytes) have prominent nucleoli.</p>
+
+<h3>2.4 Chromatin</h3>
+
+<p>Within the nucleus, DNA is packaged with proteins (primarily <strong>histones</strong>) to form <strong>chromatin</strong>:</p>
+<ul>
+<li><strong>Euchromatin</strong>: Less condensed, transcriptionally active — appears lighter in electron micrographs.</li>
+<li><strong>Heterochromatin</strong>: Highly condensed, transcriptionally inactive — appears darker.</li>
+</ul>
+<p>This organization allows the ~2 meters of human DNA to fit into a nucleus only ~5-10 μm in diameter.</p>
+
+<hr>
+
+<h2>3. The Endomembrane System</h2>
+
+<p>The <strong>endomembrane system</strong> is a network of membrane-bound organelles that function together in the synthesis, modification, packaging, and transport of proteins and lipids. It includes:</p>
+
+<ul>
+<li>Nuclear envelope</li>
+<li>Endoplasmic reticulum (rough and smooth)</li>
+<li>Golgi apparatus</li>
+<li>Vesicles (transport, secretory, lysosomal)</li>
+<li>Plasma membrane (functionally linked via vesicle trafficking)</li>
+</ul>
+<p><strong>Note</strong>: Mitochondria, chloroplasts, and peroxisomes are NOT part of the endomembrane system — they have distinct evolutionary origins and are not connected by vesicle trafficking.</p>
+
+<hr>
+
+<h2>4. The Endoplasmic Reticulum (ER)</h2>
+
+<p>The ER is a network of interconnected membrane tubules and flattened sacs (cisternae) that extends throughout the cytoplasm. It comes in two forms:</p>
+
+<h3>4.1 Rough Endoplasmic Reticulum (RER)</h3>
+
+<p>The RER is studded with <strong>ribosomes</strong> on its cytoplasmic surface, giving it a "rough" appearance in electron micrographs.</p>
+
+<p><strong>Functions:</strong></p>
+<ul>
+<li><strong>Synthesis of proteins destined for secretion, the plasma membrane, or lysosomes</strong>.</li>
+<li><strong>Co-translational translocation</strong>: Proteins enter the ER lumen AS they are being synthesized by ribosomes.</li>
+<li><strong>Initial protein folding and modification</strong> (e.g., disulfide bond formation, initial N-linked glycosylation).</li>
+</ul>
+<p><strong>The signal peptide mechanism:</strong></p>
+
+<ol>
+<li>Translation begins on a free ribosome in the cytoplasm.</li>
+<li>The first ~20 amino acids of a secretory protein form a <strong>signal peptide</strong> — a stretch of hydrophobic residues at the N-terminus.</li>
+<li>The signal peptide is recognized by the <strong>signal recognition particle (SRP)</strong>.</li>
+<li>SRP binds to the signal peptide, pauses translation, and escorts the ribosome to the <strong>SRP receptor</strong> on the ER membrane.</li>
+<li>The ribosome docks onto a <strong>translocon</strong> (protein-conducting channel) in the ER membrane.</li>
+<li>SRP is released; translation resumes, and the growing polypeptide is threaded through the translocon into the ER lumen.</li>
+<li><strong>Signal peptidase</strong> (an enzyme in the ER lumen) cleaves off the signal peptide.</li>
+<li>Translation continues until the protein is complete and released into the ER lumen.</li>
+</ol>
+<p><strong>Diagram to draw</strong>: Step-by-step illustration of the SRP pathway — ribosome, mRNA, signal peptide, SRP, SRP receptor, translocon, ER lumen. Label each step.</p>
+
+<h3>4.2 Smooth Endoplasmic Reticulum (Smooth ER)</h3>
+
+<p>The smooth ER lacks ribosomes. It has a more tubular appearance.</p>
+
+<p><strong>Functions:</strong></p>
+<table>
+<tr>
+<td>Function</td>
+<td>Details</td>
+<td>Cell Type Example</td>
+</tr>
+<tr>
+<td>Lipid synthesis</td>
+<td>Synthesis of phospholipids, cholesterol, and steroid hormones</td>
+<td>Cells of the adrenal cortex (cortisol, aldosterone) and gonads (testosterone, estrogen) have extensive smooth ER</td>
+</tr>
+<tr>
+<td>Detoxification</td>
+<td>Modification of lipophilic (fat-soluble) toxins and drugs to make them more water-soluble for excretion</td>
+<td>Liver hepatocytes** — extensive smooth ER; enzymes like cytochrome P450 oxidize toxins</td>
+</tr>
+<tr>
+<td>Calcium storage</td>
+<td>Sequesters Ca²⁺ ions; releases them in response to signals</td>
+<td>Sarcoplasmic reticulum** in muscle cells (a specialized form of smooth ER) stores and releases Ca²⁺ to trigger muscle contraction</td>
+</tr>
+<tr>
+<td>Carbohydrate metabolism</td>
+<td>Enzyme glucose-6-phosphatase in liver ER releases glucose from glycogen stores into the blood</td>
+<td>Liver hepatocytes</td>
+</tr>
+</table>
+
+<div class="tip">
+
+<p><strong>IB Exam Tip</strong>: Be precise: smooth ER synthesizes <strong>lipids</strong> (phospholipids, steroids); rough ER synthesizes <strong>proteins</strong> (for secretion, membrane insertion, or lysosomes). Don't confuse which ER does which.</p>
+
+</div>
+
+<hr>
+
+<h2>5. The Golgi Apparatus: The Cell's Sorting and Shipping Center</h2>
+
+<h3>5.1 Structure</h3>
+
+<p>The Golgi apparatus consists of flattened, membrane-bound sacs called <strong>cisternae</strong> stacked like pancakes (typically 4-8 cisternae per stack). It has a distinct <strong>polarity</strong>:</p>
+
+<ul>
+<li><strong>Cis face (cis-Golgi network, CGN)</strong>: The receiving side — faces the ER. Vesicles from the ER fuse here.</li>
+<li><strong>Medial cisternae</strong>: The middle compartments where most modifications occur.</li>
+<li><strong>Trans face (trans-Golgi network, TGN)</strong>: The shipping side — faces the plasma membrane. Vesicles bud off from here to various destinations.</li>
+</ul>
+<h3>5.2 Functions</h3>
+
+<p>The Golgi is the central station for protein processing and sorting:</p>
+
+<p>#### Protein Modification</p>
+
+<ul>
+<li><strong>Glycosylation</strong>: Carbohydrate chains added in the ER (N-linked) are further <strong>modified</strong> — sugars can be trimmed and new ones added. <strong>O-linked glycosylation</strong> (attachment of sugars to serine/threonine -OH groups) occurs primarily in the Golgi.</li>
+<li><strong>Proteolytic cleavage</strong>: Some proteins are synthesized as inactive precursors (proproteins) and are cleaved to their active form in the Golgi or Golgi-derived vesicles. <strong>Example</strong>: Proinsulin → insulin (the connecting C-peptide is removed).</li>
+<li><strong>Phosphorylation</strong>: Addition of phosphate groups to lysosomal enzymes (mannose-6-phosphate tag → targets them to lysosomes).</li>
+<li><strong>Sulfation</strong>: Addition of sulfate groups to tyrosine residues in some secretory proteins.</li>
+</ul>
+<p>#### Sorting and Packaging</p>
+
+<p>The TGN sorts proteins into different vesicles based on their final destination:</p>
+<ul>
+<li>Vesicles to the <strong>plasma membrane</strong> (constitutive secretion or regulated secretion).</li>
+<li>Vesicles to <strong>lysosomes</strong> (via the mannose-6-phosphate receptor pathway).</li>
+<li>Vesicles back to the <strong>ER</strong> (retrieval of ER-resident proteins).</li>
+</ul>
+<p><strong>Analogy</strong>: The Golgi is like a post office distribution center — packages (proteins) arrive from the ER, get labels added (modifications), and are sorted into different trucks (vesicles) heading to different destinations.</p>
+
+<hr>
+
+<h2>6. Vesicle Trafficking</h2>
+
+<p>Vesicles shuttle cargo between compartments of the endomembrane system. The protein coat on a vesicle determines its destination.</p>
+
+<h3>6.1 Coat Proteins</h3>
+
+<table>
+<tr>
+<td>Coat</td>
+<td>Direction</td>
+<td>Function</td>
+</tr>
+<tr>
+<td>COPII</td>
+<td>ER → Golgi (anterograde)</td>
+<td>Transports newly synthesized proteins from the ER to the cis-Golgi</td>
+</tr>
+<tr>
+<td>COPI</td>
+<td>Golgi → ER (retrograde)</td>
+<td>Returns escaped ER-resident proteins and recycles membrane components</td>
+</tr>
+<tr>
+<td>Clathrin</td>
+<td>Golgi → Plasma membrane; Plasma membrane → Endosomes; Golgi → Lysosomes</td>
+<td>Transport from TGN to plasma membrane or lysosomes; also receptor-mediated endocytosis</td>
+</tr>
+</table>
+
+<h3>6.2 The Vesicle Cycle</h3>
+
+<ol>
+<li><strong>Budding</strong>: Coat proteins (COPII, COPI, or clathrin) assemble on the donor membrane, deforming it into a bud.</li>
+<li><strong>Scission</strong>: The vesicle pinches off (dynamin GTPase is involved for clathrin-coated vesicles).</li>
+<li><strong>Uncoating</strong>: The coat is shed, exposing targeting proteins (SNAREs) on the vesicle surface.</li>
+<li><strong>Transport</strong>: The vesicle is transported along cytoskeletal tracks (microtubules for long-distance; actin for short-distance).</li>
+<li><strong>Tethering and docking</strong>: The vesicle is captured by tethering factors and docked via <strong>v-SNARE</strong> (on the vesicle) and <strong>t-SNARE</strong> (on the target membrane) pairing.</li>
+<li><strong>Fusion</strong>: SNARE proteins zip together, bringing the membranes into close apposition, leading to fusion.</li>
+</ol>
+<hr>
+
+<h2>7. Lysosomes: The Cellular Recycling Centers</h2>
+
+<h3>7.1 Structure and Composition</h3>
+
+<p>Lysosomes are membrane-bound organelles (~0.1-1.2 μm) containing <strong>hydrolytic enzymes</strong> capable of breaking down all major classes of biological macromolecules:</p>
+
+<table>
+<tr>
+<td>Enzyme Class</td>
+<td>Action</td>
+<td>Example Substrates</td>
+</tr>
+<tr>
+<td>Proteases</td>
+<td>Hydrolyze peptide bonds</td>
+<td>Proteins → amino acids</td>
+</tr>
+<tr>
+<td>Lipases</td>
+<td>Hydrolyze ester bonds</td>
+<td>Lipids → fatty acids + glycerol</td>
+</tr>
+<tr>
+<td>Nucleases</td>
+<td>Hydrolyze phosphodiester bonds</td>
+<td>DNA, RNA → nucleotides</td>
+</tr>
+<tr>
+<td>Glycosidases</td>
+<td>Hydrolyze glycosidic bonds</td>
+<td>Polysaccharides → monosaccharides</td>
+</tr>
+<tr>
+<td>Phosphatases</td>
+<td>Remove phosphate groups</td>
+<td>Phosphorylated substrates → Pi + dephosphorylated product</td>
+</tr>
+</table>
+
+<h3>7.2 The Acidic Environment</h3>
+
+<p>Lysosomal enzymes have <strong>pH optima around 5.0</strong>. The lysosomal lumen is maintained at pH ~5 by an <strong>H⁺-ATPase (proton pump)</strong> in the lysosomal membrane that actively transports H⁺ into the lysosome using ATP.</p>
+
+<p><strong>Why acidic?</strong></p>
+<ul>
+<li>The lysosomal enzymes function optimally at acidic pH — they would be much less active at cytoplasmic pH (~7.2).</li>
+<li>If a lysosome ruptures and releases its enzymes into the cytoplasm, the enzymes are largely inactivated by the neutral pH. This is a <strong>safety mechanism</strong> — it prevents catastrophic digestion of the cell.</li>
+</ul>
+<h3>7.3 Functions</h3>
+
+<p>#### Phagocytosis → Phagolysosome</p>
+
+<ol>
+<li>A cell (e.g., macrophage) engulfs a bacterium by phagocytosis → <strong>phagosome</strong>.</li>
+<li>The phagosome fuses with a lysosome → <strong>phagolysosome</strong>.</li>
+<li>Lysosomal enzymes digest the bacterium.</li>
+<li>Useful products (amino acids, sugars) are transported into the cytoplasm; indigestible material is retained as <strong>residual bodies</strong> or exocytosed.</li>
+</ol>
+<p>#### Autophagy</p>
+
+<p>Autophagy ("self-eating") is the process by which cells digest their own worn-out organelles or cytoplasmic components:</p>
+<ol>
+<li>A double membrane (from the ER) envelops a mitochondrion or other organelle → <strong>autophagosome</strong>.</li>
+<li>The autophagosome fuses with a lysosome.</li>
+<li>The contents are digested and recycled.</li>
+</ol>
+<p>Autophagy is crucial for cellular maintenance and increases during starvation.</p>
+
+<p>#### Autolysis (Programmed Cell Death / Apoptosis)</p>
+
+<p>During apoptosis, lysosomes may release their enzymes to systematically break down the cell from within. This contributes to the orderly dismantling of the cell.</p>
+
+<div class="definition">
+
+<p><strong>Lysosome</strong>: A membrane-bound organelle containing hydrolytic enzymes (proteases, lipases, nucleases, glycosidases) with an acidic internal pH (~5). Functions in intracellular digestion, autophagy, and autolysis.</p>
+
+</div>
+
+<hr>
+
+<h2>8. Mitochondria: The Powerhouses</h2>
+
+<h3>8.1 Structure — Compartments Within Compartments</h3>
+
+<p>Mitochondria have <strong>two membranes</strong> that create distinct compartments, each with specific roles in aerobic respiration.</p>
+
+<table>
+<tr>
+<td>Structure</td>
+<td>Description</td>
+<td>Function</td>
+</tr>
+<tr>
+<td>Outer membrane</td>
+<td>Smooth; contains <strong>porins</strong> (channel proteins)</td>
+<td>Freely permeable to small molecules and ions</td>
+</tr>
+<tr>
+<td>Intermembrane space</td>
+<td>Space between outer and inner membranes</td>
+<td>H⁺ accumulation** during ETC (proton gradient); similar composition to cytoplasm</td>
+</tr>
+<tr>
+<td>Inner membrane</td>
+<td>Highly folded into <strong>cristae</strong> (increases surface area); impermeable to most molecules</td>
+<td>Houses <strong>electron transport chain (ETC)</strong> complexes and <strong>ATP synthase</strong>; site of oxidative phosphorylation</td>
+</tr>
+<tr>
+<td>Matrix</td>
+<td>Space enclosed by inner membrane; contains enzymes, mitochondrial DNA, ribosomes</td>
+<td>Krebs cycle<strong> (citric acid cycle); </strong>β-oxidation** of fatty acids; mitochondrial gene expression</td>
+</tr>
+</table>
+
+<p><strong>Key features:</strong></p>
+<ul>
+<li><strong>Cristae</strong> dramatically increase the surface area of the inner membrane → more ETC complexes and ATP synthase → more ATP production. Cells with high energy demands (e.g., cardiac muscle) have mitochondria with very dense cristae.</li>
+<li>Mitochondria have their own <strong>circular DNA</strong> (mtDNA), <strong>70S ribosomes</strong> (like bacteria), and <strong>tRNA</strong> — evidence for their endosymbiotic origin.</li>
+<li>mtDNA encodes 13 proteins (all components of ETC complexes), 22 tRNAs, and 2 rRNAs in humans. Most mitochondrial proteins (~1,500) are encoded by nuclear DNA and imported.</li>
+</ul>
+<p><strong>Diagram to draw</strong>: A cross-section of a mitochondrion:</p>
+<ol>
+<li>Smooth outer membrane with porins.</li>
+<li>Highly folded inner membrane (cristae).</li>
+<li>Intermembrane space — label "H⁺ accumulation (proton gradient)."</li>
+<li>Matrix — label "Krebs cycle, mtDNA, 70S ribosomes."</li>
+<li>ETC complexes and ATP synthase embedded in the inner membrane.</li>
+</ol>
+<hr>
+
+<h2>9. Chloroplasts: The Photosynthetic Organelles</h2>
+
+<p>Chloroplasts are found in plants and algae. Like mitochondria, they have a double membrane and their own DNA (endosymbiotic origin from cyanobacteria).</p>
+
+<h3>9.1 Structure</h3>
+
+<table>
+<tr>
+<td>Structure</td>
+<td>Description</td>
+<td>Function</td>
+</tr>
+<tr>
+<td>Outer membrane</td>
+<td>Smooth; permeable</td>
+<td>Boundary of the organelle</td>
+</tr>
+<tr>
+<td>Inner membrane</td>
+<td>Less permeable</td>
+<td>Transport regulation</td>
+</tr>
+<tr>
+<td>Thylakoid membrane</td>
+<td>Internal membrane system folded into flattened sacs (thylakoids)</td>
+<td>Light-dependent reactions** — contains photosystems I & II, ETC, ATP synthase</td>
+</tr>
+<tr>
+<td>Grana (singular: granum)</td>
+<td>Stacks of thylakoids</td>
+<td>Maximizes surface area for light absorption and ETC components</td>
+</tr>
+<tr>
+<td>Stroma</td>
+<td>Fluid-filled space surrounding thylakoids</td>
+<td>Calvin cycle** (light-independent reactions); contains enzymes, chloroplast DNA, 70S ribosomes, starch grains</td>
+</tr>
+</table>
+
+<p><strong>Key features:</strong></p>
+<ul>
+<li>The thylakoid membrane is the site of <strong>chlorophyll</strong> and other photosynthetic pigments.</li>
+<li>During the light reactions, H⁺ ions are pumped into the <strong>thylakoid lumen</strong> (the interior of the thylakoid), creating a proton gradient that drives ATP synthesis via ATP synthase in the thylakoid membrane (chemiosmosis — similar principle to mitochondria).</li>
+<li>The stroma contains the enzymes of the Calvin cycle (including <strong>Rubisco</strong>, the most abundant enzyme on Earth).</li>
+</ul>
+<p><strong>Diagram to draw</strong>: Cross-section of a chloroplast:</p>
+<ol>
+<li>Outer and inner membranes.</li>
+<li>Stacks of thylakoids (grana) — each thylakoid is a flattened disc.</li>
+<li>Stroma between the grana.</li>
+<li>Label: "Thylakoid membrane → Light reactions," "Stroma → Calvin cycle," "Starch grain," "cpDNA + 70S ribosomes."</li>
+</ol>
+<hr>
+
+<h2>10. Vacuoles</h2>
+
+<h3>10.1 Plant Central Vacuole</h3>
+
+<p>Mature plant cells typically contain a large <strong>central vacuole</strong> that occupies up to <strong>90% of the cell volume</strong>. It is surrounded by a membrane called the <strong>tonoplast</strong>.</p>
+
+<p><strong>Functions:</strong></p>
+
+<table>
+<tr>
+<td>Function</td>
+<td>Mechanism</td>
+</tr>
+<tr>
+<td>Turgor pressure</td>
+<td>The vacuole accumulates solutes (ions, sugars) → water enters by osmosis → the vacuole swells, pressing the cytoplasm against the cell wall → <strong>turgor pressure</strong> provides structural support for non-woody plants</td>
+</tr>
+<tr>
+<td>Storage</td>
+<td>Stores ions (K⁺, Cl⁻), sugars, amino acids, proteins (in seeds), and sometimes toxic compounds (alkaloids, tannins) as defense against herbivores</td>
+</tr>
+<tr>
+<td>Waste sequestration</td>
+<td>Metabolic waste products are stored in the vacuole, away from metabolically active cytoplasm</td>
+</tr>
+<tr>
+<td>Pigmentation</td>
+<td>Anthocyanin pigments in vacuoles give flowers and fruits their red, purple, and blue colors (attract pollinators and seed dispersers)</td>
+</tr>
+<tr>
+<td>Digestion</td>
+<td>Some vacuoles contain hydrolytic enzymes and function like lysosomes</td>
+</tr>
+</table>
+
+<h3>10.2 Contractile Vacuoles in Freshwater Protists</h3>
+
+<p>Freshwater protists (e.g., <em>Paramecium</em>, <em>Amoeba</em>) live in a <strong>hypotonic environment</strong> — water constantly enters their cells by osmosis because their cytoplasm has a higher solute concentration than the surrounding freshwater.</p>
+
+<p><strong>Solution</strong>: The <strong>contractile vacuole</strong> collects excess water from the cytoplasm and periodically contracts to expel it from the cell. This is an active process requiring ATP. Without contractile vacuoles, freshwater protists would swell and burst.</p>
+
+<p><strong>Diagram</strong>: Show a Paramecium with radiating canals collecting water into a central contractile vacuole, which empties to the exterior.</p>
+
+<hr>
+
+<h2>11. Peroxisomes</h2>
+
+<p>Peroxisomes are small (~0.1-1 μm), single-membrane organelles found in virtually all eukaryotic cells.</p>
+
+<h3>11.1 Enzymatic Content</h3>
+
+<p>Peroxisomes contain <strong>oxidative enzymes</strong>, including:</p>
+
+<ul>
+<li><strong>Oxidases</strong>: Catalyze oxidation reactions using molecular oxygen (O₂), producing <strong>hydrogen peroxide (H₂O₂)</strong> as a byproduct.</li>
+<li><strong>Catalase</strong>: Rapidly breaks down H₂O₂ into water and oxygen:</li>
+</ul>
+<p style="text-align:center;margin:0.8rem 0;">$$2H_2O_2 \xrightarrow{\text{catalase}} 2H_2O + O_2$$</p>
+
+<h3>11.2 Functions</h3>
+
+<table>
+<tr>
+<td>Function</td>
+<td>Details</td>
+</tr>
+<tr>
+<td>β-oxidation of fatty acids</td>
+<td>Breakdown of very long-chain fatty acids (shorter chains are handled by mitochondria). Generates acetyl-CoA for energy.</td>
+</tr>
+<tr>
+<td>Detoxification</td>
+<td>In liver cells, peroxisomes oxidize toxic compounds (e.g., ethanol → acetaldehyde).</td>
+</tr>
+<tr>
+<td>Synthesis of plasmalogens</td>
+<td>Specialized phospholipids important in the myelin sheath of neurons.</td>
+</tr>
+<tr>
+<td>Photorespiration</td>
+<td>In plant peroxisomes, part of the photorespiratory pathway that salvages carbon from phosphoglycolate.</td>
+</tr>
+<tr>
+<td>Glyoxylate cycle</td>
+<td>In plant seeds (glyoxysomes — specialized peroxisomes), converts stored lipids into carbohydrates for the germinating seedling.</td>
+</tr>
+</table>
+
+<h3>11.3 Why Compartmentalize These Reactions?</h3>
+
+<p>Oxidation reactions produce H₂O₂ — a <strong>reactive oxygen species (ROS)</strong> that can damage DNA, proteins, and lipids. By confining these reactions to peroxisomes and rapidly degrading H₂O₂ with catalase, the cell protects itself from oxidative damage.</p>
+
+<div class="definition">
+
+<p><strong>Peroxisome</strong>: A single-membrane organelle containing oxidases (produce H₂O₂) and catalase (breaks down H₂O₂). Functions in fatty acid β-oxidation, detoxification, and plasmalogen synthesis.</p>
+
+</div>
+
+<hr>
+
+<h2>12. Worked Examples</h2>
+
+<div class="worked">
+
+<p><strong>Worked Example 1: Tracing a Secretory Protein</strong></p>
+
+<p>Trace the path of the protein insulin from its site of synthesis to its secretion from a pancreatic β-cell. Name each organelle involved and describe what happens there.</p>
+
+<p><strong>Solution:</strong></p>
+
+<ol>
+<li><strong>Nucleus</strong>: The insulin gene is transcribed to mRNA.</li>
+<li><strong>Nuclear pore</strong>: mRNA is exported to the cytoplasm.</li>
+<li><strong>Free ribosome in cytoplasm</strong>: Translation begins. The first ~24 amino acids form a <strong>signal peptide</strong>.</li>
+<li><strong>SRP + SRP receptor on RER</strong>: SRP recognizes the signal peptide, pauses translation, escorts the ribosome to the RER.</li>
+<li><strong>RER lumen</strong>: Translation resumes; preproinsulin is translocated into the ER lumen. The signal peptide is cleaved → <strong>proinsulin</strong>. Disulfide bonds form; initial folding occurs.</li>
+<li><strong>COPII vesicle</strong>: Proinsulin is transported from the ER to the <strong>cis-Golgi</strong>.</li>
+<li><strong>Golgi apparatus</strong>: Proinsulin travels through the cisternae (cis → medial → trans). In the trans-Golgi, proinsulin is cleaved by proteases → <strong>insulin</strong> (A and B chains linked by disulfide bonds) + <strong>C-peptide</strong> (removed connecting peptide).</li>
+<li><strong>Secretory vesicle</strong> (from TGN): Insulin is packaged into secretory vesicles, which are stored in the cytoplasm.</li>
+<li><strong>Exocytosis</strong>: In response to high blood glucose → Ca²⁺ influx → vesicles fuse with plasma membrane → insulin is released into the bloodstream.</li>
+</ol>
+</div>
+
+<div class="worked">
+
+<p><strong>Worked Example 2: Lysosomal Enzyme Targeting</strong></p>
+
+<p>Lysosomal enzymes must be specifically delivered to lysosomes. What molecular tag ensures this, and what would happen if the tagging system failed?</p>
+
+<p><strong>Solution:</strong></p>
+
+<p>Lysosomal enzymes are tagged with <strong>mannose-6-phosphate (M6P)</strong> in the cis-Golgi. This is a two-step process:</p>
+<ol>
+<li>N-acetylglucosamine-1-phosphotransferase adds GlcNAc-1-phosphate to a mannose residue on the enzyme.</li>
+<li>A second enzyme removes the GlcNAc, leaving mannose-6-phosphate.</li>
+</ol>
+<p><strong>Recognition</strong>: M6P receptors in the trans-Golgi network bind the tagged enzymes and package them into <strong>clathrin-coated vesicles</strong> destined for late endosomes, which mature into lysosomes.</p>
+
+<p><strong>If the system fails (e.g., in I-cell disease / mucolipidosis II)</strong>:</p>
+<ul>
+<li>Lysosomal enzymes lack the M6P tag.</li>
+<li>They are not sorted to lysosomes but are instead <strong>secreted</strong> from the cell by the default pathway.</li>
+<li>Lysosomes become engorged with undigested substrates → <strong>lysosomal storage disease</strong>.</li>
+<li>Symptoms include skeletal abnormalities, developmental delay, and organ enlargement.</li>
+</ul>
+</div>
+
+<div class="worked">
+
+<p><strong>Worked Example 3: Mitochondrial vs Chloroplast Compartments</strong></p>
+
+<p>Compare the roles of the mitochondrial inner membrane and the chloroplast thylakoid membrane in energy conversion.</p>
+
+<p><strong>Solution:</strong></p>
+
+<table>
+<tr>
+<td>Feature</td>
+<td>Mitochondrial Inner Membrane</td>
+<td>Chloroplast Thylakoid Membrane</td>
+</tr>
+<tr>
+<td>Process</td>
+<td>Oxidative phosphorylation</td>
+<td>Light-dependent reactions of photosynthesis</td>
+</tr>
+<tr>
+<td>Source of high-energy electrons</td>
+<td>NADH and FADH₂ (from Krebs cycle, glycolysis)</td>
+<td>H₂O (split by photosystem II) and light-excited chlorophyll</td>
+</tr>
+<tr>
+<td>Electron transport chain</td>
+<td>Complexes I-IV; electrons flow from NADH → complex I → ... → O₂ (final acceptor)</td>
+<td>Photosystem II → ETC → Photosystem I; electrons flow from H₂O → PSII → ... → NADP⁺ (final acceptor to make NADPH)</td>
+</tr>
+<tr>
+<td>Proton gradient</td>
+<td>H⁺ pumped from <strong>matrix</strong> to **intermembrane space</td>
+<td>H⁺ pumped from <strong>stroma</strong> to **thylakoid lumen</td>
+</tr>
+<tr>
+<td>ATP synthase location</td>
+<td>Inner membrane; H⁺ flows from intermembrane space → matrix</td>
+<td>Thylakoid membrane; H⁺ flows from thylakoid lumen → stroma</td>
+</tr>
+<tr>
+<td>End product</td>
+<td>ATP (and H₂O from O₂ reduction)</td>
+<td>ATP and NADPH (used in Calvin cycle)</td>
+</tr>
+</table>
+
+<p>Both use <strong>chemiosmosis</strong> — the coupling of electron transport to proton pumping, creating a proton gradient that drives ATP synthesis.</p>
+
+</div>
+
+<hr>
+
+<h2>13. Practice Problems</h2>
+
+<h3>Problem 1 (Easy)</h3>
+<p>List three advantages of cellular compartmentalization and give a specific example for each.</p>
+
+<h3>Problem 2 (Easy)</h3>
+<p>Distinguish between the rough ER and smooth ER in terms of: (a) appearance, (b) associated ribosomes, (c) primary synthetic function, and (d) a cell type where each is especially abundant.</p>
+
+<h3>Problem 3 (Medium)</h3>
+<p>Describe the role of the Golgi apparatus in protein processing. Name three types of modifications that can occur there.</p>
+
+<h3>Problem 4 (Medium)</h3>
+<p>Explain why the lysosomal lumen must be maintained at pH ~5 and how this is achieved.</p>
+
+<h3>Problem 5 (Hard)</h3>
+<p>Compare the structure of mitochondria and chloroplasts. Identify: (a) the number of membranes, (b) the compartment where H⁺ ions accumulate during chemiosmosis, (c) the location of DNA and ribosomes, (d) the metabolic pathway occurring in the innermost compartment, and (e) the evidence that both organelles arose by endosymbiosis.</p>
+
+<hr>
+
+<h2>14. Practice Problem Answers</h2>
+
+<h3>Answer 1</h3>
+
+<table>
+<tr>
+<td>Advantage</td>
+<td>Example</td>
+</tr>
+<tr>
+<td>Separation of incompatible reactions</td>
+<td>Fatty acid synthesis (cytoplasm) and β-oxidation (mitochondria/peroxisomes) are kept separate to prevent a futile cycle</td>
+</tr>
+<tr>
+<td>Specialized environments</td>
+<td>Lysosomes maintain pH ~5 (via H⁺-ATPase), optimal for hydrolytic enzymes, while cytoplasm is pH ~7.2</td>
+</tr>
+<tr>
+<td>Concentration of enzymes</td>
+<td>Krebs cycle enzymes are concentrated in the mitochondrial matrix, increasing reaction rates</td>
+</tr>
+</table>
+
+<p>Other acceptable examples: transcription in nucleus (separate from translation), H₂O₂ confinement in peroxisomes, Ca²⁺ storage in sarcoplasmic reticulum.</p>
+
+<h3>Answer 2</h3>
+
+<table>
+<tr>
+<td>Feature</td>
+<td>Rough ER</td>
+<td>Smooth ER</td>
+</tr>
+<tr>
+<td>Appearance</td>
+<td>Flattened sacs with ribosomes; "rough" in EM</td>
+<td>Tubular network; "smooth" in EM</td>
+</tr>
+<tr>
+<td>Ribosomes</td>
+<td>Present on cytoplasmic surface</td>
+<td>Absent</td>
+</tr>
+<tr>
+<td>Primary synthetic function</td>
+<td>Protein synthesis (secreted, membrane, lysosomal proteins)</td>
+<td>Lipid synthesis (phospholipids, steroids), detoxification, Ca²⁺ storage</td>
+</tr>
+<tr>
+<td>Abundant in</td>
+<td>Pancreatic acinar cells (secrete digestive enzymes), plasma cells (secrete antibodies)</td>
+<td>Liver hepatocytes (detoxification), adrenal cortex cells (steroid hormone synthesis), muscle cells (sarcoplasmic reticulum)</td>
+</tr>
+</table>
+
+<h3>Answer 3</h3>
+
+<p>The Golgi apparatus receives proteins from the ER at its <strong>cis face</strong>. As proteins move through the Golgi cisternae (cis → medial → trans), they undergo:</p>
+
+<ol>
+<li><strong>Glycosylation modification</strong>: N-linked oligosaccharides added in the ER are trimmed and further modified. <strong>O-linked glycosylation</strong> (attachment of sugars to serine/threonine -OH groups) occurs in the Golgi.</li>
+</ol>
+<ol>
+<li><strong>Proteolytic cleavage</strong>: Inactive precursors are cleaved to their active forms (e.g., <strong>proinsulin → insulin</strong> by removal of the C-peptide).</li>
+</ol>
+<ol>
+<li><strong>Phosphorylation</strong>: Lysosomal enzymes are tagged with <strong>mannose-6-phosphate</strong> for targeting to lysosomes.</li>
+</ol>
+<ol>
+<li><strong>Sulfation</strong>: Sulfate groups are added to tyrosine residues in some proteins.</li>
+</ol>
+<p>At the <strong>trans-Golgi network (TGN)</strong>, proteins are sorted into vesicles destined for the plasma membrane, lysosomes, or back to the ER.</p>
+
+<h3>Answer 4</h3>
+
+<p>Lysosomal enzymes (proteases, lipases, nucleases, glycosidases) have <strong>pH optima around 5.0</strong> — they are much less active at neutral pH.</p>
+
+<p>The acidic pH is maintained by a <strong>vacuolar H⁺-ATPase (proton pump)</strong> in the lysosomal membrane. This pump uses the energy of ATP hydrolysis to actively transport H⁺ ions from the cytoplasm (pH ~7.2) into the lysosomal lumen, against the concentration gradient. This is <strong>primary active transport</strong>.</p>
+
+<p><strong>Why this is important as a safety mechanism</strong>: If a lysosome ruptures and releases its enzymes into the cytoplasm (pH ~7.2), the enzymes are largely <strong>inactivated</strong> by the neutral pH. This prevents catastrophic digestion of the cell. The lysosome thus contains potentially dangerous enzymes in a compartment where they are active, while the rest of the cell is protected by the pH difference.</p>
+
+<h3>Answer 5</h3>
+
+<p><strong>(a) Number of membranes:</strong> Both have <strong>two membranes</strong> (outer and inner).</p>
+
+<p><strong>(b) H⁺ accumulation:</strong></p>
+<ul>
+<li><strong>Mitochondria</strong>: H⁺ accumulate in the <strong>intermembrane space</strong> (between outer and inner membranes).</li>
+<li><strong>Chloroplasts</strong>: H⁺ accumulate in the <strong>thylakoid lumen</strong> (inside the thylakoid discs).</li>
+</ul>
+<p><strong>(c) DNA and ribosomes:</strong></p>
+<ul>
+<li><strong>Mitochondria</strong>: DNA (circular, ~16.6 kb in humans) and 70S ribosomes are in the <strong>matrix</strong>.</li>
+<li><strong>Chloroplasts</strong>: DNA (circular, larger than mtDNA) and 70S ribosomes are in the <strong>stroma</strong>.</li>
+</ul>
+<p><strong>(d) Metabolic pathway in innermost compartment:</strong></p>
+<ul>
+<li><strong>Mitochondrial matrix</strong>: <strong>Krebs cycle</strong> (citric acid cycle) and β-oxidation of fatty acids.</li>
+<li><strong>Chloroplast stroma</strong>: <strong>Calvin cycle</strong> (light-independent reactions, carbon fixation).</li>
+</ul>
+<p><strong>(e) Endosymbiotic evidence:</strong></p>
+<p>Both organelles share features with bacteria, supporting their endosymbiotic origin:</p>
+<ol>
+<li><strong>Double membrane</strong> (the inner from the original bacterium; the outer from the host's phagosomal membrane).</li>
+<li><strong>Circular DNA</strong> (like bacterial chromosomes, not linear eukaryotic chromosomes).</li>
+<li><strong>70S ribosomes</strong> (bacterial-type, not 80S eukaryotic ribosomes).</li>
+<li><strong>Antibiotic sensitivity</strong>: Mitochondrial and chloroplast ribosomes are sensitive to antibiotics that target bacterial ribosomes (e.g., chloramphenicol, streptomycin) but not to those targeting eukaryotic ribosomes (e.g., cycloheximide).</li>
+<li><strong>Division by binary fission</strong> (like bacteria), not by mitosis.</li>
+</ol>
+<hr>
+
+<h2>15. Common Misconceptions</h2>
+
+<table>
+<tr>
+<td>Misconception</td>
+<td>Reality</td>
+</tr>
+<tr>
+<td>"The smooth ER and rough ER are completely separate organelles"</td>
+<td>They are <strong>continuous</strong> — the membranes are physically connected. The same ER network has rough and smooth regions.</td>
+</tr>
+<tr>
+<td>"All proteins are synthesized on the RER"</td>
+<td>Proteins destined for the <strong>cytoplasm, nucleus, mitochondria, chloroplasts, and peroxisomes</strong> are synthesized on <strong>free ribosomes</strong> in the cytoplasm. Only secreted, membrane, and lysosomal proteins are made on the RER.</td>
+</tr>
+<tr>
+<td>"The Golgi makes proteins"</td>
+<td>The Golgi <strong>modifies and sorts</strong> proteins. Synthesis occurs on ribosomes (RER or free).</td>
+</tr>
+<tr>
+<td>"Lysosomes are only for digesting engulfed material"</td>
+<td>Lysosomes also perform <strong>autophagy</strong> (digesting worn-out cellular components) and are involved in <strong>apoptosis</strong>.</td>
+</tr>
+<tr>
+<td>"Mitochondria and chloroplasts are part of the endomembrane system"</td>
+<td>They are <strong>NOT</strong> — they are endosymbiont-derived and are not connected by vesicle trafficking to the ER/Golgi.</td>
+</tr>
+<tr>
+<td>"Peroxisomes and lysosomes are the same thing"</td>
+<td>Peroxisomes handle <strong>oxidative</strong> reactions (produce and degrade H₂O₂); lysosomes handle <strong>hydrolytic</strong> digestion. They have different enzymes, different pH, and different functions.</td>
+</tr>
+<tr>
+<td>"All vacuoles are large and central like in plant cells"</td>
+<td>Many animal cells have smaller vacuoles; contractile vacuoles in protists are different from the plant central vacuole.</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>16. Key Terms Summary</h2>
+
+<table>
+<tr>
+<td>Term</td>
+<td>Definition</td>
+</tr>
+<tr>
+<td>Compartmentalization</td>
+<td>Division of eukaryotic cell into membrane-bound organelles with specialized functions</td>
+</tr>
+<tr>
+<td>Nuclear envelope</td>
+<td>Double membrane surrounding the nucleus; continuous with RER</td>
+</tr>
+<tr>
+<td>Nuclear pore complex</td>
+<td>Protein channel regulating transport between nucleus and cytoplasm</td>
+</tr>
+<tr>
+<td>Nucleolus</td>
+<td>Site of rRNA synthesis and ribosome assembly within nucleus</td>
+</tr>
+<tr>
+<td>Rough ER</td>
+<td>Ribosome-studded ER; synthesizes secretory, membrane, and lysosomal proteins</td>
+</tr>
+<tr>
+<td>Smooth ER</td>
+<td>Ribosome-free ER; lipid synthesis, detoxification, Ca²⁺ storage</td>
+</tr>
+<tr>
+<td>Signal peptide</td>
+<td>N-terminal sequence targeting nascent proteins to the ER</td>
+</tr>
+<tr>
+<td>SRP (Signal Recognition Particle)</td>
+<td>Binds signal peptide; escorts ribosome to ER</td>
+</tr>
+<tr>
+<td>Golgi apparatus</td>
+<td>Stacked cisternae; modifies, sorts, and packages proteins</td>
+</tr>
+<tr>
+<td>COPII</td>
+<td>Coat protein for vesicles from ER → Golgi</td>
+</tr>
+<tr>
+<td>COPI</td>
+<td>Coat protein for vesicles from Golgi → ER (retrograde)</td>
+</tr>
+<tr>
+<td>Clathrin</td>
+<td>Coat protein for vesicles from Golgi → PM/lysosomes and endocytosis</td>
+</tr>
+<tr>
+<td>Lysosome</td>
+<td>Acidic organelle with hydrolytic enzymes; intracellular digestion</td>
+</tr>
+<tr>
+<td>Autophagy</td>
+<td>Digestion of worn-out organelles by lysosomes</td>
+</tr>
+<tr>
+<td>Cristae</td>
+<td>Folds of inner mitochondrial membrane; increase surface area for ETC</td>
+</tr>
+<tr>
+<td>Matrix</td>
+<td>Innermost mitochondrial compartment; Krebs cycle</td>
+</tr>
+<tr>
+<td>Thylakoid membrane</td>
+<td>Internal membrane of chloroplast; light-dependent reactions</td>
+</tr>
+<tr>
+<td>Granum</td>
+<td>Stack of thylakoids</td>
+</tr>
+<tr>
+<td>Stroma</td>
+<td>Chloroplast fluid; Calvin cycle</td>
+</tr>
+<tr>
+<td>Tonoplast</td>
+<td>Membrane surrounding plant central vacuole</td>
+</tr>
+<tr>
+<td>Contractile vacuole</td>
+<td>Osmoregulatory organelle in freshwater protists</td>
+</tr>
+<tr>
+<td>Peroxisome</td>
+<td>Oxidative organelle; H₂O₂ metabolism, β-oxidation, detoxification</td>
+</tr>
+<tr>
+<td>Catalase</td>
+<td>Enzyme in peroxisomes; breaks H₂O₂ → H₂O + O₂</td>
+</tr>
+</table>
+
+<hr>
+
+<p>This concludes Lesson 17. You now understand the logic of compartmentalization and the structure and function of every major organelle — nucleus, ER, Golgi, lysosomes, mitochondria, chloroplasts, vacuoles, and peroxisomes. In the final lesson, we explore cell specialization, stem cells, and differentiation.</p>
+
+<div class="nav"><a href="lesson_16.html">&#8592; Lesson 16</a><a href="index.html">&#8962; Index</a><a href="lesson_18.html">Lesson 18 &#8594;</a></div>
+
+</body>
+</html>

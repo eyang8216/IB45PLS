@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" width="600" height="500">
+  <rect width="600" height="500" fill="#fff"/>
+  <text x="300" y="28" text-anchor="middle" font-family="Arial" font-size="17" font-weight="bold" fill="#333">Oxygen Dissociation Curves</text>
+
+  <!-- Axes -->
+  <line x1="70" y1="380" x2="560" y2="380" stroke="#333" stroke-width="2"/>
+  <line x1="70" y1="380" x2="70" y2="60" stroke="#333" stroke-width="2"/>
+
+  <text x="315" y="410" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">pO₂ (kPa)</text>
+  <text x="30" y="220" text-anchor="middle" font-family="Arial" font-size="12" fill="#333" transform="rotate(-90,30,220)">% Hb Saturation</text>
+
+  <!-- X-axis labels -->
+  <text x="70" y="400" text-anchor="middle" font-family="Arial" font-size="10" fill="#333">0</text>
+  <text x="170" y="400" text-anchor="middle" font-family="Arial" font-size="10" fill="#333">2</text>
+  <text x="270" y="400" text-anchor="middle" font-family="Arial" font-size="10" fill="#333">4</text>
+  <text x="370" y="400" text-anchor="middle" font-family="Arial" font-size="10" fill="#333">8</text>
+  <text x="470" y="400" text-anchor="middle" font-family="Arial" font-size="10" fill="#333">12</text>
+  <text x="540" y="400" text-anchor="middle" font-family="Arial" font-size="10" fill="#333">14</text>
+
+  <!-- Y-axis labels -->
+  <text x="60" y="380" text-anchor="end" font-family="Arial" font-size="10" fill="#333">0</text>
+  <text x="60" y="300" text-anchor="end" font-family="Arial" font-size="10" fill="#333">25</text>
+  <text x="60" y="220" text-anchor="end" font-family="Arial" font-size="10" fill="#333">50</text>
+  <text x="60" y="140" text-anchor="end" font-family="Arial" font-size="10" fill="#333">75</text>
+  <text x="60" y="60" text-anchor="end" font-family="Arial" font-size="10" fill="#333">100</text>
+
+  <!-- Grid -->
+  <line x1="70" y1="300" x2="560" y2="300" stroke="#ddd" stroke-width="1"/>
+  <line x1="70" y1="220" x2="560" y2="220" stroke="#ddd" stroke-width="1"/>
+  <line x1="70" y1="140" x2="560" y2="140" stroke="#ddd" stroke-width="1"/>
+  <line x1="170" y1="380" x2="170" y2="55" stroke="#ddd" stroke-width="1"/>
+  <line x1="270" y1="380" x2="270" y2="55" stroke="#ddd" stroke-width="1"/>
+  <line x1="370" y1="380" x2="370" y2="55" stroke="#ddd" stroke-width="1"/>
+  <line x1="470" y1="380" x2="470" y2="55" stroke="#ddd" stroke-width="1"/>
+
+  <!-- Hemoglobin sigmoidal curve -->
+  <path d="M70,375 Q120,365 170,340 Q200,300 220,250 Q240,200 270,150 Q310,100 360,80 Q400,68 460,60 Q520,55 555,53" fill="none" stroke="#e53935" stroke-width="3"/>
+  <text x="340" y="165" font-family="Arial" font-size="11" fill="#e53935" font-weight="bold">Hemoglobin (Hb)</text>
+  <text x="340" y="180" font-family="Arial" font-size="9" fill="#e53935">Sigmoidal — cooperative binding</text>
+
+  <!-- Myoglobin hyperbolic curve -->
+  <path d="M70,370 Q150,200 220,100 Q270,65 320,55 Q400,45 555,42" fill="none" stroke="#1565c0" stroke-width="2.5" stroke-dasharray="6,3"/>
+  <text x="400" y="110" font-family="Arial" font-size="10" fill="#1565c0">Myoglobin (Mb)</text>
+  <text x="400" y="124" font-family="Arial" font-size="9" fill="#1565c0">Hyperbolic — O₂ store</text>
+
+  <!-- Fetal hemoglobin -->
+  <path d="M70,370 Q130,360 190,320 Q220,270 250,200 Q280,140 320,95 Q370,68 460,58 Q530,52 555,50" fill="none" stroke="#6a1b9a" stroke-width="2.5" stroke-dasharray="4,4"/>
+  <text x="270" y="240" font-family="Arial" font-size="10" fill="#6a1b9a">Fetal Hb (HbF)</text>
+  <text x="270" y="254" font-family="Arial" font-size="9" fill="#6a1b9a">Left-shifted — higher affinity</text>
+
+  <!-- Annotations -->
+  <line x1="370" y1="80" x2="370" y2="385" stroke="#333" stroke-width="1" stroke-dasharray="2,2"/>
+  <text x="370" y="395" text-anchor="middle" font-family="Arial" font-size="9" fill="#333">~12 kPa (lungs)</text>
+
+  <line x1="220" y1="250" x2="220" y2="385" stroke="#333" stroke-width="1" stroke-dasharray="2,2"/>
+  <text x="220" y="395" text-anchor="middle" font-family="Arial" font-size="9" fill="#333">~5 kPa</text>
+  <text x="220" y="420" text-anchor="middle" font-family="Arial" font-size="9" fill="#333">(tissue)</text>
+
+  <!-- Legend -->
+  <rect x="70" y="440" width="180" height="50" rx="4" fill="#fafafa" stroke="#333" stroke-width="1"/>
+  <line x1="85" y1="455" x2="115" y2="455" stroke="#e53935" stroke-width="3"/>
+  <text x="125" y="459" font-family="Arial" font-size="9" fill="#333">Hemoglobin (adult)</text>
+  <line x1="85" y1="470" x2="115" y2="470" stroke="#1565c0" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="125" y="474" font-family="Arial" font-size="9" fill="#333">Myoglobin</text>
+  <line x1="85" y1="485" x2="115" y2="485" stroke="#6a1b9a" stroke-width="2" stroke-dasharray="4,4"/>
+  <text x="125" y="488" font-family="Arial" font-size="9" fill="#333">Fetal Hb (HbF)</text>
+</svg>

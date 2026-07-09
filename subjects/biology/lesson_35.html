@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 35: Defence Against Disease I (C3.2) — IB Biology HL</title>
+<script>window.MathJax = { tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] } };</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #1a6b3c; --border: #c4d4a9; --highlight: #e8f5e9; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Palatino', 'Georgia', serif; background: var(--bg); color: var(--text); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; font-size: 17px; line-height: 1.7; }
+  h1 { font-size: 1.7rem; color: var(--accent); margin-bottom: 0.5rem; }
+  h2 { font-size: 1.25rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; margin: 2rem 0 1rem; }
+  h3 { font-size: 1.1rem; color: #444; margin: 1.3rem 0 0.5rem; }
+  p, li { margin-bottom: 0.6rem; }
+  ul, ol { padding-left: 1.8rem; margin-bottom: 1rem; }
+  .worked { background: #e8f5e9; border-left: 4px solid #1a6b3c; padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
+  .worked strong { color: #1a6b3c; }
+  .answer { background: #fefdf7; border: 1px solid var(--border); padding: 0.8rem 1.2rem; margin: 0.5rem 0; border-radius: 6px; }
+  .nav { display: flex; justify-content: space-between; margin: 3rem 0 1rem; padding-top: 1rem; border-top: 2px solid var(--border); font-size: 0.9rem; }
+  .nav a { color: #1a5c9e; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  .definition { background: #fff8e1; border-left: 4px solid #e6a817; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  .tip { background: #e3f2fd; border-left: 4px solid #1976d2; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  table { border-collapse: collapse; margin: 0.8rem 0; width: 100%; }
+  th, td { border: 1px solid var(--border); padding: 0.4rem 0.6rem; text-align: left; }
+  th { background: #f0f5e8; }
+  @media print { body { font-size: 14px; } .nav { display: none; } }
+</style>
+</head>
+<body>
+
+
+<h2>What You'll Learn</h2>
+
+<p>Every day, you inhale thousands of bacteria, swallow viruses with your food, and brush against fungi on every surface. Yet you rarely get sick. Why? Because your body is a fortress with multiple layers of defence — from physical walls to roaming cellular patrols to highly specific molecular weapons. In this lesson, you'll learn how the immune system protects you, starting with the broad, rapid defences you're born with and progressing to the exquisitely specific adaptive responses that create immunological memory. By the end, you'll understand:</p>
+
+<ul>
+<li>The diverse cast of pathogens — bacteria, viruses, fungi, protozoa, and the bizarre prions</li>
+<li>How your innate defences — skin, mucus, stomach acid, phagocytes, inflammation, fever — provide immediate, non-specific protection</li>
+<li>The elegant structure of antibodies and how they neutralize, agglutinate, and mark pathogens for destruction</li>
+<li>How B cells and T cells provide specific, long-lasting immunity through humoral and cell-mediated responses</li>
+<li>The crucial distinction between MHC I and MHC II — and why it matters for how T cells "see" antigens</li>
+<li>How vaccines exploit immunological memory — and why smallpox was the perfect candidate for eradication</li>
+</ul>
+<hr>
+
+<h2>1. Pathogens: The Diverse Enemies</h2>
+
+<div class="definition">
+
+<p><strong>Pathogen</strong> — A disease-causing organism or agent. From Greek: <em>pathos</em> (suffering) + <em>gen</em> (to produce).</p>
+
+</div>
+
+<h3>1.1 Bacteria</h3>
+
+<p><strong>Structure:</strong> Prokaryotic cells — no nucleus, circular DNA, 70S ribosomes, cell wall (peptidoglycan in most), may have capsule, flagella, or pili. Typically 1-5 μm in size.</p>
+
+<p><strong>How they cause disease:</strong></p>
+<ul>
+<li><strong>Toxin production:</strong> Many bacteria secrete exotoxins (proteins) that damage host cells. Examples:</li>
+<li><em>Clostridium tetani</em> → tetanus toxin → blocks inhibitory neurotransmitter release → muscle spasms (lockjaw)</li>
+<li><em>Vibrio cholerae</em> → cholera toxin → activates CFTR channel → massive water/electrolyte secretion → severe diarrhea</li>
+<li><em>Corynebacterium diphtheriae</em> → diphtheria toxin → inhibits protein synthesis → cell death</li>
+<li><strong>Endotoxins:</strong> Lipopolysaccharide (LPS) in Gram-negative bacterial outer membrane — released when bacteria die, triggers massive inflammation (septic shock)</li>
+<li><strong>Direct tissue damage:</strong> Enzymes that break down tissues</li>
+<li><strong>Immune evasion:</strong> Capsules prevent phagocytosis, antigenic variation avoids antibody recognition</li>
+</ul>
+<p><strong>Examples of bacterial diseases:</strong> Tuberculosis (<em>Mycobacterium tuberculosis</em>), strep throat (<em>Streptococcus pyogenes</em>), cholera (<em>Vibrio cholerae</em>), pneumonia (<em>Streptococcus pneumoniae</em>), food poisoning (<em>Salmonella</em>, <em>E. coli</em>).</p>
+
+<p><strong>Treatable with antibiotics</strong> — bacteria have unique features (70S ribosomes, peptidoglycan cell wall) that can be targeted selectively.</p>
+
+<h3>1.2 Viruses</h3>
+
+<p><strong>Structure:</strong> Not cells — they are essentially genetic material (DNA or RNA) wrapped in a protein coat (capsid), sometimes with a lipid envelope. Typically 20-300 nm (much smaller than bacteria).</p>
+
+<p><strong>How they cause disease:</strong></p>
+<ul>
+<li>Viruses are <strong>obligate intracellular parasites</strong> — they cannot reproduce on their own</li>
+<li>They <strong>hijack the host cell's machinery</strong> to replicate:</li>
+</ul>
+<ol>
+<li>Attachment: Viral surface proteins bind to specific host cell receptors</li>
+<li>Entry: Virus enters cell (endocytosis or membrane fusion)</li>
+<li>Uncoating: Capsid removed, viral genome released</li>
+<li>Replication: Host ribosomes translate viral proteins; host or viral enzymes replicate viral genome</li>
+<li>Assembly: New viral particles assembled</li>
+<li>Release: Viruses exit by budding (enveloped viruses) or cell lysis (non-enveloped)</li>
+</ol>
+<ul>
+<li>Cell damage occurs because: cell metabolism is diverted to viral production → cell dies when new viruses are released → tissue damage. In some cases, the immune response to infected cells causes the damage.</li>
+</ul>
+<p><strong>Examples:</strong> Influenza, HIV, SARS-CoV-2 (COVID-19), measles, polio, hepatitis B, herpes simplex, rhinovirus (common cold).</p>
+
+<p><strong>NOT treatable with antibiotics</strong> — viruses use host cell machinery, so drugs targeting them often harm host cells too. Antiviral drugs exist but are more limited.</p>
+
+<h3>1.3 Fungi</h3>
+
+<p><strong>Structure:</strong> Eukaryotic organisms with cell walls made of <strong>chitin</strong> (not cellulose like plants, not peptidoglycan like bacteria). Can be unicellular (yeasts) or multicellular (molds, with hyphae forming mycelium).</p>
+
+<p><strong>How they cause disease:</strong></p>
+<ul>
+<li>Most are <strong>opportunistic</strong> — they cause disease in immunocompromised individuals</li>
+<li>Can produce enzymes that damage tissue</li>
+<li>Some produce toxins (mycotoxins)</li>
+<li>Superficial infections: athlete's foot (<em>Trichophyton</em>), ringworm, thrush (<em>Candida albicans</em>)</li>
+<li>Systemic infections (in immunocompromised): <em>Aspergillus</em>, <em>Pneumocystis jirovecii</em></li>
+</ul>
+<p><strong>Treatment:</strong> Antifungal drugs target ergosterol (fungal membrane component) or chitin synthesis.</p>
+
+<h3>1.4 Protozoa</h3>
+
+<p><strong>Structure:</strong> Single-celled eukaryotic organisms. Complex life cycles, often with multiple hosts.</p>
+
+<p><strong>Key example — Malaria (<em>Plasmodium</em>):</strong></p>
+
+<p>The malaria life cycle is a classic IB topic. <em>Plasmodium</em> species (especially <em>P. falciparum</em>, the most deadly) have a complex life cycle involving two hosts:</p>
+
+<p><strong>In the mosquito (definitive host — sexual reproduction):</strong></p>
+<ol>
+<li>Female <em>Anopheles</em> mosquito ingests gametocytes during a blood meal from an infected human</li>
+<li>In the mosquito gut: gametocytes → gametes → fertilization → zygote → ookinete → oocyst</li>
+<li>Oocyst produces thousands of <strong>sporozoites</strong> that migrate to salivary glands</li>
+</ol>
+<p><strong>In the human (intermediate host — asexual reproduction):</strong></p>
+<ol>
+<li>Infected mosquito bites → <strong>sporozoites</strong> injected into blood</li>
+<li>Sporozoites travel to <strong>liver</strong> → invade hepatocytes → multiply asexually → form <strong>merozoites</strong> (liver stage — asymptomatic, 1-2 weeks)</li>
+<li>Merozoites released from liver → invade <strong>red blood cells</strong> (RBCs)</li>
+<li>In RBCs: merozoite → ring stage → trophozoite → schizont → more merozoites (asexual multiplication)</li>
+<li>RBCs rupture synchronously → release merozoites and toxins → <strong>fever, chills, anemia</strong> (the characteristic cycling fevers of malaria — every 48 or 72 hours depending on <em>Plasmodium</em> species)</li>
+<li>Some merozoites differentiate into <strong>gametocytes</strong> (sexual forms) → can be taken up by next mosquito</li>
+</ol>
+<p><strong>Draw and label:</strong> The malaria life cycle showing both hosts:</p>
+<ul>
+<li>Mosquito: gametocytes → gametes → zygote → ookinete → oocyst → sporozoites → salivary glands</li>
+<li>Human: sporozoite → liver (merozoites) → RBCs (ring → trophozoite → schizont → merozoites → gametocytes)</li>
+<li>Labels: "Sexual reproduction" (mosquito), "Asexual reproduction" (human), "Liver stage" (1-2 weeks), "Blood stage" (symptoms: fever, anemia)</li>
+</ul>
+<p><strong>Control strategies:</strong> Mosquito nets, insecticides, antimalarial drugs (chloroquine, artemisinin), draining standing water, vaccine development (RTS,S — first malaria vaccine approved in 2021, with limited efficacy).</p>
+
+<h3>1.5 Prions</h3>
+
+<p><strong>The strangest pathogen of all.</strong> Prions are <strong>misfolded proteins</strong> — they contain no genetic material (no DNA or RNA). They "replicate" by inducing normal proteins to misfold into the prion form.</p>
+
+<div class="definition">
+
+<p><strong>Prion</strong> — An infectious protein particle. The term comes from <strong>pr</strong>oteinaceous <strong>i</strong>nfectious particle. Prions are misfolded versions of a normal cellular protein (PrP^C → PrP^Sc) that can catalyze the misfolding of additional normal proteins, leading to accumulation and neurodegeneration.</p>
+
+</div>
+
+<p><strong>Mechanism:</strong></p>
+<ol>
+<li>Normal cellular protein (PrP^C — prion protein, cellular form) is present on cell surfaces, especially in neurons</li>
+<li>The misfolded form (PrP^Sc — Sc for scrapie, the sheep prion disease) has a different conformation — more β-sheet structure</li>
+<li>When PrP^Sc encounters PrP^C, it induces PrP^C to convert to the PrP^Sc conformation</li>
+<li>This is a <strong>chain reaction</strong> — each PrP^Sc can convert many PrP^C molecules</li>
+<li>PrP^Sc forms insoluble aggregates (amyloid plaques) that cause neuronal death</li>
+<li>Brain tissue develops sponge-like holes → <strong>spongiform encephalopathy</strong></li>
+</ol>
+<p><strong>Diseases:</strong></p>
+<ul>
+<li><strong>CJD (Creutzfeldt-Jakob Disease):</strong> Human — can be sporadic, inherited, or acquired (e.g., from contaminated surgical instruments or growth hormone from cadavers)</li>
+<li><strong>vCJD (variant CJD):</strong> Human — acquired from eating beef contaminated with BSE</li>
+<li><strong>BSE (Bovine Spongiform Encephalopathy):</strong> Cattle — "mad cow disease"</li>
+<li><strong>Scrapie:</strong> Sheep</li>
+<li><strong>Kuru:</strong> Human — transmitted through cannibalistic funeral rituals in Papua New Guinea</li>
+</ul>
+<p><strong>Key features:</strong></p>
+<ul>
+<li><strong>No nucleic acid</strong> — not destroyed by UV radiation or nucleases (which would inactivate viruses)</li>
+<li><strong>Extremely resistant</strong> to heat, proteases, and standard sterilization</li>
+<li><strong>Very long incubation period</strong> (years to decades)</li>
+<li><strong>No immune response</strong> — prion protein is a normal host protein, so the immune system does not recognize it as foreign</li>
+<li><strong>No cure</strong> — invariably fatal</li>
+</ul>
+<hr>
+
+<h2>2. Innate Defences: The First Line</h2>
+
+<p>Innate immunity is <strong>non-specific</strong> — it responds the same way to all pathogens. It is present from birth, acts immediately (minutes to hours), and has no memory.</p>
+
+<h3>2.1 Physical and Chemical Barriers</h3>
+
+<p><strong>Skin:</strong></p>
+<ul>
+<li><strong>Physical barrier:</strong> Multiple layers of keratinized, dead epithelial cells form a tough, impermeable surface</li>
+<li><strong>Chemical barrier:</strong> <strong>Sebum</strong> (oily secretion from sebaceous glands) contains fatty acids and lactic acid → lowers pH to ~5.5, inhibiting bacterial growth</li>
+<li><strong>Lysozyme</strong> in sweat breaks down bacterial cell wall peptidoglycan</li>
+<li><strong>Commensal flora:</strong> Normal skin bacteria outcompete pathogens for space and nutrients</li>
+<li>When skin is broken (cuts, burns), pathogens gain entry — this is why wound cleaning is critical</li>
+</ul>
+<p><strong>Mucous Membranes:</strong></p>
+<ul>
+<li>Line body cavities open to the exterior (respiratory, digestive, urogenital tracts)</li>
+<li><strong>Mucus:</strong> Sticky glycoprotein secretion that traps pathogens and particles</li>
+<li><strong>Cilia:</strong> Hairlike projections on respiratory epithelial cells beat in coordinated waves to sweep mucus-trapped pathogens up to the throat (mucociliary escalator) where they are swallowed</li>
+<li><strong>Lysozyme:</strong> Present in tears, saliva, and nasal secretions — degrades bacterial cell walls</li>
+</ul>
+<p><strong>Stomach Acid:</strong></p>
+<ul>
+<li>Gastric juice contains HCl → pH ~1-2</li>
+<li>Destroys most ingested bacteria and pathogens</li>
+<li>A critical barrier — people on proton pump inhibitors (reducing stomach acid) have increased risk of gastrointestinal infections</li>
+</ul>
+<h3>2.2 Phagocytosis</h3>
+
+<div class="definition">
+
+<p><strong>Phagocytosis</strong> — The process by which certain white blood cells engulf and digest pathogens, cellular debris, and foreign particles. From Greek: <em>phagein</em> (to eat) + <em>kytos</em> (cell).</p>
+
+</div>
+
+<p><strong>Key phagocytic cells:</strong></p>
+
+<table>
+<tr>
+<td>Cell Type</td>
+<td>Location</td>
+<td>Function</td>
+</tr>
+<tr>
+<td>Neutrophils</td>
+<td>Circulate in blood; migrate to infection sites</td>
+<td>Most abundant WBC (~60%); short-lived; first responders; engulf bacteria and fungi; die forming pus</td>
+</tr>
+<tr>
+<td>Macrophages</td>
+<td>Tissues (derived from monocytes)</td>
+<td>Long-lived; "big eaters"; engulf pathogens, debris, dead neutrophils; also act as <strong>APCs</strong> (bridge to adaptive immunity)</td>
+</tr>
+<tr>
+<td>Dendritic cells</td>
+<td>Tissues (skin, mucosa)</td>
+<td>Professional APCs; phagocytose pathogens and present antigens to T cells to initiate adaptive response</td>
+</tr>
+</table>
+
+<p><strong>The Process of Phagocytosis:</strong></p>
+
+<p><strong>Draw and label:</strong> A series of diagrams showing phagocytosis:</p>
+
+<ol>
+<li><strong>Chemotaxis:</strong> The phagocyte is attracted to the pathogen by chemical signals — bacterial products, complement proteins, cytokines from damaged tissue</li>
+<li><strong>Recognition and Attachment:</strong> The phagocyte recognizes the pathogen via surface receptors (e.g., receptors for bacterial surface molecules, antibodies, or complement proteins coating the pathogen — <strong>opsonization</strong>)</li>
+<li><strong>Engulfment:</strong> The phagocyte's plasma membrane extends pseudopods around the pathogen, enclosing it in a vesicle called a <strong>phagosome</strong></li>
+<li><strong>Phagolysosome Formation:</strong> The phagosome fuses with <strong>lysosomes</strong> (organelles containing digestive enzymes and antimicrobial substances) → <strong>phagolysosome</strong></li>
+<li><strong>Killing and Digestion:</strong> The pathogen is destroyed by:</li>
+</ol>
+<ul>
+<li><strong>Reactive oxygen species (ROS):</strong> Superoxide (O₂⁻), hydrogen peroxide (H₂O₂), hypochlorite (OCl⁻ — essentially bleach) produced by the <strong>respiratory burst</strong> (NADPH oxidase)</li>
+<li><strong>Lysozyme:</strong> Degrades cell wall peptidoglycan</li>
+<li><strong>Acid hydrolases:</strong> Proteases, lipases, nucleases break down macromolecules</li>
+<li><strong>Low pH:</strong> Phagolysosome is acidified (pH ~4-5)</li>
+</ul>
+<ol>
+<li><strong>Exocytosis:</strong> Undigested debris is expelled from the cell</li>
+</ol>
+<div class="tip">
+
+<p><strong>Paper 1 Tip:</strong> The fusion of phagosome with lysosome to form a <strong>phagolysosome</strong> is a classic question. Know the sequence: recognition → engulfment → phagosome → fusion with lysosome → phagolysosome → digestion → exocytosis.</p>
+
+</div>
+
+<h3>2.3 Inflammation</h3>
+
+<p>Inflammation is a localized protective response to tissue damage or infection. Its cardinal signs (described by the Roman physician Celsus) are: <strong>redness, heat, swelling, pain, and (sometimes) loss of function.</strong></p>
+
+<p><strong>The Inflammatory Response:</strong></p>
+
+<ol>
+<li><strong>Tissue damage or infection</strong> → mast cells and basophils release <strong>histamine</strong> and other inflammatory mediators</li>
+<li><strong>Histamine</strong> causes:</li>
+</ol>
+<ul>
+<li><strong>Vasodilation</strong> of local arterioles → increased blood flow → <strong>redness and heat</strong></li>
+<li><strong>Increased capillary permeability</strong> → plasma leaks into tissue → <strong>swelling (edema)</strong></li>
+<li>The swelling puts pressure on nerve endings → <strong>pain</strong></li>
+</ul>
+<ol>
+<li><strong>Cytokines</strong> (signaling proteins) attract phagocytes (<strong>chemotaxis</strong>) to the site</li>
+<li><strong>Neutrophils</strong> arrive first (within hours), followed by <strong>monocytes</strong> that differentiate into macrophages</li>
+<li>Phagocytes engulf pathogens and debris → <strong>pus</strong> (dead neutrophils, bacteria, and tissue fluid) may form</li>
+<li><strong>Clotting factors</strong> in the leaked plasma may form a fibrin mesh, walling off the infection</li>
+<li>As infection is cleared, anti-inflammatory signals promote healing</li>
+</ol>
+<p><strong>Why inflammation is beneficial:</strong></p>
+<ul>
+<li>Delivers immune cells and antimicrobial substances to the site rapidly</li>
+<li>The fibrin wall prevents pathogen spread</li>
+<li>Increased temperature may inhibit some pathogens</li>
+<li>Pain encourages rest and protection of the injured area</li>
+</ul>
+<h3>2.4 Fever</h3>
+
+<p>Fever is a <strong>systemic</strong> (whole-body) response, not a local one.</p>
+
+<p><strong>Mechanism:</strong></p>
+<ol>
+<li>Macrophages encountering pathogens release <strong>pyrogens</strong> (fever-inducing cytokines, e.g., interleukin-1, TNF-α)</li>
+<li>Pyrogens travel via blood to the <strong>hypothalamus</strong></li>
+<li>They cause the hypothalamic thermostat to <strong>reset to a higher set point</strong> (e.g., 39°C instead of 37°C)</li>
+<li>The body now perceives its normal temperature as "too cold" → triggers heat-conserving responses (vasoconstriction, shivering — producing the "chills" of a developing fever)</li>
+<li>Body temperature rises to the new set point — <strong>fever</strong></li>
+</ol>
+<p><strong>Benefits of fever:</strong></p>
+<ul>
+<li>Many pathogens reproduce less efficiently at elevated temperatures</li>
+<li>Immune cell activity (phagocytosis, T cell proliferation) is enhanced</li>
+<li>Iron sequestration (liver removes iron from blood) — bacteria need iron to grow</li>
+<li>It's a conserved response across vertebrates, suggesting evolutionary benefit</li>
+</ul>
+<p><strong>Risks:</strong> Very high fevers (>41°C) can cause protein denaturation, seizures (especially in children), and brain damage. Fevers are generally beneficial below 40°C.</p>
+
+<div class="tip">
+
+<p><strong>Paper 2 Tip:</strong> The IB distinguishes carefully between <strong>non-specific (innate)</strong> and <strong>specific (adaptive)</strong> defences. Know which is which — skin, mucus, phagocytosis, inflammation, and fever are all innate. Antibodies, B cells, T cells are adaptive. A common question asks you to compare them or explain why innate responses are faster.</p>
+
+</div>
+
+<hr>
+
+<h2>3. Adaptive Immunity: The Specific Response</h2>
+
+<p>Adaptive immunity is <strong>specific</strong> — it targets particular pathogens. It is <strong>acquired</strong> through exposure, has <strong>memory</strong>, and improves with each encounter.</p>
+
+<h3>3.1 Antigens and Antibodies</h3>
+
+<div class="definition">
+
+<p><strong>Antigen</strong> — Any molecule (usually a protein or polysaccharide) that can be recognized by the immune system and trigger an adaptive immune response. Antigens are typically foreign (non-self) molecules on the surface of pathogens, but can also be from transplanted tissues, allergens, or even self-molecules in autoimmune disease.</p>
+
+<p><strong>Antibody (Immunoglobulin, Ig)</strong> — A Y-shaped protein produced by <strong>plasma cells</strong> (differentiated B cells) that specifically binds to an antigen. Antibodies are the soluble, secreted form of the B cell receptor.</p>
+
+</div>
+
+<h3>3.2 Antibody Structure</h3>
+
+<p><strong>Draw and label:</strong> A detailed diagram of an antibody:</p>
+
+<p><strong>General Structure — Y-shaped:</strong></p>
+<ul>
+<li><strong>2 identical Heavy Chains (H chains):</strong> Long polypeptide chains (~50 kDa each). The inner chains forming the stem and inner arms of the Y.</li>
+<li><strong>2 identical Light Chains (L chains):</strong> Shorter polypeptide chains (~25 kDa each). Attached to the outer arms of the Y.</li>
+<li>Chains are held together by <strong>disulfide bonds</strong> (-S-S-)</li>
+</ul>
+<p><strong>Regions:</strong></p>
+<ul>
+<li><strong>Variable (V) regions:</strong> The tips of the Y (both heavy and light chain contribute). The amino acid sequence varies enormously between different antibodies. This is the <strong>antigen-binding site</strong> — it's specific for a particular antigen (like a lock and key). Each B cell produces antibodies with one unique variable region.</li>
+<li><strong>Constant (C) regions:</strong> The stem and inner arms. The amino acid sequence is relatively constant within an antibody class. The constant region determines the <strong>class (isotype)</strong> of the antibody (IgM, IgG, IgA, IgE, IgD) and mediates <strong>effector functions</strong> — binding to immune cells, complement activation, etc.</li>
+<li><strong>Fab region (Fragment antigen-binding):</strong> The two arms — contains variable regions. Binds antigen.</li>
+<li><strong>Fc region (Fragment crystallizable):</strong> The stem — constant region. Binds to Fc receptors on phagocytes, NK cells, and to complement protein C1q.</li>
+</ul>
+<p><strong>Antibody Classes (Isotypes):</strong></p>
+
+<table>
+<tr>
+<td>Class</td>
+<td>Structure</td>
+<td>Location</td>
+<td>Key Functions</td>
+</tr>
+<tr>
+<td>IgM</td>
+<td>Pentamer (5 units joined)</td>
+<td>Blood, lymph</td>
+<td>First antibody in primary response; excellent at agglutination and complement activation</td>
+</tr>
+<tr>
+<td>IgG</td>
+<td>Monomer</td>
+<td>Blood, tissues, crosses **placenta</td>
+<td>Main antibody in secondary response; opsonization, neutralization, complement; **passive immunity to fetus</td>
+</tr>
+<tr>
+<td>IgA</td>
+<td>Dimer (2 units)</td>
+<td>Secretions (milk, saliva, tears, mucus)</td>
+<td>Mucosal immunity; **passive immunity in breast milk</td>
+</tr>
+<tr>
+<td>IgE</td>
+<td>Monomer</td>
+<td>Bound to mast cells/basophils</td>
+<td>Defence against parasites; <strong>allergic reactions</strong> (triggers histamine release)</td>
+</tr>
+<tr>
+<td>IgD</td>
+<td>Monomer</td>
+<td>B cell surface</td>
+<td>Functions as B cell receptor (with IgM); role in B cell activation</td>
+</tr>
+</table>
+
+<h3>3.3 Antibody Functions</h3>
+
+<p>Once antibodies bind to antigens, they don't directly destroy pathogens. Instead, they <strong>tag</strong> pathogens for destruction through several mechanisms:</p>
+
+<ol>
+<li><strong>Neutralization:</strong> Antibodies bind to the pathogen or toxin, physically <strong>blocking its ability to attach</strong> to host cells. Think of it as covering the pathogen's "keys" so it can't unlock cell doors. Viruses and bacterial toxins are neutralized this way.</li>
+</ol>
+<ol>
+<li><strong>Agglutination:</strong> Antibodies have <strong>two antigen-binding sites</strong> (they're bivalent). A single antibody can bind to antigens on two different pathogens → cross-links them into clumps (agglutinates). This immobilizes pathogens and makes them easier for phagocytes to engulf. IgM (with 10 binding sites) is especially effective at agglutination.</li>
+</ol>
+<ol>
+<li><strong>Opsonization:</strong> The antibody's <strong>Fc region</strong> acts as a "handle" that phagocytes (neutrophils, macrophages) can grab via <strong>Fc receptors</strong>. Antibodies coating a pathogen make it far more appetizing to phagocytes — like breading on a piece of chicken.</li>
+</ol>
+<ol>
+<li><strong>Complement Activation:</strong> When IgM or IgG binds to a pathogen surface, the Fc region can bind <strong>C1q</strong>, the first protein of the <strong>complement cascade</strong>. This triggers a proteolytic cascade that:</li>
+</ol>
+<ul>
+<li>Forms <strong>Membrane Attack Complex (MAC)</strong> — pores in pathogen membrane → lysis</li>
+<li>Generates chemoattractants (C5a) recruiting phagocytes</li>
+<li>Enhances opsonization (C3b coats pathogen)</li>
+</ul>
+<h3>3.4 B Cells and Humoral Immunity</h3>
+
+<p><strong>B cells</strong> mature in the <strong>bone marrow</strong> (B = bone marrow). They mediate <strong>humoral immunity</strong> — immunity involving antibodies in body fluids ("humors").</p>
+
+<p><strong>Key events in B cell response:</strong></p>
+<ol>
+<li>Each B cell has <strong>thousands of identical antibody molecules</strong> on its surface, serving as B cell receptors (BCRs). Each B cell's BCRs recognize one specific antigen.</li>
+<li>When the BCR binds its specific antigen → B cell is <strong>activated</strong></li>
+<li>With <strong>helper T cell</strong> assistance (CD4⁺ T cells provide cytokines), the activated B cell undergoes <strong>clonal expansion</strong> — rapid mitosis → many identical B cells</li>
+<li>Most differentiate into <strong>plasma cells</strong> — antibody factories. A single plasma cell secretes ~2,000 antibody molecules per second. They are short-lived (days to weeks).</li>
+<li>Some become <strong>memory B cells</strong> — long-lived (years to decades). They express the same BCR. On re-exposure to the antigen, they rapidly proliferate and differentiate into plasma cells → <strong>secondary response</strong> is faster and stronger.</li>
+</ol>
+<h3>3.5 T Cells and Cell-Mediated Immunity</h3>
+
+<p><strong>T cells</strong> mature in the <strong>thymus</strong> (T = thymus). They mediate <strong>cell-mediated immunity</strong> — immunity involving direct cell-to-cell contact (not antibodies). T cells cannot recognize free antigen — they only recognize antigen <strong>presented</strong> on the surface of other cells by <strong>MHC molecules</strong>.</p>
+
+<p><strong>Two Major Types of T Cells:</strong></p>
+
+<p><strong>Helper T Cells (T_H, CD4⁺):</strong></p>
+<ul>
+<li>Express <strong>CD4</strong> co-receptor on their surface</li>
+<li>Recognize antigen presented on <strong>MHC II</strong> molecules</li>
+<li>Functions:</li>
+<li><strong>Activate B cells:</strong> CD4⁺ T cells that recognize the same antigen provide "help" (cytokines like IL-4, IL-5, IL-6) that drives B cell proliferation and differentiation into plasma cells</li>
+<li><strong>Activate cytotoxic T cells:</strong> Provide cytokines (IL-2) that stimulate CD8⁺ T cell proliferation and activation</li>
+<li><strong>Activate macrophages:</strong> Secrete IFN-γ → enhances macrophage killing ability</li>
+<li><strong>Central coordinator</strong> of the adaptive immune response</li>
+<li><strong>HIV targets CD4⁺ T cells</strong> — destroying these cells cripples both humoral and cell-mediated immunity</li>
+</ul>
+<p><strong>Cytotoxic T Cells (T_C, CD8⁺):</strong></p>
+<ul>
+<li>Express <strong>CD8</strong> co-receptor on their surface</li>
+<li>Recognize antigen presented on <strong>MHC I</strong> molecules</li>
+<li>Function: <strong>Kill infected cells</strong> — especially virus-infected cells and cancer cells</li>
+</ul>
+<p><strong>Killing Mechanism — Perforin and Granzymes:</strong></p>
+<ol>
+<li>Cytotoxic T cell recognizes infected cell (MHC I + foreign peptide)</li>
+<li>T cell forms an <strong>immunological synapse</strong> with the target cell</li>
+<li>T cell releases <strong>perforin</strong> — proteins that insert into the target cell membrane and form pores</li>
+<li>T cell releases <strong>granzymes</strong> (serine proteases) that enter through the perforin pores</li>
+<li>Granzymes activate <strong>caspases</strong> → <strong>apoptosis</strong> (programmed cell death)</li>
+<li>The infected cell dies in a controlled way, preventing release of intracellular pathogens</li>
+<li>The T cell detaches and can kill another infected cell</li>
+</ol>
+<p><strong>Draw and label:</strong> A cytotoxic T cell killing a virus-infected cell:</p>
+<ul>
+<li>Left: CD8⁺ T cell with TCR binding to MHC I + viral peptide on infected cell</li>
+<li>Center: T cell releasing perforin (pores) and granzymes (entering)</li>
+<li>Right: Infected cell undergoing apoptosis (membrane blebbing, DNA fragmentation)</li>
+<li>Label: "Perforin — forms pores" and "Granzymes — activate caspases → apoptosis"</li>
+</ul>
+<hr>
+
+<h2>4. MHC: The Molecular Identity Card</h2>
+
+<p>For T cells to "see" antigens, the antigens must be presented by <strong>Major Histocompatibility Complex (MHC)</strong> molecules. Think of MHC molecules as "display cases" showing peptide fragments to T cells patrolling by.</p>
+
+<h3>4.1 MHC Class I</h3>
+
+<table>
+<tr>
+<td>Feature</td>
+<td>MHC Class I</td>
+</tr>
+<tr>
+<td>Expressed on</td>
+<td>All nucleated cells** (every cell with a nucleus)</td>
+</tr>
+<tr>
+<td>Presents</td>
+<td>Endogenous antigens** — peptides from proteins synthesized inside the cell (viral proteins, abnormal cancer proteins)</td>
+</tr>
+<tr>
+<th>Recognized by</th>
+<th>CD8⁺ cytotoxic T cells</th>
+</tr>
+<tr>
+<td>Structure</td>
+<td>One <strong>α chain</strong> (heavy chain, with peptide-binding groove) + <strong>β₂-microglobulin</strong> (small protein)</td>
+</tr>
+<tr>
+<td>Peptide source</td>
+<td>Proteasome degrades cytoplasmic proteins → peptides transported into ER by TAP → loaded onto MHC I → transported to cell surface</td>
+</tr>
+<tr>
+<td>Function</td>
+<td>Displays "what's inside me" — if infected or cancerous, CD8⁺ T cells detect foreign peptide and kill the cell</td>
+</tr>
+</table>
+
+<h3>4.2 MHC Class II</h3>
+
+<table>
+<tr>
+<td>Feature</td>
+<td>MHC Class II</td>
+</tr>
+<tr>
+<td>Expressed on</td>
+<td>Professional Antigen-Presenting Cells (APCs):** dendritic cells, macrophages, B cells</td>
+</tr>
+<tr>
+<td>Presents</td>
+<td>Exogenous antigens** — peptides from pathogens that were phagocytosed and digested</td>
+</tr>
+<tr>
+<th>Recognized by</th>
+<th>CD4⁺ helper T cells</th>
+</tr>
+<tr>
+<td>Structure</td>
+<td>α chain<strong> + </strong>β chain** (both contribute to the peptide-binding groove)</td>
+</tr>
+<tr>
+<td>Peptide source</td>
+<td>Pathogen phagocytosed → phagolysosome degrades it → peptides loaded onto MHC II in endosomal compartments → transported to cell surface</td>
+</tr>
+<tr>
+<td>Function</td>
+<td>Presents "what I've eaten" — allows helper T cells to detect extracellular pathogens and coordinate the immune response</td>
+</tr>
+</table>
+
+<p><strong>Mnemonic:</strong> The "Rule of 8" — MHC I × CD8 = 8, MHC II × CD4 = 8.</p>
+
+<table>
+<tr>
+<td></td>
+<td>MHC I</td>
+<td>MHC II</td>
+</tr>
+<tr>
+<td>Cell distribution</td>
+<td>All nucleated cells</td>
+<td>APCs only</td>
+</tr>
+<tr>
+<td>Antigen source</td>
+<td>Endogenous (inside cell)</td>
+<td>Exogenous (phagocytosed)</td>
+</tr>
+<tr>
+<td>T cell recognized</td>
+<td>CD8⁺ cytotoxic</td>
+<td>CD4⁺ helper</td>
+</tr>
+<tr>
+<td>Peptide size</td>
+<td>8-10 amino acids</td>
+<td>13-18 amino acids</td>
+</tr>
+</table>
+
+<div class="tip">
+
+<p><strong>Paper 1 Tip:</strong> A classic question: "A virus infects a liver cell. Which MHC molecule presents viral peptides from this cell?" Answer: <strong>MHC I</strong> — because the viral proteins are synthesized endogenously inside the infected cell and loaded onto MHC I. If the virus had been phagocytosed by a macrophage, the answer would be MHC II.</p>
+
+</div>
+
+<hr>
+
+<h2>5. Vaccination and Immunological Memory</h2>
+
+<div class="definition">
+
+<p><strong>Vaccination</strong> — The deliberate exposure to a non-pathogenic form of a pathogen or its antigens to induce adaptive immunity and immunological memory, protecting against future infection without causing disease.</p>
+
+</div>
+
+<h3>5.1 Primary vs Secondary Immune Response</h3>
+
+<p><strong>Primary Response (First Exposure):</strong></p>
+<ul>
+<li><strong>Lag phase:</strong> 5-10 days before significant antibody is detected. During this time, B cells with the right BCR are rare and must be activated, undergo clonal expansion, and differentiate into plasma cells.</li>
+<li><strong>Antibody produced:</strong> Initial antibody is <strong>IgM</strong> (first class produced)</li>
+<li><strong>Peak:</strong> Lower antibody concentration, declines more rapidly</li>
+<li><strong>Symptoms:</strong> The person typically becomes ill because the pathogen has time to replicate before the adaptive response is fully active</li>
+</ul>
+<p><strong>Secondary Response (Re-exposure — months or years later):</strong></p>
+<ul>
+<li><strong>Lag phase:</strong> Much shorter — 1-3 days. Memory cells are already present in large numbers.</li>
+<li><strong>Antibody produced:</strong> Rapid class switching to <strong>IgG</strong> (and IgA, IgE). Higher affinity (affinity maturation has occurred in memory cells).</li>
+<li><strong>Peak:</strong> Much higher antibody concentration, sustained longer</li>
+<li><strong>Symptoms:</strong> The person typically does <strong>not</strong> become ill — the pathogen is eliminated before it can establish infection</li>
+</ul>
+<p><strong>Draw and label:</strong> A graph showing antibody concentration vs. time:</p>
+
+<ul>
+<li>X-axis: Time (days) — label "Primary exposure" at day 0 and "Secondary exposure" at day 30-40</li>
+<li>Y-axis: Antibody concentration (arbitrary units, logarithmic scale)</li>
+<li>First curve: Long lag (~7 days) → slow rise → IgM peak → decline. Label: "Primary response — mainly IgM"</li>
+<li>Second curve: Short lag (~2 days) → rapid, high rise → sustained. Label: "Secondary response — mainly IgG, higher magnitude"</li>
+<li>Key comparisons: lag time, peak magnitude, antibody class, presence of memory cells</li>
+</ul>
+<h3>5.2 How Vaccines Work</h3>
+
+<p>Vaccines contain:</p>
+<ul>
+<li><strong>Attenuated (weakened) live pathogens:</strong> Replicate but don't cause disease. Induce strong, long-lasting immunity (e.g., MMR — measles, mumps, rubella; oral polio — Sabin)</li>
+<li><strong>Inactivated (killed) pathogens:</strong> Cannot replicate. Safer but often require boosters (e.g., injectable polio — Salk; hepatitis A)</li>
+<li><strong>Subunit vaccines:</strong> Purified antigen components (e.g., hepatitis B surface antigen, HPV capsid proteins)</li>
+<li><strong>Toxoid vaccines:</strong> Inactivated bacterial toxins (e.g., tetanus, diphtheria)</li>
+<li><strong>mRNA vaccines:</strong> mRNA encoding a viral protein — host cells translate it, presenting the antigen on MHC I (e.g., some COVID-19 vaccines)</li>
+</ul>
+<p>All vaccines work on the same principle: expose the immune system to antigens → primary response → generate <strong>memory B and T cells</strong> → secondary response on re-exposure is rapid and effective.</p>
+
+<h3>5.3 Smallpox Eradication — Why It Was Possible</h3>
+
+<p>Smallpox was declared eradicated by the WHO in 1980. This is the only human infectious disease to have been eradicated. Understanding why it was possible reveals what makes a disease eradicable.</p>
+
+<p><strong>Success Factors:</strong></p>
+
+<table>
+<tr>
+<td>Factor</td>
+<td>How Smallpox Met It</td>
+</tr>
+<tr>
+<td>No animal reservoir</td>
+<td>Smallpox virus only infects humans — no animals carry it. Eliminate it from humans and it's gone.</td>
+</tr>
+<tr>
+<td>Effective vaccine</td>
+<td>The vaccinia virus vaccine (a related poxvirus) provided strong, long-lasting immunity.</td>
+</tr>
+<tr>
+<td>Visible symptoms</td>
+<td>Smallpox causes a distinctive rash — cases could be identified easily without lab tests.</td>
+</tr>
+<tr>
+<td>No asymptomatic carriers</td>
+<td>Everyone infected showed symptoms — no hidden reservoirs.</td>
+</tr>
+<tr>
+<td>Ring vaccination strategy</td>
+<td>Instead of vaccinating everyone, teams vaccinated all contacts of each identified case ("ring"), containing outbreaks efficiently.</td>
+</tr>
+<tr>
+<td>Global coordination</td>
+<td>WHO coordinated worldwide effort with funding, personnel, and political will.</td>
+</tr>
+<tr>
+<td>Stable virus</td>
+<td>Smallpox virus does not mutate rapidly (unlike influenza or HIV) — the same vaccine worked globally.</td>
+</tr>
+<tr>
+<td>Freeze-dried vaccine</td>
+<td>Heat-stable vaccine could be transported without refrigeration to remote areas.</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>6. Common Misconceptions</h2>
+
+<table>
+<tr>
+<td>Misconception</td>
+<td>Reality</td>
+</tr>
+<tr>
+<td>"Antibiotics work against viruses."</td>
+<td>No.** Antibiotics target features specific to bacteria (cell wall, 70S ribosomes). Viruses have none of these — they use host cell machinery.</td>
+</tr>
+<tr>
+<td>"Antibodies directly kill pathogens."</td>
+<td>Antibodies do not directly kill. They <strong>neutralize, agglutinate, opsonize, and activate complement</strong> — tagging pathogens for destruction by other mechanisms.</td>
+</tr>
+<tr>
+<td>"All immune responses are specific."</td>
+<td>Innate immunity (skin, phagocytosis, inflammation) is <strong>non-specific</strong>. Only adaptive immunity (antibodies, B cells, T cells) is specific.</td>
+</tr>
+<tr>
+<td>"MHC I is only on immune cells."</td>
+<td>MHC I is on <strong>all nucleated cells</strong>. MHC II is restricted to professional APCs.</td>
+</tr>
+<tr>
+<td>"Vaccines give you a mild form of the disease."</td>
+<td>Inactivated, subunit, toxoid, and mRNA vaccines <strong>cannot cause disease</strong> — they contain no replicating pathogen. Attenuated vaccines can rarely cause mild symptoms.</td>
+</tr>
+<tr>
+<td>"Memory cells are just antibodies that persist."</td>
+<td>Memory cells are <strong>B and T lymphocytes</strong>, not antibodies. They can live for decades and rapidly respond to re-exposure by proliferating and producing new antibodies.</td>
+</tr>
+<tr>
+<td>"Fever is a symptom of the disease caused by the pathogen."</td>
+<td>Fever is an <strong>active host response</strong> — the hypothalamus is reset by pyrogens. It's part of the defence, not a direct effect of the pathogen.</td>
+</tr>
+<tr>
+<td>"Prions are a type of virus."</td>
+<td>Prions contain <strong>no nucleic acid</strong> — they are misfolded proteins. They resist treatments that inactivate viruses (UV, nucleases).</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>7. Practice Problems</h2>
+
+<h3>Problem 1 (Paper 1 Style — Multiple Choice)</h3>
+
+<p>Which of the following is part of the innate immune system?</p>
+
+<p>A. Antibody production by plasma cells.</p>
+<p>B. Memory B cell formation.</p>
+<p>C. Phagocytosis of bacteria by neutrophils.</p>
+<p>D. Cytotoxic T cell killing of virus-infected cells.</p>
+
+<p><strong>Answer:</strong> <strong>C</strong>. Phagocytosis by neutrophils is a non-specific, innate response. A, B, and D are all components of adaptive (specific) immunity — they involve lymphocytes (B and T cells) and require antigen-specific recognition.</p>
+
+<hr>
+
+<h3>Problem 2 (Paper 1 Style — Multiple Choice)</h3>
+
+<p>MHC class I molecules present antigens to:</p>
+
+<p>A. CD4⁺ helper T cells, and the antigens are from phagocytosed extracellular pathogens.</p>
+<p>B. CD8⁺ cytotoxic T cells, and the antigens are from proteins synthesized inside the cell.</p>
+<p>C. B cells, to stimulate antibody production.</p>
+<p>D. Macrophages, to enhance phagocytosis.</p>
+
+<p><strong>Answer:</strong> <strong>B</strong>. MHC I presents endogenous antigens (proteins made inside the cell) to CD8⁺ cytotoxic T cells. MHC II presents exogenous antigens (from phagocytosed pathogens) to CD4⁺ helper T cells.</p>
+
+<hr>
+
+<h3>Problem 3 (Paper 2 Style — Data Analysis)</h3>
+
+<p>A child receives their first measles vaccination at 12 months, followed by a booster at 4 years. Blood antibody levels against measles are measured.</p>
+
+<table>
+<tr>
+<td>Age</td>
+<td>Anti-measles antibody (units/mL)</td>
+</tr>
+<tr>
+<td>6 months</td>
+<td>15 (maternal IgG)</td>
+</tr>
+<tr>
+<td>12 months (pre-vaccine)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>12 months + 2 weeks</td>
+<td>25</td>
+</tr>
+<tr>
+<td>12 months + 1 month</td>
+<td>80</td>
+</tr>
+<tr>
+<td>12 months + 6 months</td>
+<td>120</td>
+</tr>
+<tr>
+<td>4 years (pre-booster)</td>
+<td>60</td>
+</tr>
+<tr>
+<td>4 years + 1 week</td>
+<td>350</td>
+</tr>
+<tr>
+<td>4 years + 1 month</td>
+<td>800</td>
+</tr>
+</table>
+
+<p><strong>(a)</strong> Explain the antibody levels at 6 months. [2 marks]</p>
+<p><strong>(b)</strong> Compare the response to the first vaccine with the booster. [3 marks]</p>
+<p><strong>(c)</strong> Explain why the booster produces a faster and stronger response. [3 marks]</p>
+
+<p><strong>Answers:</strong></p>
+
+<p><strong>(a)</strong> At 6 months, the antibody (15 units/mL) is <strong>maternal IgG</strong> — antibodies that crossed the <strong>placenta</strong> from the mother during pregnancy. This provides <strong>passive immunity</strong> to the infant. These maternal antibodies degrade over time, which is why levels drop to 2 units/mL by 12 months. [2 marks]</p>
+
+<p><strong>(b)</strong></p>
+<ul>
+<li><strong>First vaccine (12 months):</strong> Slower response — takes 2+ weeks for significant antibody to appear (25 at 2 weeks, peak 120 at 6 months). This is a <strong>primary response</strong> — B cells with the right specificity must be found, activated, and undergo clonal expansion. Initial antibody is likely IgM, followed by class switching.</li>
+<li><strong>Booster (4 years):</strong> Much faster and stronger — antibody at 350 within 1 week, peaking at 800. This is 6-7× higher peak. A <strong>secondary response</strong> — memory B cells are already present and respond rapidly. [3 marks]</li>
+</ul>
+<p><strong>(c)</strong> The first vaccine generated <strong>memory B cells</strong> specific for measles antigens. When the booster is given:</p>
+<ol>
+<li>Memory B cells are already present in large numbers — no need for the 5-10 day search and clonal expansion phase [1 mark]</li>
+<li>Memory B cells have undergone <strong>affinity maturation</strong> — their BCRs bind antigen with higher affinity, leading to more efficient activation [1 mark]</li>
+<li>Memory cells have already undergone <strong>class switching</strong> — they rapidly produce <strong>IgG</strong> (the high-affinity, long-lasting class) rather than starting with IgM. This, combined with the larger starting population, results in much higher antibody titers. [1 mark]</li>
+</ol>
+<p>[3 marks]</p>
+
+<hr>
+
+<h3>Problem 4 (Paper 2 Style — Long Answer)</h3>
+
+<p>Describe the process of phagocytosis and explain its role in innate immunity. [5 marks]</p>
+
+<p><strong>Model Answer:</strong></p>
+
+<ol>
+<li><strong>Chemotaxis:</strong> The phagocyte (neutrophil or macrophage) is attracted to the site of infection by chemical signals — bacterial products, complement proteins, cytokines from damaged tissue [1 mark]</li>
+<li><strong>Recognition and attachment:</strong> The phagocyte recognizes the pathogen via surface receptors. <strong>Opsonization</strong> (coating with antibodies or complement C3b) enhances recognition [1 mark]</li>
+<li><strong>Engulfment:</strong> The phagocyte extends pseudopods around the pathogen and encloses it in a membrane-bound vesicle called a <strong>phagosome</strong> [1 mark]</li>
+<li><strong>Phagolysosome formation and killing:</strong> The phagosome fuses with <strong>lysosomes</strong> containing digestive enzymes and antimicrobial substances. The pathogen is killed by reactive oxygen species (respiratory burst), lysozyme (degrades cell walls), acid hydrolases, and the acidic environment [1 mark]</li>
+<li><strong>Exocytosis:</strong> Undigested debris is expelled. Phagocytosis is an <strong>innate</strong> defence — it is non-specific, responds immediately to any pathogen, and does not require prior exposure. It also bridges to adaptive immunity as macrophages and dendritic cells can present antigens from digested pathogens on MHC II. [1 mark]</li>
+</ol>
+<p>[5 marks]</p>
+
+<hr>
+
+<h3>Problem 5 (Paper 2 Style — Application)</h3>
+
+<p>Explain why smallpox was successfully eradicated while malaria has not been, despite decades of effort. [6 marks]</p>
+
+<p><strong>Model Answer:</strong></p>
+
+<p>Smallpox eradication succeeded due to several factors absent or weaker in malaria:</p>
+
+<ol>
+<li><strong>Host range:</strong> Smallpox only infects <strong>humans</strong> — no animal reservoir. Malaria parasites (<em>Plasmodium</em>) also infect humans, but mosquitoes act as vectors and can maintain transmission even if human cases are treated. [1 mark]</li>
+</ol>
+<ol>
+<li><strong>Vaccine effectiveness:</strong> The smallpox vaccine (vaccinia virus) provided <strong>strong, long-lasting immunity</strong>. Malaria vaccines have been much harder to develop because the <em>Plasmodium</em> parasite has a complex life cycle with multiple stages in different hosts, each expressing different antigens. The RTS,S vaccine has only ~30-40% efficacy. [1 mark]</li>
+</ol>
+<ol>
+<li><strong>Detection:</strong> Smallpox causes a <strong>visible, distinctive rash</strong> — cases can be identified without laboratory testing. Malaria symptoms (fever, chills) overlap with many other diseases, making diagnosis harder in low-resource settings. [1 mark]</li>
+</ol>
+<ol>
+<li><strong>Antigenic variation:</strong> Smallpox virus is genetically <strong>stable</strong> — the vaccine worked globally for decades. <em>Plasmodium</em> exhibits antigenic variation (especially <em>P. falciparum</em> var genes for PfEMP1 on infected RBCs), evading immune recognition. [1 mark]</li>
+</ol>
+<ol>
+<li><strong>Vector control complexity:</strong> Smallpox transmits person-to-person (respiratory droplets/contact) — ring vaccination could contain outbreaks. Malaria requires controlling <strong>mosquito vectors</strong> — insecticide-treated nets, indoor spraying, larval habitat elimination — all logistically challenging and subject to insecticide resistance. [1 mark]</li>
+</ol>
+<ol>
+<li><strong>Asymptomatic carriers:</strong> Essentially all smallpox cases were symptomatic. Malaria can have <strong>asymptomatic carriers</strong> (<em>P. vivax</em> and <em>P. ovale</em> can also form dormant liver stages — hypnozoites — causing relapses years later), making complete elimination of the parasite from a population extremely difficult. [1 mark]</li>
+</ol>
+<p>[6 marks — any 6 well-explained points]</p>
+
+<hr>
+
+<h2>8. Key Terms Quick Reference</h2>
+
+<table>
+<tr>
+<td>Term</td>
+<td>Definition</td>
+</tr>
+<tr>
+<td>Pathogen</td>
+<td>Disease-causing organism or agent</td>
+</tr>
+<tr>
+<td>Bacterium</td>
+<td>Prokaryotic pathogen; produces toxins or directly damages tissue</td>
+</tr>
+<tr>
+<td>Virus</td>
+<td>Obligate intracellular parasite; hijacks host cell machinery</td>
+</tr>
+<tr>
+<td>Protozoan</td>
+<td>Single-celled eukaryotic pathogen (e.g., <em>Plasmodium</em> — malaria)</td>
+</tr>
+<tr>
+<td>Prion</td>
+<td>Infectious misfolded protein; no nucleic acid; causes spongiform encephalopathies</td>
+</tr>
+<tr>
+<td>Innate immunity</td>
+<td>Non-specific, present from birth, no memory (barriers, phagocytosis, inflammation)</td>
+</tr>
+<tr>
+<td>Adaptive immunity</td>
+<td>Specific, acquired, has memory (B cells, T cells, antibodies)</td>
+</tr>
+<tr>
+<td>Phagocytosis</td>
+<td>Engulfment and digestion of pathogens by phagocytes</td>
+</tr>
+<tr>
+<td>Phagolysosome</td>
+<td>Fusion of phagosome + lysosome; site of pathogen killing</td>
+</tr>
+<tr>
+<td>Inflammation</td>
+<td>Local response: vasodilation, increased permeability → redness, heat, swelling, pain</td>
+</tr>
+<tr>
+<td>Fever</td>
+<td>Systemic response: pyrogens reset hypothalamic thermostat higher</td>
+</tr>
+<tr>
+<td>Antigen</td>
+<td>Molecule recognized by immune system as foreign — triggers adaptive response</td>
+</tr>
+<tr>
+<td>Antibody</td>
+<td>Y-shaped protein (immunoglobulin) that specifically binds antigen</td>
+</tr>
+<tr>
+<td>Variable region</td>
+<td>Antigen-binding site of antibody; unique for each B cell clone</td>
+</tr>
+<tr>
+<td>Constant region</td>
+<td>Fc region of antibody; determines class and effector function</td>
+</tr>
+<tr>
+<td>Neutralization</td>
+<td>Antibody blocks pathogen from attaching to host cells</td>
+</tr>
+<tr>
+<td>Agglutination</td>
+<td>Antibody cross-links pathogens into clumps</td>
+</tr>
+<tr>
+<td>Opsonization</td>
+<td>Antibody coats pathogen; Fc region recognized by phagocytes</td>
+</tr>
+<tr>
+<td>B cell</td>
+<td>Lymphocyte; matures in bone marrow; produces antibodies (humoral immunity)</td>
+</tr>
+<tr>
+<td>Plasma cell</td>
+<td>Differentiated B cell; antibody factory (~2,000 molecules/sec)</td>
+</tr>
+<tr>
+<td>Memory B cell</td>
+<td>Long-lived B cell; enables rapid secondary response</td>
+</tr>
+<tr>
+<td>Helper T cell (CD4⁺)</td>
+<td>Activates B cells, cytotoxic T cells, macrophages; recognizes MHC II</td>
+</tr>
+<tr>
+<td>Cytotoxic T cell (CD8⁺)</td>
+<td>Kills infected cells via perforin/granzymes; recognizes MHC I</td>
+</tr>
+<tr>
+<td>MHC I</td>
+<td>On all nucleated cells; presents endogenous antigen to CD8⁺</td>
+</tr>
+<tr>
+<td>MHC II</td>
+<td>On APCs; presents exogenous antigen to CD4⁺</td>
+</tr>
+<tr>
+<td>Perforin</td>
+<td>Protein that forms pores in target cell membrane</td>
+</tr>
+<tr>
+<td>Granzymes</td>
+<td>Proteases entering through perforin pores → activate apoptosis</td>
+</tr>
+<tr>
+<td>Vaccination</td>
+<td>Deliberate antigen exposure to generate memory without disease</td>
+</tr>
+<tr>
+<td>Primary response</td>
+<td>First exposure: slow, low magnitude, mainly IgM</td>
+</tr>
+<tr>
+<td>Secondary response</td>
+<td>Re-exposure: fast, high magnitude, mainly IgG (memory cells)</td>
+</tr>
+</table>
+
+<hr>
+
+<p>This lesson covers the first half of Defence Against Disease (C3.2), establishing the fundamental framework of innate and adaptive immunity. In Lesson 36, we'll dive deeper into the HL content — clonal selection, monoclonal antibodies, HIV/AIDS, and the arms race against antibiotic resistance.</p>
+
+<div class="nav"><a href="lesson_34.html">&#8592; Lesson 34</a><a href="index.html">&#8962; Index</a><a href="lesson_36.html">Lesson 36 &#8594;</a></div>
+
+</body>
+</html>

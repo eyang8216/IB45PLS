@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" width="600" height="500">
+  <rect width="600" height="500" fill="#fff"/>
+  <text x="300" y="26" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#333">Competitive vs Non-Competitive Inhibition</text>
+
+  <!-- === COMPETITIVE (top half) === -->
+  <text x="300" y="56" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1565c0">Competitive Inhibition</text>
+
+  <!-- Axes -->
+  <line x1="60" y1="230" x2="300" y2="230" stroke="#333" stroke-width="2"/>
+  <line x1="60" y1="230" x2="60" y2="70" stroke="#333" stroke-width="2"/>
+  <text x="180" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#333">[Substrate] →</text>
+  <text x="18" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#333" transform="rotate(-90,18,155)">v →</text>
+
+  <!-- Normal curve -->
+  <path d="M70,222 Q100,215 130,180 Q180,110 240,68 Q280,52 300,45" fill="none" stroke="#1a6b3c" stroke-width="2.5"/>
+  <!-- +Inhibitor curve - same Vmax, higher Km -->
+  <path d="M70,222 Q100,215 140,195 Q200,150 260,100 Q290,68 300,48" fill="none" stroke="#e53935" stroke-width="2.5"/>
+
+  <text x="270" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#333" font-weight="bold">Vmax</text>
+  <text x="148" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#1a6b3c">No inhibitor</text>
+  <text x="205" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#e53935">+ Compet. inhibitor</text>
+
+  <!-- Key -->
+  <text x="70" y="275" text-anchor="start" font-family="Arial, sans-serif" font-size="11" fill="#1565c0" font-weight="bold">Vmax: same | Km: increased</text>
+
+  <!-- Mechanism inset -->
+  <circle cx="420" cy="130" r="30" fill="#81c784" stroke="#1a6b3c" stroke-width="2"/>
+  <path d="M410,120 Q420,110 430,120 Q435,130 428,140 L412,125 Z" fill="#ffcc80" stroke="#ff8f00" stroke-width="1.5"/>
+  <text x="460" y="125" font-family="Arial, sans-serif" font-size="11" fill="#e53935">Inhibitor mimics S</text>
+  <text x="460" y="140" font-family="Arial, sans-serif" font-size="10" fill="#e53935">→ Binds active site</text>
+  <text x="460" y="155" font-family="Arial, sans-serif" font-size="10" fill="#e53935">→ Can be outcompeted by ↑[S]</text>
+
+  <!-- Divider line -->
+  <line x1="20" y1="290" x2="580" y2="290" stroke="#ddd" stroke-width="1"/>
+
+  <!-- === NON-COMPETITIVE (bottom half) === -->
+  <text x="300" y="318" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#6a1b9a">Non-Competitive Inhibition</text>
+
+  <!-- Axes -->
+  <line x1="60" y1="480" x2="300" y2="480" stroke="#333" stroke-width="2"/>
+  <line x1="60" y1="480" x2="60" y2="320" stroke="#333" stroke-width="2"/>
+  <text x="180" y="498" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#333">[Substrate] →</text>
+
+  <!-- Normal curve -->
+  <path d="M70,472 Q100,465 130,430 Q180,360 240,318 Q280,302 300,295" fill="none" stroke="#1a6b3c" stroke-width="2.5"/>
+  <!-- +Inhibitor - lower Vmax, same Km -->
+  <path d="M70,472 Q100,465 130,448 Q180,415 240,375 Q280,355 300,348" fill="none" stroke="#6a1b9a" stroke-width="2.5"/>
+
+  <text x="250" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#333" font-weight="bold">Vmax (normal)</text>
+  <text x="315" y="340" text-anchor="start" font-family="Arial, sans-serif" font-size="11" fill="#6a1b9a" font-weight="bold">↓ Vmax (inhibited)</text>
+  <text x="148" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#1a6b3c">No inhibitor</text>
+  <text x="215" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6a1b9a">+ Non-comp. inhibitor</text>
+
+  <text x="70" y="310" text-anchor="start" font-family="Arial, sans-serif" font-size="11" fill="#6a1b9a" font-weight="bold">Vmax: decreased | Km: same</text>
+
+  <!-- Mechanism inset -->
+  <circle cx="420" cy="390" r="30" fill="#ce93d8" stroke="#6a1b9a" stroke-width="2"/>
+  <rect x="420" y="375" width="10" height="10" rx="2" fill="#ff8f00" stroke="#ff8f00" stroke-width="1"/>
+  <rect x="388" y="395" width="12" height="8" rx="3" fill="#e53935" stroke="#b71c1c" stroke-width="1"/>
+  <text x="460" y="385" font-family="Arial, sans-serif" font-size="11" fill="#6a1b9a">Binds allosteric site</text>
+  <text x="460" y="400" font-family="Arial, sans-serif" font-size="10" fill="#6a1b9a">→ Changes active site shape</text>
+  <text x="460" y="415" font-family="Arial, sans-serif" font-size="10" fill="#6a1b9a">→ ↑[S] CANNOT rescue</text>
+
+  <!-- Summary -->
+  <rect x="40" y="435" width="220" height="38" rx="4" fill="none" stroke="#1565c0" stroke-width="1"/>
+  <text x="150" y="452" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#1565c0">Competitive: competes for active site</text>
+  <text x="150" y="467" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#1565c0">Vmax unaffected; Km ↑</text>
+  <rect x="340" y="435" width="220" height="38" rx="4" fill="none" stroke="#6a1b9a" stroke-width="1"/>
+  <text x="450" y="452" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6a1b9a">Non-competitive: binds elsewhere</text>
+  <text x="450" y="467" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6a1b9a">Vmax ↓; Km unchanged</text>
+</svg>

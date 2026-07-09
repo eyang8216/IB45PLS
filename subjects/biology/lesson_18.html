@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 18: Cell Specialization (B2.3) — IB Biology HL</title>
+<script>window.MathJax = { tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] } };</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #1a6b3c; --border: #c4d4a9; --highlight: #e8f5e9; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Palatino', 'Georgia', serif; background: var(--bg); color: var(--text); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; font-size: 17px; line-height: 1.7; }
+  h1 { font-size: 1.7rem; color: var(--accent); margin-bottom: 0.5rem; }
+  h2 { font-size: 1.25rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; margin: 2rem 0 1rem; }
+  h3 { font-size: 1.1rem; color: #444; margin: 1.3rem 0 0.5rem; }
+  p, li { margin-bottom: 0.6rem; }
+  ul, ol { padding-left: 1.8rem; margin-bottom: 1rem; }
+  .worked { background: #e8f5e9; border-left: 4px solid #1a6b3c; padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
+  .worked strong { color: #1a6b3c; }
+  .answer { background: #fefdf7; border: 1px solid var(--border); padding: 0.8rem 1.2rem; margin: 0.5rem 0; border-radius: 6px; }
+  .nav { display: flex; justify-content: space-between; margin: 3rem 0 1rem; padding-top: 1rem; border-top: 2px solid var(--border); font-size: 0.9rem; }
+  .nav a { color: #1a5c9e; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  .definition { background: #fff8e1; border-left: 4px solid #e6a817; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  .tip { background: #e3f2fd; border-left: 4px solid #1976d2; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  table { border-collapse: collapse; margin: 0.8rem 0; width: 100%; }
+  th, td { border: 1px solid var(--border); padding: 0.4rem 0.6rem; text-align: left; }
+  th { background: #f0f5e8; }
+  @media print { body { font-size: 14px; } .nav { display: none; } }
+</style>
+</head>
+<body>
+
+
+<h2>What You'll Learn</h2>
+<ul>
+<li>Stem cells: definition, properties (self-renewal and potency), and the potency hierarchy</li>
+<li>Totipotent, pluripotent, multipotent, and unipotent stem cells — what each can form</li>
+<li>Sources of stem cells: embryonic, cord blood, and adult — their potencies and ethical considerations</li>
+<li>Differentiation: the process by which unspecialized cells become specialized through differential gene expression</li>
+<li>Mechanisms of differentiation: transcription factors, epigenetic modifications, and cytoplasmic determinants</li>
+<li>Specialized cell examples with structure-function relationships: erythrocytes, neurons, muscle fibers, sperm, palisade mesophyll, root hair cells, guard cells</li>
+<li>Therapeutic uses: Stargardt's disease and leukemia — how stem cells are being used in treatment</li>
+<li>iPSCs (induced pluripotent stem cells): Yamanaka factors, Nobel Prize 2012, advantages, and challenges</li>
+</ul>
+<hr>
+
+<h2>1. What Are Stem Cells?</h2>
+
+<p>Every cell in your body — from the neurons in your brain to the keratinocytes in your skin — originated from a single cell: the fertilized egg (zygote). The process by which that one cell gives rise to hundreds of distinct cell types involves <strong>stem cells</strong> and <strong>differentiation</strong>.</p>
+
+<div class="definition">
+
+<p><strong>Stem cell</strong>: An unspecialized cell that has two defining properties: (1) <strong>self-renewal</strong> — the ability to divide and produce more stem cells, and (2) <strong>potency</strong> — the ability to differentiate into one or more specialized cell types.</p>
+
+</div>
+
+<p><strong>Analogy</strong>: A stem cell is like a blank LEGO brick with the potential to become anything — a red 2×4 brick, a wheel, a window, or a specialized piece. Once it "differentiates" into a specific piece, it generally cannot go back to being a blank brick (though iPSCs are an exception — see below).</p>
+
+<h3>1.1 The Potency Hierarchy</h3>
+
+<p>Stem cells are classified by their <strong>potency</strong> — the range of cell types they can produce:</p>
+
+<table>
+<tr>
+<td>Potency</td>
+<td>What It Can Form</td>
+<td>Example</td>
+<td>Found In</td>
+</tr>
+<tr>
+<td>Totipotent</td>
+<td>All<strong> cell types of the body </strong>AND** extraembryonic tissues (placenta, umbilical cord) — can form an entire organism</td>
+<td>Zygote** (fertilized egg), blastomeres of the early morula (up to ~8-cell stage)</td>
+<td>Only in very early embryonic development</td>
+</tr>
+<tr>
+<td>Pluripotent</td>
+<td>All<strong> cell types of the body (all three germ layers: ectoderm, mesoderm, endoderm) but </strong>NOT** extraembryonic tissues</td>
+<td>Embryonic stem cells (ESCs)<strong> from the inner cell mass of the blastocyst; </strong>iPSCs</td>
+<td>Blastocyst (~5-7 days post-fertilization)</td>
+</tr>
+<tr>
+<td>Multipotent</td>
+<td>Several related** cell types (typically within one germ layer or lineage)</td>
+<td>Hematopoietic stem cells (HSCs)<strong> → all blood cells (red blood cells, white blood cells, platelets); </strong>Mesenchymal stem cells** → bone, cartilage, fat</td>
+<td>Bone marrow, umbilical cord blood, many adult tissues</td>
+</tr>
+<tr>
+<td>Unipotent</td>
+<td>Only <strong>one</strong> cell type, but retain self-renewal capacity</td>
+<td>Epidermal stem cells<strong> → keratinocytes (skin cells); </strong>Spermatogonial stem cells** → sperm</td>
+<td>Adult tissues</td>
+</tr>
+</table>
+
+<p><strong>Diagram to draw</strong>: A branching tree showing the narrowing of potency:</p>
+<ul>
+<li>Totipotent (zygote) → branches to pluripotent (inner cell mass) → branches to multipotent (HSCs, etc.) → branches to unipotent → terminal differentiated cells.</li>
+<li>Write "Self-renewal capacity decreases; specialization increases" along the arrow.</li>
+</ul>
+<div class="tip">
+
+<p><strong>IB Exam Tip</strong>: Be very precise with the definitions:</p>
+<ul>
+<li><strong>Totipotent</strong> = can form the ENTIRE organism INCLUDING extraembryonic tissues.</li>
+<li><strong>Pluripotent</strong> = can form ALL body cell types but NOT extraembryonic tissues (cannot form a complete organism alone).</li>
+<li>The distinction between totipotent and pluripotent is exactly this: totipotent cells can make a placenta; pluripotent cells cannot.</li>
+</ul>
+</div>
+
+<hr>
+
+<h2>2. Sources of Stem Cells</h2>
+
+<h3>2.1 Embryonic Stem Cells (ESCs)</h3>
+
+<p><strong>Source</strong>: The <strong>inner cell mass</strong> of the blastocyst (~5-7 days after fertilization). The blastocyst is a hollow ball of cells with an outer layer (trophoblast, which will form the placenta) and an inner cluster of cells (inner cell mass, which will form the embryo proper).</p>
+
+<p><strong>Potency</strong>: <strong>Pluripotent</strong> — can give rise to all cell types of the body.</p>
+
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Truly pluripotent — can become ANY cell type.</li>
+<li>Can be grown in culture indefinitely (immortal cell lines).</li>
+<li>Great potential for regenerative medicine.</li>
+</ul>
+<p><strong>Ethical controversy:</strong></p>
+<ul>
+<li>Harvesting ESCs involves <strong>destruction of the blastocyst</strong>.</li>
+<li>Some view the blastocyst as a potential human life and oppose its destruction for research.</li>
+<li>Others argue that: (a) blastocysts used for ESC derivation are typically "spare" embryos from IVF clinics that would otherwise be discarded, (b) the blastocyst at 5-7 days has no nervous system and cannot feel pain, and (c) the potential medical benefits justify the research.</li>
+<li>Different countries have different regulations — some permit ESC research, others restrict or ban it.</li>
+</ul>
+<h3>2.2 Cord Blood Stem Cells</h3>
+
+<p><strong>Source</strong>: Blood collected from the <strong>umbilical cord</strong> immediately after birth. This blood is rich in <strong>hematopoietic stem cells (HSCs)</strong> and some mesenchymal stem cells.</p>
+
+<p><strong>Potency</strong>: <strong>Multipotent</strong> — primarily hematopoietic (blood-forming).</p>
+
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Non-invasive collection (cord blood is normally discarded as medical waste).</li>
+<li>No ethical controversy — no embryo is involved.</li>
+<li>Lower risk of graft-versus-host disease when used for transplantation.</li>
+<li>Can be stored in <strong>cord blood banks</strong> (public or private) for future use.</li>
+</ul>
+<p><strong>Limitations:</strong></p>
+<ul>
+<li>Limited cell numbers (one cord blood collection may not have enough HSCs for an adult transplant).</li>
+<li>Multipotent, not pluripotent — cannot generate all cell types.</li>
+</ul>
+<h3>2.3 Adult Stem Cells</h3>
+
+<p><strong>Source</strong>: Found in many adult tissues, including:</p>
+<ul>
+<li><strong>Bone marrow</strong>: Hematopoietic stem cells (→ blood cells) and mesenchymal stem cells (→ bone, cartilage, fat).</li>
+<li><strong>Skin</strong>: Epidermal stem cells (→ keratinocytes).</li>
+<li><strong>Intestinal crypts</strong>: Intestinal stem cells (→ epithelial cells lining the gut).</li>
+<li><strong>Brain</strong>: Neural stem cells (→ neurons and glial cells, though limited).</li>
+<li><strong>Liver</strong>: Hepatic stem cells (oval cells) — can regenerate liver tissue.</li>
+<li><strong>Skeletal muscle</strong>: Satellite cells (→ muscle fibers).</li>
+</ul>
+<p><strong>Potency</strong>: <strong>Multipotent</strong> (most) or <strong>unipotent</strong> (some, e.g., epidermal stem cells).</p>
+
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>No ethical controversy — obtained from consenting adult donors.</li>
+<li>Can be used for <strong>autologous transplantation</strong> (patient's own cells → no immune rejection).</li>
+<li>Already in clinical use (bone marrow transplants for decades).</li>
+</ul>
+<p><strong>Limitations:</strong></p>
+<ul>
+<li>Limited potency — cannot generate all cell types.</li>
+<li>Difficult to isolate and culture (present in very small numbers).</li>
+<li>May accumulate mutations with age.</li>
+</ul>
+<hr>
+
+<h2>3. Differentiation: From Stem Cell to Specialized Cell</h2>
+
+<h3>3.1 What Is Differentiation?</h3>
+
+<p><strong>Differentiation</strong> is the process by which an unspecialized cell becomes a specialized cell type with a distinct structure and function. During differentiation, the cell undergoes changes in:</p>
+<ul>
+<li><strong>Gene expression</strong> — some genes are activated; others are permanently silenced.</li>
+<li><strong>Cell morphology</strong> — shape, size, and internal organization change.</li>
+<li><strong>Function</strong> — the cell acquires specialized capabilities.</li>
+</ul>
+<div class="definition">
+
+<p><strong>Differentiation</strong>: The process by which a cell becomes specialized in structure and function through the selective expression of genes. All differentiated cells in an organism contain the same genome; what differs is which genes are expressed.</p>
+
+</div>
+
+<p><strong>Key principle</strong>: All cells in a multicellular organism (with a few exceptions, like mature red blood cells and some immune cells) contain the <strong>same DNA</strong>. A neuron and a liver cell have identical genomes. What makes them different is <strong>differential gene expression</strong> — each cell type expresses a specific subset of genes and silences the rest.</p>
+
+<p><strong>Analogy</strong>: Every cell has the "complete instruction manual" (the genome), but different cell types "read different chapters." A neuron reads the "neuron" chapter; a liver cell reads the "liver" chapter. Both have the same book.</p>
+
+<h3>3.2 Mechanisms of Differential Gene Expression</h3>
+
+<p>#### Transcription Factors</p>
+
+<p><strong>Transcription factors</strong> are proteins that bind to specific DNA sequences (enhancers, promoters) and regulate the transcription of target genes. They are the master regulators of cell identity.</p>
+
+<ul>
+<li><strong>Activators</strong>: Increase transcription of target genes.</li>
+<li><strong>Repressors</strong>: Decrease or silence transcription.</li>
+<li><strong>Master regulatory transcription factors</strong>: Single factors that can drive differentiation toward a specific lineage (e.g., <strong>MyoD</strong> is a master regulator of skeletal muscle differentiation — expressing MyoD in a fibroblast can convert it into a muscle cell).</li>
+</ul>
+<p>#### Epigenetic Modifications</p>
+
+<p>Epigenetic changes alter gene expression <strong>without changing the DNA sequence</strong>:</p>
+
+<ul>
+<li><strong>DNA methylation</strong>: Addition of methyl groups (-CH₃) to cytosine bases (usually at CpG sites). Methylation of promoter regions generally <strong>silences</strong> gene expression.</li>
+<li><strong>Histone modification</strong>: Histone proteins (around which DNA is wrapped) can be acetylated, methylated, phosphorylated, etc. <strong>Histone acetylation</strong> generally relaxes chromatin and <strong>activates</strong> transcription; <strong>histone deacetylation</strong> compacts chromatin and <strong>represses</strong> transcription.</li>
+</ul>
+<p>Epigenetic marks can be stable through cell divisions (heritable) and explain how a differentiated cell "remembers" its identity — liver cells stay liver cells after dividing.</p>
+
+<p>#### Cytoplasmic Determinants</p>
+
+<p>In early embryos, the egg cytoplasm is not homogeneous — it contains localized <strong>maternal mRNA and proteins</strong> (cytoplasmic determinants) that are unequally distributed to daughter cells during cleavage. Cells that inherit different determinants activate different sets of genes and adopt different developmental fates.</p>
+
+<hr>
+
+<h2>4. Specialized Cell Examples</h2>
+
+<p>The IB expects you to know several examples of specialized cells and explain how their structure relates to their function. <strong>Structure-function relationship</strong> is key.</p>
+
+<h3>4.1 Erythrocytes (Red Blood Cells)</h3>
+
+<table>
+<tr>
+<td>Feature</td>
+<td>How It Relates to Function</td>
+</tr>
+<tr>
+<td>Biconcave disc shape</td>
+<td>Increases surface area-to-volume ratio → maximizes O₂ and CO₂ diffusion across the membrane</td>
+</tr>
+<tr>
+<td>No nucleus** (in mammals)</td>
+<td>Maximizes space for <strong>hemoglobin</strong> (each RBC contains ~270 million hemoglobin molecules). Also makes the cell flexible.</td>
+</tr>
+<tr>
+<td>No mitochondria</td>
+<td>Ensures that the RBC does not consume the O₂ it is carrying (relies on anaerobic glycolysis for its own ATP needs)</td>
+</tr>
+<tr>
+<td>Flexible membrane</td>
+<td>Allows the RBC to squeeze through capillaries narrower than its own diameter (~7 μm RBC through ~3-5 μm capillaries)</td>
+</tr>
+<tr>
+<td>Packed with hemoglobin</td>
+<td>Hemoglobin binds O₂ in lungs; releases O₂ in tissues</td>
+</tr>
+</table>
+
+<p><strong>Lifecycle</strong>: RBCs are produced from hematopoietic stem cells in bone marrow, live ~120 days, and are recycled by macrophages in the spleen and liver.</p>
+
+<h3>4.2 Neurons</h3>
+
+<table>
+<tr>
+<td>Feature</td>
+<td>How It Relates to Function</td>
+</tr>
+<tr>
+<td>Dendrites** (many short, branched extensions)</td>
+<td>Receive signals from other neurons or sensory receptors; extensive branching increases surface area for synaptic inputs</td>
+</tr>
+<tr>
+<td>Long axon** (up to 1 meter in humans)</td>
+<td>Conducts electrical impulses (action potentials) over long distances from the cell body to the target cell</td>
+</tr>
+<tr>
+<td>Myelin sheath** (produced by Schwann cells in PNS, oligodendrocytes in CNS)</td>
+<td>Insulates the axon → increases the speed of action potential propagation (<strong>saltatory conduction</strong> — the signal jumps between Nodes of Ranvier)</td>
+</tr>
+<tr>
+<td>Synaptic terminals** (knobs at axon endings)</td>
+<td>Contain vesicles of <strong>neurotransmitter</strong>; release neurotransmitter into the synapse to signal the next cell</td>
+</tr>
+<tr>
+<td>Many mitochondria** in synaptic terminals</td>
+<td>ATP needed for neurotransmitter synthesis, vesicle transport, and ion pumping to restore gradients after an action potential</td>
+</tr>
+</table>
+
+<h3>4.3 Striated Muscle Fibers</h3>
+
+<table>
+<tr>
+<td>Feature</td>
+<td>How It Relates to Function</td>
+</tr>
+<tr>
+<td>Multinucleated** (formed by fusion of many myoblasts)</td>
+<td>A single muscle fiber is a very long cell; multiple nuclei ensure sufficient gene expression and protein synthesis along its entire length</td>
+</tr>
+<tr>
+<td>Packed with myofibrils</td>
+<td>Myofibrils contain <strong>sarcomeres</strong> — the contractile units made of actin (thin) and myosin (thick) filaments arranged in repeating patterns</td>
+</tr>
+<tr>
+<td>Extensive sarcoplasmic reticulum** (specialized smooth ER)</td>
+<td>Stores and releases Ca²⁺ ions to trigger contraction</td>
+</tr>
+<tr>
+<td>Many mitochondria</td>
+<td>Provide ATP for muscle contraction (oxidative phosphorylation in slow-twitch fibers)</td>
+</tr>
+<tr>
+<td>Glycogen granules</td>
+<td>Readily available glucose for glycolysis during intense exercise</td>
+</tr>
+</table>
+
+<h3>4.4 Sperm Cells (Spermatozoa)</h3>
+
+<table>
+<tr>
+<td>Feature</td>
+<td>How It Relates to Function</td>
+</tr>
+<tr>
+<td>Haploid nucleus** (23 chromosomes)</td>
+<td>Contains half the genetic material; combines with the egg's haploid nucleus at fertilization to restore diploid number</td>
+</tr>
+<tr>
+<td>Acrosome** (lysosome-like cap over the nucleus)</td>
+<td>Contains hydrolytic enzymes (hyaluronidase, acrosin) that digest the outer layers of the egg (zona pellucida) during fertilization</td>
+</tr>
+<tr>
+<td>Midpiece packed with mitochondria</td>
+<td>Provides ATP for the vigorous flagellar movement needed to swim to the egg</td>
+</tr>
+<tr>
+<td>Flagellum</td>
+<td>Motility — propels the sperm through the female reproductive tract</td>
+</tr>
+<tr>
+<td>Streamlined shape</td>
+<td>Minimizes drag; maximizes swimming efficiency</td>
+</tr>
+</table>
+
+<h3>4.5 Palisade Mesophyll Cells (Plant Leaf)</h3>
+
+<table>
+<tr>
+<td>Feature</td>
+<td>How It Relates to Function</td>
+</tr>
+<tr>
+<td>Columnar (elongated) shape</td>
+<td>Cells are tightly packed like columns → maximizes the number of cells per unit leaf area</td>
+</tr>
+<tr>
+<td>Many chloroplasts** (up to 100 per cell)</td>
+<td>Maximizes light absorption for photosynthesis</td>
+</tr>
+<tr>
+<td>Chloroplasts can move** within the cell</td>
+<td>In low light, chloroplasts move to the upper surface; in intense light, they move to the sides to avoid photodamage</td>
+</tr>
+<tr>
+<td>Large central vacuole</td>
+<td>Pushes chloroplasts to the periphery of the cell, close to the cell wall, for efficient gas exchange</td>
+</tr>
+<tr>
+<td>Thin cell wall</td>
+<td>Facilitates CO₂ diffusion into the cell</td>
+</tr>
+</table>
+
+<h3>4.6 Root Hair Cells (Plant Root Epidermis)</h3>
+
+<table>
+<tr>
+<td>Feature</td>
+<td>How It Relates to Function</td>
+</tr>
+<tr>
+<td>Long, thin projection (root hair)** — up to several mm long</td>
+<td>Dramatically increases <strong>surface area</strong> for absorption of water and mineral ions from the soil</td>
+</tr>
+<tr>
+<td>Thin cell wall</td>
+<td>Minimizes the diffusion distance for water and ions</td>
+</tr>
+<tr>
+<td>Many mitochondria</td>
+<td>Provide ATP for <strong>active transport</strong> of mineral ions against their concentration gradients into the cell</td>
+</tr>
+<tr>
+<td>Large vacuole</td>
+<td>Lowers the water potential of the cell, promoting water uptake by osmosis</td>
+</tr>
+<tr>
+<td>No chloroplasts** (they are underground in the dark)</td>
+<td>Chloroplasts would be useless without light and would take up space needed for absorption functions</td>
+</tr>
+</table>
+
+<h3>4.7 Guard Cells (Plant Leaf Epidermis)</h3>
+
+<table>
+<tr>
+<td>Feature</td>
+<td>How It Relates to Function</td>
+</tr>
+<tr>
+<td>Kidney-shaped (in dicots)**, occur in pairs</td>
+<td>The shape allows them to create a pore (<strong>stoma</strong>, plural: stomata) when turgid; the pore closes when they are flaccid</td>
+</tr>
+<tr>
+<td>Chloroplasts** (unlike other epidermal cells)</td>
+<td>Photosynthesis produces ATP and sugars that drive ion pumping and osmotic changes</td>
+</tr>
+<tr>
+<td>Uneven cell wall thickness** — inner wall (facing the pore) is thicker; outer wall is thinner</td>
+<td>When guard cells fill with water and swell, the thinner outer wall stretches more, causing the cells to <strong>curve</strong> → the pore opens. When they lose water, they straighten → the pore closes</td>
+</tr>
+<tr>
+<td>Ion channels and pumps** (K⁺, Cl⁻, H⁺)</td>
+<td>Active transport of K⁺ into guard cells lowers water potential → water enters → cells become turgid → stomata open. In drought, K⁺ leaves → water follows → stomata close, reducing water loss</td>
+</tr>
+</table>
+
+<p><strong>Diagram to draw</strong>: A pair of guard cells in two states:</p>
+<ol>
+<li><strong>Open</strong>: Turgid, curved, stoma visible.</li>
+<li><strong>Closed</strong>: Flaccid, straight, stoma closed.</li>
+</ol>
+<p>Label: "Thicker inner wall," "Thinner outer wall," "K⁺ influx → water follows → turgid → open," "K⁺ efflux → water leaves → flaccid → closed."</p>
+
+<div class="tip">
+
+<p><strong>IB Exam Tip</strong>: For EVERY specialized cell, always explicitly link <strong>structure</strong> to <strong>function</strong>. Don't just list features — say WHY each feature enables the cell's specific job. Start sentences with "This enables..." or "Because of this..." to force yourself to explain.</p>
+
+</div>
+
+<hr>
+
+<h2>5. Therapeutic Uses of Stem Cells</h2>
+
+<h3>5.1 Stargardt's Disease</h3>
+
+<p><strong>Stargardt's disease</strong> (also called Stargardt's macular dystrophy) is an inherited form of juvenile macular degeneration. It is caused by mutations in the <strong>ABCA4</strong> gene, leading to the degeneration of <strong>retinal pigment epithelial (RPE) cells</strong> in the macula (the central region of the retina responsible for sharp, detailed vision). RPE cells support and nourish the photoreceptor cells. When RPE cells die, photoreceptors degenerate → progressive loss of central vision.</p>
+
+<p><strong>Experimental stem cell treatment:</strong></p>
+<ol>
+<li><strong>Embryonic stem cells (ESCs)</strong> are cultured and directed to differentiate into <strong>RPE cells</strong>.</li>
+<li>The RPE cells are injected as a suspension into the <strong>subretinal space</strong> of the patient's eye.</li>
+<li>The transplanted RPE cells integrate into the retina and begin supporting photoreceptors.</li>
+<li>Clinical trials have shown <strong>improved visual acuity</strong> in some patients, with no serious adverse events (e.g., no tumor formation).</li>
+</ol>
+<p><strong>Why the eye is a good target for early stem cell therapies:</strong></p>
+<ul>
+<li>The eye is <strong>immunologically privileged</strong> — the blood-retina barrier limits immune cell access, reducing the risk of rejection.</li>
+<li>It is a small, accessible, and easily monitored site.</li>
+<li>Cell numbers needed are relatively small.</li>
+<li>Effects can be objectively measured (visual acuity tests, retinal imaging).</li>
+</ul>
+<h3>5.2 Leukemia</h3>
+
+<p><strong>Leukemia</strong> is a cancer of blood-forming tissues (bone marrow) in which abnormal white blood cells proliferate uncontrollably, crowding out normal blood cell production.</p>
+
+<p><strong>Treatment: Hematopoietic stem cell (bone marrow) transplantation</strong></p>
+
+<ol>
+<li>The patient undergoes <strong>chemotherapy</strong> and sometimes <strong>radiation</strong> to kill the cancerous bone marrow cells. This also destroys the patient's own hematopoietic stem cells.</li>
+<li><strong>Donor hematopoietic stem cells (HSCs)</strong> are collected from:</li>
+</ol>
+<ul>
+<li><strong>Bone marrow</strong> (from a matched donor — typically a sibling or unrelated matched donor).</li>
+<li><strong>Peripheral blood</strong> (after treatment with G-CSF to mobilize HSCs into the bloodstream).</li>
+<li><strong>Umbilical cord blood</strong> (from a cord blood bank).</li>
+</ul>
+<ol>
+<li>The donor HSCs are infused into the patient's bloodstream (similar to a blood transfusion).</li>
+<li>The HSCs migrate to the bone marrow, engraft, and begin dividing.</li>
+<li>Over weeks to months, they repopulate the bone marrow and produce healthy red blood cells, white blood cells, and platelets.</li>
+</ol>
+<p><strong>Challenges:</strong></p>
+<ul>
+<li><strong>Finding a matched donor</strong>: The donor's HLA (human leukocyte antigen) type must closely match the patient's to minimize immune rejection.</li>
+<li><strong>Graft-versus-host disease (GVHD)</strong>: Donor immune cells (from the graft) may recognize the patient's tissues as "foreign" and attack them. This can range from mild (skin rash) to life-threatening.</li>
+<li><strong>Infection risk</strong>: During the period between chemotherapy and engraftment, the patient has virtually no immune system.</li>
+</ul>
+<hr>
+
+<h2>6. iPSCs: Induced Pluripotent Stem Cells</h2>
+
+<p>One of the most exciting breakthroughs in modern biology: the ability to "reprogram" a fully differentiated adult cell back into a pluripotent stem cell.</p>
+
+<h3>6.1 The Yamanaka Discovery (Nobel Prize, 2012)</h3>
+
+<p>In 2006, <strong>Shinya Yamanaka</strong> and his team at Kyoto University demonstrated that introducing just <strong>four transcription factor genes</strong> into mouse skin fibroblasts could convert them into pluripotent stem cells. These were named <strong>induced pluripotent stem cells (iPSCs)</strong>.</p>
+
+<p><strong>The Yamanaka factors (OSKM):</strong></p>
+
+<table>
+<tr>
+<td>Factor</td>
+<td>Full Name</td>
+<td>Function</td>
+</tr>
+<tr>
+<td>Oct4</td>
+<td>Octamer-binding transcription factor 4</td>
+<td>Maintains pluripotency; activates pluripotency genes</td>
+</tr>
+<tr>
+<td>Sox2</td>
+<td>SRY-box transcription factor 2</td>
+<td>Works with Oct4 to maintain pluripotency</td>
+</tr>
+<tr>
+<td>Klf4</td>
+<td>Krüppel-like factor 4</td>
+<td>Promotes cell proliferation; inhibits apoptosis</td>
+</tr>
+<tr>
+<td>c-Myc</td>
+<td>Cellular myelocytomatosis oncogene</td>
+<td>Promotes cell proliferation; opens chromatin for reprogramming</td>
+</tr>
+</table>
+
+<p><strong>How it works:</strong></p>
+<ol>
+<li>The four genes are introduced into differentiated somatic cells (e.g., skin fibroblasts) using viral vectors (retroviruses or lentiviruses).</li>
+<li>The transcription factors are expressed and activate the <strong>pluripotency gene network</strong>.</li>
+<li>Over ~2-4 weeks, a small fraction (~0.1-1%) of the cells undergo <strong>reprogramming</strong> — they revert to a pluripotent state, silencing differentiation-specific genes and reactivating pluripotency genes (like their own endogenous Oct4, Sox2, and Nanog).</li>
+<li>The resulting iPSCs are morphologically, molecularly, and functionally similar to embryonic stem cells — they can differentiate into cells of all three germ layers.</li>
+</ol>
+<div class="definition">
+
+<p><strong>iPSC (induced pluripotent stem cell)</strong>: A pluripotent stem cell generated by reprogramming a differentiated somatic cell (e.g., skin fibroblast) through the introduction of specific transcription factors (typically Oct4, Sox2, Klf4, c-Myc — the Yamanaka factors). iPSCs are similar to embryonic stem cells in their properties and potential.</p>
+
+</div>
+
+<h3>6.2 Advantages of iPSCs</h3>
+
+<table>
+<tr>
+<td>Advantage</td>
+<td>Explanation</td>
+</tr>
+<tr>
+<td>Patient-specific</td>
+<td>iPSCs can be generated from a patient's own cells → no immune rejection if transplanted back.</td>
+</tr>
+<tr>
+<td>No embryo destruction</td>
+<td>Avoids the ethical controversy associated with embryonic stem cells.</td>
+</tr>
+<tr>
+<td>Disease modeling</td>
+<td>iPSCs can be generated from patients with genetic diseases → differentiated into affected cell types → used to study disease mechanisms and test drugs "in a dish."</td>
+</tr>
+<tr>
+<td>Drug screening</td>
+<td>iPSC-derived cells (e.g., cardiomyocytes, neurons, hepatocytes) can be used to test drug efficacy and toxicity.</td>
+</tr>
+<tr>
+<td>Personalized medicine</td>
+<td>A patient's iPSCs could be used to test which drugs work best for that specific individual.</td>
+</tr>
+</table>
+
+<h3>6.3 Challenges and Risks</h3>
+
+<table>
+<tr>
+<td>Challenge</td>
+<td>Explanation</td>
+</tr>
+<tr>
+<td>Tumor formation (teratomas)</td>
+<td>Residual undifferentiated iPSCs can form teratomas (tumors containing multiple tissue types) if transplanted.</td>
+</tr>
+<tr>
+<td>c-Myc as an oncogene</td>
+<td>c-Myc is a known oncogene — its reactivation can cause cancer. Safer reprogramming methods use fewer factors or replace c-Myc.</td>
+</tr>
+<tr>
+<td>Incomplete reprogramming</td>
+<td>Some iPSCs retain "epigenetic memory" of their cell of origin, which can bias their differentiation.</td>
+</tr>
+<tr>
+<td>Viral integration</td>
+<td>Retroviral/lentiviral vectors integrate into the host genome, potentially disrupting tumor suppressor genes or activating oncogenes. Non-integrating methods (Sendai virus, episomal plasmids, mRNA, proteins) are being developed.</td>
+</tr>
+<tr>
+<td>Low efficiency</td>
+<td>Reprogramming is inefficient (~0.1-1% of cells).</td>
+</tr>
+<tr>
+<td>Cost and time</td>
+<td>Generating and characterizing patient-specific iPSC lines is expensive and takes months.</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>7. Worked Examples</h2>
+
+<div class="worked">
+
+<p><strong>Worked Example 1: Stem Cell Potency Classification</strong></p>
+
+<p>Classify the following cells by potency (totipotent, pluripotent, multipotent, or unipotent):</p>
+
+<p>(a) A cell from the inner cell mass of a blastocyst</p>
+<p>(b) A hematopoietic stem cell from bone marrow</p>
+<p>(c) A zygote immediately after fertilization</p>
+<p>(d) An epidermal stem cell in the basal layer of skin</p>
+
+<p><strong>Solution:</strong></p>
+
+<p>(a) <strong>Pluripotent</strong> — inner cell mass cells can form all body cell types but not extraembryonic tissues.</p>
+
+<p>(b) <strong>Multipotent</strong> — hematopoietic stem cells can form all blood cell types (red blood cells, platelets, all white blood cell lineages) but cannot form non-blood cells like neurons or muscle.</p>
+
+<p>(c) <strong>Totipotent</strong> — the zygote can form EVERYTHING: all body cells AND all extraembryonic tissues (placenta, amniotic sac, umbilical cord). Only the zygote and early blastomeres are totipotent.</p>
+
+<p>(d) <strong>Unipotent</strong> — epidermal stem cells divide to produce keratinocytes, the predominant cell type of the epidermis. They can self-renew but normally differentiate into only one cell type.</p>
+
+</div>
+
+<div class="worked">
+
+<p><strong>Worked Example 2: Structure-Function — Palisade Mesophyll</strong></p>
+
+<p>Explain how three structural features of palisade mesophyll cells enable efficient photosynthesis.</p>
+
+<p><strong>Solution:</strong></p>
+
+<ol>
+<li><strong>Columnar shape with tight packing</strong>: Palisade cells are elongated and packed closely together perpendicular to the leaf surface. This arrangement allows a high density of photosynthetic cells directly beneath the upper epidermis, maximizing light capture per unit leaf area. The vertical orientation also creates air spaces between cells for gas exchange.</li>
+</ol>
+<ol>
+<li><strong>Abundant chloroplasts (up to 100 per cell)</strong>: The high number of chloroplasts provides a large total surface area of thylakoid membrane for the light-dependent reactions, maximizing photon capture. Chloroplasts can also move within the cell — migrating to the upper surface in dim light and to the sides in intense light.</li>
+</ol>
+<ol>
+<li><strong>Large central vacuole</strong>: The vacuole pushes the cytoplasm and chloroplasts to the periphery of the cell, positioning chloroplasts close to the plasma membrane. This minimizes the diffusion distance for CO₂ entering the cell from the intercellular air spaces to reach the chloroplast stroma, enhancing the efficiency of the Calvin cycle.</li>
+</ol>
+</div>
+
+<div class="worked">
+
+<p><strong>Worked Example 3: iPSCs vs ESCs Comparison</strong></p>
+
+<p>A researcher wants to generate dopamine-producing neurons for transplantation into a Parkinson's disease patient. Compare the use of embryonic stem cells (ESCs) and induced pluripotent stem cells (iPSCs) for this purpose, considering both scientific and ethical factors.</p>
+
+<p><strong>Solution:</strong></p>
+
+<table>
+<tr>
+<td>Factor</td>
+<td>ESCs</td>
+<td>iPSCs</td>
+</tr>
+<tr>
+<td>Source</td>
+<td>Inner cell mass of blastocyst</td>
+<td>Patient's own somatic cells (e.g., skin fibroblasts) reprogrammed with Yamanaka factors</td>
+</tr>
+<tr>
+<td>Immune rejection</td>
+<td>Likely — ESCs are from a different individual. Patient would need immunosuppressive drugs</td>
+<td>Unlikely — patient's own cells: **autologous transplantation</td>
+</tr>
+<tr>
+<td>Ethical concerns</td>
+<td>Significant — requires destruction of embryo</td>
+<td>Minimal — no embryo involved</td>
+</tr>
+<tr>
+<td>Availability</td>
+<td>Limited — requires donated embryos (typically from IVF)</td>
+<td>Unlimited potential — any patient can donate their own cells</td>
+</tr>
+<tr>
+<td>Safety</td>
+<td>Some risk of teratoma formation</td>
+<td>Higher risk — residual iPSCs, viral integration, oncogene (c-Myc) reactivation</td>
+</tr>
+<tr>
+<td>Epigenetic issues</td>
+<td>None — ESCs are natural pluripotent cells</td>
+<td>Possible epigenetic memory of cell of origin; incomplete reprogramming</td>
+</tr>
+<tr>
+<td>Time to produce</td>
+<td>Existing ESC lines available</td>
+<td>Months to derive and characterize patient-specific iPSCs</td>
+</tr>
+</table>
+
+<p><strong>Conclusion</strong>: iPSCs are scientifically advantageous (no immune rejection) and ethically less problematic. However, safety concerns are greater. For a clinical application, iPSCs with non-integrating reprogramming methods would be the ideal choice, provided thorough safety testing for tumorigenicity.</p>
+
+</div>
+
+<hr>
+
+<h2>8. Practice Problems</h2>
+
+<h3>Problem 1 (Easy)</h3>
+<p>Define "stem cell" and distinguish between totipotent, pluripotent, multipotent, and unipotent stem cells. Give an example of each.</p>
+
+<h3>Problem 2 (Easy)</h3>
+<p>State two advantages and two disadvantages of using adult stem cells compared to embryonic stem cells for therapeutic purposes.</p>
+
+<h3>Problem 3 (Medium)</h3>
+<p>Explain how differential gene expression allows cells with identical genomes (e.g., a neuron and a liver cell) to have completely different structures and functions.</p>
+
+<h3>Problem 4 (Medium)</h3>
+<p>Describe the structure of a motor neuron and explain how three specific structural features enable its function of transmitting signals from the central nervous system to a muscle.</p>
+
+<h3>Problem 5 (Hard)</h3>
+<p>Describe the process by which iPSCs are generated. In your answer, name the Yamanaka factors, explain their roles, and discuss two significant challenges that must be overcome before iPSCs can be widely used in clinical therapy.</p>
+
+<h3>Problem 6 (Hard)</h3>
+<p>A gardener notices that on a hot, dry day, the leaves of her plants are wilted, but by evening they have recovered. Explain this observation at the cellular level, making reference to guard cells, stomata, turgor pressure, and potassium ion transport.</p>
+
+<hr>
+
+<h2>9. Practice Problem Answers</h2>
+
+<h3>Answer 1</h3>
+
+<p><strong>Stem cell</strong>: An unspecialized cell capable of self-renewal and differentiation into one or more specialized cell types.</p>
+
+<table>
+<tr>
+<td>Potency</td>
+<td>Definition</td>
+<td>Example</td>
+</tr>
+<tr>
+<td>Totipotent</td>
+<td>Can form all cell types of the body AND extraembryonic tissues (can form an entire organism)</td>
+<td>Zygote</td>
+</tr>
+<tr>
+<td>Pluripotent</td>
+<td>Can form all body cell types (all three germ layers) but NOT extraembryonic tissues</td>
+<td>Embryonic stem cells from inner cell mass</td>
+</tr>
+<tr>
+<td>Multipotent</td>
+<td>Can form several related cell types within one lineage</td>
+<td>Hematopoietic stem cells (→ all blood cells)</td>
+</tr>
+<tr>
+<td>Unipotent</td>
+<td>Can form only one cell type but retain self-renewal</td>
+<td>Epidermal stem cells (→ keratinocytes)</td>
+</tr>
+</table>
+
+<h3>Answer 2</h3>
+
+<p><strong>Advantages of adult stem cells over ESCs:</strong></p>
+<ol>
+<li><strong>No ethical controversy</strong> — obtained from consenting adult donors without embryo destruction.</li>
+<li><strong>Autologous transplantation possible</strong> — patient's own cells → no immune rejection and no need for immunosuppressive drugs.</li>
+</ol>
+<p><strong>Disadvantages of adult stem cells over ESCs:</strong></p>
+<ol>
+<li><strong>Limited potency</strong> — adult stem cells are multipotent (not pluripotent) and cannot generate all cell types.</li>
+<li><strong>Difficult to isolate and culture</strong> — present in very small numbers in tissues; may have limited proliferation capacity compared to immortal ESC lines.</li>
+</ol>
+<h3>Answer 3</h3>
+
+<p>All cells in a multicellular organism (with few exceptions) contain the <strong>same genome</strong>. Differentiation arises from <strong>differential gene expression</strong> — different cell types activate different subsets of genes and silence others.</p>
+
+<p><strong>Mechanisms:</strong></p>
+<ol>
+<li><strong>Transcription factors</strong>: Neurons express neuron-specific transcription factors that activate genes for neurotransmitter synthesis, ion channels, and axon guidance. Liver cells express liver-specific transcription factors that activate genes for metabolic enzymes (e.g., those involved in gluconeogenesis, detoxification).</li>
+</ol>
+<ol>
+<li><strong>Epigenetic modifications</strong>: DNA methylation silences genes that should not be expressed in a given cell type. Histone modifications (acetylation, methylation) alter chromatin accessibility. A neuron's insulin gene is methylated and silenced; a pancreatic β-cell's rhodopsin gene is methylated and silenced.</li>
+</ol>
+<ol>
+<li><strong>Positive feedback loops</strong>: Once a cell commits to a lineage, master regulatory transcription factors activate their own expression and repress alternative lineage genes, locking in the differentiated state.</li>
+</ol>
+<p>Thus, a neuron and a liver cell have the same DNA "instruction manual" but read completely different chapters, leading to different proteomes (sets of expressed proteins) and consequently different structures and functions.</p>
+
+<h3>Answer 4</h3>
+
+<p>A motor neuron has the following structural features adapted for signal transmission:</p>
+
+<ol>
+<li><strong>Long axon (up to 1 meter)</strong>: The axon conducts action potentials from the cell body in the spinal cord to the target muscle. Its great length allows signals to be transmitted over long distances without interruption. The uniform diameter and continuous membrane ensure uninterrupted propagation.</li>
+</ol>
+<ol>
+<li><strong>Myelin sheath (produced by Schwann cells)</strong>: The myelin sheath insulates the axon, preventing ion leakage and increasing membrane resistance. This enables <strong>saltatory conduction</strong> — action potentials "jump" from one Node of Ranvier to the next, dramatically increasing conduction velocity (up to ~120 m/s vs ~2 m/s in unmyelinated fibers). This allows rapid responses to stimuli.</li>
+</ol>
+<ol>
+<li><strong>Synaptic terminals (axon terminals)</strong>: The branched endings of the axon form <strong>neuromuscular junctions</strong> with muscle fibers. Each terminal contains synaptic vesicles filled with the neurotransmitter <strong>acetylcholine</strong>. When an action potential arrives, voltage-gated Ca²⁺ channels open → Ca²⁺ influx → vesicle fusion with the membrane → acetylcholine released into the synaptic cleft → binds to receptors on the muscle fiber → triggers muscle contraction. The extensive branching allows one motor neuron to stimulate many muscle fibers simultaneously.</li>
+</ol>
+<h3>Answer 5</h3>
+
+<p><strong>iPSC generation:</strong></p>
+
+<ol>
+<li>Somatic cells (e.g., skin fibroblasts) are isolated from the patient.</li>
+<li>Four transcription factor genes — <strong>Oct4, Sox2, Klf4, and c-Myc</strong> (the Yamanaka factors) — are introduced using viral vectors.</li>
+<li><strong>Oct4</strong> and <strong>Sox2</strong> are core pluripotency factors that activate the pluripotency gene regulatory network and repress differentiation genes.</li>
+<li><strong>Klf4</strong> promotes cell proliferation and inhibits apoptosis (programmed cell death), allowing reprogrammed cells to survive.</li>
+<li><strong>c-Myc</strong> also promotes proliferation and "opens" chromatin by recruiting histone acetyltransferases, making the genome more accessible for reprogramming.</li>
+<li>Over 2-4 weeks, a small fraction of cells reactivate endogenous pluripotency genes (Nanog, endogenous Oct4 and Sox2) and silence somatic genes → they become <strong>iPSCs</strong>.</li>
+</ol>
+<p><strong>Two significant challenges:</strong></p>
+
+<ol>
+<li><strong>Tumorigenicity</strong>: c-Myc is a potent oncogene, and its reactivation can lead to cancer. Even without c-Myc, residual undifferentiated iPSCs can form <strong>teratomas</strong> (tumors containing multiple tissue types) if transplanted. Ensuring complete differentiation and eliminating undifferentiated cells is critical for safety.</li>
+</ol>
+<ol>
+<li><strong>Viral integration</strong>: Retroviral and lentiviral vectors integrate randomly into the host genome. Integration can disrupt tumor suppressor genes or activate oncogenes → cancer risk. Additionally, the integrated transgenes may not be fully silenced after reprogramming, interfering with normal iPSC function. Safer, <strong>non-integrating methods</strong> (Sendai virus, episomal plasmids, synthetic mRNA, direct protein delivery) are being developed but have lower efficiency.</li>
+</ol>
+<h3>Answer 6</h3>
+
+<p><strong>During the hot, dry day (wilting):</strong></p>
+<ol>
+<li>High temperature and low humidity increase the rate of <strong>transpiration</strong> (water evaporation from leaves).</li>
+<li>The plant experiences <strong>water deficit</strong> — water loss exceeds water uptake from the roots.</li>
+<li>In response to water stress, the plant hormone <strong>abscisic acid (ABA)</strong> is produced.</li>
+<li>ABA triggers <strong>K⁺ efflux</strong> from guard cells. K⁺ ions leave through potassium channels.</li>
+<li>Water follows the K⁺ by osmosis (water moves from lower solute concentration to higher solute concentration) → water exits guard cells.</li>
+<li>Guard cells become <strong>flaccid (lose turgor pressure)</strong>.</li>
+<li>Because guard cells have unevenly thickened walls (thinner outer wall, thicker inner wall), loss of turgor causes them to straighten → the <strong>stoma closes</strong>.</li>
+<li>Stomatal closure reduces water loss (a protective response), but also limits CO₂ entry → photosynthesis slows.</li>
+<li>Overall, the loss of turgor in leaf cells (not just guard cells) causes the leaf to <strong>wilt</strong>.</li>
+</ol>
+<p><strong>During the evening (recovery):</strong></p>
+<ol>
+<li>Temperature drops and humidity rises → transpiration rate decreases.</li>
+<li>The roots continue absorbing water from the soil, and the plant rehydrates.</li>
+<li>ABA levels drop; K⁺ is actively pumped <strong>back into</strong> guard cells (using ATP).</li>
+<li>Water follows K⁺ by osmosis → guard cells swell.</li>
+<li>The thin outer wall stretches more than the thick inner wall → guard cells <strong>curve</strong> → stoma opens.</li>
+<li>CO₂ enters; photosynthesis can resume (in daylight).</li>
+<li>All leaf cells regain turgor → the plant becomes <strong>turgid</strong> and the leaves return to their upright position.</li>
+</ol>
+<hr>
+
+<h2>10. Common Misconceptions</h2>
+
+<table>
+<tr>
+<td>Misconception</td>
+<td>Reality</td>
+</tr>
+<tr>
+<td>"All stem cells are the same"</td>
+<td>Stem cells differ dramatically in potency — from totipotent (zygote) to unipotent (epidermal stem cell). This is the most important thing to understand about stem cells.</td>
+</tr>
+<tr>
+<td>"Adult stem cells are pluripotent"</td>
+<td>Adult stem cells are <strong>multipotent</strong> (most) or <strong>unipotent</strong> (some). Only embryonic stem cells and iPSCs are pluripotent.</td>
+</tr>
+<tr>
+<td>"Differentiation means losing genes"</td>
+<td>Differentiation involves changes in <strong>gene expression</strong>, not gene loss (with rare exceptions like mammalian RBCs losing their nucleus). The genome is retained — this is proven by the fact that a differentiated nucleus can be reprogrammed (somatic cell nuclear transfer — Dolly the sheep; iPSCs).</td>
+</tr>
+<tr>
+<td>"iPSCs are exactly the same as ESCs"</td>
+<td>iPSCs are very similar but may have <strong>epigenetic differences</strong> (epigenetic memory of their cell of origin) and may harbor mutations accumulated in the donor somatic cells.</td>
+</tr>
+<tr>
+<td>"Stem cell treatments are routine for many diseases"</td>
+<td>Bone marrow (HSC) transplantation is well-established for leukemia and some blood disorders. Most other stem cell therapies are <strong>experimental</strong> — clinical trials are ongoing, but claims of stem cell "cures" for many conditions are not yet supported by rigorous evidence.</td>
+</tr>
+<tr>
+<td>"Guard cells open stomata by actively pumping in water"</td>
+<td>Guard cells pump in <strong>K⁺ ions</strong> (active transport). Water follows passively by <strong>osmosis</strong> down the water potential gradient. The cell does not directly pump water.</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>11. Key Terms Summary</h2>
+
+<table>
+<tr>
+<td>Term</td>
+<td>Definition</td>
+</tr>
+<tr>
+<td>Stem cell</td>
+<td>Unspecialized cell with self-renewal and differentiation capacity</td>
+</tr>
+<tr>
+<td>Totipotent</td>
+<td>Can form entire organism + extraembryonic tissues</td>
+</tr>
+<tr>
+<td>Pluripotent</td>
+<td>Can form all body cells but not extraembryonic tissues</td>
+</tr>
+<tr>
+<td>Multipotent</td>
+<td>Can form several related cell types</td>
+</tr>
+<tr>
+<td>Unipotent</td>
+<td>Can form one cell type; retains self-renewal</td>
+</tr>
+<tr>
+<td>Embryonic stem cell (ESC)</td>
+<td>Pluripotent cell from inner cell mass of blastocyst</td>
+</tr>
+<tr>
+<td>Cord blood stem cell</td>
+<td>Multipotent HSCs from umbilical cord blood</td>
+</tr>
+<tr>
+<td>Adult stem cell</td>
+<td>Multipotent/unipotent stem cell in adult tissues</td>
+</tr>
+<tr>
+<td>Differentiation</td>
+<td>Process by which unspecialized cells become specialized</td>
+</tr>
+<tr>
+<td>Differential gene expression</td>
+<td>Different cells express different genes from the same genome</td>
+</tr>
+<tr>
+<td>Transcription factor</td>
+<td>Protein that regulates gene transcription</td>
+</tr>
+<tr>
+<td>Epigenetic modification</td>
+<td>Heritable change in gene expression without DNA sequence change</td>
+</tr>
+<tr>
+<td>Erythrocyte</td>
+<td>Red blood cell; biconcave, no nucleus, packed with hemoglobin</td>
+</tr>
+<tr>
+<td>Neuron</td>
+<td>Nerve cell; dendrites, axon, myelin, synaptic terminals</td>
+</tr>
+<tr>
+<td>Striated muscle fiber</td>
+<td>Multinucleated contractile cell; myofibrils of actin and myosin</td>
+</tr>
+<tr>
+<td>Sperm cell</td>
+<td>Male gamete; haploid nucleus, acrosome, flagellum, mitochondria in midpiece</td>
+</tr>
+<tr>
+<td>Palisade mesophyll</td>
+<td>Photosynthetic leaf cell; columnar, many chloroplasts</td>
+</tr>
+<tr>
+<td>Root hair cell</td>
+<td>Epidermal root cell with long projection; water/mineral absorption</td>
+</tr>
+<tr>
+<td>Guard cell</td>
+<td>Kidney-shaped epidermal cell; controls stomatal opening</td>
+</tr>
+<tr>
+<td>iPSC</td>
+<td>Induced pluripotent stem cell; reprogrammed somatic cell</td>
+</tr>
+<tr>
+<td>Yamanaka factors</td>
+<td>Oct4, Sox2, Klf4, c-Myc — reprogram differentiated cells to pluripotency</td>
+</tr>
+<tr>
+<td>Stargardt's disease</td>
+<td>Juvenile macular degeneration; treated experimentally with ESC-derived RPE cells</td>
+</tr>
+<tr>
+<td>Leukemia</td>
+<td>Blood cancer; treated with hematopoietic stem cell (bone marrow) transplantation</td>
+</tr>
+</table>
+
+<hr>
+
+<p>This concludes Lesson 18 and the series on Biochemistry and Cell Biology for IB Biology HL. You have now covered:</p>
+
+<ul>
+<li><strong>Lesson 12</strong>: Carbohydrates and Lipids I — monosaccharides, disaccharides, polysaccharides (starch, glycogen, cellulose), glycoproteins/glycolipids</li>
+<li><strong>Lesson 13</strong>: Carbohydrates and Lipids II (HL) — detailed polysaccharide structures, condensation reaction drawings, triglycerides, fatty acid types, phospholipids, cholesterol, energy storage comparison</li>
+<li><strong>Lesson 14</strong>: Proteins I — amino acid structure and classification, peptide bonds, primary through tertiary structure</li>
+<li><strong>Lesson 15</strong>: Proteins II (HL) — quaternary structure (hemoglobin, collagen), fibrous vs globular, denaturation, Anfinsen, chaperones, misfolding diseases, X-ray crystallography and NMR</li>
+<li><strong>Lesson 16</strong>: Membranes and Membrane Transport — fluid mosaic model, passive transport, osmosis, active transport, bulk transport, freeze-fracture</li>
+<li><strong>Lesson 17</strong>: Organelles and Compartmentalization — nucleus, ER, Golgi, lysosomes, mitochondria, chloroplasts, vacuoles, peroxisomes, vesicle trafficking</li>
+<li><strong>Lesson 18</strong>: Cell Specialization — stem cells, differentiation, specialized cells, therapeutic applications, iPSCs</li>
+</ul>
+<p>Master these lessons, practice drawing the structures, and work through all the practice problems — and you will be well-prepared for IB Biology HL Papers 1 and 2. Good luck!</p>
+
+<div class="nav"><a href="lesson_17.html">&#8592; Lesson 17</a><a href="index.html">&#8962; Index</a><a href="lesson_19.html">Lesson 19 &#8594;</a></div>
+
+</body>
+</html>

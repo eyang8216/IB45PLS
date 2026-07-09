@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 36: Defence Against Disease II ⚠️ HL (C3.2) — IB Biology HL</title>
+<script>window.MathJax = { tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] } };</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #1a6b3c; --border: #c4d4a9; --highlight: #e8f5e9; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Palatino', 'Georgia', serif; background: var(--bg); color: var(--text); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; font-size: 17px; line-height: 1.7; }
+  h1 { font-size: 1.7rem; color: var(--accent); margin-bottom: 0.5rem; }
+  h2 { font-size: 1.25rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; margin: 2rem 0 1rem; }
+  h3 { font-size: 1.1rem; color: #444; margin: 1.3rem 0 0.5rem; }
+  p, li { margin-bottom: 0.6rem; }
+  ul, ol { padding-left: 1.8rem; margin-bottom: 1rem; }
+  .worked { background: #e8f5e9; border-left: 4px solid #1a6b3c; padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
+  .worked strong { color: #1a6b3c; }
+  .answer { background: #fefdf7; border: 1px solid var(--border); padding: 0.8rem 1.2rem; margin: 0.5rem 0; border-radius: 6px; }
+  .nav { display: flex; justify-content: space-between; margin: 3rem 0 1rem; padding-top: 1rem; border-top: 2px solid var(--border); font-size: 0.9rem; }
+  .nav a { color: #1a5c9e; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  .definition { background: #fff8e1; border-left: 4px solid #e6a817; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  .tip { background: #e3f2fd; border-left: 4px solid #1976d2; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  table { border-collapse: collapse; margin: 0.8rem 0; width: 100%; }
+  th, td { border: 1px solid var(--border); padding: 0.4rem 0.6rem; text-align: left; }
+  th { background: #f0f5e8; }
+  @media print { body { font-size: 14px; } .nav { display: none; } }
+</style>
+</head>
+<body>
+
+
+<h2>What You'll Learn</h2>
+
+<p>In Lesson 35, you learned the foundational architecture of the immune system — innate barriers, phagocytes, antibodies, and the two arms of adaptive immunity. Now we go deeper. How does the immune system generate billions of different antibodies from a limited genome? How do scientists harness the exquisite specificity of antibodies to detect pregnancy, diagnose HIV, and treat cancer? Why has HIV, after 40 years and billions in research, still evaded a vaccine? And why are we losing the arms race against bacteria? In this final HL lesson, you'll explore the most sophisticated — and most clinically relevant — aspects of immunology. By the end, you'll understand:</p>
+
+<ul>
+<li>Clonal selection: how one B cell becomes an army of identical antibody factories</li>
+<li>The primary vs secondary response in molecular detail, including class switching from IgM to IgG</li>
+<li>How monoclonal antibodies are produced using hybridoma technology and their diagnostic and therapeutic applications</li>
+<li>The molecular details of MHC I and II, and why MHC polymorphism makes organ transplants so difficult</li>
+<li>The HIV replication cycle and why it has been so devilishly difficult to cure or vaccinate against</li>
+<li>How antibiotics work, why they don't work on viruses, and how bacteria are evolving resistance faster than we can develop new drugs</li>
+</ul>
+<hr>
+
+<h2>1. Clonal Selection: One Cell, One Antibody</h2>
+
+<p>The human immune system can produce antibodies against virtually any foreign molecule — an estimated 10⁹ to 10¹¹ different specificities. Yet the human genome has only ~20,000-25,000 genes. How is this possible?</p>
+
+<div class="definition">
+
+<p><strong>Clonal selection</strong> — The theory (proposed by Frank Macfarlane Burnet, 1957) explaining how adaptive immunity generates specific responses. Each B cell (and T cell) carries a unique receptor generated randomly during development. When a pathogen enters, it "selects" the B cell with the matching receptor, which then undergoes <strong>clonal expansion</strong> to produce an army of identical cells all producing the same antibody.</p>
+
+</div>
+
+<h3>1.1 The Clonal Selection Process</h3>
+
+<p><strong>Step 1 — Generation of Diversity (Before Infection):</strong></p>
+
+<p>During B cell development in the bone marrow, each B cell undergoes <strong>VDJ recombination</strong> — a process of random DNA rearrangement that creates a unique antibody gene:</p>
+
+<ul>
+<li>The heavy chain gene locus has multiple <strong>V</strong> (variable), <strong>D</strong> (diversity), and <strong>J</strong> (joining) gene segments</li>
+<li><strong>RAG enzymes</strong> (Recombination-Activating Genes) randomly select and join one V, one D, and one J segment, deleting the DNA between them</li>
+<li>The light chain locus undergoes similar VJ recombination (no D segments in light chains)</li>
+<li>This combinatorial diversity generates millions of different possible heavy and light chains</li>
+<li>Additional diversity comes from <strong>junctional diversity</strong> (random addition/deletion of nucleotides at junctions) and <strong>somatic hypermutation</strong> (point mutations in variable regions during B cell proliferation)</li>
+<li>Result: Each immature B cell expresses a <strong>unique B cell receptor (BCR)</strong> — a membrane-bound antibody of a single specificity</li>
+</ul>
+<p><strong>Step 2 — Negative Selection:</strong></p>
+
+<p>Before leaving the bone marrow, B cells are tested. If their BCR binds strongly to <strong>self-antigens</strong> (the body's own molecules), they are eliminated (apoptosis) or rendered anergic (non-responsive). This establishes <strong>self-tolerance</strong> — preventing autoimmunity. Only B cells that do NOT react to self are released into circulation.</p>
+
+<p><strong>Step 3 — Antigen Encounter and Selection:</strong></p>
+
+<p>Millions of naive B cells circulate, each with a unique BCR. When a pathogen enters:</p>
+<ul>
+<li>Its antigens will bind to only those rare B cells whose BCRs happen to match</li>
+<li>Antigen binding (plus T helper cell help) <strong>selects</strong> that specific B cell for activation</li>
+<li>All other B cells (with non-matching BCRs) are unaffected</li>
+</ul>
+<p><strong>Step 4 — Clonal Expansion:</strong></p>
+
+<p>The selected B cell undergoes <strong>mitosis</strong> — dividing repeatedly to generate a large <strong>clone</strong> of identical daughter cells (thousands to millions), all expressing the same BCR and all specific for the same antigen.</p>
+
+<p><strong>Step 5 — Differentiation:</strong></p>
+
+<p>The clone differentiates into two populations:</p>
+<ul>
+<li><strong>Plasma cells:</strong> Antibody-secreting factories (short-lived, days to weeks)</li>
+<li><strong>Memory B cells:</strong> Long-lived (years to decades), poised for rapid response on re-exposure</li>
+</ul>
+<p><strong>Draw and label:</strong> A diagram of clonal selection:</p>
+<ul>
+<li>Left panel: A diverse pool of naive B cells, each with a different BCR (shown as different shapes of receptors). An antigen (matching one BCR shape) is present.</li>
+<li>Center panel: The antigen binds to the B cell with the matching BCR. Other B cells are not activated.</li>
+<li>Right panel: The selected B cell has undergone clonal expansion → many identical B cells, all with the same BCR. Some shown as plasma cells (secreting antibodies), some as memory B cells.</li>
+</ul>
+<h3>1.2 Why Clonal Selection Explains Immunological Memory</h3>
+
+<p>Because each pathogen selects and expands only the B cells specific for its antigens, and because memory cells persist after the infection is cleared, the immune system "remembers" the pathogen. On re-exposure:</p>
+<ul>
+<li>The matching memory B cells are already present in large numbers</li>
+<li>No time is lost searching for the right B cell</li>
+<li>The response is rapid, large, and effective</li>
+</ul>
+<p>This is why you typically only get chickenpox once — the memory cells generated during the first infection eliminate the virus before it can establish a second infection.</p>
+
+<div class="tip">
+
+<p><strong>Paper 1 Tip:</strong> Know the difference: <strong>clonal selection</strong> is the selection of one specific B cell by antigen (happens during an infection). <strong>Clonal expansion</strong> is the subsequent proliferation of that cell into a large clone. The theory is named for the selection step, but both are essential.</p>
+
+</div>
+
+<hr>
+
+<h2>2. Primary vs Secondary Response: The Molecular Details</h2>
+
+<h3>2.1 The Primary Response in Detail</h3>
+
+<p>When a pathogen is encountered for the first time:</p>
+
+<p><strong>Days 0-3:</strong> Innate response — phagocytes, inflammation. The pathogen replicates.</p>
+
+<p><strong>Days 3-5:</strong> Antigen has been processed and presented by APCs. The rare B cell with the matching BCR is activated (with T helper cell help). <strong>Clonal expansion begins.</strong></p>
+
+<p><strong>Days 5-7:</strong> The first plasma cells differentiate and begin secreting antibody. The initial antibody is <strong>IgM</strong> — the default class produced by naive B cells (IgM and IgD are co-expressed as BCRs on naive B cells; IgM is the secreted form).</p>
+
+<p><strong>Days 7-14:</strong> <strong>Class switching</strong> occurs. With T helper cell cytokines:</p>
+<ul>
+<li>IFN-γ → switching to <strong>IgG</strong></li>
+<li>IL-4 → switching to <strong>IgE</strong></li>
+<li>TGF-β → switching to <strong>IgA</strong></li>
+</ul>
+<p>IgG production ramps up. <strong>Somatic hypermutation</strong> introduces point mutations in the variable region genes; B cells with mutations that increase antibody affinity are preferentially selected → <strong>affinity maturation</strong>.</p>
+
+<p><strong>Days 14-28:</strong> Antibody levels peak, then decline as plasma cells die (they're short-lived). Memory B cells and memory T cells persist.</p>
+
+<p><strong>Key features of primary response:</strong></p>
+<ul>
+<li>Long lag (5-10 days before significant antibody)</li>
+<li>IgM → later IgG</li>
+<li>Lower antibody concentration</li>
+<li>Shorter duration</li>
+<li>Person usually becomes ill (pathogen has time to cause disease)</li>
+</ul>
+<h3>2.2 The Secondary Response in Detail</h3>
+
+<p>On re-exposure to the same pathogen:</p>
+
+<p><strong>Hours 1-24:</strong> Memory B cells recognize the antigen. Because they already exist in large numbers (no need to find the rare specific B cell) and have high-affinity BCRs (from affinity maturation), activation is rapid.</p>
+
+<p><strong>Days 1-3:</strong> Massive clonal expansion and differentiation into plasma cells. Antibody production begins almost immediately.</p>
+
+<p><strong>Days 3-7:</strong> Antibody levels skyrocket — 10-100 times higher than the primary peak. The antibody is predominantly <strong>IgG</strong> (and IgA/IgE depending on the pathogen). These are high-affinity antibodies (from affinity maturation).</p>
+
+<p><strong>Day 7+:</strong> The pathogen is eliminated before it can cause significant disease. Memory cell populations are replenished and often expanded.</p>
+
+<p><strong>Key features of secondary response:</strong></p>
+<ul>
+<li>Short lag (1-3 days)</li>
+<li>Predominantly IgG (high affinity)</li>
+<li>Much higher antibody concentration (10-100×)</li>
+<li>Longer duration</li>
+<li>Person usually does NOT become ill</li>
+</ul>
+<p><strong>Draw and label:</strong> A graph with two curves:</p>
+
+<p><strong>Curve 1 — Primary Response:</strong></p>
+<ul>
+<li>X-axis: Time (days), Y-axis: Antibody concentration (log scale)</li>
+<li>Day 0: Primary antigen exposure</li>
+<li>Days 0-5: Flat line (lag — no detectable antibody)</li>
+<li>Days 5-14: Gradual rise (IgM dominates early, IgG later)</li>
+<li>~Day 10-14: Peak (moderate height)</li>
+<li>Post-peak: Gradual decline over weeks</li>
+</ul>
+<p><strong>Curve 2 — Secondary Response (same graph, later time):</strong></p>
+<ul>
+<li>Day 30: Secondary antigen exposure</li>
+<li>Days 30-32: Nearly flat (very short lag)</li>
+<li>Days 32-40: Rapid, steep rise (much higher than primary peak, 10-100×)</li>
+<li>Label: "Predominantly IgG — higher affinity"</li>
+<li>Post-peak: Sustained for longer</li>
+</ul>
+<p>Label comparisons: lag time, peak magnitude, antibody class, and presence/absence of illness.</p>
+
+<div class="worked">
+
+<p><strong>Worked Example: Interpreting Antibody Graphs</strong></p>
+
+<p><strong>Scenario:</strong> A patient's blood is tested for anti-pathogen antibodies. Two tests are run: one for total antibody and one specifically for IgM.</p>
+
+<table>
+<tr>
+<td>Days after symptom onset</td>
+<td>Total antibody (units)</td>
+<td>IgM (units)</td>
+<td>IgG (units, calculated)</td>
+</tr>
+<tr>
+<td>0</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>8</td>
+<td>6</td>
+<td>2</td>
+</tr>
+<tr>
+<td>10</td>
+<td>120</td>
+<td>85</td>
+<td>35</td>
+</tr>
+<tr>
+<td>20</td>
+<td>200</td>
+<td>50</td>
+<td>150</td>
+</tr>
+<tr>
+<td>40</td>
+<td>80</td>
+<td>10</td>
+<td>70</td>
+</tr>
+</table>
+
+<p><strong>(a)</strong> Is this a primary or secondary response? Justify your answer. [2 marks]</p>
+<p><strong>(b)</strong> At what point does class switching from IgM to IgG become dominant? [1 mark]</p>
+<p><strong>(c)</strong> If the patient had been previously exposed to this pathogen (secondary response), how would the data at day 5 differ? [2 marks]</p>
+
+<p><strong>Answers:</strong></p>
+
+<p><strong>(a)</strong> This is a <strong>primary response</strong>. Evidence:</p>
+<ul>
+<li>Long lag: Total antibody is low until day 10 (5-10 day lag)</li>
+<li>IgM dominance early: At day 5 and 10, IgM > IgG — indicates initial IgM production followed by class switching</li>
+<li>Moderate peak (200 units) and decline by day 40</li>
+<li>The patient became symptomatic (day 0 = symptom onset), consistent with primary infection causing illness [2 marks]</li>
+</ul>
+<p><strong>(b)</strong> Class switching becomes dominant between <strong>day 10 and day 20</strong>. At day 10, IgM (85) > IgG (35). At day 20, IgG (150) > IgM (50). This reflects the switch from early IgM production to IgG production as T helper cells provide cytokines for class switching. [1 mark]</p>
+
+<p><strong>(c)</strong> In a secondary response at day 5:</p>
+<ul>
+<li>Total antibody would already be <strong>significantly elevated</strong> (perhaps 50-500 units) because memory cells would respond within 1-3 days, not 5-10 days</li>
+<li>Antibody would be predominantly <strong>IgG</strong>, not IgM (memory B cells have already class-switched)</li>
+<li>The patient likely would not be symptomatic (the rapid response would eliminate the pathogen before illness develops) [2 marks]</li>
+</ul>
+</div>
+
+<hr>
+
+<h2>3. Monoclonal Antibodies</h2>
+
+<div class="definition">
+
+<p><strong>Monoclonal antibody (mAb)</strong> — An antibody preparation in which all antibody molecules are <strong>identical</strong> — they come from a single clone of B cells (or hybridoma cells) and recognize the <strong>same single epitope</strong> (specific part of an antigen). This contrasts with <strong>polyclonal antibodies</strong>, which are a mixture of different antibodies recognizing different epitopes on the same antigen.</p>
+
+</div>
+
+<h3>3.1 Production: Hybridoma Technology</h3>
+
+<p>The challenge: B cells producing a desired antibody are short-lived in culture. Cancer cells (myeloma cells) are immortal but don't produce useful antibodies. The solution: <strong>fuse them</strong>.</p>
+
+<p><strong>Step-by-Step:</strong></p>
+
+<ol>
+<li><strong>Immunization:</strong> A mouse (or other animal) is injected with the antigen of interest. The mouse mounts an immune response, producing B cells that make antibodies against the antigen.</li>
+</ol>
+<ol>
+<li><strong>Harvest B cells:</strong> The mouse's spleen (rich in B cells) is removed. The spleen cells include B cells producing the desired antibody.</li>
+</ol>
+<ol>
+<li><strong>Fusion:</strong> The spleen cells are mixed with <strong>myeloma cells</strong> (cancerous B cells that are immortal — they divide indefinitely in culture). <strong>Polyethylene glycol (PEG)</strong> or an electrical pulse is used to fuse the cell membranes → <strong>hybridomas</strong> (hybrid cells).</li>
+</ol>
+<ol>
+<li><strong>Selection in HAT medium:</strong> The cell mixture now contains:</li>
+</ol>
+<ul>
+<li>Unfused spleen cells (die naturally in culture after a few days)</li>
+<li>Unfused myeloma cells (lack the enzyme HGPRT — they die in HAT medium because they cannot use the "salvage pathway" for DNA synthesis when the main pathway is blocked by aminopterin)</li>
+<li><strong>Hybridomas</strong> (survive — they have HGPRT from the spleen cell and immortality from the myeloma cell)</li>
+</ul>
+<ol>
+<li><strong>Screening:</strong> The surviving hybridomas are diluted into multiwell plates (ideally one cell per well). The culture supernatant from each well is tested (by ELISA) for the desired antibody.</li>
+</ol>
+<ol>
+<li><strong>Cloning and expansion:</strong> Positive wells (containing the desired antibody) are expanded. The cells are all clones of a single hybridoma → produce <strong>identical (monoclonal) antibodies</strong>.</li>
+</ol>
+<ol>
+<li><strong>Harvesting:</strong> Monoclonal antibodies are harvested from the culture medium. For large-scale production, hybridomas may be grown in bioreactors.</li>
+</ol>
+<p><strong>Draw and label:</strong> The hybridoma production process:</p>
+<ol>
+<li>Mouse injected with antigen → spleen removed</li>
+<li>Spleen B cells + myeloma cells → PEG fusion</li>
+<li>HAT medium selection → only hybridomas survive</li>
+<li>Individual hybridomas screened for desired antibody</li>
+<li>Selected hybridoma cloned and expanded → monoclonal antibody production</li>
+</ol>
+<h3>3.2 Diagnostic Uses</h3>
+
+<p><strong>Pregnancy Tests:</strong></p>
+
+<p>The home pregnancy test is a beautiful example of monoclonal antibody technology.</p>
+
+<ul>
+<li>The test detects <strong>hCG (human chorionic gonadotropin)</strong> — a hormone produced by the developing placenta, present in urine of pregnant women from ~10 days after conception</li>
+</ul>
+<p><strong>How the test strip works:</strong></p>
+
+<ol>
+<li>Urine is applied to the sample pad and wicks up the strip</li>
+<li>The first zone contains <strong>mobile monoclonal anti-hCG antibodies</strong> linked to colored particles (e.g., gold nanoparticles or blue latex beads). These antibodies bind to hCG if present.</li>
+<li>The hCG-antibody-particle complexes continue moving up the strip</li>
+<li><strong>Test line:</strong> Contains <strong>immobilized monoclonal anti-hCG antibodies</strong> (different epitope). These capture the hCG-antibody-particle complexes → colored line appears = <strong>positive</strong> (hCG present)</li>
+<li><strong>Control line:</strong> Contains <strong>immobilized anti-mouse antibodies</strong> that capture the mobile antibodies regardless of hCG presence → colored line always appears = <strong>valid test</strong></li>
+</ol>
+<p><strong>Interpretation:</strong></p>
+<ul>
+<li>Two lines (test + control) = Pregnant</li>
+<li>One line (control only) = Not pregnant</li>
+<li>No lines = Invalid test</li>
+</ul>
+<p><strong>ELISA (Enzyme-Linked Immunosorbent Assay):</strong></p>
+
+<p>ELISA uses monoclonal antibodies linked to enzymes to detect and quantify specific antigens or antibodies.</p>
+
+<ul>
+<li><strong>Direct ELISA:</strong> Detect antigen. Antigen is immobilized. Primary antibody (linked to enzyme) binds. Substrate added → enzyme converts to colored product → color intensity proportional to antigen amount.</li>
+<li><strong>Indirect ELISA:</strong> Detect antibody (e.g., HIV testing). Antigen is immobilized. Patient serum added → if anti-HIV antibodies present, they bind. Secondary antibody (anti-human IgG, enzyme-linked) binds. Substrate → color.</li>
+<li><strong>Sandwich ELISA:</strong> Capture antibody immobilizes antigen; detection antibody (enzyme-linked) binds to a different epitope → "sandwich." Very specific and sensitive.</li>
+</ul>
+<h3>3.3 Therapeutic Uses</h3>
+
+<p>Monoclonal antibodies have revolutionized medicine. By targeting specific molecules on specific cells, they can treat diseases with unprecedented precision.</p>
+
+<p><strong>Herceptin (Trastuzumab) — Targeted Breast Cancer Therapy:</strong></p>
+
+<ul>
+<li>~20-25% of breast cancers overexpress <strong>HER2</strong> (Human Epidermal Growth Factor Receptor 2), a receptor tyrosine kinase that drives uncontrolled cell division</li>
+<li>Herceptin is a <strong>humanized monoclonal antibody</strong> (mouse variable regions grafted onto human constant regions to reduce immune rejection) that binds to HER2</li>
+<li><strong>Mechanisms:</strong></li>
+</ul>
+<ol>
+<li>Blocks HER2 signaling → inhibits cancer cell proliferation</li>
+<li>Marks HER2+ cells for <strong>antibody-dependent cellular cytotoxicity (ADCC)</strong> — NK cells recognize the antibody's Fc region and kill the cancer cell</li>
+<li>May trigger <strong>complement-dependent cytotoxicity</strong></li>
+</ol>
+<ul>
+<li><strong>Clinical use:</strong> Only effective in <strong>HER2+</strong> breast cancers — patients are tested for HER2 overexpression before treatment (personalized medicine)</li>
+<li>It transformed the prognosis for HER2+ breast cancer from one of the worst to one of the better subtypes</li>
+</ul>
+<p><strong>Anti-PD-1 Immunotherapy (e.g., Pembrolizumab, Nivolumab):</strong></p>
+
+<p>A newer and even more exciting approach — instead of targeting the cancer directly, these antibodies <strong>release the brakes</strong> on the immune system.</p>
+
+<ul>
+<li>Cancer cells often express <strong>PD-L1</strong> (Programmed Death-Ligand 1), which binds to <strong>PD-1</strong> receptors on T cells → sends an inhibitory signal → T cells are "exhausted" and cannot attack the cancer</li>
+<li>Anti-PD-1 antibodies (e.g., pembrolizumab) block this interaction → T cells are unleashed → they recognize and kill cancer cells</li>
+<li>Remarkable results in melanoma, lung cancer, and several other previously untreatable cancers</li>
+<li>Side effects: Autoimmune-like reactions (immune system can attack normal tissues when brakes are released)</li>
+</ul>
+<h3>3.4 Ethical Considerations</h3>
+
+<p>The use of animals (typically mice) in monoclonal antibody production raises ethical issues:</p>
+
+<table>
+<tr>
+<td>Argument For</td>
+<td>Argument Against</td>
+</tr>
+<tr>
+<td>mAbs have saved countless human lives (Herceptin, anti-PD-1, etc.)</td>
+<td>Mice are euthanized for spleen harvesting and may experience discomfort from immunization</td>
+</tr>
+<tr>
+<td>The number of mice used is relatively small per hybridoma line</td>
+<td>Animal suffering for human benefit must be carefully justified</td>
+</tr>
+<tr>
+<td>Alternatives (recombinant antibody libraries using phage display) are increasingly available</td>
+<td>These newer methods are more expensive and not always feasible, especially in lower-resource settings</td>
+</tr>
+<tr>
+<td>Strict animal welfare regulations (the "3Rs" — Replacement, Reduction, Refinement) minimize suffering</td>
+<td></td>
+</tr>
+</table>
+
+<div class="tip">
+
+<p><strong>Paper 2 Tip:</strong> If asked about ethical considerations, present a <strong>balanced</strong> view. Don't just say "using animals is bad." Acknowledge the medical benefits AND the ethical concerns. Mention the 3Rs (Replacement, Reduction, Refinement) as the framework for ethical animal use in research.</p>
+
+</div>
+
+<hr>
+
+<h2>4. MHC Detail (HL Extension)</h2>
+
+<h3>4.1 MHC Class I — Structural and Functional Detail</h3>
+
+<p><strong>Structure:</strong></p>
+<ul>
+<li>A transmembrane <strong>α chain</strong> (heavy chain, ~45 kDa) with three extracellular domains (α₁, α₂, α₃)</li>
+<li>α₁ and α₂ domains form a <strong>peptide-binding groove</strong> — a cleft that holds a peptide 8-10 amino acids long</li>
+<li><strong>β₂-microglobulin</strong> (a small, non-transmembrane protein, ~12 kDa) associates non-covalently with the α₃ domain</li>
+<li>β₂-microglobulin is essential for MHC I stability — without it, MHC I is not expressed on the cell surface</li>
+</ul>
+<p><strong>Peptide loading:</strong></p>
+<ol>
+<li>Cytoplasmic proteins (including viral proteins in infected cells) are degraded by the <strong>proteasome</strong> into peptides</li>
+<li>Peptides are transported into the ER by <strong>TAP</strong> (Transporter associated with Antigen Processing)</li>
+<li>In the ER, peptides are loaded onto newly synthesized MHC I molecules (with help from chaperone proteins — tapasin, calreticulin)</li>
+<li>MHC I-peptide complexes are transported through the Golgi to the cell surface</li>
+</ol>
+<p><strong>Recognition:</strong></p>
+<ul>
+<li>CD8⁺ cytotoxic T cells have T cell receptors (TCRs) that recognize the MHC I-peptide complex</li>
+<li>The <strong>CD8 co-receptor</strong> binds to the α₃ domain of MHC I (ensuring the T cell is the right type for the MHC class)</li>
+<li>If the peptide is foreign (viral, cancer), the CD8⁺ T cell is activated → kills the presenting cell</li>
+</ul>
+<h3>4.2 MHC Class II — Structural and Functional Detail</h3>
+
+<p><strong>Structure:</strong></p>
+<ul>
+<li>Two transmembrane chains: <strong>α chain</strong> (~33 kDa) and <strong>β chain</strong> (~28 kDa)</li>
+<li>α₁ and β₁ domains together form the <strong>peptide-binding groove</strong> — wider and more open than MHC I, accommodating longer peptides (13-25 amino acids)</li>
+<li>Expressed only on <strong>professional APCs:</strong> dendritic cells, macrophages, B cells</li>
+</ul>
+<p><strong>Peptide loading:</strong></p>
+<ol>
+<li>Extracellular pathogens are phagocytosed → degraded in <strong>phagolysosomes</strong> → peptide fragments</li>
+<li>MHC II molecules are synthesized in the ER, where the peptide-binding groove is blocked by the <strong>invariant chain (Ii)</strong> — prevents loading of endogenous peptides</li>
+<li>MHC II-Ii complexes are transported to endosomal compartments</li>
+<li>In the <strong>MIIC compartment</strong> (MHC II compartment), the invariant chain is degraded, leaving only a small fragment (<strong>CLIP</strong>) in the groove</li>
+<li><strong>HLA-DM</strong> (a chaperone) removes CLIP and facilitates loading of exogenous peptides</li>
+<li>MHC II-peptide complexes transported to cell surface</li>
+</ol>
+<p><strong>Recognition:</strong></p>
+<ul>
+<li>CD4⁺ helper T cells recognize the MHC II-peptide complex</li>
+<li>The <strong>CD4 co-receptor</strong> binds to the β₂ domain of MHC II</li>
+<li>Activation of CD4⁺ T cell → provides "help" to B cells, CD8⁺ T cells, and macrophages</li>
+</ul>
+<h3>4.3 MHC Polymorphism and Transplant Rejection</h3>
+
+<p><strong>Polymorphism</strong> — the existence of multiple different alleles of a gene in the population. MHC genes (called <strong>HLA</strong> — Human Leukocyte Antigen — in humans) are the <strong>most polymorphic genes in the human genome</strong>.</p>
+
+<ul>
+<li>Hundreds of different HLA alleles exist for each MHC gene</li>
+<li>Each person inherits one set of HLA genes from each parent → expresses 6 different MHC I molecules (3 genes × 2 alleles) and 6-8 different MHC II molecules</li>
+<li>The chance of two unrelated individuals having identical MHC is extremely low</li>
+</ul>
+<p><strong>Why so much polymorphism?</strong></p>
+<ul>
+<li>Population-level diversity ensures that at least some individuals in a population can present antigens from any new pathogen</li>
+<li>If a pathogen evolves to evade presentation by one MHC allele, others in the population with different alleles can still respond</li>
+<li>This is an evolutionary advantage at the <strong>population</strong> level</li>
+</ul>
+<p><strong>Transplant Rejection:</strong></p>
+<ul>
+<li>The immune system recognizes <strong>non-self MHC</strong> as foreign</li>
+<li>In an organ transplant, the donor's cells express different MHC molecules than the recipient's</li>
+<li>The recipient's T cells recognize the donor MHC as foreign → attack the transplanted organ → <strong>rejection</strong></li>
+<li><strong>Minimizing rejection:</strong></li>
+<li><strong>Tissue typing:</strong> Match donor and recipient MHC as closely as possible (siblings have a 25% chance of identical MHC)</li>
+<li><strong>Immunosuppressive drugs:</strong> Cyclosporine, tacrolimus — inhibit T cell activation. Must be taken for life</li>
+<li>These drugs increase risk of infections and certain cancers (the immune system is suppressed)</li>
+<li><strong>Bone marrow transplants</strong> are especially challenging — the graft contains immune cells that can attack the recipient (<strong>graft-versus-host disease</strong>)</li>
+</ul>
+<hr>
+
+<h2>5. HIV/AIDS</h2>
+
+<p>HIV (Human Immunodeficiency Virus) is one of the most intensively studied pathogens in history — and one of the most challenging.</p>
+
+<h3>5.1 The Virus</h3>
+
+<p>HIV is a <strong>retrovirus</strong> — its genome is RNA, not DNA.</p>
+
+<p><strong>Structure:</strong></p>
+<ul>
+<li><strong>Envelope:</strong> Lipid bilayer derived from host cell membrane, studded with viral glycoproteins:</li>
+<li><strong>gp120</strong> (surface glycoprotein) — binds to CD4 receptor on T cells</li>
+<li><strong>gp41</strong> (transmembrane glycoprotein) — mediates fusion of viral and host membranes</li>
+<li><strong>Capsid:</strong> Cone-shaped protein shell containing the viral genome</li>
+<li><strong>Genome:</strong> Two copies of single-stranded <strong>RNA</strong> (~9.7 kb) + enzymes:</li>
+<li><strong>Reverse transcriptase:</strong> Converts viral RNA → DNA (the defining enzyme of retroviruses)</li>
+<li><strong>Integrase:</strong> Inserts viral DNA into host genome</li>
+<li><strong>Protease:</strong> Cleaves viral polyproteins into functional proteins during assembly</li>
+</ul>
+<h3>5.2 The HIV Replication Cycle</h3>
+
+<p><strong>Step 1 — Attachment and Entry:</strong></p>
+<ul>
+<li>gp120 binds to <strong>CD4</strong> on the surface of helper T cells (also macrophages, dendritic cells)</li>
+<li>This binding causes a conformational change in gp120, exposing a binding site for a <strong>co-receptor</strong> (usually <strong>CCR5</strong> or <strong>CXCR4</strong>)</li>
+<li>Co-receptor binding triggers gp41 to insert into the host membrane → fusion → viral capsid enters cytoplasm</li>
+</ul>
+<p><strong>Step 2 — Reverse Transcription:</strong></p>
+<ul>
+<li><strong>Reverse transcriptase</strong> converts the viral single-stranded RNA into <strong>double-stranded DNA</strong></li>
+<li>This is error-prone — reverse transcriptase has no proofreading ability → <strong>high mutation rate</strong> (~1 mutation per replication cycle)</li>
+<li>The resulting viral DNA is called the <strong>provirus</strong></li>
+</ul>
+<p><strong>Step 3 — Integration:</strong></p>
+<ul>
+<li>The viral DNA (provirus) is transported into the nucleus</li>
+<li><strong>Integrase</strong> inserts the provirus into the host cell's chromosomal DNA</li>
+<li>The provirus is now a permanent part of the host genome — it will be replicated every time the cell divides</li>
+</ul>
+<p><strong>Step 4 — Transcription and Translation:</strong></p>
+<ul>
+<li>The integrated provirus can remain <strong>latent</strong> (dormant) for years — no viral proteins produced, invisible to the immune system</li>
+<li>When activated, host RNA polymerase II transcribes the provirus → viral mRNA</li>
+<li>Host ribosomes translate viral mRNA → viral proteins</li>
+</ul>
+<p><strong>Step 5 — Assembly and Budding:</strong></p>
+<ul>
+<li>Viral proteins and RNA assemble at the plasma membrane</li>
+<li>New virions bud from the cell, acquiring their envelope</li>
+<li><strong>Protease</strong> cleaves viral polyproteins → mature, infectious virions</li>
+<li>The host cell may survive (budding doesn't necessarily kill it immediately)</li>
+</ul>
+<h3>5.3 Why HIV Destroys the Immune System</h3>
+
+<p>HIV primarily infects and destroys <strong>CD4⁺ helper T cells</strong> — the central coordinators of adaptive immunity.</p>
+
+<ul>
+<li>Direct killing: Viral replication and budding damages the cell; infected cells are killed by cytotoxic T cells</li>
+<li>Chronic immune activation: The persistent immune response to HIV exhausts the immune system</li>
+<li>As CD4⁺ T cell counts decline (normal: 500-1,500 cells/μL):</li>
+<li><strong>>500:</strong> Usually asymptomatic</li>
+<li><strong>200-500:</strong> Increased susceptibility to infections</li>
+<li><strong><200:</strong> <strong>AIDS</strong> — Acquired Immunodeficiency Syndrome</li>
+</ul>
+<p><strong>AIDS</strong> is defined by a CD4⁺ count <200 or the presence of <strong>opportunistic infections</strong> — infections that rarely cause disease in people with intact immune systems:</p>
+<ul>
+<li><em>Pneumocystis jirovecii</em> pneumonia</li>
+<li>Kaposi's sarcoma (caused by human herpesvirus 8)</li>
+<li>Tuberculosis</li>
+<li>Cytomegalovirus retinitis</li>
+<li>Candidiasis (thrush) of the esophagus</li>
+<li>Toxoplasmosis of the brain</li>
+</ul>
+<h3>5.4 Transmission</h3>
+
+<p>HIV is transmitted through <strong>direct contact with infected body fluids:</strong></p>
+<ul>
+<li><strong>Blood:</strong> Sharing needles, contaminated blood transfusions (rare now with screening), needlestick injuries</li>
+<li><strong>Sexual contact:</strong> Vaginal, anal, oral — mucosal exposure to semen, vaginal fluid, or blood</li>
+<li><strong>Mother-to-child (vertical transmission):</strong> During pregnancy, childbirth, or breastfeeding</li>
+</ul>
+<p>HIV is <strong>NOT</strong> transmitted by: casual contact, hugging, sharing utensils, toilet seats, mosquito bites, saliva (unless blood is present), tears, or sweat.</p>
+
+<h3>5.5 Treatment: Antiretroviral Therapy (ART)</h3>
+
+<p>There is <strong>no cure</strong> for HIV — the integrated provirus persists in the host genome. However, <strong>combination antiretroviral therapy (cART)</strong> can suppress viral replication to undetectable levels, restoring immune function and near-normal life expectancy.</p>
+
+<p><strong>Drug Classes:</strong></p>
+
+<table>
+<tr>
+<td>Drug Class</td>
+<td>Target</td>
+<td>Mechanism</td>
+<td>Example</td>
+</tr>
+<tr>
+<td>Nucleoside Reverse Transcriptase Inhibitors (NRTIs)</td>
+<td>Reverse transcriptase</td>
+<td>Nucleoside analogs that terminate DNA chain elongation</td>
+<td>Zidovudine (AZT), Tenofovir</td>
+</tr>
+<tr>
+<td>Non-Nucleoside Reverse Transcriptase Inhibitors (NNRTIs)</td>
+<td>Reverse transcriptase</td>
+<td>Bind directly to RT, altering its active site</td>
+<td>Efavirenz, Nevirapine</td>
+</tr>
+<tr>
+<td>Protease Inhibitors (PIs)</td>
+<td>HIV protease</td>
+<td>Block cleavage of viral polyproteins → non-infectious virions</td>
+<td>Ritonavir, Lopinavir</td>
+</tr>
+<tr>
+<td>Integrase Inhibitors (INSTIs)</td>
+<td>Integrase</td>
+<td>Block integration of viral DNA into host genome</td>
+<td>Raltegravir, Dolutegravir</td>
+</tr>
+<tr>
+<td>Entry/Fusion Inhibitors</td>
+<td>gp41 or CCR5</td>
+<td>Block viral entry into host cells</td>
+<td>Maraviroc (CCR5 antagonist), Enfuvirtide</td>
+</tr>
+</table>
+
+<p><strong>Why combination therapy?</strong></p>
+<ul>
+<li>HIV's high mutation rate means resistance to a single drug develops rapidly</li>
+<li>Using 3+ drugs from different classes makes it statistically unlikely that a single virion will have mutations conferring resistance to all drugs simultaneously</li>
+<li><strong>Highly Active Antiretroviral Therapy (HAART)</strong> typically combines 2 NRTIs + 1 NNRTI or protease inhibitor or integrase inhibitor</li>
+<li>Adherence (taking drugs consistently) is critical — missed doses create windows for resistance to develop</li>
+</ul>
+<h3>5.6 Why No Vaccine and No Cure?</h3>
+
+<table>
+<tr>
+<td>Challenge</td>
+<td>Explanation</td>
+</tr>
+<tr>
+<td>Extremely high mutation rate</td>
+<td>Reverse transcriptase has no proofreading → 1 mutation per replication cycle → virus constantly changes. A vaccine targeting one strain may be useless against the next. Compare to stable viruses like smallpox.</td>
+</tr>
+<tr>
+<td>gp120 is highly variable</td>
+<td>The envelope glycoprotein that a vaccine would target is one of the most variable parts of the virus. Hypervariable loops in gp120 change rapidly. The host makes antibodies, but the virus has already changed.</td>
+</tr>
+<tr>
+<td>Latent reservoir</td>
+<td>Integrated provirus in resting memory CD4⁺ T cells can remain dormant for decades, invisible to the immune system and antiretroviral drugs. If treatment stops, the latent virus reactivates. This is the major barrier to a cure.</td>
+</tr>
+<tr>
+<td>Glycan shield</td>
+<td>gp120 is heavily glycosylated (covered in sugar molecules) → the "glycan shield" hides vulnerable protein epitopes from antibodies</td>
+</tr>
+<tr>
+<td>Infection of immune cells</td>
+<td>HIV infects the very cells meant to fight it — it disables the immune response as it spreads</td>
+</tr>
+<tr>
+<td>Lack of good animal model</td>
+<td>HIV only infects humans and chimpanzees. SIV (simian immunodeficiency virus) in macaques is the best model but imperfect.</td>
+</tr>
+</table>
+
+<p>"Shock and kill" and "block and lock" strategies for a cure are being researched, but none have succeeded yet.</p>
+
+<hr>
+
+<h2>6. Antibiotics</h2>
+
+<div class="definition">
+
+<p><strong>Antibiotic</strong> — A substance produced by microorganisms (or synthetically derived) that kills or inhibits the growth of bacteria. Antibiotics target features of bacterial cells that are absent or different in human cells, allowing <strong>selective toxicity</strong>.</p>
+
+</div>
+
+<h3>6.1 How Antibiotics Work</h3>
+
+<table>
+<tr>
+<td>Antibiotic Class</td>
+<td>Target</td>
+<td>Mechanism</td>
+<td>Effect</td>
+<td>Example</td>
+</tr>
+<tr>
+<td>β-Lactams</td>
+<td>Cell wall synthesis</td>
+<td>Inhibit transpeptidase enzymes that cross-link peptidoglycan → weak cell wall → osmotic lysis</td>
+<td>Bactericidal** (kills)</td>
+<td>Penicillin, Amoxicillin, Cephalosporins</td>
+</tr>
+<tr>
+<td>Glycopeptides</td>
+<td>Cell wall synthesis</td>
+<td>Bind to D-Ala-D-Ala terminus of peptidoglycan precursors → block cross-linking</td>
+<td>Bactericidal</td>
+<td>Vancomycin</td>
+</tr>
+<tr>
+<td>Tetracyclines</td>
+<td>Protein synthesis</td>
+<td>Bind to 30S ribosomal subunit → block tRNA binding → inhibit translation</td>
+<td>Bacteriostatic** (stops growth)</td>
+<td>Tetracycline, Doxycycline</td>
+</tr>
+<tr>
+<td>Macrolides</td>
+<td>Protein synthesis</td>
+<td>Bind to 50S ribosomal subunit → block peptide elongation</td>
+<td>Bacteriostatic</td>
+<td>Erythromycin, Azithromycin</td>
+</tr>
+<tr>
+<td>Fluoroquinolones</td>
+<td>Nucleic acid synthesis</td>
+<td>Inhibit DNA gyrase (topoisomerase II) → block DNA replication</td>
+<td>Bactericidal</td>
+<td>Ciprofloxacin</td>
+</tr>
+<tr>
+<td>Sulfonamides</td>
+<td>Metabolic pathway</td>
+<td>Structural analog of PABA → inhibit folic acid synthesis (humans get folate from diet)</td>
+<td>Bacteriostatic</td>
+<td>Sulfamethoxazole</td>
+</tr>
+</table>
+
+<p><strong>Why antibiotics don't work on viruses:</strong></p>
+<ul>
+<li>Viruses have <strong>no cell wall</strong> (the target of penicillin and vancomycin)</li>
+<li>Viruses have <strong>no ribosomes</strong> (the target of tetracyclines and macrolides) — they use host ribosomes</li>
+<li>Viruses have <strong>no metabolic pathways</strong> of their own (the target of sulfonamides)</li>
+<li>In short: viruses lack the bacterial-specific features that antibiotics target</li>
+</ul>
+<h3>6.2 Antibiotic Resistance</h3>
+
+<p>Antibiotic resistance is one of the greatest public health threats of the 21st century.</p>
+
+<p><strong>How resistance evolves:</strong></p>
+
+<ol>
+<li><strong>Mutation:</strong> Spontaneous mutations in bacterial genes can confer resistance. For example:</li>
+</ol>
+<ul>
+<li>Mutation in penicillin-binding protein → penicillin no longer binds → resistance</li>
+<li>Mutation in DNA gyrase → ciprofloxacin no longer binds → resistance</li>
+<li>Mutation upregulating efflux pumps → drug is pumped out before it can act</li>
+</ul>
+<ol>
+<li><strong>Horizontal gene transfer:</strong> Bacteria can acquire resistance genes from other bacteria, even different species, via:</li>
+</ol>
+<ul>
+<li><strong>Conjugation:</strong> Transfer of plasmids (small circular DNA) through a pilus (bacterial "mating")</li>
+<li><strong>Transformation:</strong> Uptake of free DNA from the environment (from dead bacteria)</li>
+<li><strong>Transduction:</strong> Transfer by bacteriophages (viruses that infect bacteria)</li>
+</ul>
+<ol>
+<li><strong>Selection pressure:</strong> In the presence of antibiotics:</li>
+</ol>
+<ul>
+<li>Sensitive bacteria die</li>
+<li>Resistant bacteria survive and reproduce</li>
+<li>The resistant population expands → infection becomes untreatable</li>
+</ul>
+<p><strong>Mechanisms of resistance:</strong></p>
+
+<table>
+<tr>
+<td>Mechanism</td>
+<td>Example</td>
+</tr>
+<tr>
+<td>Enzymatic degradation</td>
+<td>β-lactamases (penicillinases) break the β-lactam ring of penicillin → drug inactivated</td>
+</tr>
+<tr>
+<td>Target modification</td>
+<td>MRSA (Methicillin-Resistant <em>Staphylococcus aureus</em>) expresses altered penicillin-binding protein (PBP2a) that β-lactams cannot bind</td>
+</tr>
+<tr>
+<td>Efflux pumps</td>
+<td>Some bacteria overexpress membrane pumps that actively expel antibiotics (tetracycline, fluoroquinolones)</td>
+</tr>
+<tr>
+<td>Reduced permeability</td>
+<td>Mutations in porins (outer membrane channels in Gram-negative bacteria) reduce drug entry</td>
+</tr>
+<tr>
+<td>Bypass pathways</td>
+<td>Vancomycin-resistant enterococci (VRE) alter their peptidoglycan terminus from D-Ala-D-Ala to D-Ala-D-Lac → vancomycin can't bind</td>
+</tr>
+</table>
+
+<h3>6.3 Strategies to Combat Antibiotic Resistance</h3>
+
+<p><strong>1. Finish the full course of antibiotics:</strong></p>
+<ul>
+<li>Stopping early leaves the most resistant bacteria alive → they proliferate</li>
+<li>However, this is being debated — unnecessarily long courses also select for resistance</li>
+</ul>
+<p><strong>2. Reduce unnecessary antibiotic prescriptions:</strong></p>
+<ul>
+<li>Antibiotics are useless for viral infections (common cold, influenza, most sore throats)</li>
+<li>Yet they are frequently prescribed "just in case" → drives resistance in commensal bacteria</li>
+</ul>
+<p><strong>3. Reduce agricultural antibiotic use:</strong></p>
+<ul>
+<li>~70-80% of antibiotics in some countries are used in livestock (growth promotion, disease prevention in crowded conditions)</li>
+<li>This creates a massive reservoir for resistance genes that can transfer to human pathogens</li>
+</ul>
+<p><strong>4. Develop new antibiotics:</strong></p>
+<ul>
+<li>Very few new antibiotic classes have been discovered since the 1980s</li>
+<li>Pharmaceutical companies have limited financial incentive (antibiotics are taken for short courses, unlike chronic disease drugs)</li>
+<li>Government incentives and non-profit initiatives (e.g., CARB-X) aim to stimulate antibiotic development</li>
+</ul>
+<p><strong>5. Phage therapy:</strong></p>
+<ul>
+<li>Using <strong>bacteriophages</strong> (viruses that specifically infect and kill bacteria) as an alternative to antibiotics</li>
+<li>Advantages: highly specific (kill only target bacteria, sparing normal flora), self-replicating at infection site, effective against antibiotic-resistant strains</li>
+<li>Challenges: narrow host range requires identifying the specific pathogen; regulatory approval is complex; phages are biological entities that evolve; human immune system may neutralize phages</li>
+<li>Used historically in Eastern Europe (especially Georgia and Russia); gaining renewed interest globally</li>
+</ul>
+<p><strong>6. Infection prevention:</strong> Handwashing, sanitation, vaccination (preventing infections reduces antibiotic need), hospital infection control</p>
+
+<div class="tip">
+
+<p><strong>Paper 2 Tip:</strong> A common question: "Explain how antibiotic resistance evolves in a bacterial population." Use the sequence: <strong>mutation → variation → antibiotic as selection pressure → resistant bacteria survive and reproduce → pass on resistance genes → over time, population becomes resistant.</strong> Mention horizontal gene transfer via plasmids for extra marks. This is natural selection in real-time.</p>
+
+</div>
+
+<hr>
+
+<h2>7. Common Misconceptions</h2>
+
+<table>
+<tr>
+<td>Misconception</td>
+<td>Reality</td>
+</tr>
+<tr>
+<td>"Clonal selection means cloning animals."</td>
+<td>Clonal selection refers to the <strong>selection and expansion of a single B cell</strong> that recognizes the antigen. It has nothing to do with animal cloning.</td>
+</tr>
+<tr>
+<td>"Monoclonal antibodies are naturally produced in the body."</td>
+<td>Monoclonal antibodies are produced <strong>artificially</strong> by hybridoma technology. Natural immune responses produce polyclonal antibodies (many different B cell clones).</td>
+</tr>
+<tr>
+<td>"The primary response produces mainly IgG."</td>
+<td>The <strong>primary</strong> response initially produces <strong>IgM</strong>; IgG dominates later after class switching. The <strong>secondary</strong> response is predominantly IgG from the start.</td>
+</tr>
+<tr>
+<td>"MHC polymorphism means one person has many different MHC types."</td>
+<td>Each person has a unique MHC combination (6+ different MHC molecules), but "polymorphism" refers to the <strong>population-level diversity</strong> of MHC alleles — hundreds of different alleles exist across the human population.</td>
+</tr>
+<tr>
+<td>"HIV directly kills people."</td>
+<td>HIV destroys the immune system; people die from <strong>opportunistic infections</strong> (AIDS-defining illnesses) that a healthy immune system would control.</td>
+</tr>
+<tr>
+<td>"Antibiotics weaken your immune system."</td>
+<td>Antibiotics target bacteria, not immune cells. However, they can disrupt the gut microbiome, which secondarily affects immunity.</td>
+</tr>
+<tr>
+<td>"If you feel better, you can stop taking antibiotics."</td>
+<td>No.** Stopping early leaves the most resistant bacteria alive to proliferate, potentially causing a relapse with a resistant strain. Always complete the course as prescribed.</td>
+</tr>
+<tr>
+<td>"Antibiotic resistance means the person becomes resistant to the antibiotic."</td>
+<td>No.<strong> The </strong>bacteria** become resistant, not the person. A resistant bacterial strain can infect anyone, regardless of their previous antibiotic use.</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>8. Practice Problems</h2>
+
+<h3>Problem 1 (Paper 1 Style — Multiple Choice)</h3>
+
+<p>In clonal selection, what happens after a B cell's receptor binds to its specific antigen?</p>
+
+<p>A. The B cell immediately produces IgG antibodies.</p>
+<p>B. The B cell undergoes apoptosis.</p>
+<p>C. The B cell is selected for clonal expansion and differentiation into plasma cells and memory cells.</p>
+<p>D. The B cell presents the antigen on MHC I to activate cytotoxic T cells.</p>
+
+<p><strong>Answer:</strong> <strong>C</strong>. Antigen binding selects that specific B cell for activation → clonal expansion → differentiation into plasma cells (secrete antibodies) and memory cells. IgG production occurs after class switching, not immediately (A). The B cell is activated, not killed (B). B cells present on MHC II, not MHC I (D).</p>
+
+<hr>
+
+<h3>Problem 2 (Paper 1 Style — Multiple Choice)</h3>
+
+<p>Why are antibiotics ineffective against viruses?</p>
+
+<p>A. Viruses have a protein capsid that prevents antibiotic entry.</p>
+<p>B. Antibiotics are broken down by viral enzymes.</p>
+<p>C. Viruses lack the bacterial structures that antibiotics target, such as cell walls and 70S ribosomes.</p>
+<p>D. Viruses reproduce too quickly for antibiotics to work.</p>
+
+<p><strong>Answer:</strong> <strong>C</strong>. Antibiotics target bacterial-specific features: peptidoglycan cell walls (penicillin), 70S ribosomes (tetracyclines), metabolic pathways (sulfonamides). Viruses have none of these — they lack cell walls, use host ribosomes, and have no independent metabolism.</p>
+
+<hr>
+
+<h3>Problem 3 (Paper 2 Style — Data Analysis)</h3>
+
+<p>Researchers test the effectiveness of three antibiotics (A, B, C) against <em>Staphylococcus aureus</em> isolated from a patient. They measure the zone of inhibition (diameter of clear area around antibiotic disc) on agar plates.</p>
+
+<table>
+<tr>
+<td>Antibiotic</td>
+<td>Zone of inhibition (mm)</td>
+<td>Interpretation</td>
+</tr>
+<tr>
+<td>A</td>
+<td>28</td>
+<td>Sensitive</td>
+</tr>
+<tr>
+<td>B</td>
+<td>8</td>
+<td>Resistant</td>
+</tr>
+<tr>
+<td>C</td>
+<td>22</td>
+<td>Sensitive</td>
+</tr>
+</table>
+
+<p>The same strain is tested 6 months later after the patient received several courses of antibiotic B for recurrent infections.</p>
+
+<table>
+<tr>
+<td>Antibiotic</td>
+<td>Zone of inhibition (mm)</td>
+<td>Interpretation</td>
+</tr>
+<tr>
+<td>A</td>
+<td>26</td>
+<td>Sensitive</td>
+</tr>
+<tr>
+<td>B</td>
+<td>7</td>
+<td>Resistant</td>
+</tr>
+<tr>
+<td>C</td>
+<td>10</td>
+<td>Resistant</td>
+</tr>
+</table>
+
+<p><strong>(a)</strong> Calculate the percentage change in the zone of inhibition for antibiotic C. [1 mark]</p>
+<p><strong>(b)</strong> Explain why the strain has become resistant to antibiotic C even though the patient never received antibiotic C. [3 marks]</p>
+<p><strong>(c)</strong> Outline how the resistant strain likely emerged and proliferated. [3 marks]</p>
+
+<p><strong>Answers:</strong></p>
+
+<p><strong>(a)</strong> Percentage change = (22 − 10) / 22 × 100 = <strong>54.5% decrease</strong> in zone of inhibition. [1 mark]</p>
+
+<p><strong>(b)</strong> The strain acquired resistance to antibiotic C through <strong>cross-resistance</strong> or <strong>co-selection</strong>:</p>
+<ul>
+<li>The resistance mechanism against B (e.g., an <strong>efflux pump</strong> that expels antibiotic B from the cell) may also expel antibiotic C — this is cross-resistance (one mechanism confers resistance to multiple drugs) [1 mark]</li>
+<li>Alternatively, the resistance genes for B and C may be located on the <strong>same plasmid</strong>. Selecting for B resistance (by using antibiotic B) simultaneously selects for C resistance, even without C exposure [1 mark]</li>
+<li>This demonstrates a major clinical problem: using one antibiotic can select for resistance to multiple antibiotics simultaneously [1 mark]</li>
+</ul>
+<p>[3 marks]</p>
+
+<p><strong>(c)</strong> Within the original bacterial population, a rare mutant bacterium possessed (or acquired via horizontal gene transfer) a <strong>plasmid</strong> carrying resistance genes against antibiotic B. When the patient received antibiotic B, sensitive bacteria were killed, but the resistant mutant <strong>survived and reproduced</strong>. The resistant population expanded (natural selection). If the resistance plasmid also carried a resistance gene for antibiotic C, the entire resistant population was simultaneously resistant to C — even though C was never used as a selection pressure. The resistant strain became dominant through <strong>selective pressure</strong> from antibiotic B alone. [3 marks]</p>
+
+<hr>
+
+<h3>Problem 4 (Paper 2 Style — Long Answer)</h3>
+
+<p>Explain the production and use of monoclonal antibodies in medical diagnosis. [6 marks]</p>
+
+<p><strong>Model Answer:</strong></p>
+
+<p><strong>Production (Hybridoma Technology):</strong></p>
+<ol>
+<li>A mouse is <strong>immunized</strong> with the antigen of interest → mounts an immune response producing B cells that make antibodies against the antigen [1 mark]</li>
+<li>The mouse's <strong>spleen cells</strong> (containing B cells) are harvested and fused with <strong>myeloma cells</strong> (immortal cancerous B cells) using polyethylene glycol → <strong>hybridoma cells</strong> [1 mark]</li>
+<li>The cells are grown in <strong>HAT medium</strong> — unfused myeloma cells die (lack HGPRT enzyme), unfused spleen cells die naturally → only hybridomas survive [1 mark]</li>
+<li>Individual hybridomas are screened (by ELISA) to identify those producing the desired antibody. Selected hybridomas are <strong>cloned</strong> → all cells produce <strong>identical (monoclonal) antibodies</strong> recognizing a single epitope [1 mark]</li>
+</ol>
+<p><strong>Diagnostic Use — Pregnancy Test:</strong></p>
+<ol>
+<li>The test detects <strong>hCG</strong> in urine. The test strip contains mobile monoclonal anti-hCG antibodies linked to colored particles. If hCG is present, these antibodies bind to it. [1 mark]</li>
+<li>The hCG-antibody-particle complexes move up the strip. At the <strong>test line</strong>, immobilized anti-hCG antibodies (different epitope) capture the complexes → colored line. A <strong>control line</strong> captures excess mobile antibodies → always appears. Two lines = positive. [1 mark]</li>
+</ol>
+<p>[6 marks]</p>
+
+<hr>
+
+<h3>Problem 5 (Paper 2 Style — Application)</h3>
+
+<p>Explain why developing an effective vaccine against HIV has been so challenging, whereas smallpox was successfully eradicated through vaccination. [6 marks]</p>
+
+<p><strong>Model Answer:</strong></p>
+
+<table>
+<tr>
+<td>Challenge</td>
+<td>HIV</td>
+<td>Smallpox</td>
+</tr>
+<tr>
+<td>Genetic stability</td>
+<td>HIV has a <strong>very high mutation rate</strong> — reverse transcriptase has no proofreading. Envelope protein gp120 is highly variable, constantly changing the epitopes a vaccine would target</td>
+<td>Smallpox virus is genetically <strong>stable</strong> — the same vaccine (vaccinia) worked globally for decades [2 marks]</td>
+</tr>
+<tr>
+<td>Immune evasion</td>
+<td>HIV has a <strong>glycan shield</strong> (gp120 heavily glycosylated) hiding vulnerable epitopes. It also directly infects and destroys <strong>CD4⁺ helper T cells</strong>, crippling the very immune response a vaccine aims to generate. HIV establishes a <strong>latent reservoir</strong> in resting memory T cells, invisible to the immune system</td>
+<td>Smallpox does not specifically attack the immune system and has no latent reservoir. The immune response can clear the infection completely [2 marks]</td>
+</tr>
+<tr>
+<td>Animal reservoirs and natural immunity</td>
+<td>HIV has no good animal model (only chimpanzees, which are protected). No one naturally clears HIV infection, so we don't have a template for what a protective immune response looks like</td>
+<td>Smallpox only infects humans (no animal reservoir). Survivors have lifelong immunity — we knew what a protective response looked like [1 mark]</td>
+</tr>
+<tr>
+<td>Vaccine type</td>
+<td>Live attenuated HIV vaccines are too dangerous (risk of reversion to virulence and integration into host genome). Killed/subunit vaccines have shown limited efficacy</td>
+<td>A live attenuated vaccine (vaccinia — related poxvirus) was safe and highly effective [1 mark]</td>
+</tr>
+</table>
+
+<p>[6 marks — any 6 well-explained points from the above]</p>
+
+<hr>
+
+<h2>9. Key Terms Quick Reference</h2>
+
+<table>
+<tr>
+<td>Term</td>
+<td>Definition</td>
+</tr>
+<tr>
+<td>Clonal selection</td>
+<td>Antigen selects the specific B cell with matching BCR → clonal expansion</td>
+</tr>
+<tr>
+<td>Clonal expansion</td>
+<td>Selected B cell divides → large clone of identical cells</td>
+</tr>
+<tr>
+<td>VDJ recombination</td>
+<td>Random DNA rearrangement creating unique antibody genes in each B cell</td>
+</tr>
+<tr>
+<td>Primary response</td>
+<td>First exposure: long lag, IgM → IgG, moderate magnitude</td>
+</tr>
+<tr>
+<td>Secondary response</td>
+<td>Re-exposure: short lag, predominantly IgG, high magnitude (memory)</td>
+</tr>
+<tr>
+<td>Class switching</td>
+<td>B cell changes antibody class (IgM → IgG, IgA, IgE) while retaining same antigen specificity</td>
+</tr>
+<tr>
+<td>Monoclonal antibody</td>
+<td>Identical antibodies from a single hybridoma clone; one epitope specificity</td>
+</tr>
+<tr>
+<td>Hybridoma</td>
+<td>Fusion of B cell + myeloma cell → immortal antibody-producing cell</td>
+</tr>
+<tr>
+<td>HAT medium</td>
+<td>Selective medium; only hybridomas survive (HGPRT+ and immortal)</td>
+</tr>
+<tr>
+<td>ELISA</td>
+<td>Enzyme-linked immunosorbent assay; antibody/antigen detection</td>
+</tr>
+<tr>
+<td>hCG</td>
+<td>Human chorionic gonadotropin; detected in pregnancy tests</td>
+</tr>
+<tr>
+<td>Herceptin</td>
+<td>Anti-HER2 monoclonal antibody for HER2+ breast cancer</td>
+</tr>
+<tr>
+<td>MHC polymorphism</td>
+<td>Many different MHC alleles in population → transplant rejection risk</td>
+</tr>
+<tr>
+<td>gp120</td>
+<td>HIV envelope glycoprotein; binds CD4; highly variable</td>
+</tr>
+<tr>
+<td>Reverse transcriptase</td>
+<td>Retroviral enzyme; RNA → DNA; error-prone → high mutation rate</td>
+</tr>
+<tr>
+<td>Integrase</td>
+<td>HIV enzyme; inserts viral DNA into host genome</td>
+</tr>
+<tr>
+<td>Protease</td>
+<td>HIV enzyme; cleaves viral polyproteins during maturation</td>
+</tr>
+<tr>
+<td>Provirus</td>
+<td>Integrated viral DNA in host genome; can be latent</td>
+</tr>
+<tr>
+<td>AIDS</td>
+<td>CD4⁺ <200 or opportunistic infections; end stage of HIV</td>
+</tr>
+<tr>
+<td>HAART</td>
+<td>Highly Active Antiretroviral Therapy; 3+ drugs from different classes</td>
+</tr>
+<tr>
+<td>Antibiotic</td>
+<td>Substance killing/inhibiting bacteria by targeting bacterial-specific features</td>
+</tr>
+<tr>
+<td>Selective toxicity</td>
+<td>Antibiotic harms bacteria without harming human cells</td>
+</tr>
+<tr>
+<td>β-lactamase</td>
+<td>Bacterial enzyme that breaks penicillin's β-lactam ring → resistance</td>
+</tr>
+<tr>
+<td>Horizontal gene transfer</td>
+<td>Conjugation, transformation, transduction — spreading resistance genes</td>
+</tr>
+<tr>
+<td>MRSA</td>
+<td>Methicillin-Resistant *Staphylococcus aureus</td>
+</tr>
+<tr>
+<td>Phage therapy</td>
+<td>Using bacteriophages to treat bacterial infections</td>
+</tr>
+</table>
+
+<hr>
+
+<p>This completes the Defence Against Disease unit. You now understand how the immune system generates billions of specific antibodies through clonal selection, how scientists have exploited this specificity for diagnostics and cancer therapy, how HIV's extraordinary mutability has frustrated vaccine efforts for decades, and how our misuse of antibiotics threatens to return us to a pre-antibiotic era. The interplay between pathogen evolution and immune defence is one of the most dynamic and clinically relevant fields in biology — and it's rich material for IB exam questions that connect molecular mechanisms to global health challenges.</p>
+
+<div class="nav"><a href="lesson_35.html">&#8592; Lesson 35</a><a href="index.html">&#8962; Index</a><a href="lesson_37.html">Lesson 37 &#8594;</a></div>
+
+</body>
+</html>

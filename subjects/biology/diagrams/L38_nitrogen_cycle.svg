@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 540" width="600" height="540">
+  <rect width="600" height="540" fill="white"/>
+  <text x="300" y="28" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#333">L38d — The Nitrogen Cycle</text>
+
+  <!-- N2 Atmosphere -->
+  <rect x="190" y="50" width="220" height="45" rx="8" fill="#e8f0fe" stroke="#1565c0" stroke-width="2"/>
+  <text x="300" y="72" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#1565c0">Atmospheric N₂ (N≡N inert)</text>
+  <text x="300" y="88" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">Cannot be used directly by most organisms</text>
+
+  <!-- Arrows as labels - using text and paths -->
+  <defs><marker id="na" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0,0 8,3 0,6" fill="#333"/></marker></defs>
+
+  <!-- 1. Fixation -->
+  <path d="M300,95 L300,135" fill="none" stroke="#1a6b3c" stroke-width="2.5" marker-end="url(#na)"/>
+  <rect x="110" y="115" width="170" height="38" rx="4" fill="#e8f5e9" stroke="#1a6b3c" stroke-width="1.5"/>
+  <text x="195" y="130" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#1a6b3c">1. Nitrogen Fixation</text>
+  <text x="195" y="146" text-anchor="middle" font-family="Arial" font-size="10" fill="#333">N₂ → NH₄⁺ (Rhizobium, Azotobacter)</text>
+
+  <!-- NH4+ box -->
+  <rect x="310" y="145" width="130" height="35" rx="5" fill="#c8e6c9" stroke="#1a6b3c" stroke-width="1.5"/>
+  <text x="375" y="168" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#333">NH₄⁺ (Ammonium)</text>
+
+  <!-- 2. Nitrification step 1 -->
+  <path d="M440,162 L495,162" fill="none" stroke="#ff8f00" stroke-width="2" marker-end="url(#na)"/>
+  <text x="468" y="155" font-family="Arial" font-size="9" fill="#ff8f00">Nitrosomonas</text>
+  <!-- NO2 -->
+  <rect x="500" y="145" width="85" height="35" rx="5" fill="#fff3e0" stroke="#ff8f00" stroke-width="1.5"/>
+  <text x="542" y="168" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">NO₂⁻</text>
+
+  <!-- Nitrification step 2 -->
+  <path d="M542,180 L542,230" fill="none" stroke="#ff8f00" stroke-width="2" marker-end="url(#na)"/>
+  <text x="555" y="210" font-family="Arial" font-size="9" fill="#ff8f00">Nitrobacter</text>
+  <!-- NO3 -->
+  <rect x="495" y="230" width="95" height="35" rx="5" fill="#fff3e0" stroke="#ff8f00" stroke-width="1.5"/>
+  <text x="542" y="253" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#333">NO₃⁻ Nitrate</text>
+
+  <!-- Combined nitrification label -->
+  <rect x="470" y="182" width="145" height="16" rx="3" fill="none" stroke="#ff8f00" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <text x="542" y="194" text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#ff8f00">2. Nitrification</text>
+
+  <!-- 3. Assimilation -->
+  <path d="M495,248 L370,248 L370,290" fill="none" stroke="#1565c0" stroke-width="2.5"/>
+  <rect x="330" y="260" width="120" height="38" rx="4" fill="#e8f0fe" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="390" y="275" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#1565c0">3. Assimilation</text>
+  <text x="390" y="291" text-anchor="middle" font-family="Arial" font-size="10" fill="#333">Plants → Amino Acids, Proteins</text>
+
+  <!-- Plant protein -->
+  <rect x="255" y="305" width="135" height="35" rx="5" fill="#e8f5e9" stroke="#1a6b3c" stroke-width="2"/>
+  <text x="322" y="323" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#1a6b3c">Plant Protein</text>
+  <text x="322" y="336" text-anchor="middle" font-family="Arial" font-size="10" fill="#555">(Organic N)</text>
+
+  <!-- Animal consumption -->
+  <path d="M300,340 L250,340 L250,380" fill="none" stroke="#333" stroke-width="2" marker-end="url(#na)"/>
+  <rect x="170" y="380" width="160" height="35" rx="5" fill="#e8f5e9" stroke="#1a6b3c" stroke-width="2"/>
+  <text x="250" y="403" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#1a6b3c">Animal Protein (Food Chain)</text>
+
+  <!-- 4. Ammonification -->
+  <path d="M250,415 L250,460" fill="none" stroke="#6a1b9a" stroke-width="2.5" marker-end="url(#na)"/>
+  <rect x="300" y="435" width="180" height="38" rx="4" fill="#f3e5f5" stroke="#6a1b9a" stroke-width="1.5"/>
+  <text x="390" y="450" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#6a1b9a">4. Ammonification</text>
+  <text x="390" y="466" text-anchor="middle" font-family="Arial" font-size="10" fill="#333">Decomposers: Organic N → NH₄⁺</text>
+
+  <!-- Loop arrow from death back to NH4 -->
+  <path d="M252,395 Q350,420 370,345 Q375,310 370,160" fill="none" stroke="#6a1b9a" stroke-width="2" stroke-dasharray="5,3"/>
+
+  <!-- 5. Denitrification -->
+  <rect x="35" y="435" width="200" height="38" rx="4" fill="#ffebee" stroke="#e53935" stroke-width="1.5"/>
+  <text x="135" y="450" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#e53935">5. Denitrification</text>
+  <text x="135" y="466" text-anchor="middle" font-family="Arial" font-size="10" fill="#333">Pseudomonas: NO₃⁻ → N₂ (anaerobic)</text>
+
+  <!-- Denitrification arrow -->
+  <path d="M370,145 Q300,100 250,50" fill="none" stroke="#e53935" stroke-width="2" marker-end="url(#na)"/>
+  <text x="310" y="95" font-family="Arial" font-size="9" fill="#e53935">→ N₂ returned to atmosphere</text>
+
+  <!-- Bottom summary -->
+  <rect x="25" y="485" width="550" height="42" rx="6" fill="#fafafa" stroke="#ccc" stroke-width="1"/>
+  <text x="300" y="505" text-anchor="middle" font-family="Arial" font-size="11" fill="#333">Fixation: N₂→NH₄⁺ | Nitrification: NH₄⁺→NO₂⁻→NO₃⁻ | Assimilation: NO₃⁻→organic N | Ammonification: organic N→NH₄⁺ | Denitrification: NO₃⁻→N₂ (anaerobic)</text>
+  <text x="300" y="522" text-anchor="middle" font-family="Arial" font-size="10" fill="#888">Key organisms: Rhizobium (symbiotic), Azotobacter (free-living), Nitrosomonas, Nitrobacter, Pseudomonas | Key: denitrification requires anaerobic conditions</text>
+</svg>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 460">
+  <rect width="600" height="460" fill="#fff"/>
+  <text x="300" y="30" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#1a6b3c">Chi-Squared (χ²) Test — Worked Example: Monohybrid 1:1</text>
+
+  <!-- Step-by-step -->
+  <text x="300" y="55" text-anchor="middle" font-family="Arial" font-size="12" fill="#555">Tt × tt → expected 1 tall : 1 dwarf. Observed: 62 tall, 44 dwarf. Total = 106.</text>
+
+  <!-- Step 1: H0 -->
+  <rect x="30" y="72" width="540" height="28" rx="6" fill="#e8e5f5"/>
+  <text x="300" y="91" text-anchor="middle" font-family="Arial" font-size="13" fill="#6a1b9a">
+    <tspan font-weight="bold">H₀:</tspan> Data fit a 1:1 ratio. Any deviation is due to chance. <tspan font-weight="bold">H₁:</tspan> Data do NOT fit 1:1.
+  </text>
+
+  <!-- Table -->
+  <g transform="translate(30, 110)">
+    <rect x="0" y="0" width="540" height="30" rx="3" fill="#1a6b3c"/>
+    <text x="90" y="20" text-anchor="middle" font-family="Arial" font-size="12" fill="#fff" font-weight="bold">Phenotype</text>
+    <text x="210" y="20" text-anchor="middle" font-family="Arial" font-size="12" fill="#fff" font-weight="bold">O (observed)</text>
+    <text x="310" y="20" text-anchor="middle" font-family="Arial" font-size="12" fill="#fff" font-weight="bold">E (expected)</text>
+    <text x="400" y="20" text-anchor="middle" font-family="Arial" font-size="12" fill="#fff" font-weight="bold">O−E</text>
+    <text x="490" y="20" text-anchor="middle" font-family="Arial" font-size="12" fill="#fff" font-weight="bold">(O−E)²/E</text>
+
+    <rect x="0" y="30" width="540" height="28" fill="#e8f5e9"/>
+    <text x="90" y="49" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">Tall</text>
+    <text x="210" y="49" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">62</text>
+    <text x="310" y="49" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">53</text>
+    <text x="400" y="49" text-anchor="middle" font-family="Arial" font-size="12" fill="#e53935">+9</text>
+    <text x="490" y="49" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">81/53 = 1.53</text>
+
+    <rect x="0" y="58" width="540" height="28" fill="#fff"/>
+    <text x="90" y="77" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">Dwarf</text>
+    <text x="210" y="77" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">44</text>
+    <text x="310" y="77" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">53</text>
+    <text x="400" y="77" text-anchor="middle" font-family="Arial" font-size="12" fill="#1565c0">−9</text>
+    <text x="490" y="77" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">81/53 = 1.53</text>
+  </g>
+
+  <!-- Results -->
+  <rect x="30" y="210" width="540" height="70" rx="8" fill="#f5f5f5" stroke="#ddd" stroke-width="1"/>
+  <text x="300" y="235" text-anchor="middle" font-family="Arial" font-size="14" fill="#333">
+    χ² = <tspan font-weight="bold">1.53 + 1.53 = 3.06</tspan>
+  </text>
+  <text x="300" y="258" text-anchor="middle" font-family="Arial" font-size="14" fill="#333">
+    df = 2 − 1 = <tspan font-weight="bold">1</tspan> | Critical value (p=0.05, df=1) = <tspan font-weight="bold">3.84</tspan>
+  </text>
+  <text x="300" y="278" text-anchor="middle" font-family="Arial" font-size="14" fill="#333">
+    <tspan font-weight="bold" fill="#1a6b3c">3.06 &lt; 3.84 → Accept H₀</tspan> — data fit 1:1 ratio
+  </text>
+
+  <!-- Critical Values Table -->
+  <rect x="30" y="295" width="540" height="155" rx="8" fill="#fff3e0" stroke="#ff8f00" stroke-width="1"/>
+  <text x="300" y="320" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#ff8f00">χ² Critical Values Table (p = 0.05)</text>
+
+  <g transform="translate(130, 332)">
+    <rect x="0" y="0" width="340" height="24" fill="#ff8f00"/>
+    <text x="100" y="16" text-anchor="middle" font-family="Arial" font-size="11" fill="#fff" font-weight="bold">df</text>
+    <text x="170" y="16" text-anchor="middle" font-family="Arial" font-size="11" fill="#fff" font-weight="bold">1</text>
+    <text x="240" y="16" text-anchor="middle" font-family="Arial" font-size="11" fill="#fff" font-weight="bold">2</text>
+    <text x="310" y="16" text-anchor="middle" font-family="Arial" font-size="11" fill="#fff" font-weight="bold">3</text>
+
+    <rect x="0" y="24" width="340" height="22" fill="#fff"/>
+    <text x="100" y="39" text-anchor="middle" font-family="Arial" font-size="11" fill="#333">Critical χ²</text>
+    <text x="170" y="39" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#e53935">3.84</text>
+    <text x="240" y="39" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#333">5.99</text>
+    <text x="310" y="39" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#333">7.81</text>
+  </g>
+
+  <!-- Two-key-points -->
+  <text x="300" y="390" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">
+    <tspan font-weight="bold">df = number of phenotypic classes − 1</tspan> (NOT sample size − 1!)
+  </text>
+  <text x="300" y="412" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">
+    If χ² ≥ critical value → <tspan font-weight="bold" fill="#e53935">reject H₀</tspan> (data do NOT fit model → genes may be linked)
+  </text>
+  <text x="300" y="435" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">
+    If χ² &lt; critical value → <tspan font-weight="bold" fill="#1a6b3c">accept H₀</tspan> (deviation due to chance; data consistent with model)
+  </text>
+
+  <text x="300" y="455" text-anchor="middle" font-family="Arial" font-size="10" fill="#888">Formula: χ² = Σ(O−E)²/E | Example 2 in lesson shows dihybrid and linkage testing</text>
+</svg>

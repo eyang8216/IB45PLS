@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 41: Protein Synthesis II — HL Material (D1.2) — IB Biology HL</title>
+<script>window.MathJax = { tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] } };</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #1a6b3c; --border: #c4d4a9; --highlight: #e8f5e9; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Palatino', 'Georgia', serif; background: var(--bg); color: var(--text); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; font-size: 17px; line-height: 1.7; }
+  h1 { font-size: 1.7rem; color: var(--accent); margin-bottom: 0.5rem; }
+  h2 { font-size: 1.25rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; margin: 2rem 0 1rem; }
+  h3 { font-size: 1.1rem; color: #444; margin: 1.3rem 0 0.5rem; }
+  p, li { margin-bottom: 0.6rem; }
+  ul, ol { padding-left: 1.8rem; margin-bottom: 1rem; }
+  .worked { background: #e8f5e9; border-left: 4px solid #1a6b3c; padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
+  .worked strong { color: #1a6b3c; }
+  .answer { background: #fefdf7; border: 1px solid var(--border); padding: 0.8rem 1.2rem; margin: 0.5rem 0; border-radius: 6px; }
+  .nav { display: flex; justify-content: space-between; margin: 3rem 0 1rem; padding-top: 1rem; border-top: 2px solid var(--border); font-size: 0.9rem; }
+  .nav a { color: #1a5c9e; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+  .definition { background: #fff8e1; border-left: 4px solid #e6a817; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  .tip { background: #e3f2fd; border-left: 4px solid #1976d2; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
+  table { border-collapse: collapse; margin: 0.8rem 0; width: 100%; }
+  th, td { border: 1px solid var(--border); padding: 0.4rem 0.6rem; text-align: left; }
+  th { background: #f0f5e8; }
+  @media print { body { font-size: 14px; } .nav { display: none; } }
+</style>
+</head>
+<body>
+
+
+<h2>What You'll Learn</h2>
+
+<ul>
+<li>Transcription factors: general vs specific, activators vs repressors</li>
+<li>Enhancers and silencers: how DNA looping brings distant regulatory elements to the promoter</li>
+<li>Epigenetics: DNA methylation, histone acetylation, and the histone code</li>
+<li>How epigenetic changes can be inherited through cell division (and sometimes across generations)</li>
+<li>Post-translational modifications: phosphorylation, glycosylation, proteolytic cleavage, and ubiquitination</li>
+<li>Protein folding and quality control in the endoplasmic reticulum</li>
+<li>How all these layers of regulation create the complexity of eukaryotic gene expression</li>
+</ul>
+<hr>
+
+<h2>1. Transcription Factors: The Master Switches</h2>
+
+<p>In Lesson 40, we covered the basic mechanics of transcription — RNA polymerase binding and synthesising mRNA. But <strong>which genes</strong> are transcribed, <strong>when</strong>, and <strong>how much</strong>? That's the job of <strong>transcription factors</strong>.</p>
+
+<div class="definition">
+
+<p><strong>Transcription factor:</strong> A protein that binds to specific DNA sequences to regulate the transcription of a gene. Transcription factors can activate or repress transcription by influencing the ability of RNA polymerase to bind the promoter and initiate transcription.</p>
+
+</div>
+
+<h3>1.1 General (Basal) Transcription Factors</h3>
+
+<p>These are required for transcription by RNA Polymerase II in <strong>all</strong> protein-coding genes. They assemble at the core promoter and form the <strong>pre-initiation complex</strong>.</p>
+
+<p><strong>Key general transcription factors in eukaryotes:</strong></p>
+
+<table>
+<tr>
+<td>Factor</td>
+<td>Function</td>
+</tr>
+<tr>
+<td>TFIID</td>
+<td>Contains the <strong>TATA-binding protein (TBP)</strong>. Binds to the TATA box, bending the DNA and marking the transcription start site.</td>
+</tr>
+<tr>
+<td>TFIIB</td>
+<td>Bridges TFIID and RNA Pol II; helps position Pol II at the start site.</td>
+</tr>
+<tr>
+<td>TFIIF</td>
+<td>Escorts RNA Pol II to the promoter.</td>
+</tr>
+<tr>
+<td>TFIIE</td>
+<td>Recruits TFIIH; helps open the transcription bubble.</td>
+</tr>
+<tr>
+<td>TFIIH</td>
+<td>Has <strong>helicase</strong> activity (unwinds DNA) and <strong>kinase</strong> activity (phosphorylates the C-terminal domain of RNA Pol II, triggering promoter escape).</td>
+</tr>
+</table>
+
+<p><strong>Analogy:</strong> General transcription factors are like the essential crew needed to start any airplane — the pilot, co-pilot, and ground crew. Without them, no flight (no transcription) can begin. But they don't determine <em>which</em> plane flies or <em>where</em> it goes.</p>
+
+<h3>1.2 Specific (Regulatory) Transcription Factors</h3>
+
+<p>These are <strong>gene-specific</strong> — they control <strong>which</strong> genes are transcribed in <strong>which</strong> cell types and under <strong>which</strong> conditions. This is how a liver cell and a neuron, despite having identical DNA, produce completely different sets of proteins.</p>
+
+<p><strong>Two types:</strong></p>
+
+<table>
+<tr>
+<td>Type</td>
+<td>Function</td>
+<td>Mechanism</td>
+</tr>
+<tr>
+<td>Activators</td>
+<td>Increase transcription</td>
+<td>Bind to enhancer sequences; interact with the mediator complex or general transcription factors to recruit/stabilise RNA Pol II at the promoter</td>
+</tr>
+<tr>
+<td>Repressors</td>
+<td>Decrease transcription</td>
+<td>Bind to silencer sequences or block activator binding sites; recruit histone deacetylases to condense chromatin</td>
+</tr>
+</table>
+
+<p><strong>Analogy:</strong> Specific transcription factors are like a keycard system in a building. The general factors are the elevator (available to everyone), but you need the right keycard (activator) to access a specific floor (gene). Some keycards (repressors) explicitly deny access.</p>
+
+<h3>1.3 Structure of Transcription Factors</h3>
+
+<p>Transcription factors typically have <strong>two functional domains</strong>:</p>
+
+<ol>
+<li><strong>DNA-binding domain:</strong> Recognises and binds to a specific DNA sequence (~6-12 base pairs). Examples: zinc finger, leucine zipper, helix-turn-helix motifs.</li>
+</ol>
+<ol>
+<li><strong>Activation/repression domain:</strong> Interacts with other proteins (general transcription factors, mediator complex, chromatin-modifying enzymes) to influence transcription.</li>
+</ol>
+<p><strong>Analogy:</strong> The DNA-binding domain is like the correct key shape to fit a lock; the activation domain is what happens when you turn the key — it triggers the mechanism.</p>
+
+<div class="worked">
+
+<p><strong>Transcription Factor Logic</strong></p>
+
+<p>The human β-globin gene is expressed only in red blood cell precursors, not in liver cells or neurons.</p>
+
+<p>(a) Explain why this gene is not expressed in liver cells.</p>
+<p>(b) Predict what would happen if the enhancer for the β-globin gene were fused to a gene normally expressed in the liver.</p>
+
+<p><strong>Answers:</strong></p>
+<p>(a) Liver cells lack the specific activator transcription factors required for β-globin expression. While the β-globin gene and its promoter are present in liver cell DNA, the necessary combination of activators is not produced in liver cells. Without these activators binding to enhancers, RNA Pol II cannot efficiently initiate transcription at the β-globin promoter.</p>
+
+<p>(b) The liver gene would now be expressed in red blood cell precursors (where the β-globin activators are present) — it would be <strong>ectopically expressed</strong> (expressed in the wrong cell type). This experiment demonstrates that enhancers and their cognate activators are the primary determinants of cell-type-specific gene expression.</p>
+
+</div>
+
+<hr>
+
+<h2>2. Enhancers and Silencers: Long-Distance Regulation</h2>
+
+<h3>2.1 Enhancers</h3>
+
+<p><strong>Enhancers</strong> are DNA sequences that can be located <strong>thousands of base pairs away</strong> from the promoter they regulate — upstream, downstream, or even within introns. They bind <strong>activator proteins</strong>.</p>
+
+<p><strong>How does an enhancer influence a promoter from so far away? DNA looping.</strong></p>
+
+<p>The DNA between the enhancer and promoter <strong>loops out</strong>, bringing the activator proteins (bound to the enhancer) into physical proximity with the general transcription factors and RNA polymerase at the promoter. The activator interacts with the mediator complex (a large multi-protein bridge), stabilising the transcription initiation complex.</p>
+
+<p><strong>Draw and label:</strong> A diagram showing:</p>
+<ul>
+<li>A long stretch of DNA with an enhancer far upstream and a promoter near the gene.</li>
+<li>Activator proteins bound to the enhancer.</li>
+<li>DNA looping so the enhancer region physically contacts the promoter region.</li>
+<li>The mediator complex bridging the activator and the RNA Pol II / general transcription factors at the promoter.</li>
+<li>Label: "DNA looping brings distant enhancer into contact with promoter."</li>
+</ul>
+<h3>2.2 Silencers</h3>
+
+<p><strong>Silencers</strong> are similar to enhancers but bind <strong>repressor proteins</strong> instead. They can also act from a distance via DNA looping. Repressors may:</p>
+<ul>
+<li>Block activator binding (competitive inhibition).</li>
+<li>Recruit histone deacetylases to condense chromatin locally.</li>
+<li>Directly interfere with the transcription initiation complex.</li>
+</ul>
+<h3>2.3 Combinatorial Control</h3>
+
+<p>A typical eukaryotic gene is controlled by <strong>multiple</strong> enhancers and silencers, each binding different transcription factors. The <strong>combination</strong> of activators and repressors present in a given cell type determines whether the gene is on or off, and at what level.</p>
+
+<p>This is <strong>combinatorial control</strong> — the same limited set of transcription factors can regulate thousands of genes in complex patterns by acting in different combinations.</p>
+
+<p><strong>Analogy:</strong> A gene is like a high-security safe that requires multiple keys turned simultaneously. Only when the right combination of activator keys is present (and no repressor key is blocking) does the safe open.</p>
+
+<hr>
+
+<h2>3. Epigenetics: Heritable Changes Without DNA Sequence Changes</h2>
+
+<p><strong>Epigenetics</strong> refers to heritable changes in gene expression that do NOT involve changes to the DNA sequence itself. "Epi-" means "above" or "on top of" — epigenetic marks sit on top of the genetic code and influence how it's read.</p>
+
+<p><strong>Analogy:</strong> If your genome is the hardware of a computer, the epigenome is the software — it determines which programs run, when, and how much. The hardware is the same in every cell; the software differs.</p>
+
+<h3>3.1 DNA Methylation</h3>
+
+<p><strong>What:</strong> Addition of a <strong>methyl group (-CH₃)</strong> to the 5' carbon of <strong>cytosine</strong> bases, typically at <strong>CpG dinucleotides</strong> (a cytosine followed by a guanine).</p>
+
+<p><strong>Where:</strong> CpG-rich regions called <strong>CpG islands</strong> are often found in or near gene promoters (~60% of human gene promoters contain CpG islands).</p>
+
+<p><strong>What it does:</strong> Methylation of CpG islands in promoter regions generally <strong>silences</strong> gene expression.</p>
+
+<p><strong>Mechanism:</strong></p>
+<ul>
+<li>Methyl groups recruit <strong>methyl-CpG-binding proteins</strong> (e.g., MeCP2).</li>
+<li>These proteins in turn recruit <strong>histone deacetylases (HDACs)</strong> and other chromatin-remodelling complexes.</li>
+<li>Chromatin becomes condensed (heterochromatin) → RNA polymerase and transcription factors cannot access the promoter → gene is silenced.</li>
+</ul>
+<p><strong>Important example:</strong> <strong>X-chromosome inactivation.</strong> In female mammals, one X chromosome is randomly inactivated in each cell early in development. This is achieved by extensive DNA methylation, which condenses the inactivated X into a <strong>Barr body</strong> — transcriptionally silent heterochromatin. This ensures dosage compensation (males have one X, females have one active X per cell).</p>
+
+<div class="tip">
+
+<p><strong>Paper 1:</strong> "How does DNA methylation silence gene expression?" → Methyl groups added to cytosine at CpG islands in promoters → recruit methyl-binding proteins → recruit histone deacetylases → chromatin condenses → transcription factors and RNA polymerase cannot access promoter → gene silenced.</p>
+
+</div>
+
+<h3>3.2 Histone Modification</h3>
+
+<p>DNA in eukaryotic cells is wrapped around <strong>histone proteins</strong> to form <strong>nucleosomes</strong> — the basic unit of chromatin. Each nucleosome consists of ~147 bp of DNA wrapped around an octamer of histone proteins (two copies each of H2A, H2B, H3, and H4).</p>
+
+<p>Histones have flexible <strong>N-terminal tails</strong> that protrude from the nucleosome and can be <strong>chemically modified</strong>. These modifications affect how tightly DNA is wrapped.</p>
+
+<p>#### Histone Acetylation</p>
+
+<p><strong>What:</strong> Addition of <strong>acetyl groups (-COCH₃)</strong> to the <strong>lysine</strong> amino acids in histone tails. Catalysed by <strong>histone acetyltransferases (HATs)</strong>. Removed by <strong>histone deacetylases (HDACs)</strong>.</p>
+
+<p><strong>How it works:</strong></p>
+<ul>
+<li>Lysine has a positively charged side chain (NH₃⁺) at physiological pH.</li>
+<li>The negatively charged DNA backbone (phosphate groups) is attracted to the positive histones — this is what keeps chromatin tightly packed.</li>
+<li>Acetylation <strong>neutralises</strong> the positive charge on lysine (adds COCH₃ to NH₃⁺ → NH-COCH₃, which is neutral).</li>
+<li>The DNA-histone interaction weakens → chromatin becomes <strong>looser</strong> (euchromatin) → transcription factors and RNA polymerase can access the DNA.</li>
+</ul>
+<p><strong>Result:</strong> Histone acetylation = <strong>active transcription</strong> (euchromatin).</p>
+<p>Histone deacetylation = <strong>silenced transcription</strong> (heterochromatin).</p>
+
+<p><strong>Analogy:</strong> Histone acetylation is like loosening the knots on a coiled rope. When the knots are tight (deacetylated), the rope stays tightly coiled and inaccessible. When you loosen them (acetylated), the rope relaxes and you can access any point along it.</p>
+
+<p><strong>Draw and label:</strong> A diagram showing two states:</p>
+<ul>
+<li><strong>Deacetylated histones:</strong> Tightly packed nucleosomes, DNA tightly wound, labelled "Heterochromatin — transcriptionally silent."</li>
+<li><strong>Acetylated histones:</strong> Looser nucleosomes, DNA more accessible, labelled "Euchromatin — transcriptionally active."</li>
+</ul>
+<p>#### Other Histone Modifications</p>
+
+<p>Acetylation is not the only modification. Histone tails can also be:</p>
+<ul>
+<li><strong>Methylated</strong> (can activate OR repress, depending on which lysine/arginine is methylated).</li>
+<li><strong>Phosphorylated</strong> (involved in chromatin condensation during mitosis and DNA damage response).</li>
+<li><strong>Ubiquitinated</strong> (can mark histones for various fates).</li>
+</ul>
+<h3>3.3 The Histone Code Hypothesis</h3>
+
+<p>The <strong>histone code hypothesis</strong> proposes that the specific <strong>pattern</strong> of histone modifications (which residues are modified, with what chemical group) determines the transcriptional state of the associated DNA. Different combinations of modifications form a "code" that is read by other proteins to regulate chromatin structure and gene expression.</p>
+
+<h3>3.4 Epigenetic Inheritance</h3>
+
+<p>Epigenetic marks can be <strong>inherited through cell division</strong> (mitotic inheritance). When a cell divides, DNA methylation patterns are copied to the daughter strands by <strong>maintenance methyltransferases</strong> (DNMT1). This is how a liver cell produces another liver cell — the epigenetic state is preserved.</p>
+
+<p>In some cases, epigenetic marks can even be transmitted <strong>across generations</strong> (transgenerational epigenetic inheritance), though this is rarer and involves marks that survive the reprogramming that occurs during gamete formation and early embryonic development.</p>
+
+<p><strong>Example:</strong> Studies in mice (and some evidence in humans) show that a grandfather's diet can affect the metabolism of grandchildren — mediated by epigenetic marks on genes involved in metabolism that were not fully erased during gametogenesis.</p>
+
+<div class="tip">
+
+<p><strong>Paper 2 discussion question:</strong> "Discuss the evidence for and against transgenerational epigenetic inheritance in humans." Evidence: Dutch Hunger Winter (1944-45) — children born to mothers who experienced famine during pregnancy had higher rates of obesity and metabolic disease, and some effects appeared in grandchildren. Against: Epigenetic marks are largely erased during gametogenesis and early embryogenesis; confounding socioeconomic and cultural factors are difficult to separate from true biological inheritance.</p>
+
+</div>
+
+<hr>
+
+<h2>4. Post-Translational Modifications (PTMs)</h2>
+
+<p>Translation produces a polypeptide — a chain of amino acids. But this is often not yet a functional protein. <strong>Post-translational modifications</strong> chemically modify the polypeptide, altering its activity, localisation, stability, or interactions.</p>
+
+<p><strong>Analogy:</strong> A newly translated polypeptide is like a raw piece of wood. PTMs are the processes that turn it into a finished product: cutting it to size (proteolytic cleavage), painting it (glycosylation), or installing electronic components (phosphorylation).</p>
+
+<h3>4.1 Phosphorylation</h3>
+
+<p><strong>What:</strong> Addition of a <strong>phosphate group (PO₄³⁻)</strong> to serine, threonine, or tyrosine residues.</p>
+<p><strong>Catalysed by:</strong> <strong>Kinases.</strong></p>
+<p><strong>Removed by:</strong> <strong>Phosphatases.</strong></p>
+
+<p><strong>Effect:</strong> The negatively charged phosphate group can cause a <strong>conformational change</strong> in the protein, activating or deactivating it. Phosphorylation is the most common and important PTM in cell signalling.</p>
+
+<p><strong>Example:</strong> Many enzymes in metabolic pathways are regulated by phosphorylation. Glycogen phosphorylase (breaks down glycogen) is <strong>activated</strong> by phosphorylation (in response to glucagon/epinephrine — "need energy now"). Glycogen synthase (makes glycogen) is <strong>inactivated</strong> by phosphorylation.</p>
+
+<p><strong>Analogy:</strong> Phosphorylation is like flipping a light switch. One state is ON (phosphorylated), the other is OFF (dephosphorylated) — or vice versa, depending on the specific protein.</p>
+
+<h3>4.2 Glycosylation</h3>
+
+<p><strong>What:</strong> Addition of <strong>carbohydrate groups</strong> (oligosaccharides) to asparagine (N-linked) or serine/threonine (O-linked) residues.</p>
+<p><strong>Where:</strong> Occurs primarily in the <strong>ER</strong> and <strong>Golgi apparatus</strong>.</p>
+
+<p><strong>Functions:</strong></p>
+<ul>
+<li><strong>Cell-cell recognition</strong> (glycoproteins on the cell surface, e.g., ABO blood group antigens).</li>
+<li><strong>Protein folding and stability</strong> in the ER (chaperone proteins recognise glycosylation states).</li>
+<li><strong>Protection</strong> from proteolysis.</li>
+<li><strong>Cell adhesion</strong> and immune recognition.</li>
+</ul>
+<h3>4.3 Proteolytic Cleavage</h3>
+
+<p><strong>What:</strong> Cutting the polypeptide chain at specific sites to produce a smaller, active protein.</p>
+
+<p><strong>Examples:</strong></p>
+<ul>
+<li><strong>Proinsulin → Insulin:</strong> Insulin is initially synthesised as <strong>preproinsulin</strong> (with signal peptide). After the signal peptide is cleaved in the ER, <strong>proinsulin</strong> folds and forms disulfide bonds. Then a protease cleaves out the <strong>C-peptide</strong>, leaving the mature insulin (A and B chains linked by disulfide bonds). Only this cleaved form is active.</li>
+<li><strong>Trypsinogen → Trypsin:</strong> Digestive enzymes are synthesised as inactive <strong>zymogens</strong> to prevent them from digesting the cells that produce them. Trypsinogen is cleaved in the small intestine to produce active trypsin.</li>
+<li><strong>Fibrinogen → Fibrin:</strong> Blood clotting involves the cleavage of fibrinogen by thrombin to produce fibrin, which polymerises to form a clot.</li>
+</ul>
+<p><strong>Analogy:</strong> Proteolytic cleavage is like removing the safety seal and packaging from a product before you can use it. The product is fully assembled but intentionally kept inactive until it reaches the right location.</p>
+
+<h3>4.4 Ubiquitination</h3>
+
+<p><strong>What:</strong> Attachment of <strong>ubiquitin</strong> (a small 76-amino-acid protein) to lysine residues.</p>
+<p><strong>Polyubiquitination</strong> (a chain of ubiquitin molecules) tags the protein for <strong>degradation</strong> by the <strong>proteasome</strong> — a large barrel-shaped protease complex.</p>
+
+<p><strong>Process:</strong></p>
+<ol>
+<li>Ubiquitin is activated by E1 (ubiquitin-activating enzyme, ATP-dependent).</li>
+<li>Ubiquitin is transferred to E2 (ubiquitin-conjugating enzyme).</li>
+<li>E3 (ubiquitin ligase) transfers ubiquitin from E2 to the target protein. E3 provides <strong>specificity</strong> — it recognises the target protein.</li>
+<li>Multiple rounds add more ubiquitin molecules, forming a polyubiquitin chain.</li>
+<li>The tagged protein is recognised and degraded by the <strong>26S proteasome</strong>.</li>
+</ol>
+<p><strong>Significance:</strong> Regulated protein degradation is as important as regulated protein synthesis. Ubiquitination controls the half-life of cell cycle regulators (cyclins), transcription factors, and damaged/misfolded proteins. Defects in ubiquitination are implicated in cancer, neurodegenerative diseases (Parkinson's, Alzheimer's), and inflammatory disorders.</p>
+
+<div class="definition">
+
+<p><strong>Proteasome:</strong> A large (26S) multi-protein complex that degrades polyubiquitinated proteins into short peptides. It's the cell's "recycling centre" — breaking down proteins that are damaged, misfolded, or no longer needed.</p>
+
+</div>
+
+<hr>
+
+<h3>Summary Table: Post-Translational Modifications</h3>
+
+<table>
+<tr>
+<td>Modification</td>
+<td>Chemical Group Added</td>
+<td>Target Residues</td>
+<td>Key Function</td>
+<td>Example</td>
+</tr>
+<tr>
+<td>Phosphorylation</td>
+<td>Phosphate (PO₄³⁻)</td>
+<td>Ser, Thr, Tyr</td>
+<td>Activation/deactivation; signalling</td>
+<td>Glycogen phosphorylase activation</td>
+</tr>
+<tr>
+<td>Glycosylation</td>
+<td>Oligosaccharides</td>
+<td>Asn (N-linked), Ser/Thr (O-linked)</td>
+<td>Folding, recognition, stability</td>
+<td>ABO blood group antigens</td>
+</tr>
+<tr>
+<td>Proteolytic cleavage</td>
+<td>(Removal of peptide segment)</td>
+<td>Specific peptide bonds</td>
+<td>Activation of zymogens</td>
+<td>Proinsulin → insulin; trypsinogen → trypsin</td>
+</tr>
+<tr>
+<td>Ubiquitination</td>
+<td>Ubiquitin protein (polyubiquitin chain)</td>
+<td>Lys</td>
+<td>Targeting for proteasomal degradation</td>
+<td>Cyclin degradation in cell cycle</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>5. Protein Folding and Quality Control in the ER</h2>
+
+<p>A newly synthesised polypeptide is a linear chain. To become functional, it must <strong>fold</strong> into its specific three-dimensional conformation. Folding is determined by the amino acid sequence (Anfinsen's principle), but in the crowded cellular environment, proteins need help.</p>
+
+<h3>5.1 Chaperone Proteins</h3>
+
+<p><strong>Chaperones</strong> (or chaperonins) assist protein folding by:</p>
+<ul>
+<li>Binding to exposed hydrophobic patches on nascent polypeptides, preventing improper aggregation.</li>
+<li>Providing an isolated folding chamber (e.g., the GroEL/GroES complex in bacteria; Hsp60/Hsp70 families in eukaryotes).</li>
+<li>Using ATP hydrolysis to drive conformational changes that facilitate correct folding.</li>
+</ul>
+<p><strong>Key point:</strong> Chaperones do NOT dictate the final folded structure — the amino acid sequence determines that. Chaperones simply prevent misfolding and aggregation.</p>
+
+<h3>5.2 ER Quality Control</h3>
+
+<p>In the ER, proteins destined for secretion or the membrane are folded and modified. The ER has a rigorous <strong>quality control system</strong>:</p>
+
+<ul>
+<li><strong>Calnexin/calreticulin cycle:</strong> These chaperones bind to glycoproteins and assist folding. The cycle continues until the protein is correctly folded.</li>
+<li><strong>Unfolded Protein Response (UPR):</strong> If misfolded proteins accumulate (ER stress), the UPR is activated:</li>
+</ul>
+<ol>
+<li>Translation is temporarily reduced (except for chaperones).</li>
+<li>More chaperones are produced to handle the misfolded proteins.</li>
+<li>If stress persists, <strong>apoptosis</strong> is triggered.</li>
+</ol>
+<ul>
+<li><strong>ER-Associated Degradation (ERAD):</strong> Terminally misfolded proteins are retrotranslocated from the ER to the cytoplasm, ubiquitinated, and degraded by the proteasome.</li>
+</ul>
+<p><strong>Analogy:</strong> The ER quality control system is like a factory inspection line. Correctly assembled products (folded proteins) are shipped out. Products with minor defects are sent back for rework (chaperones try again). Products with major defects are scrapped and recycled (ERAD → proteasome). If too many defective products pile up, the factory shuts down (UPR → apoptosis).</p>
+
+<hr>
+
+<h2>Common Misconceptions</h2>
+
+<table>
+<tr>
+<td>Misconception</td>
+<td>Reality</td>
+</tr>
+<tr>
+<td>"Epigenetic changes alter the DNA sequence."</td>
+<td>Epigenetic changes alter <strong>gene expression</strong> without changing the DNA sequence. The nucleotide sequence remains the same.</td>
+</tr>
+<tr>
+<td>"DNA methylation always silences genes."</td>
+<td>Methylation in promoter CpG islands generally silences. But methylation in gene bodies (within the gene, not the promoter) can have different effects and is sometimes associated with active transcription.</td>
+</tr>
+<tr>
+<td>"Histone acetylation = active; methylation = silent."</td>
+<td>Oversimplified. Acetylation generally activates. But histone methylation can activate OR repress, depending on which specific lysine is methylated (e.g., H3K4me3 = active; H3K9me3 = repressive).</td>
+</tr>
+<tr>
+<td>"Post-translational modifications only activate proteins."</td>
+<td>PTMs can also inactivate (e.g., phosphorylation inactivates glycogen synthase), change localisation, or mark for degradation (ubiquitination).</td>
+</tr>
+<tr>
+<td>"All proteins fold spontaneously without help."</td>
+<td>Many do (Anfinsen showed this for RNase A in vitro). But in the crowded cellular environment, most proteins require chaperone assistance to avoid aggregation.</td>
+</tr>
+<tr>
+<td>"Enhancers only work upstream of the gene."</td>
+<td>Enhancers can be upstream, downstream, within introns, or even on a different chromosome (transvection). Their position relative to the gene is not fixed — DNA looping brings them together.</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1: Transcription Factors</h3>
+
+<p>The human insulin gene is expressed in pancreatic β-cells but not in skin fibroblasts.</p>
+
+<p>(a) Explain the role of specific transcription factors in this cell-type-specific expression.</p>
+<p>(b) A researcher creates a transgenic mouse with the insulin gene enhancer fused to the promoter of a gene encoding green fluorescent protein (GFP). Predict where GFP will be expressed and explain.</p>
+<p>(c) How does DNA looping facilitate enhancer function?</p>
+
+<hr>
+
+<h3>Problem 2: Epigenetics</h3>
+
+<p>A research study compares two groups of genetically identical mice. Group A receives a diet rich in methyl donors (folate, choline, vitamin B12) during pregnancy. Group B receives a standard diet. The offspring of Group A show darker coat colour and lower obesity rates.</p>
+
+<p>(a) Explain how maternal diet could affect coat colour in genetically identical offspring.</p>
+<p>(b) Name the enzyme responsible for maintaining DNA methylation patterns during cell division.</p>
+<p>(c) Explain why the epigenetic changes in Group A offspring may not persist into the F3 generation (great-grandchildren).</p>
+
+<hr>
+
+<h3>Problem 3: Histone Modifications</h3>
+
+<p>A gene is actively transcribed in one cell type and silenced in another.</p>
+
+<p>(a) Compare the expected histone acetylation state of this gene's promoter in the two cell types.</p>
+<p>(b) Which enzyme adds acetyl groups to histones? Which removes them?</p>
+<p>(c) Explain at the molecular level why histone acetylation promotes transcription.</p>
+
+<hr>
+
+<h3>Problem 4: Post-Translational Modifications</h3>
+
+<p>For each scenario, identify the likely post-translational modification involved:</p>
+
+<p>(a) A cell receives a signal to break down glycogen. The enzyme glycogen phosphorylase is rapidly activated.</p>
+<p>(b) A secretory protein is observed in the Golgi with carbohydrate chains attached.</p>
+<p>(c) Insulin is initially synthesised as a single polypeptide but the mature hormone consists of two separate chains joined by disulfide bonds.</p>
+<p>(d) A cyclin protein disappears rapidly at a specific point in the cell cycle despite continued transcription of its gene.</p>
+
+<hr>
+
+<h3>Problem 5: Integrated Regulation</h3>
+
+<p>A student claims: "Gene expression is controlled entirely at the level of transcription. Once mRNA is made, the protein will inevitably be produced."</p>
+
+<p>Critically evaluate this statement. In your answer, refer to at least FOUR different levels at which gene expression can be regulated (providing specific examples at each level).</p>
+
+<hr>
+
+<h2>Answers</h2>
+
+<h3>Answer 1</h3>
+
+<p>(a) Pancreatic β-cells produce a specific combination of activator transcription factors (e.g., Pdx1, NeuroD1, MafA) that bind to enhancer sequences of the insulin gene. These activators interact with the mediator complex and general transcription factors to recruit and stabilise RNA Pol II at the insulin promoter. Skin fibroblasts lack these specific activators, so the insulin gene remains silent even though the DNA sequence is identical.</p>
+
+<p>(b) GFP would be expressed in <strong>pancreatic β-cells</strong> — the same cells that normally express insulin. The insulin enhancer drives expression regardless of what gene it's attached to. This demonstrates that enhancers, and the cell-type-specific transcription factors that bind them, are the primary determinants of where and when a gene is expressed.</p>
+
+<p>(c) DNA looping allows activator proteins bound to a distant enhancer to physically contact the promoter region. The intervening DNA loops out, bringing the activator into proximity with the mediator complex and general transcription factors at the promoter. This physical interaction stabilises the transcription initiation complex and increases the rate of transcription.</p>
+
+<hr>
+
+<h3>Answer 2</h3>
+
+<p>(a) This is an example of <strong>epigenetic inheritance</strong> mediated by DNA methylation. The methyl-rich diet provided more methyl donors, leading to increased DNA methylation. In these mice, the agouti gene (which affects coat colour and metabolism) has a retrotransposon upstream. Increased methylation of this region silences the retrotransposon, reducing ectopic agouti expression → darker coat, lower obesity. The genetically identical offspring of Group A inherited these methylation patterns established during early development.</p>
+
+<p>(b) <strong>DNMT1</strong> (DNA methyltransferase 1) — the maintenance methyltransferase. During DNA replication, the parental strand retains its methylation pattern. DNMT1 recognises hemimethylated CpG sites (methylated on the parent strand, unmethylated on the new strand) and adds methyl groups to the new strand, faithfully copying the methylation pattern.</p>
+
+<p>(c) Epigenetic marks are largely <strong>erased</strong> during two critical periods: (1) during gametogenesis (formation of sperm and eggs) and (2) during early embryonic development (the wave of demethylation after fertilisation). This reprogramming removes most epigenetic marks so the new embryo starts with a "clean slate." Some marks escape erasure and can be transmitted transgenerationally, but most do not survive these reprogramming events. By the F3 generation (great-grandchildren), the epigenetic marks from the original dietary exposure are likely erased unless they are stably maintained through both rounds of reprogramming.</p>
+
+<hr>
+
+<h3>Answer 3</h3>
+
+<p>(a) In the cell type where the gene is <strong>actively transcribed</strong>, the promoter histones are <strong>acetylated</strong> — chromatin is in an open euchromatin state. In the cell type where the gene is <strong>silenced</strong>, the promoter histones are <strong>deacetylated</strong> — chromatin is condensed into heterochromatin and inaccessible to transcription machinery.</p>
+
+<p>(b) <strong>Histone acetyltransferases (HATs)</strong> add acetyl groups. <strong>Histone deacetylases (HDACs)</strong> remove them.</p>
+
+<p>(c) Histone lysine residues have positively charged side chains (NH₃⁺) that are attracted to the negatively charged DNA phosphate backbone. This electrostatic attraction keeps DNA tightly wrapped around histones. Acetylation neutralises the positive charge (adds -COCH₃ to NH₃⁺ → NH-COCH₃), weakening the histone-DNA interaction. Chromatin becomes looser, allowing transcription factors and RNA polymerase to access the DNA. Additionally, acetylated lysines serve as binding sites for bromodomain-containing proteins that further promote transcription.</p>
+
+<hr>
+
+<h3>Answer 4</h3>
+
+<p>(a) <strong>Phosphorylation.</strong> A signalling cascade (glucagon/epinephrine → cAMP → PKA) leads to phosphorylation of glycogen phosphorylase by phosphorylase kinase, activating it. (Note: this is a classic example for IB.)</p>
+
+<p>(b) <strong>Glycosylation.</strong> N-linked or O-linked glycosylation occurs in the ER and Golgi. The carbohydrate chains are added to specific asparagine (N-linked) or serine/threonine (O-linked) residues.</p>
+
+<p>(c) <strong>Proteolytic cleavage.</strong> Preproinsulin → proinsulin (signal peptide cleavage in ER) → mature insulin (C-peptide cleaved by prohormone convertases in secretory vesicles). The mature insulin consists of A and B chains linked by disulfide bonds. This is proteolytic processing, not synthesis of two separate polypeptides.</p>
+
+<p>(d) <strong>Ubiquitination.</strong> Cyclins are targeted for degradation at specific cell cycle checkpoints. The anaphase-promoting complex (APC/C, an E3 ubiquitin ligase) polyubiquitinates cyclins, targeting them to the 26S proteasome for rapid degradation. This ensures irreversible cell cycle transitions.</p>
+
+<hr>
+
+<h3>Answer 5</h3>
+
+<p>The student's claim is incorrect. Gene expression is regulated at <strong>multiple levels</strong> beyond transcription:</p>
+
+<ol>
+<li><strong>Epigenetic/chromatin level:</strong> DNA methylation and histone modifications can silence genes without altering transcription of the gene itself — they prevent transcription from ever starting. X-chromosome inactivation is a dramatic example where an entire chromosome's genes are silenced epigenetically.</li>
+</ol>
+<ol>
+<li><strong>Post-transcriptional level (mRNA processing and stability):</strong> Alternative splicing can produce different proteins from the same pre-mRNA (e.g., <em>Dscam</em> in Drosophila). mRNA stability is regulated by the poly-A tail length, AU-rich elements in the 3' UTR, and microRNAs (miRNAs) that target mRNAs for degradation or translational repression. An mRNA can be transcribed but never translated.</li>
+</ol>
+<ol>
+<li><strong>Translational level:</strong> Translation can be regulated by factors that affect ribosome binding. For example, in iron deficiency, the iron response protein (IRP) binds to the 5' UTR of ferritin mRNA, blocking translation. The mRNA is present but not translated.</li>
+</ol>
+<ol>
+<li><strong>Post-translational level:</strong> Even after a protein is made, its activity can be modulated. Phosphorylation can activate or deactivate enzymes. Proteolytic cleavage can convert an inactive zymogen to an active enzyme (trypsinogen → trypsin). Ubiquitination targets proteins for degradation, controlling their half-life independently of their synthesis rate.</li>
+</ol>
+<p>Therefore, the presence of an mRNA does not guarantee the presence or activity of the corresponding protein. Gene expression is a multi-layered process with regulation at each step.</p>
+
+<hr>
+
+<h2>Key Takeaways</h2>
+
+<table>
+<tr>
+<td>Concept</td>
+<td>Summary</td>
+</tr>
+<tr>
+<td>General transcription factors</td>
+<td>Required for all Pol II transcription. Include TFIID (TATA-binding), TFIIB, TFIIH (helicase + kinase). Form pre-initiation complex.</td>
+</tr>
+<tr>
+<td>Specific transcription factors</td>
+<td>Activators (bind enhancers) and repressors (bind silencers). Determine cell-type-specific expression.</td>
+</tr>
+<tr>
+<td>Enhancers & silencers</td>
+<td>Distant regulatory sequences that act via DNA looping. Combinatorial control.</td>
+</tr>
+<tr>
+<td>DNA methylation</td>
+<td>Methyl groups on cytosine at CpG islands → chromatin condensation → gene silencing. Maintained by DNMT1.</td>
+</tr>
+<tr>
+<td>Histone acetylation</td>
+<td>HATs add acetyl groups → neutralises lysine charge → loosens chromatin → euchromatin → active transcription. HDACs reverse this.</td>
+</tr>
+<tr>
+<td>Histone code</td>
+<td>Pattern of histone modifications (acetylation, methylation, phosphorylation) encodes information about chromatin state.</td>
+</tr>
+<tr>
+<td>Epigenetic inheritance</td>
+<td>Methylation patterns copied through cell division (DNMT1). Some marks may transmit across generations.</td>
+</tr>
+<tr>
+<td>Phosphorylation</td>
+<td>Kinases add phosphate → conformational change → activate/deactivate. Reversed by phosphatases.</td>
+</tr>
+<tr>
+<td>Glycosylation</td>
+<td>Carbohydrates added in ER/Golgi. Cell recognition, folding, stability.</td>
+</tr>
+<tr>
+<td>Proteolytic cleavage</td>
+<td>Cutting polypeptide → activation. Proinsulin→insulin, zymogens.</td>
+</tr>
+<tr>
+<td>Ubiquitination</td>
+<td>Polyubiquitin chain → proteasome degradation. E1, E2, E3 cascade. Clears damaged/misfolded/unneeded proteins.</td>
+</tr>
+<tr>
+<td>Protein folding</td>
+<td>Chaperones assist folding. ER quality control: calnexin cycle, UPR, ERAD.</td>
+</tr>
+</table>
+
+<hr>
+
+<p><em>End of Lesson 41 — Next: Mutations and Gene Editing (D1.3)</em></p>
+
+<div class="nav"><a href="lesson_40.html">&#8592; Lesson 40</a><a href="index.html">&#8962; Index</a><a href="lesson_42.html">Lesson 42 &#8594;</a></div>
+
+</body>
+</html>

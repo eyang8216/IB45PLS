@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 370">
+  <rect width="600" height="370" fill="#fff"/>
+  <text x="300" y="22" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="#333">Neuron — Structure &amp; Function</text>
+
+  <!-- Soma -->
+  <circle cx="90" cy="200" r="35" fill="#1565c0" opacity="0.7" stroke="#0d47a1" stroke-width="2.5"/>
+  <text x="90" y="195" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#fff">Soma</text>
+  <text x="90" y="215" text-anchor="middle" font-family="Arial" font-size="9" fill="#fff">(cell body)</text>
+
+  <!-- Nucleus -->
+  <circle cx="90" cy="200" r="14" fill="none" stroke="#fff" stroke-width="1.5"/>
+  <text x="90" y="203" text-anchor="middle" font-family="Arial" font-size="8" fill="#fff">Nucleus</text>
+
+  <!-- Dendrites -->
+  <g stroke="#1565c0" stroke-width="2.5" fill="none">
+    <path d="M60,185 Q30,160 15,150"/>
+    <path d="M60,195 Q25,180 10,185"/>
+    <path d="M60,210 Q30,225 15,240"/>
+    <path d="M65,175 Q20,130 10,140"/>
+    <path d="M65,220 Q20,255 15,265"/>
+  </g>
+  <text x="50" y="140" font-family="Arial" font-size="10" fill="#1565c0">Dendrites</text>
+  <text x="50" y="153" font-family="Arial" font-size="8" fill="#555">(receive signals)</text>
+
+  <!-- Axon -->
+  <line x1="125" y1="200" x2="520" y2="200" stroke="#ff8f00" stroke-width="3"/>
+  <text x="300" y="190" text-anchor="middle" font-family="Arial" font-size="10" fill="#ff8f00">Axon</text>
+
+  <!-- Axon hillock -->
+  <rect x="120" y="185" width="20" height="30" rx="3" fill="#e53935" opacity="0.7"/>
+  <text x="130" y="178" text-anchor="middle" font-family="Arial" font-size="8" fill="#e53935">Axon</text>
+  <text x="130" y="232" text-anchor="middle" font-family="Arial" font-size="8" fill="#e53935">hillock</text>
+
+  <!-- Myelin sheath -->
+  <g fill="none" stroke="#1a6b3c" stroke-width="6" opacity="0.6">
+    <rect x="170" y="195" width="30" height="10" rx="2"/>
+    <rect x="220" y="195" width="30" height="10" rx="2"/>
+    <rect x="270" y="195" width="30" height="10" rx="2"/>
+    <rect x="320" y="195" width="30" height="10" rx="2"/>
+    <rect x="370" y="195" width="30" height="10" rx="2"/>
+    <rect x="420" y="195" width="30" height="10" rx="2"/>
+  </g>
+  <text x="300" y="215" text-anchor="middle" font-family="Arial" font-size="9" fill="#1a6b3c">Myelin sheath (Schwann cells)</text>
+
+  <!-- Nodes of Ranvier -->
+  <g fill="#e53935">
+    <rect x="200" y="194" width="20" height="12" rx="2"/>
+    <rect x="250" y="194" width="20" height="12" rx="2"/>
+    <rect x="300" y="194" width="20" height="12" rx="2"/>
+    <rect x="350" y="194" width="20" height="12" rx="2"/>
+    <rect x="400" y="194" width="20" height="12" rx="2"/>
+  </g>
+  <text x="300" y="235" text-anchor="middle" font-family="Arial" font-size="9" fill="#e53935">Nodes of Ranvier (saltatory conduction)</text>
+
+  <!-- Synaptic terminals -->
+  <g fill="#6a1b9a">
+    <circle cx="520" cy="180" r="8"/><circle cx="530" cy="195" r="8"/>
+    <circle cx="520" cy="210" r="8"/><circle cx="540" cy="200" r="8"/>
+  </g>
+  <text x="530" y="260" font-family="Arial" font-size="10" fill="#6a1b9a">Synaptic terminals</text>
+  <text x="530" y="273" font-family="Arial" font-size="8" fill="#555">(release neurotransmitters)</text>
+
+  <!-- Direction -->
+  <defs><marker id="dn" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#333"/></marker></defs>
+  <line x1="350" y1="250" x2="430" y2="250" stroke="#333" stroke-width="2" marker-end="url(#dn)"/>
+  <text x="390" y="268" text-anchor="middle" font-family="Arial" font-size="9" fill="#333">Signal direction →</text>
+
+  <!-- Key -->
+  <rect x="20" y="290" width="560" height="65" rx="6" fill="#f5f5f5" stroke="#ddd" stroke-width="1"/>
+  <text x="300" y="308" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#333">Key: Dendrites → Soma → Axon hillock → Axon → Synaptic terminals</text>
+  <text x="300" y="325" text-anchor="middle" font-family="Arial" font-size="10" fill="#555">Myelin increases conduction speed · Nodes of Ranvier allow saltatory (jumping) conduction</text>
+  <text x="300" y="342" text-anchor="middle" font-family="Arial" font-size="10" fill="#555">Synaptic terminals release neurotransmitters into synapse to next neuron</text>
+</svg>

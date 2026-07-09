@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 460" width="600" height="460">
+  <defs><style>text { font-family: Arial, sans-serif; } .title { font-size: 18px; font-weight: bold; fill: #1a6b3c; text-anchor: middle; } .lab { font-size: 13px; fill: #333; text-anchor: middle; } .sm { font-size: 11px; fill: #555; text-anchor: middle; }</style></defs>
+  <rect width="600" height="460" fill="#fff"/>
+  <text x="300" y="28" class="title">Tertiary Structure: R-Group Interactions (3° Folding)</text>
+
+  <!-- Protein blob -->
+  <ellipse cx="300" cy="230" rx="170" ry="120" fill="#e8eaf6" stroke="#1565c0" stroke-width="2.5"/>
+  <text x="300" y="130" class="lab" fill="#1565c0" font-weight="bold">Folded Protein</text>
+
+  <!-- Hydrophobic core -->
+  <ellipse cx="280" cy="230" rx="60" ry="45" fill="#ffcc80" stroke="#ff8f00" stroke-width="2" opacity="0.7"/>
+  <text x="280" y="226" class="sm" fill="#e65100" font-weight="bold">Hydrophobic</text>
+  <text x="280" y="240" class="sm" fill="#e65100" font-weight="bold">Core</text>
+  <text x="280" y="258" class="sm" fill="#e65100">(nonpolar R)</text>
+
+  <!-- H-bonds -->
+  <line x1="210" y1="180" x2="175" y2="155" stroke="#1565c0" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="175" y="148" class="sm" fill="#1565c0">H-bond</text>
+  <line x1="350" y1="165" x2="390" y2="140" stroke="#1565c0" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="400" y="138" class="sm" fill="#1565c0">H-bond</text>
+
+  <!-- Ionic bond -->
+  <circle cx="190" cy="260" r="6" fill="#1565c0"/>
+  <text x="178" y="263" class="sm" fill="#1565c0">+</text>
+  <circle cx="160" cy="280" r="6" fill="#e53935"/>
+  <text x="152" y="283" class="sm" fill="#e53935">−</text>
+  <line x1="190" y1="260" x2="160" y2="280" stroke="#333" stroke-width="2" stroke-dasharray="3,2"/>
+  <text x="140" y="298" class="sm" fill="#333">Ionic bond</text>
+  <text x="140" y="311" class="sm" fill="#999">(salt bridge)</text>
+
+  <!-- Disulfide bond -->
+  <line x1="370" y1="270" x2="400" y2="290" stroke="#e53935" stroke-width="4"/>
+  <text x="370" y="265" class="sm" fill="#c62828">Cys–S–S–Cys</text>
+  <text x="370" y="305" class="sm" fill="#c62828">Disulfide bridge</text>
+  <text x="370" y="318" class="sm" fill="#999">(covalent!)</text>
+
+  <!-- Summary table -->
+  <g transform="translate(20, 350)">
+    <rect x="0" y="0" width="560" height="100" rx="6" fill="#f5f5f5" stroke="#ccc" stroke-width="1"/>
+    <text x="280" y="18" class="lab" fill="#333" font-weight="bold">5 Types of Tertiary Interactions (strongest→weakest)</text>
+    <line x1="20" y1="30" x2="540" y2="30" stroke="#ddd" stroke-width="1"/>
+    <text x="40" y="48" class="sm" fill="#c62828" font-weight="bold">1. Disulfide bridge</text><text x="170" y="48" class="sm" fill="#666">Covalent S–S (Cys—Cys) — strongest</text>
+    <text x="40" y="64" class="sm" fill="#1565c0" font-weight="bold">2. Ionic bond</text><text x="170" y="64" class="sm" fill="#666">(+)−(−) attraction (Lys⁺···Asp⁻)</text>
+    <text x="40" y="80" class="sm" fill="#43a047" font-weight="bold">3. Hydrogen bond</text><text x="170" y="80" class="sm" fill="#666">Polar R-groups: –OH···O=C–</text>
+    <text x="320" y="48" class="sm" fill="#ff8f00" font-weight="bold">4. Hydrophobic interaction</text><text x="460" y="48" class="sm" fill="#666">Nonpolar R cluster in core</text>
+    <text x="320" y="64" class="sm" fill="#999" font-weight="bold">5. Van der Waals</text><text x="460" y="64" class="sm" fill="#666">Transient dipoles — cumulative effect</text>
+  </g>
+</svg>

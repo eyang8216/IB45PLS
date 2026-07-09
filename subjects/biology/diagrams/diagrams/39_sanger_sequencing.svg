@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 620">
+  <rect width="600" height="620" fill="#fff"/>
+  <text x="300" y="26" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#1a6b3c">Sanger (Dideoxy) DNA Sequencing</text>
+  <text x="300" y="44" text-anchor="middle" font-family="Arial" font-size="11" fill="#666" font-style="italic">Chain-termination method — Frederick Sanger, 1977</text>
+
+  <!-- Principle -->
+  <text x="300" y="68" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#333">Principle: ddNTPs Terminate Synthesis</text>
+
+  <!-- dNTP vs ddNTP -->
+  <text x="150" y="90" text-anchor="middle" font-family="Arial" font-size="10" fill="#333" font-weight="bold">dNTP (normal nucleotide)</text>
+  <circle cx="130" cy="112" r="14" fill="#e8f5e9" stroke="#1a6b3c" stroke-width="2"/>
+  <text x="130" y="116" text-anchor="middle" font-family="Arial" font-size="11" fill="#1a6b3c" font-weight="bold">3'</text>
+  <text x="130" y="128" text-anchor="middle" font-family="Arial" font-size="9" fill="#1a6b3c">OH</text>
+  <text x="150" y="145" text-anchor="middle" font-family="Arial" font-size="9" fill="#555">Has 3'-OH →</text>
+  <text x="150" y="157" text-anchor="middle" font-family="Arial" font-size="9" fill="#555">Chain can continue</text>
+
+  <text x="450" y="90" text-anchor="middle" font-family="Arial" font-size="10" fill="#333" font-weight="bold">ddNTP (dideoxy terminator)</text>
+  <circle cx="430" cy="112" r="14" fill="#ffebee" stroke="#e53935" stroke-width="2"/>
+  <text x="430" y="116" text-anchor="middle" font-family="Arial" font-size="11" fill="#e53935" font-weight="bold">3'</text>
+  <text x="430" y="128" text-anchor="middle" font-family="Arial" font-size="9" fill="#e53935">H</text>
+  <text x="450" y="145" text-anchor="middle" font-family="Arial" font-size="9" fill="#555">No 3'-OH →</text>
+  <text x="450" y="157" text-anchor="middle" font-family="Arial" font-size="9" fill="#555">Chain TERMINATES</text>
+
+  <text x="300" y="140" text-anchor="middle" font-family="Arial" font-size="14" fill="#333">vs</text>
+
+  <!-- Template and reaction -->
+  <line x1="40" y1="180" x2="560" y2="180" stroke="#ddd" stroke-width="1"/>
+
+  <text x="300" y="198" text-anchor="middle" font-family="Arial" font-size="11" fill="#333">Template: 3' — T A C T G A G C T A — 5'</text>
+
+  <!-- Four reaction tubes -->
+  <text x="300" y="222" text-anchor="middle" font-family="Arial" font-size="10" fill="#666">Four parallel sequencing reactions (each with dNTPs + one ddNTP)</text>
+
+  <!-- ddATP tube -->
+  <rect x="40" y="232" width="110" height="14" rx="3" fill="#e53935" opacity="0.15" stroke="#e53935" stroke-width="1.5"/>
+  <text x="95" y="242" text-anchor="middle" font-family="Arial" font-size="10" fill="#e53935" font-weight="bold">ddATP (A lane)</text>
+
+  <!-- Fragments from ddATP -->
+  <text x="50" y="262" font-family="Arial" font-size="9" fill="#555">5'-A- ddATP (2 nt)</text>
+  <text x="50" y="276" font-family="Arial" font-size="9" fill="#555">5'-A-T-G-A- ddATP (5 nt)</text>
+  <text x="50" y="290" font-family="Arial" font-size="9" fill="#555">5'-A-T-G-A-C-T-C-G-A- ddATP (10 nt)</text>
+
+  <!-- ddTTP tube -->
+  <rect x="165" y="232" width="110" height="14" rx="3" fill="#1565c0" opacity="0.15" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="220" y="242" text-anchor="middle" font-family="Arial" font-size="10" fill="#1565c0" font-weight="bold">ddTTP (T lane)</text>
+
+  <text x="175" y="262" font-family="Arial" font-size="9" fill="#555">5'-A-T- ddTTP (3 nt)</text>
+  <text x="175" y="276" font-family="Arial" font-size="9" fill="#555">5'-A-T-G-A-C-T- ddTTP (6 nt)</text>
+
+  <!-- ddGTP tube -->
+  <rect x="290" y="232" width="110" height="14" rx="3" fill="#43a047" opacity="0.15" stroke="#1a6b3c" stroke-width="1.5"/>
+  <text x="345" y="242" text-anchor="middle" font-family="Arial" font-size="10" fill="#1a6b3c" font-weight="bold">ddGTP (G lane)</text>
+
+  <text x="300" y="262" font-family="Arial" font-size="9" fill="#555">5'-A-T-G- ddGTP (4 nt)</text>
+  <text x="300" y="276" font-family="Arial" font-size="9" fill="#555">5'-A-T-G-A-C-T-C-G- ddGTP (9 nt)</text>
+
+  <!-- ddCTP tube -->
+  <rect x="415" y="232" width="110" height="14" rx="3" fill="#ff8f00" opacity="0.15" stroke="#ff8f00" stroke-width="1.5"/>
+  <text x="470" y="242" text-anchor="middle" font-family="Arial" font-size="10" fill="#ff8f00" font-weight="bold">ddCTP (C lane)</text>
+
+  <text x="425" y="262" font-family="Arial" font-size="9" fill="#555">5'-A- ddATP ... but for C</text>
+  <text x="425" y="276" font-family="Arial" font-size="9" fill="#555">5'-A-T-G-A-C- ddCTP (6 nt)</text>
+  <text x="425" y="290" font-family="Arial" font-size="9" fill="#555">5'-A-T-G-A-C-T-C- ddCTP (8 nt)</text>
+
+  <!-- Sequencing Gel -->
+  <line x1="40" y1="320" x2="560" y2="320" stroke="#ddd" stroke-width="1"/>
+
+  <text x="300" y="340" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#333">Polyacrylamide Gel (read bottom → top)</text>
+
+  <!-- Gel lanes -->
+  <rect x="100" y="355" width="60" height="180" rx="3" fill="#f5f5f5" stroke="#ccc" stroke-width="1"/>
+  <rect x="180" y="355" width="60" height="180" rx="3" fill="#f5f5f5" stroke="#ccc" stroke-width="1"/>
+  <rect x="260" y="355" width="60" height="180" rx="3" fill="#f5f5f5" stroke="#ccc" stroke-width="1"/>
+  <rect x="340" y="355" width="60" height="180" rx="3" fill="#f5f5f5" stroke="#ccc" stroke-width="1"/>
+
+  <!-- Lane headers -->
+  <text x="130" y="348" text-anchor="middle" font-family="Arial" font-size="11" fill="#e53935" font-weight="bold">A</text>
+  <text x="210" y="348" text-anchor="middle" font-family="Arial" font-size="11" fill="#1565c0" font-weight="bold">T</text>
+  <text x="290" y="348" text-anchor="middle" font-family="Arial" font-size="11" fill="#1a6b3c" font-weight="bold">G</text>
+  <text x="370" y="348" text-anchor="middle" font-family="Arial" font-size="11" fill="#ff8f00" font-weight="bold">C</text>
+
+  <!-- Bands - A lane -->
+  <rect x="118" y="515" width="24" height="3" rx="1" fill="#e53935"/>
+  <rect x="118" y="478" width="24" height="3" rx="1" fill="#e53935"/>
+  <rect x="118" y="418" width="24" height="3" rx="1" fill="#e53935"/>
+
+  <!-- Bands - T lane -->
+  <rect x="198" y="502" width="24" height="3" rx="1" fill="#1565c0"/>
+  <rect x="198" y="442" width="24" height="3" rx="1" fill="#1565c0"/>
+
+  <!-- Bands - G lane -->
+  <rect x="278" y="490" width="24" height="3" rx="1" fill="#1a6b3c"/>
+  <rect x="278" y="430" width="24" height="3" rx="1" fill="#1a6b3c"/>
+
+  <!-- Bands - C lane -->
+  <rect x="358" y="465" width="24" height="3" rx="1" fill="#ff8f00"/>
+  <rect x="358" y="455" width="24" height="3" rx="1" fill="#ff8f00"/>
+  <rect x="358" y="405" width="24" height="3" rx="1" fill="#ff8f00"/>
+
+  <!-- Read sequence -->
+  <text x="300" y="560" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#1a6b3c">Sequence read (bottom → top): A-T-G-A-C-T-C-G-A</text>
+
+  <!-- Annotation: small fragments at bottom -->
+  <text x="400" y="520" font-family="Arial" font-size="8" fill="#888">↓ Small fragments (fast)</text>
+  <text x="400" y="400" font-family="Arial" font-size="8" fill="#888">↑ Large fragments (slow)</text>
+
+  <!-- Automated sequencing note -->
+  <line x1="40" y1="578" x2="560" y2="578" stroke="#ddd" stroke-width="1"/>
+
+  <text x="300" y="595" text-anchor="middle" font-family="Arial" font-size="10" fill="#333">Modern: fluorescent ddNTPs (one colour each) → single capillary → detector → electropherogram</text>
+  <text x="300" y="610" text-anchor="middle" font-family="Arial" font-size="9" fill="#888">Key: ddNTP lacks 3'-OH → no phosphodiester bond → chain terminates at that position</text>
+</svg>

@@ -77,7 +77,8 @@ SUBJECTS = {
         "color": "#2c6b4f",
         "folder": "subjects/economics",
         "index": "index.html",
-        "description": "IB Economics SL — 57 lessons"
+        "description": "IB Economics SL — 57 lessons",
+        "total_lessons": 57
     },
     "chemistry": {
         "name": "Chemistry HL",
@@ -94,7 +95,8 @@ SUBJECTS = {
         "color": "#6c3483",
         "folder": "subjects/physics",
         "index": "index.html",
-        "description": "IB Physics HL — 67 lessons"
+        "description": "IB Physics HL — 67 lessons",
+        "total_lessons": 41
     },
     "math": {
         "name": "Math AA HL",
@@ -102,7 +104,8 @@ SUBJECTS = {
         "color": "#1a5276",
         "folder": "subjects/math",
         "index": "index.html",
-        "description": "IB Math AA HL — 50 lessons"
+        "description": "IB Math AA HL — 50 lessons",
+        "total_lessons": 67
     },
     "chinese": {
         "name": "Chinese Lang Lit SL",
@@ -110,7 +113,8 @@ SUBJECTS = {
         "color": "#b22222",
         "folder": "subjects/chinese",
         "index": "index.html",
-        "description": "IB Chinese Lang & Lit SL — Paper 1 & 2 practice"
+        "description": "IB Chinese Lang & Lit SL — Paper 1 & 2 practice",
+        "total_lessons": 50
     },
     "english": {
         "name": "English Lang Lit SL",
@@ -118,7 +122,8 @@ SUBJECTS = {
         "color": "#1a5276",
         "folder": "subjects/english",
         "index": "index.html",
-        "description": "IB English Lang & Lit SL — Paper 1 practice"
+        "description": "IB English Lang & Lit SL — Paper 1 practice",
+        "total_lessons": 7
     },
     "sat": {
         "name": "SAT Prep",
@@ -126,11 +131,21 @@ SUBJECTS = {
         "color": "#e67e22",
         "folder": "subjects/sat",
         "index": "index.html",
-        "description": "SAT — 50 lessons + 5 practice tests"
+        "description": "SAT — 50 lessons + 5 practice tests",
+        "total_lessons": 3
+    },
+    "biology": {
+        "name": "Biology HL",
+        "icon": "🧬",
+        "color": "#27ae60",
+        "folder": "subjects/biology",
+        "index": "index.html",
+        "description": "IB Biology HL — 54 lessons",
+        "total_lessons": 54
     }
 }
 
-SYSTEM_PROMPT = """You are a friendly, encouraging IB tutor assistant. You help students learn Economics SL, Chemistry HL, Physics HL, and Math AA HL.
+SYSTEM_PROMPT = """You are a friendly, encouraging IB tutor assistant. You help students learn Economics SL, Chemistry HL, Physics HL, Math AA HL, Chinese Lang Lit SL, English Lang Lit SL, and Biology HL.
 
 Your teaching style:
 - Break down complex concepts into simple explanations
@@ -146,6 +161,9 @@ Subject context available:
 - Chemistry HL: Stoichiometry, Atomic Structure, Bonding, Energetics, Kinetics, Equilibrium, Acids/Bases, Redox, Organic — 41 lessons  
 - Physics HL: Mechanics, Thermal, Waves, Electricity, Fields, Quantum, Relativity, Nuclear — 67 lessons
 - Math AA HL: Algebra, Functions, Trigonometry, Calculus, Vectors, Stats, Probability — 50 lessons
+- Biology HL: Water, Nucleic Acids, Cells, Evolution, Biodiversity, Carbohydrates, Lipids, Proteins, Membranes, Organelles, Respiration, Photosynthesis, Genetics, Ecology, Human Physiology — 54 lessons
+- Chinese Lang Lit SL: Paper 1 & 2 guided analysis practice
+- English Lang Lit SL: Paper 1 guided analysis practice
 
 If a student asks about a topic you're unsure of, be honest about limitations and suggest they consult their textbook or teacher."""
 
@@ -539,6 +557,9 @@ def serve_subject(subject, filename="index.html"):
     if subject not in SUBJECTS:
         abort(404)
 
+    # Track lesson view for dashboard
+    track_lesson_view(session.get("user", ""), subject, filename)
+
     subj = SUBJECTS[subject]
     folder = os.path.join(os.path.dirname(__file__), subj["folder"])
     index_file = subj.get("index", "index.html")
@@ -739,43 +760,60 @@ except Exception:
 # ═══════════════════════════════════════════════════════════
 # IB LANG LIT A SL RUBRIC (used in system prompt for grading)
 # ═══════════════════════════════════════════════════════════
-IB_LANG_LIT_RUBRIC = """Grade this essay against the IB Language A: Language and Literature SL Paper 1/2 rubric:
+IB_LANG_LIT_RUBRIC = """You are a STRICT IB examiner. Grade this essay against the IB Language A: Language and Literature SL rubric.
+
+IMPORTANT GRADING PHILOSOPHY:
+- It is BETTER TO UNDERMARK than to overmark. Be brutally honest.
+- Most student essays score 2-3 per criterion, not 4-5. Only award top marks for truly exceptional work.
+- A score of 3 means "solid, meets expectations for SL." Not "average."
+- A score of 4 means "well above expectations." 
+- A score of 5 means "near-perfect, rarely awarded." Do NOT give 5s easily.
+- If the essay lacks textual references, cap Criterion A at 2.
+- If the essay is purely descriptive with no analysis of authorial choices, cap Criterion B at 2.
+- If the essay has no clear thesis or structure, cap Criterion C at 2.
+- Grammar errors or informal register should pull Criterion D down to 2-3.
+- For every point deducted, explain EXACTLY what the student must do to improve.
+- Give 2-3 specific, actionable improvements in every criterion comment.
 
 CRITERION A: Understanding and Interpretation (0-5)
-- 0: No understanding shown
-- 1-2: Superficial understanding, few references
-- 3-4: Good understanding, relevant references, some interpretation
-- 5: Excellent understanding, insightful interpretation, well-chosen references
+- 0-1: No understanding shown or completely off-topic
+- 2: Surface-level understanding, few or no textual references, relies on summary
+- 3: Adequate understanding with some references, basic interpretation
+- 4: Strong understanding with well-chosen references and meaningful interpretation
+- 5: Exceptional insight, nuanced interpretation, references are integral to argument
 
 CRITERION B: Analysis and Evaluation (0-5)
-- 0: No analysis
-- 1-2: Descriptive, little analysis of authorial choices
-- 3-4: Good analysis of textual features and their effects, some evaluation
-- 5: Excellent analysis, evaluates how choices shape meaning, sophisticated
+- 0-1: No analysis or completely irrelevant
+- 2: Mostly descriptive, identifies features but doesn't analyze their effects
+- 3: Analyzes some authorial choices and their effects on the reader
+- 4: Strong analysis that evaluates how specific features create meaning
+- 5: Sophisticated evaluation of how authorial choices work together to produce complex effects
 
 CRITERION C: Focus and Organization (0-5)
-- 0: No organization
-- 1-2: Some structure but lacks coherence or focus
-- 3-4: Clear organization, mostly coherent and focused
-- 5: Effectively organized, strong coherence, sustained focus
+- 0-1: No discernible organization
+- 2: Some structure but meanders, lacks clear thesis or topic sentences
+- 3: Clear introduction-body-conclusion, mostly stays on topic
+- 4: Well-organized with logical flow, each paragraph serves a purpose
+- 5: Flawless organization, seamless transitions, sustained analytical focus
 
 CRITERION D: Language (0-5)
-- 0: Language obscures meaning
-- 1-2: Limited clarity, some errors
-- 3-4: Clear, accurate, appropriate register, some stylistic choices
-- 5: Very clear, precise, effective style, strong academic register
+- 0-1: Language errors significantly obscure meaning
+- 2: Frequent errors, informal or inappropriate register for academic writing
+- 3: Generally clear and accurate, appropriate register with some lapses
+- 4: Clear, precise, effective academic register with stylistic awareness
+- 5: Masterful control of language, sophisticated vocabulary, flawless academic style
 
 Provide your response in this exact JSON format:
 {
-  "criterion_a": {"score": X, "comment": "specific feedback"},
-  "criterion_b": {"score": X, "comment": "specific feedback"},
-  "criterion_c": {"score": X, "comment": "specific feedback"},
-  "criterion_d": {"score": X, "comment": "specific feedback"},
+  "criterion_a": {"score": X, "comment": "What worked + 2-3 specific improvements needed"},
+  "criterion_b": {"score": X, "comment": "What worked + 2-3 specific improvements needed"},
+  "criterion_c": {"score": X, "comment": "What worked + 2-3 specific improvements needed"},
+  "criterion_d": {"score": X, "comment": "What worked + 2-3 specific improvements needed"},
   "total": X,
-  "overall_feedback": "2-3 sentence summary with 1 strength and 1 area to improve"
+  "overall_feedback": "Start with the biggest weakness. Then give 1 strength. End with the #1 priority for improvement. Be direct - no sugarcoating."
 }
 
-Be strict but encouraging. Reference specific parts of the student's essay in your feedback."""
+Reference specific parts of the student's essay. Do not be encouraging for the sake of being nice — accuracy and honesty come first."""
 
 # ═══════════════════════════════════════════════════════════
 # DASHBOARD DATA HELPERS
@@ -1028,11 +1066,29 @@ def dashboard():
 
     mock_attempts = user_data.get("mock_attempts", [])
     sat_attempts = user_data.get("sat_attempts", [])
+    lesson_views = user_data.get("lesson_views", {})
+
+    # Subject progress tracking
+    subject_progress = {}
+    for key, subj in SUBJECTS.items():
+        if key == "sat":
+            continue  # SAT tracked separately
+        total = subj.get("total_lessons", 0)
+        viewed = len(lesson_views.get(key, []))
+        if total > 0:
+            subject_progress[key] = {
+                "name": subj["name"],
+                "icon": subj["icon"],
+                "viewed": viewed,
+                "total": total,
+                "pct": round(viewed / total * 100)
+            }
 
     return render_template("dashboard.html",
         user_name=user_name,
         mock_attempts=mock_attempts[-30:],
         sat_attempts=sat_attempts[-30:],
+        subject_progress=subject_progress,
         csrf_token=generate_csrf_token())
 
 # ═══════════════════════════════════════════════════════════

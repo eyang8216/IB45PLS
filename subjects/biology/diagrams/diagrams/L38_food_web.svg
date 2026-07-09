@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 480" width="600" height="480">
+  <rect width="600" height="480" fill="white"/>
+  <text x="300" y="28" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#333">L38b — Food Web (Grassland Ecosystem)</text>
+
+  <!-- Arrows point to who eats; direction = energy flow -->
+
+  <!-- Top predators -->
+  <ellipse cx="300" cy="70" rx="50" ry="20" fill="#e53935" stroke="#333" stroke-width="2"/>
+  <text x="300" y="74" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="white">Hawk</text>
+
+  <ellipse cx="500" cy="130" rx="45" ry="18" fill="#ff8f00" stroke="#333" stroke-width="2"/>
+  <text x="500" y="134" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="white">Wolf</text>
+
+  <!-- Mid predators -->
+  <ellipse cx="230" cy="160" rx="40" ry="16" fill="#ff8f00" stroke="#333" stroke-width="2"/>
+  <text x="230" y="164" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="white">Snake</text>
+
+  <ellipse cx="400" cy="220" rx="38" ry="16" fill="#ff8f00" stroke="#333" stroke-width="2"/>
+  <text x="400" y="224" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="white">Fox</text>
+
+  <!-- Primary consumers -->
+  <ellipse cx="130" cy="260" rx="48" ry="18" fill="#43a047" stroke="#333" stroke-width="2"/>
+  <text x="130" y="264" text-anchor="middle" font-family="Arial" font-size="11" fill="white">Rabbit</text>
+
+  <ellipse cx="280" cy="300" rx="50" ry="17" fill="#43a047" stroke="#333" stroke-width="2"/>
+  <text x="280" y="304" text-anchor="middle" font-family="Arial" font-size="11" fill="white">Grasshopper</text>
+
+  <ellipse cx="460" cy="310" rx="42" ry="16" fill="#43a047" stroke="#333" stroke-width="2"/>
+  <text x="460" y="314" text-anchor="middle" font-family="Arial" font-size="11" fill="white">Deer</text>
+
+  <ellipse cx="180" cy="360" rx="42" ry="16" fill="#43a047" stroke="#333" stroke-width="2"/>
+  <text x="180" y="364" text-anchor="middle" font-family="Arial" font-size="11" fill="white">Frog</text>
+
+  <!-- Producer -->
+  <rect x="175" y="410" width="250" height="28" rx="6" fill="#1a6b3c" stroke="#333" stroke-width="2"/>
+  <text x="300" y="429" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="white">Grass (Producer)</text>
+
+  <!-- Arrows (energy flow direction: from eaten → eater) -->
+  <defs><marker id="arr" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><polygon points="0,0 7,2.5 0,5" fill="#333"/></marker></defs>
+
+  <!-- Grass → rabbit -->
+  <line x1="230" y1="420" x2="155" y2="278" stroke="#333" stroke-width="2" marker-end="url(#arr)"/>
+  <!-- Grass → grasshopper -->
+  <line x1="280" y1="415" x2="280" y2="317" stroke="#333" stroke-width="2" marker-end="url(#arr)"/>
+  <!-- Grass → deer -->
+  <line x1="370" y1="420" x2="440" y2="327" stroke="#333" stroke-width="2" marker-end="url(#arr)"/>
+  <!-- Grasshopper → frog -->
+  <line x1="260" y1="300" x2="205" y2="358" stroke="#333" stroke-width="2" marker-end="url(#arr)"/>
+  <!-- Rabbit → fox -->
+  <line x1="165" y1="255" x2="370" y2="230" stroke="#333" stroke-width="2" marker-end="url(#arr)"/>
+  <!-- Rabbit → snake -->
+  <line x1="150" y1="245" x2="210" y2="170" stroke="#333" stroke-width="2" marker-end="url(#arr)"/>
+  <!-- Frog → snake -->
+  <line x1="205" y1="348" x2="218" y2="175" stroke="#333" stroke-width="2" marker-end="url(#arr)"/>
+  <!-- Snake → hawk -->
+  <line x1="250" y1="148" x2="285" y2="90" stroke="#333" stroke-width="2" marker-end="url(#arr)"/>
+  <!-- Deer → wolf -->
+  <line x1="478" y1="297" x2="495" y2="148" stroke="#333" stroke-width="2" marker-end="url(#arr)"/>
+  <!-- Fox → hawk -->
+  <line x1="390" y1="205" x2="325" y2="88" stroke="#333" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- Legend -->
+  <rect x="30" y="445" width="540" height="28" rx="4" fill="#fafafa" stroke="#ccc" stroke-width="1"/>
+  <text x="300" y="463" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">Arrow = direction of energy flow (from food source → to consumer). Interconnected chains = food web → resilience through redundancy.</text>
+</svg>

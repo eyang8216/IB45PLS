@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450">
+  <rect width="600" height="450" fill="#fff"/>
+  <text x="300" y="28" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#1a6b3c">Linked vs Unlinked Genes — Test Cross Comparison</text>
+
+  <!-- Unlinked genes -->
+  <rect x="20" y="45" width="270" height="185" rx="8" fill="#e8f5e9" stroke="#1a6b3c" stroke-width="2"/>
+  <text x="155" y="68" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#1a6b3c">Unlinked (different chromosomes)</text>
+  <text x="155" y="85" text-anchor="middle" font-family="Arial" font-size="10" fill="#555">RrYy × rryy</text>
+
+  <rect x="30" y="95" width="230" height="120" fill="none" stroke="#333" stroke-width="1"/>
+  <line x1="30" y1="130" x2="260" y2="130" stroke="#333" stroke-width="0.5"/>
+  <line x1="145" y1="95" x2="145" y2="215" stroke="#333" stroke-width="0.5"/>
+
+  <text x="87" y="120" text-anchor="middle" font-family="Arial" font-size="10" fill="#333">RY</text>
+  <text x="202" y="120" text-anchor="middle" font-family="Arial" font-size="10" fill="#333">Ry</text>
+  <text x="72" y="155" text-anchor="middle" font-family="Arial" font-size="10" fill="#333">rY</text>
+  <text x="72" y="195" text-anchor="middle" font-family="Arial" font-size="10" fill="#333">ry</text>
+
+  <text x="87" y="155" text-anchor="middle" font-family="Arial" font-size="11" fill="#1a6b3c">25%</text>
+  <text x="202" y="155" text-anchor="middle" font-family="Arial" font-size="11" fill="#1a6b3c">25%</text>
+  <text x="87" y="195" text-anchor="middle" font-family="Arial" font-size="11" fill="#1a6b3c">25%</text>
+  <text x="202" y="195" text-anchor="middle" font-family="Arial" font-size="11" fill="#1a6b3c">25%</text>
+
+  <text x="155" y="235" text-anchor="middle" font-family="Arial" font-size="11" fill="#1a6b3c">
+    Expected ratio: <tspan font-weight="bold">1 : 1 : 1 : 1</tspan>
+  </text>
+
+  <!-- Linked genes -->
+  <rect x="310" y="45" width="270" height="185" rx="8" fill="#ffebee" stroke="#e53935" stroke-width="2"/>
+  <text x="445" y="68" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#e53935">Linked (same chromosome, 17 cM)</text>
+  <text x="445" y="85" text-anchor="middle" font-family="Arial" font-size="10" fill="#555">F₁ (b⁺b vg⁺vg) × bb vgvg</text>
+
+  <!-- Bar chart style for linked -->
+  <text x="350" y="115" text-anchor="start" font-family="Arial" font-size="10" font-weight="bold" fill="#333">Observed:</text>
+  <rect x="350" y="122" width="100" height="22" rx="3" fill="#c8e6c9"/>
+  <text x="355" y="137" font-family="Arial" font-size="9" fill="#1a6b3c">Parental: 965 (42%)</text>
+  <rect x="350" y="148" width="90" height="22" rx="3" fill="#c8e6c9"/>
+  <text x="355" y="163" font-family="Arial" font-size="9" fill="#1a6b3c">Parental: 944 (41%)</text>
+  <rect x="350" y="174" width="19" height="22" rx="3" fill="#ffcdd2"/>
+  <text x="355" y="189" font-family="Arial" font-size="9" fill="#e53935">Rec: 206 (9%)</text>
+  <rect x="350" y="200" width="17" height="22" rx="3" fill="#ffcdd2"/>
+  <text x="355" y="215" font-family="Arial" font-size="9" fill="#e53935">Rec: 185 (8%)</text>
+
+  <text x="445" y="235" text-anchor="middle" font-family="Arial" font-size="11" fill="#e53935">
+    RF = <tspan font-weight="bold">17%</tspan> (NOT 1:1:1:1!)
+  </text>
+
+  <!-- Comparison box -->
+  <rect x="20" y="255" width="560" height="85" rx="8" fill="#f3e5f5" stroke="#6a1b9a" stroke-width="1.5"/>
+  <text x="300" y="280" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#6a1b9a">How to Identify Linkage</text>
+  <text x="300" y="303" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">
+    1. Test cross F₁ heterozygote × homozygous recessive → count offspring phenotypes
+  </text>
+  <text x="300" y="323" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">
+    2. If linked: <tspan font-weight="bold">Parental types >> Recombinant types</tspan> (ratio ≠ 1:1:1:1)
+  </text>
+  <text x="300" y="343" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">
+    3. Use χ² test: If χ² >> critical value → reject H₀ (genes are linked)
+  </text>
+
+  <!-- Bottom key -->
+  <rect x="20" y="360" width="560" height="78" rx="8" fill="#f5f5f5" stroke="#ddd" stroke-width="1"/>
+  <text x="300" y="383" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#333">Key Terminology</text>
+  <text x="300" y="403" text-anchor="middle" font-family="Arial" font-size="11" fill="#1a6b3c">
+    <tspan font-weight="bold">Parental types</tspan> = same allele combination as parent (non-recombinant)
+  </text>
+  <text x="300" y="421" text-anchor="middle" font-family="Arial" font-size="11" fill="#e53935">
+    <tspan font-weight="bold">Recombinant types</tspan> = new combination from crossing over
+  </text>
+  <text x="300" y="439" text-anchor="middle" font-family="Arial" font-size="11" fill="#6a1b9a">
+    RF = (recombinants / total) × 100% | 1% = 1 cM | Max RF = 50%
+  </text>
+</svg>
