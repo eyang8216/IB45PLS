@@ -99,17 +99,17 @@ MathJax = {
 <p>Two-way table questions appear 1-3 times per SAT. These are pure data analysis—no algebra required, just careful reading and the ability to extract the right numbers. The SAT's favorite move: giving you a full table and asking a conditional probability question where students grab the wrong row/column. For an AAHL student, the probability notation $P(A|B)$ is familiar, but the SAT asks these in plain English ("among those who..., what fraction...?"), and misreading the table accounts for most errors.</p>
 <h2>Anatomy of a Two-Way Table</h2>
 <p>A two-way table shows how two categorical variables relate. Here's a template:</p>
-<p>|               | Category X | Category Y | **Total** |</p>
+<p>|               | Category X | Category Y | <b>Total</b> |</p>
 <p>|---------------|:----------:|:----------:|:---------:|</p>
-<p>| **Category A**|     a      |     b      |  **a+b**  |</p>
-<p>| **Category B**|     c      |     d      |  **c+d**  |</p>
-<p>| **Total**     |  **a+c**   |  **b+d**   | **a+b+c+d** |</p>
+<p>| <b>Category A</b>|     a      |     b      |  <b>a+b</b>  |</p>
+<p>| <b>Category B</b>|     c      |     d      |  <b>c+d</b>  |</p>
+<p>| <b>Total</b>     |  <b>a+c</b>   |  <b>b+d</b>   | <b>a+b+c+d</b> |</p>
 <h3> Three Types of Frequencies</h3>
-<p>**1. Joint Frequencies (individual cells)**</p>
+<p><b>1. Joint Frequencies (individual cells)</b></p>
 <p>The count in a single cell: $a, b, c, d$.</p>
-<p>**2. Marginal Frequencies (row/column totals)**</p>
+<p><b>2. Marginal Frequencies (row/column totals)</b></p>
 <p>The totals in the margins: $a+b$, $c+d$, $a+c$, $b+d$.</p>
-<p>**3. Conditional Relative Frequencies**</p>
+<p><b>3. Conditional Relative Frequencies</b></p>
 <p>A proportion calculated within a row or column:</p>
 <ul>
 <li>Row: $\frac{a}{a+b}$ = proportion of Category A that is Category X.</li>
@@ -119,60 +119,60 @@ MathJax = {
 <p>The bottom-right cell ($a+b+c+d$) is the total number of observations.</p>
 <h2>SAT Question Patterns</h2>
 <h3> Pattern 1: "What fraction of [group] are [characteristic]?"</h3>
-<p>**Key:** The phrase after "of" tells you the **denominator** (the restricted group).</p>
-<p>**Example:** "What fraction of **students who passed** are **female**?"</p>
+<p><b>Key:</b> The phrase after "of" tells you the <b>denominator</b> (the restricted group).</p>
+<p><b>Example:</b> "What fraction of <b>students who passed</b> are <b>female</b>?"</p>
 <p>Denominator: total students who passed.</p>
 <p>Numerator: female students who passed.</p>
 <h3> Pattern 2: "Given that a randomly selected [person] is [characteristic], what's the probability..."</h3>
-<p>**Key:** "Given that" = condition = denominator.</p>
-<p>**Example:** "Given that a randomly selected student is **male**, what is the probability the student **passed**?"</p>
+<p><b>Key:</b> "Given that" = condition = denominator.</p>
+<p><b>Example:</b> "Given that a randomly selected student is <b>male</b>, what is the probability the student <b>passed</b>?"</p>
 <p>Denominator: total male students.</p>
 <p>Numerator: male students who passed.</p>
 <h3> Pattern 3: Joint relative frequency</h3>
-<p>"What proportion of **all** students are female and passed?"</p>
+<p>"What proportion of <b>all</b> students are female and passed?"</p>
 <p>Denominator: grand total.</p>
 <p>Numerator: female students who passed.</p>
-<p>> **🚨 SAT TRAP ALERT: Using the Wrong Denominator.** The SAT will put answer choices that use the wrong denominator—the grand total when you should use a row total, the row total when you should use the column total, etc. Always identify: what is the *universe* for this question? Is it everyone? A specific row? A specific column? Read the "of" or "given that" phrase carefully. If a question says "of the students who passed," your denominator is the "passed" total, NOT the grand total.</p>
-<p>> **🔍 PATTERN RECOGNITION: "Among..., what percent...?"** Any time you see "among" in a two-way table question, it signals a conditional relative frequency. "Among X" means: restrict to group X, then find the proportion within that group. Similarly, "of the..." at the beginning of a question signals the denominator. Highlight or underline the conditional phrase before touching the numbers.</p>
+<p>> <b>🚨 SAT TRAP ALERT: Using the Wrong Denominator.</b> The SAT will put answer choices that use the wrong denominator—the grand total when you should use a row total, the row total when you should use the column total, etc. Always identify: what is the *universe* for this question? Is it everyone? A specific row? A specific column? Read the "of" or "given that" phrase carefully. If a question says "of the students who passed," your denominator is the "passed" total, NOT the grand total.</p>
+<p>> <b>🔍 PATTERN RECOGNITION: "Among..., what percent...?"</b> Any time you see "among" in a two-way table question, it signals a conditional relative frequency. "Among X" means: restrict to group X, then find the proportion within that group. Similarly, "of the..." at the beginning of a question signals the denominator. Highlight or underline the conditional phrase before touching the numbers.</p>
 <h3> Worked Example 1: Reading a Two-Way Table</h3>
-<p>**Problem:** A survey of 200 people asked about pet ownership:</p>
+<p><b>Problem:</b> A survey of 200 people asked about pet ownership:</p>
 <p>|               | Own a Dog | No Dog | Total |</p>
 <p>|---------------|:---------:|:------:|:-----:|</p>
-<p>| **Own a Cat** |     40    |   30   |  70   |</p>
-<p>| **No Cat**    |     60    |   70   |  130  |</p>
-<p>| **Total**     |    100    |  100   |  200  |</p>
+<p>| <b>Own a Cat</b> |     40    |   30   |  70   |</p>
+<p>| <b>No Cat</b>    |     60    |   70   |  130  |</p>
+<p>| <b>Total</b>     |    100    |  100   |  200  |</p>
 <p>What fraction of dog owners also own a cat?</p>
 <p>A) $\frac{40}{200}$</p>
 <p>B) $\frac{40}{100}$</p>
 <p>C) $\frac{40}{70}$</p>
 <p>D) $\frac{70}{100}$</p>
-<p>**Solution:**</p>
+<p><b>Solution:</b></p>
 <p>"Of dog owners" → restrict to the "Own a Dog" column → denominator = 100.</p>
 <p>"Also own a cat" → the cell in the "Own a Cat" row and "Own a Dog" column → numerator = 40.</p>
 <p>Fraction: $\frac{40}{100} = 0.4 = 40\%$.</p>
-<p>**Answer: B.**</p>
-<p>**Wrong answer analysis:**</p>
+<p><b>Answer: B.</b></p>
+<p><b>Wrong answer analysis:</b></p>
 <ul>
 <li>A ($\frac{40}{200}$): This uses the grand total. It answers "what fraction of ALL people own both a dog and a cat?" Not the question asked.</li>
 <li>C ($\frac{40}{70}$): This restricts to cat owners instead of dog owners (column vs. row confusion).</li>
 <li>D ($\frac{70}{100}$): This is the proportion of dog owners who own a cat? No—70 is ALL cat owners, and 100 is dog owners. This fraction is meaningless in context; it asks "what fraction of dog owners are cat owners?" but uses the wrong numerator.</li>
 </ul>
 <h3> Worked Example 2: Conditional Probability Wording</h3>
-<p>**Problem:** The same table as above. Given that a randomly selected person does NOT own a cat, what is the probability the person owns a dog?</p>
-<p>**Solution:**</p>
+<p><b>Problem:</b> The same table as above. Given that a randomly selected person does NOT own a cat, what is the probability the person owns a dog?</p>
+<p><b>Solution:</b></p>
 <p>"Given that... does NOT own a cat" → restrict to "No Cat" row → denominator = 130.</p>
 <p>"Owns a dog" → the cell in "No Cat" row and "Own a Dog" column → numerator = 60.</p>
 <p>Probability: $\frac{60}{130} = \frac{6}{13} \approx 0.462$.</p>
 <p>This is $P(\text{Dog} \mid \text{No Cat}) = \frac{60}{130}$.</p>
 <h3> Worked Example 3: Finding Missing Values</h3>
-<p>**Problem:** A two-way table is partially complete:</p>
+<p><b>Problem:</b> A two-way table is partially complete:</p>
 <p>|               | Passed | Failed | Total |</p>
 <p>|---------------|:------:|:------:|:-----:|</p>
-<p>| **Studied**   |   72   |        |       |</p>
-<p>| **Didn't Study** |      |   30   |   50  |</p>
-<p>| **Total**     |        |   42   |  120  |</p>
+<p>| <b>Studied</b>   |   72   |        |       |</p>
+<p>| <b>Didn't Study</b> |      |   30   |   50  |</p>
+<p>| <b>Total</b>     |        |   42   |  120  |</p>
 <p>What is the probability that a randomly selected student who passed also studied?</p>
-<p>**Solution:**</p>
+<p><b>Solution:</b></p>
 <p>First, complete the table:</p>
 <ul>
 <li>Grand total = 120, "Didn't Study" row total = 50, so "Studied" row total = 120 − 50 = 70.</li>
@@ -183,9 +183,9 @@ MathJax = {
 <p>Let me redesign the table:</p>
 <p>|               | Passed | Failed | Total |</p>
 <p>|---------------|:------:|:------:|:-----:|</p>
-<p>| **Studied**   |   54   |        |   60  |</p>
-<p>| **Didn't Study** |      |   30   |   40  |</p>
-<p>| **Total**     |        |   36   |  100  |</p>
+<p>| <b>Studied</b>   |   54   |        |   60  |</p>
+<p>| <b>Didn't Study</b> |      |   30   |   40  |</p>
+<p>| <b>Total</b>     |        |   36   |  100  |</p>
 <p>Complete:</p>
 <ul>
 <li>"Studied" and "Failed": 60 − 54 = 6.</li>
@@ -200,9 +200,9 @@ MathJax = {
 <p>A survey of 150 high school students about whether they play a sport and/or a musical instrument:</p>
 <p>|                        | Plays Instrument | No Instrument | Total |</p>
 <p>|------------------------|:----------------:|:-------------:|:-----:|</p>
-<p>| **Plays a Sport**      |        35        |      55       |  90   |</p>
-<p>| **Does Not Play Sport**|        25        |      35       |  60   |</p>
-<p>| **Total**              |        60        |      90       |  150  |</p>
+<p>| <b>Plays a Sport</b>      |        35        |      55       |  90   |</p>
+<p>| <b>Does Not Play Sport</b>|        25        |      35       |  60   |</p>
+<p>| <b>Total</b>              |        60        |      90       |  150  |</p>
 <li>What fraction of the students play both a sport and an instrument?</li>
 <p>A) $\frac{35}{150}$</p>
 <p>B) $\frac{35}{90}$</p>
@@ -224,7 +224,7 @@ MathJax = {
 <p>C) No, because $\frac{35}{60} \approx 0.583$ which is > 0.5, so actually yes</p>
 <p>D) No, because $\frac{25}{60} \approx 0.417$, which means most instrument players do NOT play a sport.</p>
 <p>*(Wait—$\frac{35}{60} \approx 0.583 > 0.5$, so the claim IS supported. Let me revise the question.)*</p>
-<p>**Revised:** A student claims that "most students who play an instrument also play a sport." Is this claim supported?</p>
+<p><b>Revised:</b> A student claims that "most students who play an instrument also play a sport." Is this claim supported?</p>
 <p>A) Yes, because 35 out of 60 instrument players (about 58.3%) also play a sport.</p>
 <p>B) No, because 35 is less than 55.</p>
 <p>C) No, because only $\frac{35}{150} = 23.3\%$ of all students are in that category.</p>
@@ -234,19 +234,19 @@ MathJax = {
 <p>B) 200</p>
 <p>C) 210</p>
 <p>D) Cannot be determined</p>
-<li>**(Challenge)** In a school, 60% of students take Art, 45% take Music, and 20% take both. What percent of students take neither Art nor Music?</li>
+<li><b>(Challenge)</b> In a school, 60% of students take Art, 45% take Music, and 20% take both. What percent of students take neither Art nor Music?</li>
 <p>A) 5%</p>
 <p>B) 10%</p>
 <p>C) 15%</p>
 <p>D) 25%</p>
 <hr>
 <h2>Answers</h2>
-<li>**Answer: A.** The question asks "what fraction of **the students**" — meaning of ALL students (grand total). Students who play both = 35. Fraction = $\frac{35}{150}$. **Wrong answers:** B uses only sport players as denominator. C uses instrument players. D is the fraction who play sports.</li>
-<li>**Answer: C.** "Among the students who play an instrument" → denominator = 60 (instrument column total). "Also play a sport" → numerator = 35. $\frac{35}{60} \times 100\% \approx 58.3\%$. **Wrong answers:** A: $\frac{35}{150} \approx 23.3\%$, using grand total. B: $\frac{35}{90} \approx 38.9\%$, using sport players as denominator. D: $\frac{90}{150} = 60\%$, percentage of all students who play sports.</li>
-<li>**Answer: A.** "Given that a student plays a sport" → denominator = 90. "Does NOT play an instrument" → numerator = 55. $\frac{55}{90}$. **Wrong answers:** B uses grand total. C gives probability of playing an instrument given sports ($\frac{35}{90}$). D restricts to non-instrument players as denominator.</li>
-<li>**Answer: A.** The claim is about "students who play an instrument" (denominator = 60). Among them, 35 also play sports, which is $\frac{35}{60} \approx 58.3\% > 50\%$. The claim is supported. **Wrong answers:** B uses the wrong denominator (grand total) and also gets a result < 0.5. C and D are incorrect interpretations or calculations.</li>
-<li>**Answer: B.** Row totals: $80 + 120 = 200$. Column totals: $90 + 110 = 200$. Both should equal the grand total. **Wrong answers:** A (190) adds incorrectly. C (210) adds incorrectly. D is wrong because the grand total is determined by both row and column sums (they must match).</li>
-<li>**Answer: C.** Using the principle: $P(\text{Art} \cup \text{Music}) = P(\text{Art}) + P(\text{Music}) - P(\text{Both}) = 60\% + 45\% - 20\% = 85\%$. So neither = $100\% - 85\% = 15\%$. **Wrong answers:** A (5%): $100\% - 60\% - 45\% + 20\% = 15\%$ — wait, that gives 15% too. Let me recalculate: A might be from $100 - 60 - 45 = -5$, ignoring the "both" overlap correction but getting the magnitude wrong. B (10%): perhaps $100 - 60 - 45 + 20 = 15$ miscalculated as 10. C is correct at 15%. D (25%) = $100 - 60 - 45 + 50$ (using 50% instead of 20%).</li>
+<li><b>Answer: A.</b> The question asks "what fraction of <b>the students</b>" — meaning of ALL students (grand total). Students who play both = 35. Fraction = $\frac{35}{150}$. <b>Wrong answers:</b> B uses only sport players as denominator. C uses instrument players. D is the fraction who play sports.</li>
+<li><b>Answer: C.</b> "Among the students who play an instrument" → denominator = 60 (instrument column total). "Also play a sport" → numerator = 35. $\frac{35}{60} \times 100\% \approx 58.3\%$. <b>Wrong answers:</b> A: $\frac{35}{150} \approx 23.3\%$, using grand total. B: $\frac{35}{90} \approx 38.9\%$, using sport players as denominator. D: $\frac{90}{150} = 60\%$, percentage of all students who play sports.</li>
+<li><b>Answer: A.</b> "Given that a student plays a sport" → denominator = 90. "Does NOT play an instrument" → numerator = 55. $\frac{55}{90}$. <b>Wrong answers:</b> B uses grand total. C gives probability of playing an instrument given sports ($\frac{35}{90}$). D restricts to non-instrument players as denominator.</li>
+<li><b>Answer: A.</b> The claim is about "students who play an instrument" (denominator = 60). Among them, 35 also play sports, which is $\frac{35}{60} \approx 58.3\% > 50\%$. The claim is supported. <b>Wrong answers:</b> B uses the wrong denominator (grand total) and also gets a result < 0.5. C and D are incorrect interpretations or calculations.</li>
+<li><b>Answer: B.</b> Row totals: $80 + 120 = 200$. Column totals: $90 + 110 = 200$. Both should equal the grand total. <b>Wrong answers:</b> A (190) adds incorrectly. C (210) adds incorrectly. D is wrong because the grand total is determined by both row and column sums (they must match).</li>
+<li><b>Answer: C.</b> Using the principle: $P(\text{Art} \cup \text{Music}) = P(\text{Art}) + P(\text{Music}) - P(\text{Both}) = 60\% + 45\% - 20\% = 85\%$. So neither = $100\% - 85\% = 15\%$. <b>Wrong answers:</b> A (5%): $100\% - 60\% - 45\% + 20\% = 15\%$ — wait, that gives 15% too. Let me recalculate: A might be from $100 - 60 - 45 = -5$, ignoring the "both" overlap correction but getting the magnitude wrong. B (10%): perhaps $100 - 60 - 45 + 20 = 15$ miscalculated as 10. C is correct at 15%. D (25%) = $100 - 60 - 45 + 50$ (using 50% instead of 20%).</li>
 <div class="nav">
 <a href="lesson06.html">← Previous Lesson</a>
 <a href="index.html">📋 All Lessons</a>
