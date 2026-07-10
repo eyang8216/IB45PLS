@@ -966,82 +966,173 @@ def track_lesson_view(username, subject, lesson):
 def parse_problems(text, solution_map):
     """Parse markdown problems into {label, question_html, solution_html} list."""
     problems = []
-    # Split by ## Problem markers or ### markers
-    parts = re.split(r'\n(?=## Problem|\n## Problem|### Problem|### Question)', text)
+    
+    # Try multiple splitting strategies
+    parts = re.split(r'\n(?=#{2,3}\s*Problem\s*\d+)', text)
+    
+    if len(parts) <= 1:
+        parts = re.split(r'\n(?=\*\*Problem\s*\d+\.\*\*)', text)
+    
+    if len(parts) <= 1:
+        parts = re.split(r'\n(?=#{2,3}\s*Question\s*\d+)', text)
+    
+    if len(parts) <= 1:
+        parts = re.split(r'\n(?=#{2,3}\s*Solution\s*\d+)', text)
+    
+    if len(parts) <= 1:
+        # Biology format: ### Q1.
+        parts = re.split(r'\n(?=#{2,3}\s*Q\d+\.)', text)
+    
+    if len(parts) <= 1:
+        topic_parts = re.split(r'\n(?=#{2,3}\s+[A-Z0-9])', text)
+        if len(topic_parts) > 1:
+            new_parts = []
+            for tp in topic_parts:
+                if not tp.strip():
+                    continue
+                # Try splitting by various problem markers
+                sub_parts = re.split(r'\n(?=\*\*Problem\s*\d+\.?\*\*|\n#{2,3}\s*Problem\s*\d+|\n#{2,3}\s*Q\d+\.)', tp)
+                if len(sub_parts) > 1:
+                    new_parts.extend(sub_parts)
+                else:
+                    new_parts.append(tp)
+            parts = new_parts
     
     for i, part in enumerate(parts):
         if not part.strip():
             continue
-        # Extract problem label
-        label_match = re.match(r'#{2,3}\s*(Problem\s*\d+|Question\s*\d+)', part)
-        if not label_match:
-            continue
-        label = label_match.group(1).strip()
+        part = part.strip()
         
-        # Remove the label line from content
-        content = re.sub(r'^#{2,3}\s*(Problem|Question)\s*\d+\s*\n?', '', part).strip()
+        num_match = re.search(r'(?:Problem|Question|Solution|Q)\s*(\d+)', part)
+        prob_num = num_match.group(1) if num_match else str(i + 1)
         
-        # Convert markdown content to basic HTML
-        # Bold: **text** → <b>text</b>
-        content = re.sub(r'\*\*(.+?)\*\*', r'<b>\1</b>', content)
-        # Inline code: `text` → <code>text</code>
-        content = re.sub(r'`([^`]+)`', r'<code>\1</code>', content)
-        # Paragraphs
-        paragraphs = content.split('\n\n')
-        html_parts = []
-        for p in paragraphs:
-            p = p.strip()
-            if p:
-                html_parts.append('<p>' + p.replace('\n', '<br>') + '</p>')
+        label_match = re.search(r'(#{2,3}\s*(?:Problem|Question|Solution|Q)\s*\d+[^#\n]*)', part)
+        if label_match:
+            label = label_match.group(1).replace('#', '').strip()
+            content = part[label_match.end():].strip()
+        else:
+            label_match = re.search(r'(\*\*Problem\s*\d+\.?\*\*)', part)
+            if label_match:
+                label = re.sub(r'\*\*', '', label_match.group(1))
+                content = part[label_match.end():].strip()
+            else:
+                lines = part.split('\n', 1)
+                label = lines[0].replace('#', '').strip()
+                content = lines[1].strip() if len(lines) > 1 else ''
         
-        question_html = '\n'.join(html_parts)
+        label = re.sub(r'^#{1,3}\s*', '', label).replace('**', '')
+        content_html = _md_to_html(content)
         
-        # Find matching solution
-        solution_key = str(i + 1)
-        solution_html = solution_map.get(solution_key, '')
+        solution_html = ''
+        best_key = None
+        for key in solution_map:
+            if key == prob_num or key.lstrip('0') == prob_num.lstrip('0'):
+                best_key = key
+                break
+        if best_key is None:
+            for key in solution_map:
+                if prob_num in key or key in prob_num:
+                    best_key = key
+                    break
+        if best_key:
+            solution_html = solution_map[best_key]
         
         problems.append({
             'label': label,
-            'question_html': question_html,
+            'question_html': content_html,
             'solution_html': solution_html,
             'open': False
         })
     
     return problems
 
+
+def _md_to_html(text):
+    """Convert markdown to basic HTML."""
+    text = re.sub(r'\*\*(.+?)\*\*', r'<b>\1</b>', text)
+    text = re.sub(r'`([^`]+)`', r'<code>\1</code>', text)
+    text = re.sub(r'(?<!\*)\*([^*\n]+?)\*(?!\*)', r'<i>\1</i>', text)
+    text = re.sub(r'^---$', r'<hr>', text, flags=re.MULTILINE)
+    text = re.sub(r'^> (.+)$', r'<blockquote>\1</blockquote>', text, flags=re.MULTILINE)
+    text = re.sub(r'^#### (.+)$', r'<h4>\1</h4>', text, flags=re.MULTILINE)
+    text = re.sub(r'^### (.+)$', r'<h3>\1</h3>', text, flags=re.MULTILINE)
+    text = re.sub(r'^## (.+)$', r'<h2>\1</h2>', text, flags=re.MULTILINE)
+    # Merge consecutive blockquotes
+    text = re.sub(r'</blockquote>\n<blockquote>', r'<br>', text)
+    paragraphs = text.split('\n\n')
+    html_parts = []
+    for p in paragraphs:
+        p = p.strip()
+        if not p:
+            continue
+        if re.match(r'^<(h[1-4]|hr|blockquote)', p):
+            html_parts.append(p)
+        else:
+            html_parts.append('<p>' + p.replace('\n', '<br>') + '</p>')
+    return '\n'.join(html_parts)
+
+
 def parse_solutions(text):
     """Parse markdown solutions into {problem_number: html} map."""
     solution_map = {}
-    parts = re.split(r'\n(?=#{2,3}\s*(?:Problem|Solution|Answer)\s*\d+|###\s*(?:Problem|Solution|Answer)\s*\d+)', text)
+    parts = re.split(r'\n(?=#{2,3}\s*(?:Problem|Solution|Answer|Q)\s*\d+)', text)
     
     for part in parts:
         if not part.strip():
             continue
-        # Extract number
-        num_match = re.match(r'#{2,3}\s*(?:Problem|Solution|Answer)\s*(\d+)', part)
+        num_match = re.search(r'(?:Problem|Solution|Answer|Q)\s*(\d+)', part)
         if not num_match:
             continue
         num = num_match.group(1)
-        
-        # Remove the label line
-        content = re.sub(r'^#{2,3}\s*(?:Problem|Solution|Answer)\s*\d+[:\-]?\s*\n?', '', part).strip()
-        
-        # Convert to basic HTML
-        content = re.sub(r'\*\*(.+?)\*\*', r'<b>\1</b>', content)
-        content = re.sub(r'`([^`]+)`', r'<code>\1</code>', content)
-        # Mark answer lines
-        content = re.sub(r'\*\*Answer:\*\*', r'<span class="answer">Answer:</span>', content)
-        
-        paragraphs = content.split('\n\n')
-        html_parts = []
-        for p in paragraphs:
-            p = p.strip()
-            if p:
-                html_parts.append('<p>' + p.replace('\n', '<br>') + '</p>')
-        
-        solution_map[num] = '\n'.join(html_parts)
+        content = re.sub(r'^#{2,3}\s+(?:Problem|Solution|Answer|Q)\s*\d+[^#\n]*\n?', '', part).strip()
+        solution_map[num] = _md_to_html(content)
     
     return solution_map
+
+
+def markdown_to_html(text):
+    """Convert markdown to HTML with emphasis, code, headers, tables."""
+    return _md_to_html(text)
+
+
+def convert_pipe_tables(text):
+    """Convert pipe tables in text to HTML."""
+    lines = text.split('\n')
+    result = []
+    table_lines = []
+    for line in lines:
+        stripped = line.strip()
+        if stripped.startswith('|') and stripped.endswith('|'):
+            table_lines.append(stripped)
+        else:
+            if len(table_lines) >= 2:
+                result.append(_build_table(table_lines))
+                table_lines = []
+            result.append(line)
+    if len(table_lines) >= 2:
+        result.append(_build_table(table_lines))
+    return '\n'.join(result)
+
+
+def _build_table(lines):
+    if len(lines) < 2:
+        return '\n'.join(lines)
+    header_cells = [c.strip() for c in lines[0].split('|')[1:-1]]
+    sep_cells = [c.strip() for c in lines[1].split('|')[1:-1]]
+    is_sep = all(re.match(r'^[-:]+$', c) for c in sep_cells)
+    data_start = 2 if is_sep else 1
+    html = '<table class="lesson-table"><thead><tr>'
+    for cell in header_cells:
+        html += '<th>' + cell + '</th>'
+    html += '</tr></thead><tbody>'
+    for line in lines[data_start:]:
+        cells = [c.strip() for c in line.split('|')[1:-1]]
+        html += '<tr>'
+        for cell in cells:
+            html += '<td>' + cell + '</td>'
+        html += '</tr>'
+    html += '</tbody></table>'
+    return html
 def load_sat_tests():
     """Load all SAT practice tests from the SAT folder."""
     sat_dir = os.path.join(os.path.dirname(__file__), "subjects", "sat", "practice_tests")
