@@ -35,9 +35,8 @@ GEMINI_MODEL = "gemini-2.0-flash"
 FREE_MODELS = [
     # Tier 1: Best quality for tutoring + grading
     "meta-llama/llama-3.3-70b-instruct:free",
-    "openai/gpt-oss-120b:free",
     "nvidia/nemotron-3-super-120b-a12b:free",
-    "qwen/qwen3-next-80b-a3b-instruct:free",  # strong multilingual
+    "qwen/qwen3-next-80b-a3b-instruct:free",
     # Tier 2: Solid fallbacks
     "google/gemini-2.0-flash-001",
     "mistralai/mistral-7b-instruct",
@@ -45,7 +44,6 @@ FREE_MODELS = [
     "google/gemma-4-26b-a4b-it:free",
     # Tier 3: Fast & reliable
     "meta-llama/llama-3.2-3b-instruct:free",
-    "openrouter/free",  # auto-routes to best available free model
 ]
 
 # ── User store (hashed passwords, no plaintext storage) ──
@@ -299,14 +297,14 @@ CHATBOT_CSS = """
 #lessons-chatbot .chatbot-toggle { display: flex; align-items: center; gap: 0.5rem; padding: 0.7rem 1.3rem; background: #1a1a2e; color: white; border: none; border-radius: 50px; font-size: 0.95rem; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.25); transition: all 0.2s; }
 #lessons-chatbot .chatbot-toggle:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.35); background: #16213e; }
 #lessons-chatbot .chatbot-icon { font-size: 1.4rem; margin-right: 0.1rem; }
-#lessons-chatbot .chatbot-window { position: absolute; bottom: 70px; right: 0; width: 370px; max-height: 520px; background: white; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.25); display: flex; flex-direction: column; overflow: hidden; border: 1px solid #ddd; }
+#lessons-chatbot .chatbot-window { position: absolute; bottom: 70px; right: 0; width: 420px; max-height: 600px; background: white; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.25); display: flex; flex-direction: column; overflow: hidden; border: 1px solid #ddd; }
 #lessons-chatbot .chatbot-window.hidden { display: none; }
 #lessons-chatbot .chatbot-header { background: linear-gradient(135deg, #1a1a2e, #16213e); color: white; padding: 0.8rem 1rem; position: relative; }
 #lessons-chatbot .chatbot-header h3 { font-size: 1rem; font-weight: 600; margin: 0 0 0.1rem; color: white; }
 #lessons-chatbot .chatbot-header p { font-size: 0.75rem; opacity: 0.8; margin: 0; }
 #lessons-chatbot .chatbot-close { position: absolute; top: 0.5rem; right: 0.7rem; background: none; border: none; color: white; font-size: 1.1rem; cursor: pointer; opacity: 0.7; }
 #lessons-chatbot .chatbot-close:hover { opacity: 1; }
-#lessons-chatbot .chatbot-messages { flex: 1; overflow-y: auto; padding: 0.8rem; display: flex; flex-direction: column; gap: 0.6rem; max-height: 320px; background: #fafaf8; }
+#lessons-chatbot .chatbot-messages { flex: 1; overflow-y: auto; padding: 0.8rem; display: flex; flex-direction: column; gap: 0.6rem; max-height: 420px; background: #fafaf8; }
 #lessons-chatbot .chatbot-messages .msg { display: flex; }
 #lessons-chatbot .chatbot-messages .msg.user { justify-content: flex-end; }
 #lessons-chatbot .chatbot-messages .msg-content { max-width: 85%; padding: 0.6rem 0.9rem; border-radius: 16px; font-size: 0.85rem; line-height: 1.5; }
@@ -349,6 +347,7 @@ CHATBOT_HTML = """
     <div class="chatbot-status"></div>
   </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 """
 
 CHATBOT_JS = """
@@ -429,7 +428,7 @@ CHATBOT_JS = """
     var c = document.createElement('div'); c.className='msg-content';
     var ps = text.split('\\n').filter(function(p){return p.trim();});
     if (ps.length===0) ps=[text];
-    c.innerHTML = ps.map(function(p){return '<p>'+esc(p)+'</p>';}).join('');
+    c.innerHTML = typeof marked !== 'undefined' ? marked.parse(text) : ps.map(function(p){return '<p>'+esc(p)+'</p>';}).join('');
     d.appendChild(c); msgs.appendChild(d); msgs.scrollTop=msgs.scrollHeight;
     if (window.MathJax && MathJax.typesetPromise) MathJax.typesetPromise([c]);
   }
@@ -638,6 +637,7 @@ def call_openrouter(messages, model):
         "messages": messages,
         "temperature": 0.7,
         "max_tokens": 1024,
+        "stop": ["<unk>", "<|endoftext|>"],
     }).encode("utf-8")
 
     req = urllib.request.Request(
@@ -653,7 +653,11 @@ def call_openrouter(messages, model):
 
     resp = urllib.request.urlopen(req, timeout=30)
     data = json.loads(resp.read().decode("utf-8"))
-    return data["choices"][0]["message"]["content"]
+    reply = data["choices"][0]["message"]["content"]
+    # Clean garbled <unk> tokens from unstable models
+    reply = re.sub(r'<unk>+', '', reply)
+    reply = re.sub(r'<\|endoftext\|>', '', reply)
+    return reply
 
 
 def call_gemini(messages):

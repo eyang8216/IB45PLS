@@ -57,7 +57,8 @@
         model: model,
         messages: messages,
         temperature: 0.7,
-        max_tokens: 1024
+        max_tokens: 1024,
+        stop: ["<unk>", "<|endoftext|>"]
       })
     });
 
@@ -73,7 +74,10 @@
     }
 
     const data = await resp.json();
-    return { reply: data.choices[0].message.content, model: model };
+    let reply = data.choices[0].message.content;
+    // Clean garbled <unk> tokens
+    reply = reply.replace(/<unk>+/gi, '').replace(/<\|endoftext\|>/gi, '');
+    return { reply: reply, model: model };
   }
 
   // ── Toggle window ──
@@ -174,7 +178,11 @@
     div.className = 'message ' + role;
     const content = document.createElement('div');
     content.className = 'message-content';
-    content.innerHTML = '<p>' + escapeHtml(text) + '</p>';
+    if (typeof marked !== 'undefined') {
+      content.innerHTML = marked.parse(text);
+    } else {
+      content.innerHTML = '<p>' + escapeHtml(text) + '</p>';
+    }
     div.appendChild(content);
     messagesEl.appendChild(div);
     messagesEl.scrollTop = messagesEl.scrollHeight;
