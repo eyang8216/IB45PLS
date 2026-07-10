@@ -50,11 +50,7 @@ MathJax = {
 
 <p><b>Example:</b> Toss a fair coin 3 times. Let X = the number of heads observed. The eight equally likely outcomes and the value of X for each are:</p>
 
-<p class="table-line">| Outcome | HHH | HHT | HTH | THH | HTT | THT | TTH | TTT |</p>
-<p class="table-line">|<hr>|<hr>|<hr>|<hr>|<hr>|<hr>|<hr>|<hr>|<hr>|</p>
-<p class="table-line">| Value of X | 3 | 2 | 2 | 2 | 1 | 1 | 1 | 0 |</p>
-
-<p>X is a discrete random variable because it only takes the values 0, 1, 2, or 3.</p>
+<table class="lesson-table"><thead><tr><th>Outcome</th><th>HHH</th><th>HHT</th><th>HTH</th><th>THH</th><th>HTT</th><th>THT</th><th>TTH</th><th>TTT</th></tr></thead><tbody><tr><td>Value of X</td><td>3</td><td>2</td><td>2</td><td>2</td><td>1</td><td>1</td><td>1</td><td>0</td></tr></tbody></table><p>X is a discrete random variable because it only takes the values 0, 1, 2, or 3.</p>
 
 <p><hr></p>
 
@@ -71,11 +67,7 @@ MathJax = {
 
 <p>We can display this as a table:</p>
 
-<p class="table-line">| x | 0 | 1 | 2 | 3 |</p>
-<p class="table-line">|<hr>|<hr>|<hr>|<hr>|<hr>|</p>
-<p class="table-line">| P(X = x) | 1/8 | 3/8 | 3/8 | 1/8 |</p>
-
-<p>A probability mass function must satisfy two conditions:</p>
+<table class="lesson-table"><thead><tr><th>x</th><th>0</th><th>1</th><th>2</th><th>3</th></tr></thead><tbody><tr><td>P(X = x)</td><td>1/8</td><td>3/8</td><td>3/8</td><td>1/8</td></tr></tbody></table><p>A probability mass function must satisfy two conditions:</p>
 
 <li>Every probability is between 0 and 1: 0 ≤ P(X = x) ≤ 1.</li>
 <li>The sum of all the probabilities equals 1.</li>
@@ -175,13 +167,7 @@ MathJax = {
 
 <p><b>Approach:</b> First, list each possible outcome, the net profit for that outcome, and its probability.</p>
 
-<p class="table-line">| Die Roll | Winnings | Net Profit x | P(X = x) |</p>
-<p class="table-line">|<hr>|<hr>|<hr>|<hr>|</p>
-<p class="table-line">| 6 | $20 | 20 − 5 = 15 | 1/6 |</p>
-<p class="table-line">| 5 | $10 | 10 − 5 = 5 | 1/6 |</p>
-<p class="table-line">| 1, 2, 3, 4 | $0 | 0 − 5 = −5 | 4/6 |</p>
-
-<p>Now compute E(X):</p>
+<table class="lesson-table"><thead><tr><th>Die Roll</th><th>Winnings</th><th>Net Profit x</th><th>P(X = x)</th></tr></thead><tbody><tr><td>6</td><td>$20</td><td>20 − 5 = 15</td><td>1/6</td></tr><tr><td>5</td><td>$10</td><td>10 − 5 = 5</td><td>1/6</td></tr><tr><td>1, 2, 3, 4</td><td>$0</td><td>0 − 5 = −5</td><td>4/6</td></tr></tbody></table><p>Now compute E(X):</p>
 
 <p>E(X) = 15·(1/6) + 5·(1/6) + (−5)·(4/6) = (15 + 5 − 20)/6 = 0/6 = 0</p>
 
@@ -236,12 +222,7 @@ MathJax = {
 
 <p>The ideas in this lesson are population-level concepts. When you collect actual data from a sample, you calculate the sample mean (x̄) and sample variance (s²). These are estimates of E(X) and Var(X). The formulas look similar:</p>
 
-<p class="table-line">| Concept | Population (Random Variable) | Sample (Data) |</p>
-<p class="table-line">|<hr>|<hr>|<hr>|</p>
-<p class="table-line">| Center | E(X) = Σ x·P(X = x) | x̄ = (1/n)·Σ xᵢ |</p>
-<p class="table-line">| Spread | Var(X) = E(X²) − [E(X)]² | s² = [1/(n−1)]·Σ (xᵢ − x̄)² |</p>
-
-<p>The population parameters E(X) and Var(X) describe the underlying random process. Sample statistics are what we compute from actual observations to estimate those parameters.</p>
+<table class="lesson-table"><thead><tr><th>Concept</th><th>Population (Random Variable)</th><th>Sample (Data)</th></tr></thead><tbody><tr><td>Center</td><td>E(X) = Σ x·P(X = x)</td><td>x̄ = (1/n)·Σ xᵢ</td></tr><tr><td>Spread</td><td>Var(X) = E(X²) − [E(X)]²</td><td>s² = [1/(n−1)]·Σ (xᵢ − x̄)²</td></tr></tbody></table><p>The population parameters E(X) and Var(X) describe the underlying random process. Sample statistics are what we compute from actual observations to estimate those parameters.</p>
 
 <p><hr></p>
 
@@ -407,13 +388,7 @@ MathJax = {
 
 <p>(a) There are 4 Aces, 4 Kings, and 44 other cards in the deck.</p>
 
-<p class="table-line">| Outcome | Net Profit x | P(X = x) |</p>
-<p class="table-line">|<hr>|<hr>|<hr>|</p>
-<p class="table-line">| Ace | 10 | 4/52 = 1/13 |</p>
-<p class="table-line">| King | 5 | 4/52 = 1/13 |</p>
-<p class="table-line">| Other | −2 | 44/52 = 11/13 |</p>
-
-<p>[2 marks]</p>
+<table class="lesson-table"><thead><tr><th>Outcome</th><th>Net Profit x</th><th>P(X = x)</th></tr></thead><tbody><tr><td>Ace</td><td>10</td><td>4/52 = 1/13</td></tr><tr><td>King</td><td>5</td><td>4/52 = 1/13</td></tr><tr><td>Other</td><td>−2</td><td>44/52 = 11/13</td></tr></tbody></table><p>[2 marks]</p>
 
 <p>(b) E(X) = 10·(1/13) + 5·(1/13) + (−2)·(11/13)</p>
 
@@ -447,13 +422,7 @@ MathJax = {
 
 <p>(a) Out of 1000 tickets: 1 wins $500 (net $498), 2 win $100 (net $98 each), 997 win nothing (net −$2).</p>
 
-<p class="table-line">| Prize | Net Profit x | P(X = x) |</p>
-<p class="table-line">|<hr>|<hr>|<hr>|</p>
-<p class="table-line">| $500 | 498 | 1/1000 |</p>
-<p class="table-line">| $100 | 98 | 2/1000 |</p>
-<p class="table-line">| None | −2 | 997/1000 |</p>
-
-<p>(b) E(X) = 498·(1/1000) + 98·(2/1000) + (−2)·(997/1000)</p>
+<table class="lesson-table"><thead><tr><th>Prize</th><th>Net Profit x</th><th>P(X = x)</th></tr></thead><tbody><tr><td>$500</td><td>498</td><td>1/1000</td></tr><tr><td>$100</td><td>98</td><td>2/1000</td></tr><tr><td>None</td><td>−2</td><td>997/1000</td></tr></tbody></table><p>(b) E(X) = 498·(1/1000) + 98·(2/1000) + (−2)·(997/1000)</p>
 
 <p>= (498 + 196 − 1994)/1000 = −1300/1000 = −1.30</p>
 

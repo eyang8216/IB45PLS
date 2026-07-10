@@ -594,6 +594,65 @@ def sat_practice():
         tests=tests,
         csrf_token=generate_csrf_token())
 
+@app.route("/subjects/<subject>/practice/")
+@login_required
+def practice_index(subject):
+    """List practice units for a subject, or redirect to first unit."""
+    practice_dir = os.path.join(os.path.dirname(__file__), "subjects", subject, "practice")
+    units = []
+    if os.path.exists(practice_dir):
+        for fname in sorted(os.listdir(practice_dir)):
+            if fname.startswith("problems_") and fname.endswith(".md"):
+                unit_id = fname.replace("problems_", "").replace(".md", "")
+                label = unit_id.replace("unit", "Unit ").replace("theme", "Theme ").replace("_", " ")
+                # Capitalize nicely
+                label = ' '.join(w.capitalize() for w in label.replace('Unit ','Unit ').split())
+                pass
+                units.append(unit_id)
+    if units:
+        return redirect(url_for("practice_unit", subject=subject, unit=units[0]))
+    subj = SUBJECTS.get(subject, {})
+    return render_template("practice_problems.html",
+        subject=subject, subj_name=subj.get("name", subject),
+        units=[], problems=[], current_unit="", csrf_token=generate_csrf_token())
+
+@app.route("/subjects/<subject>/practice/<unit>")
+@login_required
+def practice_unit(subject, unit):
+    """Show practice problems for a specific subject + unit."""
+    subj = SUBJECTS.get(subject, {})
+    practice_dir = os.path.join(os.path.dirname(__file__), "subjects", subject, "practice")
+    
+    problems_file = os.path.join(practice_dir, f"problems_{unit}.md")
+    solutions_file = os.path.join(practice_dir, f"solutions_{unit}.md")
+    
+    # Build unit list
+    units = []
+    if os.path.exists(practice_dir):
+        for fname in sorted(os.listdir(practice_dir)):
+            if fname.startswith("problems_") and fname.endswith(".md"):
+                uid = fname.replace("problems_", "").replace(".md", "")
+                label = uid.replace("unit", "Unit ").replace("theme", "Theme ")
+                units.append({"id": uid, "label": label})
+    
+    # Parse problems
+    problems = []
+    if os.path.exists(problems_file):
+        with open(problems_file, 'r', encoding='utf-8') as f:
+            problems_text = f.read()
+        solution_map = {}
+        if os.path.exists(solutions_file):
+            with open(solutions_file, 'r', encoding='utf-8') as f:
+                solutions_text = f.read()
+            solution_map = parse_solutions(solutions_text)
+        
+        problems = parse_problems(problems_text, solution_map)
+    
+    return render_template("practice_problems.html",
+        subject=subject, subj_name=subj.get("name", subject),
+        units=units, problems=problems, current_unit=unit,
+        csrf_token=generate_csrf_token())
+
 @app.route("/subjects/<subject>/")
 @app.route("/subjects/<subject>/<path:filename>")
 @login_required
@@ -902,8 +961,87 @@ def track_lesson_view(username, subject, lesson):
     save_user_data(username, data)
 
 # ═══════════════════════════════════════════════════════════
-# SAT PRACTICE TEST LOADER
+# PRACTICE PROBLEMS PARSER
 # ═══════════════════════════════════════════════════════════
+def parse_problems(text, solution_map):
+    """Parse markdown problems into {label, question_html, solution_html} list."""
+    problems = []
+    # Split by ## Problem markers or ### markers
+    parts = re.split(r'\n(?=## Problem|\n## Problem|### Problem|### Question)', text)
+    
+    for i, part in enumerate(parts):
+        if not part.strip():
+            continue
+        # Extract problem label
+        label_match = re.match(r'#{2,3}\s*(Problem\s*\d+|Question\s*\d+)', part)
+        if not label_match:
+            continue
+        label = label_match.group(1).strip()
+        
+        # Remove the label line from content
+        content = re.sub(r'^#{2,3}\s*(Problem|Question)\s*\d+\s*\n?', '', part).strip()
+        
+        # Convert markdown content to basic HTML
+        # Bold: **text** → <b>text</b>
+        content = re.sub(r'\*\*(.+?)\*\*', r'<b>\1</b>', content)
+        # Inline code: `text` → <code>text</code>
+        content = re.sub(r'`([^`]+)`', r'<code>\1</code>', content)
+        # Paragraphs
+        paragraphs = content.split('\n\n')
+        html_parts = []
+        for p in paragraphs:
+            p = p.strip()
+            if p:
+                html_parts.append('<p>' + p.replace('\n', '<br>') + '</p>')
+        
+        question_html = '\n'.join(html_parts)
+        
+        # Find matching solution
+        solution_key = str(i + 1)
+        solution_html = solution_map.get(solution_key, '')
+        
+        problems.append({
+            'label': label,
+            'question_html': question_html,
+            'solution_html': solution_html,
+            'open': False
+        })
+    
+    return problems
+
+def parse_solutions(text):
+    """Parse markdown solutions into {problem_number: html} map."""
+    solution_map = {}
+    parts = re.split(r'\n(?=#{2,3}\s*(?:Problem|Solution|Answer)\s*\d+|###\s*(?:Problem|Solution|Answer)\s*\d+)', text)
+    
+    for part in parts:
+        if not part.strip():
+            continue
+        # Extract number
+        num_match = re.match(r'#{2,3}\s*(?:Problem|Solution|Answer)\s*(\d+)', part)
+        if not num_match:
+            continue
+        num = num_match.group(1)
+        
+        # Remove the label line
+        content = re.sub(r'^#{2,3}\s*(?:Problem|Solution|Answer)\s*\d+[:\-]?\s*\n?', '', part).strip()
+        
+        # Convert to basic HTML
+        content = re.sub(r'\*\*(.+?)\*\*', r'<b>\1</b>', content)
+        content = re.sub(r'`([^`]+)`', r'<code>\1</code>', content)
+        # Mark answer lines
+        content = re.sub(r'\*\*Answer:\*\*', r'<span class="answer">Answer:</span>', content)
+        
+        paragraphs = content.split('\n\n')
+        html_parts = []
+        for p in paragraphs:
+            p = p.strip()
+            if p:
+                html_parts.append('<p>' + p.replace('\n', '<br>') + '</p>')
+        
+        solution_map[num] = '\n'.join(html_parts)
+    
+    return solution_map
 def load_sat_tests():
     """Load all SAT practice tests from the SAT folder."""
     sat_dir = os.path.join(os.path.dirname(__file__), "subjects", "sat", "practice_tests")

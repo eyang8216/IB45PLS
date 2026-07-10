@@ -136,17 +136,7 @@ MathJax = {
 
 <p>Consider the differential equation $\frac{dy}{dx} = x + y$. Compute slopes at several points:</p>
 
-<p class="table-line">| $(x, y)$ | $m = x + y$ | Segment direction |</p>
-<p class="table-line">|<hr>|<hr>|<hr>|</p>
-<p class="table-line">| $(0, 0)$ | $0$ | Horizontal |</p>
-<p class="table-line">| $(1, 0)$ | $1$ | Up-right at $45^\circ$ |</p>
-<p class="table-line">| $(0, 1)$ | $1$ | Up-right at $45^\circ$ |</p>
-<p class="table-line">| $(-1, 0)$ | $-1$ | Down-right at $45^\circ$ |</p>
-<p class="table-line">| $(1, 1)$ | $2$ | Steeper up-right |</p>
-<p class="table-line">| $(-1, 1)$ | $0$ | Horizontal |</p>
-<p class="table-line">| $(1, -1)$ | $0$ | Horizontal |</p>
-
-<p>An <b>isocline</b> is a curve along which the slope is constant. For this equation, setting $x + y = k$ gives the line $y = -x + k$, and along this entire line the slope is $k$. The line $y = -x$ (where $k = 0$) is a special isocline where all slope segments are horizontal.</p>
+<table class="lesson-table"><thead><tr><th>$(x, y)$</th><th>$m = x + y$</th><th>Segment direction</th></tr></thead><tbody><tr><td>$(0, 0)$</td><td>$0$</td><td>Horizontal</td></tr><tr><td>$(1, 0)$</td><td>$1$</td><td>Up-right at $45^\circ$</td></tr><tr><td>$(0, 1)$</td><td>$1$</td><td>Up-right at $45^\circ$</td></tr><tr><td>$(-1, 0)$</td><td>$-1$</td><td>Down-right at $45^\circ$</td></tr><tr><td>$(1, 1)$</td><td>$2$</td><td>Steeper up-right</td></tr><tr><td>$(-1, 1)$</td><td>$0$</td><td>Horizontal</td></tr><tr><td>$(1, -1)$</td><td>$0$</td><td>Horizontal</td></tr></tbody></table><p>An <b>isocline</b> is a curve along which the slope is constant. For this equation, setting $x + y = k$ gives the line $y = -x + k$, and along this entire line the slope is $k$. The line $y = -x$ (where $k = 0$) is a special isocline where all slope segments are horizontal.</p>
 
 <p><hr></p>
 
@@ -156,15 +146,7 @@ MathJax = {
 
 <p>Computing a few values:</p>
 
-<p class="table-line">| $(x, y)$ | $m = x/y$ |</p>
-<p class="table-line">|<hr>|<hr>|</p>
-<p class="table-line">| $(1, 1)$ | $1$ |</p>
-<p class="table-line">| $(2, 1)$ | $2$ |</p>
-<p class="table-line">| $(1, 2)$ | $0.5$ |</p>
-<p class="table-line">| $(-1, 1)$ | $-1$ |</p>
-<p class="table-line">| $(-1, -1)$ | $1$ |</p>
-
-<p>A common mistake is to draw slope segments without regard for undefined points. Where $y=0$, the differential equation itself breaks down; solution curves cannot cross the $x$-axis.</p>
+<table class="lesson-table"><thead><tr><th>$(x, y)$</th><th>$m = x/y$</th></tr></thead><tbody><tr><td>$(1, 1)$</td><td>$1$</td></tr><tr><td>$(2, 1)$</td><td>$2$</td></tr><tr><td>$(1, 2)$</td><td>$0.5$</td></tr><tr><td>$(-1, 1)$</td><td>$-1$</td></tr><tr><td>$(-1, -1)$</td><td>$1$</td></tr></tbody></table><p>A common mistake is to draw slope segments without regard for undefined points. Where $y=0$, the differential equation itself breaks down; solution curves cannot cross the $x$-axis.</p>
 
 <p><hr></p>
 
@@ -222,13 +204,7 @@ MathJax = {
 
 <p><b>Problem:</b> Use Euler&#x27;s method with step size $h = 0.5$ to approximate $y(1)$ for the differential equation $\frac{dy}{dx} = x + y$ with initial condition $y(0) = 1$.</p>
 
-<p class="table-line">| $n$ | $x_n$ | $y_n$ | $f(x_n, y_n) = x_n + y_n$ | $y_{n+1} = y_n + 0.5 \cdot f$ |</p>
-<p class="table-line">|<hr>|<hr>|<hr>|<hr>|<hr>|</p>
-<p class="table-line">| $0$ | $0$ | $1$ | $0 + 1 = 1$ | $1 + 0.5(1) = 1.5$ |</p>
-<p class="table-line">| $1$ | $0.5$ | $1.5$ | $0.5 + 1.5 = 2$ | $1.5 + 0.5(2) = 2.5$ |</p>
-<p class="table-line">| $2$ | $1.0$ | $2.5$ | — | — |</p>
-
-<p>The approximation is $y(1) \approx 2.5$. The exact solution to this equation is $y = 2e^x - x - 1$, which gives $y(1) = 2e - 2 \approx 3.437$. The error is about $0.937$, which is large because the step size $h = 0.5$ is coarse. Using $h = 0.1$ would give a much better approximation.</p>
+<table class="lesson-table"><thead><tr><th>$n$</th><th>$x_n$</th><th>$y_n$</th><th>$f(x_n, y_n) = x_n + y_n$</th><th>$y_{n+1} = y_n + 0.5 \cdot f$</th></tr></thead><tbody><tr><td>$0$</td><td>$0$</td><td>$1$</td><td>$0 + 1 = 1$</td><td>$1 + 0.5(1) = 1.5$</td></tr><tr><td>$1$</td><td>$0.5$</td><td>$1.5$</td><td>$0.5 + 1.5 = 2$</td><td>$1.5 + 0.5(2) = 2.5$</td></tr><tr><td>$2$</td><td>$1.0$</td><td>$2.5$</td><td>—</td><td>—</td></tr></tbody></table><p>The approximation is $y(1) \approx 2.5$. The exact solution to this equation is $y = 2e^x - x - 1$, which gives $y(1) = 2e - 2 \approx 3.437$. The error is about $0.937$, which is large because the step size $h = 0.5$ is coarse. Using $h = 0.1$ would give a much better approximation.</p>
 
 <p><hr></p>
 
@@ -277,17 +253,7 @@ MathJax = {
 
 <p><b>(a)</b> Slopes at each point:</p>
 
-<p class="table-line">| $(x, y)$ | $m = y - x$ |</p>
-<p class="table-line">|<hr>|<hr>|</p>
-<p class="table-line">| $(0, 0)$ | $0$ |</p>
-<p class="table-line">| $(1, 0)$ | $-1$ |</p>
-<p class="table-line">| $(0, 1)$ | $1$ |</p>
-<p class="table-line">| $(1, 1)$ | $0$ |</p>
-<p class="table-line">| $(-1, 0)$ | $1$ |</p>
-<p class="table-line">| $(0, -1)$ | $-1$ |</p>
-<p class="table-line">| $(2, 2)$ | $0$ |</p>
-
-<p><b>(b)</b> The slope is zero when $y - x = 0$, which is the line $y = x$.</p>
+<table class="lesson-table"><thead><tr><th>$(x, y)$</th><th>$m = y - x$</th></tr></thead><tbody><tr><td>$(0, 0)$</td><td>$0$</td></tr><tr><td>$(1, 0)$</td><td>$-1$</td></tr><tr><td>$(0, 1)$</td><td>$1$</td></tr><tr><td>$(1, 1)$</td><td>$0$</td></tr><tr><td>$(-1, 0)$</td><td>$1$</td></tr><tr><td>$(0, -1)$</td><td>$-1$</td></tr><tr><td>$(2, 2)$</td><td>$0$</td></tr></tbody></table><p><b>(b)</b> The slope is zero when $y - x = 0$, which is the line $y = x$.</p>
 
 <p><b>(c)</b> The isoclines are lines of the form $y - x = k$, or equivalently $y = x + k$. Along each such line, the slope is constant and equal to $k$. These isoclines form a family of parallel lines with slope $1$.</p>
 
@@ -322,13 +288,7 @@ MathJax = {
 <p><b>Answer 4</b></p>
 <p>The differential equation is $\frac{dy}{dx} = 2x$, with $y(0) = 0$. Euler&#x27;s method with $h = 0.5$:</p>
 
-<p class="table-line">| $n$ | $x_n$ | $y_n$ | $f = 2x_n$ | $y_{n+1} = y_n + 0.5 \cdot 2x_n = y_n + x_n$ |</p>
-<p class="table-line">|<hr>|<hr>|<hr>|<hr>|<hr>|</p>
-<p class="table-line">| $0$ | $0$ | $0$ | $0$ | $0 + 0 = 0$ |</p>
-<p class="table-line">| $1$ | $0.5$ | $0$ | $1$ | $0 + 0.5 = 0.5$ |</p>
-<p class="table-line">| $2$ | $1.0$ | $0.5$ | — | — |</p>
-
-<p>So $y(1) \approx 0.5$.</p>
+<table class="lesson-table"><thead><tr><th>$n$</th><th>$x_n$</th><th>$y_n$</th><th>$f = 2x_n$</th><th>$y_{n+1} = y_n + 0.5 \cdot 2x_n = y_n + x_n$</th></tr></thead><tbody><tr><td>$0$</td><td>$0$</td><td>$0$</td><td>$0$</td><td>$0 + 0 = 0$</td></tr><tr><td>$1$</td><td>$0.5$</td><td>$0$</td><td>$1$</td><td>$0 + 0.5 = 0.5$</td></tr><tr><td>$2$</td><td>$1.0$</td><td>$0.5$</td><td>—</td><td>—</td></tr></tbody></table><p>So $y(1) \approx 0.5$.</p>
 
 <p>The exact solution is found by integrating: $y = x^2 + C$. With $y(0) = 0$, we get $C = 0$, so $y = x^2$. The exact value is $y(1) = 1$.</p>
 

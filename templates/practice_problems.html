@@ -1,0 +1,73 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Practice Problems — {{ subj_name }}</title>
+<meta name="csrf-token" content="{{ csrf_token }}">
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']]},loader:{load:['[tex]/mhchem']},tex:{packages:{'[+]':['mhchem']}}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>:root{--bg:#fafaf8;--text:#1a1a1a;--accent:#1a1a2e;--border:#ddd;--green:#27ae60}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;font-size:17px;line-height:1.7;color:var(--text);background:var(--bg);max-width:900px;margin:0 auto;padding:2rem 1.5rem}
+.nav-bar{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;padding:.6rem 1.2rem;margin:-2rem -1.5rem 1.5rem;background:linear-gradient(135deg,var(--accent),#16213e);color:white;font-family:-apple-system,sans-serif;font-size:.9rem}
+.nav-bar a{color:white;text-decoration:none;opacity:.85}.nav-bar a:hover{opacity:1}
+h1{font-size:1.6rem;color:var(--accent);margin-bottom:.3rem}
+.unit-selector{display:flex;gap:.4rem;flex-wrap:wrap;margin:1rem 0}
+.unit-selector a{padding:.4rem 1rem;border-radius:20px;text-decoration:none;font-size:.85rem;font-family:sans-serif;border:1px solid var(--border);color:var(--accent)}
+.unit-selector a.active{background:var(--accent);color:white;border-color:var(--accent)}
+.unit-selector a:hover{border-color:var(--accent)}
+.problem{border:1px solid var(--border);border-radius:12px;margin:1rem 0;background:white;overflow:hidden}
+.problem-header{padding:1rem 1.2rem;display:flex;justify-content:space-between;align-items:flex-start;gap:1rem}
+.problem-header .num{font-weight:700;color:var(--accent);min-width:80px;font-size:.9rem;font-family:sans-serif}
+.problem-header .text{flex:1}
+.problem-header .text p{margin:0 0 .5rem}
+.problem-header .text p:last-child{margin:0}
+.solution-toggle{display:inline-block;padding:.4rem 1rem;border-radius:20px;cursor:pointer;font-family:sans-serif;font-size:.8rem;font-weight:600;background:#e8f5e9;color:var(--green);border:1px solid var(--green);white-space:nowrap;user-select:none}
+.solution-toggle:hover{background:var(--green);color:white}
+.solution-toggle.open{background:var(--green);color:white}
+.solution-content{display:none;border-top:1px solid #e0e0e0;background:#f9faf6;padding:1rem 1.2rem}
+.solution-content.open{display:block}
+.solution-content p{margin:0 0 .7rem}
+.solution-content p:last-child{margin:0}
+.solution-content .answer{font-weight:700;color:var(--green)}
+.no-solution{color:#999;font-style:italic;padding:1rem 1.2rem;border-top:1px solid #e0e0e0;background:#f9faf6}
+hr.problem-hr{border:none;border-top:1px solid var(--border);margin:0}
+.empty{text-align:center;color:#999;padding:3rem;font-style:italic}
+/* Tables in solutions */
+.solution-content table{width:100%;border-collapse:collapse;margin:.5rem 0;font-size:.9rem}
+.solution-content th{background:#1a1a2e;color:white;padding:.3rem .6rem;text-align:left}
+.solution-content td{padding:.3rem .6rem;border-bottom:1px solid #ddd}
+</style></head><body>
+<div class="nav-bar">
+<a href="/">📚 Lessons</a><span style="opacity:.4">›</span>
+<a href="/subjects/{{ subject }}/">{{ subj_name }}</a><span style="opacity:.4">›</span>
+<span style="opacity:.6">Practice Problems</span>
+</div>
+
+<h1>📝 {{ subj_name }} — Practice Problems</h1>
+
+<div class="unit-selector">
+{% for u in units %}
+<a href="/subjects/{{ subject }}/practice/{{ u.id }}" class="{% if u.id == current_unit %}active{% endif %}">{{ u.label }}</a>
+{% endfor %}
+</div>
+
+{% if problems %}
+{% for p in problems %}
+<div class="problem">
+<div class="problem-header">
+<div class="num">{{ p.label }}</div>
+<div class="text">{{ p.question_html | safe }}</div>
+{% if p.solution_html %}
+<button class="solution-toggle" onclick="var s=this.parentElement.nextElementSibling;var o=s.classList.toggle('open');this.classList.toggle('open');this.textContent=o?'▼ Hide Solution':'▶ Show Solution';if(o&&window.MathJax)MathJax.typesetPromise([s])">{{ '▼ Hide Solution' if p.open else '▶ Show Solution' }}</button>
+{% endif %}
+</div>
+{% if p.solution_html %}
+<div class="solution-content{% if p.open %} open{% endif %}">{{ p.solution_html | safe }}</div>
+{% else %}
+<div class="no-solution">Solutions not yet available for this unit.</div>
+{% endif %}
+</div>
+{% endfor %}
+{% else %}
+<p class="empty">No practice problems found for this unit.</p>
+{% endif %}
+
+</body></html>
