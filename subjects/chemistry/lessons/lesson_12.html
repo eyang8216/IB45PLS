@@ -3,368 +3,452 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lesson 12: Metallic Bonding, Giant Covalent Structures, Sigma and Pi Bonds, and Hybridisation — IB Chemistry HL</title>
-<script>window.MathJax = { loader: {load: ['[tex]/mhchem']}, tex: {packages: {'[+]': ['mhchem']}} };</script>
+<title>Lesson 12 — Chemistry HL — Metallic Bonding, Giant Covalent, σ/π Bonds, Hybridisation</title>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] },
+  loader: { load: ['[tex]/mhchem'] },
+  tex: { packages: {'[+]': ['mhchem']} }
+};
+</script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
 <style>
-  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Palatino', 'Georgia', serif; background: var(--bg); color: var(--text); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; font-size: 17px; line-height: 1.7; }
-  h1 { font-size: 1.7rem; color: var(--accent); margin-bottom: 0.5rem; }
-  h2 { font-size: 1.25rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; margin: 2rem 0 1rem; }
-  h3 { font-size: 1.1rem; color: #444; margin: 1.3rem 0 0.5rem; }
-  p, li { margin-bottom: 0.6rem; }
-  ul, ol { padding-left: 1.8rem; margin-bottom: 1rem; }
-  .worked { background: #f0f7f0; border-left: 4px solid #2c5f2d; padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
-  .worked strong { color: #2c5f2d; }
-  .answer { background: #fefdf7; border: 1px solid var(--border); padding: 0.8rem 1.2rem; margin: 0.5rem 0; border-radius: 6px; }
-  .nav { display: flex; justify-content: space-between; margin: 3rem 0 1rem; padding-top: 1rem; border-top: 2px solid var(--border); font-size: 0.9rem; }
-  .nav a { color: #1a5c9e; text-decoration: none; }
-  .nav a:hover { text-decoration: underline; }
-  .definition { background: #fdf5e6; border-left: 4px solid #d4a017; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
-  code { background: #f0f0f0; padding: 0.15rem 0.35rem; border-radius: 3px; font-size: 0.9em; }
-  table { border-collapse: collapse; margin: 1rem 0; width: 100%; }
-  th, td { border: 1px solid var(--border); padding: 0.4rem 0.7rem; text-align: left; font-size: 0.95em; }
-  th { background: #f0f7f0; color: var(--accent); }
-  @media print { body { font-size: 14px; } .nav { display: none; } }
-  strong { color: #1a1a1a; }
+:root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Georgia', 'Times New Roman', serif; font-size: 17px; line-height: 1.7; color: var(--text); background: var(--bg); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; }
+h1 { font-size: 1.8rem; color: var(--accent); border-bottom: 3px solid var(--accent); padding-bottom: 0.5rem; margin-bottom: 1rem; }
+h2 { font-size: 1.35rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+h3 { font-size: 1.15rem; color: var(--accent); margin: 1.5rem 0 0.5rem; }
+p { margin-bottom: 0.8rem; }
+.objectives { background: #f0f4ff; border-left: 4px solid var(--accent); padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+.objectives h3 { margin-top: 0; }
+.check-in { background: #fff8e1; border: 1px solid #ffc107; padding: 0.8rem 1rem; margin: 1rem 0; border-radius: 8px; }
+.check-in p { margin-bottom: 0.3rem; }
+.answer-toggle { display: inline-block; padding: 0.2rem 0.8rem; border-radius: 16px; cursor: pointer; font-size: 0.8rem; font-weight: 600; background: #e8f5e9; color: #2e7d32; border: 1px solid #2e7d32; user-select: none; margin-top: 0.3rem; }
+.answer-content { display: none; background: #f1f8e9; padding: 0.6rem 1rem; border-radius: 8px; margin-top: 0.5rem; }
+.answer-content.open { display: block; }
+.example { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem; margin: 1rem 0; }
+.misconception { background: #fff3e0; border-left: 4px solid #e65100; padding: 1rem 1.2rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+.misconception h3 { color: #e65100; }
+.exam-tip { background: #e8f5e9; border-left: 4px solid #2e7d32; padding: 0.8rem 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+th { background: var(--accent); color: white; padding: 0.5rem 0.8rem; text-align: left; }
+td { padding: 0.5rem 0.8rem; border-bottom: 1px solid var(--border); }
+tr:nth-child(even) td { background: #f8f8f6; }
+.diagram { text-align: center; margin: 1.5rem 0; }
+.diagram svg { max-width: 100%; }
+.diagram .caption { font-size: 0.9rem; color: #666; margin-top: 0.3rem; font-style: italic; }
+pre.ascii-art { font-family: 'Courier New', monospace; font-size: 0.75rem; line-height: 1.2; background: #f5f5f5; padding: 0.8rem; border-radius: 8px; overflow-x: auto; }
+.practice-toggle { display: block; width: 100%; padding: 0.8rem; background: var(--accent); color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem; font-weight: 600; margin: 1.5rem 0; }
+.practice-answers { display: none; }
+.practice-answers.open { display: block; }
 </style>
 </head>
 <body>
-<h1>Lesson 12: Metallic Bonding, Giant Covalent Structures, Sigma and Pi Bonds, and Hybridisation — IB Chemistry HL</h1>
-<h2>What You'll Learn</h2>
-<p>
-This lesson covers four interconnected topics that all deal with how atoms are held together in different types of substances, with a focus on the HL material for orbital overlap and hybridisation. First, you will learn about metallic bonding: what it is, how the electron sea model explains the properties of metals (malleability, electrical conductivity, thermal conductivity, lustre), and why alloys are harder and less malleable than pure metals. Second, you will study giant covalent structures—diamond, graphite, graphene, and silicon dioxide—and learn how differences in bonding at the atomic level produce dramatically different macroscopic properties. Third, you will learn the distinction between sigma (σ) bonds and pi (π) bonds: how each type of bond is formed through orbital overlap, why sigma bonds are stronger than pi bonds, and why pi bonds prevent rotation. Fourth, you will learn about hybridisation: the mixing of atomic orbitals on a single atom to form new, equivalent hybrid orbitals, and how the type of hybridisation (sp, sp², sp³, sp³d, sp³d²) is directly determined by the number of electron domains around the central atom.
-</p>
-<hr>
-<h2>1. Metallic Bonding: The Electron Sea Model</h2>
-<p>
-A metal consists of a regular, repeating lattice of metal cations (positively charged ions) immersed in a "sea" of delocalized electrons. To understand what this means, let us build the model step by step.
-</p>
-<p>
-Imagine a block of sodium metal. Each sodium atom has one valence electron in its 3s orbital. When many sodium atoms come together to form a solid, each atom loses its single valence electron. The atom becomes a sodium cation, Na⁺. The electrons that are lost do not stay attached to any particular atom. Instead, they become <strong>delocalized</strong>: they are free to move throughout the entire metal lattice, belonging to the lattice as a whole rather than to any individual atom.
-</p>
-<p>
-The metal cations (Na⁺ ions, in our sodium example) are arranged in a regular, repeating three-dimensional pattern called a metallic lattice. The delocalized electrons form a negatively charged "fluid" that fills the spaces between the cations. The electrostatic attraction between the positive metal cations and the negative sea of delocalized electrons holds the entire structure together. This attraction is <strong>metallic bonding</strong>.
-</p>
-<h3>Properties of Metals Explained by the Electron Sea Model</h3>
-<p>
-<strong>Malleability and ductility.</strong> A metal is malleable (it can be hammered into thin sheets) and ductile (it can be drawn into wires). When a force is applied to a metal, the layers of cations can slide past each other. In an ionic solid, such sliding would bring ions of the same charge next to each other, causing repulsion and shattering. In a metal, however, no matter where the cations slide, they remain surrounded by the delocalized electron sea. The metallic bonding is <strong>non-directional</strong>—it does not depend on a specific geometric arrangement of bonds. The attraction between cations and electrons is maintained even when the lattice is deformed, which allows the metal to change shape without breaking.
-</p>
-<p>
-<strong>Electrical conductivity.</strong> Metals conduct electricity in the solid state. When a potential difference (voltage) is applied across a metal, the delocalized electrons, which are already mobile, move in a coordinated way toward the positive terminal. This flow of electrons is an electric current. In contrast, ionic compounds can only conduct when molten or dissolved, because the ions themselves must be free to move. In metals, it is electrons, not ions, that carry the current.
-</p>
-<p>
-<strong>Thermal conductivity.</strong> Metals conduct heat well because the delocalized electrons can transfer kinetic energy rapidly through the lattice. When one part of a metal is heated, the electrons in that region gain kinetic energy and move quickly to cooler parts of the metal, distributing the energy.
-</p>
-<p>
-<strong>Lustre (shininess).</strong> Metals have a shiny appearance because the delocalized electrons at the surface can absorb and re-emit light across a wide range of wavelengths. When light strikes a metal surface, the electrons oscillate and re-radiate the light, giving metals their characteristic reflective appearance.
-</p>
-<h3>Alloys: Why Mixing Metals Makes Them Harder</h3>
-<p>
-An <strong>alloy</strong> is a mixture of a metal with one or more other elements, which may be other metals or non-metals such as carbon. The added atoms have a different size from the atoms of the main metal. When these differently sized atoms occupy positions in the metallic lattice, they disrupt the regular arrangement of the layers.
-</p>
-<p>
-In a pure metal, the layers of cations are smooth and can slide past each other relatively easily. In an alloy, the differently sized atoms act like bumps or obstacles in the otherwise smooth layers. When a force tries to slide one layer past another, the "bumps" catch on each other and prevent the layers from moving freely. The alloy is therefore harder, stronger, and less malleable than the pure metal.
-</p>
-<p>
-For example, pure gold (24-carat gold) is very soft and can be scratched or bent easily. Jewelry is usually made from 18-carat gold, which is an alloy of gold with copper and sometimes silver. The copper atoms are smaller than gold atoms and disrupt the gold lattice, making the alloy much harder and more durable. Similarly, steel is an alloy of iron with a small amount of carbon (and often other metals such as chromium and nickel). The carbon atoms occupy the small spaces (interstitial sites) between the iron atoms, locking the lattice and greatly increasing the hardness and strength compared to pure iron.
-</p>
-<div class="worked">
-<strong>Worked Example 12.1: Pure Metals vs. Alloys</strong><br><br>
-<p>
-<strong>Problem:</strong> A jeweler explains to a customer that a ring made from pure (24-carat) gold would be too soft for everyday wear, and recommends an 18-carat gold ring instead. The 18-carat gold contains approximately 75 percent gold and 25 percent copper by mass. Explain, using the electron sea model of metallic bonding, why the 18-carat gold alloy is harder than pure gold.
-</p>
-<p>
-<strong>To solve this, we need to compare what happens when a force is applied to pure gold versus the gold–copper alloy.</strong> In pure gold, all the atoms in the metallic lattice are gold atoms. They are all the same size, so the layers of cations form smooth planes. When a force is applied, these smooth layers can slide past each other without much resistance. The delocalized electrons adjust their positions to maintain the metallic bonding throughout the deformation.
-</p>
-<p>
-In the 18-carat gold alloy, roughly one-quarter of the lattice positions are occupied by copper atoms. Copper atoms have a different atomic radius from gold atoms. The presence of these differently sized atoms disrupts the regularity of the lattice. The layers are no longer smooth; the copper atoms protrude or create indentations relative to the surrounding gold atoms. When a force tries to slide one layer past another, the irregularities catch against each other, resisting the movement. More force is needed to cause deformation, meaning the alloy is harder than pure gold.
-</p>
-<p>
-<strong>Why this makes sense:</strong> You can think of the difference between a stack of perfectly flat, smooth tiles (which slide easily) and a stack of tiles that have bumps and protrusions (which lock together and resist sliding). The copper atoms are the "bumps" that prevent the gold layers from gliding freely.
-</p>
-</div>
-<h2>2. Giant Covalent Structures (Network Covalent Solids)</h2>
-<p>
-In a giant covalent structure, also called a network covalent solid, atoms are joined together by covalent bonds that extend continuously throughout the entire solid. There are no individual molecules—the entire crystal is essentially one enormous molecule. The different arrangements of atoms in giant covalent structures produce very different macroscopic properties.
-</p>
-<h3>Diamond: sp³ Carbon, Tetrahedral Network</h3>
-<p>
-In diamond, each carbon atom is covalently bonded to four other carbon atoms. The four bonds are arranged in a tetrahedral geometry with bond angles of exactly 109.5°. This tetrahedral arrangement repeats throughout the entire crystal, creating a rigid three-dimensional network.
-</p>
-<p>
-Every valence electron on every carbon atom is used to form a C–C sigma (single) bond. There are no delocalized electrons anywhere in the diamond structure. All electrons are confined to the covalent bonds between specific pairs of atoms.
-</p>
-<p>
-The properties of diamond follow directly from this structure. Diamond is the hardest naturally occurring substance because every atom is locked into a rigid three-dimensional framework. To scratch or deform a diamond, you would need to break covalent bonds, which are very strong. Diamond has a very high melting point (approximately 3550 °C) because melting would require breaking covalent bonds throughout the entire lattice. Diamond does not conduct electricity because there are no delocalized electrons or mobile charge carriers—every electron is localized in a covalent bond. Diamond is also an excellent thermal conductor (vibrations travel quickly through the rigid lattice) and is transparent to visible light.
-</p>
-<h3>Graphite: sp² Carbon, Layered Structure with Delocalized Electrons</h3>
-<p>
-In graphite, each carbon atom is covalently bonded to only three other carbon atoms. These three bonds are arranged in a trigonal planar geometry with 120° bond angles, forming flat hexagonal sheets. This means each carbon atom uses three of its four valence electrons for sigma bonding within its layer.
-</p>
-<p>
-The fourth valence electron on each carbon atom occupies a p orbital that is perpendicular to the plane of the layer. These p orbitals on adjacent carbon atoms overlap sideways with each other, forming a delocalized pi (π) electron system that extends across the entire layer. The electrons in this pi system are free to move within the layer, although they cannot easily jump from one layer to another.
-</p>
-<p>
-The layers of graphite are held together only by weak London dispersion forces. There are no covalent bonds between layers.
-</p>
-<p>
-The properties of graphite are very different from those of diamond because of this layered structure. Graphite is soft and slippery—the layers can slide over each other easily because only weak intermolecular forces hold them together. This makes graphite an excellent dry lubricant and the reason pencil "lead" (which is actually graphite mixed with clay) leaves a mark on paper: layers of graphite shear off onto the paper. Graphite conducts electricity within each layer because the delocalized pi electrons are mobile charge carriers. Graphite does not conduct electricity perpendicular to the layers. Graphite is opaque and black, unlike transparent diamond.
-</p>
-<h3>Graphene: A Single Layer of Graphite</h3>
-<p>
-Graphene is exactly what its name suggests: a single atomic layer of graphite. It is a sheet of carbon atoms arranged in hexagons, exactly one atom thick. Because it is only one layer, all the properties that graphite exhibits within a single layer are expressed to an extreme degree in graphene. Graphene has exceptional tensile strength (it is stronger than steel for its weight), extremely high electrical conductivity (electrons travel through graphene with almost no resistance), and high thermal conductivity. It is also transparent because it is only one atom thick. Graphene has potential applications in electronics, composite materials, and many other fields.
-</p>
-<h3>Silicon Dioxide (SiO₂): A Three-Dimensional Network Like Diamond</h3>
-<p>
-Silicon dioxide, also known as silica, is the main component of sand and quartz. In SiO₂, each silicon atom is covalently bonded to four oxygen atoms arranged tetrahedrally (bond angle 109.5°). Each oxygen atom is bonded to two silicon atoms, bridging between them. This creates a continuous three-dimensional network, similar in concept to diamond, but with oxygen atoms acting as bridges between silicon atoms.
-</p>
-<p>
-The formula SiO₂ is an empirical formula, not a molecular formula. It tells you the ratio of silicon to oxygen (1:2) in the network, but there are no discrete SiO₂ molecules. Like diamond, silicon dioxide has a very high melting point (about 1710 °C), is very hard, does not conduct electricity, and is insoluble in water.
-</p>
-<div class="worked">
-<strong>Worked Example 12.2: Diamond vs. Graphite Electrical Conductivity</strong><br><br>
-<p>
-<strong>Problem:</strong> Diamond and graphite are both pure forms of the element carbon. Diamond is an electrical insulator while graphite is a conductor of electricity. Explain this difference in terms of the bonding and structure of the two allotropes.
-</p>
-<p>
-<strong>To solve this, we need to examine where the valence electrons are located in each structure and whether any electrons are free to move.</strong>
-</p>
-<p>
-In diamond, every carbon atom forms four sigma bonds to four neighboring carbon atoms. All four valence electrons of every carbon atom are used in these covalent bonds. Every electron is confined to the region between two specific carbon nuclei. There are no free or delocalized electrons anywhere in the structure. For an electric current to flow, charged particles must be able to move through the material. Since diamond has no mobile charge carriers, it cannot conduct electricity—it is an electrical insulator.
-</p>
-<p>
-In graphite, each carbon atom forms only three sigma bonds to three neighboring carbon atoms within its layer. This uses three of the four valence electrons. The fourth valence electron is in a p orbital oriented perpendicular to the layer. The p orbitals on all the carbon atoms in a layer overlap sideways, creating a continuous pi (π) electron system that extends throughout the layer. The electrons in this delocalized pi system are not bound to any particular carbon–carbon bond; they are free to move anywhere within the layer. These delocalized electrons are mobile charge carriers, so graphite can conduct electricity—but only within each layer, not perpendicular to them.
-</p>
-<p>
-<strong>Why this makes sense:</strong> The critical difference is the number of bonds each carbon atom forms. In diamond, carbon forms four bonds and uses all its electrons, leaving none free. In graphite, carbon forms three bonds and has one electron left over, which becomes delocalized and mobile. The same element, carbon, can be either an insulator or a conductor, purely because of how its atoms are arranged.
-</p>
-</div>
-<h2>3. Sigma (σ) and Pi (π) Bonds: Two Ways Orbitals Overlap</h2>
-<p>
-All covalent bonds involve the overlap of atomic orbitals, but not all overlaps are the same. There are two fundamentally different ways that orbitals can overlap, producing two types of bonds: sigma bonds and pi bonds.
-</p>
-<h3>Sigma (σ) Bonds: End-On Overlap</h3>
-<p>
-A sigma bond is formed when two atomic orbitals overlap head-on (also called end-on overlap). Imagine two s orbitals approaching each other along the line connecting the two nuclei. They overlap directly, and the electron density is concentrated symmetrically around the axis that connects the two nuclei. This means the electron density is highest in the region directly between the two nuclei, which is the most effective place for electrons to attract both nuclei and hold them together.
-</p>
-<p>
-Sigma bonds can be formed by several combinations of orbitals: s–s overlap (as in the H–H bond), s–p overlap (as in the H–F bond), p–p end-on overlap (as in the F–F bond), or overlap involving hybrid orbitals.
-</p>
-<p>
-<strong>Properties of sigma bonds:</strong> A sigma bond is cylindrically symmetrical, meaning that if you rotate the atoms around the bond axis, the appearance of the bond does not change. Because of this symmetry, atoms joined by a sigma bond can rotate freely relative to each other. Sigma bonds are the strongest type of covalent bond because the overlap is direct and extensive.
-</p>
-<p>
-<strong>Key rule:</strong> The first bond between any two atoms is always a sigma bond. Every single bond is a sigma bond. Every double bond contains one sigma bond and one pi bond. Every triple bond contains one sigma bond and two pi bonds.
-</p>
-<h3>Pi (π) Bonds: Sideways Overlap</h3>
-<p>
-A pi bond is formed when two parallel p orbitals overlap sideways. Imagine two p orbitals on adjacent atoms, both oriented perpendicular to the bond axis. Their lobes extend above and below (or in front of and behind) the bond axis. When these lobes overlap, the electron density is concentrated in two regions: one above the plane containing the bond axis and one below it. Critically, there is no electron density directly along the bond axis in a pi bond—the electron density is entirely off the axis.
-</p>
-<p>
-<strong>Properties of pi bonds:</strong> A pi bond is not cylindrically symmetrical. If you try to rotate one end of the molecule relative to the other around a bond that has pi character, the parallel p orbitals will no longer be aligned, and the pi overlap will be broken. Pi bonds therefore <strong>prevent free rotation.</strong> This is why molecules with double bonds (such as ethene, H₂C=CH₂) cannot rotate around the C=C bond. The restricted rotation is the reason that alkenes can exist as cis–trans (E/Z) isomers.
-</p>
-<p>
-Pi bonds are weaker than sigma bonds because the sideways overlap is less extensive than the head-on overlap of a sigma bond. This is why the bond enthalpy of a C=C double bond (614 kJ mol⁻¹) is less than twice that of a C–C single bond (2 × 348 = 696 kJ mol⁻¹). The sigma component is strong, but the pi component adds less than a full sigma bond's worth of strength.
-</p>
-<h3>Examples of Sigma and Pi Bond Counting</h3>
-<p>
-In ethene, C₂H₄: There is a C=C double bond between the two carbon atoms. This consists of one C–C sigma bond and one C–C pi bond. Each carbon is also bonded to two hydrogen atoms by C–H sigma bonds. Total in the molecule: 5 sigma bonds (one C–C + four C–H) and 1 pi bond.
-</p>
-<p>
-In ethyne (acetylene), C₂H₂: The C≡C triple bond consists of one sigma bond and two pi bonds. Each carbon is also bonded to one hydrogen atom by a C–H sigma bond. Total: 3 sigma bonds (one C–C + two C–H) and 2 pi bonds.
-</p>
-<p>
-In nitrogen gas, N₂: The N≡N triple bond consists of one sigma bond and two pi bonds. The molecule is diatomic, so there is only this one bond between the two nitrogen atoms.
-</p>
-<hr>
-<h2>4. Hybridisation: Mixing Atomic Orbitals to Form Bonding Orbitals</h2>
-<p>
-In many molecules, the bond angles predicted by considering pure s and p orbitals do not match the experimentally observed angles. For example, if carbon used one s and three p orbitals to bond in methane, we might expect three bonds at 90° (from p orbitals) and one bond with no directional preference (from the s orbital). But methane is known to have four identical bonds at 109.5° angles.
-</p>
-<p>
-The concept of <strong>hybridisation</strong> resolves this discrepancy. Hybridisation is the mathematical mixing of atomic orbitals on a single atom to produce a set of new, equivalent orbitals called hybrid orbitals. The number of hybrid orbitals formed always equals the number of atomic orbitals that were mixed.
-</p>
-<h3>How to Determine Hybridisation</h3>
-<p>
-The hybridisation of an atom is determined by the number of electron domains around that atom. The number of electron domains equals the number of hybrid orbitals.
-</p>
-<table>
-<tr>
-<th>Number of electron domains</th>
-<th>Hybridisation</th>
-<th>Electron domain geometry</th>
-</tr>
-<tr>
-<td>2</td>
-<td>sp</td>
-<td>Linear</td>
-</tr>
-<tr>
-<td>3</td>
-<td>sp²</td>
-<td>Trigonal planar</td>
-</tr>
-<tr>
-<td>4</td>
-<td>sp³</td>
-<td>Tetrahedral</td>
-</tr>
-<tr>
-<td>5</td>
-<td>sp³d</td>
-<td>Trigonal bipyramidal</td>
-</tr>
-<tr>
-<td>6</td>
-<td>sp³d²</td>
-<td>Octahedral</td>
-</tr>
-<h3>sp Hybridisation: 2 Electron Domains</h3>
-</table>
-<p>
-One s orbital and one p orbital mix to form two equivalent sp hybrid orbitals. These two sp orbitals are oriented 180° apart, giving a linear geometry. The remaining two p orbitals on the atom stay unhybridized and are available for pi bonding.
-</p>
-<p>
-Example: In beryllium chloride, BeCl₂, the beryllium atom has two electron domains (two single bonds) and is sp hybridised. In ethyne, C₂H₂, each carbon atom has two electron domains (one sigma bond to the other carbon and one sigma bond to a hydrogen) and is sp hybridised. The two unhybridized p orbitals on each carbon overlap sideways to form the two pi bonds of the C≡C triple bond.
-</p>
-<h3>sp² Hybridisation: 3 Electron Domains</h3>
-<p>
-One s orbital and two p orbitals mix to form three equivalent sp² hybrid orbitals. These three orbitals lie in a plane and are oriented 120° apart, giving a trigonal planar geometry. The one remaining p orbital is perpendicular to this plane and is available for pi bonding.
-</p>
-<p>
-Example: In boron trifluoride, BF₃, the boron atom has three electron domains and is sp² hybridised. In ethene, C₂H₄, each carbon atom has three electron domains (two C–H sigma bonds and one C–C sigma bond) and is sp² hybridised. The unhybridized p orbital on each carbon overlaps sideways to form the pi bond of the C=C double bond.
-</p>
-<h3>sp³ Hybridisation: 4 Electron Domains</h3>
-<p>
-One s orbital and three p orbitals mix to form four equivalent sp³ hybrid orbitals. These four orbitals point toward the corners of a tetrahedron, with angles of 109.5°.
-</p>
-<p>
-Example: In methane, CH₄, the carbon has four electron domains and is sp³ hybridised. In ammonia, NH₃, the nitrogen has four electron domains (three bonds + one lone pair) and is sp³ hybridised. The lone pair occupies one of the sp³ hybrid orbitals. In water, H₂O, the oxygen has four electron domains (two bonds + two lone pairs) and is sp³ hybridised.
-</p>
-<h3>sp³d Hybridisation (HL): 5 Electron Domains</h3>
-<p>
-One s orbital, three p orbitals, and one d orbital mix to form five sp³d hybrid orbitals. These orbitals are directed toward the corners of a trigonal bipyramid.
-</p>
-<p>
-Example: In phosphorus pentachloride, PCl₅, the phosphorus has five electron domains and is sp³d hybridised.
-</p>
-<h3>sp³d² Hybridisation (HL): 6 Electron Domains</h3>
-<p>
-One s orbital, three p orbitals, and two d orbitals mix to form six sp³d² hybrid orbitals. These orbitals are directed toward the corners of an octahedron.
-</p>
-<p>
-Example: In sulfur hexafluoride, SF₆, the sulfur has six electron domains and is sp³d² hybridised.
-</p>
-<h3>Important Clarification</h3>
-<p>
-The hybridisation is determined by the total number of electron domains, which includes both bonding pairs and lone pairs. A nitrogen atom in NH₃, which has four electron domains (three bonds and one lone pair), is sp³ hybridised—exactly like carbon in CH₄. The lone pair occupies an sp³ hybrid orbital. The difference in molecular shape (trigonal pyramidal vs. tetrahedral) is due to the presence of the lone pair, not a difference in hybridisation.
-</p>
-<div class="worked">
-<strong>Worked Example 12.3: Determining Hybridisation</strong><br><br>
-<p>
-<strong>Problem:</strong> Determine the hybridisation of the central atom in each of the following species: (a) CO₂, (b) SO₂, (c) XeF₄.
-</p>
-<p>
-<strong>To solve this, we need to count the total electron domains around the central atom in each species.</strong>
-</p>
-<p>
-(a) CO₂: The carbon atom is bonded to two oxygen atoms by double bonds. Each double bond counts as one electron domain. There are no lone pairs on carbon. Total electron domains = 2. For 2 electron domains, the hybridisation is sp.
-</p>
-<p>
-(b) SO₂: The sulfur atom has one double bond to one oxygen, one single bond to the other oxygen (or, in the resonance hybrid, two equivalent bonds of bond order 1.5—but still two bonding domains total), and one lone pair. Total electron domains = 2 (bonding) + 1 (non-bonding) = 3. For 3 electron domains, the hybridisation is sp².
-</p>
-<p>
-(c) XeF₄: The xenon atom has four single bonds to fluorine atoms and two lone pairs. Total electron domains = 4 (bonding) + 2 (non-bonding) = 6. For 6 electron domains, the hybridisation is sp³d². The molecular shape is square planar.
-</p>
-<p>
-<strong>Why this makes sense:</strong> The hybridisation is always determined by the total number of electron domains, not by the number of atoms bonded. This is why XeF₄ is sp³d², not sp³—even though it has only four atoms attached, it has six electron domains when you count the lone pairs.
-</p>
-</div>
-<h2>Practice Problems</h2>
-<ol>
-<li>Sodium metal is a good conductor of electricity in the solid state, whereas solid sodium chloride does not conduct electricity at all. Explain this difference in terms of the bonding and the nature of the charge carriers in each substance.</li>
-</ol>
-<ol>
-<li>The molecule propene has the structural formula CH₃–CH=CH₂. (a) Determine the hybridisation of each of the three carbon atoms in propene. (b) Count the total number of sigma (σ) bonds and pi (π) bonds in the molecule.</li>
-</ol>
-<ol>
-<li>Diamond and graphite are both forms of pure carbon but have very different properties. (a) Explain, in terms of bonding and structure, why graphite can be used as a solid lubricant but diamond cannot. (b) Explain why graphite conducts electricity but diamond does not.</li>
-</ol>
-<ol>
-<li>For each of the following species, state the hybridisation of the central atom and predict the molecular shape: (a) BeCl₂, (b) SF₄, (c) BrF₅.</li>
-</ol>
-<ol>
-<li><strong>(IB Exam Style)</strong> The nitrate ion, NO₃⁻, is known from experimental measurements to be planar (all atoms lie in the same plane) with three identical N–O bonds.</li>
-</ol>
-<p>
-   (a) Draw the Lewis structure of the nitrate ion and determine the total number of valence electrons.
-</p>
-<p>
-   (b) Determine the hybridisation of the nitrogen atom in NO₃⁻. Explain your reasoning based on the number of electron domains.
-</p>
-<p>
-   (c) Describe the bonding in the nitrate ion in terms of sigma (σ) and pi (π) bonds. In your description, state which orbitals on nitrogen are used for sigma bonding, which orbital is used for pi bonding, and how the pi electrons are distributed among the three oxygen atoms.
-</p>
-<p>
-   (d) All three N–O bonds in NO₃⁻ are experimentally found to have the same length. Explain this observation using the concept of resonance.
-</p>
-<p>
-   (e) The ammonia molecule, NH₃, also has nitrogen as its central atom, but its shape is trigonal pyramidal rather than planar, and all its bonds are single bonds. Explain the differences in shape and bonding between NO₃⁻ and NH₃ by comparing the hybridisation and the number of electron domains on nitrogen in each species.
-</p>
-<hr>
-<h2>Answers</h2>
-<ol>
-<li>In sodium metal, the bonding is metallic. Each sodium atom loses its single valence electron to become a Na⁺ cation. The lost electrons become delocalized and form a mobile "sea" of electrons that can move freely throughout the metallic lattice. When a voltage is applied, these delocalized electrons flow toward the positive terminal, constituting an electric current. In solid sodium chloride, the bonding is ionic. The Na⁺ and Cl⁻ ions are held in fixed positions in a giant ionic lattice. Although the ions carry electric charge, they cannot move from their lattice positions in the solid state. Without mobile charge carriers, no electric current can flow. Sodium chloride conducts electricity only when molten or dissolved in water, because in those states the ions become free to move.</li>
-</ol>
-<ol>
-<li>(a) The three carbon atoms in propene, CH₃–CH=CH₂:</li>
+
+<h1>Lesson 12: Metallic Bonding, Giant Covalent, σ/π Bonds & Hybridisation (HL)</h1>
+
+<p><b>Syllabus reference:</b> 4.5/14.1/14.2 — Metallic bonding, giant covalent structures, sigma/pi bonds, hybridisation</p>
+
+<div class="objectives">
+<h3>Learning Objectives</h3>
+<p>By the end of this lesson, you will be able to:</p>
 <ul>
-<li>The leftmost carbon (CH₃–): This carbon forms four sigma bonds (three to hydrogen, one to the middle carbon). Total electron domains = 4. Hybridisation = sp³.</li>
-<li>The middle carbon (–CH=): This carbon forms three sigma bonds (one to the left carbon, one to hydrogen, one to the right carbon as part of the double bond) and has no lone pairs. Total electron domains = 3. Hybridisation = sp².</li>
-<li>The rightmost carbon (=CH₂): This carbon forms three sigma bonds (one to the middle carbon as part of the double bond, two to hydrogen) and has no lone pairs. Total electron domains = 3. Hybridisation = sp².</li>
+  <li><b>Describe</b> metallic bonding as the electrostatic attraction between a lattice of cations and a sea of delocalised electrons.</li>
+  <li><b>Explain</b> the properties of metals (conductivity, malleability, melting points) using the metallic bonding model.</li>
+  <li><b>Compare</b> the structures and properties of diamond, graphite, graphene, and silicon dioxide as giant covalent substances.</li>
+  <li><b>Distinguish</b> between sigma (σ) and pi (π) bonds in terms of orbital overlap and electron density distribution.</li>
+  <li><b>Determine</b> the hybridisation state (sp, sp², sp³) of atoms in molecules and relate it to molecular shape.</li>
 </ul>
-</ol>
-<p>
-   (b) Sigma bonds: There are six C–H bonds (all sigma), plus two C–C single bonds? Actually, there is one C–C single bond (between the sp³ carbon and the sp² carbon) and one C=C double bond (between the two sp² carbons). The C=C double bond contains one sigma bond. So the C–C sigma bonds = 1 (from the single) + 1 (from the double) = 2. Total sigma bonds = 6 (C–H) + 2 (C–C) = 8 sigma bonds.
-</p>
-<p>
-   Pi bonds: The C=C double bond contains one pi bond. Total pi bonds = 1.
-</p>
-<ol>
-<li>(a) Diamond has a rigid three-dimensional network in which every carbon atom is covalently bonded to four other carbon atoms in a tetrahedral arrangement. There are no layers or planes of weakness—the entire crystal is a single continuous covalent structure. To use diamond as a lubricant, you would need to shear covalent bonds, which requires enormous force. Graphite has a layered structure. Within each layer, carbon atoms are strongly bonded by covalent bonds in hexagonal rings. Between the layers, however, the forces are only weak London dispersion forces. When graphite is used as a lubricant, the layers slide past each other easily because only the weak intermolecular forces need to be overcome. This is also why a pencil leaves a mark: layers of graphite shear off onto the paper.</li>
-</ol>
-<p>
-   (b) Graphite conducts electricity because each carbon atom uses only three of its four valence electrons for sigma bonding within the layer. The fourth valence electron occupies a p orbital perpendicular to the layer. These p orbitals overlap sideways to form a delocalized pi electron system extending across the entire layer. The delocalized electrons are mobile and can carry electric current—but only parallel to the layers. Diamond does not conduct electricity because every carbon atom uses all four valence electrons to form sigma bonds. All electrons are localized in specific covalent bonds between pairs of atoms. There are no mobile electrons, so no current can flow.
-</p>
-<ol>
-<li>(a) BeCl₂: The beryllium atom has 2 valence electrons and forms two single bonds to two chlorine atoms. Total electron domains = 2, with zero lone pairs. Hybridisation = sp. The molecular shape is linear.</li>
-</ol>
-<p>
-   (b) SF₄: The sulfur atom has 6 valence electrons and forms four single bonds to four fluorine atoms, using 4 electrons, leaving 2 electrons as one lone pair. Total electron domains = 4 (bonding) + 1 (non-bonding) = 5. Hybridisation = sp³d. The molecular shape is seesaw (disphenoidal).
-</p>
-<p>
-   (c) BrF₅: The bromine atom has 7 valence electrons and forms five single bonds to five fluorine atoms, using 5 electrons, leaving 2 electrons as one lone pair. Total electron domains = 5 (bonding) + 1 (non-bonding) = 6. Hybridisation = sp³d². The molecular shape is square pyramidal.
-</p>
-<ol>
-<li>(a) The Lewis structure of NO₃⁻ has a central nitrogen atom bonded to three oxygen atoms. The total valence electrons are: 5 (from N) + 3 × 6 (from three O) + 1 (from the −1 charge) = 24 electrons. The most stable Lewis structure shows nitrogen with one double bond to one oxygen and single bonds to the other two oxygens. The singly bonded oxygens each carry a −1 formal charge. Three equivalent resonance structures can be drawn by rotating the double bond among the three oxygen atoms.</li>
-</ol>
-<p>
-   (b) The nitrogen atom in NO₃⁻ has three electron domains: the three bonds to the three oxygen atoms (the double bond counts as one domain, just like the single bonds). There are no lone pairs on the nitrogen atom. With three electron domains, the hybridisation of nitrogen is sp². This accounts for the planar geometry of the ion.
-</p>
-<p>
-   (c) The nitrogen atom uses its three sp² hybrid orbitals to form three sigma bonds—one to each oxygen atom. These three sigma bonds lie in a plane with 120° angles. The nitrogen atom also has one unhybridized p orbital, which is oriented perpendicular to the plane of the molecule. This p orbital overlaps sideways with the p orbitals on all three oxygen atoms. The result is a delocalized pi (π) system that extends over all four atoms (one nitrogen and three oxygens). This is sometimes described as a four-centre pi bond. The four electrons that participate in this delocalized pi system (two from the N=O double bond in any one resonance structure, plus the two negative charges distributed over the oxygens) are shared among all four atoms.
-</p>
-<p>
-   (d) In the resonance hybrid, the pi electrons are delocalized equally over all three N–O bonds. No single N–O bond has a full double bond character, and no single N–O bond is a pure single bond. Each bond has a bond order of 1⅓ (or 4/3). Because the electron distribution is identical for all three bonds, all three bonds have the same length and the same strength. If the electrons were localized (stuck in one N=O double bond), one bond would be shorter and two would be longer, but experiment shows all three are equal.
-</p>
-<p>
-   (e) The nitrogen atom in NO₃⁻ has three electron domains (all bonding) and is sp² hybridised, giving a trigonal planar shape. The nitrogen atom in NH₃ has five valence electrons: it forms three single bonds to three hydrogen atoms (using three electrons) and has one lone pair (the remaining two electrons). Total electron domains = 4 (three bonding, one non-bonding). The hybridisation is sp³. The electron domain geometry is tetrahedral. Because one of the four tetrahedral positions is occupied by a lone pair, the molecular shape is trigonal pyramidal. The difference in the number of electron domains (3 in NO₃⁻ versus 4 in NH₃) leads to different hybridisation (sp² versus sp³) and different molecular shapes (planar versus pyramidal). Additionally, NO₃⁻ has delocalized pi bonding across all three N–O bonds, whereas NH₃ has only sigma bonds (the lone pair occupies an sp³ orbital, and all bonding electrons are in sigma bonds).
-</p>
-<div class="nav">
-<a href="lesson_11.html">← Previous Lesson</a>
-<a href="lesson_13.html">Next Lesson →</a>
 </div>
+
+<h2>1. Prior Knowledge Check</h2>
+
+<p><b>Question 1:</b> What is the key difference between metallic, ionic, and covalent bonding?</p>
+<div class="check-in">
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content"><b>Metallic:</b> electrostatic attraction between metal cations and a sea of delocalised valence electrons. <b>Ionic:</b> electrostatic attraction between discrete cations and anions (electron transfer). <b>Covalent:</b> electrostatic attraction between a shared pair of electrons and two nuclei (localised electron sharing).</div>
+</div>
+
+<p><b>Question 2:</b> What is an allotrope? Give an example.</p>
+<div class="check-in">
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">Allotropes are different structural forms of the same element in the same physical state. Example: carbon exists as diamond (sp³, tetrahedral network), graphite (sp², layered), graphene (single layer of graphite), and fullerenes (e.g., C₆₀). Each has different properties due to different bonding arrangements.</div>
+</div>
+
+<p><b>Question 3:</b> What does the term "delocalised electrons" mean?</p>
+<div class="check-in">
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">Delocalised electrons are not confined to a single bond or atom — they are spread over multiple atoms. In metals, valence electrons are delocalised throughout the entire lattice. In graphite and benzene, π electrons are delocalised across multiple carbon atoms.</div>
+</div>
+
+<h2>2. Metallic Bonding — The Electron Sea Model</h2>
+
+<h3>2.1 The Model</h3>
+
+<p>In a metal, atoms are packed in a regular lattice. The valence electrons <b>detach</b> from individual atoms and form a <b>"sea" of delocalised electrons</b> that moves freely throughout the lattice. The positive metal cations are held together by their electrostatic attraction to this electron sea.</p>
+
+<div class="diagram">
+<svg width="520" height="260" viewBox="0 0 520 260">
+  <text x="260" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c5f2d">Metallic Bonding — The Electron Sea Model</text>
+
+  <!-- Cation lattice -->
+  <circle cx="100" cy="80" r="18" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+  <text x="100" y="84" text-anchor="middle" font-size="11" fill="#1565c0">M⁺</text>
+  <circle cx="170" cy="70" r="18" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+  <text x="170" y="74" text-anchor="middle" font-size="11" fill="#1565c0">M⁺</text>
+  <circle cx="240" cy="80" r="18" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+  <text x="240" y="84" text-anchor="middle" font-size="11" fill="#1565c0">M⁺</text>
+
+  <circle cx="100" cy="140" r="18" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+  <text x="100" y="144" text-anchor="middle" font-size="11" fill="#1565c0">M⁺</text>
+  <circle cx="170" cy="130" r="18" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+  <text x="170" y="134" text-anchor="middle" font-size="11" fill="#1565c0">M⁺</text>
+  <circle cx="240" cy="140" r="18" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+  <text x="240" y="144" text-anchor="middle" font-size="11" fill="#1565c0">M⁺</text>
+
+  <circle cx="100" cy="200" r="18" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+  <text x="100" y="204" text-anchor="middle" font-size="11" fill="#1565c0">M⁺</text>
+  <circle cx="170" cy="190" r="18" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+  <text x="170" y="194" text-anchor="middle" font-size="11" fill="#1565c0">M⁺</text>
+  <circle cx="240" cy="200" r="18" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+  <text x="240" y="204" text-anchor="middle" font-size="11" fill="#1565c0">M⁺</text>
+
+  <!-- Delocalised electrons -->
+  <circle cx="135" cy="95" r="4" fill="#e65100"/>
+  <circle cx="155" cy="90" r="4" fill="#e65100"/>
+  <circle cx="205" cy="88" r="4" fill="#e65100"/>
+  <circle cx="220" cy="110" r="4" fill="#e65100"/>
+  <circle cx="120" cy="120" r="4" fill="#e65100"/>
+  <circle cx="150" cy="145" r="4" fill="#e65100"/>
+  <circle cx="195" cy="160" r="4" fill="#e65100"/>
+  <circle cx="130" cy="170" r="4" fill="#e65100"/>
+  <circle cx="210" cy="175" r="4" fill="#e65100"/>
+  <circle cx="115" cy="150" r="4" fill="#e65100"/>
+  <circle cx="225" cy="140" r="4" fill="#e65100"/>
+  <circle cx="145" cy="110" r="4" fill="#e65100"/>
+  <text x="170" y="235" text-anchor="middle" font-size="10" fill="#e65100">e⁻ = delocalised electrons</text>
+
+  <!-- Properties box -->
+  <rect x="300" y="55" width="200" height="175" rx="8" fill="#fff8e1" stroke="#f9a825" stroke-width="1.5"/>
+  <text x="400" y="78" text-anchor="middle" font-size="12" font-weight="bold" fill="#e65100">Key Properties Explained</text>
+  <text x="310" y="100" font-size="10" fill="#333">• <b>Electrical conductivity:</b></text>
+  <text x="315" y="117" font-size="9" fill="#555">Delocalised e⁻ move freely</text>
+  <text x="315" y="132" font-size="9" fill="#555">through the lattice</text>
+  <text x="310" y="153" font-size="10" fill="#333">• <b>Malleability/ductility:</b></text>
+  <text x="315" y="170" font-size="9" fill="#555">Layers of cations slide past</text>
+  <text x="315" y="185" font-size="9" fill="#555">each other; e⁻ sea re-forms</text>
+  <text x="310" y="206" font-size="10" fill="#333">• <b>Thermal conductivity:</b></text>
+  <text x="315" y="223" font-size="9" fill="#555">Delocalised e⁻ transfer</text>
+  <text x="315" y="238" font-size="9" fill="#555">kinetic energy rapidly</text>
+</svg>
+<div class="caption">Figure 1: The metallic bonding model. Positive metal cations (blue) are held in a regular lattice by electrostatic attraction to a "sea" of delocalised valence electrons (orange dots). This simple model explains conductivity, malleability, and ductility.</div>
+</div>
+
+<h3>2.2 Factors Affecting Metallic Bond Strength</h3>
+
+<p>The strength of metallic bonding (and thus melting point) depends on:</p>
+<ol>
+  <li><b>Number of delocalised valence electrons</b> — more e⁻ per atom = stronger bonding. Group 1 (1 e⁻) → low m.p.; Group 3 (3 e⁻) → higher m.p.</li>
+  <li><b>Size of the cation</b> — smaller cations hold the electron sea more tightly (greater charge density).</li>
+  <li><b>Charge of the cation</b> — higher charge = stronger attraction to the electron sea.</li>
+</ol>
+
+<p>This explains why Mg (2 delocalised e⁻, m.p. 650°C) has a higher melting point than Na (1 delocalised e⁻, m.p. 98°C) — despite both being Period 3 metals. Similarly, transition metals have high melting points because they contribute d-electrons to the delocalised sea.</p>
+
+<div class="check-in">
+<p><b>Check-in:</b> Explain why aluminium (Group 13, m.p. 660°C) is a stronger metal than sodium (Group 1, m.p. 98°C).</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">Aluminium contributes <b>3 delocalised electrons</b> per atom to the electron sea, compared to sodium's 1. This creates a much stronger electrostatic attraction between Al³⁺ cations and the electron sea. Additionally, Al³⁺ has a smaller ionic radius and higher charge density than Na⁺, further strengthening the metallic bonds. The result: Al has a melting point over 550°C higher than Na and is mechanically much stronger.</div>
+</div>
+
+<h2>3. Giant Covalent Structures — Carbon Allotropes and SiO₂</h2>
+
+<h3>3.1 Diamond — sp³ Tetrahedral Network</h3>
+
+<p>Diamond: each carbon atom is <b>sp³ hybridised</b> and bonded tetrahedrally to four other carbon atoms by strong covalent σ bonds. This forms a rigid, three-dimensional network.</p>
+
+<ul>
+  <li><b>Extremely hard</b> — every atom is locked in place by strong covalent bonds in all directions.</li>
+  <li><b>Very high melting point</b> (~3550°C) — must break strong C–C covalent bonds.</li>
+  <li><b>Non-conductor</b> of electricity — all electrons are localised in σ bonds; no delocalised electrons.</li>
+  <li><b>Insoluble</b> in any solvent — covalent bonds throughout.</li>
+</ul>
+
+<h3>3.2 Graphite — sp² Layered Structure</h3>
+
+<p>Graphite: each carbon is <b>sp² hybridised</b>, bonded to three other carbons in a hexagonal planar layer. The fourth valence electron (in a p orbital) forms a <b>delocalised π bond</b> across the entire layer.</p>
+
+<div class="diagram">
+<svg width="520" height="260" viewBox="0 0 520 260">
+  <text x="260" y="18" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c5f2d">Graphite Structure — sp² Carbon Layers</text>
+
+  <!-- Layer 1 - top -->
+  <rect x="30" y="40" width="210" height="75" rx="5" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="1.5"/>
+  <text x="135" y="60" text-anchor="middle" font-size="10" font-weight="bold" fill="#2c5f2d">Covalent σ bonds within layer</text>
+  <circle cx="80" cy="90" r="8" fill="#bdbdbd" stroke="#333" stroke-width="1"/>
+  <circle cx="130" cy="80" r="8" fill="#bdbdbd" stroke="#333" stroke-width="1"/>
+  <circle cx="180" cy="90" r="8" fill="#bdbdbd" stroke="#333" stroke-width="1"/>
+  <circle cx="105" cy="105" r="8" fill="#bdbdbd" stroke="#333" stroke-width="1"/>
+  <circle cx="155" cy="105" r="8" fill="#bdbdbd" stroke="#333" stroke-width="1"/>
+  <line x1="80" y1="90" x2="130" y2="80" stroke="#2c5f2d" stroke-width="1.5"/>
+  <line x1="130" y1="80" x2="180" y2="90" stroke="#2c5f2d" stroke-width="1.5"/>
+  <line x1="80" y1="90" x2="105" y2="105" stroke="#2c5f2d" stroke-width="1.5"/>
+  <line x1="130" y1="80" x2="105" y2="105" stroke="#2c5f2d" stroke-width="1.5"/>
+  <line x1="130" y1="80" x2="155" y2="105" stroke="#2c5f2d" stroke-width="1.5"/>
+  <line x1="180" y1="90" x2="155" y2="105" stroke="#2c5f2d" stroke-width="1.5"/>
+  <!-- Delocalised π cloud -->
+  <text x="135" y="72" text-anchor="middle" font-size="8" fill="#e65100">Delocalised π e⁻ above & below</text>
+
+  <!-- Layer 2 - bottom -->
+  <rect x="30" y="155" width="210" height="75" rx="5" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="1.5"/>
+  <circle cx="80" cy="205" r="8" fill="#bdbdbd" stroke="#333" stroke-width="1"/>
+  <circle cx="130" cy="195" r="8" fill="#bdbdbd" stroke="#333" stroke-width="1"/>
+  <circle cx="180" cy="205" r="8" fill="#bdbdbd" stroke="#333" stroke-width="1"/>
+  <circle cx="105" cy="220" r="8" fill="#bdbdbd" stroke="#333" stroke-width="1"/>
+  <circle cx="155" cy="220" r="8" fill="#bdbdbd" stroke="#333" stroke-width="1"/>
+
+  <!-- London forces between layers -->
+  <text x="135" y="140" text-anchor="middle" font-size="10" fill="#c62828" font-style="italic">Weak London forces</text>
+  <text x="135" y="152" text-anchor="middle" font-size="10" fill="#c62828" font-style="italic">between layers (335 pm)</text>
+  <line x1="210" y1="120" x2="270" y2="120" stroke="#999" stroke-width="0.5"/>
+
+  <!-- Properties -->
+  <rect x="270" y="40" width="230" height="190" rx="8" fill="#f5f5f5" stroke="#ccc" stroke-width="1"/>
+  <text x="385" y="65" text-anchor="middle" font-size="12" font-weight="bold" fill="#2c5f2d">Graphite vs. Diamond</text>
+  <text x="280" y="90" font-size="10" fill="#333" font-weight="bold">Graphite:</text>
+  <text x="285" y="108" font-size="9" fill="#555">• Conducts electricity (delocalised π e⁻)</text>
+  <text x="285" y="125" font-size="9" fill="#555">• Soft — layers slide (lubricant)</text>
+  <text x="285" y="142" font-size="9" fill="#555">• sp² hybridised, 120° bond angles</text>
+  <text x="280" y="165" font-size="10" fill="#333" font-weight="bold">Diamond:</text>
+  <text x="285" y="183" font-size="9" fill="#555">• Non-conductor (all e⁻ localised)</text>
+  <text x="285" y="200" font-size="9" fill="#555">• Hardest natural substance</text>
+  <text x="285" y="217" font-size="9" fill="#555">• sp³ hybridised, 109.5° bond angles</text>
+</svg>
+<div class="caption">Figure 2: Graphite's layered structure. Strong covalent σ bonds within each hexagonal layer, delocalised π electrons above and below (enabling conductivity), and weak London forces between layers (enabling lubricating properties).</div>
+</div>
+
+<h3>3.3 Graphene — A Single Layer of Graphite</h3>
+
+<p>Graphene is a single atom-thick sheet of sp² carbon atoms in a hexagonal lattice:</p>
+<ul>
+  <li><b>200× stronger than steel</b> — yet incredibly light.</li>
+  <li><b>Excellent conductor</b> — delocalised π electrons move freely across the sheet.</li>
+  <li><b>Transparent</b> — absorbs only ~2.3% of visible light.</li>
+  <li><b>High thermal conductivity.</b></li>
+</ul>
+
+<h3>3.4 Silicon Dioxide ($\ce{SiO2}$)</h3>
+
+<p>SiO₂ (quartz) is a giant covalent network with each Si atom bonded tetrahedrally to four O atoms, and each O bridging two Si atoms. It is analogous to diamond but with O bridges. Properties: very hard, very high m.p. (~1710°C), non-conductor. Note: SiO₂ is the empirical formula — there are no discrete SiO₂ molecules.</p>
+
+<div class="check-in">
+<p><b>Check-in:</b> Silicon is in Group 14, directly below carbon. Why doesn't silicon form a graphite-like allotrope?</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">Silicon's 3p orbitals are more diffuse and overlap less effectively side-to-side than carbon's 2p orbitals. This makes Si=Si π bonds much weaker than C=C π bonds. Consequently, silicon cannot form stable sp² networks with delocalised π bonds — it strongly prefers sp³ tetrahedral bonding (as in the diamond structure). The same reasoning explains why $\ce{CO2}$ is a discrete molecule (O=C=O) while $\ce{SiO2}$ is a giant network — silicon avoids double bonds with oxygen in favour of four single bonds.</div>
+</div>
+
+<h2>4. Sigma (σ) and Pi (π) Bonds (HL)</h2>
+
+<h3>4.1 Sigma Bonds — Head-on Overlap</h3>
+
+<p>A <b>sigma (σ) bond</b> is formed by the <b>head-on (end-on) overlap</b> of atomic orbitals along the internuclear axis. The electron density is concentrated symmetrically about the bond axis. Sigma bonds allow <b>free rotation</b> about the bond.</p>
+
+<p>Types of σ overlap: s–s, s–p, p–p (end-on), and hybrid–hybrid, hybrid–s, hybrid–p.</p>
+
+<h3>4.2 Pi Bonds — Sideways Overlap</h3>
+
+<p>A <b>pi (π) bond</b> is formed by the <b>sideways overlap</b> of parallel p orbitals above and below the internuclear axis. The electron density is concentrated in two lobes, one above and one below the bond axis. Pi bonds <b>restrict rotation</b> — rotating would break the sideways overlap.</p>
+
+<div class="diagram">
+<svg width="520" height="230" viewBox="0 0 520 230">
+  <text x="260" y="18" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c5f2d">Sigma (σ) vs. Pi (π) Bonds</text>
+
+  <!-- Sigma bond -->
+  <rect x="15" y="35" width="235" height="185" rx="8" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="1.5"/>
+  <text x="132" y="55" text-anchor="middle" font-size="12" font-weight="bold" fill="#2c5f2d">Sigma (σ) Bond</text>
+  <!-- Two p orbitals overlapping end-on -->
+  <ellipse cx="100" cy="120" rx="30" ry="18" fill="none" stroke="#1565c0" stroke-width="2"/>
+  <ellipse cx="165" cy="120" rx="30" ry="18" fill="none" stroke="#1565c0" stroke-width="2"/>
+  <!-- Overlap zone -->
+  <ellipse cx="132" cy="120" rx="18" ry="22" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="132" y="125" text-anchor="middle" font-size="9" fill="#1565c0">overlap</text>
+  <!-- Axis -->
+  <line x1="70" y1="120" x2="195" y2="120" stroke="#333" stroke-width="0.5" stroke-dasharray="4,3"/>
+  <text x="132" y="155" text-anchor="middle" font-size="9">Head-on (end-on) overlap</text>
+  <text x="132" y="170" text-anchor="middle" font-size="9">Electron density ON bond axis</text>
+  <text x="132" y="188" text-anchor="middle" font-size="9" fill="#2c5f2d" font-weight="bold">Free rotation ✓</text>
+
+  <!-- Pi bond -->
+  <rect x="270" y="35" width="235" height="185" rx="8" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+  <text x="387" y="55" text-anchor="middle" font-size="12" font-weight="bold" fill="#e65100">Pi (π) Bond</text>
+  <!-- Two p orbitals overlapping sideways -->
+  <ellipse cx="355" cy="135" rx="15" ry="35" fill="none" stroke="#e65100" stroke-width="2"/>
+  <ellipse cx="420" cy="135" rx="15" ry="35" fill="none" stroke="#e65100" stroke-width="2"/>
+  <!-- Overlap zones above and below -->
+  <ellipse cx="387" cy="108" rx="18" ry="12" fill="#ffccbc" stroke="#e65100" stroke-width="1"/>
+  <ellipse cx="387" cy="162" rx="18" ry="12" fill="#ffccbc" stroke="#e65100" stroke-width="1"/>
+  <text x="387" y="112" text-anchor="middle" font-size="8" fill="#e65100">overlap</text>
+  <text x="387" y="166" text-anchor="middle" font-size="8" fill="#e65100">overlap</text>
+  <!-- Axis -->
+  <line x1="340" y1="135" x2="435" y2="135" stroke="#333" stroke-width="0.5" stroke-dasharray="4,3"/>
+  <text x="387" y="195" text-anchor="middle" font-size="9">Sideways overlap</text>
+  <text x="387" y="210" text-anchor="middle" font-size="9">Electron density ABOVE & BELOW axis</text>
+</svg>
+<div class="caption">Figure 3: Sigma bonds (left) form by head-on orbital overlap with electron density concentrated along the bond axis. Pi bonds (right) form by sideways overlap of parallel p orbitals, with electron density concentrated above and below the bond axis. A double bond = 1 σ + 1 π. A triple bond = 1 σ + 2 π.</div>
+</div>
+
+<h3>4.3 Counting σ and π Bonds</h3>
+
+<ul>
+  <li><b>Single bond:</b> 1 σ bond.</li>
+  <li><b>Double bond:</b> 1 σ + 1 π bond.</li>
+  <li><b>Triple bond:</b> 1 σ + 2 π bonds.</li>
+</ul>
+
+<div class="check-in">
+<p><b>Check-in:</b> How many σ and π bonds are in: (a) $\ce{H2C=CH2}$ (ethene), (b) $\ce{HC#CH}$ (ethyne), (c) $\ce{CO2}$?</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">(a) Ethene: 5 σ bonds (4 C–H + 1 C–C σ) + 1 π bond (C=C). Total = 5σ + 1π. (b) Ethyne: 3 σ bonds (2 C–H + 1 C–C σ) + 2 π bonds (C≡C). Total = 3σ + 2π. (c) CO₂: 2 σ bonds (one for each C=O) + 2 π bonds (one for each C=O). Total = 2σ + 2π.</div>
+</div>
+
+<h2>5. Hybridisation (HL)</h2>
+
+<h3>5.1 Why Hybridise?</h3>
+
+<p>Atomic orbitals (s, p, d) do not directly explain the shapes predicted by VSEPR. For example, carbon's ground state is $2s^2 2p^2$, which suggests it should form two bonds at 90° — but methane is tetrahedral (109.5°) with four identical bonds. <b>Hybridisation</b> resolves this: atomic orbitals mix (combine) to form new, equivalent hybrid orbitals that point in the directions predicted by VSEPR.</p>
+
+<h3>5.2 sp³, sp², and sp Hybridisation</h3>
+
+<table>
+<tr><th>Hybridisation</th><th># Orbitals Mixed</th><th>Electron Domains</th><th>Geometry</th><th>Bond Angle</th><th>Remaining p Orbitals</th><th>π Bonds Possible</th></tr>
+<tr><td>sp³</td><td>1 s + 3 p</td><td>4</td><td>Tetrahedral</td><td>109.5°</td><td>0</td><td>0</td></tr>
+<tr><td>sp²</td><td>1 s + 2 p</td><td>3</td><td>Trigonal planar</td><td>120°</td><td>1</td><td>1</td></tr>
+<tr><td>sp</td><td>1 s + 1 p</td><td>2</td><td>Linear</td><td>180°</td><td>2</td><td>2</td></tr>
+</table>
+
+<p><b>How to determine hybridisation:</b> Count the electron domains (bonding + lone pairs) around the atom. The number of domains = the number of hybrid orbitals needed.</p>
+
+<pre class="ascii-art">
+2 domains → sp   (e.g., Be in BeCl₂, C in CO₂, C in HC≡CH)
+3 domains → sp²  (e.g., B in BF₃, C in H₂C=CH₂, N in NO₃⁻)
+4 domains → sp³  (e.g., C in CH₄, N in NH₃, O in H₂O)
+</pre>
+
+<div class="check-in">
+<p><b>Check-in:</b> Determine the hybridisation of: (a) the carbon in $\ce{CH2O}$ (methanal), (b) the nitrogen in $\ce{NH3}$, (c) the central carbon in $\ce{CH3COOH}$.</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">(a) In CH₂O, C is bonded to two H atoms and one O (double bond). That's 3 electron domains → <b>sp²</b>. Trigonal planar, 120°. (b) N in NH₃: 3 bonding + 1 lone pair = 4 domains → <b>sp³</b>. (c) CH₃COOH has two carbon atoms: the CH₃ carbon has 4 σ bonds (3 C–H + 1 C–C) → <b>sp³</b>. The COOH carbon has 3 domains (C=O double bond + C–O single bond + C–C single bond) → <b>sp²</b>.</div>
+</div>
+
+<h3>5.3 Hybridisation and Bonding in Ethene and Ethyne</h3>
+
+<p><b>Ethene ($\ce{H2C=CH2}$):</b> Each C is sp² hybridised. The three sp² hybrids form three σ bonds (two C–H and one C–C). The remaining unhybridised p orbital on each C overlaps sideways to form the π bond. The molecule is planar with 120° bond angles.</p>
+
+<p><b>Ethyne ($\ce{HC#CH}$):</b> Each C is sp hybridised. The two sp hybrids form two σ bonds (one C–H and one C–C). The two remaining unhybridised p orbitals on each C overlap sideways to form two π bonds (perpendicular to each other). The molecule is linear with 180° bond angles.</p>
+
+<div class="check-in">
+<p><b>Check-in:</b> Why does the C=C double bond in ethene prevent rotation, while the C–C single bond in ethane allows free rotation?</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">The C=C double bond consists of one σ bond and one π bond. The π bond is formed by sideways overlap of parallel p orbitals. If one CH₂ group rotates relative to the other, the p orbitals would no longer be parallel and the π bond would break. Breaking a π bond requires significant energy (~264 kJ mol⁻¹), so rotation is restricted at room temperature. The C–C single bond in ethane is a pure σ bond — head-on overlap allows rotation without breaking the bond.</div>
+</div>
+
+<h2>6. Worked Examples</h2>
+
+<div class="example">
+<b>Example 1 — Explaining Metallic Properties:</b><br><br>
+Explain why sodium is malleable (can be hammered into sheets) but sodium chloride shatters when struck.<br><br>
+In sodium metal, the Na⁺ cations are embedded in a delocalised sea of electrons. When the metal is deformed, layers of cations slide past each other, but the electron sea immediately re-forms around the new arrangement — the metallic bonds are <b>non-directional</b>. In NaCl, the Na⁺ and Cl⁻ ions are locked in specific positions. When the crystal is struck, a layer shifts and like charges (Na⁺ next to Na⁺, Cl⁻ next to Cl⁻) align, causing strong repulsion that shatters the crystal. Ionic bonds are <b>directional</b> in the sense that the ordered lattice must be maintained.
+</div>
+
+<div class="example">
+<b>Example 2 — σ/π Bond Counting in Organic Molecules:</b><br><br>
+For $\ce{CH2=CH-CH=CH2}$ (buta-1,3-diene), determine: (a) the total number of σ bonds, (b) the total number of π bonds, (c) the hybridisation of each carbon atom.<br><br>
+<b>Structure:</b> $\ce{H2C=CH-CH=CH2}$. Carbons numbered C1–C4.<br>
+<b>(a) σ bonds:</b> Each C–H = 1 σ (6 total). C1=C2: 1 σ. C2–C3: 1 σ. C3=C4: 1 σ. Total = 6 + 3 = <b>9 σ bonds</b>.<br>
+<b>(b) π bonds:</b> C1=C2: 1 π. C3=C4: 1 π. Total = <b>2 π bonds</b>.<br>
+<b>(c) Hybridisation:</b> C1: 3 domains (2 C–H σ + 1 C=C σ) → sp². C2: 3 domains (1 C–H σ + C1=C2 σ + C2–C3 σ) → sp². C3: 3 domains → sp². C4: 3 domains → sp². <b>All carbons are sp² hybridised.</b> The molecule is fully conjugated — the π system is delocalised across all four carbons.
+</div>
+
+<div class="example">
+<b>Example 3 — Comparing Carbon Allotropes (HL exam favourite):</b><br><br>
+Compare and contrast the structure, bonding, and electrical conductivity of diamond, graphite, and graphene.<br><br>
+<table style="font-size:0.9em">
+<tr><th>Property</th><th>Diamond</th><th>Graphite</th><th>Graphene</th></tr>
+<tr><td>Hybridisation</td><td>sp³</td><td>sp²</td><td>sp²</td></tr>
+<tr><td>Structure</td><td>3D tetrahedral network</td><td>2D layers with weak interlayer forces</td><td>Single 2D sheet</td></tr>
+<tr><td>σ bonds per C</td><td>4</td><td>3</td><td>3</td></tr>
+<tr><td>π bonds per C</td><td>0</td><td>1 (delocalised)</td><td>1 (delocalised)</td></tr>
+<tr><td>Electrical conductivity</td><td>None (all e⁻ localised)</td><td>Good (delocalised π e⁻)</td><td>Excellent (delocalised π e⁻)</td></tr>
+<tr><td>Hardness</td><td>Hardest natural substance</td><td>Soft (layers slide)</td><td>Strongest material known</td></tr>
+</table>
+</div>
+
+<h2>7. Common Misconceptions</h2>
+
+<div class="misconception">
+<h3>⚠️ Common Mistakes to Avoid</h3>
+<ol>
+  <li><b>Thinking metallic bonding is just "ions in a sea."</b> Be precise: it's the electrostatic attraction between <em>positive</em> cations and <em>delocalised</em> valence electrons. The electrons are not fixed to any one atom.</li>
+  <li><b>Confusing σ and π bonds.</b> A double bond is NOT two identical bonds — it's 1 σ + 1 π. The σ bond forms first and is stronger. The π bond is weaker and more reactive. All single bonds are σ. The first bond of any multiple bond is always σ.</li>
+  <li><b>Thinking graphite conducts electricity because of free ions.</b> There are no ions in graphite. It conducts because of <b>delocalised π electrons</b> that can move freely along the layers.</li>
+  <li><b>Applying hybridisation to isolated atoms.</b> Hybridisation is a <b>bonding model</b> — atoms hybridise only when forming bonds. An isolated carbon atom is not sp³ hybridised; it becomes sp³ hybridised as it forms four bonds in methane.</li>
+  <li><b>Forgetting that lone pairs count as electron domains for hybridisation.</b> In NH₃, N has 3 bonding pairs + 1 lone pair = 4 domains → sp³ hybridised. The lone pair occupies an sp³ hybrid orbital. Similarly, H₂O: O is sp³ hybridised with 2 bonding + 2 lone pairs.</li>
+</ol>
+</div>
+
+<h2>8. End-of-Lesson Practice</h2>
+
+<p><b>Question 1:</b> Explain why magnesium is a better electrical conductor than sodium, using the metallic bonding model.</p>
+
+<p><b>Question 2:</b> Silicon dioxide ($\ce{SiO2}$) has a very high melting point. Explain in terms of its structure and bonding, and contrast with $\ce{CO2}$.</p>
+
+<p><b>Question 3:</b> State the number of σ and π bonds in: (a) $\ce{N2}$ (nitrogen gas), (b) $\ce{H2CO}$ (methanal), (c) $\ce{C6H6}$ (benzene).</p>
+
+<p><b>Question 4:</b> Determine the hybridisation of the underlined atom: (a) $\ce{\underline{C}H4}$, (b) $\ce{\underline{B}F3}$, (c) the carbonyl carbon in $\ce{CH3\underline{C}OCH3}$.</p>
+
+<p><b>Question 5:</b> Graphene is described as the "strongest material ever measured." Explain this property in terms of its bonding and structure.</p>
+
+<p><b>Question 6 (HL synthesis):</b> For the molecule $\ce{H2C=C=CH2}$ (allene): (a) draw the Lewis structure, (b) determine the hybridisation of each carbon, (c) state the total number of σ and π bonds, (d) explain why all four H atoms are NOT in the same plane.</p>
+
+<button class="practice-toggle" onclick="var a=this.nextElementSibling;a.classList.toggle('open');this.textContent=a.classList.contains('open')?'▴ Hide Answers':'▸ Show Answers'">▸ Show Answers</button>
+<div class="practice-answers">
+
+<p><b>Answer 1:</b> Magnesium contributes <b>2 delocalised electrons per atom</b> to the electron sea, compared to sodium's 1. This gives a higher electron density in the conduction band. Additionally, Mg²⁺ cations have a higher charge density (+2 charge, smaller radius) than Na⁺, creating a stronger electrostatic attraction that holds the lattice more tightly — but the delocalised electrons are still mobile enough for good conductivity. Magnesium has both higher melting point and good conductivity.</p>
+
+<p><b>Answer 2:</b> $\ce{SiO2}$ is a <b>giant covalent network</b>: each Si is tetrahedrally bonded to four O atoms, and each O bridges two Si atoms. Melting requires breaking strong Si–O covalent bonds throughout the lattice (bond energy ~466 kJ mol⁻¹), giving a m.p. of ~1710°C. $\ce{CO2}$ is a discrete molecular substance (O=C=O) — molecules are held together only by weak London forces, so it sublimes at −78°C. The difference arises because carbon forms stable π bonds (C=O double bonds), while silicon avoids π bonding, preferring four single bonds in a network.</p>
+
+<p><b>Answer 3:</b> (a) $\ce{N2}$: N≡N → 1 σ + 2 π bonds. (b) $\ce{H2CO}$: 3 σ bonds (2 C–H + 1 C–O σ) + 1 π bond (C=O). Total = 3σ + 1π. (c) $\ce{C6H6}$ (benzene): 12 σ bonds (6 C–C + 6 C–H) + 3 delocalised π bonds (the aromatic π system). Alternatively: 6 σ in the ring, 6 σ C–H, and a delocalised π system equivalent to 3 π bonds.</p>
+
+<p><b>Answer 4:</b> (a) C in CH₄: 4 domains → <b>sp³</b>. (b) B in BF₃: 3 domains → <b>sp²</b>. (c) The carbonyl carbon in CH₃COCH₃ (propanone/acetone): 3 domains (C=O double bond + 2 C–C single bonds) → <b>sp²</b>. Note: the CH₃ carbons are sp³.</p>
+
+<p><b>Answer 5:</b> Graphene is a single layer of sp²-hybridised carbon atoms in a hexagonal lattice. Each C–C bond is a strong covalent σ bond (bond energy ~348 kJ mol⁻¹ in a benzene-like environment). The absence of defects in a perfect sheet means any applied force is distributed across an enormous number of these strong bonds. Additionally, the delocalised π electron system provides extra stabilisation. The 2D nature means there are no weak interlayer forces to shear — unlike graphite, graphene cannot fail by layer slippage.</p>
+
+<p><b>Answer 6:</b> (a) $\ce{H2C=C=CH2}$: central C has two double bonds. Total valence electrons: 3×C(4) + 4×H(1) = 16. (b) C1 (left): 3 domains (2 C–H + 1 C=C) → <b>sp²</b>. C2 (central): 2 domains (two double bonds) → <b>sp</b>. C3 (right): 3 domains → <b>sp²</b>. (c) σ bonds: 4 C–H + 2 C–C σ = 6. π bonds: 2 (one for each C=C). Total = 6σ + 2π. (d) The central sp carbon has two π bonds that are <b>perpendicular</b> to each other (using the two unhybridised p orbitals: p_y and p_z). The C1 end uses one of these p orbitals for its π bond, and the C3 end uses the other. This forces the two CH₂ planes to be orthogonal (90° to each other) — the molecule is non-planar overall. This is a classic stereochemical feature of allenes.</p>
+</div>
+
+<h2>9. Key Terms</h2>
+<table>
+<tr><th>Term</th><th>Definition</th></tr>
+<tr><td>Metallic bonding</td><td>Electrostatic attraction between a lattice of metal cations and a sea of delocalised valence electrons</td></tr>
+<tr><td>Delocalised electrons</td><td>Electrons not confined to one atom or bond; free to move through a structure</td></tr>
+<tr><td>Giant covalent structure</td><td>A continuous network of atoms held together by covalent bonds throughout the entire structure</td></tr>
+<tr><td>Allotrope</td><td>Different structural forms of the same element (e.g., diamond, graphite, graphene for carbon)</td></tr>
+<tr><td>Sigma (σ) bond</td><td>A covalent bond formed by head-on overlap of orbitals; electron density concentrated along the bond axis</td></tr>
+<tr><td>Pi (π) bond</td><td>A covalent bond formed by sideways overlap of parallel p orbitals; electron density above and below the bond axis</td></tr>
+<tr><td>Hybridisation</td><td>The mixing of atomic orbitals to form new equivalent hybrid orbitals that point in specific directions</td></tr>
+<tr><td>sp³ hybridisation</td><td>Mixing of 1 s + 3 p → 4 equivalent hybrid orbitals, tetrahedral, 109.5°</td></tr>
+<tr><td>sp² hybridisation</td><td>Mixing of 1 s + 2 p → 3 equivalent hybrid orbitals + 1 unhybridised p, trigonal planar, 120°</td></tr>
+<tr><td>sp hybridisation</td><td>Mixing of 1 s + 1 p → 2 equivalent hybrid orbitals + 2 unhybridised p, linear, 180°</td></tr>
+</table>
+
+<h2>10. Exam Tips</h2>
+
+<div class="exam-tip"><b>Paper 1 — σ/π Bond Counting:</b> The fastest method: every single bond = 1 σ. Every additional bond in a multiple bond = 1 π. So a double bond = 1 σ + 1 π; a triple bond = 1 σ + 2 π. Count single bonds first, then add π from multiples. For benzene: 6 C–C σ + 6 C–H σ = 12 σ bonds. The aromatic π system counts as delocalised π bonds (3 π bonds equivalent).</div>
+
+<div class="exam-tip"><b>Paper 2 — Hybridisation Questions:</b> Always link hybridisation to electron domain count. State: "X has N electron domains (M bonding pairs + L lone pairs), therefore it is spᴺ⁻¹ hybridised." For example: "The oxygen in H₂O has 4 electron domains (2 bonding + 2 lone pairs), therefore it is sp³ hybridised." The IB marking scheme rewards explicit connection between domain count and hybridisation.</div>
+
+<div class="exam-tip"><b>Giant Covalent vs. Molecular — The CO₂/SiO₂ Trap:</b> This is one of the most tested comparisons in IB Chemistry. CO₂ is a linear molecular gas (sublimes at −78°C); SiO₂ is a giant covalent solid (m.p. 1710°C). The key reason: carbon forms stable π bonds (favouring C=O double bonds), while silicon's larger size and more diffuse p orbitals make Si=O π bonds weak, so it forms four Si–O single bonds in a network instead. NEVER write SiO₂ as O=Si=O — it doesn't exist as discrete molecules.</div>
+
 </body>
 </html>

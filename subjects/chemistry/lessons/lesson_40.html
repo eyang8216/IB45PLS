@@ -3,229 +3,392 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lesson 40: Benzene and Electrophilic Substitution (HL) — IB Chemistry HL</title>
-<script>window.MathJax = { loader: {load: ['[tex]/mhchem']}, tex: {packages: {'[+]': ['mhchem']}} };</script>
+<title>Lesson 40 — Chemistry HL — Benzene & Electrophilic Substitution</title>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] },
+  loader: { load: ['[tex]/mhchem'] },
+  tex: { packages: {'[+]': ['mhchem']} }
+};
+</script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
 <style>
-  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Palatino', 'Georgia', serif; background: var(--bg); color: var(--text); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; font-size: 17px; line-height: 1.7; }
-  h1 { font-size: 1.7rem; color: var(--accent); margin-bottom: 0.5rem; }
-  h2 { font-size: 1.25rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; margin: 2rem 0 1rem; }
-  h3 { font-size: 1.1rem; color: #444; margin: 1.3rem 0 0.5rem; }
-  p, li { margin-bottom: 0.6rem; }
-  ul, ol { padding-left: 1.8rem; margin-bottom: 1rem; }
-  .worked { background: #f0f7f0; border-left: 4px solid #2c5f2d; padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
-  .answer { background: #fefdf7; border: 1px solid var(--border); padding: 0.8rem 1.2rem; margin: 0.5rem 0; border-radius: 6px; }
-  .nav { display: flex; justify-content: space-between; margin: 3rem 0 1rem; padding-top: 1rem; border-top: 2px solid var(--border); font-size: 0.9rem; }
-  .nav a { color: #1a5c9e; text-decoration: none; }
-  .nav a:hover { text-decoration: underline; }
-  .definition { background: #fdf5e6; border-left: 4px solid #d4a017; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
-  table { border-collapse: collapse; margin: 1rem 0; width: 100%; }
-  th { background: #2c5f2d; color: #fff; padding: 0.4rem 0.7rem; text-align: left; font-weight: normal; }
-  td { padding: 0.3rem 0.7rem; border-bottom: 1px solid var(--border); }
-  tr:nth-child(even) td { background: #fafaf5; }
-  @media print { body { font-size: 14px; } .nav { display: none; } }
+:root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Georgia', 'Times New Roman', serif; font-size: 17px; line-height: 1.7; color: var(--text); background: var(--bg); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; }
+h1 { font-size: 1.8rem; color: var(--accent); border-bottom: 3px solid var(--accent); padding-bottom: 0.5rem; margin-bottom: 1rem; }
+h2 { font-size: 1.35rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+h3 { font-size: 1.15rem; color: var(--accent); margin: 1.5rem 0 0.5rem; }
+p { margin-bottom: 0.8rem; }
+.objectives { background: #f0f4ff; border-left: 4px solid var(--accent); padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+.objectives h3 { margin-top: 0; }
+.check-in { background: #fff8e1; border: 1px solid #ffc107; padding: 0.8rem 1rem; margin: 1rem 0; border-radius: 8px; }
+.check-in p { margin-bottom: 0.3rem; }
+.answer-toggle { display: inline-block; padding: 0.2rem 0.8rem; border-radius: 16px; cursor: pointer; font-size: 0.8rem; font-weight: 600; background: #e8f5e9; color: #2e7d32; border: 1px solid #2e7d32; user-select: none; margin-top: 0.3rem; }
+.answer-content { display: none; background: #f1f8e9; padding: 0.6rem 1rem; border-radius: 8px; margin-top: 0.5rem; }
+.answer-content.open { display: block; }
+.example { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem; margin: 1rem 0; }
+.misconception { background: #fff3e0; border-left: 4px solid #e65100; padding: 1rem 1.2rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+.misconception h3 { color: #e65100; }
+.exam-tip { background: #e8f5e9; border-left: 4px solid #2e7d32; padding: 0.8rem 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+th { background: var(--accent); color: white; padding: 0.5rem 0.8rem; text-align: left; }
+td { padding: 0.5rem 0.8rem; border-bottom: 1px solid var(--border); }
+tr:nth-child(even) td { background: #f8f8f6; }
+.diagram { text-align: center; margin: 1.5rem 0; }
+.diagram svg { max-width: 100%; }
+.diagram .caption { font-size: 0.9rem; color: #666; margin-top: 0.3rem; font-style: italic; }
+pre.ascii-art { font-family: 'Courier New', monospace; font-size: 0.75rem; line-height: 1.2; background: #f5f5f5; padding: 0.8rem; border-radius: 8px; overflow-x: auto; }
+.practice-toggle { display: block; width: 100%; padding: 0.8rem; background: var(--accent); color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem; font-weight: 600; margin: 1.5rem 0; }
+.practice-answers { display: none; }
+.practice-answers.open { display: block; }
 </style>
 </head>
 <body>
-<h1>Lesson 40: Benzene and Electrophilic Substitution (HL)</h1>
-<h2>What You'll Learn</h2>
-<p>In this lesson, you will study benzene — one of the most important molecules in organic chemistry. Benzene has a special stability that makes it behave very differently from alkenes, even though it contains double bonds. You will learn about the delocalised π electron system that gives benzene its unique properties. You will learn about electrophilic substitution, the main reaction type of benzene and its derivatives. You will learn about three important substitution reactions: nitration, halogenation, and Friedel-Crafts alkylation. You will also learn how groups already attached to a benzene ring direct incoming groups to specific positions.</p>
-<hr>
-<h2>1. What Is Benzene?</h2>
-<p>Benzene is a hydrocarbon with the molecular formula <strong>C₆H₆</strong>. At first glance, this formula seems puzzling: it has the same number of carbon atoms as cyclohexane (C₆H₁₂) but only half as many hydrogen atoms. Something about its structure must be different.</p>
-<p>Benzene is a <strong>cyclic</strong> molecule — the six carbon atoms are arranged in a flat (planar) ring. Each carbon is bonded to one hydrogen atom. The ring is a regular hexagon with all bond angles equal to <strong>120°</strong>. This tells us that each carbon uses <strong>sp² hybridisation</strong> — three sp² orbitals in a plane, 120° apart, forming σ bonds to two neighbouring carbons and one hydrogen. This leaves one unhybridised <strong>p orbital</strong> on each carbon, perpendicular to the plane of the ring.</p>
-<h3>The Key Insight: Delocalised π Electrons</h3>
-<p>In benzene, the six p orbitals (one from each carbon) overlap <strong>sideways</strong> with each other — not just in pairs, but all around the ring. This creates a continuous ring of electron density above and below the plane of the carbon atoms. The six electrons in these p orbitals (one from each carbon) are <strong>delocalised</strong> — they are not confined to a single bond between two atoms but are shared equally among all six carbon atoms.</p>
-<p>This delocalisation is what makes benzene special. It gives benzene an extra stability that is not present in hypothetical "cyclohexa-1,3,5-triene" (a molecule with alternating single and double bonds).</p>
-<p><strong>Physical evidence:</strong> All six C−C bonds in benzene are <strong>identical in length</strong> — about <strong>139 pm</strong> (picometres). This is intermediate between a typical C−C single bond (154 pm) and a typical C=C double bond (134 pm). If benzene had alternating single and double bonds, we would expect two different bond lengths. The fact that all six bonds are the same is strong evidence for delocalisation.</p>
-<hr>
-<h2>2. Evidence for Benzene's Special Stability</h2>
-<h3>Evidence 1: Resistance to Addition Reactions</h3>
-<p>Alkenes react with bromine water at room temperature — the orange colour disappears as Br₂ adds across the double bond. <strong>Benzene does NOT react with bromine water</strong> under these conditions. If benzene had ordinary double bonds, it should add bromine just like an alkene. The fact that it does not tells us that the π electrons in benzene are not like ordinary alkene π electrons — they are delocalised and stabilised, making addition unfavourable.</p>
-<p>To make benzene react with bromine, we need a <strong>halogen carrier catalyst</strong> (such as FeBr₃ or AlBr₃), and the reaction that occurs is <strong>substitution, not addition</strong> — one H is replaced by Br, and the aromatic ring is preserved. This tells us that the ring is so stable that the molecule will not sacrifice that stability by undergoing addition.</p>
-<h3>Evidence 2: Enthalpy of Hydrogenation</h3>
-<p>Hydrogenation is the addition of H₂ across a double bond. We can measure how much energy is released when it happens.</p>
+
+<h1>Lesson 40: Benzene &amp; Electrophilic Substitution (HL)</h1>
+
+<p><b>Syllabus reference:</b> 20.1–20.2 (Aromatic Chemistry — HL only)</p>
+
+<!-- SECTION A -->
+<div class="objectives">
+<h3>Learning Objectives</h3>
+<p>By the end of this lesson, you will be able to:</p>
 <ul>
-<li>Cyclohexene (one C=C double bond) + H₂ → cyclohexane: ΔH = <strong>−120 kJ mol⁻¹</strong>.</li>
-<li>If benzene were "cyclohexatriene" with three ordinary double bonds, hydrogenating it to cyclohexane should release 3 × (−120) = <strong>−360 kJ mol⁻¹</strong>.</li>
-<li>The <strong>actual</strong> enthalpy change for C₆H₆ + 3H₂ → C₆H₁₂ is <strong>−210 kJ mol⁻¹</strong>.</li>
+  <li><b>Describe</b> the delocalised $\pi$-electron system of benzene and explain the evidence against the Kekulé structure.</li>
+  <li><b>Calculate</b> and interpret the delocalisation (resonance) energy of benzene from thermodynamic data.</li>
+  <li><b>Draw</b> the general mechanism for electrophilic aromatic substitution ($\ce{S_EAr}$) including the Wheland intermediate.</li>
+  <li><b>Write</b> mechanisms and equations for nitration, halogenation, Friedel–Crafts alkylation, and Friedel–Crafts acylation of benzene.</li>
+  <li><b>Explain</b> why benzene undergoes substitution rather than addition, despite its unsaturation.</li>
 </ul>
-<p>The difference is 360 − 210 = <strong>150 kJ mol⁻¹</strong>. Benzene is <strong>150 kJ mol⁻¹ more stable</strong> than the hypothetical triene. This extra stability is called the <strong>delocalisation energy</strong> (or resonance energy). It is the energy you would need to put in to break the delocalisation — that is why benzene resists addition.</p>
-<hr>
-<h2>3. Electrophilic Substitution — The General Mechanism</h2>
-<p>Because benzene is electron-rich (the π cloud above and below the ring), it is attractive to <strong>electrophiles</strong> — electron-deficient species that seek out electrons. However, unlike alkenes, benzene does not undergo <strong>addition</strong>. Instead, it undergoes <strong>electrophilic substitution</strong>. The electrophile replaces one of the hydrogen atoms on the ring, and the stable aromatic system is preserved.</p>
-<p>The general mechanism for electrophilic substitution of benzene (often abbreviated as <strong>SEAr</strong>, where Ar stands for "aromatic") has three stages:</p>
-<p><strong>Stage 1: Generation of the electrophile (E⁺).</strong> The electrophile is not present in the starting materials — it must be generated in the reaction mixture, usually by the catalyst. This stage varies depending on the specific reaction.</p>
-<p><strong>Stage 2: Attack of the electrophile on the ring.</strong> The electrophile is attracted to the π electron cloud of benzene. Two of the π electrons form a σ bond to the electrophile. This leaves only four π electrons spread over five carbon atoms (with a positive charge on the ring). The intermediate is called an <strong>arenium ion</strong> (also called a <strong>Wheland intermediate</strong> or <strong>σ-complex</strong>). The positive charge is delocalised over the ring, which stabilises this intermediate.</p>
-<p><strong>Stage 3: Loss of a proton (H⁺) and restoration of the aromatic system.</strong> A base present in the reaction mixture (often the counterion from Stage 1) removes a proton from the carbon that now carries the electrophile. The two electrons from the C−H bond move back into the π system, restoring the full aromatic sextet (six delocalised π electrons). The product is a substituted benzene, and the aromatic stability is recovered.</p>
-<p><strong>Why substitution and not addition?</strong> If benzene underwent addition (like alkenes), the product would be a cyclohexadiene derivative with only four π electrons — no longer aromatic, and much less stable. By undergoing substitution, benzene trades one H for the electrophile but keeps its aromaticity and its 150 kJ mol⁻¹ of delocalisation energy. The energy "cost" of losing aromaticity is too high for addition to be favourable.</p>
-<hr>
-<h2>4. Specific Electrophilic Substitution Reactions</h2>
-<h3>Nitration of Benzene</h3>
-<p>Nitration replaces an H on the ring with a <strong>nitro group (−NO₂)</strong>. The reagents are concentrated nitric acid (HNO₃) and concentrated sulfuric acid (H₂SO₄, the catalyst). The temperature is kept at about 50–55 °C.</p>
-<p><strong>Electrophile generation:</strong> Sulfuric acid protonates nitric acid, which leads to the formation of the <strong>nitronium ion (NO₂⁺)</strong>:</p>
-<p>$$\ce{HNO3 + H2SO4 -> NO2+ + HSO4- + H2O}$$</p>
-<p>The NO₂⁺ is a powerful electrophile — the nitrogen carries a positive charge.</p>
-<p><strong>Overall reaction:</strong></p>
-<p>$$\ce{C6H6 + HNO3 ->[H2SO4] C6H5NO2 + H2O}$$</p>
-<p>The product is <strong>nitrobenzene</strong>. If the temperature is raised and more nitric acid is added, further nitration can occur, giving mainly <strong>1,3-dinitrobenzene</strong> (because the −NO₂ group directs incoming groups to the meta position, as explained later).</p>
-<h3>Halogenation of Benzene</h3>
-<p>Halogenation replaces an H with a halogen (Cl or Br). The reagent is the halogen (Cl₂ or Br₂) with a <strong>halogen carrier catalyst</strong> such as FeCl₃, FeBr₃, AlCl₃, or AlBr₃.</p>
-<p><strong>Electrophile generation:</strong> The catalyst polarises the halogen molecule, effectively generating a halogen cation (or a strongly polarised complex):</p>
-<p>$$\ce{Br2 + FeBr3 -> Br+ + FeBr4-}$$</p>
-<p>The Br⁺ (or the polarised Br–Br–FeBr₃ complex) acts as the electrophile.</p>
-<p><strong>Overall reaction:</strong></p>
-<p>$$\ce{C6H6 + Br2 ->[FeBr3] C6H5Br + HBr}$$</p>
-<p>The product is <strong>bromobenzene</strong>. The FeBr₃ catalyst is regenerated: FeBr₄⁻ loses Br⁻ to the H⁺ removed from the ring, forming HBr and FeBr₃.</p>
-<h3>Friedel-Crafts Alkylation</h3>
-<p>Friedel-Crafts alkylation attaches an <strong>alkyl group (R−)</strong> to the benzene ring. The reagents are a halogenoalkane (RCl or RBr) and an <strong>aluminium chloride (AlCl₃)</strong> catalyst (anhydrous — no water).</p>
-<p><strong>Electrophile generation:</strong> The AlCl₃ accepts a chloride ion from the halogenoalkane, generating a <strong>carbocation (R⁺)</strong>:</p>
-<p>$$\ce{CH3Cl + AlCl3 -> CH3+ + AlCl4-}$$</p>
-<p>The carbocation is the electrophile.</p>
-<p><strong>Overall reaction:</strong></p>
-<p>$$\ce{C6H6 + CH3Cl ->[AlCl3] C6H5CH3 + HCl}$$</p>
-<p>The product is <strong>methylbenzene</strong> (common name: toluene). This reaction is very useful for building more complex molecules from benzene.</p>
-<hr>
-<h2>5. Directive Effects — Where Does the Second Group Go?</h2>
-<p>When a benzene ring already has one substituent (a group attached to the ring), and we do another electrophilic substitution, where does the second group attach? The existing substituent <strong>directs</strong> the incoming group to specific positions. There are two categories:</p>
-<h3>Ortho/Para Directing Groups (Direct to C-2, C-4, and C-6)</h3>
-<p>These groups direct incoming electrophiles to the <strong>ortho</strong> (C-2) and <strong>para</strong> (C-4) positions relative to themselves. Most are <strong>activating</strong> — they make the ring more reactive than benzene itself by donating electron density into the ring.</p>
-<p>Examples:</p>
-<ul>
-<li><strong>−OH, −NH₂, −OCH₃:</strong> Strongly activating, strong ortho/para directors. The lone pair on the oxygen or nitrogen can overlap with the π system, increasing electron density at the ortho and para positions.</li>
-<li><strong>Alkyl groups (−CH₃, −C₂H₅, etc.):</strong> Weakly activating, ortho/para directing. They donate electron density through the inductive effect and hyperconjugation.</li>
-<li><strong>Halogens (−F, −Cl, −Br, −I):</strong> A special case. They are <strong>deactivating</strong> (they withdraw electron density through their electronegativity), but they are still <strong>ortho/para directing</strong> because their lone pairs can donate electron density through resonance. This is an HL detail worth noting: halogens deactivate the ring overall but direct ortho/para.</li>
-</ul>
-<h3>Meta Directing Groups (Direct to C-3 and C-5)</h3>
-<p>These groups direct incoming electrophiles to the <strong>meta</strong> (C-3) position. They are <strong>deactivating</strong> — they make the ring less reactive than benzene by withdrawing electron density.</p>
-<p>Examples:</p>
-<ul>
-<li><strong>−NO₂, −COOH, −CHO, −CN, −SO₃H:</strong> These groups have a positive or partially positive atom attached directly to the ring, or they have strong electron-withdrawing π bonds. They pull electron density away from the ring, especially from the ortho and para positions, leaving the meta position as the least deactivated site for electrophilic attack.</li>
-</ul>
-<p><div class="worked"></p>
-<p><strong>Worked Example 1: Phenol (C₆H₅OH) reacts rapidly with bromine water without any catalyst, giving a white precipitate. Predict the product and explain why phenol is so much more reactive than benzene.</strong></p>
-<p>Phenol has an <strong>−OH group</strong> attached to the ring. The −OH group is strongly <strong>activating</strong> and <strong>ortho/para directing</strong>. The lone pair on the oxygen overlaps with the π system of the ring (this is called p-π conjugation), significantly increasing electron density, especially at the ortho and para positions.</p>
-<p>With bromine water (a source of Br₂, which can act as an electrophile without a catalyst when the ring is activated enough), all three available ortho/para positions (relative to the −OH) are substituted. The product is <strong>2,4,6-tribromophenol</strong> — a white precipitate with three bromine atoms on the ring at the 2, 4, and 6 positions.</p>
-<p>No catalyst is needed because the −OH group makes the ring so electron-rich that Br₂ itself can act as the electrophile without needing FeBr₃ to generate Br⁺.</p>
-<p></div></p>
-<p><div class="worked"></p>
-<p><strong>Worked Example 2: Predict the major product when benzoic acid (C₆H₅COOH) is nitrated with a mixture of concentrated nitric and sulfuric acids.</strong></p>
-<p>Benzoic acid has a <strong>−COOH group</strong> attached to the ring. The −COOH group is <strong>deactivating</strong> and <strong>meta directing</strong>. It withdraws electron density from the ring (the carbonyl C=O is electron-withdrawing through both inductive and resonance effects).</p>
-<p>Nitration will therefore occur at the <strong>meta position</strong> (C-3) relative to the −COOH. The product is <strong>3-nitrobenzoic acid</strong>.</p>
-<p>If we tried to nitrate further, the second nitro group would also go meta to the −COOH (and meta to the first −NO₂), giving 3,5-dinitrobenzoic acid.</p>
-<p></div></p>
-<hr>
-<h2>Practice Problems</h2>
-<p><strong>Problem 1:</strong> Alkenes such as cyclohexene rapidly decolourise bromine water at room temperature, undergoing electrophilic addition. Benzene, however, does not react with bromine water under the same conditions. Explain this difference in reactivity. Your answer should refer to the delocalisation energy of benzene and the difference between addition and substitution.</p>
-<p><strong>Problem 2:</strong> Write balanced chemical equations for each of the following reactions, including the step in which the electrophile is generated:</p>
-<p>(a) The nitration of benzene to form nitrobenzene.</p>
-<p>(b) The reaction of benzene with chloromethane in the presence of anhydrous aluminium chloride (the Friedel-Crafts alkylation).</p>
-<p><strong>Problem 3:</strong> The enthalpy of hydrogenation of cyclohexene (one C=C double bond) has been measured as −120 kJ mol⁻¹.</p>
-<p>(a) Calculate the enthalpy of hydrogenation that would be expected for benzene if it had the Kekulé structure with three localised C=C double bonds.</p>
-<p>(b) The experimentally measured enthalpy of hydrogenation of benzene (C₆H₆ + 3H₂ → C₆H₁₂) is −210 kJ mol⁻¹. Calculate the delocalisation energy of benzene.</p>
-<p>(c) Explain what this delocalisation energy represents in terms of the electronic structure of benzene, and how it explains benzene's resistance to addition reactions.</p>
-<p><strong>Problem 4:</strong> Predict the major organic product or products formed when each of the following substituted benzenes undergoes mononitration (addition of one −NO₂ group) using a mixture of concentrated nitric and sulfuric acids. In each case, explain whether the existing substituent is activating or deactivating and whether it directs ortho/para or meta.</p>
-<p>(a) Methylbenzene (C₆H₅CH₃)</p>
-<p>(b) Nitrobenzene (C₆H₅NO₂)</p>
-<p>(c) Chlorobenzene (C₆H₅Cl)</p>
-<p><strong>Problem 5 (IB-style):</strong> Compound K is a liquid with the molecular formula C₇H₇NO₂. K is prepared by the nitration of methylbenzene (C₇H₈) at room temperature using a mixture of concentrated nitric acid and concentrated sulfuric acid. When K is heated under reflux with tin metal and concentrated hydrochloric acid (Sn/HCl), followed by the addition of sodium hydroxide solution, compound L with the formula C₇H₉N is formed. L reacts with ethanoyl chloride (CH₃COCl) to produce a white crystalline solid M.</p>
-<p>(a) Methylbenzene has a −CH₃ group attached to the ring. Explain whether this group is activating or deactivating, and whether it directs incoming electrophiles to the ortho/para or meta positions.</p>
-<p>(b) Draw the structures of the two main isomers of K that would be formed by mononitration of methylbenzene. Give the IUPAC name for each.</p>
-<p>(c) Write a balanced equation for the reduction of K to L, using the symbol [H] to represent the reducing agent (hydrogen atoms provided by the Sn/HCl system). State the new functional group formed in L.</p>
-<p>(d) L reacts with ethanoyl chloride (CH₃COCl). Identify the type of reaction that occurs between L and ethanoyl chloride, and name the functional group formed in M. Explain why L is able to react as a nucleophile in this reaction.</p>
-<hr>
-<h2>Answers</h2>
-<div class="answer">
-<p><strong>Answer 1.</strong></p>
 </div>
-<div class="answer">
-<p>Alkenes have localised π electrons — the π bond is concentrated between two specific carbon atoms. When an electrophile attacks, the π bond breaks and new σ bonds form (addition). The energy cost is about 120 kJ mol⁻¹ per double bond, and the product is a stable alkane. This is energetically favourable.</p>
+
+<!-- SECTION B -->
+<h2>1. Prior Knowledge Check</h2>
+
+<p><b>Question 1:</b> Benzene has the molecular formula $\ce{C6H6}$. Why was this formula problematic for 19th-century chemists trying to determine its structure?</p>
+<div class="check-in">
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">With six carbons and only six hydrogens, benzene is highly unsaturated. For a comparable alkane ($\ce{C6H14}$), it is "missing" 8 hydrogen atoms. Chemists initially proposed structures with triple bonds or highly strained rings, but none matched benzene's chemical behaviour: it did <b>NOT</b> undergo addition reactions (decolourising bromine water) like alkenes, yet it was clearly unsaturated. The Kekulé structure (alternating single and double bonds in a six-membered ring, 1865) was the best fit — but it predicted two different 1,2-disubstituted isomers, which were never observed.</div>
 </div>
-<div class="answer">
-<p>Benzene has <strong>delocalised π electrons</strong> spread over all six carbon atoms. If benzene were to undergo addition, two of the π electrons would be used to form bonds to the electrophile, but the remaining π system would have only four electrons spread over four carbons — a non-aromatic system. The ring would lose its aromatic stability, which is worth <strong>150 kJ mol⁻¹</strong>. The energy penalty of losing aromaticity is greater than the energy gained by forming two new σ bonds, so addition is not favourable.</p>
+
+<p><b>Question 2:</b> What is the difference between an addition reaction (like alkene + $\ce{Br2}$) and a substitution reaction (like benzene + $\ce{Br2}$)?</p>
+<div class="check-in">
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content"><b>Addition:</b> atoms add across a $\pi$ bond; the unsaturation decreases; the carbon skeleton adds new atoms. Ethene + $\ce{Br2}$ → 1,2-dibromoethane. <b>Substitution:</b> one atom/group replaces another; the carbon skeleton and degree of unsaturation remain unchanged. Benzene + $\ce{Br2}$ → bromobenzene + $\ce{HBr}$ (Br replaces H; the aromatic ring is preserved). Benzene undergoes substitution because addition would destroy the aromaticity (delocalised $\pi$ system) — a large energetic penalty (~150 kJ mol⁻¹).</div>
 </div>
-<div class="answer">
-<p>Instead, benzene undergoes <strong>substitution</strong>, where the electrophile replaces a hydrogen atom. After the electrophile attaches and the H⁺ departs, the π system is restored to six delocalised electrons — the aromatic stability is recovered. The 150 kJ mol⁻¹ of delocalisation energy is preserved, making substitution the thermodynamically favoured pathway.</p>
+
+<p><b>Question 3:</b> What does "delocalisation" mean, and how does it affect the stability of a molecule?</p>
+<div class="check-in">
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content"><b>Delocalisation</b> means electrons are spread over more than two atoms — they are not confined to a single bond or lone pair site. This lowers the overall energy of the molecule. In benzene, six $\pi$ electrons are delocalised over all six carbon atoms in a continuous ring. This delocalisation energy (~150 kJ mol⁻¹) is why benzene is far more stable than the hypothetical "cyclohexatriene" with localised double bonds.</div>
 </div>
-<div class="answer">
-<p><strong>Answer 2.</strong></p>
+
+<!-- SECTION C -->
+<h2>2. The Structure of Benzene — Evidence vs. Kekulé</h2>
+
+<p>Benzene, $\ce{C6H6}$, is the prototypical <b>aromatic</b> compound. Its structure was a major puzzle in 19th-century chemistry. The currently accepted model is based on <b>molecular orbital theory</b>: six $sp^2$ hybridised carbons form a planar ring, each contributing one unhybridised $p$ orbital to a continuous $\pi$-electron cloud above and below the plane.</p>
+
+<h3>2.1 Evidence Against the Kekulé Structure</h3>
+
+<p>Kekulé proposed alternating single and double bonds (cyclohexa-1,3,5-triene). Experimental evidence contradicts this:</p>
+
+<div class="diagram">
+<svg width="720" height="440" viewBox="0 0 720 440">
+  <text x="360" y="18" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c5f2d">Evidence Against the Kekulé Structure for Benzene</text>
+
+  <!-- Evidence 1 -->
+  <rect x="15" y="30" width="340" height="95" rx="6" fill="#ffebee" stroke="#c62828" stroke-width="1"/>
+  <text x="185" y="50" text-anchor="middle" font-size="11" font-weight="bold" fill="#c62828">1. Bond Lengths — All C–C Bonds Are Equal</text>
+  <text x="185" y="68" text-anchor="middle" font-size="10">Kekulé predicts alternating C–C (154 pm) and C=C (134 pm)</text>
+  <text x="185" y="85" text-anchor="middle" font-size="10">X-ray diffraction: all six C–C bonds are <b>139 pm</b> (EXACTLY intermediate)</text>
+  <text x="185" y="102" text-anchor="middle" font-size="10">→ Bond order = 1.5 for every C–C bond</text>
+
+  <!-- Evidence 2 -->
+  <rect x="365" y="30" width="340" height="95" rx="6" fill="#ffebee" stroke="#c62828" stroke-width="1"/>
+  <text x="535" y="50" text-anchor="middle" font-size="11" font-weight="bold" fill="#c62828">2. Only ONE 1,2-Disubstituted Isomer Exists</text>
+  <text x="535" y="68" text-anchor="middle" font-size="10">Kekulé: 1,2-dichlorobenzene should have 2 isomers:</text>
+  <text x="535" y="85" text-anchor="middle" font-size="10">Cl across a C=C vs. Cl across a C–C</text>
+  <text x="535" y="102" text-anchor="middle" font-size="10">Experiment: only <b>ONE</b> 1,2-dichlorobenzene exists</text>
+
+  <!-- Evidence 3 -->
+  <rect x="15" y="135" width="340" height="95" rx="6" fill="#ffebee" stroke="#c62828" stroke-width="1"/>
+  <text x="185" y="155" text-anchor="middle" font-size="11" font-weight="bold" fill="#c62828">3. Enthalpy of Hydrogenation — Too Stable</text>
+  <text x="185" y="173" text-anchor="middle" font-size="10">Predicted $\Delta H_{hyd}$ for Kekulé: ~3 × (−120) = <b>−360 kJ mol⁻¹</b></text>
+  <text x="185" y="191" text-anchor="middle" font-size="10">(using cyclohexene → cyclohexane = −120 kJ mol⁻¹ per C=C)</text>
+  <text x="185" y="209" text-anchor="middle" font-size="10">Experimental $\Delta H_{hyd}$: <b>−208 kJ mol⁻¹</b></text>
+
+  <!-- Evidence 4 -->
+  <rect x="365" y="135" width="340" height="95" rx="6" fill="#ffebee" stroke="#c62828" stroke-width="1"/>
+  <text x="535" y="155" text-anchor="middle" font-size="11" font-weight="bold" fill="#c62828">4. Chemical Reactivity — Substitution, Not Addition</text>
+  <text x="535" y="173" text-anchor="middle" font-size="10">Kekulé (with 3 C=C) should decolourise $\ce{Br2}$ instantly</text>
+  <text x="535" y="191" text-anchor="middle" font-size="10">Benzene + $\ce{Br2}$: no reaction without a halogen carrier</text>
+  <text x="535" y="209" text-anchor="middle" font-size="10">With $\ce{FeBr3}$: $\ce{C6H6 + Br2 -> C6H5Br + HBr}$ (substitution!)</text>
+
+  <!-- Reality: Delocalised -->
+  <rect x="15" y="245" width="690" height="80" rx="8" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="2"/>
+  <text x="360" y="270" text-anchor="middle" font-size="12" font-weight="bold" fill="#2c5f2d">The Reality: Benzene is a Resonance Hybrid</text>
+  <text x="360" y="295" text-anchor="middle" font-size="11">$\ce{C6H6}$: planar, 6 $sp^2$ carbons, 6 $p$ orbitals → continuous $\pi$ cloud above and below the ring</text>
+  <text x="360" y="315" text-anchor="middle" font-size="11">6 $\pi$ electrons delocalised → <b>aromatic stabilisation energy ≈ 152 kJ mol⁻¹</b></text>
+
+  <!-- Aromaticity rules -->
+  <rect x="15" y="340" width="690" height="80" rx="6" fill="#e3f2fd" stroke="#1565c0" stroke-width="1"/>
+  <text x="360" y="360" text-anchor="middle" font-size="11" font-weight="bold" fill="#1565c0">Hückel's Rule for Aromaticity: $4n + 2$ $\pi$ electrons ($n = 0, 1, 2, \ldots$)</text>
+  <text x="360" y="382" text-anchor="middle" font-size="10">Benzene: 6 $\pi$ e⁻ → $4n+2 = 6$ → $n = 1$ → <b>aromatic</b> &nbsp;|&nbsp; Cyclooctatetraene: 8 $\pi$ e⁻ → $4n+2 \neq 8$ → non-aromatic (tub-shaped)</text>
+  <text x="360" y="402" text-anchor="middle" font-size="10">Conditions: cyclic, planar, fully conjugated, $4n+2$ $\pi$ electrons</text>
+</svg>
+<div class="caption">Figure 1: The four lines of evidence that disproved the Kekulé model. The delocalised structure — a resonance hybrid — explains all observations. Benzene's reluctance to undergo addition is a direct consequence of aromatic stabilisation.</div>
 </div>
-<div class="answer">
-<p>(a) Nitration:</p>
-<p>Electrophile generation: $$\ce{HNO3 + H2SO4 -> NO2+ + HSO4- + H2O}$$</p>
-<p>Overall reaction: $$\ce{C6H6 + HNO3 ->[H2SO4] C6H5NO2 + H2O}$$</p>
+
+<h3>2.2 The Delocalised $\pi$ System</h3>
+
+<div class="diagram">
+<svg width="600" height="280" viewBox="0 0 600 280">
+  <text x="300" y="18" text-anchor="middle" font-size="13" font-weight="bold" fill="#2c5f2d">Benzene — $\pi$ Electron Delocalisation</text>
+
+  <!-- Benzene ring top-down -->
+  <polygon points="300,55 366,93 348,167 252,167 234,93" fill="none" stroke="#333" stroke-width="2.5"/>
+  <!-- C atoms -->
+  <circle cx="300" cy="55" r="10" fill="#333" opacity="0.2"/>
+  <circle cx="366" cy="93" r="10" fill="#333" opacity="0.2"/>
+  <circle cx="348" cy="167" r="10" fill="#333" opacity="0.2"/>
+  <circle cx="252" cy="167" r="10" fill="#333" opacity="0.2"/>
+  <circle cx="234" cy="93" r="10" fill="#333" opacity="0.2"/>
+  <circle cx="300" cy="120" r="10" fill="#333" opacity="0.2"/>
+
+  <!-- Pi cloud torus -->
+  <ellipse cx="300" cy="115" rx="78" ry="30" fill="#ffcc80" opacity="0.35" stroke="#e65100" stroke-width="1" stroke-dasharray="6"/>
+  <text x="300" y="205" text-anchor="middle" font-size="10">$\pi$-electron cloud (top view)</text>
+
+  <!-- Side view -->
+  <line x1="80" y1="245" x2="220" y2="245" stroke="#333" stroke-width="3"/>
+  <line x1="220" y1="245" x2="360" y2="245" stroke="#333" stroke-width="3"/>
+  <line x1="360" y1="245" x2="500" y2="245" stroke="#333" stroke-width="3"/>
+  <circle cx="80" cy="245" r="5" fill="#333"/>
+  <circle cx="500" cy="245" r="5" fill="#333"/>
+  <!-- Pi lobes above -->
+  <ellipse cx="290" cy="228" rx="150" ry="20" fill="#ffcc80" opacity="0.45" stroke="#e65100" stroke-width="1"/>
+  <!-- Pi lobes below -->
+  <ellipse cx="290" cy="262" rx="150" ry="20" fill="#ffcc80" opacity="0.45" stroke="#e65100" stroke-width="1"/>
+  <text x="290" y="215" text-anchor="middle" font-size="9" fill="#e65100">delocalised $\pi$ electrons above ring</text>
+  <text x="290" y="278" text-anchor="middle" font-size="9" fill="#e65100">delocalised $\pi$ electrons below ring</text>
+  <text x="290" y="248" text-anchor="middle" font-size="9">$\sigma$ framework</text>
+
+  <text x="500" y="240" font-size="9">side view</text>
+</svg>
+<div class="caption">Figure 2: The delocalised $\pi$ system of benzene. Six $p$ orbitals (one from each $sp^2$ carbon) overlap sideways to form a continuous $\pi$ cloud. The 6 $\pi$ electrons are fully delocalised — they belong to the ring as a whole, not to individual double bonds.</div>
 </div>
-<div class="answer">
-<p>(b) Friedel-Crafts alkylation:</p>
-<p>Electrophile generation: $$\ce{CH3Cl + AlCl3 -> CH3+ + AlCl4-}$$</p>
-<p>The carbocation CH₃⁺ (a methyl cation) is the electrophile.</p>
-<p>Overall reaction: $$\ce{C6H6 + CH3Cl ->[AlCl3] C6H5CH3 + HCl}$$</p>
+
+<div class="check-in">
+<p><b>Check-in:</b> Calculate the resonance energy of benzene given: $\Delta H_{hyd}$ (cyclohexene) = −120 kJ mol⁻¹; $\Delta H_{hyd}$ (benzene, experimental) = −208 kJ mol⁻¹.</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">Kekulé (cyclohexatriene) would have 3 isolated C=C bonds: predicted $\Delta H_{hyd}$ = 3 × (−120) = <b>−360 kJ mol⁻¹</b>. Experimental = −208 kJ mol⁻¹. Resonance (delocalisation) energy = |−360 − (−208)| = <b>152 kJ mol⁻¹</b>. Benzene is 152 kJ mol⁻¹ <b>more stable</b> than the hypothetical Kekulé structure. This is the energy that would be lost if benzene underwent addition — explaining why it prefers substitution.</div>
 </div>
-<div class="answer">
-<p>In the mechanism, the AlCl₃ catalyst is regenerated: the H⁺ removed from the ring combines with AlCl₄⁻ to give AlCl₃ and HCl.</p>
+
+<h2>3. Electrophilic Aromatic Substitution ($\ce{S_EAr}$) — The General Mechanism</h2>
+
+<p>Benzene does NOT undergo electrophilic addition (like alkenes). Instead, it undergoes <b>electrophilic aromatic substitution</b> ($\ce{S_EAr}$) — the electrophile replaces a hydrogen while preserving the aromatic ring.</p>
+
+<div class="diagram">
+<svg width="720" height="320" viewBox="0 0 720 320">
+  <text x="360" y="18" text-anchor="middle" font-size="13" font-weight="bold" fill="#2c5f2d">General Mechanism for Electrophilic Aromatic Substitution</text>
+
+  <!-- Step 1 -->
+  <rect x="10" y="30" width="340" height="135" rx="6" fill="#ffebee" stroke="#c62828" stroke-width="1"/>
+  <text x="180" y="50" text-anchor="middle" font-size="11" font-weight="bold" fill="#c62828">Step 1: Electrophilic Attack (slow, RDS)</text>
+  <text x="180" y="70" text-anchor="middle" font-size="10">$\ce{C6H6 + E+ -> [C6H6E]+}$</text>
+  <text x="180" y="88" text-anchor="middle" font-size="10">$\pi$ electrons attack $\ce{E+}$ → <b>Wheland intermediate</b></text>
+  <text x="180" y="105" text-anchor="middle" font-size="10">(arenium ion, $\sigma$ complex)</text>
+  <text x="180" y="123" text-anchor="middle" font-size="10">Positive charge delocalised over 5 carbons</text>
+  <text x="180" y="140" text-anchor="middle" font-size="10">Aromaticity is <b>lost</b> (but only temporarily)</text>
+
+  <!-- Step 2 -->
+  <rect x="10" y="175" width="340" height="130" rx="6" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="1"/>
+  <text x="180" y="195" text-anchor="middle" font-size="11" font-weight="bold" fill="#2c5f2d">Step 2: Deprotonation (fast)</text>
+  <text x="180" y="215" text-anchor="middle" font-size="10">$\ce{[C6H6E]+ -> C6H5E + H+}$</text>
+  <text x="180" y="235" text-anchor="middle" font-size="10">Base (often $\ce{FeBr4-}$ or $\ce{HSO4-}$) removes $\ce{H+}$</text>
+  <text x="180" y="255" text-anchor="middle" font-size="10">Aromaticity is <b>restored</b></text>
+  <text x="180" y="275" text-anchor="middle" font-size="10">Overall: $\ce{C6H6 + E+ -> C6H5E + H+}$</text>
+
+  <!-- Wheland intermediate visual -->
+  <rect x="365" y="30" width="345" height="275" rx="6" fill="#fafafa" stroke="#999" stroke-width="1"/>
+  <text x="537" y="55" text-anchor="middle" font-size="11" font-weight="bold">Wheland Intermediate Structure</text>
+  <!-- Hexagon with broken circle -->
+  <polygon points="537,80 580,105 570,165 504,165 493,105" fill="none" stroke="#333" stroke-width="2"/>
+  <!-- Positive charge delocalised -->
+  <text x="507" y="115" font-size="14" fill="#c62828">⊕</text>
+  <!-- E+ substituent -->
+  <circle cx="537" cy="78" r="6" fill="#1565c0"/>
+  <text x="537" y="73" font-size="8" fill="#fff">E</text>
+  <!-- H on same carbon -->
+  <text x="555" y="78" font-size="9">H</text>
+  <text x="537" y="195" text-anchor="middle" font-size="10">$sp^3$ carbon at site of attack</text>
+  <text x="537" y="215" text-anchor="middle" font-size="10">+ charge delocalised by resonance</text>
+  <text x="537" y="235" text-anchor="middle" font-size="10">over <b>ortho</b> and <b>para</b> positions</text>
+  <text x="537" y="260" text-anchor="middle" font-size="10">(3 contributing resonance structures)</text>
+</svg>
+<div class="caption">Figure 3: The general $S_EAr$ mechanism. The electrophile $\ce{E+}$ is generated in situ. Attack by the $\pi$ electrons forms a Wheland intermediate (non-aromatic, cationic). Loss of $\ce{H+}$ restores aromaticity — the driving force for substitution over addition.</div>
 </div>
-<div class="answer">
-<p><strong>Answer 3.</strong></p>
+
+<h3>3.1 Specific $S_EAr$ Reactions — Generating the Electrophile</h3>
+
+<div class="diagram">
+<svg width="720" height="380" viewBox="0 0 720 380">
+  <text x="360" y="18" text-anchor="middle" font-size="13" font-weight="bold" fill="#2c5f2d">Four Key $S_EAr$ Reactions of Benzene (HL)</text>
+
+  <!-- Nitration -->
+  <rect x="10" y="30" width="345" height="80" rx="6" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="1"/>
+  <text x="183" y="48" text-anchor="middle" font-size="11" font-weight="bold">1. Nitration</text>
+  <text x="183" y="65" text-anchor="middle" font-size="10">Reagents: conc. $\ce{HNO3}$ + conc. $\ce{H2SO4}$, 50–60°C</text>
+  <text x="183" y="82" text-anchor="middle" font-size="10">$\ce{HNO3 + 2H2SO4 -> NO2+ + 2HSO4- + H3O+}$</text>
+  <text x="183" y="99" text-anchor="middle" font-size="10">$\ce{C6H6 + NO2+ -> C6H5NO2 + H+}$ &nbsp; (nitrobenzene)</text>
+
+  <!-- Halogenation -->
+  <rect x="365" y="30" width="345" height="80" rx="6" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="1"/>
+  <text x="538" y="48" text-anchor="middle" font-size="11" font-weight="bold">2. Halogenation (Br₂/Cl₂)</text>
+  <text x="538" y="65" text-anchor="middle" font-size="10">Reagents: $\ce{Br2}$ + $\ce{FeBr3}$ (halogen carrier, Lewis acid)</text>
+  <text x="538" y="82" text-anchor="middle" font-size="10">$\ce{Br2 + FeBr3 -> Br+ + FeBr4-}$</text>
+  <text x="538" y="99" text-anchor="middle" font-size="10">$\ce{C6H6 + Br+ -> C6H5Br + H+}$ &nbsp; (bromobenzene)</text>
+
+  <!-- Friedel-Crafts Alkylation -->
+  <rect x="10" y="125" width="345" height="95" rx="6" fill="#fff8e1" stroke="#d4a017" stroke-width="1"/>
+  <text x="183" y="143" text-anchor="middle" font-size="11" font-weight="bold">3. Friedel–Crafts Alkylation</text>
+  <text x="183" y="160" text-anchor="middle" font-size="10">Reagents: $\ce{RCl + AlCl3}$ (anhydrous)</text>
+  <text x="183" y="177" text-anchor="middle" font-size="10">$\ce{RCl + AlCl3 -> R+ + AlCl4-}$ (carbocation)</text>
+  <text x="183" y="194" text-anchor="middle" font-size="10">$\ce{C6H6 + R+ -> C6H5R + H+}$</text>
+  <text x="183" y="211" text-anchor="middle" font-size="10"><b>Limitations:</b> polyalkylation; carbocation rearrangements</text>
+
+  <!-- Friedel-Crafts Acylation -->
+  <rect x="365" y="125" width="345" height="95" rx="6" fill="#fff8e1" stroke="#d4a017" stroke-width="1"/>
+  <text x="538" y="143" text-anchor="middle" font-size="11" font-weight="bold">4. Friedel–Crafts Acylation</text>
+  <text x="538" y="160" text-anchor="middle" font-size="10">Reagents: $\ce{RCOCl + AlCl3}$ (anhydrous)</text>
+  <text x="538" y="177" text-anchor="middle" font-size="10">$\ce{RCOCl + AlCl3 -> RCO+ + AlCl4-}$ (acylium ion)</text>
+  <text x="538" y="194" text-anchor="middle" font-size="10">$\ce{C6H6 + RCO+ -> C6H5COR + H+}$ (ketone)</text>
+  <text x="538" y="211" text-anchor="middle" font-size="10"><b>Advantage:</b> no polyacylation; no rearrangements</text>
+
+  <!-- Key note -->
+  <rect x="10" y="235" width="700" height="60" rx="4" fill="#f5f5f5"/>
+  <text x="360" y="258" text-anchor="middle" font-size="10">All four reactions proceed via the same 2-step $S_EAr$ mechanism — only the method of generating $\ce{E+}$ differs.</text>
+  <text x="360" y="278" text-anchor="middle" font-size="10">The halogen carrier ($\ce{FeBr3}$, $\ce{AlCl3}$, $\ce{FeCl3}$) is a <b>Lewis acid catalyst</b> — it polarises and weakens the X–X or C–X bond.</text>
+
+  <!-- Regeneration -->
+  <rect x="10" y="308" width="700" height="55" rx="4" fill="#e3f2fd" stroke="#1565c0" stroke-width="1"/>
+  <text x="360" y="328" text-anchor="middle" font-size="10">Catalyst regeneration: $\ce{FeBr4- + H+ -> FeBr3 + HBr}$ (the $\ce{FeBr3}$ is regenerated — true catalyst)</text>
+  <text x="360" y="350" text-anchor="middle" font-size="10">OR: $\ce{AlCl4- + H+ -> AlCl3 + HCl}$</text>
+</svg>
+<div class="caption">Figure 4: The four $S_EAr$ reactions required for HL. In every case, a strong electrophile ($\ce{NO2+}$, $\ce{Br+}$, $\ce{R+}$, $\ce{RCO+}$) is generated by a Lewis acid catalyst. The mechanism is identical: attack by $\pi$ electrons → Wheland intermediate → loss of $\ce{H+}$.</div>
 </div>
-<div class="answer">
-<p>(a) If benzene had three ordinary localised double bonds, the expected ΔH for complete hydrogenation would be: 3 × (−120 kJ mol⁻¹) = <strong>−360 kJ mol⁻¹</strong>.</p>
+
+<div class="check-in">
+<p><b>Check-in:</b> Why is a halogen carrier ($\ce{FeBr3}$ or $\ce{AlCl3}$) needed for benzene halogenation, but not for alkene halogenation?</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">Alkenes have <b>localised</b> $\pi$ electrons that are highly reactive — they can polarise $\ce{Br2}$ by induced dipole, leading to electrophilic addition without a catalyst. Benzene has <b>delocalised</b> $\pi$ electrons — they are stabilised by aromaticity (152 kJ mol⁻¹). The $\pi$ electrons are not sufficiently reactive to polarise $\ce{Br2}$ and initiate electrophilic attack. The halogen carrier ($\ce{FeBr3}$, a Lewis acid) polarises $\ce{Br–Br}$ by accepting a lone pair, generating the much stronger electrophile $\ce{Br+}$ (effectively). This stronger electrophile can overcome the aromatic stabilisation barrier.</div>
 </div>
-<div class="answer">
-<p>(b) Delocalisation energy = expected − actual = 360 − 210 = <strong>150 kJ mol⁻¹</strong>. Benzene is 150 kJ mol⁻¹ more stable than the hypothetical cyclohexa-1,3,5-triene.</p>
+
+<h2>4. Why Substitution, Not Addition?</h2>
+
+<p>This is the fundamental difference between benzene and alkenes — and a classic IB question.</p>
+
+<p>If benzene underwent addition (e.g., $\ce{C6H6 + Br2 -> C6H6Br2}$), the product would be a non-aromatic cyclohexadiene derivative. The <b>aromatic stabilisation energy</b> (~152 kJ mol⁻¹) would be lost permanently. In substitution ($\ce{C6H6 + Br2 -> C6H5Br + HBr}$), aromaticity is only <b>temporarily</b> disrupted (Wheland intermediate) and then <b>regained</b> in the product. The energy "cost" of the Wheland intermediate is repaid when aromaticity is restored.</p>
+
+<!-- SECTION D -->
+<h2>5. Worked Examples</h2>
+
+<div class="example">
+<b>Example 1 — Drawing the nitration mechanism (Paper 2 classic):</b><br><br>
+Draw the full mechanism (curly arrows) for the nitration of benzene to form nitrobenzene.<br><br>
+<b>Step 0 (electrophile generation):</b> $\ce{HNO3 + 2H2SO4 -> NO2+ + 2HSO4- + H3O+}$. The nitronium ion $\ce{NO2+}$ is the electrophile ($\ce{O=N+=O}$).<br>
+<b>Step 1:</b> $\pi$ electrons of benzene (curly arrow from the ring) attack $\ce{N+}$ of $\ce{NO2+}$. Curly arrow from $\ce{N=O}$ $\pi$ bond → $\ce{O}$ (to maintain octet). Wheland intermediate forms: $\ce{C6H6NO2+}$, with $\ce{NO2}$ attached to one $sp^3$ carbon and positive charge delocalised over ortho/para positions.<br>
+<b>Step 2:</b> $\ce{HSO4-}$ (the base) removes $\ce{H+}$ from the $sp^3$ carbon. Curly arrow from $\ce{C–H}$ $\sigma$ bond → ring (restoring $\pi$ system). Product: nitrobenzene $\ce{C6H5NO2}$ + $\ce{H2SO4}$ (regenerated).<br><br>
+<b>⚠️ Common wrong approach:</b> Forgetting to draw the generation of $\ce{NO2+}$ (step 0), or drawing $\ce{NO2+}$ attacking with the oxygen rather than the nitrogen. The electrophile is $\ce{NO2+}$ with the positive charge on nitrogen.
 </div>
-<div class="answer">
-<p>(c) The delocalisation energy represents the extra stability gained by having six π electrons spread continuously around the ring rather than confined to three isolated double bonds. In benzene, each p orbital overlaps equally with both neighbours, creating a molecular orbital that encompasses all six carbon atoms. The electrons in this delocalised system are lower in energy than they would be in localised π bonds.</p>
+
+<div class="example">
+<b>Example 2 — Comparing F–C alkylation vs. acylation:</b><br><br>
+Explain why Friedel–Crafts acylation is preferred over alkylation for introducing a 3-carbon side chain to benzene, if the desired product is propylbenzene.<br><br>
+<b>F–C Alkylation directly:</b> $\ce{C6H6 + CH3CH2CH2Cl ->[AlCl3] C6H5CH2CH2CH3}$ + HCl. <b>Problem:</b> the 1° carbocation $\ce{CH3CH2CH2+}$ can rearrange to the more stable 2° carbocation $\ce{CH3CH+CH3}$ → isopropylbenzene (major product), not propylbenzene. Also, polyalkylation is common.<br>
+<b>F–C Acylation then reduction:</b> Step 1: $\ce{C6H6 + CH3CH2COCl ->[AlCl3] C6H5COCH2CH3}$ (ethyl phenyl ketone). The acylium ion $\ce{CH3CH2CO+}$ is resonance-stabilised — NO rearrangement. Step 2: $\ce{C6H5COCH2CH3}$ is reduced using $\ce{Zn(Hg)/HCl}$ (Clemmensen) or $\ce{NH2NH2/KOH}$ (Wolff–Kishner) to give propylbenzene. <b>Clean, no rearrangement, no polyacylation.</b><br><br>
+<b>⚠️ Common wrong approach:</b> Assuming FC alkylation always gives the straight-chain product. Carbocation rearrangements are a major limitation of FC alkylation.
 </div>
-<div class="answer">
-<p>This extra 150 kJ mol⁻¹ of stability is why benzene resists addition. Addition would break the delocalised system, destroying this stabilisation — the energy cost is too high. Substitution preserves the delocalised π system, so the stability is retained throughout the reaction.</p>
+
+<div class="example">
+<b>Example 3 — Substitution vs. addition with thermodynamic numbers:</b><br><br>
+The enthalpy of hydrogenation of cyclohexene is −120 kJ mol⁻¹. The enthalpy of hydrogenation of benzene (to cyclohexane) is −208 kJ mol⁻¹. Cyclohexane → benzene + $\ce{3H2}$ has $\Delta H = +208$ kJ mol⁻¹. Using these numbers, explain why benzene does NOT undergo electrophilic addition of $\ce{Br2}$.<br><br>
+<b>Analysis:</b> Addition of $\ce{Br2}$ across one C=C of a hypothetical Kekulé benzene would be exothermic by roughly −120 kJ mol⁻¹ (analogous to cyclohexene). However, in REAL benzene, addition would destroy aromaticity — costing 152 kJ mol⁻¹ (the resonance energy). The net $\Delta H$ for addition would be approximately +32 kJ mol⁻¹ (endothermic). Substitution avoids this: the Wheland intermediate costs ~60 kJ mol⁻¹ (less than full aromaticity loss), and this is recovered when $\ce{H+}$ is lost and aromaticity is restored. The aromatic ring is <b>preserved</b> — the thermodynamic driving force.<br><br>
+<b>⚠️ Common wrong approach:</b> Saying "benzene doesn't react with $\ce{Br2}$." It does react — but only in the presence of a halogen carrier ($\ce{FeBr3}$), and it undergoes <b>substitution</b>, not addition. The distinction is crucial.
 </div>
-<div class="answer">
-<p><strong>Answer 4.</strong></p>
+
+<!-- SECTION F -->
+<div class="misconception">
+<h3>⚠️ Common Mistakes to Avoid</h3>
+<ol>
+  <li><b>Benzene undergoes substitution, NOT addition.</b> This is the single most tested concept. Benzene + $\ce{Br2}$ → NO REACTION in the dark. With $\ce{FeBr3}$ → bromobenzene + HBr (substitution). Alkenes + $\ce{Br2}$ → instant decolourisation (addition). Know this difference cold.</li>
+  <li><b>$\ce{FeBr3}$ (or $\ce{AlCl3}$) is a CATALYST — it is regenerated.</b> The overall equation is $\ce{C6H6 + Br2 -> C6H5Br + HBr}$. $\ce{FeBr3}$ does not appear in the stoichiometric equation. The mechanism shows $\ce{FeBr4- + H+ -> FeBr3 + HBr}$ in the last step.</li>
+  <li><b>The Wheland intermediate is NOT aromatic.</b> It has an $sp^3$ carbon and only 4 $\pi$ electrons delocalised over 5 carbons (Hückel: 4 ≠ $4n+2$). Aromaticity is temporarily lost but regained in the product.</li>
+  <li><b>Friedel–Crafts alkylation has limitations.</b> Carbocations rearrange (1° → 2° → 3°). Polyalkylation occurs because the product (alkylbenzene) is more reactive than benzene (alkyl group is activating). Acylation avoids both problems.</li>
+  <li><b>Hückel's rule: $4n+2$ $\pi$ electrons.</b> Not "6 electrons makes it aromatic." Cyclopentadienyl anion ($\ce{C5H5-}$, 6 $\pi$ e⁻) and cycloheptatrienyl cation ($\ce{C7H7+}$, 6 $\pi$ e⁻) are also aromatic. $4n+2$ is the general rule.</li>
+</ol>
 </div>
-<div class="answer">
-<p>(a) Methylbenzene: The −CH₃ group is <strong>activating</strong> (weakly) and <strong>ortho/para directing</strong>. Alkyl groups donate electron density through the inductive effect and through hyperconjugation, increasing electron density at ortho and para positions. The products of mononitration are <strong>2-nitromethylbenzene</strong> (ortho-nitrotoluene) and <strong>4-nitromethylbenzene</strong> (para-nitrotoluene).</p>
+
+<!-- SECTION G -->
+<h2>6. End-of-Lesson Practice</h2>
+
+<p><b>Question 1 (Paper 1 style):</b> Which statement about benzene is correct?<br>
+A. It decolourises bromine water immediately.<br>
+B. All carbon–carbon bonds are the same length.<br>
+C. It has three localised $\pi$ bonds.<br>
+D. It is non-planar.</p>
+
+<p><b>Question 2:</b> Draw the full mechanism (including electrophile generation) for the chlorination of benzene using $\ce{Cl2}$ and $\ce{AlCl3}$.</p>
+
+<p><b>Question 3:</b> Explain why the enthalpy of hydrogenation of benzene (−208 kJ mol⁻¹) is less exothermic than predicted for cyclohexa-1,3,5-triene (−360 kJ mol⁻¹).</p>
+
+<p><b>Question 4:</b> Write equations for: (a) nitration of benzene, (b) Friedel–Crafts acylation of benzene with ethanoyl chloride, (c) reduction of the acylation product to ethylbenzene.</p>
+
+<p><b>Question 5:</b> Cyclooctatetraene ($\ce{C8H8}$) has 8 $\pi$ electrons but is NOT aromatic. Explain why, using Hückel's rule and structural evidence.</p>
+
+<p><b>Question 6 (Paper 2 style):</b> Propose a synthesis of 4-nitroethylbenzene from benzene, showing all reagents, conditions, and the order of reactions. Explain why the order matters.</p>
+
+<button class="practice-toggle" onclick="var a=this.nextElementSibling;a.classList.toggle('open');this.textContent=a.classList.contains('open')?'▴ Hide Answers':'▸ Show Answers'">▸ Show Answers</button>
+<div class="practice-answers">
+
+<p><b>Answer 1:</b> B. All C–C bonds in benzene are identical (139 pm, intermediate between single and double). A is wrong — benzene does NOT decolourise $\ce{Br2}$ water without a catalyst. C is wrong — the $\pi$ electrons are delocalised, not localised in three alternating double bonds. D is wrong — benzene is perfectly planar (all carbons $sp^2$).</p>
+
+<p><b>Answer 2:</b> <b>Electrophile generation:</b> $\ce{Cl2 + AlCl3 -> Cl+ + AlCl4-}$. Curly arrow from Cl–Cl bond to Al (forming Cl–Al bond); the other Cl becomes $\ce{Cl+}$. <b>Step 1:</b> $\pi$ electrons of benzene attack $\ce{Cl+}$ → Wheland intermediate with Cl on an $sp^3$ carbon, + charge delocalised. <b>Step 2:</b> $\ce{AlCl4-}$ removes $\ce{H+}$ → chlorobenzene $\ce{C6H5Cl + AlCl3 + HCl}$. $\ce{AlCl3}$ regenerated.</p>
+
+<p><b>Answer 3:</b> The predicted value (−360 kJ mol⁻¹) assumes three isolated C=C bonds (like cyclohexene × 3). But benzene is NOT cyclohexatriene — its $\pi$ electrons are delocalised. The delocalisation (resonance) energy = 360 − 208 = <b>152 kJ mol⁻¹</b>. This is the extra stability from delocalisation. Because benzene is 152 kJ mol⁻¹ more stable than predicted, hydrogenation releases 152 kJ mol⁻¹ less energy.</p>
+
+<p><b>Answer 4:</b> (a) $\ce{C6H6 + HNO3 ->[H2SO4][50°C] C6H5NO2 + H2O}$. (b) $\ce{C6H6 + CH3COCl ->[AlCl3] C6H5COCH3 + HCl}$. (c) $\ce{C6H5COCH3 ->[Zn(Hg)][HCl,\Delta] C6H5CH2CH3}$ (Clemmensen reduction).</p>
+
+<p><b>Answer 5:</b> Cyclooctatetraene has 8 $\pi$ electrons: $4n+2 = 8 \implies 4n = 6 \implies n = 1.5$ (not an integer). So Hückel's rule predicts non-aromatic. Structurally, cyclooctatetraene is <b>tub-shaped</b> (not planar) — the $p$ orbitals cannot overlap effectively for delocalisation. It behaves as a typical polyene: undergoes addition reactions with $\ce{Br2}$, has alternating single and double bond lengths.</p>
+
+<p><b>Answer 6:</b> Target: 4-nitroethylbenzene (nitro and ethyl groups <b>para</b> to each other). <b>Route:</b> (1) FC acylation: $\ce{C6H6 + CH3COCl ->[AlCl3] C6H5COCH3}$ (acetophenone). The –COCH₃ group is <b>meta-directing</b>. Wait — need para product. Actually, ethyl is ortho/para-directing. So: (1) FC alkylation/acylation to introduce ethyl first? Better: FC acylation then reduction → ethylbenzene (ethyl is o/p-directing). (2) Nitration: $\ce{C6H5CH2CH3 + HNO3 ->[H2SO4]}$ → mixture of ortho and para nitroethylbenzene. Para is major (less steric hindrance). <b>Order matters:</b> if you nitrate first, the –NO₂ group is meta-directing, and FC alkylation would give the meta isomer. The activating o/p-directing group must be introduced first.</p>
 </div>
-<div class="answer">
-<p>(b) Nitrobenzene: The −NO₂ group is <strong>deactivating</strong> and <strong>meta directing</strong>. The nitro group withdraws electron density through both resonance (it can accept electrons into its π system) and the inductive effect (the highly electronegative oxygen atoms pull electron density). The meta position is the least deactivated. The product is <strong>1,3-dinitrobenzene</strong> (meta-dinitrobenzene).</p>
-</div>
-<div class="answer">
-<p>(c) Chlorobenzene: The −Cl group is <strong>deactivating</strong> (due to its electronegativity, it withdraws electron density inductively) but <strong>ortho/para directing</strong> (the lone pairs on chlorine can donate electron density into the ring through resonance, particularly at ortho and para positions). The products are <strong>2-chloronitrobenzene</strong> and <strong>4-chloronitrobenzene</strong>. The overall rate is slower than for benzene itself, but the regiochemistry is ortho/para.</p>
-</div>
-<div class="answer">
-<p><strong>Answer 5.</strong></p>
-</div>
-<div class="answer">
-<p>(a) The −CH₃ group in methylbenzene is an alkyl group. It is <strong>activating</strong> (weakly) because it donates electron density to the ring through the inductive effect and hyperconjugation. It is <strong>ortho/para directing</strong> — electrophiles attack preferentially at the ortho (C-2, C-6) and para (C-4) positions because these positions have higher electron density in the intermediate arenium ion.</p>
-</div>
-<div class="answer">
-<p>(b) The two main isomers of K (C₇H₇NO₂, formed by mononitration of C₇H₈):</p>
-</div>
-<ul>
-<li><strong>2-nitromethylbenzene</strong> (ortho-nitrotoluene): the −NO₂ is at C-2, adjacent to the −CH₃.</li>
-<li><strong>4-nitromethylbenzene</strong> (para-nitrotoluene): the −NO₂ is at C-4, opposite the −CH₃.</li>
-</ul>
-<div class="answer">
-<p>The meta isomer (3-nitromethylbenzene) is formed in only very small amounts.</p>
-</div>
-<div class="answer">
-<p>(c) Reduction of K to L: The −NO₂ group is reduced to an −NH₂ group by the Sn/HCl system (which generates nascent hydrogen, [H]):</p>
-<p>$$\ce{CH3C6H4NO2 + 6[H] -> CH3C6H4NH2 + 2H2O}$$</p>
-</div>
-<div class="answer">
-<p>The new functional group in L is the <strong>amine</strong> group (−NH₂). L is a <strong>methylphenylamine</strong> (also called toluidine — specifically, depending on whether K was ortho or para, it is 2-methylphenylamine or 4-methylphenylamine).</p>
-</div>
-<div class="answer">
-<p>(d) L contains an −NH₂ group (a primary amine). The nitrogen has a lone pair of electrons, which makes it a <strong>nucleophile</strong>. It reacts with ethanoyl chloride (CH₃COCl) in a <strong>nucleophilic addition-elimination</strong> (also called nucleophilic acyl substitution) reaction. The nitrogen attacks the carbonyl carbon of the acyl chloride, displacing chloride. The product M is an <strong>amide</strong> — specifically, N-(methylphenyl)ethanamide (an amide linkage: CH₃−CO−NH−C₆H₄CH₃). The reaction produces HCl as a by-product, which reacts with excess amine.</p>
-</div>
-<div class="answer">
-<p>Equation: $$\ce{CH3C6H4NH2 + CH3COCl -> CH3C6H4NHCOCH3 + HCl}$$</p>
-</div>
-<div class="nav">
-  <a href="lesson_39.html">← Previous Lesson</a>
-  <a href="../index.html">↑ Lesson Index</a>
-  <a href="lesson_41.html">Next Lesson →</a>
-</div>
+
+<!-- SECTION H -->
+<h2>7. Key Terms</h2>
+<table>
+<tr><th>Term</th><th>Definition</th></tr>
+<tr><td>Aromatic compound</td><td>A cyclic, planar, fully conjugated molecule with $4n+2$ $\pi$ electrons (Hückel's rule), exhibiting exceptional stability</td></tr>
+<tr><td>Delocalisation</td><td>Spreading of $\pi$ electrons over more than two atoms; in benzene, 6 $\pi$ electrons are delocalised over 6 carbons</td></tr>
+<tr><td>Resonance energy</td><td>The extra stability of a molecule due to electron delocalisation; for benzene ≈ 152 kJ mol⁻¹ (difference between predicted and actual $\Delta H_{hyd}$)</td></tr>
+<tr><td>Electrophilic aromatic substitution ($S_EAr$)</td><td>Two-step mechanism: (1) $\pi$ electrons attack $\ce{E+}$ → Wheland intermediate, (2) loss of $\ce{H+}$ → aromatic product</td></tr>
+<tr><td>Wheland intermediate (arenium ion, $\sigma$ complex)</td><td>The non-aromatic cationic intermediate in $S_EAr$; positive charge delocalised but aromaticity is lost; one $sp^3$ carbon</td></tr>
+<tr><td>Nitronium ion</td><td>$\ce{NO2+}$ ($\ce{O=N+=O}$), the electrophile in nitration; generated from $\ce{HNO3 + H2SO4}$</td></tr>
+<tr><td>Halogen carrier</td><td>A Lewis acid catalyst ($\ce{FeBr3}$, $\ce{AlCl3}$, $\ce{FeCl3}$) that polarises $\ce{X2}$ or $\ce{RX}$ to generate a stronger electrophile; regenerated at the end</td></tr>
+<tr><td>Friedel–Crafts alkylation</td><td>$\ce{S_EAr}$ using $\ce{RCl + AlCl3}$ to introduce an alkyl group; limited by carbocation rearrangement and polyalkylation</td></tr>
+<tr><td>Friedel–Crafts acylation</td><td>$\ce{S_EAr}$ using $\ce{RCOCl + AlCl3}$ to introduce an acyl group; no rearrangement, no polyacylation; product is a ketone</td></tr>
+<tr><td>Hückel's rule</td><td>A molecule is aromatic if it is cyclic, planar, fully conjugated, and has $4n+2$ $\pi$ electrons (where $n = 0, 1, 2,\ldots$)</td></tr>
+</table>
+
+<!-- SECTION I -->
+<h2>8. Exam Tips</h2>
+
+<div class="exam-tip"><b>Paper 1 (Multiple Choice):</b> "Which of these is NOT evidence against the Kekulé structure?" — bond lengths (all equal), one 1,2-isomer, enthalpy of hydrogenation, and preference for substitution are ALL evidence against. Questions often test whether you know benzene decolourises bromine water (it does NOT — without a catalyst). Also: Hückel's rule — counting $\pi$ electrons correctly (double bonds = 2 each, anions add electrons, cations remove).</div>
+
+<div class="exam-tip"><b>Paper 2 — $S_EAr$ Mechanism (5–7 marks):</b> You must draw: (1) generation of the electrophile using the catalyst, (2) curly arrow from benzene $\pi$ system to $\ce{E+}$, (3) the Wheland intermediate with + charge delocalised (draw resonance structures or indicate with dashed circle/partial charges), (4) curly arrow from C–H bond → ring with base removing $\ce{H+}$, (5) regeneration of the catalyst. This is a high-mark question — be thorough.</div>
+
+<div class="exam-tip"><b>Multi-step synthesis (Paper 2):</b> If asked to synthesise a disubstituted benzene, the ORDER of reactions is critical because the first substituent directs the second. Activating o/p-directors ($\ce{–CH3}$, $\ce{–NH2}$, $\ce{–OH}$) must be introduced before deactivating m-directors ($\ce{–NO2}$, $\ce{–COOH}$). Explain your reasoning — "nitration first would give the meta isomer, but the target is para."</div>
+
 </body>
 </html>

@@ -3,483 +3,129 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lesson 4: Demand — Law, Curve, and Determinants — IB Economics SL</title>
+<title>Lesson 4 — IB Economics SL — Demand</title>
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']]}};</script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
-<style>
-  :root { --bg: #fdfdfc; --text: #1a1a1a; --accent: #2c5f2d; --subtle: #f0f4f0; --border: #d0d4d0; --code-bg: #f7f8f7; }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: Georgia, "Times New Roman", serif; font-size: 17px; line-height: 1.7; color: var(--text); background: var(--bg); max-width: 800px; margin: 0 auto; padding: 2rem 1.5rem; }
-  nav { margin-bottom: 1.5rem; font-size: 0.9rem; }
-  nav a { color: var(--accent); text-decoration: none; margin-right: 1.2rem; }
-  nav a:hover { text-decoration: underline; }
-  h1 { font-size: 2rem; margin-bottom: 0.25rem; border-bottom: 3px solid var(--accent); padding-bottom: 0.4rem; }
-  h2 { font-size: 1.35rem; margin: 2rem 0 0.75rem; color: var(--accent); }
-  h3 { font-size: 1.1rem; margin: 1.25rem 0 0.5rem; }
-  p { margin-bottom: 1rem; }
-  ul, ol { margin: 0.5rem 0 1rem 1.5rem; }
-  li { margin-bottom: 0.4rem; }
-  blockquote { border-left: 4px solid var(--accent); margin: 1rem 0; padding: 0.5rem 1rem; background: var(--subtle); font-style: italic; }
-  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.95rem; }
-  th, td { border: 1px solid var(--border); padding: 0.5rem 0.75rem; text-align: left; }
-  th { background: var(--subtle); font-weight: bold; }
-  code { background: var(--code-bg); padding: 0.1rem 0.35rem; border-radius: 3px; font-size: 0.9em; }
-  hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
-  strong { color: #1a1a1a; }
-  .tip { background: #f9faf7; border: 1px solid var(--border); border-left: 5px solid var(--accent); padding: 0.75rem 1rem; margin: 1rem 0; border-radius: 4px; }
-  .tip::before { content: "💡 IB Exam Tip: "; font-weight: bold; }
-  .problem { font-weight: bold; }
-  .answer-head { font-weight: bold; color: var(--accent); margin-top: 1rem; }
-  footer { margin-top: 2.5rem; font-size: 0.85rem; color: #888; border-top: 1px solid var(--border); padding-top: 1rem; }
-  @media print { body { font-size: 12pt; padding: 0; max-width: none; } nav, footer { display: none; } h1 { border-bottom: 2px solid #000; } h2 { color: #000; } .tip { border-left: 3px solid #000; background: none; } }
-</style>
+<style>:root{--bg:#fdfcf9;--text:#1a1a1a;--accent:#2c6b4f;--border:#d4c5a9}*{margin:0;padding:0;box-sizing:border-box}body{font-family:Georgia,'Times New Roman',serif;font-size:17px;line-height:1.7;color:var(--text);background:var(--bg);max-width:820px;margin:0 auto;padding:2rem 1.5rem}h1{font-size:1.8rem;color:var(--accent);border-bottom:3px solid var(--accent);padding-bottom:.5rem;margin-bottom:1rem}h2{font-size:1.35rem;color:var(--accent);margin:2rem 0 .8rem;border-bottom:1px solid var(--border);padding-bottom:.3rem}h3{font-size:1.15rem;color:var(--accent);margin:1.5rem 0 .5rem}p{margin-bottom:.8rem}.objectives{background:#f0f4ff;border-left:4px solid var(--accent);padding:1rem 1.2rem;margin:1rem 0;border-radius:0 8px 8px 0}.objectives h3{margin-top:0}.check-in{background:#fff8e1;border:1px solid #ffc107;padding:.8rem 1rem;margin:1rem 0;border-radius:8px}.check-in p{margin-bottom:.3rem}.answer-toggle{display:inline-block;padding:.2rem .8rem;border-radius:16px;cursor:pointer;font-size:.8rem;font-weight:600;background:#e8f5e9;color:#2e7d32;border:1px solid #2e7d32;user-select:none;margin-top:.3rem}.answer-content{display:none;background:#f1f8e9;padding:.6rem 1rem;border-radius:8px;margin-top:.5rem}.answer-content.open{display:block}.example{background:white;border:1px solid var(--border);border-radius:12px;padding:1.2rem;margin:1rem 0}.misconception{background:#fff3e0;border-left:4px solid #e65100;padding:1rem 1.2rem;margin:1.5rem 0;border-radius:0 8px 8px 0}.misconception h3{color:#e65100}.exam-tip{background:#e8f5e9;border-left:4px solid #2e7d32;padding:.8rem 1rem;margin:1rem 0;border-radius:0 8px 8px 0}table{width:100%;border-collapse:collapse;margin:1rem 0}th{background:var(--accent);color:white;padding:.5rem .8rem;text-align:left}td{padding:.5rem .8rem;border-bottom:1px solid var(--border)}tr:nth-child(even) td{background:#f8f8f6}.diagram{text-align:center;margin:1.5rem 0}.diagram svg{max-width:100%}.diagram .caption{font-size:.9rem;color:#666;margin-top:.3rem;font-style:italic}pre.ascii-art{font-family:'Courier New',monospace;font-size:.75rem;line-height:1.2;background:#f5f5f5;padding:.8rem;border-radius:8px;overflow-x:auto}.practice-toggle{display:block;width:100%;padding:.8rem;background:var(--accent);color:white;border:none;border-radius:8px;cursor:pointer;font-size:1rem;font-weight:600;margin:1.5rem 0}.practice-answers{display:none}.practice-answers.open{display:block}</style>
 </head>
 <body>
-<nav>
-  <a href="lesson_03_economic_models_methodology.html">← Previous Lesson</a> &nbsp;|&nbsp;
-  <a href="#">Index</a> &nbsp;|&nbsp;
-  <a href="lesson_05_supply.html">Next Lesson →</a>
-</nav>
 <h1>Lesson 4: Demand — Law, Curve, and Determinants</h1>
+<p><strong>Syllabus reference:</strong> Unit 2.1–2.2 — Demand in competitive markets</p>
 
-<h2> What You'll Learn</h2>
+<div class="objectives"><h3>Learning Objectives</h3><p>By the end of this lesson, you will be able to:</p><ul><li><strong>Define</strong> demand and state the law of demand</li><li><strong>Distinguish</strong> between a movement along the demand curve and a shift of the demand curve</li><li><strong>Identify</strong> the non-price determinants of demand using the TRIBE framework</li><li><strong>Explain</strong> the difference between normal goods and inferior goods</li><li><strong>Explain</strong> the difference between substitute goods and complementary goods</li><li><strong>Draw</strong> and interpret demand curves and shifts in demand</li></ul></div>
 
-<p>By the end of this lesson, you will be able to:</p>
-<ul>
-<li>Define demand and state the law of demand</li>
-<li>Construct and interpret demand schedules and curves</li>
-<li>Distinguish between individual and market demand</li>
-<li>Explain three reasons why demand curves slope downward</li>
-<li>Differentiate between a movement along the curve and a shift of the curve</li>
-<li>Identify and apply the non-price determinants of demand (TRIBE)</li>
-<li>Distinguish normal goods from inferior goods, and substitutes from complements</li>
-</ul>
+<h2>1. Prior Knowledge Check</h2>
+<div class="check-in"><p><strong>Question 1:</strong> In Lesson 3, we discussed the ceteris paribus assumption. What does this Latin phrase mean, and why is it important?</p><span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'Hide Answer':'Show Answer'">Show Answer</span><div class="answer-content"><p><strong>Answer:</strong> Ceteris paribus means "all other things being equal." It is the assumption that we hold all other variables constant while examining the effect of one variable. It is essential because in the real world many things change at once; ceteris paribus allows us to isolate cause-and-effect relationships.</p></div></div>
+<div class="check-in"><p><strong>Question 2:</strong> Think about a product you buy regularly — perhaps coffee, or bus tickets, or streaming subscriptions. If the price of that product doubled, would you buy the same amount? Less? Why?</p><span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'Hide Answer':'Show Answer'">Show Answer</span><div class="answer-content"><p><strong>Answer:</strong> Most people would buy less when the price rises. At a higher price, the product takes up more of your budget, so you might cut back. You might also switch to a cheaper alternative. This intuitive response — buy less when price rises — is the law of demand.</p></div></div>
 
-<hr>
+<h2>2. What Demand Means in Economics</h2>
+<p><strong>Demand</strong> is the quantity of a good or service that consumers are willing and able to buy at each possible price over a given period of time, <em>ceteris paribus</em>. Every word in this definition matters:</p>
+<ul><li><strong>"Willing and able"</strong> — wanting something is not enough. You must also have the money to pay for it. A student might want a Ferrari, but that desire is not "demand" in the economic sense unless the student has the £200,000 to buy one.</li><li><strong>"At each possible price"</strong> — demand is not a single number. It is a relationship between price and quantity across a range of prices.</li><li><strong>"Over a given period of time"</strong> — demand is a flow. It makes no sense to say "demand for coffee is 500 cups" without specifying whether that is per day, per week, or per year.</li><li><strong>"Ceteris paribus"</strong> — the relationship between price and quantity demanded assumes that all other factors affecting demand (income, tastes, prices of other goods) are held constant.</li></ul>
+<p>The <strong>law of demand</strong> states that, ceteris paribus, as the price of a good rises, the quantity demanded of that good falls. As the price falls, the quantity demanded rises. Price and quantity demanded are inversely related.</p>
+<div class="check-in"><p><strong>Check-in:</strong> If a cinema lowers ticket prices from £12 to £8 and the number of tickets sold rises from 200 to 350 per day, has demand increased? Use precise economic language.</p><span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'Hide Answer':'Show Answer'">Show Answer</span><div class="answer-content"><p><strong>Answer:</strong> No — demand has not increased. The <em>quantity demanded</em> has increased (from 200 to 350) in response to a fall in price. This is a movement along the existing demand curve, not an increase in demand (which would require the entire curve to shift right). This distinction between "demand" and "quantity demanded" is one of the most mark-sensitive points in IB Economics.</p></div></div>
 
-<h2> 1. Definition of Demand and the Law of Demand</h2>
+<h2>3. The Demand Curve</h2>
+<p>A <strong>demand schedule</strong> is a table showing the quantity demanded at each price. A <strong>demand curve</strong> is the graphical representation of the demand schedule, with price on the vertical axis and quantity demanded on the horizontal axis.</p>
+<p>The demand curve slopes downward for three reasons:</p>
+<ol><li><strong>The income effect:</strong> When the price of a good falls, the purchasing power of your income increases — you can buy more of the good (and more of other goods) with the same money.</li><li><strong>The substitution effect:</strong> When the price of a good falls, it becomes relatively cheaper compared to substitute goods. Consumers switch from the now-relatively-expensive substitutes toward the cheaper good.</li><li><strong>Diminishing marginal utility:</strong> As you consume more units of a good, each additional unit provides less additional satisfaction. You are only willing to buy more units if the price is lower to compensate for the lower satisfaction per unit.</li></ol>
+<div class="diagram"><pre class="ascii-art">Price (£)
+  ▲
+12│●
+  │  ╲
+ 8│    ●╲
+  │        ╲
+ 4│          ●╲
+  │              ╲
+ 0│────────────────●──► Quantity (units per day)
+  0   100  200  300  400
 
-<h3>What Is Demand?</h3>
+  The demand curve: as price falls, quantity demanded rises.
+  Points A (P=12, Q=100), B (P=8, Q=200), C (P=4, Q=300).
+</pre><p class="caption">Figure 1: A demand curve. The downward slope reflects the law of demand. Each point represents a different price-quantity combination.</p></div>
 
-<p><strong>Demand</strong> in economics is not just wanting something — it is <strong>the quantity of a good or service that consumers are willing and able to purchase at each possible price, over a given time period, ceteris paribus.</strong></p>
+<h2>4. Movement Along vs. Shift of the Demand Curve</h2>
+<p>This distinction is fundamental. Getting it wrong is one of the most common errors on IB exams.</p>
+<p>A <strong>movement along</strong> the demand curve occurs when the <em>price of the good itself</em> changes and the quantity demanded adjusts in response. The demand curve does not move; we simply slide along it to a new point. If price falls, we move down and to the right (higher quantity demanded). If price rises, we move up and to the left (lower quantity demanded).</p>
+<p>A <strong>shift</strong> of the demand curve occurs when a <em>non-price determinant</em> of demand changes. The entire curve moves — to the right (increase in demand — at every price, consumers want to buy more) or to the left (decrease in demand — at every price, consumers want to buy less).</p>
+<div class="check-in"><p><strong>Check-in:</strong> A new health study reports that eating blueberries significantly reduces the risk of heart disease. The price of blueberries does not change. Does this cause a movement along the demand curve or a shift? In which direction?</p><span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'Hide Answer':'Show Answer'">Show Answer</span><div class="answer-content"><p><strong>Answer:</strong> A shift of the demand curve to the right — an increase in demand. The health study changes consumers' tastes and preferences (a non-price determinant). At every given price, consumers now want to buy more blueberries than before. The price has not changed; what has changed is the desire to buy at each price.</p></div></div>
 
-<p>The phrase "willing <em>and able</em>" is crucial:</p>
-<ul>
-<li><strong>Willing</strong>: The consumer desires the good</li>
-<li><strong>Able</strong>: The consumer has the purchasing power (income) to buy it</li>
-</ul>
+<h2>5. Non-Price Determinants of Demand — TRIBE</h2>
+<p>Five categories of factors can shift the entire demand curve. We use the mnemonic <strong>TRIBE</strong>:</p>
+<p><strong>T — Tastes and preferences.</strong> If a product becomes more popular (through advertising, trends, health recommendations), demand increases (shifts right). If it falls out of favour, demand decreases (shifts left).</p>
+<p><strong>R — Related goods' prices.</strong> This has two sub-categories:</p>
+<ul><li><strong>Substitute goods:</strong> goods that can be used in place of each other. Tea and coffee are substitutes. If the price of coffee rises, some coffee drinkers switch to tea, increasing the demand for tea (tea demand shifts right). The price of one good and the demand for its substitute move in the <em>same</em> direction.</li>
+<li><strong>Complementary goods:</strong> goods that are used together. Printers and ink cartridges are complements. If the price of printers falls, more people buy printers, and they also need ink cartridges — the demand for ink cartridges increases (shifts right). The price of one good and the demand for its complement move in <em>opposite</em> directions.</li></ul>
+<p><strong>I — Income.</strong> Changes in consumers' incomes shift demand, but the direction depends on the type of good:</p>
+<ul><li><strong>Normal goods:</strong> demand increases when income rises (most goods — restaurant meals, clothing, electronics). Demand shifts right when incomes rise.</li><li><strong>Inferior goods:</strong> demand decreases when income rises, because consumers switch to higher-quality alternatives. Examples: supermarket own-brand beans, bus travel (when people can afford cars), instant noodles. Demand shifts left when incomes rise.</li></ul>
+<p><strong>B — Buyers (number of).</strong> More consumers in a market means more demand at every price. Population growth, immigration, or a new export market opening up all increase the number of buyers and shift demand right.</p>
+<p><strong>E — Expectations.</strong> If consumers expect prices to rise in the future, they may buy more now, shifting current demand right. If they expect the economy to enter a recession and their incomes to fall, they may reduce spending now, shifting demand left.</p>
+<div class="check-in"><p><strong>Check-in:</strong> The price of petrol rises sharply. What happens to the demand for large fuel-inefficient cars? What happens to the demand for electric cars? Classify each relationship (substitute or complement) and state the direction of the demand shift.</p><span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'Hide Answer':'Show Answer'">Show Answer</span><div class="answer-content"><p><strong>Answer:</strong> Petrol and large fuel-inefficient cars are <strong>complements</strong> — they are used together. When petrol becomes more expensive, driving a fuel-inefficient car becomes more costly, so demand for these cars <strong>decreases</strong> (shifts left). Petrol prices and demand for electric cars: electric cars are <strong>substitutes</strong> for petrol-powered cars. When petrol becomes more expensive, some consumers switch to electric cars, so demand for electric cars <strong>increases</strong> (shifts right).</p></div></div>
 
-<p>A billionaire may <em>want</em> a private island but not be <em>willing</em> to pay the price, or a student may be willing but not able. Neither counts as demand.</p>
+<h2>6. Worked Examples</h2>
+<div class="example"><h3>Worked Example 1: Movement vs Shift</h3><p><strong>Problem:</strong> The price of cinema tickets falls from £12 to £8. At the same time, a highly anticipated film is released, attracting audiences who had not been going to the cinema. Analyse the effects on the market for cinema tickets, distinguishing between movements along the demand curve and shifts.</p><p><strong>Step 1:</strong> The fall in price from £12 to £8 causes a <strong>movement along</strong> the demand curve — the quantity demanded increases as we slide down the existing curve.</p><p><strong>Step 2:</strong> The release of the anticipated film changes tastes and preferences (T in TRIBE). This causes the demand curve to <strong>shift to the right</strong> — at every price, more people want cinema tickets.</p><p><strong>Step 3:</strong> The combined effect: we observe a large increase in ticket sales. Part of this increase is a movement along the old demand curve (due to the price fall) and part is due to the curve shifting right (due to the film release).</p><p><strong>⚠️ Common Wrong Approach:</strong> Attributing the entire change in quantity to either the price change alone or the taste change alone. In the real world, both can happen simultaneously. The IB examiner wants you to distinguish between the two mechanisms even when they occur together.</p></div>
+<div class="example"><h3>Worked Example 2: Normal vs Inferior Goods</h3><p><strong>Problem:</strong> During an economic boom, average household incomes rise by 15%. Sales of supermarket own-brand baked beans fall by 8%, while sales of branded organic beans rise by 22%. Classify each type of bean and explain the demand shifts.</p><p><strong>Step 1:</strong> Own-brand beans: When incomes rose, demand fell. This means own-brand beans are an <strong>inferior good</strong>. As households become richer, they switch away from the cheapest option. The demand curve for own-brand beans shifted left.</p><p><strong>Step 2:</strong> Organic beans: When incomes rose, demand rose sharply. Organic beans are a <strong>normal good</strong> (in fact, with a large positive response to income, they may be a <strong>luxury good</strong> — a normal good where the percentage increase in demand exceeds the percentage increase in income). The demand curve for organic beans shifted right.</p><p><strong>⚠️ Common Wrong Approach:</strong> Assuming that all goods are normal goods and that rising incomes increase demand for everything. The concept of inferior goods — goods you buy <em>less</em> of as you get richer — is a standard exam trap.</p></div>
+<div class="example"><h3>Worked Example 3: The Expectation Trap</h3><p><strong>Problem:</strong> The government announces that from next month, a new tax will raise the price of cigarettes by £2 per pack. Before the tax takes effect, what happens to the current demand for cigarettes? Explain using the TRIBE framework. <em>(Exam trap: students confuse expectations with the actual price change.)</em></p><p><strong>Step 1:</strong> The announcement changes consumers' <strong>expectations</strong> (E in TRIBE). Consumers expect the price of cigarettes to rise in the near future.</p><p><strong>Step 2:</strong> In response to the expected future price increase, some smokers stock up now — they buy more cigarettes before the price goes up. Current demand shifts <strong>right</strong>.</p><p><strong>Step 3:</strong> After the tax takes effect and the price actually rises, there will be a <strong>movement along</strong> the new demand curve (quantity demanded falls because price is higher). But the demand curve itself may also shift left over time as some smokers quit in response to the permanently higher price.</p><p><strong>⚠️ Common Wrong Approach (The Exam Trap):</strong> Students often say "the price is going up, so demand will fall" — correctly predicting the long-run outcome but missing the short-run spike in demand caused by expectations. The announcement of a future price increase can temporarily <em>increase</em> current demand, even though the eventual effect of the higher price is a lower quantity demanded.</p></div>
 
-<h3>The Law of Demand</h3>
+<h2>7. Diagrams</h2>
+<div class="diagram"><pre class="ascii-art">
+Movement ALONG the demand curve vs. SHIFT of the demand curve
 
-<blockquote><strong>As the price of a good rises, the quantity demanded falls; as the price falls, the quantity demanded rises — ceteris paribus.</strong></blockquote>
+Price (£)                          Price (£)
+  ▲                                  ▲
+  │    A                             │         D₂ (increased demand)
+10│●╲                               │       ╱
+  │    ╲                             │     ╱
+  │      ╲  movement                 │   ╱ D₁
+ 6│        ●B  along                 │ ╱
+  │          ╲                       │╱
+  │            ╲                     ●───────────►
+  └────────────────► Q               └───────────► Q
+        D₁                                  Q
+  Change in PRICE → movement         Change in non-price
+  along the curve                    determinant → curve shifts
 
-<p>There is an <strong>inverse (negative) relationship</strong> between price and quantity demanded. This is one of the most robust empirical regularities in all of economics.</p>
+LEFT: Price falls £10→£6, Qd rises (movement along D₁)
+RIGHT: A change in tastes/income/etc. shifts entire curve
+       from D₁ to D₂: at EVERY price, more is demanded
+</pre><p class="caption">Figure 2: Movement along vs. shift. Left: only the good's own price changes. Right: a non-price determinant changes, shifting the whole curve.</p></div>
 
-<hr>
+<div class="misconception"><h3>⚠️ Common Mistakes to Avoid</h3><ol>
+<li><strong>Mistake:</strong> Using "demand" and "quantity demanded" interchangeably. <strong>Why it's wrong:</strong> "Demand" refers to the entire demand curve — the relationship between price and quantity. "Quantity demanded" refers to a specific point on that curve at a specific price. <strong>Correct approach:</strong> If price changes, say "quantity demanded changes." If a non-price determinant changes, say "demand changes" (the curve shifts). IB mark schemes penalise this confusion.</li>
+<li><strong>Mistake:</strong> Thinking that all goods are normal goods. <strong>Why it's wrong:</strong> Inferior goods exist, and the IB tests them regularly. Bus travel, cheap groceries, and second-hand goods are often inferior. <strong>Correct approach:</strong> When analysing the effect of an income change on demand, always ask: "Is this good normal or inferior?"</li>
+<li><strong>Mistake:</strong> Confusing substitutes and complements when analysing cross-price effects. <strong>Why it's wrong:</strong> The direction of the demand shift is opposite. If the price of coffee rises, tea demand goes UP (substitute) but cream demand goes DOWN (complement). <strong>Correct approach:</strong> Ask: "Do consumers use these goods together (complements) or instead of each other (substitutes)?"</li>
+<li><strong>Mistake:</strong> Treating a shift and a movement as the same thing when both happen. <strong>Why it's wrong:</strong> In complex real-world scenarios, a price change (movement) and a preference change (shift) can occur simultaneously. <strong>Correct approach:</strong> Analyse each effect separately, then combine them. The IB rewards this layered analysis.</li></ol></div>
 
-<h2> 2. Demand Schedule and Demand Curve</h2>
+<h2>8. End-of-Lesson Practice</h2>
+<p><strong>Question 1.</strong> [Paper 1, MC] Which of the following would cause a rightward shift of the demand curve for cinema tickets?</p><p>A. A decrease in the price of cinema tickets.<br>B. An increase in the price of streaming services, a substitute.<br>C. A decrease in consumers' incomes (cinema is a normal good).<br>D. An increase in the number of cinema screens, reducing queues.</p>
+<p><strong>Question 2.</strong> [Paper 1, MC] Bus travel in a city is an inferior good. If average incomes in the city rise by 10%, what happens to the demand for bus travel?</p><p>A. It increases — the demand curve shifts right.<br>B. It decreases — the demand curve shifts left.<br>C. It increases — there is a movement along the demand curve.<br>D. It does not change because bus travel is a necessity.</p>
+<p><strong>Question 3.</strong> [Paper 2] Distinguish between a movement along the demand curve and a shift of the demand curve. Provide one cause for each, using a specific good as an example. [4 marks]</p>
+<p><strong>Question 4.</strong> [Paper 2] Using the TRIBE framework, explain how each of the following would affect the demand for new cars: (a) A rise in the price of train tickets. (b) An increase in consumer confidence about future economic conditions. (c) A fall in the price of petrol. [6 marks]</p>
+<p><strong>Question 5.</strong> [Paper 2, Exam Style] In 2025, the government of a country simultaneously reduced taxes on electric vehicles (lowering their price by 15%) and launched a major advertising campaign promoting the environmental benefits of electric cars. (a) Using a demand diagram, distinguish between the effect of the price reduction and the effect of the advertising campaign on the market for electric vehicles. [4 marks] (b) Explain why the combined effect on the quantity of electric vehicles sold is larger than either effect alone. [2 marks]</p>
 
-<h3>Demand Schedule</h3>
+<button class="practice-toggle" onclick="var a=this.nextElementSibling;a.classList.toggle('open');this.textContent=a.classList.contains('open')?'▴ Hide Answers':'▸ Show Answers'">▸ Show Answers</button>
+<div class="practice-answers">
+<p><strong>Answer 1:</strong> B. Streaming services are a substitute for cinema. If the price of streaming rises, some consumers switch to cinema, increasing demand — the demand curve for cinema tickets shifts right. A is a movement along the curve (own-price change). C would shift demand left (normal good, income falls). D affects supply, not demand.</p>
+<p><strong>Answer 2:</strong> B. For an inferior good, rising income causes demand to decrease — the demand curve shifts left. People switch from bus travel to cars or taxis as they become wealthier.</p>
+<p><strong>Answer 3:</strong> A movement along occurs when the price of the good itself changes. E.g., if cinema ticket prices fall from £12 to £8, the quantity demanded rises — we slide down the existing demand curve. A shift occurs when a non-price determinant changes. E.g., if a blockbuster film is released, tastes change and the entire demand curve shifts right. At every price, more tickets are demanded. [✓ 4 marks]</p>
+<p><strong>Answer 4:</strong> (a) Train tickets are a substitute for new cars. When train prices rise, some commuters switch to driving, increasing demand for cars — demand shifts right. (b) Higher consumer confidence (E — expectations) means consumers are more optimistic about future incomes and job security. They are more willing to make large purchases like cars. Demand shifts right. (c) Petrol and cars are complements. Cheaper petrol makes driving less expensive, so more people want cars — demand shifts right. [✓ 6 marks]</p>
+<p><strong>Answer 5:</strong> (a) The 15% price reduction causes a <strong>movement along</strong> the existing demand curve — quantity demanded increases as we move down the curve. The advertising campaign changes tastes/preferences, causing the demand curve to <strong>shift right</strong>. [Diagram: demand curve D₁, show movement from point A to B along D₁ (price effect), then show D₂ shifted right of D₁ (advertising effect).] [✓ 4 marks] (b) The price reduction increases quantity demanded by making EVs cheaper relative to petrol cars. The advertising campaign further increases quantity demanded by changing consumer preferences — even at unchanged prices, more people want EVs. The two effects are additive: the movement along the curve from lower price plus the shift from changed tastes both push quantity in the same direction — upward. [✓ 2 marks]</p></div>
 
-<p>A <strong>demand schedule</strong> is a table showing the quantity demanded at each price. Example: weekly demand for coffee in a university café:</p>
-
-<table>
-<tr><th>Price per cup (£)</th><th>Quantity demanded (cups/week)</th></tr>
-<tr><td>5.00</td><td>50</td></tr>
-<tr><td>4.00</td><td>100</td></tr>
-<tr><td>3.00</td><td>180</td></tr>
-<tr><td>2.00</td><td>300</td></tr>
-<tr><td>1.00</td><td>500</td></tr>
+<h2>9. Key Terms</h2>
+<table><tr><th>Term</th><th>Definition</th></tr>
+<tr><td>Demand</td><td>The quantity of a good that consumers are willing and able to buy at each possible price over a given time period, ceteris paribus</td></tr>
+<tr><td>Law of demand</td><td>As the price of a good rises, the quantity demanded falls; as price falls, quantity demanded rises — ceteris paribus</td></tr>
+<tr><td>Quantity demanded</td><td>The specific amount consumers are willing and able to buy at a particular price</td></tr>
+<tr><td>Demand curve</td><td>A graphical representation of the demand schedule, showing the relationship between price and quantity demanded</td></tr>
+<tr><td>Movement along the demand curve</td><td>A change in quantity demanded caused by a change in the good's own price</td></tr>
+<tr><td>Shift of the demand curve</td><td>A change in demand caused by a change in a non-price determinant; the entire curve moves left or right</td></tr>
+<tr><td>Normal good</td><td>A good for which demand increases when consumer income rises</td></tr>
+<tr><td>Inferior good</td><td>A good for which demand decreases when consumer income rises</td></tr>
+<tr><td>Substitute goods</td><td>Goods that can be used in place of each other; a rise in the price of one increases demand for the other</td></tr>
+<tr><td>Complementary goods</td><td>Goods that are used together; a rise in the price of one decreases demand for the other</td></tr>
 </table>
 
-<h3>Demand Curve</h3>
-
-<p>The <strong>demand curve</strong> is the graphical representation of the demand schedule. Price (P) is on the vertical axis; quantity demanded (Q) is on the horizontal axis. The curve slopes downward from left to right.</p>
-
-<h3>Individual Demand vs Market Demand</h3>
-
-<ul>
-<li><strong>Individual demand</strong>: The demand of a single consumer for a good</li>
-<li><strong>Market demand</strong>: The horizontal (quantity) summation of all individual demand curves in a market</li>
-</ul>
-
-<blockquote><strong>Example</strong>: If Alice demands 3 cups at £2 and Bob demands 5 cups at £2, market demand at £2 is 3 + 5 = 8 cups.</blockquote>
-
-<hr>
-
-<h2> 3. Why Do Demand Curves Slope Downward?</h2>
-
-<p>Three effects explain the inverse relationship between price and quantity demanded:</p>
-
-<h3>1. The Income Effect</h3>
-
-<p>When the price of a good falls, the consumer's <strong>real income</strong> (purchasing power) increases. They can buy more of <em>all</em> normal goods with the same money income, including the good whose price fell.</p>
-
-<blockquote><strong>Example</strong>: If the price of bread halves, a consumer with the same money income can now afford twice as much bread and has money left over for other goods. Some of that increased purchasing power is spent on buying more bread.</blockquote>
-
-<h3>2. The Substitution Effect</h3>
-
-<p>When the price of a good falls, it becomes relatively cheaper compared to its substitutes. Consumers switch (substitute) away from now-relatively-expensive alternatives toward the cheaper good.</p>
-
-<blockquote><strong>Example</strong>: If beef prices fall while chicken prices stay the same, consumers substitute beef for chicken. Quantity demanded of beef rises.</blockquote>
-
-<h3>3. Diminishing Marginal Utility</h3>
-
-<p>As a consumer consumes more units of a good, the additional satisfaction (<strong>marginal utility</strong>) from each extra unit falls. A consumer will only buy an additional unit if the price is lower — they value the first cup of coffee highly (willing to pay £4) but the fifth cup far less (willing to pay only £1). Lower prices are needed to induce purchases of additional units.</p>
-
-<hr>
-
-<h2> 4. Movement Along vs Shift of the Demand Curve</h2>
-
-<p>This distinction is <strong>critical</strong> for IB exams. Confusing the two is one of the most common mistakes.</p>
-
-<h3>Movement Along the Demand Curve</h3>
-
-<p>A <strong>change in the good's own price</strong> causes a movement <em>along</em> the existing demand curve.</p>
-
-<ul>
-<li><strong>Price rises</strong> → movement up and left along the curve (lower Qd) — called a <strong>contraction of demand</strong></li>
-<li><strong>Price falls</strong> → movement down and right along the curve (higher Qd) — called an <strong>expansion of demand</strong></li>
-</ul>
-
-<p>The demand curve itself does NOT shift. The relationship between price and quantity demanded is unchanged.</p>
-
-<h3>Shift of the Demand Curve</h3>
-
-<p>A <strong>change in any non-price determinant</strong> causes the <em>entire</em> demand curve to shift.</p>
-
-<ul>
-<li><strong>Increase in demand</strong> → curve shifts RIGHT (more demanded at every price)</li>
-<li><strong>Decrease in demand</strong> → curve shifts LEFT (less demanded at every price)</li>
-</ul>
-
-<h3>Memory Aid</h3>
-
-<table>
-<tr><th>Change</th><th>Curve Response</th><th>Terminology</th></tr>
-<tr><td>Own price changes</td><td>Movement ALONG the curve</td><td>Expansion (↓P) or Contraction (↑P) of demand</td></tr>
-<tr><td>Non-price determinant changes</td><td>SHIFT of the entire curve</td><td>Increase (right) or Decrease (left) in demand</td></tr>
-</table>
-
-<hr>
-
-<h2> 5. Non-Price Determinants of Demand — TRIBE</h2>
-
-<p>The factors that shift the demand curve can be remembered with the acronym <strong>TRIBE</strong>:</p>
-
-<h3>T — Tastes and Preferences</h3>
-
-<p>Changes in what consumers like, want, or find fashionable. Tastes can shift due to:</p>
-<ul>
-<li>Advertising and marketing</li>
-<li>Social trends and peer influence</li>
-<li>Health information (e.g., studies linking red meat to cancer reduce demand for beef)</li>
-<li>Seasonal factors</li>
-</ul>
-
-<blockquote><strong>Example</strong>: A celebrity endorsement of a sneaker brand shifts demand right.</blockquote>
-
-<h3>R — Related Goods Prices (Substitutes and Complements)</h3>
-
-<p><strong>Substitutes</strong>: Goods that can replace each other in consumption. If the price of good B rises, demand for good A increases (shift right) as consumers switch to A.</p>
-
-<ul>
-<li>Examples: Tea and coffee; butter and margarine; bus travel and train travel</li>
-<li><strong>Cross-price elasticity is positive</strong> for substitutes.</li>
-</ul>
-
-<p><strong>Complements</strong>: Goods used together. If the price of good B rises, demand for good A falls (shift left) because fewer people buy B and therefore need less A.</p>
-
-<ul>
-<li>Examples: Printers and ink cartridges; cars and petrol; smartphones and apps</li>
-<li><strong>Cross-price elasticity is negative</strong> for complements.</li>
-</ul>
-
-<h3>I — Income (Normal vs Inferior Goods)</h3>
-
-<p><strong>Normal goods</strong>: Demand rises when income rises (and falls when income falls). Most goods are normal.</p>
-<ul>
-<li><strong>Necessities</strong>: Normal goods where demand rises less than proportionally with income (e.g., basic food, water, electricity)</li>
-<li><strong>Luxuries</strong>: Normal goods where demand rises more than proportionally with income (e.g., luxury cars, international travel, fine dining)</li>
-</ul>
-
-<p><strong>Inferior goods</strong>: Demand falls when income rises (and rises when income falls). Consumers buy these only because they cannot afford better alternatives.</p>
-<ul>
-<li>Examples: Instant noodles, second-hand clothing, bus travel (vs taxi/private car), supermarket own-brand basics</li>
-</ul>
-
-<blockquote><strong>Key distinction</strong>: A good is "inferior" economically, not in quality. As incomes rise, consumers switch <em>away</em> from inferior goods to superior substitutes.</blockquote>
-
-<h3>B — Buyers (Number of Consumers)</h3>
-
-<p>More buyers in a market → market demand increases (shifts right). Fewer buyers → market demand decreases (shifts left).</p>
-
-<ul>
-<li>Population growth increases demand for housing, food, energy</li>
-<li>Ageing population increases demand for healthcare, decreases demand for education</li>
-<li>Immigration expands the number of consumers in a country</li>
-</ul>
-
-<h3>E — Expectations</h3>
-
-<p>What consumers expect about future prices, income, or availability affects current demand.</p>
-
-<ul>
-<li><strong>Future price expected to rise</strong> → current demand increases (buy now before it gets expensive)</li>
-<li><strong>Future price expected to fall</strong> → current demand decreases (wait for the lower price)</li>
-<li><strong>Future income expected to fall</strong> (recession fears) → current demand for durables and luxuries may decrease (precautionary saving)</li>
-</ul>
-
-<blockquote><strong>Example</strong>: If consumers expect a housing market crash, demand for houses today falls as buyers wait for lower prices.</blockquote>
-
-<hr>
-
-<h2> 6. Normal vs Inferior Goods — Detailed Comparison</h2>
-
-<table>
-<tr><th>Feature</th><th>Normal Good</th><th>Inferior Good</th></tr>
-<tr><td><strong>Income ↑</strong></td><td>Demand ↑ (curve shifts right)</td><td>Demand ↓ (curve shifts left)</td></tr>
-<tr><td><strong>Income ↓</strong></td><td>Demand ↓ (curve shifts left)</td><td>Demand ↑ (curve shifts right)</td></tr>
-<tr><td><strong>Income elasticity</strong></td><td>Positive (YED > 0)</td><td>Negative (YED < 0)</td></tr>
-<tr><td><strong>Examples</strong></td><td>Organic food, new cars, restaurant meals</td><td>Instant noodles, bus travel, second-hand goods</td></tr>
-<tr><td><strong>Why?</strong></td><td>Consumers buy more of what they value when they can afford it</td><td>Consumers switch to better alternatives when they can afford them</td></tr>
-</table>
-
-<hr>
-
-<h2> 7. Substitutes vs Complements — Detailed Comparison</h2>
-
-<table>
-<tr><th>Feature</th><th>Substitutes</th><th>Complements</th></tr>
-<tr><td><strong>Relationship</strong></td><td>Goods used <em>instead of</em> each other</td><td>Goods used <em>together with</em> each other</td></tr>
-<tr><td><strong>Price of B ↑</strong></td><td>Demand for A ↑ (shifts right)</td><td>Demand for A ↓ (shifts left)</td></tr>
-<tr><td><strong>Price of B ↓</strong></td><td>Demand for A ↓ (shifts left)</td><td>Demand for A ↑ (shifts right)</td></tr>
-<tr><td><strong>Cross-price elasticity</strong></td><td>Positive (XED > 0)</td><td>Negative (XED < 0)</td></tr>
-<tr><td><strong>Examples</strong></td><td>Coca-Cola and Pepsi; Kindle and physical books</td><td>Coffee and sugar; games console and games</td></tr>
-</table>
-
-<hr>
-
-<h2> IB Exam Tip</h2>
-
-<p>When asked to analyse a change in a market, follow this sequence:</p>
-<ol>
-<li><strong>Identify</strong> whether it's a change in price (→ movement along) or a non-price determinant (→ shift)</li>
-<li><strong>Name</strong> the specific determinant (use the correct terminology: "tastes," "income," "number of buyers" — not vague phrases)</li>
-<li><strong>State direction</strong>: "increase in demand" (right) or "decrease in demand" (left)</li>
-<li><strong>Explain</strong> the mechanism: <em>why</em> does the shift occur?</li>
-<li><strong>Diagram</strong>: Draw clearly with labelled axes, initial and new curves (D₁ → D₂), and arrows</li>
-</ol>
-
-<p>Never say "demand increases" when you mean "quantity demanded increases" — the IB rewards precise terminology.</p>
-
-<hr>
-
-<h2> Practice Problems</h2>
-
-<h3>Problem 1: Movement vs Shift</h3>
-
-<p>For each scenario, state whether it causes a movement along the demand curve or a shift, and in which direction.</p>
-
-<p>(a) The price of cinema tickets falls.</p>
-<p>(b) A new study shows that watching films at the cinema improves mental health.</p>
-<p>(c) Netflix raises its subscription price.</p>
-<p>(d) Consumer incomes rise and cinema visits are a normal good.</p>
-<p>(e) The population of young people (who go to cinemas most) decreases.</p>
-
-<h3>Problem 2: Normal vs Inferior Goods</h3>
-
-<p>Classify each good as normal or inferior for a typical consumer. Explain.</p>
-<p>(a) A used 10-year-old car</p>
-<p>(b) Fresh organic vegetables</p>
-<p>(c) Cheap fast food</p>
-<p>(d) Private healthcare</p>
-<p>(e) Public bus transport</p>
-
-<h3>Problem 3: Substitutes vs Complements</h3>
-
-<p>For each pair, state whether the goods are substitutes or complements. Then state what happens to demand for Good A when the price of Good B rises.</p>
-<p>(a) A = butter, B = margarine</p>
-<p>(b) A = petrol, B = cars</p>
-<p>(c) A = train tickets, B = domestic flights</p>
-<p>(d) A = tennis rackets, B = tennis balls</p>
-
-<h3>Problem 4: Demand Curve Drawing</h3>
-
-<p>The market for electric vehicles (EVs) has the following demand schedule:</p>
-
-<table>
-<tr><th>Price ($000s)</th><th>Qd (000s/year)</th></tr>
-<tr><td>60</td><td>100</td></tr>
-<tr><td>50</td><td>200</td></tr>
-<tr><td>40</td><td>350</td></tr>
-<tr><td>30</td><td>550</td></tr>
-<tr><td>20</td><td>800</td></tr>
-</table>
-
-<p>(a) Describe the relationship between price and quantity demanded.</p>
-<p>(b) The government introduces a $5,000 subsidy for EV buyers. The new Qd at each price is: 60→180, 50→320, 40→500, 30→720, 20→1000. Has demand changed or has quantity demanded changed? Explain.</p>
-<p>(c) If instead the price of EVs fell from $50,000 to $40,000, has demand changed or quantity demanded changed?</p>
-
-<h3>Problem 5: Applying TRIBE</h3>
-
-<p>For each scenario, identify which determinant of demand (TRIBE) is at work and state the direction of the shift:</p>
-<p>(a) A celebrity chef promotes plant-based burgers. (Market: plant-based burgers)</p>
-<p>(b) The price of printers falls by 30%. (Market: printer ink cartridges)</p>
-<p>(c) A recession reduces average household incomes. (Market: luxury handbags)</p>
-<p>(d) The number of university students in the city doubles. (Market: rental apartments near campus)</p>
-<p>(e) Consumers expect petrol prices to surge next month. (Market: petrol today)</p>
-
-<h3>Problem 6: IB-Style (Challenging)</h3>
-
-<p>The market for coffee has an initial demand given by: Qd = 500 − 20P (where P is in £ and Qd is in thousands of cups per day).</p>
-
-<p>(a) Calculate Qd at P = £3, £5, £7, and £10. Plot the demand curve (sketch).</p>
-
-<p>(b) Consumer incomes rise by 10%, and coffee is a normal good. The new demand is Qd = 600 − 20P. Calculate the increase in Qd at P = £5 and explain how this illustrates a shift vs a movement.</p>
-
-<p>(c) The price of tea (a substitute) rises from £2 to £4. The demand for coffee becomes Qd = 580 − 20P. Compare the effects of the income change (part b) and the tea price change (part c) at P = £5. Which has the larger effect on coffee demand?</p>
-
-<p>(d) If the price of coffee itself rises from £5 to £7, use the ORIGINAL demand function to calculate the change in Qd. Is this a movement or a shift? Explain why the distinction matters for a café owner making pricing decisions.</p>
-
-<hr>
-
-<h2> Answers</h2>
-
-<h3>Answer 1: Movement vs Shift</h3>
-
-<p>(a) <strong>Movement along</strong> — price of cinema tickets (own price) falls → <strong>expansion of demand</strong> (movement down and right along the curve).</p>
-
-<p>(b) <strong>Shift right</strong> — tastes/preferences change favourably (T in TRIBE) → more cinema visits demanded at every price.</p>
-
-<p>(c) <strong>Shift</strong> — Netflix is a <em>substitute</em> for cinema. Netflix price rises → substitutes become more expensive → demand for cinema shifts <strong>right</strong> (R in TRIBE).</p>
-
-<p>(d) <strong>Shift right or left</strong> — depends on whether cinema is a normal or inferior good. For most consumers, cinema is normal → income rises → demand shifts <strong>right</strong> (I in TRIBE).</p>
-
-<p>(e) <strong>Shift left</strong> — number of buyers decreases (B in TRIBE) → market demand shifts left at every price.</p>
-
-<h3>Answer 2: Normal vs Inferior Goods</h3>
-
-<p>(a) <strong>Used 10-year-old car</strong>: Typically <strong>inferior</strong>. As income rises, consumers switch to newer or new cars.</p>
-
-<p>(b) <strong>Fresh organic vegetables</strong>: <strong>Normal</strong> (likely a luxury). As income rises, consumers buy more and upgrade from conventional to organic.</p>
-
-<p>(c) <strong>Cheap fast food</strong>: <strong>Inferior</strong>. As income rises, consumers switch to higher-quality restaurants or home-cooked meals with better ingredients.</p>
-
-<p>(d) <strong>Private healthcare</strong>: <strong>Normal</strong> (luxury). As income rises, consumers may supplement public healthcare or upgrade from public to private.</p>
-
-<p>(e) <strong>Public bus transport</strong>: <strong>Inferior</strong> for many. As income rises, consumers switch to taxis, ride-sharing, or private cars. (Note: in cities with excellent bus systems, this may not hold — context matters.)</p>
-
-<h3>Answer 3: Substitutes vs Complements</h3>
-
-<p>(a) Butter and margarine: <strong>Substitutes</strong>. Price of margarine (B) rises → demand for butter (A) <strong>shifts right</strong> (increases).</p>
-
-<p>(b) Petrol and cars: <strong>Complements</strong>. Price of cars (B) rises → fewer cars bought → less petrol needed → demand for petrol (A) <strong>shifts left</strong> (decreases).</p>
-
-<p>(c) Train tickets and domestic flights: <strong>Substitutes</strong>. Price of flights (B) rises → more people take trains → demand for train tickets (A) <strong>shifts right</strong> (increases).</p>
-
-<p>(d) Tennis rackets and tennis balls: <strong>Complements</strong>. Price of rackets (B) rises → fewer rackets sold → fewer people playing tennis → demand for balls (A) <strong>shifts left</strong> (decreases).</p>
-
-<h3>Answer 4: Demand Curve Drawing</h3>
-
-<p>(a) <strong>Inverse relationship</strong>: As price falls, Qd rises. This conforms to the law of demand.</p>
-
-<p>(b) <strong>Demand has changed (shift right)</strong>. The subsidy is NOT a change in the own price of EVs. It effectively increases consumers' willingness and ability to buy at every price. More EVs are demanded at each price → the entire demand curve shifts right. This is an increase in demand.</p>
-
-<p>(c) <strong>Quantity demanded has changed (movement along)</strong>. The fall from $50,000 to $40,000 is a change in the EV's own price. We move along the existing demand curve from Qd = 200 to Qd = 350. The demand curve itself hasn't shifted.</p>
-
-<h3>Answer 5: Applying TRIBE</h3>
-
-<p>(a) <strong>T — Tastes/preferences</strong>. Celebrity endorsement makes plant-based burgers more desirable. Demand shifts <strong>right</strong>.</p>
-
-<p>(b) <strong>R — Related goods (complements)</strong>. Printers and ink cartridges are complements. Price of printers falls → more printers bought → more cartridges needed. Demand for cartridges shifts <strong>right</strong>.</p>
-
-<p>(c) <strong>I — Income</strong>. Recession → incomes fall. Luxury handbags are normal goods (luxuries). Demand shifts <strong>left</strong>.</p>
-
-<p>(d) <strong>B — Buyers (number of)</strong>. More students → more potential renters. Demand for apartments shifts <strong>right</strong>.</p>
-
-<p>(e) <strong>E — Expectations</strong>. Expected future price increase → buy now to avoid higher prices later. Current petrol demand shifts <strong>right</strong>.</p>
-
-<h3>Answer 6: IB-Style Solution</h3>
-
-<p><strong>(a)</strong> Qd at each price:</p>
-<ul>
-<li>P = £3: Qd = 500 − 20(3) = 500 − 60 = <strong>440 thousand cups</strong></li>
-<li>P = £5: Qd = 500 − 20(5) = 500 − 100 = <strong>400 thousand cups</strong></li>
-<li>P = £7: Qd = 500 − 20(7) = 500 − 140 = <strong>360 thousand cups</strong></li>
-<li>P = £10: Qd = 500 − 20(10) = 500 − 200 = <strong>300 thousand cups</strong></li>
-</ul>
-
-<p>The demand curve is a downward-sloping straight line (linear demand).</p>
-
-<p><strong>(b)</strong> At P = £5:</p>
-<ul>
-<li>Original Qd = 400</li>
-<li>New Qd = 600 − 20(5) = 600 − 100 = 500</li>
-<li>Increase = 100 thousand cups</li>
-</ul>
-
-<p>This is a <strong>shift</strong> (right) of the entire demand curve, caused by a change in a non-price determinant (income, I in TRIBE). At every single price, more coffee is demanded. Compare this to a movement along: if the price had fallen from £5 to £3, Qd would rise from 400 to 440 — but that's moving along the <em>same</em> curve. The café owner sees 500 cups demanded at £5 after the income change vs 400 before — the demand relationship itself has changed.</p>
-
-<p><strong>(c)</strong> At P = £5:</p>
-<ul>
-<li>Income effect: Qd = 500</li>
-<li>Tea price effect: Qd = 580 − 20(5) = 580 − 100 = 480</li>
-<li>Income change increases Qd by 100; tea price change increases Qd by 80.</li>
-<li><strong>Income change has a larger effect</strong> (100 vs 80).</li>
-</ul>
-
-<p>This comparison shows that different non-price determinants can have different magnitudes of impact. The café owner should pay attention to both consumer incomes and competitor (tea) pricing.</p>
-
-<p><strong>(d)</strong> Price rise from £5 to £7 using ORIGINAL demand:</p>
-<ul>
-<li>At P = £5: Qd = 400</li>
-<li>At P = £7: Qd = 360</li>
-<li>Change = −40 thousand cups</li>
-</ul>
-
-<p>This is a <strong>movement along</strong> the demand curve (contraction of demand). The distinction matters enormously for the café owner:</p>
-<ul>
-<li>If the change is a <em>movement</em> (own price change), the owner directly controls this and can try different price points along the same demand curve.</li>
-<li>If the change is a <em>shift</em> (income or tea prices), the owner has no control over these external factors and must adapt strategy accordingly — perhaps by changing product offerings rather than prices.</li>
-</ul>
-
-<hr>
-
-<h2> Evaluate</h2>
-
-<h3>Question</h3>
-
-<p><strong>"The law of demand always holds true." Evaluate this statement, considering Veblen goods and Giffen goods.</strong></p>
-
-<h3>Model Answer</h3>
-
-<p><strong>Conclusion</strong>: The law of demand is one of the most robust empirical regularities in economics and holds true for the vast majority of goods in the vast majority of circumstances. However, there are theoretically and empirically documented exceptions — Veblen goods and Giffen goods — that challenge the claim that it <em>always</em> holds.</p>
-
-<p><strong>The law of demand</strong> states that as price rises, quantity demanded falls, ceteris paribus. This is driven by the income effect, substitution effect, and diminishing marginal utility. For normal and most inferior goods, these effects work in the same direction: a price rise makes the good relatively more expensive (substitution effect → less demanded) AND reduces real income (income effect → less demanded for normal goods; for inferior goods, the income effect works opposite but is typically smaller than the substitution effect).</p>
-
-<p><strong>Veblen goods</strong> are luxury goods for which higher prices <em>increase</em> demand because the high price itself signals status and exclusivity. Named after economist Thorstein Veblen, who wrote about "conspicuous consumption." Examples: Rolex watches, Hermès Birkin bags, luxury sports cars. If a Birkin bag's price fell dramatically, its exclusivity would evaporate and demand from status-seeking consumers might actually fall. The Veblen effect violates the law of demand but applies only to a narrow class of positional/luxury goods consumed for their signaling value.</p>
-
-<p><strong>Giffen goods</strong> are a rare type of inferior good where the income effect is so strong (and perverse) that it outweighs the substitution effect. For a Giffen good, a price rise makes consumers so much poorer in real terms that they buy <em>more</em> of the inferior good because they can no longer afford superior substitutes. The classic example (Sir Robert Giffen, 19th century) was potatoes during the Irish famine: when potato prices rose, poor families could afford even less meat, so they bought <em>more</em> potatoes to survive. Note: Giffen goods require (1) the good to be a very large share of the consumer's budget, (2) the good to be strongly inferior, and (3) no close substitutes — explaining why documented real-world examples are extremely rare.</p>
-
-<p><strong>Long-term vs short-term</strong>: In the short term, Giffen behaviour might emerge during extreme scarcity or poverty. In the long term, as consumers adjust and markets evolve, the substitution effect tends to dominate, and the law of demand reasserts itself.</p>
-
-<p><strong>Assumptions</strong>: The law of demand assumes rational consumers, perfect information, and ceteris paribus. Veblen and Giffen goods violate these assumptions — Veblen consumers value price <em>qua</em> price (irrational from a conventional utility standpoint), and Giffen goods arise under extreme income constraints that break the assumption that the substitution effect dominates.</p>
-
-<p><strong>Stakeholders</strong>: For most firms and most products, the law of demand is a reliable guide for pricing strategy. Luxury goods marketers, however, must carefully consider that price cuts might damage brand equity and reduce demand. Policymakers designing taxes on staple foods in very poor regions should be aware of the theoretical possibility of Giffen behaviour, though it is unlikely to manifest outside extreme conditions.</p>
-
-<p><strong>Priorities</strong>: The existence of exceptions does not invalidate the law of demand as a general principle. Physics has exceptions to Newton's laws (relativity, quantum mechanics) yet Newtonian physics remains enormously useful. Similarly, economics students should learn the law of demand as the central tendency while being aware of its theoretical limits.</p>
-
-<p><strong>Pros/Cons</strong>: The law of demand is supported by overwhelming empirical evidence across thousands of goods and markets (pro). The exceptions are theoretically interesting but empirically negligible — there are perhaps a handful of documented Giffen-good cases in economic history (con to the "always" claim). The Veblen effect is better understood as a different preference structure (consumers value exclusivity) rather than a violation of rational choice per se.</p>
-
-<p><strong>Final judgment</strong>: The statement "the law of demand always holds true" is too absolute. A more precise formulation: the law of demand is a powerful and near-universal empirical regularity that holds for virtually all goods in virtually all market conditions, with rare and narrowly circumscribed exceptions (Veblen goods, Giffen goods) that do not undermine its practical utility or theoretical centrality.</p>
-
-<nav style="margin-top:1.5rem;">
-  <a href="lesson_03_economic_models_methodology.html">← Previous Lesson</a> &nbsp;|&nbsp;
-  <a href="#">Index</a> &nbsp;|&nbsp;
-  <a href="lesson_05_supply.html">Next Lesson →</a>
-</nav>
-<footer>IB Economics SL — Lesson 4: Demand. Based on Tragakes, 3rd ed. (Cambridge, 2020).</footer>
+<h2>10. Exam Tips</h2>
+<div class="exam-tip"><strong>Paper 1:</strong> When asked to "explain the law of demand," you must include the phrase "ceteris paribus" in your definition. Then explain the income effect, substitution effect, and diminishing marginal utility. A diagram is essential — draw a downward-sloping curve with price on the vertical axis and quantity on the horizontal, and label at least two points.</div>
+<div class="exam-tip"><strong>Paper 2:</strong> Data response questions often present a scenario with multiple changes affecting demand. Your job is to separate them: which changes cause movements along the curve (own-price changes) and which cause shifts (non-price determinants)? List each change, classify it, and state the direction of the effect. Then combine them to give the net result.</div>
 </body>
 </html>

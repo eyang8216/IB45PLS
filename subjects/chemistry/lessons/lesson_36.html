@@ -3,311 +3,490 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lesson 36: Organic Chemistry Fundamentals — Functional Groups and IUPAC Nomenclature — IB Chemistry HL</title>
-<script>window.MathJax = { loader: {load: ['[tex]/mhchem']}, tex: {packages: {'[+]': ['mhchem']}} };</script>
+<title>Lesson 36 — Chemistry HL — Organic Fundamentals: Functional Groups & Nomenclature</title>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] },
+  loader: { load: ['[tex]/mhchem'] },
+  tex: { packages: {'[+]': ['mhchem']} }
+};
+</script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
 <style>
-  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Palatino', 'Georgia', serif; background: var(--bg); color: var(--text); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; font-size: 17px; line-height: 1.7; }
-  h1 { font-size: 1.7rem; color: var(--accent); margin-bottom: 0.5rem; }
-  h2 { font-size: 1.25rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; margin: 2rem 0 1rem; }
-  h3 { font-size: 1.1rem; color: #444; margin: 1.3rem 0 0.5rem; }
-  p, li { margin-bottom: 0.6rem; }
-  ul, ol { padding-left: 1.8rem; margin-bottom: 1rem; }
-  .worked { background: #f0f7f0; border-left: 4px solid #2c5f2d; padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
-  .answer { background: #fefdf7; border: 1px solid var(--border); padding: 0.8rem 1.2rem; margin: 0.5rem 0; border-radius: 6px; }
-  .nav { display: flex; justify-content: space-between; margin: 3rem 0 1rem; padding-top: 1rem; border-top: 2px solid var(--border); font-size: 0.9rem; }
-  .nav a { color: #1a5c9e; text-decoration: none; }
-  .nav a:hover { text-decoration: underline; }
-  .definition { background: #fdf5e6; border-left: 4px solid #d4a017; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
-  table { border-collapse: collapse; margin: 1rem 0; width: 100%; }
-  th { background: #2c5f2d; color: #fff; padding: 0.4rem 0.7rem; text-align: left; font-weight: normal; }
-  td { padding: 0.3rem 0.7rem; border-bottom: 1px solid var(--border); }
-  tr:nth-child(even) td { background: #fafaf5; }
-  @media print { body { font-size: 14px; } .nav { display: none; } }
+:root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Georgia', 'Times New Roman', serif; font-size: 17px; line-height: 1.7; color: var(--text); background: var(--bg); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; }
+h1 { font-size: 1.8rem; color: var(--accent); border-bottom: 3px solid var(--accent); padding-bottom: 0.5rem; margin-bottom: 1rem; }
+h2 { font-size: 1.35rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+h3 { font-size: 1.15rem; color: var(--accent); margin: 1.5rem 0 0.5rem; }
+p { margin-bottom: 0.8rem; }
+.objectives { background: #f0f4ff; border-left: 4px solid var(--accent); padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+.objectives h3 { margin-top: 0; }
+.check-in { background: #fff8e1; border: 1px solid #ffc107; padding: 0.8rem 1rem; margin: 1rem 0; border-radius: 8px; }
+.check-in p { margin-bottom: 0.3rem; }
+.answer-toggle { display: inline-block; padding: 0.2rem 0.8rem; border-radius: 16px; cursor: pointer; font-size: 0.8rem; font-weight: 600; background: #e8f5e9; color: #2e7d32; border: 1px solid #2e7d32; user-select: none; margin-top: 0.3rem; }
+.answer-content { display: none; background: #f1f8e9; padding: 0.6rem 1rem; border-radius: 8px; margin-top: 0.5rem; }
+.answer-content.open { display: block; }
+.example { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem; margin: 1rem 0; }
+.misconception { background: #fff3e0; border-left: 4px solid #e65100; padding: 1rem 1.2rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+.misconception h3 { color: #e65100; }
+.exam-tip { background: #e8f5e9; border-left: 4px solid #2e7d32; padding: 0.8rem 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+th { background: var(--accent); color: white; padding: 0.5rem 0.8rem; text-align: left; }
+td { padding: 0.5rem 0.8rem; border-bottom: 1px solid var(--border); }
+tr:nth-child(even) td { background: #f8f8f6; }
+.diagram { text-align: center; margin: 1.5rem 0; }
+.diagram svg { max-width: 100%; }
+.diagram .caption { font-size: 0.9rem; color: #666; margin-top: 0.3rem; font-style: italic; }
+pre.ascii-art { font-family: 'Courier New', monospace; font-size: 0.75rem; line-height: 1.2; background: #f5f5f5; padding: 0.8rem; border-radius: 8px; overflow-x: auto; }
+.practice-toggle { display: block; width: 100%; padding: 0.8rem; background: var(--accent); color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem; font-weight: 600; margin: 1.5rem 0; }
+.practice-answers { display: none; }
+.practice-answers.open { display: block; }
 </style>
 </head>
 <body>
-<h1>Lesson 36: Organic Chemistry Fundamentals — Functional Groups and IUPAC Nomenclature</h1>
-<h2>What You'll Learn</h2>
-<p>This lesson is your introduction to organic chemistry — the chemistry of carbon compounds. You will learn why carbon is special and can form millions of different compounds. You will learn what a functional group is and how to recognise common ones. Most importantly, you will learn the IUPAC system — the international rules for naming organic molecules. By the end of this lesson, you will be able to look at a molecular formula or a structural diagram and give the molecule its correct systematic name.</p>
-<hr>
-<h2>1. What Is Organic Chemistry?</h2>
-<p>Organic chemistry is the branch of chemistry that studies compounds containing the element carbon. The name "organic" comes from history — scientists once believed that these compounds could only be made by living organisms. We now know that is not true, but the name has stayed. Organic chemistry today is about the structure, properties, reactions, and synthesis of carbon-based molecules, whether they come from nature or are made in a laboratory.</p>
-<p><strong>Why carbon is special.</strong> Carbon atoms have the unique ability to form strong covalent bonds with other carbon atoms. A covalent bond is a bond in which two atoms share a pair of electrons. Carbon can form long chains of carbon atoms linked together — a property called <strong>catenation</strong>. Carbon can also form rings, branched structures, and bonds with many other elements like hydrogen, oxygen, nitrogen, and the halogens (fluorine, chlorine, bromine, iodine).</p>
-<p>Carbon has 4 electrons in its outer shell (its valence shell). Because of this, a carbon atom always forms 4 covalent bonds in its stable molecules. It can do this by forming four single bonds, or two single bonds and one double bond, or one single bond and one triple bond, or two double bonds. The ability to form double and triple bonds (where two or three pairs of electrons are shared) adds to the diversity of organic molecules.</p>
-<p><strong>Hydrocarbons</strong> are the simplest organic compounds — they contain only carbon and hydrogen. All other organic compounds can be thought of as hydrocarbons in which one or more hydrogen atoms have been replaced by other atoms or groups of atoms.</p>
-<hr>
-<h2>2. Homologous Series — Families of Organic Compounds</h2>
-<p>A <strong>homologous series</strong> is a family of organic compounds that share the same general features:</p>
+
+<h1>Lesson 36: Organic Fundamentals — Functional Groups &amp; Nomenclature</h1>
+
+<p><b>Syllabus reference:</b> 10.1, 20.1 (Fundamentals of Organic Chemistry)</p>
+
+<!-- SECTION A -->
+<div class="objectives">
+<h3>Learning Objectives</h3>
+<p>By the end of this lesson, you will be able to:</p>
 <ul>
-<li>All members of the series have the <strong>same functional group</strong> (explained below).</li>
-<li>Each member differs from the next by one <strong>CH₂ group</strong> — that is, by one carbon atom and two hydrogen atoms.</li>
-<li>The series has a <strong>general molecular formula</strong> that describes any member.</li>
-<li>All members have <strong>similar chemical properties</strong> because they have the same functional group.</li>
-<li>Physical properties (such as boiling point and melting point) show a <strong>gradual trend</strong> as the chain gets longer.</li>
+  <li><b>Identify</b> and <b>name</b> at least 12 functional groups by their general formula, suffix, and prefix.</li>
+  <li><b>Apply</b> systematic IUPAC nomenclature rules to organic molecules with up to 10 carbon atoms.</li>
+  <li><b>Classify</b> alcohols, halogenoalkanes, and amines as primary (1°), secondary (2°), or tertiary (3°).</li>
+  <li><b>Draw</b> structural, condensed, and skeletal formulas for a given molecular formula.</li>
+  <li><b>Recognise</b> homologous series and predict trends in physical properties within a series.</li>
 </ul>
-<p>Think of a homologous series like a ladder. Each rung is one CH₂ unit higher than the previous one. The chemistry is similar at every rung because the same functional group is present.</p>
-<hr>
-<h2>3. Functional Groups — The Reactive Parts of Molecules</h2>
-<p>A <strong>functional group</strong> is a specific atom or group of atoms within a molecule that gives the molecule its characteristic chemical reactions. The rest of the molecule (the hydrocarbon skeleton) affects physical properties but does not usually participate directly in reactions.</p>
-<p>When you look at an organic molecule, the first thing to identify is the functional group because it tells you what kind of reactions the molecule can do. Two molecules with the same functional group but different chain lengths will undergo the same kinds of reactions.</p>
-<p>Here is a table of the common functional groups you need to know for IB Chemistry HL. Study each one carefully. The "general formula" column shows the formula for the homologous series if there is only one of that functional group in an otherwise straight-chain molecule.</p>
+</div>
+
+<!-- SECTION B -->
+<h2>1. Prior Knowledge Check</h2>
+
+<p><b>Question 1:</b> What does the term "homologous series" mean, and why are alkanes described as a homologous series?</p>
+<div class="check-in">
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">A <b>homologous series</b> is a family of compounds with the same general formula, same functional group, and a regular gradation in physical properties. Each successive member differs by a $\ce{–CH2–}$ unit. Alkanes ($\ce{C_nH_{2n+2}}$) are a homologous series — methane ($\ce{CH4}$), ethane ($\ce{C2H6}$), propane ($\ce{C3H8}$), etc. — each differing by $\ce{CH2}$. Boiling points increase steadily due to increasing London dispersion forces.</div>
+</div>
+
+<p><b>Question 2:</b> Draw the displayed formula of $\ce{C2H6O}$ — there are two possible isomers. What are they?</p>
+<div class="check-in">
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">Two isomers: <b>ethanol</b> $\ce{CH3CH2OH}$ (an alcohol) and <b>methoxymethane</b> $\ce{CH3OCH3}$ (an ether). They have the same molecular formula but different connectivity — this is <b>functional group isomerism</b>. Ethanol boils at 78°C (hydrogen bonding); methoxymethane boils at −24°C (dipole–dipole only).</div>
+</div>
+
+<p><b>Question 3:</b> What is the difference between "saturated" and "unsaturated" hydrocarbons?</p>
+<div class="check-in">
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content"><b>Saturated</b> hydrocarbons contain only carbon–carbon single bonds ($\ce{C–C}$). Every carbon is bonded to the maximum number of hydrogen atoms possible. Alkanes are saturated. <b>Unsaturated</b> hydrocarbons contain at least one multiple bond — a $\ce{C=C}$ double bond (alkenes) or a $\ce{C#C}$ triple bond (alkynes). These multiple bonds are sites of reactivity.</div>
+</div>
+
+<!-- SECTION C -->
+<h2>2. The Language of Organic Chemistry — Functional Groups</h2>
+
+<p>Organic chemistry is the chemistry of carbon compounds. Carbon is uniquely versatile: it forms four covalent bonds, catenates (chains to itself), and forms stable bonds with H, O, N, S, P, and halogens. Over 20 million organic compounds are known — but they are systematically organised by their <b>functional groups</b>.</p>
+
+<p>A <b>functional group</b> is an atom or group of atoms within a molecule that gives it characteristic chemical reactivity. The rest of the molecule — the <b>carbon skeleton</b> — influences physical properties (boiling point, solubility) but the functional group determines the <b>chemistry</b>.</p>
+
+<h3>2.1 The Major Functional Groups You Must Know</h3>
+
+<div class="diagram">
+<svg width="760" height="820" viewBox="0 0 760 820">
+  <text x="380" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c5f2d">Essential Functional Groups for IB Chemistry HL</text>
+  <line x1="30" y1="35" x2="730" y2="35" stroke="#2c5f2d" stroke-width="1"/>
+
+  <!-- Row 1: Alkane, Alkene, Alkyne -->
+  <rect x="30" y="48" width="215" height="68" rx="6" fill="#f5f5f5" stroke="#ccc" stroke-width="1"/>
+  <text x="138" y="70" text-anchor="middle" font-size="12" font-weight="bold">Alkane</text>
+  <text x="138" y="88" text-anchor="middle" font-size="11">Prefix: alkyl- &nbsp; Suffix: –ane</text>
+  <text x="138" y="105" text-anchor="middle" font-size="11">$\ce{C–C}$ only, e.g. $\ce{C2H6}$</text>
+
+  <rect x="265" y="48" width="215" height="68" rx="6" fill="#f5f5f5" stroke="#ccc" stroke-width="1"/>
+  <text x="373" y="70" text-anchor="middle" font-size="12" font-weight="bold">Alkene</text>
+  <text x="373" y="88" text-anchor="middle" font-size="11">Suffix: –ene</text>
+  <text x="373" y="105" text-anchor="middle" font-size="11">$\ce{C=C}$, e.g. $\ce{C2H4}$</text>
+
+  <rect x="500" y="48" width="230" height="68" rx="6" fill="#f5f5f5" stroke="#ccc" stroke-width="1"/>
+  <text x="615" y="70" text-anchor="middle" font-size="12" font-weight="bold">Alkyne</text>
+  <text x="615" y="88" text-anchor="middle" font-size="11">Suffix: –yne</text>
+  <text x="615" y="105" text-anchor="middle" font-size="11">$\ce{C#C}$, e.g. $\ce{C2H2}$</text>
+
+  <!-- Row 2: Alcohol, Ether, Halogenoalkane -->
+  <rect x="30" y="130" width="215" height="68" rx="6" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="1.5"/>
+  <text x="138" y="152" text-anchor="middle" font-size="12" font-weight="bold" fill="#2c5f2d">Alcohol</text>
+  <text x="138" y="170" text-anchor="middle" font-size="11">Prefix: hydroxy– &nbsp; Suffix: –ol</text>
+  <text x="138" y="187" text-anchor="middle" font-size="11">$\ce{–OH}$, e.g. $\ce{CH3CH2OH}$</text>
+
+  <rect x="265" y="130" width="215" height="68" rx="6" fill="#f5f5f5" stroke="#ccc" stroke-width="1"/>
+  <text x="373" y="152" text-anchor="middle" font-size="12" font-weight="bold">Ether</text>
+  <text x="373" y="170" text-anchor="middle" font-size="11">Prefix: alkoxy–</text>
+  <text x="373" y="187" text-anchor="middle" font-size="11">$\ce{–O–}$, e.g. $\ce{CH3OCH3}$</text>
+
+  <rect x="500" y="130" width="230" height="68" rx="6" fill="#f5f5f5" stroke="#ccc" stroke-width="1"/>
+  <text x="615" y="152" text-anchor="middle" font-size="12" font-weight="bold">Halogenoalkane</text>
+  <text x="615" y="170" text-anchor="middle" font-size="11">Prefix: fluoro–, chloro–, etc.</text>
+  <text x="615" y="187" text-anchor="middle" font-size="11">$\ce{–X}$ (X=F,Cl,Br,I), e.g. $\ce{CH3Cl}$</text>
+
+  <!-- Row 3: Aldehyde, Ketone, Carboxylic Acid -->
+  <rect x="30" y="212" width="215" height="85" rx="6" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="1.5"/>
+  <text x="138" y="234" text-anchor="middle" font-size="12" font-weight="bold" fill="#2c5f2d">Aldehyde</text>
+  <text x="138" y="252" text-anchor="middle" font-size="11">Suffix: –al</text>
+  <text x="138" y="270" text-anchor="middle" font-size="11">$\ce{–CHO}$</text>
+  <text x="138" y="288" text-anchor="middle" font-size="11">e.g. $\ce{CH3CHO}$ (ethanal)</text>
+
+  <rect x="265" y="212" width="215" height="85" rx="6" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="1.5"/>
+  <text x="373" y="234" text-anchor="middle" font-size="12" font-weight="bold" fill="#2c5f2d">Ketone</text>
+  <text x="373" y="252" text-anchor="middle" font-size="11">Suffix: –one</text>
+  <text x="373" y="270" text-anchor="middle" font-size="11">$\ce{>C=O}$</text>
+  <text x="373" y="288" text-anchor="middle" font-size="11">e.g. $\ce{CH3COCH3}$ (propanone)</text>
+
+  <rect x="500" y="212" width="230" height="85" rx="6" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="1.5"/>
+  <text x="615" y="234" text-anchor="middle" font-size="12" font-weight="bold" fill="#2c5f2d">Carboxylic Acid</text>
+  <text x="615" y="252" text-anchor="middle" font-size="11">Suffix: –oic acid</text>
+  <text x="615" y="270" text-anchor="middle" font-size="11">$\ce{–COOH}$</text>
+  <text x="615" y="288" text-anchor="middle" font-size="11">e.g. $\ce{CH3COOH}$</text>
+
+  <!-- Row 4: Ester, Amine, Amide -->
+  <rect x="30" y="312" width="215" height="85" rx="6" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="1.5"/>
+  <text x="138" y="334" text-anchor="middle" font-size="12" font-weight="bold" fill="#2c5f2d">Ester</text>
+  <text x="138" y="352" text-anchor="middle" font-size="11">Suffix: –yl –oate</text>
+  <text x="138" y="370" text-anchor="middle" font-size="11">$\ce{–COO–}$</text>
+  <text x="138" y="388" text-anchor="middle" font-size="11">e.g. $\ce{CH3COOCH2CH3}$</text>
+
+  <rect x="265" y="312" width="215" height="85" rx="6" fill="#f5f5f5" stroke="#ccc" stroke-width="1"/>
+  <text x="373" y="334" text-anchor="middle" font-size="12" font-weight="bold">Amine</text>
+  <text x="373" y="352" text-anchor="middle" font-size="11">Prefix: amino– &nbsp; Suffix: –amine</text>
+  <text x="373" y="370" text-anchor="middle" font-size="11">$\ce{–NH2}$</text>
+  <text x="373" y="388" text-anchor="middle" font-size="11">e.g. $\ce{CH3NH2}$</text>
+
+  <rect x="500" y="312" width="230" height="85" rx="6" fill="#f5f5f5" stroke="#ccc" stroke-width="1"/>
+  <text x="615" y="334" text-anchor="middle" font-size="12" font-weight="bold">Amide</text>
+  <text x="615" y="352" text-anchor="middle" font-size="11">Suffix: –amide</text>
+  <text x="615" y="370" text-anchor="middle" font-size="11">$\ce{–CONH2}$</text>
+  <text x="615" y="388" text-anchor="middle" font-size="11">e.g. $\ce{CH3CONH2}$</text>
+
+  <!-- Row 5: Nitrile, Arene -->
+  <rect x="30" y="412" width="215" height="68" rx="6" fill="#f5f5f5" stroke="#ccc" stroke-width="1"/>
+  <text x="138" y="434" text-anchor="middle" font-size="12" font-weight="bold">Nitrile</text>
+  <text x="138" y="452" text-anchor="middle" font-size="11">Suffix: –nitrile</text>
+  <text x="138" y="470" text-anchor="middle" font-size="11">$\ce{–C#N}$, e.g. $\ce{CH3CN}$</text>
+
+  <rect x="265" y="412" width="215" height="68" rx="6" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="1.5"/>
+  <text x="373" y="434" text-anchor="middle" font-size="12" font-weight="bold" fill="#2c5f2d">Arene (Aromatic)</text>
+  <text x="373" y="452" text-anchor="middle" font-size="11">Prefix: phenyl–</text>
+  <text x="373" y="470" text-anchor="middle" font-size="11">Benzene ring $\ce{C6H5–}$</text>
+
+  <rect x="500" y="412" width="230" height="68" rx="6" fill="#f8f8f6" stroke="#d4c5a9" stroke-width="1"/>
+  <text x="615" y="434" text-anchor="middle" font-size="12" font-weight="bold">Acyl Chloride</text>
+  <text x="615" y="452" text-anchor="middle" font-size="11">Suffix: –oyl chloride</text>
+  <text x="615" y="470" text-anchor="middle" font-size="11">$\ce{–COCl}$, e.g. $\ce{CH3COCl}$</text>
+
+  <!-- Key -->
+  <rect x="30" y="500" width="16" height="16" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="1.5"/>
+  <text x="55" y="514" font-size="11" fill="#333">= Most commonly examined at HL</text>
+</svg>
+<div class="caption">Figure 1: The 12 functional groups required for IB Chemistry HL. Green-highlighted groups are especially important — they appear in synthesis, mechanism, and spectroscopy questions.</div>
+</div>
+
+<div class="check-in">
+<p><b>Check-in:</b> Which functional group is present in both aldehydes and ketones, and how do you distinguish them?</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">Both contain the <b>carbonyl group</b> $\ce{>C=O}$. The distinction: in an <b>aldehyde</b>, the carbonyl carbon is bonded to at least one H atom ($\ce{–CHO}$) and is always at the end of a chain. In a <b>ketone</b>, the carbonyl carbon is bonded to <em>two</em> carbon atoms ($\ce{>C=O}$) and is never at the end of a chain. This difference is crucial — aldehydes oxidise to carboxylic acids; ketones do not (unless the chain breaks).</div>
+</div>
+
+<h2>3. IUPAC Nomenclature — Systematic Naming</h2>
+
+<p>The International Union of Pure and Applied Chemistry (IUPAC) provides a systematic way to name organic compounds. Every name encodes the structure. Mastering nomenclature is not memorisation — it is <b>decoding</b>. A name like <b>2-methylpropan-1-ol</b> tells you everything about the molecule.</p>
+
+<h3>3.1 The Three Parts of Every IUPAC Name</h3>
+
+<div class="diagram">
+<svg width="720" height="180" viewBox="0 0 720 180">
+  <!-- Prefix block -->
+  <rect x="20" y="40" width="200" height="100" rx="10" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+  <text x="120" y="68" text-anchor="middle" font-size="14" font-weight="bold" fill="#1565c0">PREFIX</text>
+  <text x="120" y="90" text-anchor="middle" font-size="11">What is attached?</text>
+  <text x="120" y="108" text-anchor="middle" font-size="11">substituents, side chains</text>
+  <text x="120" y="128" text-anchor="middle" font-size="11">e.g. methyl–, chloro–, amino–</text>
+
+  <text x="245" y="95" text-anchor="middle" font-size="18">+</text>
+
+  <!-- Stem block -->
+  <rect x="270" y="40" width="180" height="100" rx="10" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="2"/>
+  <text x="360" y="68" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c5f2d">STEM (ROOT)</text>
+  <text x="360" y="90" text-anchor="middle" font-size="11">How many carbons?</text>
+  <text x="360" y="108" text-anchor="middle" font-size="11">longest continuous chain</text>
+  <text x="360" y="128" text-anchor="middle" font-size="11">meth–, eth–, prop–, but–…</text>
+
+  <text x="475" y="95" text-anchor="middle" font-size="18">+</text>
+
+  <!-- Suffix block -->
+  <rect x="500" y="40" width="200" height="100" rx="10" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+  <text x="600" y="68" text-anchor="middle" font-size="14" font-weight="bold" fill="#e65100">SUFFIX</text>
+  <text x="600" y="90" text-anchor="middle" font-size="11">What family?</text>
+  <text x="600" y="108" text-anchor="middle" font-size="11">functional group</text>
+  <text x="600" y="128" text-anchor="middle" font-size="11">–ane, –ene, –ol, –al, –one…</text>
+
+  <text x="360" y="170" text-anchor="middle" font-size="13" font-style="italic">Example: 2–chloro– + prop– + –ane = 2–chloropropane</text>
+</svg>
+<div class="caption">Figure 2: Every IUPAC name = Prefix + Stem + Suffix. The stem tells you the carbon chain length; the suffix tells you the functional group family; the prefix tells you what substituents are attached and where.</div>
+</div>
+
+<h3>3.2 Step-by-Step Naming Rules</h3>
+
+<p><b>Rule 1 — Find the longest continuous carbon chain</b> that contains the principal functional group. This determines the stem name.</p>
+
+<p><b>Rule 2 — Number the chain</b> so that the principal functional group gets the lowest possible number. If there is no functional group (alkane), number so substituents get the lowest combination of numbers.</p>
+
+<p><b>Rule 3 — Identify and name substituents</b> (side chains, halogen atoms, etc.). List them alphabetically with their position numbers. Use di–, tri–, tetra– for multiple identical substituents.</p>
+
+<p><b>Rule 4 — Assemble the name:</b> (number)–(substituent)(number)–(substituent)…STEM(number)–(suffix). Use commas between numbers, hyphens between numbers and words.</p>
+
+<div class="check-in">
+<p><b>Check-in:</b> Name the following molecule: $\ce{CH3CH(CH3)CH2CH2OH}$</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">The longest chain containing –OH is 4 carbons: butan–. Number from –OH end: C1 = $\ce{CH2OH}$, C2 = $\ce{CH2}$, C3 = $\ce{CH(CH3)}$, C4 = $\ce{CH3}$. At C3, a methyl substituent. Name: <b>3-methylbutan-1-ol</b>. (The "1" is necessary because –OH could be on C2 in an isomer.)</div>
+</div>
+
+<h2>4. Representing Organic Molecules — Three Types of Formula</h2>
+
+<p>Organic molecules can be drawn in three ways. IB exam questions may use any of them — you must be fluent in all three.</p>
+
+<div class="diagram">
+<svg width="720" height="280" viewBox="0 0 720 280">
+  <text x="360" y="18" text-anchor="middle" font-size="13" font-weight="bold" fill="#2c5f2d">Three Representations of Butanoic Acid ($\ce{C3H7COOH}$)</text>
+
+  <!-- Displayed formula -->
+  <rect x="10" y="30" width="228" height="235" rx="8" fill="#f5f5f5" stroke="#999" stroke-width="1"/>
+  <text x="124" y="55" text-anchor="middle" font-size="12" font-weight="bold">Displayed (Full Structural)</text>
+  <text x="124" y="72" text-anchor="middle" font-size="10">Every atom, every bond shown</text>
+  <!-- Butanoic acid displayed -->
+  <line x1="70" y1="100" x2="70" y2="120" stroke="#333" stroke-width="2"/>
+  <line x1="70" y1="120" x2="55" y2="135" stroke="#333" stroke-width="2"/>
+  <line x1="70" y1="120" x2="85" y2="135" stroke="#333" stroke-width="2"/>
+  <line x1="85" y1="135" x2="85" y2="155" stroke="#333" stroke-width="2"/>
+  <line x1="85" y1="155" x2="70" y2="170" stroke="#333" stroke-width="2"/>
+  <line x1="85" y1="155" x2="100" y2="170" stroke="#333" stroke-width="2"/>
+  <line x1="100" y1="170" x2="100" y2="190" stroke="#333" stroke-width="2"/>
+  <line x1="100" y1="190" x2="85" y2="205" stroke="#333" stroke-width="2"/>
+  <line x1="100" y1="190" x2="115" y2="205" stroke="#333" stroke-width="2"/>
+  <line x1="115" y1="205" x2="115" y2="225" stroke="#333" stroke-width="2"/>
+  <text x="55" y="100" font-size="9" text-anchor="end">H</text>
+  <text x="42" y="138" font-size="9" text-anchor="end">H</text>
+  <text x="100" y="145" font-size="9">H</text>
+  <text x="74" y="248" font-size="9">H₂ at C5 implied by bond</text>
+
+  <!-- Condensed -->
+  <rect x="248" y="30" width="218" height="235" rx="8" fill="#f5f5f5" stroke="#999" stroke-width="1"/>
+  <text x="357" y="55" text-anchor="middle" font-size="12" font-weight="bold">Condensed Structural</text>
+  <text x="357" y="72" text-anchor="middle" font-size="10">Groups written compactly</text>
+  <text x="357" y="110" text-anchor="middle" font-size="13" font-family="monospace">CH₃—CH₂—CH₂—COOH</text>
+  <text x="357" y="135" text-anchor="middle" font-size="11">or</text>
+  <text x="357" y="160" text-anchor="middle" font-size="13" font-family="monospace">CH₃CH₂CH₂COOH</text>
+  <text x="357" y="190" text-anchor="middle" font-size="11">Each carbon listed with</text>
+  <text x="357" y="210" text-anchor="middle" font-size="11">its attached hydrogens</text>
+
+  <!-- Skeletal -->
+  <rect x="476" y="30" width="234" height="235" rx="8" fill="#f5f5f5" stroke="#999" stroke-width="1"/>
+  <text x="593" y="55" text-anchor="middle" font-size="12" font-weight="bold">Skeletal (Line-Angle)</text>
+  <text x="593" y="72" text-anchor="middle" font-size="10">C atoms implied, H omitted</text>
+  <!-- Butanoic acid skeletal: zigzag 4 carbons then COOH -->
+  <line x1="570" y1="190" x2="570" y2="160" stroke="#333" stroke-width="2"/>
+  <line x1="570" y1="160" x2="550" y2="140" stroke="#333" stroke-width="2"/>
+  <line x1="550" y1="140" x2="570" y2="120" stroke="#333" stroke-width="2"/>
+  <line x1="570" y1="120" x2="590" y2="100" stroke="#333" stroke-width="2"/>
+  <!-- OH at end -->
+  <line x1="590" y1="100" x2="610" y2="90" stroke="#333" stroke-width="2"/>
+  <text x="618" y="92" font-size="11" fill="#333">O</text>
+  <line x1="590" y1="100" x2="605" y2="80" stroke="#333" stroke-width="1.5"/>
+  <text x="610" y="78" font-size="9" fill="#333">OH</text>
+  <text x="593" y="235" text-anchor="middle" font-size="9">Every vertex/end = C atom</text>
+</svg>
+<div class="caption">Figure 3: Three ways to represent butanoic acid. IB exams may use any of these. Skeletal formulas are most efficient — each vertex and line-end represents a carbon atom with sufficient hydrogens to make four bonds.</div>
+</div>
+
+<div class="check-in">
+<p><b>Check-in:</b> What is the difference between the molecular formula $\ce{C4H8O2}$ and the structural formula $\ce{CH3CH2CH2COOH}$?</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">$\ce{C4H8O2}$ tells you only <b>which atoms</b> are present and <b>how many</b>. It does <em>not</em> tell you how they are connected. $\ce{CH3CH2CH2COOH}$ is a structural formula that shows connectivity: a 3-carbon chain ending in a –COOH group. $\ce{C4H8O2}$ could also represent ethyl ethanoate ($\ce{CH3COOCH2CH3}$), methyl propanoate, or butanoic acid — all different compounds with the same molecular formula (isomers).</div>
+</div>
+
+<h2>5. Classification — Primary, Secondary, Tertiary</h2>
+
+<p>For several functional groups — alcohols, halogenoalkanes, and amines — the reactivity depends critically on the <b>degree of substitution</b> at the carbon bearing the functional group.</p>
+
+<div class="diagram">
+<svg width="720" height="220" viewBox="0 0 720 220">
+  <text x="360" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#2c5f2d">Classification of Alcohols (applies identically to halogenoalkanes and amines)</text>
+
+  <!-- Primary (1°) -->
+  <rect x="15" y="35" width="220" height="170" rx="8" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="2"/>
+  <text x="125" y="60" text-anchor="middle" font-size="13" font-weight="bold">1° (Primary)</text>
+  <text x="125" y="78" text-anchor="middle" font-size="11">Carbon with –OH is attached</text>
+  <text x="125" y="95" text-anchor="middle" font-size="11">to <b>ONE</b> other carbon</text>
+  <!-- ethanol molecule -->
+  <line x1="110" y1="125" x2="110" y2="145" stroke="#333" stroke-width="2"/>
+  <line x1="110" y1="145" x2="95" y2="160" stroke="#333" stroke-width="2"/>
+  <line x1="110" y1="145" x2="125" y2="160" stroke="#333" stroke-width="2"/>
+  <line x1="125" y1="160" x2="125" y2="180" stroke="#333" stroke-width="2"/>
+  <line x1="125" y1="180" x2="135" y2="195" stroke="#e65100" stroke-width="2.5"/>
+  <text x="145" y="198" font-size="11" fill="#e65100">OH</text>
+  <text x="125" y="210" text-anchor="middle" font-size="10">ethanol (1° alcohol)</text>
+
+  <!-- Secondary (2°) -->
+  <rect x="250" y="35" width="220" height="170" rx="8" fill="#fff8e1" stroke="#d4a017" stroke-width="2"/>
+  <text x="360" y="60" text-anchor="middle" font-size="13" font-weight="bold">2° (Secondary)</text>
+  <text x="360" y="78" text-anchor="middle" font-size="11">Carbon with –OH is attached</text>
+  <text x="360" y="95" text-anchor="middle" font-size="11">to <b>TWO</b> other carbons</text>
+  <!-- propan-2-ol -->
+  <line x1="320" y1="140" x2="340" y2="125" stroke="#333" stroke-width="2"/>
+  <line x1="340" y1="125" x2="360" y2="140" stroke="#333" stroke-width="2"/>
+  <line x1="360" y1="140" x2="360" y2="160" stroke="#333" stroke-width="2"/>
+  <line x1="360" y1="160" x2="350" y2="175" stroke="#333" stroke-width="2"/>
+  <line x1="360" y1="160" x2="373" y2="178" stroke="#e65100" stroke-width="2.5"/>
+  <text x="383" y="182" font-size="11" fill="#e65100">OH</text>
+  <text x="360" y="210" text-anchor="middle" font-size="10">propan-2-ol (2° alcohol)</text>
+
+  <!-- Tertiary (3°) -->
+  <rect x="485" y="35" width="220" height="170" rx="8" fill="#ffebee" stroke="#c62828" stroke-width="2"/>
+  <text x="595" y="60" text-anchor="middle" font-size="13" font-weight="bold">3° (Tertiary)</text>
+  <text x="595" y="78" text-anchor="middle" font-size="11">Carbon with –OH is attached</text>
+  <text x="595" y="95" text-anchor="middle" font-size="11">to <b>THREE</b> other carbons</text>
+  <!-- 2-methylpropan-2-ol -->
+  <line x1="580" y1="125" x2="580" y2="145" stroke="#333" stroke-width="2"/>
+  <line x1="580" y1="145" x2="565" y2="160" stroke="#333" stroke-width="2"/>
+  <line x1="580" y1="145" x2="595" y2="160" stroke="#333" stroke-width="2"/>
+  <line x1="580" y1="145" x2="580" y2="165" stroke="#333" stroke-width="2"/>
+  <line x1="580" y1="165" x2="575" y2="182" stroke="#e65100" stroke-width="2.5"/>
+  <text x="568" y="188" font-size="11" fill="#e65100">OH</text>
+  <text x="595" y="210" text-anchor="middle" font-size="10">2-methylpropan-2-ol (3°)</text>
+</svg>
+<div class="caption">Figure 4: Classification of alcohols. The same logic applies to halogenoalkanes (1°, 2°, 3° based on the halogen-bearing carbon) and amines (1°, 2°, 3° based on how many carbons are attached to the nitrogen). Note: amine classification uses a different rule!</div>
+</div>
+
+<p><b>Important distinction for amines:</b> For amines, classification counts the number of carbon atoms <em>directly attached to the nitrogen atom</em>, NOT the carbon bearing the functional group (since the nitrogen IS the functional group).</p>
+
+<!-- SECTION D -->
+<h2>6. Worked Examples</h2>
+
+<div class="example">
+<b>Example 1 — IUPAC naming with multiple substituents:</b><br><br>
+Name: $\ce{CH3CH(Cl)CH(CH3)CH2CH3}$<br><br>
+<b>Step 1:</b> Draw or expand the structure. The chain is: C1($\ce{CH3}$)–C2($\ce{CHCl}$)–C3($\ce{CH(CH3)}$)–C4($\ce{CH2}$)–C5($\ce{CH3}$). Longest chain = 5 carbons → <b>pentane</b>.<br>
+<b>Step 2:</b> Number from the end that gives substituents the lowest numbers. From left: Cl on C2, methyl on C3 → set {2,3}. From right: Cl on C4, methyl on C3 → set {3,4}. Choose left (2,3 is lower than 3,4).<br>
+<b>Step 3:</b> Alphabetical: chloro– before methyl–. Name: <b>2-chloro-3-methylpentane</b>.<br>
+<b>Step 4:</b> Check: pentane = 5 C, chloro at C2, methyl at C3. ✓<br><br>
+<b>⚠️ Common wrong approach:</b> Numbering from the wrong end gives 4-chloro-3-methylpentane — wrong because {3,4} > {2,3}. Always minimise the first point of difference.
+</div>
+
+<div class="example">
+<b>Example 2 — Naming compounds with two functional groups:</b><br><br>
+Name: $\ce{HOCH2CH2CH2COOH}$<br><br>
+<b>Step 1:</b> Priority: carboxylic acid > alcohol, so –COOH determines the suffix and numbering. Stem = 4 carbons → <b>butanoic acid</b>.<br>
+<b>Step 2:</b> Number from –COOH (C1). $\ce{–OH}$ is on C4.<br>
+<b>Step 3:</b> Prefix for alcohol: hydroxy–. Name: <b>4-hydroxybutanoic acid</b>.<br>
+<b>Step 4:</b> The IUPAC priority order (descending): –COOH > –COOR > –CONH₂ > –CN > –CHO > >C=O > –OH > –NH₂ > >C=C< > –X. Use this always when multiple functional groups are present.<br><br>
+<b>⚠️ Common wrong approach:</b> Naming this as "butanoic-4-ol" — incorrect because –COOH outranks –OH, so –OH becomes a prefix.
+</div>
+
+<div class="example">
+<b>Example 3 — Drawing from a name:</b><br><br>
+Draw the skeletal formula of <b>3-ethyl-2,2-dimethylhexane</b>.<br><br>
+<b>Step 1:</b> "hexane" = 6-carbon chain. Draw a zigzag with 6 vertices.<br>
+<b>Step 2:</b> "2,2-dimethyl" = two methyl groups on C2.<br>
+<b>Step 3:</b> "3-ethyl" = an ethyl group ($\ce{–CH2CH3}$) on C3.<br>
+<b>Step 4:</b> Number 1→6. C1 at one end, C6 at the other.<br>
+<br>
+<b>Skeletal diagram:</b><br>
+<svg width="400" height="140" viewBox="0 0 400 140">
+  <polyline points="30,100 70,75 110,100 150,75 190,100 230,75" stroke="#333" stroke-width="2" fill="none"/>
+  <!-- C1 label -->
+  <text x="25" y="118" font-size="10" fill="#666">C1</text>
+  <!-- C2 spurs (two methyls) -->
+  <line x1="70" y1="75" x2="50" y2="50" stroke="#333" stroke-width="2"/>
+  <line x1="70" y1="75" x2="90" y2="50" stroke="#333" stroke-width="2"/>
+  <!-- C3 spur (ethyl) -->
+  <line x1="110" y1="100" x2="110" y2="70" stroke="#333" stroke-width="2"/>
+  <line x1="110" y1="70" x2="90" y2="50" stroke="#333" stroke-width="2"/>
+  <!-- C5 -->
+  <text x="235" y="93" font-size="10" fill="#666">C6</text>
+</svg>
+<br><br>
+<b>⚠️ Common wrong approach:</b> Forgetting that "dimethyl" means the two methyls are on the SAME carbon (C2). Some students incorrectly place them on C2 and C3.
+</div>
+
+<!-- SECTION F -->
+<div class="misconception">
+<h3>⚠️ Common Mistakes to Avoid</h3>
+<ol>
+  <li><b>Amine classification is different from alcohol/halogenoalkane classification.</b> For alcohols and halogenoalkanes, you look at the carbon bearing the –OH/–X group. For amines, you count how many carbon atoms are directly attached to the nitrogen. $\ce{CH3NH2}$ is primary; $\ce{(CH3)2NH}$ is secondary; $\ce{(CH3)3N}$ is tertiary. Do NOT apply the carbon-bearing rule to amines.</li>
+  <li><b>"Longest chain" must contain the principal functional group.</b> If the longest chain passes through but does not include the –OH group, it is NOT the parent chain. The parent is the longest chain <em>containing</em> the functional group.</li>
+  <li><b>Alphabetical order ignores di–, tri–, tetra– prefixes.</b> "3,3-dimethyl" comes before "2-ethyl" because 'm' (methyl) comes before 'e' (ethyl). The di– is ignored for alphabetical ordering but NOT for naming.</li>
+  <li><b>Skeletal formulas: every vertex and line-end is a carbon.</b> Students sometimes forget that the end of a line represents $\ce{CH3}$ (not nothing). A line with two vertices represents $\ce{CH3–CH2–CH3}$ (3 carbons), not 2.</li>
+  <li><b>Carbonyl in aldehydes vs ketones.</b> $\ce{–CHO}$ is always terminal; $\ce{>C=O}$ in ketones is never terminal. An exam trap: drawing a ketone at the end of a chain and calling it an aldehyde.</li>
+</ol>
+</div>
+
+<!-- SECTION G -->
+<h2>7. End-of-Lesson Practice</h2>
+
+<p><b>Question 1 (Paper 1 style):</b> Which compound is a secondary alcohol?<br>
+A. $\ce{CH3CH2CH2OH}$ &nbsp; B. $\ce{(CH3)2CHOH}$ &nbsp; C. $\ce{(CH3)3COH}$ &nbsp; D. $\ce{CH3OH}$</p>
+
+<p><b>Question 2:</b> Give the systematic IUPAC name for $\ce{CH3CH2CH(CH3)CH2COOH}$.</p>
+
+<p><b>Question 3:</b> Draw the skeletal formula of <b>2-bromo-3-chloro-4-methylhexane</b>.</p>
+
+<p><b>Question 4:</b> Classify the following as 1°, 2°, or 3°: (a) $\ce{CH3CH2CH2Br}$, (b) $\ce{(CH3)2CHNH2}$, (c) $\ce{(CH3)3CCl}$, (d) $\ce{(CH3)2NH}$.</p>
+
+<p><b>Question 5:</b> A compound has molecular formula $\ce{C3H6O}$. Draw and name ALL possible isomers, identifying the functional group in each. (Hint: consider alcohols, ethers, aldehydes, and ketones.)</p>
+
+<p><b>Question 6 (IB-style):</b> Compound X has the molecular formula $\ce{C5H10O2}$. It reacts with sodium carbonate to produce $\ce{CO2}$ gas. It does NOT decolourise bromine water. Deduce two possible structures for X, giving systematic names.</p>
+
+<button class="practice-toggle" onclick="var a=this.nextElementSibling;a.classList.toggle('open');this.textContent=a.classList.contains('open')?'▴ Hide Answers':'▸ Show Answers'">▸ Show Answers</button>
+<div class="practice-answers">
+
+<p><b>Answer 1:</b> B. $\ce{(CH3)2CHOH}$ is propan-2-ol — the carbon bearing the –OH is attached to TWO other carbons → secondary (2°). A is propan-1-ol (1°). C is 2-methylpropan-2-ol (3°). D is methanol (1°).</p>
+
+<p><b>Answer 2:</b> Longest chain with –COOH: 5 carbons → pentanoic acid. Number from –COOH (C1). Methyl on C3. Name: <b>3-methylpentanoic acid</b>.</p>
+
+<p><b>Answer 3:</b> hexane = 6C backbone. Number so substituents get lowest set: Br at C2, Cl at C3, methyl at C4. Skeletal: zigzag 6 carbons, with Br branch at C2, Cl branch at C3, $\ce{CH3}$ branch at C4.</p>
+
+<p><b>Answer 4:</b> (a) $\ce{CH3CH2CH2Br}$ — Br on C1 which is attached to 1 carbon → <b>1°</b>. (b) $\ce{(CH3)2CHNH2}$ — N attached to 1 carbon (the isopropyl group) → <b>1° amine</b>. (c) $\ce{(CH3)3CCl}$ — Cl on C attached to 3 carbons → <b>3° halogenoalkane</b>. (d) $\ce{(CH3)2NH}$ — N attached to 2 carbons → <b>2° amine</b>. Note the difference between (b) and (d): in (b), the NH₂ is on a secondary carbon (2° halogenoalkane-like classification not applicable — amines are classified by N-attachment). Actually, $\ce{(CH3)2CHNH2}$: N is attached to ONE carbon → primary amine.</p>
+
+<p><b>Answer 5:</b> $\ce{C3H6O}$ isomers: (1) <b>Propanal</b> $\ce{CH3CH2CHO}$ — aldehyde. (2) <b>Propanone</b> $\ce{CH3COCH3}$ — ketone. (3) <b>Prop-2-en-1-ol</b> $\ce{CH2=CHCH2OH}$ — alcohol + alkene. (4) <b>Prop-1-en-1-ol</b> (enol, unstable, tautomerises). (5) <b>Methoxyethene</b> $\ce{CH2=CHOCH3}$ — ether + alkene. (6) <b>Cyclopropanol</b> — cyclic alcohol. Most important for IB: propanal and propanone (functional group isomers).</p>
+
+<p><b>Answer 6:</b> $\ce{C5H10O2}$. Reacts with $\ce{Na2CO3}$ to give $\ce{CO2}$ → must be a <b>carboxylic acid</b> (–COOH). Does not decolourise $\ce{Br2}$ water → no $\ce{C=C}$ double bond. So it is a saturated carboxylic acid. Two possible structures: <b>pentanoic acid</b> $\ce{CH3CH2CH2CH2COOH}$ and <b>3-methylbutanoic acid</b> $\ce{(CH3)2CHCH2COOH}$. (Also 2-methylbutanoic acid and 2,2-dimethylpropanoic acid are possible.)</p>
+</div>
+
+<!-- SECTION H -->
+<h2>8. Key Terms</h2>
 <table>
-<tr><th>Homologous Series</th><th>Functional Group</th><th>Identifying Feature</th><th>Suffix (name ending)</th><th>General Formula</th></tr>
-<tr><td>Alkanes</td><td>None (C–C and C–H only)</td><td>All single bonds</td><td><strong>−ane</strong></td><td>CₙH₂ₙ₊₂</td></tr>
-<tr><td>Alkenes</td><td>C=C (carbon-carbon double bond)</td><td>A double bond between two carbons</td><td><strong>−ene</strong></td><td>CₙH₂ₙ</td></tr>
-<tr><td>Alkynes</td><td>C≡C (carbon-carbon triple bond)</td><td>A triple bond between two carbons</td><td><strong>−yne</strong></td><td>CₙH₂ₙ₋₂</td></tr>
-<tr><td>Alcohols</td><td>−OH (hydroxyl group)</td><td>An –OH group bonded to a carbon</td><td><strong>−ol</strong></td><td>CₙH₂ₙ₊₁OH</td></tr>
-<tr><td>Aldehydes</td><td>−CHO (carbonyl group at chain end)</td><td>C=O at the end of the chain; the carbonyl carbon is also bonded to H</td><td><strong>−al</strong></td><td>CₙH₂ₙO</td></tr>
-<tr><td>Ketones</td><td>>C=O (carbonyl group not at end)</td><td>C=O with the carbon bonded to two other carbons</td><td><strong>−one</strong></td><td>CₙH₂ₙO</td></tr>
-<tr><td>Carboxylic acids</td><td>−COOH (carboxyl group)</td><td>C=O and –OH on the same terminal carbon</td><td><strong>−oic acid</strong></td><td>CₙH₂ₙO₂</td></tr>
-<tr><td>Esters</td><td>−COO−</td><td>C=O and –O– linking two carbon chains</td><td><strong>−oate</strong> (alkyl alkanoate)</td><td>CₙH₂ₙO₂</td></tr>
-<tr><td>Amines</td><td>−NH₂ (amino group)</td><td>A nitrogen atom bonded to carbon(s) and hydrogen(s)</td><td><strong>−amine</strong></td><td>CₙH₂ₙ₊₁NH₂</td></tr>
-<tr><td>Amides</td><td>−CONH₂</td><td>C=O bonded to –NH₂</td><td><strong>−amide</strong></td><td>CₙH₂ₙ₊₁NO</td></tr>
-<tr><td>Halogenoalkanes</td><td>−X (where X = F, Cl, Br, I)</td><td>A halogen atom bonded to a carbon</td><td>Prefix: <strong>fluoro−, chloro−, bromo−, iodo−</strong></td><td>CₙH₂ₙ₊₁X</td></tr>
-<tr><td>Nitriles</td><td>−C≡N (cyano group)</td><td>A carbon-nitrogen triple bond</td><td><strong>−nitrile</strong></td><td>CₙH₂ₙ₋₁N</td></tr>
+<tr><th>Term</th><th>Definition</th></tr>
+<tr><td>Functional group</td><td>An atom or group of atoms within a molecule that gives it characteristic chemical reactivity (e.g., –OH, –COOH, >C=O)</td></tr>
+<tr><td>Homologous series</td><td>A family of compounds with the same general formula and functional group, differing by successive $\ce{–CH2–}$ units</td></tr>
+<tr><td>IUPAC nomenclature</td><td>The international system for naming organic compounds systematically (prefix + stem + suffix)</td></tr>
+<tr><td>Carbonyl group</td><td>The $\ce{>C=O}$ functional group, found in aldehydes, ketones, carboxylic acids, esters, and amides</td></tr>
+<tr><td>Carboxyl group</td><td>The $\ce{–COOH}$ functional group of carboxylic acids, consisting of a carbonyl and a hydroxyl on the same carbon</td></tr>
+<tr><td>Primary (1°) carbon</td><td>A carbon atom bonded to exactly one other carbon atom</td></tr>
+<tr><td>Secondary (2°) carbon</td><td>A carbon atom bonded to exactly two other carbon atoms</td></tr>
+<tr><td>Tertiary (3°) carbon</td><td>A carbon atom bonded to exactly three other carbon atoms</td></tr>
+<tr><td>Skeletal formula</td><td>A line-angle representation of an organic molecule where vertices and line-ends represent carbon atoms; hydrogen atoms are omitted unless part of a functional group</td></tr>
+<tr><td>Structural isomer</td><td>Compounds with the same molecular formula but different connectivity of atoms (different structural formulas)</td></tr>
+<tr><td>Functional group isomer</td><td>Structural isomers that belong to different homologous series (e.g., propanal and propanone, both $\ce{C3H6O}$)</td></tr>
 </table>
-<hr>
-<h2>4. The IUPAC Naming System — Rules for Giving Every Molecule a Unique Name</h2>
-<p><strong>IUPAC</strong> stands for the International Union of Pure and Applied Chemistry. The IUPAC naming system (also called systematic nomenclature) is a set of rules that assigns a unique name to every possible organic molecule. If you follow the rules correctly, anyone anywhere in the world can draw the molecule from just its name.</p>
-<p>Here are the steps, explained one at a time. You must follow them in this order.</p>
-<div class="worked">
-<p><strong>Step 1: Find the longest continuous chain of carbon atoms.</strong> This chain is called the <strong>parent chain</strong>. The number of carbon atoms in the parent chain determines the root of the name:</p>
-</div>
-<ul>
-<li>1 carbon: <strong>meth−</strong></li>
-<li>2 carbons: <strong>eth−</strong></li>
-<li>3 carbons: <strong>prop−</strong></li>
-<li>4 carbons: <strong>but−</strong></li>
-<li>5 carbons: <strong>pent−</strong></li>
-<li>6 carbons: <strong>hex−</strong></li>
-<li>7 carbons: <strong>hept−</strong></li>
-<li>8 carbons: <strong>oct−</strong></li>
-<li>9 carbons: <strong>non−</strong></li>
-<li>10 carbons: <strong>dec−</strong></li>
-</ul>
-<p><strong>Step 2: Identify the principal functional group.</strong> Among all the functional groups present, one is the "principal" one — it determines the suffix (ending) of the name. The priority order (highest priority first) is: carboxylic acid > ester > amide > nitrile > aldehyde > ketone > alcohol > amine > alkene > alkyne > alkane > halogenoalkane. The highest-priority group gets the suffix; lower-priority groups are named as prefixes.</p>
-<p><strong>Step 3: Number the carbon atoms in the parent chain.</strong> Start numbering from the end of the chain that gives the <strong>principal functional group the lowest possible number</strong>. If there is no functional group (alkane), number from the end that gives the first substituent the lowest number.</p>
-<p><strong>Step 4: Identify and name substituents.</strong> A <strong>substituent</strong> is any atom or group attached to the parent chain that is not part of the principal functional group. Common substituents include:</p>
-<ul>
-<li>Alkyl groups (branches from the main chain): methyl (−CH₃), ethyl (−C₂H₅), propyl (−C₃H₇)</li>
-<li>Halogens: fluoro (−F), chloro (−Cl), bromo (−Br), iodo (−I)</li>
-<li>Lower-priority functional groups named as prefixes: hydroxy (−OH when not the principal group), amino (−NH₂ when not principal)</li>
-</ul>
-<p><strong>Step 5: Write the name as one word (with hyphens and commas).</strong> The format is: (substituent positions)-(substituent names)(parent chain)(functional group suffix). If there are multiple identical substituents, use di− (2), tri− (3), tetra− (4). List substituents in alphabetical order (ignoring di−, tri− when alphabetising). Use commas between numbers and hyphens between numbers and words.</p>
-<hr>
-<h2>5. Worked Examples — Naming Molecules Step by Step</h2>
-<p><div class="worked"></p>
-<p><strong>Worked Example 1: Name the molecule with the structural formula CH₃CH₂CH₂COOH.</strong></p>
-<div class="worked">
-<p><strong>To solve this, we need to:</strong> follow the IUPAC steps.</p>
-</div>
-<div class="worked">
-<p>Step 1: Count the longest carbon chain that includes the functional group. The chain is CH₃−CH₂−CH₂−COOH. That is 4 carbon atoms. Root: <strong>but−</strong>.</p>
-</div>
-<p>Step 2: The functional group is −COOH, which is a carboxylic acid. This is the highest priority group. Suffix: <strong>−oic acid</strong>. Replace the "e" of butane: <strong>butanoic acid</strong>.</p>
-<p>Step 3: Numbering: The −COOH carbon is always number 1 in carboxylic acids. No need to write "1" in the name.</p>
-<p>Answer: <strong>butanoic acid</strong>.</p>
-<p>There are no substituents, so the name is simply the root plus the suffix.</p>
-<p></div></p>
-<p><div class="worked"></p>
-<p><strong>Worked Example 2: Name the molecule CH₃CH(Cl)CH₃.</strong></p>
-<div class="worked">
-<p><strong>To solve this, we need to:</strong> identify the parent chain and substituents.</p>
-</div>
-<div class="worked">
-<p>Step 1: The longest carbon chain: CH₃−CH−CH₃. That is 3 carbon atoms. Root: <strong>prop−</strong>.</p>
-</div>
-<p>Step 2: There are only single bonds and a chlorine atom. No multiple bonds, no oxygen or nitrogen groups. The molecule is an alkane with a halogen substituent. The principal group is the alkane. Suffix: <strong>−ane</strong>.</p>
-<p>Step 3: Numbering: Number from the end that gives the chlorine the lowest number. If we number from the left: carbon 1 is CH₃, carbon 2 is CH(Cl), carbon 3 is CH₃. Chlorine is at position 2. If we number from the right, chlorine is also at position 2. So chlorine is at C-2.</p>
-<p>Step 4: The substituent is a chlorine atom. As a prefix: <strong>chloro−</strong>. Its position is 2.</p>
-<p>Step 5: Put it together: <strong>2-chloropropane</strong>.</p>
-<p>Notice: numbers and words are separated by hyphens. No space between "chloro" and "propane."</p>
-<p></div></p>
-<p><div class="worked"></p>
-<p><strong>Worked Example 3: Name the molecule CH₃CH=CHCH₃.</strong></p>
-<div class="worked">
-<p>Step 1: The longest chain with the double bond: 4 carbon atoms. Root: <strong>but−</strong>.</p>
-</div>
-<p>Step 2: The functional group is the C=C double bond — an alkene. Suffix: <strong>−ene</strong>.</p>
-<p>Step 3: Numbering: We number to give the double bond the lowest possible number. The double bond starts at C-2 (whether we number from left or right). So the double bond is between C-2 and C-3.</p>
-<p>Step 4: No substituents.</p>
-<p>Step 5: Put it together: <strong>but−2−ene</strong>. More commonly written as <strong>but-2-ene</strong>.</p>
-<p>The "2" indicates the position of the double bond — specifically, it starts at carbon 2.</p>
-<p></div></p>
-<p><div class="worked"></p>
-<p><strong>Worked Example 4: Name the molecule CH₃CH₂COCH₃.</strong></p>
-<div class="worked">
-<p>Step 1: Longest chain including the C=O group: CH₃−CH₂−CO−CH₃. That is 4 carbon atoms. Root: <strong>but−</strong>.</p>
-</div>
-<p>Step 2: The functional group is >C=O (carbonyl) in the middle of the chain — a ketone. Suffix: <strong>−one</strong>.</p>
-<p>Step 3: Numbering: Number from the end that gives the C=O the lowest number. From the left: C-1 is CH₃, C-2 is CH₂, C-3 is CO, C-4 is CH₃. C=O is at C-3. From the right: C=O is at C-2. So number from the right, giving C=O position 2.</p>
-<p>Step 4: No substituents.</p>
-<p>Step 5: Put it together: <strong>butan−2−one</strong>. More commonly: <strong>butan-2-one</strong>.</p>
-<p>Note the "an" between "but" and "one" — this comes from the alkane name "butane." The "e" of "ane" is dropped before adding "one": butane → butanone.</p>
-<p></div></p>
-<p><div class="worked"></p>
-<p><strong>Worked Example 5: Name the molecule CH₃CH(OH)CH₂CH₃.</strong></p>
-<div class="worked">
-<p>Step 1: Longest chain: 4 carbon atoms. Root: <strong>but−</strong>.</p>
-</div>
-<p>Step 2: Functional group: −OH (hydroxyl), which is an alcohol. Suffix: <strong>−ol</strong>.</p>
-<p>Step 3: Numbering: Number from the end that gives the −OH the lowest number. From the left: −OH is at C-2. From the right: −OH is at C-3. So number from the left.</p>
-<p>Step 4: No other substituents.</p>
-<p>Step 5: Put it together: <strong>butan-2-ol</strong>. The "e" is kept before "ol": butane → butanol, and the number is inserted.</p>
-<p></div></p>
-<p><div class="worked"></p>
-<p><strong>Worked Example 6: Name the molecule CH₃CH(CH₃)CH₂CH₃.</strong></p>
-<div class="worked">
-<p>Step 1: Longest chain: The backbone is CH₃−CH−CH₂−CH₃. That is 4 carbons. Root: <strong>but−</strong>.</p>
-</div>
-<p>Step 2: Only single bonds — alkane. Suffix: <strong>−ane</strong>.</p>
-<p>Step 3: Numbering: Number from the end closer to the branch. The branch (methyl group) is on C-2 from the left, or C-3 from the right. So number from the left. The methyl group is at position 2.</p>
-<p>Step 4: Substituent: a methyl group (−CH₃) at position 2. Prefix: <strong>methyl−</strong>.</p>
-<p>Step 5: <strong>2-methylbutane</strong>.</p>
-<p></div></p>
-<p><div class="worked"></p>
-<p><strong>Worked Example 7: Name the ester CH₃CH₂COOCH₃.</strong></p>
-<p>An ester has the general structure R−COO−R', where R is the part from the carboxylic acid and R' is the part from the alcohol. To name an ester, we name the alkyl group from the alcohol first, then the acid part with the suffix <strong>−oate</strong>.</p>
-<p>The molecule: CH₃CH₂−COO−CH₃.</p>
-<p>The alcohol part (the −OR' group): −O−CH₃ comes from methanol. The alkyl group is <strong>methyl</strong>.</p>
-<p>The acid part (the RCO− group): CH₃CH₂−CO− comes from propanoic acid (CH₃CH₂COOH). As an ester suffix, propanoic acid becomes <strong>propanoate</strong>.</p>
-<p>Put together: <strong>methyl propanoate</strong>.</p>
-<p>(Note: in the full name, the two words are separated by a space — this is an exception to the one-word rule.)</p>
-<p></div></p>
-<p><div class="worked"></p>
-<p><strong>Worked Example 8: Name the molecule CH₃CHBrCH₂CH₃.</strong></p>
-<div class="worked">
-<p>Step 1: Longest chain: 4 carbon atoms. Root: <strong>but−</strong>.</p>
-</div>
-<p>Step 2: Only single bonds — alkane. Suffix: <strong>−ane</strong>.</p>
-<p>Step 3: Numbering: Number to give Br the lowest number. From the left: Br at C-2. From the right: Br at C-3. Number from the left.</p>
-<p>Step 4: Substituent: bromine at position 2. Prefix: <strong>bromo−</strong>.</p>
-<p>Step 5: <strong>2-bromobutane</strong>.</p>
-<p></div></p>
-<hr>
-<h2>Practice Problems</h2>
-<p><strong>Problem 1:</strong> Write the general molecular formula for each of the following homologous series:</p>
-<p>(a) Alkenes.</p>
-<p>(b) Alcohols (with one −OH group, straight chain).</p>
-<p>(c) Carboxylic acids (with one −COOH group, straight chain).</p>
-<p><strong>Problem 2:</strong> For each of the following compounds, identify the functional group present and state which homologous series the compound belongs to.</p>
-<p>(a) CH₃CH₂CHO</p>
-<p>(b) CH₃COCH₂CH₃</p>
-<p>(c) CH₃CH₂NH₂</p>
-<p>(d) CH₃CN</p>
-<p><strong>Problem 3:</strong> Give the systematic IUPAC name for each of the following compounds. Show your reasoning by stating the length of the parent chain, the principal functional group, the numbering, and any substituents.</p>
-<p>(a) CH₃CH₂CH₂CH₃</p>
-<p>(b) CH₃CH₂CH₂OH</p>
-<p>(c) CH₃CH=CH₂</p>
-<p>(d) CH₃CHClCH₂CH₃</p>
-<p>(e) CH₃CH₂COOH</p>
-<p><strong>Problem 4:</strong> Draw the structural formula (showing all atoms) for each of the following compounds, as indicated by the IUPAC name:</p>
-<p>(a) Pentan-3-one</p>
-<p>(b) 2-methylpropan-1-ol</p>
-<p>(c) Ethyl ethanoate</p>
-<p>(d) 1,2-dibromoethane</p>
-<p><strong>Problem 5 (IB-style):</strong> Two organic compounds, A and B, both have the molecular formula C₄H₁₀O.</p>
-<ul>
-<li>Compound A does not react when heated with acidified potassium dichromate(VI) solution (K₂Cr₂O₇ dissolved in dilute sulfuric acid). The solution remains orange.</li>
-<li>Compound B does react with acidified potassium dichromate(VI): the orange solution turns green, and a new compound C with the formula C₄H₈O is formed. Compound C gives a positive result with Tollens' reagent (a silver mirror forms).</li>
-</ul>
-<p>(a) Explain what the reaction (or lack of reaction) with acidified potassium dichromate(VI) tells you about the type of alcohol present in compounds A and B. Classify each as primary (1°), secondary (2°), or tertiary (3°), or state if it is not an alcohol at all.</p>
-<p>(b) Compound C gives a positive Tollens' test. What functional group does this indicate is present in compound C? Based on this, what type of alcohol must compound B be?</p>
-<p>(c) Suggest one possible structural formula and IUPAC name for compound A, one for compound B, and one for compound C. Explain how you arrived at each answer.</p>
-<p>(d) Explain, in terms of bonding, why compound A does not react with acidified dichromate(VI), whereas compound B does.</p>
-<hr>
-<h2>Answers</h2>
-<div class="answer">
-<p><strong>Answer 1.</strong></p>
-</div>
-<div class="answer">
-<p>(a) Alkenes (one double bond, straight chain): CₙH₂ₙ. Each double bond reduces the hydrogen count by 2 compared to the alkane with the same number of carbons.</p>
-</div>
-<div class="answer">
-<p>(b) Alcohols (one −OH, straight chain): CₙH₂ₙ₊₁OH. The general formula can also be written as CₙH₂ₙ₊₂O, but CₙH₂ₙ₊₁OH makes the functional group explicit.</p>
-</div>
-<div class="answer">
-<p>(c) Carboxylic acids (one −COOH, straight chain): CₙH₂ₙO₂. For example, methanoic acid is HCOOH (n=1 gives CH₂O₂, which matches: 1 carbon, 2 hydrogens, 2 oxygens).</p>
-</div>
-<div class="answer">
-<p><strong>Answer 2.</strong></p>
-</div>
-<div class="answer">
-<p>(a) CH₃CH₂CHO: The group at the end is −CHO (carbonyl with H attached). This is an <strong>aldehyde</strong> group. The compound belongs to the <strong>aldehyde</strong> homologous series.</p>
-</div>
-<div class="answer">
-<p>(b) CH₃COCH₂CH₃: The C=O group has carbon atoms on both sides (CH₃− on one side, −CH₂CH₃ on the other). This is a <strong>ketone</strong> group. The compound belongs to the <strong>ketone</strong> homologous series. Its IUPAC name is butanone.</p>
-</div>
-<div class="answer">
-<p>(c) CH₃CH₂NH₂: The −NH₂ group is an <strong>amine</strong> (amino group). The compound belongs to the <strong>amine</strong> homologous series. Its IUPAC name is ethylamine or aminoethane.</p>
-</div>
-<div class="answer">
-<p>(d) CH₃CN: The −C≡N group is a <strong>nitrile</strong> (cyano group). The compound belongs to the <strong>nitrile</strong> homologous series. Its IUPAC name is ethanenitrile.</p>
-</div>
-<div class="answer">
-<p><strong>Answer 3.</strong></p>
-</div>
-<div class="answer">
-<p>(a) CH₃CH₂CH₂CH₃: 4 carbon chain, all single bonds → alkane. Root: <strong>but−</strong>, suffix: <strong>−ane</strong>. Name: <strong>butane</strong>.</p>
-</div>
-<div class="answer">
-<p>(b) CH₃CH₂CH₂OH: 3 carbon chain. Functional group: −OH (alcohol). Root: <strong>prop−</strong>, suffix: <strong>−ol</strong>. Numbering: −OH is at C-1 (numbering from the −OH end). Name: <strong>propan-1-ol</strong>.</p>
-</div>
-<div class="answer">
-<p>(c) CH₃CH=CH₂: 3 carbon chain. Functional group: C=C (alkene). Root: <strong>prop−</strong>, suffix: <strong>−ene</strong>. Numbering: double bond starts at C-1. Name: <strong>propene</strong> (no number needed since the double bond can only be at C-1 in a 3-carbon chain).</p>
-</div>
-<div class="answer">
-<p>(d) CH₃CHClCH₂CH₃: 4 carbon chain. All single bonds → alkane. Root: <strong>but−</strong>, suffix: <strong>−ane</strong>. Numbering: Cl is at C-2 (number from end closest to Cl). Substituent: chloro at C-2. Name: <strong>2-chlorobutane</strong>.</p>
-</div>
-<div class="answer">
-<p>(e) CH₃CH₂COOH: 3 carbon chain including the −COOH carbon. Functional group: −COOH (carboxylic acid). Root: <strong>prop−</strong>, suffix: <strong>−oic acid</strong>. The −COOH carbon is automatically number 1. Name: <strong>propanoic acid</strong>.</p>
-</div>
-<div class="answer">
-<p><strong>Answer 4.</strong></p>
-</div>
-<div class="answer">
-<p>(a) Pentan-3-one: "Pent" = 5 carbons. "3-one" = ketone (C=O) at C-3. Structure: CH₃CH₂−CO−CH₂CH₃.</p>
-</div>
-<div class="answer">
-<p>(b) 2-methylpropan-1-ol: "Prop" = 3 carbon parent chain. "1-ol" = −OH at C-1. "2-methyl" = methyl group at C-2. Structure: (CH₃)₂CH−CH₂OH. The central carbon (C-2) is bonded to H, CH₃, CH₃, and CH₂OH.</p>
-</div>
-<div class="answer">
-<p>(c) Ethyl ethanoate: Ester. "Ethyl" = alkyl group from ethanol (CH₃CH₂−). "Ethanoate" = from ethanoic acid (CH₃COO−). Structure: CH₃COOCH₂CH₃.</p>
-</div>
-<div class="answer">
-<p>(d) 1,2-dibromoethane: "Eth" = 2 carbon chain. "1,2-dibromo" = bromine atoms at C-1 and C-2. Structure: CH₂Br−CH₂Br.</p>
-</div>
-<div class="answer">
-<p><strong>Answer 5.</strong></p>
-</div>
-<div class="answer">
-<p>(a) Acidified potassium dichromate(VI) is an oxidising agent. In organic chemistry, it can oxidise <strong>primary (1°) alcohols</strong> (first to aldehydes and then to carboxylic acids) and <strong>secondary (2°) alcohols</strong> (to ketones). It cannot oxidise <strong>tertiary (3°) alcohols</strong>. Compound A does not react, which suggests A is a tertiary alcohol. Compound B does react, which suggests B is either a primary or a secondary alcohol.</p>
-</div>
-<div class="answer">
-<p>(b) A positive Tollens' test (silver mirror) indicates the presence of an <strong>aldehyde</strong>. Aldehydes are formed by oxidation of primary alcohols. Therefore, compound B must be a <strong>primary (1°) alcohol</strong>. Compound C is the aldehyde produced by oxidation of B.</p>
-</div>
-<div class="answer">
-<p>(c) Possible answers (there are several isomers of C₄H₁₀O):</p>
-</div>
-<div class="answer">
-<p>Compound A (tertiary alcohol, C₄H₁₀O): <strong>2-methylpropan-2-ol</strong>, also written as (CH₃)₃COH. The carbon bearing the −OH is attached to three other carbon atoms (three methyl groups) and has no hydrogen atom attached to it.</p>
-</div>
-<div class="answer">
-<p>Compound B (primary alcohol, C₄H₁₀O): <strong>butan-1-ol</strong>, CH₃CH₂CH₂CH₂OH. This is a straight-chain primary alcohol.</p>
-</div>
-<div class="answer">
-<p>Compound C (aldehyde, C₄H₈O): <strong>butanal</strong>, CH₃CH₂CH₂CHO. This is formed by oxidation of butan-1-ol at the −CH₂OH end.</p>
-</div>
-<div class="answer">
-<p>(d) Oxidation of alcohols by dichromate(VI) involves the removal of two hydrogen atoms: one from the −OH group and one from the carbon atom that is bonded to the −OH group. For this to happen, that carbon atom must have at least one hydrogen atom attached to it. In a tertiary alcohol such as 2-methylpropan-2-ol, the carbon bearing the −OH group is bonded to three other carbon atoms and has no C−H bond at that position. Since there is no hydrogen atom to remove from that carbon, oxidation cannot occur. The dichromate remains orange because no Cr(VI) is reduced to Cr(III).</p>
-</div>
-<div class="nav">
-  <a href="lesson_35.html">← Previous Lesson</a>
-  <a href="../index.html">↑ Lesson Index</a>
-  <a href="lesson_37.html">Next Lesson →</a>
-</div>
+
+<!-- SECTION I -->
+<h2>9. Exam Tips</h2>
+
+<div class="exam-tip"><b>Paper 1 (Multiple Choice):</b> Nomenclature questions appear almost every year — usually testing whether you can distinguish between functional group isomers. The trap: a molecular formula like $\ce{C3H6O}$ could be an aldehyde OR a ketone. Read the name carefully and match it to the correct functional group. Also, primary/secondary/tertiary classification of alcohols and halogenoalkanes is a frequent focus — memorise the rule for each.</div>
+
+<div class="exam-tip"><b>Paper 2 (Structured):</b> You may be asked to draw structural formulas from IUPAC names or vice versa. These are "easy marks" if you are systematic. Always: (1) identify the stem (carbon count), (2) draw the backbone, (3) number it, (4) add substituents and functional groups at the correct positions, (5) check every carbon has four bonds.</div>
+
+<div class="exam-tip"><b>IUPAC priority order is essential:</b> When a molecule has multiple functional groups, the highest-priority group becomes the suffix. The order is: –COOH > –COOR > –CONH₂ > –CN > –CHO > >C=O > –OH > –NH₂ > >C=C< > –X. IB expects you to know this for naming compounds with multiple functional groups on Paper 2.</div>
+
 </body>
 </html>

@@ -3,669 +3,291 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lesson 25 — IB Chemistry HL</title>
-<script>window.MathJax = { loader: {load: ['[tex]/mhchem']}, tex: {packages: {'[+]': ['mhchem']}} };</script>
+<title>Lesson 25 — Chemistry HL — Kc Calculations — ICE Tables &amp; Exam Technique</title>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] },
+  loader: { load: ['[tex]/mhchem'] },
+  tex: { packages: {'[+]': ['mhchem']} }
+};
+</script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
 <style>
-  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Palatino', 'Georgia', serif; background: var(--bg); color: var(--text); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; font-size: 17px; line-height: 1.7; }
-  h1 { font-size: 1.7rem; color: var(--accent); margin-bottom: 0.5rem; }
-  h2 { font-size: 1.25rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; margin: 2rem 0 1rem; }
-  h3 { font-size: 1.1rem; color: #444; margin: 1.3rem 0 0.5rem; }
-  p, li { margin-bottom: 0.6rem; }
-  ul, ol { padding-left: 1.8rem; margin-bottom: 1rem; }
-  .worked { background: #f0f7f0; border-left: 4px solid #2c5f2d; padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
-  .worked strong { color: #2c5f2d; }
-  .answer { background: #fefdf7; border: 1px solid var(--border); padding: 0.8rem 1.2rem; margin: 0.5rem 0; border-radius: 6px; }
-  .nav { display: flex; justify-content: space-between; margin: 3rem 0 1rem; padding-top: 1rem; border-top: 2px solid var(--border); font-size: 0.9rem; }
-  .nav a { color: #1a5c9e; text-decoration: none; }
-  .nav a:hover { text-decoration: underline; }
-  .definition { background: #fdf5e6; border-left: 4px solid #d4a017; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
-  table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
-  th, td { padding: 0.5rem; border: 1px solid #ccc; text-align: left; }
-  th { background: #f0f7f0; }
-  @media print { body { font-size: 14px; } .nav { display: none; } }
+:root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Georgia', 'Times New Roman', serif; font-size: 17px; line-height: 1.7; color: var(--text); background: var(--bg); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; }
+h1 { font-size: 1.8rem; color: var(--accent); border-bottom: 3px solid var(--accent); padding-bottom: 0.5rem; margin-bottom: 1rem; }
+h2 { font-size: 1.35rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+h3 { font-size: 1.15rem; color: var(--accent); margin: 1.5rem 0 0.5rem; }
+p { margin-bottom: 0.8rem; }
+.objectives { background: #f0f4ff; border-left: 4px solid var(--accent); padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+.objectives h3 { margin-top: 0; }
+.check-in { background: #fff8e1; border: 1px solid #ffc107; padding: 0.8rem 1rem; margin: 1rem 0; border-radius: 8px; }
+.check-in p { margin-bottom: 0.3rem; }
+.answer-toggle { display: inline-block; padding: 0.2rem 0.8rem; border-radius: 16px; cursor: pointer; font-size: 0.8rem; font-weight: 600; background: #e8f5e9; color: #2e7d32; border: 1px solid #2e7d32; user-select: none; margin-top: 0.3rem; }
+.answer-content { display: none; background: #f1f8e9; padding: 0.6rem 1rem; border-radius: 8px; margin-top: 0.5rem; }
+.answer-content.open { display: block; }
+.example { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem; margin: 1rem 0; }
+.misconception { background: #fff3e0; border-left: 4px solid #e65100; padding: 1rem 1.2rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+.misconception h3 { color: #e65100; }
+.exam-tip { background: #e8f5e9; border-left: 4px solid #2e7d32; padding: 0.8rem 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+th { background: var(--accent); color: white; padding: 0.5rem 0.8rem; text-align: left; }
+td { padding: 0.5rem 0.8rem; border-bottom: 1px solid var(--border); }
+tr:nth-child(even) td { background: #f8f8f6; }
+.diagram { text-align: center; margin: 1.5rem 0; }
+.diagram svg { max-width: 100%; }
+.diagram .caption { font-size: 0.9rem; color: #666; margin-top: 0.3rem; font-style: italic; }
+.definition { background: #fdf5e6; border-left: 4px solid #d4a017; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 8px 8px 0; }
+.practice-toggle { display: block; width: 100%; padding: 0.8rem; background: var(--accent); color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem; font-weight: 600; margin: 1.5rem 0; }
+.practice-answers { display: none; }
+.practice-answers.open { display: block; }
 </style>
 </head>
 <body>
-<h1>Lesson 25: Kc Calculations — ICE Tables and Exam Technique</h1>
 
-<h2>What You'll Learn</h2>
+<h1>Lesson 25: $K_c$ Calculations — ICE Tables &amp; Exam Technique</h1>
+<p><b>Syllabus reference:</b> 7.1, 17.1 — Equilibrium Calculations</p>
 
+<div class="objectives">
+<h3>Learning Objectives</h3>
+<p>By the end of this lesson, you will be able to:</p>
 <ul>
-
-<li>Set up and systematically solve ICE (Initial, Change, Equilibrium) tables for equilibrium problems</li>
-
-<li>Calculate equilibrium concentrations when given initial amounts and Kc</li>
-
-<li>Calculate Kc from equilibrium composition data</li>
-
-<li>Handle stoichiometric coefficients correctly in the change row of an ICE table</li>
-
-<li>Recognise and avoid the most common mistakes students make in equilibrium calculations</li>
-
+  <li><b>Construct</b> an ICE (Initial–Change–Equilibrium) table for any homogeneous equilibrium problem.</li>
+  <li><b>Calculate</b> $K_c$ given initial amounts and one equilibrium concentration (or vice versa).</li>
+  <li><b>Solve</b> quadratic equations arising from $K_c$ expressions where the change $x$ is not negligible.</li>
+  <li><b>Apply</b> the "small $x$" approximation when $K_c$ is very small and justify when it is valid.</li>
+  <li><b>Handle</b> $K_c$ problems where the reaction is approached from the product side ("reverse ICE").</li>
 </ul>
-
-<hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
-
-<h2>1. The ICE Table Method</h2>
-
-<h3>What This Concept Is and Why It Matters</h3>
-
-<p>When you know the amount of each substance you start with, and you know the value of the equilibrium constant Kc, you can calculate exactly what the concentrations will be at equilibrium. But equilibrium calculations are not as straightforward as just plugging numbers into the Kc formula, because the equilibrium concentrations are what you are trying to find — they are not given to you directly.</p>
-
-<p>The ICE table is a structured, systematic method for organising this kind of problem. The letters stand for <strong>I</strong>nitial concentration, <strong>C</strong>hange in concentration, and <strong>E</strong>quilibrium concentration. By setting up rows for each species and columns for I, C, and E, you turn a confusing algebra problem into a clear, step-by-step procedure.</p>
-
-<h3>The Step-by-Step Procedure</h3>
-
-<p>Follow these steps in order, every time. Do not skip any step.</p>
-
-<p><strong>Step 1: Write the balanced chemical equation.</strong> Everything depends on the stoichiometric coefficients being correct. Double-check that the equation is balanced.</p>
-
-<p><strong>Step 2: Set up the ICE table.</strong> Draw a table with rows for Initial, Change, and Equilibrium. Make columns for each gaseous and aqueous species in the reaction. (Do not include solids or pure liquids — they do not appear in Kc.)</p>
-
-<p><strong>Step 3: Fill in the Initial row.</strong> Enter the initial concentrations of all species. If you are given amounts in moles and a volume in dm³, convert to concentration by dividing moles by volume: concentration = n/V. If a species is not present initially, its initial concentration is zero.</p>
-
-<p><strong>Step 4: Express the Change row using the variable x.</strong> Reactants are consumed, so their Change entries are negative (e.g., −x, −2x, −3x). Products are formed, so their Change entries are positive (e.g., +x, +2x, +3x). The coefficient in front of x must match the stoichiometric coefficient from the balanced equation. For example, if the balanced equation has 2A → B, then the change for A is −2x and the change for B is +x.</p>
-
-<p><strong>Step 5: Write the Equilibrium row.</strong> For each species, add the Initial and Change entries: Equilibrium = Initial + Change.</p>
-
-<p><strong>Step 6: Substitute the Equilibrium expressions into the Kc expression.</strong> Write the Kc expression and replace each concentration with the algebraic expression from the Equilibrium row.</p>
-
-<p><strong>Step 7: Solve for x.</strong> This usually involves algebra — sometimes a simple square root, sometimes a quadratic equation. If Kc is very small (less than about 10⁻³), you may be able to make an approximation (assume x is negligible compared to the initial concentration), but always check that the approximation is valid (x should be less than 5% of the initial concentration).</p>
-
-<p><strong>Step 8: Calculate all equilibrium concentrations.</strong> Plug the value of x back into the expressions in the Equilibrium row.</p>
-
-<p><strong>Step 9: Check your work.</strong> Substitute your calculated equilibrium concentrations back into the Kc expression and verify that you get the given value of Kc. If you do not, you made an error.</p>
-
-<hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
-
-<h2>2. Example 1: H₂ + I₂ ⇌ 2HI (Equal Moles on Each Side)</h2>
-
-<h3>Worked Example 1</h3>
-
-<p><strong>Problem:</strong> The reaction H₂(g) + I₂(g) ⇌ 2HI(g) has an equilibrium constant Kc = 49 at a certain temperature. A chemist places 1.0 mole of H₂ gas and 1.0 mole of I₂ gas into a sealed container with a volume of 1.0 dm³. No HI is present initially. Calculate the equilibrium concentrations of all three species.</p>
-
-<p><strong>Strategy:</strong> We will set up an ICE table. Since the volume is 1.0 dm³, the initial concentrations in mol dm⁻³ are numerically equal to the moles. We let x represent the amount of H₂ that reacts (in mol dm⁻³). The stoichiometry then determines all other changes.</p>
-
-<p><strong>Solution:</strong></p>
-
-<p><strong>Step 1:</strong> The equation is H₂(g) + I₂(g) ⇌ 2HI(g). It is already balanced.</p>
-
-<p><strong>Step 2-5:</strong> Build the ICE table.</p>
-
-<table>
-
-<thead><tr>
-<th>Species</th>
-<th>H₂</th>
-<th>I₂</th>
-<th>HI</th>
-</tr></thead>
-<tbody>
-
-<tr>
-<td>**I**nitial / mol dm⁻³</td>
-<td>1.0</td>
-<td>1.0</td>
-<td>0</td>
-</tr>
-
-<tr>
-<td>**C**hange / mol dm⁻³</td>
-<td>−x</td>
-<td>−x</td>
-<td>+2x</td>
-</tr>
-
-<tr>
-<td>**E**quilibrium / mol dm⁻³</td>
-<td>1.0 − x</td>
-<td>1.0 − x</td>
-<td>2x</td>
-</tr>
-
-</tbody></table>
-
-<p>Why is the change for HI +2x? Because the coefficient of HI in the balanced equation is 2. For every 1 molecule of H₂ that reacts (our −x), 2 molecules of HI are formed. So the change in [HI] is twice as large.</p>
-
-<p><strong>Step 6:</strong> Write the Kc expression and substitute:</p>
-
-<p>\[K_c = \frac{[\text{HI}]^2}{[\text{H}_2][\text{I}_2]} = \frac{(2x)^2}{(1.0 - x)(1.0 - x)} = 49\]</p>
-
-<p>\[\frac{4x^2}{(1.0 - x)^2} = 49\]</p>
-
-<p><strong>Step 7:</strong> Because both sides are perfect squares, we can take the square root of both sides. This is only possible because the numerator is a square (4x² = (2x)²) and the denominator is a square ((1.0 − x)²). Taking the square root:</p>
-
-<p>\[\frac{2x}{1.0 - x} = 7\]</p>
-
-<p>(We take the positive root, 7, because concentrations must be positive. The negative root, −7, is mathematically valid but chemically meaningless — it would give a negative value for x, which would mean a negative concentration.)</p>
-
-<p>Now solve for x:</p>
-
-<p>\[2x = 7(1.0 - x)\]</p>
-
-<p>\[2x = 7.0 - 7x\]</p>
-
-<p>\[2x + 7x = 7.0\]</p>
-
-<p>\[9x = 7.0\]</p>
-
-<p>\[x = \frac{7.0}{9} = 0.778 \text{ mol dm}^{-3}\]</p>
-
-<p><strong>Step 8:</strong> Calculate the equilibrium concentrations:</p>
-
-<p>[H₂] = 1.0 − 0.778 = 0.222 mol dm⁻³ (approximately 0.22 mol dm⁻³)</p>
-
-<p>[I₂] = 1.0 − 0.778 = 0.222 mol dm⁻³ (same as H₂, as expected from symmetry)</p>
-
-<p>[HI] = 2 × 0.778 = 1.556 mol dm⁻³ (approximately 1.6 mol dm⁻³)</p>
-
-<p><strong>Step 9:</strong> Check:</p>
-
-<p>\[K_c = \frac{(1.556)^2}{(0.222)(0.222)} = \frac{2.421}{0.0493} = 49.1 \approx 49\]</p>
-
-<p>The small difference is due to rounding. The answer is verified.</p>
-
-<p><strong>Why this makes sense:</strong> We started with equal amounts of the two reactants, and the stoichiometry uses them in a 1:1 ratio. So they should have equal concentrations at equilibrium. Also, Kc = 49 is fairly large, so most but not all of the reactants should be converted to products. Our result shows about 78% conversion, which is consistent with Kc = 49.</p>
-
-<hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
-
-<h2>3. Example 2: N₂O₄ ⇌ 2NO₂ (One Reactant Dissociating)</h2>
-
-<h3>Worked Example 2</h3>
-
-<p><strong>Problem:</strong> Dinitrogen tetroxide gas, N₂O₄, partially dissociates into nitrogen dioxide gas, NO₂, according to the equilibrium N₂O₄(g) ⇌ 2NO₂(g). At 373 K, the equilibrium constant Kc for this reaction is 0.36. A chemist places 2.0 moles of pure N₂O₄ gas into a container with a volume of 5.0 dm³. No NO₂ is present initially. Calculate the equilibrium concentrations of N₂O₄ and NO₂.</p>
-
-<p><strong>Strategy:</strong> This is similar to the previous example, but there are two important differences. First, the stoichiometric coefficients are different (1 and 2 instead of 1 and 1 and 2). Second, taking a square root will not simplify the algebra because the denominator is (0.40 − x), not (0.40 − x)². We will need to solve a quadratic equation.</p>
-
-<p><strong>Solution:</strong></p>
-
-<p><strong>Step 3:</strong> Calculate initial concentrations. [N₂O₄]₀ = moles/volume = 2.0 mol / 5.0 dm³ = 0.40 mol dm⁻³. [NO₂]₀ = 0.</p>
-
-<p><strong>Steps 2-5:</strong> Build the ICE table.</p>
-
-<table>
-
-<thead><tr>
-<th>Species</th>
-<th>N₂O₄</th>
-<th>NO₂</th>
-</tr></thead>
-<tbody>
-
-<tr>
-<td>**I**nitial / mol dm⁻³</td>
-<td>0.40</td>
-<td>0</td>
-</tr>
-
-<tr>
-<td>**C**hange / mol dm⁻³</td>
-<td>−x</td>
-<td>+2x</td>
-</tr>
-
-<tr>
-<td>**E**quilibrium / mol dm⁻³</td>
-<td>0.40 − x</td>
-<td>2x</td>
-</tr>
-
-</tbody></table>
-
-<p><strong>Step 6:</strong> Write the Kc expression and substitute:</p>
-
-<p>\[K_c = \frac{[\text{NO}_2]^2}{[\text{N}_2\text{O}_4]} = \frac{(2x)^2}{0.40 - x} = 0.36\]</p>
-
-<p>\[\frac{4x^2}{0.40 - x} = 0.36\]</p>
-
-<p><strong>Step 7:</strong> Multiply both sides by (0.40 − x):</p>
-
-<p>\[4x^2 = 0.36(0.40 - x)\]</p>
-
-<p>\[4x^2 = 0.144 - 0.36x\]</p>
-
-<p>Bring all terms to one side to form a quadratic equation:</p>
-
-<p>\[4x^2 + 0.36x - 0.144 = 0\]</p>
-
-<p>To make the numbers easier to work with, multiply the entire equation by 100:</p>
-
-<p>\[400x^2 + 36x - 14.4 = 0\]</p>
-
-<p>Use the quadratic formula: for ax² + bx + c = 0,</p>
-
-<p>\[x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\]</p>
-
-<p>where a = 400, b = 36, c = −14.4.</p>
-
-<p>\[x = \frac{-36 \pm \sqrt{36^2 - 4(400)(-14.4)}}{2(400)}\]</p>
-
-<p>\[x = \frac{-36 \pm \sqrt{1296 + 23040}}{800}\]</p>
-
-<p>\[x = \frac{-36 \pm \sqrt{24336}}{800}\]</p>
-
-<p>\[x = \frac{-36 \pm 156}{800}\]</p>
-
-<p>This gives two possible values for x:</p>
-
-<p>x = (−36 + 156) / 800 = 120 / 800 = 0.15</p>
-
-<p>x = (−36 − 156) / 800 = −192 / 800 = −0.24</p>
-
-<p>The negative value would give a negative concentration of NO₂ (since [NO₂] = 2x), which is chemically impossible. We take the positive root: <strong>x = 0.15 mol dm⁻³</strong>.</p>
-
-<p><strong>Step 8:</strong> Calculate equilibrium concentrations:</p>
-
-<p>[N₂O₄] = 0.40 − 0.15 = 0.25 mol dm⁻³</p>
-
-<p>[NO₂] = 2 × 0.15 = 0.30 mol dm⁻³</p>
-
-<p><strong>Step 9:</strong> Check:</p>
-
-<p>\[K_c = \frac{(0.30)^2}{0.25} = \frac{0.090}{0.25} = 0.36\]</p>
-
-<p>This matches the given Kc exactly.</p>
-
-<p><strong>Why this makes sense:</strong> Kc = 0.36 is less than 1, so the equilibrium should favour the reactant N₂O₄ somewhat. Our results show [N₂O₄] = 0.25 and [NO₂] = 0.30, which means there is slightly more NO₂ than N₂O₄ in terms of concentration, but the squared term in the numerator means the equilibrium still favours the reactant side overall.</p>
-
-<hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
-
-<h2>4. Example 3: Esterification (Equal Moles on Both Sides)</h2>
-
-<h3>Worked Example 3</h3>
-
-<p><strong>Problem:</strong> The esterification reaction between ethanoic acid and ethanol produces ethyl ethanoate and water:</p>
-
-<p>\[\text{CH}_3\text{COOH}(\text{l}) + \text{C}_2\text{H}_5\text{OH}(\text{l}) \rightleftharpoons \text{CH}_3\text{COOC}_2\text{H}_5(\text{l}) + \text{H}_2\text{O}(\text{l})\]</p>
-
-<p>At a certain temperature, the equilibrium constant Kc for this reaction is 4.0. All four species are liquids, but none is the solvent in vast excess, so all appear in the Kc expression. Initially, 1.0 mole of ethanoic acid and 1.0 mole of ethanol are mixed in a container of volume V dm³. No ester and no water are present initially. Calculate the equilibrium amount of ester in moles.</p>
-
-<p><strong>Strategy:</strong> Since the total volume V is the same for all species and cancels out in the Kc expression, we can work directly with amounts in moles. We let x be the number of moles of acid that react.</p>
-
-<p><strong>Solution:</strong></p>
-
-<p><strong>Step 2-5:</strong> Build the ICE table using moles (the volume will cancel later).</p>
-
-<table>
-
-<thead><tr>
-<th>Species</th>
-<th>CH₃COOH</th>
-<th>C₂H₅OH</th>
-<th>CH₃COOC₂H₅</th>
-<th>H₂O</th>
-</tr></thead>
-<tbody>
-
-<tr>
-<td>**I**nitial / mol</td>
-<td>1.0</td>
-<td>1.0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-
-<tr>
-<td>**C**hange / mol</td>
-<td>−x</td>
-<td>−x</td>
-<td>+x</td>
-<td>+x</td>
-</tr>
-
-<tr>
-<td>**E**quilibrium / mol</td>
-<td>1.0 − x</td>
-<td>1.0 − x</td>
-<td>x</td>
-<td>x</td>
-</tr>
-
-</tbody></table>
-
-<p><strong>Step 6:</strong> Write the Kc expression. The concentration of each species is its amount in moles divided by the volume V:</p>
-
-<p>\[K_c = \frac{[\text{ester}][\text{H}_2\text{O}]}{[\text{acid}][\text{alcohol}]} = \frac{(x/V)(x/V)}{((1.0-x)/V)((1.0-x)/V)}\]</p>
-
-<p>All the V terms cancel out, so we can work entirely with moles:</p>
-
-<p>\[K_c = \frac{x \cdot x}{(1.0 - x)(1.0 - x)} = \frac{x^2}{(1.0 - x)^2} = 4.0\]</p>
-
-<p><strong>Step 7:</strong> Take the square root of both sides:</p>
-
-<p>\[\frac{x}{1.0 - x} = 2.0\]</p>
-
-<p>\[x = 2.0(1.0 - x)\]</p>
-
-<p>\[x = 2.0 - 2.0x\]</p>
-
-<p>\[3.0x = 2.0\]</p>
-
-<p>\[x = \frac{2.0}{3.0} = 0.67 \text{ mol}\]</p>
-
-<p><strong>Step 8:</strong> The equilibrium amount of ester is x = <strong>0.67 mol</strong>.</p>
-
-<p><strong>Why this makes sense:</strong> Kc = 4.0 means products are favoured, and with equal starting amounts of both reactants, we expect more than half but not all to be converted. Our result shows that 67% of the acid (and alcohol) has been converted to ester.</p>
-
-<hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
-
-<h2>5. Common Pitfalls and How to Avoid Them</h2>
-
-<h3>Pitfall 1: Forgetting to Convert Moles to Concentration</h3>
-
-<p>If you are given moles of a substance and the volume of the container, you must divide moles by volume to get concentration (in mol dm⁻³) before entering values into the ICE table. The Kc expression uses concentrations, not amounts. The only exception is when the volume cancels out — which happens only when there are equal numbers of moles on both sides of the equation after the stoichiometric coefficients are counted. When in doubt, always convert to concentration.</p>
-
-<h3>Pitfall 2: Getting the Signs Wrong in the Change Row</h3>
-
-<p>Reactants are consumed, so their Change row entries are always negative (e.g., −x, −2x). Products are produced, so their Change row entries are always positive (e.g., +x, +2x). If you put +x for a reactant, your algebra will give nonsensical results. Always check: is this species being used up or being made?</p>
-
-<h3>Pitfall 3: Missing Stoichiometric Coefficients in the Change Row</h3>
-
-<p>The number in front of x in the Change row must match the stoichiometric coefficient from the balanced equation. For the reaction 2A → B, the change for A is −2x (coefficient 2) and the change for B is +x (coefficient 1). A common mistake is to write −x for A because "one x represents one unit of reaction." In fact, one unit of reaction consumes two A particles.</p>
-
-<h3>Pitfall 4: Solving a Quadratic Equation Incorrectly</h3>
-
-<p>When you get two roots from the quadratic formula, one will usually give a negative concentration (and should be discarded). Always check both roots against the physical constraints: all concentrations must be positive, and x cannot be larger than the initial concentration of any reactant.</p>
-
-<h3>Pitfall 5: Not Checking Your Answer</h3>
-
-<p>After you have calculated all equilibrium concentrations, substitute them back into the Kc expression. If the value you get is not reasonably close to the given Kc, you made a mistake somewhere. This simple check takes 30 seconds and catches most errors.</p>
-
-<h3>Pitfall 6: Including Solids or Pure Liquids</h3>
-
-<p>Remember that solids (s) and pure liquids (l) do not appear in the Kc expression. Do not include columns for them in the ICE table when you are substituting into Kc. You may include them in the table for your own tracking, but do not use their concentrations in the Kc expression.</p>
-
-<hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
-
-<h2>Practice Problems</h2>
-
-<ol>
-
-<li>For the equilibrium CO(g) + H₂O(g) ⇌ CO₂(g) + H₂(g), the equilibrium constant Kc has the value 1.0 at 1100 K. Initially, the concentrations of CO and H₂O are both 2.0 mol dm⁻³, and no CO₂ or H₂ is present. Construct a complete ICE table for this reaction and calculate the equilibrium concentrations of all four species.</li>
-
-</ol>
-
-<ol>
-
-<li>Phosphorus pentachloride decomposes according to the equilibrium PCl₅(g) ⇌ PCl₃(g) + Cl₂(g). At 500 K, the equilibrium constant Kc for this decomposition is 0.042. A chemist places 0.50 moles of pure PCl₅ gas into a container with a volume of 2.0 dm³. Construct an ICE table and calculate the equilibrium concentrations of all three species. Solve the resulting quadratic equation, showing each step of your algebra.</li>
-
-</ol>
-
-<ol>
-
-<li>The oxidation of sulfur dioxide to sulfur trioxide reaches equilibrium according to the equation 2SO₂(g) + O₂(g) ⇌ 2SO₃(g). In a container with volume 2.0 dm³ at a certain temperature, the equilibrium mixture is found to contain 0.060 moles of SO₂, 0.040 moles of O₂, and 0.080 moles of SO₃. Calculate the value of the equilibrium constant Kc.</li>
-
-</ol>
-
-<ol>
-
-<li>For the reaction N₂(g) + 3H₂(g) ⇌ 2NH₃(g), the equilibrium constant Kc has the value 0.50 at a certain temperature. Initially, the concentrations are [N₂] = 1.0 mol dm⁻³ and [H₂] = 3.0 mol dm⁻³, with no NH₃ present. Construct the ICE table and write the equilibrium concentrations in terms of x. Write the full Kc equation in terms of x. Do not solve the equation — the algebra is complex — but simplify it as much as possible.</li>
-
-</ol>
-
-<ol>
-
-<li><strong>(IB-Exam Style)</strong> Hydrogen iodide decomposes according to the equilibrium:</li>
-
-</ol>
-
-<p>\[2\text{HI}(\text{g}) \rightleftharpoons \text{H}_2(\text{g}) + \text{I}_2(\text{g})\]</p>
-
-<p>A chemist places 0.40 moles of pure HI gas into a sealed container with a volume of 2.0 dm³ at a temperature of 700 K. The system is allowed to reach equilibrium. At equilibrium, analysis shows that 0.10 moles of HI remain in the container.</p>
-
-<p>(a) Calculate the initial concentration of HI in mol dm⁻³.</p>
-
-<p>(b) Calculate the amount (in moles) of HI that has reacted.</p>
-
-<p>(c) Using the stoichiometry of the balanced equation, determine the amounts (in moles) of H₂ and I₂ that have been formed at equilibrium.</p>
-
-<p>(d) Convert all equilibrium amounts to concentrations in mol dm⁻³ and calculate the value of Kc at 700 K.</p>
-
-<p>(e) In a second experiment at the same temperature, the chemist starts with 0.20 moles of H₂ and 0.20 moles of I₂ in the same 2.0 dm³ container, with no HI present initially. Use the value of Kc from part (d) to calculate the equilibrium concentration of HI in this second experiment. Set up an ICE table and solve for the unknown.</p>
-
-<hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
-
-<h2>Answers</h2>
-
-<h3>Answer 1</h3>
-
-<p>The balanced equation is CO + H₂O ⇌ CO₂ + H₂. Since all coefficients are 1, the ICE table is straightforward.</p>
-
-<table>
-
-<thead><tr>
-<th>Species</th>
-<th>CO</th>
-<th>H₂O</th>
-<th>CO₂</th>
-<th>H₂</th>
-</tr></thead>
-<tbody>
-
-<tr>
-<td>**I**nitial / mol dm⁻³</td>
-<td>2.0</td>
-<td>2.0</td>
-<td>0</td>
-<td>0</td>
-</tr>
-
-<tr>
-<td>**C**hange / mol dm⁻³</td>
-<td>−x</td>
-<td>−x</td>
-<td>+x</td>
-<td>+x</td>
-</tr>
-
-<tr>
-<td>**E**quilibrium / mol dm⁻³</td>
-<td>2.0 − x</td>
-<td>2.0 − x</td>
-<td>x</td>
-<td>x</td>
-</tr>
-
-</tbody></table>
-
-<p>Kc = [CO₂][H₂] / ([CO][H₂O]) = x² / (2.0 − x)² = 1.0.</p>
-
-<p>Taking the square root: x / (2.0 − x) = 1.0.</p>
-
-<p>x = 2.0 − x → 2x = 2.0 → x = 1.0.</p>
-
-<p>All equilibrium concentrations are: [CO] = [H₂O] = [CO₂] = [H₂] = <strong>1.0 mol dm⁻³</strong>.</p>
-
-<p>This makes sense: Kc = 1.0 means neither side is favoured, and with equal starting amounts and 1:1 stoichiometry, exactly half of each reactant is converted at equilibrium.</p>
-
-<h3>Answer 2</h3>
-
-<p><strong>Step 1:</strong> Initial concentration of PCl₅: [PCl₅]₀ = 0.50 mol / 2.0 dm³ = 0.25 mol dm⁻³.</p>
-
-<table>
-
-<thead><tr>
-<th>Species</th>
-<th>PCl₅</th>
-<th>PCl₃</th>
-<th>Cl₂</th>
-</tr></thead>
-<tbody>
-
-<tr>
-<td>**I**nitial / mol dm⁻³</td>
-<td>0.25</td>
-<td>0</td>
-<td>0</td>
-</tr>
-
-<tr>
-<td>**C**hange / mol dm⁻³</td>
-<td>−x</td>
-<td>+x</td>
-<td>+x</td>
-</tr>
-
-<tr>
-<td>**E**quilibrium / mol dm⁻³</td>
-<td>0.25 − x</td>
-<td>x</td>
-<td>x</td>
-</tr>
-
-</tbody></table>
-
-<p>Kc = [PCl₃][Cl₂] / [PCl₅] = x² / (0.25 − x) = 0.042.</p>
-
-<p>x² = 0.042(0.25 − x) = 0.0105 − 0.042x.</p>
-
-<p>x² + 0.042x − 0.0105 = 0.</p>
-
-<p>Using the quadratic formula with a = 1, b = 0.042, c = −0.0105:</p>
-
-<p>x = [−0.042 ± √(0.042² − 4(1)(−0.0105))] / 2 = [−0.042 ± √(0.001764 + 0.042)] / 2 = [−0.042 ± √0.043764] / 2 = [−0.042 ± 0.2092] / 2.</p>
-
-<p>Positive root: x = (−0.042 + 0.2092) / 2 = 0.1672 / 2 = 0.0836.</p>
-
-<p>Negative root is chemically impossible.</p>
-
-<p>Equilibrium concentrations: [PCl₅] = 0.25 − 0.0836 = 0.1664 ≈ <strong>0.17 mol dm⁻³</strong>, [PCl₃] = [Cl₂] = <strong>0.084 mol dm⁻³</strong> (approximately, to two significant figures).</p>
-
-<h3>Answer 3</h3>
-
-<p>First, convert all amounts to concentrations by dividing by the volume (2.0 dm³):</p>
-
-<p>[SO₂] = 0.060 / 2.0 = 0.030 mol dm⁻³</p>
-
-<p>[O₂] = 0.040 / 2.0 = 0.020 mol dm⁻³</p>
-
-<p>[SO₃] = 0.080 / 2.0 = 0.040 mol dm⁻³</p>
-
-<p>Kc = [SO₃]² / ([SO₂]²[O₂]) = (0.040)² / ((0.030)² (0.020)) = 0.0016 / (0.0009 × 0.020) = 0.0016 / 0.000018 = 88.89 ≈ <strong>89</strong>.</p>
-
-<h3>Answer 4</h3>
-
-<table>
-
-<thead><tr>
-<th>Species</th>
-<th>N₂</th>
-<th>H₂</th>
-<th>NH₃</th>
-</tr></thead>
-<tbody>
-
-<tr>
-<td>**I**nitial / mol dm⁻³</td>
-<td>1.0</td>
-<td>3.0</td>
-<td>0</td>
-</tr>
-
-<tr>
-<td>**C**hange / mol dm⁻³</td>
-<td>−x</td>
-<td>−3x</td>
-<td>+2x</td>
-</tr>
-
-<tr>
-<td>**E**quilibrium / mol dm⁻³</td>
-<td>1.0 − x</td>
-<td>3.0 − 3x</td>
-<td>2x</td>
-</tr>
-
-</tbody></table>
-
-<p>Note carefully the change for H₂ is −3x (coefficient 3) and for NH₃ is +2x (coefficient 2).</p>
-
-<p>Kc = [NH₃]² / ([N₂][H₂]³) = (2x)² / [(1.0 − x)(3.0 − 3x)³] = 0.50.</p>
-
-<p>Simplify: (3.0 − 3x) = 3(1.0 − x), so (3.0 − 3x)³ = 27(1.0 − x)³.</p>
-
-<p>The Kc expression becomes: 4x² / [(1.0 − x) × 27(1.0 − x)³] = 4x² / [27(1.0 − x)⁴] = 0.50.</p>
-
-<p>This is the simplified form. Solving it would involve expanding (1.0 − x)⁴, which leads to a quartic equation — beyond what is expected in IB, but the setup is the critical skill.</p>
-
-<h3>Answer 5</h3>
-
-<p><strong>(a)</strong> Initial [HI] = moles / volume = 0.40 mol / 2.0 dm³ = <strong>0.20 mol dm⁻³</strong>.</p>
-
-<p><strong>(b)</strong> Amount of HI that reacted = initial amount − equilibrium amount = 0.40 − 0.10 = <strong>0.30 moles</strong>.</p>
-
-<p><strong>(c)</strong> From the balanced equation 2HI ⇌ H₂ + I₂, for every 2 moles of HI that decompose, 1 mole of H₂ and 1 mole of I₂ are formed. Since 0.30 moles of HI decomposed, the amount of H₂ formed = 0.30 / 2 = 0.15 moles, and the amount of I₂ formed is also <strong>0.15 moles</strong>.</p>
-
-<p><strong>(d)</strong> Equilibrium concentrations in mol dm⁻³:</p>
-
-<p>[HI] = 0.10 mol / 2.0 dm³ = 0.050 mol dm⁻³</p>
-
-<p>[H₂] = 0.15 mol / 2.0 dm³ = 0.075 mol dm⁻³</p>
-
-<p>[I₂] = 0.15 mol / 2.0 dm³ = 0.075 mol dm⁻³</p>
-
-<p>Kc = [H₂][I₂] / [HI]² = (0.075)(0.075) / (0.050)² = 0.005625 / 0.0025 = <strong>2.25</strong>.</p>
-
-<p><strong>(e)</strong> In the second experiment, initial concentrations: [H₂] = [I₂] = 0.20 / 2.0 = 0.10 mol dm⁻³, [HI] = 0. The reaction must proceed in reverse: H₂ + I₂ → 2HI.</p>
-
-<table>
-
-<thead><tr>
-<th>Species</th>
-<th>H₂</th>
-<th>I₂</th>
-<th>HI</th>
-</tr></thead>
-<tbody>
-
-<tr>
-<td>**I**nitial / mol dm⁻³</td>
-<td>0.10</td>
-<td>0.10</td>
-<td>0</td>
-</tr>
-
-<tr>
-<td>**C**hange / mol dm⁻³</td>
-<td>−x</td>
-<td>−x</td>
-<td>+2x</td>
-</tr>
-
-<tr>
-<td>**E**quilibrium / mol dm⁻³</td>
-<td>0.10 − x</td>
-<td>0.10 − x</td>
-<td>2x</td>
-</tr>
-
-</tbody></table>
-
-<p>Kc = [H₂][I₂] / [HI]² = 2.25 (using the same Kc as the forward reaction 2HI ⇌ H₂ + I₂).</p>
-
-<p>2.25 = (0.10 − x)(0.10 − x) / (2x)² = (0.10 − x)² / 4x².</p>
-
-<p>Take the square root: √2.25 = 1.5 = (0.10 − x) / (2x).</p>
-
-<p>1.5 = (0.10 − x) / (2x).</p>
-
-<p>3.0x = 0.10 − x.</p>
-
-<p>4.0x = 0.10.</p>
-
-<p>x = 0.025.</p>
-
-<p>Equilibrium [HI] = 2x = 2 × 0.025 = <strong>0.050 mol dm⁻³</strong>.</p>
-
-<p>This is exactly the same [HI] as in part (d) — starting from the opposite side at the same temperature leads to the same equilibrium concentrations, confirming that Kc is a true constant.</p>
-
-<div class="nav">
-  <a href="lesson_24.html">← Previous Lesson</a>
-  <a href="../index.html">↑ All Lessons</a>
-  <a href="lesson_26.html">Next Lesson →</a>
 </div>
+
+<h2>1. Prior Knowledge Check</h2>
+
+<p><b>Question 1:</b> In an ICE table, what do I, C, and E stand for? When are the "C" entries negative?</p>
+<div class="check-in">
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">I = <b>Initial</b> concentrations (before any reaction), C = <b>Change</b> (the amount that reacts, using $x$), E = <b>Equilibrium</b> concentrations (I + C). C entries are <b>negative</b> for reactants (they are consumed) and <b>positive</b> for products (they are formed). The magnitude of each C entry is proportional to the stoichiometric coefficient: for $\ce{2A -> B}$, if A changes by $-2x$, B changes by $+x$.</div>
+</div>
+
+<p><b>Question 2:</b> For $\ce{N2 + 3H2 <=> 2NH3}$, if $x$ mol of N₂ react, how much H₂ reacts and how much NH₃ forms?</p>
+<div class="check-in">
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">From the stoichiometry (1:3:2), if $x$ mol of N₂ react, then $3x$ mol of H₂ react and $2x$ mol of NH₃ form. The C row would be: N₂ = $-x$, H₂ = $-3x$, NH₃ = $+2x$.</div>
+</div>
+
+<h2>2. The ICE Table Method — Step by Step</h2>
+
+<p>The ICE table is the systematic method for solving equilibrium problems. It converts a verbal problem into algebra.</p>
+
+<div class="diagram">
+<svg width="520" height="260" viewBox="0 0 520 260">
+  <!-- ICE table -->
+  <rect x="20" y="10" width="480" height="200" rx="6" fill="#f8f8f6" stroke="#333" stroke-width="1.5"/>
+  <!-- header row -->
+  <line x1="20" y1="45" x2="500" y2="45" stroke="#333" stroke-width="1.5"/>
+  <line x1="140" y1="10" x2="140" y2="210" stroke="#333" stroke-width="1"/>
+  <line x1="260" y1="10" x2="260" y2="210" stroke="#333" stroke-width="1"/>
+  <line x1="380" y1="10" x2="380" y2="210" stroke="#333" stroke-width="1"/>
+  <!-- labels -->
+  <text x="80" y="35" text-anchor="middle" font-size="13" font-weight="bold"></text>
+  <text x="200" y="35" text-anchor="middle" font-size="13" font-weight="bold" fill="#1565c0">A</text>
+  <text x="320" y="35" text-anchor="middle" font-size="13" font-weight="bold" fill="#1565c0">B</text>
+  <text x="440" y="35" text-anchor="middle" font-size="13" font-weight="bold" fill="#c62828">C</text>
+  <!-- I row -->
+  <text x="80" y="70" text-anchor="middle" font-size="13" font-weight="bold" fill="#2c5f2d">I (Initial)</text>
+  <text x="200" y="70" text-anchor="middle" font-size="13">[A]₀</text>
+  <text x="320" y="70" text-anchor="middle" font-size="13">[B]₀</text>
+  <text x="440" y="70" text-anchor="middle" font-size="13">[C]₀</text>
+  <!-- C row -->
+  <text x="80" y="110" text-anchor="middle" font-size="13" font-weight="bold" fill="#e65100">C (Change)</text>
+  <text x="200" y="110" text-anchor="middle" font-size="13" fill="#c62828">−x</text>
+  <text x="320" y="110" text-anchor="middle" font-size="13" fill="#c62828">−x</text>
+  <text x="440" y="110" text-anchor="middle" font-size="13" fill="#2c5f2d">+2x</text>
+  <!-- E row -->
+  <text x="80" y="150" text-anchor="middle" font-size="13" font-weight="bold" fill="#2c5f2d">E (Equil.)</text>
+  <text x="200" y="150" text-anchor="middle" font-size="13">[A]₀−x</text>
+  <text x="320" y="150" text-anchor="middle" font-size="13">[B]₀−x</text>
+  <text x="440" y="150" text-anchor="middle" font-size="13">[C]₀+2x</text>
+  <!-- equation -->
+  <text x="260" y="245" text-anchor="middle" font-size="13" fill="#2c5f2d">$K_c = \dfrac{([\ce{C}]_0 + 2x)^2}{([\ce{A}]_0 - x)([\ce{B}]_0 - x)}$ = known value → solve for $x$</text>
+</svg>
+<div class="caption">Figure 1: The ICE table for $\ce{A + B <=> 2C}$. The C row uses $x$ multiplied by stoichiometric coefficients. The E row feeds into the $K_c$ expression, producing an equation to solve.</div>
+</div>
+
+<h3>2.1 The Systematic Approach</h3>
+<ol>
+  <li><b>Write</b> the balanced equation and the $K_c$ expression.</li>
+  <li><b>Convert</b> all given amounts to <b>concentrations</b> (mol dm⁻³) by dividing by volume (dm³).</li>
+  <li><b>Construct</b> the ICE table. Define $x$ as the change in concentration of the species with coefficient 1, or the species whose equilibrium concentration is sought.</li>
+  <li><b>Fill</b> E row = I row + C row.</li>
+  <li><b>Substitute</b> E row into the $K_c$ expression and solve for $x$.</li>
+  <li><b>Check</b> your answer: concentrations must be positive. If you get two roots, discard the one that gives a negative concentration.</li>
+</ol>
+
+<div class="diagram">
+<svg width="520" height="230" viewBox="0 0 520 230">
+  <text x="260" y="25" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c5f2d">ICE Table Workflow</text>
+  <!-- step 1 -->
+  <rect x="25" y="45" width="130" height="75" rx="8" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="2"/>
+  <text x="90" y="75" text-anchor="middle" font-size="11" font-weight="bold">Step 1</text>
+  <text x="90" y="92" text-anchor="middle" font-size="10">Write balanced eqn</text>
+  <text x="90" y="107" text-anchor="middle" font-size="10">&amp; Kc expression</text>
+  <!-- arrow -->
+  <text x="170" y="88" font-size="20" fill="#555">→</text>
+  <!-- step 2 -->
+  <rect x="195" y="45" width="130" height="75" rx="8" fill="#fff8e1" stroke="#f57f17" stroke-width="2"/>
+  <text x="260" y="75" text-anchor="middle" font-size="11" font-weight="bold">Step 2</text>
+  <text x="260" y="92" text-anchor="middle" font-size="10">Convert to</text>
+  <text x="260" y="107" text-anchor="middle" font-size="10">concentrations</text>
+  <!-- arrow -->
+  <text x="340" y="88" font-size="20" fill="#555">→</text>
+  <!-- step 3 -->
+  <rect x="365" y="45" width="130" height="75" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+  <text x="430" y="75" text-anchor="middle" font-size="11" font-weight="bold">Step 3</text>
+  <text x="430" y="92" text-anchor="middle" font-size="10">Build ICE table</text>
+  <text x="430" y="107" text-anchor="middle" font-size="10">I → C → E rows</text>
+  <!-- step 4 -->
+  <rect x="100" y="140" width="150" height="60" rx="8" fill="#ffcdd2" stroke="#c62828" stroke-width="2"/>
+  <text x="175" y="162" text-anchor="middle" font-size="11" font-weight="bold">Step 4</text>
+  <text x="175" y="178" text-anchor="middle" font-size="10">Sub into Kc &amp; solve for x</text>
+  <text x="175" y="192" text-anchor="middle" font-size="10">(Quadratic if needed)</text>
+  <!-- arrow -->
+  <text x="265" y="173" font-size="20" fill="#555">→</text>
+  <!-- step 5 -->
+  <rect x="285" y="140" width="150" height="60" rx="8" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="2"/>
+  <text x="360" y="162" text-anchor="middle" font-size="11" font-weight="bold">Step 5</text>
+  <text x="360" y="178" text-anchor="middle" font-size="10">Discard negative roots</text>
+  <text x="360" y="192" text-anchor="middle" font-size="10">Verify by back-substitution</text>
+</svg>
+<div class="caption">Figure 2: The five-step ICE method workflow. Always verify that all equilibrium concentrations are positive — discard any root that gives a negative value.</div>
+</div>
+
+<div class="check-in">
+<p><b>Check-in:</b> For $\ce{A <=> 2B}$, a student writes C row: A = $-2x$, B = $+x$. What is wrong?</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">The changes must be proportional to the <b>stoichiometric coefficients</b>. For $\ce{A <=> 2B}$, if A changes by $-x$, B changes by $+2x$ (not $+x$). The student has the ratio reversed. The correct C row: A = $-x$, B = $+2x$. Think: for every 1 A that decomposes, 2 B are formed — so B's change must be twice A's.</div>
+</div>
+
+<h2>3. Solving $K_c$ Problems — Three Common Scenarios</h2>
+
+<h3>Scenario A: Given initial amounts and $K_c$, find equilibrium concentrations</h3>
+<p>Set up the ICE table, substitute E row into $K_c$, and solve. If $K_c$ is small and the initial concentration is large, you may be able to use the <b>small-$x$ approximation</b>: if $x \ll [\text{initial}]$, then $[\text{initial}] - x \approx [\text{initial}]$. Always <b>check</b> that $x$ is less than 5% of the initial concentration to justify the approximation.</p>
+
+<h3>Scenario B: Given initial amounts and one equilibrium concentration, find $K_c$</h3>
+<p>Use the known equilibrium concentration to find $x$ directly (no quadratic), then calculate all other equilibrium concentrations and substitute into $K_c$.</p>
+
+<h3>Scenario C: Reaction approached from products</h3>
+<p>The initial concentrations may be on the product side. In this case, the C row has <b>negative</b> entries for products and <b>positive</b> for reactants — the reaction runs "backwards" to reach equilibrium. The ICE method works identically; just be careful with signs.</p>
+
+<div class="check-in">
+<p><b>Check-in:</b> When is the small-$x$ approximation justified, and how do you verify it?</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">The approximation is justified when $K_c$ is very small (typically $K_c < 10^{-3}$) and initial concentrations are not extremely dilute. After solving, verify: if $(x / [\text{initial}]) \times 100\% < 5\%$, the approximation is valid. If it exceeds 5%, you must solve the full quadratic. <b>Warning:</b> Never apply the small-$x$ approximation if the initial concentration of the limiting species is less than about 100× $K_c$.</div>
+</div>
+
+<h2>4. Worked Examples</h2>
+
+<div class="example">
+<b>Example 1 — Finding $K_c$ from One Equilibrium Concentration:</b><br><br>
+0.500 mol of $\ce{PCl5}$ is placed in a 2.00 dm³ sealed container and heated to 250°C. At equilibrium, 0.200 mol of $\ce{PCl5}$ remains: $\ce{PCl5(g) <=> PCl3(g) + Cl2(g)}$. Calculate $K_c$.<br><br>
+<b>Solution using ICE:</b><br>
+<table style="margin:0.5rem 0;">
+<tr><th></th><th>PCl₅</th><th>PCl₃</th><th>Cl₂</th></tr>
+<tr><td>I (mol dm⁻³)</td><td>0.250</td><td>0</td><td>0</td></tr>
+<tr><td>C</td><td>−x</td><td>+x</td><td>+x</td></tr>
+<tr><td>E</td><td>0.250−x</td><td>x</td><td>x</td></tr>
+</table>
+Given: at equilibrium, [PCl₅] = 0.200/2.00 = 0.100 mol dm⁻³. So 0.250 − x = 0.100 → $x = 0.150$.<br>
+Equilibrium: [PCl₅] = 0.100, [PCl₃] = 0.150, [Cl₂] = 0.150 mol dm⁻³.<br>
+$K_c = (0.150 \times 0.150) / 0.100 = \mathbf{0.225}$. Units: mol dm⁻³ (Δn = 2−1 = 1).<br><br>
+<b>⚠️ Common wrong approach:</b> Using moles directly without dividing by volume: $K_c = (0.300\times0.300)/0.200 = 0.450$. This gives the wrong $K_c$ because Δn ≠ 0.
+</div>
+
+<div class="example">
+<b>Example 2 — Solving Quadratic for $K_c$:</b><br><br>
+For $\ce{H2(g) + I2(g) <=> 2HI(g)}$, 1.00 mol H₂ and 1.00 mol I₂ are placed in a 1.00 dm³ vessel at 440°C. $K_c = 49.5$. Find equilibrium concentrations.<br><br>
+<b>Solution:</b><br>
+<table style="margin:0.5rem 0;">
+<tr><th></th><th>H₂</th><th>I₂</th><th>HI</th></tr>
+<tr><td>I</td><td>1.00</td><td>1.00</td><td>0</td></tr>
+<tr><td>C</td><td>−x</td><td>−x</td><td>+2x</td></tr>
+<tr><td>E</td><td>1.00−x</td><td>1.00−x</td><td>2x</td></tr>
+</table>
+$K_c = (2x)^2 / ((1.00-x)(1.00-x)) = 4x^2/(1.00-x)^2 = 49.5$.<br>
+Take square root: $2x/(1.00-x) = \sqrt{49.5} = 7.035$. → $2x = 7.035 - 7.035x$ → $9.035x = 7.035$ → $x = 0.7786$.<br>
+Equilibrium: [H₂] = [I₂] = $1.00 - 0.7786 = 0.221$ mol dm⁻³, [HI] = $2 \times 0.7786 = 1.557$ mol dm⁻³.<br>
+Check: $K_c = (1.557)^2/(0.221)^2 = 2.424/0.0488 = 49.6$ ✓ (rounding).<br><br>
+<b>⚠️ Common wrong approach:</b> Forgetting to square the coefficients in the C row. "If 2HI forms, change is +2x, NOT +x." Also: not taking the square root to simplify — you can solve $4x^2/(1-x)^2 = 49.5$ as a quadratic, but taking the square root of both sides first is much simpler when the numerator and denominator are both perfect squares.
+</div>
+
+<div class="example">
+<b>Example 3 — Small-$x$ Approximation:</b><br><br>
+For $\ce{COCl2(g) <=> CO(g) + Cl2(g)}$, $K_c = 2.0 \times 10^{-6}$ at 400°C. Initially, [COCl₂] = 0.50 mol dm⁻³. Find equilibrium concentrations.<br><br>
+<b>Solution:</b> ICE: I = [0.50, 0, 0]; C = [−x, +x, +x]; E = [0.50−x, x, x].<br>
+$K_c = x^2/(0.50-x) = 2.0\times10^{-6}$. Since $K_c$ is tiny, $x$ is negligible compared to 0.50: $x^2/0.50 \approx 2.0\times10^{-6}$. → $x^2 = 1.0\times10^{-6}$ → $x = 1.0\times10^{-3}$.<br>
+Check: $x/0.50 = 0.001/0.50 = 0.2\% < 5\%$ → approximation valid.<br>
+Equilibrium: [COCl₂] ≈ 0.50, [CO] = [Cl₂] = $1.0 \times 10^{-3}$ mol dm⁻³.<br><br>
+<b>⚠️ Common wrong approach:</b> Applying the small-$x$ approximation when $K_c$ is moderate (e.g., $K_c = 0.1$). The approximation fails badly when $K_c$ is not very small. Always check! If the check fails, you must solve the full quadratic: $x^2 + K_c x - K_c[\text{initial}] = 0$.
+</div>
+
+<div class="misconception">
+<h3>⚠️ Common Mistakes to Avoid</h3>
+<ol>
+  <li><b>"I can use moles directly in $K_c$."</b> You <b>must</b> convert to concentrations (mol dm⁻³) unless the volume is exactly 1.00 dm³ <em>and</em> Δn = 0. Using moles when Δn ≠ 0 and V ≠ 1.00 dm³ gives an incorrect $K_c$ value.</li>
+  <li><b>"The C row always uses $+x$ for products and $-x$ for reactants."</b> This is only true when starting from reactants. If you start from products (or a mixture), you must determine the direction of net reaction first (compare $Q$ to $K_c$) and assign C signs accordingly.</li>
+  <li><b>"The small-$x$ approximation always works when $K_c$ is small."</b> It also depends on the initial concentration. If the initial concentration is also very small (comparable to $K_c$), $x$ may not be negligible. The ratio $x/[\text{initial}]$ is the true test.</li>
+  <li><b>"I can always avoid quadratics by taking square roots."</b> Only when the $K_c$ expression is a perfect square — i.e., numerator and denominator are both squares of linear terms in $x$. Otherwise, you must solve a quadratic, which the IB expects you to do.</li>
+  <li><b>"Both roots of a quadratic are valid equilibrium solutions."</b> Only the root that gives all positive equilibrium concentrations is valid. The other root is mathematically correct but physically meaningless.</li>
+</ol>
+</div>
+
+<h2>6. End-of-Lesson Practice</h2>
+
+<p><b>Question 1:</b> 0.400 mol of $\ce{N2O4}$ is placed in a 4.00 dm³ container at 298 K: $\ce{N2O4(g) <=> 2NO2(g)}$. At equilibrium, [NO₂] = 0.060 mol dm⁻³. Calculate $K_c$.</p>
+
+<p><b>Question 2:</b> For $\ce{2SO3(g) <=> 2SO2(g) + O2(g)}$, $K_c = 0.040$ at 900 K. Initially, [SO₃] = 0.200 mol dm⁻³ with no SO₂ or O₂. Determine the equilibrium concentration of O₂.</p>
+
+<p><b>Question 3:</b> For $\ce{CO(g) + H2O(g) <=> CO2(g) + H2(g)}$, $K_c = 1.00$ at 1100 K. Initially, [CO] = [H₂O] = 0.500 mol dm⁻³ with no products. Find all equilibrium concentrations.</p>
+
+<p><b>Question 4:</b> 0.100 mol of HI is placed in a 1.00 dm³ vessel at 700 K: $\ce{2HI(g) <=> H2(g) + I2(g)}$. $K_c = 0.0183$. Find the equilibrium concentration of HI.</p>
+
+<p><b>Question 5:</b> For $\ce{2NO2(g) <=> N2O4(g)}$, $K_c = 216$ at 298 K. Initially, [NO₂] = 0.200 mol dm⁻³, [N₂O₄] = 0. Calculate the equilibrium concentration of N₂O₄. (This will require solving a quadratic.)</p>
+
+<p><b>Question 6 (IB multi-step):</b> 0.600 mol of $\ce{PCl5}$ is heated to 500 K in a 2.00 dm³ vessel. At equilibrium, the mixture contains 0.200 mol of Cl₂: $\ce{PCl5(g) <=> PCl3(g) + Cl2(g)}$.<br>(a) Set up an ICE table and find $x$.<br>(b) Calculate all equilibrium concentrations.<br>(c) Calculate $K_c$ with correct units.<br>(d) If an additional 0.100 mol of Cl₂ is injected at constant volume, predict the direction of net reaction using $Q$.</p>
+
+<button class="practice-toggle" onclick="var a=this.nextElementSibling;a.classList.toggle('open');this.textContent=a.classList.contains('open')?'▴ Hide Answers':'▸ Show Answers'">▸ Show Answers</button>
+<div class="practice-answers">
+
+<p><b>Answer 1:</b> [N₂O₄]₀ = 0.400/4.00 = 0.100 mol dm⁻³. ICE: I = [0.100, 0]; C = [−x, +2x]; E = [0.100−x, 2x]. Given 2x = 0.060 → x = 0.030. [N₂O₄]eq = 0.070. $K_c = (0.060)^2/0.070 = 0.0514$ mol dm⁻³.</p>
+
+<p><b>Answer 2:</b> ICE: I = [0.200, 0, 0]; C = [−2x, +2x, +x]; E = [0.200−2x, 2x, x]. $K_c = (2x)^2(x)/(0.200-2x)^2 = 4x^3/(0.200-2x)^2 = 0.040$. This is a cubic — but with small $K_c$, try approximation: $4x^3/(0.200)^2 \approx 0.040$ → $4x^3 = 0.0016$ → $x^3 = 0.0004$ → $x = 0.0737$. Check: $2x = 0.147$, compared to 0.200 — too large (74%), so approximation fails. Solve properly: this is exam-level difficult. But for small $K_c$, the assumption that $2x \ll 0.200$ often holds; here it does not, indicating a significant decomposition. The exact solution requires an iterative or cubic approach — this problem illustrates when NOT to use the small-x approximation.</p>
+
+<p><b>Answer 3:</b> ICE: I = [0.500, 0.500, 0, 0]; C = [−x, −x, +x, +x]; E = [0.500−x, 0.500−x, x, x]. $K_c = x^2/(0.500-x)^2 = 1.00$. Square root: $x/(0.500-x) = 1$ → $x = 0.500-x$ → $2x = 0.500$ → $x = 0.250$. All equilibrium concentrations = 0.250 mol dm⁻³.</p>
+
+<p><b>Answer 4:</b> ICE: I = [0.100, 0, 0]; C = [−2x, +x, +x]; E = [0.100−2x, x, x]. $K_c = x^2/(0.100-2x)^2 = 0.0183$. Square root: $x/(0.100-2x) = \sqrt{0.0183} = 0.1353$. $x = 0.01353 - 0.2706x$ → $1.2706x = 0.01353$ → $x = 0.01065$. [HI]eq = $0.100 - 2(0.01065) = \mathbf{0.0787}$ mol dm⁻³.</p>
+
+<p><b>Answer 5:</b> ICE: I = [0.200, 0]; C = [−2x, +x]; E = [0.200−2x, x]. $K_c = x/(0.200-2x)^2 = 216$. $x = 216(0.200-2x)^2 = 216(0.04 - 0.8x + 4x^2)$. $x = 8.64 - 172.8x + 864x^2$. $864x^2 - 173.8x + 8.64 = 0$. Quadratic formula gives $x \approx 0.094$ (the root giving [NO₂] positive). [N₂O₄]eq = <b>0.094 mol dm⁻³</b>.</p>
+
+<p><b>Answer 6:</b> (a) [PCl₅]₀ = 0.300. ICE: I=[0.300,0,0]; C=[−x,+x,+x]; E=[0.300−x, x, x]. Given [Cl₂]eq = 0.200/2.00 = 0.100 → $x = 0.100$. (b) [PCl₅]eq = 0.200, [PCl₃]eq = 0.100, [Cl₂]eq = 0.100. (c) $K_c = (0.100\times0.100)/0.200 = 0.0500$ mol dm⁻³. (d) New [Cl₂] = 0.100 + 0.050 = 0.150. $Q = (0.100\times0.150)/0.200 = 0.075$. $Q > K_c$ → net reaction shifts <b>left</b>.</p>
+</div>
+
+<h2>7. Key Terms</h2>
+<table>
+<tr><th>Term</th><th>Definition</th></tr>
+<tr><td>ICE table</td><td>A systematic grid (Initial, Change, Equilibrium) for organising equilibrium concentration calculations</td></tr>
+<tr><td>$x$ (change variable)</td><td>The unknown change in concentration of one species; scaled by stoichiometric coefficients for others</td></tr>
+<tr><td>Small-$x$ approximation</td><td>Simplifying $[\text{initial}] - x \approx [\text{initial}]$ when $x$ is negligible; valid only if $x < 5\%$ of initial</td></tr>
+<tr><td>Quadratic formula</td><td>$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$; used when $K_c$ yields a quadratic equation in $x$</td></tr>
+<tr><td>Reverse ICE</td><td>ICE table where initial concentrations are of products; C row has opposite signs</td></tr>
+</table>
+
+<h2>8. Exam Tips</h2>
+
+<div class="exam-tip"><b>Paper 2 (Structured):</b> ICE table questions are worth 4–6 marks. Always: (1) write the balanced equation, (2) convert to concentrations, (3) draw the full ICE table with clear column headings, (4) show the $K_c$ substitution step, (5) solve for $x$ showing work, (6) state all equilibrium concentrations with units, (7) give $K_c$ with correct units. Partial marks are awarded for correct ICE structure and $K_c$ expression even if algebra is incorrect.</div>
+
+<div class="exam-tip"><b>Quadratic Equations:</b> The IB expects you to solve quadratics. Organise them carefully: bring all terms to one side, identify $a$, $b$, $c$, and apply the formula. The negative root is almost always the one to discard. Write: "$x = \text{[value]}$ or $x = \text{[value]}$. The second value gives negative concentrations and is rejected."</div>
+
+<div class="exam-tip"><b>Checking Your Answer:</b> Always substitute your final equilibrium concentrations back into the $K_c$ expression to verify you get approximately the given $K_c$. A discrepancy of more than 5% suggests an algebra error. This 30-second check can save you 3–4 marks on an exam.</div>
+
 </body>
 </html>

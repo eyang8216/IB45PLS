@@ -3,305 +3,307 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lesson 35: Electrolysis and Quantitative Electrochemistry (HL) — IB Chemistry HL</title>
-<script>window.MathJax = { loader: {load: ['[tex]/mhchem']}, tex: {packages: {'[+]': ['mhchem']}} };</script>
+<title>Lesson 35 — Chemistry HL — Electrolysis & Quantitative Electrochemistry</title>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] },
+  loader: { load: ['[tex]/mhchem'] },
+  tex: { packages: {'[+]': ['mhchem']} }
+};
+</script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
 <style>
-  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Palatino', 'Georgia', serif; background: var(--bg); color: var(--text); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; font-size: 17px; line-height: 1.7; }
-  h1 { font-size: 1.7rem; color: var(--accent); margin-bottom: 0.5rem; }
-  h2 { font-size: 1.25rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; margin: 2rem 0 1rem; }
-  h3 { font-size: 1.1rem; color: #444; margin: 1.3rem 0 0.5rem; }
-  p, li { margin-bottom: 0.6rem; }
-  ul, ol { padding-left: 1.8rem; margin-bottom: 1rem; }
-  .worked { background: #f0f7f0; border-left: 4px solid #2c5f2d; padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
-  .answer { background: #fefdf7; border: 1px solid var(--border); padding: 0.8rem 1.2rem; margin: 0.5rem 0; border-radius: 6px; }
-  .nav { display: flex; justify-content: space-between; margin: 3rem 0 1rem; padding-top: 1rem; border-top: 2px solid var(--border); font-size: 0.9rem; }
-  .nav a { color: #1a5c9e; text-decoration: none; }
-  .nav a:hover { text-decoration: underline; }
-  .definition { background: #fdf5e6; border-left: 4px solid #d4a017; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
-  table { border-collapse: collapse; margin: 1rem 0; width: 100%; }
-  th { background: #2c5f2d; color: #fff; padding: 0.4rem 0.7rem; text-align: left; font-weight: normal; }
-  td { padding: 0.3rem 0.7rem; border-bottom: 1px solid var(--border); }
-  tr:nth-child(even) td { background: #fafaf5; }
-  @media print { body { font-size: 14px; } .nav { display: none; } }
+:root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Georgia', 'Times New Roman', serif; font-size: 17px; line-height: 1.7; color: var(--text); background: var(--bg); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; }
+h1 { font-size: 1.8rem; color: var(--accent); border-bottom: 3px solid var(--accent); padding-bottom: 0.5rem; margin-bottom: 1rem; }
+h2 { font-size: 1.35rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+h3 { font-size: 1.15rem; color: var(--accent); margin: 1.5rem 0 0.5rem; }
+p { margin-bottom: 0.8rem; }
+.objectives { background: #f0f4ff; border-left: 4px solid var(--accent); padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+.objectives h3 { margin-top: 0; }
+.check-in { background: #fff8e1; border: 1px solid #ffc107; padding: 0.8rem 1rem; margin: 1rem 0; border-radius: 8px; }
+.check-in p { margin-bottom: 0.3rem; }
+.answer-toggle { display: inline-block; padding: 0.2rem 0.8rem; border-radius: 16px; cursor: pointer; font-size: 0.8rem; font-weight: 600; background: #e8f5e9; color: #2e7d32; border: 1px solid #2e7d32; user-select: none; margin-top: 0.3rem; }
+.answer-content { display: none; background: #f1f8e9; padding: 0.6rem 1rem; border-radius: 8px; margin-top: 0.5rem; }
+.answer-content.open { display: block; }
+.example { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem; margin: 1rem 0; }
+.misconception { background: #fff3e0; border-left: 4px solid #e65100; padding: 1rem 1.2rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+.misconception h3 { color: #e65100; }
+.exam-tip { background: #e8f5e9; border-left: 4px solid #2e7d32; padding: 0.8rem 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+th { background: var(--accent); color: white; padding: 0.5rem 0.8rem; text-align: left; }
+td { padding: 0.5rem 0.8rem; border-bottom: 1px solid var(--border); }
+tr:nth-child(even) td { background: #f8f8f6; }
+.diagram { text-align: center; margin: 1.5rem 0; }
+.diagram svg { max-width: 100%; }
+.diagram .caption { font-size: 0.9rem; color: #666; margin-top: 0.3rem; font-style: italic; }
+pre.ascii-art { font-family: 'Courier New', monospace; font-size: 0.75rem; line-height: 1.2; background: #f5f5f5; padding: 0.8rem; border-radius: 8px; overflow-x: auto; }
+.practice-toggle { display: block; width: 100%; padding: 0.8rem; background: var(--accent); color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem; font-weight: 600; margin: 1.5rem 0; }
+.practice-answers { display: none; }
+.practice-answers.open { display: block; }
 </style>
 </head>
 <body>
-<h1>Lesson 35: Electrolysis and Quantitative Electrochemistry (HL)</h1>
-<h2>What You'll Learn</h2>
-<p>In this lesson, you will learn about electrolysis — the process of using electricity to force a chemical reaction to happen. This is the opposite of what a voltaic cell does. You will learn how to predict what products will form when you electrolyse a molten salt or an aqueous solution. You will learn Faraday's laws, which let you calculate exactly how much of a substance is produced when a given electric current flows for a given time. Finally, you will learn the equation that connects cell potential to Gibbs free energy, which tells you whether a reaction is spontaneous.</p>
-<hr>
-<h2>1. Voltaic Cells versus Electrolytic Cells — The Key Difference</h2>
-<p>Before we study electrolysis, let us make sure we understand how it differs from what we learned in Lesson 34.</p>
-<p>A <strong>voltaic cell</strong> uses a spontaneous chemical reaction to produce electricity. The chemical reaction happens naturally, and the cell harvests the energy as an electric current. In a voltaic cell, chemical energy is converted to electrical energy.</p>
-<p>An <strong>electrolytic cell</strong> uses electricity from an external source (such as a battery or power supply) to force a non-spontaneous chemical reaction to happen. The reaction would not happen on its own; it needs the electrical energy to push it. In an electrolytic cell, electrical energy is converted to chemical energy.</p>
-<p>Here is a table comparing the two types of cells:</p>
+
+<h1>Lesson 35: Electrolysis & Quantitative Electrochemistry (HL)</h1>
+
+<p><b>Syllabus reference:</b> 9.2, 19.1 (HL) — Electrolytic Cells, Faraday's Laws, Quantitative Electrolysis</p>
+
+<!-- SECTION A -->
+<div class="objectives">
+<h3>Learning Objectives</h3>
+<p>By the end of this lesson, you will be able to:</p>
+<ul>
+  <li><b>Distinguish</b> between voltaic (spontaneous) and electrolytic (non-spontaneous) cells.</li>
+  <li><b>Predict</b> the products of electrolysis of molten salts and aqueous solutions using $E^{\ominus}$ values.</li>
+  <li><b>Apply</b> Faraday's laws to calculate mass of product, current, or time in electrolysis.</li>
+  <li><b>Explain</b> the relationship between charge, current, time, and amount of substance: $Q = It = nF$.</li>
+  <li><b>Compare</b> electrolytic refining, electroplating, and the chlor-alkali industry.</li>
+</ul>
+</div>
+
+<!-- SECTION B -->
+<h2>1. Prior Knowledge Check</h2>
+
+<p><b>Question 1:</b> What is the key difference between a voltaic cell and an electrolytic cell?</p>
+<div class="check-in">
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">A <b>voltaic cell</b> uses a <b>spontaneous</b> redox reaction to generate electricity ($E^{\ominus}_{\text{cell}} > 0$). An <b>electrolytic cell</b> uses an external power source to drive a <b>non-spontaneous</b> redox reaction ($E^{\ominus}_{\text{cell}} < 0$). Voltaic: chemical → electrical. Electrolytic: electrical → chemical.</div>
+</div>
+
+<p><b>Question 2:</b> In an electrolytic cell, which electrode is positive and which is negative?</p>
+<div class="check-in">
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">In an electrolytic cell: <b>anode = positive (+)</b>, <b>cathode = negative (−)</b>. This is the <b>opposite</b> of a voltaic cell! Oxidation still occurs at the anode and reduction at the cathode in both types — the sign convention is what differs.</div>
+</div>
+
+<!-- SECTION C -->
+<h2>2. Electrolytic Cells — Driving Non-Spontaneous Reactions</h2>
+
+<p>An <b>electrolytic cell</b> uses a DC power source (battery) to force electrons through a circuit against the thermodynamic gradient. The external voltage must exceed the cell's $E^{\ominus}_{\text{cell}}$ (in magnitude) for electrolysis to occur.</p>
+
+<div class="diagram">
+<svg width="600" height="300" viewBox="0 0 600 300">
+  <text x="300" y="18" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c5f2d">Electrolytic Cell — Electrolysis of Molten NaCl</text>
+  <!-- power source -->
+  <rect x="230" y="30" width="140" height="40" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="2"/>
+  <text x="300" y="55" text-anchor="middle" font-size="11" fill="#e65100">DC Power Source</text>
+  <text x="200" y="48" text-anchor="middle" font-size="12" font-weight="bold">+</text>
+  <text x="400" y="48" text-anchor="middle" font-size="12" font-weight="bold">−</text>
+  <!-- wires -->
+  <line x1="235" y1="50" x2="120" y2="120" stroke="#333" stroke-width="2"/>
+  <line x1="365" y1="50" x2="480" y2="120" stroke="#333" stroke-width="2"/>
+  <!-- cell -->
+  <rect x="50" y="120" width="500" height="140" rx="10" fill="#f5f5f5" stroke="#555" stroke-width="2"/>
+  <text x="300" y="145" text-anchor="middle" font-size="11" fill="#555">Molten NaCl (l)</text>
+  <!-- anode -->
+  <rect x="80" y="150" width="40" height="90" rx="4" fill="#ffcdd2" stroke="#c62828" stroke-width="2"/>
+  <text x="100" y="250" text-anchor="middle" font-size="10" fill="#c62828">ANODE (+)</text>
+  <text x="100" y="130" text-anchor="middle" font-size="10" fill="#c62828">2Cl⁻ → Cl₂ + 2e⁻</text>
+  <!-- cathode -->
+  <rect x="480" y="150" width="40" height="90" rx="4" fill="#bbdefb" stroke="#1565c0" stroke-width="2"/>
+  <text x="500" y="250" text-anchor="middle" font-size="10" fill="#1565c0">CATHODE (−)</text>
+  <text x="500" y="130" text-anchor="middle" font-size="10" fill="#1565c0">Na⁺ + e⁻ → Na</text>
+  <!-- bubbles -->
+  <circle cx="120" cy="155" r="5" fill="#90ee90" fill-opacity="0.7"/>
+  <circle cx="135" cy="148" r="4" fill="#90ee90" fill-opacity="0.7"/>
+  <circle cx="128" cy="160" r="3" fill="#90ee90" fill-opacity="0.7"/>
+  <text x="160" y="155" font-size="9" fill="#2c5f2d">Cl₂↑</text>
+  <!-- labels -->
+  <text x="215" y="165" font-size="10" fill="#555">Na⁺ →</text>
+  <text x="380" y="165" font-size="10" fill="#555">← Cl⁻</text>
+</svg>
+<div class="caption">Figure 1: Electrolysis of molten NaCl. External voltage forces Cl⁻ oxidation at the anode (+) and Na⁺ reduction at the cathode (−). The products are Cl₂ gas and liquid Na metal.</div>
+</div>
+
+<h3>2.1 Voltaic vs. Electrolytic — Signs Reversed</h3>
+
 <table>
 <tr><th>Feature</th><th>Voltaic Cell</th><th>Electrolytic Cell</th></tr>
+<tr><td>$\Delta G$</td><td>Negative (spontaneous)</td><td>Positive (non-spontaneous)</td></tr>
+<tr><td>$E^{\ominus}_{\text{cell}}$</td><td>Positive</td><td>Negative</td></tr>
+<tr><td>Anode sign</td><td><b>Negative (−)</b></td><td><b>Positive (+)</b></td></tr>
+<tr><td>Cathode sign</td><td><b>Positive (+)</b></td><td><b>Negative (−)</b></td></tr>
+<tr><td>Oxidation at</td><td>Anode (−)</td><td>Anode (+)</td></tr>
+<tr><td>Reduction at</td><td>Cathode (+)</td><td>Cathode (−)</td></tr>
 <tr><td>Energy conversion</td><td>Chemical → Electrical</td><td>Electrical → Chemical</td></tr>
-<tr><td>Is the reaction spontaneous?</td><td>Yes (E°_cell > 0)</td><td>No (E°_cell < 0)</td></tr>
-<tr><td>Where does the energy come from?</td><td>The chemical reaction itself</td><td>An external power source (battery)</td></tr>
-<tr><td>Sign of the anode</td><td>Negative (−)</td><td>Positive (+)</td></tr>
-<tr><td>Sign of the cathode</td><td>Positive (+)</td><td>Negative (−)</td></tr>
-<tr><td>Direction of electron flow in external circuit</td><td>From anode to cathode</td><td>Still from anode to cathode, but the anode is positive because it is connected to the positive terminal of the battery</td></tr>
+<tr><td>Salt bridge needed?</td><td>Yes</td><td>No (both electrodes in same solution)</td></tr>
 </table>
-<p><strong>Why is the polarity different?</strong> In an electrolytic cell, the battery forces electrons to go where they would not naturally go. The battery's positive terminal pulls electrons out of the anode (so the anode becomes positive), and the battery's negative terminal pushes electrons into the cathode (so the cathode becomes negative). Despite this reversed polarity, oxidation still happens at the anode and reduction still happens at the cathode. AN OX and RED CAT still apply.</p>
-<hr>
-<h2>2. Electrolysis of Molten Salts — The Simplest Case</h2>
-<p><strong>Electrolysis</strong> is the process of passing an electric current through an electrolyte (a liquid or solution that contains mobile ions) to cause a chemical change. The word "electrolysis" comes from "electro-" (electricity) and "-lysis" (splitting).</p>
-<p>The simplest kind of electrolysis involves a <strong>molten salt</strong>. A molten salt is a salt that has been heated until it melts into a liquid. In the molten state, the ions are free to move. There are only two kinds of ions — the cation (positive) and the anion (negative) — so there is no competition. The products are easy to predict because only one reduction and one oxidation are possible.</p>
-<p><div class="worked"></p>
-<p><strong>Worked Example 1: Predict the products when molten sodium chloride (NaCl) is electrolysed using inert electrodes.</strong></p>
-<div class="worked">
-<p><strong>To solve this, we need to:</strong> identify the ions present, then decide which one is reduced at the cathode and which is oxidised at the anode.</p>
+
+<h2>3. Predicting Products of Electrolysis</h2>
+
+<h3>3.1 Molten Salts — Simple</h3>
+<p>Only one cation and one anion are present. The cation is reduced at the cathode; the anion is oxidised at the anode. Example: molten $\ce{PbBr2}$ → $\ce{Pb}$ at cathode, $\ce{Br2}$ at anode.</p>
+
+<h3>3.2 Aqueous Solutions — Competitive</h3>
+<p>In aqueous solutions, <b>water</b> can also be oxidised or reduced. You must compare $E^{\ominus}$ values to determine which reaction occurs preferentially.</p>
+
+<div class="diagram">
+<svg width="560" height="220" viewBox="0 0 560 220">
+  <text x="280" y="18" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c5f2d">Competing Reactions — Aqueous NaCl Electrolysis</text>
+  <rect x="20" y="35" width="240" height="80" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="140" y="55" text-anchor="middle" font-size="11" font-weight="bold" fill="#1565c0">CATHODE (−) options</text>
+  <text x="140" y="75" text-anchor="middle" font-size="10">Na⁺ + e⁻ → Na &nbsp; E⦵ = −2.71 V</text>
+  <text x="140" y="95" text-anchor="middle" font-size="10" fill="#2c5f2d">2H₂O + 2e⁻ → H₂ + 2OH⁻ &nbsp; E⦵ = −0.83 V ✓</text>
+  <text x="140" y="112" text-anchor="middle" font-size="9" fill="#555">H₂O is more easily reduced (less negative)</text>
+  <rect x="300" y="35" width="240" height="80" rx="8" fill="#ffebee" stroke="#c62828" stroke-width="1.5"/>
+  <text x="420" y="55" text-anchor="middle" font-size="11" font-weight="bold" fill="#c62828">ANODE (+) options</text>
+  <text x="420" y="75" text-anchor="middle" font-size="10">2Cl⁻ → Cl₂ + 2e⁻ &nbsp; E⦵ = +1.36 V</text>
+  <text x="420" y="95" text-anchor="middle" font-size="10" fill="#2c5f2d">2H₂O → O₂ + 4H⁺ + 4e⁻ &nbsp; E⦵ = +1.23 V ✓</text>
+  <text x="420" y="112" text-anchor="middle" font-size="9" fill="#555">BUT overpotential favours Cl⁻ in conc. NaCl!</text>
+  <text x="280" y="155" text-anchor="middle" font-size="12" fill="#e65100">Dilute NaCl: O₂ at anode &nbsp;|&nbsp; Concentrated NaCl: Cl₂ at anode</text>
+  <text x="280" y="180" text-anchor="middle" font-size="11" fill="#2c5f2d">Cathode always: H₂(g) + OH⁻ (solution becomes alkaline)</text>
+  <text x="280" y="200" text-anchor="middle" font-size="10" fill="#555">This is the chlor-alkali process for producing Cl₂, H₂, and NaOH.</text>
+</svg>
+<div class="caption">Figure 2: Competing reactions in aqueous NaCl electrolysis. H₂O reduction wins at the cathode. At the anode, Cl⁻ oxidation is favoured in concentrated solutions due to kinetic overpotential effects.</div>
 </div>
-<p>In molten NaCl, the only ions present are Na⁺ and Cl⁻. The electrodes are "inert," meaning they do not react; they just conduct electricity (typical inert electrodes are graphite or platinum).</p>
-<p>At the <strong>cathode</strong> (negative electrode, connected to the negative terminal of the battery): Cations (Na⁺) are attracted to the negative electrode. Na⁺ gains one electron and is reduced to sodium metal:</p>
-<p>$$\ce{Na+ + e- -> Na(l)}$$</p>
-<p>Molten sodium metal is produced.</p>
-<p>At the <strong>anode</strong> (positive electrode): Anions (Cl⁻) are attracted to the positive electrode. Cl⁻ loses one electron and is oxidised to chlorine gas:</p>
-<p>$$\ce{2Cl- -> Cl2(g) + 2e-}$$</p>
-<p>Chlorine gas bubbles off.</p>
-<p>The overall equation is:</p>
-<p>$$\ce{2NaCl(l) -> 2Na(l) + Cl2(g)}$$</p>
-<p><strong>Why this makes sense:</strong> There are only two ions, so there is no ambiguity. Sodium is produced at the cathode, chlorine at the anode.</p>
-<p></div></p>
-<hr>
-<h2>3. Electrolysis of Aqueous Solutions — Competition from Water</h2>
-<p>When we electrolyse an <strong>aqueous solution</strong> (a solution in water), the situation is more complicated. Now there are more than two species that could be reduced or oxidised, because <strong>water itself</strong> can be reduced or oxidised.</p>
-<p>In any aqueous solution, water is present. At the cathode, water can be reduced:</p>
-<p>$$\ce{2H2O(l) + 2e- -> H2(g) + 2OH-(aq)} \qquad E^\circ = -0.83\text{ V}$$</p>
-<p>At the anode, water can be oxidised:</p>
-<p>$$\ce{2H2O(l) -> O2(g) + 4H+(aq) + 4e-} \qquad E^\circ = +1.23\text{ V}$$</p>
-<p>These water half-reactions compete with the half-reactions of the dissolved ions. We need rules to decide which reaction wins.</p>
-<p><strong>At the cathode (reduction):</strong> Compare the reduction potentials of the metal ion and of water. The species with the <strong>more positive E°</strong> is reduced.</p>
-<ul>
-<li>If the metal ion has a reduction potential that is more positive than about −0.83 V (the E° for water reduction), the <strong>metal</strong> is deposited.</li>
-<li>If the metal is very reactive — meaning its reduction potential is much more negative than −0.83 V — then <strong>water is reduced instead</strong>, producing hydrogen gas and hydroxide ions. This happens for metals like sodium (E° = −2.71 V), potassium (E° = −2.93 V), magnesium (E° = −2.37 V), and aluminium (E° = −1.66 V).</li>
-</ul>
-<p><strong>At the anode (oxidation):</strong> Compare what can be oxidised.</p>
-<ul>
-<li>If the solution contains a halide ion (Cl⁻, Br⁻, I⁻) at reasonable concentration, the halide is usually oxidised to the halogen.</li>
-<li>If the solution contains no halide — for example, if the anion is sulfate (SO₄²⁻) or nitrate (NO₃⁻) — then <strong>water is oxidised</strong>, producing oxygen gas and hydrogen ions.</li>
-</ul>
-<p><div class="worked"></p>
-<p><strong>Worked Example 2: Predict the products when concentrated aqueous sodium chloride (brine) is electrolysed with inert electrodes.</strong></p>
-<div class="worked">
-<p><strong>To solve this, we need to:</strong> list all species present, then decide the cathode and anode reactions.</p>
+
+<div class="check-in">
+<p><b>Check-in:</b> Predict products at each electrode for electrolysis of concentrated aqueous $\ce{CuSO4}$ using inert (graphite) electrodes.</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content"><b>Cathode (−):</b> $\ce{Cu^{2+} + 2e- -> Cu(s)}$. Cu²⁺ ($E^{\ominus}$ = +0.34 V) is more easily reduced than water ($E^{\ominus}$ = −0.83 V). Copper metal deposits.<br><b>Anode (+):</b> $\ce{2H2O -> O2 + 4H+ + 4e-}$. Water is more easily oxidised than SO₄²⁻. Oxygen gas evolves and solution becomes acidic near the anode. (Note: if Cu electrodes were used, the anode would dissolve: $\ce{Cu -> Cu^{2+} + 2e-}$.)</div>
 </div>
-<p>Species present: Na⁺, Cl⁻, H₂O.</p>
-<p><strong>At the cathode (−):</strong> Two species could be reduced — Na⁺ (E° = −2.71 V) and H₂O (E° = −0.83 V). Water has the more positive E° (−0.83 > −2.71), so water is reduced:</p>
-<p>$$\ce{2H2O(l) + 2e- -> H2(g) + 2OH-(aq)}$$</p>
-<p>Hydrogen gas is produced, and the solution near the cathode becomes alkaline due to OH⁻.</p>
-<p><strong>At the anode (+):</strong> Two species could be oxidised — Cl⁻ and H₂O. In concentrated NaCl, chloride ions are oxidised preferentially (despite having a slightly higher E° than water in the table, kinetic factors favour Cl⁻ oxidation in concentrated solution):</p>
-<p>$$\ce{2Cl-(aq) -> Cl2(g) + 2e-}$$</p>
-<p>Chlorine gas is produced.</p>
-<p><strong>Overall reaction:</strong> Adding the two half-equations:</p>
-<p>$$\ce{2NaCl(aq) + 2H2O(l) -> H2(g) + Cl2(g) + 2NaOH(aq)}$$</p>
-<p>This is the industrially important chlor-alkali process, which produces hydrogen, chlorine, and sodium hydroxide — three very important chemicals.</p>
-<p></div></p>
-<p><div class="worked"></p>
-<p><strong>Worked Example 3: Predict the products when copper(II) sulfate solution, CuSO₄(aq), is electrolysed using inert graphite electrodes.</strong></p>
-<p>Species present: Cu²⁺, SO₄²⁻, H₂O.</p>
-<p><strong>At the cathode (−):</strong> Cu²⁺/Cu has E° = +0.34 V. Water reduction has E° = −0.83 V. Copper has the much more positive E°, so Cu²⁺ is reduced:</p>
-<p>$$\ce{Cu^{2+}(aq) + 2e- -> Cu(s)}$$</p>
-<p>A reddish-brown deposit of copper metal forms on the cathode.</p>
-<p><strong>At the anode (+):</strong> SO₄²⁻ cannot be easily oxidised (sulfur is already at its maximum oxidation number). Water is oxidised instead:</p>
-<p>$$\ce{2H2O(l) -> O2(g) + 4H+(aq) + 4e-}$$</p>
-<p>Oxygen gas bubbles off. The solution near the anode becomes acidic due to H⁺.</p>
-<p><strong>Overall reaction:</strong> Multiply the cathode half by 2 to match 4 electrons:</p>
-<p>$$\ce{2Cu^{2+} + 4e- -> 2Cu}$$</p>
-<p>$$\ce{2H2O -> O2 + 4H+ + 4e-}$$</p>
-<p>Add: $$\ce{2CuSO4(aq) + 2H2O(l) -> 2Cu(s) + O2(g) + 2H2SO4(aq)}$$</p>
-<p>The blue colour of the solution fades (Cu²⁺ ions are consumed), and the solution becomes acidic.</p>
-<p></div></p>
-<p><div class="worked"></p>
-<p><strong>Worked Example 4: What happens when copper(II) sulfate solution is electrolysed using copper electrodes instead of inert electrodes?</strong></p>
-<div class="worked">
-<p><strong>To solve this, we need to:</strong> consider whether the electrode material itself can react.</p>
+
+<h2>4. Faraday's Laws — Quantitative Electrolysis</h2>
+
+<p>Michael Faraday established the quantitative relationship between electricity and chemical change:</p>
+
+<div class="definition" style="background:#fdf5e6;border-left:4px solid #d4a017;padding:0.6rem 1rem;margin:0.8rem 0;border-radius:0 8px 8px 0;">
+<b>Faraday's Laws:</b><br>
+<b>1st Law:</b> The mass of substance produced is directly proportional to the quantity of electricity passed.<br>
+<b>2nd Law:</b> For a given quantity of electricity, the masses of different substances produced are proportional to their equivalent masses ($M/n$).<br><br>
+<b>Key equations:</b>
+$$Q = I \times t$$
+$$n(e^-) = \frac{Q}{F} = \frac{I \times t}{F}$$
+$$n(\text{product}) = \frac{n(e^-)}{\text{electrons in half-equation}}$$
+where $Q$ = charge (C), $I$ = current (A), $t$ = time (s), $F = 96500\text{ C mol}^{-1}$.
 </div>
-<p>With <strong>copper electrodes</strong>, the anode is made of copper, not graphite or platinum. At the anode, instead of oxidising water or sulfate ions, the copper electrode itself can be oxidised:</p>
-<p>$$\ce{Cu(s) -> Cu^{2+}(aq) + 2e-}$$</p>
-<p>The anode <strong>dissolves</strong> — copper atoms leave the electrode and enter the solution as Cu²⁺ ions.</p>
-<p>At the cathode, Cu²⁺ is reduced as before:</p>
-<p>$$\ce{Cu^{2+}(aq) + 2e- -> Cu(s)}$$</p>
-<p>Copper is deposited on the cathode.</p>
-<p>The net effect: copper is transferred from the anode to the cathode. The concentration of Cu²⁺ in the solution stays constant. This is the basis of <strong>electroplating</strong> and <strong>electrorefining</strong> of copper. Impure copper is used as the anode and dissolves; pure copper deposits on the cathode.</p>
-<p></div></p>
-<hr>
-<h2>4. Faraday's Laws — Measuring the Amount of Electrolysis</h2>
-<p><strong>Faraday's first law of electrolysis</strong> states that the mass of a substance produced or consumed at an electrode during electrolysis is directly proportional to the quantity of electric charge that passes through the cell.</p>
-<p>To use this law, we need several quantities:</p>
-<p><strong>Electric current (I):</strong> measured in <strong>amperes</strong> (A). Current is the rate of flow of charge. One ampere means one coulomb of charge passes per second.</p>
-<p><strong>Time (t):</strong> measured in <strong>seconds</strong> (s). Always convert time to seconds.</p>
-<p><strong>Charge (Q):</strong> measured in <strong>coulombs</strong> (C). Charge is the amount of electricity that has passed. It is calculated by:</p>
-<p>$$Q = I \times t$$</p>
-<p>(Charge in coulombs = current in amperes × time in seconds.)</p>
-<p><strong>Faraday's constant (F):</strong> This is the charge carried by one mole of electrons. Its value is approximately <strong>96,500 C mol⁻¹</strong>. So one mole of electrons carries 96,500 coulombs of charge.</p>
-<p><strong>Amount of electrons:</strong> To find how many moles of electrons have passed, divide the total charge by Faraday's constant:</p>
-<p>$$n(e^-) = \frac{Q}{F} = \frac{I \times t}{96,500}$$</p>
-<p>Once you know the number of moles of electrons, you use the stoichiometry of the electrode half-equation to find the moles of product, and then convert to mass or volume.</p>
-<p><div class="worked"></p>
-<p><strong>Worked Example 5: Calculate the mass of copper metal deposited when a current of 2.00 A is passed through a solution of copper(II) sulfate for 30.0 minutes, using inert electrodes.</strong></p>
-<div class="worked">
-<p><strong>To solve this, we need to:</strong> calculate the charge, find the moles of electrons, use the half-equation to find moles of copper, and convert to mass.</p>
+
+<h3>4.1 The Calculation Pathway</h3>
+
+<p>Current ($I$, in A) and time ($t$, in s) → Charge ($Q$, in C) → Moles of electrons → Moles of product → Mass of product.</p>
+
+<div class="check-in">
+<p><b>Check-in:</b> A current of 2.00 A is passed through molten $\ce{MgCl2}$ for 30.0 minutes. Calculate the mass of magnesium produced. ($\ce{Mg}$ = 24.3, $F = 96500$)</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">$t = 30.0 \times 60 = 1800$ s. $Q = It = 2.00 \times 1800 = 3600$ C. $n(e^-) = 3600 / 96500 = 0.0373$ mol. $\ce{Mg^{2+} + 2e- -> Mg}$: 2 e⁻ per Mg. $n(\ce{Mg}) = 0.0373 / 2 = 0.01865$ mol. $m = 0.01865 \times 24.3 = \mathbf{0.453\text{ g}}$.</div>
 </div>
-<div class="worked">
-<p><strong>Step 1: Calculate the charge.</strong> Time in seconds = 30.0 × 60 = 1800 s.</p>
-<p>Q = I × t = 2.00 A × 1800 s = 3600 C.</p>
+
+<h2>5. Applications of Electrolysis</h2>
+
+<table>
+<tr><th>Process</th><th>Electrolyte</th><th>Products/Uses</th></tr>
+<tr><td>Chlor-alkali</td><td>Conc. aqueous $\ce{NaCl}$</td><td>$\ce{Cl2}$ (anode), $\ce{H2}$ (cathode), $\ce{NaOH}$ (in solution)</td></tr>
+<tr><td>Aluminium extraction</td><td>$\ce{Al2O3}$ in molten cryolite</td><td>$\ce{Al}$ at cathode, $\ce{CO2}$ at anode (carbon anodes consumed)</td></tr>
+<tr><td>Electroplating</td><td>Metal salt solution</td><td>Object to be plated is the cathode; anode is the plating metal</td></tr>
+<tr><td>Electrorefining</td><td>Impure metal as anode</td><td>Pure metal deposited at cathode; impurities fall as "anode sludge"</td></tr>
+</table>
+
+<div class="check-in">
+<p><b>Check-in:</b> Why are the carbon anodes consumed during aluminium extraction?</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">At the anode: $\ce{2O^{2-} -> O2 + 4e-}$. The oxygen produced at high temperature reacts with the carbon anodes: $\ce{C + O2 -> CO2}$ (and some CO). The anodes are gradually burnt away and must be replaced regularly — this is a major cost in aluminium production.</div>
 </div>
-<p><strong>Step 2: Calculate the amount of electrons.</strong></p>
-<p>n(e⁻) = Q / F = 3600 C / 96,500 C mol⁻¹ = 0.0373 mol.</p>
-<p><strong>Step 3: Use the half-equation.</strong> The reduction half-equation is Cu²⁺ + 2e⁻ → Cu. This tells us that 2 moles of electrons produce 1 mole of copper. So the number of moles of copper is half the number of moles of electrons:</p>
-<p>n(Cu) = 0.0373 mol / 2 = 0.01865 mol.</p>
-<p><strong>Step 4: Convert to mass.</strong> The molar mass of copper (Cu) is 63.55 g mol⁻¹.</p>
-<p>m(Cu) = n × M = 0.01865 mol × 63.55 g mol⁻¹ = 1.19 g.</p>
-<p><strong>Why this makes sense:</strong> 2 A for half an hour is a modest current and time, producing about a gram of copper — a reasonable amount for a laboratory experiment.</p>
-<p></div></p>
-<p><div class="worked"></p>
-<p><strong>Worked Example 6: Calculate the volume of oxygen gas produced at the anode when a current of 1.50 A is passed through dilute sulfuric acid for 20.0 minutes, measured at STP (standard temperature and pressure, where 1 mole of gas occupies 22.7 dm³).</strong></p>
-<div class="worked">
-<p><strong>Step 1:</strong> Q = I × t = 1.50 A × (20.0 × 60) s = 1800 C.</p>
+
+<!-- SECTION D -->
+<h2>5. Worked Examples</h2>
+
+<div class="example">
+<b>Example 1 — Finding Time from Mass:</b><br><br>
+How long must a current of 5.00 A flow through $\ce{AgNO3(aq)}$ to deposit 2.16 g of silver? ($\ce{Ag}$ = 108, $F = 96500$)<br><br>
+<b>Step 1:</b> $n(\ce{Ag}) = 2.16 / 108 = 0.0200$ mol.<br>
+<b>Step 2:</b> $\ce{Ag+ + e- -> Ag}$, so $n(e^-) = n(\ce{Ag}) = 0.0200$ mol.<br>
+<b>Step 3:</b> $Q = n(e^-) \times F = 0.0200 \times 96500 = 1930$ C.<br>
+<b>Step 4:</b> $t = Q / I = 1930 / 5.00 = \mathbf{386\text{ s}}$ (6 min 26 s).<br><br>
+<b>⚠️ Common wrong approach:</b> Forgetting to convert mass to moles first, or using the wrong half-equation. For Ag⁺, it's 1 e⁻ per Ag — but for Cu²⁺ it's 2, for Al³⁺ it's 3. Always check the half-equation.
 </div>
-<p><strong>Step 2:</strong> n(e⁻) = 1800 C / 96,500 C mol⁻¹ = 0.01865 mol.</p>
-<p><strong>Step 3:</strong> The anode half-equation for water oxidation is: 2H₂O → O₂ + 4H⁺ + 4e⁻. This tells us that 4 moles of electrons produce 1 mole of O₂.</p>
-<p>n(O₂) = 0.01865 mol / 4 = 0.00466 mol.</p>
-<p><strong>Step 4:</strong> Volume at STP: V = n × 22.7 dm³ mol⁻¹ = 0.00466 mol × 22.7 dm³ mol⁻¹ = 0.106 dm³. This is equivalent to 106 cm³.</p>
-<p><strong>Why this makes sense:</strong> 0.106 dm³ is about 100 mL of gas — a visible amount of bubbling at the electrode.</p>
-<p></div></p>
-<hr>
-<h2>5. Relating Cell Potential and Gibbs Free Energy</h2>
-<p>There is a direct relationship between the standard cell potential (E°_cell) and the standard Gibbs free energy change (ΔG°) of the cell reaction:</p>
-<p>$$\Delta G^\circ = -nFE^\circ_{\text{cell}}$$</p>
-<p>Where:</p>
-<ul>
-<li>ΔG° is the standard Gibbs free energy change, measured in joules per mole (J mol⁻¹). ΔG° tells us whether a reaction is thermodynamically favourable. If ΔG° is negative, the reaction is spontaneous. If ΔG° is positive, the reaction is non-spontaneous.</li>
-<li>n is the number of moles of electrons transferred in the balanced overall redox equation. You must use the balanced equation — do not guess this number.</li>
-<li>F is Faraday's constant, 96,500 C mol⁻¹.</li>
-<li>E°_cell is the standard cell potential in volts (V).</li>
-</ul>
-<p>Notice the negative sign: if E°_cell is positive, then ΔG° is negative, meaning the reaction is spontaneous. This matches what we learned in Lesson 34.</p>
-<p><strong>Units:</strong> Because 1 V × 1 C = 1 J, the product nFE° automatically gives joules.</p>
-<p><div class="worked"></p>
-<p><strong>Worked Example 7: Calculate ΔG° for the Daniell cell reaction: Zn(s) + Cu²⁺(aq) → Zn²⁺(aq) + Cu(s), given that E°_cell = +1.10 V.</strong></p>
-<div class="worked">
-<p><strong>To solve this, we need to:</strong> identify n from the balanced equation, then apply the formula.</p>
+
+<div class="example">
+<b>Example 2 — Comparing Products with Different $n$:</b><br><br>
+The same current is passed through $\ce{CuSO4}$ and $\ce{AgNO3}$ for the same time. If 0.635 g of Cu is deposited, what mass of Ag is deposited? ($\ce{Cu}$ = 63.5, $\ce{Ag}$ = 108)<br><br>
+<b>Step 1:</b> $n(\ce{Cu}) = 0.635/63.5 = 0.0100$ mol. Cu²⁺ + 2e⁻ → Cu, so $n(e^-) = 0.0200$ mol.<br>
+<b>Step 2:</b> Same $n(e^-)$ passed through AgNO₃. Ag⁺ + e⁻ → Ag, so $n(\ce{Ag}) = n(e^-) = 0.0200$ mol.<br>
+<b>Step 3:</b> $m(\ce{Ag}) = 0.0200 \times 108 = \mathbf{2.16\text{ g}}$.<br><br>
+<b>⚠️ Common wrong approach:</b> Assuming equal mass is deposited. Faraday's 2nd law: mass ∝ $M/n$. Cu: 63.5/2 = 31.75; Ag: 108/1 = 108. Ratio = 108/31.75 = 3.40, so Ag mass = 0.635 × 3.40 = 2.16 g.
 </div>
-<p>The balanced equation shows that 2 electrons are transferred (Zn → Zn²⁺ loses 2 e⁻; Cu²⁺ → Cu gains 2 e⁻). So n = 2.</p>
-<p>ΔG° = −nFE°_cell = −(2) × (96,500 C mol⁻¹) × (1.10 V) = −212,300 J mol⁻¹ = −212 kJ mol⁻¹.</p>
-<p><strong>Why this makes sense:</strong> The large negative value of ΔG° confirms that this reaction is highly spontaneous, which is why the Daniell cell produces a reliable voltage.</p>
-<p></div></p>
-<hr>
-<h2>Practice Problems</h2>
-<p><strong>Problem 1:</strong> Predict the products formed at the anode and at the cathode when each of the following is electrolysed using inert electrodes. Write the half-equation for each electrode reaction.</p>
-<p>(a) Molten magnesium chloride, MgCl₂(l).</p>
-<p>(b) Concentrated aqueous potassium iodide, KI(aq).</p>
-<p>(c) Aqueous silver nitrate, AgNO₃(aq).</p>
-<p><strong>Problem 2:</strong> Calculate the mass of silver metal deposited when a current of 0.500 A is passed through a solution of silver nitrate, AgNO₃(aq), for exactly 45.0 minutes. The half-equation for the cathode reaction is Ag⁺(aq) + e⁻ → Ag(s). The molar mass of silver is 107.87 g mol⁻¹. (Faraday's constant F = 96,500 C mol⁻¹.)</p>
-<p><strong>Problem 3:</strong> In the electrolysis of water acidified with dilute sulfuric acid, a current of 3.00 A is passed for 15.0 minutes. The cathode reaction produces hydrogen gas: 2H₂O(l) + 2e⁻ → H₂(g) + 2OH⁻(aq). The anode reaction produces oxygen gas: 2H₂O(l) → O₂(g) + 4H⁺(aq) + 4e⁻. Calculate the volume, in dm³, of hydrogen gas and of oxygen gas produced, measured at STP where the molar volume of an ideal gas is 22.7 dm³ mol⁻¹.</p>
-<p><strong>Problem 4:</strong> A student wants to electroplate a metal spoon with nickel using a solution of nickel(II) sulfate, NiSO₄(aq), and a nickel anode. The spoon is the cathode, and the half-equation is Ni²⁺(aq) + 2e⁻ → Ni(s). The student passes a steady current of 4.00 A. Calculate the time, in minutes, required to deposit exactly 2.50 g of nickel onto the spoon. The molar mass of nickel is 58.69 g mol⁻¹. (F = 96,500 C mol⁻¹.)</p>
-<p><strong>Problem 5 (IB-style):</strong> An unknown metal M forms a sulfate salt with the formula MSO₄. When an aqueous solution of MSO₄ is electrolysed using inert electrodes, the metal M is deposited at the cathode according to the half-equation M²⁺(aq) + 2e⁻ → M(s). In an experiment, a current of 1.20 A is passed through the MSO₄ solution for a period of 25.0 minutes, and 0.592 g of metal M is deposited.</p>
-<p>(a) Calculate the total charge, in coulombs, that passed through the cell.</p>
-<p>(b) Calculate the amount, in moles, of electrons that passed through the cell. (F = 96,500 C mol⁻¹.)</p>
-<p>(c) Using the half-equation, determine the amount, in moles, of metal M that was deposited.</p>
-<p>(d) Calculate the molar mass of metal M in g mol⁻¹.</p>
-<p>(e) The standard electrode potential for the M²⁺/M half-cell is −0.76 V. A voltaic cell is constructed by connecting an M²⁺/M half-cell to a Cu²⁺/Cu half-cell (E° = +0.34 V). Calculate the standard cell potential, E°_cell, and then use the equation ΔG° = −nFE°_cell to calculate the standard Gibbs free energy change for this cell reaction. State whether the reaction is spontaneous.</p>
-<hr>
-<h2>Answers</h2>
-<div class="answer">
-<p><strong>Answer 1.</strong></p>
+
+<div class="example">
+<b>Example 3 — Predicting Electrolysis Products (Active Electrodes):</b><br><br>
+Electrolysis of $\ce{CuSO4(aq)}$ is carried out using copper electrodes (not inert). Predict products and electrode mass changes.<br><br>
+<b>Cathode (−):</b> $\ce{Cu^{2+} + 2e- -> Cu(s)}$. Copper is deposited — cathode <b>gains mass</b>.<br>
+<b>Anode (+):</b> With copper electrodes, the anode itself is oxidised: $\ce{Cu(s) -> Cu^{2+} + 2e-}$. Anode <b>loses mass</b>. This is why CuSO₄ concentration stays constant — Cu²⁺ removed at cathode is replaced at anode.<br>
+<b>This is electrorefining:</b> impure copper anode → pure copper cathode. Impurities (Ag, Au, Pt) fall as anode sludge.<br><br>
+<b>⚠️ Common wrong approach:</b> Predicting O₂ at the anode as for inert electrodes. The nature of the electrode material matters — active electrodes (Cu, Ag, Zn) can be oxidised instead of the anion or water.
 </div>
-<div class="answer">
-<p>(a) Molten MgCl₂: Only Mg²⁺ and Cl⁻ are present.</p>
-<p>Cathode (−): Mg²⁺ + 2e⁻ → Mg(l). Magnesium metal is produced.</p>
-<p>Anode (+): 2Cl⁻ → Cl₂(g) + 2e⁻. Chlorine gas is produced.</p>
-<p>Overall: MgCl₂(l) → Mg(l) + Cl₂(g).</p>
+
+<!-- SECTION F -->
+<div class="misconception">
+<h3>⚠️ Common Mistakes to Avoid</h3>
+<ol>
+  <li><b>Confusing anode/cathode signs between voltaic and electrolytic cells.</b> In electrolytic: anode = +, cathode = −. In voltaic: anode = −, cathode = +. Oxidation is always at the anode and reduction at the cathode in both — the sign convention is what flips.</li>
+  <li><b>Forgetting to convert time to seconds.</b> $Q = It$ requires time in <b>seconds</b>. If minutes or hours are given, multiply by 60 or 3600 respectively.</li>
+  <li><b>Using the wrong number of electrons in the half-equation.</b> Al³⁺ requires 3 e⁻; Cu²⁺ requires 2; Ag⁺ requires 1. The number of electrons determines the mole ratio: $n$(product) = $n(e^-) / n$.</li>
+  <li><b>Ignoring water as a competing reactant in aqueous electrolysis.</b> In aqueous solutions, $\ce{H2O}$ can be reduced (to $\ce{H2}$ + $\ce{OH-}$) or oxidised (to $\ce{O2}$ + $\ce{H+}$). These reactions compete with the dissolved ions.</li>
+  <li><b>Assuming inert electrode behaviour when electrodes are active.</b> Copper, silver, and zinc electrodes can dissolve at the anode. This is exploited in electroplating and electrorefining.</li>
+</ol>
 </div>
-<div class="answer">
-<p>(b) Concentrated KI(aq): Species present: K⁺, I⁻, H₂O.</p>
-<p>Cathode (−): K⁺/K has E° ≈ −2.93 V. Water reduction has E° = −0.83 V. Water is more easily reduced. Cathode: 2H₂O(l) + 2e⁻ → H₂(g) + 2OH⁻(aq). Hydrogen gas is produced.</p>
-<p>Anode (+): I⁻ is oxidised (iodide ions can be oxidised to iodine). Anode: 2I⁻(aq) → I₂(aq) + 2e⁻. Iodine is produced (brown colour appears).</p>
-<p>Products: H₂ at cathode, I₂ at anode.</p>
+
+<!-- SECTION G -->
+<h2>6. End-of-Lesson Practice</h2>
+
+<p><b>Question 1 (Paper 1 style):</b> During the electrolysis of molten $\ce{Al2O3}$, aluminium is produced at the:<br>
+A. Anode, which is positive &nbsp; B. Anode, which is negative &nbsp; C. Cathode, which is positive &nbsp; D. Cathode, which is negative</p>
+
+<p><b>Question 2:</b> A current of 0.500 A is passed through $\ce{CuSO4(aq)}$ for 2.00 hours. Calculate the mass of copper deposited. ($\ce{Cu}$ = 63.5, $F = 96500$)</p>
+
+<p><b>Question 3:</b> Predict products at both electrodes for electrolysis of: (a) molten $\ce{KBr}$, (b) dilute aqueous $\ce{KBr}$ using inert electrodes.</p>
+
+<p><b>Question 4:</b> In the chlor-alkali process, concentrated $\ce{NaCl(aq)}$ is electrolysed. Write equations for the cathode and anode reactions and explain why the solution becomes alkaline.</p>
+
+<p><b>Question 5:</b> How long (in minutes) must a current of 3.00 A flow to deposit 5.00 g of chromium from $\ce{Cr^{3+}(aq)}$? ($\ce{Cr}$ = 52.0, $F = 96500$)</p>
+
+<p><b>Question 6 (IB-style):</b> Two electrolytic cells are connected in series — one contains $\ce{AgNO3(aq)}$ and the other $\ce{CuSO4(aq)}$. After electrolysis, 1.08 g of Ag is deposited in the first cell. (a) Calculate the charge passed. (b) Calculate the mass of Cu deposited. (c) If the current was 0.200 A, how long did the electrolysis last?</p>
+
+<button class="practice-toggle" onclick="var a=this.nextElementSibling;a.classList.toggle('open');this.textContent=a.classList.contains('open')?'▴ Hide Answers':'▸ Show Answers'">▸ Show Answers</button>
+<div class="practice-answers">
+
+<p><b>Answer 1:</b> D. Cathode, which is negative. Al³⁺ is reduced at the cathode: $\ce{Al^{3+} + 3e- -> Al}$. In electrolytic cells, the cathode is the negative electrode.</p>
+
+<p><b>Answer 2:</b> $t = 2.00 \times 3600 = 7200$ s. $Q = 0.500 \times 7200 = 3600$ C. $n(e^-) = 3600/96500 = 0.0373$ mol. $\ce{Cu^{2+} + 2e- -> Cu}$, so $n(\ce{Cu}) = 0.0373/2 = 0.01865$ mol. $m = 0.01865 \times 63.5 = \mathbf{1.18\text{ g}}$.</p>
+
+<p><b>Answer 3:</b> (a) Molten KBr: Cathode: $\ce{K+ + e- -> K(l)}$. Anode: $\ce{2Br- -> Br2 + 2e-}$. (b) Dilute aqueous KBr: Cathode: $\ce{2H2O + 2e- -> H2 + 2OH-}$ (water reduced, not K⁺). Anode: $\ce{2H2O -> O2 + 4H+ + 4e-}$ (water oxidised, not Br⁻ in dilute solution). Products: H₂ and O₂.</p>
+
+<p><b>Answer 4:</b> Cathode: $\ce{2H2O + 2e- -> H2 + 2OH-}$. Anode: $\ce{2Cl- -> Cl2 + 2e-}$. The cathode produces OH⁻ ions, making the solution alkaline. Overall: $\ce{2NaCl + 2H2O -> H2 + Cl2 + 2NaOH}$. The NaOH accumulates in the solution.</p>
+
+<p><b>Answer 5:</b> $n(\ce{Cr}) = 5.00/52.0 = 0.09615$ mol. $\ce{Cr^{3+} + 3e- -> Cr}$, so $n(e^-) = 3 \times 0.09615 = 0.2885$ mol. $Q = 0.2885 \times 96500 = 27840$ C. $t = 27840/3.00 = 9280$ s = <b>155 minutes</b>.</p>
+
+<p><b>Answer 6:</b> (a) $n(\ce{Ag}) = 1.08/108 = 0.0100$ mol. Ag⁺ + e⁻ → Ag, so $n(e^-) = 0.0100$ mol. $Q = 0.0100 \times 96500 = \mathbf{965\text{ C}}$. (b) Same charge in series. $n(\ce{Cu}) = n(e^-)/2 = 0.00500$ mol. $m = 0.00500 \times 63.5 = \mathbf{0.318\text{ g}}$. (c) $t = Q/I = 965/0.200 = 4825$ s = <b>80.4 min</b>.</p>
 </div>
-<div class="answer">
-<p>(c) AgNO₃(aq) with inert electrodes: Species present: Ag⁺, NO₃⁻, H₂O.</p>
-<p>Cathode (−): Ag⁺/Ag has E° = +0.80 V, which is much more positive than water reduction (−0.83 V). Ag⁺ is reduced: Ag⁺(aq) + e⁻ → Ag(s). Silver metal deposits.</p>
-<p>Anode (+): NO₃⁻ cannot be easily oxidised. Water is oxidised: 2H₂O(l) → O₂(g) + 4H⁺(aq) + 4e⁻. Oxygen gas is produced.</p>
-<p>Products: Ag at cathode, O₂ at anode. The solution becomes acidic.</p>
-</div>
-<div class="answer">
-<p><strong>Answer 2.</strong></p>
-</div>
-<div class="answer">
-<p>Time in seconds = 45.0 × 60 = 2700 s.</p>
-<p>Q = I × t = 0.500 A × 2700 s = 1350 C.</p>
-<p>n(e⁻) = 1350 C / 96,500 C mol⁻¹ = 0.01399 mol.</p>
-<p>From the half-equation Ag⁺ + e⁻ → Ag, 1 mol of electrons produces 1 mol of Ag.</p>
-<p>n(Ag) = 0.01399 mol.</p>
-<p>m(Ag) = 0.01399 mol × 107.87 g mol⁻¹ = 1.51 g.</p>
-</div>
-<div class="answer">
-<p><strong>Answer 3.</strong></p>
-</div>
-<div class="answer">
-<p>Q = I × t = 3.00 A × (15.0 × 60) s = 2700 C.</p>
-<p>n(e⁻) = 2700 / 96,500 = 0.02798 mol.</p>
-</div>
-<div class="answer">
-<p>For hydrogen (cathode): 2H₂O + 2e⁻ → H₂ + 2OH⁻. 2 mol e⁻ → 1 mol H₂.</p>
-<p>n(H₂) = 0.02798 / 2 = 0.01399 mol.</p>
-<p>V(H₂) = 0.01399 mol × 22.7 dm³ mol⁻¹ = 0.318 dm³.</p>
-</div>
-<div class="answer">
-<p>For oxygen (anode): 2H₂O → O₂ + 4H⁺ + 4e⁻. 4 mol e⁻ → 1 mol O₂.</p>
-<p>n(O₂) = 0.02798 / 4 = 0.006995 mol.</p>
-<p>V(O₂) = 0.006995 mol × 22.7 dm³ mol⁻¹ = 0.159 dm³.</p>
-</div>
-<div class="answer">
-<p>The ratio H₂ : O₂ by volume is 0.318 : 0.159 = 2 : 1, which matches the ratio in water (H₂O).</p>
-</div>
-<div class="answer">
-<p><strong>Answer 4.</strong></p>
-</div>
-<div class="answer">
-<p>First find the amount of nickel: n(Ni) = mass / molar mass = 2.50 g / 58.69 g mol⁻¹ = 0.04259 mol.</p>
-<p>From the half-equation Ni²⁺ + 2e⁻ → Ni, 2 mol of e⁻ are needed per mol of Ni.</p>
-<p>n(e⁻) = 2 × 0.04259 = 0.08518 mol.</p>
-<p>Charge needed: Q = n(e⁻) × F = 0.08518 mol × 96,500 C mol⁻¹ = 8220 C.</p>
-<p>Time: t = Q / I = 8220 C / 4.00 A = 2055 s.</p>
-<p>In minutes: 2055 / 60 = 34.3 min.</p>
-</div>
-<div class="answer">
-<p><strong>Answer 5.</strong></p>
-</div>
-<div class="answer">
-<p>(a) Q = I × t = 1.20 A × (25.0 × 60) s = 1.20 × 1500 = 1800 C.</p>
-</div>
-<div class="answer">
-<p>(b) n(e⁻) = Q / F = 1800 C / 96,500 C mol⁻¹ = 0.01865 mol.</p>
-</div>
-<div class="answer">
-<p>(c) From M²⁺ + 2e⁻ → M, 2 mol e⁻ produce 1 mol M.</p>
-<p>n(M) = 0.01865 / 2 = 0.00933 mol.</p>
-</div>
-<div class="answer">
-<p>(d) Molar mass M = mass / amount = 0.592 g / 0.00933 mol = 63.5 g mol⁻¹.</p>
-</div>
-<div class="answer">
-<p>(e) E° values: M²⁺/M = −0.76 V, Cu²⁺/Cu = +0.34 V.</p>
-<p>Copper has the more positive E°, so it is the cathode (reduction). M is the anode (oxidation).</p>
-<p>E°_cell = (+0.34) − (−0.76) = +1.10 V.</p>
-<p>In the balanced overall reaction, M → M²⁺ + 2e⁻ and Cu²⁺ + 2e⁻ → Cu, so n = 2.</p>
-<p>ΔG° = −nFE°_cell = −(2)(96,500)(1.10) = −212,300 J mol⁻¹ = −212 kJ mol⁻¹.</p>
-<p>Since ΔG° is negative, the reaction is spontaneous.</p>
-<p>(Note: The molar mass of 63.5 g mol⁻¹ identifies M as copper, but the E° value of −0.76 V is actually the value for zinc. In a real IB question, these would be consistent. The purpose here is to practice the calculation method.)</p>
-</div>
-<div class="nav">
-  <a href="lesson_34.html">← Previous Lesson</a>
-  <a href="../index.html">↑ Lesson Index</a>
-  <a href="lesson_36.html">Next Lesson →</a>
-</div>
+
+<!-- SECTION H -->
+<h2>7. Key Terms</h2>
+<table>
+<tr><th>Term</th><th>Definition</th></tr>
+<tr><td>Electrolysis</td><td>The use of electrical energy to drive a non-spontaneous chemical reaction</td></tr>
+<tr><td>Electrolytic cell</td><td>A cell where an external power source forces a redox reaction to occur in the non-spontaneous direction</td></tr>
+<tr><td>Faraday constant ($F$)</td><td>$9.65 \times 10^4\text{ C mol}^{-1}$ — the charge on one mole of electrons</td></tr>
+<tr><td>$Q = It$</td><td>The relationship between charge (C), current (A), and time (s)</td></tr>
+<tr><td>$n(e^-) = Q/F$</td><td>The number of moles of electrons transferred, given the total charge</td></tr>
+<tr><td>Overpotential</td><td>The extra voltage beyond the thermodynamic requirement needed to drive electrolysis at a practical rate</td></tr>
+<tr><td>Electroplating</td><td>Using electrolysis to coat an object with a thin layer of metal for protection or decoration</td></tr>
+<tr><td>Electrorefining</td><td>Purifying a metal by making it the anode; pure metal deposits at the cathode</td></tr>
+<tr><td>Chlor-alkali process</td><td>Industrial electrolysis of concentrated brine producing Cl₂, H₂, and NaOH</td></tr>
+</table>
+
+<!-- SECTION I -->
+<h2>8. Exam Tips</h2>
+
+<div class="exam-tip"><b>Paper 1 (Multiple Choice):</b> Questions on electrolysis often test the sign convention (anode = + in electrolytic cell) and the electron-to-product mole ratio. Also common: identifying which species is discharged at each electrode based on $E^{\ominus}$ values. Check whether the question specifies "molten" or "aqueous" — the answer changes completely.</div>
+
+<div class="exam-tip"><b>Paper 2 (Structured):</b> Quantitative electrolysis calculations follow a fixed pathway: $I$ and $t$ → $Q = It$ → $n(e^-) = Q/F$ → moles of product → mass. Show each step clearly — method marks are awarded even if your arithmetic is wrong. Always check: are you using the correct $n$ (number of electrons in the half-equation)?</div>
+
+<div class="exam-tip"><b>Electrode material matters:</b> The IB frequently tests the distinction between inert electrodes (graphite, platinum) and active electrodes (copper, silver). With inert electrodes, water or the anion is oxidised. With active electrodes, the electrode metal itself may oxidise. This is crucial for electroplating and electrorefining questions.</div>
+
 </body>
 </html>

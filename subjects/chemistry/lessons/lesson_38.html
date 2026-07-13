@@ -3,258 +3,414 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lesson 38: Alcohols, Halogenoalkanes, SN1/SN2, and Elimination (HL) — IB Chemistry HL</title>
-<script>window.MathJax = { loader: {load: ['[tex]/mhchem']}, tex: {packages: {'[+]': ['mhchem']}} };</script>
+<title>Lesson 38 — Chemistry HL — Alcohols, Halogenoalkanes, SN1/SN2 & Elimination</title>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] },
+  loader: { load: ['[tex]/mhchem'] },
+  tex: { packages: {'[+]': ['mhchem']} }
+};
+</script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
 <style>
-  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Palatino', 'Georgia', serif; background: var(--bg); color: var(--text); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; font-size: 17px; line-height: 1.7; }
-  h1 { font-size: 1.7rem; color: var(--accent); margin-bottom: 0.5rem; }
-  h2 { font-size: 1.25rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; margin: 2rem 0 1rem; }
-  h3 { font-size: 1.1rem; color: #444; margin: 1.3rem 0 0.5rem; }
-  p, li { margin-bottom: 0.6rem; }
-  ul, ol { padding-left: 1.8rem; margin-bottom: 1rem; }
-  .worked { background: #f0f7f0; border-left: 4px solid #2c5f2d; padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
-  .answer { background: #fefdf7; border: 1px solid var(--border); padding: 0.8rem 1.2rem; margin: 0.5rem 0; border-radius: 6px; }
-  .nav { display: flex; justify-content: space-between; margin: 3rem 0 1rem; padding-top: 1rem; border-top: 2px solid var(--border); font-size: 0.9rem; }
-  .nav a { color: #1a5c9e; text-decoration: none; }
-  .nav a:hover { text-decoration: underline; }
-  .definition { background: #fdf5e6; border-left: 4px solid #d4a017; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
-  table { border-collapse: collapse; margin: 1rem 0; width: 100%; }
-  th { background: #2c5f2d; color: #fff; padding: 0.4rem 0.7rem; text-align: left; font-weight: normal; }
-  td { padding: 0.3rem 0.7rem; border-bottom: 1px solid var(--border); }
-  tr:nth-child(even) td { background: #fafaf5; }
-  @media print { body { font-size: 14px; } .nav { display: none; } }
+:root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Georgia', 'Times New Roman', serif; font-size: 17px; line-height: 1.7; color: var(--text); background: var(--bg); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; }
+h1 { font-size: 1.8rem; color: var(--accent); border-bottom: 3px solid var(--accent); padding-bottom: 0.5rem; margin-bottom: 1rem; }
+h2 { font-size: 1.35rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+h3 { font-size: 1.15rem; color: var(--accent); margin: 1.5rem 0 0.5rem; }
+p { margin-bottom: 0.8rem; }
+.objectives { background: #f0f4ff; border-left: 4px solid var(--accent); padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+.objectives h3 { margin-top: 0; }
+.check-in { background: #fff8e1; border: 1px solid #ffc107; padding: 0.8rem 1rem; margin: 1rem 0; border-radius: 8px; }
+.check-in p { margin-bottom: 0.3rem; }
+.answer-toggle { display: inline-block; padding: 0.2rem 0.8rem; border-radius: 16px; cursor: pointer; font-size: 0.8rem; font-weight: 600; background: #e8f5e9; color: #2e7d32; border: 1px solid #2e7d32; user-select: none; margin-top: 0.3rem; }
+.answer-content { display: none; background: #f1f8e9; padding: 0.6rem 1rem; border-radius: 8px; margin-top: 0.5rem; }
+.answer-content.open { display: block; }
+.example { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem; margin: 1rem 0; }
+.misconception { background: #fff3e0; border-left: 4px solid #e65100; padding: 1rem 1.2rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+.misconception h3 { color: #e65100; }
+.exam-tip { background: #e8f5e9; border-left: 4px solid #2e7d32; padding: 0.8rem 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+th { background: var(--accent); color: white; padding: 0.5rem 0.8rem; text-align: left; }
+td { padding: 0.5rem 0.8rem; border-bottom: 1px solid var(--border); }
+tr:nth-child(even) td { background: #f8f8f6; }
+.diagram { text-align: center; margin: 1.5rem 0; }
+.diagram svg { max-width: 100%; }
+.diagram .caption { font-size: 0.9rem; color: #666; margin-top: 0.3rem; font-style: italic; }
+pre.ascii-art { font-family: 'Courier New', monospace; font-size: 0.75rem; line-height: 1.2; background: #f5f5f5; padding: 0.8rem; border-radius: 8px; overflow-x: auto; }
+.practice-toggle { display: block; width: 100%; padding: 0.8rem; background: var(--accent); color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem; font-weight: 600; margin: 1.5rem 0; }
+.practice-answers { display: none; }
+.practice-answers.open { display: block; }
 </style>
 </head>
 <body>
-<h1>Lesson 38: Alcohols, Halogenoalkanes, SN1/SN2, and Elimination (HL)</h1>
-<h2>What You'll Learn</h2>
-<p>In this lesson, you will study two important families of organic compounds: alcohols and halogenoalkanes. You will learn how to classify them as primary, secondary, or tertiary based on the carbon that carries the functional group. You will learn how alcohols are oxidised and how halogenoalkanes react with nucleophiles and bases. This lesson introduces two fundamental reaction mechanisms: SN1 and SN2 (nucleophilic substitution) and E2 (elimination). Understanding these mechanisms is essential for HL organic chemistry.</p>
-<hr>
-<h2>1. Alcohols — Structure and Classification</h2>
-<p>An <strong>alcohol</strong> is an organic compound that contains a <strong>hydroxyl group (−OH)</strong> bonded to a saturated carbon atom (a carbon that has only single bonds). The −OH group is the functional group of alcohols.</p>
-<p>Alcohols are classified based on the carbon atom that carries the −OH group. We ask: how many other carbon atoms are directly bonded to that carbon?</p>
+
+<h1>Lesson 38: Alcohols, Halogenoalkanes, S<sub>N</sub>1/S<sub>N</sub>2 &amp; Elimination (HL)</h1>
+
+<p><b>Syllabus reference:</b> 10.2, 20.2 (Alcohols, Halogenoalkanes, Nucleophilic Substitution, Elimination)</p>
+
+<!-- SECTION A -->
+<div class="objectives">
+<h3>Learning Objectives</h3>
+<p>By the end of this lesson, you will be able to:</p>
 <ul>
-<li>A <strong>primary (1°) alcohol</strong> has the −OH group attached to a carbon that is bonded to exactly <strong>one</strong> other carbon atom. That carbon is at the end of a chain. Example: ethanol, CH₃CH₂OH. The carbon with the −OH (the CH₂ group) is bonded to one other carbon (the CH₃ group).</li>
+  <li><b>Describe</b> the preparation, oxidation, and substitution reactions of alcohols and halogenoalkanes.</li>
+  <li><b>Distinguish</b> between S<sub>N</sub>1 and S<sub>N</sub>2 mechanisms based on kinetics, stereochemistry, and substrate structure.</li>
+  <li><b>Predict</b> whether a given halogenoalkane will undergo S<sub>N</sub>1, S<sub>N</sub>2, or elimination under specified conditions.</li>
+  <li><b>Draw</b> curly-arrow mechanisms for S<sub>N</sub>1, S<sub>N</sub>2, E1, and E2 reactions including transition states.</li>
+  <li><b>Explain</b> how the choice of solvent, temperature, and nucleophile/base strength determines the reaction pathway.</li>
 </ul>
-<ul>
-<li>A <strong>secondary (2°) alcohol</strong> has the −OH group attached to a carbon that is bonded to exactly <strong>two</strong> other carbon atoms. That carbon is in the middle of a chain. Example: propan-2-ol, CH₃CH(OH)CH₃. The central carbon has −OH, −H, and two −CH₃ groups.</li>
-</ul>
-<ul>
-<li>A <strong>tertiary (3°) alcohol</strong> has the −OH group attached to a carbon that is bonded to <strong>three</strong> other carbon atoms. Example: 2-methylpropan-2-ol, (CH₃)₃COH. The central carbon is bonded to three CH₃ groups and the −OH group; it has no hydrogen atoms directly attached to it.</li>
-</ul>
-<p>This classification matters because the behaviour of alcohols — especially their oxidation — depends critically on whether they are 1°, 2°, or 3°.</p>
-<hr>
-<h2>2. Oxidation of Alcohols</h2>
-<p>The oxidising agent used in the laboratory for alcohols is <strong>acidified potassium dichromate(VI)</strong>, which is K₂Cr₂O₇ dissolved in dilute sulfuric acid. The key observable change is the colour: the dichromate solution is <strong>orange</strong> (due to Cr(VI), oxidation number +6), and when it acts as an oxidising agent, it is reduced to Cr(III) (oxidation number +3), which is <strong>green</strong>.</p>
-<p>The organic products depend on the class of alcohol:</p>
-<p><strong>Primary (1°) alcohol:</strong> Oxidation removes two hydrogen atoms from the carbon bearing the −OH (one from the −OH and one from the C−H bond), producing an <strong>aldehyde</strong> (−CHO). If the oxidising agent is present in excess and the mixture is heated under reflux (boiling with a condenser to return vapours), the aldehyde can be oxidised further to a <strong>carboxylic acid</strong> (−COOH).</p>
-<p>To isolate the aldehyde, we use <strong>distillation</strong> — the aldehyde is boiled off as it forms (it has a lower boiling point than the alcohol or the acid), so it escapes further oxidation.</p>
-<p><strong>Secondary (2°) alcohol:</strong> Oxidation removes two hydrogen atoms, producing a <strong>ketone</strong> (>C=O). Ketones cannot be oxidised further under these conditions because the carbonyl carbon has no hydrogen attached to remove.</p>
-<p><strong>Tertiary (3°) alcohol:</strong> No reaction occurs. The carbon bearing the −OH has no C−H bond, so there is no hydrogen atom to remove. The dichromate stays orange.</p>
-<p><div class="worked"></p>
-<p><strong>Worked Example 1: Predict the product when butan-2-ol is heated with acidified potassium dichromate(VI) under reflux.</strong></p>
-<p>Butan-2-ol is CH₃CH₂CH(OH)CH₃. The carbon with the −OH (C-2) is bonded to a −CH₂CH₃ group, a −CH₃ group, an −H, and an −OH. It is bonded to two carbons → secondary (2°) alcohol.</p>
-<p>A 2° alcohol is oxidised to a ketone. The product is <strong>butanone</strong>: CH₃CH₂COCH₃. The orange dichromate turns green.</p>
-<p>The name "butanone" comes from: 4-carbon chain (but−), ketone (−one), with the C=O group at C-2 (butan-2-one, usually just called butanone because in a 4-carbon chain the ketone can only be at C-2).</p>
-<p></div></p>
-<hr>
-<h2>3. Halogenoalkanes — Structure and Bonding</h2>
-<p>A <strong>halogenoalkane</strong> (also called a haloalkane or alkyl halide) has the general formula <strong>R−X</strong>, where R represents an alkyl group (a carbon chain) and X is a halogen atom: fluorine, chlorine, bromine, or iodine. The functional group is the carbon-halogen bond.</p>
-<p>Like alcohols, halogenoalkanes are classified as primary (1°), secondary (2°), or tertiary (3°) based on the carbon that carries the halogen atom — how many other carbon atoms are bonded to that carbon?</p>
-<p>The <strong>C−X bond is polar</strong>. Halogens are more electronegative than carbon. (Electronegativity is the ability of an atom to attract bonding electrons.) This means the halogen pulls electron density toward itself, making the carbon slightly positive (δ+, pronounced "delta plus") and the halogen slightly negative (δ−, "delta minus").</p>
-<p>Because the carbon is δ+, it can be attacked by <strong>nucleophiles</strong>. A nucleophile is a chemical species that has a lone pair of electrons and is attracted to positive (or partially positive) centres. "Nucleophile" means "nucleus-loving" — it seeks out positive charge. Common nucleophiles include OH⁻, CN⁻, NH₃, and H₂O.</p>
-<hr>
-<h2>4. Nucleophilic Substitution — Two Mechanisms</h2>
-<p>A <strong>nucleophilic substitution</strong> reaction is one in which a nucleophile replaces (substitutes for) the halogen atom in a halogenoalkane. The halogen leaves as a halide ion (X⁻), and the nucleophile takes its place. There are two entirely different mechanisms for this: SN1 and SN2.</p>
-<h3>The SN2 Mechanism</h3>
-<p><strong>SN2</strong> stands for <strong>S</strong>ubstitution, <strong>N</strong>ucleophilic, <strong>2</strong> (bimolecular). "Bimolecular" means the rate-determining step (the slowest step that limits how fast the overall reaction can go) involves <strong>two</strong> species colliding: the halogenoalkane and the nucleophile.</p>
-<p>SN2 happens in <strong>one concerted step</strong>. The nucleophile attacks the δ+ carbon from the <strong>opposite side</strong> to the halogen (this is called "backside attack"). As the nucleophile begins to form a bond with the carbon, the carbon-halogen bond begins to break. Both changes happen at the same time. There is no intermediate — just a <strong>transition state</strong> where the carbon is partially bonded to both the nucleophile and the leaving group.</p>
-<p><strong>Rate equation:</strong> Rate = k [R−X] [Nu⁻]. The reaction rate depends on the concentration of both the halogenoalkane and the nucleophile.</p>
-<p><strong>Key features of SN2:</strong></p>
-<ul>
-<li>Favoured by <strong>primary (1°) halogenoalkanes</strong>. Secondary is slower but possible. Tertiary is extremely slow because the bulky alkyl groups block the backside approach of the nucleophile (this is called <strong>steric hindrance</strong>).</li>
-<li>At a carbon that is a chiral centre (bonded to four different groups), SN2 produces <strong>inversion of configuration</strong> — like an umbrella turning inside out. The nucleophile enters from the opposite side, so the arrangement of groups around the carbon flips.</li>
-<li>Requires a <strong>strong nucleophile</strong>.</li>
-<li>Favoured by <strong>polar aprotic solvents</strong> — solvents that are polar but cannot donate hydrogen bonds, such as propanone (acetone) or DMSO.</li>
-</ul>
-<h3>The SN1 Mechanism</h3>
-<p><strong>SN1</strong> stands for <strong>S</strong>ubstitution, <strong>N</strong>ucleophilic, <strong>1</strong> (unimolecular). "Unimolecular" means the rate-determining step involves only <strong>one</strong> species: the halogenoalkane alone.</p>
-<p>SN1 happens in <strong>two steps</strong>:</p>
-<p><strong>Step 1 (slow):</strong> The C−X bond breaks on its own. Both electrons from the bond go to the halogen, which leaves as a halide ion (X⁻). The carbon is left with a positive charge and only 6 valence electrons — this is a <strong>carbocation</strong> (also called a carbenium ion). This step is slow and determines the overall rate.</p>
-<p>$$\ce{R3CBr -> R3C+ + Br-}$$</p>
-<p><strong>Step 2 (fast):</strong> The nucleophile attacks the carbocation, donating a pair of electrons to form a new covalent bond.</p>
-<p>$$\ce{R3C+ + OH- -> R3COH}$$</p>
-<p><strong>Rate equation:</strong> Rate = k [R−X]. The concentration of the nucleophile does not appear because the nucleophile is not involved in the rate-determining step.</p>
-<p><strong>Key features of SN1:</strong></p>
-<ul>
-<li>Favoured by <strong>tertiary (3°) halogenoalkanes</strong>. Secondary is slower but possible. Primary is very slow and usually does not go by SN1. This is because carbocation stability follows the order: 3° > 2° > 1°. Alkyl groups attached to the positive carbon donate electron density through the inductive effect, spreading out and stabilising the positive charge.</li>
-<li>The carbocation intermediate is <strong>planar</strong> (sp² hybridised, flat, 120° angles). The nucleophile can attack from either side of this plane with equal probability. If the carbon was a chiral centre, the product is a <strong>racemic mixture</strong> — a 50:50 mix of the two enantiomers (mirror-image molecules). The overall optical activity is zero.</li>
-<li>Can happen with a <strong>weak nucleophile</strong> (even water can do it).</li>
-<li>Favoured by <strong>polar protic solvents</strong> — solvents that can donate hydrogen bonds, such as water or ethanol. These solvents stabilise the carbocation and the leaving halide ion.</li>
-</ul>
-<p><div class="definition"></p>
-<p><strong>Summary Table: SN1 versus SN2</strong></p>
+</div>
+
+<!-- SECTION B -->
+<h2>1. Prior Knowledge Check</h2>
+
+<p><b>Question 1:</b> What is a nucleophile? Give three examples relevant to this lesson.</p>
+<div class="check-in">
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">A <b>nucleophile</b> is an electron-pair donor — a Lewis base. It has a lone pair or $\pi$ electrons and attacks electron-deficient sites. Examples: $\ce{OH-}$ (hydroxide), $\ce{CN-}$ (cyanide), $\ce{NH3}$ (ammonia), $\ce{:Br-}$, and $\ce{H2O:}$. Nucleophiles are central to substitution reactions at saturated carbon.</div>
+</div>
+
+<p><b>Question 2:</b> How does the classification of an alcohol (1°/2°/3°) affect its oxidation products?</p>
+<div class="check-in">
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">1° alcohol → aldehyde → carboxylic acid (with excess oxidant). 2° alcohol → ketone (no further oxidation without breaking C–C). 3° alcohol → <b>no oxidation</b> under normal conditions (no H atom on the carbon bearing –OH to remove). This is a classic distinguishing test: only 1° and 2° alcohols are oxidised by acidified $\ce{K2Cr2O7}$ (orange → green).</div>
+</div>
+
+<p><b>Question 3:</b> What is the difference between "substitution" and "elimination" as reaction types?</p>
+<div class="check-in">
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content"><b>Substitution:</b> one atom or group is replaced by another; the carbon skeleton remains unchanged. $\ce{CH3CH2Br + OH- -> CH3CH2OH + Br-}$. <b>Elimination:</b> atoms/groups are removed from adjacent carbons, forming a $\pi$ bond. $\ce{CH3CH2Br + OH- -> CH2=CH2 + H2O + Br-}$. Substitution and elimination are <b>competing</b> pathways — the outcome depends on the substrate, reagent, and conditions.</div>
+</div>
+
+<!-- SECTION C -->
+<h2>2. Alcohols — Preparation, Reactions, and Oxidation</h2>
+
+<p>Alcohols contain the hydroxyl group $\ce{–OH}$ bonded to an $sp^3$ carbon. They are classified as 1°, 2°, or 3°. The $\ce{–OH}$ group makes alcohols weak Brønsted acids ($pK_a \approx 16$ for primary alcohols) and also provides a lone pair for nucleophilic behaviour.</p>
+
+<h3>2.1 Oxidation of Alcohols — The Classic Test</h3>
+
+<div class="diagram">
+<svg width="720" height="300" viewBox="0 0 720 300">
+  <text x="360" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c5f2d">Oxidation of Alcohols with Acidified Dichromate ($\ce{Cr2O7^{2-}/H+}$)</text>
+
+  <!-- 1° alcohol path -->
+  <rect x="10" y="35" width="230" height="250" rx="8" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="1.5"/>
+  <text x="125" y="58" text-anchor="middle" font-size="12" font-weight="bold">1° Alcohol → Aldehyde → Acid</text>
+  <text x="125" y="78" text-anchor="middle" font-size="11">$\ce{RCH2OH}$</text>
+  <text x="125" y="98" text-anchor="middle" font-size="18">↓ [O]</text>
+  <text x="125" y="118" text-anchor="middle" font-size="11">$\ce{RCHO}$ (aldehyde)</text>
+  <text x="125" y="140" text-anchor="middle" font-size="11" fill="#c62828">distil off immediately</text>
+  <text x="125" y="158" text-anchor="middle" font-size="18">↓ excess [O]</text>
+  <text x="125" y="178" text-anchor="middle" font-size="11">$\ce{RCOOH}$ (carboxylic acid)</text>
+  <text x="125" y="200" text-anchor="middle" font-size="10" fill="#666">Both steps: orange → green</text>
+
+  <!-- 2° alcohol path -->
+  <rect x="250" y="35" width="220" height="250" rx="8" fill="#fff8e1" stroke="#d4a017" stroke-width="1.5"/>
+  <text x="360" y="58" text-anchor="middle" font-size="12" font-weight="bold">2° Alcohol → Ketone</text>
+  <text x="360" y="78" text-anchor="middle" font-size="11">$\ce{R2CHOH}$</text>
+  <text x="360" y="98" text-anchor="middle" font-size="18">↓ [O]</text>
+  <text x="360" y="118" text-anchor="middle" font-size="11">$\ce{R2C=O}$ (ketone)</text>
+  <text x="360" y="148" text-anchor="middle" font-size="11" fill="#c62828">STOPS HERE</text>
+  <text x="360" y="168" text-anchor="middle" font-size="10">No H on carbonyl C</text>
+  <text x="360" y="185" text-anchor="middle" font-size="10">→ cannot oxidise further</text>
+  <text x="360" y="210" text-anchor="middle" font-size="10" fill="#666">orange → green</text>
+
+  <!-- 3° alcohol path -->
+  <rect x="480" y="35" width="230" height="250" rx="8" fill="#ffebee" stroke="#c62828" stroke-width="1.5"/>
+  <text x="595" y="58" text-anchor="middle" font-size="12" font-weight="bold">3° Alcohol → NO REACTION</text>
+  <text x="595" y="78" text-anchor="middle" font-size="11">$\ce{R3COH}$</text>
+  <text x="595" y="118" text-anchor="middle" font-size="28" fill="#c62828">✗</text>
+  <text x="595" y="150" text-anchor="middle" font-size="11">No α-hydrogen to remove</text>
+  <text x="595" y="170" text-anchor="middle" font-size="10">C–C bond cleavage needed</text>
+  <text x="595" y="195" text-anchor="middle" font-size="10">(not under these conditions)</text>
+  <text x="595" y="220" text-anchor="middle" font-size="10" fill="#666">stays orange</text>
+</svg>
+<div class="caption">Figure 1: Oxidation behaviour of the three alcohol classes. This is the basis for distinguishing 1°, 2°, and 3° alcohols experimentally. The colour change $\ce{Cr2O7^{2-}}$ (orange) → $\ce{Cr^{3+}}$ (green) is the visual indicator.</div>
+</div>
+
+<h3>2.2 Preparation of Halogenoalkanes from Alcohols</h3>
+
+<p>Alcohols can be converted to halogenoalkanes by nucleophilic substitution — but the $\ce{–OH}$ group is a poor leaving group (hydroxide $\ce{OH-}$ is a strong base). It must first be <b>protonated</b> to form $\ce{–OH2+}$, where water is an excellent leaving group.</p>
+
+<p><b>Using $\ce{PCl5}$ or $\ce{SOCl2}$:</b> $\ce{ROH + SOCl2 -> RCl + SO2 + HCl}$ (no acid needed; clean reaction).</p>
+
+<p><b>Using $\ce{HX}$:</b> $\ce{ROH + HBr -> RBr + H2O}$ (via protonation of –OH, then S<sub>N</sub>1 or S<sub>N</sub>2).</p>
+
+<div class="check-in">
+<p><b>Check-in:</b> Why can't you simply use $\ce{NaCl}$ and an alcohol to make a chloroalkane?</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">$\ce{Cl-}$ is a good nucleophile, but $\ce{–OH}$ is a <b>terrible leaving group</b> because $\ce{OH-}$ is a strong base. The reaction $\ce{ROH + Cl- -> RCl + OH-}$ is thermodynamically unfavourable (strong base displaced by weaker base). By adding acid, $\ce{–OH}$ becomes $\ce{–OH2+}$; now the leaving group is $\ce{H2O}$ (weak base, excellent leaving group). This is why halogenoalkane synthesis from alcohols requires acidic conditions or specialised reagents ($\ce{SOCl2}$, $\ce{PCl5}$, $\ce{PBr3}$).</div>
+</div>
+
+<h2>3. Nucleophilic Substitution — S<sub>N</sub>1 vs. S<sub>N</sub>2 (HL)</h2>
+
+<p>Nucleophilic substitution is the reaction of a nucleophile ($\ce{Nu-}$ or $\ce{Nu:}$) with a halogenoalkane ($\ce{R–X}$) to replace X with Nu. But there are <b>two fundamentally different mechanisms</b> — and which one operates depends on the structure of the halogenoalkane.</p>
+
+<h3>3.1 S<sub>N</sub>2 — Bimolecular, Concerted</h3>
+
+<div class="diagram">
+<svg width="700" height="280" viewBox="0 0 700 280">
+  <text x="350" y="18" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c5f2d">S<sub>N</sub>2 Mechanism: $\ce{CH3Br + OH- -> CH3OH + Br-}$</text>
+
+  <!-- Reactants -->
+  <text x="70" y="70" font-size="12">$\ce{HO-}$</text>
+  <text x="115" y="110" font-size="12">$\ce{CH3Br}$</text>
+
+  <!-- HO- nucleophile -->
+  <circle cx="95" cy="85" r="12" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="2"/>
+  <text x="95" y="90" text-anchor="middle" font-size="10" font-weight="bold">HO⁻</text>
+
+  <!-- CH3Br -->
+  <circle cx="220" cy="120" r="16" fill="#333" opacity="0.25"/>
+  <text x="220" y="125" text-anchor="middle" font-size="10" fill="#fff" font-weight="bold">C</text>
+  <circle cx="280" cy="120" r="16" fill="#ffebee" stroke="#c62828" stroke-width="1.5"/>
+  <text x="280" y="125" text-anchor="middle" font-size="10" fill="#c62828">Br</text>
+  <!-- H atoms back -->
+  <text x="205" y="145" font-size="9">H</text>
+  <text x="235" y="145" font-size="9">H</text>
+  <text x="220" y="98" font-size="9">H</text>
+
+  <!-- Curly arrow from OH- to C -->
+  <path d="M107,85 C150,80 180,95 204,115" fill="none" stroke="#c62828" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="155" y="78" font-size="9" fill="#c62828">Nu attacks</text>
+
+  <!-- Curly arrow from C-Br to Br -->
+  <path d="M260,120 C275,130 285,140 295,135" fill="none" stroke="#c62828" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="285" y="148" font-size="9" fill="#c62828">LG leaves</text>
+
+  <defs><marker id="arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#c62828"/></marker></defs>
+
+  <!-- Transition state -->
+  <rect x="310" y="40" width="100" height="180" rx="6" fill="#fff8e1" stroke="#d4a017" stroke-width="1" stroke-dasharray="4"/>
+  <text x="360" y="58" text-anchor="middle" font-size="9" fill="#d4a017">Transition</text>
+  <text x="360" y="70" text-anchor="middle" font-size="9" fill="#d4a017">State</text>
+  <text x="360" y="95" text-anchor="middle" font-size="9">[HO···CH₃···Br]⁻</text>
+  <text x="360" y="115" text-anchor="middle" font-size="9">pentacoordinate C</text>
+  <text x="360" y="135" text-anchor="middle" font-size="9">partial bonds</text>
+  <text x="360" y="155" text-anchor="middle" font-size="9">Nu and LG 180° apart</text>
+
+  <!-- Product side -->
+  <circle cx="440" cy="120" r="16" fill="#333" opacity="0.25"/>
+  <text x="440" y="125" text-anchor="middle" font-size="10" fill="#fff" font-weight="bold">C</text>
+  <circle cx="500" cy="90" r="12" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="2"/>
+  <text x="500" y="95" text-anchor="middle" font-size="9">OH</text>
+  <text x="425" y="145" font-size="9">H</text>
+  <text x="455" y="145" font-size="9">H</text>
+  <text x="440" y="98" font-size="9">H</text>
+  <text x="530" y="140" font-size="11" fill="#c62828">+ Br⁻</text>
+
+  <!-- Inversion -->
+  <text x="360" y="200" text-anchor="middle" font-size="10" fill="#c62828" font-weight="bold">↑ Walden Inversion — umbrella flips!</text>
+  <text x="360" y="220" text-anchor="middle" font-size="10">Rate = k[CH₃Br][OH⁻] — 2nd order (bimolecular)</text>
+  <text x="360" y="240" text-anchor="middle" font-size="10">One step: bond making and breaking are simultaneous (concerted)</text>
+</svg>
+<div class="caption">Figure 2: The S<sub>N</sub>2 mechanism. The nucleophile attacks from the <b>back side</b> (opposite the leaving group), passing through a pentacoordinate transition state. The product has <b>inverted</b> stereochemistry (Walden inversion). Rate = $k[\ce{RX}][\ce{Nu-}]$ — bimolecular.</div>
+</div>
+
+<h3>3.2 S<sub>N</sub>1 — Unimolecular, Stepwise</h3>
+
+<div class="diagram">
+<svg width="700" height="280" viewBox="0 0 700 280">
+  <text x="350" y="18" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c5f2d">S<sub>N</sub>1 Mechanism: $\ce{(CH3)3CBr + H2O -> (CH3)3COH + HBr}$</text>
+
+  <!-- Step 1 -->
+  <rect x="10" y="30" width="320" height="120" rx="6" fill="#ffebee" stroke="#c62828" stroke-width="1"/>
+  <text x="170" y="50" text-anchor="middle" font-size="11" font-weight="bold" fill="#c62828">Step 1: RATE-DETERMINING</text>
+  <text x="170" y="70" text-anchor="middle" font-size="11">$\ce{(CH3)3C–Br -> (CH3)3C+ + Br-}$</text>
+  <text x="170" y="90" text-anchor="middle" font-size="10">heterolytic fission — slow, unimolecular</text>
+  <text x="170" y="108" text-anchor="middle" font-size="10">Rate = $k[(\ce{CH3)3CBr}]$ — 1st order</text>
+  <text x="170" y="128" text-anchor="middle" font-size="10" fill="#c62828">curly arrow: C–Br bond electrons → Br</text>
+
+  <!-- Step 2 -->
+  <rect x="10" y="160" width="320" height="105" rx="6" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="1"/>
+  <text x="170" y="180" text-anchor="middle" font-size="11" font-weight="bold" fill="#2c5f2d">Step 2: FAST</text>
+  <text x="170" y="200" text-anchor="middle" font-size="11">$\ce{(CH3)3C+ + H2O: -> (CH3)3C–OH2+}$</text>
+  <text x="170" y="220" text-anchor="middle" font-size="10">water (nucleophile) attacks planar carbocation</text>
+  <text x="170" y="240" text-anchor="middle" font-size="10">Step 3 (fast): deprotonation → $\ce{(CH3)3COH}$</text>
+
+  <!-- Carbocation planar diagram -->
+  <rect x="350" y="30" width="340" height="120" rx="6" fill="#f5f5f5" stroke="#999" stroke-width="1"/>
+  <text x="520" y="50" text-anchor="middle" font-size="10" font-weight="bold">Planar carbocation (sp²)</text>
+  <text x="520" y="70" text-anchor="middle" font-size="10">empty p orbital ⊥ to plane</text>
+  <text x="520" y="90" text-anchor="middle" font-size="10">Nu can attack from EITHER face</text>
+  <text x="520" y="108" text-anchor="middle" font-size="10">→ racemisation (if chiral centre)</text>
+
+  <!-- Carbocation stability order -->
+  <rect x="350" y="165" width="340" height="100" rx="6" fill="#e3f2fd" stroke="#1565c0" stroke-width="1"/>
+  <text x="520" y="185" text-anchor="middle" font-size="10" font-weight="bold" fill="#1565c0">S<sub>N</sub>1 favoured by:</text>
+  <text x="520" y="205" text-anchor="middle" font-size="10">3° > 2° >> 1° (carbocation stability)</text>
+  <text x="520" y="225" text-anchor="middle" font-size="10">Weak nucleophiles (e.g., H₂O, ROH)</text>
+  <text x="520" y="245" text-anchor="middle" font-size="10">Polar protic solvents (stabilise ions)</text>
+</svg>
+<div class="caption">Figure 3: The S<sub>N</sub>1 mechanism. The leaving group departs first (slow step), forming a planar carbocation. The nucleophile then attacks from either face — leading to <b>racemisation</b> if the carbon is chiral. Rate depends only on [RX].</div>
+</div>
+
+<div class="check-in">
+<p><b>Check-in:</b> Why does 1-bromobutane undergo S<sub>N</sub>2 while 2-bromo-2-methylpropane undergoes S<sub>N</sub>1 with the same nucleophile?</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">1-bromobutane is a 1° halogenoalkane. S<sub>N</sub>2 requires back-side attack — minimal steric hindrance at a 1° centre, so S<sub>N</sub>2 is fast. Forming a 1° carbocation for S<sub>N</sub>1 is very unfavourable. 2-bromo-2-methylpropane is 3°: S<sub>N</sub>2 is impossible — the carbon is completely blocked for back-side attack (steric hindrance from 3 methyl groups). But S<sub>N</sub>1 is fast because the 3° carbocation is highly stabilised by three +I alkyl groups. <b>The substrate determines the mechanism.</b></div>
+</div>
+
+<h2>4. Elimination Reactions (HL) — Competing with Substitution</h2>
+
+<p>When a nucleophile can also act as a <b>base</b> (e.g., $\ce{OH-}$, $\ce{RO-}$, $\ce{NH2-}$), it may remove a $\beta$-hydrogen instead of substituting. This is <b>elimination</b> — forming an alkene.</p>
+
+<div class="diagram">
+<svg width="720" height="280" viewBox="0 0 720 280">
+  <text x="360" y="18" text-anchor="middle" font-size="13" font-weight="bold" fill="#2c5f2d">Substitution vs. Elimination: The Four Pathways for $\ce{RX + Nu-/Base}$</text>
+
+  <!-- S_N2 -->
+  <rect x="15" y="35" width="160" height="110" rx="8" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="2"/>
+  <text x="95" y="58" text-anchor="middle" font-size="12" font-weight="bold">S<sub>N</sub>2</text>
+  <text x="95" y="78" text-anchor="middle" font-size="10">Good Nu, less basic</text>
+  <text x="95" y="95" text-anchor="middle" font-size="10">1° RX (low steric)</text>
+  <text x="95" y="112" text-anchor="middle" font-size="10">Aprotic solvent</text>
+  <text x="95" y="130" text-anchor="middle" font-size="10">→ Inversion</text>
+
+  <!-- S_N1 -->
+  <rect x="190" y="35" width="160" height="110" rx="8" fill="#fff8e1" stroke="#d4a017" stroke-width="2"/>
+  <text x="270" y="58" text-anchor="middle" font-size="12" font-weight="bold">S<sub>N</sub>1</text>
+  <text x="270" y="78" text-anchor="middle" font-size="10">Weak Nu (H₂O, ROH)</text>
+  <text x="270" y="95" text-anchor="middle" font-size="10">3° RX (stable C⁺)</text>
+  <text x="270" y="112" text-anchor="middle" font-size="10">Protic solvent</text>
+  <text x="270" y="130" text-anchor="middle" font-size="10">→ Racemisation</text>
+
+  <!-- E2 -->
+  <rect x="365" y="35" width="160" height="110" rx="8" fill="#ffebee" stroke="#c62828" stroke-width="2"/>
+  <text x="445" y="58" text-anchor="middle" font-size="12" font-weight="bold">E2</text>
+  <text x="445" y="78" text-anchor="middle" font-size="10">Strong base</text>
+  <text x="445" y="95" text-anchor="middle" font-size="10">Heat</text>
+  <text x="445" y="112" text-anchor="middle" font-size="10">Concerted</text>
+  <text x="445" y="130" text-anchor="middle" font-size="10">→ anti-periplanar</text>
+
+  <!-- E1 -->
+  <rect x="540" y="35" width="160" height="110" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+  <text x="620" y="58" text-anchor="middle" font-size="12" font-weight="bold">E1</text>
+  <text x="620" y="78" text-anchor="middle" font-size="10">Weak base, 3° RX</text>
+  <text x="620" y="95" text-anchor="middle" font-size="10">Heat</text>
+  <text x="620" y="112" text-anchor="middle" font-size="10">Stepwise (C⁺ first)</text>
+  <text x="620" y="130" text-anchor="middle" font-size="10">→ Zaitsev product</text>
+
+  <!-- Key factors -->
+  <rect x="15" y="165" width="690" height="100" rx="6" fill="#fafafa" stroke="#999" stroke-width="1"/>
+  <text x="360" y="188" text-anchor="middle" font-size="12" font-weight="bold">Key Decision Factors</text>
+  <text x="360" y="210" text-anchor="middle" font-size="11">• <b>1° RX + strong Nu⁻/weak base</b> (e.g., $\ce{CN-}$, $\ce{I-}$) → S<sub>N</sub>2 dominates</text>
+  <text x="360" y="230" text-anchor="middle" font-size="11">• <b>3° RX + strong base</b> (e.g., $\ce{OH-}$, $\ce{EtO-}$) → E2 dominates (steric hindrance blocks S<sub>N</sub>2)</text>
+  <text x="360" y="250" text-anchor="middle" font-size="11">• <b>Heat favours elimination</b> (ΔS positive: 2 particles → 3 particles) &nbsp;|&nbsp; <b>Cold favours substitution</b></text>
+</svg>
+<div class="caption">Figure 4: Decision flowchart for S<sub>N</sub>1/S<sub>N</sub>2/E1/E2. The substrate (1° vs. 2° vs. 3°), the nucleophile/base strength, the solvent, and the temperature all influence the pathway.</div>
+</div>
+
+<div class="check-in">
+<p><b>Check-in:</b> Predict the major organic product when 2-bromopropane is heated with (a) aqueous $\ce{NaOH}$ and (b) ethanolic $\ce{NaOH}$.</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">(a) <b>Aqueous $\ce{NaOH}$ at moderate temperature:</b> $\ce{OH-}$ acts as a nucleophile → S<sub>N</sub>2 at 2° centre → propan-2-ol. (b) <b>Ethanolic $\ce{NaOH}$ at reflux:</b> $\ce{OH-}$ in ethanol acts as a strong base; heat favours elimination → E2 → propene $\ce{CH3CH=CH2}$. The solvent is a key clue: aqueous = substitution; ethanolic = elimination. IB expects you to know this distinction.</div>
+</div>
+
+<h2>5. Zaitsev's Rule for Elimination</h2>
+
+<p>When elimination can produce more than one alkene, <b>Zaitsev's rule</b> predicts the major product:</p>
+
+<div class="definition" style="background:#fdf5e6;border-left:4px solid #d4a017;padding:0.6rem 1rem;margin:0.8rem 0;border-radius:0 8px 8px 0;">
+<b>Zaitsev's Rule:</b> The major product of elimination is the <b>more substituted alkene</b> — the one with more alkyl groups attached to the $\ce{C=C}$ carbons. This alkene is thermodynamically more stable (hyperconjugation from alkyl groups stabilises the $\pi$ bond).
+</div>
+
+<!-- SECTION D -->
+<h2>6. Worked Examples</h2>
+
+<div class="example">
+<b>Example 1 — Predicting S<sub>N</sub>2 stereochemistry:</b><br><br>
+(S)-2-bromobutane reacts with $\ce{NaOH}$ (aq). Draw the product and state its stereochemistry.<br><br>
+<b>Analysis:</b> 2-bromobutane is a 2° halogenoalkane with a chiral centre at C2. $\ce{OH-}$ is a good nucleophile. S<sub>N</sub>2 is possible (2° substrates can go S<sub>N</sub>1 or S<sub>N</sub>2 depending on conditions; aqueous $\ce{NaOH}$ favours S<sub>N</sub>2). <b>Mechanism:</b> $\ce{OH-}$ attacks from the back side → Walden inversion. (S)-2-bromobutane becomes (R)-butan-2-ol. <b>CIP priority:</b> $\ce{OH > CH2CH3 > CH3 > H}$. With inversion, the configuration flips from S to R.<br><br>
+<b>⚠️ Common wrong approach:</b> Forgetting that S<sub>N</sub>2 causes inversion. Students sometimes draw the same stereochemistry, giving (S)-butan-2-ol.
+</div>
+
+<div class="example">
+<b>Example 2 — Competition between substitution and elimination:</b><br><br>
+1-bromopropane is treated with $\ce{KOH}$ in ethanol under reflux. The product mixture contains two organic compounds. Identify them and explain which is major.<br><br>
+<b>Analysis:</b> 1° halogenoalkane + strong base + heat + ethanolic solvent. $\ce{OH-}$/$\ce{EtO-}$ can act as base (E2) or nucleophile (S<sub>N</sub>2). Both occur. E2 product: propene $\ce{CH3CH=CH2}$. S<sub>N</sub>2 product: propan-1-ol (or ethoxypropane via $\ce{EtO-}$ if $\ce{EtOH}$ solvent participates). With ethanolic $\ce{KOH}$, elimination dominates → <b>propene is major</b> (Zaitsev not applicable — only one elimination product possible). Minor product: propan-1-ol (substitution).<br><br>
+<b>⚠️ Common wrong approach:</b> Writing only the elimination product. IB expects you to recognise that substitution and elimination compete and that the conditions (solvent, temperature) influence the ratio.
+</div>
+
+<div class="example">
+<b>Example 3 — E2 stereochemistry (anti-periplanar requirement):</b><br><br>
+Explain why (1R,2R)-1-bromo-1,2-diphenylethane undergoes E2 elimination with $\ce{NaOEt}$ to give exclusively (E)-1,2-diphenylethene, while the (1S,2R) diastereomer gives exclusively the (Z)-alkene.<br><br>
+<b>Analysis:</b> E2 requires the H and the leaving group (Br) to be <b>anti-periplanar</b> — in the same plane but on opposite sides (dihedral angle ≈ 180°). This allows optimal orbital overlap for the forming $\pi$ bond. In the (1R,2R) isomer, when Br and H are anti, the two phenyl groups end up on opposite sides of the C=C → E configuration. In (1S,2R), anti arrangement places phenyl groups on the same side → Z configuration. <b>Key point:</b> E2 stereochemistry is <b>stereospecific</b> — the diastereomer determines the alkene geometry.<br><br>
+<b>⚠️ Common wrong approach:</b> Treating E2 as non-stereospecific and predicting a mixture of E and Z for each diastereomer. The anti-periplanar requirement makes E2 highly stereospecific.
+</div>
+
+<!-- SECTION F -->
+<div class="misconception">
+<h3>⚠️ Common Mistakes to Avoid</h3>
+<ol>
+  <li><b>S<sub>N</sub>2 is NOT simply "1° substrates."</b> While S<sub>N</sub>2 is fastest for 1° substrates, it can also occur with 2° substrates (especially with strong nucleophiles like $\ce{I-}$, $\ce{CN-}$). It is impossible for 3° substrates due to steric hindrance. The transition from S<sub>N</sub>2 to S<sub>N</sub>1 is gradual, not abrupt.</li>
+  <li><b>Aqueous vs. ethanolic conditions.</b> $\ce{NaOH(aq)}$ = nucleophilic substitution (OH⁻ as Nu). $\ce{NaOH}$ in ethanol + heat = elimination (OH⁻/EtO⁻ as base). This is a classic IB distinction that appears every year.</li>
+  <li><b>Oxidation states.</b> 1° alcohol → aldehyde → acid involves oxidation at the SAME carbon twice. 2° → ketone is a single oxidation. 3° alcohol cannot be oxidised (no C–H on the C–OH). Don't confuse this with complete combustion (which burns everything).</li>
+  <li><b>"Nucleophile" vs. "Base."</b> All bases are nucleophiles, but nucleophilicity and basicity are different. $\ce{I-}$ is an excellent nucleophile but a very weak base (its conjugate acid $\ce{HI}$ is strong). $\ce{t-BuO-}$ is a strong base but a poor nucleophile (too bulky). This distinction determines S<sub>N</sub>2 vs E2.</li>
+  <li><b>S<sub>N</sub>1 racemisation is not always complete.</b> Ion-pair effects mean the leaving group can partially block one face, giving more inversion than retention. IB accepts "racemisation" as the expected answer, but be aware that real S<sub>N</sub>1 reactions often give a slight excess of inversion product.</li>
+</ol>
+</div>
+
+<!-- SECTION G -->
+<h2>7. End-of-Lesson Practice</h2>
+
+<p><b>Question 1 (Paper 1 style):</b> Which halogenoalkane reacts fastest by the S<sub>N</sub>2 mechanism?<br>
+A. $\ce{(CH3)3CBr}$ &nbsp; B. $\ce{CH3CH2CH2Br}$ &nbsp; C. $\ce{(CH3)2CHBr}$ &nbsp; D. $\ce{CH3Br}$</p>
+
+<p><b>Question 2:</b> Draw the S<sub>N</sub>2 mechanism for the reaction of $\ce{CH3CH2I}$ with $\ce{CN-}$. Show curly arrows and the transition state.</p>
+
+<p><b>Question 3:</b> Predict the products when 2-bromo-2-methylbutane is heated with aqueous $\ce{NaOH}$. Explain the mechanism.</p>
+
+<p><b>Question 4:</b> Classify each reaction as S<sub>N</sub>1, S<sub>N</sub>2, E1, or E2: (a) $\ce{(CH3)3CCl + H2O}$ (warm) → $\ce{(CH3)3COH}$, (b) $\ce{CH3CH2Br + NaOCH3}$ (in methanol, reflux) → $\ce{CH2=CH2}$.</p>
+
+<p><b>Question 5:</b> (R)-2-chlorobutane reacts with aqueous $\ce{KOH}$. Draw the stereochemistry of the product and state its absolute configuration (R/S).</p>
+
+<p><b>Question 6 (Paper 2 style):</b> The reaction of 1-iodobutane with $\ce{NH3}$ yields butan-1-amine. (a) Draw the S<sub>N</sub>2 mechanism. (b) Explain why a large excess of $\ce{NH3}$ is needed to minimise further substitution. (c) What by-product forms if excess 1-iodobutane is used instead?</p>
+
+<button class="practice-toggle" onclick="var a=this.nextElementSibling;a.classList.toggle('open');this.textContent=a.classList.contains('open')?'▴ Hide Answers':'▸ Show Answers'">▸ Show Answers</button>
+<div class="practice-answers">
+
+<p><b>Answer 1:</b> D. $\ce{CH3Br}$ has the least steric hindrance — three small H atoms around the carbon. S<sub>N</sub>2 rate: $\ce{CH3X}$ > 1° > 2° > 3°. $\ce{(CH3)3CBr}$ (3°) undergoes S<sub>N</sub>1, not S<sub>N</sub>2.</p>
+
+<p><b>Answer 2:</b> $\ce{NC-}$ attacks C of $\ce{CH3CH2I}$ from the back (180° to C–I). Curly arrow from $\ce{CN-}$ lone pair → C; curly arrow from C–I bond → I. Transition state: pentacoordinate C with partial C–Nu and C–I bonds. Product: $\ce{CH3CH2CN}$ (propanenitrile) + $\ce{I-}$.</p>
+
+<p><b>Answer 3:</b> 2-bromo-2-methylbutane is 3°. Aqueous $\ce{NaOH}$: water is the solvent and nucleophile. S<sub>N</sub>1 mechanism: Br⁻ leaves → 3° carbocation $\ce{(CH3CH2)(CH3)2C+}$. $\ce{H2O}$ attacks → protonated alcohol → deprotonation → <b>2-methylbutan-2-ol</b>. Also: some E1 → 2-methylbut-2-ene and 2-methylbut-1-ene (Zaitsev: the more substituted alkene is major).</p>
+
+<p><b>Answer 4:</b> (a) 3° RX, weak nucleophile (H₂O), protic solvent → <b>S<sub>N</sub>1</b> (with some E1 as minor). Rate = $k[\ce{RX}]$ only. (b) $\ce{CH3CH2Br}$ is 1° RX, $\ce{NaOCH3}$ is a strong base, methanol solvent, reflux (heat) → <b>E2</b> dominates. The methoxide acts as a base, abstracting the β-H while Br leaves.</p>
+
+<p><b>Answer 5:</b> S<sub>N</sub>2 → Walden inversion. (R)-2-chlorobutane becomes <b>(S)-butan-2-ol</b>. CIP priority: $\ce{OH}$ (highest) > $\ce{CH2CH3}$ > $\ce{CH3}$ > H. In the (R) enantiomer of the starting material, the priority order is viewed with H pointing away; inversion flips all relative positions, giving S.</p>
+
+<p><b>Answer 6:</b> (a) S<sub>N</sub>2: $\ce{NH3}$ lone pair attacks C, I⁻ leaves, then deprotonation → $\ce{CH3CH2CH2CH2NH2}$. (b) The product butan-1-amine is itself a nucleophile (has a lone pair). It can react with remaining 1-iodobutane → N-butylbutan-1-amine ($\ce{R2NH}$). Excess $\ce{NH3}$ outcompetes the amine product statistically. (c) If excess 1-iodobutane, secondary and tertiary amines form (and even quaternary ammonium salt $\ce{R4N+ I-}$).</p>
+</div>
+
+<!-- SECTION H -->
+<h2>8. Key Terms</h2>
 <table>
-<tr><th>Factor</th><th>SN1</th><th>SN2</th></tr>
-<tr><td>Number of steps</td><td>Two (slow then fast)</td><td>One (concerted)</td></tr>
-<tr><td>Rate equation</td><td>Rate = k[R−X]</td><td>Rate = k[R−X][Nu⁻]</td></tr>
-<tr><td>Substrate preference</td><td>3° > 2° > 1°</td><td>1° > 2° > 3°</td></tr>
-<tr><td>Stereochemistry at chiral centre</td><td>Racemisation (both enantiomers)</td><td>Inversion (one enantiomer, opposite configuration)</td></tr>
-<tr><td>Preferred solvent</td><td>Polar protic (water, ethanol)</td><td>Polar aprotic (propanone)</td></tr>
-<tr><td>Nucleophile strength needed</td><td>Weak is fine</td><td>Strong is needed</td></tr>
-<tr><td>Carbocation intermediate?</td><td>Yes</td><td>No (only a transition state)</td></tr>
+<tr><th>Term</th><th>Definition</th></tr>
+<tr><td>Nucleophilic substitution</td><td>A reaction where a nucleophile replaces a leaving group on an $sp^3$ carbon</td></tr>
+<tr><td>S<sub>N</sub>2</td><td>Bimolecular nucleophilic substitution: concerted (one-step), back-side attack, Walden inversion, rate = $k[\ce{RX}][\ce{Nu-}]$</td></tr>
+<tr><td>S<sub>N</sub>1</td><td>Unimolecular nucleophilic substitution: stepwise via carbocation, racemisation, rate = $k[\ce{RX}]$</td></tr>
+<tr><td>E2</td><td>Bimolecular elimination: concerted, anti-periplanar geometry, rate = $k[\ce{RX}][\ce{Base}]$</td></tr>
+<tr><td>E1</td><td>Unimolecular elimination: stepwise via carbocation, Zaitsev product, rate = $k[\ce{RX}]$</td></tr>
+<tr><td>Walden inversion</td><td>Inversion of configuration at a chiral centre during S<sub>N</sub>2 — the nucleophile attacks from the side opposite the leaving group</td></tr>
+<tr><td>Leaving group</td><td>The atom or group that departs with the bonding electron pair during substitution or elimination; good leaving groups are weak bases (e.g., $\ce{I-}$, $\ce{Br-}$, $\ce{H2O}$, $\ce{OTs-}$)</td></tr>
+<tr><td>Zaitsev's rule</td><td>In elimination, the major product is the more substituted (more stable) alkene</td></tr>
+<tr><td>Anti-periplanar</td><td>A conformation where the H and leaving group are in the same plane but on opposite sides (dihedral angle ≈ 180°), required for E2</td></tr>
+<tr><td>Oxidation (organic)</td><td>Increase in oxygen content or decrease in hydrogen content; for alcohols: 1° → aldehyde → acid; 2° → ketone</td></tr>
+<tr><td>Protic solvent</td><td>A solvent capable of hydrogen-bond donation (e.g., $\ce{H2O}$, $\ce{ROH}$); stabilises carbocations and anions, favouring S<sub>N</sub>1</td></tr>
+<tr><td>Aprotic solvent</td><td>A solvent without H-bond donor ability (e.g., acetone, DMSO, DMF); nucleophiles are not solvated as strongly, favouring S<sub>N</sub>2</td></tr>
 </table>
-<p></div></p>
-<hr>
-<h2>5. Elimination — The Competing E2 Reaction</h2>
-<p>When a halogenoalkane is treated with hydroxide ions (OH⁻), there are two possible outcomes: OH⁻ can act as a <strong>nucleophile</strong> (substitution, SN1 or SN2) or as a <strong>base</strong> (elimination, E2). These pathways compete.</p>
-<p>In an <strong>elimination</strong> reaction, the OH⁻ removes a hydrogen ion (H⁺, a proton) from a carbon atom <strong>adjacent</strong> to the one carrying the halogen. At the same time, the C−X bond breaks and the halogen leaves. The result is the formation of a <strong>C=C double bond</strong> — an alkene.</p>
-<p><strong>E2</strong> stands for <strong>E</strong>limination, <strong>2</strong> (bimolecular). Like SN2, it happens in one concerted step, and the rate depends on both the halogenoalkane and the base: Rate = k [R−X] [OH⁻].</p>
-<p>$$\ce{CH3CH2Br + OH- -> CH2=CH2 + Br- + H2O}$$</p>
-<h3>Conditions That Favour Substitution (SN) versus Elimination (E)</h3>
-<p><strong>Conditions favouring substitution (nucleophilic attack):</strong></p>
-<ul>
-<li><strong>Warm</strong> (not too hot) aqueous solution. "Aqueous" means the solvent is water.</li>
-<li><strong>Dilute</strong> NaOH or KOH.</li>
-<li>1° halogenoalkanes favour SN2.</li>
-</ul>
-<p><strong>Conditions favouring elimination (base attack):</strong></p>
-<ul>
-<li><strong>Hot</strong> solution. Higher temperatures favour elimination.</li>
-<li><strong>Ethanolic</strong> (ethanol as solvent) — written as "NaOH in ethanol" or "ethanolic KOH."</li>
-<li><strong>Concentrated</strong> NaOH or KOH.</li>
-<li>3° halogenoalkanes favour elimination over substitution due to steric hindrance.</li>
-</ul>
-<p>A useful memory phrase: <strong>"Hot ethanolic → elimination. Warm aqueous → substitution."</strong></p>
-<h3>Saytzeff's Rule</h3>
-<p>When elimination can produce more than one alkene (because there are different adjacent carbons from which a hydrogen can be removed), the major product is the <strong>more substituted alkene</strong> — the alkene with more alkyl groups attached to the doubly bonded carbons. This is <strong>Saytzeff's rule</strong> (also spelled Zaitsev's rule).</p>
-<p>The more substituted alkene is more stable because alkyl groups donate electron density (through hyperconjugation), which stabilises the double bond. The transition state leading to the more substituted alkene is lower in energy, so that pathway is faster.</p>
-<p><div class="worked"></p>
-<p><strong>Worked Example 2: Predict the mechanism and product when 2-bromo-2-methylpropane reacts with dilute aqueous NaOH at room temperature.</strong></p>
-<p>2-bromo-2-methylpropane is (CH₃)₃CBr. The carbon bearing Br is bonded to three CH₃ groups → <strong>tertiary (3°)</strong> halogenoalkane.</p>
-<p>Conditions: dilute aqueous NaOH, room temperature → polar protic solvent, weak base, not hot. With a 3° substrate, SN1 is strongly favoured. (SN2 is impossible due to steric hindrance; elimination would need hot ethanolic conditions.)</p>
-<p><strong>Mechanism (SN1):</strong></p>
-<p>Step 1 (slow): (CH₃)₃CBr → (CH₃)₃C⁺ + Br⁻. The C−Br bond breaks, forming a tertiary carbocation.</p>
-<p>Step 2 (fast): (CH₃)₃C⁺ + OH⁻ → (CH₃)₃COH.</p>
-<p>Product: <strong>2-methylpropan-2-ol</strong>, a tertiary alcohol.</p>
-<p></div></p>
-<p><div class="worked"></p>
-<p><strong>Worked Example 3: Predict the mechanism and products when 1-bromobutane is heated with concentrated ethanolic KOH.</strong></p>
-<p>1-bromobutane is CH₃CH₂CH₂CH₂Br. The carbon bearing Br is bonded to one other carbon → <strong>primary (1°)</strong> halogenoalkane.</p>
-<p>Conditions: hot, ethanolic (ethanol solvent), concentrated KOH → these conditions favour <strong>elimination (E2)</strong> over substitution.</p>
-<p>In E2, OH⁻ acts as a base, removing H⁺ from a carbon adjacent to the C−Br. There are two possible adjacent carbons:</p>
-<ul>
-<li>Removing H from C-2 gives but-1-ene: CH₃CH₂CH=CH₂.</li>
-<li>Removing H from C-1? No — C-1 has the Br, and we need an adjacent carbon. Actually, 1-bromobutane has adjacent carbons at C-2 only (the β position). Wait, let me reconsider: CH₃CH₂CH₂CH₂Br. The carbons are numbered 1 (CH₂Br), 2 (CH₂), 3 (CH₂), 4 (CH₃). The carbon adjacent to C-1 is C-2. Removing H from C-2 gives but-1-ene: CH₃CH₂CH=CH₂. But wait — is that the only product?</li>
-</ul>
-<p>Actually, in E2 with 1-bromobutane, the base removes H from C-2 and Br from C-1, giving but-1-ene. However, under these strongly basic conditions, the initially formed but-1-ene can sometimes isomerise to but-2-ene (CH₃CH=CHCH₃), which is more substituted and more stable.</p>
-<p>The <strong>major product</strong> by Saytzeff's rule is <strong>but-2-ene</strong> (if isomerisation occurs, or if the base attacks at a rearranged position). In a straightforward E2, but-1-ene is the initial product, but but-2-ene is more stable and may dominate the final mixture. For IB purposes: the major alkene from elimination of a 1-halogenoalkane is typically the more substituted alkene if the base/catalyst can cause rearrangement.</p>
-<p>For simplicity: E2 of 1-bromobutane predominantly gives <strong>but-1-ene</strong> as the kinetic product, but <strong>but-2-ene</strong> is the thermodynamic product (more stable). In many IB contexts, Saytzeff's rule is applied to 2° and 3° substrates where two different alkenes can form directly.</p>
-<p></div></p>
-<hr>
-<h2>Practice Problems</h2>
-<p><strong>Problem 1:</strong> Classify each of the following alcohols as primary (1°), secondary (2°), or tertiary (3°). For each one, predict the organic product(s) when the alcohol is heated with acidified potassium dichromate(VI) under reflux. If no reaction occurs, state this and explain why.</p>
-<p>(a) CH₃CH₂CH₂OH (propan-1-ol)</p>
-<p>(b) (CH₃)₂CHOH (propan-2-ol)</p>
-<p>(c) (CH₃)₃COH (2-methylpropan-2-ol)</p>
-<p><strong>Problem 2:</strong> For each of the following reactions of halogenoalkanes, predict whether the mechanism is SN1 or SN2. Draw the structure of the organic product and name it using IUPAC rules.</p>
-<p>(a) 1-iodopropane (CH₃CH₂CH₂I) is heated with aqueous sodium hydroxide.</p>
-<p>(b) 2-bromopropane (CH₃CHBrCH₃) is heated under reflux with water as the solvent.</p>
-<p>(c) Chloromethane (CH₃Cl) is heated with sodium cyanide (NaCN) dissolved in ethanol.</p>
-<p><strong>Problem 3:</strong> 2-bromobutane (CH₃CH₂CHBrCH₃) can undergo both nucleophilic substitution and elimination when treated with sodium hydroxide.</p>
-<p>(a) Write a balanced equation for the substitution reaction, giving the structure and IUPAC name of the organic product.</p>
-<p>(b) Write a balanced equation for the elimination reaction, showing the structures of all possible alkene products.</p>
-<p>(c) State the specific conditions (solvent, temperature, concentration) that favour substitution, and the conditions that favour elimination.</p>
-<p>(d) Use Saytzeff's rule to identify which alkene is the major product of elimination, and explain why it is favoured.</p>
-<p><strong>Problem 4:</strong> The SN1 reaction of a chiral halogenoalkane produces a racemic mixture, while the SN2 reaction of a chiral halogenoalkane produces a product with inverted configuration. Explain why this difference occurs. Your answer should describe the shape of the carbocation intermediate in SN1 and the direction of nucleophilic attack in SN2.</p>
-<p><strong>Problem 5 (IB-style):</strong> Compound P has the molecular formula C₄H₉Br and exists as a pair of optical isomers (enantiomers).</p>
-<p>(a) Explain what structural feature allows P to exist as optical isomers. Deduce the structural formula of P and give its IUPAC name.</p>
-<p>When P is heated with warm aqueous sodium hydroxide, compound Q with the formula C₄H₁₀O is formed.</p>
-<p>(b) Name the type of reaction that occurs and state the mechanism (SN1 or SN2), giving reasons for your choice. Predict the structure and IUPAC name of Q.</p>
-<p>(c) If the starting material P is a single enantiomer (optically pure), will the product Q be optically active? Explain your answer in terms of the mechanism.</p>
-<p>When P is heated with hot ethanolic sodium hydroxide, three alkenes, R, S, and T, are produced.</p>
-<p>(d) Draw the structures of the three alkenes R, S, and T, and name them. Identify which one is the major product (S) by applying Saytzeff's rule and explain why it is the most stable.</p>
-<hr>
-<h2>Answers</h2>
-<div class="answer">
-<p><strong>Answer 1.</strong></p>
-</div>
-<div class="answer">
-<p>(a) CH₃CH₂CH₂OH: The −OH carbon is bonded to one other carbon (the CH₂ next to it) → <strong>primary (1°) alcohol</strong>. Oxidation under reflux: 1° alcohol → carboxylic acid. The product is <strong>propanoic acid</strong>, CH₃CH₂COOH. (The intermediate aldehyde, propanal, is oxidised further under reflux.)</p>
-</div>
-<div class="answer">
-<p>(b) (CH₃)₂CHOH: The −OH carbon is bonded to two other carbons (two CH₃ groups) → <strong>secondary (2°) alcohol</strong>. Oxidation: 2° alcohol → ketone. Product: <strong>propanone</strong>, CH₃COCH₃ (also known as acetone). The orange dichromate turns green.</p>
-</div>
-<div class="answer">
-<p>(c) (CH₃)₃COH: The −OH carbon is bonded to three other carbons (three CH₃ groups) → <strong>tertiary (3°) alcohol</strong>. No oxidation occurs. The carbon bearing the −OH has no hydrogen atom attached. Oxidation requires removing a hydrogen from that carbon, which is impossible here. The dichromate solution stays orange.</p>
-</div>
-<div class="answer">
-<p><strong>Answer 2.</strong></p>
-</div>
-<div class="answer">
-<p>(a) 1-iodopropane with aqueous NaOH: 1° halogenoalkane, warm aqueous conditions, strong nucleophile OH⁻ → <strong>SN2</strong> mechanism. Product: CH₃CH₂CH₂OH, <strong>propan-1-ol</strong>.</p>
-</div>
-<div class="answer">
-<p>(b) 2-bromopropane with water under reflux: 2° halogenoalkane, water is a weak nucleophile, polar protic solvent → <strong>SN1</strong> mechanism (though for 2°, it is borderline; water favours SN1 because it stabilises the carbocation and is a weak nucleophile). The carbocation (CH₃−C⁺H−CH₃) is secondary and reasonably stable. Product: CH₃CH(OH)CH₃, <strong>propan-2-ol</strong>. Some racemisation may occur if the starting material is chiral (but 2-bromopropane is not chiral because C-2 has two identical CH₃ groups).</p>
-</div>
-<div class="answer">
-<p>(c) Chloromethane with NaCN in ethanol: 1° halogenoalkane, CN⁻ is a strong nucleophile, ethanol is a polar solvent → <strong>SN2</strong> mechanism. Product: CH₃CN, <strong>ethanenitrile</strong> (also called acetonitrile).</p>
-</div>
-<div class="answer">
-<p><strong>Answer 3.</strong></p>
-</div>
-<div class="answer">
-<p>(a) Substitution: CH₃CH₂CHBrCH₃ + OH⁻ → CH₃CH₂CH(OH)CH₃ + Br⁻. Product: <strong>butan-2-ol</strong>. This is a 2° alcohol.</p>
-</div>
-<div class="answer">
-<p>(b) Elimination: CH₃CH₂CHBrCH₃ + OH⁻ → CH₃CH=CHCH₃ + CH₃CH₂CH=CH₂ + Br⁻ + H₂O. Two alkenes are possible: <strong>but-2-ene</strong> (CH₃CH=CHCH₃) and <strong>but-1-ene</strong> (CH₃CH₂CH=CH₂). But-2-ene itself can exist as cis and trans geometric isomers.</p>
-</div>
-<div class="answer">
-<p>(c) Conditions favouring substitution: warm (not hot), aqueous NaOH, dilute. Conditions favouring elimination: hot, ethanolic NaOH, concentrated.</p>
-</div>
-<div class="answer">
-<p>(d) Saytzeff's rule: The more substituted alkene is the major product. But-2-ene has two alkyl groups (two CH₃ groups) attached to the C=C carbons. But-1-ene has only one alkyl group (one CH₃CH₂) on the C=C. But-2-ene is more substituted, more stable, and is the <strong>major elimination product</strong>.</p>
-</div>
-<div class="answer">
-<p><strong>Answer 4.</strong></p>
-</div>
-<div class="answer">
-<p>In <strong>SN1</strong>, the rate-determining step is the departure of the leaving group, forming a <strong>planar carbocation</strong> intermediate. The carbocation carbon is sp² hybridised with a vacant p orbital perpendicular to the plane of the three bonds. The nucleophile can attack this flat carbocation from either side — the top face or the bottom face — with equal probability. This produces a 50:50 mixture of the two enantiomers, which is a <strong>racemic mixture</strong> with zero net optical rotation.</p>
-</div>
-<div class="answer">
-<p>In <strong>SN2</strong>, the nucleophile attacks the carbon from the <strong>back side</strong> — the side opposite the leaving group. There is no intermediate; the reaction goes through a single transition state where the nucleophile is partially bonded on one side and the leaving group is partially bonded on the other. The three other groups on the carbon are pushed back (like an umbrella inverting in strong wind), resulting in <strong>inversion of configuration</strong>. Only one enantiomer is produced — the one with the opposite configuration to the starting material.</p>
-</div>
-<div class="answer">
-<p><strong>Answer 5.</strong></p>
-</div>
-<div class="answer">
-<p>(a) Optical isomerism requires a <strong>chiral centre</strong> — a carbon atom bonded to four different groups. P has formula C₄H₉Br. The only C₄H₉Br isomer with a chiral carbon is <strong>2-bromobutane</strong>: CH₃CH₂C*HBrCH₃. The starred carbon (C-2) is bonded to −H, −CH₃, −CH₂CH₃, and −Br — four different groups. The IUPAC name is <strong>2-bromobutane</strong>. (Note: 1-bromobutane, 1-bromo-2-methylpropane, and 2-bromo-2-methylpropane have no chiral centres.)</p>
-</div>
-<div class="answer">
-<p>(b) Reaction with warm aqueous NaOH is nucleophilic substitution. P is a 2° halogenoalkane. The conditions (warm, aqueous, good nucleophile OH⁻) favour <strong>SN2</strong>. The product Q is <strong>butan-2-ol</strong>: CH₃CH₂CH(OH)CH₃.</p>
-</div>
-<div class="answer">
-<p>(c) If P is a single enantiomer and the reaction goes by SN2, the product Q will be formed with <strong>inversion of configuration</strong>. It will be the single opposite enantiomer and will be <strong>optically active</strong> (it will rotate plane-polarised light, just in the opposite direction to the starting material). If the reaction went by SN1, the product would be a racemic mixture (optically inactive).</p>
-</div>
-<div class="answer">
-<p>(d) Elimination of 2-bromobutane with hot ethanolic NaOH (E2):</p>
-<p>The three alkenes are:</p>
-</div>
-<ul>
-<li>R: <strong>but-1-ene</strong>, CH₃CH₂CH=CH₂.</li>
-<li>S: <strong>(E)-but-2-ene</strong> (trans), CH₃ groups on opposite sides of the double bond.</li>
-<li>T: <strong>(Z)-but-2-ene</strong> (cis), CH₃ groups on the same side.</li>
-</ul>
-<div class="answer">
-<p>The major product S is <strong>but-2-ene</strong> (specifically the trans/E isomer, which is more stable than cis due to less steric repulsion between the CH₃ groups). But-2-ene is more substituted than but-1-ene: the C=C in but-2-ene has two alkyl groups (one CH₃ on each carbon), while the C=C in but-1-ene has only one alkyl group. More highly substituted alkenes are more stable due to hyperconjugation (electron donation from adjacent C−H σ bonds into the π system), so Saytzeff's rule predicts but-2-ene as the major product. Between the two but-2-ene isomers, trans is usually more stable than cis because the CH₃ groups are farther apart, minimising steric strain.</p>
-</div>
-<div class="nav">
-  <a href="lesson_37.html">← Previous Lesson</a>
-  <a href="../index.html">↑ Lesson Index</a>
-  <a href="lesson_39.html">Next Lesson →</a>
-</div>
+
+<!-- SECTION I -->
+<h2>9. Exam Tips</h2>
+
+<div class="exam-tip"><b>Paper 1 (Multiple Choice):</b> S<sub>N</sub>2 rate comparison questions are common: "which reacts fastest with $\ce{CN-}$?" Remember: $\ce{CH3X}$ > 1° > 2° > 3° for S<sub>N</sub>2. For S<sub>N</sub>1: reverse order (3° > 2° > 1°). Also, the leaving group ability: $\ce{I- > Br- > Cl- >> F-}$ (weaker base = better leaving group).</div>
+
+<div class="exam-tip"><b>Paper 2 — Mechanism questions (4–6 marks):</b> You must show: curly arrows (electron pair movement), the transition state/ intermediate structure, stereochemistry where relevant (inversion for S<sub>N</sub>2, racemisation for S<sub>N</sub>1), and the correct product. For E2, show the anti-periplanar arrangement. <b>IB examiners deduct marks for missing stereochemistry.</b></div>
+
+<div class="exam-tip"><b>Aqueous vs. ethanolic KOH:</b> This is one of the most frequently tested distinctions. $\ce{KOH(aq)}$, warm = hydrolysis (substitution, OH⁻ as nucleophile). $\ce{KOH}$ in ethanol, reflux = elimination (OH⁻/EtO⁻ as base). If the question specifies "ethanolic" and "reflux", the answer is elimination — do not write substitution.</div>
+
 </body>
 </html>

@@ -3,301 +3,361 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lesson 16: Bond Enthalpies and Energy Profiles — IB Chemistry HL</title>
-<script>window.MathJax = { loader: {load: ['[tex]/mhchem']}, tex: {packages: {'[+]': ['mhchem']}} };</script>
+<title>Lesson 16 — Chemistry HL — Bond Enthalpies &amp; Energy Profiles</title>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] },
+  loader: { load: ['[tex]/mhchem'] },
+  tex: { packages: {'[+]': ['mhchem']} }
+};
+</script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
 <style>
-  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Palatino', 'Georgia', serif; background: var(--bg); color: var(--text); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; font-size: 17px; line-height: 1.7; }
-  h1 { font-size: 1.7rem; color: var(--accent); margin-bottom: 0.5rem; }
-  h2 { font-size: 1.25rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; margin: 2rem 0 1rem; }
-  h3 { font-size: 1.1rem; color: #444; margin: 1.3rem 0 0.5rem; }
-  p, li { margin-bottom: 0.6rem; }
-  ul, ol { padding-left: 1.8rem; margin-bottom: 1rem; }
-  .worked { background: #f0f7f0; border-left: 4px solid #2c5f2d; padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
-  .worked strong { color: #2c5f2d; }
-  .answer { background: #fefdf7; border: 1px solid var(--border); padding: 0.8rem 1.2rem; margin: 0.5rem 0; border-radius: 6px; }
-  .definition { background: #fdf5e6; border-left: 4px solid #d4a017; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
-  table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
-  th, td { padding: 0.5rem; border: 1px solid #ccc; text-align: left; }
-  th { background: #f0f7f0; }
-  pre, code { background: #f5f5f5; font-family: 'Courier New', monospace; font-size: 0.9em; }
-  pre { padding: 1rem; overflow-x: auto; margin: 1rem 0; white-space: pre-wrap; }
-  .nav { display: flex; justify-content: space-between; margin: 3rem 0 1rem; padding-top: 1rem; border-top: 2px solid var(--border); font-size: 0.9rem; }
-  .nav a { color: #1a5c9e; text-decoration: none; }
-  .nav a:hover { text-decoration: underline; }
-  @media print { body { font-size: 14px; } .nav { display: none; } }
+:root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Georgia', 'Times New Roman', serif; font-size: 17px; line-height: 1.7; color: var(--text); background: var(--bg); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; }
+h1 { font-size: 1.8rem; color: var(--accent); border-bottom: 3px solid var(--accent); padding-bottom: 0.5rem; margin-bottom: 1rem; }
+h2 { font-size: 1.35rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+h3 { font-size: 1.15rem; color: var(--accent); margin: 1.5rem 0 0.5rem; }
+p { margin-bottom: 0.8rem; }
+.objectives { background: #f0f4ff; border-left: 4px solid var(--accent); padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+.objectives h3 { margin-top: 0; }
+.check-in { background: #fff8e1; border: 1px solid #ffc107; padding: 0.8rem 1rem; margin: 1rem 0; border-radius: 8px; }
+.check-in p { margin-bottom: 0.3rem; }
+.answer-toggle { display: inline-block; padding: 0.2rem 0.8rem; border-radius: 16px; cursor: pointer; font-size: 0.8rem; font-weight: 600; background: #e8f5e9; color: #2e7d32; border: 1px solid #2e7d32; user-select: none; margin-top: 0.3rem; }
+.answer-content { display: none; background: #f1f8e9; padding: 0.6rem 1rem; border-radius: 8px; margin-top: 0.5rem; }
+.answer-content.open { display: block; }
+.example { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem; margin: 1rem 0; }
+.misconception { background: #fff3e0; border-left: 4px solid #e65100; padding: 1rem 1.2rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+.misconception h3 { color: #e65100; }
+.exam-tip { background: #e8f5e9; border-left: 4px solid #2e7d32; padding: 0.8rem 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+th { background: var(--accent); color: white; padding: 0.5rem 0.8rem; text-align: left; }
+td { padding: 0.5rem 0.8rem; border-bottom: 1px solid var(--border); }
+tr:nth-child(even) td { background: #f8f8f6; }
+.diagram { text-align: center; margin: 1.5rem 0; }
+.diagram svg { max-width: 100%; }
+.diagram .caption { font-size: 0.9rem; color: #666; margin-top: 0.3rem; font-style: italic; }
+pre.ascii-art { font-family: 'Courier New', monospace; font-size: 0.75rem; line-height: 1.2; background: #f5f5f5; padding: 0.8rem; border-radius: 8px; overflow-x: auto; }
+.practice-toggle { display: block; width: 100%; padding: 0.8rem; background: var(--accent); color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem; font-weight: 600; margin: 1.5rem 0; }
+.practice-answers { display: none; }
+.practice-answers.open { display: block; }
 </style>
 </head>
 <body>
-<h1>Lesson 16: Bond Enthalpies and Energy Profiles</h1>
-<h2>What You'll Learn</h2>
+
+<h1>Lesson 16: Bond Enthalpies &amp; Energy Profiles</h1>
+
+<p><b>Syllabus reference:</b> 5.3 — Bond Enthalpies</p>
+
+<!-- SECTION A -->
+<div class="objectives">
+<h3>Learning Objectives</h3>
+<p>By the end of this lesson, you will be able to:</p>
 <ul>
-<li>Define bond enthalpy and distinguish between bond breaking (endothermic) and bond forming (exothermic)</li>
-<li>Explain the difference between average bond enthalpy and the bond enthalpy in a specific molecule</li>
-<li>Calculate an approximate ΔH for a reaction using tabulated bond enthalpy values</li>
-<li>List the limitations of bond enthalpy calculations and explain why they give estimates rather than exact values</li>
-<li>Draw and fully label energy profile diagrams showing reactants, products, ΔH, activation energy (Ea), and the transition state</li>
-<li>Show how a catalyst changes an energy profile and explain why ΔH stays the same</li>
+  <li><b>Distinguish</b> between bond-breaking (endothermic) and bond-making (exothermic) and explain why all chemical reactions involve both.</li>
+  <li><b>Define</b> average bond enthalpy and explain why it differs from the bond enthalpy in a specific molecule.</li>
+  <li><b>Calculate</b> $\Delta H$ for a reaction using average bond enthalpies: $\Delta H = \sum E(\text{bonds broken}) - \sum E(\text{bonds formed})$.</li>
+  <li><b>Draw and interpret</b> energy profile diagrams showing reactants, products, transition state, and activation energy ($E_a$).</li>
+  <li><b>Identify</b> the activation energy and $\Delta H$ on an energy profile for both exothermic and endothermic reactions.</li>
 </ul>
-<hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
-<h2>1. What Is Bond Enthalpy?</h2>
-<h3>The Fundamental Idea</h3>
-<p>Every chemical reaction involves breaking some chemical bonds and forming new ones. Understanding the energy changes in a reaction therefore comes down to understanding two simple facts:</p>
-<ul>
-<li><strong>Breaking a bond requires energy.</strong> You must pull atoms apart against the attractive force that holds them together. This input of energy makes bond breaking an <strong>endothermic</strong> process (ΔH positive).</li>
-</ul>
-<ul>
-<li><strong>Forming a bond releases energy.</strong> When two atoms come together and form a bond, they move to a lower energy state, and the excess energy is released. This makes bond forming an <strong>exothermic</strong> process (ΔH negative).</li>
-</ul>
-<h3>Definition of Bond Enthalpy</h3>
-<p>The <strong>bond enthalpy</strong> (sometimes called bond energy or bond dissociation energy) of a particular covalent bond is the energy required to break <strong>one mole</strong> of that bond in <strong>gaseous molecules</strong>.</p>
-<p>For example, the H−H bond enthalpy is 436 kJ mol⁻¹. This means that to break one mole of H−H bonds (which is 6.022 × 10²³ individual H−H bonds), you must supply 436 kJ of energy. The equation for this process is:</p>
-<p>H₂(g) → 2H(g), ΔH = +436 kJ mol⁻¹</p>
-<p>Notice three things about this definition:</p>
-<ol>
-<li>The energy is given per mole of bonds, not per molecule.</li>
-<li>The species must be in the <strong>gas phase</strong>. Bond enthalpies are defined for gases.</li>
-<li>The value is always positive when referring to bond breaking. If you are forming a bond, the same amount of energy is released, and the ΔH is negative.</li>
-</ol>
-<h3>Average Bond Enthalpy vs. Specific Bond Enthalpy</h3>
-<p>When you look up a bond enthalpy in a data table, the value you find (for example, C−H = 414 kJ mol⁻¹) is almost always an <strong>average</strong> bond enthalpy. This is important to understand.</p>
-<p>The C−H bond does not have exactly the same strength in every molecule. In methane (CH₄), breaking the first C−H bond requires about 439 kJ mol⁻¹, but breaking the second C−H bond (now from a CH₃ fragment) requires a slightly different amount of energy. The C−H bond in ethene (C₂H₄) has yet another value. Scientists have measured the C−H bond energy in many different compounds and calculated an average, which is the value that appears in data tables.</p>
-<p>A <strong>specific bond enthalpy</strong> (sometimes called bond dissociation energy) is the exact energy for one particular bond in one particular molecule. Specific values are more accurate but less convenient, because you would need a different value for every bond in every molecule.</p>
-<h3>Why Do Bond Enthalpies Vary?</h3>
-<p>The strength of a bond between two atoms is affected by the other atoms nearby in the same molecule. The electrons that form the bond are influenced by neighboring bonds and by lone pairs. This is why the same type of bond (like C−H) can have slightly different strengths in different molecular environments.</p>
-<hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
-<h2>2. Calculating ΔH from Bond Enthalpies</h2>
-<h3>The Formula</h3>
-<p>To estimate the enthalpy change for a reaction using bond enthalpies:</p>
-<p><strong>ΔH ≈ ΣBE(bonds broken) − ΣBE(bonds formed)</strong></p>
-<p>Here, BE stands for bond enthalpy, and Σ means "the sum of." The formula has a minus sign because bond breaking is endothermic (positive contribution to ΔH) and bond forming is exothermic (negative contribution to ΔH).</p>
-<p>The symbol "≈" (approximately equal to) is used because this calculation gives an estimate, not an exact value. We will discuss the reasons for this in Section 3.</p>
-<h3>Step-by-Step Method</h3>
-<p>Follow these four steps every time:</p>
-<p><strong>Step 1:</strong> Draw the Lewis (dot-and-cross) structure for every reactant and every product. You must know what each molecule looks like so you can count bonds correctly.</p>
-<p><strong>Step 2:</strong> Count every bond in every reactant molecule. These are the bonds that are <strong>broken</strong>. Multiply each bond type by its bond enthalpy and add them up.</p>
-<p><strong>Step 3:</strong> Count every bond in every product molecule. These are the bonds that are <strong>formed</strong>. Multiply each bond type by its bond enthalpy and add them up.</p>
-<p><strong>Step 4:</strong> Apply the formula: ΔH ≈ (sum of bonds broken) − (sum of bonds formed).</p>
-<h3>Worked Example 1: Formation of Hydrogen Chloride</h3>
-<p><strong>Problem:</strong> Use bond enthalpies to estimate ΔH for the reaction: H₂(g) + Cl₂(g) → 2HCl(g). The bond enthalpies are: BE(H−H) = 436 kJ mol⁻¹, BE(Cl−Cl) = 243 kJ mol⁻¹, BE(H−Cl) = 431 kJ mol⁻¹.</p>
-<p><strong>Strategy:</strong> Draw the structures. H₂ has one H−H bond. Cl₂ has one Cl−Cl bond. HCl has one H−Cl bond (and there are 2 moles of HCl produced). Count bonds broken from reactants, bonds formed from products, and apply the formula.</p>
-<p><strong>Step 1 — Bonds broken (reactants):</strong></p>
-<ul>
-<li>1 × (H−H) = 1 × 436 = 436 kJ</li>
-<li>1 × (Cl−Cl) = 1 × 243 = 243 kJ</li>
-<li>Total bonds broken = 436 + 243 = 679 kJ.</li>
-</ul>
-<p><strong>Step 2 — Bonds formed (products):</strong></p>
-<ul>
-<li>2 × (H−Cl) = 2 × 431 = 862 kJ</li>
-<li>Total bonds formed = 862 kJ.</li>
-</ul>
-<p><strong>Step 3 — Calculate ΔH:</strong></p>
-<p>ΔH ≈ 679 − 862 = −183 kJ mol⁻¹.</p>
-<p><strong>Why this makes sense:</strong> The reaction is exothermic. More energy is released when the two H−Cl bonds form (862 kJ) than was needed to break the H−H and Cl−Cl bonds (679 kJ). The net release is 183 kJ per mole of reaction (where "one mole of reaction" means the equation as written: 1 H₂ + 1 Cl₂ → 2 HCl).</p>
-<h3>Worked Example 2: Combustion of Methane (Simplified)</h3>
-<p><strong>Problem:</strong> Estimate ΔH for the combustion of methane using bond enthalpies: CH₄(g) + 2O₂(g) → CO₂(g) + 2H₂O(g). The bond enthalpies are: BE(C−H) = 414 kJ mol⁻¹, BE(O=O) = 498 kJ mol⁻¹, BE(C=O) = 804 kJ mol⁻¹ (in CO₂), BE(O−H) = 463 kJ mol⁻¹. Note that we are using H₂O(g), not H₂O(l), because bond enthalpies are defined for gaseous species.</p>
-<p><strong>Strategy:</strong> Draw the Lewis structures. Methane (CH₄) has four C−H single bonds. Each O₂ molecule has one O=O double bond (two O₂ molecules means 2 O=O bonds to break). CO₂ is linear O=C=O with two C=O double bonds. Each H₂O molecule has two O−H single bonds, and there are two H₂O molecules.</p>
-<p><strong>Step 1 — Bonds broken:</strong></p>
-<ul>
-<li>4 × (C−H) = 4 × 414 = 1656 kJ</li>
-<li>2 × (O=O) = 2 × 498 = 996 kJ</li>
-<li>Total bonds broken = 1656 + 996 = 2652 kJ.</li>
-</ul>
-<p><strong>Step 2 — Bonds formed:</strong></p>
-<ul>
-<li>2 × 2 × (C=O) = 4 × (C=O) = 4 × 804 = 3216 kJ (two C=O bonds per CO₂, one CO₂)</li>
-</ul>
-<p>Wait — check the stoichiometry: 1 CO₂ has 2 C=O bonds → 2 × 804 = 1608 kJ. But let me re-check.</p>
-<p>Actually let me be more careful. The product CO₂ has two C=O double bonds: O=C=O. So 1 molecule of CO₂ contributes 2 × BE(C=O). With coefficient 1: 2 × 804 = 1608 kJ.</p>
-<p>Each H₂O has two O−H single bonds: H−O−H. So 1 molecule of H₂O contributes 2 × BE(O−H). With coefficient 2: 2 × 2 × 463 = 1852 kJ.</p>
-<p>Total bonds formed = 1608 + 1852 = 3460 kJ.</p>
-<p>Let me recalculate more carefully.</p>
-<p>Actually, wait. Let me re-read the problem. CO₂: 2(C=O) = 2 × 804 = 1608. 2H₂O: each has 2(O−H), so 4(O−H) = 4 × 463 = 1852. Sum = 1608 + 1852 = 3460 kJ.</p>
-<p><strong>Step 3 — Calculate ΔH:</strong></p>
-<p>ΔH ≈ 2652 − 3460 = −808 kJ mol⁻¹.</p>
-<p><strong>Why this makes sense:</strong> The data book value for ΔH_c⦵ of methane is −891 kJ mol⁻¹. Our estimate (−808) is in the right ballpark but is less exothermic. The difference is partly because we used H₂O(g) rather than H₂O(l). When water vapor condenses to liquid, about 44 kJ per mole of water is released. For two moles of water, that is 88 kJ. Adding this to −808 gives −896 kJ, which is very close to the true value of −891 kJ mol⁻¹.</p>
-<h3>Worked Example 3: Hydrogenation of Ethene</h3>
-<p><strong>Problem:</strong> Estimate ΔH for: C₂H₄(g) + H₂(g) → C₂H₆(g). The bond enthalpies are: BE(C=C) = 614 kJ mol⁻¹, BE(C−C) = 348 kJ mol⁻¹, BE(C−H) = 414 kJ mol⁻¹, BE(H−H) = 436 kJ mol⁻¹. Ethene (C₂H₄) has one C=C double bond and four C−H single bonds. Ethane (C₂H₆) has one C−C single bond and six C−H single bonds.</p>
-<p><strong>Strategy:</strong> Count carefully. The reaction converts a C=C double bond and an H−H single bond into a C−C single bond and two additional C−H bonds.</p>
-<p><strong>Step 1 — Bonds broken (reactants):</strong></p>
-<p>In C₂H₄: 1 × (C=C) + 4 × (C−H) = 614 + 4(414) = 614 + 1656 = 2270 kJ.</p>
-<p>In H₂: 1 × (H−H) = 436 kJ.</p>
-<p>Total bonds broken = 2270 + 436 = 2706 kJ.</p>
-<p><strong>Step 2 — Bonds formed (products):</strong></p>
-<p>In C₂H₆: 1 × (C−C) + 6 × (C−H) = 348 + 6(414) = 348 + 2484 = 2832 kJ.</p>
-<p>Total bonds formed = 2832 kJ.</p>
-<p><strong>Step 3 — Calculate ΔH:</strong></p>
-<p>ΔH ≈ 2706 − 2832 = −126 kJ mol⁻¹.</p>
-<p><strong>Why this makes sense:</strong> This is a hydrogenation reaction, and hydrogenation of alkenes is typically exothermic by about 120 to 140 kJ mol⁻¹. Our estimate falls right in that range. Breaking the π component of the C=C double bond (which is weaker than a σ bond) and forming two new C−H σ bonds releases net energy.</p>
-<hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
-<h2>3. Why Bond Enthalpy Calculations Are Approximate</h2>
-<p>There are three main reasons why ΔH values calculated from bond enthalpies are always estimates:</p>
-<h3>Reason 1: Average Bond Enthalpies</h3>
-<p>As explained in Section 1, the bond enthalpy values in data tables are averages taken from many different molecules. The actual C−H bond in your specific molecule might be slightly stronger or weaker than the average. This introduces uncertainty — typically a few percent for each bond type.</p>
-<h3>Reason 2: The Gaseous State Requirement</h3>
-<p>Bond enthalpies are defined for reactions where all species are in the gas phase. If a substance in your reaction is a liquid or a solid, the calculation does not account for the energy changes associated with phase changes (vaporization, condensation, melting, freezing). For example, in the combustion of methane, the standard reaction produces H₂O(l), but bond enthalpy calculations must use H₂O(g) because the O−H bond enthalpy is defined for water vapor. The condensation 2H₂O(g) → 2H₂O(l) releases about 88 kJ, which the bond enthalpy calculation misses.</p>
-<h3>Reason 3: Bonds Do Not Break Independently</h3>
-<p>The bond enthalpy model imagines that in a reaction, all the bonds in the reactants break completely, and then all the bonds in the products form from scratch. This is not how real reactions work. In reality, bonds break and form in a coordinated way through a transition state. Some bonds start breaking while others start forming simultaneously. The actual energy required is not simply the sum of all bond dissociation energies. The bond enthalpy method ignores the detailed reaction mechanism, which introduces error.</p>
-<h3>How Big Is the Error?</h3>
-<p>For gas-phase reactions of small molecules, bond enthalpy estimates are usually within about 10% of the experimental value. For reactions involving liquids, solids, or large molecules, the error can be larger. This is still useful for getting a quick estimate or for checking whether a calculated ΔH is plausible.</p>
-<hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
-<h2>4. Energy Profile Diagrams (Reaction Coordinate Diagrams)</h2>
-<h3>What Does an Energy Profile Show?</h3>
-<p>An energy profile (also called a reaction coordinate diagram or potential energy diagram) is a graph that shows how the energy of a chemical system changes as the reaction progresses from reactants to products. The horizontal axis is the <strong>reaction coordinate</strong>, which represents the progress of the reaction — it starts at "reactants" on the left and ends at "products" on the right. The vertical axis is <strong>potential energy</strong> (or enthalpy, since most reactions happen at constant pressure).</p>
-<h3>Key Features to Label</h3>
-<p>Every energy profile must have these five features clearly labeled:</p>
-<ol>
-<li><strong>Reactants:</strong> The energy level at the start of the reaction, shown on the left side of the diagram.</li>
-</ol>
-<ol>
-<li><strong>Products:</strong> The energy level at the end of the reaction, shown on the right side of the diagram.</li>
-</ol>
-<ol>
-<li><strong>ΔH (Enthalpy Change):</strong> The vertical distance between the reactants energy level and the products energy level. If products are lower than reactants, ΔH is negative and the reaction is exothermic. If products are higher, ΔH is positive and the reaction is endothermic.</li>
-</ol>
-<ol>
-<li><strong>Activation Energy (Ea):</strong> The energy barrier that must be overcome for the reaction to happen. Ea is the vertical distance from the reactants energy level to the highest point on the curve (the peak). Ea is always positive. Even exothermic reactions have an Ea — this is why gasoline does not spontaneously burst into flame at room temperature; it needs a spark to provide the activation energy.</li>
-</ol>
-<ol>
-<li><strong>Transition State (Activated Complex):</strong> The peak of the curve. This represents the highest-energy arrangement of atoms along the reaction path. At the transition state, old bonds are partially broken and new bonds are partially formed. The transition state is an unstable arrangement that cannot be isolated — it either falls back to reactants or goes forward to products.</li>
-</ol>
-<h3>Drawing an Exothermic Energy Profile</h3>
-<p>For an exothermic reaction, the products are at a lower energy than the reactants:</p>
-<pre><code>Potential
-Energy
-   |
-   |     Transition State
-   |        /\
-   |       /  \
-   |  ←Ea→/    \
-   |     /      \
-   |────┘        └──────  Reactants
-   |                    \
-   |                     └──  Products (lower than reactants)
-   |   ←──────── ΔH (negative) ────────→
-   |
-   └──────────────────────────────────── Reaction Coordinate</code></pre>
-<h3>Drawing an Endothermic Energy Profile</h3>
-<p>For an endothermic reaction, the products are at a higher energy than the reactants. The activation energy Ea is still measured from the reactants to the peak, but since the products are higher, Ea is larger than ΔH:</p>
-<pre><code>Potential
-Energy
-   |
-   |     Transition State
-   |        /\
-   |       /  \
-   |  ←Ea→/    └──────  Products (higher than reactants)
-   |     /       
-   |────┘              Reactants
-   |   ←── ΔH (positive) ──→
-   |
-   └──────────────────────────────────── Reaction Coordinate</code></pre>
-<h3>Common Misconception About Activation Energy</h3>
-<p>Many students think that Ea is the energy needed to break all the bonds in the reactants. This is not correct. Ea is the energy needed to reach the transition state, where bonds are only partially broken. The total energy to break all bonds completely would be much larger than Ea.</p>
-<p>Another common misconception is that a reaction with a large negative ΔH must have a small Ea. These are independent quantities. A reaction can be very exothermic (large negative ΔH) but still have a large activation energy — this is why some fuels are difficult to ignite.</p>
-<hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
-<h2>5. The Effect of a Catalyst on Energy Profiles</h2>
-<h3>What a Catalyst Does</h3>
-<p>A catalyst is a substance that increases the rate of a chemical reaction without being consumed by the reaction. It works by providing an <strong>alternative reaction pathway</strong> — a different sequence of bond-breaking and bond-forming steps that has a <strong>lower activation energy</strong> than the uncatalyzed pathway.</p>
-<h3>How a Catalyst Changes the Energy Profile</h3>
-<p>On an energy profile diagram, the catalyzed reaction is shown as a second curve. This curve starts at exactly the same reactant energy level and ends at exactly the same product energy level as the uncatalyzed curve. The only difference is that the catalyzed curve has a <strong>lower peak</strong> — its maximum is lower, so the activation energy Ea(catalyzed) is smaller than Ea(uncatalyzed).</p>
-<h3>Why ΔH Does Not Change</h3>
-<p>Because the catalyzed and uncatalyzed pathways start at the same energy (reactants) and end at the same energy (products), the vertical distance between start and end is exactly the same. Therefore, ΔH is <strong>unchanged</strong> by a catalyst. A catalyst changes how fast equilibrium is reached, not the position of equilibrium or the overall energy change.</p>
-<h3>Why a Smaller Ea Makes the Reaction Faster</h3>
-<p>At any given temperature, molecules have a distribution of energies — some move slowly (low energy) and some move fast (high energy). Only molecules that have energy equal to or greater than Ea can react. When Ea is lowered by a catalyst, a much larger fraction of the molecules have enough energy to react. This is why even a modest reduction in Ea can produce a dramatic increase in reaction rate.</p>
-<h3>Worked Example 4: Drawing a Catalyzed Energy Profile</h3>
-<p><strong>Problem:</strong> The decomposition of hydrogen iodide, 2HI(g) → H₂(g) + I₂(g), has an activation energy Ea = 183 kJ mol⁻¹ and ΔH = +53 kJ mol⁻¹ when uncatalyzed. When a gold catalyst is used, Ea drops to 105 kJ mol⁻¹. Sketch and fully label the energy profile for both the catalyzed and uncatalyzed pathways on the same axes.</p>
-<p><strong>Strategy:</strong> ΔH is positive (+53 kJ mol⁻¹), so the products are higher than the reactants by 53 kJ mol⁻¹. The uncatalyzed curve has Ea = 183 kJ mol⁻¹ (measured from reactants to peak). The catalyzed curve has Ea = 105 kJ mol⁻¹. Both curves start at "2HI(g)" and end at "H₂(g) + I₂(g)" at an energy level 53 kJ higher.</p>
-<p><strong>Answer (described in words):</strong> The diagram has two curves on the same axes. Both curves begin at the same point on the left, labeled "2HI(g)". Both curves end at the same point on the right, labeled "H₂(g) + I₂(g)", which is 53 kJ mol⁻¹ higher than the starting point. The uncatalyzed curve rises to a tall peak; the vertical arrow from reactants to this peak is labeled "Ea (uncatalyzed) = 183 kJ mol⁻¹". The catalyzed curve follows a lower path and rises to a shorter peak; the arrow to this peak is labeled "Ea (catalyzed) = 105 kJ mol⁻¹". A vertical arrow from the reactants level to the products level is labeled "ΔH = +53 kJ mol⁻¹". The transition states are the peaks of each curve. Note that the catalyzed pathway may have more than one small peak (representing intermediate steps), which is acceptable as long as the highest peak is lower than the uncatalyzed peak.</p>
-<hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
-<h2>Practice Problems</h2>
-<ol>
-<li>Use the following bond enthalpies to estimate ΔH for the reaction N₂(g) + 3H₂(g) → 2NH₃(g): BE(N≡N) = 945 kJ mol⁻¹, BE(H−H) = 436 kJ mol⁻¹, BE(N−H) = 391 kJ mol⁻¹. Nitrogen gas has a triple bond (N≡N). Each ammonia molecule (NH₃) has three N−H single bonds.</li>
-</ol>
-<ol>
-<li>Use the following bond enthalpies to estimate ΔH for the complete combustion of ethene: C₂H₄(g) + 3O₂(g) → 2CO₂(g) + 2H₂O(g). The bond enthalpies are: BE(C=C) = 614 kJ mol⁻¹, BE(C−H) = 414 kJ mol⁻¹, BE(O=O) = 498 kJ mol⁻¹, BE(C=O) = 804 kJ mol⁻¹ (in CO₂), BE(O−H) = 463 kJ mol⁻¹. Ethene (C₂H₄) has one C=C double bond and four C−H single bonds. Carbon dioxide has two C=O double bonds per molecule. Water has two O−H single bonds per molecule.</li>
-</ol>
-<ol>
-<li>A student calculates ΔH for a reaction using average bond enthalpies and obtains −250 kJ mol⁻¹. The data book value is −310 kJ mol⁻¹. Write a full paragraph explaining three distinct reasons why the bond enthalpy estimate might differ from the experimental value. For each reason, explain whether it would cause the estimate to be more exothermic or less exothermic than the true value.</li>
-</ol>
-<ol>
-<li>The reaction between hydrogen gas and iodine gas is: H₂(g) + I₂(g) → 2HI(g). This reaction has ΔH = +53 kJ mol⁻¹ (it is endothermic).</li>
-</ol>
-<p>(a) Sketch and fully label an energy profile diagram for this reaction. Label the reactants, products, ΔH, activation energy Ea, and the transition state.</p>
-<p>(b) On the same axes, draw the catalyzed pathway if a platinum catalyst reduces Ea from 173 kJ mol⁻¹ to 85 kJ mol⁻¹. Explain why ΔH is the same for both pathways.</p>
-<ol>
-<li><strong>(IB-exam style)</strong> Hydrazine, N₂H₄, is used as a rocket fuel and reacts with oxygen according to the following equation: N₂H₄(g) + O₂(g) → N₂(g) + 2H₂O(g). The Lewis structure of hydrazine (H₂N−NH₂) has one N−N single bond, four N−H single bonds, and each nitrogen atom has one lone pair.</li>
-</ol>
-<p>(a) Use the following bond enthalpy data to estimate ΔH for this reaction: BE(N−N) = 158 kJ mol⁻¹, BE(N−H) = 391 kJ mol⁻¹, BE(O=O) = 498 kJ mol⁻¹, BE(N≡N) = 945 kJ mol⁻¹, BE(O−H) = 463 kJ mol⁻¹.</p>
-<p>(b) The experimentally measured ΔH for this reaction is −585 kJ mol⁻¹. Calculate the percentage difference between your estimated value from part (a) and the experimental value. Use the formula: percentage difference = |(estimated − experimental)| / |experimental| × 100%.</p>
-<p>(c) The experimental value was measured under conditions where the water produced is liquid, H₂O(l), rather than gaseous. The enthalpy of vaporization of water is +44 kJ mol⁻¹. Use this information to adjust your estimate from part (a) and explain whether this brings your estimate closer to or further from the experimental value.</p>
-<hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
-<h2>Answers</h2>
-<ol>
-<li><strong>Bonds broken (reactants):</strong></li>
-</ol>
-<ul>
-<li>1 × (N≡N) = 1 × 945 = 945 kJ</li>
-<li>3 × (H−H) = 3 × 436 = 1308 kJ</li>
-<li>Total bonds broken = 945 + 1308 = 2253 kJ.</li>
-</ul>
-<p><strong>Bonds formed (products):</strong></p>
-<ul>
-<li>Each NH₃ has 3 N−H bonds. With 2 NH₃: 6 × (N−H) = 6 × 391 = 2346 kJ.</li>
-<li>Total bonds formed = 2346 kJ.</li>
-</ul>
-<p><strong>ΔH ≈</strong> 2253 − 2346 = −93 kJ mol⁻¹.</p>
-<p><strong>Why this makes sense:</strong> The Haber process (N₂ + 3H₂ → 2NH₃) is known to be exothermic. The data book value is approximately −92 kJ mol⁻¹, so our bond enthalpy estimate is remarkably close. This is because all species are gases and the molecules are small and simple, so the average bond enthalpies work well.</p>
-<p><strong>Common mistake:</strong> Students sometimes forget that NH₃ has a coefficient of 2 in the balanced equation and count only 3 N−H bonds instead of 6.</p>
-<ol>
-<li><strong>Bonds broken (reactants):</strong></li>
-</ol>
-<ul>
-<li>In C₂H₄: 1 × (C=C) + 4 × (C−H) = 614 + 4(414) = 614 + 1656 = 2270 kJ.</li>
-<li>In 3O₂: 3 × (O=O) = 3 × 498 = 1494 kJ.</li>
-<li>Total bonds broken = 2270 + 1494 = 3764 kJ.</li>
-</ul>
-<p><strong>Bonds formed (products):</strong></p>
-<ul>
-<li>In 2CO₂: each CO₂ has 2 C=O bonds, so 2 × 2 × 804 = 4 × 804 = 3216 kJ.</li>
-<li>In 2H₂O: each H₂O has 2 O−H bonds, so 2 × 2 × 463 = 4 × 463 = 1852 kJ.</li>
-<li>Total bonds formed = 3216 + 1852 = 5068 kJ.</li>
-</ul>
-<p><strong>ΔH ≈</strong> 3764 − 5068 = −1304 kJ mol⁻¹.</p>
-<p><strong>Why this makes sense:</strong> This is the combustion of ethene, and the data book value is approximately −1411 kJ mol⁻¹. Our estimate is less exothermic by about 107 kJ mol⁻¹. This difference is largely because H₂O(g) is produced in our calculation, but the standard combustion enthalpy uses H₂O(l). The condensation of 2 moles of H₂O releases about 88 kJ, which accounts for most of the discrepancy.</p>
-<ol>
-<li>There are three distinct reasons why the bond enthalpy estimate (−250 kJ mol⁻¹) is less exothermic than the experimental value (−310 kJ mol⁻¹). First, average bond enthalpies are used rather than the specific bond enthalpies for the exact molecules in the reaction. The actual bonds in these particular molecules may be slightly different in strength from the tabulated averages, which would cause the estimate to deviate from the true value — the direction of deviation could be either way depending on the specific molecules involved. Second, bond enthalpies are defined for gaseous species. If any reactant or product in the reaction is a liquid or solid at standard conditions, the bond enthalpy calculation misses the energy change associated with the phase change. Specifically, if a product condenses from gas to liquid, the condensation releases additional energy that is not captured in the bond enthalpy calculation, making the estimate less exothermic than the true value. Third, the bond enthalpy model assumes that all bonds in the reactants break completely and then all bonds in the products form independently. In reality, the reaction proceeds through a transition state where bonds break and form in a coordinated manner. This mechanistic reality is not captured by simple bond counting, and the energy difference between the model and reality introduces error — typically making the calculated value less exothermic because the model overestimates the energy needed to break the reactant bonds. Taken together, these three factors readily explain why the estimate of −250 kJ mol⁻¹ is smaller in magnitude than the experimental value of −310 kJ mol⁻¹.</li>
-</ol>
-<ol>
-<li><strong>(a)</strong> The energy profile diagram for H₂(g) + I₂(g) → 2HI(g) with ΔH = +53 kJ mol⁻¹:</li>
-</ol>
-<p>The horizontal axis is labeled "Reaction Coordinate." The vertical axis is labeled "Potential Energy." On the left side of the diagram, a horizontal line is labeled "H₂(g) + I₂(g)" — this is the reactants level. On the right side, a horizontal line 53 kJ mol⁻¹ higher is labeled "2HI(g)" — this is the products level. A curve rises from the reactants level to a peak (the transition state) and then descends partially to the products level, ending higher than it started because the reaction is endothermic. An upward vertical arrow from the reactants level to the peak is labeled "Ea = 173 kJ mol⁻¹." An upward vertical arrow from the reactants level to the products level is labeled "ΔH = +53 kJ mol⁻¹." The peak of the curve is labeled "Transition State."</p>
-<p><strong>(b)</strong> On the same axes, a second curve is drawn that starts at the same reactants energy level and ends at the same products energy level. This second curve has a lower peak. The vertical arrow from the reactants level to the peak of this second curve is labeled "Ea (catalyzed) = 85 kJ mol⁻¹." The ΔH value is exactly the same (+53 kJ mol⁻¹) for both the catalyzed and uncatalyzed pathways because a catalyst does not change the identity or energy of the reactants or products — it only provides a different route between them. Since the starting point (reactants) and the ending point (products) are unchanged, the vertical distance between them (ΔH) is also unchanged. A catalyst changes the height of the energy barrier, not the overall energy difference between the beginning and the end.</p>
-<ol>
-<li><strong>(a)</strong> Draw the Lewis structure of N₂H₄: H₂N−NH₂, with one N−N single bond and four N−H single bonds. O₂ has one O=O double bond. N₂ has one N≡N triple bond. Each H₂O has two O−H single bonds.</li>
-</ol>
-<p><strong>Bonds broken (reactants):</strong></p>
-<ul>
-<li>In N₂H₄: 1 × (N−N) + 4 × (N−H) = 158 + 4(391) = 158 + 1564 = 1722 kJ.</li>
-<li>In O₂: 1 × (O=O) = 498 kJ.</li>
-<li>Total bonds broken = 1722 + 498 = 2220 kJ.</li>
-</ul>
-<p><strong>Bonds formed (products):</strong></p>
-<ul>
-<li>In N₂: 1 × (N≡N) = 945 kJ.</li>
-<li>In 2H₂O: 2 × 2 × (O−H) = 4 × 463 = 1852 kJ.</li>
-<li>Total bonds formed = 945 + 1852 = 2797 kJ.</li>
-</ul>
-<p><strong>ΔH ≈</strong> 2220 − 2797 = −577 kJ mol⁻¹.</p>
-<p><strong>Why this is reasonable:</strong> This is an exothermic combustion-like reaction, and the magnitude (around 580 kJ mol⁻¹) is typical for a fuel-oxidizer reaction.</p>
-<p><strong>(b)</strong> Percentage difference = |−577 − (−585)| / |−585| × 100% = 8 / 585 × 100% = 1.37%. This is a very small difference (less than 2%), indicating that the bond enthalpy method works very well for this particular reaction, likely because all species involved are small gaseous molecules.</p>
-<p><strong>(c)</strong> The experimental value of −585 kJ mol⁻¹ was measured with H₂O(l) as the product, while our estimate of −577 kJ mol⁻¹ used H₂O(g). When water vapor condenses to liquid water, the process H₂O(g) → H₂O(l) releases energy: ΔH = −44 kJ mol⁻¹ for each mole of water. Since the reaction produces 2 moles of water, the condensation releases 2 × (−44) = −88 kJ mol⁻¹. If we adjust our estimate to account for this condensation: ΔH(adjusted) = −577 + (−88) = −665 kJ mol⁻¹. This adjusted value (−665) is actually further from the experimental value (−585) than the original estimate (−577). The original estimate, even though it used the "wrong" phase for water, happened to be closer to the experimental value. This illustrates that the bond enthalpy method involves compensating errors — the average bond enthalpy approximations and phase-change omissions can sometimes partially cancel each other out.</p>
-<div class="nav">
-<a href="lesson_15.html">← Previous Lesson</a>
-<a href="../index.html">Home</a>
-<a href="lesson_17.html">Next Lesson →</a>
 </div>
+
+<!-- SECTION B -->
+<h2>1. Prior Knowledge Check</h2>
+
+<p><b>Question 1:</b> Is breaking a chemical bond endothermic or exothermic? Why?</p>
+<div class="check-in">
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content"><b>Endothermic.</b> Breaking a bond requires you to overcome the attractive forces holding the atoms together — you must <em>put energy in</em>. Conversely, making a bond releases energy (exothermic). This is why all reactions involve both: you break bonds in reactants (endothermic) and make bonds in products (exothermic). The net $\Delta H$ is the balance.</div>
+</div>
+
+<p><b>Question 2:</b> In an exothermic reaction, which is larger — the energy released by bond-making or the energy absorbed by bond-breaking?</p>
+<div class="check-in">
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">In an exothermic reaction, the energy <b>released by making new bonds</b> (in products) is larger than the energy <b>absorbed when breaking old bonds</b> (in reactants). The net release of energy means $\Delta H < 0$. In endothermic reactions, the opposite is true.</div>
+</div>
+
+<p><b>Question 3:</b> What does "activation energy" ($E_a$) mean?</p>
+<div class="check-in">
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content"><b>Activation energy</b> ($E_a$) is the minimum energy that colliding particles must possess for a reaction to occur. It is the energy barrier between reactants and products — the energy required to reach the <b>transition state</b> (activated complex) where bonds are partially broken and partially formed.</div>
+</div>
+
+<!-- SECTION C -->
+<h2>2. Bond Enthalpy — The Energy of a Chemical Bond</h2>
+
+<h3>2.1 Definition and Significance</h3>
+
+<p><b>Bond enthalpy</b> is the energy required to break one mole of a particular covalent bond in the gaseous state. For example, breaking one mole of $\ce{H-H}$ bonds requires 436 kJ:</p>
+
+$$\ce{H2(g) -> 2H(g)}, \quad \Delta H = +436\text{ kJ mol}^{-1}$$
+
+<p>Since bond-breaking is always endothermic, bond enthalpies are always reported as <b>positive</b> values. Bond-making releases the exact same amount of energy (just with a negative sign).</p>
+
+<div class="definition" style="background:#fdf5e6;border-left:4px solid #d4a017;padding:0.6rem 1rem;margin:0.8rem 0;border-radius:0 8px 8px 0;">
+<b>Average bond enthalpy:</b> The energy required to break one mole of a given bond, averaged across many different compounds containing that bond. For example, the $\ce{C-H}$ bond enthalpy (414 kJ mol⁻¹) is the average of $\ce{C-H}$ bonds in $\ce{CH4}$, $\ce{C2H6}$, $\ce{C2H4}$, etc. — each of which has a slightly different value.
+</div>
+
+<h3>2.2 Why "Average"?</h3>
+
+<p>The $\ce{C-H}$ bond in methane ($\ce{CH4}$) is not exactly the same as a $\ce{C-H}$ bond in ethene ($\ce{C2H4}$) or chloroform ($\ce{CHCl3}$). The surrounding atoms affect the bond strength. The IB Data Booklet gives <b>average</b> bond enthalpies — these are useful for estimating $\Delta H$, but calculations using them are approximate.</p>
+
+<div class="check-in">
+<p><b>Check-in:</b> The bond enthalpy of $\ce{H-Cl}$ is +431 kJ mol⁻¹. What is the enthalpy change for $\ce{H(g) + Cl(g) -> HCl(g)}$?</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">Making a bond is the reverse of breaking it, so $\Delta H = \mathbf{-431\text{ kJ mol}^{-1}}$. This is bond formation, which is always exothermic. The magnitude is the same as the bond enthalpy; only the sign changes.</div>
+</div>
+
+<h2>3. Calculating ΔH from Bond Enthalpies</h2>
+
+<p>The fundamental principle: in any reaction, you break all the bonds in the reactants and form all the bonds in the products. The net enthalpy change is the difference:</p>
+
+<div class="definition" style="background:#fdf5e6;border-left:4px solid #d4a017;padding:0.6rem 1rem;margin:0.8rem 0;border-radius:0 8px 8px 0;">
+<b>ΔH from bond enthalpies:</b>
+$$\Delta H = \sum E(\text{bonds broken}) - \sum E(\text{bonds formed})$$
+$E$ = bond enthalpy (always positive). Bonds broken: endothermic (+). Bonds formed: exothermic (−). The net is their difference.
+</div>
+
+<div class="diagram">
+<svg width="500" height="260" viewBox="0 0 500 260">
+  <text x="250" y="20" text-anchor="middle" font-size="12" font-weight="bold">Calculating ΔH from Bond Enthalpies</text>
+  
+  <!-- Gaseous atoms (top) -->
+  <rect x="130" y="210" width="240" height="35" rx="6" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+  <text x="250" y="233" text-anchor="middle" font-size="11" fill="#e65100">Separated gaseous atoms (all bonds broken)</text>
+  
+  <!-- Reactants -->
+  <rect x="40" y="40" width="160" height="50" rx="8" fill="#ffebee" stroke="#c62828" stroke-width="2"/>
+  <text x="120" y="62" text-anchor="middle" font-size="12" fill="#c62828">Reactants</text>
+  <text x="120" y="80" text-anchor="middle" font-size="10">(molecules intact)</text>
+  
+  <!-- Products -->
+  <rect x="300" y="40" width="160" height="50" rx="8" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="2"/>
+  <text x="380" y="62" text-anchor="middle" font-size="12" fill="#2c5f2d">Products</text>
+  <text x="380" y="80" text-anchor="middle" font-size="10">(molecules intact)</text>
+  
+  <!-- Up arrow from reactants to atoms -->
+  <line x1="120" y1="90" x2="120" y2="205" stroke="#c62828" stroke-width="2.5" marker-end="url(#aR)"/>
+  <text x="105" y="150" text-anchor="middle" font-size="10" fill="#c62828" transform="rotate(-90,105,150)">+Σ E(bonds broken)</text>
+  
+  <!-- Down arrow from atoms to products -->
+  <line x1="380" y1="205" x2="380" y2="95" stroke="#2c5f2d" stroke-width="2.5" marker-end="url(#aG)"/>
+  <text x="395" y="150" text-anchor="middle" font-size="10" fill="#2c5f2d" transform="rotate(90,395,150)">−Σ E(bonds formed)</text>
+  
+  <!-- Direct arrow -->
+  <line x1="200" y1="65" x2="295" y2="65" stroke="#333" stroke-width="2" marker-end="url(#aD)"/>
+  <text x="248" y="55" text-anchor="middle" font-size="11" font-weight="bold">ΔH = Σ broken − Σ formed</text>
+  
+  <defs>
+    <marker id="aD" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#333"/></marker>
+    <marker id="aR" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#c62828"/></marker>
+    <marker id="aG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#2c5f2d"/></marker>
+  </defs>
+</svg>
+<div class="caption">Figure 1: The bond enthalpy cycle. All bonds are broken to produce free gaseous atoms (up), then new bonds form to give products (down). $\Delta H$ is the algebraic sum.</div>
+</div>
+
+<div class="check-in">
+<p><b>Check-in:</b> Calculate $\Delta H$ for $\ce{H2(g) + Cl2(g) -> 2HCl(g)}$ using bond enthalpies: $E(\ce{H-H}) = 436$, $E(\ce{Cl-Cl}) = 243$, $E(\ce{H-Cl}) = 431$ kJ mol⁻¹.</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">Bonds broken: 1 × $\ce{H-H}$ (+436) + 1 × $\ce{Cl-Cl}$ (+243) = +679 kJ. Bonds formed: 2 × $\ce{H-Cl}$ = 2 × (−431) = −862 kJ. $\Delta H = +679 + (-862) = \mathbf{-183\text{ kJ mol}^{-1}}$. The reaction is exothermic because stronger $\ce{H-Cl}$ bonds replace weaker $\ce{H-H}$ and $\ce{Cl-Cl}$ bonds.</div>
+</div>
+
+<h3>3.1 O₂ and N₂ — Special Cases (HL)</h3>
+
+<p>When using bond enthalpies for reactions involving $\ce{O2}$ and $\ce{N2}$, you must use the correct bond order. $\ce{O2}$ has an $\ce{O=O}$ double bond ($E = 498$ kJ mol⁻¹), and $\ce{N2}$ has an $\ce{N#N}$ triple bond ($E = 945$ kJ mol⁻¹). The IB Data Booklet gives these values.</p>
+
+<div class="check-in">
+<p><b>Check-in:</b> Calculate $\Delta H$ for $\ce{N2(g) + 3H2(g) -> 2NH3(g)}$ using: $E(\ce{N#N}) = 945$, $E(\ce{H-H}) = 436$, $E(\ce{N-H}) = 391$ kJ mol⁻¹.</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">Bonds broken: 1 × $\ce{N#N}$ (945) + 3 × $\ce{H-H}$ (3 × 436 = 1308) = +2253 kJ. Bonds formed: in 2 $\ce{NH3}$, there are 2 × 3 = 6 $\ce{N-H}$ bonds. 6 × 391 = 2346 kJ formed = −2346 kJ. $\Delta H = 2253 - 2346 = \mathbf{-93\text{ kJ mol}^{-1}}$.</div>
+</div>
+
+<h2>4. Energy Profiles — Visualising Reaction Energetics</h2>
+
+<h3>4.1 The Energy Profile Diagram</h3>
+
+<p>An <b>energy profile</b> (also called a reaction coordinate diagram) plots enthalpy against the "progress of reaction". It shows:</p>
+<ul>
+  <li><b>Reactants:</b> starting enthalpy level (left).</li>
+  <li><b>Products:</b> ending enthalpy level (right).</li>
+  <li><b>Transition state:</b> the highest-energy point — the "activated complex" where bonds are half-broken, half-formed.</li>
+  <li><b>Activation energy ($E_a$):</b> the energy difference between reactants and the transition state.</li>
+  <li><b>$\Delta H$:</b> the energy difference between reactants and products.</li>
+</ul>
+
+<div class="diagram">
+<svg width="520" height="280" viewBox="0 0 520 280">
+  <!-- Exothermic profile -->
+  <rect x="10" y="10" width="245" height="260" rx="8" fill="#fff8f8" stroke="#c62828" stroke-width="1"/>
+  <text x="132" y="32" text-anchor="middle" font-size="11" font-weight="bold" fill="#c62828">Exothermic (ΔH &lt; 0)</text>
+  
+  <!-- Axes -->
+  <line x1="30" y1="240" x2="240" y2="240" stroke="#333" stroke-width="1.5"/>
+  <line x1="30" y1="240" x2="30" y2="50" stroke="#333" stroke-width="1.5"/>
+  <text x="135" y="258" text-anchor="middle" font-size="9">Progress of reaction →</text>
+  <text x="18" y="150" font-size="9" transform="rotate(-90,18,150)">Enthalpy</text>
+  
+  <!-- Curve -->
+  <path d="M35,100 Q70,100 95,100 Q110,100 120,140 Q130,180 135,190 Q140,200 140,190 Q145,180 150,140 Q160,100 175,160 Q190,200 210,160 Q230,120 235,160" fill="none" stroke="#c62828" stroke-width="2"/>
+  <circle cx="135" cy="190" r="4" fill="#c62828"/>
+  
+  <!-- Labels -->
+  <text x="55" y="95" font-size="9" fill="#c62828">Reactants</text>
+  <text x="200" y="148" font-size="9" fill="#c62828">Products</text>
+  <text x="125" y="210" font-size="9" fill="#e65100">TS</text>
+  
+  <!-- Ea arrow -->
+  <line x1="95" y1="105" x2="95" y2="185" stroke="#1565c0" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="90" y1="105" x2="100" y2="105" stroke="#1565c0" stroke-width="1"/>
+  <line x1="90" y1="185" x2="100" y2="185" stroke="#1565c0" stroke-width="1"/>
+  <text x="72" y="148" font-size="9" fill="#1565c0" transform="rotate(-90,72,148)">Eₐ</text>
+  
+  <!-- ΔH arrow -->
+  <line x1="220" y1="105" x2="220" y2="160" stroke="#2c5f2d" stroke-width="1.5"/>
+  <line x1="215" y1="105" x2="225" y2="105" stroke="#2c5f2d" stroke-width="1"/>
+  <line x1="215" y1="160" x2="225" y2="160" stroke="#2c5f2d" stroke-width="1"/>
+  <text x="232" y="135" font-size="9" fill="#2c5f2d">ΔH</text>
+
+  <!-- Endothermic profile -->
+  <rect x="265" y="10" width="245" height="260" rx="8" fill="#f8f8ff" stroke="#1565c0" stroke-width="1"/>
+  <text x="387" y="32" text-anchor="middle" font-size="11" font-weight="bold" fill="#1565c0">Endothermic (ΔH &gt; 0)</text>
+  
+  <line x1="285" y1="240" x2="495" y2="240" stroke="#333" stroke-width="1.5"/>
+  <line x1="285" y1="240" x2="285" y2="50" stroke="#333" stroke-width="1.5"/>
+  <text x="390" y="258" text-anchor="middle" font-size="9">Progress of reaction →</text>
+  
+  <path d="M290,160 Q325,160 340,160 Q355,160 365,120 Q375,80 385,70 Q395,60 395,75 Q405,90 415,130 Q430,160 445,100 Q460,80 485,100" fill="none" stroke="#1565c0" stroke-width="2"/>
+  <circle cx="385" cy="70" r="4" fill="#1565c0"/>
+  
+  <text x="310" y="148" font-size="9" fill="#1565c0">Reactants</text>
+  <text x="470" y="95" font-size="9" fill="#1565c0">Products</text>
+  <text x="375" y="88" font-size="9" fill="#e65100">TS</text>
+  
+  <!-- Ea arrow -->
+  <line x1="340" y1="162" x2="340" y2="75" stroke="#c62828" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="335" y1="162" x2="345" y2="162" stroke="#c62828" stroke-width="1"/>
+  <line x1="335" y1="75" x2="345" y2="75" stroke="#c62828" stroke-width="1"/>
+  <text x="355" y="122" font-size="9" fill="#c62828">Eₐ</text>
+  
+  <!-- ΔH arrow -->
+  <line x1="475" y1="160" x2="475" y2="100" stroke="#1565c0" stroke-width="1.5"/>
+  <line x1="470" y1="160" x2="480" y2="160" stroke="#1565c0" stroke-width="1"/>
+  <line x1="470" y1="100" x2="480" y2="100" stroke="#1565c0" stroke-width="1"/>
+  <text x="487" y="133" font-size="9" fill="#1565c0">ΔH</text>
+</svg>
+<div class="caption">Figure 2: Energy profiles for exothermic (left) and endothermic (right) reactions. Note: for endothermic reactions, $E_a$ is always <b>larger</b> than $\Delta H$ because you must climb over the transition state before reaching the higher product level.</div>
+</div>
+
+<div class="check-in">
+<p><b>Check-in:</b> On an energy profile for an exothermic reaction, the activation energy is 50 kJ mol⁻¹ and $\Delta H = -150$ kJ mol⁻¹. What is the activation energy of the <b>reverse</b> reaction?</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">The reverse $E_a = E_a(\text{forward}) + |\Delta H| = 50 + 150 = \mathbf{200\text{ kJ mol}^{-1}}$. The reverse reaction must climb from the product level back up to the transition state, which means crossing both the forward $E_a$ AND the $\Delta H$ gap.</div>
+</div>
+
+<h2>5. Worked Examples</h2>
+
+<div class="example">
+<b>Example 1 — Combustion of Methane Using Bond Enthalpies:</b><br><br>
+Calculate $\Delta H$ for $\ce{CH4(g) + 2O2(g) -> CO2(g) + 2H2O(g)}$ using bond enthalpies (kJ mol⁻¹): $\ce{C-H} = 414$, $\ce{O=O} = 498$, $\ce{C=O} = 804$, $\ce{O-H} = 463$.<br><br>
+<b>Step 1: Draw Lewis structures.</b> $\ce{CH4}$: 4 $\ce{C-H}$ bonds. $\ce{O2}$: $\ce{O=O}$. $\ce{CO2}$: $\ce{O=C=O}$ (2 $\ce{C=O}$ bonds). $\ce{H2O}$: $\ce{H-O-H}$ (2 $\ce{O-H}$ bonds per molecule).<br>
+<b>Step 2: Bonds broken.</b> 4 × $\ce{C-H}$ = 4(414) = 1656. 2 × $\ce{O=O}$ = 2(498) = 996. Total = +2652 kJ.<br>
+<b>Step 3: Bonds formed.</b> 4 × $\ce{C=O}$ (2 per $\ce{CO2}$ but wait — $\ce{CO2}$ has 2 $\ce{C=O}$ bonds) = 2(804) = 1608. 4 × $\ce{O-H}$ (2 per $\ce{H2O}$, 2 molecules) = 4(463) = 1852. Total formed = 3460 kJ → −3460.<br>
+<b>Step 4:</b> $\Delta H = 2652 - 3460 = \mathbf{-808\text{ kJ mol}^{-1}}$.<br>
+Literature is −891; the difference is because average bond enthalpies are approximations and here we used $\ce{H2O(g)}$ rather than $\ce{H2O(l)}$.<br><br>
+<b>⚠️ Common wrong approach:</b> Miscounting the bonds in $\ce{CO2}$. Students sometimes count 2 $\ce{C=O}$ bonds as one "double bond enclosure" and forget there are 2 separate $\ce{C=O}$ bonds, each needing 804 kJ.
+</div>
+
+<div class="example">
+<b>Example 2 — Reverse Activation Energy:</b><br><br>
+The forward reaction $\ce{A -> B}$ has $E_a = 75$ kJ mol⁻¹ and $\Delta H = -120$ kJ mol⁻¹. Calculate $E_a$ for the reverse reaction and sketch the energy profile.<br><br>
+<b>Step 1:</b> $\Delta H = -120$ means products are 120 kJ lower than reactants.<br>
+<b>Step 2:</b> Reverse $E_a$ = forward $E_a$ + $|\Delta H|$ = 75 + 120 = $\mathbf{195\text{ kJ mol}^{-1}}$.<br>
+<b>Step 3 (sketch):</b> Reactants at some reference (0). TS at +75. Products at −120. Reverse must climb from −120 up to +75 = 195 kJ.<br><br>
+<b>⚠️ Common wrong approach:</b> Thinking reverse $E_a$ = forward $E_a - |\Delta H|$. That would give 75 − 120 = −45, which is impossible (activation energies are always positive).
+</div>
+
+<div class="example">
+<b>Example 3 — Ozone Decomposition:</b><br><br>
+Calculate $\Delta H$ for $\ce{2O3(g) -> 3O2(g)}$ using bond enthalpies. In $\ce{O3}$, there are 2 $\ce{O-O}$ bonds (one single, one with partial double-bond character — but use the average single-bond value of 146 kJ mol⁻¹). $\ce{O=O} = 498$.<br><br>
+<b>Step 1:</b> Bonds broken in 2 $\ce{O3}$: each $\ce{O3}$ has 2 $\ce{O-O}$ bonds → 4 × 146 = +584 kJ.<br>
+<b>Step 2:</b> Bonds formed in 3 $\ce{O2}$: each $\ce{O2}$ has 1 $\ce{O=O}$ → 3 × 498 = 1494 kJ formed = −1494 kJ.<br>
+<b>Step 3:</b> $\Delta H = 584 - 1494 = \mathbf{-910\text{ kJ mol}^{-1}}$ for 2 $\ce{O3}$ decomposing. Per mole of $\ce{O3}$: −455 kJ mol⁻¹. The reaction is highly exothermic — ozone is thermodynamically unstable relative to $\ce{O2}$.<br><br>
+<b>⚠️ Common wrong approach:</b> Using the wrong bond for $\ce{O3}$. Ozone has resonance — the actual bond order is 1.5, but IB uses the average $\ce{O-O}$ single bond enthalpy. Also, students miscount: 2 $\ce{O3}$ molecules means 4 $\ce{O-O}$ bonds broken, not 2.
+</div>
+
+<!-- SECTION F -->
+<div class="misconception">
+<h3>⚠️ Common Mistakes to Avoid</h3>
+<ol>
+  <li><b>"Thinking bond-breaking releases energy."</b> Breaking bonds ALWAYS requires energy (endothermic). Making bonds ALWAYS releases energy (exothermic). Many students confuse this because they associate combustion (burning) with "breaking bonds in the fuel" and assume breaking releases energy. The energy comes from the new bonds formed, not the old bonds broken.</li>
+  <li><b>"Forgetting that bond enthalpy calculations require all species to be gaseous."</b> Bond enthalpies are defined for the gaseous state. If products include $\ce{H2O(l)}$, you need to account for condensation energy. Using average bond enthalpies for reactions producing liquids introduces significant error.</li>
+  <li><b>"Misidentifying the activation energy on a diagram."</b> $E_a$ is always measured from the <b>reactants</b> to the <b>transition state</b> — not from some arbitrary baseline. For an endothermic reaction, $E_a$ is larger than $\Delta H$; for an exothermic reaction, $E_a$ may be smaller or larger than $|\Delta H|$.</li>
+  <li><b>"Confusing bond enthalpy with bond polarity strength."</b> A polar bond (e.g., $\ce{H-F}$) is not necessarily stronger because it's polar — but $\ce{H-F}$ (567 kJ mol⁻¹) is indeed stronger than $\ce{H-H}$ (436) because of the electronegativity difference adding ionic character to the covalent bond.</li>
+</ol>
+</div>
+
+<!-- SECTION G -->
+<h2>6. End-of-Lesson Practice</h2>
+
+<p><b>Question 1 (Paper 1 style):</b> Which statement about bond enthalpies is correct?<br>
+A. Bond enthalpies are exact values for each specific molecule.<br>
+B. Bond-breaking is always exothermic.<br>
+C. Average bond enthalpies are used because bond strength varies slightly between different molecules.<br>
+D. Bond enthalpies can be used to calculate $\Delta H$ exactly, with no error.</p>
+
+<p><b>Question 2:</b> Calculate $\Delta H$ for $\ce{C2H4(g) + H2(g) -> C2H6(g)}$ using bond enthalpies (kJ mol⁻¹): $\ce{C=C} = 614$, $\ce{C-H} = 414$, $\ce{H-H} = 436$, $\ce{C-C} = 346$. (Note: $\ce{C2H4}$ has 1 $\ce{C=C}$ and 4 $\ce{C-H}$. $\ce{C2H6}$ has 1 $\ce{C-C}$ and 6 $\ce{C-H}$.)</p>
+
+<p><b>Question 3:</b> Calculate $\Delta H$ for $\ce{CH3OH(g) + 1.5 O2(g) -> CO2(g) + 2H2O(g)}$ using bond enthalpies. $\ce{CH3OH}$: 3 $\ce{C-H}$, 1 $\ce{C-O}$, 1 $\ce{O-H}$. Data: $\ce{C-H} = 414$, $\ce{C-O} = 358$, $\ce{O-H} = 463$, $\ce{O=O} = 498$, $\ce{C=O} = 804$.</p>
+
+<p><b>Question 4:</b> An exothermic reaction has $E_a(\text{forward}) = 85$ kJ mol⁻¹ and $\Delta H = -210$ kJ mol⁻¹. Calculate $E_a$ for the reverse reaction and state whether the reverse reaction is faster or slower than the forward (at the same temperature).</p>
+
+<p><b>Question 5:</b> Hydrazine is used as rocket fuel: $\ce{N2H4(g) + O2(g) -> N2(g) + 2H2O(g)}$. $\ce{N2H4}$ has 1 $\ce{N-N}$ single bond and 4 $\ce{N-H}$ bonds. $\ce{O2}$ has $\ce{O=O}$. $\ce{N2}$ has $\ce{N#N}$. $\ce{H2O}$ has 2 $\ce{O-H}$. Data (kJ mol⁻¹): $\ce{N-N} = 163$, $\ce{N-H} = 391$, $\ce{O=O} = 498$, $\ce{N#N} = 945$, $\ce{O-H} = 463$. Calculate $\Delta H$.</p>
+
+<p><b>Question 6 (IB-style):</b> The reaction $\ce{2HI(g) -> H2(g) + I2(g)}$ has $\Delta H = -9\text{ kJ mol}^{-1}$ (experimental).<br>
+(a) Calculate $\Delta H$ using bond enthalpies: $E(\ce{H-I}) = 299$, $E(\ce{H-H}) = 436$, $E(\ce{I-I}) = 151$ kJ mol⁻¹.<br>
+(b) Explain any difference between your calculated and the experimental value.<br>
+(c) Explain why this reaction has a very small $|\Delta H|$.</p>
+
+<button class="practice-toggle" onclick="var a=this.nextElementSibling;a.classList.toggle('open');this.textContent=a.classList.contains('open')?'▴ Hide Answers':'▸ Show Answers'">▸ Show Answers</button>
+<div class="practice-answers">
+
+<p><b>Answer 1:</b> C. Bond enthalpies are averages across many compounds; they vary with molecular environment. A is wrong (they are average, not exact). B is wrong (breaking is endothermic). D is wrong (bond enthalpy calculations are approximate).</p>
+
+<p><b>Answer 2:</b> Bonds broken: 1 $\ce{C=C}$ (614) + 4 $\ce{C-H}$ (4×414 = 1656) + 1 $\ce{H-H}$ (436) = +2706 kJ. Bonds formed: 1 $\ce{C-C}$ (346) + 6 $\ce{C-H}$ (6×414 = 2484) = 2830 kJ → −2830 kJ. $\Delta H = 2706 - 2830 = \mathbf{-124\text{ kJ mol}^{-1}}$.</p>
+
+<p><b>Answer 3:</b> Bonds broken: 3 $\ce{C-H}$ (1242) + 1 $\ce{C-O}$ (358) + 1 $\ce{O-H}$ (463) + 1.5 $\ce{O=O}$ (747) = +2810 kJ. Bonds formed: 2 $\ce{C=O}$ in $\ce{CO2}$ (2×804 = 1608) + 4 $\ce{O-H}$ in 2 $\ce{H2O}$ (4×463 = 1852) = 3460 → −3460 kJ. $\Delta H = 2810 - 3460 = \mathbf{-650\text{ kJ mol}^{-1}}$.</p>
+
+<p><b>Answer 4:</b> Reverse $E_a = 85 + 210 = \mathbf{295\text{ kJ mol}^{-1}}$. The reverse reaction is much <b>slower</b> because it has a much higher activation energy — fewer molecules have enough energy to overcome this larger barrier at any given temperature.</p>
+
+<p><b>Answer 5:</b> Bonds broken: 1 $\ce{N-N}$ (163) + 4 $\ce{N-H}$ (1564) + 1 $\ce{O=O}$ (498) = +2225 kJ. Bonds formed: 1 $\ce{N#N}$ (945) + 4 $\ce{O-H}$ (1852) = 2797 → −2797 kJ. $\Delta H = 2225 - 2797 = \mathbf{-572\text{ kJ mol}^{-1}}$. The very strong $\ce{N#N}$ triple bond makes the products much more stable.</p>
+
+<p><b>Answer 6:</b> (a) Bonds broken: 2 $\ce{H-I}$ = 2(299) = +598 kJ. Bonds formed: 1 $\ce{H-H}$ (436) + 1 $\ce{I-I}$ (151) = 587 → −587 kJ. $\Delta H = 598 - 587 = +11\text{ kJ mol}^{-1}$. (b) The experimental value is −9, the calculated is +11. Difference is due to using average bond enthalpies — the actual $\ce{H-I}$ bond strength differs slightly. (c) $|\Delta H|$ is small because the bonds broken (2 H–I, total 598) and bonds formed (H–H + I–I, total 587) are very similar in energy — the reaction is nearly thermoneutral.</p>
+</div>
+
+<!-- SECTION H -->
+<h2>7. Key Terms</h2>
+<table>
+<tr><th>Term</th><th>Definition</th></tr>
+<tr><td>Bond enthalpy ($E$)</td><td>The energy required to break one mole of a covalent bond in the gaseous state; always positive</td></tr>
+<tr><td>Average bond enthalpy</td><td>The average bond-breaking energy for a specific bond type, averaged over many different compounds</td></tr>
+<tr><td>Bond-breaking</td><td>Always endothermic (+); requires energy input to overcome attractive forces between atoms</td></tr>
+<tr><td>Bond-making</td><td>Always exothermic (−); energy is released when new bonds form</td></tr>
+<tr><td>Energy profile</td><td>A diagram showing enthalpy change along the reaction coordinate; displays reactants, products, transition state, $E_a$, and $\Delta H$</td></tr>
+<tr><td>Transition state</td><td>The highest-energy arrangement of atoms along the reaction path; bonds are partially broken and partially formed (the activated complex)</td></tr>
+<tr><td>Activation energy ($E_a$)</td><td>The minimum energy required for reactants to reach the transition state and form products</td></tr>
+<tr><td>Reverse activation energy</td><td>$E_a(\text{reverse}) = E_a(\text{forward}) + |\Delta H|$ for exothermic; $E_a(\text{reverse}) = E_a(\text{forward}) - \Delta H$ for endothermic</td></tr>
+</table>
+
+<!-- SECTION I -->
+<h2>8. Exam Tips</h2>
+
+<div class="exam-tip"><b>Paper 1 (Multiple Choice):</b> Energy profile questions almost always appear. You must be able to look at a diagram and identify $E_a$, $\Delta H$, and whether the reaction is exothermic or endothermic. Also, be prepared for the "reverse $E_a$" calculation — a favourite one-mark question: "The forward $E_a$ is X and $\Delta H$ is Y. What is the reverse $E_a$?"</div>
+
+<div class="exam-tip"><b>Paper 2 — Bond Enthalpy Calculations:</b> Always draw the Lewis structure (or at least note bond counts) before plugging numbers into the formula. The most common loss of marks comes from miscounting bonds — especially in $\ce{CO2}$ (2 $\ce{C=O}$ bonds), $\ce{H2O}$ (2 $\ce{O-H}$ bonds), and $\ce{N2}$ (triple bond). Also, explicitly state "bonds broken" and "bonds formed" on separate lines — this earns method marks even if the arithmetic is wrong.</div>
+
+<div class="exam-tip"><b>Paper 2 — Justifying Stability:</b> When asked why a reaction is exothermic, link it to bond enthalpies: "The products have stronger bonds than the reactants, so more energy is released when product bonds form than is absorbed when reactant bonds break." Use specific bond enthalpy values to support your answer.</div>
+
 </body>
 </html>

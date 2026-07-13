@@ -3,210 +3,280 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lesson 31: Advanced Acid-Base — IB Chemistry HL</title>
-<script>window.MathJax = { loader: {load: ['[tex]/mhchem']}, tex: {packages: {'[+]': ['mhchem']}} };</script>
+<title>Lesson 31 — Chemistry HL — Lewis Theory, Polyprotic Acids, Hydrolysis</title>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] },
+  loader: { load: ['[tex]/mhchem'] },
+  tex: { packages: {'[+]': ['mhchem']} }
+};
+</script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
 <style>
-  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Palatino', 'Georgia', serif; background: var(--bg); color: var(--text); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; font-size: 17px; line-height: 1.7; }
-  h1 { font-size: 1.7rem; color: var(--accent); margin-bottom: 0.5rem; }
-  h2 { font-size: 1.25rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; margin: 2rem 0 1rem; }
-  h3 { font-size: 1.1rem; color: #444; margin: 1.3rem 0 0.5rem; }
-  p, li { margin-bottom: 0.6rem; }
-  ul, ol { padding-left: 1.8rem; margin-bottom: 1rem; }
-  .worked { background: #f0f7f0; border-left: 4px solid #2c5f2d; padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
-  .worked strong { color: #2c5f2d; }
-  .definition { background: #fdf5e6; border-left: 4px solid #d4a017; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
-  table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
-  th, td { border: 1px solid var(--border); padding: 0.5rem; text-align: left; }
-  .nav { display: flex; justify-content: space-between; margin: 3rem 0 1rem; padding-top: 1rem; border-top: 2px solid var(--border); font-size: 0.9rem; }
-  .nav a { color: #1a5c9e; text-decoration: none; }
-  .nav a:hover { text-decoration: underline; }
-  @media print { body { font-size: 14px; } .nav { display: none; } }
+:root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Georgia', 'Times New Roman', serif; font-size: 17px; line-height: 1.7; color: var(--text); background: var(--bg); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; }
+h1 { font-size: 1.8rem; color: var(--accent); border-bottom: 3px solid var(--accent); padding-bottom: 0.5rem; margin-bottom: 1rem; }
+h2 { font-size: 1.35rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+h3 { font-size: 1.15rem; color: var(--accent); margin: 1.5rem 0 0.5rem; }
+p { margin-bottom: 0.8rem; }
+.objectives { background: #f0f4ff; border-left: 4px solid var(--accent); padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+.objectives h3 { margin-top: 0; }
+.check-in { background: #fff8e1; border: 1px solid #ffc107; padding: 0.8rem 1rem; margin: 1rem 0; border-radius: 8px; }
+.check-in p { margin-bottom: 0.3rem; }
+.answer-toggle { display: inline-block; padding: 0.2rem 0.8rem; border-radius: 16px; cursor: pointer; font-size: 0.8rem; font-weight: 600; background: #e8f5e9; color: #2e7d32; border: 1px solid #2e7d32; user-select: none; margin-top: 0.3rem; }
+.answer-content { display: none; background: #f1f8e9; padding: 0.6rem 1rem; border-radius: 8px; margin-top: 0.5rem; }
+.answer-content.open { display: block; }
+.example { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem; margin: 1rem 0; }
+.misconception { background: #fff3e0; border-left: 4px solid #e65100; padding: 1rem 1.2rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+.misconception h3 { color: #e65100; }
+.exam-tip { background: #e8f5e9; border-left: 4px solid #2e7d32; padding: 0.8rem 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+th { background: var(--accent); color: white; padding: 0.5rem 0.8rem; text-align: left; }
+td { padding: 0.5rem 0.8rem; border-bottom: 1px solid var(--border); }
+tr:nth-child(even) td { background: #f8f8f6; }
+.diagram { text-align: center; margin: 1.5rem 0; }
+.diagram svg { max-width: 100%; }
+.diagram .caption { font-size: 0.9rem; color: #666; margin-top: 0.3rem; font-style: italic; }
+pre.ascii-art { font-family: 'Courier New', monospace; font-size: 0.75rem; line-height: 1.2; background: #f5f5f5; padding: 0.8rem; border-radius: 8px; overflow-x: auto; }
+.practice-toggle { display: block; width: 100%; padding: 0.8rem; background: var(--accent); color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem; font-weight: 600; margin: 1.5rem 0; }
+.practice-answers { display: none; }
+.practice-answers.open { display: block; }
 </style>
 </head>
 <body>
-<h1>Lesson 31: Advanced Acid-Base</h1>
 
-<h2>What You'll Learn</h2>
+<h1>Lesson 31: Advanced Acid–Base — Lewis Theory, Polyprotic Acids & Hydrolysis</h1>
+
+<p><b>Syllabus reference:</b> 18.1–18.3 (HL) — Lewis Acids/Bases, Polyprotic Acids, Salt Hydrolysis</p>
+
+<!-- SECTION A -->
+<div class="objectives">
+<h3>Learning Objectives</h3>
+<p>By the end of this lesson, you will be able to:</p>
 <ul>
-<li>Define acids and bases using Lewis theory, which is broader than Brønsted-Lowry theory</li>
-<li>Identify Lewis acids and Lewis bases in reactions, including those involving transition metal ions and molecules without hydrogen</li>
-<li>Calculate the pH of solutions containing polyprotic acids by considering the successive dissociation steps</li>
-<li>Predict whether a salt dissolved in water will produce an acidic, basic, or neutral solution by analysing the hydrolysis behaviour of each ion</li>
-<li>Calculate the pH of salt solutions using the Ka and Kb values of the ions that undergo hydrolysis</li>
+  <li><b>Define</b> a Lewis acid (electron-pair acceptor) and Lewis base (electron-pair donor), extending beyond Brønsted–Lowry theory.</li>
+  <li><b>Identify</b> Lewis acid–base reactions, including complex ion formation with transition metals.</li>
+  <li><b>Write</b> stepwise dissociation equations and $K_a$ expressions for polyprotic acids.</li>
+  <li><b>Predict</b> whether a salt solution is acidic, basic, or neutral based on the hydrolysis behaviour of its ions.</li>
 </ul>
-<h2>1. Lewis Theory — The Broadest Definition of Acids and Bases</h2>
-<h3>Why we need a broader definition</h3>
-<p>The Brønsted-Lowry theory defines acids as proton donors and bases as proton acceptors. This works for almost all acid-base reactions you encounter in aqueous solution. However, some reactions look and behave like acid-base reactions even though no protons are transferred. For example, when boron trifluoride (BF₃) reacts with ammonia (NH₃), a new bond forms between the boron atom and the nitrogen atom. No hydrogen ion is given or taken. Yet BF₃ behaves in a way that is chemically similar to how H⁺ behaves.</p>
-<p>To account for reactions like this, the American chemist Gilbert N. Lewis proposed a more general definition in 1923, the same year Brønsted and Lowry published their theory.</p>
-<h3>The Lewis definitions</h3>
-<p>A <strong>Lewis acid</strong> is a chemical species that <strong>accepts an electron pair</strong>. The key word is "accepts." A Lewis acid has an empty orbital or a region of positive charge that can receive a pair of electrons.</p>
-<p>A <strong>Lewis base</strong> is a chemical species that <strong>donates an electron pair</strong>. The key word is "donates." A Lewis base has a lone pair of electrons that it can share with the Lewis acid.</p>
-<p>When a Lewis base donates its electron pair to a Lewis acid, the two species form a new <strong>coordinate covalent bond</strong> (also called a dative bond). In a coordinate covalent bond, both electrons in the bond come from the same atom — the Lewis base.</p>
-<h3>The relationship between Lewis and Brønsted-Lowry</h3>
-<p>Every Brønsted-Lowry base is also a Lewis base, because to accept a proton (H⁺), a species must donate an electron pair to form a bond with the proton. Similarly, every Brønsted-Lowry acid reaction can be described in Lewis terms, because the proton (H⁺) itself is a Lewis acid — it has an empty 1s orbital and accepts an electron pair from the base.</p>
-<p>However, many Lewis acids are not Brønsted-Lowry acids. BF₃, AlCl₃, CO₂, and transition metal ions such as Fe³⁺ and Cu²⁺ are all Lewis acids, but none of them donates a proton in the Brønsted-Lowry sense. The Lewis definition is therefore broader and more general.</p>
-<h3>Examples of Lewis acid-base reactions</h3>
-<p><strong>Example 1:</strong> Boron trifluoride and ammonia.</p>
-<p>$$\ce{BF3 + NH3 -> F3B-NH3}$$</p>
-<p>In BF₃, the boron atom has only six electrons in its valence shell (three single bonds to fluorine). This means boron has an empty orbital and can accept an electron pair. BF₃ is the Lewis acid. Ammonia, NH₃, has a lone pair of electrons on the nitrogen atom. NH₃ is the Lewis base. The nitrogen donates its lone pair to the boron, forming a new B—N bond.</p>
-<p><strong>Example 2:</strong> A proton and ammonia.</p>
-<p>$$\ce{H+ + NH3 -> NH4+}$$</p>
-<p>The proton H⁺ has no electrons at all — it is an empty orbital waiting to be filled. H⁺ is the Lewis acid. NH₃ donates its lone pair. NH₃ is the Lewis base. This is also a Brønsted-Lowry reaction, illustrating the overlap between the two theories.</p>
-<p><strong>Example 3:</strong> A transition metal ion forming a complex.</p>
-<p>$$\ce{Cu^{2+}(aq) + 4NH3(aq) -> [Cu(NH3)4]^{2+}(aq)}$$</p>
-<p>The copper(II) ion, Cu²⁺, has empty orbitals in its 3d, 4s, and 4p subshells. It accepts electron pairs from four ammonia molecules, acting as a Lewis acid. Each ammonia molecule donates its lone pair, acting as a Lewis base. The resulting species, [Cu(NH₃)₄]²⁺, is a complex ion. This reaction is a Lewis acid-base reaction but not a Brønsted-Lowry one, because no protons are transferred.</p>
-<div class="worked">
-<p><p><strong>Worked Example 1:</strong> In the reaction AlCl₃ + Cl⁻ → AlCl₄⁻, identify the Lewis acid and the Lewis base. Explain your reasoning.</p></p>
-<p><p><strong>Strategy:</strong> Determine which species accepts an electron pair and which species donates an electron pair.</p></p>
-<p><p>AlCl₃ has an aluminium atom bonded to three chlorine atoms. Aluminium is in Group 13 and has three valence electrons. In AlCl₃, aluminium shares these three electrons with three chlorine atoms, giving it only six electrons in its valence shell. An octet requires eight electrons. Therefore, aluminium in AlCl₃ has an empty orbital and can accept an electron pair. AlCl₃ is the Lewis acid.</p></p>
-<p><p>The chloride ion, Cl⁻, has four lone pairs of electrons. It can donate one of these lone pairs to form a bond with the aluminium atom. Cl⁻ is the Lewis base.</p></p>
-<p><p>The product, AlCl₄⁻, contains an Al—Cl bond in which both electrons came from the Cl⁻ ion. This is a coordinate covalent bond.</p></p>
-<p><p><strong>Why this makes sense:</strong> AlCl₃ is electron-deficient (incomplete octet), which is a classic characteristic of a Lewis acid. Species with incomplete octets — such as compounds of boron, aluminium, and beryllium — are frequently Lewis acids.</p></p>
 </div>
-<h2>2. Polyprotic Acids — More Than One Ionisable Proton</h2>
-<h3>What a polyprotic acid is</h3>
-<p>A <strong>polyprotic acid</strong> is an acid that has more than one hydrogen atom that can be donated as a proton. The prefix "poly" means many, and "protic" refers to protons.</p>
-<p>A <strong>diprotic</strong> acid has two ionisable protons. Examples include sulfuric acid (H₂SO₄), carbonic acid (H₂CO₃), and hydrogen sulfide (H₂S).</p>
-<p>A <strong>triprotic</strong> acid has three ionisable protons. The most important example for IB Chemistry HL is phosphoric acid, H₃PO₄.</p>
-<h3>Successive dissociation steps</h3>
-<p>When a polyprotic acid dissociates, it does not lose all its protons at once. Instead, the protons come off one at a time in a series of steps, and each step has its own Ka value.</p>
-<p>For phosphoric acid, H₃PO₄, the three dissociation steps are:</p>
-<p>Step 1: H₃PO₄ (aq) ⇌ H⁺ (aq) + H₂PO₄⁻ (aq) — Ka₁ = 7.5 × 10⁻³ mol dm⁻³</p>
-<p>Step 2: H₂PO₄⁻ (aq) ⇌ H⁺ (aq) + HPO₄²⁻ (aq) — Ka₂ = 6.2 × 10⁻⁸ mol dm⁻³</p>
-<p>Step 3: HPO₄²⁻ (aq) ⇌ H⁺ (aq) + PO₄³⁻ (aq) — Ka₃ = 4.8 × 10⁻¹³ mol dm⁻³</p>
-<p>Look at the pattern: Ka₁ is about 10⁵ times larger than Ka₂, and Ka₂ is about 10⁵ times larger than Ka₃. Each successive dissociation is much weaker than the one before it. This is a universal pattern for polyprotic acids.</p>
-<h3>Why successive Ka values decrease</h3>
-<p>There are two reasons why it becomes progressively harder to remove each additional proton:</p>
-<p>First, <strong>electrostatic attraction</strong>: after the first proton is removed, the remaining species (H₂PO₄⁻) carries a negative charge. Removing a positively charged proton from a negatively charged ion is much harder than removing it from a neutral molecule, because the opposite charges attract each other. After the second proton is removed, the species (HPO₄²⁻) has a charge of −2, making the third proton even harder to remove.</p>
-<p>Second, the <strong>common ion effect</strong>: the H⁺ ions produced in the first dissociation suppress the second and third dissociations through Le Chatelier's principle. The equilibrium for step 2 is shifted to the left by the high concentration of H⁺ already present from step 1.</p>
-<h3>Calculating pH of a polyprotic acid solution</h3>
-<p>For most polyprotic acids, only the <strong>first dissociation</strong> contributes significantly to [H⁺]. The second and third dissociations produce such tiny amounts of additional H⁺ that they can be neglected in pH calculations. The rule is: if Ka₂ is at least 1000 times smaller than Ka₁, consider only Ka₁.</p>
-<div class="worked">
-<p><p><strong>Worked Example 2:</strong> Calculate the pH of a solution of carbonic acid, H₂CO₃, with a concentration of 0.10 mol dm⁻³. The relevant constants are Ka₁ = 4.3 × 10⁻⁷ mol dm⁻³ and Ka₂ = 5.6 × 10⁻¹¹ mol dm⁻³. The temperature is 298 K.</p></p>
-<p><p><strong>Strategy:</strong> Since Ka₂ is about 8000 times smaller than Ka₁ (5.6 × 10⁻¹¹ vs 4.3 × 10⁻⁷), the second dissociation contributes negligibly to [H⁺]. We only need to consider the first dissociation: H₂CO₃ (aq) ⇌ H⁺ (aq) + HCO₃⁻ (aq).</p></p>
-<p><p>Set up the ICE table with C₀ = 0.10 mol dm⁻³. Using the approximation x = √(Ka₁ × C₀):</p></p>
-<p><p>x = √(4.3 × 10⁻⁷ × 0.10) = √(4.3 × 10⁻⁸) = √4.3 × √10⁻⁸ = 2.07 × 10⁻⁴ mol dm⁻³.</p></p>
-<p><p>Check the approximation: percentage dissociation = (2.07 × 10⁻⁴ ÷ 0.10) × 100% = 0.21%. This is far less than 5%, so the approximation is valid.</p></p>
-<p><p>[H⁺] = 2.07 × 10⁻⁴ mol dm⁻³.</p></p>
-<p><p>pH = −log(2.07 × 10⁻⁴) = −[log(2.07) + log(10⁻⁴)] = −[0.316 + (−4.00)] = −(−3.68) = 3.68.</p></p>
-<p><p><strong>Why this makes sense:</strong> Carbonic acid is a very weak acid (Ka₁ = 4.3 × 10⁻⁷), so even at 0.10 mol dm⁻³, the [H⁺] is only 2.07 × 10⁻⁴ mol dm⁻³. The pH of 3.68 is typical for a very weak diprotic acid. The H⁺ contributed by the second dissociation (approximately √(Ka₂ × [HCO₃⁻])) would be about √(5.6 × 10⁻¹¹ × 2.07 × 10⁻⁴) ≈ 1 × 10⁻⁷ mol dm⁻³, which is negligible compared to 2.07 × 10⁻⁴.</p></p>
-</div>
-<h2>3. Salt Hydrolysis — Why Salt Solutions Are Not Always Neutral</h2>
-<h3>The misconception about salts</h3>
-<p>Many students think that all salt solutions are neutral because salts are the product of acid-base neutralisation. This is incorrect. When a salt dissolves in water, its ions may react with water molecules in a process called <strong>hydrolysis</strong>. The word "hydrolysis" comes from "hydro" (water) and "lysis" (breaking). In this context, it means that the ions break apart water molecules by pulling off either H⁺ or OH⁻.</p>
-<p>Whether a salt solution is acidic, basic, or neutral depends entirely on the acid and base from which the salt was formed.</p>
-<h3>The four categories of salts</h3>
-<p><strong>Category 1: Salt from a strong acid and a strong base.</strong></p>
-<p>Example: sodium chloride, NaCl, formed from HCl (strong acid) and NaOH (strong base).</p>
-<p>When NaCl dissolves: NaCl (s) → Na⁺ (aq) + Cl⁻ (aq). The Na⁺ ion comes from NaOH, a strong base. Ions from strong bases (Na⁺, K⁺, Ba²⁺) do not hydrolyse because their conjugate bases (NaOH, KOH, Ba(OH)₂) are completely dissociated — there is no tendency for the reverse reaction. The Cl⁻ ion comes from HCl, a strong acid. Ions from strong acids (Cl⁻, NO₃⁻, Br⁻, I⁻) do not hydrolyse because their conjugate acids are completely dissociated. Since neither ion hydrolyses, the solution is <strong>neutral</strong> (pH ≈ 7).</p>
-<p><strong>Category 2: Salt from a strong acid and a weak base.</strong></p>
-<p>Example: ammonium chloride, NH₄Cl, formed from HCl (strong acid) and NH₃ (weak base).</p>
-<p>The Cl⁻ ion does not hydrolyse (from strong acid). The NH₄⁺ ion comes from the weak base NH₃, so NH₄⁺ is the conjugate acid of a weak base. It hydrolyses:</p>
-<p>$$\ce{NH4+(aq) + H2O(l) <=> NH3(aq) + H3O+(aq)}$$</p>
-<p>This reaction produces H₃O⁺, making the solution <strong>acidic</strong> (pH < 7).</p>
-<p><strong>Category 3: Salt from a weak acid and a strong base.</strong></p>
-<p>Example: sodium ethanoate, CH₃COONa, formed from CH₃COOH (weak acid) and NaOH (strong base).</p>
-<p>The Na⁺ ion does not hydrolyse (from strong base). The CH₃COO⁻ ion comes from the weak acid CH₃COOH, so CH₃COO⁻ is the conjugate base of a weak acid. It hydrolyses:</p>
-<p>$$\ce{CH3COO-(aq) + H2O(l) <=> CH3COOH(aq) + OH-(aq)}$$</p>
-<p>This reaction produces OH⁻, making the solution <strong>basic</strong> (pH > 7).</p>
-<p><strong>Category 4: Salt from a weak acid and a weak base.</strong></p>
-<p>Example: ammonium ethanoate, CH₃COONH₄, formed from CH₃COOH (weak acid) and NH₃ (weak base).</p>
-<p>Both ions hydrolyse. The NH₄⁺ ion produces H₃O⁺ (acidic), and the CH₃COO⁻ ion produces OH⁻ (basic). The overall pH depends on the relative strengths of the acid and base: if Ka of the weak acid is greater than Kb of the weak base, the solution is acidic; if Kb is greater than Ka, the solution is basic; if they are equal, the solution is approximately neutral (this is rare).</p>
-<h3>A quick rule</h3>
-<p>To predict whether a salt solution is acidic or basic, identify the "parent" acid and base. If the parent acid is strong and the parent base is strong, the salt is neutral. If the parent acid is strong and the parent base is weak, the salt is acidic. If the parent acid is weak and the parent base is strong, the salt is basic.</p>
-<div class="worked">
-<p><p><strong>Worked Example 3:</strong> Predict whether an aqueous solution of each of the following salts will be acidic, basic, or neutral. (a) Potassium nitrate, KNO₃. (b) Copper(II) sulfate, CuSO₄. (c) Sodium carbonate, Na₂CO₃.</p></p>
-<p><p><strong>Strategy:</strong> Identify the parent acid and base for each ion. Determine whether each ion hydrolyses.</p></p>
-<p><p><strong>(a) KNO₃:</strong> K⁺ comes from KOH (strong base) — does not hydrolyse. NO₃⁻ comes from HNO₃ (strong acid) — does not hydrolyse. Both ions are spectators. Solution is <strong>neutral</strong>.</p></p>
-<p><p><strong>(b) CuSO₄:</strong> Cu²⁺ comes from Cu(OH)₂ (weak base, nearly insoluble) — the Cu²⁺ ion hydrolyses. In aqueous solution, the copper(II) ion exists as [Cu(H₂O)₆]²⁺. This hydrated ion can donate a proton: [Cu(H₂O)₆]²⁺ (aq) ⇌ [Cu(H₂O)₅(OH)]⁺ (aq) + H⁺ (aq). Small, highly charged metal ions like Cu²⁺, Fe³⁺, and Al³⁺ are acidic in water. SO₄²⁻ comes from H₂SO₄ — the first proton of H₂SO₄ is strong, but the second (from HSO₄⁻) is weak, so SO₄²⁻ can hydrolyse slightly: SO₄²⁻ (aq) + H₂O (l) ⇌ HSO₄⁻ (aq) + OH⁻ (aq). However, the acidic effect of Cu²⁺ generally dominates. Solution is <strong>acidic</strong>.</p></p>
-<p><p><strong>(c) Na₂CO₃:</strong> Na⁺ comes from NaOH (strong base) — does not hydrolyse. CO₃²⁻ comes from HCO₃⁻ (a very weak acid, Ka₂ of H₂CO₃ is 5.6 × 10⁻¹¹) — the carbonate ion hydrolyses: CO₃²⁻ (aq) + H₂O (l) ⇌ HCO₃⁻ (aq) + OH⁻ (aq). Solution is <strong>basic</strong>.</p></p>
-</div>
-<h2>4. Calculating the pH of a Salt Solution</h2>
-<h3>The method</h3>
-<p>When a salt contains an ion that hydrolyses, the pH calculation is similar to a weak acid or weak base calculation, but you must first find the appropriate Ka or Kb for the hydrolysing ion.</p>
-<p>For the anion of a weak acid (A⁻), the hydrolysis reaction is: A⁻ (aq) + H₂O (l) ⇌ HA (aq) + OH⁻ (aq). The equilibrium constant for this reaction is Kb for A⁻:</p>
-<p>$$K_b(\ce{A-}) = \frac{K_w}{K_a(\ce{HA})}$$</p>
-<p>Once you have Kb, treat it as a weak base problem: find [OH⁻] using [OH⁻] = √(Kb × C₀), then pOH = −log[OH⁻], and pH = 14 − pOH (at 298 K).</p>
-<p>For the cation of a weak base (for example, NH₄⁺), the hydrolysis is: NH₄⁺ (aq) + H₂O (l) ⇌ NH₃ (aq) + H₃O⁺ (aq). Here, Ka for NH₄⁺ is:</p>
-<p>$$K_a(\ce{NH4+}) = \frac{K_w}{K_b(\ce{NH3})}$$</p>
-<p>Treat this as a weak acid problem: find [H⁺] directly.</p>
-<div class="worked">
-<p><p><strong>Worked Example 4:</strong> Calculate the pH of a solution of sodium ethanoate, CH₃COONa, with a concentration of 0.10 mol dm⁻³ at 298 K. The Ka of ethanoic acid, CH₃COOH, is 1.8 × 10⁻⁵ mol dm⁻³ and Kw is 1.0 × 10⁻¹⁴.</p></p>
-<p><p><strong>Strategy:</strong> CH₃COONa dissolves to give Na⁺ (spectator) and CH₃COO⁻ (which hydrolyses). First, find Kb for CH₃COO⁻, then treat as a weak base problem.</p></p>
-<p><p>Kb(CH₃COO⁻) = Kw ÷ Ka(CH₃COOH) = (1.0 × 10⁻¹⁴) ÷ (1.8 × 10⁻⁵).</p></p>
-<p><p>Kb = (1.0 ÷ 1.8) × (10⁻¹⁴ ÷ 10⁻⁵) = 0.556 × 10⁻⁹ = 5.6 × 10⁻¹⁰ mol dm⁻³.</p></p>
-<p><p>The hydrolysis reaction is: CH₃COO⁻ (aq) + H₂O (l) ⇌ CH₃COOH (aq) + OH⁻ (aq).</p></p>
-<p><p>Using the approximation: [OH⁻] = √(Kb × C₀) = √(5.6 × 10⁻¹⁰ × 0.10) = √(5.6 × 10⁻¹¹).</p></p>
-<p><p>[OH⁻] = √5.6 × √10⁻¹¹ = 2.37 × 10⁻⁵·⁵ ... Let me be more careful: √(5.6 × 10⁻¹¹) = √(56 × 10⁻¹²) = √56 × 10⁻⁶ ≈ 7.48 × 10⁻⁶ mol dm⁻³.</p></p>
-<p><p>pOH = −log(7.48 × 10⁻⁶) = −[log(7.48) + log(10⁻⁶)] = −[0.874 + (−6.00)] = −(−5.126) = 5.13.</p></p>
-<p><p>pH = 14.00 − 5.13 = 8.87.</p></p>
-<p><p><strong>Why this makes sense:</strong> Sodium ethanoate is the salt of a weak acid and a strong base, so we expect a basic solution. A pH of 8.87 is mildly basic, which is consistent with this expectation. The conjugate base of a weak acid with Ka of 10⁻⁵ should produce a mildly basic solution — this is confirmed by the calculation.</p></p>
-</div>
-<h2>5. Comparing the Three Acid-Base Theories</h2>
-<table>
-<tr><th>Theory</th><th>Definition of an acid</th><th>Definition of a base</th><th>Limitation</th></tr>
-<tr><td>Arrhenius (1884)</td><td>Produces H⁺ in water</td><td>Produces OH⁻ in water</td><td>Only applies to aqueous solutions; cannot explain why NH₃ is a base</td></tr>
-<tr><td>Brønsted-Lowry (1923)</td><td>Proton (H⁺) donor</td><td>Proton (H⁺) acceptor</td><td>Requires H⁺ transfer; cannot explain reactions like BF₃ + NH₃</td></tr>
-<tr><td>Lewis (1923)</td><td>Electron pair acceptor</td><td>Electron pair donor</td><td>The most general — covers all acid-base reactions</td></tr>
-<p>The Lewis theory is the broadest. It includes all Brønsted-Lowry acids and bases, which in turn include all Arrhenius acids and bases. As you move from Arrhenius to Brønsted-Lowry to Lewis, the definitions become progressively more general and encompass more chemical reactions.</p>
-</table>
-<h2>Practice Problems</h2>
-<p><strong>Problem 1:</strong> For each of the following reactions, identify the Lewis acid and the Lewis base. Explain your reasoning for each case by describing what happens with the electron pairs. (a) Carbon dioxide gas reacts with the hydroxide ion in aqueous solution: CO₂ (g) + OH⁻ (aq) → HCO₃⁻ (aq). (b) Iron(III) ions react with water molecules to form a hydrated complex: Fe³⁺ (aq) + 6H₂O (l) → [Fe(H₂O)₆]³⁺ (aq). (c) Sulfur trioxide gas reacts with water: SO₃ (g) + H₂O (l) → H₂SO₄ (aq).</p>
-<p><strong>Problem 2:</strong> Predict whether an aqueous solution of each of the following salts will be acidic, basic, or neutral. In each case, write the hydrolysis equation for any ion that reacts with water. (a) Sodium chloride, NaCl. (b) Ammonium nitrate, NH₄NO₃. (c) Potassium carbonate, K₂CO₃. (d) Ammonium chloride, NH₄Cl.</p>
-<p><strong>Problem 3:</strong> Calculate the pH of a solution of hydrogen sulfide, H₂S, with a concentration of 0.050 mol dm⁻³ at 298 K. The acid dissociation constants are Ka₁ = 1.0 × 10⁻⁷ mol dm⁻³ and Ka₂ = 1.0 × 10⁻¹⁴ mol dm⁻³. Neglect the contribution from the second dissociation.</p>
-<p><strong>Problem 4:</strong> Calculate the pH of a solution of sodium cyanide, NaCN, with a concentration of 0.20 mol dm⁻³ at 298 K. The Ka of hydrocyanic acid, HCN, is 6.2 × 10⁻¹⁰ mol dm⁻³ and Kw is 1.0 × 10⁻¹⁴.</p>
-<p><strong>Problem 5 (IB-style):</strong> (a) Iron(III) chloride, FeCl₃, dissolves in water to form an acidic solution. Explain why this solution is acidic, writing a balanced chemical equation with state symbols for the hydrolysis reaction that occurs. (b) Phosphoric acid, H₃PO₄, is a triprotic acid with the following dissociation constants at 298 K: Ka₁ = 7.5 × 10⁻³ mol dm⁻³, Ka₂ = 6.2 × 10⁻⁸ mol dm⁻³, and Ka₃ = 4.8 × 10⁻¹³ mol dm⁻³. Explain, in terms of electrostatic forces, why Ka₁ is so much larger than Ka₂. (c) Calculate the pH of a solution of phosphoric acid, H₃PO₄, with a concentration of 0.10 mol dm⁻³. You may consider only the first dissociation step. (d) The salt sodium dihydrogen phosphate, NaH₂PO₄, dissolves in water. A student claims that this salt solution should be neutral because it contains Na⁺ (from a strong base) and H₂PO₄⁻ (an anion). Evaluate this claim by discussing the amphiprotic nature of H₂PO₄⁻. State whether the solution is actually acidic, basic, or approximately neutral, and justify your answer using relevant Ka and Kb values.</p>
-<h2>Answers</h2>
-<h3>Answer 1</h3>
-<p><strong>(a) CO₂ + OH⁻ → HCO₃⁻:</strong> In carbon dioxide, the carbon atom is bonded to two oxygen atoms by double bonds. The carbon atom has a partial positive charge because oxygen is more electronegative. The carbon atom in CO₂ can accept an electron pair from a nucleophile. The hydroxide ion, OH⁻, has three lone pairs on the oxygen atom. The hydroxide ion donates one of its lone pairs to the carbon atom of CO₂, forming a new C—O bond. Therefore, CO₂ is the Lewis acid (electron pair acceptor) and OH⁻ is the Lewis base (electron pair donor).</p>
-<p><strong>(b) Fe³⁺ + 6H₂O → [Fe(H₂O)₆]³⁺:</strong> The iron(III) ion, Fe³⁺, has empty orbitals in its 3d, 4s, and 4p subshells. It can accept electron pairs. Each water molecule has two lone pairs on its oxygen atom. Six water molecules each donate one lone pair to the iron(III) ion, forming six Fe—O coordinate covalent bonds. Therefore, Fe³⁺ is the Lewis acid and H₂O is the Lewis base.</p>
-<p><strong>(c) SO₃ + H₂O → H₂SO₄:</strong> In sulfur trioxide, the sulfur atom is bonded to three oxygen atoms. The sulfur atom in SO₃ has an incomplete octet (or can expand its octet to accept electron pairs). It accepts an electron pair from the oxygen atom of a water molecule. Water donates a lone pair from its oxygen atom. Therefore, SO₃ is the Lewis acid and H₂O is the Lewis base.</p>
-<h3>Answer 2</h3>
-<p><strong>(a) NaCl:</strong> Na⁺ comes from NaOH (strong base) — does not hydrolyse. Cl⁻ comes from HCl (strong acid) — does not hydrolyse. The solution is neutral.</p>
-<p><strong>(b) NH₄NO₃:</strong> NH₄⁺ comes from NH₃ (weak base) — hydrolyses: NH₄⁺ (aq) + H₂O (l) ⇌ NH₃ (aq) + H₃O⁺ (aq). NO₃⁻ comes from HNO₃ (strong acid) — does not hydrolyse. The solution is acidic.</p>
-<p><strong>(c) K₂CO₃:</strong> K⁺ comes from KOH (strong base) — does not hydrolyse. CO₃²⁻ comes from HCO₃⁻ (very weak acid) — hydrolyses: CO₃²⁻ (aq) + H₂O (l) ⇌ HCO₃⁻ (aq) + OH⁻ (aq). The solution is basic.</p>
-<p><strong>(d) NH₄Cl:</strong> NH₄⁺ comes from NH₃ (weak base) — hydrolyses: NH₄⁺ (aq) + H₂O (l) ⇌ NH₃ (aq) + H₃O⁺ (aq). Cl⁻ comes from HCl (strong acid) — does not hydrolyse. The solution is acidic.</p>
-<h3>Answer 3</h3>
-<p>Only the first dissociation (Ka₁ = 1.0 × 10⁻⁷) is considered. Ka₂ (1.0 × 10⁻¹⁴) is 10⁷ times smaller and contributes negligibly.</p>
-<p>The first dissociation: H₂S (aq) ⇌ H⁺ (aq) + HS⁻ (aq), Ka₁ = 1.0 × 10⁻⁷.</p>
-<p>Using the approximation: x = √(Ka₁ × C₀) = √(1.0 × 10⁻⁷ × 0.050) = √(5.0 × 10⁻⁹).</p>
-<p>x = √5.0 × √10⁻⁹ = 2.236 × 10⁻⁴·⁵ = 7.07 × 10⁻⁵ mol dm⁻³.</p>
-<p>Check: percentage dissociation = (7.07 × 10⁻⁵ ÷ 0.050) × 100% = 0.14%. This is far less than 5%, so the approximation is valid.</p>
-<p>[H⁺] = 7.07 × 10⁻⁵ mol dm⁻³.</p>
-<p>pH = −log(7.07 × 10⁻⁵) = −[log(7.07) + log(10⁻⁵)] = −[0.849 + (−5.00)] = −(−4.151) = 4.15.</p>
-<h3>Answer 4</h3>
-<p>NaCN dissolves to give Na⁺ (spectator) and CN⁻ (which hydrolyses).</p>
-<p>Kb(CN⁻) = Kw ÷ Ka(HCN) = (1.0 × 10⁻¹⁴) ÷ (6.2 × 10⁻¹⁰).</p>
-<p>Kb = (1.0 ÷ 6.2) × (10⁻¹⁴ ÷ 10⁻¹⁰) = 0.1613 × 10⁻⁴ = 1.61 × 10⁻⁵ mol dm⁻³.</p>
-<p>The hydrolysis reaction is: CN⁻ (aq) + H₂O (l) ⇌ HCN (aq) + OH⁻ (aq).</p>
-<p>[OH⁻] = √(Kb × C₀) = √(1.61 × 10⁻⁵ × 0.20) = √(3.22 × 10⁻⁶).</p>
-<p>[OH⁻] = √3.22 × √10⁻⁶ = 1.795 × 10⁻³ mol dm⁻³.</p>
-<p>pOH = −log(1.795 × 10⁻³) = −[log(1.795) + log(10⁻³)] = −[0.254 + (−3.00)] = −(−2.746) = 2.75.</p>
-<p>pH = 14.00 − 2.75 = 11.25.</p>
-<p>This strongly basic pH makes sense because HCN is an extremely weak acid (Ka = 6.2 × 10⁻¹⁰, pKa = 9.21), meaning its conjugate base CN⁻ is a relatively strong base (Kb ≈ 1.6 × 10⁻⁵, similar to ammonia).</p>
-<h3>Answer 5</h3>
-<p><strong>(a)</strong> When iron(III) chloride dissolves in water, it dissociates: FeCl₃ (s) → Fe³⁺ (aq) + 3Cl⁻ (aq). The chloride ions do not hydrolyse because they come from HCl, a strong acid. However, the Fe³⁺ ion is small and highly charged (charge density is high). In water, Fe³⁺ becomes hydrated, forming the complex ion [Fe(H₂O)₆]³⁺ (aq). The high positive charge on the iron pulls electron density away from the O—H bonds in the coordinated water molecules, weakening them. This allows one of the water molecules to lose a proton:</p>
-<p>[Fe(H₂O)₆]³⁺ (aq) ⇌ [Fe(H₂O)₅(OH)]²⁺ (aq) + H⁺ (aq)</p>
-<p>The release of H⁺ makes the solution acidic. This is a general property of small, highly charged metal cations (such as Fe³⁺, Al³⁺, Cr³⁺, and Cu²⁺).</p>
-<p><strong>(b)</strong> Ka₁ (7.5 × 10⁻³) is approximately 1.2 × 10⁵ times larger than Ka₂ (6.2 × 10⁻⁸). The reason is electrostatic: it is much harder to remove a positively charged proton from a negatively charged ion than from a neutral molecule. In the first dissociation, a proton is removed from neutral H₃PO₄. In the second dissociation, a proton must be removed from H₂PO₄⁻, which carries a charge of −1. The electrostatic attraction between the negatively charged ion and the positively charged proton makes the second proton much harder to remove. By the third dissociation, the proton must be removed from HPO₄²⁻ (charge −2), making it even harder — Ka₃ is only 4.8 × 10⁻¹³. Each successive negative charge increases the electrostatic grip on the remaining protons.</p>
-<p><strong>(c)</strong> Only the first dissociation is considered: H₃PO₄ (aq) ⇌ H⁺ (aq) + H₂PO₄⁻ (aq), Ka₁ = 7.5 × 10⁻³.</p>
-<p>Using the approximation: x = √(Ka₁ × C₀) = √(7.5 × 10⁻³ × 0.10) = √(7.5 × 10⁻⁴).</p>
-<p>x = √7.5 × √10⁻⁴ = 2.74 × 10⁻² mol dm⁻³.</p>
-<p>Check the approximation: percentage dissociation = (2.74 × 10⁻² ÷ 0.10) × 100% = 27.4%. This is well above 5%, so the approximation is not strictly valid. However, at the IB HL level, this simplified answer is generally accepted. If we solved the quadratic, we would get x² + 7.5×10⁻³x − 7.5×10⁻⁴ = 0, and the exact x ≈ 2.39 × 10⁻² mol dm⁻³.</p>
-<p>[H⁺] ≈ 2.74 × 10⁻² mol dm⁻³.</p>
-<p>pH = −log(2.74 × 10⁻²) = −[log(2.74) + log(10⁻²)] = −[0.438 + (−2.00)] = −(−1.562) = 1.56.</p>
-<p><strong>(d)</strong> The student's claim is incorrect. Sodium dihydrogen phosphate, NaH₂PO₄, dissociates in water to Na⁺ (aq) and H₂PO₄⁻ (aq). Na⁺ is a spectator — it comes from NaOH, a strong base, and does not hydrolyse. However, H₂PO₄⁻ is amphiprotic: it can act as both an acid and a base.</p>
-<p>As an acid (donating a proton): H₂PO₄⁻ (aq) ⇌ HPO₄²⁻ (aq) + H⁺ (aq). The equilibrium constant for this is Ka₂ = 6.2 × 10⁻⁸.</p>
-<p>As a base (accepting a proton): H₂PO₄⁻ (aq) + H⁺ (aq) ⇌ H₃PO₄ (aq). The equilibrium constant for this is Kb = Kw ÷ Ka₁ = (1.0 × 10⁻¹⁴) ÷ (7.5 × 10⁻³) = 1.33 × 10⁻¹².</p>
-<p>Now compare the two tendencies: Ka₂ (6.2 × 10⁻⁸) is much larger than Kb (1.33 × 10⁻¹²). Since Ka₂ >> Kb, the acidic behaviour of H₂PO₄⁻ dominates over its basic behaviour. The solution produces more H⁺ than OH⁻, making it acidic. The actual pH of a NaH₂PO₄ solution is approximately 4.7, which is indeed acidic (pH < 7). The solution is not neutral.</p>
 
-<div class="nav">
-  <a href="lesson_30.html">&larr; Previous Lesson</a>
-  <a href="../index.html">&uarr; Lesson Index</a>
-  <a href="lesson_32.html">Next Lesson &rarr;</a>
+<!-- SECTION B -->
+<h2>1. Prior Knowledge Check</h2>
+
+<p><b>Question 1:</b> Define a Brønsted–Lowry acid and base.</p>
+<div class="check-in">
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">A <b>Brønsted–Lowry acid</b> is a proton ($\ce{H+}$) donor. A <b>Brønsted–Lowry base</b> is a proton acceptor. This theory focuses exclusively on proton transfer.</div>
 </div>
+
+<p><b>Question 2:</b> What is a polyprotic acid? Give an example.</p>
+<div class="check-in">
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">A <b>polyprotic acid</b> can donate more than one proton per molecule. Examples: $\ce{H2SO4}$ (diprotic), $\ce{H3PO4}$ (triprotic). Each proton is lost in a separate step with its own $K_a$ value.</div>
+</div>
+
+<!-- SECTION C -->
+<h2>2. Lewis Acid–Base Theory</h2>
+
+<p>Brønsted–Lowry theory explains most acid–base chemistry but is limited to <b>proton transfer</b>. In 1923, Gilbert N. Lewis proposed a more general definition:</p>
+
+<div class="definition" style="background:#fdf5e6;border-left:4px solid #d4a017;padding:0.6rem 1rem;margin:0.8rem 0;border-radius:0 8px 8px 0;">
+<b>Lewis definitions:</b><br>
+• <b>Lewis acid:</b> An <b>electron-pair acceptor</b> — has an empty orbital to receive electrons.<br>
+• <b>Lewis base:</b> An <b>electron-pair donor</b> — has a lone pair of electrons to donate.<br>
+• <b>Coordinate (dative) covalent bond</b> forms when the base donates its lone pair to the acid.
+</div>
+
+<p><b>All Brønsted–Lowry bases are also Lewis bases</b> (they have lone pairs). But Lewis acids include species that have <em>no protons at all</em> — e.g., $\ce{BF3}$, $\ce{AlCl3}$, and transition metal cations like $\ce{Cu^{2+}}$ and $\ce{Fe^{3+}}$.</p>
+
+<div class="diagram">
+<svg width="550" height="220" viewBox="0 0 550 220">
+  <text x="275" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c5f2d">Lewis Acid–Base: BF₃ + NH₃ → F₃B–NH₃</text>
+  <!-- BF3 -->
+  <circle cx="130" cy="120" r="28" fill="#ffebee" stroke="#c62828" stroke-width="2"/>
+  <text x="130" y="116" text-anchor="middle" font-size="13" font-weight="bold" fill="#c62828">BF₃</text>
+  <text x="130" y="162" text-anchor="middle" font-size="11" fill="#c62828">Lewis ACID</text>
+  <text x="130" y="178" text-anchor="middle" font-size="10" fill="#555">(e⁻-pair acceptor)</text>
+  <text x="130" y="195" text-anchor="middle" font-size="10" fill="#555">B has empty 2p orbital</text>
+  <!-- NH3 -->
+  <circle cx="420" cy="120" r="28" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+  <text x="420" y="116" text-anchor="middle" font-size="13" font-weight="bold" fill="#1565c0">NH₃</text>
+  <text x="420" y="162" text-anchor="middle" font-size="11" fill="#1565c0">Lewis BASE</text>
+  <text x="420" y="178" text-anchor="middle" font-size="10" fill="#555">(e⁻-pair donor)</text>
+  <text x="420" y="195" text-anchor="middle" font-size="10" fill="#555">N has lone pair</text>
+  <!-- Arrow from NH3 to BF3 -->
+  <line x1="162" y1="110" x2="388" y2="110" stroke="#2c5f2d" stroke-width="2" marker-end="url(#arrDonor)"/>
+  <text x="275" y="100" text-anchor="middle" font-size="11" fill="#2c5f2d">lone pair donated</text>
+  <text x="275" y="140" text-anchor="middle" font-size="11" fill="#e65100">→ coordinate covalent bond forms</text>
+  <defs><marker id="arrDonor" markerWidth="10" markerHeight="6" refX="10" refY="3" orient="auto"><path d="M0,0 L10,3 L0,6 Z" fill="#2c5f2d"/></marker></defs>
+</svg>
+<div class="caption">Figure 1: BF₃ (electron-deficient boron) accepts a lone pair from NH₃. No proton is transferred — this is purely a Lewis acid–base reaction.</div>
+</div>
+
+<div class="check-in">
+<p><b>Check-in:</b> Classify each as Lewis acid (LA) or Lewis base (LB): (a) $\ce{OH-}$, (b) $\ce{AlCl3}$, (c) $\ce{Fe^{3+}}$, (d) $\ce{H2O}$.</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">(a) LB — has lone pairs on O. (b) LA — Al has an incomplete octet (6 electrons). (c) LA — Fe³⁺ is a cation with empty d-orbitals. (d) LB — water has two lone pairs on oxygen (and can act as a ligand).</div>
+</div>
+
+<h2>3. Polyprotic Acids</h2>
+
+<p>A <b>polyprotic acid</b> dissociates in <b>steps</b>, each with its own $K_a$. The first proton is always the easiest to lose; subsequent dissociations are progressively weaker because it's harder to remove $\ce{H+}$ from a negatively charged species.</p>
+
+<h3>3.1 Diprotic Example: Carbonic Acid ($\ce{H2CO3}$)</h3>
+
+$$\ce{H2CO3 <=> H+ + HCO3-} \qquad K_{a1} = 4.3 \times 10^{-7}$$
+$$\ce{HCO3- <=> H+ + CO3^{2-}} \qquad K_{a2} = 5.6 \times 10^{-11}$$
+
+<p>Notice: $K_{a2} \ll K_{a1}$ (by a factor of ~10⁴). The second dissociation is far weaker.</p>
+
+<h3>3.2 Triprotic Example: Phosphoric Acid ($\ce{H3PO4}$)</h3>
+
+<p>$K_{a1} = 7.1 \times 10^{-3}$, $K_{a2} = 6.3 \times 10^{-8}$, $K_{a3} = 4.2 \times 10^{-13}$. Each step is ~10⁵ weaker than the previous one.</p>
+
+<div class="diagram">
+<svg width="520" height="200" viewBox="0 0 520 200">
+  <text x="260" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c5f2d">Polyprotic Acid Dissociation — H₃PO₄</text>
+  <rect x="30" y="35" width="140" height="55" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+  <text x="100" y="58" text-anchor="middle" font-size="11" font-weight="bold">Step 1</text>
+  <text x="100" y="76" text-anchor="middle" font-size="10" fill="#1565c0">H₃PO₄ → H⁺ + H₂PO₄⁻</text>
+  <text x="100" y="92" text-anchor="middle" font-size="10" fill="#e65100">Kₐ₁ = 7.1×10⁻³</text>
+  <line x1="170" y1="62" x2="195" y2="62" stroke="#333" stroke-width="2" marker-end="url(#a1)"/>
+  <rect x="200" y="35" width="140" height="55" rx="8" fill="#fff8e1" stroke="#d4a017" stroke-width="2"/>
+  <text x="270" y="58" text-anchor="middle" font-size="11" font-weight="bold">Step 2</text>
+  <text x="270" y="76" text-anchor="middle" font-size="10">H₂PO₄⁻ → H⁺ + HPO₄²⁻</text>
+  <text x="270" y="92" text-anchor="middle" font-size="10" fill="#e65100">Kₐ₂ = 6.3×10⁻⁸</text>
+  <line x1="340" y1="62" x2="365" y2="62" stroke="#333" stroke-width="2" marker-end="url(#a1)"/>
+  <rect x="370" y="35" width="130" height="55" rx="8" fill="#ffebee" stroke="#c62828" stroke-width="2"/>
+  <text x="435" y="58" text-anchor="middle" font-size="11" font-weight="bold">Step 3</text>
+  <text x="435" y="76" text-anchor="middle" font-size="10">HPO₄²⁻ → H⁺ + PO₄³⁻</text>
+  <text x="435" y="92" text-anchor="middle" font-size="10" fill="#e65100">Kₐ₃ = 4.2×10⁻¹³</text>
+  <text x="260" y="125" text-anchor="middle" font-size="11" fill="#555">Each step is ~10⁵× weaker — removing H⁺ from more negative ion is harder.</text>
+  <text x="260" y="155" text-anchor="middle" font-size="12" font-weight="bold" fill="#2c5f2d">For pH calculation: only Kₐ₁ matters unless concentrations are very low.</text>
+  <text x="260" y="175" text-anchor="middle" font-size="10" fill="#555">(H⁺ from Kₐ₂ and Kₐ₃ is negligible — typically < 1% of total H⁺)</text>
+  <defs><marker id="a1" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#333"/></marker></defs>
+</svg>
+<div class="caption">Figure 2: Stepwise dissociation of a triprotic acid. In practice, only the first dissociation contributes significantly to [H⁺].</div>
+</div>
+
+<div class="check-in">
+<p><b>Check-in:</b> Calculate the pH of 0.100 mol dm⁻³ $\ce{H2CO3}$ ($K_{a1} = 4.3\times10^{-7}$, $K_{a2} = 5.6\times10^{-11}$). State why you can ignore the second dissociation.</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">Using $K_{a1}$ only: $x = \sqrt{4.3\times10^{-7} \times 0.100} = \sqrt{4.3\times10^{-8}} = 2.07\times10^{-4}$ mol dm⁻³. pH = 3.68. $K_{a2}$ is ~10⁴ times smaller — the $\ce{H+}$ from the second dissociation is negligible (~$5.6\times10^{-11}$ mol dm⁻³).</div>
+</div>
+
+<h2>4. Salt Hydrolysis — Acidic, Basic, or Neutral?</h2>
+
+<p>When a salt dissolves, its ions may react with water — this is called <b>hydrolysis</b>. The pH of the resulting solution depends on the parent acid and base:</p>
+
+<table>
+<tr><th>Salt from</th><th>Example</th><th>Solution pH</th><th>Explanation</th></tr>
+<tr><td>Strong acid + Strong base</td><td>$\ce{NaCl}$, $\ce{KNO3}$</td><td>7 (neutral)</td><td>Neither ion hydrolyses</td></tr>
+<tr><td>Strong acid + Weak base</td><td>$\ce{NH4Cl}$, $\ce{FeCl3}$</td><td>< 7 (acidic)</td><td>Cation hydrolyses: $\ce{NH4+ + H2O <=> NH3 + H3O+}$</td></tr>
+<tr><td>Weak acid + Strong base</td><td>$\ce{CH3COONa}$, $\ce{Na2CO3}$</td><td>> 7 (basic)</td><td>Anion hydrolyses: $\ce{CH3COO- + H2O <=> CH3COOH + OH-}$</td></tr>
+<tr><td>Weak acid + Weak base</td><td>$\ce{CH3COONH4}$</td><td>Depends on $K_a$ vs. $K_b$</td><td>Both ions hydrolyse; compare strengths</td></tr>
+</table>
+
+<div class="check-in">
+<p><b>Check-in:</b> Predict whether solutions of these salts are acidic, basic, or neutral: (a) $\ce{KCl}$, (b) $\ce{NH4NO3}$, (c) $\ce{Na2CO3}$, (d) $\ce{AlCl3}$.</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">(a) Neutral — KOH (strong base) + HCl (strong acid). (b) Acidic — NH₃ (weak base) + HNO₃ (strong acid); NH₄⁺ hydrolyses. (c) Basic — NaOH (strong base) + H₂CO₃ (weak acid); CO₃²⁻ hydrolyses. (d) Acidic — Al(OH)₃ (weak base) + HCl (strong acid); Al³⁺ hydrolyses: $\ce{[Al(H2O)6]^{3+} + H2O <=> [Al(H2O)5(OH)]^{2+} + H3O+}$.</div>
+</div>
+
+<!-- SECTION D -->
+<h2>5. Worked Examples</h2>
+
+<div class="example">
+<b>Example 1 — Identifying Lewis Acid–Base Reactions:</b><br><br>
+Which of these is a Lewis acid–base reaction but NOT a Brønsted–Lowry reaction?<br>
+(a) $\ce{NH3 + HCl -> NH4Cl}$<br>
+(b) $\ce{Cu^{2+} + 4NH3 -> [Cu(NH3)4]^{2+}}$<br>
+(c) $\ce{CH3COOH + NaOH -> CH3COONa + H2O}$<br><br>
+<b>Analysis:</b> (a) Involves proton transfer (HCl donates H⁺ to NH₃) — this is Brønsted–Lowry. (b) Cu²⁺ accepts electron pairs from NH₃, forming coordinate bonds. No proton transfer occurs — this is purely Lewis. (c) Involves proton transfer — Brønsted–Lowry.<br>
+<b>Answer: (b) only.</b><br><br>
+<b>⚠️ Common wrong approach:</b> Thinking all acid–base reactions are proton transfers. Lewis theory is broader — any electron-pair donation/acceptance counts, including complex ion formation.
+</div>
+
+<div class="example">
+<b>Example 2 — pH of a Polyprotic Acid:</b><br><br>
+Calculate the pH of 0.0500 mol dm⁻³ $\ce{H2SO3}$ (sulfurous acid). $K_{a1} = 1.5\times10^{-2}$, $K_{a2} = 1.0\times10^{-7}$.<br><br>
+<b>Step 1:</b> Check if approximation valid for $K_{a1}$: $K_{a1}/c = 1.5\times10^{-2}/0.0500 = 0.30$. This is far above $10^{-3}$ — must solve quadratic!<br>
+<b>Step 2 — Quadratic:</b> $1.5\times10^{-2} = x^2/(0.0500 - x)$. $x^2 + 1.5\times10^{-2}x - 7.5\times10^{-4} = 0$.<br>
+<b>Step 3:</b> $x = [-0.015 + \sqrt{(0.015)^2 + 4\times7.5\times10^{-4}}]/2 = [-0.015 + \sqrt{2.25\times10^{-4} + 3.00\times10^{-3}}]/2 = [-0.015 + 0.0568]/2 = 0.0209$ mol dm⁻³.<br>
+<b>Step 4:</b> pH = $-\log(0.0209) = \mathbf{1.68}$. Ignore $K_{a2}$ — it contributes negligibly.<br><br>
+<b>⚠️ Common wrong approach:</b> Using the approximation for a moderately strong polyprotic acid like H₂SO₃. With $K_a/c = 0.30$, the error would be huge.
+</div>
+
+<div class="example">
+<b>Example 3 — Predicting Salt Hydrolysis pH:</b><br><br>
+Predict whether a 0.100 mol dm⁻³ solution of $\ce{CH3COONH4}$ is acidic, basic, or neutral. $K_a(\ce{CH3COOH}) = 1.8\times10^{-5}$, $K_b(\ce{NH3}) = 1.8\times10^{-5}$.<br><br>
+<b>Analysis:</b> Both ions hydrolyse. For $\ce{CH3COO-}$: $K_b = K_w/K_a = 10^{-14}/1.8\times10^{-5} = 5.6\times10^{-10}$. For $\ce{NH4+}$: $K_a = K_w/K_b = 10^{-14}/1.8\times10^{-5} = 5.6\times10^{-10}$. Since $K_a$ of $\ce{NH4+}$ equals $K_b$ of $\ce{CH3COO-}$, the solution is <b>neutral</b> (pH = 7.00).<br><br>
+<b>⚠️ Common wrong approach:</b> Assuming all salts of a weak acid and weak base are neutral. This is only true if $K_a = K_b$. If $K_a > K_b$, the solution is acidic; if $K_b > K_a$, it's basic.
+</div>
+
+<!-- SECTION F -->
+<div class="misconception">
+<h3>⚠️ Common Mistakes to Avoid</h3>
+<ol>
+  <li><b>Limiting Lewis acids to proton-containing species.</b> Lewis acids include metal cations ($\ce{Cu^{2+}}$, $\ce{Fe^{3+}}$) and electron-deficient molecules ($\ce{BF3}$, $\ce{AlCl3}$) that have no protons at all.</li>
+  <li><b>Treating polyprotic acids as if all protons contribute equally.</b> The first dissociation dominates. Unless the acid is strong in its first step (like $\ce{H2SO4}$), $K_{a2}$ and $K_{a3}$ can be ignored for pH calculations.</li>
+  <li><b>Forgetting that highly charged metal cations (Al³⁺, Fe³⁺) hydrolyse to produce acidic solutions.</b> These cations are surrounded by water ligands that become acidic due to the high charge density polarising O–H bonds.</li>
+  <li><b>Thinking all salts of weak acid + weak base are neutral.</b> The pH depends on the relative magnitudes of $K_a$ and $K_b$ of the ions involved.</li>
+</ol>
+</div>
+
+<!-- SECTION G -->
+<h2>6. End-of-Lesson Practice</h2>
+
+<p><b>Question 1 (Paper 1 style):</b> Which species can act as a Lewis acid but NOT as a Brønsted–Lowry acid?<br>
+A. $\ce{HCl}$ &nbsp; B. $\ce{NH3}$ &nbsp; C. $\ce{BF3}$ &nbsp; D. $\ce{H3O+}$</p>
+
+<p><b>Question 2:</b> Write the two dissociation equations and $K_a$ expressions for the diprotic acid $\ce{H2C2O4}$ (oxalic acid, $K_{a1}=5.9\times10^{-2}$, $K_{a2}=6.4\times10^{-5}$).</p>
+
+<p><b>Question 3:</b> Calculate the pH of 0.0200 mol dm⁻³ $\ce{H2C2O4}$ using $K_{a1}=5.9\times10^{-2}$. Explain why you cannot use the approximation.</p>
+
+<p><b>Question 4:</b> Classify aqueous solutions of these salts as acidic, basic, or neutral: (a) $\ce{K2SO4}$, (b) $\ce{CuSO4}$, (c) $\ce{NaHCO3}$, (d) $\ce{NH4CN}$ ($K_a$ HCN = $6.2\times10^{-10}$, $K_b$ NH₃ = $1.8\times10^{-5}$).</p>
+
+<p><b>Question 5:</b> Write the hydrolysis equation and explain why $\ce{FeCl3}$ solution is acidic. What is the role of $\ce{Fe^{3+}}$ as a Lewis acid?</p>
+
+<button class="practice-toggle" onclick="var a=this.nextElementSibling;a.classList.toggle('open');this.textContent=a.classList.contains('open')?'▴ Hide Answers':'▸ Show Answers'">▸ Show Answers</button>
+<div class="practice-answers">
+
+<p><b>Answer 1:</b> C. BF₃ has no protons to donate (so it's not Brønsted–Lowry), but boron has an empty 2p orbital and can accept an electron pair — making it a Lewis acid. HCl and H₃O⁺ are both Brønsted–Lowry and Lewis acids. NH₃ is a base.</p>
+
+<p><b>Answer 2:</b> Step 1: $\ce{H2C2O4 <=> H+ + HC2O4-}$, $K_{a1} = [\ce{H+}][\ce{HC2O4-}]/[\ce{H2C2O4}]$. Step 2: $\ce{HC2O4- <=> H+ + C2O4^{2-}}$, $K_{a2} = [\ce{H+}][\ce{C2O4^{2-}}]/[\ce{HC2O4-}]$.</p>
+
+<p><b>Answer 3:</b> $K_{a1}/c = 0.059/0.0200 = 2.95 \gg 10^{-3}$, so approximation fails. Solve quadratic: $5.9\times10^{-2} = x^2/(0.0200-x)$. $x^2 + 0.059x - 0.00118 = 0$. $x = [-0.059 + \sqrt{0.003481 + 0.00472}]/2 = [-0.059 + 0.0906]/2 = 0.0158$. pH = $-\log(0.0158) = \mathbf{1.80}$.</p>
+
+<p><b>Answer 4:</b> (a) Neutral — KOH (SB) + H₂SO₄ (SA). (b) Acidic — Cu(OH)₂ (WB) + H₂SO₄ (SA); Cu²⁺ hydrolyses. (c) Basic — NaOH (SB) + H₂CO₃ (WA); HCO₃⁻ hydrolyses to give OH⁻. (d) $K_a$(NH₄⁺) = $10^{-14}/1.8\times10^{-5} = 5.6\times10^{-10}$, $K_b$(CN⁻) = $10^{-14}/6.2\times10^{-10} = 1.6\times10^{-5}$. Since $K_b$(CN⁻) > $K_a$(NH₄⁺), the solution is <b>basic</b>.</p>
+
+<p><b>Answer 5:</b> $\ce{[Fe(H2O)6]^{3+} + H2O <=> [Fe(H2O)5(OH)]^{2+} + H3O+}$. Fe³⁺ has a high charge density (+3) and polarises the O–H bonds of coordinated water molecules, weakening them so they release H⁺. Fe³⁺ acts as a <b>Lewis acid</b> because it accepts electron pairs from water molecules to form the hexaaqua complex — the hydrolysis is a consequence of this Lewis acidity.</p>
+</div>
+
+<!-- SECTION H -->
+<h2>7. Key Terms</h2>
+<table>
+<tr><th>Term</th><th>Definition</th></tr>
+<tr><td>Lewis acid</td><td>An electron-pair acceptor; has an empty orbital (e.g., $\ce{BF3}$, $\ce{Cu^{2+}}$)</td></tr>
+<tr><td>Lewis base</td><td>An electron-pair donor; has a lone pair (e.g., $\ce{NH3}$, $\ce{OH-}$, $\ce{H2O}$)</td></tr>
+<tr><td>Coordinate bond</td><td>A covalent bond where both electrons come from one atom (the Lewis base)</td></tr>
+<tr><td>Polyprotic acid</td><td>An acid that can donate more than one proton per molecule, in stepwise fashion</td></tr>
+<tr><td>$K_{a1}$, $K_{a2}$, $K_{a3}$</td><td>Successive acid dissociation constants; $K_{a1} > K_{a2} > K_{a3}$ always</td></tr>
+<tr><td>Hydrolysis</td><td>Reaction of an ion with water, producing $\ce{H3O+}$ or $\ce{OH-}$ and changing the pH</td></tr>
+<tr><td>Amphiprotic species</td><td>A species that can both donate and accept a proton (e.g., $\ce{HCO3-}$, $\ce{H2O}$)</td></tr>
+<tr><td>Charge density</td><td>The ratio of an ion's charge to its radius; high charge density cations (Al³⁺, Fe³⁺) produce acidic solutions</td></tr>
+</table>
+
+<!-- SECTION I -->
+<h2>8. Exam Tips</h2>
+
+<div class="exam-tip"><b>Paper 1 (Multiple Choice):</b> Questions on Lewis theory often ask "which is a Lewis acid but not a Brønsted acid?" Look for electron-deficient molecules (BF₃, AlCl₃) or transition metal cations. The key is the absence of protons.</div>
+
+<div class="exam-tip"><b>Paper 2 (Structured):</b> For polyprotic acid pH calculations, always state "Assuming $\ce{H+}$ from the second (and third) dissociation is negligible." This shows you understand that $K_{a1}$ dominates. If $K_{a1}/c$ is large, you must solve the quadratic — show the quadratic equation explicitly to earn method marks.</div>
+
+<div class="exam-tip"><b>Salt hydrolysis:</b> When asked to explain why a salt solution is acidic/basic, write the hydrolysis equation, identify the ion responsible, and explain using Brønsted–Lowry (proton transfer) or Lewis (electron-pair acceptance) theory as appropriate. For metal cations like Al³⁺ and Fe³⁺, referencing the hexaaqua complex shows deeper understanding.</div>
+
 </body>
 </html>

@@ -3,429 +3,309 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lesson 8: The Periodic Table — Structure, Trends, and Period 3 Patterns — IB Chemistry HL</title>
-<script>window.MathJax = { loader: {load: ['[tex]/mhchem']}, tex: {packages: {'[+]': ['mhchem']}} };</script>
+<title>Lesson 8 — Chemistry HL — The Periodic Table & Periodic Trends</title>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] },
+  loader: { load: ['[tex]/mhchem'] },
+  tex: { packages: {'[+]': ['mhchem']} }
+};
+</script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
 <style>
-  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Palatino', 'Georgia', serif; background: var(--bg); color: var(--text); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; font-size: 17px; line-height: 1.7; }
-  h1 { font-size: 1.7rem; color: var(--accent); margin-bottom: 0.5rem; }
-  h2 { font-size: 1.25rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; margin: 2rem 0 1rem; }
-  h3 { font-size: 1.1rem; color: #444; margin: 1.3rem 0 0.5rem; }
-  p, li { margin-bottom: 0.6rem; }
-  ul, ol { padding-left: 1.8rem; margin-bottom: 1rem; }
-  .worked { background: #f0f7f0; border-left: 4px solid #2c5f2d; padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
-  .worked strong { color: #2c5f2d; }
-  .answer { background: #fefdf7; border: 1px solid var(--border); padding: 0.8rem 1.2rem; margin: 0.5rem 0; border-radius: 6px; }
-  .nav { display: flex; justify-content: space-between; margin: 3rem 0 1rem; padding-top: 1rem; border-top: 2px solid var(--border); font-size: 0.9rem; }
-  .nav a { color: #1a5c9e; text-decoration: none; }
-  .nav a:hover { text-decoration: underline; }
-  .definition { background: #fdf5e6; border-left: 4px solid #d4a017; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
-  code { background: #f0f0f0; padding: 0.15rem 0.35rem; border-radius: 3px; font-size: 0.9em; }
-  table { border-collapse: collapse; margin: 1rem 0; width: 100%; }
-  th, td { border: 1px solid var(--border); padding: 0.4rem 0.7rem; text-align: left; font-size: 0.95em; }
-  th { background: #f0f7f0; color: var(--accent); }
-  @media print { body { font-size: 14px; } .nav { display: none; } }
-  strong { color: #1a1a1a; }
+:root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Georgia', 'Times New Roman', serif; font-size: 17px; line-height: 1.7; color: var(--text); background: var(--bg); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; }
+h1 { font-size: 1.8rem; color: var(--accent); border-bottom: 3px solid var(--accent); padding-bottom: 0.5rem; margin-bottom: 1rem; }
+h2 { font-size: 1.35rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+h3 { font-size: 1.15rem; color: var(--accent); margin: 1.5rem 0 0.5rem; }
+p { margin-bottom: 0.8rem; }
+.objectives { background: #f0f4ff; border-left: 4px solid var(--accent); padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+.objectives h3 { margin-top: 0; }
+.check-in { background: #fff8e1; border: 1px solid #ffc107; padding: 0.8rem 1rem; margin: 1rem 0; border-radius: 8px; }
+.check-in p { margin-bottom: 0.3rem; }
+.answer-toggle { display: inline-block; padding: 0.2rem 0.8rem; border-radius: 16px; cursor: pointer; font-size: 0.8rem; font-weight: 600; background: #e8f5e9; color: #2e7d32; border: 1px solid #2e7d32; user-select: none; margin-top: 0.3rem; }
+.answer-content { display: none; background: #f1f8e9; padding: 0.6rem 1rem; border-radius: 8px; margin-top: 0.5rem; }
+.answer-content.open { display: block; }
+.example { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem; margin: 1rem 0; }
+.misconception { background: #fff3e0; border-left: 4px solid #e65100; padding: 1rem 1.2rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+.misconception h3 { color: #e65100; }
+.exam-tip { background: #e8f5e9; border-left: 4px solid #2e7d32; padding: 0.8rem 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+th { background: var(--accent); color: white; padding: 0.5rem 0.8rem; text-align: left; }
+td { padding: 0.5rem 0.8rem; border-bottom: 1px solid var(--border); }
+tr:nth-child(even) td { background: #f8f8f6; }
+.diagram { text-align: center; margin: 1.5rem 0; }
+.diagram svg { max-width: 100%; }
+.diagram .caption { font-size: 0.9rem; color: #666; margin-top: 0.3rem; font-style: italic; }
+pre.ascii-art { font-family: 'Courier New', monospace; font-size: 0.75rem; line-height: 1.2; background: #f5f5f5; padding: 0.8rem; border-radius: 8px; overflow-x: auto; }
+.practice-toggle { display: block; width: 100%; padding: 0.8rem; background: var(--accent); color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem; font-weight: 600; margin: 1.5rem 0; }
+.practice-answers { display: none; }
+.practice-answers.open { display: block; }
 </style>
 </head>
 <body>
-<h1>Lesson 8: The Periodic Table — Structure, Trends, and Period 3 Patterns — IB Chemistry HL</h1>
-<h2>What You'll Learn</h2>
-<p>
-This lesson covers five major topics. First, you will learn how the periodic table is organized into groups, periods, and blocks, and what each of those structural features tells you about an element's electron configuration. Second, you will study the trends in atomic radius and ionic radius—why atoms get smaller as you move to the right across a period, why they get larger as you move down a group, and what happens to the size of an atom when it becomes an ion. Third, you will learn about electronegativity, electron affinity, and the related concepts of metallic and non-metallic character, and you will see how these properties change across the periodic table. Fourth, you will examine the acid–base behavior of the oxides of Period 3 elements, learning to write chemical equations for their reactions with water, acids, and bases. Fifth, you will study the chlorides of Period 3, observing how their bonding type shifts from ionic to covalent across the period and what happens when these chlorides react with water.
-</p>
-<hr>
-<h2>1. How the Periodic Table Is Organized</h2>
-<p>
-Before we can discuss trends, we must understand exactly how the periodic table is arranged. The modern periodic table organizes elements by increasing atomic number, which is the number of protons in the nucleus of an atom. The symbol for atomic number is Z. Hydrogen, with one proton, has Z = 1 and sits in the top-left corner. Helium has Z = 2, lithium has Z = 3, and so on all the way to oganesson at Z = 118.
-</p>
-<h3>Groups: The Vertical Columns</h3>
-<p>
-A <strong>group</strong> is a vertical column in the periodic table. The groups are numbered 1 through 18. Every element in the same group has the same number of valence electrons. Valence electrons are the electrons that occupy the outermost shell of an atom, and they are the electrons that participate in chemical bonding. Because elements in the same group share the same arrangement of valence electrons, they tend to have similar chemical properties. For example, all elements in Group 1 (lithium, sodium, potassium, rubidium, cesium) have one valence electron, and all of them react vigorously with water to produce hydrogen gas and a metal hydroxide.
-</p>
-<h3>Periods: The Horizontal Rows</h3>
-<p>
-A <strong>period</strong> is a horizontal row in the periodic table. Elements in the same period all have their outermost electrons in the same principal quantum shell. The principal quantum shell is labeled with the principal quantum number n, which can be 1, 2, 3, and so on. For example, all elements in Period 2 (lithium through neon) have their valence electrons in the n = 2 shell. All elements in Period 3 (sodium through argon) have their valence electrons in the n = 3 shell. As you move from left to right across a period, each successive element has one more proton in the nucleus and one more electron added to the same shell.
-</p>
-<h3>Blocks: s, p, d, and f</h3>
-<p>
-The periodic table is divided into four rectangular regions called <strong>blocks</strong>. The block to which an element belongs tells you which type of atomic subshell is receiving the highest-energy electrons in that element's ground-state electron configuration.
-</p>
-<p>
-The <strong>s-block</strong> contains Groups 1 and 2, plus helium. In these elements, the ns subshell is being filled. Hydrogen has the electron configuration 1s¹. Lithium has 1s² 2s¹. Beryllium has 1s² 2s². The "s" in "s-block" refers to the s subshell, which can hold a maximum of two electrons.
-</p>
-<p>
-The <strong>p-block</strong> contains Groups 13 through 18 (except helium). In these elements, the np subshell is being filled. The p subshell can hold a maximum of six electrons. For example, carbon (Group 14, Period 2) has the electron configuration 1s² 2s² 2p². The "2p²" part means that the 2p subshell is being filled, so carbon is in the p-block.
-</p>
-<p>
-The <strong>d-block</strong> contains Groups 3 through 12. In these elements, the (n−1)d subshell is being filled. For example, iron (Group 8, Period 4) has the electron configuration [Ar] 3d⁶ 4s². The 3d subshell is the one being filled, even though iron is in Period 4. Since n = 4 for Period 4, the filling subshell is (n−1)d, which is the 3d subshell. Elements in the d-block are called transition metals.
-</p>
-<p>
-The <strong>f-block</strong> consists of the two rows placed separately at the bottom of the periodic table: the lanthanides (elements 57–71) and the actinides (elements 89–103). In these elements, the (n−2)f subshell is being filled. For example, cerium (element 58, in the lanthanide series) has a partially filled 4f subshell.
-</p>
-<hr>
-<h2>2. Atomic Radius: How to Measure the Size of an Atom</h2>
-<p>
-An atom does not have a sharp boundary like a billiard ball. Scientists define the <strong>atomic radius</strong> as one-half of the distance between the nuclei of two identical atoms that are bonded to each other. For example, in a molecule of chlorine gas, Cl₂, the distance between the two chlorine nuclei is about 198 picometers (pm). Half of that distance, 99 pm, is taken as the atomic radius of chlorine.
-</p>
-<h3>Trend Across a Period: Atomic Radius Decreases</h3>
-<p>
-When you move from left to right across a period, the atomic radius becomes smaller. Let us understand why this happens by examining Period 3, which runs from sodium (Na, Z = 11) to argon (Ar, Z = 18).
-</p>
-<p>
-As you go from sodium to argon, each step adds one proton to the nucleus. The nuclear charge (the positive charge that attracts electrons) increases steadily from +11 to +18. Each step also adds one electron, but all of these electrons go into the same principal shell, the n = 3 shell. The inner shells (n = 1 and n = 2) remain unchanged, so the shielding effect—the ability of inner electrons to block the outer electrons from feeling the full nuclear charge—stays approximately constant across the period.
-</p>
-<p>
-Because the nuclear charge keeps increasing while the shielding stays the same, the <strong>effective nuclear charge</strong> (Z_eff) experienced by the outer electrons increases. Z_eff is the net positive charge that an outer electron actually feels after some of the nuclear charge has been canceled out by the repulsion of inner electrons. A larger effective nuclear charge means the outer electrons are pulled more tightly toward the nucleus, so the atomic radius shrinks. Sodium has a radius of approximately 186 pm, while chlorine, at the right side of Period 3, has a radius of approximately 99 pm.
-</p>
-<h3>Common Misconception: More Electrons Does Not Mean Larger</h3>
-<p>
-A student might think that adding more electrons should make the atom larger. This is incorrect when moving across a period because all the added electrons go into the same shell. The dominant effect is the increasing nuclear charge, which pulls all the electrons closer. The atom becomes smaller, not larger.
-</p>
-<h3>Trend Down a Group: Atomic Radius Increases</h3>
-<p>
-When you move down a group, the atomic radius becomes larger. Consider Group 1: lithium (Period 2, n = 2), sodium (Period 3, n = 3), potassium (Period 4, n = 4), rubidium (Period 5, n = 5), and cesium (Period 6, n = 6).
-</p>
-<p>
-Each step down the group adds an entirely new principal quantum shell. Lithium has electrons in the n = 1 and n = 2 shells. Sodium adds the n = 3 shell. Potassium adds the n = 4 shell. Each new shell is farther from the nucleus than the previous one, so the outermost electrons are, on average, at a greater distance. Although the nuclear charge also increases (lithium has Z = 3, sodium has Z = 11, potassium has Z = 19), the added inner shells provide extra shielding that largely cancels out the increased nuclear attraction. The net result is that the outer electrons are less tightly held, and the radius increases.
-</p>
-<div class="worked">
-<strong>Worked Example 8.1: Comparing Atomic Radii</strong><br><br>
-<p>
-<strong>Problem:</strong> Arrange the elements magnesium (Mg), calcium (Ca), and barium (Ba) in order of increasing atomic radius. Explain your reasoning.
-</p>
-<p>
-<strong>To solve this, we need to identify the position of each element in the periodic table.</strong> Magnesium is in Group 2, Period 3. Calcium is in Group 2, Period 4. Barium is in Group 2, Period 6. All three are in the same group, which means they have the same number of valence electrons and the same general electron configuration pattern for their outermost shell.
-</p>
-<p>
-Since all three elements are in the same group, the only factor that changes is the number of electron shells. Magnesium has its outermost electrons in the n = 3 shell. Calcium has its outermost electrons in the n = 4 shell. Barium has its outermost electrons in the n = 6 shell. More shells mean a larger atomic radius. Therefore, the order of increasing atomic radius is: magnesium (smallest), then calcium, then barium (largest).
-</p>
-<p>
-<strong>Why this makes sense:</strong> Barium sits two rows below calcium in the periodic table and three rows below magnesium. Each row adds a whole new shell of electrons, which physically extends farther from the nucleus. The increased nuclear charge (Ba has Z = 56 versus Mg with Z = 12) cannot overcome the effect of having so many more electron shells between the nucleus and the outermost electrons.
-</p>
+
+<h1>Lesson 8: The Periodic Table & Periodic Trends</h1>
+
+<p><b>Syllabus reference:</b> 2.2/3.1/3.2 — The periodic table, periodic trends, oxides, group properties</p>
+
+<div class="objectives">
+<h3>Learning Objectives</h3>
+<p>By the end of this lesson, you will be able to:</p>
+<ul>
+  <li><b>Explain</b> how the periodic table is organised by atomic number into groups (vertical) and periods (horizontal).</li>
+  <li><b>Describe and rationalise</b> trends across Period 3 and down groups: atomic radius, ionic radius, ionisation energy, electron affinity, and electronegativity.</li>
+  <li><b>Relate</b> the acid–base character of Period 3 oxides to bonding type and position in the periodic table.</li>
+  <li><b>Compare</b> the chemical behaviour of Group 1 (alkali metals) and Group 17 (halogens), including reactivity trends.</li>
+  <li><b>Predict</b> properties of elements based on their position in the periodic table using trends.</li>
+</ul>
 </div>
-<h2>3. Ionic Radius: What Happens When an Atom Gains or Loses Electrons</h2>
-<p>
-When a neutral atom gains or loses electrons to become an ion, its radius changes significantly. The rules are simple but important.
-</p>
-<h3>Cations (Positive Ions) Are Smaller Than Their Parent Atoms</h3>
-<p>
-A <strong>cation</strong> is a positively charged ion, formed when a neutral atom loses one or more electrons. Metals tend to form cations. When electrons are removed, two things happen. First, there are fewer electrons repelling each other, so the remaining electrons can be drawn closer to the nucleus. Second, in many cases, the atom loses its entire outermost shell. For example, a sodium atom (Na) has the electron configuration 1s² 2s² 2p⁶ 3s¹. When it loses one electron to become Na⁺, the electron configuration becomes 1s² 2s² 2p⁶. The entire n = 3 shell is gone. The Na⁺ ion is therefore much smaller than the neutral Na atom.
-</p>
-<h3>Anions (Negative Ions) Are Larger Than Their Parent Atoms</h3>
-<p>
-An <strong>anion</strong> is a negatively charged ion, formed when a neutral atom gains one or more electrons. Non-metals tend to form anions. When electrons are added, the increased electron–electron repulsion causes the electron cloud to expand. At the same time, the nuclear charge remains the same, but it must now attract a larger number of electrons. The result is that each electron is held less tightly, and the ion becomes larger. For example, a chlorine atom (Cl) gains one electron to become Cl⁻. The Cl⁻ ion has a larger radius than the neutral Cl atom.
-</p>
-<h3>Isoelectronic Series: Same Number of Electrons, Different Sizes</h3>
-<p>
-Two or more species are <strong>isoelectronic</strong> when they have exactly the same total number of electrons. An important isoelectronic series for IB Chemistry is the set of ions and atoms that all have 10 electrons, the same number as a neon atom: N³⁻, O²⁻, F⁻, Ne, Na⁺, Mg²⁺, and Al³⁺. Every member of this series has the electron configuration 1s² 2s² 2p⁶.
-</p>
-<p>
-Even though they all have the same number of electrons, their sizes are very different. The reason is that they have different numbers of protons in their nuclei—that is, different nuclear charges. The nitride ion N³⁻ has only 7 protons pulling on 10 electrons, so the electron cloud is relatively spread out. The aluminum ion Al³⁺ has 13 protons pulling on the same 10 electrons, so the electron cloud is pulled in tightly. The order of decreasing ionic radius in this series is: N³⁻ (largest) > O²⁻ > F⁻ > Ne > Na⁺ > Mg²⁺ > Al³⁺ (smallest). The larger the nuclear charge, the smaller the radius.
-</p>
-<div class="worked">
-<strong>Worked Example 8.2: Comparing Ionic Radii</strong><br><br>
-<p>
-<strong>Problem:</strong> The potassium ion K⁺ and the chloride ion Cl⁻ are both isoelectronic with argon (they all have 18 electrons). Which ion has the smaller radius? Explain.
-</p>
-<p>
-<strong>To solve this, we need to compare the nuclear charges of the two ions.</strong> Both K⁺ and Cl⁻ have a total of 18 electrons, arranged in the configuration 1s² 2s² 2p⁶ 3s² 3p⁶. However, the potassium atom has 19 protons in its nucleus, so K⁺ has a nuclear charge Z = 19. The chlorine atom has 17 protons, so Cl⁻ has a nuclear charge Z = 17.
-</p>
-<p>
-The potassium ion has a greater nuclear charge (19 protons versus 17 protons) pulling on the same number of electrons (18 in both cases). This stronger electrostatic attraction pulls the electron cloud closer to the nucleus. Therefore, K⁺ has the smaller radius. Cl⁻, with fewer protons pulling on the same number of electrons, has a larger radius.
-</p>
-<p>
-<strong>Why this makes sense:</strong> Think of the nucleus as a magnet and the electrons as metal filings. A stronger magnet (more protons) pulls the same number of filings into a tighter cluster. K⁺, with two more protons than Cl⁻, is the "stronger magnet," so its electron cloud is more compact.
-</p>
+
+<h2>1. Prior Knowledge Check</h2>
+
+<p><b>Question 1:</b> What determines the group and period of an element from its electron configuration?</p>
+<div class="check-in">
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">The <b>period</b> is the highest principal quantum number ($n$) occupied. The <b>group</b> is determined by the number of valence electrons: for s- and p-block elements, it equals the sum of electrons in the outermost s and p sub-levels. For example, Cl: [Ne]3s²3p⁵ → Period 3, Group 17 (7 valence electrons).</div>
 </div>
-<h2>4. Electronegativity, Electron Affinity, and Metallic Character</h2>
-<h3>Electronegativity: The Pull on Shared Electrons</h3>
-<p>
-<strong>Electronegativity</strong> (often abbreviated as EN) is a measure of how strongly an atom attracts a pair of electrons that it is sharing in a covalent bond. The concept was developed by Linus Pauling, and the most common scale is called the Pauling scale. On the Pauling scale, fluorine is the most electronegative element, assigned a value of 4.0. All other elements have values relative to fluorine.
-</p>
-<p>
-The trend in electronegativity mirrors the trend in atomic radius but in the opposite direction. Across a period, electronegativity increases. The nuclear charge increases, the atomic radius decreases, and the nucleus can attract bonding electrons more effectively. Down a group, electronegativity decreases. The atomic radius increases, the bonding electrons are farther from the nucleus, and inner-shell shielding reduces the effective nuclear pull on the bonding electrons.
-</p>
-<p>
-Fluorine (EN = 4.0), oxygen (EN = 3.5), nitrogen (EN = 3.0), and chlorine (EN = 3.0) are the most electronegative elements. Francium and cesium, at the bottom of Group 1, are the least electronegative.
-</p>
-<h3>Common Misconception: Electronegativity Is Not the Same as Electron Affinity</h3>
-<p>
-Electronegativity describes the pull on electrons *within a bond*. <strong>Electron affinity</strong> is a different concept. Electron affinity is the energy change (usually measured in kilojoules per mole) that occurs when a neutral gaseous atom gains an electron to form a gaseous anion. A more negative (more exothermic) electron affinity means the atom releases more energy when it gains an electron, which generally indicates a stronger attraction for electrons. Electron affinity becomes more negative (more favorable) across a period and less negative (less favorable) down a group, following the same general direction as electronegativity. However, the two are separate quantities and should not be used interchangeably.
-</p>
-<h3>Metallic and Non-Metallic Character</h3>
-<p>
-<strong>Metallic character</strong> refers to how readily an element loses electrons to form positive ions. Metals have low electronegativity, low ionization energy (the energy needed to remove an electron), and they tend to form cations. Metallic character decreases as you move from left to right across a period because the increasing nuclear charge makes it harder to remove electrons. Metallic character increases as you move down a group because the outermost electrons are farther from the nucleus and are more easily removed.
-</p>
-<p>
-<strong>Non-metallic character</strong> is the opposite trend. Non-metals have high electronegativity, tend to gain or share electrons rather than lose them, and form anions or covalent bonds. Non-metallic character increases across a period and decreases down a group.
-</p>
-<p>
-Between the metals on the left and the non-metals on the right, there is a diagonal band of elements that have properties intermediate between metals and non-metals. These are called <strong>metalloids</strong> or semimetals. The most commonly recognized metalloids are boron (B), silicon (Si), germanium (Ge), arsenic (As), antimony (Sb), and tellurium (Te). For example, silicon looks metallic and conducts electricity, but only moderately—it is a semiconductor, not a full conductor like a metal.
-</p>
-<hr>
-<h2>5. Period 3 Oxides: Acid–Base Behavior</h2>
-<p>
-The oxides formed by the elements of Period 3 show a clear and systematic trend in their acid–base behavior. As you move from left to right across Period 3, the oxides change from strongly basic (on the left, with sodium and magnesium) to amphoteric (aluminum) to acidic (silicon, phosphorus, sulfur, and chlorine). This trend is directly linked to the type of bonding present in the oxide, which in turn is linked to the electronegativity of the element.
-</p>
-<h3>Sodium Oxide, Na₂O: Strongly Basic</h3>
-<p>
-Sodium oxide is an ionic compound containing Na⁺ and O²⁻ ions. When sodium oxide is added to water, the oxide ion (O²⁻) reacts with water to form hydroxide ions (OH⁻). The balanced equation with state symbols is:
-</p>
-<p>
-Na₂O(s) + H₂O(l) → 2NaOH(aq)
-</p>
-<p>
-The product is sodium hydroxide, a strong base that dissociates completely in water, giving a solution with a very high pH (around 13 to 14). Sodium oxide also reacts with acids. For example, with hydrochloric acid:
-</p>
-<p>
-Na₂O(s) + 2HCl(aq) → 2NaCl(aq) + H₂O(l)
-</p>
-<h3>Magnesium Oxide, MgO: Basic</h3>
-<p>
-Magnesium oxide is also ionic, with Mg²⁺ and O²⁻ ions. It reacts with water to form magnesium hydroxide, but the reaction is slow because MgO has low solubility:
-</p>
-<p>
-MgO(s) + H₂O(l) → Mg(OH)₂(aq)
-</p>
-<p>
-Magnesium hydroxide is only slightly soluble, so the resulting solution is weakly basic with a pH around 10. MgO reacts readily with acids:
-</p>
-<p>
-MgO(s) + 2HCl(aq) → MgCl₂(aq) + H₂O(l)
-</p>
-<h3>Aluminum Oxide, Al₂O₃: Amphoteric</h3>
-<p>
-An <strong>amphoteric</strong> substance is one that can react with both acids and bases. Aluminum oxide does not dissolve in water (it is insoluble), but it can be shown to react with both hydrochloric acid (an acid) and sodium hydroxide (a base).
-</p>
-<p>
-With acid: Al₂O₃(s) + 6HCl(aq) → 2AlCl₃(aq) + 3H₂O(l)
-</p>
-<p>
-With base: Al₂O₃(s) + 2NaOH(aq) + 3H₂O(l) → 2NaAl(OH)₄(aq)
-</p>
-<p>
-The product of the reaction with sodium hydroxide is sodium aluminate, NaAl(OH)₄. In this reaction, Al₂O₃ is acting as an acidic oxide, reacting with the base NaOH.
-</p>
-<h3>Silicon Dioxide, SiO₂: Acidic</h3>
-<p>
-Silicon dioxide (the main component of sand and quartz) has a giant covalent structure. It does not react with water because the Si–O bonds are too strong to be broken by water molecules. However, SiO₂ reacts with strong bases, which demonstrates its acidic character. When heated with sodium hydroxide:
-</p>
-<p>
-SiO₂(s) + 2NaOH(aq) → Na₂SiO₃(aq) + H₂O(l)
-</p>
-<p>
-The product is sodium silicate, a salt.
-</p>
-<h3>Phosphorus(V) Oxide, P₄O₁₀: Acidic</h3>
-<p>
-Phosphorus(V) oxide reacts vigorously with water to form phosphoric(V) acid:
-</p>
-<p>
-P₄O₁₀(s) + 6H₂O(l) → 4H₃PO₄(aq)
-</p>
-<p>
-The resulting solution is strongly acidic. P₄O₁₀ also reacts with bases. With sodium hydroxide:
-</p>
-<p>
-P₄O₁₀(s) + 12NaOH(aq) → 4Na₃PO₄(aq) + 6H₂O(l)
-</p>
-<h3>Sulfur Dioxide, SO₂, and Sulfur Trioxide, SO₃: Acidic</h3>
-<p>
-Sulfur dioxide reacts with water to form sulfurous acid:
-</p>
-<p>
-SO₂(g) + H₂O(l) → H₂SO₃(aq)
-</p>
-<p>
-Sulfur trioxide reacts with water to form sulfuric acid:
-</p>
-<p>
-SO₃(g) + H₂O(l) → H₂SO₄(aq)
-</p>
-<p>
-Both are acidic oxides and react with bases. For example, with sodium hydroxide:
-</p>
-<p>
-SO₂(g) + 2NaOH(aq) → Na₂SO₃(aq) + H₂O(l)
-</p>
-<p>
-SO₃(g) + 2NaOH(aq) → Na₂SO₄(aq) + H₂O(l)
-</p>
-<h3>Dichlorine Heptoxide, Cl₂O₇: Strongly Acidic</h3>
-<p>
-Chlorine(VII) oxide reacts with water to produce perchloric acid, one of the strongest known acids:
-</p>
-<p>
-Cl₂O₇(l) + H₂O(l) → 2HClO₄(aq)
-</p>
-<h3>Summary of the Trend</h3>
-<p>
-The trend from basic to acidic across Period 3 happens because the bonding character of the oxides changes. Sodium and magnesium oxides are ionic; the oxide ion O²⁻ is a strong base. As the electronegativity of the Period 3 element increases, the bonding becomes more covalent. Covalent oxides tend to react with water to produce acidic solutions because the central atom pulls electron density away from the oxygen atoms, making the O–H bonds in the resulting acid more polar and easier to break, releasing H⁺ ions.
-</p>
-<div class="worked">
-<strong>Worked Example 8.3: Acid–Base Reactions of Oxides</strong><br><br>
-<p>
-<strong>Problem:</strong> Write a balanced chemical equation with state symbols for the reaction of sulfur dioxide gas with aqueous potassium hydroxide.
-</p>
-<p>
-<strong>To solve this, we need to recognize that SO₂ is an acidic oxide.</strong> Acidic oxides react with bases (such as KOH, potassium hydroxide) to form a salt and water. The reaction is a neutralization-type reaction. The sulfur in SO₂ is in the +4 oxidation state, so the salt formed will contain the sulfite ion, SO₃²⁻.
-</p>
-<p>
-Step 1: Write the unbalanced equation: SO₂(g) + KOH(aq) → K₂SO₃(aq) + H₂O(l)
-</p>
-<p>
-Step 2: Balance the equation. There are two potassium atoms in K₂SO₃ but only one in KOH, so we need two KOH: SO₂(g) + 2KOH(aq) → K₂SO₃(aq) + H₂O(l)
-</p>
-<p>
-Step 3: Check all atoms. Left: 1 S, 2 O (from SO₂) + 2 O (from 2 KOH) = 4 O, 2 K, 2 H. Right: 1 S, 3 O (from K₂SO₃) + 1 O (from H₂O) = 4 O, 2 K, 2 H. The equation is balanced.
-</p>
-<p>
-Step 4: Add state symbols. SO₂ is a gas at room temperature. KOH is aqueous (dissolved in water). K₂SO₃ is soluble, so it is aqueous. H₂O is a liquid.
-</p>
-<p>
-Final equation: SO₂(g) + 2KOH(aq) → K₂SO₃(aq) + H₂O(l)
-</p>
-<p>
-<strong>Why this makes sense:</strong> SO₂ is a non-metal oxide, so it is acidic. It reacts with a base in the same general pattern as other acidic oxides: acidic oxide + base → salt + water. The salt contains the sulfite ion because the sulfur retains its +4 oxidation state.
-</p>
+
+<p><b>Question 2:</b> Define electronegativity and state its trend across Period 3.</p>
+<div class="check-in">
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">Electronegativity is the ability of an atom to attract a bonding pair of electrons in a covalent bond. Across Period 3 (Na → Cl), electronegativity <b>increases</b> because nuclear charge increases while shielding remains roughly constant, so the nucleus pulls bonding electrons more strongly.</div>
 </div>
-<h2>6. Period 3 Chlorides: Bonding and Hydrolysis</h2>
-<p>
-The chlorides of Period 3 elements also show a clear trend, this time in the type of bonding. As you move from left to right, the bonding shifts from ionic to covalent.
-</p>
-<h3>Sodium Chloride, NaCl, and Magnesium Chloride, MgCl₂: Ionic</h3>
-<p>
-Sodium chloride and magnesium chloride are ionic compounds. They form giant ionic lattices in which each cation is surrounded by chloride ions and vice versa. These compounds have high melting points (NaCl: 801 °C, MgCl₂: 714 °C) because a large amount of energy is needed to overcome the strong electrostatic forces holding the lattice together. When added to water, NaCl and MgCl₂ simply dissolve—they do not react chemically with the water. They dissociate into their constituent ions: Na⁺ and Cl⁻, or Mg²⁺ and 2Cl⁻.
-</p>
-<h3>Aluminum Chloride, AlCl₃: An Intermediate Case</h3>
-<p>
-Aluminum chloride is an interesting case. In the solid state, it exists as an ionic lattice, but when it melts or vaporizes, it forms covalent Al₂Cl₆ dimers. A <strong>dimer</strong> is a molecule made of two identical smaller units joined together. In Al₂Cl₆, each aluminum atom is bonded to four chlorine atoms: two terminal chlorines and two bridging chlorines. The bridging chlorine atoms each form one normal covalent bond to one aluminum and one dative (coordinate) covalent bond to the other aluminum. The aluminum atoms achieve an octet of electrons through this arrangement. AlCl₃ sublimes (turns directly from solid to gas) at about 180 °C, which is much lower than the melting points of NaCl and MgCl₂, because the forces between Al₂Cl₆ molecules in the solid are weak van der Waals' forces.
-</p>
-<h3>Silicon Tetrachloride, SiCl₄: Covalent Molecular</h3>
-<p>
-Silicon tetrachloride is a covalent molecular liquid at room temperature. Each molecule consists of a central silicon atom bonded to four chlorine atoms in a tetrahedral arrangement. The molecules are held together in the liquid state only by weak intermolecular forces, so SiCl₄ has a low boiling point (about 58 °C). SiCl₄ reacts violently with water in a hydrolysis reaction:
-</p>
-<p>
-SiCl₄(l) + 2H₂O(l) → SiO₂(s) + 4HCl(g)
-</p>
-<p>
-The HCl gas produced forms steamy white fumes when it meets moist air. This is a classic observation for the hydrolysis of covalent chlorides.
-</p>
-<h3>Phosphorus Trichloride, PCl₃, and Phosphorus Pentachloride, PCl₅: Covalent Molecular</h3>
-<p>
-Both phosphorus chlorides are covalent molecular compounds. PCl₃ is a liquid at room temperature with the P atom bonded to three Cl atoms (trigonal pyramidal shape with one lone pair on P). PCl₅ is a solid at room temperature with the P atom bonded to five Cl atoms (trigonal bipyramidal shape). Both undergo hydrolysis with water:
-</p>
-<p>
-PCl₃(l) + 3H₂O(l) → H₃PO₃(aq) + 3HCl(aq)
-</p>
-<p>
-PCl₅(s) + 4H₂O(l) → H₃PO₄(aq) + 5HCl(aq)
-</p>
-<p>
-Note that PCl₃ produces phosphorous acid (H₃PO₃, phosphorus in the +3 oxidation state), while PCl₅ produces phosphoric acid (H₃PO₄, phosphorus in the +5 oxidation state). Both reactions produce HCl, and steamy fumes are observed.
-</p>
-<div class="worked">
-<strong>Worked Example 8.4: Explaining Hydrolysis</strong><br><br>
-<p>
-<strong>Problem:</strong> A few drops of silicon tetrachloride, SiCl₄, are added to a beaker of water in a fume cupboard. The liquid reacts immediately, producing a white solid and steamy fumes. Write a balanced equation for the reaction that occurs and explain the origin of the steamy fumes.
-</p>
-<p>
-<strong>To solve this, we need to recall that SiCl₄ is a covalent chloride of a Period 3 element.</strong> Covalent chlorides of Period 3 undergo hydrolysis when added to water. In hydrolysis, the chlorine atoms are replaced by OH groups from water, and HCl is produced as a byproduct.
-</p>
-<p>
-Step 1: Write the hydrolysis reaction. Each Cl atom in SiCl₄ is replaced by an O atom (or OH group) from water. The silicon ends up bonded to oxygen, forming SiO₂, which is a white solid (silica). The chlorine atoms combine with hydrogen from water to form HCl gas.
-</p>
-<p>
-SiCl₄(l) + 2H₂O(l) → SiO₂(s) + 4HCl(g)
-</p>
-<p>
-Step 2: Check the balancing. Left: 1 Si, 4 Cl, 4 H, 2 O. Right: 1 Si, 2 O, 4 H, 4 Cl. Balanced.
-</p>
-<p>
-Step 3: Explain the steamy fumes. The HCl produced in the reaction is a colorless gas. When this gas comes into contact with water vapor in the air, it dissolves to form tiny droplets of hydrochloric acid. These droplets scatter light and appear as a white mist or "steamy fumes."
-</p>
-<p>
-<strong>Why this makes sense:</strong> The reaction is driven by the strength of the Si–O bond compared to the Si–Cl bond. Silicon forms very strong bonds with oxygen, so replacing Si–Cl bonds with Si–O bonds is energetically favorable.
-</p>
+
+<p><b>Question 3:</b> Why does atomic radius decrease across a period?</p>
+<div class="check-in">
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">Across a period, electrons are added to the <b>same principal energy level</b> while the nuclear charge increases. The increased effective nuclear charge pulls the electron cloud closer to the nucleus, decreasing the atomic radius. Shielding from inner electrons remains approximately constant.</div>
 </div>
-<h2>Practice Problems</h2>
-<ol>
-<li>The elements phosphorus (P), nitrogen (N), arsenic (As), and antimony (Sb) all belong to Group 15 of the periodic table. Arrange these four elements in order of increasing atomic radius and explain the reasoning behind your order. Your explanation should refer to the electron shell structure of each element.</li>
-</ol>
-<ol>
-<li>The following four species all have exactly 18 electrons: the sulfide ion S²⁻, the chloride ion Cl⁻, the potassium ion K⁺, and the calcium ion Ca²⁺. Rank these four ions in order of decreasing ionic radius (from largest to smallest). For each ion, state the nuclear charge (number of protons), and explain how the nuclear charge determines the ionic radius within this isoelectronic series.</li>
-</ol>
-<ol>
-<li>Sulfur trioxide, SO₃, is a white solid at room temperature that reacts vigorously with water. (a) Write the balanced chemical equation, including state symbols, for the reaction of SO₃ with water. (b) Write a balanced equation, including state symbols, for the reaction of SO₃ with aqueous sodium hydroxide. (c) Explain why SO₃ is classified as an acidic oxide.</li>
-</ol>
-<ol>
-<li>Aluminum oxide, Al₂O₃, is described as an amphoteric oxide. (a) Explain what the term "amphoteric" means. (b) Write a balanced equation, with state symbols, for the reaction of Al₂O₃ with aqueous hydrochloric acid, HCl. (c) Write a balanced equation, with state symbols, for the reaction of Al₂O₃ with aqueous sodium hydroxide, NaOH. (d) Explain why Al₂O₃ is amphoteric while Na₂O (which lies to its left in Period 3) is only basic.</li>
-</ol>
-<ol>
-<li><strong>(IB Exam Style)</strong> The table below shows the formulas and melting points of four chlorides of Period 3 elements.</li>
-</ol>
+
+<h2>2. The Architecture of the Periodic Table</h2>
+
+<h3>2.1 Blocks, Groups, and Periods</h3>
+
+<p>The periodic table is divided into <b>blocks</b> that reflect the sub-level being filled:</p>
+
+<div class="diagram">
+<svg width="520" height="200" viewBox="0 0 520 200">
+  <!-- s-block -->
+  <rect x="20" y="40" width="45" height="140" rx="5" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="42" y="25" text-anchor="middle" font-size="11" font-weight="bold" fill="#1565c0">s-block</text>
+  <text x="42" y="115" text-anchor="middle" font-size="10" fill="#333">Gp 1-2</text>
+  <!-- d-block -->
+  <rect x="75" y="40" width="130" height="140" rx="5" fill="#ffccbc" stroke="#e64a19" stroke-width="1.5"/>
+  <text x="140" y="25" text-anchor="middle" font-size="11" font-weight="bold" fill="#e64a19">d-block</text>
+  <text x="140" y="115" text-anchor="middle" font-size="10" fill="#333">Gp 3-12</text>
+  <!-- p-block -->
+  <rect x="215" y="40" width="140" height="140" rx="5" fill="#c8e6c9" stroke="#2c5f2d" stroke-width="1.5"/>
+  <text x="285" y="25" text-anchor="middle" font-size="11" font-weight="bold" fill="#2c5f2d">p-block</text>
+  <text x="285" y="115" text-anchor="middle" font-size="10" fill="#333">Gp 13-18</text>
+  <!-- f-block -->
+  <rect x="365" y="60" width="140" height="80" rx="5" fill="#e1bee7" stroke="#7b1fa2" stroke-width="1.5"/>
+  <text x="435" y="45" text-anchor="middle" font-size="10" font-weight="bold" fill="#7b1fa2">f-block</text>
+  <text x="435" y="105" text-anchor="middle" font-size="10" fill="#333">Lanthanides</text>
+  <text x="435" y="122" text-anchor="middle" font-size="10" fill="#333">& Actinides</text>
+  <!-- Diagonal arrow -->
+  <line x1="45" y1="155" x2="275" y2="155" stroke="#333" stroke-width="1"/>
+  <text x="160" y="172" text-anchor="middle" font-size="9" fill="#666">Metallic character decreases →</text>
+  <text x="160" y="188" text-anchor="middle" font-size="9" fill="#666">← Non-metallic character increases</text>
+</svg>
+<div class="caption">Figure 1: The periodic table divided into s, p, d, and f blocks based on the highest-energy sub-level being filled.</div>
+</div>
+
+<h3>2.2 The Diagonal Relationship</h3>
+
+<p>Elements on a diagonal sometimes show similar properties despite being in different groups — e.g., Li and Mg, Be and Al, B and Si. This arises because moving right (increasing $Z$) increases polarising power, while moving down (increasing size) decreases it — the diagonal balances these effects.</p>
+
+<div class="check-in">
+<p><b>Check-in:</b> Lithium is in Group 1, yet it resembles magnesium (Group 2) more than sodium. Explain two chemical similarities.</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">(1) Both Li and Mg form normal oxides ($\ce{Li2O}$, $\ce{MgO}$), whereas Na forms a peroxide ($\ce{Na2O2}$). (2) Both Li and Mg form nitrides when heated in nitrogen ($\ce{Li3N}$, $\ce{Mg3N2}$), unlike other Group 1 metals. (3) Both have relatively high melting points and are harder than their group neighbours. The diagonal relationship arises because Li⁺ and Mg²⁺ have similar charge-to-radius ratios (similar polarising power).</div>
+</div>
+
+<h2>3. Key Periodic Trends Explained</h2>
+
+<h3>3.1 Atomic Radius</h3>
+
+<div class="diagram">
+<svg width="520" height="260" viewBox="0 0 520 260">
+  <text x="260" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c5f2d">Atomic Radius Trends</text>
+  <!-- Axes for period trend -->
+  <line x1="40" y1="230" x2="250" y2="230" stroke="#333" stroke-width="2"/>
+  <line x1="40" y1="230" x2="40" y2="50" stroke="#333" stroke-width="2"/>
+  <text x="145" y="252" text-anchor="middle" font-size="10" fill="#666">Across Period 3 →</text>
+  <text x="20" y="145" text-anchor="middle" font-size="10" fill="#666" transform="rotate(-90,20,145)">Atomic radius</text>
+  <!-- Data points: Na→Cl -->
+  <circle cx="60" cy="60" r="4" fill="#c62828"/><text x="60" y="45" text-anchor="middle" font-size="8">Na</text>
+  <circle cx="85" cy="72" r="4" fill="#c62828"/><text x="85" y="57" text-anchor="middle" font-size="8">Mg</text>
+  <circle cx="110" cy="88" r="4" fill="#c62828"/><text x="110" y="73" text-anchor="middle" font-size="8">Al</text>
+  <circle cx="135" cy="104" r="4" fill="#c62828"/><text x="135" y="89" text-anchor="middle" font-size="8">Si</text>
+  <circle cx="160" cy="120" r="4" fill="#c62828"/><text x="160" y="105" text-anchor="middle" font-size="8">P</text>
+  <circle cx="185" cy="136" r="4" fill="#c62828"/><text x="185" y="121" text-anchor="middle" font-size="8">S</text>
+  <circle cx="210" cy="152" r="4" fill="#c62828"/><text x="210" y="137" text-anchor="middle" font-size="8">Cl</text>
+  <polyline points="60,60 85,72 110,88 135,104 160,120 185,136 210,152" fill="none" stroke="#c62828" stroke-width="1.5"/>
+  <text x="145" y="230" text-anchor="middle" font-size="9" fill="#c62828">Decreases →</text>
+
+  <!-- Group trend -->
+  <line x1="270" y1="230" x2="480" y2="230" stroke="#333" stroke-width="2"/>
+  <line x1="270" y1="230" x2="270" y2="50" stroke="#333" stroke-width="2"/>
+  <text x="375" y="252" text-anchor="middle" font-size="10" fill="#666">Down Group 1 →</text>
+  <circle cx="295" cy="80" r="4" fill="#1565c0"/><text x="295" y="65" text-anchor="middle" font-size="8">Li</text>
+  <circle cx="330" cy="105" r="4" fill="#1565c0"/><text x="330" y="90" text-anchor="middle" font-size="8">Na</text>
+  <circle cx="365" cy="135" r="4" fill="#1565c0"/><text x="365" y="120" text-anchor="middle" font-size="8">K</text>
+  <circle cx="400" cy="165" r="4" fill="#1565c0"/><text x="400" y="150" text-anchor="middle" font-size="8">Rb</text>
+  <circle cx="435" cy="195" r="4" fill="#1565c0"/><text x="435" y="180" text-anchor="middle" font-size="8">Cs</text>
+  <polyline points="295,80 330,105 365,135 400,165 435,195" fill="none" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="375" y="230" text-anchor="middle" font-size="9" fill="#1565c0">Increases ↓</text>
+</svg>
+<div class="caption">Figure 2: Atomic radius decreases across a period (more protons pulling on same shell) and increases down a group (additional electron shells).</div>
+</div>
+
+<p><b>Across a period:</b> Atomic radius <b>decreases</b> — increasing effective nuclear charge pulls the same outer shell inward.<br>
+<b>Down a group:</b> Atomic radius <b>increases</b> — new principal energy levels are added, so outer electrons are further from the nucleus.</p>
+
+<h3>3.2 Ionic Radius — a Subtlety</h3>
+
+<p>Cations are <b>smaller</b> than their parent atoms (lost electrons, less repulsion, sometimes lost the entire outer shell). Anions are <b>larger</b> than their parent atoms (gained electrons, increased repulsion expands the electron cloud).</p>
+
+<p>For <b>isoelectronic</b> species (same number of electrons): the one with the <b>higher nuclear charge</b> is smallest. Example: $\ce{N^{3-}}$, $\ce{O^{2-}}$, $\ce{F-}$, $\ce{Ne}$, $\ce{Na+}$, $\ce{Mg^{2+}}$, $\ce{Al^{3+}}$ all have 10 electrons. Ionic radius decreases in this order because $Z$ increases from 7 to 13.</p>
+
+<div class="check-in">
+<p><b>Check-in:</b> Arrange $\ce{S^{2-}}$, $\ce{Cl-}$, $\ce{K+}$, and $\ce{Ca^{2+}}$ in order of increasing ionic radius. All are isoelectronic with Ar (18 electrons).</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">All have 18 electrons. Nuclear charges: $\ce{Ca^{2+}}$ (20), $\ce{K+}$ (19), $\ce{Cl-}$ (17), $\ce{S^{2-}}$ (16). Higher $Z$ = stronger pull = smaller radius. Order of increasing radius: $\ce{Ca^{2+}} < \ce{K+} < \ce{Cl-} < \ce{S^{2-}}$.</div>
+</div>
+
+<h3>3.3 Electronegativity Trends</h3>
+
+<p><b>Electronegativity</b> is the tendency of an atom to attract a bonding pair of electrons. The Pauling scale is the most common. Fluorine (4.0) is the most electronegative element.</p>
+
+<p><b>Across a period:</b> Increases (stronger effective nuclear charge).<br>
+<b>Down a group:</b> Decreases (larger atomic radius, more shielding, bonding pair is further from nucleus).</p>
+
+<h3>3.4 Melting Points Across Period 3 — a Structure Story</h3>
+
 <table>
-<tr>
-<th>Formula</th>
-<th>Melting point / °C</th>
-<th>Electrical conductivity of the liquid</th>
-</tr>
-<tr>
-<td>NaCl</td>
-<td>801</td>
-<td>Good</td>
-</tr>
-<tr>
-<td>MgCl₂</td>
-<td>714</td>
-<td>Good</td>
-</tr>
-<tr>
-<td>AlCl₃</td>
-<td>Sublimes at 180</td>
-<td>Poor</td>
-</tr>
-<tr>
-<td>SiCl₄</td>
-<td>−69 (boiling point)</td>
-<td>None</td>
-</tr>
+<tr><th>Element</th><th>Na</th><th>Mg</th><th>Al</th><th>Si</th><th>P₄</th><th>S₈</th><th>Cl₂</th><th>Ar</th></tr>
+<tr><td>Bonding</td><td>Metallic</td><td>Metallic</td><td>Metallic</td><td>Giant covalent</td><td>Simple molecular</td><td>Simple molecular</td><td>Simple molecular</td><td>Monatomic</td></tr>
+<tr><td>m.p. (°C)</td><td>98</td><td>650</td><td>660</td><td>1414</td><td>44</td><td>119</td><td>−101</td><td>−189</td></tr>
 </table>
-<p>
-   (a) Explain why NaCl and MgCl₂ have high melting points and why their molten forms conduct electricity. (b) AlCl₃ sublimes at a much lower temperature than the melting points of NaCl and MgCl₂. Explain this observation in terms of the structure and bonding of AlCl₃. (c) SiCl₄ is a liquid at room temperature that reacts with water. Write a balanced equation for this reaction, including state symbols, and state one observation that would be made when the reaction is carried out. (d) Predict, with a reason, the relative melting point of PCl₃ compared to SiCl₄.
-</p>
-<hr>
-<h2>Answers</h2>
-<ol>
-<li>The order of increasing atomic radius is nitrogen (smallest), then phosphorus, then arsenic, then antimony (largest). All four elements are in Group 15, which means they all have five valence electrons and the same general pattern of electron configuration in their outermost shell. Nitrogen is in Period 2, so its outermost electrons are in the n = 2 shell. Phosphorus is in Period 3 (n = 3 shell). Arsenic is in Period 4 (n = 4 shell). Antimony is in Period 5 (n = 5 shell). Each element down the group has one more principal quantum shell than the element above it, and each new shell is located farther from the nucleus. Although the nuclear charge also increases (N has Z = 7, P has Z = 15, As has Z = 33, Sb has Z = 51), the additional inner shells provide shielding that largely counteracts the increased nuclear attraction. The dominant factor is the increasing number of electron shells, which causes the atomic radius to increase going down the group.</li>
-</ol>
-<ol>
-<li>The order of decreasing ionic radius is S²⁻ (largest), then Cl⁻, then K⁺, then Ca²⁺ (smallest). All four ions are isoelectronic: each has 18 electrons arranged as 1s² 2s² 2p⁶ 3s² 3p⁶. The nuclear charges are: S has 16 protons, Cl has 17 protons, K has 19 protons, and Ca has 20 protons. Within an isoelectronic series, the ion with the smallest nuclear charge has its electrons held most loosely, because fewer protons are pulling on the same number of electrons. The sulfide ion, with only 16 protons, has the weakest pull on its 18 electrons, so its electron cloud is the most spread out and it has the largest radius. At the other end, the calcium ion has 20 protons pulling on those same 18 electrons, so the electron cloud is pulled in most tightly, giving Ca²⁺ the smallest radius. A common pitfall is to think that adding electrons always makes an ion larger—but in an isoelectronic series, the nuclear charge overrides this consideration.</li>
-</ol>
-<ol>
-<li>(a) SO₃(s) + H₂O(l) → H₂SO₄(aq). Sulfur trioxide reacts with water to produce sulfuric acid. (b) SO₃(s) + 2NaOH(aq) → Na₂SO₄(aq) + H₂O(l). The acidic oxide reacts with the base sodium hydroxide to form sodium sulfate (a salt) and water. (c) SO₃ is classified as an acidic oxide because it reacts with water to produce an acidic solution (sulfuric acid) and it reacts with bases (such as NaOH) to form a salt and water. The sulfur atom in SO₃ has a high electronegativity and a high oxidation state (+6), which means it pulls electron density strongly toward itself. This makes the oxide react with water by accepting electron pairs from the oxygen of water molecules, ultimately releasing H⁺ ions into the solution.</li>
-</ol>
-<ol>
-<li>(a) An amphoteric substance is one that can react with both acids and bases. This means it can behave as a base when mixed with an acid, and it can behave as an acid when mixed with a base. (b) Al₂O₃(s) + 6HCl(aq) → 2AlCl₃(aq) + 3H₂O(l). In this reaction, Al₂O₃ acts as a base because it reacts with the acid HCl. (c) Al₂O₃(s) + 2NaOH(aq) + 3H₂O(l) → 2NaAl(OH)₄(aq). In this reaction, Al₂O₃ acts as an acid because it reacts with the base NaOH. (d) Na₂O is purely basic because it is an ionic oxide: the O²⁻ ion is a strong base that reacts with water to produce OH⁻ ions. Na₂O will not react with bases. Al₂O₃ has bonding that is intermediate between ionic and covalent because aluminum has a higher electronegativity and a higher charge density (+3) than sodium (+1). The partially covalent character of Al₂O₃ allows it to react with both acids (where it acts as a base, accepting H⁺ to form water and Al³⁺) and bases (where it acts as an acid, accepting OH⁻ to form aluminate ions). This dual behavior is characteristic of elements in the middle of Period 3.</li>
-</ol>
-<ol>
-<li>(a) NaCl and MgCl₂ are ionic compounds. They form giant ionic lattices in which each cation is surrounded by anions and each anion is surrounded by cations in a repeating three-dimensional pattern. The electrostatic forces of attraction between oppositely charged ions extend throughout the entire lattice. To melt these compounds, a large amount of thermal energy must be supplied to overcome these strong forces and allow the ions to move past each other. This is why their melting points are high. When molten, the ions are no longer fixed in lattice positions—they are free to move. Since ions are charged particles, their movement constitutes an electric current, which is why molten NaCl and MgCl₂ conduct electricity. A common misconception is to think that electrons carry the current in molten ionic compounds. In fact, it is the movement of the ions themselves (cations toward the negative electrode and anions toward the positive electrode) that carries the charge.</li>
-</ol>
-<p>
-(b) AlCl₃ has different bonding from NaCl and MgCl₂. Although AlCl₃ has some ionic character in the solid state, it vaporizes to form covalent Al₂Cl₆ dimers. In the Al₂Cl₆ dimer, each aluminum atom is covalently bonded to four chlorine atoms through a combination of normal covalent bonds and dative (coordinate) covalent bonds. The individual Al₂Cl₆ molecules are held together in the solid state only by weak van der Waals' forces between molecules, not by strong ionic bonds throughout a lattice. Because van der Waals' forces are much weaker than ionic bonds, only a modest amount of energy is needed to separate the Al₂Cl₆ molecules, so the compound sublimes at a relatively low temperature. The poor electrical conductivity of molten AlCl₃ confirms that it does not contain free ions—it exists as neutral covalent molecules.
-</p>
-<p>
-(c) SiCl₄(l) + 2H₂O(l) → SiO₂(s) + 4HCl(g). When silicon tetrachloride is added to water, it undergoes hydrolysis. The observation would be the formation of a white precipitate (silicon dioxide, SiO₂) and the evolution of steamy white fumes. The fumes are caused by HCl gas dissolving in atmospheric water vapor to form a fine mist of hydrochloric acid droplets.
-</p>
-<p>
-(d) PCl₃ is expected to have a melting point similar to or slightly lower than that of SiCl₄. Both PCl₃ and SiCl₄ are covalent molecular compounds. PCl₃ molecules have a trigonal pyramidal shape with one lone pair on the phosphorus atom, while SiCl₄ molecules are tetrahedral with no lone pair. Both are held together in the solid state by weak intermolecular forces (van der Waals' forces). Since phosphorus (Z = 15) and silicon (Z = 14) are adjacent in Period 3, and PCl₃ has one more chlorine atom's worth of electrons than SiCl₄? Actually, PCl₃ has 3 Cl atoms versus SiCl₄'s 4 Cl atoms. SiCl₄ has more electrons (total electrons = 14 + 4×17 = 82 versus PCl₃ with 15 + 3×17 = 66), so SiCl₄ has slightly stronger London dispersion forces. However, PCl₃ is a polar molecule (due to its trigonal pyramidal shape with a lone pair) while SiCl₄ is non-polar (tetrahedral, symmetrical). The dipole–dipole forces in PCl₃ partially compensate for the weaker London forces. Overall, both have low melting points characteristic of covalent molecular substances, and PCl₃ melts at about −94 °C, which is lower than the boiling point of SiCl₄ at −69 °C but in the same general low range expected for small covalent molecules.
-</p>
-<div class="nav">
-<a href="lesson_07.html">← Previous Lesson</a>
-<a href="lesson_09.html">Next Lesson →</a>
+
+<p>The pattern reflects <b>structure type</b>: metallic bonding strengthens Na→Mg→Al (more delocalised electrons, smaller ions), silicon's giant covalent network is strongest of all, then a dramatic drop to weak van der Waals' forces in simple molecular P₄, S₈, Cl₂.</p>
+
+<div class="check-in">
+<p><b>Check-in:</b> Why does sulfur (S₈, m.p. 119°C) have a higher melting point than phosphorus (P₄, m.p. 44°C), given both are simple molecular?</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">S₈ molecules are larger than P₄ molecules (8 atoms vs. 4 atoms), so they have more electrons and therefore stronger London (dispersion) forces between molecules. More energy is required to overcome these stronger intermolecular forces, giving sulfur a higher melting point.</div>
 </div>
+
+<h2>4. Period 3 Oxides — Acid–Base Character</h2>
+
+<p>The oxides of Period 3 elements reveal a clear trend from <b>basic → amphoteric → acidic</b>:</p>
+
+<table>
+<tr><th>Oxide</th><th>$\ce{Na2O}$</th><th>$\ce{MgO}$</th><th>$\ce{Al2O3}$</th><th>$\ce{SiO2}$</th><th>$\ce{P4O10}$</th><th>$\ce{SO3}$</th><th>$\ce{Cl2O7}$</th></tr>
+<tr><td>Character</td><td>Basic</td><td>Basic</td><td>Amphoteric</td><td>Acidic</td><td>Acidic</td><td>Acidic</td><td>Acidic</td></tr>
+<tr><td>Reacts with</td><td>Acids</td><td>Acids</td><td>Both</td><td>Bases</td><td>Bases</td><td>Bases</td><td>Bases</td></tr>
+</table>
+
+<p>$\ce{Al2O3}$ is <b>amphoteric</b>: it reacts with both acids and bases:<br>
+$\ce{Al2O3 + 6HCl -> 2AlCl3 + 3H2O}$<br>
+$\ce{Al2O3 + 2NaOH + 3H2O -> 2NaAl(OH)4}$</p>
+
+<h2>5. Worked Examples</h2>
+
+<div class="example">
+<b>Example 1 — Predicting Properties from Position:</b><br><br>
+Element X is in Period 4, Group 16. Predict: (a) its electron configuration, (b) the formula of its hydride, (c) whether its oxide is acidic or basic, (d) its electronegativity relative to sulfur.<br><br>
+<b>(a)</b> Period 4, Group 16 → selenium (Se): [Ar] 3d¹⁰ 4s² 4p⁴.<br>
+<b>(b)</b> Group 16 hydride: $\ce{H2Se}$ (like $\ce{H2O}$, $\ce{H2S}$).<br>
+<b>(c)</b> Non-metal oxide → <b>acidic</b>: $\ce{SeO2}$ and $\ce{SeO3}$ react with bases.<br>
+<b>(d)</b> Electronegativity: Se is below S in Group 16, so electronegativity <b>decreases</b> (Se ≈ 2.4 vs. S ≈ 2.5). The bonding pair is further from the nucleus.
+</div>
+
+<div class="example">
+<b>Example 2 — Period 3 Oxide Chemistry:</b><br><br>
+Write balanced equations for: (a) the reaction of $\ce{Na2O}$ with water, (b) the reaction of $\ce{SO3}$ with water, (c) the reaction of $\ce{Al2O3}$ with aqueous NaOH.<br><br>
+<b>(a)</b> $\ce{Na2O + H2O -> 2NaOH}$ (basic oxide, forms alkali).<br>
+<b>(b)</b> $\ce{SO3 + H2O -> H2SO4}$ (acidic oxide, forms sulfuric acid).<br>
+<b>(c)</b> $\ce{Al2O3 + 2NaOH + 3H2O -> 2NaAl(OH)4}$ (amphoteric — note that Al₂O₃ is insoluble in water but dissolves in alkali solution).
+</div>
+
+<div class="example">
+<b>Example 3 — Ionic Radius Comparison:</b><br><br>
+Explain why $\ce{K+}$ (138 pm) is smaller than $\ce{Cl-}$ (181 pm), even though K (Z=19) has more protons than Cl (Z=17).<br><br>
+<b>Answer:</b> $\ce{K+}$ and $\ce{Cl-}$ are isoelectronic (both have 18 electrons), but $\ce{K+}$ has 19 protons while $\ce{Cl-}$ has only 17. The greater nuclear charge of $\ce{K+}$ exerts a stronger electrostatic pull on the same number of electrons, contracting the electron cloud. Additionally, $\ce{K+}$ has lost its 4s electron entirely, so its outer shell is now $n=3$ (same as $\ce{Cl-}$), not $n=4$.
+</div>
+
+<h2>6. Common Misconceptions</h2>
+
+<div class="misconception">
+<h3>⚠️ Common Mistakes to Avoid</h3>
+<ol>
+  <li><b>Thinking atomic radius increases across a period.</b> No — more protons in the same shell pull electrons inward. The radius <em>decreases</em>. This is one of the most counterintuitive trends for students.</li>
+  <li><b>Claiming electronegativity increases down a group.</b> It <em>decreases</em> because the bonding pair is further from the nucleus and more shielded. Fluorine (top of Group 17) is the most electronegative, not iodine.</li>
+  <li><b>Forgetting that $\ce{Al2O3}$ is amphoteric.</b> Many students classify it as basic because Al is a metal, but its position at the metal–nonmetal boundary gives it intermediate character. It reacts with both HCl and NaOH.</li>
+  <li><b>Assuming all Group 1 metals react identically.</b> While trends are similar, reactivity increases significantly down the group. Potassium reacts far more violently with water than lithium. This is because the outer electron is easier to remove (lower IE) and the atom is larger.</li>
+  <li><b>Misidentifying the cause of the Period 3 melting point trend.</b> The giant drop after Si is NOT about bond strength within molecules — it's about the <em>type of structure</em>. $\ce{P4}$, $\ce{S8}$, and $\ce{Cl2}$ are held together by weak intermolecular forces, not the strong covalent bonds within each molecule.</li>
+</ol>
+</div>
+
+<h2>7. End-of-Lesson Practice</h2>
+
+<p><b>Question 1 (Paper 1):</b> Which of the following lists is in order of increasing atomic radius?<br>
+A. $\ce{Na < Mg < Al}$ &nbsp; B. $\ce{Cl < S < P}$ &nbsp; C. $\ce{Li < Na < Mg}$ &nbsp; D. $\ce{F < O < S}$</p>
+
+<p><b>Question 2:</b> Arrange each set in order of increasing size and explain: (a) $\ce{Na, Na+}$, (b) $\ce{Cl, Cl-}$, (c) $\ce{O^{2-}, F-, Ne, Na+, Mg^{2+}}$.</p>
+
+<p><b>Question 3:</b> Explain why the first ionisation energy of neon ($2081$ kJ mol⁻¹) is higher than that of fluorine ($1681$ kJ mol⁻¹), despite both being in Period 2.</p>
+
+<p><b>Question 4:</b> Describe and explain the trend in acid–base character of the oxides of Period 3 elements from sodium to chlorine.</p>
+
+<p><b>Question 5:</b> Astatine (At) is below iodine in Group 17. Predict: (a) its physical state at room temperature, (b) the formula of its compound with sodium, (c) how its reactivity compares with iodine, (d) the colour of its vapour.</p>
+
+<p><b>Question 6 (HL-style):</b> The melting points (K) of Period 3 elements are: Na 371, Mg 923, Al 933, Si 1687, P 317, S 392, Cl 172, Ar 84. Explain the trend in terms of bonding and structure, identifying the type of bonding/intermolecular force in each case.</p>
+
+<button class="practice-toggle" onclick="var a=this.nextElementSibling;a.classList.toggle('open');this.textContent=a.classList.contains('open')?'▴ Hide Answers':'▸ Show Answers'">▸ Show Answers</button>
+<div class="practice-answers">
+
+<p><b>Answer 1:</b> B. Across Period 3, radius decreases from left to right, so Cl (smallest) < S < P (largest of the three). In A, the order is reversed (radius decreases Na→Al). In C, Mg is smaller than Na. In D, O is smaller than F (and S is larger than both).</p>
+
+<p><b>Answer 2:</b> (a) $\ce{Na+}$ < $\ce{Na}$ — Na⁺ has lost its 3s electron entirely, so its outer shell is now n=2, and there are 11 protons pulling on 10 electrons. (b) $\ce{Cl}$ < $\ce{Cl-}$ — Cl⁻ has an extra electron, increasing electron-electron repulsion and expanding the cloud. (c) $\ce{Mg^{2+}}$ < $\ce{Na+}$ < $\ce{Ne}$ < $\ce{F-}$ < $\ce{O^{2-}}$ — all isoelectronic (10 e⁻), size decreases as $Z$ increases (12→11→10→9→8).</p>
+
+<p><b>Answer 3:</b> Both Ne and F have electrons in the $n=2$ shell. Ne has 10 protons vs. F's 9, so the effective nuclear charge is greater. The 2p electrons in neon are therefore held more tightly, requiring more energy to remove. Additionally, removing an electron from neon disrupts a stable full octet.</p>
+
+<p><b>Answer 4:</b> $\ce{Na2O}$, $\ce{MgO}$: basic (ionic oxides of metals, react with acids). $\ce{Al2O3}$: amphoteric (aluminium sits at the metal–nonmetal boundary). $\ce{SiO2}$: acidic (giant covalent, reacts with hot concentrated bases). $\ce{P4O10}$, $\ce{SO3}$, $\ce{Cl2O7}$: acidic (covalent oxides of non-metals, react with water to form acids and with bases to form salts). The trend reflects the change from metallic to non-metallic character across Period 3.</p>
+
+<p><b>Answer 5:</b> (a) Solid — halogens become increasingly dense and less volatile down the group; iodine is a solid, so astatine should be too. (b) $\ce{NaAt}$ (1:1 ratio, like NaCl). (c) Less reactive than iodine — reactivity decreases down Group 17 because the atom is larger and attracts an extra electron less strongly. (d) Dark/black — halogens darken down the group; astatine is expected to be near-black.</p>
+
+<p><b>Answer 6:</b> Na, Mg, Al: metallic bonding. Strength increases Na→Mg→Al because more delocalised valence electrons (1, 2, 3) and smaller, more highly charged cations strengthen the metallic lattice. Si: giant covalent — very strong Si–Si covalent bonds throughout the lattice require a lot of energy to break (highest m.p.). P₄, S₈, Cl₂, Ar: simple molecular with van der Waals' forces only. S₈ (392 K) > P₄ (317 K) because S₈ molecules are larger (more electrons, stronger London forces). Cl₂ (172 K) < S₈ because Cl₂ molecules have far fewer electrons. Ar (84 K) is monatomic with only very weak instantaneous dipole–induced dipole forces.</p>
+</div>
+
+<h2>8. Key Terms</h2>
+<table>
+<tr><th>Term</th><th>Definition</th></tr>
+<tr><td>Atomic radius</td><td>Half the distance between the nuclei of two bonded atoms of the same element</td></tr>
+<tr><td>Ionic radius</td><td>The radius of an ion in an ionic crystal; cations are smaller, anions larger than parent atoms</td></tr>
+<tr><td>Ionisation energy</td><td>The minimum energy required to remove one mole of electrons from one mole of gaseous atoms</td></tr>
+<tr><td>Electronegativity</td><td>A measure of the tendency of an atom to attract a bonding pair of electrons (Pauling scale)</td></tr>
+<tr><td>Electron affinity</td><td>The energy change when one mole of electrons is added to one mole of gaseous atoms</td></tr>
+<tr><td>Effective nuclear charge ($Z_{\text{eff}}$)</td><td>The net positive charge experienced by an electron after accounting for shielding</td></tr>
+<tr><td>Isoelectronic</td><td>Species with the same number of electrons (e.g., $\ce{O^{2-}}$, $\ce{F-}$, $\ce{Ne}$, $\ce{Na+}$ all have 10)</td></tr>
+<tr><td>Amphoteric</td><td>A substance that can react with both acids and bases (e.g., $\ce{Al2O3}$, $\ce{Al(OH)3}$)</td></tr>
+<tr><td>Diagonal relationship</td><td>Similarities between certain elements on a diagonal (e.g., Li/Mg, Be/Al, B/Si)</td></tr>
+<tr><td>Periodicity</td><td>The repeating pattern of physical and chemical properties across periods</td></tr>
+</table>
+
+<h2>9. Exam Tips</h2>
+
+<div class="exam-tip"><b>Paper 1 — Trend Questions:</b> The IB loves "which is in the correct order?" questions. Your strategy: identify what property is being compared, recall the trend direction (across = decrease for radius, increase for IE/EN; down = increase for radius, decrease for IE/EN), then scan for the answer that matches. Eliminate options where two elements in the same period are in the wrong order.</div>
+
+<div class="exam-tip"><b>Paper 2 — "Explain the trend" = 3 marks:</b> The IB marking scheme expects three things: (1) state the direction of the trend, (2) mention nuclear charge and shielding, (3) relate to the specific property. E.g., "Atomic radius decreases across Period 3 because nuclear charge increases while shielding remains constant, so the outer electrons are pulled closer to the nucleus."</div>
+
+<div class="exam-tip"><b>Data-Based Questions:</b> If you're given a table of melting points and asked to explain the trend, always classify each substance by its <b>structure type</b> first (metallic, giant covalent, simple molecular). The explanation follows directly from structure — don't try to explain metallic trends with covalent arguments, or vice versa.</div>
+
 </body>
 </html>

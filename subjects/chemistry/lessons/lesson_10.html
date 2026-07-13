@@ -3,453 +3,411 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lesson 10: VSEPR Theory — Predicting Molecular Shapes and Bond Angles — IB Chemistry HL</title>
-<script>window.MathJax = { loader: {load: ['[tex]/mhchem']}, tex: {packages: {'[+]': ['mhchem']}} };</script>
+<title>Lesson 10 — Chemistry HL — VSEPR Theory: Molecular Shapes & Bond Angles</title>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] },
+  loader: { load: ['[tex]/mhchem'] },
+  tex: { packages: {'[+]': ['mhchem']} }
+};
+</script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
 <style>
-  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Palatino', 'Georgia', serif; background: var(--bg); color: var(--text); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; font-size: 17px; line-height: 1.7; }
-  h1 { font-size: 1.7rem; color: var(--accent); margin-bottom: 0.5rem; }
-  h2 { font-size: 1.25rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; margin: 2rem 0 1rem; }
-  h3 { font-size: 1.1rem; color: #444; margin: 1.3rem 0 0.5rem; }
-  p, li { margin-bottom: 0.6rem; }
-  ul, ol { padding-left: 1.8rem; margin-bottom: 1rem; }
-  .worked { background: #f0f7f0; border-left: 4px solid #2c5f2d; padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
-  .worked strong { color: #2c5f2d; }
-  .answer { background: #fefdf7; border: 1px solid var(--border); padding: 0.8rem 1.2rem; margin: 0.5rem 0; border-radius: 6px; }
-  .nav { display: flex; justify-content: space-between; margin: 3rem 0 1rem; padding-top: 1rem; border-top: 2px solid var(--border); font-size: 0.9rem; }
-  .nav a { color: #1a5c9e; text-decoration: none; }
-  .nav a:hover { text-decoration: underline; }
-  .definition { background: #fdf5e6; border-left: 4px solid #d4a017; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
-  code { background: #f0f0f0; padding: 0.15rem 0.35rem; border-radius: 3px; font-size: 0.9em; }
-  table { border-collapse: collapse; margin: 1rem 0; width: 100%; }
-  th, td { border: 1px solid var(--border); padding: 0.4rem 0.7rem; text-align: left; font-size: 0.95em; }
-  th { background: #f0f7f0; color: var(--accent); }
-  @media print { body { font-size: 14px; } .nav { display: none; } }
-  strong { color: #1a1a1a; }
+:root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Georgia', 'Times New Roman', serif; font-size: 17px; line-height: 1.7; color: var(--text); background: var(--bg); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; }
+h1 { font-size: 1.8rem; color: var(--accent); border-bottom: 3px solid var(--accent); padding-bottom: 0.5rem; margin-bottom: 1rem; }
+h2 { font-size: 1.35rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+h3 { font-size: 1.15rem; color: var(--accent); margin: 1.5rem 0 0.5rem; }
+p { margin-bottom: 0.8rem; }
+.objectives { background: #f0f4ff; border-left: 4px solid var(--accent); padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+.objectives h3 { margin-top: 0; }
+.check-in { background: #fff8e1; border: 1px solid #ffc107; padding: 0.8rem 1rem; margin: 1rem 0; border-radius: 8px; }
+.check-in p { margin-bottom: 0.3rem; }
+.answer-toggle { display: inline-block; padding: 0.2rem 0.8rem; border-radius: 16px; cursor: pointer; font-size: 0.8rem; font-weight: 600; background: #e8f5e9; color: #2e7d32; border: 1px solid #2e7d32; user-select: none; margin-top: 0.3rem; }
+.answer-content { display: none; background: #f1f8e9; padding: 0.6rem 1rem; border-radius: 8px; margin-top: 0.5rem; }
+.answer-content.open { display: block; }
+.example { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem; margin: 1rem 0; }
+.misconception { background: #fff3e0; border-left: 4px solid #e65100; padding: 1rem 1.2rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+.misconception h3 { color: #e65100; }
+.exam-tip { background: #e8f5e9; border-left: 4px solid #2e7d32; padding: 0.8rem 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+th { background: var(--accent); color: white; padding: 0.5rem 0.8rem; text-align: left; }
+td { padding: 0.5rem 0.8rem; border-bottom: 1px solid var(--border); }
+tr:nth-child(even) td { background: #f8f8f6; }
+.diagram { text-align: center; margin: 1.5rem 0; }
+.diagram svg { max-width: 100%; }
+.diagram .caption { font-size: 0.9rem; color: #666; margin-top: 0.3rem; font-style: italic; }
+pre.ascii-art { font-family: 'Courier New', monospace; font-size: 0.75rem; line-height: 1.2; background: #f5f5f5; padding: 0.8rem; border-radius: 8px; overflow-x: auto; }
+.practice-toggle { display: block; width: 100%; padding: 0.8rem; background: var(--accent); color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem; font-weight: 600; margin: 1.5rem 0; }
+.practice-answers { display: none; }
+.practice-answers.open { display: block; }
 </style>
 </head>
 <body>
-<h1>Lesson 10: VSEPR Theory — Predicting Molecular Shapes and Bond Angles — IB Chemistry HL</h1>
-<h2>What You'll Learn</h2>
-<p>
-This lesson covers one of the most powerful and widely used theories in chemistry: VSEPR theory. You will learn what VSEPR stands for and why it works—the fundamental principle that electron pairs repel each other and arrange themselves to be as far apart as possible. You will learn exactly how to count electron domains around a central atom, recognizing that a double or triple bond counts as a single domain. You will then learn how to use the number of electron domains and the number of lone pairs to predict the molecular shape (geometry) and the bond angles for molecules with two, three, four, five, and six electron domains. For the HL content, you will master the five-domain (trigonal bipyramidal) and six-domain (octahedral) families of shapes, including how lone pairs choose specific positions in each geometry to minimize repulsion. By the end of this lesson, you will be able to look at the formula of almost any molecule or polyatomic ion, draw its Lewis structure, count domains, and confidently name its shape and approximate bond angles.
-</p>
-<hr>
-<h2>1. What VSEPR Theory Is and Why It Works</h2>
-<p>
-VSEPR stands for <strong>Valence Shell Electron Pair Repulsion</strong>. Despite its long name, the idea behind VSEPR theory is straightforward: electrons are negatively charged, and negative charges repel each other. The electron pairs in the valence shell of an atom push each other away. To minimize this repulsion, the electron pairs arrange themselves in three-dimensional space so that they are as far apart from each other as geometrically possible. The positions that the electron pairs take up determine the shape of the molecule.
-</p>
-<p>
-Before we go further, we need to define two closely related but distinct terms. The <strong>electron domain geometry</strong> (also called the electron pair geometry) describes the three-dimensional arrangement of ALL electron domains around the central atom—both the domains that contain bonding pairs (shared electrons) and the domains that contain lone pairs (non-bonding electrons). The <strong>molecular geometry</strong> (also called the molecular shape) describes the three-dimensional arrangement of only the ATOMS bonded to the central atom. Lone pairs influence the molecular shape by pushing bonding pairs into different positions, but lone pairs themselves are not counted as part of the molecular shape because they are not atoms.
-</p>
-<h3>The Repulsion Hierarchy</h3>
-<p>
-Not all electron pair repulsions are equal in strength. Lone pairs occupy more space near the central atom than bonding pairs do. This is because a lone pair is attracted to only one nucleus (the central atom's nucleus), so its electron cloud spreads out more widely. A bonding pair is attracted to two nuclei (the central atom and the bonded atom), so its electron cloud is more confined to the region between the two nuclei.
-</p>
-<p>
-The order of repulsion strength, from strongest to weakest, is:
-</p>
-<p>
-<strong>Lone pair–lone pair repulsion > Lone pair–bonding pair repulsion > Bonding pair–bonding pair repulsion</strong>
-</p>
-<p>
-This hierarchy has a direct and important consequence: every time you replace a bonding pair with a lone pair in a given electron domain geometry, the remaining bonding pairs are pushed closer together. This means the bond angles become smaller than the "ideal" angles of the parent electron domain geometry. You will see this pattern repeatedly as we work through the different geometries.
-</p>
-<hr>
-<h2>2. How to Count Electron Domains</h2>
-<p>
-Counting electron domains correctly is the essential first step in applying VSEPR theory. An electron domain is any region around the central atom where electrons are concentrated. The following items each count as ONE electron domain:
-</p>
+
+<h1>Lesson 10: VSEPR Theory — Molecular Shapes & Bond Angles</h1>
+
+<p><b>Syllabus reference:</b> 4.3/14.1 — VSEPR theory, molecular shapes, bond angles, polarity of molecules</p>
+
+<div class="objectives">
+<h3>Learning Objectives</h3>
+<p>By the end of this lesson, you will be able to:</p>
 <ul>
-<li>A single bond between the central atom and another atom</li>
-<li>A double bond between the central atom and another atom</li>
-<li>A triple bond between the central atom and another atom</li>
-<li>A lone pair of electrons on the central atom</li>
+  <li><b>State</b> the central principle of VSEPR theory: electron pairs repel and arrange themselves to minimise repulsion.</li>
+  <li><b>Determine</b> the electron domain geometry and molecular geometry for any molecule or ion given its Lewis structure.</li>
+  <li><b>Predict</b> bond angles and explain deviations from ideal angles due to lone-pair repulsion.</li>
+  <li><b>Identify</b> all 11 molecular shapes tested by the IB from 2 to 6 electron domains.</li>
+  <li><b>Apply</b> VSEPR to deduce shape, then use shape to determine molecular polarity.</li>
 </ul>
-<p>
-<strong>Critical point:</strong> A double bond counts as one domain, not two. A triple bond also counts as one domain, not three. The reason is that all the electrons in a multiple bond are concentrated between the same two nuclei—they occupy essentially the same region of space from the perspective of VSEPR. Whether a bond is single, double, or triple, it repels other electron domains as a single unit.
-</p>
-<div class="worked">
-<strong>Worked Example 10.1: Counting Electron Domains</strong><br><br>
-<p>
-<strong>Problem:</strong> Count the total number of electron domains around the central atom in each of the following molecules: (a) BeCl₂, (b) BF₃, (c) CH₄, (d) NH₃, (e) H₂O.
-</p>
-<p>
-<strong>To solve this, we first draw a quick Lewis structure for each molecule to identify the bonding and non-bonding pairs on the central atom.</strong>
-</p>
-<p>
-(a) BeCl₂: Beryllium is the central atom. It forms two single bonds, one to each chlorine. Beryllium has no lone pairs. Total electron domains = 2 (two bonding domains, zero non-bonding domains).
-</p>
-<p>
-(b) BF₃: Boron is the central atom. It forms three single bonds, one to each fluorine. Boron has no lone pairs. Total electron domains = 3 (three bonding, zero non-bonding).
-</p>
-<p>
-(c) CH₄: Carbon is the central atom. It forms four single bonds, one to each hydrogen. Carbon has no lone pairs. Total electron domains = 4 (four bonding, zero non-bonding).
-</p>
-<p>
-(d) NH₃: Nitrogen is the central atom. It forms three single bonds to three hydrogen atoms and has one lone pair. Total electron domains = 3 + 1 = 4 (three bonding, one non-bonding).
-</p>
-<p>
-(e) H₂O: Oxygen is the central atom. It forms two single bonds to two hydrogen atoms and has two lone pairs. Total electron domains = 2 + 2 = 4 (two bonding, two non-bonding).
-</p>
-<p>
-<strong>Why this makes sense:</strong> Notice that all four molecules in (b) through (e) have four electron domains, yet their shapes are different (trigonal planar for BF₃, tetrahedral for CH₄, trigonal pyramidal for NH₃, and bent for H₂O). The number of electron domains alone is not enough to determine the molecular shape—you must also know how many of those domains are bonding pairs and how many are lone pairs.
-</p>
 </div>
-<h2>3. The Four-Domain Family: Tetrahedral Electron Geometry</h2>
-<p>
-Because the four-domain family contains the most commonly encountered molecular shapes, we will study it in detail first.
-</p>
-<h3>Four Domains, Zero Lone Pairs: Tetrahedral, 109.5°</h3>
-<p>
-When a central atom has four bonding pairs and zero lone pairs, the four electron domains repel each other equally and arrange themselves pointing toward the corners of a regular tetrahedron. A tetrahedron is a four-faced solid in which every face is an equilateral triangle. The angle between any two bonds in a perfect tetrahedron is 109.5°. The molecular shape is called <strong>tetrahedral</strong>.
-</p>
-<p>
-The classic example is methane, CH₄. The carbon atom forms four identical C–H bonds. There are no lone pairs on carbon. All H–C–H bond angles are 109.5°. Other examples include CCl₄ (carbon tetrachloride), SiH₄ (silane), and the ammonium ion NH₄⁺.
-</p>
-<h3>Four Domains, One Lone Pair: Trigonal Pyramidal, Approximately 107°</h3>
-<p>
-When one of the four electron domains is a lone pair, the remaining three bonding pairs are pushed together by the stronger repulsion from the lone pair. The electron domain geometry is still tetrahedral at its core, but the molecular shape—what you see when you look only at the atoms—is called <strong>trigonal pyramidal</strong>. You can visualize this by imagining a tetrahedron with one corner occupied by an invisible lone pair instead of an atom. The three bonds form a triangular pyramid.
-</p>
-<p>
-The classic example is ammonia, NH₃. The nitrogen atom has three bonding pairs (N–H) and one lone pair. The H–N–H bond angle is approximately 107°, which is slightly smaller than the ideal tetrahedral angle of 109.5° because the lone pair repels the bonding pairs more strongly than they repel each other.
-</p>
-<h3>Four Domains, Two Lone Pairs: Bent (V-Shaped), Approximately 104.5°</h3>
-<p>
-When two of the four electron domains are lone pairs, the two remaining bonding pairs are pushed together even more. The molecular shape is called <strong>bent</strong> or <strong>V-shaped</strong>. The bond angle is approximately 104.5°.
-</p>
-<p>
-The classic example is water, H₂O. The oxygen atom has two bonding pairs (O–H) and two lone pairs. The H–O–H bond angle is approximately 104.5°, which is even smaller than the angle in ammonia because there are now two lone pairs compressing the bonds.
-</p>
-<h3>The Classic Angle Compression Pattern</h3>
-<p>
-This pattern is one you will use often in IB Chemistry. For molecules with four electron domains:
-</p>
-<ul>
-<li>0 lone pairs: bond angle = 109.5° (tetrahedral)</li>
-<li>1 lone pair: bond angle ≈ 107° (trigonal pyramidal)</li>
-<li>2 lone pairs: bond angle ≈ 104.5° (bent)</li>
-</ul>
-<p>
-Each additional lone pair squeezes the bonding pairs closer together, reducing the bond angle by roughly 2° to 2.5° per lone pair.
-</p>
-<div class="worked">
-<strong>Worked Example 10.2: Shape of the Ammonium Ion</strong><br><br>
-<p>
-<strong>Problem:</strong> Predict the shape and bond angle of the ammonium ion, NH₄⁺.
-</p>
-<p>
-<strong>To solve this, we need to draw the Lewis structure and count electron domains.</strong> The nitrogen atom has 5 valence electrons. It forms four bonds with four hydrogen atoms. One of these bonds is a dative (coordinate) bond, because the nitrogen donates its lone pair to a hydrogen ion, H⁺. However, as we learned in Lesson 9, a dative bond is identical in its structural consequences to any other covalent bond.
-</p>
-<p>
-With four bonds to four hydrogen atoms and no remaining lone pairs on the nitrogen (the lone pair has been used to form the fourth bond), the nitrogen has four electron domains, all of which are bonding domains. The four domains repel each other equally and adopt a tetrahedral arrangement. The molecular shape is tetrahedral, and all H–N–H bond angles are 109.5°.
-</p>
-<p>
-<strong>Why this makes sense:</strong> Even though NH₄⁺ is an ion and one of its bonds is dative, VSEPR theory treats all bonds—regardless of their origin—as electron domains. The four domains arrange themselves tetrahedrally, exactly as they do in CH₄.
-</p>
+
+<h2>1. Prior Knowledge Check</h2>
+
+<p><b>Question 1:</b> What does VSEPR stand for and what is its basic premise?</p>
+<div class="check-in">
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">VSEPR = <b>Valence Shell Electron Pair Repulsion</b>. The premise: electron pairs (both bonding and non-bonding) around a central atom repel each other and arrange themselves as far apart as possible in three-dimensional space to minimise repulsion. The resulting arrangement determines the molecular shape.</div>
 </div>
-<h2>4. Two and Three Electron Domains</h2>
-<h3>Two Electron Domains: Linear, 180°</h3>
-<p>
-When a central atom has only two electron domains (and necessarily zero lone pairs, because if there were a lone pair there would be at least three total domains), the two domains move to opposite sides of the central atom. The result is a linear molecule with a bond angle of 180°.
-</p>
-<p>
-Examples: BeCl₂ (beryllium chloride, in the gas phase) has two Be–Cl single bonds and no lone pairs. CO₂ (carbon dioxide) has two C=O double bonds—each double bond counts as one domain—and no lone pairs on carbon. Both molecules are linear with 180° bond angles.
-</p>
-<h3>Three Electron Domains, Zero Lone Pairs: Trigonal Planar, 120°</h3>
-<p>
-When a central atom has three bonding domains and zero lone pairs, the three domains spread out in a plane (a flat surface), pointing toward the corners of an equilateral triangle. The bond angle is 120°. This shape is called <strong>trigonal planar</strong>.
-</p>
-<p>
-The classic example is BF₃ (boron trifluoride). Boron has three single bonds to three fluorine atoms and no lone pairs. The molecule is flat, with all F–B–F angles equal to 120°.
-</p>
-<h3>Three Electron Domains, One Lone Pair: Bent, Approximately 118°</h3>
-<p>
-When one of the three electron domains is a lone pair, the two bonding pairs are pushed slightly together. The molecular shape is bent (V-shaped), and the bond angle is slightly less than 120°, typically around 118°.
-</p>
-<p>
-Examples: SO₂ (sulfur dioxide) has two S–O bonds and one lone pair on sulfur. O₃ (ozone) has two O–O bonds and one lone pair on the central oxygen. Both are bent with bond angles of approximately 118°.
-</p>
-<hr>
-<h2>5. HL Content: Five Electron Domains — Trigonal Bipyramidal</h2>
-<p>
-When a central atom has five electron domains, they arrange themselves in a shape called a <strong>trigonal bipyramid</strong>. To visualize this shape, imagine a flat triangle in the middle (the equatorial plane) with three atoms at its corners, 120° apart. Then imagine one atom directly above the center of the triangle (one axial position) and one directly below (the other axial position). The angle between an axial atom and any equatorial atom is 90°.
-</p>
-<p>
-An essential feature of the trigonal bipyramid is that the axial positions and the equatorial positions are <strong>not equivalent</strong>. The axial positions have three nearest neighbors at 90° (the three equatorial atoms). The equatorial positions have only two nearest neighbors at 90° (the two axial atoms) and two at 120° (the other two equatorial atoms). This difference in crowding has a crucial consequence: lone pairs always go in equatorial positions.
-</p>
-<h3>Five Domains, Zero Lone Pairs: Trigonal Bipyramidal</h3>
-<p>
-When all five domains are bonding pairs, the molecular shape is <strong>trigonal bipyramidal</strong>. Bond angles: 120° between equatorial atoms; 90° between axial and equatorial atoms; 180° between the two axial atoms.
-</p>
-<p>
-Example: PCl₅ (phosphorus pentachloride). Phosphorus has five single bonds to five chlorine atoms and no lone pairs. The three equatorial P–Cl bonds are separated by 120°, and the two axial P–Cl bonds are at 90° to the equatorial bonds.
-</p>
-<h3>Five Domains, One Lone Pair: Seesaw (Disphenoidal)</h3>
-<p>
-The lone pair goes into an equatorial position to minimize repulsion (two 90° interactions instead of three if it were axial). The four bonding pairs occupy the remaining two equatorial and two axial positions. The resulting shape resembles a playground seesaw: two axial atoms, two equatorial atoms, and the lone pair in the empty equatorial position. Bond angles: the equatorial F–S–F angle is approximately 120° (slightly compressed); the axial F–S–F angle is approximately 180° (but bent slightly by the lone pair).
-</p>
-<p>
-Example: SF₄ (sulfur tetrafluoride). Sulfur has four S–F bonds and one lone pair. The shape is seesaw.
-</p>
-<h3>Five Domains, Two Lone Pairs: T-Shaped</h3>
-<p>
-Both lone pairs go into equatorial positions (where they have only two 90° interactions each, compared to three if either were axial). The three bonding pairs occupy the remaining one equatorial and two axial positions, forming a T shape. The bond angle between the two axial atoms is approximately 180° (or slightly less), and the equatorial atom is at approximately 90° to both axial atoms.
-</p>
-<p>
-Example: ClF₃ (chlorine trifluoride). Chlorine has three Cl–F bonds and two lone pairs. The shape is T-shaped.
-</p>
-<h3>Five Domains, Three Lone Pairs: Linear</h3>
-<p>
-All three lone pairs occupy the three equatorial positions (where they all have 120° separation from each other, minimizing lone pair–lone pair repulsion). The two bonding pairs occupy the two axial positions, exactly opposite each other. The molecular shape is <strong>linear</strong> with a bond angle of exactly 180°.
-</p>
-<p>
-Example: XeF₂ (xenon difluoride). Xenon has two Xe–F bonds and three lone pairs. The shape is linear.
-</p>
-<hr>
-<h2>6. HL Content: Six Electron Domains — Octahedral</h2>
-<p>
-When a central atom has six electron domains, they arrange themselves at the corners of a regular <strong>octahedron</strong>. An octahedron has eight faces (all equilateral triangles), six corners, and all bond angles are exactly 90°. Crucially, in an octahedron, all six positions are equivalent—there are no axial versus equatorial distinctions.
-</p>
-<h3>Six Domains, Zero Lone Pairs: Octahedral, 90°</h3>
-<p>
-All six positions are occupied by atoms. The molecular shape is <strong>octahedral</strong>, with all bond angles equal to 90°.
-</p>
-<p>
-Example: SF₆ (sulfur hexafluoride). Sulfur has six S–F bonds and no lone pairs (12 electrons around sulfur—an expanded octet). The shape is octahedral.
-</p>
-<h3>Six Domains, One Lone Pair: Square Pyramidal, Approximately 90°</h3>
-<p>
-The lone pair can occupy any position (all are equivalent). The five bonding pairs occupy the remaining five positions. The four atoms in the equatorial plane form a square, and the fifth atom sits above (or below) the center. The shape is called <strong>square pyramidal</strong>. Bond angles are approximately 90°, with slight compression due to the lone pair.
-</p>
-<p>
-Example: BrF₅ (bromine pentafluoride). Bromine has five Br–F bonds and one lone pair. The shape is square pyramidal.
-</p>
-<h3>Six Domains, Two Lone Pairs: Square Planar, 90°</h3>
-<p>
-For six domains with two lone pairs, the lone pairs must occupy positions that are as far apart as possible. In an octahedron, the two positions that are farthest apart are opposite each other (180° apart). The lone pairs take these opposite positions, leaving four bonding pairs in a flat square arrangement around the central atom. This shape is called <strong>square planar</strong>. All four bond angles are exactly 90°. The four bonding atoms and the central atom all lie in the same plane.
-</p>
-<p>
-Example: XeF₄ (xenon tetrafluoride). Xenon has four Xe–F bonds and two lone pairs. The lone pairs are on opposite sides of the xenon atom (above and below the molecular plane), and the four fluorine atoms form a square around the xenon. This is square planar, with F–Xe–F bond angles of 90°.
-</p>
-<div class="worked">
-<strong>Worked Example 10.3: XeF₄ Shape Analysis</strong><br><br>
-<p>
-<strong>Problem:</strong> Predict the molecular shape of xenon tetrafluoride, XeF₄, and explain why it is square planar and not tetrahedral.
-</p>
-<p>
-<strong>To solve this, we need to count the valence electrons and determine the number of electron domains, then apply VSEPR rules for six-domain systems.</strong>
-</p>
-<p>
-Step 1: Count valence electrons. Xenon is a noble gas in Group 18 and has 8 valence electrons. Each fluorine atom is in Group 17 and brings 7 valence electrons, but in bonding, each fluorine contributes 1 electron to the shared pair with xenon. We are interested in how many electrons the xenon atom must accommodate around itself. Xenon uses 1 electron per bond to fluorine, so four bonds use 4 of xenon's 8 valence electrons. The remaining 8 − 4 = 4 electrons on xenon form two lone pairs.
-</p>
-<p>
-Step 2: Count electron domains. Xenon has four bonding domains (the four Xe–F bonds) plus two non-bonding domains (the two lone pairs). Total domains = 6.
-</p>
-<p>
-Step 3: Determine the electron domain geometry. Six domains arrange octahedrally. The six corners of the octahedron correspond to the six domains.
-</p>
-<p>
-Step 4: Place the lone pairs. In an octahedron, to minimize repulsion, the two lone pairs must occupy positions that are as far apart as possible. The maximum separation is achieved when they are at opposite corners of the octahedron (180° apart).
-</p>
-<p>
-Step 5: Identify the molecular shape. The four fluorine atoms occupy the four remaining positions, which all lie in a single plane (the equatorial plane of the octahedron). The molecular shape is square planar.
-</p>
-<p>
-<strong>Why this shape is not tetrahedral:</strong> Tetrahedral geometry occurs when there are exactly four electron domains. XeF₄ has six electron domains, not four. The two lone pairs, though invisible in the molecular shape, occupy real positions in space and force the four fluorine atoms into a square planar arrangement. Counting electron domains correctly—including lone pairs—prevents the common mistake of misidentifying the shape.
-</p>
+
+<p><b>Question 2:</b> What is the difference between an electron domain and a bonding pair?</p>
+<div class="check-in">
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">An <b>electron domain</b> is any region of electron density around the central atom — it can be a single bond, double bond, triple bond, or lone pair. All count as ONE domain for VSEPR purposes. A double bond counts as one domain, not two.</div>
 </div>
-<h2>7. Complete Summary of All VSEPR Shapes</h2>
-<p>
-The following table summarizes every molecular shape you are expected to know for IB Chemistry HL, organized by the number of electron domains:
-</p>
+
+<p><b>Question 3:</b> Draw the Lewis structure of $\ce{NH3}$ and $\ce{NH4+}$. How many electron domains around N in each?</p>
+<div class="check-in">
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">$\ce{NH3}$: N has 3 bonding pairs + 1 lone pair = <b>4 electron domains</b>. $\ce{NH4+}$: N has 4 bonding pairs + 0 lone pairs = <b>4 electron domains</b>. Both have tetrahedral electron domain geometry, but different molecular shapes (trigonal pyramidal vs. tetrahedral).</div>
+</div>
+
+<h2>2. The VSEPR Method — Step by Step</h2>
+
+<h3>2.1 The Five Steps</h3>
+
+<ol>
+  <li><b>Draw the Lewis structure</b> — this is non-negotiable; you cannot do VSEPR without it.</li>
+  <li><b>Count electron domains</b> around the central atom: each bond (single, double, triple) = 1 domain; each lone pair = 1 domain.</li>
+  <li><b>Determine the electron domain geometry</b> (the arrangement of all domains) based on the count.</li>
+  <li><b>Determine the molecular geometry</b> (the arrangement of atoms only, ignoring lone pairs).</li>
+  <li><b>Predict bond angles</b> and account for lone-pair compression.</li>
+</ol>
+
+<h3>2.2 The Repulsion Hierarchy</h3>
+
+<p>Not all electron pair repulsions are equal:</p>
+
+$$\text{Lone pair–lone pair} > \text{Lone pair–bonding pair} > \text{Bonding pair–bonding pair}$$
+
+<p>Lone pairs are held closer to the nucleus and occupy more space than bonding pairs (which are stretched between two nuclei). Therefore, lone pairs <b>compress</b> bond angles — the more lone pairs, the smaller the bond angle.</p>
+
+<div class="diagram">
+<svg width="520" height="260" viewBox="0 0 520 260">
+  <text x="260" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c5f2d">Effect of Lone Pairs on Bond Angles — 4 Electron Domains</text>
+  <!-- CH4 tetrahedral 109.5 -->
+  <rect x="15" y="40" width="155" height="200" rx="8" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="1.5"/>
+  <text x="92" y="65" text-anchor="middle" font-size="12" font-weight="bold" fill="#2c5f2d">$\ce{CH4}$</text>
+  <text x="92" y="85" text-anchor="middle" font-size="10">4 bonding pairs</text>
+  <text x="92" y="100" text-anchor="middle" font-size="10">0 lone pairs</text>
+  <text x="92" y="130" text-anchor="middle" font-size="16" font-weight="bold" fill="#2c5f2d">109.5°</text>
+  <text x="92" y="150" text-anchor="middle" font-size="9" fill="#555">Tetrahedral</text>
+  <!-- Methane tetrahedron -->
+  <polygon points="92,170 60,210 92,235 124,210" fill="none" stroke="#2c5f2d" stroke-width="1.5"/>
+  <circle cx="92" cy="205" r="3" fill="#2c5f2d"/>
+  <circle cx="60" cy="210" r="3" fill="#2c5f2d"/>
+  <circle cx="124" cy="210" r="3" fill="#2c5f2d"/>
+  <circle cx="92" cy="170" r="3" fill="#2c5f2d"/>
+
+  <!-- NH3 trigonal pyramidal 107 -->
+  <rect x="182" y="40" width="155" height="200" rx="8" fill="#fff8e1" stroke="#f9a825" stroke-width="1.5"/>
+  <text x="259" y="65" text-anchor="middle" font-size="12" font-weight="bold" fill="#e65100">$\ce{NH3}$</text>
+  <text x="259" y="85" text-anchor="middle" font-size="10">3 bonding pairs</text>
+  <text x="259" y="100" text-anchor="middle" font-size="10">1 lone pair</text>
+  <text x="259" y="130" text-anchor="middle" font-size="16" font-weight="bold" fill="#e65100">107°</text>
+  <text x="259" y="150" text-anchor="middle" font-size="9" fill="#555">Trigonal pyramidal</text>
+  <polygon points="259,175 232,210 259,230 286,210" fill="none" stroke="#e65100" stroke-width="1.5"/>
+  <circle cx="259" cy="200" r="3" fill="#e65100"/>
+  <circle cx="232" cy="210" r="3" fill="#e65100"/>
+  <circle cx="286" cy="210" r="3" fill="#e65100"/>
+  <text x="259" y="245" text-anchor="middle" font-size="8" fill="#e65100">1 LP (not shown)</text>
+
+  <!-- H2O bent 104.5 -->
+  <rect x="349" y="40" width="155" height="200" rx="8" fill="#ffebee" stroke="#c62828" stroke-width="1.5"/>
+  <text x="426" y="65" text-anchor="middle" font-size="12" font-weight="bold" fill="#c62828">$\ce{H2O}$</text>
+  <text x="426" y="85" text-anchor="middle" font-size="10">2 bonding pairs</text>
+  <text x="426" y="100" text-anchor="middle" font-size="10">2 lone pairs</text>
+  <text x="426" y="130" text-anchor="middle" font-size="16" font-weight="bold" fill="#c62828">104.5°</text>
+  <text x="426" y="150" text-anchor="middle" font-size="9" fill="#555">Bent/V-shaped</text>
+  <!-- V-shape -->
+  <line x1="426" y1="195" x2="402" y2="225" stroke="#c62828" stroke-width="2"/>
+  <line x1="426" y1="195" x2="450" y2="225" stroke="#c62828" stroke-width="2"/>
+  <circle cx="426" cy="195" r="3" fill="#c62828"/>
+  <circle cx="402" cy="225" r="3" fill="#c62828"/>
+  <circle cx="450" cy="225" r="3" fill="#c62828"/>
+  <text x="426" y="245" text-anchor="middle" font-size="8" fill="#c62828">2 LP (not shown)</text>
+</svg>
+<div class="caption">Figure 1: The progressive compression of bond angles with increasing lone pairs. All three molecules have 4 electron domains (tetrahedral arrangement), but the bond angle shrinks from 109.5° → 107° → 104.5° as lone pair count increases from 0 → 1 → 2.</div>
+</div>
+
+<div class="check-in">
+<p><b>Check-in:</b> Why is the bond angle in $\ce{NH3}$ (107°) smaller than in $\ce{CH4}$ (109.5°)?</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">Both have 4 electron domains (tetrahedral). However, $\ce{NH3}$ has one lone pair which occupies more space than a bonding pair. The lone pair–bonding pair repulsion is stronger than bonding pair–bonding pair repulsion, so the N–H bonds are pushed closer together, compressing the H–N–H angle from 109.5° to about 107°.</div>
+</div>
+
+<h2>3. The Complete VSEPR Geometry Table</h2>
+
 <table>
-<tr>
-<th>Electron domains</th>
-<th>Lone pairs</th>
-<th>Molecular shape</th>
-<th>Bond angles</th>
-<th>Example</th>
-</tr>
-<tr>
-<td>2</td>
-<td>0</td>
-<td>Linear</td>
-<td>180°</td>
-<td>BeCl₂, CO₂</td>
-</tr>
-<tr>
-<td>3</td>
-<td>0</td>
-<td>Trigonal planar</td>
-<td>120°</td>
-<td>BF₃, CO₃²⁻</td>
-</tr>
-<tr>
-<td>3</td>
-<td>1</td>
-<td>Bent (V-shaped)</td>
-<td>~118°</td>
-<td>SO₂, O₃</td>
-</tr>
-<tr>
-<td>4</td>
-<td>0</td>
-<td>Tetrahedral</td>
-<td>109.5°</td>
-<td>CH₄, CCl₄, NH₄⁺</td>
-</tr>
-<tr>
-<td>4</td>
-<td>1</td>
-<td>Trigonal pyramidal</td>
-<td>~107°</td>
-<td>NH₃, PH₃</td>
-</tr>
-<tr>
-<td>4</td>
-<td>2</td>
-<td>Bent (V-shaped)</td>
-<td>~104.5°</td>
-<td>H₂O, H₂S</td>
-</tr>
-<tr>
-<td>5</td>
-<td>0</td>
-<td>Trigonal bipyramidal</td>
-<td>120° (eq), 90° (ax)</td>
-<td>PCl₅</td>
-</tr>
-<tr>
-<td>5</td>
-<td>1</td>
-<td>Seesaw (disphenoidal)</td>
-<td>~120°, ~90°</td>
-<td>SF₄</td>
-</tr>
-<tr>
-<td>5</td>
-<td>2</td>
-<td>T-shaped</td>
-<td>~90°</td>
-<td>ClF₃</td>
-</tr>
-<tr>
-<td>5</td>
-<td>3</td>
-<td>Linear</td>
-<td>180°</td>
-<td>XeF₂</td>
-</tr>
-<tr>
-<td>6</td>
-<td>0</td>
-<td>Octahedral</td>
-<td>90°</td>
-<td>SF₆</td>
-</tr>
-<tr>
-<td>6</td>
-<td>1</td>
-<td>Square pyramidal</td>
-<td>~90°</td>
-<td>BrF₅</td>
-</tr>
-<tr>
-<td>6</td>
-<td>2</td>
-<td>Square planar</td>
-<td>90°</td>
-<td>XeF₄</td>
-</tr>
-<hr>
-<h2>Practice Problems</h2>
+<tr><th>Electron Domains</th><th>Bonding Pairs</th><th>Lone Pairs</th><th>Electron Domain Geometry</th><th>Molecular Geometry</th><th>Bond Angle</th><th>Example</th></tr>
+<tr><td>2</td><td>2</td><td>0</td><td>Linear</td><td>Linear</td><td>180°</td><td>$\ce{BeCl2}$, $\ce{CO2}$</td></tr>
+<tr><td>3</td><td>3</td><td>0</td><td>Trigonal planar</td><td>Trigonal planar</td><td>120°</td><td>$\ce{BF3}$, $\ce{SO3}$</td></tr>
+<tr><td>3</td><td>2</td><td>1</td><td>Trigonal planar</td><td>Bent/V-shaped</td><td>&lt;120°</td><td>$\ce{SO2}$, $\ce{O3}$</td></tr>
+<tr><td>4</td><td>4</td><td>0</td><td>Tetrahedral</td><td>Tetrahedral</td><td>109.5°</td><td>$\ce{CH4}$, $\ce{NH4+}$</td></tr>
+<tr><td>4</td><td>3</td><td>1</td><td>Tetrahedral</td><td>Trigonal pyramidal</td><td>~107°</td><td>$\ce{NH3}$, $\ce{PH3}$</td></tr>
+<tr><td>4</td><td>2</td><td>2</td><td>Tetrahedral</td><td>Bent/V-shaped</td><td>~104.5°</td><td>$\ce{H2O}$, $\ce{H2S}$</td></tr>
+<tr><td>5</td><td>5</td><td>0</td><td>Trigonal bipyramidal</td><td>Trigonal bipyramidal</td><td>90°, 120°</td><td>$\ce{PCl5}$</td></tr>
+<tr><td>5</td><td>4</td><td>1</td><td>Trigonal bipyramidal</td><td>Seesaw</td><td>&lt;90°, &lt;120°</td><td>$\ce{SF4}$</td></tr>
+<tr><td>5</td><td>3</td><td>2</td><td>Trigonal bipyramidal</td><td>T-shaped</td><td>&lt;90°</td><td>$\ce{ClF3}$</td></tr>
+<tr><td>5</td><td>2</td><td>3</td><td>Trigonal bipyramidal</td><td>Linear</td><td>180°</td><td>$\ce{XeF2}$</td></tr>
+<tr><td>6</td><td>6</td><td>0</td><td>Octahedral</td><td>Octahedral</td><td>90°</td><td>$\ce{SF6}$</td></tr>
+<tr><td>6</td><td>5</td><td>1</td><td>Octahedral</td><td>Square pyramidal</td><td>&lt;90°</td><td>$\ce{BrF5}$</td></tr>
+<tr><td>6</td><td>4</td><td>2</td><td>Octahedral</td><td>Square planar</td><td>90°</td><td>$\ce{XeF4}$</td></tr>
 </table>
-<ol>
-<li>Beryllium chloride, BeCl₂, exists as a linear molecule in the gas phase. Using VSEPR theory, explain why BeCl₂ is linear. In your answer, state the number of electron domains around the beryllium atom, the number of lone pairs (if any), and the expected bond angle.</li>
-</ol>
-<ol>
-<li>Nitrogen trifluoride, NF₃, and boron trifluoride, BF₃, have very different molecular shapes. For each molecule, state (a) the total number of electron domains around the central atom, (b) the number of lone pairs on the central atom, (c) the name of the molecular shape, and (d) the approximate bond angle. Explain why the shapes are different even though both molecules contain a central atom bonded to three fluorine atoms.</li>
-</ol>
-<ol>
-<li>Xenon difluoride, XeF₂, has three lone pairs on the central xenon atom, yet the molecule is linear. Use VSEPR theory to explain why. In your answer, identify the electron domain geometry, state where the lone pairs are positioned, and explain why those positions are chosen.</li>
-</ol>
-<ol>
-<li>Predict the molecular shape of each of the following species using VSEPR theory. For each one, state the number of electron domains, the number of lone pairs, and the name of the molecular shape: (a) BrF₅, (b) IF₄⁻, (c) SF₄.</li>
-</ol>
-<ol>
-<li><strong>(IB Exam Style)</strong> Phosphorus forms a compound with chlorine and fluorine with the formula PF₃Cl₂. This compound can exist in two different structural forms (isomers) that differ in the arrangement of chlorine and fluorine atoms around the central phosphorus atom.</li>
-</ol>
-<p>
-   (a) Identify the electron domain geometry around the phosphorus atom in PF₃Cl₂. State the total number of electron domains and the number of lone pairs (if any).
-</p>
-<p>
-   (b) Draw and name the two possible isomers of PF₃Cl₂. For each isomer, describe the positions occupied by the chlorine atoms (axial or equatorial) and the fluorine atoms.
-</p>
-<p>
-   (c) For each isomer, predict whether the molecule as a whole is polar or non-polar. Explain your reasoning by referring to the symmetry of the arrangement and the bond polarities.
-</p>
-<p>
-   (d) Based on the principle that more electronegative substituents tend to prefer axial positions in a trigonal bipyramid, predict which isomer is more stable. Justify your answer.
-</p>
-<hr>
-<h2>Answers</h2>
-<ol>
-<li>The beryllium atom in BeCl₂ has 2 valence electrons. It forms two single bonds, one to each chlorine atom, using both of its valence electrons. There are 2 electron domains around the beryllium atom, both of which are bonding domains. There are zero lone pairs on the beryllium atom. According to VSEPR theory, two electron domains will repel each other and move as far apart as possible. The farthest two points can be from each other on a sphere is at opposite ends of a diameter, which produces a linear arrangement with a bond angle of exactly 180°. Therefore, BeCl₂ is linear. Beryllium is electron-deficient in this molecule, having only 4 electrons around it instead of an octet, but VSEPR theory still applies based on the number of electron domains.</li>
-</ol>
-<ol>
-<li>For NF₃: The nitrogen atom has 5 valence electrons. It forms three single bonds with three fluorine atoms, using 3 electrons, leaving 2 electrons as one lone pair. Total electron domains = 4 (three bonding + one non-bonding). Number of lone pairs = 1. The electron domain geometry is tetrahedral. The molecular shape, considering only the atoms, is trigonal pyramidal. The bond angle is approximately 107° (compressed from 109.5° by the lone pair).</li>
-</ol>
-<p>
-   For BF₃: The boron atom has 3 valence electrons. It forms three single bonds with three fluorine atoms, using all 3 electrons. Total electron domains = 3 (three bonding, zero non-bonding). Number of lone pairs = 0. The molecular shape is trigonal planar. The bond angle is exactly 120°.
-</p>
-<p>
-   The two molecules have different shapes because they have different numbers of electron domains around the central atom. NF₃ has four electron domains (including one lone pair on nitrogen), while BF₃ has only three electron domains (all bonding, no lone pairs). The presence of the lone pair on nitrogen in NF₃ changes the shape from trigonal planar (flat, 120°) to trigonal pyramidal (three-dimensional, ~107°).
-</p>
-<ol>
-<li>The xenon atom in XeF₂ has 8 valence electrons. It forms two single bonds with two fluorine atoms, using 2 electrons, leaving 6 electrons as three lone pairs. Total electron domains = 2 (bonding) + 3 (non-bonding) = 5. The electron domain geometry for five domains is trigonal bipyramidal.</li>
-</ol>
-<p>
-   In a trigonal bipyramid, lone pairs always occupy equatorial positions because equatorial positions have fewer 90° interactions with other domains. An axial position has three 90° interactions (with the three equatorial domains), while an equatorial position has only two 90° interactions (with the two axial domains). Placing lone pairs in equatorial positions minimizes the strong lone pair–bonding pair repulsions.
-</p>
-<p>
-   XeF₂ has three lone pairs, which exactly fill all three equatorial positions of the trigonal bipyramid. The two fluorine atoms occupy the two axial positions, which are directly opposite each other. The molecular shape, considering only the atoms, is linear, with an F–Xe–F bond angle of exactly 180°. The three lone pairs are arranged in the equatorial plane 120° apart, where their mutual repulsions are minimized.
-</p>
-<ol>
-<li>(a) BrF₅: Bromine has 7 valence electrons. It forms five single bonds to five fluorine atoms, using 5 electrons, leaving 2 electrons as one lone pair. Total electron domains = 5 (bonding) + 1 (non-bonding) = 6. The electron domain geometry is octahedral. With six domains and one lone pair, the molecular shape is square pyramidal. The five fluorine atoms occupy five of the six octahedral positions; the lone pair occupies the sixth. The bond angles are approximately 90°.</li>
-</ol>
-<p>
-   (b) IF₄⁻: Iodine has 7 valence electrons, plus 1 additional electron from the negative charge, giving a total of 8 valence electrons. It forms four single bonds to four fluorine atoms, using 4 electrons, leaving 4 electrons as two lone pairs. Total electron domains = 4 (bonding) + 2 (non-bonding) = 6. The electron domain geometry is octahedral. With six domains and two lone pairs, the lone pairs occupy opposite positions in the octahedron (180° apart) to minimize repulsion. The four fluorine atoms occupy the four remaining positions, which are coplanar, giving a square planar molecular shape. Bond angles are 90°.
-</p>
-<p>
-   (c) SF₄: Sulfur has 6 valence electrons. It forms four single bonds to four fluorine atoms, using 4 electrons, leaving 2 electrons as one lone pair. Total electron domains = 4 (bonding) + 1 (non-bonding) = 5. The electron domain geometry is trigonal bipyramidal. The lone pair occupies an equatorial position. The four fluorine atoms occupy the remaining two equatorial and two axial positions. The molecular shape is seesaw (also called disphenoidal). Bond angles: approximately 120° between the two equatorial fluorine atoms (slightly compressed by the lone pair), and approximately 90° between axial and equatorial fluorines.
-</p>
-<ol>
-<li>(a) Phosphorus in PF₃Cl₂ has 5 valence electrons. It forms five single bonds (three to fluorine and two to chlorine), using all 5 valence electrons. There are no lone pairs on the phosphorus atom. Total electron domains = 5, all of which are bonding domains. The electron domain geometry is trigonal bipyramidal.</li>
-</ol>
-<p>
-   (b) Isomer A: Both chlorine atoms in axial positions, all three fluorine atoms in equatorial positions. The Cl–P–Cl bond angle is 180° (axial positions are opposite each other). The F–P–F bond angles are 120° in the equatorial plane. This is the trans (or axial) isomer.
-</p>
-<p>
-   Isomer B: One chlorine atom in an axial position and one chlorine atom in an equatorial position, with the three fluorine atoms occupying the remaining two equatorial positions and one axial position. This is a less symmetrical arrangement. Alternatively, the isomer with both chlorine atoms in equatorial positions and fluorine atoms in the two axial positions and one equatorial position is also possible. In this isomer, the Cl–P–Cl bond angle is 120°, and the F–P–F angles include one at 180° (axial) and others at 120° and 90°.
-</p>
-<p>
-   (c) Isomer A (both Cl axial, three F equatorial): This molecule has D₃h symmetry. The three equatorial P–F bonds are identical and arranged symmetrically (120° apart). The two axial P–Cl bonds are opposite each other. Each P–Cl bond dipole cancels at the molecular level because the axial chlorines are symmetrically opposite. The three equatorial P–F dipoles sum to zero because they are symmetrically arranged at 120°. The molecule is non-polar.
-</p>
-<p>
-   Isomer B (Cl atoms not symmetrically arranged): If the two chlorine atoms are in equatorial positions with the fluorines in axial and equatorial positions, the molecule is not symmetric. The bond dipoles do not cancel. The molecule is polar.
-</p>
-<p>
-   (d) In trigonal bipyramidal geometry, more electronegative substituents tend to prefer axial positions. Fluorine (electronegativity = 4.0) is more electronegative than chlorine (electronegativity = 3.0). Therefore, the isomer in which the fluorine atoms occupy axial positions and the chlorine atoms occupy equatorial positions is expected to be more stable. This corresponds to the isomer with fluorine atoms in the two axial positions and one equatorial position, and chlorine atoms in the two equatorial positions (Isomer B with F axial). In this arrangement, the more electronegative fluorine atoms occupy the axial sites where the bonds are slightly longer and the electron density accommodation by electronegative atoms is more favorable. Additionally, the larger chlorine atoms (which are bulkier) are placed in the less crowded equatorial positions, reducing steric repulsion.
-</p>
-<p>
-   A common pitfall is to assume that the more symmetrical isomer (both Cl axial, all F equatorial) must be more stable because of symmetry. Symmetry alone does not determine stability; the electronic factors (electronegativity and apicophilicity—the preference of certain groups for axial positions) are more important.
-</p>
-<div class="nav">
-<a href="lesson_09.html">← Previous Lesson</a>
-<a href="lesson_11.html">Next Lesson →</a>
+
+<div class="diagram">
+<svg width="520" height="310" viewBox="0 0 520 310">
+  <text x="260" y="18" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c5f2d">Key Molecular Geometries (4, 5, and 6 domains)</text>
+
+  <!-- Tetrahedral -->
+  <text x="85" y="50" text-anchor="middle" font-size="11" font-weight="bold">Tetrahedral</text>
+  <line x1="85" y1="60" x2="70" y2="90" stroke="#2c5f2d" stroke-width="2"/>
+  <line x1="85" y1="60" x2="100" y2="90" stroke="#2c5f2d" stroke-width="2"/>
+  <line x1="85" y1="60" x2="60" y2="100" stroke="#2c5f2d" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <line x1="85" y1="60" x2="110" y2="100" stroke="#2c5f2d" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <circle cx="85" cy="60" r="3" fill="#2c5f2d"/>
+  <circle cx="70" cy="90" r="2.5" fill="#1565c0"/>
+  <circle cx="100" cy="90" r="2.5" fill="#1565c0"/>
+  <circle cx="60" cy="100" r="2.5" fill="#1565c0"/>
+  <circle cx="110" cy="100" r="2.5" fill="#1565c0"/>
+  <text x="85" y="120" text-anchor="middle" font-size="9">109.5°</text>
+
+  <!-- Trigonal bipyramidal -->
+  <text x="190" y="50" text-anchor="middle" font-size="11" font-weight="bold">Trigonal bipyramidal</text>
+  <line x1="190" y1="60" x2="165" y2="100" stroke="#e65100" stroke-width="2"/>
+  <line x1="190" y1="60" x2="215" y2="100" stroke="#e65100" stroke-width="2"/>
+  <line x1="190" y1="60" x2="190" y2="105" stroke="#e65100" stroke-width="2"/>
+  <line x1="190" y1="60" x2="175" y2="75" stroke="#e65100" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <line x1="190" y1="60" x2="205" y2="75" stroke="#e65100" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <circle cx="190" cy="60" r="3" fill="#e65100"/>
+  <circle cx="165" cy="100" r="2.5" fill="#1565c0"/>
+  <circle cx="215" cy="100" r="2.5" fill="#1565c0"/>
+  <circle cx="190" cy="105" r="2.5" fill="#1565c0"/>
+  <circle cx="175" cy="75" r="2.5" fill="#1565c0"/>
+  <circle cx="205" cy="75" r="2.5" fill="#1565c0"/>
+  <text x="190" y="120" text-anchor="middle" font-size="9">90° (ax-eq), 120° (eq-eq)</text>
+
+  <!-- Seesaw -->
+  <text x="310" y="50" text-anchor="middle" font-size="11" font-weight="bold">Seesaw (4 BP + 1 LP)</text>
+  <line x1="310" y1="60" x2="285" y2="100" stroke="#e65100" stroke-width="2"/>
+  <line x1="310" y1="60" x2="335" y2="100" stroke="#e65100" stroke-width="2"/>
+  <line x1="310" y1="60" x2="310" y2="105" stroke="#e65100" stroke-width="2"/>
+  <circle cx="310" cy="60" r="3" fill="#e65100"/>
+  <circle cx="285" cy="100" r="2.5" fill="#1565c0"/>
+  <circle cx="335" cy="100" r="2.5" fill="#1565c0"/>
+  <circle cx="310" cy="105" r="2.5" fill="#1565c0"/>
+  <text x="295" y="70" font-size="8" fill="#c62828">LP</text>
+  <text x="310" y="120" text-anchor="middle" font-size="9">&lt;90°, &lt;120°</text>
+
+  <!-- Octahedral -->
+  <text x="435" y="50" text-anchor="middle" font-size="11" font-weight="bold">Octahedral</text>
+  <line x1="435" y1="65" x2="415" y2="95" stroke="#7b1fa2" stroke-width="2"/>
+  <line x1="435" y1="65" x2="455" y2="95" stroke="#7b1fa2" stroke-width="2"/>
+  <line x1="435" y1="65" x2="415" y2="75" stroke="#7b1fa2" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <line x1="435" y1="65" x2="455" y2="75" stroke="#7b1fa2" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <line x1="435" y1="65" x2="435" y2="100" stroke="#7b1fa2" stroke-width="2"/>
+  <line x1="435" y1="65" x2="435" y2="30" stroke="#7b1fa2" stroke-width="2"/>
+  <circle cx="435" cy="65" r="3" fill="#7b1fa2"/>
+  <circle cx="415" cy="95" r="2.5" fill="#1565c0"/>
+  <circle cx="455" cy="95" r="2.5" fill="#1565c0"/>
+  <circle cx="415" cy="75" r="2.5" fill="#1565c0"/>
+  <circle cx="455" cy="75" r="2.5" fill="#1565c0"/>
+  <circle cx="435" cy="100" r="2.5" fill="#1565c0"/>
+  <circle cx="435" cy="30" r="2.5" fill="#1565c0"/>
+  <text x="435" y="120" text-anchor="middle" font-size="9">90°</text>
+
+  <!-- Additional shapes row -->
+  <text x="65" y="165" text-anchor="middle" font-size="10" font-weight="bold">Square planar</text>
+  <rect x="30" y="175" width="70" height="55" rx="5" fill="none" stroke="#7b1fa2" stroke-width="1.5"/>
+  <circle cx="65" cy="202" r="2.5" fill="#7b1fa2"/>
+  <circle cx="45" cy="185" r="2.5" fill="#1565c0"/>
+  <circle cx="85" cy="185" r="2.5" fill="#1565c0"/>
+  <circle cx="45" cy="220" r="2.5" fill="#1565c0"/>
+  <circle cx="85" cy="220" r="2.5" fill="#1565c0"/>
+  <text x="65" y="245" text-anchor="middle" font-size="8">$\ce{XeF4}$</text>
+
+  <text x="170" y="165" text-anchor="middle" font-size="10" font-weight="bold">T-shaped</text>
+  <line x1="170" y1="185" x2="150" y2="220" stroke="#e65100" stroke-width="2"/>
+  <line x1="170" y1="185" x2="190" y2="220" stroke="#e65100" stroke-width="2"/>
+  <line x1="170" y1="185" x2="170" y2="225" stroke="#e65100" stroke-width="2"/>
+  <circle cx="170" cy="185" r="3" fill="#e65100"/>
+  <circle cx="150" cy="220" r="2.5" fill="#1565c0"/>
+  <circle cx="190" cy="220" r="2.5" fill="#1565c0"/>
+  <circle cx="170" cy="225" r="2.5" fill="#1565c0"/>
+  <text x="170" y="245" text-anchor="middle" font-size="8">$\ce{ClF3}$</text>
+
+  <text x="270" y="165" text-anchor="middle" font-size="10" font-weight="bold">Square pyramidal</text>
+  <polygon points="255,225 240,195 250,180 270,180 280,195" fill="none" stroke="#7b1fa2" stroke-width="1.5"/>
+  <line x1="260" y1="190" x2="260" y2="170" stroke="#7b1fa2" stroke-width="2"/>
+  <circle cx="260" cy="190" r="2.5" fill="#7b1fa2"/>
+  <circle cx="255" cy="225" r="2.5" fill="#1565c0"/>
+  <circle cx="240" cy="195" r="2.5" fill="#1565c0"/>
+  <circle cx="250" cy="180" r="2.5" fill="#1565c0"/>
+  <circle cx="270" cy="180" r="2.5" fill="#1565c0"/>
+  <circle cx="280" cy="195" r="2.5" fill="#1565c0"/>
+  <circle cx="260" cy="170" r="2.5" fill="#1565c0"/>
+  <text x="270" y="245" text-anchor="middle" font-size="8">$\ce{BrF5}$</text>
+
+  <text x="380" y="165" text-anchor="middle" font-size="10" font-weight="bold">Trigonal pyramidal</text>
+  <line x1="380" y1="185" x2="365" y2="220" stroke="#e65100" stroke-width="2"/>
+  <line x1="380" y1="185" x2="395" y2="220" stroke="#e65100" stroke-width="2"/>
+  <line x1="380" y1="185" x2="380" y2="195" stroke="#e65100" stroke-width="1.5" stroke-dasharray="2,2"/>
+  <circle cx="380" cy="185" r="3" fill="#e65100"/>
+  <circle cx="365" cy="220" r="2.5" fill="#1565c0"/>
+  <circle cx="395" cy="220" r="2.5" fill="#1565c0"/>
+  <text x="380" y="210" font-size="8" fill="#c62828">LP ↑</text>
+  <text x="380" y="245" text-anchor="middle" font-size="8">$\ce{NH3}$</text>
+
+  <text x="470" y="165" text-anchor="middle" font-size="10" font-weight="bold">Bent</text>
+  <line x1="460" y1="185" x2="450" y2="220" stroke="#c62828" stroke-width="2"/>
+  <line x1="460" y1="185" x2="475" y2="220" stroke="#c62828" stroke-width="2"/>
+  <circle cx="460" cy="185" r="3" fill="#c62828"/>
+  <circle cx="450" cy="220" r="2.5" fill="#1565c0"/>
+  <circle cx="475" cy="220" r="2.5" fill="#1565c0"/>
+  <text x="465" y="210" font-size="8" fill="#c62828">2LP</text>
+  <text x="470" y="245" text-anchor="middle" font-size="8">$\ce{H2O}$</text>
+
+  <text x="260" y="285" text-anchor="middle" font-size="9" fill="#666">Note: dashed wedges go into the page; solid wedges come out of the page. Lone pairs are labelled "LP".</text>
+</svg>
+<div class="caption">Figure 2: Key molecular geometries with 4, 5, and 6 electron domains. The shape name describes the arrangement of ATOMS only — lone pairs are invisible in the molecular geometry but determine the shape.</div>
 </div>
+
+<h2>4. Special Considerations</h2>
+
+<h3>4.1 Multiple Bonds Count as ONE Domain</h3>
+
+<p>A double or triple bond is treated as <b>one electron domain</b> in VSEPR, because all the electron density is concentrated in the same region between the two nuclei. $\ce{CO2}$ has 2 domains (two double bonds) → linear; $\ce{SO2}$ has 3 domains (one double bond, one single bond, one lone pair) → bent.</p>
+
+<h3>4.2 5-Domain Geometries — Axial vs. Equatorial</h3>
+
+<p>In a <b>trigonal bipyramid</b>, there are two types of positions: <b>axial</b> (180° apart, 3 × 90° interactions with equatorial ligands) and <b>equatorial</b> (120° apart, 2 × 90° interactions). Lone pairs always occupy <b>equatorial</b> positions first because they minimise the number of 90° LP–BP repulsions (2 vs. 3).</p>
+
+<div class="check-in">
+<p><b>Check-in:</b> In $\ce{SF4}$ (seesaw shape), where is the lone pair located — axial or equatorial? Why?</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">The lone pair occupies an <b>equatorial</b> position. If it were axial, it would have three 90° LP–BP repulsions with the equatorial fluorine atoms. In the equatorial position, it has only two 90° LP–BP repulsions. This minimises overall repulsion, making the seesaw shape more stable.</div>
+</div>
+
+<div class="check-in">
+<p><b>Check-in:</b> $\ce{XeF2}$ has 5 electron domains but is linear. Explain.</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">$\ce{XeF2}$: Xe(8) + 2×F(7) = 22 valence electrons. Lewis structure: two Xe–F bonds + three lone pairs on Xe. That's 5 electron domains (trigonal bipyramidal). The three lone pairs occupy all three equatorial positions (to minimise 90° repulsions), leaving the two F atoms in axial positions — exactly 180° apart. The molecular geometry (atoms only) is <b>linear</b>.</div>
+</div>
+
+<h2>5. Worked Examples</h2>
+
+<div class="example">
+<b>Example 1 — Complete VSEPR Analysis of $\ce{PCl3}$:</b><br><br>
+<b>Lewis structure:</b> P(5) + 3×Cl(7) = 26 e⁻. Three P–Cl single bonds + 1 lone pair on P. Each Cl has 3 lone pairs.<br>
+<b>Electron domains:</b> 3 bonding + 1 lone = 4 → tetrahedral electron domain geometry.<br>
+<b>Molecular geometry:</b> 3 bonding + 1 lone → <b>trigonal pyramidal</b>.<br>
+<b>Bond angle:</b> ~107° (less than 109.5° due to lone pair compression).<br>
+<b>Polarity:</b> The molecule is polar — the Cl–P bonds are polar (Cl more EN) and the trigonal pyramidal shape prevents cancellation of bond dipoles. The net dipole points downward (toward the lone pair).
+</div>
+
+<div class="example">
+<b>Example 2 — $\ce{XeF4}$ (Square Planar, HL):</b><br><br>
+<b>Lewis structure:</b> Xe(8) + 4×F(7) = 36 e⁻. Four Xe–F bonds (8 e⁻), each F with 3 lone pairs (24 e⁻), remaining 4 e⁻ = 2 lone pairs on Xe.<br>
+<b>Electron domains:</b> 4 bonding + 2 lone = 6 → octahedral electron domain geometry.<br>
+<b>Lone pair placement:</b> The two lone pairs must be placed opposite each other (180° apart, axial positions) to minimise LP–LP repulsion.<br>
+<b>Molecular geometry:</b> 4 bonding pairs in a square plane → <b>square planar</b>.<br>
+<b>Bond angle:</b> 90° (between adjacent F atoms).<br>
+<b>Polarity:</b> Non-polar — the four bond dipoles are symmetrically arranged in a plane and cancel.
+</div>
+
+<div class="example">
+<b>Example 3 — $\ce{SO4^{2-}}$ vs. $\ce{SO3^{2-}}$:</b><br><br>
+These two sulfur oxoanions have very different shapes despite both having a central S atom bonded to oxygen. Explain.<br><br>
+<b>$\ce{SO4^{2-}}$ (sulfate):</b> S(6) + 4×O(6) + 2 = 32 e⁻. Four S–O bonds (with resonance), <b>no lone pair on S</b>. 4 domains → tetrahedral, 109.5°.<br>
+<b>$\ce{SO3^{2-}}$ (sulfite):</b> S(6) + 3×O(6) + 2 = 26 e⁻. Three S–O bonds + <b>1 lone pair on S</b>. 4 domains → trigonal pyramidal, ~107°.<br><br>
+The difference: adding one more O atom to sulfite uses the lone pair in bonding, converting trigonal pyramidal to tetrahedral. The bond angle increases and the polarity changes.
+</div>
+
+<h2>6. Common Misconceptions</h2>
+
+<div class="misconception">
+<h3>⚠️ Common Mistakes to Avoid</h3>
+<ol>
+  <li><b>Counting a double bond as two electron domains.</b> A double bond is <b>one domain</b>. $\ce{CO2}$ has 2 domains (not 4), so it's linear, not bent. This is the single most common VSEPR error.</li>
+  <li><b>Confusing electron domain geometry with molecular geometry.</b> The electron domain geometry includes lone pairs; the molecular geometry describes atom positions only. $\ce{NH3}$ has tetrahedral <em>electron</em> geometry but trigonal pyramidal <em>molecular</em> geometry.</li>
+  <li><b>Thinking ionic compounds have molecular shapes.</b> VSEPR applies only to discrete covalent molecules and polyatomic ions. NaCl does not have a "shape" — it has a crystal lattice structure.</li>
+  <li><b>Forgetting that lone pairs on terminal atoms do not affect the central atom's geometry.</b> Only lone pairs <em>on the central atom</em> influence shape. The three lone pairs on each Cl in $\ce{PCl3}$ do not affect the trigonal pyramidal shape — only the one lone pair on P matters.</li>
+  <li><b>Assuming the ideal angle without accounting for lone pair compression.</b> If asked for the bond angle in $\ce{NH3}$, writing 109.5° is wrong. It's 107°. The IB expects you to know that lone pairs compress bond angles by about 2.5° per lone pair.</li>
+</ol>
+</div>
+
+<h2>7. End-of-Lesson Practice</h2>
+
+<p><b>Question 1:</b> State the electron domain geometry, molecular geometry, and approximate bond angle for: (a) $\ce{BeCl2}$, (b) $\ce{BF3}$, (c) $\ce{CH4}$.</p>
+
+<p><b>Question 2:</b> Predict the shape and bond angle of $\ce{SO2}$. Explain why it is not linear like $\ce{CO2}$.</p>
+
+<p><b>Question 3:</b> Draw the Lewis structure of $\ce{IF5}$ and predict its molecular shape. Where is the lone pair? (HL)</p>
+
+<p><b>Question 4:</b> Compare the shapes and bond angles of $\ce{NH3}$, $\ce{PH3}$, and $\ce{AsH3}$. All are Group 15 hydrides — explain any differences.</p>
+
+<p><b>Question 5:</b> $\ce{ClF3}$ has the molecular formula $\ce{AX3E2}$ (3 bonding, 2 lone pairs). Predict its shape and explain the positions of the lone pairs. (HL)</p>
+
+<p><b>Question 6 (HL synthesis):</b> For $\ce{XeOF4}$ (xenon oxytetrafluoride): (a) draw the Lewis structure, (b) determine the number of electron domains around Xe, (c) predict the molecular geometry, (d) state the approximate O–Xe–F and F–Xe–F bond angles.</p>
+
+<button class="practice-toggle" onclick="var a=this.nextElementSibling;a.classList.toggle('open');this.textContent=a.classList.contains('open')?'▴ Hide Answers':'▸ Show Answers'">▸ Show Answers</button>
+<div class="practice-answers">
+
+<p><b>Answer 1:</b> (a) $\ce{BeCl2}$: 2 domains (2 bonding, 0 lone) → linear, 180°. (b) $\ce{BF3}$: 3 domains (3 bonding, 0 lone) → trigonal planar, 120°. (c) $\ce{CH4}$: 4 domains (4 bonding, 0 lone) → tetrahedral, 109.5°.</p>
+
+<p><b>Answer 2:</b> $\ce{SO2}$: 3 electron domains (S=O double bond, S–O single bond, 1 lone pair on S) → <b>bent/V-shaped</b>, ~119°. $\ce{CO2}$ has only 2 domains (two C=O double bonds, no lone pair on C) → linear. The lone pair on S is the crucial difference.</p>
+
+<p><b>Answer 3:</b> $\ce{IF5}$: I(7) + 5×F(7) = 42 e⁻. Five I–F bonds (10 e⁻), each F with 3 lone pairs (30 e⁻), 2 e⁻ left = 1 lone pair on I. Six electron domains (octahedral), 5 bonding + 1 lone → <b>square pyramidal</b>. The lone pair is opposite one F, pushing the four equatorial F atoms slightly down. Bond angles: slightly less than 90°.</p>
+
+<p><b>Answer 4:</b> All three are trigonal pyramidal (4 domains, 3 bonding + 1 lone). Bond angles: $\ce{NH3}$ (107°) > $\ce{PH3}$ (93.5°) > $\ce{AsH3}$ (91.8°). As the central atom gets larger down the group, the bonding pairs are further from the central atom, reducing BP–BP repulsion. Consequently, the lone pair compresses the bond angle more severely in the heavier hydrides. Additionally, the H–X–H angle approaches 90° as the central atom uses almost pure p orbitals for bonding (little hybridisation in heavier elements).</p>
+
+<p><b>Answer 5:</b> $\ce{ClF3}$: 5 electron domains — trigonal bipyramidal. The two lone pairs occupy equatorial positions (to minimise 90° LP–LP and LP–BP repulsions). The three F atoms occupy the remaining two axial positions and one equatorial position → <b>T-shaped</b>. F–Cl–F angles are approximately 87.5° (between axial and equatorial F) and 175° (between axial F atoms, slightly bent due to equatorial lone pairs).</p>
+
+<p><b>Answer 6:</b> (a) Xe(8) + O(6) + 4×F(7) = 42 e⁻. One Xe=O double bond, four Xe–F single bonds, one lone pair on Xe. (b) 6 electron domains (1 double bond + 4 single bonds + 1 lone pair). (c) Octahedral electron geometry, 5 bonding + 1 lone → <b>square pyramidal</b> — but the oxygen occupies one position. The preferred structure places the double-bonded O opposite the lone pair (to minimise LP–double bond repulsion), with the four F atoms in the square plane. (d) O–Xe–F ≈ 90° (axial-equatorial), F–Xe–F ≈ 90° (adjacent in square plane). The F atoms are slightly pushed away from the lone pair.</p>
+</div>
+
+<h2>8. Key Terms</h2>
+<table>
+<tr><th>Term</th><th>Definition</th></tr>
+<tr><td>VSEPR theory</td><td>Valence Shell Electron Pair Repulsion — electron pairs repel and arrange to minimise repulsion</td></tr>
+<tr><td>Electron domain</td><td>A region of electron density around the central atom (bond or lone pair); counts as ONE</td></tr>
+<tr><td>Electron domain geometry</td><td>The spatial arrangement of ALL electron domains (bonding + non-bonding) around the central atom</td></tr>
+<tr><td>Molecular geometry</td><td>The spatial arrangement of ATOMS only (ignoring lone pairs)</td></tr>
+<tr><td>Bond angle</td><td>The angle between two bonds originating from the same central atom</td></tr>
+<tr><td>Axial position</td><td>In a trigonal bipyramid, the two positions aligned vertically on the symmetry axis (180° apart)</td></tr>
+<tr><td>Equatorial position</td><td>In a trigonal bipyramid, the three positions in the horizontal plane (120° apart)</td></tr>
+<tr><td>Lone pair compression</td><td>The reduction of bond angles caused by lone pairs occupying more space than bonding pairs</td></tr>
+<tr><td>Trigonal planar</td><td>3 electron domains, 120° apart in a plane (e.g., $\ce{BF3}$)</td></tr>
+<tr><td>Octahedral</td><td>6 electron domains, 90° apart, arranged around a central point like the vertices of an octahedron</td></tr>
+</table>
+
+<h2>9. Exam Tips</h2>
+
+<div class="exam-tip"><b>Paper 1 — "Which species has shape X?":</b> These questions test whether you can quickly count electron domains. Strategy: (1) identify the central atom, (2) count groups around it (each bond = 1, double bond = 1), (3) subtract from group valence to find lone pairs, (4) match to shape. Time-saving: $\ce{NH4+}$ = tetrahedral, $\ce{H3O+}$ = trigonal pyramidal, $\ce{CO3^{2-}}$ = trigonal planar — memorise these.</div>
+
+<div class="exam-tip"><b>Paper 2 — Drawing shapes:</b> You MUST use wedges and dashes to show 3D structure. Solid wedge = coming out of page; dashed wedge = going into page; solid line = in plane. For tetrahedral: two in plane, one out, one in. For trigonal planar: all in plane (no wedges needed). For octahedral: four in plane, one out, one in. Label bond angles and name the shape explicitly.</div>
+
+<div class="exam-tip"><b>HL — 5 and 6 domain shapes:</b> The IB only tests seesaw, T-shaped, square pyramidal, and square planar for 5- and 6-domain species. Know how lone pairs are placed: equatorial first for 5-domain, opposite each other for 6-domain. $\ce{XeF2}$ (linear), $\ce{SF4}$ (seesaw), $\ce{ClF3}$ (T-shaped), $\ce{BrF5}$ (square pyramidal), and $\ce{XeF4}$ (square planar) are the classic examples.</div>
+
 </body>
 </html>

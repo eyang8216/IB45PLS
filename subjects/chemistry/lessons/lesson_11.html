@@ -3,297 +3,344 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lesson 11: Molecular Polarity and Intermolecular Forces — IB Chemistry HL</title>
-<script>window.MathJax = { loader: {load: ['[tex]/mhchem']}, tex: {packages: {'[+]': ['mhchem']}} };</script>
+<title>Lesson 11 — Chemistry HL — Polarity & Intermolecular Forces</title>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] },
+  loader: { load: ['[tex]/mhchem'] },
+  tex: { packages: {'[+]': ['mhchem']} }
+};
+</script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
 <style>
-  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Palatino', 'Georgia', serif; background: var(--bg); color: var(--text); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; font-size: 17px; line-height: 1.7; }
-  h1 { font-size: 1.7rem; color: var(--accent); margin-bottom: 0.5rem; }
-  h2 { font-size: 1.25rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; margin: 2rem 0 1rem; }
-  h3 { font-size: 1.1rem; color: #444; margin: 1.3rem 0 0.5rem; }
-  p, li { margin-bottom: 0.6rem; }
-  ul, ol { padding-left: 1.8rem; margin-bottom: 1rem; }
-  .worked { background: #f0f7f0; border-left: 4px solid #2c5f2d; padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
-  .worked strong { color: #2c5f2d; }
-  .answer { background: #fefdf7; border: 1px solid var(--border); padding: 0.8rem 1.2rem; margin: 0.5rem 0; border-radius: 6px; }
-  .nav { display: flex; justify-content: space-between; margin: 3rem 0 1rem; padding-top: 1rem; border-top: 2px solid var(--border); font-size: 0.9rem; }
-  .nav a { color: #1a5c9e; text-decoration: none; }
-  .nav a:hover { text-decoration: underline; }
-  .definition { background: #fdf5e6; border-left: 4px solid #d4a017; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
-  code { background: #f0f0f0; padding: 0.15rem 0.35rem; border-radius: 3px; font-size: 0.9em; }
-  table { border-collapse: collapse; margin: 1rem 0; width: 100%; }
-  th, td { border: 1px solid var(--border); padding: 0.4rem 0.7rem; text-align: left; font-size: 0.95em; }
-  th { background: #f0f7f0; color: var(--accent); }
-  @media print { body { font-size: 14px; } .nav { display: none; } }
-  strong { color: #1a1a1a; }
+:root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Georgia', 'Times New Roman', serif; font-size: 17px; line-height: 1.7; color: var(--text); background: var(--bg); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; }
+h1 { font-size: 1.8rem; color: var(--accent); border-bottom: 3px solid var(--accent); padding-bottom: 0.5rem; margin-bottom: 1rem; }
+h2 { font-size: 1.35rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+h3 { font-size: 1.15rem; color: var(--accent); margin: 1.5rem 0 0.5rem; }
+p { margin-bottom: 0.8rem; }
+.objectives { background: #f0f4ff; border-left: 4px solid var(--accent); padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+.objectives h3 { margin-top: 0; }
+.check-in { background: #fff8e1; border: 1px solid #ffc107; padding: 0.8rem 1rem; margin: 1rem 0; border-radius: 8px; }
+.check-in p { margin-bottom: 0.3rem; }
+.answer-toggle { display: inline-block; padding: 0.2rem 0.8rem; border-radius: 16px; cursor: pointer; font-size: 0.8rem; font-weight: 600; background: #e8f5e9; color: #2e7d32; border: 1px solid #2e7d32; user-select: none; margin-top: 0.3rem; }
+.answer-content { display: none; background: #f1f8e9; padding: 0.6rem 1rem; border-radius: 8px; margin-top: 0.5rem; }
+.answer-content.open { display: block; }
+.example { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem; margin: 1rem 0; }
+.misconception { background: #fff3e0; border-left: 4px solid #e65100; padding: 1rem 1.2rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+.misconception h3 { color: #e65100; }
+.exam-tip { background: #e8f5e9; border-left: 4px solid #2e7d32; padding: 0.8rem 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+th { background: var(--accent); color: white; padding: 0.5rem 0.8rem; text-align: left; }
+td { padding: 0.5rem 0.8rem; border-bottom: 1px solid var(--border); }
+tr:nth-child(even) td { background: #f8f8f6; }
+.diagram { text-align: center; margin: 1.5rem 0; }
+.diagram svg { max-width: 100%; }
+.diagram .caption { font-size: 0.9rem; color: #666; margin-top: 0.3rem; font-style: italic; }
+pre.ascii-art { font-family: 'Courier New', monospace; font-size: 0.75rem; line-height: 1.2; background: #f5f5f5; padding: 0.8rem; border-radius: 8px; overflow-x: auto; }
+.practice-toggle { display: block; width: 100%; padding: 0.8rem; background: var(--accent); color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem; font-weight: 600; margin: 1.5rem 0; }
+.practice-answers { display: none; }
+.practice-answers.open { display: block; }
 </style>
 </head>
 <body>
-<h1>Lesson 11: Molecular Polarity and Intermolecular Forces — IB Chemistry HL</h1>
-<h2>What You'll Learn</h2>
-<p>
-This lesson connects the shapes you learned in Lesson 10 to two of the most practically important consequences of molecular structure: whether a molecule is polar or non-polar, and how molecules attract each other through intermolecular forces. You will learn how to determine molecular polarity—not just bond polarity—by considering both the electronegativity differences in bonds and the three-dimensional shape of the molecule. You will learn why some molecules with polar bonds (like CO₂) are non-polar overall, while others (like H₂O) are polar. You will then study the three types of intermolecular forces: London dispersion forces (present in all molecules), dipole–dipole forces (present between polar molecules), and hydrogen bonding (a special, particularly strong type of dipole–dipole interaction that occurs when hydrogen is bonded to nitrogen, oxygen, or fluorine). You will learn to use intermolecular forces to explain and predict physical properties such as boiling points, melting points, and solubility.
-</p>
-<hr>
-<h2>1. Bond Polarity: When Electrons Are Shared Unequally</h2>
-<p>
-A covalent bond between two identical atoms, such as the bond in a Cl₂ molecule or an H₂ molecule, is <strong>non-polar</strong>. The two atoms have exactly the same electronegativity, so the pair of electrons that forms the bond is shared equally. The electron density is distributed symmetrically between the two nuclei.
-</p>
-<p>
-A covalent bond between two different atoms is <strong>polar</strong> if the atoms have different electronegativities. Electronegativity, introduced in Lesson 8, is a measure of an atom's ability to attract the electrons in a bond toward itself. When two atoms with different electronegativities form a bond, the electrons are pulled more strongly toward the atom with the higher electronegativity. This uneven distribution of electron density creates a <strong>bond dipole</strong>.
-</p>
-<p>
-A bond dipole has two important properties: a magnitude (how large the charge separation is) and a direction (which atom pulls the electrons more strongly). The direction of the dipole is conventionally indicated by an arrow with a cross at the tail, written above the bond and pointing toward the more electronegative atom. Alternatively, it is indicated with partial charges: the less electronegative atom is labeled δ+ (delta plus, meaning a partial positive charge) and the more electronegative atom is labeled δ− (delta minus, meaning a partial negative charge).
-</p>
-<p>
-For example, in a hydrogen chloride molecule, HCl, chlorine (electronegativity = 3.0) is more electronegative than hydrogen (electronegativity = 2.1). The bonding electrons are drawn toward the chlorine atom, so the chlorine end of the molecule has a partial negative charge (δ−) and the hydrogen end has a partial positive charge (δ+). The H–Cl bond is polar.
-</p>
-<hr>
-<h2>2. Molecular Polarity: Adding Up Bond Dipoles as Vectors</h2>
-<p>
-Having polar bonds does not automatically make a molecule polar. The polarity of the entire molecule is determined by the <strong>vector sum</strong> of all the individual bond dipoles. If the bond dipoles cancel each other out because of the symmetry of the molecule, the molecule is non-polar. If they do not cancel, the molecule has a net dipole moment and is polar.
-</p>
-<p>
-This is why molecular shape, which you learned to predict in Lesson 10, is essential for determining polarity. You must know the three-dimensional arrangement of the bonds to decide whether their dipoles add up to zero or to a non-zero resultant.
-</p>
-<h3>Case 1: Linear Molecules with Two Identical Polar Bonds — Non-Polar</h3>
-<p>
-Carbon dioxide, CO₂, provides the classic example. The C=O bonds are strongly polar because oxygen (EN = 3.5) is much more electronegative than carbon (EN = 2.5). Each bond has a dipole pointing from carbon toward oxygen. However, CO₂ is a linear molecule (O=C=O) with a bond angle of 180°. The two bond dipoles are equal in magnitude and point in exactly opposite directions. When you add them as vectors, they cancel completely. The net dipole moment of CO₂ is zero, so CO₂ is a non-polar molecule. This is why carbon dioxide is a gas at room temperature with a very low boiling point (it sublimes at −78 °C), rather than a polar liquid like water.
-</p>
-<h3>Case 2: Bent Molecules with Two Identical Polar Bonds — Polar</h3>
-<p>
-Water, H₂O, also has two polar bonds. The O–H bonds are polar because oxygen (EN = 3.5) is more electronegative than hydrogen (EN = 2.1). However, water is a bent molecule with a bond angle of approximately 104.5°. The two O–H bond dipoles point in directions that are 104.5° apart. They do not point in opposite directions, so they do not cancel. Instead, they add up to give a net dipole moment that points along the bisector of the H–O–H angle (roughly downward, through the oxygen atom away from the hydrogens). Water is a polar molecule, which explains its high boiling point, its ability to dissolve many ionic and polar substances, and its unique role as a solvent for life.
-</p>
-<h3>Case 3: Symmetrical Tetrahedral Molecules — Non-Polar</h3>
-<p>
-Carbon tetrachloride, CCl₄, has four polar C–Cl bonds (chlorine EN = 3.0, carbon EN = 2.5). The molecule is tetrahedral with bond angles of 109.5°. Because the tetrahedron is a perfectly symmetrical shape, the four C–Cl bond dipoles all point toward the corners of a tetrahedron, and their vector sum is exactly zero. CCl₄ is non-polar. This can be counterintuitive—four polar bonds, yet a non-polar molecule—but it is the symmetry that matters.
-</p>
-<p>
-Now consider replacing one chlorine atom in CCl₄ with a hydrogen atom to make CHCl₃ (chloroform). The C–H bond has a much smaller dipole than the C–Cl bonds (carbon and hydrogen have similar electronegativities). The four bonds are no longer identical, so the dipoles no longer cancel. The molecule has a net dipole moment and is polar.
-</p>
-<h3>Case 4: Trigonal Planar Molecules with Three Identical Bonds — Non-Polar</h3>
-<p>
-Boron trifluoride, BF₃, has three strongly polar B–F bonds arranged in a trigonal plane with 120° angles. Because the molecule is flat and symmetrical, the three bond dipoles sum to zero. BF₃ is non-polar.
-</p>
-<h3>Case 5: Trigonal Pyramidal Molecules with Three Identical Bonds — Polar</h3>
-<p>
-Ammonia, NH₃, has three polar N–H bonds. The molecule is trigonal pyramidal (not flat) because of the lone pair on nitrogen. The three bond dipoles have a net component pointing in the direction of the lone pair (downward from the nitrogen). They do not cancel. NH₃ is polar.
-</p>
-<div class="worked">
-<strong>Worked Example 11.1: Comparing CO₂ and SO₂</strong><br><br>
-<p>
-<strong>Problem:</strong> Both carbon dioxide (CO₂) and sulfur dioxide (SO₂) contain polar bonds between the central atom and oxygen. CO₂ is non-polar, but SO₂ is polar. Explain this difference.
-</p>
-<p>
-<strong>To solve this, we need to determine the molecular shapes of both molecules and then consider how the bond dipoles add up in each shape.</strong>
-</p>
-<p>
-CO₂ has two double bonds from carbon to oxygen and no lone pairs on carbon. The electron domain count is 2, giving a linear shape with a bond angle of 180°. The two C=O bond dipoles are equal in magnitude and point in exactly opposite directions, so they cancel completely. The net dipole moment is zero, and the molecule is non-polar.
-</p>
-<p>
-SO₂ has two bonds (one double, one single in the resonance hybrid) and one lone pair on sulfur. The electron domain count is 3, with one lone pair, giving a bent shape with a bond angle of approximately 118°. The two S–O bond dipoles point in directions that are 118° apart. These vectors do not cancel; instead, they add up to produce a net dipole moment pointing along the direction that bisects the O–S–O angle. The molecule has a permanent dipole moment and is polar.
-</p>
-<p>
-<strong>Why this makes sense:</strong> The critical difference is the presence of a lone pair on sulfur, which does not exist on carbon in CO₂. That lone pair changes the shape from linear (symmetric, dipoles cancel) to bent (asymmetric, dipoles do not cancel). This illustrates the general principle that molecular polarity depends on both bond polarity and molecular shape.
-</p>
+
+<h1>Lesson 11: Polarity & Intermolecular Forces</h1>
+
+<p><b>Syllabus reference:</b> 4.4/14.1 — Intermolecular forces, hydrogen bonding, London forces, dipole–dipole</p>
+
+<div class="objectives">
+<h3>Learning Objectives</h3>
+<p>By the end of this lesson, you will be able to:</p>
+<ul>
+  <li><b>Determine</b> whether a molecule is polar or non-polar based on bond polarity and molecular shape.</li>
+  <li><b>Describe</b> the three types of intermolecular forces: London (dispersion), dipole–dipole, and hydrogen bonding.</li>
+  <li><b>Rank</b> the relative strengths of intermolecular forces and explain how they affect physical properties (boiling point, viscosity, solubility).</li>
+  <li><b>Explain</b> anomalous properties of water (high boiling point, density maximum at 4°C, high surface tension) using hydrogen bonding.</li>
+  <li><b>Predict</b> relative boiling points of organic compounds based on functional groups and molecular size.</li>
+</ul>
 </div>
-<h2>3. Intermolecular Forces: What Holds Molecules Together</h2>
-<p>
-<strong>Intermolecular forces</strong> (often abbreviated as IMFs) are the forces of attraction that operate between separate molecules. They are distinct from intramolecular forces, which are the covalent or ionic bonds that hold atoms together within a single molecule. Intermolecular forces are much weaker than covalent or ionic bonds, but they are critically important because they determine the physical properties of molecular substances: melting points, boiling points, viscosity, surface tension, and solubility.
-</p>
-<p>
-There are three types of intermolecular forces that you need to know for IB Chemistry HL. Every molecule experiences London dispersion forces. Polar molecules also experience dipole–dipole forces. Molecules that have a hydrogen atom bonded directly to nitrogen, oxygen, or fluorine can also form hydrogen bonds.
-</p>
-<h3>Type 1: London Dispersion Forces — Present in All Molecules</h3>
-<p>
-London dispersion forces (also called van der Waals' forces or instantaneous dipole–induced dipole forces) exist between all molecules, whether polar or non-polar. They are the only intermolecular force present between non-polar molecules.
-</p>
-<p>
-London forces arise from the constant motion of electrons within atoms and molecules. At any given instant, the electrons in a molecule may be distributed unevenly. One side of the molecule may momentarily have slightly more electron density than the other side. This creates a temporary, instantaneous dipole. This instantaneous dipole can then induce a corresponding dipole in a neighboring molecule by pushing or pulling on that neighbor's electrons. The two dipoles attract each other, creating a very brief attractive force.
-</p>
-<p>
-The strength of London dispersion forces depends primarily on the number of electrons in the molecule. A molecule with more electrons has a larger, more polarizable electron cloud. A more polarizable electron cloud is more easily distorted, producing larger instantaneous dipoles and therefore stronger London forces. Since the number of electrons is generally proportional to the molar mass, London forces tend to increase with increasing molar mass.
-</p>
-<p>
-For example, consider the boiling points of the halogens in Group 17. Fluorine (F₂, molar mass 38 g mol⁻¹) boils at −188 °C. Chlorine (Cl₂, molar mass 71 g mol⁻¹) boils at −34 °C. Bromine (Br₂, molar mass 160 g mol⁻¹) boils at +59 °C. Iodine (I₂, molar mass 254 g mol⁻¹) boils at +184 °C. All four molecules are non-polar, so only London forces operate between them. The steady increase in boiling point reflects the steady increase in the number of electrons (F₂ has 18 electrons, Cl₂ has 34, Br₂ has 70, I₂ has 106) and the corresponding increase in the strength of London dispersion forces.
-</p>
-<h3>Type 2: Dipole–Dipole Forces — Between Polar Molecules</h3>
-<p>
-Dipole–dipole forces are the electrostatic attractions between the permanent dipoles of polar molecules. The δ+ end of one polar molecule is attracted to the δ− end of a neighboring polar molecule. These forces are directional and are stronger than London forces between molecules of comparable size.
-</p>
-<p>
-For example, compare HCl (molar mass 36.5, boiling point −85 °C) with F₂ (molar mass 38, boiling point −188 °C). These two molecules have similar molar masses and therefore similar numbers of electrons, so their London forces are comparable. However, HCl is polar (it has a permanent dipole) while F₂ is non-polar. The additional dipole–dipole forces in HCl give it a boiling point more than 100 °C higher than that of F₂.
-</p>
-<h3>Type 3: Hydrogen Bonding — The Strongest Type of Intermolecular Force</h3>
-<p>
-Hydrogen bonding is a special, particularly strong kind of dipole–dipole interaction. For hydrogen bonding to occur, two conditions must both be satisfied:
-</p>
-<ol>
-<li>A hydrogen atom must be <strong>covalently bonded</strong> to a nitrogen atom, an oxygen atom, or a fluorine atom. These three elements are the most electronegative in the periodic table (N has EN = 3.0, O has EN = 3.5, F has EN = 4.0). When hydrogen is bonded to one of them, the bond is highly polar, and the hydrogen atom carries a significant partial positive charge (δ+).</li>
-</ol>
-<ol>
-<li>That partially positive hydrogen must be attracted to a <strong>lone pair of electrons</strong> on a nitrogen, oxygen, or fluorine atom in a neighboring molecule.</li>
-</ol>
-<p>
-Hydrogen bonds are roughly ten times stronger than ordinary dipole–dipole forces, though they are still about ten times weaker than typical covalent bonds. A typical hydrogen bond has an energy of about 20 to 40 kJ mol⁻¹, compared to about 2 to 5 kJ mol⁻¹ for a dipole–dipole interaction and 200 to 400 kJ mol⁻¹ for a covalent bond.
-</p>
-<p>
-<strong>Important clarification:</strong> The hydrogen bond is an intermolecular force, not a covalent bond. It is an attraction between molecules, not a sharing of electrons. The notation often used is X–H···Y, where the solid dash represents the covalent bond within the molecule and the dotted line represents the hydrogen bond between molecules.
-</p>
-<h3>Consequences of Hydrogen Bonding</h3>
-<p>
-Hydrogen bonding has profound effects on the properties of substances:
-</p>
-<p>
-<strong>Water's unusually high boiling point.</strong> Water (H₂O, molar mass 18 g mol⁻¹) boils at 100 °C, while hydrogen sulfide (H₂S, molar mass 34 g mol⁻¹) boils at −60 °C. Based on London forces alone, H₂S, with nearly twice the molar mass, should boil at a higher temperature. But water can form hydrogen bonds (each water molecule can form up to four: two using its hydrogen atoms as donors and two using its lone pairs as acceptors), and H₂S cannot (sulfur is not electronegative enough). The hydrogen bonding in water completely overwhelms the advantage H₂S has in London forces, giving water a boiling point 160 °C higher.
-</p>
-<p>
-<strong>Ice floats on liquid water.</strong> In most substances, the solid form is denser than the liquid form. Water is an exception. When water freezes, the hydrogen bonds lock the water molecules into an open, hexagonal crystalline structure in which each molecule is held at a fixed distance from its neighbors. This open structure is less dense than liquid water, where the molecules can pack more closely. Because ice is less dense than liquid water, it floats. This property is essential for life: if ice sank, lakes and oceans would freeze solid from the bottom up.
-</p>
-<p>
-<strong>The structure of DNA.</strong> The two strands of the DNA double helix are held together by hydrogen bonds between complementary base pairs: adenine (A) pairs with thymine (T) via two hydrogen bonds, and cytosine (C) pairs with guanine (G) via three hydrogen bonds. These hydrogen bonds are strong enough to hold the strands together under normal conditions but weak enough to be separated when the DNA needs to be copied or read.
-</p>
-<p>
-<strong>The structure of proteins.</strong> The folding of proteins into their three-dimensional shapes is stabilized in part by hydrogen bonds. The alpha-helix and beta-pleated sheet, two of the most common structural motifs in proteins, are held together by hydrogen bonds between the C=O and N–H groups of the protein backbone.
-</p>
-<div class="worked">
-<strong>Worked Example 11.2: Ranking Boiling Points by Intermolecular Forces</strong><br><br>
-<p>
-<strong>Problem:</strong> Arrange the following three compounds in order of increasing boiling point: ethane (C₂H₆, molar mass 30 g mol⁻¹), fluoromethane (CH₃F, molar mass 34 g mol⁻¹), and methanol (CH₃OH, molar mass 32 g mol⁻¹). Explain your reasoning for each compound.
-</p>
-<p>
-<strong>To solve this, we need to identify the types of intermolecular forces present in each compound and compare their relative strengths.</strong>
-</p>
-<p>
-<strong>Ethane (C₂H₆):</strong> The C–H bonds are very weakly polar (carbon EN = 2.5, hydrogen EN = 2.1), and the molecule is symmetrical (no net dipole). Ethane is non-polar. The only intermolecular forces between ethane molecules are London dispersion forces. With a molar mass of 30 g mol⁻¹ and relatively few electrons (18 total), the London forces are weak. Ethane has the lowest boiling point of the three.
-</p>
-<p>
-<strong>Fluoromethane (CH₃F):</strong> The C–F bond is strongly polar (fluorine EN = 4.0, carbon EN = 2.5). The molecule has a tetrahedral shape, but the four bonds are not identical (three C–H and one C–F), so the bond dipoles do not cancel. CH₃F has a net dipole moment and is polar. In addition to London dispersion forces (comparable in strength to those in ethane, since the molar masses are similar), fluoromethane has dipole–dipole forces. These additional forces give fluoromethane a higher boiling point than ethane.
-</p>
-<p>
-<strong>Methanol (CH₃OH):</strong> Methanol contains an O–H bond. The oxygen atom (EN = 3.5) is one of the three elements that can participate in hydrogen bonding when bonded to hydrogen. Methanol molecules can form hydrogen bonds with each other (the hydrogen of the O–H group on one methanol molecule is attracted to a lone pair on the oxygen of another methanol molecule). Hydrogen bonding is much stronger than ordinary dipole–dipole forces. Methanol therefore has the strongest intermolecular forces of the three compounds and the highest boiling point.
-</p>
-<p>
-<strong>Order of increasing boiling point:</strong> C₂H₆ (lowest) < CH₃F (middle) < CH₃OH (highest).
-</p>
-<p>
-<strong>Why this makes sense:</strong> The three compounds have similar molar masses (30, 34, and 32 g mol⁻¹), so their London forces are similar. The differences in boiling point are driven entirely by the presence or absence of additional, stronger types of intermolecular forces. This is a clean example of how IMF types, not just molar mass, determine physical properties.
-</p>
+
+<h2>1. Prior Knowledge Check</h2>
+
+<p><b>Question 1:</b> What makes a bond polar? Give an example of a polar bond and a non-polar bond.</p>
+<div class="check-in">
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">A bond is polar when the two atoms have <b>different electronegativities</b>, causing unequal sharing of electrons and creating a bond dipole. Polar: $\ce{H-Cl}$ (EN difference ≈ 1.0). Non-polar: $\ce{Cl-Cl}$ (EN difference = 0). The greater the EN difference, the more polar the bond.</div>
 </div>
-<h2>4. Solubility and the "Like Dissolves Like" Principle</h2>
-<p>
-The same intermolecular forces that determine boiling points also determine whether one substance will dissolve in another. The guiding principle is often stated as "like dissolves like."
-</p>
-<p>
-A <strong>polar solvent</strong> (such as water) dissolves polar solutes and ionic compounds. The polar water molecules can form dipole–dipole interactions or ion–dipole interactions with the solute particles. These favorable interactions provide the energy needed to separate the solute particles from each other and the solvent molecules from each other. For example, table salt (NaCl, an ionic compound) dissolves in water because the ion–dipole attractions between Na⁺ ions and the oxygen atoms of water, and between Cl⁻ ions and the hydrogen atoms of water, are strong enough to overcome the lattice energy of the NaCl crystal.
-</p>
-<p>
-A <strong>non-polar solvent</strong> (such as hexane, C₆H₁₄) dissolves non-polar solutes. The only intermolecular forces involved are London dispersion forces, which are similar in strength whether the interactions are solute–solute, solvent–solvent, or solute–solvent. The entropy increase upon mixing drives the dissolution. For example, oil (a mixture of non-polar hydrocarbons) dissolves in hexane but not in water.
-</p>
-<p>
-This principle explains why oil and water do not mix. Water molecules are strongly attracted to each other through hydrogen bonding. Oil molecules are non-polar and interact with each other only through London forces. If oil molecules were to enter the water, they would disrupt the network of hydrogen bonds among water molecules without providing any compensating strong interactions. The energetic cost is too high, so the oil and water remain as separate phases.
-</p>
-<hr>
-<h2>Practice Problems</h2>
+
+<p><b>Question 2:</b> Why is $\ce{CO2}$ non-polar even though the C=O bonds are polar?</p>
+<div class="check-in">
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">$\ce{CO2}$ is linear (O=C=O). The two C=O bond dipoles are equal in magnitude but point in opposite directions (180° apart). They <b>cancel</b> vectorially, giving no net molecular dipole. Symmetry is the key — a molecule with polar bonds can still be non-polar if the shape makes the dipoles cancel.</div>
+</div>
+
+<p><b>Question 3:</b> Name the strongest type of intermolecular force. Between which atoms does it occur?</p>
+<div class="check-in">
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content"><b>Hydrogen bonding</b> is the strongest intermolecular force. It occurs when H is covalently bonded to a highly electronegative atom (N, O, or F) and is attracted to a lone pair on N, O, or F on a neighbouring molecule. Example: between $\ce{H2O}$ molecules.</div>
+</div>
+
+<h2>2. Molecular Polarity — Shape Matters</h2>
+
+<h3>2.1 From Bond Polarity to Molecular Polarity</h3>
+
+<p>A molecule is polar if it has a <b>net dipole moment</b> — an overall separation of charge. This requires:</p>
 <ol>
-<li>Carbon dioxide, CO₂, and sulfur dioxide, SO₂, both contain polar bonds between the central atom and oxygen. Carbon dioxide is a non-polar molecule, but sulfur dioxide is polar. Explain this difference by referring to the molecular shapes of both molecules and how the bond dipoles add up in each case.</li>
+  <li><b>Polar bonds</b> (atoms with different electronegativities).</li>
+  <li><b>Asymmetric shape</b> — the bond dipoles must NOT cancel vectorially.</li>
 </ol>
+
+<div class="diagram">
+<svg width="520" height="260" viewBox="0 0 520 260">
+  <text x="260" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c5f2d">Bond Dipoles and Molecular Polarity</text>
+
+  <!-- CO2 - Non-polar -->
+  <rect x="20" y="40" width="150" height="200" rx="8" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="1.5"/>
+  <text x="95" y="65" text-anchor="middle" font-size="12" font-weight="bold" fill="#2c5f2d">$\ce{CO2}$ — Non-polar</text>
+  <circle cx="65" cy="120" r="18" fill="#ffccbc" stroke="#e64a19" stroke-width="1.5"/>
+  <text x="65" y="124" text-anchor="middle" font-size="10" fill="#333">O</text>
+  <circle cx="95" cy="120" r="13" fill="#bdbdbd" stroke="#757575" stroke-width="1.5"/>
+  <text x="95" y="124" text-anchor="middle" font-size="10" fill="#333">C</text>
+  <circle cx="125" cy="120" r="18" fill="#ffccbc" stroke="#e64a19" stroke-width="1.5"/>
+  <text x="125" y="124" text-anchor="middle" font-size="10" fill="#333">O</text>
+  <!-- Dipole arrows -->
+  <line x1="65" y1="105" x2="65" y2="90" stroke="#c62828" stroke-width="2" marker-end="url(#arrowDip)"/>
+  <line x1="125" y1="135" x2="125" y2="150" stroke="#c62828" stroke-width="2" marker-end="url(#arrowDip)"/>
+  <text x="95" y="155" text-anchor="middle" font-size="9" fill="#c62828">Dipoles cancel → μ = 0</text>
+  <text x="95" y="175" text-anchor="middle" font-size="9" fill="#555">Linear, symmetric</text>
+
+  <defs><marker id="arrowDip" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#c62828"/></marker></defs>
+
+  <!-- H2O - Polar -->
+  <rect x="190" y="40" width="150" height="200" rx="8" fill="#fff3e0" stroke="#e65100" stroke-width="1.5"/>
+  <text x="265" y="65" text-anchor="middle" font-size="12" font-weight="bold" fill="#e65100">$\ce{H2O}$ — Polar</text>
+  <circle cx="265" cy="110" r="18" fill="#ffccbc" stroke="#e64a19" stroke-width="1.5"/>
+  <text x="265" y="114" text-anchor="middle" font-size="10" fill="#333">O</text>
+  <circle cx="245" cy="140" r="10" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="245" y="143" text-anchor="middle" font-size="8" fill="#333">H</text>
+  <circle cx="285" cy="140" r="10" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="285" y="143" text-anchor="middle" font-size="8" fill="#333">H</text>
+  <line x1="265" y1="100" x2="265" y2="85" stroke="#c62828" stroke-width="2" marker-end="url(#arrowDip)"/>
+  <text x="265" y="165" text-anchor="middle" font-size="9" fill="#c62828">Dipoles add → μ > 0</text>
+  <text x="265" y="180" text-anchor="middle" font-size="9" fill="#555">Bent, asymmetric</text>
+
+  <!-- CCl4 -->
+  <rect x="360" y="40" width="145" height="200" rx="8" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="1.5"/>
+  <text x="432" y="65" text-anchor="middle" font-size="12" font-weight="bold" fill="#2c5f2d">$\ce{CCl4}$ — Non-polar</text>
+  <circle cx="432" cy="110" r="12" fill="#bdbdbd" stroke="#757575" stroke-width="1.5"/>
+  <text x="432" y="114" text-anchor="middle" font-size="9" fill="#333">C</text>
+  <circle cx="410" cy="130" r="15" fill="#c8e6c9" stroke="#2c5f2d" stroke-width="1.5"/>
+  <text x="410" y="134" text-anchor="middle" font-size="8">Cl</text>
+  <circle cx="454" cy="130" r="15" fill="#c8e6c9" stroke="#2c5f2d" stroke-width="1.5"/>
+  <text x="454" y="134" text-anchor="middle" font-size="8">Cl</text>
+  <circle cx="415" cy="90" r="15" fill="#c8e6c9" stroke="#2c5f2d" stroke-width="1.5"/>
+  <text x="415" y="93" text-anchor="middle" font-size="8">Cl</text>
+  <circle cx="450" cy="90" r="15" fill="#c8e6c9" stroke="#2c5f2d" stroke-width="1.5"/>
+  <text x="450" y="93" text-anchor="middle" font-size="8">Cl</text>
+  <text x="432" y="165" text-anchor="middle" font-size="9" fill="#c62828">Dipoles cancel</text>
+  <text x="432" y="180" text-anchor="middle" font-size="9" fill="#555">Tetrahedral, symmetric</text>
+
+  <text x="260" y="250" text-anchor="middle" font-size="10" fill="#666">Key principle: Polar bonds ≠ polar molecule. Shape determines whether dipoles cancel.</text>
+</svg>
+<div class="caption">Figure 1: CO₂ has polar bonds but is non-polar — the linear shape cancels dipoles. H₂O has polar bonds AND is polar — the bent shape prevents cancellation. CCl₄ has four polar bonds but tetrahedral symmetry makes it non-polar.</div>
+</div>
+
+<div class="check-in">
+<p><b>Check-in:</b> $\ce{BF3}$ and $\ce{NF3}$ both have polar bonds. Which is polar and which is non-polar? Explain.</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">$\ce{BF3}$ is trigonal planar (3 bonding, 0 lone pairs). The three B–F bond dipoles are arranged symmetrically at 120° and cancel → <b>non-polar</b>. $\ce{NF3}$ is trigonal pyramidal (3 bonding, 1 lone pair). The three N–F bond dipoles do NOT cancel because the molecule is asymmetric — the net dipole points toward the fluorine atoms (downward) → <b>polar</b>.</div>
+</div>
+
+<h2>3. The Hierarchy of Intermolecular Forces</h2>
+
+<h3>3.1 London (Dispersion) Forces — Present in ALL Molecules</h3>
+
+<p><b>London forces</b> (also called instantaneous dipole–induced dipole forces or van der Waals' forces) arise from temporary fluctuations in electron distribution. At any instant, electrons may be unevenly distributed, creating a temporary dipole that induces a dipole in a neighbouring molecule.</p>
+
+<p>London forces <b>increase with:</b></p>
+<ul>
+  <li><b>More electrons</b> — larger electron cloud = more polarisable = stronger temporary dipoles.</li>
+  <li><b>Greater surface area</b> — more contact between molecules.</li>
+  <li><b>Larger molecular mass</b> (as a proxy for electron count).</li>
+</ul>
+
+<h3>3.2 Dipole–Dipole Forces — Polar Molecules Only</h3>
+
+<p>Permanent dipoles in polar molecules attract each other. The positive end ($\delta^+$) of one molecule is attracted to the negative end ($\delta^-$) of another. These are stronger than London forces for molecules of comparable size.</p>
+
+<h3>3.3 Hydrogen Bonding — The Strongest IMF</h3>
+
+<p>A <b>hydrogen bond</b> is a special, strong dipole–dipole interaction that occurs when:</p>
+<ul>
+  <li>H is covalently bonded to a very electronegative atom: <b>N, O, or F</b>.</li>
+  <li>This H is attracted to a <b>lone pair</b> on N, O, or F of a neighbouring molecule.</li>
+</ul>
+
+<div class="diagram">
+<svg width="520" height="220" viewBox="0 0 520 220">
+  <text x="260" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c5f2d">Hydrogen Bonding in Water</text>
+
+  <!-- Water molecule 1 -->
+  <circle cx="180" cy="100" r="22" fill="#ffccbc" stroke="#e64a19" stroke-width="2"/>
+  <text x="180" y="105" text-anchor="middle" font-size="12" font-weight="bold" fill="#333">O</text>
+  <circle cx="155" cy="125" r="10" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="155" y="128" text-anchor="middle" font-size="8" fill="#333">H</text>
+  <circle cx="205" cy="125" r="10" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="205" y="128" text-anchor="middle" font-size="8" fill="#333">H</text>
+  <!-- Lone pairs -->
+  <text x="165" y="88" font-size="10" fill="#e65100">••</text>
+  <text x="190" y="82" font-size="10" fill="#e65100">••</text>
+
+  <!-- Water molecule 2 -->
+  <circle cx="350" cy="100" r="22" fill="#ffccbc" stroke="#e64a19" stroke-width="2"/>
+  <text x="350" y="105" text-anchor="middle" font-size="12" font-weight="bold" fill="#333">O</text>
+  <circle cx="325" cy="125" r="10" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="325" y="128" text-anchor="middle" font-size="8" fill="#333">H</text>
+  <circle cx="375" cy="75" r="10" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="375" y="78" text-anchor="middle" font-size="8" fill="#333">H</text>
+  <!-- Lone pairs -->
+  <text x="345" y="82" font-size="10" fill="#e65100">••</text>
+  <text x="360" y="78" font-size="10" fill="#e65100">••</text>
+
+  <!-- Hydrogen bond -->
+  <line x1="205" y1="125" x2="345" y2="100" stroke="#7b1fa2" stroke-width="2.5" stroke-dasharray="8,4"/>
+  <text x="275" y="108" text-anchor="middle" font-size="10" fill="#7b1fa2" font-weight="bold">H-bond</text>
+
+  <!-- Labels -->
+  <text x="180" y="160" text-anchor="middle" font-size="9" fill="#555">δ⁻</text>
+  <text x="205" y="145" text-anchor="middle" font-size="9" fill="#555">δ⁺</text>
+  <text x="155" y="145" text-anchor="middle" font-size="9" fill="#555">δ⁺</text>
+
+  <!-- Key -->
+  <text x="100" y="200" font-size="9" fill="#333">H-bond distance ≈ 177 pm</text>
+  <text x="100" y="215" font-size="9" fill="#333">(O–H covalent ≈ 96 pm)</text>
+  <text x="310" y="200" font-size="9" fill="#333">Bond energy ≈ 10–40 kJ mol⁻¹</text>
+  <text x="310" y="215" font-size="9" fill="#333">(O–H covalent ≈ 463 kJ mol⁻¹)</text>
+</svg>
+<div class="caption">Figure 2: Hydrogen bonding between two water molecules. The H-bond (purple dashed line) is much weaker than a covalent bond but strong enough to dramatically affect physical properties.</div>
+</div>
+
+<div class="check-in">
+<p><b>Check-in:</b> Which of these can form hydrogen bonds: $\ce{CH4}$, $\ce{NH3}$, $\ce{HF}$, $\ce{CH3F}$, $\ce{CH3OH}$? Explain each.</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">$\ce{CH4}$: No — H is bonded to C (not N/O/F). $\ce{NH3}$: <b>Yes</b> — H bonded to N, and N has a lone pair. $\ce{HF}$: <b>Yes</b> — H bonded to F, and F has lone pairs. $\ce{CH3F}$: No — although F is present, the H atoms are bonded to C, not F. F has lone pairs but no H–F bond exists. $\ce{CH3OH}$: <b>Yes</b> — the O–H group can donate H-bonds, and O has lone pairs to accept them.</div>
+</div>
+
+<h2>4. Physical Properties and IMFs</h2>
+
+<h3>4.1 Boiling Points — The Ultimate IMF Test</h3>
+
+<p>Boiling point comparisons are the most common IB exam question. The general trend:</p>
+
+<p>$$\text{Hydrogen bonding} > \text{Dipole–dipole} > \text{London forces only}$$</p>
+
+<div class="check-in">
+<p><b>Check-in:</b> Rank $\ce{C2H6}$, $\ce{CH3F}$, $\ce{CH3OH}$ in order of increasing boiling point. All have similar molecular mass.</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">$\ce{C2H6}$ (lowest) — only London forces (non-polar). $\ce{CH3F}$ — polar (dipole–dipole), stronger than London alone. $\ce{CH3OH}$ (highest) — hydrogen bonding (strongest IMF). Boiling points: C₂H₆ = −89°C, CH₃F = −78°C, CH₃OH = 65°C. The jump from CH₃F to CH₃OH is dramatic because H-bonding is much stronger than dipole–dipole.</div>
+</div>
+
+<h3>4.2 The Anomalous Properties of Water</h3>
+
+<p>Water's hydrogen bonding network explains its unique properties:</p>
+
+<ul>
+  <li><b>High boiling point</b> (100°C) — for such a light molecule (M = 18), this is extraordinary. Compare $\ce{H2S}$ (M = 34, b.p. = −60°C) and $\ce{H2Se}$ (M = 81, b.p. = −41°C). Water's H-bonds require extra energy to break.</li>
+  <li><b>Density maximum at 4°C</b> — ice is less dense than liquid water because H-bonds hold molecules in an open hexagonal lattice. This is why ice floats — crucial for aquatic life.</li>
+  <li><b>High surface tension</b> — the strong cohesive forces from H-bonding allow water striders to walk on water and form droplets.</li>
+  <li><b>High specific heat capacity</b> — H-bonds absorb a lot of energy before breaking, making water an excellent temperature buffer.</li>
+</ul>
+
+<h2>5. Worked Examples</h2>
+
+<div class="example">
+<b>Example 1 — Boiling Point Trend in Group 16 Hydrides:</b><br><br>
+The boiling points of Group 16 hydrides are: $\ce{H2O}$ (100°C), $\ce{H2S}$ (−60°C), $\ce{H2Se}$ (−41°C), $\ce{H2Te}$ (−2°C). Explain the trend.<br><br>
+If only London forces mattered, boiling point would increase smoothly down the group (more electrons = stronger London forces). This is observed from $\ce{H2S}$ → $\ce{H2Se}$ → $\ce{H2Te}$. However, $\ce{H2O}$ is dramatically higher — an anomaly caused by <b>hydrogen bonding</b>. Water molecules form an extensive H-bond network (each H₂O can form up to 4 H-bonds), which requires much more energy to disrupt than London forces alone. $\ce{H2S}$ cannot form H-bonds because S is not electronegative enough (EN = 2.5 vs. O = 3.5).
+</div>
+
+<div class="example">
+<b>Example 2 — Isomers and Boiling Point:</b><br><br>
+Pentane ($\ce{CH3CH2CH2CH2CH3}$, b.p. 36°C) and 2,2-dimethylpropane ($\ce{C(CH3)4}$, b.p. 9.5°C) are isomers ($\ce{C5H12}$). Explain the difference in boiling point despite identical molecular mass.<br><br>
+Both are non-polar, so only London forces operate. However, pentane is a linear chain with a large surface area — neighbouring molecules can pack closely and interact along the entire length. 2,2-dimethylpropane is nearly spherical — molecules have less surface contact, so the instantaneous dipoles induce less effectively. <b>More branching → more spherical → smaller surface area → weaker London forces → lower boiling point.</b>
+</div>
+
+<div class="example">
+<b>Example 3 — Solubility: "Like Dissolves Like":</b><br><br>
+Predict whether each substance is soluble in water (polar, H-bonding) or hexane (non-polar): (a) $\ce{NaCl}$, (b) $\ce{I2}$, (c) $\ce{CH3CH2OH}$ (ethanol), (d) $\ce{CH3(CH2)4CH3}$ (hexane itself).<br><br>
+<b>(a) NaCl:</b> ionic — soluble in water (ion–dipole interactions with H₂O), insoluble in hexane.<br>
+<b>(b) I₂:</b> non-polar covalent — soluble in hexane (London forces match), very slightly soluble in water.<br>
+<b>(c) CH₃CH₂OH:</b> has polar O–H group (H-bonding) and non-polar C₂H₅ group — miscible with water (H-bonding) AND soluble in hexane (London forces with alkyl chain). The alkyl chain makes it partly soluble in non-polar solvents.<br>
+<b>(d) Hexane:</b> non-polar — miscible with hexane, immiscible with water.
+</div>
+
+<h2>6. Common Misconceptions</h2>
+
+<div class="misconception">
+<h3>⚠️ Common Mistakes to Avoid</h3>
 <ol>
-<li>For each of the following pairs of substances, identify which one has the higher boiling point and explain your reasoning in terms of intermolecular forces:</li>
+  <li><b>Calling all intermolecular forces "van der Waals."</b> The IB distinguishes: London (dispersion) forces, dipole–dipole forces, and hydrogen bonding are all types of van der Waals' forces. But in IB exams, "van der Waals' forces" usually refers specifically to London/dispersion forces. Be precise.</li>
+  <li><b>Thinking hydrogen bonds are covalent bonds.</b> A hydrogen bond is an <b>intermolecular</b> force (≈10–40 kJ mol⁻¹), much weaker than a covalent O–H bond (≈463 kJ mol⁻¹). The H is covalently bonded to one O and H-bonded to a different O.</li>
+  <li><b>Saying "H-bonding occurs whenever H is present."</b> The H must be bonded to N, O, or F. $\ce{CH4}$ has H atoms but no H-bonding. Even $\ce{CH3F}$ has no H-bonding because the H atoms are bonded to C, not F.</li>
+  <li><b>Ignoring molecular shape when assessing polarity.</b> $\ce{CCl4}$ has four polar C–Cl bonds but is non-polar because the tetrahedral shape is symmetric. Always draw the shape before deciding polarity.</li>
+  <li><b>Assuming larger molecules always have higher boiling points due to stronger London forces — without checking for H-bonding.</b> $\ce{H2O}$ (M = 18) has a much higher boiling point than $\ce{C3H8}$ (M = 44) because H-bonding trumps London forces.</li>
 </ol>
-<p>
-   (a) Methane, CH₄ (molar mass 16 g mol⁻¹), and carbon tetrachloride, CCl₄ (molar mass 154 g mol⁻¹).
-</p>
-<p>
-   (b) Dimethyl ether, CH₃OCH₃ (molar mass 46 g mol⁻¹), and ethanol, CH₃CH₂OH (molar mass 46 g mol⁻¹).
-</p>
-<ol>
-<li>The boiling points of the Group 15 hydrides are: ammonia, NH₃, boiling at −33 °C; phosphine, PH₃, boiling at −88 °C; and arsine, AsH₃, boiling at −63 °C. These three compounds have the same general molecular shape (trigonal pyramidal). Explain why the boiling points do not simply increase from NH₃ to AsH₃ as the molar mass increases. In your answer, account for the boiling point of each hydride.</li>
-</ol>
-<ol>
-<li>The compound 1,2-dichloroethene (C₂H₂Cl₂) exists as two geometric isomers: cis-1,2-dichloroethene (boiling point 60 °C) and trans-1,2-dichloroethene (boiling point 48 °C). Both isomers have the same molar mass (97 g mol⁻¹) and the same number and types of atoms. Explain why the cis isomer has a higher boiling point. Your explanation should include a comparison of the molecular polarity of the two isomers.</li>
-</ol>
-<ol>
-<li><strong>(IB Exam Style)</strong> The table below shows the molar masses and boiling points of four compounds that contain two carbon atoms each.</li>
-</ol>
+</div>
+
+<h2>7. End-of-Lesson Practice</h2>
+
+<p><b>Question 1:</b> Determine whether each molecule is polar or non-polar: (a) $\ce{CH4}$, (b) $\ce{CH3Cl}$, (c) $\ce{SF6}$, (d) $\ce{SO2}$.</p>
+
+<p><b>Question 2:</b> Identify all types of intermolecular forces present in: (a) $\ce{HCl(l)}$, (b) $\ce{CH3OCH3(l)}$ (dimethyl ether), (c) $\ce{CH3COOH(l)}$ (acetic acid).</p>
+
+<p><b>Question 3:</b> Explain why the boiling point of $\ce{HF}$ (20°C) is much higher than $\ce{HCl}$ (−85°C), even though HCl has more electrons.</p>
+
+<p><b>Question 4:</b> $\ce{CH3CH2CH2OH}$ (propan-1-ol, b.p. 97°C) and $\ce{CH3OCH2CH3}$ (methoxyethane, b.p. 8°C) are isomers. Account for the 89°C difference in boiling point.</p>
+
+<p><b>Question 5:</b> The boiling points of the noble gases are: He (−269°C), Ne (−246°C), Ar (−186°C), Kr (−152°C), Xe (−107°C). Explain the trend in terms of intermolecular forces.</p>
+
+<p><b>Question 6 (HL-data analysis):</b> The graph below (described) shows boiling points of Period 2 hydrides: $\ce{CH4}$ (−164°C), $\ce{NH3}$ (−33°C), $\ce{H2O}$ (100°C), $\ce{HF}$ (20°C). Account for the shape of the graph, explaining each data point in terms of intermolecular forces.</p>
+
+<button class="practice-toggle" onclick="var a=this.nextElementSibling;a.classList.toggle('open');this.textContent=a.classList.contains('open')?'▴ Hide Answers':'▸ Show Answers'">▸ Show Answers</button>
+<div class="practice-answers">
+
+<p><b>Answer 1:</b> (a) $\ce{CH4}$: tetrahedral, symmetric → <b>non-polar</b>. (b) $\ce{CH3Cl}$: tetrahedral but asymmetric (one Cl, three H) → <b>polar</b>. (c) $\ce{SF6}$: octahedral, symmetric → <b>non-polar</b>. (d) $\ce{SO2}$: bent (one lone pair on S) → <b>polar</b>.</p>
+
+<p><b>Answer 2:</b> (a) $\ce{HCl}$: London forces + dipole–dipole (polar molecule). No H-bonding (Cl is not N/O/F). (b) $\ce{CH3OCH3}$: London forces + dipole–dipole (bent around O, polar). The O has lone pairs but no O–H bond, so no H-bonding. (c) $\ce{CH3COOH}$: London forces + dipole–dipole + <b>hydrogen bonding</b> (O–H group). Acetic acid actually forms dimers via two H-bonds between carboxyl groups.</p>
+
+<p><b>Answer 3:</b> HF has <b>hydrogen bonding</b> (H bonded to F, the most electronegative element). Each HF molecule forms strong H-bonds with neighbours. HCl only has dipole–dipole forces and London forces — no H-bonding because Cl is not electronegative enough and is too large for effective H-bonding. Despite HCl having more electrons (stronger London forces), H-bonding in HF dominates, giving a boiling point 105°C higher.</p>
+
+<p><b>Answer 4:</b> Propan-1-ol has an –OH group → can form <b>hydrogen bonds</b>. Methoxyethane is an ether — it has a polar C–O–C group and can participate in dipole–dipole forces but has <b>no H-bond donor</b> (no O–H bond). The 89°C difference illustrates the dramatic effect of H-bonding vs. dipole–dipole on boiling point.</p>
+
+<p><b>Answer 5:</b> Noble gases are monatomic and non-polar — <b>only London (dispersion) forces</b> are present. Down the group, the number of electrons increases (He: 2, Ne: 10, Ar: 18, Kr: 36, Xe: 54), so the electron cloud becomes larger and more polarisable. Stronger temporary dipoles → stronger London forces → higher boiling point. The trend is smooth with no anomalies because no other IMFs are present.</p>
+
+<p><b>Answer 6:</b> The general trend expected for Period 2 hydrides (based on electron count) would be a smooth increase from CH₄ to HF. Instead, the graph shows three anomalies: NH₃, H₂O, and HF all have elevated boiling points. CH₄: only London forces (non-polar, tetrahedral) → lowest b.p. NH₃: H-bonding (H–N bonds, lone pair on N) → elevated. H₂O: strongest H-bonding (each H₂O can form up to 4 H-bonds, two as donor via O–H, two as acceptor via lone pairs) → highest b.p. HF: H-bonding (H–F bond) but each HF can only form 2 H-bonds on average (one donor, one acceptor) → elevated but slightly lower than H₂O. The anomaly is caused by H-bonding; without it, the boiling points would follow the electron-count trend like Group 14 hydrides.</p>
+</div>
+
+<h2>8. Key Terms</h2>
 <table>
-<tr>
-<th>Compound</th>
-<th>Formula</th>
-<th>Molar mass / g mol⁻¹</th>
-<th>Boiling point / °C</th>
-</tr>
-<tr>
-<td>Propane</td>
-<td>CH₃CH₂CH₃</td>
-<td>44</td>
-<td>−42</td>
-</tr>
-<tr>
-<td>Ethanal</td>
-<td>CH₃CHO</td>
-<td>44</td>
-<td>20</td>
-</tr>
-<tr>
-<td>Ethanol</td>
-<td>CH₃CH₂OH</td>
-<td>46</td>
-<td>78</td>
-</tr>
-<tr>
-<td>Ethanoic acid</td>
-<td>CH₃COOH</td>
-<td>60</td>
-<td>118</td>
-</tr>
+<tr><th>Term</th><th>Definition</th></tr>
+<tr><td>Electronegativity</td><td>The ability of an atom to attract a bonding pair of electrons (Pauling scale)</td></tr>
+<tr><td>Bond dipole</td><td>A separation of charge within a polar covalent bond (δ⁺ and δ⁻)</td></tr>
+<tr><td>Molecular dipole (μ)</td><td>The net dipole moment of the entire molecule; the vector sum of all bond dipoles</td></tr>
+<tr><td>London (dispersion) forces</td><td>Weak IMFs caused by temporary, instantaneous dipoles that induce dipoles in neighbours; present in ALL molecules</td></tr>
+<tr><td>Dipole–dipole forces</td><td>Attractions between permanent dipoles of polar molecules</td></tr>
+<tr><td>Hydrogen bond</td><td>A strong dipole–dipole interaction where H (bonded to N/O/F) is attracted to a lone pair on N/O/F of another molecule</td></tr>
+<tr><td>Polarisability</td><td>The ease with which an electron cloud can be distorted; increases with more electrons and larger atomic radius</td></tr>
+<tr><td>Surface tension</td><td>The tendency of a liquid surface to resist rupture; caused by cohesive IMFs</td></tr>
+<tr><td>Viscosity</td><td>A liquid's resistance to flow; stronger IMFs → higher viscosity</td></tr>
+<tr><td>Miscibility</td><td>The ability of two liquids to mix in all proportions; governed by "like dissolves like"</td></tr>
 </table>
-<p>
-   (a) Propane and ethanal have the same molar mass (44 g mol⁻¹), yet ethanal boils 62 °C higher than propane. Explain this difference by identifying the intermolecular forces present in each compound and comparing their strengths.
-</p>
-<p>
-   (b) Ethanol contains one more carbon atom than methanol (CH₃OH), yet methanol boils at 65 °C and ethanol at 78 °C. Ethanol is the higher-boiling of the two. Explain why, even though both can form hydrogen bonds.
-</p>
-<p>
-   (c) Ethanoic acid has the highest boiling point of all four compounds at 118 °C. Account for this in detail, considering the specific way in which ethanoic acid molecules interact with each other in the liquid phase.
-</p>
-<hr>
-<h2>Answers</h2>
-<ol>
-<li>CO₂ has two double bonds from carbon to oxygen and no lone pairs on carbon. Its electron domain count is 2, giving a linear shape with a bond angle of exactly 180°. The two C=O bond dipoles are equal in magnitude and point in exactly opposite directions. As vectors, they cancel completely, producing a net dipole moment of zero. CO₂ is therefore non-polar. SO₂ has two bonds and one lone pair on sulfur, giving an electron domain count of 3 and a bent molecular shape with a bond angle of approximately 118°. In a bent geometry, the two S–O bond dipoles do not point in opposite directions. When added as vectors, they produce a net dipole moment that points along the bisector of the O–S–O angle. SO₂ is therefore polar. The key difference is that the lone pair on sulfur in SO₂ changes the molecular geometry from linear to bent, preventing the bond dipoles from canceling.</li>
-</ol>
-<ol>
-<li>(a) Carbon tetrachloride, CCl₄, has the higher boiling point. Both CH₄ and CCl₄ are non-polar tetrahedral molecules, so the only intermolecular forces in both are London dispersion forces. CCl₄ has a molar mass of 154 g mol⁻¹, which is nearly ten times the molar mass of CH₄ (16 g mol⁻¹). The CCl₄ molecule contains 74 electrons compared to CH₄'s 10 electrons. The much larger number of electrons in CCl₄ produces a much more polarizable electron cloud, leading to significantly stronger London dispersion forces and a much higher boiling point. This comparison illustrates that even when the types of intermolecular forces are the same, the strength of those forces can differ dramatically based on the size of the electron cloud.</li>
-</ol>
-<p>
-   (b) Ethanol, CH₃CH₂OH, has the higher boiling point. Both compounds have the same molar mass (46 g mol⁻¹) and therefore very similar London dispersion forces. Dimethyl ether (CH₃OCH₃) is polar because of the C–O–C bent geometry, so it has dipole–dipole forces in addition to London forces. However, ethanol contains an O–H group. The hydrogen atom bonded to oxygen can form hydrogen bonds with the oxygen lone pairs of neighboring ethanol molecules. Hydrogen bonding is considerably stronger than ordinary dipole–dipole forces. Ethanol's boiling point (78 °C) is far higher than dimethyl ether's boiling point (−24 °C) because the hydrogen bonds between ethanol molecules require significantly more thermal energy to overcome.
-</p>
-<ol>
-<li>The boiling points of the Group 15 hydrides show an anomaly at NH₃. If London dispersion forces were the only factor, the boiling points would increase steadily with molar mass: PH₃ (34 g mol⁻¹) should boil higher than NH₃ (17 g mol⁻¹), and AsH₃ (78 g mol⁻¹) should boil highest of all. The data partially follow this pattern: PH₃ boils at −88 °C and AsH₃ at −63 °C, an increase of 25 °C consistent with stronger London forces in the heavier molecule. However, NH₃ boils at −33 °C, which is 55 °C higher than PH₃ despite having only half the molar mass. This anomaly is explained by hydrogen bonding. In NH₃, the nitrogen atom (electronegativity 3.0) is sufficiently electronegative that the N–H bond is highly polar. The hydrogen atoms of one NH₃ molecule are attracted to the lone pair on the nitrogen of another NH₃ molecule, forming N–H···N hydrogen bonds. In PH₃ and AsH₃, the central atoms (phosphorus and arsenic) are not electronegative enough to support hydrogen bonding (P has EN = 2.1, As has EN = 2.0). These heavier hydrides interact only through dipole–dipole and London forces. The hydrogen bonding in NH₃ overcomes its disadvantage in London forces and gives it a higher boiling point than PH₃. The subsequent rise from PH₃ to AsH₃ reflects the normal increase in London forces with increasing molar mass.</li>
-</ol>
-<ol>
-<li>Both cis- and trans-1,2-dichloroethene have the same chemical formula (C₂H₂Cl₂), the same molar mass (97 g mol⁻¹), and the same bonds. The difference lies in the spatial arrangement of the two chlorine atoms relative to the C=C double bond. In the cis isomer, the two chlorine atoms are on the same side of the double bond. The two C–Cl bond dipoles point in roughly the same direction (both to one side of the molecule). These dipoles add together, giving the cis isomer a net dipole moment—the molecule is polar. In the trans isomer, the two chlorine atoms are on opposite sides of the double bond. The two C–Cl bond dipoles point in opposite directions, and because the molecule is roughly symmetrical, they cancel. The trans isomer has no net dipole moment—it is non-polar. Both isomers experience London dispersion forces of equal strength (same number of electrons, same molar mass). However, the cis isomer also experiences dipole–dipole forces because it is polar. These additional attractive forces between cis molecules mean that more energy is required to separate them and transition to the gas phase, giving the cis isomer a higher boiling point (60 °C) than the trans isomer (48 °C). This is a classic example of how molecular shape, through its effect on polarity, determines physical properties even when the chemical formula is identical.</li>
-</ol>
-<ol>
-<li>(a) Propane (CH₃CH₂CH₃) is a hydrocarbon with only C–C and C–H bonds. The C–H bonds are very weakly polar, and the molecule is symmetrical in its extended conformation, making propane effectively non-polar. The only intermolecular forces between propane molecules are London dispersion forces. Ethanal (CH₃CHO) contains a carbonyl group (C=O). The C=O bond is strongly polar because oxygen (EN = 3.5) is much more electronegative than carbon (EN = 2.5). The ethanal molecule has a net dipole moment and is polar. In addition to London dispersion forces (which are comparable in magnitude to those in propane, since the molar masses are identical), ethanal molecules experience dipole–dipole attractions between their permanent dipoles. These additional forces mean that ethanal molecules are held together more strongly in the liquid phase, requiring a higher temperature (20 °C versus −42 °C) to provide enough kinetic energy for the molecules to escape as a gas.</li>
-</ol>
-<p>
-   (b) Both methanol (CH₃OH) and ethanol (CH₃CH₂OH) can form hydrogen bonds because each has an O–H group. The hydrogen bonding is the dominant intermolecular force in both liquids. However, ethanol has a larger molar mass (46 g mol⁻¹) than methanol (32 g mol⁻¹). The larger molecule has more electrons (ethanol has 26 electrons, methanol has 18), which means the London dispersion forces between ethanol molecules are stronger than those between methanol molecules. In addition to the hydrogen bonding that both compounds share, ethanol benefits from stronger London forces, which raises its boiling point by approximately 13 °C above that of methanol.
-</p>
-<p>
-   (c) Ethanoic acid (CH₃COOH) has the highest boiling point because its molecules can form a particularly strong arrangement of hydrogen bonds. An ethanoic acid molecule has both a hydrogen bond donor (the O–H group) and a hydrogen bond acceptor (the C=O group). In the liquid phase, two ethanoic acid molecules can come together to form a cyclic dimer. In this dimer, the O–H group of one molecule forms a hydrogen bond with the C=O group of the other molecule, and vice versa, creating a ring stabilized by two hydrogen bonds. This dimerization has an effect similar to doubling the effective molar mass of the species in the liquid. The dimer structure is:
-</p>
-<p>
-   One molecule's O–H···O=C of the other molecule, and simultaneously the other molecule's O–H···O=C of the first molecule.
-</p>
-<p>
-   Because the dimer contains two molecules held together by two hydrogen bonds, the intermolecular forces are approximately twice as strong as those in a simple alcohol like ethanol, where each molecule typically participates in only one or two hydrogen bonds that are not arranged in a reinforcing cyclic structure. This dimerization, combined with the already strong hydrogen bonding and the London forces from a molar mass of 60 g mol⁻¹, gives ethanoic acid the highest boiling point of the four compounds in the table. A common mistake is to attribute the high boiling point solely to hydrogen bonding in a general sense, without recognizing that the specific ability of carboxylic acids to form dimers doubles the effective size and bonding strength of the units in the liquid.
-</p>
-<div class="nav">
-<a href="lesson_10.html">← Previous Lesson</a>
-<a href="lesson_12.html">Next Lesson →</a>
-</div>
+
+<h2>9. Exam Tips</h2>
+
+<div class="exam-tip"><b>Paper 1 — Boiling Point Comparisons:</b> When asked to rank boiling points, check in this order: (1) H-bonding? → highest. (2) Dipole–dipole? → intermediate. (3) Only London forces? → lowest for similar mass. Within the same IMF type, more electrons (larger M) → higher b.p. For isomers, less branching → more linear → higher b.p. Memorise: H₂O > HF > NH₃ for Period 2 hydrides.</div>
+
+<div class="exam-tip"><b>Paper 2 — "Explain why..." questions:</b> Always state: (1) the types of IMFs present in each substance, (2) their relative strengths, (3) the consequence for the physical property. Example: "Ethanol has a higher boiling point than dimethyl ether because ethanol can form hydrogen bonds (due to its O–H group), whereas dimethyl ether can only form dipole–dipole forces. Hydrogen bonds are stronger, so more energy is required to separate ethanol molecules."</div>
+
+<div class="exam-tip"><b>Common Data Booklet Values:</b> The Data Booklet provides electronegativity values (Pauling scale). Use these to calculate ΔEN and determine bond polarity. General rule: ΔEN > 1.7 → ionic; 0.3–1.7 → polar covalent; < 0.3 → non-polar covalent. But polarity is a continuum and these are approximate boundaries.</div>
+
 </body>
 </html>

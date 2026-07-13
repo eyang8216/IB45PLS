@@ -3,420 +3,280 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lesson 24 — IB Chemistry HL</title>
-<script>window.MathJax = { loader: {load: ['[tex]/mhchem']}, tex: {packages: {'[+]': ['mhchem']}} };</script>
+<title>Lesson 24 — Chemistry HL — The Equilibrium Constant Kc — Expression, Magnitude, Q</title>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] },
+  loader: { load: ['[tex]/mhchem'] },
+  tex: { packages: {'[+]': ['mhchem']} }
+};
+</script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
 <style>
-  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Palatino', 'Georgia', serif; background: var(--bg); color: var(--text); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; font-size: 17px; line-height: 1.7; }
-  h1 { font-size: 1.7rem; color: var(--accent); margin-bottom: 0.5rem; }
-  h2 { font-size: 1.25rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; margin: 2rem 0 1rem; }
-  h3 { font-size: 1.1rem; color: #444; margin: 1.3rem 0 0.5rem; }
-  p, li { margin-bottom: 0.6rem; }
-  ul, ol { padding-left: 1.8rem; margin-bottom: 1rem; }
-  .worked { background: #f0f7f0; border-left: 4px solid #2c5f2d; padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
-  .worked strong { color: #2c5f2d; }
-  .answer { background: #fefdf7; border: 1px solid var(--border); padding: 0.8rem 1.2rem; margin: 0.5rem 0; border-radius: 6px; }
-  .nav { display: flex; justify-content: space-between; margin: 3rem 0 1rem; padding-top: 1rem; border-top: 2px solid var(--border); font-size: 0.9rem; }
-  .nav a { color: #1a5c9e; text-decoration: none; }
-  .nav a:hover { text-decoration: underline; }
-  .definition { background: #fdf5e6; border-left: 4px solid #d4a017; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
-  table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
-  th, td { padding: 0.5rem; border: 1px solid #ccc; text-align: left; }
-  th { background: #f0f7f0; }
-  @media print { body { font-size: 14px; } .nav { display: none; } }
+:root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Georgia', 'Times New Roman', serif; font-size: 17px; line-height: 1.7; color: var(--text); background: var(--bg); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; }
+h1 { font-size: 1.8rem; color: var(--accent); border-bottom: 3px solid var(--accent); padding-bottom: 0.5rem; margin-bottom: 1rem; }
+h2 { font-size: 1.35rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+h3 { font-size: 1.15rem; color: var(--accent); margin: 1.5rem 0 0.5rem; }
+p { margin-bottom: 0.8rem; }
+.objectives { background: #f0f4ff; border-left: 4px solid var(--accent); padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+.objectives h3 { margin-top: 0; }
+.check-in { background: #fff8e1; border: 1px solid #ffc107; padding: 0.8rem 1rem; margin: 1rem 0; border-radius: 8px; }
+.check-in p { margin-bottom: 0.3rem; }
+.answer-toggle { display: inline-block; padding: 0.2rem 0.8rem; border-radius: 16px; cursor: pointer; font-size: 0.8rem; font-weight: 600; background: #e8f5e9; color: #2e7d32; border: 1px solid #2e7d32; user-select: none; margin-top: 0.3rem; }
+.answer-content { display: none; background: #f1f8e9; padding: 0.6rem 1rem; border-radius: 8px; margin-top: 0.5rem; }
+.answer-content.open { display: block; }
+.example { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem; margin: 1rem 0; }
+.misconception { background: #fff3e0; border-left: 4px solid #e65100; padding: 1rem 1.2rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+.misconception h3 { color: #e65100; }
+.exam-tip { background: #e8f5e9; border-left: 4px solid #2e7d32; padding: 0.8rem 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+th { background: var(--accent); color: white; padding: 0.5rem 0.8rem; text-align: left; }
+td { padding: 0.5rem 0.8rem; border-bottom: 1px solid var(--border); }
+tr:nth-child(even) td { background: #f8f8f6; }
+.diagram { text-align: center; margin: 1.5rem 0; }
+.diagram svg { max-width: 100%; }
+.diagram .caption { font-size: 0.9rem; color: #666; margin-top: 0.3rem; font-style: italic; }
+.definition { background: #fdf5e6; border-left: 4px solid #d4a017; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 8px 8px 0; }
+.practice-toggle { display: block; width: 100%; padding: 0.8rem; background: var(--accent); color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem; font-weight: 600; margin: 1.5rem 0; }
+.practice-answers { display: none; }
+.practice-answers.open { display: block; }
 </style>
 </head>
 <body>
-<h1>Lesson 24: The Equilibrium Constant Kc — Expression, Magnitude, and Reaction Quotient Q</h1>
 
-<h2>What You'll Learn</h2>
+<h1>Lesson 24: The Equilibrium Constant $K_c$ — Expression, Magnitude, Q</h1>
+<p><b>Syllabus reference:</b> 7.1 — Equilibrium; 17.1 — The Equilibrium Law (HL)</p>
 
+<div class="objectives">
+<h3>Learning Objectives</h3>
+<p>By the end of this lesson, you will be able to:</p>
 <ul>
-
-<li>Write the equilibrium constant expression Kc for any homogeneous or heterogeneous equilibrium</li>
-
-<li>Interpret the magnitude of Kc to determine whether reactants or products are favoured</li>
-
-<li>Explain why Kc depends only on temperature and not on concentration or pressure</li>
-
-<li>Calculate the reaction quotient Q and use it to predict the direction a reaction will proceed</li>
-
-<li>Perform simple Kc calculations from equilibrium concentration data</li>
-
+  <li><b>Write</b> the equilibrium constant expression $K_c$ for any homogeneous reaction from its balanced equation.</li>
+  <li><b>Explain</b> why solids and pure liquids are omitted from the $K_c$ expression.</li>
+  <li><b>Interpret</b> the magnitude of $K_c$ ($K_c \gg 1$, $K_c \approx 1$, $K_c \ll 1$) in terms of the equilibrium position.</li>
+  <li><b>Define</b> the reaction quotient $Q$ and use it to predict the direction a reaction mixture will shift to reach equilibrium.</li>
+  <li><b>Relate</b> $Q$ and $K_c$: if $Q < K_c$, reaction proceeds forwards; if $Q > K_c$, reaction proceeds backwards.</li>
 </ul>
-
-<hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
-
-<h2>1. The Kc Expression</h2>
-
-<h3>What This Concept Is and Why It Matters</h3>
-
-<p>When a reversible reaction reaches equilibrium, the concentrations of reactants and products stop changing. But there is a deeper mathematical regularity: for any given reaction at a fixed temperature, the ratio of product concentrations to reactant concentrations — each raised to the power of its stoichiometric coefficient — always has the same numerical value. This value is called the <strong>equilibrium constant</strong>, given the symbol Kc (the "c" stands for concentration).</p>
-
-<p>The Kc expression lets you calculate the equilibrium constant from measured concentrations, or predict equilibrium concentrations if you know Kc. It is one of the most powerful quantitative tools in chemistry.</p>
-
-<h3>How to Write the Kc Expression</h3>
-
-<p>Consider a general reversible reaction:</p>
-
-<p>\[a\text{A} + b\text{B} \rightleftharpoons c\text{C} + d\text{D}\]</p>
-
-<p>The equilibrium constant Kc is defined as:</p>
-
-<p>\[K_c = \frac{[\text{C}]^c [\text{D}]^d}{[\text{A}]^a [\text{B}]^b}\]</p>
-
-<p>Here is what each part means:</p>
-
-<ul>
-
-<li><strong>[A], [B], [C], [D]</strong> are the equilibrium concentrations of the reactants and products, measured in mol dm⁻³.</li>
-
-<li><strong>The exponents a, b, c, d</strong> are the stoichiometric coefficients from the balanced equation. The coefficient in front of A becomes the exponent for [A] in the denominator. The coefficient in front of C becomes the exponent for [C] in the numerator.</li>
-
-<li><strong>Products go in the numerator</strong> (top of the fraction), and <strong>reactants go in the denominator</strong> (bottom of the fraction).</li>
-
-<li>The expression is valid only when the system is <strong>at equilibrium</strong>. If the system is not at equilibrium, the same expression gives Q (the reaction quotient), which we will discuss later.</li>
-
-</ul>
-
-<h3>What to Include and What to Exclude</h3>
-
-<p>This is a critical rule that many students get wrong: <strong>solids and pure liquids do not appear in the Kc expression.</strong> The reason is that the concentration of a pure solid or a pure liquid is constant — it does not change during the reaction, no matter how much of it is present. Only species whose concentrations can change appear in Kc.</p>
-
-<p>Specifically:</p>
-
-<ul>
-
-<li><strong>Gases (g):</strong> Always included.</li>
-
-<li><strong>Aqueous solutions (aq):</strong> Always included.</li>
-
-<li><strong>Pure solids (s):</strong> Never included. Their "activity" is defined as 1.</li>
-
-<li><strong>Pure liquids (l):</strong> Never included, unless the reaction takes place in a solution where the liquid is also acting as the solvent and participates in the reaction in a non-negligible way (for IB, in esterification reactions, water and alcohols may be included since they are not in vast excess as solvent).</li>
-
-</ul>
-
-<h3>Worked Example: Writing Kc Expressions for Different Types of Reactions</h3>
-
-<p><strong>Reaction 1:</strong> 2SO₂(g) + O₂(g) ⇌ 2SO₃(g)</p>
-
-<p>All species are gases, so all appear in the expression:</p>
-
-<p>\[K_c = \frac{[\text{SO}_3]^2}{[\text{SO}_2]^2 [\text{O}_2]}\]</p>
-
-<p><strong>Reaction 2:</strong> N₂(g) + 3H₂(g) ⇌ 2NH₃(g)</p>
-
-<p>All gases:</p>
-
-<p>\[K_c = \frac{[\text{NH}_3]^2}{[\text{N}_2][\text{H}_2]^3}\]</p>
-
-<p><strong>Reaction 3:</strong> CaCO₃(s) ⇌ CaO(s) + CO₂(g)</p>
-
-<p>CaCO₃ and CaO are both solids — they do not appear. Only CO₂ (a gas) appears:</p>
-
-<p>\[K_c = [\text{CO}_2]\]</p>
-
-<p>This tells you something interesting: for this reaction, at a given temperature, the concentration (and therefore the partial pressure) of CO₂ at equilibrium is fixed, regardless of how much CaCO₃ or CaO is present — as long as both solids are present.</p>
-
-<p><strong>Reaction 4:</strong> CH₃COOH(aq) + H₂O(l) ⇌ CH₃COO⁻(aq) + H₃O⁺(aq)</p>
-
-<p>Water is a pure liquid and is the solvent, present in vast excess. Its concentration remains essentially constant (about 55 mol dm⁻³), so it is omitted:</p>
-
-<p>\[K_c = \frac{[\text{CH}_3\text{COO}^-][\text{H}_3\text{O}^+]}{[\text{CH}_3\text{COOH}]}\]</p>
-
-<hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
-
-<h2>2. The Magnitude of Kc</h2>
-
-<h3>What This Concept Is and Why It Matters</h3>
-
-<p>The numerical value of Kc tells you, at a glance, whether the equilibrium position lies to the right (products favoured) or to the left (reactants favoured).</p>
-
-<p><strong>Kc is very large (much greater than 1, such as 10⁵ or 10¹⁰):</strong> At equilibrium, the numerator (product concentrations) is much larger than the denominator (reactant concentrations). This means the reaction has gone nearly to completion — most of the reactants have been converted to products. The equilibrium "lies to the right."</p>
-
-<p><strong>Kc is approximately 1 (between about 0.1 and 10):</strong> At equilibrium, there are significant amounts of both reactants and products. Neither side is strongly favoured.</p>
-
-<p><strong>Kc is very small (much less than 1, such as 10⁻⁵ or 10⁻¹⁰):</strong> At equilibrium, the denominator is much larger than the numerator. This means very little product has formed. The reaction hardly proceeds at all before reaching equilibrium. The equilibrium "lies to the left."</p>
-
-<p>A key point: the magnitude of Kc tells you nothing about how fast equilibrium is reached. A reaction with Kc = 10²⁰ might take a million years to reach equilibrium if its activation energy is enormous. Kc is about thermodynamics (where equilibrium lies), not kinetics (how fast you get there).</p>
-
-<h3>Worked Example 1: Interpreting Kc Values</h3>
-
-<p><strong>Problem:</strong> At a certain temperature, the reaction H₂(g) + I₂(g) ⇌ 2HI(g) has Kc = 50. At the same temperature, the decomposition of ammonia 2NH₃(g) ⇌ N₂(g) + 3H₂(g) has Kc = 1.0 × 10⁻⁵. Interpret what these two values tell you about the equilibrium composition in each case.</p>
-
-<p><strong>Strategy:</strong> Compare each Kc value to 1 and reason about the relative sizes of the numerator and denominator.</p>
-
-<p><strong>Solution:</strong> For H₂ + I₂ ⇌ 2HI, Kc = 50. Since 50 is much greater than 1, the numerator [HI]² must be larger than the denominator [H₂][I₂] by a factor of 50. This means that at equilibrium, the concentration of HI is significantly higher than the concentrations of H₂ and I₂. The equilibrium favours products — the reaction goes a long way toward forming HI.</p>
-
-<p>For 2NH₃ ⇌ N₂ + 3H₂, Kc = 1.0 × 10⁻⁵ (which is 0.00001). Since this is much less than 1, the denominator [NH₃]² must be much larger than the numerator [N₂][H₂]³. At equilibrium, the concentration of NH₃ dominates — only tiny amounts of N₂ and H₂ are present. The equilibrium heavily favours the reactant (NH₃) for this decomposition reaction.</p>
-
-<hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
-
-<h2>3. Kc Depends Only on Temperature</h2>
-
-<h3>What This Concept Is and Why It Matters</h3>
-
-<p>The equilibrium constant Kc is not truly a universal constant — it changes with temperature. But for a given reaction at a given temperature, Kc has one fixed value. This is a profound and useful fact.</p>
-
-<p>If you change the concentration of a reactant or product, the system is disturbed from equilibrium and will shift to re-establish equilibrium, but once it settles, the ratio of concentrations (raised to their powers) will return to exactly the same Kc value. If you change the pressure (for a gas-phase reaction), the system shifts, but Kc remains unchanged. Concentration and pressure changes shift the position of equilibrium but never change Kc.</p>
-
-<p>Temperature is different. Changing the temperature actually changes the numerical value of Kc. The direction of the change depends on whether the forward reaction is endothermic or exothermic:</p>
-
-<ul>
-
-<li><strong>Exothermic forward reaction (ΔH negative):</strong> Increasing the temperature shifts equilibrium toward reactants (left), so Kc <strong>decreases</strong>. Decreasing the temperature shifts equilibrium toward products (right), so Kc <strong>increases</strong>.</li>
-
-</ul>
-
-<ul>
-
-<li><strong>Endothermic forward reaction (ΔH positive):</strong> Increasing the temperature shifts equilibrium toward products (right), so Kc <strong>increases</strong>. Decreasing the temperature shifts equilibrium toward reactants (left), so Kc <strong>decreases</strong>.</li>
-
-</ul>
-
-<p>This is consistent with Le Chatelier's Principle: adding heat to an exothermic reaction reduces Kc because the equilibrium shifts away from products. Adding heat to an endothermic reaction increases Kc because the equilibrium shifts toward products.</p>
-
-<hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
-
-<h2>4. The Reaction Quotient Q</h2>
-
-<h3>What This Concept Is and Why It Matters</h3>
-
-<p>Suppose you mix some reactants and products in a container. You do not know whether the mixture is at equilibrium. You need a way to predict which direction the reaction will go to reach equilibrium. The <strong>reaction quotient</strong>, given the symbol Q, serves this purpose.</p>
-
-<p>Q is calculated using exactly the same formula as Kc — products over reactants, each raised to their stoichiometric coefficients — but using the <strong>current</strong> concentrations, which may or may not be the equilibrium concentrations:</p>
-
-<p>\[Q = \frac{[\text{C}]^c [\text{D}]^d}{[\text{A}]^a [\text{B}]^b}\]</p>
-
-<p>Once you have calculated Q, you compare it to the known value of Kc at that temperature:</p>
-
-<ul>
-
-<li><strong>If Q < Kc:</strong> The numerator (products) is too small relative to the denominator (reactants) compared to what it should be at equilibrium. The reaction will proceed in the <strong>forward direction</strong> (toward products) to increase the numerator and decrease the denominator, raising Q until it equals Kc.</li>
-
-</ul>
-
-<ul>
-
-<li><strong>If Q = Kc:</strong> The system is already at equilibrium. No net reaction occurs in either direction.</li>
-
-</ul>
-
-<ul>
-
-<li><strong>If Q > Kc:</strong> The numerator is too large relative to the denominator. The reaction will proceed in the <strong>reverse direction</strong> (toward reactants) to decrease the numerator and increase the denominator, lowering Q until it equals Kc.</li>
-
-</ul>
-
-<h3>Worked Example 2: Using Q to Predict Reaction Direction</h3>
-
-<p><strong>Problem:</strong> For the reaction H₂(g) + I₂(g) ⇌ 2HI(g), the equilibrium constant Kc is 50 at 700 K. A chemist prepares a mixture with the following concentrations: [H₂] = 0.10 mol dm⁻³, [I₂] = 0.20 mol dm⁻³, and [HI] = 0.40 mol dm⁻³. Predict the direction in which the reaction will proceed to reach equilibrium.</p>
-
-<p><strong>Strategy:</strong> Calculate Q using the given concentrations and the same formula as Kc. Then compare Q to Kc.</p>
-
-<p><strong>Solution:</strong></p>
-
-<p>\[Q = \frac{[\text{HI}]^2}{[\text{H}_2][\text{I}_2]} = \frac{(0.40)^2}{(0.10)(0.20)}\]</p>
-
-<p>Calculate the numerator: (0.40)² = 0.16.</p>
-
-<p>Calculate the denominator: 0.10 × 0.20 = 0.020.</p>
-
-<p>\[Q = \frac{0.16}{0.020} = 8.0\]</p>
-
-<p>Now compare: Q = 8.0, and Kc = 50. Since Q (8.0) is less than Kc (50), the value of Q needs to increase to reach equilibrium. Q increases when the numerator (products) gets larger and the denominator (reactants) gets smaller. This means the reaction must proceed in the <strong>forward direction</strong>, converting H₂ and I₂ into more HI.</p>
-
-<p><strong>Why this makes sense:</strong> With the given concentrations, there is relatively little HI compared to H₂ and I₂ — the system has not yet made enough products. It needs to move forward to establish equilibrium.</p>
-
-<hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
-
-<h2>5. Simple Kc Calculations</h2>
-
-<h3>Type 1: Calculate Kc from Equilibrium Concentrations</h3>
-
-<p><strong>Worked Example 3:</strong> The reaction 2SO₂(g) + O₂(g) ⇌ 2SO₃(g) was allowed to reach equilibrium in a sealed container at a fixed temperature. Analysis of the mixture showed the following equilibrium concentrations: [SO₂] = 0.40 mol dm⁻³, [O₂] = 0.20 mol dm⁻³, and [SO₃] = 0.80 mol dm⁻³. Calculate the value of Kc at this temperature.</p>
-
-<p><strong>Strategy:</strong> Write the Kc expression, substitute the equilibrium concentrations, and compute.</p>
-
-<p><strong>Solution:</strong></p>
-
-<p>The balanced equation is 2SO₂ + O₂ ⇌ 2SO₃. The Kc expression is:</p>
-
-<p>\[K_c = \frac{[\text{SO}_3]^2}{[\text{SO}_2]^2 [\text{O}_2]}\]</p>
-
-<p>Substitute the values:</p>
-
-<p>\[K_c = \frac{(0.80)^2}{(0.40)^2 (0.20)}\]</p>
-
-<p>Calculate step by step:</p>
-
-<p>(0.80)² = 0.64</p>
-
-<p>(0.40)² = 0.16</p>
-
-<p>0.16 × 0.20 = 0.032</p>
-
-<p>\[K_c = \frac{0.64}{0.032} = 20\]</p>
-
-<p><strong>Why this makes sense:</strong> Kc = 20 is greater than 1, indicating that products are favoured — which matches the data, since [SO₃] is higher than [SO₂] despite the squared term.</p>
-
-<h3>Type 2: Calculate an Unknown Equilibrium Concentration Given Kc</h3>
-
-<p><strong>Worked Example 4:</strong> For the reaction H₂(g) + I₂(g) ⇌ 2HI(g), the equilibrium constant Kc has a value of 49 at a particular temperature. Analysis of an equilibrium mixture shows [H₂] = 0.10 mol dm⁻³ and [HI] = 0.70 mol dm⁻³. Calculate the equilibrium concentration of I₂.</p>
-
-<p><strong>Strategy:</strong> Write the Kc expression, substitute the known values, and solve for the unknown.</p>
-
-<p><strong>Solution:</strong></p>
-
-<p>\[K_c = \frac{[\text{HI}]^2}{[\text{H}_2][\text{I}_2]} = 49\]</p>
-
-<p>Substitute the known values:</p>
-
-<p>\[49 = \frac{(0.70)^2}{(0.10)[\text{I}_2]}\]</p>
-
-<p>Calculate (0.70)² = 0.49:</p>
-
-<p>\[49 = \frac{0.49}{(0.10)[\text{I}_2]}\]</p>
-
-<p>Multiply both sides by (0.10)[I₂]:</p>
-
-<p>\[49 \times (0.10)[\text{I}_2] = 0.49\]</p>
-
-<p>\[4.9 [\text{I}_2] = 0.49\]</p>
-
-<p>\[[\text{I}_2] = \frac{0.49}{4.9} = 0.10 \text{ mol dm}^{-3}\]</p>
-
-<p><strong>Why this makes sense:</strong> Since Kc = 49 and [H₂] = 0.10, we should have [I₂] = 0.10 as well. The symmetry of the reaction (one H₂ and one I₂ making two HI) means that at equilibrium, if you started with equal amounts and Kc is reasonably large, you end up with equal concentrations of the two reactants. And indeed [I₂] = [H₂] = 0.10 mol dm⁻³.</p>
-
-<hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
-
-<h2>Practice Problems</h2>
-
-<ol>
-
-<li>Write the equilibrium constant expression Kc for each of the following reactions. In each case, explain which species are included and which (if any) are omitted, and state the reason for any omissions.</li>
-
-</ol>
-
-<p>(a) 2NO(g) + O₂(g) ⇌ 2NO₂(g)</p>
-
-<p>(b) CH₄(g) + H₂O(g) ⇌ CO(g) + 3H₂(g)</p>
-
-<p>(c) Fe₂O₃(s) + 3CO(g) ⇌ 2Fe(s) + 3CO₂(g)</p>
-
-<ol>
-
-<li>For the reaction CO(g) + 2H₂(g) ⇌ CH₃OH(g), the equilibrium constant Kc is 14.5 at a temperature of 500 K. At a particular moment during the reaction, the concentrations in the reaction vessel are: [CO] = 0.20 mol dm⁻³, [H₂] = 0.10 mol dm⁻³, and [CH₃OH] = 0.040 mol dm⁻³. Calculate the reaction quotient Q and use it to predict whether the reaction will proceed in the forward direction or the reverse direction to reach equilibrium. Explain your reasoning.</li>
-
-</ol>
-
-<ol>
-
-<li>The equilibrium N₂O₄(g) ⇌ 2NO₂(g) is established in a sealed container at a certain temperature. Analysis of the equilibrium mixture gives the following concentrations: [N₂O₄] = 0.20 mol dm⁻³ and [NO₂] = 0.40 mol dm⁻³. Calculate the value of Kc at this temperature.</li>
-
-</ol>
-
-<ol>
-
-<li>For the equilibrium PCl₅(g) ⇌ PCl₃(g) + Cl₂(g), the equilibrium constant Kc is 0.040 at a certain temperature. Analysis of an equilibrium mixture shows [PCl₅] = 0.10 mol dm⁻³ and [Cl₂] = 0.020 mol dm⁻³. Calculate the equilibrium concentration of PCl₃.</li>
-
-</ol>
-
-<ol>
-
-<li><strong>(IB-Exam Style)</strong> The decomposition of hydrogen iodide gas is represented by the following equilibrium:</li>
-
-</ol>
-
-<p>\[2\text{HI}(\text{g}) \rightleftharpoons \text{H}_2(\text{g}) + \text{I}_2(\text{g}) \quad \Delta H = +53 \text{ kJ mol}^{-1}\]</p>
-
-<p>At a temperature of 700 K, the equilibrium constant Kc for this reaction is 0.020.</p>
-
-<p>(a) State, with a brief explanation, what the value Kc = 0.020 tells you about the relative amounts of reactants and products present in the equilibrium mixture at 700 K.</p>
-
-<p>(b) The reaction is endothermic in the forward direction as written. Predict, with reasoning, whether the value of Kc at 800 K will be larger than, smaller than, or equal to 0.020.</p>
-
-<p>(c) In an experiment at 700 K, a chemist mixes HI, H₂, and I₂ in a sealed container so that the initial concentration of each gas is 0.50 mol dm⁻³. Calculate the reaction quotient Q for this mixture and determine the direction in which the reaction will proceed to reach equilibrium.</p>
-
-<p>(d) The chemist allows the mixture described in part (c) to reach equilibrium at 700 K. Sketch a graph showing how the concentration of HI changes from the initial mixing (t = 0) until equilibrium is established, and explain the shape of your graph.</p>
-
-<hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
-
-<h2>Answers</h2>
-
-<h3>Answer 1</h3>
-
-<p><strong>(a)</strong> Kc = [NO₂]² / ([NO]²[O₂]). All three species are gases, so all appear in the expression. The exponent 2 for NO₂ and NO comes from the stoichiometric coefficient 2 in front of each in the balanced equation.</p>
-
-<p><strong>(b)</strong> Kc = [CO][H₂]³ / ([CH₄][H₂O]). All four species are gases, so all appear. The [H₂] has an exponent of 3 because the coefficient of H₂ in the balanced equation is 3.</p>
-
-<p><strong>(c)</strong> Kc = [CO₂]³ / [CO]³. The species Fe₂O₃(s) and Fe(s) are solids. Solids have constant concentration (their "activity" is defined as 1) and are omitted from the Kc expression. Only the gases CO and CO₂, whose concentrations can vary, appear. Both have exponents of 3 from their stoichiometric coefficients. Note that the expression could also be written as Kc = ([CO₂]/[CO])³.</p>
-
-<h3>Answer 2</h3>
-
-<p>The Kc expression for CO(g) + 2H₂(g) ⇌ CH₃OH(g) is:</p>
-
-<p>\[Q = \frac{[\text{CH}_3\text{OH}]}{[\text{CO}][\text{H}_2]^2}\]</p>
-
-<p>Substitute the given concentrations:</p>
-
-<p>\[Q = \frac{0.040}{(0.20)(0.10)^2} = \frac{0.040}{(0.20)(0.010)} = \frac{0.040}{0.0020} = 20\]</p>
-
-<p>Now compare: Q = 20 and Kc = 14.5. Since Q (20) is greater than Kc (14.5), the value of Q needs to decrease to reach equilibrium. Q decreases when the numerator (product concentration) gets smaller and the denominator (reactant concentrations) gets larger. This means the reaction will proceed in the <strong>reverse direction</strong> — CH₃OH will decompose into CO and H₂ until the ratio of concentrations equals Kc = 14.5.</p>
-
-<h3>Answer 3</h3>
-
-<p>The Kc expression for N₂O₄(g) ⇌ 2NO₂(g) is:</p>
-
-<p>\[K_c = \frac{[\text{NO}_2]^2}{[\text{N}_2\text{O}_4]}\]</p>
-
-<p>Substitute the equilibrium concentrations:</p>
-
-<p>\[K_c = \frac{(0.40)^2}{0.20} = \frac{0.16}{0.20} = 0.80\]</p>
-
-<p>The value of Kc is <strong>0.80</strong>. Since Kc is less than 1 (but not extremely small), the equilibrium slightly favours the reactant N₂O₄, but significant amounts of both species are present.</p>
-
-<h3>Answer 4</h3>
-
-<p>The Kc expression for PCl₅(g) ⇌ PCl₃(g) + Cl₂(g) is:</p>
-
-<p>\[K_c = \frac{[\text{PCl}_3][\text{Cl}_2]}{[\text{PCl}_5]}\]</p>
-
-<p>Substitute Kc = 0.040, [PCl₅] = 0.10, and [Cl₂] = 0.020:</p>
-
-<p>\[0.040 = \frac{[\text{PCl}_3](0.020)}{0.10}\]</p>
-
-<p>Multiply both sides by 0.10:</p>
-
-<p>\[0.040 \times 0.10 = [\text{PCl}_3] \times 0.020\]</p>
-
-<p>\[0.0040 = [\text{PCl}_3] \times 0.020\]</p>
-
-<p>\[[\text{PCl}_3] = \frac{0.0040}{0.020} = 0.20 \text{ mol dm}^{-3}\]</p>
-
-<p>The equilibrium concentration of PCl₃ is <strong>0.20 mol dm⁻³</strong>.</p>
-
-<h3>Answer 5</h3>
-
-<p><strong>(a)</strong> Kc = 0.020 is a number much less than 1. Since Kc = [H₂][I₂] / [HI]², a value of 0.020 means the denominator [HI]² is much larger than the numerator [H₂][I₂] — by a factor of 1/0.020 = 50. This tells us that at equilibrium at 700 K, the reaction mixture contains much more HI than H₂ and I₂. The equilibrium position lies to the left — the reactants (HI in this case, since the reaction is written as 2HI ⇌ H₂ + I₂) are strongly favoured.</p>
-
-<p><strong>(b)</strong> The forward reaction as written (2HI → H₂ + I₂) is endothermic, with ΔH = +53 kJ mol⁻¹. According to Le Chatelier's Principle, increasing the temperature favours the endothermic direction — in this case, the forward direction. The equilibrium shifts to the right, producing more H₂ and I₂ at the expense of HI. This means the numerator [H₂][I₂] increases and the denominator [HI]² decreases. Therefore, the value of Kc <strong>increases</strong>. Kc at 800 K will be <strong>larger</strong> than 0.020.</p>
-
-<p><strong>(c)</strong> The expression for Q is the same as for Kc:</p>
-
-<p>\[Q = \frac{[\text{H}_2][\text{I}_2]}{[\text{HI}]^2} = \frac{(0.50)(0.50)}{(0.50)^2} = \frac{0.25}{0.25} = 1.0\]</p>
-
-<p>Now compare Q = 1.0 to Kc = 0.020. Since Q (1.0) is much greater than Kc (0.020), the quotient is too large — there are too many products (H₂ and I₂) relative to reactant (HI) compared to what equilibrium requires. The reaction will proceed in the <strong>reverse direction</strong> (from right to left: H₂ + I₂ → 2HI) to decrease Q toward Kc.</p>
-
-<p><strong>(d)</strong> At t = 0, the concentration of HI is 0.50 mol dm⁻³. Since Q > Kc, the reaction proceeds in the reverse direction — H₂ and I₂ combine to form HI. This means the concentration of HI begins to increase from its initial value. As the reaction proceeds, the rate of the reverse reaction slows down (because H₂ and I₂ are being consumed) and the rate of the forward reaction speeds up (because HI is being produced). Eventually the two rates become equal at equilibrium. On the graph, the [HI] starts at 0.50, then rises along a curve that is steep at first (when the reverse reaction is fastest) and gradually flattens out as equilibrium is approached. At equilibrium, the concentration reaches a constant value (which from Kc = 0.020 can be calculated to be higher than 0.50). The graph is a curve that asymptotically approaches a horizontal line — the equilibrium concentration of HI.</p>
-
-<div class="nav">
-  <a href="lesson_23.html">← Previous Lesson</a>
-  <a href="../index.html">↑ All Lessons</a>
-  <a href="lesson_25.html">Next Lesson →</a>
 </div>
+
+<h2>1. Prior Knowledge Check</h2>
+
+<p><b>Question 1:</b> Write the mathematical expression for an equilibrium constant in terms of concentrations. What does the balanced equation tell you about the exponents?</p>
+<div class="check-in">
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">For $\ce{aA + bB <=> cC + dD}$: $K_c = \frac{[\ce{C}]^c[\ce{D}]^d}{[\ce{A}]^a[\ce{B}]^b}$. Products go in the numerator, reactants in the denominator. The exponents are the <b>stoichiometric coefficients</b> from the balanced equation. Note: unlike rate equations, the exponents in $K_c$ are <b>always</b> the stoichiometric coefficients — $K_c$ is derived from thermodynamics, not kinetics.</div>
+</div>
+
+<p><b>Question 2:</b> The equilibrium $\ce{CaCO3(s) <=> CaO(s) + CO2(g)}$ is established in a sealed container. Write the $K_c$ expression. Why are some species omitted?</p>
+<div class="check-in">
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">$K_c = [\ce{CO2}]$. Solids ($\ce{CaCO3}$ and $\ce{CaO}$) are omitted because their "concentration" is essentially constant — it depends on density, not on how much solid is present. The activity of a pure solid or pure liquid is defined as 1. Only <b>gases</b> and <b>aqueous</b> species appear in $K_c$ expressions.</div>
+</div>
+
+<h2>2. The $K_c$ Expression — Rules and Conventions</h2>
+
+<div class="definition">
+<b>For a general homogeneous equilibrium:</b> $\ce{aA + bB <=> cC + dD}$
+$$K_c = \frac{[\ce{C}]^c_{\text{eq}}[\ce{D}]^d_{\text{eq}}}{[\ce{A}]^a_{\text{eq}}[\ce{B}]^b_{\text{eq}}}$$
+All concentrations are <b>equilibrium concentrations</b> in mol dm⁻³. $K_c$ has units of (mol dm⁻³)$^{\Delta n}$ where $\Delta n = (c+d) - (a+b)$ = moles of gaseous/aqueous products minus moles of gaseous/aqueous reactants.
+</div>
+
+<h3>2.1 What Goes In and What Stays Out</h3>
+
+<table>
+<tr><th>Phase</th><th>Included in $K_c$?</th><th>Reason</th></tr>
+<tr><td>Gas (g)</td><td><b>Yes</b></td><td>Concentration varies with conditions</td></tr>
+<tr><td>Aqueous (aq)</td><td><b>Yes</b></td><td>Concentration varies</td></tr>
+<tr><td>Pure liquid (l)</td><td><b>No</b></td><td>Activity = 1; concentration is essentially constant</td></tr>
+<tr><td>Pure solid (s)</td><td><b>No</b></td><td>Activity = 1; concentration depends only on density</td></tr>
+</table>
+
+<div class="diagram">
+<svg width="500" height="220" viewBox="0 0 500 220">
+  <!-- reaction equation -->
+  <text x="250" y="35" text-anchor="middle" font-size="15" font-weight="bold">$\ce{3Fe(s) + 4H2O(g) <=> Fe3O4(s) + 4H2(g)}$</text>
+  <!-- Kc expression -->
+  <rect x="50" y="55" width="400" height="70" rx="10" fill="#fdf5e6" stroke="#d4a017" stroke-width="2"/>
+  <text x="250" y="82" text-anchor="middle" font-size="18" fill="#c62828">$K_c = \dfrac{[\ce{H2}]^4}{[\ce{H2O}]^4}$</text>
+  <text x="250" y="108" text-anchor="middle" font-size="12" fill="#555">Only gases included; Fe(s) and Fe₃O₄(s) omitted</text>
+  <!-- cross outs -->
+  <text x="145" y="53" font-size="28" fill="#c62828" font-weight="bold">✗</text>
+  <text x="355" y="53" font-size="28" fill="#c62828" font-weight="bold">✗</text>
+  <!-- units -->
+  <text x="250" y="155" text-anchor="middle" font-size="13" fill="#2c5f2d">$K_c$ is dimensionless here: Δn = 4 − 4 = 0</text>
+  <!-- explanation -->
+  <text x="250" y="185" text-anchor="middle" font-size="12" fill="#666">Only species whose concentrations can change appear in Kc</text>
+</svg>
+<div class="caption">Figure 1: Writing $K_c$ for a heterogeneous equilibrium. Solids (Fe, Fe₃O₄) are omitted. Only gases (H₂O, H₂) appear. When Δn = 0, $K_c$ is dimensionless.</div>
+</div>
+
+<div class="check-in">
+<p><b>Check-in:</b> Write $K_c$ for $\ce{CH3COOH(l) + C2H5OH(l) <=> CH3COOC2H5(l) + H2O(l)}$. What about units?</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">All species are <b>pure liquids</b>. In principle, all activities equal 1 and $K_c = 1$ — but this is not practically useful. In reality, for esterification in an organic solvent, we treat them as solutes: $K_c = \frac{[\ce{CH3COOC2H5}][\ce{H2O}]}{[\ce{CH3COOH}][\ce{C2H5OH}]}$. For IB, when all species are in the same liquid phase, they are treated as if in solution and appear in $K_c$. The key point: pure solids are definitely omitted; liquid mixtures (where concentrations vary) are included.</div>
+</div>
+
+<h2>3. Interpreting the Magnitude of $K_c$</h2>
+
+<p>The numerical value of $K_c$ tells you about the equilibrium position — the relative amounts of products and reactants at equilibrium:</p>
+
+<table>
+<tr><th>$K_c$ Value</th><th>Interpretation</th><th>Equilibrium Position</th></tr>
+<tr><td>$K_c \gg 1$ (e.g., $10^3$, $10^{10}$)</td><td>Products dominate; equilibrium lies far <b>right</b></td><td>Reaction essentially "goes to completion"</td></tr>
+<tr><td>$K_c \approx 1$ (e.g., 0.1 to 10)</td><td>Significant amounts of both reactants and products</td><td>Equilibrium mixture contains all species</td></tr>
+<tr><td>$K_c \ll 1$ (e.g., $10^{-3}$, $10^{-10}$)</td><td>Reactants dominate; equilibrium lies far <b>left</b></td><td>Reaction "does not occur" to a significant extent</td></tr>
+</table>
+
+<div class="diagram">
+<svg width="500" height="180" viewBox="0 0 500 180">
+  <!-- spectrum bar -->
+  <rect x="30" y="70" width="440" height="30" rx="15" fill="#eee"/>
+  <!-- Kc << 1 -->
+  <rect x="30" y="70" width="120" height="30" rx="15" fill="#ffcdd2"/>
+  <text x="90" y="90" text-anchor="middle" font-size="11" fill="#c62828" font-weight="bold">Kc ≪ 1</text>
+  <!-- Kc ~ 1 -->
+  <rect x="180" y="70" width="140" height="30" fill="#fff9c4"/>
+  <text x="250" y="90" text-anchor="middle" font-size="11" fill="#f57f17" font-weight="bold">Kc ≈ 1</text>
+  <!-- Kc >> 1 -->
+  <rect x="350" y="70" width="120" height="30" rx="15" fill="#c8e6c9"/>
+  <text x="410" y="90" text-anchor="middle" font-size="11" fill="#2c5f2d" font-weight="bold">Kc ≫ 1</text>
+  <!-- arrows -->
+  <text x="90" y="55" text-anchor="middle" font-size="12" fill="#c62828">Reactants</text>
+  <text x="90" y="128" text-anchor="middle" font-size="12" fill="#c62828">dominate</text>
+  <text x="250" y="55" text-anchor="middle" font-size="12" fill="#f57f17">Mixture</text>
+  <text x="410" y="55" text-anchor="middle" font-size="12" fill="#2c5f2d">Products</text>
+  <text x="410" y="128" text-anchor="middle" font-size="12" fill="#2c5f2d">dominate</text>
+  <!-- scale -->
+  <text x="30" y="145" font-size="10" fill="#999">10⁻¹⁰</text>
+  <text x="150" y="145" font-size="10" fill="#999">10⁻²</text>
+  <text x="250" y="145" font-size="10" fill="#999">1</text>
+  <text x="350" y="145" font-size="10" fill="#999">10²</text>
+  <text x="470" y="145" font-size="10" fill="#999">10¹⁰</text>
+</svg>
+<div class="caption">Figure 2: The $K_c$ spectrum. $K_c$ can range from extremely small to extremely large. A $K_c$ of $10^{30}$ means the reaction is effectively irreversible under those conditions.</div>
+</div>
+
+<div class="check-in">
+<p><b>Check-in:</b> At 298 K, $K_c = 1.0 \times 10^{-14}$ for $\ce{2H2O(l) <=> H3O+(aq) + OH-(aq)}$. What does this tell you about the extent of water autoionisation?</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">$K_c = 1.0 \times 10^{-14} \ll 1$ means the equilibrium lies extremely far to the <b>left</b>. At equilibrium, only about $1 \times 10^{-7}$ mol dm⁻³ of $\ce{H3O+}$ and $\ce{OH-}$ are present — negligible compared to the ~55.5 mol dm⁻³ of water. This is why pure water is effectively neutral and non-conductive. The tiny $K_c$ quantifies what "water barely dissociates" means numerically.</div>
+</div>
+
+<h2>4. The Reaction Quotient $Q$</h2>
+
+<p>The reaction quotient $Q$ has the <b>same mathematical form</b> as $K_c$, but uses <b>non-equilibrium</b> concentrations — i.e., the concentrations at any arbitrary point, not necessarily at equilibrium.</p>
+
+<div class="definition">
+<b>Reaction quotient:</b>
+$$Q = \frac{[\ce{C}]^c[\ce{D}]^d}{[\ce{A}]^a[\ce{B}]^b} \quad \text{(using current, non-equilibrium concentrations)}$$
+Compare $Q$ to $K_c$:
+<ul>
+  <li>$Q < K_c$: Too few products / too many reactants → reaction proceeds <b>forward</b> (→) to reach equilibrium.</li>
+  <li>$Q = K_c$: System is at <b>equilibrium</b>.</li>
+  <li>$Q > K_c$: Too many products / too few reactants → reaction proceeds <b>backward</b> (←) to reach equilibrium.</li>
+</ul>
+</div>
+
+<div class="check-in">
+<p><b>Check-in:</b> For $\ce{N2(g) + 3H2(g) <=> 2NH3(g)}$, $K_c = 0.50$ at 400°C. A mixture contains: $[\ce{N2}] = 0.80$, $[\ce{H2}] = 1.2$, $[\ce{NH3}] = 0.30$ mol dm⁻³. Is the mixture at equilibrium? If not, which way will it shift?</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">$Q = [\ce{NH3}]^2 / ([\ce{N2}][\ce{H2}]^3) = (0.30)^2 / (0.80 \times (1.2)^3) = 0.090 / (0.80 \times 1.728) = 0.090 / 1.382 = 0.065$. Since $Q (0.065) < K_c (0.50)$, the reaction proceeds <b>forward</b> (→), producing more NH₃ until $Q = K_c = 0.50$.</div>
+</div>
+
+<h2>5. Worked Examples</h2>
+
+<div class="example">
+<b>Example 1 — Writing $K_c$ Expressions:</b><br><br>
+Write the $K_c$ expression and state its units for each reaction:<br>
+(a) $\ce{2SO2(g) + O2(g) <=> 2SO3(g)}$<br>
+(b) $\ce{NH4HS(s) <=> NH3(g) + H2S(g)}$<br>
+(c) $\ce{CH3COOH(aq) + H2O(l) <=> CH3COO-(aq) + H3O+(aq)}$<br><br>
+<b>Solution:</b><br>
+(a) $K_c = \dfrac{[\ce{SO3}]^2}{[\ce{SO2}]^2[\ce{O2}]}$. Δn = 2 − 3 = −1. Units: (mol dm⁻³)⁻¹ = dm³ mol⁻¹.<br>
+(b) $K_c = [\ce{NH3}][\ce{H2S}]$. Solid NH₄HS omitted. Δn = 2 − 0 = 2. Units: mol² dm⁻⁶.<br>
+(c) $K_c = \dfrac{[\ce{CH3COO-}][\ce{H3O+}]}{[\ce{CH3COOH}]}$. Water (pure liquid, in vast excess) is omitted. Δn = 2 − 1 = 1. Units: mol dm⁻³.<br><br>
+<b>⚠️ Common wrong approach:</b> Including H₂O(l) in the $K_c$ expression for aqueous equilibria. The concentration of water (~55.5 mol dm⁻³) is essentially constant and is absorbed into $K_c$. For acid dissociation: $K_a = [\ce{H3O+}][\ce{A-}]/[\ce{HA}]$, with no [H₂O].
+</div>
+
+<div class="example">
+<b>Example 2 — Using $Q$ to Predict Direction:</b><br><br>
+For $\ce{CO(g) + H2O(g) <=> CO2(g) + H2(g)}$, $K_c = 4.06$ at 500°C. A 2.0 dm³ flask contains: 0.40 mol CO, 0.60 mol H₂O, 0.80 mol CO₂, and 0.20 mol H₂. Predict the direction of net reaction.<br><br>
+<b>Solution:</b> First, calculate concentrations: [CO] = 0.20, [H₂O] = 0.30, [CO₂] = 0.40, [H₂] = 0.10 mol dm⁻³.<br>
+$Q = ([\ce{CO2}][\ce{H2}]) / ([\ce{CO}][\ce{H2O}]) = (0.40 \times 0.10) / (0.20 \times 0.30) = 0.040/0.060 = 0.667$.<br>
+Since $Q (0.667) < K_c (4.06)$, the reaction proceeds <b>forward</b> (→), consuming CO and H₂O, producing CO₂ and H₂.<br><br>
+<b>⚠️ Common wrong approach:</b> Forgetting to divide moles by volume to get concentrations. If you use moles directly, $Q$ = (0.80×0.20)/(0.40×0.60) = 0.667 — here it gives the same answer because Δn = 0 (same number of moles on both sides). But this is only true when Δn = 0! Always convert to concentrations to be safe.
+</div>
+
+<div class="example">
+<b>Example 3 — $K_c$ Magnitude and Reaction Feasibility:</b><br><br>
+At 298 K, $K_c = 2.0 \times 10^{31}$ for $\ce{2H2(g) + O2(g) <=> 2H2O(g)}$. Explain what this value means practically, and why hydrogen and oxygen can coexist at room temperature despite this enormous $K_c$.<br><br>
+<b>Solution:</b> $K_c = 2.0 \times 10^{31} \gg 1$ means the equilibrium lies extremely far to the right — at equilibrium, the reaction mixture would contain almost entirely H₂O with negligible H₂ and O₂. However, at room temperature, the <b>activation energy is very high</b>, so the rate is effectively zero. Thermodynamics ($K_c$) tells you where equilibrium lies; kinetics ($E_a$) tells you how fast you get there. H₂ and O₂ can coexist indefinitely at room temperature because, despite the enormous thermodynamic driving force, the kinetic barrier prevents reaction. A spark provides the activation energy, and the mixture explodes.<br><br>
+<b>⚠️ Common wrong approach:</b> "A large $K_c$ means the reaction is fast." No — $K_c$ is thermodynamic, not kinetic. A reaction can have $K_c \approx 10^{50}$ and still be immeasurably slow if $E_a$ is high. Thermodynamics and kinetics are independent quantities.
+</div>
+
+<div class="misconception">
+<h3>⚠️ Common Mistakes to Avoid</h3>
+<ol>
+  <li><b>"$K_c$ includes all species in the balanced equation."</b> Solids and pure liquids are <b>omitted</b>. Only gases and aqueous species appear. A common trap: including $\ce{H2O(l)}$ in $K_c$ for aqueous acid dissociation.</li>
+  <li><b>"$K_c$ has no units."</b> $K_c$ generally has units unless $\Delta n = 0$. At IB, you must state the units of $K_c$ when asked. Derive them from the expression: units of (mol dm⁻³)$^{\Delta n}$.</li>
+  <li><b>"A large $K_c$ means the reaction is fast."</b> $K_c$ says nothing about rate. It is purely thermodynamic. A reaction with $K_c = 10^{80}$ could be immeasurably slow if $E_a$ is high.</li>
+  <li><b>"$K_c$ changes when you add more reactant."</b> $K_c$ is constant at a given temperature. Adding reactant shifts the position of equilibrium (changing individual concentrations) but does not change the ratio $K_c$. Only temperature changes $K_c$.</li>
+  <li><b>"$Q$ and $K_c$ are the same thing."</b> $Q$ is calculated using <b>any</b> concentrations (not necessarily equilibrium). $K_c$ uses <b>equilibrium</b> concentrations only. They have the same algebraic form but different meanings.</li>
+</ol>
+</div>
+
+<h2>6. End-of-Lesson Practice</h2>
+
+<p><b>Question 1 (Paper 1 style):</b> For $\ce{2A(g) + B(g) <=> 2C(g)}$, the $K_c$ expression is:<br>
+A. $[\ce{C}]/[\ce{A}][\ce{B}]$ &nbsp; B. $[\ce{C}]^2/[\ce{A}]^2[\ce{B}]$ &nbsp; C. $2[\ce{C}]/2[\ce{A}][\ce{B}]$ &nbsp; D. $[\ce{C}]^2/2[\ce{A}]^2[\ce{B}]$</p>
+
+<p><b>Question 2:</b> Write $K_c$ expressions with units for: (a) $\ce{2NO2(g) <=> N2O4(g)}$, (b) $\ce{Fe2O3(s) + 3CO(g) <=> 2Fe(s) + 3CO2(g)}$, (c) $\ce{2NaHCO3(s) <=> Na2CO3(s) + H2O(g) + CO2(g)}$.</p>
+
+<p><b>Question 3:</b> $K_c = 0.36$ for $\ce{PCl5(g) <=> PCl3(g) + Cl2(g)}$ at 250°C. A 1.0 dm³ flask contains 0.50 mol PCl₅, 0.30 mol PCl₃, and 0.40 mol Cl₂. Determine $Q$ and predict the direction of net reaction.</p>
+
+<p><b>Question 4:</b> $K_c = 170$ for $\ce{2HI(g) <=> H2(g) + I2(g)}$ at 500 K. Interpret the magnitude of $K_c$. At equilibrium, which species predominate?</p>
+
+<p><b>Question 5:</b> Explain why $K_c$ for $\ce{CaCO3(s) <=> CaO(s) + CO2(g)}$ does not include [CaCO₃] or [CaO], but does include [CO₂]. What is the practical meaning of this $K_c$?</p>
+
+<p><b>Question 6 (IB-style):</b> At 700 K, $K_c = 54$ for $\ce{H2(g) + I2(g) <=> 2HI(g)}$. A student mixes 0.80 mol H₂, 0.20 mol I₂, and 1.60 mol HI in a 2.0 dm³ flask.<br>(a) Calculate $Q$.<br>(b) State the direction of net reaction with reasoning.<br>(c) Explain why $K_c$ is dimensionless for this reaction.</p>
+
+<button class="practice-toggle" onclick="var a=this.nextElementSibling;a.classList.toggle('open');this.textContent=a.classList.contains('open')?'▴ Hide Answers':'▸ Show Answers'">▸ Show Answers</button>
+<div class="practice-answers">
+
+<p><b>Answer 1:</b> B. $K_c = [\ce{C}]^2/([\ce{A}]^2[\ce{B}])$. The exponents are the stoichiometric coefficients. Option D incorrectly places coefficients in the denominator.</p>
+
+<p><b>Answer 2:</b> (a) $K_c = [\ce{N2O4}]/[\ce{NO2}]^2$. Δn = 1−2 = −1, units: dm³ mol⁻¹. (b) $K_c = [\ce{CO2}]^3/[\ce{CO}]^3$. Solids omitted. Δn = 3−3 = 0, dimensionless. (c) $K_c = [\ce{H2O}][\ce{CO2}]$. Solids omitted. Δn = 2−0 = 2, units: mol² dm⁻⁶.</p>
+
+<p><b>Answer 3:</b> [PCl₅] = 0.50, [PCl₃] = 0.30, [Cl₂] = 0.40 mol dm⁻³. $Q = (0.30\times0.40)/0.50 = 0.24$. $Q (0.24) < K_c (0.36)$ → net reaction proceeds <b>forward</b> (→), producing more PCl₃ and Cl₂.</p>
+
+<p><b>Answer 4:</b> $K_c = 170$ is moderately large ($K_c > 1$), meaning <b>products dominate</b> at equilibrium — H₂ and I₂ are favoured. However, $K_c$ is not so large that HI is negligible. At equilibrium, the mixture contains all three species with H₂ and I₂ predominating. The equilibrium lies to the <b>right</b>.</p>
+
+<p><b>Answer 5:</b> Solids have constant "concentration" (activity = 1) — adding more CaCO₃ does not change its effective concentration, which depends only on density. $K_c = [\ce{CO2}]$ means that at a given temperature, there is a <b>fixed equilibrium pressure of CO₂</b> above the solids, regardless of how much CaCO₃ or CaO is present. If [CO₂] exceeds this value, CaO reacts to form CaCO₃; if it falls below, CaCO₃ decomposes.</p>
+
+<p><b>Answer 6:</b> (a) [H₂] = 0.40, [I₂] = 0.10, [HI] = 0.80 mol dm⁻³. $Q = (0.80)^2/(0.40\times0.10) = 0.64/0.04 = 16$. (b) $Q (16) < K_c (54)$ → net reaction <b>forward</b> (→), producing more HI. (c) Δn = 2 − (1+1) = 0. Same number of moles on both sides → units cancel → $K_c$ is dimensionless.</p>
+</div>
+
+<h2>7. Key Terms</h2>
+<table>
+<tr><th>Term</th><th>Definition</th></tr>
+<tr><td>Equilibrium constant ($K_c$)</td><td>The ratio of product concentrations to reactant concentrations at equilibrium, each raised to its stoichiometric coefficient</td></tr>
+<tr><td>$K_c$ expression</td><td>The algebraic form: $K_c = [\ce{C}]^c[\ce{D}]^d / ([\ce{A}]^a[\ce{B}]^b)$ for $\ce{aA + bB <=> cC + dD}$</td></tr>
+<tr><td>Homogeneous equilibrium</td><td>An equilibrium where all species are in the same phase (all gases, or all aqueous)</td></tr>
+<tr><td>Heterogeneous equilibrium</td><td>An equilibrium involving species in different phases (e.g., solid + gas)</td></tr>
+<tr><td>Reaction quotient ($Q$)</td><td>The same ratio as $K_c$ but calculated using non-equilibrium concentrations; used to predict direction of shift</td></tr>
+<tr><td>Δn</td><td>The change in moles of gas (or aqueous species): (moles products) − (moles reactants); determines units of $K_c$</td></tr>
+<tr><td>Activity</td><td>The effective concentration of a species; for pure solids and liquids, activity = 1</td></tr>
+</table>
+
+<h2>8. Exam Tips</h2>
+
+<div class="exam-tip"><b>Writing $K_c$ Expressions:</b> The most common error is including solids or pure liquids. Remember: only (g) and (aq). Write the expression first, then determine units: if Δn = 0, $K_c$ is dimensionless. If Δn ≠ 0, units are (mol dm⁻³)^Δn. State units explicitly — at least one mark depends on it.</div>
+
+<div class="exam-tip"><b>$Q$ vs. $K_c$ Comparison:</b> Always state explicitly: "$Q < K_c$, therefore the reaction proceeds forwards" (or vice versa). Do not just write the numerical comparison — explain the direction. A complete one-mark answer: "$Q = 0.24$, which is less than $K_c = 0.36$, so the net reaction proceeds to the right."</div>
+
+<div class="exam-tip"><b>Paper 1 Trap:</b> A question may give two different $K_c$ values at two temperatures and ask what this tells you. If $K_c$ decreases as $T$ increases, the forward reaction is <b>exothermic</b> (ΔH < 0). If $K_c$ increases as $T$ increases, the forward reaction is <b>endothermic</b> (ΔH > 0). This is an application of Le Chatelier's principle — temperature is the only perturbation that changes $K_c$ itself.</div>
+
 </body>
 </html>

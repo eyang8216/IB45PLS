@@ -3,465 +3,92 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lesson 5: Supply — Law, Curve, and Determinants — IB Economics SL</title>
+<title>Lesson 5 — IB Economics SL — Supply</title>
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']]}};</script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
-<style>
-  :root { --bg: #fdfdfc; --text: #1a1a1a; --accent: #2c5f2d; --subtle: #f0f4f0; --border: #d0d4d0; --code-bg: #f7f8f7; }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: Georgia, "Times New Roman", serif; font-size: 17px; line-height: 1.7; color: var(--text); background: var(--bg); max-width: 800px; margin: 0 auto; padding: 2rem 1.5rem; }
-  nav { margin-bottom: 1.5rem; font-size: 0.9rem; }
-  nav a { color: var(--accent); text-decoration: none; margin-right: 1.2rem; }
-  nav a:hover { text-decoration: underline; }
-  h1 { font-size: 2rem; margin-bottom: 0.25rem; border-bottom: 3px solid var(--accent); padding-bottom: 0.4rem; }
-  h2 { font-size: 1.35rem; margin: 2rem 0 0.75rem; color: var(--accent); }
-  h3 { font-size: 1.1rem; margin: 1.25rem 0 0.5rem; }
-  p { margin-bottom: 1rem; }
-  ul, ol { margin: 0.5rem 0 1rem 1.5rem; }
-  li { margin-bottom: 0.4rem; }
-  blockquote { border-left: 4px solid var(--accent); margin: 1rem 0; padding: 0.5rem 1rem; background: var(--subtle); font-style: italic; }
-  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.95rem; }
-  th, td { border: 1px solid var(--border); padding: 0.5rem 0.75rem; text-align: left; }
-  th { background: var(--subtle); font-weight: bold; }
-  code { background: var(--code-bg); padding: 0.1rem 0.35rem; border-radius: 3px; font-size: 0.9em; }
-  hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
-  strong { color: #1a1a1a; }
-  .tip { background: #f9faf7; border: 1px solid var(--border); border-left: 5px solid var(--accent); padding: 0.75rem 1rem; margin: 1rem 0; border-radius: 4px; }
-  .tip::before { content: "💡 IB Exam Tip: "; font-weight: bold; }
-  .problem { font-weight: bold; }
-  .answer-head { font-weight: bold; color: var(--accent); margin-top: 1rem; }
-  footer { margin-top: 2.5rem; font-size: 0.85rem; color: #888; border-top: 1px solid var(--border); padding-top: 1rem; }
-  @media print { body { font-size: 12pt; padding: 0; max-width: none; } nav, footer { display: none; } h1 { border-bottom: 2px solid #000; } h2 { color: #000; } .tip { border-left: 3px solid #000; background: none; } }
-</style>
+<style>:root{--bg:#fdfcf9;--text:#1a1a1a;--accent:#2c6b4f;--border:#d4c5a9}*{margin:0;padding:0;box-sizing:border-box}body{font-family:Georgia,'Times New Roman',serif;font-size:17px;line-height:1.7;color:var(--text);background:var(--bg);max-width:820px;margin:0 auto;padding:2rem 1.5rem}h1{font-size:1.8rem;color:var(--accent);border-bottom:3px solid var(--accent);padding-bottom:.5rem;margin-bottom:1rem}h2{font-size:1.35rem;color:var(--accent);margin:2rem 0 .8rem;border-bottom:1px solid var(--border);padding-bottom:.3rem}h3{font-size:1.15rem;color:var(--accent);margin:1.5rem 0 .5rem}p{margin-bottom:.8rem}.objectives{background:#f0f4ff;border-left:4px solid var(--accent);padding:1rem 1.2rem;margin:1rem 0;border-radius:0 8px 8px 0}.objectives h3{margin-top:0}.check-in{background:#fff8e1;border:1px solid #ffc107;padding:.8rem 1rem;margin:1rem 0;border-radius:8px}.check-in p{margin-bottom:.3rem}.answer-toggle{display:inline-block;padding:.2rem .8rem;border-radius:16px;cursor:pointer;font-size:.8rem;font-weight:600;background:#e8f5e9;color:#2e7d32;border:1px solid #2e7d32;user-select:none;margin-top:.3rem}.answer-content{display:none;background:#f1f8e9;padding:.6rem 1rem;border-radius:8px;margin-top:.5rem}.answer-content.open{display:block}.example{background:white;border:1px solid var(--border);border-radius:12px;padding:1.2rem;margin:1rem 0}.misconception{background:#fff3e0;border-left:4px solid #e65100;padding:1rem 1.2rem;margin:1.5rem 0;border-radius:0 8px 8px 0}.misconception h3{color:#e65100}.exam-tip{background:#e8f5e9;border-left:4px solid #2e7d32;padding:.8rem 1rem;margin:1rem 0;border-radius:0 8px 8px 0}table{width:100%;border-collapse:collapse;margin:1rem 0}th{background:var(--accent);color:white;padding:.5rem .8rem;text-align:left}td{padding:.5rem .8rem;border-bottom:1px solid var(--border)}tr:nth-child(even) td{background:#f8f8f6}.diagram{text-align:center;margin:1.5rem 0}.diagram svg{max-width:100%}.diagram .caption{font-size:.9rem;color:#666;margin-top:.3rem;font-style:italic}pre.ascii-art{font-family:'Courier New',monospace;font-size:.75rem;line-height:1.2;background:#f5f5f5;padding:.8rem;border-radius:8px;overflow-x:auto}.practice-toggle{display:block;width:100%;padding:.8rem;background:var(--accent);color:white;border:none;border-radius:8px;cursor:pointer;font-size:1rem;font-weight:600;margin:1.5rem 0}.practice-answers{display:none}.practice-answers.open{display:block}</style>
 </head>
 <body>
-<nav>
-  <a href="lesson_04_demand.html">← Previous Lesson</a> &nbsp;|&nbsp;
-  <a href="#">Index</a> &nbsp;|&nbsp;
-  <a href="lesson_06_market_equilibrium_price_mechanism.html">Next Lesson →</a>
-</nav>
 <h1>Lesson 5: Supply — Law, Curve, and Determinants</h1>
-
-<h2> What You'll Learn</h2>
-
-<p>By the end of this lesson, you will be able to:</p>
-<ul>
-<li>Define supply and state the law of supply</li>
-<li>Construct and interpret supply schedules and curves</li>
-<li>Distinguish between individual and market supply</li>
-<li>Explain why supply curves slope upward</li>
-<li>Differentiate between a movement along the curve and a shift of the curve</li>
-<li>Identify and apply the non-price determinants of supply (PINTS)</li>
-<li>Distinguish between joint supply and competitive supply</li>
-</ul>
-
-<hr>
-
-<h2> 1. Definition of Supply and the Law of Supply</h2>
-
-<h3>What Is Supply?</h3>
-
-<p><strong>Supply</strong> is the quantity of a good or service that producers are <strong>willing and able</strong> to produce and sell at each possible price, over a given time period, ceteris paribus.</p>
-
-<ul>
-<li><strong>Willing</strong>: The firm finds it profitable or strategically desirable to produce</li>
-<li><strong>Able</strong>: The firm has the productive capacity (resources, technology) to produce</li>
-</ul>
-
-<p>Supply reflects producers' behaviour — it is not about what producers <em>could</em> theoretically produce, but what they <em>choose</em> to produce given prices and costs.</p>
-
-<h3>The Law of Supply</h3>
-
-<blockquote><strong>As the price of a good rises, the quantity supplied rises; as the price falls, the quantity supplied falls — ceteris paribus.</strong></blockquote>
-
-<p>There is a <strong>positive (direct) relationship</strong> between price and quantity supplied. Higher prices give producers both the incentive and the means to produce more.</p>
-
-<hr>
-
-<h2> 2. Supply Schedule and Supply Curve</h2>
-
-<h3>Supply Schedule</h3>
-
-<p>Example: weekly supply of coffee from a café:</p>
-
-<table>
-<tr><th>Price per cup (£)</th><th>Quantity supplied (cups/week)</th></tr>
-<tr><td>1.00</td><td>100</td></tr>
-<tr><td>2.00</td><td>250</td></tr>
-<tr><td>3.00</td><td>450</td></tr>
-<tr><td>4.00</td><td>700</td></tr>
-<tr><td>5.00</td><td>1,000</td></tr>
-</table>
-
-<h3>Supply Curve</h3>
-
-<p>The <strong>supply curve</strong> is the graphical representation of the supply schedule. It slopes <strong>upward</strong> from left to right.</p>
-
-<h3>Individual Supply vs Market Supply</h3>
-
-<ul>
-<li><strong>Individual supply</strong>: The supply of a single firm</li>
-<li><strong>Market supply</strong>: The horizontal summation of all individual firm supply curves in the market</li>
-</ul>
-
-<blockquote><strong>Example</strong>: If Firm A supplies 200 cups at £3 and Firm B supplies 300 cups at £3, market supply at £3 is 200 + 300 = 500 cups.</blockquote>
-
-<hr>
-
-<h2> 3. Why Does the Supply Curve Slope Upward?</h2>
-
-<h3>1. The Profit Motive</h3>
-
-<p>When the market price rises, producing the good becomes more profitable. Existing firms expand output to capture higher profits. New firms may enter the market, attracted by the profit opportunity. Higher prices signal to producers: "Make more of this."</p>
-
-<h3>2. Increasing Marginal Costs</h3>
-
-<p>In the short run, as a firm produces more, its <strong>marginal cost</strong> (cost of producing one more unit) typically rises. This is due to the <strong>law of diminishing marginal returns</strong>: with a fixed factor (e.g., factory size), adding more variable inputs (workers) eventually yields smaller and smaller increases in output. Each additional unit costs more to produce.</p>
-
-<p>Firms will only produce an additional unit if the price they receive covers the marginal cost. Since marginal cost rises with output, a higher price is needed to justify higher output. Thus the supply curve is the <strong>marginal cost curve</strong> (above the shutdown point).</p>
-
-<h3>3. Time and Capacity Constraints</h3>
-
-<p>In the short run, firms cannot instantly expand capacity. To increase output, they must use existing capacity more intensively — pay workers overtime, run machines longer, use less efficient backup equipment — all of which raise per-unit costs.</p>
-
-<hr>
-
-<h2> 4. Movement Along vs Shift of the Supply Curve</h2>
-
-<p>This parallels the demand-side distinction and is equally important for IB exams.</p>
-
-<h3>Movement Along the Supply Curve</h3>
-
-<p>A <strong>change in the good's own price</strong> causes a movement <em>along</em> the existing supply curve.</p>
-
-<ul>
-<li><strong>Price rises</strong> → movement up and right along the curve (higher Qs) — called an <strong>expansion of supply</strong></li>
-<li><strong>Price falls</strong> → movement down and left along the curve (lower Qs) — called a <strong>contraction of supply</strong></li>
-</ul>
-
-<p>The supply curve itself does NOT shift.</p>
-
-<h3>Shift of the Supply Curve</h3>
-
-<p>A <strong>change in any non-price determinant</strong> causes the <em>entire</em> supply curve to shift.</p>
-
-<ul>
-<li><strong>Increase in supply</strong> → curve shifts RIGHT (more supplied at every price)</li>
-<li><strong>Decrease in supply</strong> → curve shifts LEFT (less supplied at every price)</li>
-</ul>
-
-<h3>Memory Aid</h3>
-
-<table>
-<tr><th>Change</th><th>Curve Response</th><th>Terminology</th></tr>
-<tr><td>Own price changes</td><td>Movement ALONG the curve</td><td>Expansion (↑P) or Contraction (↓P) of supply</td></tr>
-<tr><td>Non-price determinant changes</td><td>SHIFT of the entire curve</td><td>Increase (right) or Decrease (left) in supply</td></tr>
-</table>
-
-<hr>
-
-<h2> 5. Non-Price Determinants of Supply — PINTS</h2>
-
-<p>The factors that shift the supply curve can be remembered with the acronym <strong>PINTS</strong>:</p>
-
-<h3>P — Productivity</h3>
-
-<p>Higher productivity means more output from the same inputs (lower per-unit costs). This increases supply (shifts right). Productivity can rise due to:</p>
-<ul>
-<li>Better worker training and education (human capital)</li>
-<li>Improved management practices</li>
-<li>Better organisation of production</li>
-</ul>
-
-<p>Lower productivity (e.g., due to worker burnout, outdated methods) shifts supply left.</p>
-
-<h3>I — Indirect Taxes and Subsidies</h3>
-
-<p><strong>Indirect taxes</strong> (e.g., VAT, excise duties on alcohol/tobacco/fuel) increase firms' costs. This decreases supply (shifts left).</p>
-
-<p><strong>Subsidies</strong> are payments from government to firms, reducing their costs. This increases supply (shifts right).</p>
-
-<blockquote><strong>Important</strong>: The IB distinguishes between the <em>imposition</em> of a tax/subsidy (shift of supply) and the <em>incidence</em> (who actually bears the burden — covered in later lessons). For now, know that taxes shift supply left and subsidies shift supply right.</blockquote>
-
-<h3>N — Number of Firms</h3>
-
-<p>More firms in the market → greater market supply (shifts right). Fewer firms (due to bankruptcies, mergers, exit) → market supply falls (shifts left).</p>
-
-<p>Entry and exit depend on:</p>
-<ul>
-<li><strong>Barriers to entry</strong>: High barriers (licences, large capital requirements) limit entry</li>
-<li><strong>Profitability</strong>: If incumbent firms earn supernormal profits, new firms are attracted (in the long run, under competitive conditions)</li>
-</ul>
-
-<h3>T — Technology</h3>
-
-<p>Technological improvements allow firms to produce more output with the same inputs (or the same output with fewer inputs). This lowers production costs and increases supply (shifts right).</p>
-
-<ul>
-<li>Automation replacing manual labour</li>
-<li>Better software improving logistics and inventory management</li>
-<li>New production techniques (e.g., 3D printing, precision agriculture)</li>
-</ul>
-
-<p>Technological regression is rare but possible (e.g., loss of knowledge, destruction of infrastructure in war).</p>
-
-<h3>S — Supply Shocks and Input Costs</h3>
-
-<p><strong>Input costs</strong> (raw materials, energy, wages, rent): If input prices rise, production costs rise, and supply decreases (shifts left). If input prices fall, supply increases (shifts right).</p>
-
-<p><strong>Supply shocks</strong>: Sudden, unexpected events affecting production:</p>
-<ul>
-<li><strong>Negative supply shock</strong>: Natural disaster destroying crops, pandemic disrupting supply chains, war cutting off energy supplies → supply shifts left</li>
-<li><strong>Positive supply shock</strong>: Unexpectedly good harvest, discovery of abundant cheap energy → supply shifts right</li>
-</ul>
-
-<hr>
-
-<h2> 6. Joint Supply and Competitive Supply</h2>
-
-<h3>Joint Supply</h3>
-
-<p><strong>Joint supply</strong> occurs when the production of one good <em>automatically</em> yields another good as a by-product. The two goods are produced together — increasing production of one necessarily increases output of the other.</p>
-
-<ul>
-<li><strong>Examples</strong>: Beef and leather (slaughtering cattle yields both); crude oil and natural gas (often extracted together); wheat and straw</li>
-<li><strong>Implication</strong>: If demand (and price) for beef rises, production of beef increases → supply of leather automatically increases (shifts right)</li>
-</ul>
-
-<h3>Competitive Supply</h3>
-
-<p><strong>Competitive supply</strong> occurs when two goods <em>compete for the same resources</em> in production. Producing more of one requires diverting resources from the other, reducing its output.</p>
-
-<ul>
-<li><strong>Examples</strong>: Wheat and corn (compete for the same farmland); a factory producing either cars or trucks on the same assembly line; a farmer choosing between dairy and crop farming</li>
-<li><strong>Implication</strong>: If the price of wheat rises, farmers allocate more land to wheat → supply of corn decreases (shifts left)</li>
-</ul>
-
-<h3>Summary Table</h3>
-
-<table>
-<tr><th>Type</th><th>Relationship</th><th>Effect on Supply of Good A if Price of Good B Rises</th></tr>
-<tr><td><strong>Joint supply</strong></td><td>Produced together</td><td>Supply of A <strong>increases</strong> (more of B produced → more of A as by-product)</td></tr>
-<tr><td><strong>Competitive supply</strong></td><td>Compete for same resources</td><td>Supply of A <strong>decreases</strong> (resources diverted to B)</td></tr>
-</table>
-
-<hr>
-
-<h2> IB Exam Tip</h2>
-
-<p>When analysing supply changes, always specify <strong>why</strong> the curve slopes upward (profit motive, increasing marginal costs). IB examiners look for:</p>
-<ol>
-<li>Clear distinction between "quantity supplied" (movement along) and "supply" (shift)</li>
-<li>Correct use of non-price determinant names — use PINTS as a checklist</li>
-<li>Explanation of the <em>mechanism</em>: how does the determinant affect costs and thus supply?</li>
-<li>Recognition that supply-side factors often interact with demand — but analyse them separately first</li>
-</ol>
-
-<p>Common mistake: Saying "supply increases" when you mean "quantity supplied increases due to a price rise." Be precise.</p>
-
-<hr>
-
-<h2> Practice Problems</h2>
-
-<h3>Problem 1: Movement vs Shift</h3>
-
-<p>For each scenario, state whether it causes a movement along the supply curve or a shift, and in which direction.</p>
-
-<p>(a) The price of wheat rises.</p>
-<p>(b) New fertiliser technology doubles crop yields.</p>
-<p>(c) The government imposes a new tax on sugary drinks.</p>
-<p>(d) A drought destroys half the wheat crop.</p>
-<p>(e) More farmers enter the wheat market.</p>
-<p>(f) The price of wheat falls by 20%.</p>
-
-<h3>Problem 2: Identifying Determinants (PINTS)</h3>
-
-<p>For each scenario, identify which PINTS determinant is at work and the direction of the shift:</p>
-<p>(a) Wage rates for construction workers rise by 15%. (Market: new housing)</p>
-<p>(b) The government offers wind farm operators a subsidy of £50 per MWh. (Market: renewable electricity)</p>
-<p>(c) Three major smartphone manufacturers exit the market. (Market: smartphones)</p>
-<p>(d) AI-powered robots reduce assembly time by 60%. (Market: automobiles)</p>
-<p>(e) Better training programmes improve worker skills. (Market: any manufactured good)</p>
-
-<h3>Problem 3: Joint vs Competitive Supply</h3>
-
-<p>For each pair, state whether the goods are in joint supply or competitive supply:</p>
-<p>(a) Milk and cheese (a dairy farmer's choices)</p>
-<p>(b) Wool and lamb (from sheep)</p>
-<p>(c) Sugar cane and sugar cane ethanol (from the same crop)</p>
-<p>(d) A factory producing either chairs or tables on the same production line</p>
-
-<h3>Problem 4: Supply Schedule Analysis</h3>
-
-<p>A firm has the following supply schedule for T-shirts:</p>
-
-<table>
-<tr><th>Price (£)</th><th>Qs (T-shirts/week)</th><th>Marginal Cost (£)</th></tr>
-<tr><td>5</td><td>0</td><td>—</td></tr>
-<tr><td>8</td><td>50</td><td>8</td></tr>
-<tr><td>12</td><td>150</td><td>12</td></tr>
-<tr><td>16</td><td>300</td><td>16</td></tr>
-<tr><td>20</td><td>500</td><td>20</td></tr>
-</table>
-
-<p>(a) At a price of £10, how many T-shirts will the firm supply? Explain.</p>
-<p>(b) At a price of £14, how many? Explain.</p>
-<p>(c) Why does the firm supply zero at a price of £5?</p>
-<p>(d) What is the relationship between price and marginal cost at each output level? Why?</p>
-
-<h3>Problem 5: Supply Curve Shifts — Full Scenario</h3>
-
-<p>The market for avocados has an initial supply of Qs = −200 + 50P (Q in tonnes, P in £/kg).</p>
-
-<p>(a) At P = £6, calculate Qs.</p>
-<p>(b) A drought destroys avocado orchards. New supply is Qs = −400 + 50P. At P = £6, what is the new Qs? Has supply increased or decreased? Is this a movement or shift?</p>
-<p>(c) Separately, the price of avocados rises from £6 to £10. Using the ORIGINAL supply function, calculate the new Qs. Is this a movement or shift?</p>
-<p>(d) Explain how a drought (part b) and a price rise (part c) have fundamentally different implications for the avocado market.</p>
-
-<h3>Problem 6: IB-Style (Challenging)</h3>
-
-<p>A market has two identical firms, each with supply: q = −50 + 25P.</p>
-
-<p>(a) Derive the market supply function.</p>
-<p>(b) If the government imposes a per-unit tax of £4, each firm's supply becomes q = −150 + 25P. Derive the new market supply function. At P = £10, calculate the change in market quantity supplied.</p>
-<p>(c) Instead of a tax, suppose three new identical firms enter the market. Derive the new market supply function (5 firms total). At P = £10, calculate Qs. Compare with part (b) — which has a larger effect on quantity supplied at £10?</p>
-<p>(d) Discuss one reason why the government might prefer a tax over allowing market entry, even if the entry would result in more supply at a given price.</p>
-
-<hr>
-
-<h2> Answers</h2>
-
-<h3>Answer 1: Movement vs Shift</h3>
-
-<p>(a) <strong>Movement along</strong> — own price of wheat rises → <strong>expansion of supply</strong> (up and right along the curve).</p>
-
-<p>(b) <strong>Shift right</strong> — technology (T in PINTS) improves → more wheat supplied at every price.</p>
-
-<p>(c) <strong>Shift left</strong> — indirect tax (I in PINTS) raises costs → less supplied at every price.</p>
-
-<p>(d) <strong>Shift left</strong> — negative supply shock (S in PINTS) → less wheat at every price.</p>
-
-<p>(e) <strong>Shift right</strong> — number of firms (N in PINTS) increases → more market supply at every price.</p>
-
-<p>(f) <strong>Movement along</strong> — own price falls → <strong>contraction of supply</strong> (down and left along the curve).</p>
-
-<h3>Answer 2: Identifying Determinants</h3>
-
-<p>(a) <strong>S — Supply shocks/Input costs</strong>. Wages are an input cost. Higher wages → higher production costs → supply <strong>shifts left</strong> (decrease).</p>
-
-<p>(b) <strong>I — Indirect taxes/Subsidies</strong>. Subsidy reduces firms' effective costs → supply <strong>shifts right</strong> (increase).</p>
-
-<p>(c) <strong>N — Number of firms</strong>. Fewer firms → lower market supply → supply <strong>shifts left</strong> (decrease).</p>
-
-<p>(d) <strong>T — Technology</strong>. AI/robotics improve production efficiency → lower costs → supply <strong>shifts right</strong> (increase).</p>
-
-<p>(e) <strong>P — Productivity</strong>. Better training → higher output per worker → lower per-unit costs → supply <strong>shifts right</strong> (increase).</p>
-
-<h3>Answer 3: Joint vs Competitive Supply</h3>
-
-<p>(a) Milk and cheese: <strong>Competitive supply</strong>. A dairy farmer can use milk to produce either cheese or sell it as liquid milk. The same milk is allocated between these competing uses.</p>
-
-<p>(b) Wool and lamb: <strong>Joint supply</strong>. Sheep produce both wool and meat. Raising more sheep for wool automatically increases lamb production (and vice versa).</p>
-
-<p>(c) Sugar cane and ethanol: <strong>Joint supply</strong> (from the same crop) — the same sugar cane can be processed into sugar or fermented into ethanol. However, after initial processing, the allocation between sugar and ethanol becomes competitive. The relationship is complex, but from the crop itself, it starts as joint supply.</p>
-
-<p>(d) Chairs and tables: <strong>Competitive supply</strong>. The factory's production line can make one or the other (or switch between them). The same resources (machines, workers, space) compete between the two products.</p>
-
-<h3>Answer 4: Supply Schedule Analysis</h3>
-
-<p>(a) At P = £10: The firm will supply <strong>50 T-shirts</strong>. The supply schedule shows that at P = £8, Qs = 50, and at P = £12, Qs = 150. A rational profit-maximising firm supplies up to the point where P ≥ MC. At P = £10, the firm produces 50 units (the last produced at MC = £8) but not 150 (which would require MC = £12, which exceeds P = £10). So Qs at £10 is between 50 and 150 — the firm would produce approximately 100 units if MC rises linearly.</p>
-
-<p><em>(Note: With discrete data, the exact answer depends on the marginal cost function. The key insight: the firm supplies where P ≥ MC.)</em></p>
-
-<p>(b) At P = £14: The firm supplies <strong>between 150 and 300 units</strong>. P = £14 covers MC up to £12 (150 units) but not MC = £16. So Qs ≈ 150–300, likely around 225 if MC is linear.</p>
-
-<p>(c) At P = £5: The firm supplies <strong>zero</strong>. P = £5 is below the firm's minimum marginal cost (£8 at the first unit). The firm cannot cover even the variable costs of the first unit, so it shuts down.</p>
-
-<p>(d) <strong>P = MC at the margin</strong>: At each output level, the price equals the marginal cost of the <em>last</em> unit produced (approximately). The supply curve is the marginal cost curve (above the shutdown point). This is because a profit-maximising firm produces where MR = MC, and in perfect competition, MR = P, so P = MC.</p>
-
-<h3>Answer 5: Supply Curve Shifts</h3>
-
-<p><strong>(a)</strong> At P = £6: Qs = −200 + 50(6) = −200 + 300 = <strong>100 tonnes</strong>.</p>
-
-<p><strong>(b)</strong> At P = £6 with new supply: Qs = −400 + 50(6) = −400 + 300 = <strong>−100 tonnes</strong> (effectively zero — the firm cannot supply at £6 with the new cost structure).</p>
-
-<p>Supply has <strong>decreased</strong> (shifted left). This is a <strong>shift</strong> of the supply curve caused by a negative supply shock (drought → S in PINTS). At every price, less is supplied.</p>
-
-<p><strong>(c)</strong> At P = £10 with original supply: Qs = −200 + 50(10) = −200 + 500 = <strong>300 tonnes</strong>.</p>
-
-<p>This is a <strong>movement along</strong> the original supply curve (expansion of supply). The supply curve itself hasn't changed.</p>
-
-<p><strong>(d)</strong> The drought (shift left) means less avocado is supplied at <em>every</em> price — the entire supply relationship has deteriorated. To get the original Qs = 100, the price would now need to be higher. The price rise (movement along) is the <em>market's response</em> to some change — producers supply more <em>because</em> the price rose, not because they can produce more cheaply.</p>
-
-<p>For consumers: a supply shift left means higher prices AND lower quantities (bad for consumers). A movement along triggered by higher demand means higher prices but also HIGHER quantities (consumers at least get more avocados, even at higher prices).</p>
-
-<h3>Answer 6: IB-Style Solution</h3>
-
-<p><strong>(a) Market supply</strong> = 2 × q = 2(−50 + 25P) = <strong>−100 + 50P</strong>.</p>
-
-<p><strong>(b)</strong> New firm supply: q = −150 + 25P.</p>
-<p>New market supply = 2(−150 + 25P) = <strong>−300 + 50P</strong>.</p>
-
-<p>At P = £10:</p>
-<ul>
-<li>Original Qs = −100 + 50(10) = −100 + 500 = <strong>400</strong></li>
-<li>New Qs = −300 + 50(10) = −300 + 500 = <strong>200</strong></li>
-<li>Change = −200 units (supply decreased).</li>
-</ul>
-
-<p><strong>(c)</strong> 5 firms, each with original supply:</p>
-<p>Market supply = 5(−50 + 25P) = <strong>−250 + 125P</strong>.</p>
-
-<p>At P = £10: Qs = −250 + 125(10) = −250 + 1250 = <strong>1,000</strong>.</p>
-
-<p>Comparison:</p>
-<ul>
-<li>Tax (part b): Qs = 200</li>
-<li>Entry (part c): Qs = 1,000</li>
-</ul>
-
-<p><strong>Entry has a much larger effect</strong> on quantity supplied at P = £10 (1,000 vs 200). This makes sense: the tax shifts each firm's supply left (higher costs), while entry adds entire new supply curves.</p>
-
-<p><strong>(d)</strong> Government might prefer a tax despite lower supply because:</p>
-<ul>
-<li><strong>Revenue</strong>: The tax generates government revenue (4 × 200 = £800 at P = £10) that can fund public services. Entry generates no direct government revenue.</li>
-<li><strong>Market stability</strong>: Entry may lead to overcapacity and eventual bankruptcies, creating instability. A tax is predictable.</li>
-<li><strong>Externalities</strong>: If the good has negative externalities (pollution from production), a tax internalises the external cost — reducing supply is actually the <em>goal</em>, not a side effect.</li>
-<li><strong>Political economy</strong>: Entry is a market process the government cannot directly control; a tax is a policy instrument under government control.</li>
-</ul>
-
-<hr>
-
-<h2> Evaluate</h2>
-
-<h3>Question</h3>
-
-<p><strong>"The law of supply is more reliable than the law of demand because producers are more rational than consumers." Evaluate this statement.</strong></p>
-
-<h3>Model Answer</h3>
-
-<p><strong>Conclusion</strong>: The claim is problematic on multiple levels. While the law of supply is indeed a robust empirical regularity, its "reliability" relative to the law of demand has nothing to do with producers being "more rational" than consumers — both laws rest on different mechanisms, and both have exceptions.</p>
-
-<p>First, the premise that "producers are more rational than consumers" is questionable. Both producers and consumers generally act in their perceived self-interest given their constraints and information. Consumers may sometimes make inconsistent or impulse purchases, but so do firms — corporate history is replete with irrational investment decisions, herd behaviour, and managerial overconfidence. Behavioural economics has documented systematic deviations from rationality in <em>both</em> consumers (present bias, loss aversion) and firms (overoptimism, sunk cost fallacy). There is no compelling evidence that producers are systematically more rational.</p>
-
-<p>Second, the reliability of the law of supply and the law of demand depends on different mechanisms. The law of demand rests on the income effect, substitution effect, and diminishing marginal utility — all of which are strong and general. The law of supply rests on the profit motive and increasing marginal costs. Both are well-supported empirically, but they can be disrupted by different factors.</p>
-
-<p><strong>Long-term vs short-term</strong>: In the short run, both laws have exceptions: the law of demand is challenged by Veblen and Giffen goods; the law of supply can be challenged when firms face fixed capacity (supply is perfectly inelastic in the very short run — a price rise cannot immediately increase output). In the long run, both laws become more reliable as consumers and producers fully adjust.</p>
-
-<p><strong>Assumptions</strong>: The law of supply assumes that firms are profit-maximisers with flexible production. In reality, some firms are not purely profit-driven (non-profits, state-owned enterprises), and some face capacity constraints that make supply unresponsive to price. Similarly, the law of demand assumes rational consumers with stable preferences — an assumption that behavioural economics complicates but does not destroy.</p>
-
-<p><strong>Stakeholders</strong>: For policymakers, both laws are sufficiently reliable for practical purposes. When designing a tax, they can reasonably expect that higher prices will reduce quantity demanded (law of demand) and that a tax will shift the supply curve left (law of supply). Neither law needs to be "more reliable" — they address different sides of the market.</p>
-
-<p><strong>Priorities</strong>: Rather than ranking the laws, students should understand that both are central tendencies with well-understood exceptions. The interesting questions are not "which law is more reliable?" but "under what conditions might each law fail, and why?"</p>
-
-<p><strong>Pros/Cons</strong>: The law of supply may appear more mechanical (cost curves are observable; preferences are not), giving it an illusion of greater reliability (pro for supply's perceived reliability). However, supply is heavily dependent on external factors — weather, geopolitics, technology shocks — that can cause sudden, unpredictable shifts (con). Demand tends to be more stable and predictable in the aggregate (pro for demand), though individual consumer behaviour may seem erratic (con).</p>
-
-<p><strong>Final judgment</strong>: The statement is unconvincing. Both the law of supply and the law of demand are well-established economic principles with strong theoretical foundations and extensive empirical support. Neither is "more reliable" in a meaningful sense, and the claim about producer rationality is an unsubstantiated stereotype. Good economics treats both laws as complementary tools for understanding market behaviour, each with its own domain of applicability and its own set of caveats.</p>
-
-<nav style="margin-top:1.5rem;">
-  <a href="lesson_04_demand.html">← Previous Lesson</a> &nbsp;|&nbsp;
-  <a href="#">Index</a> &nbsp;|&nbsp;
-  <a href="lesson_06_market_equilibrium_price_mechanism.html">Next Lesson →</a>
-</nav>
-<footer>IB Economics SL — Lesson 5: Supply. Based on Tragakes, 3rd ed. (Cambridge, 2020).</footer>
+<p><strong>Syllabus reference:</strong> Unit 2.3 — Supply in competitive markets</p>
+
+<div class="objectives"><h3>Learning Objectives</h3><p>By the end of this lesson, you will be able to:</p><ul><li><strong>Define</strong> supply and state the law of supply</li><li><strong>Distinguish</strong> between a movement along the supply curve and a shift of the supply curve</li><li><strong>Identify</strong> the non-price determinants of supply using the PINTS framework</li><li><strong>Explain</strong> the concepts of joint supply and competitive supply</li><li><strong>Draw</strong> and interpret supply curves and shifts in supply</li></ul></div>
+
+<h2>1. Prior Knowledge Check</h2>
+<div class="check-in"><p><strong>Question 1:</strong> In Lesson 4, you learned the law of demand: as price rises, quantity demanded falls. What do you think happens on the producer side — if the price of a good rises, do firms want to produce more or less of it? Why?</p><span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'Hide Answer':'Show Answer'">Show Answer</span><div class="answer-content"><p><strong>Answer:</strong> Firms typically want to produce <strong>more</strong> when the price rises. A higher price means higher revenue per unit sold, which makes production more profitable. This incentivises existing firms to expand output and new firms to enter the market. This is the intuition behind the law of supply.</p></div></div>
+<div class="check-in"><p><strong>Question 2:</strong> You learned the difference between a movement along and a shift of the demand curve. What caused each type of change for demand?</p><span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'Hide Answer':'Show Answer'">Show Answer</span><div class="answer-content"><p><strong>Answer:</strong> A movement along the demand curve is caused by a change in the good's <strong>own price</strong>. A shift of the demand curve is caused by a change in a <strong>non-price determinant</strong> (TRIBE: Tastes, Related goods, Income, Buyers, Expectations). The same logic applies to supply — we just use different non-price determinants.</p></div></div>
+
+<h2>2. What Supply Means in Economics</h2>
+<p><strong>Supply</strong> is the quantity of a good or service that producers are willing and able to offer for sale at each possible price over a given period of time, <em>ceteris paribus</em>. As with demand, every word matters: "willing and able" (firms must have both the motivation and the capacity), "at each possible price" (supply is a relationship, not a single number), "over a given period" (supply is a flow), and "ceteris paribus" (we hold non-price factors constant).</p>
+<p>The <strong>law of supply</strong> states that, ceteris paribus, as the price of a good rises, the quantity supplied of that good rises. As the price falls, the quantity supplied falls. Price and quantity supplied are <strong>directly</strong> (positively) related. This is the opposite of demand, where the relationship is inverse.</p>
+<p>Why does supply slope up? There are two main reasons:</p>
+<ol><li><strong>The profit motive:</strong> At a higher price, producing the good is more profitable. Existing firms expand output, and new firms enter the market, attracted by the higher profits.</li><li><strong>Increasing marginal cost:</strong> As a firm produces more, the cost of producing each additional unit typically rises (overtime pay for workers, less efficient machinery pressed into service, less suitable land brought into cultivation). A higher price is needed to cover these higher costs.</li></ol>
+<div class="check-in"><p><strong>Check-in:</strong> A bakery sells bread at £2 per loaf and produces 200 loaves per day. If the price rises to £3 per loaf, the bakery increases production to 280 loaves per day. Has <em>supply</em> increased? Use precise language.</p><span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'Hide Answer':'Show Answer'">Show Answer</span><div class="answer-content"><p><strong>Answer:</strong> No — supply has not increased. The <strong>quantity supplied</strong> has increased (from 200 to 280) in response to a higher price. This is a movement along the existing supply curve (up and to the right), not an increase in supply. An increase in supply would mean the entire curve shifts right — the bakery produces more at <em>every</em> price, not just at a higher price. This "supply vs. quantity supplied" distinction mirrors the "demand vs. quantity demanded" distinction from Lesson 4 and is equally mark-sensitive.</p></div></div>
+
+<h2>3. Movement Along vs. Shift of the Supply Curve</h2>
+<p>A <strong>movement along</strong> the supply curve occurs when the <em>price of the good itself</em> changes and producers adjust the quantity supplied in response. If price rises, we move up and right along the supply curve (higher quantity supplied). If price falls, we move down and left (lower quantity supplied).</p>
+<p>A <strong>shift</strong> of the supply curve occurs when a <strong>non-price determinant</strong> of supply changes. The entire curve moves: right for an increase in supply (producers are willing to offer more at every price) or left for a decrease in supply (producers offer less at every price).</p>
+<div class="diagram"><pre class="ascii-art">Price (£)                      
+  ▲      Supply (S)              
+  │        ╱                    
+12│       ●B                    
+  │      ╱ (movement along S)    
+ 8│     ●A                       
+  │    ╱                         
+ 4│   ●                          
+  │  ╱                           
+  │ ╱                            
+  │╱                             
+  └────────────────► Q           
+  0  100  200  300               
+  
+  As price rises £8→£12, quantity
+  supplied rises (movement along S)
+</pre><p class="caption">Figure 1: A supply curve. As price rises, firms move up and right along the curve, increasing quantity supplied. The curve slopes upward, reflecting the law of supply.</p></div>
+
+<h2>4. Non-Price Determinants of Supply — PINTS</h2>
+<p>Five categories shift the supply curve. We use <strong>PINTS</strong>:</p>
+<p><strong>P — Productivity.</strong> If workers or machines become more productive (producing more output per unit of input), the cost per unit falls, and firms can supply more at every price. Supply shifts right. Higher productivity can come from better training, improved technology, or more efficient organisation.</p>
+<p><strong>I — Indirect taxes and subsidies.</strong> These are government interventions that directly affect production costs:</p><ul><li>An <strong>indirect tax</strong> (like VAT or a fuel duty) increases production costs. At every price, firms supply less. Supply shifts <strong>left</strong>.</li><li>A <strong>subsidy</strong> (a government payment to producers per unit) reduces production costs. At every price, firms supply more. Supply shifts <strong>right</strong>.</li></ul>
+<p><strong>N — Number of firms.</strong> More firms in a market means more total supply at every price. New firms entering the market (attracted by profits) shift supply right. Firms leaving (due to losses) shift supply left.</p>
+<p><strong>T — Technology.</strong> Technological improvements reduce production costs. A bakery that invests in a faster oven can produce more bread with the same workers. Supply shifts right.</p>
+<p><strong>S — Supply shocks and costs of production.</strong> Changes in the prices of inputs (raw materials, energy, wages, rent) directly affect supply. A rise in the price of wheat (an input for bread) increases the bakery's costs. At every price for bread, the bakery offers less — supply shifts left. Supply shocks are sudden, unexpected events: a drought that destroys crops shifts agricultural supply left; the discovery of a new oil field shifts oil supply right.</p>
+<div class="check-in"><p><strong>Check-in:</strong> The government introduces a new tax of £0.50 on every litre of petrol sold. Separately, a new drilling technology reduces the cost of extracting crude oil by 30%. Analyse the effect of each on the supply of petrol.</p><span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'Hide Answer':'Show Answer'">Show Answer</span><div class="answer-content"><p><strong>Answer:</strong> The tax (I in PINTS) increases production costs for petrol refiners. At every price, they supply less — the supply curve for petrol shifts <strong>left</strong>. The new drilling technology (T in PINTS) reduces the cost of the key input (crude oil). At every price, refiners can supply more petrol — the supply curve shifts <strong>right</strong>. These two effects push in opposite directions. The net effect on petrol supply depends on which shift is larger.</p></div></div>
+
+<h2>5. Joint Supply and Competitive Supply</h2>
+<p><strong>Joint supply</strong> occurs when producing one good automatically produces another. When a cow is slaughtered for beef, leather is produced as a by-product. You cannot produce more beef without also producing more leather. If the demand for beef rises (pushing up the price of beef), more cattle are slaughtered, and the supply of leather automatically increases — leather supply shifts right, even though nothing changed in the leather market directly.</p>
+<p><strong>Competitive supply</strong> occurs when the same resources can be used to produce two different goods, but not both at the same time. A farmer's field can grow wheat or barley. If the price of wheat rises, the farmer switches land from barley to wheat. The supply of wheat increases (shift right) and the supply of barley decreases (shift left), even though nothing changed in the barley market directly. The two goods compete for the same scarce resource.</p>
+<div class="check-in"><p><strong>Check-in:</strong> A sharp rise in the price of lamb causes sheep farmers to increase their flocks. What happens to the supply of wool? What type of supply relationship is this?</p><span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'Hide Answer':'Show Answer'">Show Answer</span><div class="answer-content"><p><strong>Answer:</strong> Wool supply increases (shifts right) — even though nothing changed in the wool market. When farmers raise more sheep for lamb meat, they also produce more wool as a by-product. This is <strong>joint supply</strong>: lamb and wool are produced together; you cannot increase one without increasing the other.</p></div></div>
+
+<h2>6. Worked Examples</h2>
+<div class="example"><h3>Worked Example 1: Identifying Supply Shifters</h3><p><strong>Problem:</strong> For each scenario, state whether supply shifts right, left, or does not shift, and identify the PINTS determinant: (a) Wages for construction workers rise by 20%. (b) The government offers a £5,000 subsidy per electric vehicle produced. (c) Three new coffee shops open in a neighbourhood.</p><p><strong>Step 1:</strong> (a) Higher wages increase production costs (S — costs of production). At every price, construction firms supply less. Supply shifts <strong>left</strong>.</p><p><strong>Step 2:</strong> (b) The subsidy (I — indirect taxes and subsidies) reduces the effective cost per vehicle. At every price, firms supply more electric vehicles. Supply shifts <strong>right</strong>.</p><p><strong>Step 3:</strong> (c) Three new firms (N — number of firms) mean more total supply at every price. Supply shifts <strong>right</strong>.</p><p><strong>⚠️ Common Wrong Approach:</strong> For (a), some students say supply shifts right because "higher wages mean workers can afford more, so demand increases." This confuses supply (producers) with demand (consumers). Higher wages are a cost to the <em>producer</em>, so they reduce supply. The effect on workers' incomes is a demand-side story, not a supply-side one.</p></div>
+<div class="example"><h3>Worked Example 2: Joint Supply Trap</h3><p><strong>Problem:</strong> The price of beef rises sharply due to increased demand from export markets. Analyse the effect on the market for leather. <em>(Exam trap: students analyse leather in isolation and miss the joint supply connection.)</em></p><p><strong>Step 1:</strong> Beef and leather are goods in <strong>joint supply</strong> — both come from cattle. When more cattle are slaughtered for beef, more leather is automatically produced.</p><p><strong>Step 2:</strong> The rise in the price of beef (driven by higher demand for beef) leads to an increase in cattle slaughter. This increases the supply of leather at every price — the leather supply curve shifts <strong>right</strong>. The price of leather falls and the quantity of leather traded rises.</p><p><strong>Step 3:</strong> Notice that nothing changed in the leather market itself — no change in leather demand, no change in leather production technology. The supply shift in the leather market is entirely due to events in the beef market.</p><p><strong>⚠️ Common Wrong Approach:</strong> Analysing the leather market in isolation as if the change in beef prices has no effect. The IB tests joint supply precisely because students forget to look for connections between markets.</p></div>
+<div class="example"><h3>Worked Example 3: Multiple Simultaneous Shifts</h3><p><strong>Problem:</strong> A severe drought destroys half of the wheat harvest. Simultaneously, the government removes a subsidy that had been paid to wheat farmers. Analyse the combined effect on wheat supply.</p><p><strong>Step 1:</strong> The drought is a supply shock (S in PINTS) — it reduces the quantity of wheat that can be produced. Supply shifts <strong>left</strong>.</p><p><strong>Step 2:</strong> Removing the subsidy (I in PINTS) increases the effective cost of production for farmers. Without the subsidy payment, farmers receive less per unit. Supply also shifts <strong>left</strong>.</p><p><strong>Step 3:</strong> Both changes push supply in the same direction — left. The combined effect is a large leftward shift of the wheat supply curve. The equilibrium price of wheat will rise significantly, and the quantity will fall significantly.</p><p><strong>⚠️ Common Wrong Approach:</strong> Failing to separate the two effects. Even though both push supply left, the IB examiner wants you to identify each one individually before stating the net result. "Supply decreases due to a supply shock (drought) and the removal of a production subsidy" earns more marks than "supply decreases."</p></div>
+
+<div class="misconception"><h3>⚠️ Common Mistakes to Avoid</h3><ol>
+<li><strong>Mistake:</strong> Confusing "supply" with "quantity supplied" — exactly the parallel error from demand. <strong>Why it's wrong:</strong> "Supply" is the entire curve. "Quantity supplied" is a point on the curve. <strong>Correct approach:</strong> Own-price change → movement along. Any other factor → shift.</li>
+<li><strong>Mistake:</strong> Drawing the supply curve sloping downward. <strong>Why it's wrong:</strong> The law of supply says price and quantity supplied are positively related — higher price, higher quantity. <strong>Correct approach:</strong> Always draw supply sloping upward, from bottom-left to top-right.</li>
+<li><strong>Mistake:</strong> Treating a change in input costs as not affecting supply because "the firm can just raise prices." <strong>Why it's wrong:</strong> At any <em>given</em> price, higher costs mean the firm is less willing to supply. That is the definition of a supply decrease. <strong>Correct approach:</strong> Higher input costs shift the supply curve left. Whether firms actually <em>do</em> raise prices is determined by the interaction of supply and demand — that comes in Lesson 6.</li></ol></div>
+
+<h2>7. End-of-Lesson Practice</h2>
+<p><strong>Question 1.</strong> [Paper 1, MC] Which of the following would cause a rightward shift of the supply curve for furniture?</p><p>A. An increase in the price of furniture.<br>B. A decrease in the price of wood, a key input.<br>C. An increase in consumer incomes.<br>D. A new tax on furniture production.</p>
+<p><strong>Question 2.</strong> [Paper 1, MC] The government introduces a new regulation requiring all food manufacturers to install expensive safety equipment. What is the effect on the supply of processed food?</p><p>A. Movement up and right along the supply curve.<br>B. Movement down and left along the supply curve.<br>C. The supply curve shifts to the left.<br>D. The supply curve shifts to the right.</p>
+<p><strong>Question 3.</strong> [Paper 2] Distinguish between a movement along the supply curve and a shift of the supply curve. Provide one cause for each, using the market for coffee as an example. [4 marks]</p>
+<p><strong>Question 4.</strong> [Paper 2] Using the PINTS framework, explain how each of the following affects the supply of clothing: (a) The introduction of robot sewing machines that cut labour costs by 40%. (b) A rise in the world price of cotton. (c) Ten new clothing brands enter the market. [6 marks]</p>
+<p><strong>Question 5.</strong> [Paper 2, Exam Style] A drought in Brazil destroys 30% of the coffee harvest. At the same time, the Brazilian government introduces a new subsidy for coffee farmers to help them recover. (a) Use a supply diagram to show the effect of each change on the coffee market. [4 marks] (b) Explain why the net effect on the equilibrium price of coffee is uncertain. [2 marks]</p>
+<button class="practice-toggle" onclick="var a=this.nextElementSibling;a.classList.toggle('open');this.textContent=a.classList.contains('open')?'▴ Hide Answers':'▸ Show Answers'">▸ Show Answers</button>
+<div class="practice-answers">
+<p><strong>Answer 1:</strong> B. Cheaper wood reduces input costs (S in PINTS), shifting supply right. A is an own-price change (movement along). C affects demand, not supply. D would shift supply left.</p>
+<p><strong>Answer 2:</strong> C. The expensive safety equipment increases production costs. At every price, firms are willing to supply less — supply shifts left.</p>
+<p><strong>Answer 3:</strong> A movement along occurs when the price of coffee itself changes — e.g., if coffee prices rise from £3 to £4 per pound, quantity supplied increases (movement up the supply curve). A shift occurs when a non-price determinant changes — e.g., if a new harvesting technology reduces costs, the entire supply curve shifts right.</p>
+<p><strong>Answer 4:</strong> (a) Technology (T) — lower labour costs shift supply right. (b) Cotton is an input; higher costs (S) shift supply left. (c) More firms (N) shift supply right.</p>
+<p><strong>Answer 5:</strong> (a) Drought: supply shock (S), supply shifts left. Subsidy: government payment reduces costs (I), supply shifts right. Diagram: show S₁ shifting left to S₂ (drought), then right to S₃ (subsidy). (b) The drought shifts supply left (pushing price up); the subsidy shifts supply right (pushing price down). The net effect depends on which shift is larger. If the subsidy is large enough to offset the drought damage, the price might not rise — but if the crop loss is severe, price will still rise despite the subsidy.</p></div>
+
+<h2>8. Key Terms</h2>
+<table><tr><th>Term</th><th>Definition</th></tr><tr><td>Supply</td><td>The quantity of a good that producers are willing and able to offer for sale at each possible price over a given time period, ceteris paribus</td></tr><tr><td>Law of supply</td><td>As price rises, quantity supplied rises; as price falls, quantity supplied falls — ceteris paribus</td></tr><tr><td>Movement along the supply curve</td><td>A change in quantity supplied caused by a change in the good's own price</td></tr><tr><td>Shift of the supply curve</td><td>A change in supply caused by a change in a non-price determinant; the entire curve moves</td></tr><tr><td>Joint supply</td><td>When producing one good automatically produces another (e.g., beef and leather)</td></tr><tr><td>Competitive supply</td><td>When the same resources can produce two different goods but not both simultaneously</td></tr></table>
+
+<h2>9. Exam Tips</h2>
+<div class="exam-tip"><strong>Paper 1:</strong> When explaining the law of supply, draw the upward-sloping curve and label it "S." Explain why it slopes upward — the profit motive and increasing marginal cost. Reference ceteris paribus.</div>
+<div class="exam-tip"><strong>Paper 2:</strong> Supply questions in data response often involve a supply shock (drought, war, pandemic) combined with a government policy (tax, subsidy, regulation). Always separate the two effects before combining them.</div>
 </body>
 </html>

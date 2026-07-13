@@ -3,433 +3,130 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lesson 2: The Production Possibilities Curve (PPC) — IB Economics SL</title>
+<title>Lesson 2 — IB Economics SL — The Production Possibilities Curve</title>
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']]}};</script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
 <style>
-  :root { --bg: #fdfdfc; --text: #1a1a1a; --accent: #2c5f2d; --subtle: #f0f4f0; --border: #d0d4d0; --code-bg: #f7f8f7; }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: Georgia, "Times New Roman", serif; font-size: 17px; line-height: 1.7; color: var(--text); background: var(--bg); max-width: 800px; margin: 0 auto; padding: 2rem 1.5rem; }
-  nav { margin-bottom: 1.5rem; font-size: 0.9rem; }
-  nav a { color: var(--accent); text-decoration: none; margin-right: 1.2rem; }
-  nav a:hover { text-decoration: underline; }
-  h1 { font-size: 2rem; margin-bottom: 0.25rem; border-bottom: 3px solid var(--accent); padding-bottom: 0.4rem; }
-  h2 { font-size: 1.35rem; margin: 2rem 0 0.75rem; color: var(--accent); }
-  h3 { font-size: 1.1rem; margin: 1.25rem 0 0.5rem; }
-  p { margin-bottom: 1rem; }
-  ul, ol { margin: 0.5rem 0 1rem 1.5rem; }
-  li { margin-bottom: 0.4rem; }
-  blockquote { border-left: 4px solid var(--accent); margin: 1rem 0; padding: 0.5rem 1rem; background: var(--subtle); font-style: italic; }
-  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.95rem; }
-  th, td { border: 1px solid var(--border); padding: 0.5rem 0.75rem; text-align: left; }
-  th { background: var(--subtle); font-weight: bold; }
-  code { background: var(--code-bg); padding: 0.1rem 0.35rem; border-radius: 3px; font-size: 0.9em; }
-  hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
-  strong { color: #1a1a1a; }
-  .tip { background: #f9faf7; border: 1px solid var(--border); border-left: 5px solid var(--accent); padding: 0.75rem 1rem; margin: 1rem 0; border-radius: 4px; }
-  .tip::before { content: "💡 IB Exam Tip: "; font-weight: bold; }
-  .problem { font-weight: bold; }
-  .answer-head { font-weight: bold; color: var(--accent); margin-top: 1rem; }
-  footer { margin-top: 2.5rem; font-size: 0.85rem; color: #888; border-top: 1px solid var(--border); padding-top: 1rem; }
-  @media print { body { font-size: 12pt; padding: 0; max-width: none; } nav, footer { display: none; } h1 { border-bottom: 2px solid #000; } h2 { color: #000; } .tip { border-left: 3px solid #000; background: none; } }
+:root{--bg:#fdfcf9;--text:#1a1a1a;--accent:#2c6b4f;--border:#d4c5a9}*{margin:0;padding:0;box-sizing:border-box}body{font-family:Georgia,'Times New Roman',serif;font-size:17px;line-height:1.7;color:var(--text);background:var(--bg);max-width:820px;margin:0 auto;padding:2rem 1.5rem}h1{font-size:1.8rem;color:var(--accent);border-bottom:3px solid var(--accent);padding-bottom:.5rem;margin-bottom:1rem}h2{font-size:1.35rem;color:var(--accent);margin:2rem 0 .8rem;border-bottom:1px solid var(--border);padding-bottom:.3rem}h3{font-size:1.15rem;color:var(--accent);margin:1.5rem 0 .5rem}p{margin-bottom:.8rem}.objectives{background:#f0f4ff;border-left:4px solid var(--accent);padding:1rem 1.2rem;margin:1rem 0;border-radius:0 8px 8px 0}.objectives h3{margin-top:0}.check-in{background:#fff8e1;border:1px solid #ffc107;padding:.8rem 1rem;margin:1rem 0;border-radius:8px}.check-in p{margin-bottom:.3rem}.answer-toggle{display:inline-block;padding:.2rem .8rem;border-radius:16px;cursor:pointer;font-size:.8rem;font-weight:600;background:#e8f5e9;color:#2e7d32;border:1px solid #2e7d32;user-select:none;margin-top:.3rem}.answer-content{display:none;background:#f1f8e9;padding:.6rem 1rem;border-radius:8px;margin-top:.5rem}.answer-content.open{display:block}.example{background:white;border:1px solid var(--border);border-radius:12px;padding:1.2rem;margin:1rem 0}.misconception{background:#fff3e0;border-left:4px solid #e65100;padding:1rem 1.2rem;margin:1.5rem 0;border-radius:0 8px 8px 0}.misconception h3{color:#e65100}.exam-tip{background:#e8f5e9;border-left:4px solid #2e7d32;padding:.8rem 1rem;margin:1rem 0;border-radius:0 8px 8px 0}table{width:100%;border-collapse:collapse;margin:1rem 0}th{background:var(--accent);color:white;padding:.5rem .8rem;text-align:left}td{padding:.5rem .8rem;border-bottom:1px solid var(--border)}tr:nth-child(even) td{background:#f8f8f6}.diagram{text-align:center;margin:1.5rem 0}.diagram svg{max-width:100%}.diagram .caption{font-size:.9rem;color:#666;margin-top:.3rem;font-style:italic}pre.ascii-art{font-family:'Courier New',monospace;font-size:.75rem;line-height:1.2;background:#f5f5f5;padding:.8rem;border-radius:8px;overflow-x:auto}.practice-toggle{display:block;width:100%;padding:.8rem;background:var(--accent);color:white;border:none;border-radius:8px;cursor:pointer;font-size:1rem;font-weight:600;margin:1.5rem 0}.practice-answers{display:none}.practice-answers.open{display:block}
 </style>
 </head>
 <body>
-<nav>
-  <a href="lesson_01_scarcity_choice_opportunity_cost.html">← Previous Lesson</a> &nbsp;|&nbsp;
-  <a href="#">Index</a> &nbsp;|&nbsp;
-  <a href="lesson_03_economic_models_methodology.html">Next Lesson →</a>
-</nav>
 <h1>Lesson 2: The Production Possibilities Curve (PPC)</h1>
-
-<h2> What You'll Learn</h2>
-
-<p>By the end of this lesson, you will be able to:</p>
-<ul>
-<li>Define and construct a Production Possibilities Curve (PPC)</li>
-<li>Explain why the PPC is typically concave (bowed outward) due to increasing opportunity cost</li>
-<li>Interpret points on, inside, and outside the PPC</li>
-<li>Distinguish between actual growth and potential growth</li>
-<li>Identify causes of outward shifts in the PPC</li>
-<li>Differentiate between economic growth and economic development</li>
-</ul>
-
-<hr>
-
-<h2> 1. The PPC: Definition and Construction</h2>
-
-<h3>What Is the PPC?</h3>
-
-<p>The <strong>Production Possibilities Curve (PPC)</strong> — also called the Production Possibilities Frontier (PPF) — is a graph showing the maximum combinations of two goods an economy can produce in a given time period, using all its resources fully and efficiently, with a fixed state of technology.</p>
-
-<p><strong>Key assumptions of the PPC model:</strong></p>
-<ol>
-<li>Only two goods are produced (to allow a two-dimensional graph); all others held constant</li>
-<li>Resources are fixed in quantity and quality</li>
-<li>Technology is fixed</li>
-<li>All resources are fully and efficiently employed</li>
-<li>The time period is specified (e.g., one year)</li>
-</ol>
-
-<h3>Constructing a PPC</h3>
-
-<p>Consider a simple economy producing only two goods: <strong>capital goods</strong> (machines, factories) and <strong>consumer goods</strong> (food, clothing). The table below shows possible combinations:</p>
-
-<table>
-<tr><th>Combination</th><th>Capital Goods (units)</th><th>Consumer Goods (units)</th></tr>
-<tr><td>A</td><td>0</td><td>100</td></tr>
-<tr><td>B</td><td>10</td><td>95</td></tr>
-<tr><td>C</td><td>20</td><td>80</td></tr>
-<tr><td>D</td><td>30</td><td>55</td></tr>
-<tr><td>E</td><td>40</td><td>20</td></tr>
-<tr><td>F</td><td>45</td><td>0</td></tr>
-</table>
-
-<p><strong>Plotting these points</strong> on a graph with capital goods on the x-axis and consumer goods on the y-axis produces the PPC.</p>
-
-<p>Notice what happens as we move from A → B → C → D → E → F:</p>
-<ul>
-<li>Moving from A to B: gaining 10 capital goods costs 5 consumer goods → <strong>opportunity cost per unit = 0.5 consumer goods</strong></li>
-<li>Moving from B to C: gaining 10 capital goods costs 15 consumer goods → <strong>opportunity cost per unit = 1.5 consumer goods</strong></li>
-<li>Moving from C to D: gaining 10 capital goods costs 25 consumer goods → <strong>opportunity cost per unit = 2.5 consumer goods</strong></li>
-<li>Moving from D to E: gaining 10 capital goods costs 35 consumer goods → <strong>opportunity cost per unit = 3.5 consumer goods</strong></li>
-</ul>
-
-<p><strong>The opportunity cost increases</strong> as we produce more capital goods. This is why the PPC is concave (bowed outward from the origin).</p>
-
-<hr>
-
-<h2> 2. Why Is the PPC Concave? — Increasing Opportunity Cost</h2>
-
-<p>The PPC is typically drawn concave to the origin because of the <strong>law of increasing opportunity cost</strong>:</p>
-
-<blockquote>As an economy produces more of one good, the opportunity cost of producing additional units of that good (in terms of the other good sacrificed) increases.</blockquote>
-
-<h3>Explanation: Not All Resources Are Equally Suited</h3>
-
-<p>Resources are not perfectly adaptable. Some resources are better suited to producing one type of good than another:</p>
-
-<ul>
-<li><strong>Land</strong>: Some land is better for grazing cattle (consumer good: food) while other land is better for factories (capital good). As you convert more land to factories, you start using land poorly suited for building.</li>
-<li><strong>Labour</strong>: Some workers are skilled at making consumer goods (bakers, tailors); others at making capital goods (engineers, machinists). Shifting workers from consumer to capital production eventually requires using workers whose skills don't match, reducing productivity.</li>
-<li><strong>Capital</strong>: Machines designed for consumer-good production (ovens, sewing machines) cannot easily produce capital goods (steel beams, engines).</li>
-</ul>
-
-<p>When an economy starts shifting resources towards capital goods, it first reallocates the resources <em>least</em> suited to consumer goods — so the opportunity cost is low. But as it continues, it must reallocate resources that are <em>highly</em> suited to consumer goods but poorly suited to capital goods, so the output sacrificed (opportunity cost) rises.</p>
-
-<h3>A Straight-Line PPC?</h3>
-
-<p>If resources were <strong>perfectly adaptable</strong> between the two goods (identical productivity in both uses), the opportunity cost would be constant and the PPC would be a straight line. This is rare in reality but useful as a simplified benchmark.</p>
-
-<hr>
-
-<h2> 3. Interpreting Points on the PPC</h2>
-
-<table>
-<tr><th>Point Location</th><th>Meaning</th><th>Resource Status</th><th>Attainable?</th></tr>
-<tr><td><strong>On the curve</strong></td><td>All resources fully and efficiently employed</td><td>Full employment, productive efficiency</td><td>Yes</td></tr>
-<tr><td><strong>Inside the curve</strong></td><td>Resources are unemployed or underemployed, or used inefficiently</td><td>Unemployment, inefficiency, recession</td><td>Yes (but undesirable)</td></tr>
-<tr><td><strong>Outside the curve</strong></td><td>Beyond current productive capacity</td><td>Unattainable with current resources and technology</td><td>No (in the short run)</td></tr>
-</table>
-
-<h3>Points Inside the PPC</h3>
-
-<p>An economy producing at a point inside its PPC is <strong>not using all resources</strong> or <strong>not using them efficiently</strong>. Causes include:</p>
-<ul>
-<li><strong>Unemployment</strong>: Workers without jobs who could be producing output</li>
-<li><strong>Underemployment</strong>: Skilled workers in unskilled jobs, using only part of their capacity</li>
-<li><strong>Inefficient production</strong>: Waste, poor management, outdated methods</li>
-<li><strong>Recession</strong>: Reduced economic activity during a downturn</li>
-</ul>
-
-<h3>Points Outside the PPC</h3>
-
-<p>A point outside the PPC is <strong>unattainable given current resources and technology</strong>. It represents a combination of goods the economy cannot produce. However, through economic growth, the PPC can shift outward and make previously unattainable points achievable.</p>
-
-<hr>
-
-<h2> 4. Shifts of the PPC: Actual vs Potential Growth</h2>
-
-<h3>Actual Growth (Movement Toward the Curve)</h3>
-
-<p><strong>Actual growth</strong> occurs when an economy moves from a point <em>inside</em> the PPC to a point <em>on</em> the PPC (or closer to it). This happens when:</p>
-<ul>
-<li>Unemployed resources are put to work</li>
-<li>Idle capacity is utilised</li>
-<li>The economy recovers from a recession</li>
-</ul>
-
-<p>The PPC itself does not shift — the economy simply moves closer to its existing frontier. This represents an increase in <strong>actual output</strong> (real GDP).</p>
-
-<h3>Potential Growth (Outward Shift of the Curve)</h3>
-
-<p><strong>Potential growth</strong> occurs when the entire PPC shifts outward, increasing the economy's productive capacity. This represents an increase in <strong>potential output</strong>.</p>
-
-<p>An outward shift can be:</p>
-<ul>
-<li><strong>Parallel</strong> (both goods increase equally) — if the improvement affects both sectors equally</li>
-<li><strong>Skewed</strong> (one good increases more) — if the improvement affects one sector more than the other</li>
-</ul>
-
-<hr>
-
-<h2> 5. Causes of Outward PPC Shifts</h2>
-
-<p>The PPC shifts outward when there is an increase in the <strong>quantity</strong> or <strong>quality</strong> of resources, or an improvement in <strong>technology</strong>. Specifically:</p>
-
-<h3>1. Increase in Quantity of Resources</h3>
-<ul>
-<li><strong>More land</strong>: Discovery of new mineral deposits, reclamation of land from the sea</li>
-<li><strong>More labour</strong>: Population growth, immigration, higher labour force participation</li>
-<li><strong>More capital</strong>: Investment in new machinery, factories, infrastructure (this also shifts the PPC in the future)</li>
-</ul>
-
-<h3>2. Increase in Quality of Resources</h3>
-<ul>
-<li><strong>Better land</strong>: Improved soil fertility, irrigation</li>
-<li><strong>Better labour (human capital)</strong>: Education, training, better healthcare → more productive workers</li>
-<li><strong>Better capital</strong>: Technological improvements embedded in new equipment</li>
-</ul>
-
-<h3>3. Technological Progress</h3>
-<ul>
-<li>New production methods that produce more output from the same inputs</li>
-<li>Innovation that creates entirely new goods</li>
-<li>Improvements in management and organisation</li>
-</ul>
-
-<h3>4. Improvements in Efficiency</h3>
-<ul>
-<li>Better allocation of resources</li>
-<li>Reduced waste</li>
-<li>Institutional improvements (legal system, property rights, political stability)</li>
-</ul>
-
-<h3>Important: Investment and Future Growth</h3>
-
-<p>An economy that produces more <strong>capital goods</strong> today sacrifices current consumption but builds productive capacity for the future. An economy producing at point C (more capital goods) will experience faster future PPC shifts than one at point B (more consumer goods). This is the <strong>growth trade-off</strong>: current consumption vs future growth.</p>
-
-<hr>
-
-<h2> 6. Economic Growth vs Economic Development</h2>
-
-<p>These terms sound similar but have distinct meanings in IB Economics:</p>
-
-<table>
-<tr><th>Dimension</th><th>Economic Growth</th><th>Economic Development</th></tr>
-<tr><td><strong>Definition</strong></td><td>An increase in the quantity of goods and services produced (real GDP)</td><td>A broader improvement in living standards, well-being, and human capabilities</td></tr>
-<tr><td><strong>Measurement</strong></td><td>Quantitative — % change in real GDP, GDP per capita</td><td>Qualitative — HDI (health, education, income), poverty rates, life expectancy, literacy</td></tr>
-<tr><td><strong>PPC relationship</strong></td><td>PPC shifts outward (potential growth) or movement toward the curve (actual growth)</td><td>Not directly captured by the PPC; involves improvements in distribution, institutions, and human welfare</td></tr>
-<tr><td><strong>Focus</strong></td><td>Output and income</td><td>Quality of life</td></tr>
-</table>
-
-<p><strong>Example</strong>: A country may experience economic growth (PPC shifts outward due to oil discoveries) but limited economic development (if oil wealth goes to a small elite, health and education don't improve for the majority).</p>
-
-<hr>
-
-<h2> IB Exam Tip</h2>
-
-<p>When drawing a PPC in an IB exam:</p>
-<ol>
-<li><strong>Label both axes</strong> clearly with the two goods</li>
-<li><strong>Draw it concave</strong> to the origin (unless told otherwise)</li>
-<li><strong>Mark points clearly</strong> on, inside, and outside the curve</li>
-<li><strong>Use arrows</strong> to show shifts and explain the cause</li>
-<li><strong>Always explain</strong> that the concave shape reflects increasing opportunity cost due to resource heterogeneity</li>
-</ol>
-
-<p>Common mistake: Drawing a straight-line PPC without justification. Unless the question specifies constant opportunity cost, always draw it concave.</p>
-
-<hr>
-
-<h2> Practice Problems</h2>
-
-<h3>Problem 1: Interpreting the PPC</h3>
-
-<p>An economy produces food (F) and machines (M). Its PPC shows: Point P (10F, 40M) lies on the curve; Point Q (8F, 25M) lies inside; Point R (15F, 50M) lies outside.</p>
-
-<p>(a) What does Point Q represent?</p>
-<p>(b) What must happen for the economy to reach Point R?</p>
-<p>(c) If the economy moves from Q to P, what has occurred?</p>
-
-<h3>Problem 2: Calculating Opportunity Cost</h3>
-
-<p>Using the PPC data below:</p>
-
-<table>
-<tr><th>Option</th><th>Wheat (tonnes)</th><th>Steel (tonnes)</th></tr>
-<tr><td>A</td><td>0</td><td>500</td></tr>
-<tr><td>B</td><td>100</td><td>450</td></tr>
-<tr><td>C</td><td>200</td><td>350</td></tr>
-<tr><td>D</td><td>300</td><td>200</td></tr>
-<tr><td>E</td><td>350</td><td>0</td></tr>
-</table>
-
-<p>Calculate the opportunity cost per tonne of wheat when moving:</p>
-<p>(a) From A to B</p>
-<p>(b) From B to C</p>
-<p>(c) From C to D</p>
-<p>(d) From D to E</p>
-
-<p>What pattern do you observe?</p>
-
-<h3>Problem 3: Shifts of the PPC</h3>
-
-<p>For each event, state whether the PPC shifts outward, shifts inward, or is unaffected. If it shifts, state whether it is parallel or skewed.</p>
-
-<p>(a) A major earthquake destroys factories.</p>
-<p>(b) The government invests heavily in education.</p>
-<p>(c) A new oil field is discovered.</p>
-<p>(d) Unemployment falls from 10% to 4%.</p>
-<p>(e) A technological breakthrough in agriculture doubles crop yields.</p>
-
-<h3>Problem 4: Capital vs Consumer Goods Trade-off</h3>
-
-<p>Two countries, X and Y, have identical PPCs. Country X produces at a point with 60% capital goods and 40% consumer goods. Country Y produces at 20% capital goods and 80% consumer goods. Both are on their PPCs.</p>
-
-<p>(a) Which country will likely have higher consumption today?</p>
-<p>(b) Which country will likely experience faster PPC growth in 10 years? Explain.</p>
-
-<h3>Problem 5: Growth vs Development</h3>
-
-<p>Classify each as an example of economic growth, economic development, both, or neither:</p>
-<p>(a) Real GDP increases by 3%.</p>
-<p>(b) Life expectancy rises from 65 to 72 years.</p>
-<p>(c) A country discovers oil and its GDP per capita doubles, but income inequality worsens and literacy remains unchanged.</p>
-<p>(d) The PPC shifts outward due to immigration of skilled workers.</p>
-
-<h3>Problem 6: IB-Style (Challenging)</h3>
-
-<p>An economy produces only two goods: healthcare (H) and education (E). Its PPC is given by the equation: H = 120 − 0.5E − 0.001E² (for 0 ≤ E ≤ 200).</p>
-
-<p>(a) What is the maximum amount of healthcare that can be produced? What is the maximum amount of education?</p>
-<p>(b) Calculate the opportunity cost of increasing education from 50 to 60 units.</p>
-<p>(c) Calculate the opportunity cost of increasing education from 140 to 150 units.</p>
-<p>(d) Explain why these two opportunity costs differ.</p>
-<p>(e) If a new medical technology increases healthcare output by 20% at every level of education, write the new PPC equation.</p>
-
-<hr>
-
-<h2> Answers</h2>
-
-<h3>Answer 1: Interpreting the PPC</h3>
-
-<p>(a) <strong>Point Q (8F, 25M) lies inside the PPC</strong> — the economy is producing below its potential. Resources are either unemployed, underemployed, or used inefficiently. This could indicate a recession.</p>
-
-<p>(b) <strong>To reach Point R (15F, 50M)</strong> — which lies outside the current PPC — the economy must achieve <strong>potential growth</strong>: an outward shift of the PPC. This requires more/better resources or technological progress.</p>
-
-<p>(c) <strong>Moving from Q to P</strong> represents <strong>actual growth</strong> — the economy moves from underemployment toward full employment on the existing PPC. No shift occurs; idle resources are put to work.</p>
-
-<h3>Answer 2: Calculating Opportunity Cost</h3>
-
-<p>(a) A → B: Gain 100 wheat, lose 50 steel → <strong>opportunity cost = 0.5 tonnes steel per tonne of wheat</strong></p>
-
-<p>(b) B → C: Gain 100 wheat, lose 100 steel → <strong>opportunity cost = 1.0 tonnes steel per tonne of wheat</strong></p>
-
-<p>(c) C → D: Gain 100 wheat, lose 150 steel → <strong>opportunity cost = 1.5 tonnes steel per tonne of wheat</strong></p>
-
-<p>(d) D → E: Gain 50 wheat, lose 200 steel → <strong>opportunity cost = 4.0 tonnes steel per tonne of wheat</strong></p>
-
-<p><strong>Pattern</strong>: The opportunity cost of wheat rises steadily (0.5 → 1.0 → 1.5 → 4.0). This illustrates the <strong>law of increasing opportunity cost</strong>. Resources suited to steel production are increasingly diverted to wheat, where they are progressively less productive. The PPC is concave.</p>
-
-<h3>Answer 3: Shifts of the PPC</h3>
-
-<p>(a) <strong>Inward shift</strong> — destruction of factories reduces capital stock. Likely <strong>skewed</strong> (more impact on manufactured goods).</p>
-
-<p>(b) <strong>Outward shift</strong> — education increases human capital (labour quality). Likely <strong>parallel</strong> over time as better-educated workers improve all sectors.</p>
-
-<p>(c) <strong>Outward shift</strong> — discovery increases land resources. Likely <strong>skewed</strong> toward oil-related production.</p>
-
-<p>(d) <strong>No shift; movement toward the curve</strong> — falling unemployment means the economy moves from inside the PPC toward the curve. This is actual growth, not potential growth. The PPC itself is unchanged.</p>
-
-<p>(e) <strong>Outward shift, skewed</strong> — agricultural technology improves the maximum possible food output; the intercept on the agricultural axis extends outward. Non-agricultural maximum may be unchanged.</p>
-
-<h3>Answer 4: Capital vs Consumer Goods Trade-off</h3>
-
-<p>(a) <strong>Country Y</strong> will have higher consumption today — 80% of output is consumer goods vs 40% for Country X.</p>
-
-<p>(b) <strong>Country X</strong> will likely experience faster PPC growth. By producing more capital goods (60% vs 20%), Country X is investing more in productive capacity. Capital goods (machines, factories) increase future production possibilities. Country X is sacrificing current consumption for future growth — the classic PPC trade-off.</p>
-
-<h3>Answer 5: Growth vs Development</h3>
-
-<p>(a) <strong>Economic growth</strong> — pure increase in output (real GDP).</p>
-
-<p>(b) <strong>Economic development</strong> — improvement in a key human welfare indicator (health/life expectancy). This may accompany growth but is distinct.</p>
-
-<p>(c) <strong>Economic growth without development</strong> — GDP per capita doubles (growth), but inequality worsens and literacy is unchanged, so broader living standards may not improve. This is a classic case of growth without development.</p>
-
-<p>(d) <strong>Both</strong> — immigration of skilled workers increases productive capacity (potential growth, PPC shift) AND brings human capital that can contribute to broader development.</p>
-
-<h3>Answer 6: IB-Style Solution</h3>
-
-<p><strong>(a) Maximums:</strong></p>
-<ul>
-<li>Maximum healthcare (H) when E = 0: H = 120 − 0 − 0 = <strong>120 units</strong></li>
-<li>Maximum education (E): Set H = 0: 0 = 120 − 0.5E − 0.001E²</li>
-</ul>
-<p>→ 0.001E² + 0.5E − 120 = 0</p>
-<p>→ Using quadratic formula: E = [−0.5 ± √(0.25 + 0.48)] / 0.002</p>
-<p>→ E = [−0.5 ± √0.73] / 0.002 = [−0.5 ± 0.8544] / 0.002</p>
-<p>→ E ≈ 177.2 or E ≈ −677.2 (reject negative)</p>
-<p>→ <strong>Maximum E ≈ 177 units</strong></p>
-
-<p><strong>(b)</strong> Opportunity cost from E = 50 to E = 60:</p>
-<ul>
-<li>At E = 50: H = 120 − 0.5(50) − 0.001(2500) = 120 − 25 − 2.5 = 92.5</li>
-<li>At E = 60: H = 120 − 0.5(60) − 0.001(3600) = 120 − 30 − 3.6 = 86.4</li>
-<li>Healthcare sacrificed = 92.5 − 86.4 = 6.1</li>
-<li><strong>Opportunity cost per unit of education = 6.1 / 10 = 0.61 healthcare units</strong></li>
-</ul>
-
-<p><strong>(c)</strong> Opportunity cost from E = 140 to E = 150:</p>
-<ul>
-<li>At E = 140: H = 120 − 0.5(140) − 0.001(19600) = 120 − 70 − 19.6 = 30.4</li>
-<li>At E = 150: H = 120 − 0.5(150) − 0.001(22500) = 120 − 75 − 22.5 = 22.5</li>
-<li>Healthcare sacrificed = 30.4 − 22.5 = 7.9</li>
-<li><strong>Opportunity cost per unit = 7.9 / 10 = 0.79 healthcare units</strong></li>
-</ul>
-
-<p><strong>(d)</strong> The opportunity cost rises (0.61 → 0.79) because of <strong>increasing opportunity cost</strong>. The quadratic term (−0.001E²) in the PPC equation captures the fact that resources are not equally suited to both goods. As the economy produces more education, it must use resources progressively less suited to education (and more suited to healthcare), sacrificing ever-larger amounts of healthcare. This produces the concave shape.</p>
-
-<p><strong>(e)</strong> New PPC with 20% healthcare increase:</p>
-<ul>
-<li>Original: H = 120 − 0.5E − 0.001E²</li>
-<li>New: H = 1.2 × (120 − 0.5E − 0.001E²)</li>
-<li><strong>H = 144 − 0.6E − 0.0012E²</strong></li>
-</ul>
-
-<hr>
-
-<h2> Evaluate</h2>
-
-<h3>Question</h3>
-
-<p><strong>"A country should always maximise its production of capital goods to achieve the highest possible economic growth." Evaluate this statement.</strong></p>
-
-<h3>Model Answer</h3>
-
-<p><strong>Conclusion</strong>: The statement is too simplistic. While producing more capital goods accelerates potential growth, maximising capital-goods production at the expense of all current consumption is neither desirable nor sustainable.</p>
-
-<p>The PPC framework illustrates the core trade-off: an economy producing at a capital-goods-heavy point (e.g., 90% capital, 10% consumer goods) will experience faster outward PPC shifts than one consuming heavily today. Investment in machines, infrastructure, and technology builds tomorrow's productive capacity. South Korea's rapid post-war transformation from an agrarian economy to an industrial powerhouse exemplifies deliberate sacrifice of current consumption for capital accumulation and future growth.</p>
-
-<p>However, "always maximise" ignores several critical considerations. First, there is a <strong>minimum consumption requirement</strong> — people need food, shelter, and healthcare today to survive and remain productive. An economy producing zero consumer goods would face malnutrition, social unrest, and collapsing labour productivity, undermining the very growth it seeks. Second, there are <strong>diminishing returns to capital</strong>: each additional unit of capital eventually adds less output, especially if complementary resources (skilled labour, energy) are constrained. Third, consumer spending itself can drive growth by creating demand that incentivises investment — the two types of goods are complementary, not purely competing.</p>
-
-<p><strong>Long-term vs short-term</strong>: In the short term, maximising capital goods causes severe welfare losses (poverty, inadequate healthcare). In the long term, the expanded PPC enables both more capital AND more consumption — but only if the population survives the short-term deprivation. The optimal balance depends on a society's time preference and existing consumption levels.</p>
-
-<p><strong>Assumptions</strong>: The statement assumes that all capital investment is productive and that the political/institutional framework (property rights, rule of law) exists to channel investment into growth. In countries with corruption or weak institutions, capital accumulation may be wasted or captured by elites, yielding little growth.</p>
-
-<p><strong>Stakeholders</strong>: Workers and consumers bear the immediate costs of reduced consumption, while future generations and owners of capital reap the benefits. This raises equity concerns — should today's poor sacrifice for tomorrow's rich?</p>
-
-<p><strong>Priorities</strong>: A balanced approach — producing enough capital goods to sustain robust growth while maintaining an acceptable standard of current consumption — is typically optimal. The precise mix depends on a society's values, development level, and growth objectives. Poorer countries may reasonably prioritise capital accumulation more heavily.</p>
-
-<p><strong>Pros/Cons</strong>: High capital investment accelerates growth (pro) and builds infrastructure for future generations (pro). But it creates current hardship (con), risks overinvestment in unproductive projects (con), and may neglect human capital (education, health) which is itself a form of productive investment (con).</p>
-
-<p><strong>Final judgment</strong>: Countries should pursue a <em>high</em> but not <em>maximum</em> rate of capital accumulation, calibrated to their development stage and societal preferences. The PPC is a tool for understanding the trade-off, not a prescription for an extreme position on it. The optimal point is somewhere in the middle of the curve, informed by both positive analysis (what are the returns to capital?) and normative judgment (how much current sacrifice is acceptable?).</p>
-
-<nav style="margin-top:1.5rem;">
-  <a href="lesson_01_scarcity_choice_opportunity_cost.html">← Previous Lesson</a> &nbsp;|&nbsp;
-  <a href="#">Index</a> &nbsp;|&nbsp;
-  <a href="lesson_03_economic_models_methodology.html">Next Lesson →</a>
-</nav>
-<footer>IB Economics SL — Lesson 2: The Production Possibilities Curve. Based on Tragakes, 3rd ed. (Cambridge, 2020).</footer>
+<p><strong>Syllabus reference:</strong> Unit 1.2–1.3 — Resource allocation and the PPC model</p>
+
+<div class="objectives"><h3>Learning Objectives</h3><p>By the end of this lesson, you will be able to:</p><ul><li><strong>Define</strong> the production possibilities curve (PPC) and explain what it represents</li><li><strong>Explain</strong> why the PPC is typically drawn concave to the origin (increasing opportunity cost)</li><li><strong>Interpret</strong> points on, inside, and outside the PPC in terms of efficiency, unemployment, and feasibility</li><li><strong>Distinguish</strong> between actual growth (movement toward the curve) and potential growth (outward shift of the curve)</li><li><strong>Analyse</strong> the causes and consequences of outward shifts of the PPC</li><li><strong>Draw</strong> and fully label a PPC diagram, showing both consumer goods and capital goods</li></ul></div>
+
+<h2>1. Prior Knowledge Check</h2>
+<div class="check-in"><p><strong>Question 1:</strong> In Lesson 1, you learned that scarcity forces every economy to answer three basic questions. What are those three questions?</p><span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'Hide Answer':'Show Answer'">Show Answer</span><div class="answer-content"><p><strong>Answer:</strong> What to produce? How to produce? For whom to produce? Every economy must decide which goods and services to make, what combination of resources to use in making them, and who receives the output.</p></div></div>
+<div class="check-in"><p><strong>Question 2:</strong> What is the difference between capital goods and consumer goods? Think of one example of each.</p><span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'Hide Answer':'Show Answer'">Show Answer</span><div class="answer-content"><p><strong>Answer:</strong> Consumer goods are goods that directly satisfy human wants — food, clothing, smartphones. Capital goods are manufactured goods used to produce other goods — factory machinery, tractors, delivery vans. The key distinction: consumer goods are used up in consumption; capital goods are used to produce more goods in the future.</p></div></div>
+<div class="check-in"><p><strong>Question 3:</strong> Remember the definition of opportunity cost from Lesson 1. If a baker can produce either 50 loaves of bread or 30 cakes in an hour, what is the opportunity cost of producing one more loaf of bread?</p><span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'Hide Answer':'Show Answer'">Show Answer</span><div class="answer-content"><p><strong>Answer:</strong> The opportunity cost of one loaf of bread is 30/50 = 0.6 cakes. In the hour the baker uses to produce the loaf of bread, she could have produced a fraction of a cake instead. If we think of it the other way: to get 50 loaves, she gives up 30 cakes, so each loaf "costs" 0.6 cakes in terms of what is given up.</p></div></div>
+
+<h2>2. What the PPC Is and Why It Matters</h2>
+<p>The <strong>production possibilities curve</strong> (PPC), sometimes called the production possibilities frontier (PPF), is a diagram that shows the maximum combinations of two goods that an economy can produce, given its resources and technology, when all resources are fully and efficiently employed.</p>
+<p>Why does this matter? The PPC is the simplest possible model of an entire economy. With just two goods, one diagram, and a few curves, it captures nearly every fundamental idea in economics: scarcity, choice, opportunity cost, efficiency, unemployment, and economic growth. If you understand the PPC deeply, you have a framework for thinking about every other topic in this course.</p>
+<p>Imagine an economy that produces only two goods: <strong>capital goods</strong> (machines, factories, tools — goods used to produce other goods in the future) and <strong>consumer goods</strong> (food, clothing, entertainment — goods that directly satisfy wants today). By simplifying the economy to just these two categories, we can ask a powerful question: how much of each should the economy produce?</p>
+<div class="check-in"><p><strong>Check-in:</strong> An economy currently produces 200 units of capital goods and 500 units of consumer goods. If it wants to increase capital goods production to 250 units, what must happen to consumer goods production? Why?</p><span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'Hide Answer':'Show Answer'">Show Answer</span><div class="answer-content"><p><strong>Answer:</strong> Consumer goods production must fall. The economy's resources are fully employed producing 200 capital goods. To produce an additional 50 capital goods, resources (workers, machines, land) must be moved from consumer goods production to capital goods production. This reduces the output of consumer goods. This trade-off is the opportunity cost of producing more capital goods.</p></div></div>
+
+<h2>3. The Shape of the PPC — Why It Curves Outward</h2>
+<p>A PPC is almost always drawn as a curve that bows outward from the origin (concave to the origin). This shape is not an arbitrary choice. It represents a crucial economic idea: <strong>increasing opportunity cost</strong>.</p>
+<p>Here is what that means. Suppose an economy moves resources from producing consumer goods to producing capital goods. The first few units of capital goods are produced by the resources best suited to making capital goods — the engineers, the factory sites, the machine tools. As the economy tries to produce even more capital goods, it must start using resources that are less and less suited to that task — perhaps farmland, or retail workers, or office buildings. These resources are much better at producing consumer goods. So to get each additional unit of capital goods, the economy must give up <em>more and more</em> consumer goods. The opportunity cost rises at the margin.</p>
+<p>A <strong>straight-line PPC</strong> would mean constant opportunity cost — every unit of one good costs the same amount of the other good. This would imply that all resources are equally good at producing both goods, which is almost never true in reality.</p>
+<div class="check-in"><p><strong>Check-in:</strong> An economy is at point A on its PPC, producing lots of consumer goods and few capital goods. It moves to point B, producing more capital goods. At which point — A or B — is the opportunity cost of producing one more capital good higher? Why?</p><span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'Hide Answer':'Show Answer'">Show Answer</span><div class="answer-content"><p><strong>Answer:</strong> The opportunity cost is higher at point B. At point A, the economy is using resources that are well-suited to capital goods production (moving them away from consumer goods where they were less productive), so the cost in terms of consumer goods lost is relatively small. At point B, the economy has already moved its best capital-goods resources and is now forced to use resources that are much better at making consumer goods — so each additional capital good costs a larger amount of consumer goods.</p></div></div>
+
+<h2>4. Reading Points on the PPC</h2>
+<p>Every point on the PPC diagram tells you something about how the economy is performing.</p>
+<p><strong>Points on the curve:</strong> The economy is producing at its maximum potential. All resources — all workers, all machines, all land — are fully and efficiently employed. There is no unemployment and no wasted capacity. This is called <strong>productive efficiency</strong>: the economy cannot produce more of one good without producing less of the other.</p>
+<p><strong>Points inside the curve:</strong> The economy is producing below its potential. Some resources are unemployed (workers without jobs) or underemployed (machines sitting idle, factories running below capacity). The economy could produce more of both goods by putting these idle resources to work. This represents unemployment, recession, or inefficiency.</p>
+<p><strong>Points outside the curve:</strong> These combinations are unattainable given the economy's current resources and technology. The economy simply cannot produce that much. However, points outside the curve are not permanently out of reach — if the curve shifts outward (economic growth), points that were previously unattainable become possible.</p>
+<div class="diagram"><pre class="ascii-art">
+        Capital Goods
+        (units)
+            ▲
+         500│           ●F (unattainable — outside PPC)
+            │          ╱
+         400│      ●E ╱
+            │       ╲╱
+         300│   ●D──╲──●C
+            │   ╱     ╲
+         200│  ╱  ●B   ╲
+            │ ╱  (inside)╲
+         100│╱            ╲
+            ●──────────────●──► Consumer Goods (units)
+            0   100  200  300  400  500
+            A                    G
+</pre><p class="caption">Figure 1: The Production Possibilities Curve. Points on the curve (A, D, C, G) show full employment. Point B is inside the curve — unemployment. Point F is outside — currently unattainable. The concave shape shows increasing opportunity cost.</p></div>
+
+<h2>5. Shifts of the PPC — Economic Growth</h2>
+<p>The PPC is not fixed forever. It can shift outward, representing <strong>economic growth</strong> — an increase in the economy's productive capacity.</p>
+<p>There is an important distinction between two types of growth:</p>
+<p><strong>Actual growth</strong> occurs when an economy moves from a point inside the PPC to a point on the PPC. The economy was operating below its potential (unemployment, idle capacity) and now uses its idle resources. The curve itself does not move; the economy simply moves closer to it. This is a recovery from a recession.</p>
+<p><strong>Potential growth</strong> occurs when the PPC itself shifts outward. The economy's maximum possible output increases. This can happen for several reasons:</p>
+<ul><li><strong>Increase in the quantity of resources:</strong> more workers (population growth, immigration), more capital goods (investment in new factories and machines), discovery of new natural resources.</li><li><strong>Increase in the quality of resources:</strong> better education and training (human capital), technological progress, improved healthcare making workers more productive.</li><li><strong>Improvements in efficiency:</strong> better institutions, reduced corruption, more competitive markets, improved infrastructure.</li></ul>
+<div class="check-in"><p><strong>Check-in:</strong> A country discovers large offshore oil reserves. At the same time, it invests heavily in university education. Using PPC analysis, what kind of growth does each change represent? Will the PPC shift, and if so, how?</p><span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'Hide Answer':'Show Answer'">Show Answer</span><div class="answer-content"><p><strong>Answer:</strong> Both changes shift the PPC outward — they represent potential growth. The oil discovery increases the quantity of the land factor. The university investment increases the quality of the labour factor (human capital). The PPC shifts outward, likely asymmetrically: if oil is used more in capital goods industries, the capital goods axis might extend more than the consumer goods axis.</p></div></div>
+
+<h2>6. Worked Examples</h2>
+<div class="example"><h3>Worked Example 1: Reading a PPC Table</h3><p><strong>Problem:</strong> An economy produces two goods: wheat (tonnes) and steel (tonnes). Five possible combinations are shown: A (0 wheat, 100 steel), B (20 wheat, 95 steel), C (40 wheat, 80 steel), D (60 wheat, 50 steel), E (80 wheat, 0 steel). Calculate the opportunity cost of moving from combination C to combination D.</p><p><strong>Step 1:</strong> At combination C, the economy produces 40 tonnes of wheat and 80 tonnes of steel. At combination D, it produces 60 tonnes of wheat and 50 tonnes of steel. Moving from C to D increases wheat by 20 tonnes and decreases steel by 30 tonnes.</p><p><strong>Step 2:</strong> The opportunity cost of the additional 20 tonnes of wheat is the 30 tonnes of steel given up. Per tonne of wheat, the opportunity cost is 30 ÷ 20 = 1.5 tonnes of steel.</p><p><strong>Step 3:</strong> Notice that the opportunity cost of wheat <em>increases</em> as we move to the right along the PPC. Going from A to B: 20 wheat costs 5 steel (0.25 per wheat). From B to C: 20 wheat costs 15 steel (0.75 per wheat). From C to D: 20 wheat costs 30 steel (1.5 per wheat). This is increasing opportunity cost — the hallmark of a concave PPC.</p><p><strong>⚠️ Common Wrong Approach:</strong> Students sometimes calculate opportunity cost as a simple ratio (80/40 = 2) and assume it is constant. This misses the key insight that opportunity cost changes along the curve. Always calculate opportunity cost <em>for the specific movement</em> between two points on the PPC.</p></div>
+
+<div class="example"><h3>Worked Example 2: Actual vs Potential Growth</h3><p><strong>Problem:</strong> The table below shows an economy's actual output of consumer goods and capital goods in three years. In Year 3, it invests 40% of its output in new machinery.</p><table><tr><th>Year</th><th>Consumer Goods</th><th>Capital Goods</th><th>Unemployment Rate</th></tr><tr><td>Year 1</td><td>400 units</td><td>100 units</td><td>8%</td></tr><tr><td>Year 2</td><td>480 units</td><td>120 units</td><td>3%</td></tr><tr><td>Year 3</td><td>460 units</td><td>180 units</td><td>3%</td></tr></table><p>Identify whether each transition represents actual growth, potential growth, both, or neither.</p><p><strong>Step 1: Year 1 to Year 2.</strong> Both consumer goods (400→480) and capital goods (100→120) increase. Unemployment falls from 8% to 3%. The economy was inside its PPC (high unemployment) and moved closer to the curve. This is <strong>actual growth</strong> — using previously idle resources. The PPC itself may not have shifted.</p><p><strong>Step 2: Year 2 to Year 3.</strong> Consumer goods fall (480→460) but capital goods rise sharply (120→180). Unemployment stays at 3% (the economy is on its PPC). The economy is shifting along the PPC, producing more capital goods at the expense of consumer goods. This is <strong>neither</strong> actual nor potential growth — it is a reallocation of resources along the existing PPC.</p><p><strong>Step 3: Looking forward.</strong> The high investment in capital goods in Year 3 will increase the economy's capital stock. This will shift the PPC outward in future years, enabling <strong>potential growth</strong> — the economy sacrifices consumption today for greater productive capacity tomorrow.</p><p><strong>⚠️ Common Wrong Approach:</strong> Some students see total output rise (640→640 — actually, 400+100=500, 480+120=600, 460+180=640) and assume potential growth has occurred. But total output can increase through actual growth (using idle resources) without the PPC shifting. Only an increase in productive <em>capacity</em> (not just output) shifts the PPC outward.</p></div>
+
+<div class="example"><h3>Worked Example 3: The Investment Trade-off (Exam Trap)</h3><p><strong>Problem:</strong> Two countries, X and Y, both produce at points on their respective PPCs. Country X produces mostly consumer goods (80% consumer, 20% capital). Country Y produces mostly capital goods (30% consumer, 70% capital). Both have identical resources and technology. Which country is likely to experience faster potential growth in the future? Explain why. <em>(This targets the exam trap of thinking that producing at any point on the PPC is equivalent for long-term growth.)</em></p><p><strong>Step 1:</strong> Both countries are on their PPCs — both are productively efficient. But productive efficiency is not the same as a <em>good</em> choice about the future.</p><p><strong>Step 2:</strong> Country Y is devoting 70% of its resources to capital goods — machines, factories, infrastructure. These capital goods do not directly satisfy consumer wants today, but they <em>increase the economy's capacity to produce in the future</em>. Next year, Country Y will have more capital, so its PPC will shift outward by more.</p><p><strong>Step 3:</strong> Country X is enjoying high consumption today at the expense of investment. Its PPC will shift outward by less (or not at all if it is not even replacing depreciating capital). Country X is choosing present consumption over future growth.</p><p><strong>Step 4:</strong> Conclusion: Country Y will grow faster. Its citizens accept lower consumption today in exchange for higher consumption in the future. This is the fundamental trade-off the PPC illustrates: <strong>investment in capital goods requires sacrificing current consumption.</strong></p><p><strong>⚠️ Common Wrong Approach (The Exam Trap):</strong> Many students argue that because both are on their PPCs, they are equally efficient and will grow at the same rate. This confuses <em>productive efficiency</em> (being on the PPC) with <em>allocative efficiency</em> (choosing the right point on the PPC for long-term goals). In an IB exam, always ask: "What is being produced, not just how efficiently?" A country on its PPC that produces only consumer goods with zero investment will see its PPC shrink as capital depreciates.</p></div>
+
+<h2>7. Diagrams</h2>
+<div class="diagram"><pre class="ascii-art">
+Capital Goods
+    ▲
+    │           ╭──────────────────── PPC₂ (after growth)
+    │          ╱
+    │      ●──╱─── PPC₁ (original)
+    │     ╱
+    │  ●─╱──── ●B (on PPC₁)
+    │ ╱   ●A
+    │╱    (inside PPC₁)
+    ●────────────────────► Consumer Goods
+    
+    Movement A→B: Actual growth (toward existing PPC)
+    Movement PPC₁→PPC₂: Potential growth (curve shifts outward)
+</pre><p class="caption">Figure 2: Actual growth is a movement from inside the PPC toward the curve (A→B), using previously idle resources. Potential growth is an outward shift of the entire curve (PPC₁→PPC₂), reflecting increased productive capacity.</p></div>
+
+<div class="misconception"><h3>⚠️ Common Mistakes to Avoid</h3><ol>
+<li><strong>Mistake:</strong> Thinking a straight-line PPC is the norm. <strong>Why it's wrong:</strong> A straight PPC means constant opportunity cost — all resources are equally good at producing both goods. This almost never happens. <strong>Correct approach:</strong> Draw the PPC concave to the origin (bowed outward). Explain that this shape reflects increasing opportunity cost as resources are not equally suited to all types of production.</li>
+<li><strong>Mistake:</strong> Confusing a movement toward the PPC (actual growth) with a shift of the PPC (potential growth). <strong>Why it's wrong:</strong> "Growth" in GDP numbers can come from either source, but they mean very different things for long-term prosperity. <strong>Correct approach:</strong> Ask: "Did the economy's maximum possible output increase, or did it just use its existing capacity better?" If unemployment fell, that is actual growth. If the capital stock, labour force, or technology improved, that is potential growth.</li>
+<li><strong>Mistake:</strong> Assuming that a point on the PPC is always the best outcome. <strong>Why it's wrong:</strong> Being on the PPC means productive efficiency, but it says nothing about whether the right mix of goods is being produced. <strong>Correct approach:</strong> Distinguish productive efficiency (on the curve) from allocative efficiency (producing the combination society most values). A country on its PPC producing only weapons is productively efficient but may not be serving its citizens' needs.</li>
+<li><strong>Mistake:</strong> Thinking that producing more capital goods always shifts the PPC outward by the same amount regardless of starting point. <strong>Why it's wrong:</strong> Investment in capital goods must at least replace depreciating capital before it adds net new capacity. <strong>Correct approach:</strong> If a country produces 100 units of capital goods but 80 units of existing capital wear out, net investment is only 20 units. The PPC shifts outward by the <em>net</em> addition to the capital stock.</li></ol></div>
+
+<h2>8. End-of-Lesson Practice</h2>
+<p><strong>Question 1.</strong> [Paper 1, MC] A point inside a country's PPC represents:</p><p>A. An unattainable combination of goods.<br>B. Full employment of all resources.<br>C. Unemployment or inefficient use of resources.<br>D. The maximum possible output of capital goods.</p>
+
+<p><strong>Question 2.</strong> [Paper 1, MC] Which of the following would shift a country's PPC outward?</p><p>A. A reduction in the unemployment rate.<br>B. An increase in the retirement age, expanding the labour force.<br>C. A movement of workers from consumer goods industries to capital goods industries.<br>D. An increase in consumer spending during a recovery.</p>
+
+<p><strong>Question 3.</strong> [Paper 2] A country produces two goods: food (tonnes) and electronics (units). Its PPC combinations are: A (0 food, 500 electronics), B (100 food, 480 electronics), C (200 food, 420 electronics), D (300 food, 300 electronics), E (400 food, 0 electronics). (a) Calculate the opportunity cost of moving from B to C. [2 marks] (b) Explain why the opportunity cost per unit of food increases as the country produces more food. [3 marks]</p>
+
+<p><strong>Question 4.</strong> [Paper 2] Using a PPC diagram, explain the difference between actual economic growth and potential economic growth. In your answer, identify one policy a government could use to achieve each type of growth. [6 marks]</p>
+
+<p><strong>Question 5.</strong> [Paper 2, Exam Style — 8 marks] Two countries, Alpha and Beta, have identical PPCs. Alpha chooses to produce at a point near the consumer goods axis (80% consumer goods, 20% capital goods). Beta chooses a point near the capital goods axis (30% consumer goods, 70% capital goods). (a) Draw a PPC diagram showing both countries' positions. [2 marks] (b) Explain which country is likely to experience faster potential growth over the next decade. [3 marks] (c) Discuss one reason why Alpha might rationally choose its position despite lower future growth. [3 marks]</p>
+
+<button class="practice-toggle" onclick="var a=this.nextElementSibling;a.classList.toggle('open');this.textContent=a.classList.contains('open')?'▴ Hide Answers':'▸ Show Answers'">▸ Show Answers</button>
+<div class="practice-answers"><h3>Answers and Mark Scheme</h3>
+<p><strong>Answer 1:</strong> C. Points inside the PPC represent underutilisation of resources — unemployment or inefficiency. The economy could produce more of both goods by putting idle resources to work.</p>
+<p><strong>Answer 2:</strong> B. Expanding the labour force increases the quantity of a factor of production, shifting the PPC outward (potential growth). A reduction in unemployment (A) represents actual growth — moving toward the existing PPC, not shifting it. C is a movement along the PPC. D increases spending but does not necessarily increase productive capacity.</p>
+<p><strong>Answer 3:</strong> (a) Moving B→C: food increases by 100 tonnes (from 100 to 200). Electronics decrease by 60 units (from 480 to 420). Opportunity cost = 60 electronics ÷ 100 food = 0.6 electronics per tonne of food. [✓ 1 mark for correct calculation, ✓ 1 mark for correct units.] (b) The PPC is concave because resources are not equally suited to producing both goods. As the country shifts more resources into food production, it must use land, labour, and capital that are increasingly better suited to producing electronics. Each additional tonne of food therefore requires giving up more electronics than the previous tonne. This is the principle of increasing opportunity cost. [✓ 3 marks — 1 for identifying resources are not equally suited, 1 for explaining the mechanism, 1 for linking to the shape of the PPC.]</p>
+<p><strong>Answer 4:</strong> Actual growth is movement from a point inside the PPC toward the curve, achieved by using previously idle resources (e.g., reducing unemployment through expansionary fiscal policy). The curve itself does not move. Potential growth is an outward shift of the entire PPC, achieved by increasing productive capacity — for example, investing in education to improve human capital (supply-side policy). [Diagram: show PPC with point A inside, point B on the curve (actual growth), and PPC₂ shifted outward (potential growth).] [✓ 6 marks — 2 for correct diagram, 2 for explaining actual growth + policy example, 2 for explaining potential growth + policy example.]</p>
+<p><strong>Answer 5:</strong> (a) [Diagram: PPC with Alpha near the consumer goods end, Beta near the capital goods end. Both on the curve.] [✓ 2 marks — 1 for correctly drawn PPC, 1 for showing both countries on the curve at different positions.] (b) Beta will experience faster potential growth. By devoting 70% of its resources to capital goods, Beta is building machines, factories, and infrastructure that increase future productive capacity. Alpha, consuming 80% of output today, invests little, so its PPC will shift outward more slowly. This is the investment-consumption trade-off: Beta sacrifices current consumption for greater future production. [✓ 3 marks — 1 for identifying Beta, 1 for explaining capital accumulation, 1 for linking to PPC shift.] (c) Alpha may rationally choose high current consumption if: its population is currently very poor and needs food and basic goods urgently; its citizens have a high time preference (they value present consumption much more than future consumption); it expects to receive foreign investment or aid that will shift its PPC outward regardless; or its political system favours short-term popularity over long-term planning. [✓ 3 marks — 1 for any valid reason, 2 for clear explanation with economic reasoning.]</p></div>
+
+<h2>9. Key Terms</h2>
+<table><tr><th>Term</th><th>Definition</th></tr>
+<tr><td>Production possibilities curve (PPC)</td><td>A diagram showing the maximum combinations of two goods an economy can produce with given resources and technology, assuming full and efficient employment</td></tr>
+<tr><td>Capital goods</td><td>Manufactured goods (machines, tools, buildings) used to produce other goods in the future</td></tr>
+<tr><td>Consumer goods</td><td>Goods that directly satisfy human wants in the present</td></tr>
+<tr><td>Increasing opportunity cost</td><td>The principle that as more of one good is produced, the opportunity cost per unit rises because resources are not equally suited to all types of production</td></tr>
+<tr><td>Productive efficiency</td><td>Producing at a point on the PPC — cannot produce more of one good without producing less of the other</td></tr>
+<tr><td>Actual growth</td><td>Movement from a point inside the PPC toward the curve, achieved by using previously idle resources</td></tr>
+<tr><td>Potential growth</td><td>An outward shift of the entire PPC, reflecting an increase in the economy's productive capacity</td></tr>
+<tr><td>Investment</td><td>Production of capital goods; sacrificing current consumption to increase future productive capacity</td></tr></table>
+
+<h2>10. Exam Tips</h2>
+<div class="exam-tip"><strong>Paper 1 (Extended Response):</strong> PPC questions in Paper 1 often ask you to explain the concepts of scarcity, choice, and opportunity cost using the PPC model. Structure your answer around the diagram: start by drawing and labelling it, then explain what each feature of the diagram illustrates. The concave shape = increasing opportunity cost. The axes = the choice between two goods. The curve itself = scarcity (limited production possibilities). Points outside = unattainable given current resources.</div>
+<div class="exam-tip"><strong>Paper 2 (Data Response):</strong> If a Paper 2 question gives you a table of output combinations along a PPC, the examiner expects you to calculate opportunity costs between specific points and to recognise whether the data shows increasing, constant, or decreasing opportunity cost. Show all working. If the cost per unit is rising as you move along the table, explicitly state: "This demonstrates increasing opportunity cost, which explains why the PPC is concave."</div>
+<div class="exam-tip"><strong>General:</strong> The most common PPC exam error is confusing actual growth (movement toward the curve) with potential growth (shift of the curve). Before writing, ask yourself: "Did the productive capacity of the economy increase, or did it simply use existing capacity more fully?" This distinction is worth marks in every IB paper.</div>
 </body>
 </html>

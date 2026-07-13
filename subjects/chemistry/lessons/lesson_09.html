@@ -3,359 +3,304 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lesson 9: Ionic and Covalent Bonding — Lewis Structures, Formal Charge, and Resonance — IB Chemistry HL</title>
-<script>window.MathJax = { loader: {load: ['[tex]/mhchem']}, tex: {packages: {'[+]': ['mhchem']}} };</script>
+<title>Lesson 9 — Chemistry HL — Ionic & Covalent Bonding: Lewis Structures, Formal Charge</title>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] },
+  loader: { load: ['[tex]/mhchem'] },
+  tex: { packages: {'[+]': ['mhchem']} }
+};
+</script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
 <style>
-  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Palatino', 'Georgia', serif; background: var(--bg); color: var(--text); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; font-size: 17px; line-height: 1.7; }
-  h1 { font-size: 1.7rem; color: var(--accent); margin-bottom: 0.5rem; }
-  h2 { font-size: 1.25rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; margin: 2rem 0 1rem; }
-  h3 { font-size: 1.1rem; color: #444; margin: 1.3rem 0 0.5rem; }
-  p, li { margin-bottom: 0.6rem; }
-  ul, ol { padding-left: 1.8rem; margin-bottom: 1rem; }
-  .worked { background: #f0f7f0; border-left: 4px solid #2c5f2d; padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
-  .worked strong { color: #2c5f2d; }
-  .answer { background: #fefdf7; border: 1px solid var(--border); padding: 0.8rem 1.2rem; margin: 0.5rem 0; border-radius: 6px; }
-  .nav { display: flex; justify-content: space-between; margin: 3rem 0 1rem; padding-top: 1rem; border-top: 2px solid var(--border); font-size: 0.9rem; }
-  .nav a { color: #1a5c9e; text-decoration: none; }
-  .nav a:hover { text-decoration: underline; }
-  .definition { background: #fdf5e6; border-left: 4px solid #d4a017; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
-  code { background: #f0f0f0; padding: 0.15rem 0.35rem; border-radius: 3px; font-size: 0.9em; }
-  table { border-collapse: collapse; margin: 1rem 0; width: 100%; }
-  th, td { border: 1px solid var(--border); padding: 0.4rem 0.7rem; text-align: left; font-size: 0.95em; }
-  th { background: #f0f7f0; color: var(--accent); }
-  @media print { body { font-size: 14px; } .nav { display: none; } }
-  strong { color: #1a1a1a; }
+:root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Georgia', 'Times New Roman', serif; font-size: 17px; line-height: 1.7; color: var(--text); background: var(--bg); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; }
+h1 { font-size: 1.8rem; color: var(--accent); border-bottom: 3px solid var(--accent); padding-bottom: 0.5rem; margin-bottom: 1rem; }
+h2 { font-size: 1.35rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+h3 { font-size: 1.15rem; color: var(--accent); margin: 1.5rem 0 0.5rem; }
+p { margin-bottom: 0.8rem; }
+.objectives { background: #f0f4ff; border-left: 4px solid var(--accent); padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+.objectives h3 { margin-top: 0; }
+.check-in { background: #fff8e1; border: 1px solid #ffc107; padding: 0.8rem 1rem; margin: 1rem 0; border-radius: 8px; }
+.check-in p { margin-bottom: 0.3rem; }
+.answer-toggle { display: inline-block; padding: 0.2rem 0.8rem; border-radius: 16px; cursor: pointer; font-size: 0.8rem; font-weight: 600; background: #e8f5e9; color: #2e7d32; border: 1px solid #2e7d32; user-select: none; margin-top: 0.3rem; }
+.answer-content { display: none; background: #f1f8e9; padding: 0.6rem 1rem; border-radius: 8px; margin-top: 0.5rem; }
+.answer-content.open { display: block; }
+.example { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem; margin: 1rem 0; }
+.misconception { background: #fff3e0; border-left: 4px solid #e65100; padding: 1rem 1.2rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+.misconception h3 { color: #e65100; }
+.exam-tip { background: #e8f5e9; border-left: 4px solid #2e7d32; padding: 0.8rem 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+th { background: var(--accent); color: white; padding: 0.5rem 0.8rem; text-align: left; }
+td { padding: 0.5rem 0.8rem; border-bottom: 1px solid var(--border); }
+tr:nth-child(even) td { background: #f8f8f6; }
+.diagram { text-align: center; margin: 1.5rem 0; }
+.diagram svg { max-width: 100%; }
+.diagram .caption { font-size: 0.9rem; color: #666; margin-top: 0.3rem; font-style: italic; }
+pre.ascii-art { font-family: 'Courier New', monospace; font-size: 0.75rem; line-height: 1.2; background: #f5f5f5; padding: 0.8rem; border-radius: 8px; overflow-x: auto; }
+.practice-toggle { display: block; width: 100%; padding: 0.8rem; background: var(--accent); color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem; font-weight: 600; margin: 1.5rem 0; }
+.practice-answers { display: none; }
+.practice-answers.open { display: block; }
 </style>
 </head>
 <body>
-<h1>Lesson 9: Ionic and Covalent Bonding — Lewis Structures, Formal Charge, and Resonance — IB Chemistry HL</h1>
-<h2>What You'll Learn</h2>
-<p>
-This lesson covers five interconnected topics in chemical bonding. First, you will learn exactly what ionic bonding is, how the structure of an ionic lattice explains the physical properties of ionic compounds, and why properties such as melting point, brittleness, and electrical conductivity follow directly from this structure. Second, you will learn what covalent bonding is—the sharing of electron pairs between atoms—and you will distinguish single, double, and triple bonds in terms of length, strength, and electron count. Third, you will learn how to draw Lewis structures for molecules and polyatomic ions, including cases where the octet rule is violated, and you will understand what a dative (coordinate) covalent bond is. Fourth, you will learn to calculate formal charge and use this calculation to choose the most stable Lewis structure when more than one is possible. Fifth, you will learn about resonance, including what a resonance hybrid is and why delocalization of electrons makes molecules more stable.
-</p>
-<hr>
-<h2>1. Ionic Bonding: Electrostatic Attraction Between Oppositely Charged Ions</h2>
-<p>
-Ionic bonding is the electrostatic attraction between positively charged ions (cations) and negatively charged ions (anions). Ionic bonding typically occurs between a metal and a non-metal. The metal atom has a low electronegativity, which means it does not hold its valence electrons tightly. The metal loses one or more electrons to become a cation. The non-metal atom has a high electronegativity, which means it strongly attracts additional electrons. The non-metal gains the electrons that the metal lost, becoming an anion. The resulting cation and anion are held together because opposite electrical charges attract each other.
-</p>
-<p>
-For example, consider the formation of sodium chloride, NaCl. A sodium atom has the electron configuration 1s² 2s² 2p⁶ 3s¹. It has one electron in its outermost shell. If it loses this one electron, it becomes Na⁺ with the electron configuration 1s² 2s² 2p⁶, which is the stable electron configuration of neon. A chlorine atom has the electron configuration 1s² 2s² 2p⁶ 3s² 3p⁵. It has seven electrons in its outermost shell. If it gains one electron, it becomes Cl⁻ with the electron configuration 1s² 2s² 2p⁶ 3s² 3p⁶, which is the stable electron configuration of argon. The Na⁺ and Cl⁻ ions are then held together by electrostatic attraction.
-</p>
-<h3>The Ionic Lattice: A Three-Dimensional Repeating Structure</h3>
-<p>
-Ionic compounds do not exist as pairs of ions. Instead, they form a giant three-dimensional structure called an <strong>ionic lattice</strong>, in which each ion is surrounded by ions of the opposite charge in a regular, repeating pattern. In the NaCl lattice, each Na⁺ ion is surrounded by six Cl⁻ ions arranged at the corners of an octahedron, and each Cl⁻ ion is surrounded by six Na⁺ ions in the same arrangement. The chemical formula NaCl is an <strong>empirical formula</strong>—it tells you the simplest ratio of ions in the compound, not the number of ions in a discrete molecule. There is no such thing as a single NaCl molecule in a crystal of salt. The entire crystal is one continuous network of ions.
-</p>
-<p>
-Because the electrostatic attraction operates between every ion and all of its oppositely charged neighbors throughout the lattice, the total attractive force holding the lattice together is enormous. This fact directly explains the physical properties of ionic compounds.
-</p>
-<h3>Properties of Ionic Compounds Explained by the Lattice Structure</h3>
-<p>
-<strong>High melting points and high boiling points.</strong> To melt an ionic compound, you must supply enough thermal energy to overcome the strong electrostatic attractions that hold the lattice together and allow the ions to move past one another. This requires a great deal of energy, which is why ionic compounds typically melt at temperatures of several hundred degrees Celsius. For example, NaCl melts at 801 °C, and MgO melts at 2852 °C.
-</p>
-<p>
-<strong>Brittleness.</strong> Ionic crystals are hard but brittle. If you strike an ionic crystal with a hammer, the layers of ions can shift relative to each other. When this happens, ions of the same charge may be forced next to each other. Instead of the stable arrangement of alternating positive and negative charges, you now have regions where two positive ions are adjacent or two negative ions are adjacent. Ions of the same charge repel each other strongly, and this repulsion causes the crystal to shatter along the shifted plane. An ionic crystal cannot deform plastically the way a metal can.
-</p>
-<p>
-<strong>Electrical conductivity only when molten or dissolved.</strong> In the solid state, the ions are locked into fixed positions in the lattice. They can vibrate in place, but they cannot move from one location to another. Since an electric current requires the movement of charged particles, solid ionic compounds do not conduct electricity. When the compound is melted, the ions gain enough kinetic energy to break free from their fixed positions and move through the liquid. Similarly, when the compound dissolves in water, the ions separate and become surrounded by water molecules, allowing them to move freely through the solution. In both the molten and aqueous states, the mobile ions can carry an electric current.
-</p>
-<p>
-<strong>Often soluble in water.</strong> Many ionic compounds dissolve in water because water molecules are polar. The partially positive hydrogen atoms in water are attracted to the anions, and the partially negative oxygen atom is attracted to the cations. These ion–dipole interactions provide enough energy to overcome the lattice energy and pull the ions into solution.
-</p>
-<div class="worked">
-<strong>Worked Example 9.1: Explaining Melting Point Differences</strong><br><br>
-<p>
-<strong>Problem:</strong> Magnesium oxide, MgO, has a melting point of 2852 °C. Sodium chloride, NaCl, has a melting point of 801 °C. Both compounds have the same type of crystal lattice (the rock salt structure). Explain why the melting point of MgO is so much higher than that of NaCl.
-</p>
-<p>
-<strong>To solve this, we need to examine the charges on the ions and how these charges affect the strength of the electrostatic attraction.</strong> The electrostatic force of attraction between two charged particles is directly proportional to the product of their charges. This is expressed in Coulomb's law: the force F is proportional to (q₁ × q₂) divided by the square of the distance between the charges.
-</p>
-<p>
-In NaCl, the ions are Na⁺ (charge = +1) and Cl⁻ (charge = −1). The product of the charges is (+1) × (−1), which has a magnitude of 1. In MgO, the ions are Mg²⁺ (charge = +2) and O²⁻ (charge = −2). The product of the charges is (+2) × (−2), which has a magnitude of 4.
-</p>
-<p>
-The electrostatic attraction in MgO is therefore about four times stronger than in NaCl (assuming similar distances between ions, which is roughly true since both adopt the rock salt structure with comparable ionic radii). Because the forces holding the lattice together are much stronger in MgO, a much higher temperature is required to provide enough thermal energy to overcome these forces and melt the compound. This is why MgO melts at a temperature more than 2000 °C higher than NaCl.
-</p>
-<p>
-<strong>Why this makes sense:</strong> Double charges produce much stronger attractions than single charges. You can think of it as the difference between the strength of one magnet versus the strength of a magnet with twice the pulling power. MgO's doubly charged ions create a lattice that is far more difficult to tear apart.
-</p>
+
+<h1>Lesson 9: Ionic & Covalent Bonding — Lewis Structures, Formal Charge</h1>
+
+<p><b>Syllabus reference:</b> 4.1/4.2/14.1 — Ionic and covalent bonding, Lewis structures, formal charge, resonance</p>
+
+<div class="objectives">
+<h3>Learning Objectives</h3>
+<p>By the end of this lesson, you will be able to:</p>
+<ul>
+  <li><b>Describe</b> ionic bonding as the electrostatic attraction between oppositely charged ions formed by electron transfer.</li>
+  <li><b>Draw</b> Lewis (electron dot) structures for molecules and polyatomic ions, including those with multiple bonds.</li>
+  <li><b>Calculate</b> and interpret formal charge to determine the most stable Lewis structure.</li>
+  <li><b>Identify</b> resonance structures and explain why the true structure is a hybrid.</li>
+  <li><b>Apply</b> the octet rule and recognise when expansion of the octet is possible (HL).</li>
+</ul>
 </div>
-<h2>2. Covalent Bonding: Sharing Electron Pairs</h2>
-<p>
-Covalent bonding is the sharing of one or more pairs of electrons between two atoms. Covalent bonds typically form between atoms of non-metals, which have relatively high electronegativities and tend to gain electrons rather than lose them. When two such atoms approach each other, neither can fully remove an electron from the other, so they compromise by sharing electrons. Each shared pair of electrons constitutes one covalent bond.
-</p>
-<h3>Single, Double, and Triple Bonds</h3>
-<p>
-A <strong>single bond</strong> consists of one shared pair of electrons. In a Lewis structure, a single bond is represented by a single line between the two atomic symbols. For example, in the chlorine molecule Cl₂, the two chlorine atoms share one pair of electrons, written as Cl–Cl.
-</p>
-<p>
-A <strong>double bond</strong> consists of two shared pairs of electrons, represented by two lines. In the oxygen molecule O₂, the two oxygen atoms share two pairs of electrons, written as O=O.
-</p>
-<p>
-A <strong>triple bond</strong> consists of three shared pairs of electrons, represented by three lines. In the nitrogen molecule N₂, the two nitrogen atoms share three pairs of electrons, written as N≡N.
-</p>
-<h3>Bond Length and Bond Strength</h3>
-<p>
-As the number of shared pairs increases, the bond becomes shorter and stronger. A double bond is shorter than a single bond between the same two atoms, and a triple bond is shorter still. Bond length is typically measured in picometers (1 pm = 10⁻¹² m). Bond strength is measured by bond enthalpy, which is the energy (in kilojoules per mole) needed to break the bond.
-</p>
-<p>
-For carbon–carbon bonds: a C–C single bond has a length of 154 pm and a bond enthalpy of 348 kJ mol⁻¹. A C=C double bond has a length of 134 pm and a bond enthalpy of 614 kJ mol⁻¹. A C≡C triple bond has a length of 120 pm and a bond enthalpy of 839 kJ mol⁻¹. Notice that the bond enthalpy does not simply double or triple—a double bond is not twice as strong as a single bond, because the second shared pair (the π bond) is weaker than the first (the σ bond).
-</p>
-<h3>The Dative (Coordinate) Covalent Bond</h3>
-<p>
-In a normal covalent bond, each atom contributes one electron to the shared pair. In a <strong>dative covalent bond</strong> (also called a coordinate covalent bond), both electrons in the shared pair come from the same atom. Once formed, a dative bond is indistinguishable from any other covalent bond in terms of its length and strength. The only difference is the origin of the electrons.
-</p>
-<p>
-A dative bond forms when one atom (the donor) has a lone pair of electrons that it can donate, and another atom (the acceptor) has an empty orbital that can accept those electrons. Important examples include:
-</p>
-<p>
-The <strong>ammonium ion, NH₄⁺</strong>: A neutral ammonia molecule, NH₃, has a lone pair on the nitrogen atom. A hydrogen ion, H⁺, has no electrons but does have an empty 1s orbital. When NH₃ and H⁺ come together, the nitrogen donates its lone pair to form a bond with the hydrogen ion. All four N–H bonds in NH₄⁺ are equivalent in length and strength.
-</p>
-<p>
-The <strong>hydronium ion, H₃O⁺</strong>: A water molecule, H₂O, donates a lone pair on its oxygen atom to a hydrogen ion, H⁺, forming a third O–H bond.
-</p>
-<p>
-In Lewis structures, a dative bond is often indicated by an arrow (→) pointing from the donor atom to the acceptor atom.
-</p>
-<hr>
-<h2>3. How to Draw Lewis Structures</h2>
-<p>
-A <strong>Lewis structure</strong> is a diagram that shows how valence electrons are arranged in a molecule or polyatomic ion. Dots represent electrons that are not involved in bonding (lone pairs), and lines represent bonding pairs of electrons.
-</p>
-<h3>Step-by-Step Procedure</h3>
-<p>
-<strong>Step 1: Count the total number of valence electrons.</strong> Add up the valence electrons contributed by each atom in the molecule. For main-group elements, the number of valence electrons equals the group number (Group 1 has 1 valence electron, Group 2 has 2, Group 13 has 3, Group 14 has 4, and so on up to Group 18 with 8). If the species is a polyatomic ion, add one extra electron for each negative charge, or subtract one electron for each positive charge.
-</p>
-<p>
-<strong>Step 2: Draw a skeleton structure.</strong> Decide which atom goes in the center. The central atom is usually the one with the lowest electronegativity, except that hydrogen is never the central atom (hydrogen can form only one bond). Place the other atoms around the central atom and connect each outer atom to the central atom with a single line (representing one shared pair of electrons).
-</p>
-<p>
-<strong>Step 3: Distribute the remaining electrons as lone pairs.</strong> Subtract the electrons used in the skeleton bonds from the total. Each single bond uses 2 electrons. Place the remaining electrons as lone pairs on the outer atoms first, giving each outer atom an octet (8 electrons total, including bonding and non-bonding electrons). If there are still electrons left after all outer atoms have octets, place them as lone pairs on the central atom.
-</p>
-<p>
-<strong>Step 4: Check the central atom's octet.</strong> Count the electrons around the central atom (bonding pairs count as 2 electrons per bond, and add any lone pairs). If the central atom has fewer than 8 electrons, convert one or more lone pairs from outer atoms into additional bonds (double or triple bonds) to the central atom.
-</p>
-<p>
-<strong>Step 5: Verify the total electron count.</strong> Make sure the Lewis structure uses exactly the number of valence electrons you counted in Step 1.
-</p>
-<h3>Exceptions to the Octet Rule</h3>
-<p>
-Not all atoms follow the octet rule. There are three important categories of exceptions.
-</p>
-<p>
-<strong>Electron-deficient molecules.</strong> Some atoms can be stable with fewer than 8 electrons. Beryllium, in BeCl₂, has only 4 electrons around it (two single bonds). Boron, in BF₃, has only 6 electrons around it (three single bonds). These compounds are stable despite the incomplete octet. Electron-deficient molecules often act as Lewis acids, meaning they can accept a pair of electrons.
-</p>
-<p>
-<strong>Expanded octet.</strong> Elements in Period 3 and beyond (phosphorus, sulfur, chlorine, and heavier elements) can accommodate more than 8 electrons because they have low-lying d orbitals that can participate in bonding. In phosphorus pentachloride, PCl₅, the phosphorus atom is surrounded by 10 electrons (five single bonds). In sulfur hexafluoride, SF₆, the sulfur atom is surrounded by 12 electrons (six single bonds).
-</p>
-<p>
-<strong>Odd-electron species (free radicals).</strong> Some molecules have an odd number of valence electrons, making it impossible for every atom to have a complete octet. Nitrogen monoxide, NO, has 11 valence electrons (5 from N + 6 from O). The Lewis structure shows a double bond and an unpaired electron on the nitrogen atom.
-</p>
-<div class="worked">
-<strong>Worked Example 9.2: Drawing the Lewis Structure of SO₄²⁻</strong><br><br>
-<p>
-<strong>Problem:</strong> Draw the Lewis structure of the sulfate ion, SO₄²⁻. Indicate all bonding pairs and lone pairs.
-</p>
-<p>
-<strong>To solve this, we need to follow the five-step procedure for drawing Lewis structures.</strong>
-</p>
-<p>
-Step 1: Count the total valence electrons. Sulfur is in Group 16 and contributes 6 valence electrons. Each oxygen atom is in Group 16 and contributes 6 valence electrons. There are four oxygen atoms, contributing 4 × 6 = 24 valence electrons. The ion has a charge of 2−, which means there are two extra electrons. Total: 6 + 24 + 2 = 32 valence electrons.
-</p>
-<p>
-Step 2: Draw the skeleton. Sulfur is less electronegative than oxygen, so sulfur is the central atom. Place four oxygen atoms around the sulfur and connect each with a single bond. Four bonds use 4 × 2 = 8 electrons. Remaining electrons: 32 − 8 = 24.
-</p>
-<p>
-Step 3: Distribute remaining electrons as lone pairs on outer atoms. Place three lone pairs (6 electrons) on each oxygen atom. Four oxygen atoms × 6 electrons = 24 electrons. All 24 remaining electrons are used. Now each oxygen atom has 8 electrons (2 from the S–O bond plus 6 from lone pairs), satisfying the octet rule for all four oxygen atoms.
-</p>
-<p>
-Step 4: Check the central atom. The sulfur atom currently has four single bonds, giving it 8 electrons. This satisfies the octet rule. However, we should consider whether a structure with double bonds might be more stable. We can convert a lone pair on one oxygen into a second bond to sulfur, creating an S=O double bond. Since there are four oxygen atoms, you might think we can make two S=O double bonds. The most common representation shows sulfur with two double bonds and two single bonds, giving sulfur 12 electrons (an expanded octet, which is allowed for Period 3 sulfur).
-</p>
-<p>
-Step 5: Verify. With two S=O double bonds and two S–O single bonds, all oxygen atoms still have octets, and sulfur has 12 electrons. The total electron count remains 32. This structure has less formal charge separation (discussed in Section 4) than the all-single-bond version and is a better description of the real ion.
-</p>
+
+<h2>1. Prior Knowledge Check</h2>
+
+<p><b>Question 1:</b> What is the difference between an ionic bond and a covalent bond?</p>
+<div class="check-in">
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">An <b>ionic bond</b> is the electrostatic attraction between oppositely charged ions formed by <em>electron transfer</em> (usually metal + non-metal). A <b>covalent bond</b> is the electrostatic attraction between a shared pair of electrons and two positive nuclei, formed by <em>electron sharing</em> (usually non-metal + non-metal).</div>
 </div>
-<h2>4. Formal Charge: Choosing the Best Lewis Structure</h2>
-<p>
-When more than one valid Lewis structure is possible for a molecule or ion, we use <strong>formal charge</strong> to decide which structure is most likely to represent the real arrangement of electrons. The formal charge on an atom is a bookkeeping number that tells you whether that atom has gained or lost electrons relative to the neutral free atom, assuming that bonding electrons are shared equally.
-</p>
-<h3>How to Calculate Formal Charge</h3>
-<p>
-The formula for formal charge (FC) is:
-</p>
-<p>
-FC = (number of valence electrons in the free neutral atom) − (number of non-bonding electrons on the atom in the structure) − ½(number of bonding electrons shared by the atom)
-</p>
-<p>
-In a shorter form: FC = V − N − ½B, where V is the valence electron count of the free atom, N is the number of electrons in lone pairs, and B is the number of electrons in bonds to that atom.
-</p>
-<h3>Rules for Choosing the Most Stable Structure</h3>
-<p>
-When comparing Lewis structures, apply these rules in order:
-</p>
-<ol>
-<li>The structure in which all formal charges are closest to zero is generally the most stable.</li>
-<li>If formal charges must exist, negative formal charges should be placed on the most electronegative atoms, and positive formal charges should be placed on the least electronegative atoms.</li>
-<li>The sum of all formal charges must equal the overall charge of the species (zero for a neutral molecule, −1 for a −1 ion, and so on).</li>
-</ol>
-<div class="worked">
-<strong>Worked Example 9.3: Using Formal Charge to Choose a Lewis Structure</strong><br><br>
-<p>
-<strong>Problem:</strong> Carbon dioxide, CO₂, can be drawn with two different Lewis structures. Structure A has two C=O double bonds (O=C=O). Structure B has a C–O single bond and a C≡O triple bond (O–C≡O). Calculate the formal charge on each atom in both structures and determine which structure is more stable.
-</p>
-<p>
-<strong>To solve this, we need to calculate formal charges for every atom in both proposed structures.</strong>
-</p>
-<p>
-<strong>Structure A: O=C=O</strong>
-</p>
-<p>
-For the central carbon atom: Carbon is in Group 14, so V = 4 valence electrons. In Structure A, carbon has no lone pairs, so N = 0. Carbon is involved in four bonds (two double bonds = 8 bonding electrons), so B = 8. FC(C) = 4 − 0 − ½(8) = 4 − 4 = 0.
-</p>
-<p>
-For each oxygen atom: Oxygen is in Group 16, so V = 6. Each oxygen has two lone pairs (4 non-bonding electrons), so N = 4. Each oxygen is involved in one double bond (4 bonding electrons), so B = 4. FC(O) = 6 − 4 − ½(4) = 6 − 4 − 2 = 0.
-</p>
-<p>
-All formal charges in Structure A are zero. Sum = 0 + 0 + 0 = 0, which matches the charge of the neutral CO₂ molecule.
-</p>
-<p>
-<strong>Structure B: O–C≡O</strong>
-</p>
-<p>
-For the left oxygen (single-bonded O): V = 6. This oxygen has three lone pairs, so N = 6. It has one single bond (2 bonding electrons), so B = 2. FC = 6 − 6 − ½(2) = 6 − 6 − 1 = −1.
-</p>
-<p>
-For the central carbon: V = 4. Carbon has no lone pairs, so N = 0. It has one single bond and one triple bond, which is 2 + 6 = 8 bonding electrons, so B = 8. FC = 4 − 0 − ½(8) = 4 − 4 = 0.
-</p>
-<p>
-For the right oxygen (triple-bonded O): V = 6. This oxygen has one lone pair, so N = 2. It has one triple bond (6 bonding electrons), so B = 6. FC = 6 − 2 − ½(6) = 6 − 2 − 3 = +1.
-</p>
-<p>
-The formal charges in Structure B are −1, 0, and +1. Sum = (−1) + 0 + (+1) = 0, which still matches the neutral charge.
-</p>
-<p>
-Structure A has all formal charges equal to zero, while Structure B has formal charges of −1 and +1 on two of its atoms. According to the rule that structures with formal charges closest to zero are preferred, Structure A is the more stable Lewis structure for CO₂. This matches experimental evidence: CO₂ is a linear molecule with two equivalent C=O bonds.
-</p>
-<p>
-<strong>Why this makes sense:</strong> The carbon atom in CO₂ is sp hybridized (Lesson 12), forming two double bonds with two oxygen atoms. Structure B places a negative charge on oxygen (which is electronegative, so that might seem acceptable) but also places a positive charge on the other oxygen, which is energetically unfavorable. The symmetric Structure A with no charge separation is a much better description of the real molecule.
-</p>
+
+<p><b>Question 2:</b> State the octet rule. Which elements are common exceptions?</p>
+<div class="check-in">
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">The octet rule: atoms tend to gain, lose, or share electrons to achieve a full outer shell of 8 electrons (noble gas configuration). Exceptions: H and He (duet, 2 electrons), Be (often 4), B (often 6), and elements in Period 3+ that can expand their octet using d orbitals (e.g., $\ce{PCl5}$, $\ce{SF6}$).</div>
 </div>
-<h2>5. Resonance: When One Lewis Structure Is Not Enough</h2>
-<p>
-Sometimes, even after applying the formal charge rules, you find that two or more valid Lewis structures can be drawn for the same molecule or ion, and these structures differ only in the positions of electrons (not in the positions of atoms). When this happens, the real molecule is not represented by any single one of these structures. Instead, the real molecule is a <strong>resonance hybrid</strong>: a weighted average of all the valid resonance structures.
-</p>
-<p>
-<strong>Important clarification:</strong> The molecule does not flip back and forth between the resonance structures. It exists at all times as a single structure in which the electrons are delocalized—spread out over multiple atoms—rather than confined to a specific bond between two specific atoms. The energy of the resonance hybrid is lower than the energy of any individual resonance structure would be. This energy lowering is called the <strong>resonance stabilization energy</strong>.
-</p>
-<h3>How to Draw Resonance Structures</h3>
-<p>
-Resonance structures are connected by a double-headed arrow (↔). You must not confuse this with an equilibrium arrow (⇌). Resonance structures represent different ways of drawing the same molecule; equilibrium arrows represent a chemical reaction in which reactants and products interconvert.
-</p>
-<h3>Example 1: Ozone, O₃</h3>
-<p>
-Ozone can be drawn with two resonance structures. In one structure, the left O–O bond is a double bond and the right O–O bond is a single bond. In the other structure, the left O–O bond is a single bond and the right O–O bond is a double bond. The true structure of ozone is a hybrid of these two: both O–O bonds are identical, with a bond order of 1.5 (halfway between a single bond and a double bond). Each O–O bond in ozone has the same length (128 pm), which is intermediate between a typical O–O single bond (148 pm) and a typical O=O double bond (121 pm).
-</p>
-<h3>Example 2: The Nitrate Ion, NO₃⁻</h3>
-<p>
-The nitrate ion has three equivalent resonance structures. In each structure, one of the N–O bonds is a double bond and the other two are single bonds. The true ion is a hybrid in which all three N–O bonds are identical, each with a bond order of 1⅓ (or 4/3). The negative charge is delocalized equally over all three oxygen atoms. This delocalization stabilizes the nitrate ion, which is why nitrates are generally stable and soluble.
-</p>
-<h3>Example 3: The Carbonate Ion, CO₃²⁻</h3>
-<p>
-The carbonate ion also has three equivalent resonance structures. Just as in the nitrate ion, one C–O bond is a double bond in each structure, but all three C–O bonds in the real ion are identical, with bond order 1⅓. The two negative charges are delocalized over all three oxygen atoms.
-</p>
-<h3>Example 4: Benzene, C₆H₆</h3>
-<p>
-Benzene is a ring of six carbon atoms, each also bonded to one hydrogen atom. Two Kekulé structures can be drawn: one with alternating double bonds starting at position 1, and another with alternating double bonds starting at position 2. The real structure of benzene is a hybrid in which all six C–C bonds are identical, with bond order 1.5. The six π electrons are delocalized in a ring above and below the plane of the carbon atoms. This delocalization gives benzene unusual stability compared to what would be expected for a molecule with three isolated double bonds.
-</p>
-<div class="worked">
-<strong>Worked Example 9.4: Resonance in the Carbonate Ion</strong><br><br>
-<p>
-<strong>Problem:</strong> The carbonate ion, CO₃²⁻, is known experimentally to have three identical C–O bonds, all of the same length. Draw the three resonance structures of CO₃²⁻ and explain why all three C–O bonds are identical in the real ion.
-</p>
-<p>
-<strong>To solve this, we need to draw the three possible arrangements of double and single bonds in CO₃²⁻.</strong> The ion has a total of 4 (from C) + 3×6 (from three O) + 2 (from the 2− charge) = 24 valence electrons.
-</p>
-<p>
-In the first resonance structure, carbon forms a double bond with oxygen A and single bonds with oxygens B and C. Oxygen A has two lone pairs; oxygens B and C each have three lone pairs. The formal charges are: oxygen A = 0, oxygen B = −1, oxygen C = −1, carbon = 0. Total = −2, which matches the ion charge.
-</p>
-<p>
-In the second resonance structure, the double bond is with oxygen B, and oxygens A and C have the single bonds. In the third, the double bond is with oxygen C, and A and B have the single bonds.
-</p>
-<p>
-The real carbonate ion is a resonance hybrid of these three structures. The π electrons that form the double bond in any one resonance structure are actually delocalized over all three carbon–oxygen bonds in the hybrid. Because the delocalization is equal (all three structures are equivalent), each C–O bond has exactly one-third of the character of a double bond and two-thirds of the character of a single bond. The bond order is 1⅓. All three bonds are identical in length and strength.
-</p>
-<p>
-<strong>Why this makes sense:</strong> If the electrons were localized (stuck in one C=O bond and not the others), one C–O bond would be shorter and the other two would be longer, and the ion would be less symmetrical. The experimental evidence—all three bonds are the same length—tells us directly that the electrons must be delocalized.
-</p>
+
+<p><b>Question 3:</b> Draw the Lewis structure of $\ce{CO2}$.</p>
+<div class="check-in">
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">$\ce{O=C=O}$. Total valence electrons: C (4) + 2×O (6) = 16. Place C in centre, form two double bonds to satisfy octets. Each atom has a full octet. There are two double bonds and no lone pairs on carbon; each oxygen has two lone pairs.</div>
 </div>
-<h2>Practice Problems</h2>
-<ol>
-<li>Draw the Lewis structure of carbon dioxide, CO₂. After you have drawn the structure, state how many bonding pairs and how many non-bonding pairs of electrons are present on the central carbon atom.</li>
-</ol>
-<ol>
-<li>Draw the Lewis structure of phosphorus pentachloride, PCl₅. Identify which exception to the octet rule applies to PCl₅, and state the total number of electrons that surround the phosphorus atom in your structure.</li>
-</ol>
-<ol>
-<li>Draw two possible Lewis structures for the nitrite ion, NO₂⁻. Calculate the formal charge on every atom in both structures. Based on your formal charge calculations, identify which structure would be the more stable one, and explain your reasoning.</li>
-</ol>
-<ol>
-<li>The sulfur dioxide molecule, SO₂, can be drawn with two resonance structures. (a) Draw both resonance structures, showing all bonding pairs and lone pairs. (b) Explain whether the two S–O bonds in SO₂ are expected to have the same length. (c) State the bond order of each S–O bond in the resonance hybrid.</li>
-</ol>
-<ol>
-<li><strong>(IB Exam Style)</strong> Aluminum chloride, AlCl₃, exists as a dimer with the formula Al₂Cl₆ in the gas phase and in non-polar solvents.</li>
-</ol>
-<p>
-   (a) Draw the Lewis structure of an AlCl₃ monomer. Use your structure to explain why AlCl₃ is described as an electron-deficient molecule.
-</p>
-<p>
-   (b) In the Al₂Cl₆ dimer, two chlorine atoms act as bridges between the two aluminum atoms. Each bridging chlorine atom is bonded to both aluminum atoms. Draw the Lewis structure of Al₂Cl₆, clearly labeling each bridging chlorine atom and indicating which bonds are normal covalent bonds and which are dative covalent bonds. Use arrows (→) to represent any dative bonds.
-</p>
-<p>
-   (c) Boron trichloride, BCl₃, which is also a Group 13 halide, does not form a dimer under normal conditions. It remains as monomeric BCl₃ molecules. Explain why BCl₃ does not dimerize while AlCl₃ does, even though both molecules are electron-deficient. Your explanation should refer to the relative sizes of the central atoms and the implications for bond formation.
-</p>
-<hr>
-<h2>Answers</h2>
-<ol>
-<li>The Lewis structure of CO₂ is O=C=O. The central carbon atom is connected to each oxygen atom by a double bond. Each double bond counts as two bonding pairs, so the carbon atom has a total of four bonding pairs (two double bonds, four shared pairs of electrons). The carbon atom has zero non-bonding pairs (no lone pairs). Each oxygen atom has two lone pairs. The total number of valence electrons is 4 (from C) + 2×6 (from two O) = 16. The structure uses 8 electrons in the bonds (four bonding pairs) and 8 electrons in the lone pairs on the oxygen atoms (four lone pairs on each of two oxygens), for a total of 16, which matches the count. All atoms have a complete octet.</li>
-</ol>
-<ol>
-<li>The Lewis structure of PCl₅ shows a central phosphorus atom bonded to five chlorine atoms by single bonds. Each chlorine atom has three lone pairs. The phosphorus atom is surrounded by five bonding pairs, which means it has 10 electrons in its valence shell. This is an <strong>expanded octet</strong>—phosphorus exceeds the usual limit of 8 electrons. Phosphorus is in Period 3, which means it has access to 3d orbitals that can be used to accommodate additional electrons beyond the octet. The chlorine atoms each have a complete octet (2 electrons from the P–Cl bond plus 6 electrons from three lone pairs = 8 electrons). A common mistake is to think that the chlorine atoms also violate the octet rule, but they do not—only the phosphorus atom does.</li>
-</ol>
-<ol>
-<li>The nitrite ion, NO₂⁻, has a total of 5 (from N) + 2×6 (from two O) + 1 (from the −1 charge) = 18 valence electrons.</li>
-</ol>
-<p>
-   <strong>Structure A:</strong> N is double-bonded to one O and single-bonded to the other O. The double-bonded O has two lone pairs; the single-bonded O has three lone pairs. N has one lone pair. Formal charges: double-bonded O: FC = 6 − 4 − ½(4) = 0. Single-bonded O: FC = 6 − 6 − ½(2) = −1. N: FC = 5 − 2 − ½(6) = 0. Sum = 0 + (−1) + 0 = −1. This matches the ion charge.
-</p>
-<p>
-   <strong>Structure B:</strong> The double bond is on the other oxygen (mirror image of Structure A). The formal charges are the same: the single-bonded O has FC = −1, the double-bonded O has FC = 0, and N has FC = 0.
-</p>
-<p>
-   Both structures have one oxygen with a formal charge of −1. Since oxygen is the most electronegative atom in the ion, placing the negative charge on oxygen is favorable. Both structures are equivalent resonance forms, and the real ion is a hybrid with two identical N–O bonds (bond order = 1.5) and the negative charge delocalized over both oxygen atoms. Neither individual structure is more stable than the other—they are equal contributors to the resonance hybrid.
-</p>
-<ol>
-<li>(a) In both resonance structures of SO₂, the sulfur atom is bonded to two oxygen atoms and has one lone pair. In one resonance structure, the sulfur is double-bonded to the left oxygen and single-bonded to the right oxygen. The double-bonded oxygen has two lone pairs; the single-bonded oxygen has three lone pairs. In the other resonance structure, the arrangement is reversed: the double bond is on the right and the single bond is on the left.</li>
-</ol>
-<p>
-   (b) Yes, the two S–O bonds are expected to have the same length. Because the two resonance structures are equivalent, the real SO₂ molecule is a resonance hybrid in which the π electrons are delocalized equally over both S–O bonds. Experimental measurement confirms that both S–O bonds in SO₂ are the same length (about 143 pm).
-</p>
-<p>
-   (c) The bond order of each S–O bond in the resonance hybrid is 1.5. In each resonance structure, one bond is a double bond (bond order 2) and the other is a single bond (bond order 1). Since both structures contribute equally to the hybrid, the average bond order is (2 + 1) / 2 = 1.5.
-</p>
-<ol>
-<li>(a) The Lewis structure of the AlCl₃ monomer shows a central aluminum atom bonded to three chlorine atoms by single bonds. Each chlorine atom has three lone pairs. The aluminum atom has three bonding pairs and no lone pairs, giving it a total of 6 valence electrons. Aluminum is in Group 13 and has 3 valence electrons of its own; each chlorine contributes 1 electron to a bond, so Al shares 3 electrons from the three Cl atoms, making 6 electrons in its valence shell. Since the octet rule predicts 8 electrons for a complete valence shell, AlCl₃ has only 6—it is two electrons short of an octet. This is why AlCl₃ is described as electron-deficient.</li>
-</ol>
-<p>
-   (b) In the Al₂Cl₆ dimer, two AlCl₃ units are joined by two bridging chlorine atoms. Each aluminum atom is bonded to two terminal chlorine atoms (one at each end) and to two bridging chlorine atoms that connect the two aluminum atoms. A terminal Al–Cl bond is a normal covalent bond: each atom contributes one electron. A bridging chlorine atom forms one normal covalent bond with one aluminum (each contributing one electron) and one dative covalent bond with the other aluminum (the chlorine donates a lone pair to the electron-deficient aluminum). The dative bonds should be indicated with arrows pointing from the bridging chlorine atoms to the aluminum atoms. Through this arrangement, each aluminum atom ends up with four bonds (8 electrons), satisfying the octet rule. Each bridging chlorine has two bonds and two lone pairs, also satisfying the octet rule.
-</p>
-<p>
-   (c) BCl₃ does not dimerize because the boron atom is too small. Boron is in Period 2, and its atomic radius is much smaller than that of aluminum, which is in Period 3. If a chlorine atom from one BCl₃ molecule attempted to donate a lone pair to the boron of another BCl₃ molecule, the chlorine atom would need to approach very close to the boron atom. However, the three chlorine atoms already bonded to each boron are relatively large and create significant steric hindrance (physical crowding) around the boron atom. The combination of boron's small size and the bulky chlorine atoms makes it energetically unfavorable for a fourth bond to form. In AlCl₃, the aluminum atom is larger, so there is more space around it to accommodate a fourth chlorine atom, and dimerization can occur without excessive steric strain. This is a key example of how atomic size, not just electron count, can influence molecular structure.
-</p>
-<div class="nav">
-<a href="lesson_08.html">← Previous Lesson</a>
-<a href="lesson_10.html">Next Lesson →</a>
+
+<h2>2. Ionic Bonding — Electron Transfer</h2>
+
+<h3>2.1 The Born–Haber Model</h3>
+
+<p>Ionic bonding occurs when a <b>metal</b> (low electronegativity, low IE) transfers electrons to a <b>non-metal</b> (high electronegativity, exothermic electron affinity). The resulting cation and anion are held together by <b>electrostatic attraction</b> in a giant ionic lattice.</p>
+
+<div class="diagram">
+<svg width="520" height="240" viewBox="0 0 520 240">
+  <text x="260" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c5f2d">Formation of NaCl: Electron Transfer</text>
+  <!-- Na atom -->
+  <circle cx="90" cy="120" r="35" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+  <text x="90" y="110" text-anchor="middle" font-size="11" fill="#1565c0" font-weight="bold">Na</text>
+  <text x="90" y="130" text-anchor="middle" font-size="9" fill="#555">2,8,1</text>
+  <!-- Cl atom -->
+  <circle cx="350" cy="120" r="42" fill="#ffebee" stroke="#c62828" stroke-width="2"/>
+  <text x="350" y="108" text-anchor="middle" font-size="11" fill="#c62828" font-weight="bold">Cl</text>
+  <text x="350" y="128" text-anchor="middle" font-size="9" fill="#555">2,8,7</text>
+  <!-- Arrow showing e- transfer -->
+  <line x1="125" y1="110" x2="308" y2="110" stroke="#e65100" stroke-width="2.5" marker-end="url(#arrowET)"/>
+  <text x="220" y="103" text-anchor="middle" font-size="10" fill="#e65100" font-weight="bold">1 e⁻ transferred</text>
+  <defs><marker id="arrowET" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#e65100"/></marker></defs>
+  <!-- Resulting ions -->
+  <text x="50" y="185" text-anchor="middle" font-size="12" font-weight="bold" fill="#1565c0">Na⁺</text>
+  <text x="50" y="202" text-anchor="middle" font-size="9" fill="#555">[2,8]⁺</text>
+  <text x="390" y="185" text-anchor="middle" font-size="12" font-weight="bold" fill="#c62828">Cl⁻</text>
+  <text x="390" y="202" text-anchor="middle" font-size="9" fill="#555">[2,8,8]⁻</text>
+  <!-- Electrostatic attraction -->
+  <path d="M70,195 Q130,230 190,210" fill="none" stroke="#2c5f2d" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <path d="M370,195 Q310,230 250,210" fill="none" stroke="#2c5f2d" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="220" y="235" text-anchor="middle" font-size="10" fill="#2c5f2d" font-style="italic">Electrostatic attraction forms ionic bond</text>
+</svg>
+<div class="caption">Figure 1: Electron transfer from Na to Cl. The resulting Na⁺ and Cl⁻ ions attract electrostatically, forming the ionic compound NaCl. Both ions achieve noble gas configurations.</div>
 </div>
+
+<h3>2.2 Properties of Ionic Compounds</h3>
+<ul>
+  <li><b>High melting/boiling points</b> — strong electrostatic forces throughout the lattice require much energy to overcome.</li>
+  <li><b>Brittle</b> — when a layer of ions shifts, like charges align and repel, shattering the crystal.</li>
+  <li><b>Conduct electricity when molten or aqueous</b> — ions are free to move; in the solid, they are locked in place.</li>
+  <li><b>Soluble in polar solvents</b> (e.g., water) — hydration energy compensates for lattice energy.</li>
+</ul>
+
+<div class="check-in">
+<p><b>Check-in:</b> Why is $\ce{MgO}$ (m.p. 2852°C) so much higher-melting than $\ce{NaCl}$ (m.p. 801°C)?</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">$\ce{Mg^{2+}}$ and $\ce{O^{2-}}$ both carry double charges compared to $\ce{Na+}$ and $\ce{Cl-}$. The electrostatic force $F \propto (q_+ \times q_-)/r^2$ is roughly 4 times stronger in MgO. Additionally, the Mg²⁺ and O²⁻ ions are smaller (higher charge density), which further increases lattice enthalpy. Much more energy is needed to break the MgO lattice.</div>
+</div>
+
+<h2>3. Covalent Bonding — Lewis Structures</h2>
+
+<h3>3.1 The Systematic Method for Drawing Lewis Structures</h3>
+
+<ol>
+  <li><b>Count total valence electrons</b> (adjust for charge in ions: add 1 for each negative, subtract 1 for each positive).</li>
+  <li><b>Draw the skeleton</b> — least electronegative atom in centre (except H, which is always terminal).</li>
+  <li><b>Connect atoms with single bonds</b> (2 electrons per bond).</li>
+  <li><b>Distribute remaining electrons</b> as lone pairs to satisfy octets (outer atoms first, then central).</li>
+  <li><b>Form multiple bonds</b> if any atom lacks an octet — convert lone pairs to bonding pairs.</li>
+  <li><b>Check formal charges</b> to identify the most stable structure.</li>
+</ol>
+
+<h3>3.2 Multiple Bonds and Bond Order</h3>
+
+<p>A <b>single bond</b> shares 2 electrons (1 pair), a <b>double bond</b> shares 4 electrons (2 pairs), and a <b>triple bond</b> shares 6 electrons (3 pairs). As bond order increases, bond length decreases and bond strength increases.</p>
+
+<div class="check-in">
+<p><b>Check-in:</b> Draw the Lewis structure of $\ce{HCN}$ (hydrogen cyanide). Count valence electrons and identify bond orders.</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">Valence electrons: H(1) + C(4) + N(5) = 10. Skeleton: H–C–N. After single bonds (4 e⁻ used), 6 e⁻ remain. Place on N (3 lone pairs = 6 e⁻). N has octet but C only has 4 e⁻. Convert two N lone pairs to bonding pairs: $\ce{H-C#N:}$ (triple bond between C and N). Structure: $\ce{H-C≡N}$ with one lone pair on N.</div>
+</div>
+
+<h2>4. Formal Charge — Finding the Best Lewis Structure (HL)</h2>
+
+<h3>4.1 Definition and Formula</h3>
+
+<p><b>Formal charge</b> is the hypothetical charge an atom would have if all bonding electrons were shared equally:</p>
+
+$$\text{Formal charge} = (\text{valence e}^-) - (\text{non-bonding e}^-) - \frac{1}{2}(\text{bonding e}^-)$$
+
+<p>The <b>best</b> Lewis structure is the one where:</p>
+<ul>
+  <li>Formal charges are as close to zero as possible.</li>
+  <li>Any negative formal charge resides on the <b>most electronegative</b> atom.</li>
+  <li>The sum of all formal charges equals the overall charge of the species.</li>
+</ul>
+
+<h3>4.2 Example: $\ce{CO2}$ — Two Possible Structures</h3>
+
+<div class="diagram">
+<svg width="520" height="220" viewBox="0 0 520 220">
+  <text x="260" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c5f2d">Comparing Lewis Structures of CO₂ with Formal Charge</text>
+  <!-- Structure A: O=C=O -->
+  <rect x="20" y="40" width="230" height="160" rx="8" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="2"/>
+  <text x="135" y="65" text-anchor="middle" font-size="13" font-weight="bold" fill="#2c5f2d">Structure A — O=C=O</text>
+  <text x="135" y="90" text-anchor="middle" font-size="12">O: FC = 6 − 4 − ½(4) = 0 ✓</text>
+  <text x="135" y="110" text-anchor="middle" font-size="12">C: FC = 4 − 0 − ½(8) = 0 ✓</text>
+  <text x="135" y="130" text-anchor="middle" font-size="12">O: FC = 6 − 4 − ½(4) = 0 ✓</text>
+  <text x="135" y="155" text-anchor="middle" font-size="12" fill="#2c5f2d" font-weight="bold">All FC = 0 → MOST STABLE</text>
+  <!-- Structure B: O≡C-O -->
+  <rect x="270" y="40" width="230" height="160" rx="8" fill="#ffebee" stroke="#c62828" stroke-width="2"/>
+  <text x="385" y="65" text-anchor="middle" font-size="13" font-weight="bold" fill="#c62828">Structure B — O≡C–O</text>
+  <text x="385" y="90" text-anchor="middle" font-size="12">O: FC = 6 − 2 − ½(6) = +1 ✗</text>
+  <text x="385" y="110" text-anchor="middle" font-size="12">C: FC = 4 − 0 − ½(8) = 0 ✓</text>
+  <text x="385" y="130" text-anchor="middle" font-size="12">O: FC = 6 − 6 − ½(2) = −1 ✗</text>
+  <text x="385" y="155" text-anchor="middle" font-size="12" fill="#c62828" font-weight="bold">FC ≠ 0 → LESS STABLE</text>
+</svg>
+<div class="caption">Figure 2: Formal charge comparison for two possible Lewis structures of CO₂. Structure A with all formal charges of zero is the correct and most stable representation.</div>
+</div>
+
+<div class="check-in">
+<p><b>Check-in:</b> The nitrate ion $\ce{NO3-}$ can be drawn with one N=O double bond and two N–O single bonds. Calculate the formal charge on each oxygen in this structure. Why do we need resonance?</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">For the double-bonded O: FC = 6 − 4 − ½(4) = 0. For each single-bonded O: FC = 6 − 6 − ½(2) = −1. N: FC = 5 − 0 − ½(8) = +1. Sum = 0 + (−1) + (−1) + (+1) = −1 = charge on ion ✓. However, experimentally all three N–O bonds are identical (intermediate between single and double). We use <b>resonance</b>: the double bond is delocalised over all three oxygen positions, giving each N–O bond a bond order of 1⅓.</div>
+</div>
+
+<h2>5. Resonance — When One Structure Isn't Enough</h2>
+
+<p><b>Resonance</b> occurs when two or more valid Lewis structures can be drawn that differ only in the placement of electrons (not atoms). The true structure is a <b>resonance hybrid</b> — a weighted average of all contributing forms. Delocalised electrons are shown with a dashed circle or line.</p>
+
+<p>Key examples: $\ce{NO3-}$, $\ce{CO3^{2-}}$, $\ce{O3}$ (ozone), $\ce{C6H6}$ (benzene), $\ce{SO3}$, $\ce{NO2-}$.</p>
+
+<h2>6. Worked Examples</h2>
+
+<div class="example">
+<b>Example 1 — Lewis Structure with Formal Charge:</b><br><br>
+Draw the best Lewis structure for $\ce{SO2}$ and calculate formal charges on all atoms.<br><br>
+<b>Step 1:</b> Valence electrons: S(6) + 2×O(6) = 18.<br>
+<b>Step 2:</b> Skeleton: O–S–O.<br>
+<b>Step 3:</b> Single bonds use 4 e⁻, leaving 14. Fill octets: each O gets 6 e⁻ as lone pairs = 12, leaving 2 e⁻ as one lone pair on S. Now S has only 8 e⁻ (octet satisfied) but there are 2 e⁻ left — place them on S as a second lone pair. S now has 10 e⁻ total (expanded octet — OK for Period 3).<br>
+<b>Better approach:</b> Form one double bond to give each atom an octet with minimal formal charge. Structure: O=S–O with one lone pair on S and two on each O.<br>
+<b>Formal charges — Structure with one S=O double bond:</b><br>
+Double-bonded O: FC = 6 − 4 − ½(4) = 0.<br>
+Single-bonded O: FC = 6 − 6 − ½(2) = −1.<br>
+S: FC = 6 − 2 − ½(6) = +1.<br>
+Sum = 0. This is a resonance hybrid — both O positions are equivalent.
+</div>
+
+<div class="example">
+<b>Example 2 — Identifying the Best Structure:</b><br><br>
+For the cyanate ion $\ce{OCN-}$, three possible skeletal arrangements exist: O–C–N, C–O–N, and C–N–O. Use formal charge to determine the most stable arrangement.<br><br>
+Valence electrons: O(6) + C(4) + N(5) + 1(charge) = 16.<br><br>
+<b>O–C–N (cyanate):</b> $\ce{^{-}O-C#N}$ with triple C≡N bond. FC: O = 6−6−½(2)=−1; C = 4−0−½(8)=0; N = 5−2−½(6)=0. Sum = −1 ✓<br>
+<b>C–O–N:</b> FC would place negative on C or N (less electronegative than O) → less stable.<br>
+<b>C–N–O (isocyanate):</b> $\ce{^{-}C=N^{+}=O}$ has FC: C = −1, N = +1, O = 0... or with different bonding. The most stable has negative charge on O (most electronegative).<br><br>
+<b>Winner:</b> O–C–N (cyanate) because the negative formal charge sits on oxygen, the most electronegative element.
+</div>
+
+<div class="example">
+<b>Example 3 — Resonance in the Carbonate Ion:</b><br><br>
+Draw all resonance structures for $\ce{CO3^{2-}}$ and describe the true structure.<br><br>
+Total valence electrons: C(4) + 3×O(6) + 2(charge) = 24. With C central, three equivalent resonance forms each have one C=O double bond and two C–O⁻ single bonds. The double bond is delocalised over all three positions.<br><br>
+The true carbonate ion has three identical C–O bonds, each with bond order = 1⅓ (intermediate between single and double). All O atoms carry an equal partial negative charge (−⅔ each). The ion is trigonal planar with 120° bond angles. <b>Experimental evidence:</b> all three C–O bond lengths in $\ce{CO3^{2-}}$ are identical (≈129 pm, between C–O single 143 pm and C=O double 120 pm).
+</div>
+
+<h2>7. Common Misconceptions</h2>
+
+<div class="misconception">
+<h3>⚠️ Common Mistakes to Avoid</h3>
+<ol>
+  <li><b>Confusing formal charge with oxidation state.</b> Formal charge assumes equal sharing of bonding electrons (covalent model). Oxidation state assumes complete transfer to the more electronegative atom (ionic model). They are different concepts with different values for the same atom.</li>
+  <li><b>Drawing resonance structures with different atom arrangements.</b> Resonance structures must have identical atom connectivity — only electrons move. If atoms are rearranged, those are different <em>isomers</em>, not resonance forms.</li>
+  <li><b>Forgetting to count the ion charge in total valence electrons.</b> For $\ce{NO3-}$, add 1 electron. For $\ce{NH4+}$, subtract 1. This is the #1 cause of wrong Lewis structures in exams.</li>
+  <li><b>Giving hydrogen an octet.</b> Hydrogen follows the <b>duet rule</b> — it can only accommodate 2 electrons (1 bond). Never draw H with lone pairs or double bonds.</li>
+  <li><b>Expanding the octet for Period 2 elements.</b> C, N, O, F <b>cannot</b> expand their octet — they lack accessible d orbitals. Only Period 3+ elements (e.g., P, S, Cl) can have more than 8 electrons. A structure with 10 electrons around oxygen is always wrong.</li>
+</ol>
+</div>
+
+<h2>8. End-of-Lesson Practice</h2>
+
+<p><b>Question 1:</b> Draw the Lewis structure of $\ce{PCl3}$ and state the number of bonding pairs and lone pairs on the central atom.</p>
+
+<p><b>Question 2:</b> Draw the Lewis structure of $\ce{SO4^{2-}}$ and calculate the formal charge on each atom in your best structure.</p>
+
+<p><b>Question 3:</b> The thiocyanate ion $\ce{SCN-}$ can exist as $\ce{S-C#N}$ or $\ce{S=C=N}$. Use formal charges to determine which is more stable.</p>
+
+<p><b>Question 4:</b> Explain why $\ce{BeCl2}$ in the gas phase is linear and covalent, not ionic. Draw its Lewis structure and comment on whether it obeys the octet rule.</p>
+
+<p><b>Question 5:</b> Draw all resonance structures for $\ce{NO2-}$ (nitrite ion). What is the N–O bond order in the resonance hybrid?</p>
+
+<p><b>Question 6 (HL multi-step):</b> The molecule $\ce{XeF4}$ has xenon as the central atom. (a) Count total valence electrons. (b) Draw the Lewis structure. (c) How many electrons surround Xe? (d) Is this an example of octet expansion? Explain. (e) What is the formal charge on Xe?</p>
+
+<button class="practice-toggle" onclick="var a=this.nextElementSibling;a.classList.toggle('open');this.textContent=a.classList.contains('open')?'▴ Hide Answers':'▸ Show Answers'">▸ Show Answers</button>
+<div class="practice-answers">
+
+<p><b>Answer 1:</b> $\ce{PCl3}$: P has 5 valence e⁻, each Cl has 7 → total = 5 + 21 = 26 e⁻. Three P–Cl single bonds + one lone pair on P, three lone pairs on each Cl. Central P: 3 bonding pairs, 1 lone pair. All atoms have octets.</p>
+
+<p><b>Answer 2:</b> $\ce{SO4^{2-}}$: S(6) + 4×O(6) + 2(charge) = 32 e⁻. Best structure: two S=O double bonds and two S–O⁻ single bonds (resonance hybrid of 6 forms). Formal charges: S = 6 − 0 − ½(12) = 0; each double-bonded O = 6 − 4 − ½(4) = 0; each single-bonded O = 6 − 6 − ½(2) = −1. Sum = 0+0+0+(−1)+(−1) = −2 = charge on ion ✓. In the resonance hybrid, all S–O bonds are equivalent with bond order 1.5.</p>
+
+<p><b>Answer 3:</b> <b>S–C≡N (thiocyanate):</b> S: FC = 6−6−½(2) = −1; C: FC = 4−0−½(8) = 0; N: FC = 5−2−½(6) = 0. Sum = −1.<br><b>S=C=N (isothiocyanate):</b> S: FC = 6−4−½(4) = 0; C: FC = 4−0−½(8) = 0; N: FC = 5−4−½(4) = −1. Sum = −1.<br>Both have FC sum of −1, but in S–C≡N the negative charge sits on S (EN=2.5), while in S=C=N it sits on N (EN=3.0). The nitrogen-bearing negative charge (more electronegative atom) is slightly preferred for free ions, but both forms exist — the ion is ambidentate.</p>
+
+<p><b>Answer 4:</b> $\ce{BeCl2}$: Be(2) + 2×Cl(7) = 16 e⁻. Structure: Cl–Be–Cl with three lone pairs on each Cl. Be has only 4 electrons — it is <b>electron-deficient</b> and does not obey the octet rule. In the gas phase, it is a linear covalent molecule (sp hybridised). In the solid state, it polymerises via chlorine bridges to give Be a full octet. The electronegativity difference (Be=1.5, Cl=3.0) is moderate, so the bonding is polar covalent with significant ionic character.</p>
+
+<p><b>Answer 5:</b> $\ce{NO2-}$: N(5) + 2×O(6) + 1 = 18 e⁻. Two equivalent resonance structures with N=O double bond on one side and N–O⁻ single bond on the other. The double bond is delocalised — each N–O bond has bond order = 1.5. The ion is bent (V-shaped) with one lone pair on N.</p>
+
+<p><b>Answer 6:</b> (a) Xe(8) + 4×F(7) = 36 e⁻. (b) Square planar: four Xe–F single bonds, each F with three lone pairs, plus two lone pairs on Xe (above and below the plane). (c) Xe is surrounded by 8 bonding electrons + 4 non-bonding = <b>12 electrons</b> total. (d) Yes — Xe is Period 5 with accessible 5d orbitals; it can expand beyond an octet. This is octet expansion. (e) FC on Xe = 8 − 4 − ½(8) = 0.</p>
+</div>
+
+<h2>9. Key Terms</h2>
+<table>
+<tr><th>Term</th><th>Definition</th></tr>
+<tr><td>Ionic bond</td><td>Electrostatic attraction between oppositely charged ions in a lattice</td></tr>
+<tr><td>Covalent bond</td><td>Electrostatic attraction between a shared pair of electrons and two nuclei</td></tr>
+<tr><td>Lewis structure</td><td>A diagram showing all valence electrons as dots; bonding pairs as lines, lone pairs as dots</td></tr>
+<tr><td>Formal charge</td><td>The charge an atom would have if bonding electrons were shared equally: $V - N_{\text{non}} - \frac{1}{2}N_{\text{bond}}$</td></tr>
+<tr><td>Resonance</td><td>The representation of a molecule by two or more Lewis structures differing only in electron placement</td></tr>
+<tr><td>Resonance hybrid</td><td>The true structure, which is a weighted average of all resonance contributors</td></tr>
+<tr><td>Delocalised electrons</td><td>Electrons spread over three or more atoms, not confined to a single bond or atom</td></tr>
+<tr><td>Octet rule</td><td>The tendency of atoms to achieve 8 valence electrons (noble gas configuration)</td></tr>
+<tr><td>Expanded octet</td><td>When a central atom from Period 3+ accommodates more than 8 electrons using d orbitals</td></tr>
+<tr><td>Electron-deficient</td><td>A molecule where the central atom has fewer than 8 electrons (e.g., $\ce{BeCl2}$, $\ce{BF3}$)</td></tr>
+</table>
+
+<h2>10. Exam Tips</h2>
+
+<div class="exam-tip"><b>Paper 1 — Formal Charge Questions:</b> You usually don't need to calculate formal charges from scratch in Paper 1. Instead, use the rule: the best structure has formal charges closest to zero, and any negative charge on the most electronegative atom. Look at the given structures and eliminate those with +2 or −2 formal charges. The correct answer is almost always the one with all FC = 0 or the most electronegative atom bearing the negative charge.</div>
+
+<div class="exam-tip"><b>Paper 2 — Drawing Lewis Structures:</b> You MUST show all valence electrons, including lone pairs. A structure without lone pairs loses marks even if connectivity is correct. For ions, put the structure in square brackets with the charge outside. For resonance, draw all contributing forms (usually 2-3) with double-headed arrows (↔) between them, then state the hybrid structure.</div>
+
+<div class="exam-tip"><b>Common Exam Traps:</b> (1) $\ce{CO}$ has a triple bond with a lone pair on each atom — the carbon carries a formal −1 and oxygen +1, which surprises many students. (2) $\ce{NO}$ is a free radical with 11 valence electrons — it cannot have a full octet on both atoms. (3) $\ce{BF3}$ is electron-deficient (6 e⁻ around B); it readily accepts a lone pair to form $\ce{BF4-}$.</div>
+
 </body>
 </html>

@@ -3,470 +3,292 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lesson 22 — IB Chemistry HL</title>
-<script>window.MathJax = { loader: {load: ['[tex]/mhchem']}, tex: {packages: {'[+]': ['mhchem']}} };</script>
+<title>Lesson 22 — Chemistry HL — Reaction Mechanisms &amp; The Arrhenius Equation</title>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] },
+  loader: { load: ['[tex]/mhchem'] },
+  tex: { packages: {'[+]': ['mhchem']} }
+};
+</script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
 <style>
-  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Palatino', 'Georgia', serif; background: var(--bg); color: var(--text); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; font-size: 17px; line-height: 1.7; }
-  h1 { font-size: 1.7rem; color: var(--accent); margin-bottom: 0.5rem; }
-  h2 { font-size: 1.25rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; margin: 2rem 0 1rem; }
-  h3 { font-size: 1.1rem; color: #444; margin: 1.3rem 0 0.5rem; }
-  p, li { margin-bottom: 0.6rem; }
-  ul, ol { padding-left: 1.8rem; margin-bottom: 1rem; }
-  .worked { background: #f0f7f0; border-left: 4px solid #2c5f2d; padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
-  .worked strong { color: #2c5f2d; }
-  .answer { background: #fefdf7; border: 1px solid var(--border); padding: 0.8rem 1.2rem; margin: 0.5rem 0; border-radius: 6px; }
-  .nav { display: flex; justify-content: space-between; margin: 3rem 0 1rem; padding-top: 1rem; border-top: 2px solid var(--border); font-size: 0.9rem; }
-  .nav a { color: #1a5c9e; text-decoration: none; }
-  .nav a:hover { text-decoration: underline; }
-  .definition { background: #fdf5e6; border-left: 4px solid #d4a017; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
-  table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
-  th, td { padding: 0.5rem; border: 1px solid #ccc; text-align: left; }
-  th { background: #f0f7f0; }
-  @media print { body { font-size: 14px; } .nav { display: none; } }
+:root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Georgia', 'Times New Roman', serif; font-size: 17px; line-height: 1.7; color: var(--text); background: var(--bg); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; }
+h1 { font-size: 1.8rem; color: var(--accent); border-bottom: 3px solid var(--accent); padding-bottom: 0.5rem; margin-bottom: 1rem; }
+h2 { font-size: 1.35rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+h3 { font-size: 1.15rem; color: var(--accent); margin: 1.5rem 0 0.5rem; }
+p { margin-bottom: 0.8rem; }
+.objectives { background: #f0f4ff; border-left: 4px solid var(--accent); padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+.objectives h3 { margin-top: 0; }
+.check-in { background: #fff8e1; border: 1px solid #ffc107; padding: 0.8rem 1rem; margin: 1rem 0; border-radius: 8px; }
+.check-in p { margin-bottom: 0.3rem; }
+.answer-toggle { display: inline-block; padding: 0.2rem 0.8rem; border-radius: 16px; cursor: pointer; font-size: 0.8rem; font-weight: 600; background: #e8f5e9; color: #2e7d32; border: 1px solid #2e7d32; user-select: none; margin-top: 0.3rem; }
+.answer-content { display: none; background: #f1f8e9; padding: 0.6rem 1rem; border-radius: 8px; margin-top: 0.5rem; }
+.answer-content.open { display: block; }
+.example { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem; margin: 1rem 0; }
+.misconception { background: #fff3e0; border-left: 4px solid #e65100; padding: 1rem 1.2rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+.misconception h3 { color: #e65100; }
+.exam-tip { background: #e8f5e9; border-left: 4px solid #2e7d32; padding: 0.8rem 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+th { background: var(--accent); color: white; padding: 0.5rem 0.8rem; text-align: left; }
+td { padding: 0.5rem 0.8rem; border-bottom: 1px solid var(--border); }
+tr:nth-child(even) td { background: #f8f8f6; }
+.diagram { text-align: center; margin: 1.5rem 0; }
+.diagram svg { max-width: 100%; }
+.diagram .caption { font-size: 0.9rem; color: #666; margin-top: 0.3rem; font-style: italic; }
+.definition { background: #fdf5e6; border-left: 4px solid #d4a017; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 8px 8px 0; }
+.practice-toggle { display: block; width: 100%; padding: 0.8rem; background: var(--accent); color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem; font-weight: 600; margin: 1.5rem 0; }
+.practice-answers { display: none; }
+.practice-answers.open { display: block; }
 </style>
 </head>
 <body>
-<h1>Lesson 22: Reaction Mechanisms and The Arrhenius Equation (HL)</h1>
 
-<h2>What You'll Learn</h2>
+<h1>Lesson 22: Reaction Mechanisms &amp; The Arrhenius Equation (HL)</h1>
+<p><b>Syllabus reference:</b> 16.1 — Reaction Mechanisms; 16.2 — Activation Energy (HL)</p>
 
+<div class="objectives">
+<h3>Learning Objectives</h3>
+<p>By the end of this lesson, you will be able to:</p>
 <ul>
-
-<li>Define a reaction mechanism and identify elementary steps, intermediates, and the rate-determining step</li>
-
-<li>Predict the rate law from a given reaction mechanism by identifying the rate-determining step</li>
-
-<li>Determine whether a proposed mechanism is consistent with an experimentally measured rate law</li>
-
-<li>Define molecularity for elementary steps</li>
-
-<li>Apply the Arrhenius equation in both its exponential and linear forms</li>
-
-<li>Calculate activation energy from rate constants measured at two different temperatures</li>
-
+  <li><b>Distinguish</b> between elementary steps and the overall reaction; define molecularity (unimolecular, bimolecular).</li>
+  <li><b>Identify</b> the rate-determining step (RDS) in a proposed mechanism and predict the resulting rate equation.</li>
+  <li><b>Explain</b> why the rate equation reflects the molecularity of the RDS, not the overall stoichiometry.</li>
+  <li><b>Apply</b> the Arrhenius equation: $k = Ae^{-E_a/RT}$ and its logarithmic form $\ln k = \ln A - E_a/RT$.</li>
+  <li><b>Calculate</b> $E_a$ from rate constant data at two temperatures or from the slope of an Arrhenius plot.</li>
 </ul>
-
-<hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
-
-<h2>1. Reaction Mechanisms</h2>
-
-<h3>What This Concept Is and Why It Matters</h3>
-
-<p>When you write a balanced chemical equation like 2NO(g) + O₂(g) → 2NO₂(g), you are describing the overall change — what you have at the start and what you have at the end. But this equation does not tell you what actually happens at the molecular level. Do two NO molecules and one O₂ molecule all crash into each other at the same instant? Or does the reaction happen in a series of smaller, simpler steps?</p>
-
-<p>A <strong>reaction mechanism</strong> is the detailed, step-by-step sequence of events at the molecular level that leads from reactants to products. Understanding mechanisms lets chemists predict rate laws, design catalysts, and control which products form.</p>
-
-<h3>Elementary Steps</h3>
-
-<p>An <strong>elementary step</strong> is a single molecular event — one collision or one decomposition — that cannot be broken down into simpler chemical events. Each elementary step represents exactly what happens when particles interact.</p>
-
-<p>For example, if an elementary step is written as A + B → C, it literally means that one particle of A collides with one particle of B, and in that single collision, they rearrange to form one particle of C.</p>
-
-<p>The overall reaction is the sum of all the elementary steps in the mechanism. When you add up all the steps, any species that appears on both the left and right sides cancels out, leaving only the reactants and products shown in the overall balanced equation.</p>
-
-<h3>Intermediates</h3>
-
-<p>An <strong>intermediate</strong> is a species that is produced in one elementary step and then consumed in a later elementary step. Intermediates do not appear in the overall balanced equation because they cancel out when the steps are added together. They exist only fleetingly during the reaction. They are real chemical species — you can sometimes detect them with special instruments — but they never accumulate because as soon as they are formed, they react further.</p>
-
-<p>For example, in the mechanism:</p>
-
-<p>Step 1: A + B → X (X is formed here)</p>
-
-<p>Step 2: X + C → D (X is consumed here)</p>
-
-<p>The species X is an intermediate. It appears in Step 1 as a product and in Step 2 as a reactant. When you add the two steps (A + B + X + C → X + D), X cancels, giving A + B + C → D.</p>
-
-<hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
-
-<h2>2. The Rate-Determining Step</h2>
-
-<h3>What This Concept Is and Why It Matters</h3>
-
-<p>In any multi-step mechanism, the different elementary steps may happen at different speeds. One step will be slower than all the others. This slowest step is called the <strong>rate-determining step</strong> (often abbreviated RDS). It acts like a bottleneck: the overall reaction cannot go any faster than this slowest step.</p>
-
-<p>A useful analogy is a multi-lane highway that narrows to a single lane. No matter how fast cars travel on the wide section, the rate at which cars pass through the whole road is limited by how fast they can get through the single-lane bottleneck. Similarly, no matter how fast the other steps in a mechanism are, the overall rate is limited by the rate of the slowest step.</p>
-
-<h3>The Rate Law of the Overall Reaction</h3>
-
-<p>This is the most important practical consequence of the rate-determining step concept: the rate law for the overall reaction is determined by the molecularity of the rate-determining step.</p>
-
-<p>Here is what that means in practice. If the slowest step in a mechanism is a single elementary reaction, then the rate law for the overall reaction matches the rate law you would write for that elementary step based on its molecularity:</p>
-
-<ul>
-
-<li>If the RDS is A → products (one molecule decomposing): Rate = k[A]</li>
-
-<li>If the RDS is A + B → products (two molecules colliding): Rate = k[A][B]</li>
-
-<li>If the RDS is 2A → products (two identical molecules colliding): Rate = k[A]²</li>
-
-</ul>
-
-<p>Intermediates that appear in the rate-determining step must be expressed in terms of reactants using equilibrium relationships from fast, reversible steps that precede the RDS. But for most problems at this level, the RDS directly involves only reactants.</p>
-
-<h3>Worked Example 1: Testing a Mechanism Against Experimental Rate Data</h3>
-
-<p><strong>Problem:</strong> The reaction 2NO(g) + O₂(g) → 2NO₂(g) has been studied experimentally. The experimentally determined rate law is Rate = k[NO]²[O₂]. Two possible mechanisms are proposed:</p>
-
-<p><strong>Mechanism A</strong> (single step): 2NO + O₂ → 2NO₂</p>
-
-<p><strong>Mechanism B</strong> (two steps):</p>
-
-<p>Step 1 (slow): 2NO → N₂O₂</p>
-
-<p>Step 2 (fast): N₂O₂ + O₂ → 2NO₂</p>
-
-<p>Determine which mechanism is consistent with the experimental rate law.</p>
-
-<p><strong>Strategy:</strong> For each mechanism, we identify the rate-determining step (or treat the only step as the RDS) and write the rate law it predicts. Then we compare with the experimental rate law.</p>
-
-<p><strong>Solution:</strong></p>
-
-<p><strong>Mechanism A:</strong> This mechanism has only one step, so that step is necessarily the rate-determining step. It is an elementary step involving two NO molecules and one O₂ molecule colliding simultaneously. The rate law for an elementary step is determined by the stoichiometric coefficients of the reactants in that step: Rate = k[NO]²[O₂]. This matches the experimental rate law exactly. So Mechanism A is consistent with the data.</p>
-
-<p><strong>Mechanism B:</strong> The slow step is Step 1, which is the rate-determining step. Step 1 involves two NO molecules colliding: 2NO → N₂O₂. Since this is an elementary step, the rate law is Rate = k[NO]². This predicted rate law does not include [O₂], but the experimental rate law does include [O₂]. Therefore, Mechanism B predicts a rate law that does not match experiment. Mechanism B is not consistent.</p>
-
-<p><strong>Why this makes sense:</strong> Mechanism B would predict that changing the O₂ concentration has no effect on the rate, but experiments show that doubling [O₂] doubles the rate. Mechanism A correctly captures that all three molecules are involved in the crucial collision.</p>
-
-<p>A note of caution: a single-step, three-molecule (termolecular) collision like Mechanism A is statistically very unlikely, and in reality this reaction probably proceeds through a more complex mechanism involving a pre-equilibrium. But for the purpose of this problem, Mechanism A is the one consistent with the data.</p>
-
-<h3>Worked Example 2: Proposing a Mechanism from a Rate Law</h3>
-
-<p><strong>Problem:</strong> The reaction (CH₃)₃CBr + OH⁻ → (CH₃)₃COH + Br⁻ has been studied. The experimentally determined rate law is Rate = k[(CH₃)₃CBr]. Notably, the concentration of OH⁻ does not appear in the rate law — the reaction is zero order with respect to OH⁻. Propose a two-step mechanism that is consistent with this rate law, and clearly identify the rate-determining step and any intermediates.</p>
-
-<p><strong>Strategy:</strong> Since the rate law is first order in (CH₃)₃CBr and zero order in OH⁻, the rate-determining step must involve only (CH₃)₃CBr. The OH⁻ must participate only in a fast step that occurs after the RDS.</p>
-
-<p><strong>Solution:</strong></p>
-
-<p><strong>Step 1 (slow, rate-determining):</strong> (CH₃)₃CBr → (CH₃)₃C⁺ + Br⁻</p>
-
-<p>This is a unimolecular step: one molecule of (CH₃)₃CBr breaks apart to form a positively charged carbocation intermediate, (CH₃)₃C⁺, and a bromide ion. The rate law for this elementary step is Rate = k[(CH₃)₃CBr], which matches the experimental rate law.</p>
-
-<p><strong>Step 2 (fast):</strong> (CH₃)₃C⁺ + OH⁻ → (CH₃)₃COH</p>
-
-<p>The carbocation intermediate, once formed, reacts rapidly with any available OH⁻ ion to form the final alcohol product. Since this step is fast, it does not limit the overall rate.</p>
-
-<p>The intermediate in this mechanism is (CH₃)₃C⁺. It is produced in Step 1 and consumed in Step 2, so it cancels out when the steps are added: (CH₃)₃CBr + OH⁻ → (CH₃)₃COH + Br⁻. This matches the overall reaction.</p>
-
-<p><strong>Why this makes sense:</strong> Because the slow step does not involve OH⁻, adding more OH⁻ cannot speed up the overall reaction — you are limited by how fast (CH₃)₃CBr falls apart, and that does not depend on OH⁻. This is the classic S_N1 mechanism.</p>
-
-<hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
-
-<h2>3. Molecularity</h2>
-
-<h3>What This Concept Is and Why It Matters</h3>
-
-<p>Molecularity is a number that describes how many particles (molecules, atoms, or ions) come together and interact in a single elementary step. It applies only to elementary steps, not to overall reactions.</p>
-
-<p><strong>Unimolecular:</strong> One particle undergoes a change by itself — for example, a molecule breaks apart or rearranges its atoms. Example: Br₂ → 2Br•. The rate law is Rate = k[Br₂].</p>
-
-<p><strong>Bimolecular:</strong> Two particles collide and react. This is the most common type of elementary step. Example: H₂ + I• → HI + H•. The rate law is Rate = k[H₂][I•].</p>
-
-<p><strong>Termolecular:</strong> Three particles collide simultaneously and react. This is extremely rare because the probability of three particles all coming together at exactly the same instant with the right energy and orientation is vanishingly small. If a balanced equation seems to need three molecules, the reaction almost certainly proceeds through a sequence of bimolecular steps (or a bimolecular step followed by a fast unimolecular step), not a single termolecular step.</p>
-
-<hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
-
-<h2>4. The Arrhenius Equation</h2>
-
-<h3>What This Concept Is and Why It Matters</h3>
-
-<p>We know from the previous lessons that the rate of a reaction depends dramatically on temperature, and that the rate constant k changes with temperature. But what is the precise mathematical relationship? The Arrhenius equation, discovered by the Swedish chemist Svante Arrhenius in 1889, gives us this relationship. It is one of the most important equations in all of chemical kinetics.</p>
-
-<h3>The Exponential Form</h3>
-
-<p>The Arrhenius equation is:</p>
-
-<p>\[k = A e^{-E_a / RT}\]</p>
-
-<p>Let us define each symbol:</p>
-
-<ul>
-
-<li><strong>k</strong> is the rate constant at temperature T.</li>
-
-<li><strong>A</strong> is the pre-exponential factor (also called the frequency factor or the Arrhenius constant). It represents the frequency of collisions multiplied by the probability that those collisions have the correct orientation. A has the same units as k.</li>
-
-<li><strong>e</strong> is the base of natural logarithms, approximately equal to 2.718.</li>
-
-<li><strong>Ea</strong> is the activation energy, measured in joules per mole (J mol⁻¹). It is the minimum energy that colliding particles must have for a reaction to occur.</li>
-
-<li><strong>R</strong> is the gas constant, which has the value 8.31 J K⁻¹ mol⁻¹. This constant appears because we are dealing with energy on a per-mole basis.</li>
-
-<li><strong>T</strong> is the absolute temperature in kelvin (K).</li>
-
-</ul>
-
-<p>The term e^(−Ea/RT) is a fraction between 0 and 1. It represents the fraction of collisions that have sufficient energy to overcome the activation barrier. When Ea is large, this fraction is very small. When T is large, this fraction is larger.</p>
-
-<h3>The Linear Form</h3>
-
-<p>Taking the natural logarithm (ln) of both sides of the Arrhenius equation gives:</p>
-
-<p>\[\ln k = \ln A - \frac{E_a}{RT}\]</p>
-
-<p>This can be rearranged to:</p>
-
-<p>\[\ln k = -\frac{E_a}{R} \cdot \frac{1}{T} + \ln A\]</p>
-
-<p>This has the form of a straight line: y = mx + c.</p>
-
-<ul>
-
-<li>y is ln k (what we plot on the vertical axis).</li>
-
-<li>x is 1/T (what we plot on the horizontal axis).</li>
-
-<li>m, the gradient (slope), is −Ea/R.</li>
-
-<li>c, the y-intercept, is ln A.</li>
-
-</ul>
-
-<p>If you measure k at several different temperatures, plot ln k against 1/T, and find the gradient of the best-fit line, you can calculate Ea by multiplying the gradient by −R.</p>
-
-<h3>The Two-Point Form</h3>
-
-<p>If you only have rate constants at two different temperatures (T₁ and T₂), you can use this form:</p>
-
-<p>\[\ln\left(\frac{k_2}{k_1}\right) = \frac{E_a}{R}\left(\frac{1}{T_1} - \frac{1}{T_2}\right)\]</p>
-
-<p>This equation is derived by writing the linear form at two temperatures and subtracting. It allows you to find Ea without needing a full graph.</p>
-
-<h3>Worked Example 3: Finding Ea from Two Temperatures</h3>
-
-<p><strong>Problem:</strong> The rate constant for a chemical reaction is measured at two temperatures. At 300 K, k = 1.00 × 10⁻³ s⁻¹. At 310 K, k = 2.00 × 10⁻³ s⁻¹. Calculate the activation energy Ea for this reaction. Use R = 8.31 J K⁻¹ mol⁻¹.</p>
-
-<p><strong>Strategy:</strong> We use the two-point Arrhenius equation. We know k₁, k₂, T₁, and T₂. We need to find Ea.</p>
-
-<p><strong>Solution:</strong></p>
-
-<p>First, identify the values: k₁ = 1.00 × 10⁻³ s⁻¹ at T₁ = 300 K; k₂ = 2.00 × 10⁻³ s⁻¹ at T₂ = 310 K. Note that k₂/k₁ = 2.00 (the rate constant doubles).</p>
-
-<p>Now apply the two-point equation:</p>
-
-<p>\[\ln\left(\frac{k_2}{k_1}\right) = \frac{E_a}{R}\left(\frac{1}{T_1} - \frac{1}{T_2}\right)\]</p>
-
-<p>Substitute the numbers:</p>
-
-<p>\[\ln(2.00) = \frac{E_a}{8.31}\left(\frac{1}{300} - \frac{1}{310}\right)\]</p>
-
-<p>Calculate ln(2.00) = 0.693.</p>
-
-<p>Calculate the temperature difference term:</p>
-
-<p>\[\frac{1}{300} - \frac{1}{310} = \frac{310 - 300}{300 \times 310} = \frac{10}{93000} = 1.075 \times 10^{-4} \text{ K}^{-1}\]</p>
-
-<p>Now substitute:</p>
-
-<p>\[0.693 = \frac{E_a}{8.31} \times 1.075 \times 10^{-4}\]</p>
-
-<p>\[E_a = \frac{0.693 \times 8.31}{1.075 \times 10^{-4}} = \frac{5.759}{1.075 \times 10^{-4}} = 53600 \text{ J mol}^{-1}\]</p>
-
-<p>Convert to kJ mol⁻¹ by dividing by 1000: <strong>Ea = 53.6 kJ mol⁻¹</strong>.</p>
-
-<p><strong>Why this makes sense:</strong> An activation energy around 50 kJ mol⁻¹ is fairly typical for a reaction that proceeds at a moderate rate near room temperature. The doubling of k for a 10 K rise is also a typical observation that corresponds to Ea values in the 50–60 kJ mol⁻¹ range.</p>
-
-<h3>Worked Example 4: Predicting k at a New Temperature</h3>
-
-<p><strong>Problem:</strong> For a certain decomposition reaction, the rate constant k is measured as 1.0 × 10⁻³ s⁻¹ at 298 K and as 3.0 × 10⁻³ s⁻¹ at 308 K. (a) Calculate the activation energy Ea. (b) Predict the value of the rate constant at 318 K.</p>
-
-<p><strong>Strategy:</strong> Part (a) uses the two-point equation as in the previous example. Part (b) uses the same equation again, but this time we know Ea and we want k at a new temperature.</p>
-
-<p><strong>Solution, part (a):</strong></p>
-
-<p>k₁ = 1.0 × 10⁻³ s⁻¹, T₁ = 298 K; k₂ = 3.0 × 10⁻³ s⁻¹, T₂ = 308 K.</p>
-
-<p>\[\ln\left(\frac{3.0 \times 10^{-3}}{1.0 \times 10^{-3}}\right) = \ln(3.0) = 1.099\]</p>
-
-<p>\[\frac{1}{298} - \frac{1}{308} = \frac{308 - 298}{298 \times 308} = \frac{10}{91784} = 1.090 \times 10^{-4} \text{ K}^{-1}\]</p>
-
-<p>\[1.099 = \frac{E_a}{8.31} \times 1.090 \times 10^{-4}\]</p>
-
-<p>\[E_a = \frac{1.099 \times 8.31}{1.090 \times 10^{-4}} = \frac{9.133}{1.090 \times 10^{-4}} = 83800 \text{ J mol}^{-1} = 83.8 \text{ kJ mol}^{-1}\]</p>
-
-<p><strong>Solution, part (b):</strong> Now use T₁ = 298 K, k₁ = 1.0 × 10⁻³ s⁻¹, T₂ = 318 K, and the Ea we just calculated.</p>
-
-<p>\[\frac{1}{298} - \frac{1}{318} = \frac{318 - 298}{298 \times 318} = \frac{20}{94764} = 2.111 \times 10^{-4} \text{ K}^{-1}\]</p>
-
-<p>\[\ln\left(\frac{k_{318}}{1.0 \times 10^{-3}}\right) = \frac{83800}{8.31} \times 2.111 \times 10^{-4}\]</p>
-
-<p>\[\frac{83800}{8.31} = 10084\]</p>
-
-<p>\[\ln\left(\frac{k_{318}}{1.0 \times 10^{-3}}\right) = 10084 \times 2.111 \times 10^{-4} = 2.129\]</p>
-
-<p>\[\frac{k_{318}}{1.0 \times 10^{-3}} = e^{2.129} = 8.41\]</p>
-
-<p>\[k_{318} = 8.41 \times 1.0 \times 10^{-3} = 8.4 \times 10^{-3} \text{ s}^{-1}\]</p>
-
-<p><strong>Why this makes sense:</strong> Going from 298 K to 308 K (10 K rise) roughly tripled k. Going another 10 K to 318 K roughly triples it again (1.0 → 3.0 → 8.4). This "rule of thumb" — that k increases by a factor of 2 to 3 for each 10 K rise near room temperature — holds for reactions with Ea in the 50–100 kJ mol⁻¹ range.</p>
-
-<hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
-
-<h2>Practice Problems</h2>
-
-<ol>
-
-<li>The gas-phase reaction 2NO₂Cl(g) → 2NO₂(g) + Cl₂(g) has been studied experimentally. The experimentally determined rate law is Rate = k[NO₂Cl], which means the reaction is first order with respect to NO₂Cl. Propose a two-step mechanism that is consistent with this rate law. For your mechanism, clearly identify the rate-determining step and label any reaction intermediates.</li>
-
-</ol>
-
-<ol>
-
-<li>A student proposes two mechanisms for a reaction that has the experimental rate law Rate = k[A][B]².</li>
-
-</ol>
-
-<p><strong>Mechanism 1</strong> (single step): A + 2B → products</p>
-
-<p><strong>Mechanism 2</strong> (two steps):</p>
-
-<p>Step 1 (slow): A + B → C</p>
-
-<p>Step 2 (fast): C + B → products</p>
-
-<p>For each mechanism, write the rate law that the mechanism predicts. Determine which mechanism is consistent with the experimental rate law, and explain your reasoning.</p>
-
-<ol>
-
-<li>The rate constant for a reaction is measured as 2.5 × 10⁻⁴ s⁻¹ at 298 K and as 1.0 × 10⁻³ s⁻¹ at 308 K. Calculate the activation energy Ea for this reaction in kJ mol⁻¹. The gas constant R has the value 8.31 J K⁻¹ mol⁻¹.</li>
-
-</ol>
-
-<ol>
-
-<li>A chemist measures the rate constant k for a reaction at four different temperatures and obtains the following results:</li>
-
-</ol>
-
-<table>
-
-<thead><tr>
-<th>T / K</th>
-<th>290</th>
-<th>300</th>
-<th>310</th>
-<th>320</th>
-</tr></thead>
-<tbody>
-
-<tr>
-<td>k / s⁻¹</td>
-<td>0.50 × 10⁻³</td>
-<td>1.40 × 10⁻³</td>
-<td>3.60 × 10⁻³</td>
-<td>8.70 × 10⁻³</td>
-</tr>
-
-</tbody></table>
-
-<p>Describe in detail how the chemist could determine the activation energy of this reaction graphically. State exactly what quantities should be plotted on each axis, what shape the graph should have, what the gradient represents, and how Ea is calculated from the gradient.</p>
-
-<ol>
-
-<li><strong>(IB-Exam Style)</strong> The hydrolysis of an organic ester in alkaline solution was studied at several temperatures. The reaction is first order with respect to the ester. The rate constant k was measured at different temperatures, and the results are shown below.</li>
-
-</ol>
-
-<table>
-
-<thead><tr>
-<th>T / K</th>
-<th>290</th>
-<th>300</th>
-<th>310</th>
-<th>320</th>
-</tr></thead>
-<tbody>
-
-<tr>
-<td>k / 10⁻³ s⁻¹</td>
-<td>0.50</td>
-<td>1.40</td>
-<td>3.60</td>
-<td>8.70</td>
-</tr>
-
-</tbody></table>
-
-<p>(a) Explain, using the Arrhenius equation k = A e^(−Ea/RT), why the rate constant k increases when the temperature is raised. Your explanation should refer to the mathematical form of the equation.</p>
-
-<p>(b) Using only the data at 290 K and 320 K, calculate the activation energy Ea for this reaction. Express your answer in kJ mol⁻¹. The value of the gas constant R is 8.31 J K⁻¹ mol⁻¹.</p>
-
-<p>(c) Using the value of Ea you calculated in part (b), predict the value of the rate constant k at a temperature of 330 K.</p>
-
-<p>(d) A student studying this reaction proposes a mechanism consisting of a fast first step followed by a slow second step. State which step is the rate-determining step, and explain how the overall rate law is related to the molecularity of this step. The student also suggests that an intermediate is formed. Explain what an intermediate is and why it does not appear in the overall balanced equation for the reaction.</p>
-
-<hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
-
-<h2>Answers</h2>
-
-<h3>Answer 1</h3>
-
-<p>Since the experimental rate law is Rate = k[NO₂Cl] — first order with only one reactant molecule appearing — the rate-determining step must be a unimolecular step involving only NO₂Cl. A consistent two-step mechanism is:</p>
-
-<p><strong>Step 1 (slow, rate-determining):</strong> NO₂Cl → NO₂ + Cl•. This is unimolecular and has the rate law Rate = k[NO₂Cl], matching the experimental data.</p>
-
-<p><strong>Step 2 (fast):</strong> NO₂Cl + Cl• → NO₂ + Cl₂. The chlorine atom (Cl•) produced in Step 1 rapidly attacks another NO₂Cl molecule.</p>
-
-<p>When the two steps are added: NO₂Cl + NO₂Cl + Cl• → NO₂ + Cl• + NO₂ + Cl₂. The Cl• cancels (it is formed in Step 1 and consumed in Step 2), leaving 2NO₂Cl → 2NO₂ + Cl₂, which matches the overall reaction. The intermediate is the chlorine atom, Cl•.</p>
-
-<h3>Answer 2</h3>
-
-<p><strong>Mechanism 1:</strong> This is a single-step mechanism, so that step is the rate-determining step. For a single elementary step A + 2B → products, the rate law is determined by the molecularity: Rate = k[A][B]². This matches the experimental rate law exactly.</p>
-
-<p><strong>Mechanism 2:</strong> The slow step (Step 1) is the rate-determining step: A + B → C. Being bimolecular, the rate law is Rate = k[A][B]. This predicts first order in B, but the experimental rate law shows second order in B. Therefore, Mechanism 2 is <strong>not consistent</strong> with the experimental data.</p>
-
-<p>Only Mechanism 1 is consistent. However, a termolecular elementary step (three particles colliding simultaneously) is statistically very unlikely. In reality, a reaction with this rate law probably proceeds through a pre-equilibrium mechanism (a fast equilibrium forming an intermediate, followed by a slow step). But for the purposes of this question, Mechanism 1 is the one that matches.</p>
-
-<h3>Answer 3</h3>
-
-<p>Use the two-point Arrhenius equation. k₁ = 2.5 × 10⁻⁴ s⁻¹ at T₁ = 298 K; k₂ = 1.0 × 10⁻³ s⁻¹ at T₂ = 308 K. The ratio k₂/k₁ = (1.0 × 10⁻³) / (2.5 × 10⁻⁴) = 4.0.</p>
-
-<p>ln(4.0) = 1.386.</p>
-
-<p>1/T₁ − 1/T₂ = 1/298 − 1/308 = (308 − 298) / (298 × 308) = 10 / 91784 = 1.090 × 10⁻⁴ K⁻¹.</p>
-
-<p>1.386 = (Ea / 8.31) × 1.090 × 10⁻⁴.</p>
-
-<p>Ea = (1.386 × 8.31) / (1.090 × 10⁻⁴) = 11.52 / (1.090 × 10⁻⁴) = 105700 J mol⁻¹ = <strong>106 kJ mol⁻¹</strong> (to three significant figures).</p>
-
-<h3>Answer 4</h3>
-
-<p>The chemist should plot ln k on the vertical y-axis against 1/T on the horizontal x-axis. First, the chemist needs to calculate ln k for each temperature (taking the natural logarithm of each k value) and 1/T for each temperature (dividing 1 by each T value in kelvin). The four data points should then be plotted. According to the linear form of the Arrhenius equation, ln k = −(Ea/R)(1/T) + ln A, this plot should produce a straight line. The gradient (slope) of this straight line is equal to −Ea/R. To find Ea, the chemist calculates the gradient from the best-fit line (gradient = Δ(ln k) / Δ(1/T)) and then multiplies the gradient by −R: Ea = −gradient × R. The y-intercept of the line gives ln A, from which the pre-exponential factor A can be found by taking e^(y-intercept). This graphical method is more reliable than using just two points because it uses all the data and averages out experimental errors.</p>
-
-<h3>Answer 5</h3>
-
-<p><strong>(a)</strong> The Arrhenius equation k = A e^(−Ea/RT) contains the term e^(−Ea/RT). The exponent is −Ea/(RT). As T (the denominator of the denominator) increases, the value of Ea/(RT) becomes smaller. Since there is a negative sign in front, −Ea/(RT) becomes less negative — it moves closer to zero from below. The exponential function e^x increases as x increases (becomes less negative), so e^(−Ea/RT) becomes larger. Since k = A multiplied by this exponential factor, and A is essentially constant with respect to temperature, k increases. Physically, this means that at higher temperatures, a larger fraction of molecular collisions have energy greater than or equal to Ea, so the reaction proceeds faster.</p>
-
-<p><strong>(b)</strong> k₁ = 0.50 × 10⁻³ s⁻¹ at T₁ = 290 K; k₂ = 8.70 × 10⁻³ s⁻¹ at T₂ = 320 K. The ratio k₂/k₁ = 8.70 / 0.50 = 17.4.</p>
-
-<p>ln(17.4) = 2.856.</p>
-
-<p>1/T₁ − 1/T₂ = 1/290 − 1/320 = (320 − 290) / (290 × 320) = 30 / 92800 = 3.233 × 10⁻⁴ K⁻¹.</p>
-
-<p>2.856 = (Ea / 8.31) × 3.233 × 10⁻⁴.</p>
-
-<p>Ea = (2.856 × 8.31) / (3.233 × 10⁻⁴) = 23.73 / (3.233 × 10⁻⁴) = 73400 J mol⁻¹ = <strong>73.4 kJ mol⁻¹</strong>.</p>
-
-<p><strong>(c)</strong> Use T₁ = 290 K (where k₁ = 0.50 × 10⁻³ s⁻¹) and T₂ = 330 K, with Ea = 73.4 kJ mol⁻¹ = 73400 J mol⁻¹.</p>
-
-<p>1/T₁ − 1/T₂ = 1/290 − 1/330 = (330 − 290) / (290 × 330) = 40 / 95700 = 4.180 × 10⁻⁴ K⁻¹.</p>
-
-<p>ln(k₃₃₀ / 0.50 × 10⁻³) = (73400 / 8.31) × 4.180 × 10⁻⁴ = 8833 × 4.180 × 10⁻⁴ = 3.692.</p>
-
-<p>k₃₃₀ / 0.50 × 10⁻³ = e^3.692 = 40.1.</p>
-
-<p>k₃₃₀ = 40.1 × 0.50 × 10⁻³ = <strong>2.01 × 10⁻² s⁻¹</strong> (approximately 2.0 × 10⁻² s⁻¹).</p>
-
-<p><strong>(d)</strong> The rate-determining step is the slow second step, because the rate-determining step is always the slowest step in a mechanism. The overall rate law is determined by the molecularity of this slow step. If the slow step is, for example, a reaction between the intermediate (call it X) and water, the rate law would be Rate = k[X][H₂O]. However, since X is an intermediate (it does not appear in the overall equation), its concentration must be expressed in terms of the reactants using the equilibrium constant of the fast first step. An intermediate is a species that is produced in one elementary step of a mechanism and consumed in a subsequent elementary step. It does not appear in the overall balanced equation because when all the elementary steps of the mechanism are added together, the intermediate appears as both a product (in one step) and a reactant (in another step), and thus cancels out algebraically.</p>
-
-<div class="nav">
-  <a href="lesson_21.html">← Previous Lesson</a>
-  <a href="../index.html">↑ All Lessons</a>
-  <a href="lesson_23.html">Next Lesson →</a>
 </div>
+
+<h2>1. Prior Knowledge Check</h2>
+
+<p><b>Question 1:</b> Define the rate-determining step of a multi-step reaction.</p>
+<div class="check-in">
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">The rate-determining step (RDS) is the <b>slowest</b> elementary step in a reaction mechanism. It acts as a bottleneck — the overall rate cannot exceed the rate of this step. All steps after the RDS are kinetically invisible because they occur faster than the RDS can feed them intermediates.</div>
+</div>
+
+<p><b>Question 2:</b> Why does raising the temperature increase the rate constant $k$?</p>
+<div class="check-in">
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">Higher temperature increases the average kinetic energy of particles, shifting the Maxwell-Boltzmann distribution so that a much larger <b>fraction</b> of collisions have energy $\ge E_a$. This exponentially increases the proportion of effective collisions, which is reflected in a larger $k$. The Arrhenius equation quantifies this: $k = Ae^{-E_a/RT}$.</div>
+</div>
+
+<h2>2. Reaction Mechanisms — Elementary Steps</h2>
+
+<p>Most chemical reactions do not occur in a single collision. Instead, they proceed through a series of <b>elementary steps</b>, each involving a small number of particles colliding or a single particle dissociating. The sequence of elementary steps is the <b>reaction mechanism</b>.</p>
+
+<h3>2.1 Molecularity</h3>
+<ul>
+  <li><b>Unimolecular:</b> One particle rearranges or dissociates (e.g., $\ce{A -> B + C}$). Rate = $k[\ce{A}]$.</li>
+  <li><b>Bimolecular:</b> Two particles collide (e.g., $\ce{A + B -> C}$ or $\ce{2A -> C}$). Rate = $k[\ce{A}][\ce{B}]$ or $k[\ce{A}]^2$.</li>
+  <li><b>Termolecular:</b> Three particles collide simultaneously — extremely rare in practice.</li>
+</ul>
+
+<div class="definition">
+<b>Key principle:</b> For any <b>elementary step</b>, the rate law follows directly from the molecularity. The order with respect to each reactant equals its coefficient in that step.
+</div>
+
+<h3>2.2 The Rate-Determining Step (RDS)</h3>
+
+<p>In a multi-step mechanism, the overall rate is governed by the <b>slowest step</b> — the RDS. Steps before the RDS establish a pre-equilibrium that feeds the RDS. Steps after the RDS consume intermediates rapidly and do not affect the rate law.</p>
+
+<div class="diagram">
+<svg width="520" height="220" viewBox="0 0 520 220">
+  <defs><marker id="ar22a" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 Z" fill="#333"/></marker></defs></defs>
+  <!-- step 1: fast -->
+  <rect x="30" y="60" width="100" height="55" rx="8" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="2"/>
+  <text x="80" y="85" text-anchor="middle" font-size="12" font-weight="bold">Step 1</text>
+  <text x="80" y="102" text-anchor="middle" font-size="10" fill="#555">A → B (fast)</text>
+  <!-- arrow 1 -->
+  <line x1="130" y1="87" x2="170" y2="87" stroke="#333" stroke-width="2" marker-end="url(#ar22a)"/>
+  <!-- step 2: slow (RDS) -->
+  <rect x="175" y="50" width="140" height="75" rx="8" fill="#ffebee" stroke="#c62828" stroke-width="3"/>
+  <text x="245" y="75" text-anchor="middle" font-size="12" font-weight="bold" fill="#c62828">Step 2 — RDS</text>
+  <text x="245" y="95" text-anchor="middle" font-size="10" fill="#555">B + C → D (slow)</text>
+  <text x="245" y="112" text-anchor="middle" font-size="10" fill="#c62828">⬅ bottleneck</text>
+  <!-- arrow 2 -->
+  <line x1="315" y1="87" x2="355" y2="87" stroke="#333" stroke-width="2" marker-end="url(#ar22a)"/>
+  <!-- step 3: fast -->
+  <rect x="360" y="60" width="100" height="55" rx="8" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="2"/>
+  <text x="410" y="85" text-anchor="middle" font-size="12" font-weight="bold">Step 3</text>
+  <text x="410" y="102" text-anchor="middle" font-size="10" fill="#555">D → E (fast)</text>
+  <!-- labels -->
+  <text x="78" y="170" text-anchor="middle" font-size="11" fill="#2c5f2d">Kinetic</text>
+  <text x="78" y="183" text-anchor="middle" font-size="11" fill="#2c5f2d">irrelevance</text>
+  <text x="245" y="175" text-anchor="middle" font-size="11" fill="#c62828">Rate = k₂[B][C]</text>
+  <text x="245" y="190" text-anchor="middle" font-size="11" fill="#c62828">Overall rate law</text>
+  <text x="410" y="170" text-anchor="middle" font-size="11" fill="#2c5f2d">Kinetic</text>
+  <text x="410" y="183" text-anchor="middle" font-size="11" fill="#2c5f2d">irrelevance</text>
+</svg>
+<div class="caption">Figure 1: A three-step mechanism. Step 2 is the RDS (slowest). Only the species in Step 2 appear in the rate law. Steps before the RDS may create intermediates that appear in the rate law; steps after the RDS are kinetically invisible.</div>
+</div>
+
+<div class="check-in">
+<p><b>Check-in:</b> A proposed mechanism for $\ce{2A + B -> C + D}$ is: (1) $\ce{A + B -> X}$ (slow), (2) $\ce{X + A -> C + D}$ (fast). Predict the rate equation.</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">Step 1 is rate-determining and bimolecular (A + B colliding). The rate = $k[\ce{A}][\ce{B}]$. Overall order = 2. Note: even though the overall equation has 2A + B, the rate law is $k[\ce{A}][\ce{B}]$, <b>not</b> $k[\ce{A}]^2[\ce{B}]$. The stoichiometric coefficient of A (2) is irrelevant — only what happens in the RDS matters.</div>
+</div>
+
+<h2>3. The Arrhenius Equation</h2>
+
+<p>The Arrhenius equation quantifies how the rate constant $k$ depends on temperature and activation energy:</p>
+
+<div class="definition">
+<b>Arrhenius equation:</b>
+$$k = A e^{-E_a/RT}$$
+$k$ = rate constant; $A$ = pre-exponential (frequency) factor; $E_a$ = activation energy (J mol⁻¹); $R = 8.31$ J K⁻¹ mol⁻¹; $T$ = temperature (K).
+</div>
+
+<p>The exponential term $e^{-E_a/RT}$ represents the <b>fraction of collisions</b> with energy $\ge E_a$. As $T$ increases or $E_a$ decreases, this fraction grows. The pre-exponential factor $A$ accounts for collision frequency and orientation probability.</p>
+
+<h3>3.1 Logarithmic Form</h3>
+
+<p>Taking natural logs of both sides gives a linear equation:</p>
+
+$$\ln k = \ln A - \frac{E_a}{R}\left(\frac{1}{T}\right)$$
+
+<p>This has the form $y = c + mx$ where $y = \ln k$, $x = 1/T$, $m = -E_a/R$, and $c = \ln A$.</p>
+
+<h3>3.2 Two-Point Form</h3>
+
+<p>If you know $k$ at two temperatures:</p>
+
+$$\ln\left(\frac{k_2}{k_1}\right) = \frac{E_a}{R}\left(\frac{1}{T_1} - \frac{1}{T_2}\right)$$
+
+<div class="diagram">
+<svg width="500" height="280" viewBox="0 0 500 280">
+  <line x1="70" y1="240" x2="480" y2="240" stroke="#333" stroke-width="2"/>
+  <line x1="70" y1="245" x2="70" y2="30" stroke="#333" stroke-width="2"/>
+  <text x="275" y="272" text-anchor="middle" font-size="13">1/T (K⁻¹)</text>
+  <text x="18" y="140" text-anchor="middle" font-size="13" transform="rotate(-90,18,140)">ln k</text>
+  <!-- line -->
+  <line x1="95" y1="210" x2="460" y2="60" stroke="#c62828" stroke-width="2.5"/>
+  <!-- data points -->
+  <circle cx="140" cy="190" r="3" fill="#2c5f2d"/>
+  <circle cx="230" cy="155" r="3" fill="#2c5f2d"/>
+  <circle cx="320" cy="120" r="3" fill="#2c5f2d"/>
+  <circle cx="410" cy="85" r="3" fill="#2c5f2d"/>
+  <!-- annotations -->
+  <text x="280" y="45" text-anchor="middle" font-size="11" fill="#c62828">slope = −Eₐ/R</text>
+  <text x="440" y="235" text-anchor="middle" font-size="10" fill="#555">y-intercept = ln A</text>
+  <!-- slope triangle -->
+  <line x1="230" y1="155" x2="320" y2="155" stroke="#1565c0" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="320" y1="155" x2="320" y2="120" stroke="#1565c0" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="275" y="170" text-anchor="middle" font-size="10" fill="#1565c0">Δ(1/T)</text>
+  <text x="330" y="140" font-size="10" fill="#1565c0">Δ(ln k)</text>
+</svg>
+<div class="caption">Figure 2: An Arrhenius plot: $\ln k$ against $1/T$. The negative slope = $-E_a/R$. The $y$-intercept at $1/T=0$ (infinite temperature) gives $\ln A$. A steeper slope means a higher $E_a$ — the reaction is more temperature-sensitive.</div>
+</div>
+
+<div class="check-in">
+<p><b>Check-in:</b> The rate constant doubles when the temperature is raised from 298 K to 308 K. Estimate $E_a$. ($R = 8.31$ J K⁻¹ mol⁻¹)</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">$\ln(k_2/k_1) = \ln 2 = 0.693$. $1/T_1 - 1/T_2 = 1/298 - 1/308 = 1.09 \times 10^{-4}$. $E_a = R \times \ln 2 / (1/T_1 - 1/T_2) = 8.31 \times 0.693 / (1.09\times10^{-4}) = \mathbf{5.28 \times 10^4\text{ J mol}^{-1} = 52.8\text{ kJ mol}^{-1}}$. This is a typical $E_a$ for many organic reactions. Note that J mol⁻¹ is the IB-preferred unit for Arrhenius calculations.</div>
+</div>
+
+<h2>4. Connecting Mechanism to Rate Law</h2>
+
+<p>When the RDS involves an <b>intermediate</b> formed in a prior fast equilibrium step, you must express the intermediate's concentration in terms of reactants using the equilibrium constant.</p>
+
+<div class="check-in">
+<p><b>Check-in:</b> Mechanism: $\ce{A <=>[fast] B}$; $\ce{B + C -> D}$ (slow). Derive the rate law.</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">RDS: rate = $k_2[\ce{B}][\ce{C}]$. But B is an intermediate. From the fast equilibrium: $K = [\ce{B}]/[\ce{A}]$, so $[\ce{B}] = K[\ce{A}]$. Substituting: rate = $k_2 K [\ce{A}][\ce{C}] = k_{\text{obs}}[\ce{A}][\ce{C}]$, where $k_{\text{obs}} = k_2 K$. The overall rate law is first order in A and first order in C, even though C does not appear in the equilibrium step.</div>
+</div>
+
+<h2>5. Worked Examples</h2>
+
+<div class="example">
+<b>Example 1 — Predicting Rate Law from Mechanism:</b><br><br>
+The reaction $\ce{2NO(g) + O2(g) -> 2NO2(g)}$ has the experimental rate law: rate = $k[\ce{NO}]^2[\ce{O2}]$. A proposed mechanism is:<br>
+(1) $\ce{NO + O2 <=>[\text{fast}] NO3}$<br>
+(2) $\ce{NO3 + NO ->[\text{slow}] 2NO2}$<br>
+Is the mechanism consistent with the rate law?<br><br>
+<b>Solution:</b> Step 2 is RDS: rate = $k_2[\ce{NO3}][\ce{NO}]$. $\ce{NO3}$ is an intermediate. From step 1 equilibrium: $K = [\ce{NO3}]/([\ce{NO}][\ce{O2}])$, so $[\ce{NO3}] = K[\ce{NO}][\ce{O2}]$. Substituting: rate = $k_2 K [\ce{NO}][\ce{O2}][\ce{NO}] = k[\ce{NO}]^2[\ce{O2}]$, where $k = k_2 K$. This matches the experimental rate law — the mechanism is <b>consistent</b>.<br><br>
+<b>⚠️ Common wrong approach:</b> Claiming "the mechanism is correct." Consistency does <b>not</b> prove the mechanism — it only shows the mechanism is not ruled out. Other mechanisms might also be consistent. Kinetics can disprove but never prove a mechanism.
+</div>
+
+<div class="example">
+<b>Example 2 — Arrhenius from Two Temperatures:</b><br><br>
+For $\ce{2HI -> H2 + I2}$, $k = 3.5 \times 10^{-7}$ dm³ mol⁻¹ s⁻¹ at 556 K and $k = 1.4 \times 10^{-5}$ dm³ mol⁻¹ s⁻¹ at 629 K. Calculate $E_a$ and $A$.<br><br>
+<b>Solution:</b> $k_2/k_1 = 1.4\times10^{-5} / 3.5\times10^{-7} = 40$. $\ln(40) = 3.69$.<br>
+$1/T_1 - 1/T_2 = 1/556 - 1/629 = 1.799\times10^{-3} - 1.590\times10^{-3} = 2.09\times10^{-4}$.<br>
+$E_a = R \times \ln(40) / (2.09\times10^{-4}) = 8.31 \times 3.69 / 2.09\times10^{-4} = \mathbf{1.47 \times 10^5\text{ J mol}^{-1} = 147\text{ kJ mol}^{-1}}$.<br>
+For $A$: $A = k / e^{-E_a/RT}$. Using $T = 556$ K: $E_a/RT = 147000/(8.31\times556) = 31.8$. $e^{-31.8} = 1.56\times10^{-14}$. $A = 3.5\times10^{-7} / 1.56\times10^{-14} = \mathbf{2.2 \times 10^7\text{ dm}^3\text{ mol}^{-1}\text{ s}^{-1}}$.
+</div>
+
+<div class="example">
+<b>Example 3 — Arrhenius Plot:</b><br><br>
+An Arrhenius plot of $\ln k$ vs. $1/T$ gives a straight line with slope = $-1.24 \times 10^4$ K and $y$-intercept = 26.8. Calculate $E_a$ and $A$.<br><br>
+<b>Solution:</b> Slope = $-E_a/R$, so $E_a = -R \times \text{slope} = -8.31 \times (-1.24\times10^4) = \mathbf{1.03 \times 10^5\text{ J mol}^{-1} = 103\text{ kJ mol}^{-1}}$.<br>
+$y$-intercept = $\ln A$, so $A = e^{26.8} = \mathbf{4.4 \times 10^{11}}$ (units match those of $k$).<br><br>
+<b>⚠️ Common wrong approach:</b> Forgetting the negative sign. The slope is $-E_a/R$, so $E_a = -R \times \text{slope}$. If the slope is negative (as it always is for a normal Arrhenius plot), $E_a$ is positive. Also, using °C instead of K — the Arrhenius equation requires <b>absolute temperature</b>.
+</div>
+
+<div class="misconception">
+<h3>⚠️ Common Mistakes to Avoid</h3>
+<ol>
+  <li><b>"All collisions with $E \ge E_a$ react."</b> No — orientation also matters. The pre-exponential factor $A$ accounts for the probability that a collision with sufficient energy also has the correct orientation. $A$ is typically much smaller than the total collision frequency.</li>
+  <li><b>"The RDS is always the first step."</b> No. The RDS can be any step. If it is the second or third step, prior steps establish equilibria that feed the RDS. The intermediate concentrations appear in the rate law and must be expressed in terms of reactants.</li>
+  <li><b>"A mechanism consistent with the rate law is proven correct."</b> Kinetics can only <b>disprove</b> a mechanism (if the predicted rate law does not match experiment). Many different mechanisms can predict the same rate law, so consistency is necessary but not sufficient.</li>
+  <li><b>"$E_a$ is the difference in energy between reactants and products."</b> No. That is $\Delta H$. $E_a$ is the energy barrier — the difference between the transition state and reactants. A catalyst lowers this barrier without changing $\Delta H$.</li>
+  <li><b>"The Arrhenius equation predicts $k$ increases linearly with $T$."</b> The relationship is <b>exponential</b>: $k \propto e^{-1/T}$. A small increase in $T$ produces a large increase in $k$, especially when $E_a$ is high.</li>
+</ol>
+</div>
+
+<h2>6. End-of-Lesson Practice</h2>
+
+<p><b>Question 1 (Paper 1 style):</b> A reaction has mechanism: Step 1: $\ce{A -> B}$ (slow); Step 2: $\ce{B + C -> D}$ (fast). The rate equation is:<br>
+A. rate = $k[\ce{A}][\ce{C}]$ &nbsp; B. rate = $k[\ce{A}]$ &nbsp; C. rate = $k[\ce{B}][\ce{C}]$ &nbsp; D. rate = $k[\ce{A}]^2$</p>
+
+<p><b>Question 2:</b> The rate constant of a reaction is $2.0 \times 10^{-4}$ s⁻¹ at 300 K and $8.0 \times 10^{-4}$ s⁻¹ at 310 K. Calculate $E_a$.</p>
+
+<p><b>Question 3:</b> Explain why most reactions approximately double in rate for every 10°C rise, using the Arrhenius equation.</p>
+
+<p><b>Question 4:</b> A proposed mechanism for $\ce{2A + B -> P}$ is: $\ce{A + B <=>[fast] X}$; $\ce{X + A -> P}$ (slow). Deduce the rate law and explain whether it is consistent with the stoichiometry.</p>
+
+<p><b>Question 5:</b> An Arrhenius plot gives slope = $-9.50 \times 10^3$ K. Find $E_a$ in kJ mol⁻¹. If $\ln A = 24.0$, calculate $k$ at 350 K.</p>
+
+<p><b>Question 6:</b> For a reaction with $E_a = 75$ kJ mol⁻¹ and $A = 1.0 \times 10^{10}$ s⁻¹, calculate $k$ at 298 K and 308 K. Hence find the factor by which the rate increases for this 10°C rise.</p>
+
+<button class="practice-toggle" onclick="var a=this.nextElementSibling;a.classList.toggle('open');this.textContent=a.classList.contains('open')?'▴ Hide Answers':'▸ Show Answers'">▸ Show Answers</button>
+<div class="practice-answers">
+
+<p><b>Answer 1:</b> B. The RDS is Step 1 (slow), which is unimolecular (A → B). The rate law for an elementary unimolecular step is rate = $k[\ce{A}]$. Step 2 is fast and does not affect the rate law.</p>
+
+<p><b>Answer 2:</b> $\ln(8.0\times10^{-4}/2.0\times10^{-4}) = \ln 4 = 1.386$. $1/T_1 - 1/T_2 = 1/300 - 1/310 = 1.075\times10^{-4}$. $E_a = 8.31 \times 1.386 / 1.075\times10^{-4} = \mathbf{1.07 \times 10^5\text{ J mol}^{-1} = 107\text{ kJ mol}^{-1}}$.</p>
+
+<p><b>Answer 3:</b> From $k = Ae^{-E_a/RT}$: the factor by which $k$ increases for a 10°C rise depends on $E_a$. For a typical $E_a \approx 50$–$60$ kJ mol⁻¹ and $T \approx 300$ K, $e^{-E_a/R} \times (1/T_1 - 1/T_2) \approx e^{0.7} \approx 2$. Thus $k$ roughly doubles. This is an approximation — for higher $E_a$, the factor is larger; for lower $E_a$, smaller.</p>
+
+<p><b>Answer 4:</b> RDS is step 2: rate = $k_2[\ce{X}][\ce{A}]$. From equilibrium: $K = [\ce{X}]/([\ce{A}][\ce{B}])$, so $[\ce{X}] = K[\ce{A}][\ce{B}]$. Substituting: rate = $k_2K[\ce{A}][\ce{B}][\ce{A}] = k[\ce{A}]^2[\ce{B}]$. This matches the stoichiometry (2A + B), but this is <b>coincidental</b> — the mechanism could easily give a different rate law. Always check the mechanism, not the stoichiometry.</p>
+
+<p><b>Answer 5:</b> $E_a = -R \times \text{slope} = -8.31 \times (-9.50\times10^3) = 7.89\times10^4$ J mol⁻¹ = <b>78.9 kJ mol⁻¹</b>. $\ln k = \ln A - E_a/RT = 24.0 - 78900/(8.31\times350) = 24.0 - 27.1 = -3.1$. $k = e^{-3.1} = \mathbf{4.5 \times 10^{-2}\text{ s}^{-1}}$.</p>
+
+<p><b>Answer 6:</b> At 298 K: $E_a/RT = 75000/(8.31\times298) = 30.3$, $e^{-30.3} = 6.9\times10^{-14}$, $k = 1.0\times10^{10} \times 6.9\times10^{-14} = \mathbf{6.9 \times 10^{-4}\text{ s}^{-1}}$. At 308 K: $E_a/RT = 75000/(8.31\times308) = 29.3$, $e^{-29.3} = 1.9\times10^{-13}$, $k = 1.0\times10^{10} \times 1.9\times10^{-13} = \mathbf{1.9 \times 10^{-3}\text{ s}^{-1}}$. Factor = $1.9\times10^{-3} / 6.9\times10^{-4} = \mathbf{2.75}$. The rate increases by a factor of about 2.8 for a 10°C rise — close to the "doubling" rule of thumb.</p>
+</div>
+
+<h2>7. Key Terms</h2>
+<table>
+<tr><th>Term</th><th>Definition</th></tr>
+<tr><td>Elementary step</td><td>A single molecular event (collision or dissociation) in a reaction mechanism</td></tr>
+<tr><td>Molecularity</td><td>The number of particles participating in an elementary step (unimolecular = 1, bimolecular = 2)</td></tr>
+<tr><td>Rate-determining step (RDS)</td><td>The slowest elementary step; its rate law determines the overall rate equation</td></tr>
+<tr><td>Reaction intermediate</td><td>A species produced in one elementary step and consumed in a later step; does not appear in the overall equation</td></tr>
+<tr><td>Arrhenius equation</td><td>$k = A e^{-E_a/RT}$ — relates the rate constant to temperature and activation energy</td></tr>
+<tr><td>Activation energy ($E_a$)</td><td>The minimum energy required for a collision to result in reaction; the barrier height on a reaction profile</td></tr>
+<tr><td>Pre-exponential factor ($A$)</td><td>The frequency of collisions with correct orientation; the maximum possible $k$ as $T \to \infty$</td></tr>
+<tr><td>Arrhenius plot</td><td>A graph of $\ln k$ vs. $1/T$; slope = $-E_a/R$, $y$-intercept = $\ln A$</td></tr>
+</table>
+
+<h2>8. Exam Tips</h2>
+
+<div class="exam-tip"><b>Paper 2 (Structured):</b> When asked "Is this mechanism consistent with the rate law?", you must: (1) identify the RDS, (2) write its rate law using intermediates, (3) use fast pre-equilibria to express intermediates in terms of reactants, (4) compare the final expression to the experimental rate law. State clearly: "The mechanism is consistent with the rate law <b>but does not prove it</b> — other mechanisms may also be consistent."</div>
+
+<div class="exam-tip"><b>Arrhenius Calculations:</b> Always convert $E_a$ to J mol⁻¹ (not kJ mol⁻¹) when using $R = 8.31$ J K⁻¹ mol⁻¹. If the question gives $E_a$ in kJ mol⁻¹, multiply by 1000. The most common arithmetic error is unit mismatch between $E_a$ and $R$. Also, temperatures must be in kelvin — add 273 to Celsius values.</div>
+
+<div class="exam-tip"><b>Paper 1 Trap:</b> An Arrhenius question may ask "Which graph gives a straight line?" The answer is $\ln k$ vs. $1/T$ (not $\ln k$ vs. $T$, not $k$ vs. $T$, not $k$ vs. $1/T$). Only the logarithmic form linearises the exponential relationship. The slope is <b>negative</b> — as $T$ increases, $1/T$ decreases and $\ln k$ increases.</div>
+
 </body>
 </html>

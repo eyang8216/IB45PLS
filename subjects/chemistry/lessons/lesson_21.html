@@ -3,475 +3,287 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lesson 21 — IB Chemistry HL</title>
-<script>window.MathJax = { loader: {load: ['[tex]/mhchem']}, tex: {packages: {'[+]': ['mhchem']}} };</script>
+<title>Lesson 21 — Chemistry HL — Rate Equations, Orders of Reaction &amp; Rate Constant</title>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] },
+  loader: { load: ['[tex]/mhchem'] },
+  tex: { packages: {'[+]': ['mhchem']} }
+};
+</script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
 <style>
-  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Palatino', 'Georgia', serif; background: var(--bg); color: var(--text); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; font-size: 17px; line-height: 1.7; }
-  h1 { font-size: 1.7rem; color: var(--accent); margin-bottom: 0.5rem; }
-  h2 { font-size: 1.25rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; margin: 2rem 0 1rem; }
-  h3 { font-size: 1.1rem; color: #444; margin: 1.3rem 0 0.5rem; }
-  p, li { margin-bottom: 0.6rem; }
-  ul, ol { padding-left: 1.8rem; margin-bottom: 1rem; }
-  .worked { background: #f0f7f0; border-left: 4px solid #2c5f2d; padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
-  .worked strong { color: #2c5f2d; }
-  .answer { background: #fefdf7; border: 1px solid var(--border); padding: 0.8rem 1.2rem; margin: 0.5rem 0; border-radius: 6px; }
-  .nav { display: flex; justify-content: space-between; margin: 3rem 0 1rem; padding-top: 1rem; border-top: 2px solid var(--border); font-size: 0.9rem; }
-  .nav a { color: #1a5c9e; text-decoration: none; }
-  .nav a:hover { text-decoration: underline; }
-  .definition { background: #fdf5e6; border-left: 4px solid #d4a017; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
-  table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
-  th, td { padding: 0.5rem; border: 1px solid #ccc; text-align: left; }
-  th { background: #f0f7f0; }
-  @media print { body { font-size: 14px; } .nav { display: none; } }
+:root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Georgia', 'Times New Roman', serif; font-size: 17px; line-height: 1.7; color: var(--text); background: var(--bg); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; }
+h1 { font-size: 1.8rem; color: var(--accent); border-bottom: 3px solid var(--accent); padding-bottom: 0.5rem; margin-bottom: 1rem; }
+h2 { font-size: 1.35rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+h3 { font-size: 1.15rem; color: var(--accent); margin: 1.5rem 0 0.5rem; }
+p { margin-bottom: 0.8rem; }
+.objectives { background: #f0f4ff; border-left: 4px solid var(--accent); padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+.objectives h3 { margin-top: 0; }
+.check-in { background: #fff8e1; border: 1px solid #ffc107; padding: 0.8rem 1rem; margin: 1rem 0; border-radius: 8px; }
+.check-in p { margin-bottom: 0.3rem; }
+.answer-toggle { display: inline-block; padding: 0.2rem 0.8rem; border-radius: 16px; cursor: pointer; font-size: 0.8rem; font-weight: 600; background: #e8f5e9; color: #2e7d32; border: 1px solid #2e7d32; user-select: none; margin-top: 0.3rem; }
+.answer-content { display: none; background: #f1f8e9; padding: 0.6rem 1rem; border-radius: 8px; margin-top: 0.5rem; }
+.answer-content.open { display: block; }
+.example { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem; margin: 1rem 0; }
+.misconception { background: #fff3e0; border-left: 4px solid #e65100; padding: 1rem 1.2rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+.misconception h3 { color: #e65100; }
+.exam-tip { background: #e8f5e9; border-left: 4px solid #2e7d32; padding: 0.8rem 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+th { background: var(--accent); color: white; padding: 0.5rem 0.8rem; text-align: left; }
+td { padding: 0.5rem 0.8rem; border-bottom: 1px solid var(--border); }
+tr:nth-child(even) td { background: #f8f8f6; }
+.diagram { text-align: center; margin: 1.5rem 0; }
+.diagram svg { max-width: 100%; }
+.diagram .caption { font-size: 0.9rem; color: #666; margin-top: 0.3rem; font-style: italic; }
+.definition { background: #fdf5e6; border-left: 4px solid #d4a017; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 8px 8px 0; }
+.practice-toggle { display: block; width: 100%; padding: 0.8rem; background: var(--accent); color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem; font-weight: 600; margin: 1.5rem 0; }
+.practice-answers { display: none; }
+.practice-answers.open { display: block; }
 </style>
 </head>
 <body>
-<h1>Lesson 21: Rate Equations, Orders of Reaction, and Rate Constant (HL)</h1>
 
-<h2>What You'll Learn</h2>
+<h1>Lesson 21: Rate Equations, Orders of Reaction &amp; Rate Constant (HL)</h1>
+<p><b>Syllabus reference:</b> 16.1 — Rate Expression and Reaction Mechanism (HL)</p>
 
+<div class="objectives">
+<h3>Learning Objectives</h3>
+<p>By the end of this lesson, you will be able to:</p>
 <ul>
-
-<li>Write a rate equation (rate law) for a chemical reaction and explain what each symbol means</li>
-
-<li>Define the terms "order of reaction" and "overall order"</li>
-
-<li>Determine orders of reaction from experimental data using the method of initial rates</li>
-
-<li>Calculate the rate constant k from experimental data and determine its units</li>
-
-<li>Interpret concentration-time graphs and rate-concentration graphs for zero, first, and second order reactions</li>
-
+  <li><b>Write</b> the rate equation (rate law) for a reaction given experimental data: $\text{rate} = k[\ce{A}]^m[\ce{B}]^n$.</li>
+  <li><b>Determine</b> orders of reaction (zero, first, second) with respect to each reactant using the method of initial rates.</li>
+  <li><b>Calculate</b> the rate constant $k$ and its units from experimental data.</li>
+  <li><b>Sketch and interpret</b> concentration–time graphs for zero-, first-, and second-order reactions.</li>
+  <li><b>Deduce</b> the overall order of a reaction and predict how changing concentration affects the rate.</li>
 </ul>
-
-<hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
-
-<h2>1. The Rate Equation</h2>
-
-<h3>What This Concept Is and Why It Matters</h3>
-
-<p>So far we have described reaction rates in qualitative terms: "higher temperature makes the reaction faster." But chemists need to be able to make precise quantitative predictions: "If I double the concentration of this reactant, exactly how much faster will the reaction go?" The rate equation — also called the rate law — is the mathematical tool that answers this question. It connects the concentrations of reactants to the measured rate.</p>
-
-<p>For any reaction, the rate equation is determined by experiment. You cannot predict it just by looking at the balanced chemical equation. The one exception is for reactions that happen in a single step, which we will study in the next lesson.</p>
-
-<h3>The General Form of a Rate Equation</h3>
-
-<p>Consider a reaction where substances A and B react to form products:</p>
-
-<p>\[\text{A} + \text{B} \rightarrow \text{products}\]</p>
-
-<p>The rate equation for this reaction has the following general form:</p>
-
-<p>\[\text{Rate} = k[\text{A}]^m[\text{B}]^n\]</p>
-
-<p>Let us define each symbol carefully:</p>
-
-<ul>
-
-<li><strong>Rate</strong> is the speed of the reaction, measured in mol dm⁻³ s⁻¹ (change of concentration per second).</li>
-
-<li><strong>k</strong> is the rate constant. This is a number that is specific to a particular reaction at a particular temperature. The value of k changes if you change the temperature, but it does not depend on the concentrations of reactants. A large k means a fast reaction; a small k means a slow reaction.</li>
-
-<li><strong>[A]</strong> and <strong>[B]</strong> are the concentrations of the reactants in mol dm⁻³. The square brackets always mean "concentration of."</li>
-
-<li><strong>m</strong> is the order of reaction with respect to reactant A. It tells you how the rate depends on the concentration of A.</li>
-
-<li><strong>n</strong> is the order of reaction with respect to reactant B. It tells you how the rate depends on the concentration of B.</li>
-
-<li>The sum <strong>m + n</strong> is called the overall order of the reaction.</li>
-
-</ul>
-
-<h3>What the Orders Mean Numerically</h3>
-
-<p>The order with respect to a particular reactant (m or n) is almost always 0, 1, or 2. Here is what each value means in practical terms:</p>
-
-<p><strong>Zero order (m = 0):</strong> The rate does not depend on the concentration of that reactant at all. If you double [A], triple [A], or halve [A], the rate stays exactly the same. Mathematically, anything raised to the power 0 equals 1, so [A]⁰ = 1 and the rate equation simply becomes Rate = k[B]ⁿ — the term for A disappears.</p>
-
-<p><strong>First order (m = 1):</strong> The rate is directly proportional to the concentration of that reactant. If you double [A], the rate doubles. If you triple [A], the rate triples. If you halve [A], the rate halves.</p>
-
-<p><strong>Second order (m = 2):</strong> The rate is proportional to the square of the concentration of that reactant. If you double [A], the rate quadruples (2² = 4). If you triple [A], the rate increases by a factor of 9 (3² = 9). If you halve [A], the rate becomes one-quarter of its original value.</p>
-
-<p>The orders m and n are not the same as the stoichiometric coefficients in the balanced equation. For the reaction 2NO + O₂ → 2NO₂, you might guess that the rate equation is Rate = k[NO]²[O₂]. In this particular case, the guess happens to be correct — but this is a coincidence. For many reactions, the orders are completely different from the stoichiometric coefficients. That is why we do not guess: we measure.</p>
-
-<hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
-
-<h2>2. Determining Orders: The Method of Initial Rates</h2>
-
-<h3>What This Concept Is and Why It Matters</h3>
-
-<p>To find the rate equation for a reaction, we need to measure how the rate changes when we change the concentration of each reactant, one at a time. The method of initial rates is the standard experimental approach. We measure the rate right at the beginning of the reaction (the "initial rate") for several different starting concentrations. By comparing experiments where only one concentration changes, we can deduce each order.</p>
-
-<h3>The Logic of Comparison</h3>
-
-<p>Imagine we have two experiments. In Experiment 1, we use certain starting concentrations and measure the initial rate. In Experiment 2, we double [A] while keeping [B] the same as in Experiment 1. Then we compare the rates:</p>
-
-<ul>
-
-<li>If the rate does not change → order with respect to A is 0 (zero order).</li>
-
-<li>If the rate doubles → order with respect to A is 1 (first order).</li>
-
-<li>If the rate quadruples → order with respect to A is 2 (second order).</li>
-
-<li>If the rate increases by a factor of 8 → order with respect to A is 3 (third order — rare).</li>
-
-</ul>
-
-<p>The same logic applies for B: find two experiments where [B] changes but [A] stays constant.</p>
-
-<h3>Worked Example 1: Finding Orders and Rate Equation from Data</h3>
-
-<p><strong>Problem:</strong> A reaction between substances A and B was studied by measuring the initial rate at different starting concentrations. The results are shown in the table below.</p>
-
-<table>
-
-<thead><tr>
-<th>Experiment</th>
-<th>[A] / mol dm⁻³</th>
-<th>[B] / mol dm⁻³</th>
-<th>Initial rate / mol dm⁻³ s⁻¹</th>
-</tr></thead>
-<tbody>
-
-<tr>
-<td>1</td>
-<td>0.10</td>
-<td>0.10</td>
-<td>2.0 × 10⁻⁴</td>
-</tr>
-
-<tr>
-<td>2</td>
-<td>0.20</td>
-<td>0.10</td>
-<td>4.0 × 10⁻⁴</td>
-</tr>
-
-<tr>
-<td>3</td>
-<td>0.10</td>
-<td>0.30</td>
-<td>6.0 × 10⁻⁴</td>
-</tr>
-
-</tbody></table>
-
-<p>(a) Determine the order of reaction with respect to A, explaining your reasoning.</p>
-
-<p>(b) Determine the order of reaction with respect to B, explaining your reasoning.</p>
-
-<p>(c) Write the rate equation for this reaction.</p>
-
-<p>(d) Calculate the value of the rate constant k, including its units.</p>
-
-<p><strong>Strategy:</strong> We need to find pairs of experiments where one concentration changes and the other does not. Then we compare how the rate changes and deduce the order.</p>
-
-<p><strong>Solution, part (a):</strong> To find the order with respect to A, we need two experiments where [A] changes but [B] stays the same. Looking at the table, Experiment 1 and Experiment 2 satisfy this: [A] changes from 0.10 to 0.20 (doubles), while [B] stays at 0.10 in both experiments.</p>
-
-<p>Now compare the rates: In Experiment 1, rate = 2.0 × 10⁻⁴. In Experiment 2, rate = 4.0 × 10⁻⁴. The rate has increased from 2.0 × 10⁻⁴ to 4.0 × 10⁻⁴ — it has doubled.</p>
-
-<p>Since doubling [A] caused the rate to double, the order with respect to A is <strong>1</strong> (first order).</p>
-
-<p><strong>Solution, part (b):</strong> To find the order with respect to B, we look for two experiments where [B] changes but [A] stays the same. Experiment 1 and Experiment 3 satisfy this: [B] changes from 0.10 to 0.30 (triples), while [A] stays at 0.10 in both.</p>
-
-<p>Now compare the rates: In Experiment 1, rate = 2.0 × 10⁻⁴. In Experiment 3, rate = 6.0 × 10⁻⁴. The rate has increased from 2.0 × 10⁻⁴ to 6.0 × 10⁻⁴ — it has tripled.</p>
-
-<p>Since tripling [B] caused the rate to triple, the order with respect to B is <strong>1</strong> (first order).</p>
-
-<p><strong>Solution, part (c):</strong> Now we can write the rate equation. With m = 1 and n = 1:</p>
-
-<p>\[\text{Rate} = k[\text{A}]^1[\text{B}]^1 = k[\text{A}][\text{B}]\]</p>
-
-<p>The overall order is 1 + 1 = 2.</p>
-
-<p><strong>Solution, part (d):</strong> To find k, we rearrange the rate equation:</p>
-
-<p>\[k = \frac{\text{Rate}}{[\text{A}][\text{B}]}\]</p>
-
-<p>We can use the data from any experiment. Let us use Experiment 1:</p>
-
-<p>\[k = \frac{2.0 \times 10^{-4} \text{ mol dm}^{-3} \text{ s}^{-1}}{(0.10 \text{ mol dm}^{-3})(0.10 \text{ mol dm}^{-3})}\]</p>
-
-<p>\[k = \frac{2.0 \times 10^{-4}}{0.010} = 2.0 \times 10^{-2}\]</p>
-
-<p>Now for the units. The rate has units of mol dm⁻³ s⁻¹. The denominator [A][B] has units of (mol dm⁻³)(mol dm⁻³) = (mol dm⁻³)² = mol² dm⁻⁶. So:</p>
-
-<p>\[\text{Units of } k = \frac{\text{mol dm}^{-3} \text{ s}^{-1}}{\text{mol}^2 \text{ dm}^{-6}} = \text{mol}^{-1} \text{ dm}^3 \text{ s}^{-1}\]</p>
-
-<p>We write this as dm³ mol⁻¹ s⁻¹. The full answer is: <strong>k = 2.0 × 10⁻² dm³ mol⁻¹ s⁻¹</strong>.</p>
-
-<p><strong>Why this makes sense:</strong> A first-order dependence on each reactant means doubling either one doubles the rate. The units dm³ mol⁻¹ s⁻¹ are the expected units for a second-order rate constant.</p>
-
-<hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
-
-<h2>3. Units of the Rate Constant k</h2>
-
-<h3>What This Concept Is and Why It Matters</h3>
-
-<p>The rate constant k does not always have the same units. Its units change depending on the overall order of the reaction. This is because the rate itself always has units of mol dm⁻³ s⁻¹, but the concentration terms multiplied together have different total units depending on how many of them there are.</p>
-
-<p>Here is a systematic way to find the units of k for any overall order. Let the overall order be p (so p = m + n + ...). Then:</p>
-
-<p>\[k = \frac{\text{Rate}}{(\text{concentration})^p}\]</p>
-
-<p>The units are:</p>
-
-<p>\[\text{Units of } k = \frac{\text{mol dm}^{-3} \text{ s}^{-1}}{(\text{mol dm}^{-3})^p} = (\text{mol dm}^{-3})^{1-p} \text{ s}^{-1}\]</p>
-
-<p>Applying this formula:</p>
-
-<ul>
-
-<li>For overall order 0 (p = 0): units = (mol dm⁻³)¹ s⁻¹ = <strong>mol dm⁻³ s⁻¹</strong></li>
-
-<li>For overall order 1 (p = 1): units = (mol dm⁻³)⁰ s⁻¹ = <strong>s⁻¹</strong></li>
-
-<li>For overall order 2 (p = 2): units = (mol dm⁻³)⁻¹ s⁻¹ = <strong>dm³ mol⁻¹ s⁻¹</strong></li>
-
-<li>For overall order 3 (p = 3): units = (mol dm⁻³)⁻² s⁻¹ = <strong>dm⁶ mol⁻² s⁻¹</strong></li>
-
-</ul>
-
-<p>You can check your work by making sure the units of k, when multiplied by the concentration terms in the rate equation, produce mol dm⁻³ s⁻¹.</p>
-
-<hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
-
-<h2>4. Graphical Determination of Reaction Order</h2>
-
-<h3>What This Concept Is and Why It Matters</h3>
-
-<p>Sometimes you are not given a neat table of initial rates. Instead, you might have a graph showing how the concentration of a reactant changes over time, or how the rate changes with concentration. The shape of these graphs reveals the order of reaction.</p>
-
-<h3>Concentration-Time Graphs</h3>
-
-<p>These graphs plot the concentration of a reactant on the y-axis against time on the x-axis.</p>
-
-<p><strong>Zero order:</strong> The graph is a straight line with a constant negative gradient. The concentration falls at a steady rate. The gradient of this line equals −k (the negative of the rate constant).</p>
-
-<p><strong>First order:</strong> The graph is a curve that is steep at first and then gradually flattens out. The key diagnostic feature of a first-order reaction is that the <strong>half-life is constant</strong>. The half-life (t₁/₂) is the time it takes for the concentration of the reactant to fall to half of its starting value. For a first-order reaction, it takes the same amount of time to go from 100% to 50% as it does to go from 50% to 25%, and from 25% to 12.5%, and so on. The half-life does not depend on the starting concentration. The relationship is: t₁/₂ = ln 2 / k, where ln 2 ≈ 0.693.</p>
-
-<p><strong>Second order:</strong> The graph is an even steeper curve that flattens out. For a second-order reaction, the half-life is not constant — it gets longer as the concentration drops. If you start with a high concentration, the half-life is short. If you start with a low concentration, the half-life is long. Specifically, t₁/₂ = 1/(k[A]₀), where [A]₀ is the starting concentration.</p>
-
-<h3>Rate-Concentration Graphs</h3>
-
-<p>These graphs plot the rate on the y-axis against the concentration of a reactant on the x-axis.</p>
-
-<p><strong>Zero order:</strong> The graph is a horizontal line. The rate does not change no matter what the concentration is.</p>
-
-<p><strong>First order:</strong> The graph is a straight line passing through the origin. The rate is directly proportional to concentration.</p>
-
-<p><strong>Second order:</strong> The graph is a curve that bends upward (a parabola). The rate increases faster than the concentration increases.</p>
-
-<h3>Worked Example 2: Using Half-Life to Determine Order</h3>
-
-<p><strong>Problem:</strong> A student studies the decomposition of a compound X. When the student starts with [X] = 0.40 mol dm⁻³, the half-life is measured as 80 seconds. When the student performs a second experiment starting with [X] = 0.20 mol dm⁻³, the half-life is again 80 seconds. Determine the order of reaction with respect to X and calculate the rate constant k.</p>
-
-<p><strong>Strategy:</strong> The half-life being the same at two different starting concentrations is the defining characteristic of a first-order reaction. We then use the first-order half-life formula.</p>
-
-<p><strong>Solution:</strong> Since t₁/₂ = 80 s regardless of whether [X]₀ = 0.40 mol dm⁻³ or 0.20 mol dm⁻³, the half-life is independent of initial concentration. This means the reaction is <strong>first order</strong> with respect to X.</p>
-
-<p>For a first-order reaction, the rate constant k is related to the half-life by:</p>
-
-<p>\[k = \frac{\ln 2}{t_{1/2}} = \frac{0.693}{80 \text{ s}} = 8.66 \times 10^{-3} \text{ s}^{-1}\]</p>
-
-<p><strong>Why this makes sense:</strong> The units are s⁻¹, which are the correct units for a first-order rate constant. And 0.693/80 gives a small number, which is typical for a reaction that takes over a minute to reach half completion.</p>
-
-<h3>Worked Example 3: Using the Integrated Rate Law for First Order</h3>
-
-<p><strong>Problem:</strong> A first-order reaction starts with a reactant concentration of 0.800 mol dm⁻³. After 40 minutes, the concentration has dropped to 0.200 mol dm⁻³. Calculate the rate constant k. Also calculate the half-life.</p>
-
-<p><strong>Strategy:</strong> For a first-order reaction, the integrated rate law is ln([A]/[A]₀) = −kt. We substitute the known concentrations and time to find k. Then we use t₁/₂ = ln2/k.</p>
-
-<p><strong>Solution:</strong> The integrated first-order rate equation is:</p>
-
-<p>\[\ln\left(\frac{[A]}{[A]_0}\right) = -kt\]</p>
-
-<p>Substitute [A] = 0.200, [A]₀ = 0.800, and t = 40 minutes:</p>
-
-<p>\[\ln\left(\frac{0.200}{0.800}\right) = -k(40)\]</p>
-
-<p>\[\ln(0.25) = -k(40)\]</p>
-
-<p>The natural logarithm of 0.25 is −1.386 (since e^−1.386 ≈ 0.25):</p>
-
-<p>\[-1.386 = -k(40)\]</p>
-
-<p>\[k = \frac{1.386}{40} = 0.0347 \text{ min}^{-1}\]</p>
-
-<p>Now for the half-life:</p>
-
-<p>\[t_{1/2} = \frac{\ln 2}{k} = \frac{0.693}{0.0347 \text{ min}^{-1}} = 20.0 \text{ min}\]</p>
-
-<p><strong>Why this makes sense:</strong> We can verify this result independently. Starting at 0.800, one half-life (20 min) should bring us to 0.400. Another half-life (another 20 min, total 40 min) should bring us to 0.200. That is exactly what the problem states — 40 minutes to go from 0.800 to 0.200, which is two half-lives. So our calculated half-life of 20 minutes is confirmed.</p>
-
-<hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
-
-<h2>Practice Problems</h2>
-
-<ol>
-
-<li>A student studies the reaction A + 2B → C by measuring initial rates at different starting concentrations. The data obtained are shown in the table below.</li>
-
-</ol>
-
-<table>
-
-<thead><tr>
-<th>Experiment</th>
-<th>[A] / mol dm⁻³</th>
-<th>[B] / mol dm⁻³</th>
-<th>Initial rate / mol dm⁻³ s⁻¹</th>
-</tr></thead>
-<tbody>
-
-<tr>
-<td>1</td>
-<td>0.10</td>
-<td>0.10</td>
-<td>1.0 × 10⁻³</td>
-</tr>
-
-<tr>
-<td>2</td>
-<td>0.20</td>
-<td>0.10</td>
-<td>2.0 × 10⁻³</td>
-</tr>
-
-<tr>
-<td>3</td>
-<td>0.10</td>
-<td>0.20</td>
-<td>4.0 × 10⁻³</td>
-</tr>
-
-</tbody></table>
-
-<p>(a) Determine the order of reaction with respect to A, explaining each step of your reasoning.</p>
-
-<p>(b) Determine the order of reaction with respect to B, explaining each step of your reasoning.</p>
-
-<p>(c) Write the rate equation for this reaction and state the overall order.</p>
-
-<p>(d) Calculate the rate constant k and determine its units.</p>
-
-<ol>
-
-<li>A chemical reaction is found to obey first-order kinetics. The concentration of the reactant starts at 0.500 mol dm⁻³ and drops to 0.250 mol dm⁻³ over a period of 30 minutes. Calculate the rate constant k and the half-life of the reaction. Verify that your answer for the half-life is consistent with the information given in the problem.</li>
-
-</ol>
-
-<ol>
-
-<li>A student measures the half-life of a reaction at two different starting concentrations. When the initial concentration of the reactant is 0.40 mol dm⁻³, the half-life is 100 seconds. When the initial concentration is 0.20 mol dm⁻³, the half-life is 200 seconds. Determine the order of this reaction. Explain your reasoning, making reference to how half-life depends on initial concentration for zero, first, and second order reactions.</li>
-
-</ol>
-
-<ol>
-
-<li>A reaction is found to be zero order with respect to its only reactant. (a) Sketch a graph showing how the concentration of this reactant changes with time. Label both axes and indicate what the gradient represents. (b) On a separate set of axes, sketch a graph showing how the rate of reaction depends on the concentration of this reactant. Label both axes and explain the shape of your graph.</li>
-
-</ol>
-
-<ol>
-
-<li><strong>(IB-Exam Style)</strong> The reaction between nitrogen monoxide gas and oxygen gas produces nitrogen dioxide gas according to the following equation:</li>
-
-</ol>
-
-<p>\[2\text{NO}(\text{g}) + \text{O}_2(\text{g}) \rightarrow 2\text{NO}_2(\text{g})\]</p>
-
-<p>The reaction was studied at a fixed temperature by measuring the initial rate at various starting concentrations of the two reactants. The results are shown in the table below.</p>
-
-<table>
-
-<thead><tr>
-<th>Experiment</th>
-<th>[NO] / mol dm⁻³</th>
-<th>[O₂] / mol dm⁻³</th>
-<th>Initial rate / mol dm⁻³ s⁻¹</th>
-</tr></thead>
-<tbody>
-
-<tr>
-<td>1</td>
-<td>0.010</td>
-<td>0.010</td>
-<td>2.5 × 10⁻⁵</td>
-</tr>
-
-<tr>
-<td>2</td>
-<td>0.020</td>
-<td>0.010</td>
-<td>1.0 × 10⁻⁴</td>
-</tr>
-
-<tr>
-<td>3</td>
-<td>0.010</td>
-<td>0.020</td>
-<td>5.0 × 10⁻⁵</td>
-</tr>
-
-</tbody></table>
-
-<p>(a) Determine the order of reaction with respect to NO and the order with respect to O₂. For each, explain clearly how you used the data to reach your conclusion.</p>
-
-<p>(b) Write the rate equation for this reaction and state the overall order.</p>
-
-<p>(c) Using the data from any one experiment, calculate the value of the rate constant k. Include its units.</p>
-
-<p>(d) Using your rate equation, predict the initial rate of reaction when [NO] = 0.030 mol dm⁻³ and [O₂] = 0.040 mol dm⁻³ at the same temperature.</p>
-
-<hr style="border:none;border-top:1px solid var(--border);margin:1.5rem 0;">
-
-<h2>Answers</h2>
-
-<h3>Answer 1</h3>
-
-<p><strong>(a)</strong> To find the order with respect to A, compare Experiment 1 and Experiment 2. In these two experiments, [A] changes from 0.10 to 0.20 mol dm⁻³ (it doubles), while [B] remains constant at 0.10 mol dm⁻³. The rate changes from 1.0 × 10⁻³ to 2.0 × 10⁻³ mol dm⁻³ s⁻¹ — it also doubles. Since doubling the concentration of A causes the rate to double, the order with respect to A is 1 (first order).</p>
-
-<p><strong>(b)</strong> To find the order with respect to B, compare Experiment 1 and Experiment 3. In these two experiments, [B] changes from 0.10 to 0.20 mol dm⁻³ (it doubles), while [A] remains constant at 0.10 mol dm⁻³. The rate changes from 1.0 × 10⁻³ to 4.0 × 10⁻³ mol dm⁻³ s⁻¹ — it quadruples (multiplied by 4). Since doubling the concentration of B causes the rate to quadruple, the order with respect to B is 2 (second order). A common mistake here is to see the doubling and assume first order; always check the factor by which the rate changes.</p>
-
-<p><strong>(c)</strong> The rate equation is Rate = k[A]¹[B]² = k[A][B]². The overall order is 1 + 2 = 3.</p>
-
-<p><strong>(d)</strong> Using Experiment 1: k = Rate / ([A][B]²) = (1.0 × 10⁻³) / (0.10 × (0.10)²) = (1.0 × 10⁻³) / (0.10 × 0.010) = (1.0 × 10⁻³) / 0.0010 = 1.0. The units: Rate has units mol dm⁻³ s⁻¹. The denominator [A][B]² has units (mol dm⁻³)(mol dm⁻³)² = (mol dm⁻³)³ = mol³ dm⁻⁹. So k has units (mol dm⁻³ s⁻¹) / (mol³ dm⁻⁹) = mol⁻² dm⁶ s⁻¹ (or dm⁶ mol⁻² s⁻¹). The full answer is <strong>k = 1.0 dm⁶ mol⁻² s⁻¹</strong>.</p>
-
-<h3>Answer 2</h3>
-
-<p>For a first-order reaction, we use the integrated rate law: ln([A]/[A]₀) = −kt. Substituting [A] = 0.250, [A]₀ = 0.500, and t = 30 minutes: ln(0.250/0.500) = −k(30). This is ln(0.5) = −k(30). The natural logarithm of 0.5 is −0.693, so −0.693 = −k(30) and k = 0.693/30 = <strong>0.0231 min⁻¹</strong>. The half-life is t₁/₂ = ln 2 / k = 0.693 / 0.0231 = <strong>30.0 minutes</strong>. This is consistent because the problem states that the concentration halved (from 0.500 to 0.250) in exactly 30 minutes — so the half-life must be 30 minutes.</p>
-
-<h3>Answer 3</h3>
-
-<p>The half-life doubles when the initial concentration is halved. This behaviour — where the half-life is inversely proportional to the initial concentration — is characteristic of a <strong>second-order</strong> reaction. For a zero-order reaction, the half-life would be halved when the initial concentration is halved (t₁/₂ ∝ [A]₀). For a first-order reaction, the half-life would remain constant regardless of the initial concentration. For a second-order reaction, t₁/₂ = 1/(k[A]₀), so halving [A]₀ doubles t₁/₂ — exactly what the data show.</p>
-
-<h3>Answer 4</h3>
-
-<p><strong>(a)</strong> For a zero-order reaction, the concentration-time graph is a straight line with a constant negative gradient. The y-axis is labelled [A] / mol dm⁻³ and the x-axis is labelled Time / s. The line starts at the initial concentration [A]₀ on the y-axis and slopes downward at a constant angle until it reaches the x-axis (where [A] = 0). The gradient of this line is equal to −k, the negative of the rate constant. Because the gradient is constant, the rate (which is the absolute value of the gradient, k) does not change as the reactant is consumed.</p>
-
-<p><strong>(b)</strong> For a zero-order reaction, the rate-concentration graph is a horizontal line. The y-axis is labelled Rate / mol dm⁻³ s⁻¹ and the x-axis is labelled [A] / mol dm⁻³. The line is parallel to the x-axis at a height equal to k. This shows that the rate remains constant regardless of the concentration of A. No matter how much A is present, the reaction proceeds at the same speed. This is unusual but can happen when a catalyst is saturated or when the reaction rate is limited by something other than the concentration of A (for example, by the availability of light in a photochemical reaction).</p>
-
-<h3>Answer 5</h3>
-
-<p><strong>(a)</strong> For the order with respect to NO: Compare Experiment 1 and Experiment 2. In these experiments, [NO] changes from 0.010 to 0.020 mol dm⁻³ (it doubles), while [O₂] remains constant at 0.010 mol dm⁻³. The rate changes from 2.5 × 10⁻⁵ to 1.0 × 10⁻⁴. The factor by which the rate increases is (1.0 × 10⁻⁴) / (2.5 × 10⁻⁵) = 4. The rate quadruples when [NO] doubles. Since 2² = 4, the order with respect to NO is <strong>2</strong> (second order).</p>
-
-<p>For the order with respect to O₂: Compare Experiment 1 and Experiment 3. In these experiments, [O₂] changes from 0.010 to 0.020 mol dm⁻³ (it doubles), while [NO] remains constant at 0.010 mol dm⁻³. The rate changes from 2.5 × 10⁻⁵ to 5.0 × 10⁻⁵ — it doubles. Since doubling [O₂] doubles the rate, the order with respect to O₂ is <strong>1</strong> (first order).</p>
-
-<p><strong>(b)</strong> The rate equation is Rate = k[NO]²[O₂]. The overall order is 2 + 1 = 3.</p>
-
-<p><strong>(c)</strong> Using Experiment 1: k = Rate / ([NO]²[O₂]) = (2.5 × 10⁻⁵) / ((0.010)² × 0.010) = (2.5 × 10⁻⁵) / (0.0001 × 0.010) = (2.5 × 10⁻⁵) / (1.0 × 10⁻⁶) = 25. For the units: the denominator (mol dm⁻³)² × (mol dm⁻³) = (mol dm⁻³)³. So k has units = (mol dm⁻³ s⁻¹) / (mol dm⁻³)³ = mol⁻² dm⁶ s⁻¹ (or dm⁶ mol⁻² s⁻¹). The answer is <strong>k = 25 dm⁶ mol⁻² s⁻¹</strong>.</p>
-
-<p><strong>(d)</strong> Using the rate equation Rate = k[NO]²[O₂] with k = 25, [NO] = 0.030, and [O₂] = 0.040: Rate = 25 × (0.030)² × 0.040 = 25 × 0.0009 × 0.040 = 25 × 3.6 × 10⁻⁵ = 9.0 × 10⁻⁴. The predicted initial rate is <strong>9.0 × 10⁻⁴ mol dm⁻³ s⁻¹</strong>. Note that this is much larger than any of the individual experimental rates because both reactant concentrations have been increased.</p>
-
-<div class="nav">
-  <a href="lesson_20.html">← Previous Lesson</a>
-  <a href="../index.html">↑ All Lessons</a>
-  <a href="lesson_22.html">Next Lesson →</a>
 </div>
+
+<h2>1. Prior Knowledge Check</h2>
+
+<p><b>Question 1:</b> Write a general expression showing how reaction rate depends on the concentration of a reactant A if the reaction is (a) zero order in A, (b) first order in A.</p>
+<div class="check-in">
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">(a) Zero order: rate is <b>independent</b> of [A] — doubling [A] does not change the rate. (b) First order: rate $\propto$ [A] — doubling [A] doubles the rate. The order tells you the <b>power</b> to which the concentration is raised in the rate equation.</div>
+</div>
+
+<p><b>Question 2:</b> In the reaction $\ce{2A + B -> C}$, why can we NOT write rate $= k[\ce{A}]^2[\ce{B}]$ based solely on the stoichiometric equation?</p>
+<div class="check-in">
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">The stoichiometric coefficients are <b>not</b> necessarily the orders. Reaction order must be determined <b>experimentally</b> — it depends on the mechanism, not the overall equation. The reaction could proceed through multiple elementary steps, and the slowest step (rate-determining step) dictates the rate law. Only for <b>elementary</b> (single-step) reactions do stoichiometric coefficients equal the orders.</div>
+</div>
+
+<h2>2. The Rate Equation — Definition and Meaning</h2>
+
+<p>The <b>rate equation</b> (or rate law) is a mathematical expression that relates the rate of a reaction to the concentrations of reactants raised to some powers:</p>
+
+<div class="definition">
+<b>General rate equation:</b>
+$$\text{rate} = k[\ce{A}]^m[\ce{B}]^n$$
+$k$ = rate constant (temperature-dependent); $m$ = order with respect to A; $n$ = order with respect to B; $m + n$ = <b>overall order</b>.
+</div>
+
+<p>The orders $m$ and $n$ are usually small integers (0, 1, or 2) — they are <b>not</b> the stoichiometric coefficients. The rate constant $k$ is <b>independent of concentration</b> but increases with temperature. Its units depend on the overall order.</p>
+
+<table>
+<tr><th>Overall Order</th><th>Units of $k$</th><th>Example Rate Equation</th></tr>
+<tr><td>0</td><td>mol dm⁻³ s⁻¹</td><td>rate = $k$</td></tr>
+<tr><td>1</td><td>s⁻¹</td><td>rate = $k[\ce{A}]$</td></tr>
+<tr><td>2</td><td>dm³ mol⁻¹ s⁻¹</td><td>rate = $k[\ce{A}]^2$ or $k[\ce{A}][\ce{B}]$</td></tr>
+<tr><td>3</td><td>dm⁶ mol⁻² s⁻¹</td><td>rate = $k[\ce{A}]^2[\ce{B}]$</td></tr>
+</table>
+
+<div class="check-in">
+<p><b>Check-in:</b> What are the units of $k$ for a reaction with rate = $k[\ce{A}][\ce{B}]^2$?</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">Overall order = $1 + 2 = 3$. Rate has units mol dm⁻³ s⁻¹. $k$ = rate / ($[\ce{A}][\ce{B}]^2$) = (mol dm⁻³ s⁻¹) / (mol dm⁻³ × (mol dm⁻³)²) = (mol dm⁻³ s⁻¹) / (mol³ dm⁻⁹) = <b>dm⁶ mol⁻² s⁻¹</b>. Always derive units from the rate equation — never memorise them.</div>
+</div>
+
+<h2>3. Determining Orders: The Method of Initial Rates</h2>
+
+<p>The <b>initial rate</b> is the instantaneous rate at $t = 0$, measured before concentrations change significantly. By systematically varying one reactant's concentration while keeping others constant, you isolate its effect on the rate.</p>
+
+<div class="diagram">
+<svg width="520" height="260" viewBox="0 0 520 260">
+  <line x1="60" y1="220" x2="490" y2="220" stroke="#333" stroke-width="2"/>
+  <line x1="60" y1="225" x2="60" y2="20" stroke="#333" stroke-width="2"/>
+  <text x="275" y="252" text-anchor="middle" font-size="13">Time</text>
+  <text x="20" y="125" text-anchor="middle" font-size="13" transform="rotate(-90,20,125)">[Reactant]</text>
+  <!-- three curves showing different initial rates -->
+  <!-- Expt 1: low conc -->
+  <path d="M60,220 Q80,215 110,200 Q150,175 210,150 Q300,120 420,105 Q470,100 490,98" fill="none" stroke="#1565c0" stroke-width="2.5"/>
+  <text x="480" y="92" text-anchor="middle" font-size="10" fill="#1565c0">Expt 1 (low [A])</text>
+  <!-- Expt 2: medium conc -->
+  <path d="M60,220 Q80,210 100,195 Q140,165 195,135 Q280,100 390,80 Q450,72 490,70" fill="none" stroke="#2c5f2d" stroke-width="2.5"/>
+  <text x="480" y="64" text-anchor="middle" font-size="10" fill="#2c5f2d">Expt 2 (med [A])</text>
+  <!-- Expt 3: high conc -->
+  <path d="M60,220 Q80,200 95,185 Q130,155 180,120 Q260,85 370,60 Q440,50 490,45" fill="none" stroke="#c62828" stroke-width="2.5"/>
+  <text x="480" y="38" text-anchor="middle" font-size="10" fill="#c62828">Expt 3 (high [A])</text>
+  <!-- tangent lines for initial rates -->
+  <line x1="60" y1="220" x2="130" y2="180" stroke="#1565c0" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.6"/>
+  <line x1="60" y1="220" x2="130" y2="160" stroke="#2c5f2d" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.6"/>
+  <line x1="60" y1="220" x2="130" y2="135" stroke="#c62828" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.6"/>
+  <text x="145" y="195" font-size="9" fill="#555">initial rates →</text>
+</svg>
+<div class="caption">Figure 1: Concentration–time curves for three experiments with different initial [A]. The dashed tangents at t = 0 give the initial rates. Comparing how the initial rate changes as [A] changes reveals the order with respect to A.</div>
+</div>
+
+<h3>3.1 The Systematic Approach</h3>
+
+<ol>
+  <li>Find two experiments where <b>only one concentration changes</b> while all others are constant.</li>
+  <li>Compare the factor change in concentration to the factor change in rate.</li>
+  <li>If rate does not change → <b>zero order</b>. If rate changes by same factor → <b>first order</b>. If rate changes by factor² → <b>second order</b>.</li>
+  <li>Repeat for each reactant.</li>
+  <li>Substitute data from any experiment into the rate equation to find $k$.</li>
+</ol>
+
+<div class="check-in">
+<p><b>Check-in:</b> For a reaction A + B → products, experiments give:<br>Expt 1: [A]=0.10, [B]=0.10, rate=2.0×10⁻⁴<br>Expt 2: [A]=0.20, [B]=0.10, rate=4.0×10⁻⁴<br>Expt 3: [A]=0.10, [B]=0.20, rate=2.0×10⁻⁴<br>Determine the orders and rate equation.</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">Comparing Expt 1→2: [A] doubles, [B] constant, rate doubles → <b>first order in A</b>. Comparing Expt 1→3: [B] doubles, [A] constant, rate unchanged → <b>zero order in B</b>. Rate equation: rate = $k[\ce{A}]$. Overall order = 1. $k$ = 2.0×10⁻⁴ / 0.10 = 2.0×10⁻³ s⁻¹.</div>
+</div>
+
+<h2>4. Graphical Determination of Order</h2>
+
+<h3>4.1 Concentration–Time Graphs</h3>
+
+<p>The shape of a concentration–time graph reveals the order:</p>
+<ul>
+  <li><b>Zero order:</b> Linear decrease — constant gradient. [A] vs. $t$ is a straight line with slope = $-k$.</li>
+  <li><b>First order:</b> Exponential decay — constant <b>half-life</b>. $\ln[\ce{A}]$ vs. $t$ is a straight line with slope = $-k$.</li>
+  <li><b>Second order:</b> Curve steeper initially than first order. $1/[\ce{A}]$ vs. $t$ is a straight line with slope = $+k$.</li>
+</ul>
+
+<div class="diagram">
+<svg width="520" height="280" viewBox="0 0 520 280">
+  <line x1="55" y1="240" x2="490" y2="240" stroke="#333" stroke-width="2"/>
+  <line x1="55" y1="245" x2="55" y2="25" stroke="#333" stroke-width="2"/>
+  <text x="270" y="272" text-anchor="middle" font-size="13">Time</text>
+  <text x="18" y="135" text-anchor="middle" font-size="13" transform="rotate(-90,18,135)">[A]</text>
+  <!-- zero order: straight line -->
+  <line x1="55" y1="60" x2="350" y2="235" stroke="#1565c0" stroke-width="2.5"/>
+  <text x="370" y="240" font-size="11" fill="#1565c0">Zero order</text>
+  <!-- first order: exponential decay -->
+  <path d="M55,60 Q80,62 110,70 Q150,90 200,120 Q260,165 320,200 Q370,220 420,232 Q460,237 490,239" fill="none" stroke="#2c5f2d" stroke-width="2.5"/>
+  <text x="335" y="193" font-size="11" fill="#2c5f2d">First order</text>
+  <!-- second order: sharper initial drop -->
+  <path d="M55,60 Q70,70 90,90 Q120,130 160,170 Q210,210 270,228 Q330,237 420,240 Q470,240 490,240" fill="none" stroke="#c62828" stroke-width="2.5"/>
+  <text x="180" y="160" font-size="11" fill="#c62828">Second order</text>
+</svg>
+<div class="caption">Figure 2: Concentration–time curves for zero-, first-, and second-order reactions (same initial concentration, equal $k$ for comparison). Zero-order is linear; first-order has constant half-life; second-order drops fastest initially but takes longest to reach zero.</div>
+</div>
+
+<div class="check-in">
+<p><b>Check-in:</b> A plot of $\ln[\ce{A}]$ against time gives a straight line. What is the order and how do you find $k$?</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">The reaction is <b>first order</b> with respect to A. For a first-order reaction, $\ln[\ce{A}]_t = \ln[\ce{A}]_0 - kt$, which is of the form $y = c + mx$. The slope of the $\ln[\ce{A}]$ vs. $t$ graph = $-k$. So $k = -\text{slope}$. The half-life $t_{1/2} = \ln2/k = 0.693/k$, and is <b>constant</b> throughout the reaction — a unique feature of first-order kinetics.</div>
+</div>
+
+<h2>5. Worked Examples</h2>
+
+<div class="example">
+<b>Example 1 — Determining Order from Data:</b><br><br>
+For $\ce{2NO(g) + O2(g) -> 2NO2(g)}$, the following initial rate data were collected at 300 K:<br>
+<table style="margin:0.5rem 0;">
+<tr><th>Expt</th><th>[NO] / mol dm⁻³</th><th>[O₂] / mol dm⁻³</th><th>Initial rate / mol dm⁻³ s⁻¹</th></tr>
+<tr><td>1</td><td>0.010</td><td>0.010</td><td>2.5 × 10⁻⁵</td></tr>
+<tr><td>2</td><td>0.020</td><td>0.010</td><td>1.0 × 10⁻⁴</td></tr>
+<tr><td>3</td><td>0.010</td><td>0.020</td><td>5.0 × 10⁻⁵</td></tr>
+</table>
+Determine the rate equation and calculate $k$.<br><br>
+<b>Solution:</b><br>
+Expt 1→2: [NO] ×2, [O₂] constant, rate ×4 ($1.0\times10^{-4} / 2.5\times10^{-5} = 4$). Since 2² = 4, <b>second order in NO</b>.<br>
+Expt 1→3: [O₂] ×2, [NO] constant, rate ×2 ($5.0\times10^{-5} / 2.5\times10^{-5} = 2$). <b>First order in O₂</b>.<br>
+Rate equation: rate = $k[\ce{NO}]^2[\ce{O2}]$. Overall order = 3.<br>
+$k$ = rate / ($[\ce{NO}]^2[\ce{O2}]$) = $2.5\times10^{-5} / ((0.010)^2(0.010))$ = $2.5\times10^{-5} / 1.0\times10^{-6}$ = <b>25 dm⁶ mol⁻² s⁻¹</b>.<br><br>
+<b>⚠️ Common wrong approach:</b> Writing rate = $k[\ce{NO}]^2[\ce{O2}]$ because the coefficients are 2 and 1. This happens to be correct here, but it is <b>coincidence</b> — never assume orders equal coefficients. The data must confirm it.
+</div>
+
+<div class="example">
+<b>Example 2 — Units of $k$:</b><br><br>
+A reaction is first order in A and second order in B. Derive the units of $k$.<br><br>
+<b>Solution:</b> Rate = $k[\ce{A}][\ce{B}]^2$. Overall order = 3.<br>
+Rate has units: mol dm⁻³ s⁻¹.<br>
+$[\ce{A}]$ has units: mol dm⁻³. $[\ce{B}]^2$ has units: mol² dm⁻⁶.<br>
+So $k$ = rate / ($[\ce{A}][\ce{B}]^2$) has units: (mol dm⁻³ s⁻¹) / (mol³ dm⁻⁹) = <b>dm⁶ mol⁻² s⁻¹</b>.<br><br>
+<b>⚠️ Common wrong approach:</b> Memorising a table of units without understanding. If the question gives a rate equation you haven't seen before, you must derive the units from scratch. Always start from: units of $k$ = units of rate ÷ (units of each concentration term raised to its order).
+</div>
+
+<div class="example">
+<b>Example 3 — First-Order Half-Life:</b><br><br>
+The decomposition of $\ce{N2O5}$ is first order: $\ce{2N2O5 -> 4NO2 + O2}$. The rate constant is $k = 3.4 \times 10^{-5}$ s⁻¹ at 298 K. Calculate the half-life and the time for 75% decomposition.<br><br>
+<b>Solution:</b><br>
+$t_{1/2} = \ln 2 / k = 0.693 / (3.4 \times 10^{-5}) = \mathbf{2.04 \times 10^4\text{ s}}$ (about 5.7 hours).<br>
+75% decomposed means 25% remains. After one half-life, 50% remains. After two half-lives, 25% remains. So $t_{75\%} = 2 \times t_{1/2} = \mathbf{4.08 \times 10^4\text{ s}}$ (about 11.3 hours).<br>
+This illustrates a key property of first-order reactions: each successive half-life takes the <b>same</b> amount of time. This is <b>not</b> true for zero- or second-order reactions.
+</div>
+
+<div class="misconception">
+<h3>⚠️ Common Mistakes to Avoid</h3>
+<ol>
+  <li><b>"The order equals the stoichiometric coefficient."</b> This is only true for <b>elementary</b> (single-step) reactions. For most reactions, the order must be determined experimentally. The coefficients in the overall equation provide <b>no information</b> about the orders.</li>
+  <li><b>"Zero order means the rate is zero."</b> No. Zero order means the rate is <b>independent</b> of the concentration of that reactant. The reaction still proceeds at a constant rate (until the reactant runs out).</li>
+  <li><b>"The rate constant $k$ is truly constant."</b> $k$ is independent of <b>concentration</b> but depends strongly on <b>temperature</b> (Arrhenius equation) and may depend on the presence of a catalyst. "Constant" means concentration-independent.</li>
+  <li><b>"If doubling [A] doubles the rate, it must be first order."</b> Check at least two concentration changes. A single comparison could be misleading if there is experimental error. Always look for a pattern across multiple experiments.</li>
+  <li><b>"Overall order cannot be fractional."</b> It can be — fractional orders (e.g., 0.5, 1.5) occur in some mechanisms, particularly those involving dissociation equilibria before the rate-determining step. However, at IB HL, integer orders (0, 1, 2) are primarily expected.</li>
+</ol>
+</div>
+
+<h2>6. End-of-Lesson Practice</h2>
+
+<p><b>Question 1 (Paper 1 style):</b> The rate equation for a reaction is rate = $k[\ce{X}][\ce{Y}]^2$. If [X] is doubled and [Y] is halved, the rate:<br>
+A. stays the same &nbsp; B. is halved &nbsp; C. is doubled &nbsp; D. is quartered</p>
+
+<p><b>Question 2:</b> For the reaction $\ce{A + 2B -> C}$, data: Expt 1: [A]=0.10, [B]=0.20, rate=1.0×10⁻³; Expt 2: [A]=0.20, [B]=0.20, rate=2.0×10⁻³; Expt 3: [A]=0.10, [B]=0.40, rate=4.0×10⁻³. Determine: (a) the orders, (b) the rate equation, (c) the value and units of $k$.</p>
+
+<p><b>Question 3:</b> A reaction is zero order in reactant P. Sketch the concentration–time graph for [P] and explain its shape.</p>
+
+<p><b>Question 4:</b> The half-life of a first-order reaction is 230 s. Calculate the rate constant $k$ and the time for the concentration to fall to 12.5% of its original value.</p>
+
+<p><b>Question 5:</b> For rate = $k[\ce{A}]^2$, derive the units of $k$ and predict the factor by which the rate increases if [A] is tripled.</p>
+
+<p><b>Question 6 (IB multi-step):</b> A student studies $\ce{2X + Y -> Z}$ and collects: Expt 1: [X]=0.20, [Y]=0.10, rate=8.0×10⁻⁴; Expt 2: [X]=0.40, [Y]=0.10, rate=3.2×10⁻³; Expt 3: [X]=0.20, [Y]=0.30, rate=8.0×10⁻⁴.<br>(a) Determine the order with respect to X and Y.<br>(b) Write the rate equation.<br>(c) Calculate $k$ with units.<br>(d) Predict the rate when [X]=0.30, [Y]=0.25.</p>
+
+<button class="practice-toggle" onclick="var a=this.nextElementSibling;a.classList.toggle('open');this.textContent=a.classList.contains('open')?'▴ Hide Answers':'▸ Show Answers'">▸ Show Answers</button>
+<div class="practice-answers">
+
+<p><b>Answer 1:</b> B (halved). New rate = $k(2[\ce{X}])(\frac{1}{2}[\ce{Y}])^2 = k(2[\ce{X}])(\frac{1}{4}[\ce{Y}]^2) = \frac{1}{2}k[\ce{X}][\ce{Y}]^2$. The factor is $2 \times \frac{1}{4} = \frac{1}{2}$.</p>
+
+<p><b>Answer 2:</b> (a) Expt 1→2: [A] ×2, rate ×2 → <b>first order in A</b>. Expt 1→3: [B] ×2, rate ×4 → <b>second order in B</b>. (b) rate = $k[\ce{A}][\ce{B}]^2$. Overall order = 3. (c) $k = 1.0\times10^{-3} / (0.10 \times (0.20)^2) = 0.25$ dm⁶ mol⁻² s⁻¹.</p>
+
+<p><b>Answer 3:</b> A straight line with constant negative slope. Zero order: rate = $k$, so [P] decreases at a constant rate: $[\ce{P}]_t = [\ce{P}]_0 - kt$. The gradient = $-k$. The graph is linear because the rate does not depend on [P] — even as [P] falls, the rate stays the same.</p>
+
+<p><b>Answer 4:</b> $k = \ln2 / t_{1/2} = 0.693 / 230 = 3.01 \times 10^{-3}$ s⁻¹. 12.5% = 1/8 remains → 3 half-lives. $t = 3 \times 230 = \mathbf{690\text{ s}}$.</p>
+
+<p><b>Answer 5:</b> $k$ = rate/$[\ce{A}]^2$ → units = (mol dm⁻³ s⁻¹)/(mol² dm⁻⁶) = <b>dm³ mol⁻¹ s⁻¹</b>. If [A] is tripled, rate changes by factor $3^2 = 9$, so the rate <b>increases 9-fold</b>.</p>
+
+<p><b>Answer 6:</b> (a) Expt 1→2: [X] ×2, rate ×4 → <b>second order in X</b>. Expt 1→3: [Y] ×3, rate unchanged → <b>zero order in Y</b>. (b) rate = $k[\ce{X}]^2$. (c) $k = 8.0\times10^{-4} / (0.20)^2 = 0.020$ dm³ mol⁻¹ s⁻¹. (d) rate = $0.020 \times (0.30)^2 = \mathbf{1.8 \times 10^{-3}}$ mol dm⁻³ s⁻¹. Note that [Y] does not affect the rate.</p>
+</div>
+
+<h2>7. Key Terms</h2>
+<table>
+<tr><th>Term</th><th>Definition</th></tr>
+<tr><td>Rate equation</td><td>Mathematical expression: rate = $k[\ce{A}]^m[\ce{B}]^n$, relating rate to reactant concentrations</td></tr>
+<tr><td>Order of reaction</td><td>The power to which a concentration is raised in the rate equation (0, 1, or 2 typically)</td></tr>
+<tr><td>Overall order</td><td>The sum of all individual orders in the rate equation</td></tr>
+<tr><td>Rate constant ($k$)</td><td>Proportionality constant in the rate equation; independent of concentration but temperature-dependent</td></tr>
+<tr><td>Method of initial rates</td><td>Technique: vary one concentration at a time, measure initial rate, deduce order from rate-change factors</td></tr>
+<tr><td>Half-life ($t_{1/2}$)</td><td>Time for the concentration of a reactant to fall to half its initial value; constant for first-order reactions only</td></tr>
+<tr><td>Zero order</td><td>Rate is independent of the reactant's concentration; concentration–time graph is linear</td></tr>
+<tr><td>First order</td><td>Rate is directly proportional to concentration; $\ln[\ce{A}]$ vs. $t$ is linear; half-life is constant</td></tr>
+<tr><td>Second order</td><td>Rate is proportional to the square of concentration; $1/[\ce{A}]$ vs. $t$ is linear</td></tr>
+</table>
+
+<h2>8. Exam Tips</h2>
+
+<div class="exam-tip"><b>Paper 1 (Multiple Choice):</b> Order-determination questions typically present a table of 3 experiments. Identify the pair where only one concentration changes. If the rate doubles when concentration doubles → first order. If the rate quadruples → second order. If the rate is unchanged → zero order. Watch for questions where <b>both</b> concentrations change — you must account for the known order of one reactant to isolate the other.</div>
+
+<div class="exam-tip"><b>Paper 2 (Structured):</b> When calculating $k$, you <b>must</b> include correct units. At least one mark is allocated for units. Derive them: units of $k$ = (mol dm⁻³ s⁻¹) / (mol dm⁻³)^overall order. If you cannot remember this, do dimensional analysis: rearrange the rate equation to $k = \text{rate}/([\ce{A}]^m[\ce{B}]^n)$ and cancel units.</div>
+
+<div class="exam-tip"><b>Graphical Analysis:</b> If given a graph, identify the linearised form: straight-line [A] vs. $t$ → zero order; straight-line $\ln[\ce{A}]$ vs. $t$ → first order; straight-line $1/[\ce{A}]$ vs. $t$ → second order. The slope gives $k$ (or $-k$, depending on the plot). Exam questions often give raw [A] vs. $t$ data and ask you to determine the order by testing which transformation gives a straight line.</div>
+
 </body>
 </html>
