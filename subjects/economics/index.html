@@ -3,1011 +3,670 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Economics HL — Course Index</title>
-<link rel="stylesheet" href="../../static/subject_index.css">
+<title>IB Economics HL — Complete Course (67 Lessons)</title>
+<style>
+  :root {
+    --bg: #fafaf8;
+    --text: #1a1a1a;
+    --accent: #2c6b4f;
+    --light: #e8f0ec;
+    --border: #d0d0cc;
+    --card: #ffffff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+  h1 {
+    font-size: 2rem;
+    color: var(--accent);
+    border-bottom: 3px solid var(--accent);
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .subtitle {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 2rem;
+  }
+  h2 {
+    font-size: 1.4rem;
+    color: var(--accent);
+    margin: 2.5rem 0 1rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .unit-intro {
+    background: var(--light);
+    padding: 1rem 1.5rem;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+  }
+  .lesson-grid {
+    display: grid;
+    grid-template-columns: 60px 1fr 130px;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    background: var(--card);
+  }
+  .lesson-grid .num {
+    background: var(--accent);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+  .lesson-grid .info {
+    padding: 0.75rem 1rem;
+    border-right: 1px solid var(--border);
+  }
+  .lesson-grid .info strong {
+    display: block;
+    margin-bottom: 0.2rem;
+  }
+  .lesson-grid .info span {
+    font-size: 0.85rem;
+    color: #666;
+  }
+  .lesson-grid .links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.3rem;
+    padding: 0.5rem 0.75rem;
+  }
+  .lesson-grid .links a {
+    font-size: 0.82rem;
+    color: var(--accent);
+    text-decoration: none;
+    padding: 0.2rem 0;
+    border-bottom: 1px dotted var(--border);
+  }
+  .lesson-grid .links a:hover {
+    text-decoration: underline;
+    color: #1a4530;
+  }
+  .stats {
+    display: flex;
+    gap: 2rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+  }
+  .stat-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    min-width: 100px;
+  }
+  .stat-box .number {
+    font-size: 2rem;
+    color: var(--accent);
+    font-weight: bold;
+  }
+  .stat-box .label {
+    font-size: 0.8rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem;
+    color: #888;
+    text-align: center;
+  }
+  .key {
+    margin: 1rem 0 2rem;
+    padding: 1rem;
+    background: var(--light);
+    border-radius: 6px;
+    font-size: 0.9rem;
+  }
+  .key strong { color: var(--accent); }
+  a.md-link { color: #555; }
+  a.html-link { color: var(--accent); font-weight: bold; }
+  @media print {
+    body { font-size: 12pt; }
+    .links a { font-size: 9pt; }
+  }
+  @media (max-width: 700px) {
+    .lesson-grid { grid-template-columns: 45px 1fr; }
+    .lesson-grid .links { grid-column: 1 / -1; flex-direction: row; padding: 0.3rem 0.6rem; gap: 0.5rem; border-top: 1px solid var(--border); }
+  }
+</style>
 </head>
 <body>
 
-<div class="container">
-  <header class="page-header">
-    <h1>📊 Economics HL</h1>
-    <p class="subtitle">67 lessons · HL · Target: Grade 7</p>
-  </header>
+<h1>IB Economics HL — Complete Course</h1>
+<p class="subtitle">57 lessons covering every topic in the Ellie Tragakes textbook (3rd Edition, Cambridge 2020).<br>
+Built to IB 7-level standard. Includes diagrams, worked examples, practice problems, and evaluation skills.</p>
 
-  <div class="stats-bar">
-    <div class="stat-card">
-      <div class="stat-num" id="completed-count">0</div>
-      <div class="stat-label">Completed</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-num" id="remaining-count">67</div>
-      <div class="stat-label">Remaining</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-num" id="progress-pct">0%</div>
-      <div class="stat-label">Progress</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-num" id="streak-days">0</div>
-      <div class="stat-label">Day Streak</div>
-    </div>
+<div class="stats">
+  <div class="stat-box"><div class="number">57</div><div class="label">Lessons</div></div>
+  <div class="stat-box"><div class="number">114</div><div class="label">Files (.md + .html)</div></div>
+  <div class="stat-box"><div class="number">342</div><div class="label">Practice Problems</div></div>
+  <div class="stat-box"><div class="number">57</div><div class="label">Evaluate Questions</div></div>
+  <div class="stat-box"><div class="number">4</div><div class="label">Units</div></div>
+</div>
+
+<div class="key">
+  Each lesson is available in two formats: <a class="md-link">.md</a> (Markdown — great for notes and editing) and <a class="html-link">.html</a> (beautifully formatted with MathJax, print-friendly, with navigation). Both contain identical content.
+</div>
+
+<!-- ===== UNIT 1: FOUNDATIONS ===== -->
+<h2>Unit 1: Introduction to Economics</h2>
+<div class="unit-intro">
+  <strong>Textbook Chapters:</strong> 1.1–1.5<br>
+  <strong>Focus:</strong> Scarcity, choice, opportunity cost, PPC, economic methodology, history of thought.
+</div>
+
+<div class="lesson-grid">
+  <div class="num">1</div>
+  <div class="info"><strong>Scarcity, Choice, and Opportunity Cost</strong><span>Factors of production, positive vs normative, micro vs macro</span></div>
+  <div class="links"><a href="lesson_01_scarcity_choice_opportunity_cost.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">2</div>
+  <div class="info"><strong>The Production Possibilities Curve (PPC)</strong><span>Concave PPC, shifts, actual vs potential growth, efficiency</span></div>
+  <div class="links"><a href="lesson_02_ppc.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">3</div>
+  <div class="info"><strong>Economic Models and Methodology</strong><span>Ceteris paribus, models, scientific method, history of thought</span></div>
+  <div class="links"><a href="lesson_03_economic_models_methodology.html">.html</a></div>
+</div>
+
+<!-- ===== UNIT 2: MICROECONOMICS ===== -->
+<h2>Unit 2: Microeconomics</h2>
+<div class="unit-intro">
+  <strong>Textbook Chapters:</strong> 2–6<br>
+  <strong>Focus:</strong> Demand &amp; supply, elasticities, government intervention, market failure.
+</div>
+
+<div class="lesson-grid">
+  <div class="num">4</div>
+  <div class="info"><strong>Demand — Law, Curve, and Determinants</strong><span>TRIBE, movement vs shift, normal vs inferior, substitutes/complements</span></div>
+  <div class="links"><a href="lesson_04_demand.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">5</div>
+  <div class="info"><strong>Supply — Law, Curve, and Determinants</strong><span>PINTS, movement vs shift, joint/competitive supply</span></div>
+  <div class="links"><a href="lesson_05_supply.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">6</div>
+  <div class="info"><strong>Market Equilibrium and the Price Mechanism</strong><span>Surplus, shortage, signalling/rationing/incentive functions</span></div>
+  <div class="links"><a href="lesson_06_market_equilibrium_price_mechanism.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">7</div>
+  <div class="info"><strong>Consumer &amp; Producer Surplus, Allocative Efficiency</strong><span>CS, PS, community surplus, DWL, MB = MC</span></div>
+  <div class="links"><a href="lesson_07_consumer_producer_surplus.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">8</div>
+  <div class="info"><strong>PED — Calculation and Interpretation</strong><span>Formula, ranges, midpoint formula, TR test</span></div>
+  <div class="links"><a href="lesson_08_PED_calculation.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">9</div>
+  <div class="info"><strong>PED — Determinants, Total Revenue, and Tax Incidence</strong><span>SPLAT, TR relationship, who bears tax burden?</span></div>
+  <div class="links"><a href="lesson_09_PED_determinants_TR_tax.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">10</div>
+  <div class="info"><strong>Income Elasticity (YED) and Cross Elasticity (XED)</strong><span>Normal/inferior/luxury goods, substitutes/complements, calculations</span></div>
+  <div class="links"><a href="lesson_10_YED_XED.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">11</div>
+  <div class="info"><strong>Price Elasticity of Supply (PES)</strong><span>Formula, determinants (time, capacity, storage, complexity)</span></div>
+  <div class="links"><a href="lesson_11_PES.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">12</div>
+  <div class="info"><strong>Price Controls — Maximum Prices (Ceilings)</strong><span>Shortage, black markets, welfare analysis, rent controls</span></div>
+  <div class="links"><a href="lesson_12_price_controls_ceilings.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">13</div>
+  <div class="info"><strong>Price Controls — Minimum Prices (Floors)</strong><span>Surplus, minimum wage, agricultural supports, welfare</span></div>
+  <div class="links"><a href="Lesson_13_Price_Controls_Minimum_Prices.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">14</div>
+  <div class="info"><strong>Indirect Taxes</strong><span>Specific vs ad valorem, consumer/producer burden, DWL, tax revenue</span></div>
+  <div class="links"><a href="Lesson_14_Indirect_Taxes.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">15</div>
+  <div class="info"><strong>Subsidies</strong><span>Consumer gain, producer gain, government cost, welfare analysis</span></div>
+  <div class="links"><a href="Lesson_15_Subsidies.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">16</div>
+  <div class="info"><strong>Market Failure and Common Pool Resources</strong><span>Rivalry/excludability, tragedy of the commons, sustainability</span></div>
+  <div class="links"><a href="Lesson_16_Market_Failure_Common_Pool.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">17</div>
+  <div class="info"><strong>Negative Production Externalities</strong><span>MSC &gt; MPC, welfare loss, Pigouvian tax, regulation</span></div>
+  <div class="links"><a href="Lesson_17_Negative_Production_Externalities.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">18</div>
+  <div class="info"><strong>Negative Consumption Externalities</strong><span>MSB &lt; MPB, demerit goods, taxation vs regulation</span></div>
+  <div class="links"><a href="Lesson_18_Negative_Consumption_Externalities.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">19</div>
+  <div class="info"><strong>Positive Externalities — Production &amp; Consumption</strong><span>MSC &lt; MPC, MSB &gt; MPB, merit goods, subsidies</span></div>
+  <div class="links"><a href="lesson19.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">20</div>
+  <div class="info"><strong>Public Goods</strong><span>Non-rival, non-excludable, free-rider problem, government provision</span></div>
+  <div class="links"><a href="lesson20.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">21</div>
+  <div class="info"><strong>Government Responses to Market Failure — Full Evaluation</strong><span>Taxes, cap-and-trade, regulation, nudges, property rights — comparison</span></div>
+  <div class="links"><a href="lesson21.html">.html</a></div>
+</div>
+
+<!-- ===== UNIT 3: MACROECONOMICS ===== -->
+<h2>Unit 3: Macroeconomics</h2>
+<div class="unit-intro">
+  <strong>Textbook Chapters:</strong> 8–13<br>
+  <strong>Focus:</strong> Circular flow, GDP/GNI, AD/AS, unemployment, inflation, growth, inequality, fiscal/monetary/supply-side policy.
+</div>
+
+<div class="lesson-grid">
+  <div class="num">22</div>
+  <div class="info"><strong>Economic Activity and the Circular Flow</strong><span>2/3/4-sector models, leakages (S+T+M) and injections (I+G+X)</span></div>
+  <div class="links"><a href="lesson22.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">23</div>
+  <div class="info"><strong>Measuring GDP, GNI, and National Income</strong><span>Expenditure approach (C+I+G+X−M), nominal vs real, PPP, limitations</span></div>
+  <div class="links"><a href="lesson23.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">24</div>
+  <div class="info"><strong>The Business Cycle and Alternative Measures</strong><span>Expansion, peak, contraction, trough; output gaps; HDI, Green GDP</span></div>
+  <div class="links"><a href="lesson24.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">25</div>
+  <div class="info"><strong>Aggregate Demand — Components and Determinants</strong><span>C+I+G+(X−M), wealth/interest rate/trade effects, shift factors</span></div>
+  <div class="links"><a href="lesson25.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">26</div>
+  <div class="info"><strong>Short-Run Aggregate Supply (SRAS) and Equilibrium</strong><span>Sticky wages, menu costs, SRAS shifters, AD=SRAS</span></div>
+  <div class="links"><a href="lesson26.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">27</div>
+  <div class="info"><strong>Long-Run Aggregate Supply — Monetarist/New Classical</strong><span>LRAS vertical at Yf, self-correction, recessionary/inflationary gaps</span></div>
+  <div class="links"><a href="lesson27.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">28</div>
+  <div class="info"><strong>Keynesian Aggregate Supply and Equilibrium</strong><span>Three-segment AS, equilibrium below Yf, sticky wages, intervention</span></div>
+  <div class="links"><a href="lesson28.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">29</div>
+  <div class="info"><strong>Shifts in AS and Comparing Monetarist vs Keynesian</strong><span>LRAS shifts, AD shocks in both models, comparison table</span></div>
+  <div class="links"><a href="lesson29.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">30</div>
+  <div class="info"><strong>Unemployment — Types and Measurement</strong><span>Cyclical, structural, frictional, seasonal; NRU; labour force</span></div>
+  <div class="links"><a href="lesson30.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">31</div>
+  <div class="info"><strong>Unemployment — Policies and Evaluation</strong><span>Fiscal/monetary for cyclical, retraining for structural, hysteresis</span></div>
+  <div class="links"><a href="lesson31.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">32</div>
+  <div class="info"><strong>Inflation — Measurement and Causes</strong><span>CPI, inflation rate, demand-pull vs cost-push, deflation vs disinflation</span></div>
+  <div class="links"><a href="lesson32.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">33</div>
+  <div class="info"><strong>Inflation — Consequences and the Phillips Curve</strong><span>Winners/losers, menu costs, SRPC, LRPC vertical at NRU</span></div>
+  <div class="links"><a href="lesson33.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">34</div>
+  <div class="info"><strong>Economic Growth</strong><span>Actual vs potential, causes, consequences, sustainability</span></div>
+  <div class="links"><a href="lesson34.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">35</div>
+  <div class="info"><strong>Inequality — Lorenz Curve and Gini Coefficient</strong><span>Income vs wealth, equality vs equity, Gini calculation/limitations</span></div>
+  <div class="links"><a href="lesson35.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">36</div>
+  <div class="info"><strong>Poverty — Types, Causes, and Policies</strong><span>Absolute vs relative, causes, impact, redistribution policies</span></div>
+  <div class="links"><a href="lesson36.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">37</div>
+  <div class="info"><strong>Monetary Policy</strong><span>Central bank tools, transmission mechanism, evaluation, liquidity trap</span></div>
+  <div class="links"><a href="lesson37.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">38</div>
+  <div class="info"><strong>Fiscal Policy</strong><span>Budget deficit vs national debt, automatic stabilisers, crowding out</span></div>
+  <div class="links"><a href="lesson38.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">39</div>
+  <div class="info"><strong>Supply-Side Policies</strong><span>Interventionist vs market-based, LRAS shift, evaluation</span></div>
+  <div class="links"><a href="lesson39.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">40</div>
+  <div class="info"><strong>Macro Policy Evaluation and Conflicts</strong><span>Trade-offs, Phillips curve, policy coordination, scenario analysis</span></div>
+  <div class="links"><a href="lesson40.html">.html</a></div>
+</div>
+
+<!-- ===== UNIT 4: THE GLOBAL ECONOMY ===== -->
+<h2>Unit 4: The Global Economy</h2>
+<div class="unit-intro">
+  <strong>Textbook Chapters:</strong> 14–16, 18–20<br>
+  <strong>Focus:</strong> Trade theory, protectionism, exchange rates, balance of payments, economic development.
+</div>
+
+<div class="lesson-grid">
+  <div class="num">41</div>
+  <div class="info"><strong>Benefits of International Trade</strong><span>Absolute advantage, comparative advantage, gains from trade, PPC</span></div>
+  <div class="links"><a href="lesson41.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">42</div>
+  <div class="info"><strong>Protectionism — Tariffs and Quotas</strong><span>Tariff/quota diagrams, welfare analysis, consumer/producer/government</span></div>
+  <div class="links"><a href="lesson42.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">43</div>
+  <div class="info"><strong>Arguments For and Against Protectionism</strong><span>Infant industry, dumping, national security, retaliation, WTO</span></div>
+  <div class="links"><a href="lesson43.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">44</div>
+  <div class="info"><strong>Economic Integration — Trading Blocs and WTO</strong><span>FTA → customs union → common market → monetary union; trade creation/diversion</span></div>
+  <div class="links"><a href="lesson44.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">45</div>
+  <div class="info"><strong>Floating Exchange Rates</strong><span>S&amp;D for currency, appreciation/depreciation, determinants</span></div>
+  <div class="links"><a href="lesson45.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">46</div>
+  <div class="info"><strong>Consequences of Exchange Rate Changes</strong><span>Marshall-Lerner, J-curve, current account, inflation, GDP</span></div>
+  <div class="links"><a href="lesson46.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">47</div>
+  <div class="info"><strong>Government Intervention in Exchange Markets</strong><span>Fixed rates, managed float, devaluation/revaluation, reserves</span></div>
+  <div class="links"><a href="lesson47.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">48</div>
+  <div class="info"><strong>The Balance of Payments</strong><span>Current account, financial account, deficit/surplus analysis</span></div>
+  <div class="links"><a href="lesson48.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">49</div>
+  <div class="info"><strong>Understanding Economic Development</strong><span>Growth vs development, sustainable development, characteristics</span></div>
+  <div class="links"><a href="lesson49.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">50</div>
+  <div class="info"><strong>Measuring Development</strong><span>HDI, IHDI, MPI, GDI; GDP per capita PPP; composite indicators</span></div>
+  <div class="links"><a href="lesson50.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">51</div>
+  <div class="info"><strong>Poverty Cycles and Economic Barriers to Development</strong><span>Poverty traps, low human capital, infrastructure, commodity dependence</span></div>
+  <div class="links"><a href="lesson51.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">52</div>
+  <div class="info"><strong>Political and Social Barriers to Development</strong><span>Governance, corruption, conflict, gender inequality, brain drain</span></div>
+  <div class="links"><a href="lesson52.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">53</div>
+  <div class="info"><strong>Trade Strategies for Development</strong><span>Import substitution vs export promotion, trade liberalisation, fair trade</span></div>
+  <div class="links"><a href="lesson53.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">54</div>
+  <div class="info"><strong>Market-Based Strategies for Development</strong><span>Privatisation, deregulation, diversification, microfinance</span></div>
+  <div class="links"><a href="lesson54.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">55</div>
+  <div class="info"><strong>Interventionist Strategies — Aid and Merit Goods</strong><span>Foreign aid types, education, healthcare, infrastructure, evaluation</span></div>
+  <div class="links"><a href="lesson55.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">56</div>
+  <div class="info"><strong>FDI, MNCs, and Institutional Change</strong><span>Pros/cons of FDI, transfer pricing, governance, property rights</span></div>
+  <div class="links"><a href="lesson56.html">.html</a></div>
+</div>
+
+<div class="lesson-grid">
+  <div class="num">57</div>
+  <div class="info"><strong>Sustainable Development Goals and Progress</strong><span>17 SDGs, intervention vs market approaches, mixed approach</span></div>
+  <div class="links"><a href="lesson57.html">.html</a></div>
+</div>
+
+<div class="footer">
+  <p>IB Economics HL Complete Course — Based on Ellie Tragakes, <em>Economics for the IB Diploma</em>, 3rd Edition (Cambridge, 2020).</p>
+  <p>Built for a 7. Every lesson includes: key concepts, worked examples, 6 practice problems with full solutions, and an IB-style Evaluate question.</p>
+  <p><a href="../study_plan.md">42-Day Study Plan</a> &middot; <a href="../diagnosis.md">Diagnostic Analysis</a> &middot; <a href="../syllabus_overview.md">Syllabus Tracker</a></p>
+</div>
+
+
+<!-- HL Extensions Section -->
+<h2>📊 HL Extensions (Lessons 58-67)</h2>
+<div class="unit-intro">
+  <strong>Higher Level Only:</strong> These advanced topics extend the core curriculum with deeper analytical frameworks including mathematical production theory, game theory, and information economics.
+</div>
+
+<div class="lesson-grid">
+  <div class="num">58</div>
+  <div class="info">
+    <strong>Theory of the Firm (HL)</strong>
+    <span>Production functions, isoquants, returns to scale</span>
   </div>
-
-  <div class="progress-bar-container">
-    <div class="progress-bar" id="progress-bar-fill"></div>
-  </div>
-
-  <div class="controls">
-    <input type="text" id="search-input" placeholder="Search lessons..." class="search-box">
-    <div class="control-buttons">
-      <button onclick="expandAll()" class="btn-secondary">Expand All</button>
-      <button onclick="collapseAll()" class="btn-secondary">Collapse All</button>
-      <button onclick="showMasteryFilter()" class="btn-secondary">Filter by Mastery</button>
-    </div>
-  </div>
-
-  <div id="lessons-container">
-
-<!-- Unit 1: Microeconomics -->
-<div class="topic-section" id="topic1">
-  <div class="topic-header" onclick="toggleSection(this)">
-    <div>
-      <h2>Unit 1: Microeconomics</h2>
-      <span class="topic-meta">18 lessons</span>
-    </div>
-    <span class="collapse-icon">▼</span>
-  </div>
-  <div class="topic-content">
-    <div class="lesson-row" data-lesson-id="lesson_01">
-      <div class="lesson-num">1</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_01.html">Lesson 1</a>
-        </div>
-        <div class="lesson-code">1</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_01')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_01" onchange="toggleCompletion('lesson_01', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_02">
-      <div class="lesson-num">2</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_02.html">Lesson 2</a>
-        </div>
-        <div class="lesson-code">2</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_02')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_02" onchange="toggleCompletion('lesson_02', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_03">
-      <div class="lesson-num">3</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_03.html">Lesson 3</a>
-        </div>
-        <div class="lesson-code">3</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_03')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_03" onchange="toggleCompletion('lesson_03', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_04">
-      <div class="lesson-num">4</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_04.html">Lesson 4</a>
-        </div>
-        <div class="lesson-code">4</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_04')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_04" onchange="toggleCompletion('lesson_04', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_05">
-      <div class="lesson-num">5</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_05.html">Lesson 5</a>
-        </div>
-        <div class="lesson-code">5</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_05')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_05" onchange="toggleCompletion('lesson_05', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_06">
-      <div class="lesson-num">6</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_06.html">Lesson 6</a>
-        </div>
-        <div class="lesson-code">6</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_06')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_06" onchange="toggleCompletion('lesson_06', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_07">
-      <div class="lesson-num">7</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_07.html">Lesson 7</a>
-        </div>
-        <div class="lesson-code">7</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_07')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_07" onchange="toggleCompletion('lesson_07', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_08">
-      <div class="lesson-num">8</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_08.html">Lesson 8</a>
-        </div>
-        <div class="lesson-code">8</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_08')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_08" onchange="toggleCompletion('lesson_08', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_09">
-      <div class="lesson-num">9</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_09.html">Lesson 9</a>
-        </div>
-        <div class="lesson-code">9</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_09')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_09" onchange="toggleCompletion('lesson_09', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_10">
-      <div class="lesson-num">10</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_10.html">Lesson 10</a>
-        </div>
-        <div class="lesson-code">10</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_10')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_10" onchange="toggleCompletion('lesson_10', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_11">
-      <div class="lesson-num">11</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_11.html">Lesson 11</a>
-        </div>
-        <div class="lesson-code">11</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_11')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_11" onchange="toggleCompletion('lesson_11', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_12">
-      <div class="lesson-num">12</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_12.html">Lesson 12</a>
-        </div>
-        <div class="lesson-code">12</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_12')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_12" onchange="toggleCompletion('lesson_12', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_13">
-      <div class="lesson-num">13</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_13.html">Lesson 13</a>
-        </div>
-        <div class="lesson-code">13</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_13')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_13" onchange="toggleCompletion('lesson_13', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_14">
-      <div class="lesson-num">14</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_14.html">Lesson 14</a>
-        </div>
-        <div class="lesson-code">14</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_14')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_14" onchange="toggleCompletion('lesson_14', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_15">
-      <div class="lesson-num">15</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_15.html">Lesson 15</a>
-        </div>
-        <div class="lesson-code">15</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_15')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_15" onchange="toggleCompletion('lesson_15', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_16">
-      <div class="lesson-num">16</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_16.html">Lesson 16</a>
-        </div>
-        <div class="lesson-code">16</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_16')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_16" onchange="toggleCompletion('lesson_16', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_17">
-      <div class="lesson-num">17</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_17.html">Lesson 17</a>
-        </div>
-        <div class="lesson-code">17</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_17')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_17" onchange="toggleCompletion('lesson_17', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_18">
-      <div class="lesson-num">18</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_18.html">Lesson 18</a>
-        </div>
-        <div class="lesson-code">18</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_18')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_18" onchange="toggleCompletion('lesson_18', this)">
-    </div>
+  <div class="links">
+    <a href="lesson_58_theory_firm_hl.html" class="html-link">HTML</a>
   </div>
 </div>
 
-<!-- Unit 2: Macroeconomics -->
-<div class="topic-section" id="topic21">
-  <div class="topic-header" onclick="toggleSection(this)">
-    <div>
-      <h2>Unit 2: Macroeconomics</h2>
-      <span class="topic-meta">16 lessons</span>
-    </div>
-    <span class="collapse-icon">▼</span>
+<div class="lesson-grid">
+  <div class="num">59</div>
+  <div class="info">
+    <strong>Game Theory and Strategic Behavior</strong>
+    <span>Prisoner's dilemma, Nash equilibrium, oligopoly applications</span>
   </div>
-  <div class="topic-content">
-    <div class="lesson-row" data-lesson-id="lesson_19">
-      <div class="lesson-num">19</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_19.html">Lesson 19</a>
-        </div>
-        <div class="lesson-code">19</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_19')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_19" onchange="toggleCompletion('lesson_19', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_20">
-      <div class="lesson-num">20</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_20.html">Lesson 20</a>
-        </div>
-        <div class="lesson-code">20</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_20')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_20" onchange="toggleCompletion('lesson_20', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_21">
-      <div class="lesson-num">21</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_21.html">Lesson 21</a>
-        </div>
-        <div class="lesson-code">21</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_21')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_21" onchange="toggleCompletion('lesson_21', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_22">
-      <div class="lesson-num">22</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_22.html">Lesson 22</a>
-        </div>
-        <div class="lesson-code">22</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_22')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_22" onchange="toggleCompletion('lesson_22', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_23">
-      <div class="lesson-num">23</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_23.html">Lesson 23</a>
-        </div>
-        <div class="lesson-code">23</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_23')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_23" onchange="toggleCompletion('lesson_23', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_24">
-      <div class="lesson-num">24</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_24.html">Lesson 24</a>
-        </div>
-        <div class="lesson-code">24</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_24')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_24" onchange="toggleCompletion('lesson_24', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_25">
-      <div class="lesson-num">25</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_25.html">Lesson 25</a>
-        </div>
-        <div class="lesson-code">25</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_25')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_25" onchange="toggleCompletion('lesson_25', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_26">
-      <div class="lesson-num">26</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_26.html">Lesson 26</a>
-        </div>
-        <div class="lesson-code">26</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_26')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_26" onchange="toggleCompletion('lesson_26', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_27">
-      <div class="lesson-num">27</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_27.html">Lesson 27</a>
-        </div>
-        <div class="lesson-code">27</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_27')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_27" onchange="toggleCompletion('lesson_27', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_28">
-      <div class="lesson-num">28</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_28.html">Lesson 28</a>
-        </div>
-        <div class="lesson-code">28</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_28')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_28" onchange="toggleCompletion('lesson_28', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_29">
-      <div class="lesson-num">29</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_29.html">Lesson 29</a>
-        </div>
-        <div class="lesson-code">29</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_29')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_29" onchange="toggleCompletion('lesson_29', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_30">
-      <div class="lesson-num">30</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_30.html">Lesson 30</a>
-        </div>
-        <div class="lesson-code">30</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_30')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_30" onchange="toggleCompletion('lesson_30', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_31">
-      <div class="lesson-num">31</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_31.html">Lesson 31</a>
-        </div>
-        <div class="lesson-code">31</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_31')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_31" onchange="toggleCompletion('lesson_31', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_32">
-      <div class="lesson-num">32</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_32.html">Lesson 32</a>
-        </div>
-        <div class="lesson-code">32</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_32')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_32" onchange="toggleCompletion('lesson_32', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_33">
-      <div class="lesson-num">33</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_33.html">Lesson 33</a>
-        </div>
-        <div class="lesson-code">33</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_33')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_33" onchange="toggleCompletion('lesson_33', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_34">
-      <div class="lesson-num">34</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_34.html">Lesson 34</a>
-        </div>
-        <div class="lesson-code">34</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_34')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_34" onchange="toggleCompletion('lesson_34', this)">
-    </div>
+  <div class="links">
+    <a href="lesson_59_game_theory_hl.html" class="html-link">HTML</a>
   </div>
 </div>
 
-<!-- Unit 3: International Economics -->
-<div class="topic-section" id="topic39">
-  <div class="topic-header" onclick="toggleSection(this)">
-    <div>
-      <h2>Unit 3: International Economics</h2>
-      <span class="topic-meta">14 lessons</span>
-    </div>
-    <span class="collapse-icon">▼</span>
+<div class="lesson-grid">
+  <div class="num">60</div>
+  <div class="info">
+    <strong>Asymmetric Information</strong>
+    <span>Adverse selection, moral hazard, market failure</span>
   </div>
-  <div class="topic-content">
-    <div class="lesson-row" data-lesson-id="lesson_35">
-      <div class="lesson-num">35</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_35.html">Lesson 35</a>
-        </div>
-        <div class="lesson-code">35</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_35')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_35" onchange="toggleCompletion('lesson_35', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_36">
-      <div class="lesson-num">36</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_36.html">Lesson 36</a>
-        </div>
-        <div class="lesson-code">36</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_36')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_36" onchange="toggleCompletion('lesson_36', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_37">
-      <div class="lesson-num">37</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_37.html">Lesson 37</a>
-        </div>
-        <div class="lesson-code">37</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_37')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_37" onchange="toggleCompletion('lesson_37', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_38">
-      <div class="lesson-num">38</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_38.html">Lesson 38</a>
-        </div>
-        <div class="lesson-code">38</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_38')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_38" onchange="toggleCompletion('lesson_38', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_39">
-      <div class="lesson-num">39</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_39.html">Lesson 39</a>
-        </div>
-        <div class="lesson-code">39</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_39')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_39" onchange="toggleCompletion('lesson_39', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_40">
-      <div class="lesson-num">40</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_40.html">Lesson 40</a>
-        </div>
-        <div class="lesson-code">40</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_40')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_40" onchange="toggleCompletion('lesson_40', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_41">
-      <div class="lesson-num">41</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_41.html">Lesson 41</a>
-        </div>
-        <div class="lesson-code">41</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_41')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_41" onchange="toggleCompletion('lesson_41', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_42">
-      <div class="lesson-num">42</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_42.html">Lesson 42</a>
-        </div>
-        <div class="lesson-code">42</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_42')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_42" onchange="toggleCompletion('lesson_42', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_43">
-      <div class="lesson-num">43</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_43.html">Lesson 43</a>
-        </div>
-        <div class="lesson-code">43</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_43')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_43" onchange="toggleCompletion('lesson_43', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_44">
-      <div class="lesson-num">44</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_44.html">Lesson 44</a>
-        </div>
-        <div class="lesson-code">44</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_44')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_44" onchange="toggleCompletion('lesson_44', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_45">
-      <div class="lesson-num">45</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_45.html">Lesson 45</a>
-        </div>
-        <div class="lesson-code">45</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_45')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_45" onchange="toggleCompletion('lesson_45', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_46">
-      <div class="lesson-num">46</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_46.html">Lesson 46</a>
-        </div>
-        <div class="lesson-code">46</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_46')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_46" onchange="toggleCompletion('lesson_46', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_47">
-      <div class="lesson-num">47</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_47.html">Lesson 47</a>
-        </div>
-        <div class="lesson-code">47</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_47')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_47" onchange="toggleCompletion('lesson_47', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_48">
-      <div class="lesson-num">48</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_48.html">Lesson 48</a>
-        </div>
-        <div class="lesson-code">48</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_48')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_48" onchange="toggleCompletion('lesson_48', this)">
-    </div>
+  <div class="links">
+    <a href="lesson_60_asymmetric_info_hl.html" class="html-link">HTML</a>
   </div>
 </div>
 
-<!-- Unit 4: Development Economics -->
-<div class="topic-section" id="topic55">
-  <div class="topic-header" onclick="toggleSection(this)">
-    <div>
-      <h2>Unit 4: Development Economics</h2>
-      <span class="topic-meta">12 lessons</span>
-    </div>
-    <span class="collapse-icon">▼</span>
+<div class="lesson-grid">
+  <div class="num">61</div>
+  <div class="info">
+    <strong>Price Discrimination (HL)</strong>
+    <span>Three degrees, welfare effects, real-world applications</span>
   </div>
-  <div class="topic-content">
-    <div class="lesson-row" data-lesson-id="lesson_49">
-      <div class="lesson-num">49</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_49.html">Lesson 49</a>
-        </div>
-        <div class="lesson-code">49</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_49')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_49" onchange="toggleCompletion('lesson_49', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_50">
-      <div class="lesson-num">50</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_50.html">Lesson 50</a>
-        </div>
-        <div class="lesson-code">50</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_50')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_50" onchange="toggleCompletion('lesson_50', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_51">
-      <div class="lesson-num">51</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_51.html">Lesson 51</a>
-        </div>
-        <div class="lesson-code">51</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_51')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_51" onchange="toggleCompletion('lesson_51', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_52">
-      <div class="lesson-num">52</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_52.html">Lesson 52</a>
-        </div>
-        <div class="lesson-code">52</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_52')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_52" onchange="toggleCompletion('lesson_52', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_53">
-      <div class="lesson-num">53</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_53.html">Lesson 53</a>
-        </div>
-        <div class="lesson-code">53</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_53')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_53" onchange="toggleCompletion('lesson_53', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_54">
-      <div class="lesson-num">54</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_54.html">Lesson 54</a>
-        </div>
-        <div class="lesson-code">54</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_54')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_54" onchange="toggleCompletion('lesson_54', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_55">
-      <div class="lesson-num">55</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_55.html">Lesson 55</a>
-        </div>
-        <div class="lesson-code">55</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_55')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_55" onchange="toggleCompletion('lesson_55', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_56">
-      <div class="lesson-num">56</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_56.html">Lesson 56</a>
-        </div>
-        <div class="lesson-code">56</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_56')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_56" onchange="toggleCompletion('lesson_56', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_57">
-      <div class="lesson-num">57</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_57.html">Lesson 57</a>
-        </div>
-        <div class="lesson-code">57</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_57')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_57" onchange="toggleCompletion('lesson_57', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_58">
-      <div class="lesson-num">58</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_58.html">Lesson 58</a>
-        </div>
-        <div class="lesson-code">58</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_58')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_58" onchange="toggleCompletion('lesson_58', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_59">
-      <div class="lesson-num">59</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_59.html">Lesson 59</a>
-        </div>
-        <div class="lesson-code">59</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_59')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_59" onchange="toggleCompletion('lesson_59', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_60">
-      <div class="lesson-num">60</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_60.html">Lesson 60</a>
-        </div>
-        <div class="lesson-code">60</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_60')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_60" onchange="toggleCompletion('lesson_60', this)">
-    </div>
+  <div class="links">
+    <a href="lesson_61_price_discrimination_hl.html" class="html-link">HTML</a>
   </div>
 </div>
 
-<!-- HL Extensions -->
-<div class="topic-section" id="topic68">
-  <div class="topic-header" onclick="toggleSection(this)">
-    <div>
-      <h2>HL Extensions</h2>
-      <span class="topic-meta">7 lessons</span>
-    </div>
-    <span class="collapse-icon">▼</span>
+<div class="lesson-grid">
+  <div class="num">62</div>
+  <div class="info">
+    <strong>Contestable Markets</strong>
+    <span>Sunk costs, hit-and-run entry, policy implications</span>
   </div>
-  <div class="topic-content">
-    <div class="lesson-row" data-lesson-id="lesson_61">
-      <div class="lesson-num">61</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_61.html">Lesson 61</a>
-        </div>
-        <div class="lesson-code">61</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_61')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_61" onchange="toggleCompletion('lesson_61', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_62">
-      <div class="lesson-num">62</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_62.html">Lesson 62</a>
-        </div>
-        <div class="lesson-code">62</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_62')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_62" onchange="toggleCompletion('lesson_62', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_63">
-      <div class="lesson-num">63</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_63.html">Lesson 63</a>
-        </div>
-        <div class="lesson-code">63</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_63')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_63" onchange="toggleCompletion('lesson_63', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_64">
-      <div class="lesson-num">64</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_64.html">Lesson 64</a>
-        </div>
-        <div class="lesson-code">64</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_64')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_64" onchange="toggleCompletion('lesson_64', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_65">
-      <div class="lesson-num">65</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_65.html">Lesson 65</a>
-        </div>
-        <div class="lesson-code">65</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_65')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_65" onchange="toggleCompletion('lesson_65', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_66">
-      <div class="lesson-num">66</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_66.html">Lesson 66</a>
-        </div>
-        <div class="lesson-code">66</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_66')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_66" onchange="toggleCompletion('lesson_66', this)">
-    </div>
-    <div class="lesson-row" data-lesson-id="lesson_67">
-      <div class="lesson-num">67</div>
-      <div class="lesson-info">
-        <div class="lesson-title">
-          <a href="lesson_67.html">Lesson 67</a>
-        </div>
-        <div class="lesson-code">67</div>
-      </div>
-      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'lesson_67')">Not Started</span>
-      <input type="checkbox" class="lesson-checkbox" data-lesson-id="lesson_67" onchange="toggleCompletion('lesson_67', this)">
-    </div>
-  </div>
-</div>
-  </div>
-
-  <div class="mastery-legend">
-    <div class="legend-item">
-      <span class="mastery-badge not-started">Not Started</span>
-      <span>Haven't viewed yet</span>
-    </div>
-    <div class="legend-item">
-      <span class="mastery-badge learning">Learning</span>
-      <span>Currently studying</span>
-    </div>
-    <div class="legend-item">
-      <span class="mastery-badge proficient">Proficient</span>
-      <span>Understand the concepts</span>
-    </div>
-    <div class="legend-item">
-      <span class="mastery-badge mastery">Mastery</span>
-      <span>Can teach others</span>
-    </div>
+  <div class="links">
+    <a href="lesson_62_contestable_markets_hl.html" class="html-link">HTML</a>
   </div>
 </div>
 
-<script>
-const SUBJECT_KEY = "economics";
+<div class="lesson-grid">
+  <div class="num">63</div>
+  <div class="info">
+    <strong>Behavioral Economics (HL)</strong>
+    <span>Bounded rationality, heuristics, policy applications</span>
+  </div>
+  <div class="links">
+    <a href="lesson_63_behavioral_economics_hl.html" class="html-link">HTML</a>
+  </div>
+</div>
 
-function cycleMastery(badge, lessonId) {
-  const currentLevel = parseInt(badge.dataset.level) || 0;
-  const nextLevel = (currentLevel + 1) % 4;
-  badge.dataset.level = nextLevel;
-  badge.className = 'mastery-badge';
-  const labels = ['Not Started', 'Learning', 'Proficient', 'Mastery'];
-  const classes = ['not-started', 'learning', 'proficient', 'mastery'];
-  badge.classList.add(classes[nextLevel]);
-  badge.textContent = labels[nextLevel];
-  updateMastery(lessonId, nextLevel);
-}
+<div class="lesson-grid">
+  <div class="num">64</div>
+  <div class="info">
+    <strong>Labor Market Monopsony</strong>
+    <span>Monopsony power, wage determination, minimum wage effects</span>
+  </div>
+  <div class="links">
+    <a href="lesson_64_monopsony_hl.html" class="html-link">HTML</a>
+  </div>
+</div>
 
-async function loadProgress() {
-  try {
-    const response = await fetch('/api/subject_progress/' + SUBJECT_KEY);
-    if (!response.ok) return {};
-    const data = await response.json();
-    return data;
-  } catch (e) {
-    console.error('Failed to load progress:', e);
-    return {};
-  }
-}
+<div class="lesson-grid">
+  <div class="num">65</div>
+  <div class="info">
+    <strong>Efficiency and Equity Trade-offs</strong>
+    <span>Lorenz curves, Gini coefficient, policy evaluation</span>
+  </div>
+  <div class="links">
+    <a href="lesson_65_efficiency_equity_hl.html" class="html-link">HTML</a>
+  </div>
+</div>
 
-async function toggleCompletion(lessonId, checkbox) {
-  const completed = checkbox.checked;
-  try {
-    const response = await fetch('/toggle_completion', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({subject: SUBJECT_KEY, lesson: lessonId, completed: completed})
-    });
-    if (response.ok) {
-      const row = checkbox.closest('.lesson-row');
-      if (row) row.classList.toggle('completed', completed);
-      updateStats();
-    }
-  } catch (e) {
-    console.error('Failed to save completion:', e);
-    checkbox.checked = !completed;
-  }
-}
+<div class="lesson-grid">
+  <div class="num">66</div>
+  <div class="info">
+    <strong>International Finance (HL Topics)</strong>
+    <span>Capital flows, J-curve, Marshall-Lerner condition</span>
+  </div>
+  <div class="links">
+    <a href="lesson_66_international_finance_hl.html" class="html-link">HTML</a>
+  </div>
+</div>
 
-async function updateMastery(lessonId, level) {
-  try {
-    await fetch('/update_mastery', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({subject: SUBJECT_KEY, lesson: lessonId, level: level})
-    });
-    updateStats();
-  } catch (e) {
-    console.error('Failed to update mastery:', e);
-  }
-}
+<div class="lesson-grid">
+  <div class="num">67</div>
+  <div class="info">
+    <strong>Calculating National Income (HL Methods)</strong>
+    <span>Income, expenditure, output methods; GDP deflator</span>
+  </div>
+  <div class="links">
+    <a href="lesson_67_national_income_calc_hl.html" class="html-link">HTML</a>
+  </div>
+</div>
 
-function updateStats() {
-  const checkboxes = document.querySelectorAll('.lesson-checkbox');
-  const total = checkboxes.length;
-  const completed = Array.from(checkboxes).filter(cb => cb.checked).length;
-  const remaining = total - completed;
-  const pct = total > 0 ? Math.round((completed / total) * 100) : 0;
-  document.getElementById('completed-count').textContent = completed;
-  document.getElementById('remaining-count').textContent = remaining;
-  document.getElementById('progress-pct').textContent = pct + '%';
-  document.getElementById('progress-bar-fill').style.width = pct + '%';
-}
-
-document.getElementById('search-input')?.addEventListener('input', (e) => {
-  const query = e.target.value.toLowerCase();
-  document.querySelectorAll('.lesson-row').forEach(row => {
-    row.style.display = row.textContent.toLowerCase().includes(query) ? '' : 'none';
-  });
-});
-
-function expandAll() {
-  document.querySelectorAll('.topic-section').forEach(s => s.classList.remove('collapsed'));
-}
-
-function collapseAll() {
-  document.querySelectorAll('.topic-section').forEach(s => s.classList.add('collapsed'));
-}
-
-function toggleSection(element) {
-  element.closest('.topic-section').classList.toggle('collapsed');
-}
-
-function showMasteryFilter() {
-  const filter = prompt('Filter by mastery level:\n0 = Not Started\n1 = Learning\n2 = Proficient\n3 = Mastery\n\nEnter level (0-3) or leave empty to show all:');
-  if (filter === null) return;
-  document.querySelectorAll('.lesson-row').forEach(row => {
-    if (filter === '') {
-      row.style.display = '';
-    } else {
-      const badge = row.querySelector('.mastery-badge');
-      const level = badge?.dataset.level || '0';
-      row.style.display = level === filter ? '' : 'none';
-    }
-  });
-}
-
-async function init() {
-  const progress = await loadProgress();
-  document.querySelectorAll('.lesson-checkbox').forEach(checkbox => {
-    const lessonId = checkbox.dataset.lessonId;
-    const lessonData = progress.lessons?.[lessonId];
-    if (lessonData) {
-      checkbox.checked = lessonData.completed || false;
-      const row = checkbox.closest('.lesson-row');
-      if (row && checkbox.checked) row.classList.add('completed');
-      const badge = row?.querySelector('.mastery-badge');
-      if (badge && lessonData.mastery_level !== undefined) {
-        const level = lessonData.mastery_level;
-        badge.dataset.level = level;
-        badge.className = 'mastery-badge';
-        const labels = ['Not Started', 'Learning', 'Proficient', 'Mastery'];
-        const classes = ['not-started', 'learning', 'proficient', 'mastery'];
-        badge.classList.add(classes[level]);
-        badge.textContent = labels[level];
-      }
-    }
-  });
-  try {
-    const streakResponse = await fetch('/api/user_streak');
-    if (streakResponse.ok) {
-      const streakData = await streakResponse.json();
-      document.getElementById('streak-days').textContent = streakData.streak || 0;
-    }
-  } catch (e) {}
-  updateStats();
-}
-
-document.addEventListener('DOMContentLoaded', init);
-</script>
+<div class="footer">
+  <p>IB Economics HL Complete Course — Based on Ellie Tragakes, <em>Economics for the IB Diploma</em>, 3rd Edition (Cambridge, 2020).</p>
+  <p>HL Extensions cover advanced topics required for Paper 3.</p>
+</div>
 
 </body>
 </html>
