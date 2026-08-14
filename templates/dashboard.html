@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Dashboard — IB Study Hub</title>
+<meta name="csrf-token" content="{{ csrf_token }}">
+<link rel="stylesheet" href="/static/style.css">
+<style>
+.dashboard-container { max-width: 1280px; margin: 0 auto; padding: var(--space-8) var(--space-6); }
+.dashboard-header { margin-bottom: var(--space-8); }
+.dashboard-title { font-size: 2rem; font-weight: 700; color: var(--text-primary); margin-bottom: var(--space-2); }
+.dashboard-subtitle { font-size: 1rem; color: var(--text-secondary); }
+
+.section-title { font-size: 1.5rem; font-weight: 600; color: var(--text-primary); margin: var(--space-8) 0 var(--space-4); }
+
+.progress-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: var(--space-4); margin-bottom: var(--space-8); }
+.progress-card { background: var(--bg-primary); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-6); }
+.progress-card-header { display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-3); }
+.progress-icon { font-size: 1.5rem; }
+.progress-name { font-size: 1rem; font-weight: 600; color: var(--text-primary); }
+.progress-stats { font-size: 0.875rem; color: var(--text-secondary); }
+
+.attempts-list { list-style: none; display: flex; flex-direction: column; gap: var(--space-4); }
+.attempt-card { background: var(--bg-primary); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-6); }
+.attempt-meta { font-size: 0.875rem; color: var(--text-muted); margin-bottom: var(--space-3); }
+.attempt-scores { display: flex; gap: var(--space-3); flex-wrap: wrap; margin-bottom: var(--space-3); }
+.score-badge { font-size: 0.875rem; padding: var(--space-2) var(--space-3); background: var(--bg-secondary); border-radius: var(--radius-md); }
+.score-total { background: var(--accent); color: white; font-weight: 600; }
+.criterion-details { display: flex; flex-direction: column; gap: var(--space-2); margin-top: var(--space-3); padding-top: var(--space-3); border-top: 1px solid var(--border); }
+.criterion-item { font-size: 0.875rem; color: var(--text-secondary); }
+.essay-preview { font-size: 0.875rem; color: var(--text-secondary); font-style: italic; margin-top: var(--space-3); padding-left: var(--space-4); border-left: 3px solid var(--border); max-height: 100px; overflow-y: auto; }
+.empty-state { text-align: center; padding: var(--space-12); color: var(--text-muted); font-style: italic; }
+</style>
+</head>
+<body>
+
+<!-- TOP NAV -->
+<nav class="top-nav">
+  <div class="top-nav-inner">
+    <a href="/" class="nav-brand">📚 IB Study Hub</a>
+    <div class="nav-links">
+      <div class="nav-user">
+        <span>👤</span>
+        <span class="nav-user-name">{{ user_name }}</span>
+      </div>
+      <a href="/" class="nav-link">← Back to Lessons</a>
+      <a href="/logout" class="nav-link">Logout</a>
+    </div>
+  </div>
+</nav>
+
+<div class="dashboard-container">
+
+  <div class="dashboard-header">
+    <h1 class="dashboard-title">📊 Your Dashboard</h1>
+    <p class="dashboard-subtitle">Track your progress across all subjects</p>
+  </div>
+
+  <!-- Lesson Progress (no percentages) -->
+  <h2 class="section-title">📚 Lesson Activity</h2>
+  {% if subject_progress %}
+  <div class="progress-grid">
+    {% for key, subj in subject_progress.items() %}
+    <div class="progress-card">
+      <div class="progress-card-header">
+        <span class="progress-icon">{{ subj.icon }}</span>
+        <span class="progress-name">{{ subj.name }}</span>
+      </div>
+      <p class="progress-stats">{{ subj.viewed }} of {{ subj.total }} lessons viewed</p>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="empty-state">No lesson views yet. Start studying to track your progress!</p>
+  {% endif %}
+
+  <!-- Lang Lit Attempts -->
+  <h2 class="section-title">📝 Language & Literature Practice</h2>
+  {% if mock_attempts %}
+  <ul class="attempts-list">
+    {% for a in mock_attempts|reverse %}
+    <li class="attempt-card">
+      <div class="attempt-meta">{{ a.date }} · {{ a.prompt_title or a.subject }} · {{ a.mode }}</div>
+      {% if a.scores and a.scores.total %}
+      <div class="attempt-scores">
+        <span class="score-badge score-total">Total: {{ a.scores.total }}/20</span>
+        {% if a.scores.criterion_a %}<span class="score-badge">Criterion A: {{ a.scores.criterion_a.score }}/5</span>{% endif %}
+        {% if a.scores.criterion_b %}<span class="score-badge">Criterion B: {{ a.scores.criterion_b.score }}/5</span>{% endif %}
+        {% if a.scores.criterion_c %}<span class="score-badge">Criterion C: {{ a.scores.criterion_c.score }}/5</span>{% endif %}
+        {% if a.scores.criterion_d %}<span class="score-badge">Criterion D: {{ a.scores.criterion_d.score }}/5</span>{% endif %}
+      </div>
+      <div class="criterion-details">
+        {% if a.scores.criterion_a and a.scores.criterion_a.comment %}<div class="criterion-item"><strong>A:</strong> {{ a.scores.criterion_a.comment }}</div>{% endif %}
+        {% if a.scores.criterion_b and a.scores.criterion_b.comment %}<div class="criterion-item"><strong>B:</strong> {{ a.scores.criterion_b.comment }}</div>{% endif %}
+        {% if a.scores.criterion_c and a.scores.criterion_c.comment %}<div class="criterion-item"><strong>C:</strong> {{ a.scores.criterion_c.comment }}</div>{% endif %}
+        {% if a.scores.criterion_d and a.scores.criterion_d.comment %}<div class="criterion-item"><strong>D:</strong> {{ a.scores.criterion_d.comment }}</div>{% endif %}
+        {% if a.scores.overall_feedback %}<div class="criterion-item" style="margin-top: var(--space-2);"><em>{{ a.scores.overall_feedback }}</em></div>{% endif %}
+      </div>
+      {% endif %}
+      <div class="essay-preview">{{ a.essay_preview[:200] }}{% if a.essay_preview|length > 200 %}...{% endif %}</div>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="empty-state">No practice attempts yet. Try a Paper 1 or Paper 2 practice!</p>
+  {% endif %}
+
+  <!-- SAT Attempts -->
+  <h2 class="section-title">🎓 SAT Practice</h2>
+  {% if sat_attempts %}
+  <ul class="attempts-list">
+    {% for a in sat_attempts|reverse %}
+    <li class="attempt-card">
+      <div class="attempt-meta">{{ a.date }} · {{ a.module }}</div>
+      <div style="font-size: 0.9375rem; color: var(--text-secondary); line-height: 1.6;">
+        {{ a.feedback[:500] }}{% if a.feedback|length > 500 %}...{% endif %}
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="empty-state">No SAT attempts yet. Start with a practice test!</p>
+  {% endif %}
+
+</div>
+
+</body>
+</html>
