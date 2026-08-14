@@ -3,148 +3,1011 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IB Physics HL — Lesson Index</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700&display=swap');
-  
-  :root {
-    --bg: #fdfcf9;
-    --text: #1a1a1a;
-    --accent: #2c5f2d;
-    --border: #d0cec7;
-    --code-bg: #f4f3ef;
-  }
-  
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  
-  body {
-    font-family: 'Source Serif 4', Georgia, serif;
-    font-size: 17px;
-    line-height: 1.7;
-    color: var(--text);
-    background: var(--bg);
-    max-width: 820px;
-    margin: 0 auto;
-    padding: 2rem 1.5rem 4rem;
-  }
-  
-  h1 {
-    font-size: 2rem;
-    font-weight: 700;
-    margin: 0 0 0.5rem;
-    color: var(--accent);
-  }
-  
-  .subtitle {
-    color: #666;
-    margin-bottom: 2rem;
-    font-style: italic;
-  }
-  
-  .stats {
-    display: flex;
-    gap: 2rem;
-    margin: 0 0 2rem;
-    flex-wrap: wrap;
-  }
-  
-  .stat {
-    background: var(--code-bg);
-    padding: 0.75rem 1.25rem;
-    border-radius: 6px;
-    text-align: center;
-  }
-  
-  .stat .num {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--accent);
-  }
-  
-  .stat .label {
-    font-size: 0.85rem;
-    color: #666;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1rem 0;
-  }
-  
-  th {
-    background: var(--accent);
-    color: white;
-    padding: 0.6rem 1rem;
-    text-align: left;
-    font-weight: 600;
-  }
-  
-  td {
-    padding: 0.5rem 1rem;
-    border-bottom: 1px solid var(--border);
-  }
-  
-  tr:hover td {
-    background: #f8f7f3;
-  }
-  
-  a {
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: 600;
-  }
-  
-  a:hover { text-decoration: underline; }
-  
-  .legend {
-    margin: 2rem 0 1rem;
-    font-size: 0.9rem;
-    color: #666;
-  }
-  
-  .legend span {
-    margin-right: 1.5rem;
-  }
-  
-  @media print {
-    body { font-size: 12pt; max-width: 100%; }
-    a { color: #000; }
-    th { background: #ddd; color: #000; }
-    .stats { display: none; }
-  }
-</style>
+<title>Physics HL — Course Index</title>
+<link rel="stylesheet" href="../../static/subject_index.css">
 </head>
 <body>
 
-<h1>IB Physics HL — Complete Lessons</h1>
-<p class="subtitle">67 lessons covering every topic in the Pearson IB Physics HL textbook (Hamper &amp; Mitchell, 3rd Ed., 2023). Built for a 7.</p>
+<div class="container">
+  <header class="page-header">
+    <h1>⚛️ Physics HL</h1>
+    <p class="subtitle">67 lessons · HL · Target: Grade 7</p>
+  </header>
 
-<div class="stats">
-  <div class="stat"><div class="num">67</div><div class="label">Lessons</div></div>
-  <div class="stat"><div class="num">25</div><div class="label">Chapters</div></div>
-  <div class="stat"><div class="num">42</div><div class="label">Day Plan</div></div>
-  <div class="stat"><div class="num">~300</div><div class="label">Practice Problems</div></div>
+  <div class="stats-bar">
+    <div class="stat-card">
+      <div class="stat-num" id="completed-count">0</div>
+      <div class="stat-label">Completed</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num" id="remaining-count">67</div>
+      <div class="stat-label">Remaining</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num" id="progress-pct">0%</div>
+      <div class="stat-label">Progress</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num" id="streak-days">0</div>
+      <div class="stat-label">Day Streak</div>
+    </div>
+  </div>
+
+  <div class="progress-bar-container">
+    <div class="progress-bar" id="progress-bar-fill"></div>
+  </div>
+
+  <div class="controls">
+    <input type="text" id="search-input" placeholder="Search lessons..." class="search-box">
+    <div class="control-buttons">
+      <button onclick="expandAll()" class="btn-secondary">Expand All</button>
+      <button onclick="collapseAll()" class="btn-secondary">Collapse All</button>
+      <button onclick="showMasteryFilter()" class="btn-secondary">Filter by Mastery</button>
+    </div>
+  </div>
+
+  <div id="lessons-container">
+
+<!-- Topic 1 -->
+<div class="topic-section" id="topic1">
+  <div class="topic-header" onclick="toggleSection(this)">
+    <div>
+      <h2>Topic 1</h2>
+      <span class="topic-meta">15 lessons</span>
+    </div>
+    <span class="collapse-icon">▼</span>
+  </div>
+  <div class="topic-content">
+    <div class="lesson-row" data-lesson-id="L10_measurement_uncertainty">
+      <div class="lesson-num">1</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L10_measurement_uncertainty.html">L10 Measurement Uncertainty</a>
+        </div>
+        <div class="lesson-code">1</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L10_measurement_uncertainty')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L10_measurement_uncertainty" onchange="toggleCompletion('L10_measurement_uncertainty', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L11_relativity_2">
+      <div class="lesson-num">2</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L11_relativity_2.html">L11 Relativity 2</a>
+        </div>
+        <div class="lesson-code">2</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L11_relativity_2')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L11_relativity_2" onchange="toggleCompletion('L11_relativity_2', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L12_relativity_3">
+      <div class="lesson-num">3</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L12_relativity_3.html">L12 Relativity 3</a>
+        </div>
+        <div class="lesson-code">3</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L12_relativity_3')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L12_relativity_3" onchange="toggleCompletion('L12_relativity_3', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L13_relativity_4">
+      <div class="lesson-num">4</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L13_relativity_4.html">L13 Relativity 4</a>
+        </div>
+        <div class="lesson-code">4</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L13_relativity_4')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L13_relativity_4" onchange="toggleCompletion('L13_relativity_4', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L14_thermal_1">
+      <div class="lesson-num">5</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L14_thermal_1.html">L14 Thermal 1</a>
+        </div>
+        <div class="lesson-code">5</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L14_thermal_1')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L14_thermal_1" onchange="toggleCompletion('L14_thermal_1', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L15_thermal_2">
+      <div class="lesson-num">6</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L15_thermal_2.html">L15 Thermal 2</a>
+        </div>
+        <div class="lesson-code">6</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L15_thermal_2')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L15_thermal_2" onchange="toggleCompletion('L15_thermal_2', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L16_greenhouse_1">
+      <div class="lesson-num">7</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L16_greenhouse_1.html">L16 Greenhouse 1</a>
+        </div>
+        <div class="lesson-code">7</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L16_greenhouse_1')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L16_greenhouse_1" onchange="toggleCompletion('L16_greenhouse_1', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L17_greenhouse_2">
+      <div class="lesson-num">8</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L17_greenhouse_2.html">L17 Greenhouse 2</a>
+        </div>
+        <div class="lesson-code">8</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L17_greenhouse_2')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L17_greenhouse_2" onchange="toggleCompletion('L17_greenhouse_2', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L18_gas_laws_1">
+      <div class="lesson-num">9</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L18_gas_laws_1.html">L18 Gas Laws 1</a>
+        </div>
+        <div class="lesson-code">9</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L18_gas_laws_1')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L18_gas_laws_1" onchange="toggleCompletion('L18_gas_laws_1', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L19_gas_laws_2">
+      <div class="lesson-num">10</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L19_gas_laws_2.html">L19 Gas Laws 2</a>
+        </div>
+        <div class="lesson-code">10</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L19_gas_laws_2')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L19_gas_laws_2" onchange="toggleCompletion('L19_gas_laws_2', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L1_kinematics_review">
+      <div class="lesson-num">11</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L1_kinematics_review.html">L1 Kinematics Review</a>
+        </div>
+        <div class="lesson-code">11</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L1_kinematics_review')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L1_kinematics_review" onchange="toggleCompletion('L1_kinematics_review', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L20_gas_laws_3">
+      <div class="lesson-num">12</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L20_gas_laws_3.html">L20 Gas Laws 3</a>
+        </div>
+        <div class="lesson-code">12</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L20_gas_laws_3')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L20_gas_laws_3" onchange="toggleCompletion('L20_gas_laws_3', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L21_thermo_1">
+      <div class="lesson-num">13</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L21_thermo_1.html">L21 Thermo 1</a>
+        </div>
+        <div class="lesson-code">13</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L21_thermo_1')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L21_thermo_1" onchange="toggleCompletion('L21_thermo_1', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L22_thermo_2">
+      <div class="lesson-num">14</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L22_thermo_2.html">L22 Thermo 2</a>
+        </div>
+        <div class="lesson-code">14</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L22_thermo_2')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L22_thermo_2" onchange="toggleCompletion('L22_thermo_2', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L23_thermo_3">
+      <div class="lesson-num">15</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L23_thermo_3.html">L23 Thermo 3</a>
+        </div>
+        <div class="lesson-code">15</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L23_thermo_3')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L23_thermo_3" onchange="toggleCompletion('L23_thermo_3', this)">
+    </div>
+  </div>
 </div>
 
-<p class="legend">
-  <span>🔲 = Not started</span>
-  <span>🔄 = In progress</span>
-  <span>✅ = Mastered</span>
-  <span>⚠️ = Review needed</span>
-</p>
+<!-- Topic 2 -->
+<div class="topic-section" id="topic2">
+  <div class="topic-header" onclick="toggleSection(this)">
+    <div>
+      <h2>Topic 2</h2>
+      <span class="topic-meta">15 lessons</span>
+    </div>
+    <span class="collapse-icon">▼</span>
+  </div>
+  <div class="topic-content">
+    <div class="lesson-row" data-lesson-id="L24_circuits_1">
+      <div class="lesson-num">16</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L24_circuits_1.html">L24 Circuits 1</a>
+        </div>
+        <div class="lesson-code">16</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L24_circuits_1')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L24_circuits_1" onchange="toggleCompletion('L24_circuits_1', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L25_circuits_2">
+      <div class="lesson-num">17</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L25_circuits_2.html">L25 Circuits 2</a>
+        </div>
+        <div class="lesson-code">17</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L25_circuits_2')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L25_circuits_2" onchange="toggleCompletion('L25_circuits_2', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L26_circuits_3">
+      <div class="lesson-num">18</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L26_circuits_3.html">L26 Circuits 3</a>
+        </div>
+        <div class="lesson-code">18</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L26_circuits_3')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L26_circuits_3" onchange="toggleCompletion('L26_circuits_3', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L27_circuits_4">
+      <div class="lesson-num">19</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L27_circuits_4.html">L27 Circuits 4</a>
+        </div>
+        <div class="lesson-code">19</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L27_circuits_4')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L27_circuits_4" onchange="toggleCompletion('L27_circuits_4', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L28_circuits_5">
+      <div class="lesson-num">20</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L28_circuits_5.html">L28 Circuits 5</a>
+        </div>
+        <div class="lesson-code">20</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L28_circuits_5')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L28_circuits_5" onchange="toggleCompletion('L28_circuits_5', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L29_shm_1">
+      <div class="lesson-num">21</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L29_shm_1.html">L29 Shm 1</a>
+        </div>
+        <div class="lesson-code">21</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L29_shm_1')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L29_shm_1" onchange="toggleCompletion('L29_shm_1', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L2_forces_review">
+      <div class="lesson-num">22</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L2_forces_review.html">L2 Forces Review</a>
+        </div>
+        <div class="lesson-code">22</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L2_forces_review')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L2_forces_review" onchange="toggleCompletion('L2_forces_review', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L30_shm_2">
+      <div class="lesson-num">23</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L30_shm_2.html">L30 Shm 2</a>
+        </div>
+        <div class="lesson-code">23</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L30_shm_2')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L30_shm_2" onchange="toggleCompletion('L30_shm_2', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L31_shm_3">
+      <div class="lesson-num">24</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L31_shm_3.html">L31 Shm 3</a>
+        </div>
+        <div class="lesson-code">24</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L31_shm_3')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L31_shm_3" onchange="toggleCompletion('L31_shm_3', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L32_shm_4">
+      <div class="lesson-num">25</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L32_shm_4.html">L32 Shm 4</a>
+        </div>
+        <div class="lesson-code">25</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L32_shm_4')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L32_shm_4" onchange="toggleCompletion('L32_shm_4', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L33_wave_model_1">
+      <div class="lesson-num">26</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L33_wave_model_1.html">L33 Wave Model 1</a>
+        </div>
+        <div class="lesson-code">26</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L33_wave_model_1')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L33_wave_model_1" onchange="toggleCompletion('L33_wave_model_1', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L34_wave_model_2">
+      <div class="lesson-num">27</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L34_wave_model_2.html">L34 Wave Model 2</a>
+        </div>
+        <div class="lesson-code">27</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L34_wave_model_2')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L34_wave_model_2" onchange="toggleCompletion('L34_wave_model_2', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L35_wave_model_3">
+      <div class="lesson-num">28</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L35_wave_model_3.html">L35 Wave Model 3</a>
+        </div>
+        <div class="lesson-code">28</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L35_wave_model_3')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L35_wave_model_3" onchange="toggleCompletion('L35_wave_model_3', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L36_wave_phenomena_1">
+      <div class="lesson-num">29</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L36_wave_phenomena_1.html">L36 Wave Phenomena 1</a>
+        </div>
+        <div class="lesson-code">29</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L36_wave_phenomena_1')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L36_wave_phenomena_1" onchange="toggleCompletion('L36_wave_phenomena_1', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L37_wave_phenomena_2">
+      <div class="lesson-num">30</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L37_wave_phenomena_2.html">L37 Wave Phenomena 2</a>
+        </div>
+        <div class="lesson-code">30</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L37_wave_phenomena_2')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L37_wave_phenomena_2" onchange="toggleCompletion('L37_wave_phenomena_2', this)">
+    </div>
+  </div>
+</div>
 
-<table>
-  <tr><th style="width:60px;text-align:center">#</th><th>Lesson Title</th><th style="width:60px;text-align:center">Done</th></tr>
-  <tr><th colspan="3">A.1 Kinematics</th></tr><tr><td style="text-align:center;width:60px">1</td><td><a href="L1_kinematics_review.html">Lesson 1: Kinematics — Describing Motion</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><th colspan="3">A.2 Forces & Momentum</th></tr><tr><td style="text-align:center;width:60px">2</td><td><a href="L2_forces_review.html">Lesson 2: Forces Review</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><td style="text-align:center;width:60px">3</td><td><a href="L3_momentum_impulse.html">Lesson 3: Momentum and Impulse</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><td style="text-align:center;width:60px">4</td><td><a href="L4_momentum_applications.html">Lesson 4: Momentum Applications</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><th colspan="3">A.3 Work, Energy & Power</th></tr><tr><td style="text-align:center;width:60px">5</td><td><a href="L5_energy_power.html">Lesson 5: Work, Energy and Power</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><th colspan="3">A.4 Rigid Body Mechanics (HL)</th></tr><tr><td style="text-align:center;width:60px">6</td><td><a href="L6_rigid_body_1.html">Lesson 6: Rigid Body Mechanics I — Torque and Static Equilibrium (HL)</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><td style="text-align:center;width:60px">7</td><td><a href="L7_rigid_body_2.html">Lesson 7: Rigid Body Mechanics II — Moment of Inertia (HL)</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><td style="text-align:center;width:60px">8</td><td><a href="L8_rigid_body_3.html">Lesson 8: Rigid Body Mechanics III — Angular Momentum (HL)</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><th colspan="3">A.5 Special Relativity (HL)</th></tr><tr><td style="text-align:center;width:60px">9</td><td><a href="L9_relativity_1.html">Lesson 9: Special Relativity I — Reference Frames and Einstein's Postulates</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><td style="text-align:center;width:60px">11</td><td><a href="L11_relativity_2.html">Lesson 11: Special Relativity II — Time Dilation and Length Contraction</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><td style="text-align:center;width:60px">12</td><td><a href="L12_relativity_3.html">Lesson 12: Special Relativity III — Spacetime Diagrams (HL)</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><td style="text-align:center;width:60px">13</td><td><a href="L13_relativity_4.html">Lesson 13: Special Relativity IV — Relativistic Mechanics (HL)</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><th colspan="3">Measurement & Uncertainty</th></tr><tr><td style="text-align:center;width:60px">10</td><td><a href="L10_measurement_uncertainty.html">Lesson 10: Measurement & Uncertainty Refresher</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><th colspan="3">B.1 Thermal Energy Transfers</th></tr><tr><td style="text-align:center;width:60px">14</td><td><a href="L14_thermal_1.html">Lesson 14: Thermal Energy Transfers I — Heat & Temperature</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><td style="text-align:center;width:60px">15</td><td><a href="L15_thermal_2.html">Lesson 15: Thermal Physics 2 — Specific Heat Capacity and Latent Heat</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><th colspan="3">B.2 Greenhouse Effect</th></tr><tr><td style="text-align:center;width:60px">16</td><td><a href="L16_greenhouse_1.html">Lesson 16: The Greenhouse Effect 1 — Energy Balance and Black-Body Radiation</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><td style="text-align:center;width:60px">17</td><td><a href="L17_greenhouse_2.html">Lesson 17: The Greenhouse Effect 2 — Albedo, Emissivity, and the Enhanced Greenhouse Effect</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><th colspan="3">B.3 Gas Laws</th></tr><tr><td style="text-align:center;width:60px">18</td><td><a href="L18_gas_laws_1.html">Lesson 18: Gas Laws 1 — The Ideal Gas Model, Moles, and Avogadro</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><td style="text-align:center;width:60px">19</td><td><a href="L19_gas_laws_2.html">Lesson 19: Gas Laws II — Boyle, Charles, Gay-Lussac and the Ideal Gas Equation</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><td style="text-align:center;width:60px">20</td><td><a href="L20_gas_laws_3.html">Lesson 20: Gas Laws III — Molecular Kinetic Energy and Pressure</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><th colspan="3">B.4 Thermodynamics (HL)</th></tr><tr><td style="text-align:center;width:60px">21</td><td><a href="L21_thermo_1.html">Lesson 21: Thermodynamics I — The First Law and Thermodynamic Processes</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><td style="text-align:center;width:60px">22</td><td><a href="L22_thermo_2.html">Lesson 22: Thermodynamics II — pV Diagrams, Cycles and Heat Engines</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><td style="text-align:center;width:60px">23</td><td><a href="L23_thermo_3.html">Lesson 23: Thermodynamics III — The Second Law and Entropy (HL)</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><th colspan="3">B.5 Current & Circuits</th></tr><tr><td style="text-align:center;width:60px">24</td><td><a href="L24_circuits_1.html">Lesson 24: Circuits I — Charge, Current & Resistance</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><td style="text-align:center;width:60px">25</td><td><a href="L25_circuits_2.html">Lesson 25: Circuits II — Series and Parallel</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><td style="text-align:center;width:60px">26</td><td><a href="L26_circuits_3.html">Lesson 26: Circuits III — Kirchhoff's Laws & Potential Dividers</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><td style="text-align:center;width:60px">27</td><td><a href="L27_circuits_4.html">Lesson 27: Circuits IV — EMF, Internal Resistance & Power</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><td style="text-align:center;width:60px">28</td><td><a href="L28_circuits_5.html">Lesson 28: Circuits V — Capacitors & RC Circuits (HL)</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><th colspan="3">C.1 Simple Harmonic Motion</th></tr><tr><td style="text-align:center;width:60px">29</td><td><a href="L29_shm_1.html">Lesson 29: Simple Harmonic Motion I — Introducing Oscillations</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><td style="text-align:center;width:60px">30</td><td><a href="L30_shm_2.html">Lesson 30: Simple Harmonic Motion II — Kinematics: Displacement, Velocity, Acceleration, and Phase</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><td style="text-align:center;width:60px">31</td><td><a href="L31_shm_3.html">Lesson 31: Simple Harmonic Motion III — Energy in SHM</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><td style="text-align:center;width:60px">32</td><td><a href="L32_shm_4.html">Lesson 32: Simple Harmonic Motion IV — Damping, Resonance and Q-Factor (HL)</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><th colspan="3">C.2 Wave Model</th></tr><tr><td style="text-align:center;width:60px">33</td><td><a href="L33_wave_model_1.html">Lesson 33: Wave Model I — What Is a Wave?</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><td style="text-align:center;width:60px">34</td><td><a href="L34_wave_model_2.html">Lesson 34: Wave Model II — Reflection, Refraction and Snell's Law</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><td style="text-align:center;width:60px">35</td><td><a href="L35_wave_model_3.html">Lesson 35: Wave Model III — Diffraction, Huygens' Principle and Superposition</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><th colspan="3">C.3 Wave Phenomena</th></tr><tr><td style="text-align:center;width:60px">36</td><td><a href="L36_wave_phenomena_1.html">Lesson 36: Wave Phenomena I — Young's Double Slit</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><td style="text-align:center;width:60px">37</td><td><a href="L37_wave_phenomena_2.html">Lesson 37: Wave Phenomena II — Single-Slit Diffraction and Gratings (HL)</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><td style="text-align:center;width:60px">38</td><td><a href="L38_wave_phenomena_3.html">Lesson 38: Wave Phenomena III — Thin-Film Interference (HL)</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><td style="text-align:center;width:60px">39</td><td><a href="L39_wave_phenomena_4.html">Lesson 39: Wave Phenomena IV — Resolution and Polarisation (HL)</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><th colspan="3">C.4 Standing Waves & Resonance</th></tr><tr><td style="text-align:center;width:60px">40</td><td><a href="L40_standing_waves_1.html">Lesson 40: Standing Waves I — Nodes, Antinodes & Strings</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><td style="text-align:center;width:60px">41</td><td><a href="L41_standing_waves_2.html">Lesson 41: Standing Waves II — Pipes & Resonance</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><td style="text-align:center;width:60px">42</td><td><a href="L42_standing_waves_3.html">Lesson 42: Standing Waves III — Advanced & Energy (HL)</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><th colspan="3">C.5 Doppler Effect</th></tr><tr><td style="text-align:center;width:60px">43</td><td><a href="L43_doppler_1.html">Lesson 43: The Doppler Effect I — Sound Waves</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><td style="text-align:center;width:60px">44</td><td><a href="L44_doppler_2.html">Lesson 44: The Doppler Effect II — Light, Redshift, and Applications</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><th colspan="3">D.1 Gravitational Fields</th></tr><tr><td style="text-align:center;width:60px">45</td><td><a href="L45_gravitational_fields_1.html">Lesson 45: Gravitational Fields I — Newton's Law & Field Strength</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><td style="text-align:center;width:60px">46</td><td><a href="L46_gravitational_fields_2.html">Lesson 46: Gravitational Fields II — Potential & Orbits</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><td style="text-align:center;width:60px">47</td><td><a href="L47_gravitational_fields_3.html">Lesson 47: Gravitational Fields III — Kepler's Laws & Advanced Orbits</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><th colspan="3">D.2 Electric & Magnetic Fields</th></tr><tr><td style="text-align:center;width:60px">48</td><td><a href="L48_em_fields_1.html">Lesson 48: Electric & Magnetic Fields I — Coulomb's Law & E-Fields</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><td style="text-align:center;width:60px">49</td><td><a href="L49_em_fields_2.html">Lesson 49: Electric & Magnetic Fields II — Electric Potential</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><td style="text-align:center;width:60px">50</td><td><a href="L50_em_fields_3.html">Lesson 50: Electric & Magnetic Fields III — Magnetic Fields & Forces</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><td style="text-align:center;width:60px">51</td><td><a href="L51_em_fields_4.html">Lesson 51: Electric & Magnetic Fields IV — Circular Motion in B-Fields</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><th colspan="3">D.3 Motion in EM Fields</th></tr><tr><td style="text-align:center;width:60px">52</td><td><a href="L52_motion_em_1.html">Lesson 52: Motion in EM Fields I — Electron Gun and Parallel Plates</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><td style="text-align:center;width:60px">53</td><td><a href="L53_motion_em_2.html">Lesson 53: Motion in EM Fields II — Mass Spectrometer and Cyclotron</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><th colspan="3">D.4 Induction (HL)</th></tr><tr><td style="text-align:center;width:60px">54</td><td><a href="L54_induction_1.html">Lesson 54: Induction I — Magnetic Flux and Faraday's Law</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><td style="text-align:center;width:60px">55</td><td><a href="L55_induction_2.html">Lesson 55: Induction II — AC Generators, RMS Values and Power</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><td style="text-align:center;width:60px">56</td><td><a href="L56_induction_3.html">Lesson 56: Induction 3 — AC Generators, Transformers, and Power Transmission</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><th colspan="3">E.1 Structure of the Atom</th></tr><tr><td style="text-align:center;width:60px">57</td><td><a href="L57_atom_1.html">Lesson 57: Atom 1 — Atomic Structure and Rutherford Scattering</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><td style="text-align:center;width:60px">58</td><td><a href="L58_atom_2.html">Lesson 58: Atom 2 — Energy Levels, Spectra, and the Bohr Model</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><td style="text-align:center;width:60px">59</td><td><a href="L59_atom_3.html">Lesson 59: Atom 3 — Wave-Particle Duality, de Broglie, and Electron Diffraction</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><th colspan="3">E.2 Quantum Physics (HL)</th></tr><tr><td style="text-align:center;width:60px">60</td><td><a href="L60_quantum_1.html">Lesson 60: Quantum 1 — The Photoelectric Effect</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><td style="text-align:center;width:60px">61</td><td><a href="L61_quantum_2.html">Lesson 61: Quantum 2 — Millikan's Experiment, Stopping Potential, and KE_max vs. f</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><td style="text-align:center;width:60px">62</td><td><a href="L62_quantum_3.html">Lesson 62: Quantum 3 — Matter Waves, Heisenberg Uncertainty, and Wavefunctions</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><td style="text-align:center;width:60px">63</td><td><a href="L63_quantum_4.html">Lesson 63: Quantum 4 — Barrier Tunneling, STM, and Applications</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><th colspan="3">E.3 Radioactive Decay</th></tr><tr><td style="text-align:center;width:60px">64</td><td><a href="L64_radioactive_decay_1.html">Lesson 64: Radioactive Decay 1 — Random Nature, Activity, Decay Constant, and Half-Life</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><td style="text-align:center;width:60px">65</td><td><a href="L65_radioactive_decay_2.html">Lesson 65: Radioactive Decay 2 — Exponential Decay Law, Carbon Dating, and Background Radiation</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><th colspan="3">E.4 Fission</th></tr><tr><td style="text-align:center;width:60px">66</td><td><a href="L66_fission.html">Lesson 66: Fission — Chain Reactions, Binding Energy Curve, and Nuclear Reactors</a></td><td style="text-align:center;width:60px">🔲</td></tr><tr><th colspan="3">E.5 Fusion & Stars</th></tr><tr><td style="text-align:center;width:60px">67</td><td><a href="L67_fusion_stars.html">Lesson 67: Fusion and Stars — Energy in the Cosmos</a></td><td style="text-align:center;width:60px">🔲</td></tr>
-</table>
+<!-- Topic 3 -->
+<div class="topic-section" id="topic3">
+  <div class="topic-header" onclick="toggleSection(this)">
+    <div>
+      <h2>Topic 3</h2>
+      <span class="topic-meta">15 lessons</span>
+    </div>
+    <span class="collapse-icon">▼</span>
+  </div>
+  <div class="topic-content">
+    <div class="lesson-row" data-lesson-id="L38_wave_phenomena_3">
+      <div class="lesson-num">31</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L38_wave_phenomena_3.html">L38 Wave Phenomena 3</a>
+        </div>
+        <div class="lesson-code">31</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L38_wave_phenomena_3')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L38_wave_phenomena_3" onchange="toggleCompletion('L38_wave_phenomena_3', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L39_wave_phenomena_4">
+      <div class="lesson-num">32</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L39_wave_phenomena_4.html">L39 Wave Phenomena 4</a>
+        </div>
+        <div class="lesson-code">32</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L39_wave_phenomena_4')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L39_wave_phenomena_4" onchange="toggleCompletion('L39_wave_phenomena_4', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L3_momentum_impulse">
+      <div class="lesson-num">33</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L3_momentum_impulse.html">L3 Momentum Impulse</a>
+        </div>
+        <div class="lesson-code">33</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L3_momentum_impulse')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L3_momentum_impulse" onchange="toggleCompletion('L3_momentum_impulse', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L40_standing_waves_1">
+      <div class="lesson-num">34</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L40_standing_waves_1.html">L40 Standing Waves 1</a>
+        </div>
+        <div class="lesson-code">34</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L40_standing_waves_1')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L40_standing_waves_1" onchange="toggleCompletion('L40_standing_waves_1', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L41_standing_waves_2">
+      <div class="lesson-num">35</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L41_standing_waves_2.html">L41 Standing Waves 2</a>
+        </div>
+        <div class="lesson-code">35</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L41_standing_waves_2')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L41_standing_waves_2" onchange="toggleCompletion('L41_standing_waves_2', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L42_standing_waves_3">
+      <div class="lesson-num">36</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L42_standing_waves_3.html">L42 Standing Waves 3</a>
+        </div>
+        <div class="lesson-code">36</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L42_standing_waves_3')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L42_standing_waves_3" onchange="toggleCompletion('L42_standing_waves_3', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L43_doppler_1">
+      <div class="lesson-num">37</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L43_doppler_1.html">L43 Doppler 1</a>
+        </div>
+        <div class="lesson-code">37</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L43_doppler_1')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L43_doppler_1" onchange="toggleCompletion('L43_doppler_1', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L44_doppler_2">
+      <div class="lesson-num">38</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L44_doppler_2.html">L44 Doppler 2</a>
+        </div>
+        <div class="lesson-code">38</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L44_doppler_2')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L44_doppler_2" onchange="toggleCompletion('L44_doppler_2', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L45_gravitational_fields_1">
+      <div class="lesson-num">39</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L45_gravitational_fields_1.html">L45 Gravitational Fields 1</a>
+        </div>
+        <div class="lesson-code">39</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L45_gravitational_fields_1')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L45_gravitational_fields_1" onchange="toggleCompletion('L45_gravitational_fields_1', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L46_gravitational_fields_2">
+      <div class="lesson-num">40</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L46_gravitational_fields_2.html">L46 Gravitational Fields 2</a>
+        </div>
+        <div class="lesson-code">40</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L46_gravitational_fields_2')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L46_gravitational_fields_2" onchange="toggleCompletion('L46_gravitational_fields_2', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L47_gravitational_fields_3">
+      <div class="lesson-num">41</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L47_gravitational_fields_3.html">L47 Gravitational Fields 3</a>
+        </div>
+        <div class="lesson-code">41</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L47_gravitational_fields_3')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L47_gravitational_fields_3" onchange="toggleCompletion('L47_gravitational_fields_3', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L48_em_fields_1">
+      <div class="lesson-num">42</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L48_em_fields_1.html">L48 Em Fields 1</a>
+        </div>
+        <div class="lesson-code">42</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L48_em_fields_1')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L48_em_fields_1" onchange="toggleCompletion('L48_em_fields_1', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L49_em_fields_2">
+      <div class="lesson-num">43</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L49_em_fields_2.html">L49 Em Fields 2</a>
+        </div>
+        <div class="lesson-code">43</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L49_em_fields_2')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L49_em_fields_2" onchange="toggleCompletion('L49_em_fields_2', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L4_momentum_applications">
+      <div class="lesson-num">44</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L4_momentum_applications.html">L4 Momentum Applications</a>
+        </div>
+        <div class="lesson-code">44</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L4_momentum_applications')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L4_momentum_applications" onchange="toggleCompletion('L4_momentum_applications', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L50_em_fields_3">
+      <div class="lesson-num">45</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L50_em_fields_3.html">L50 Em Fields 3</a>
+        </div>
+        <div class="lesson-code">45</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L50_em_fields_3')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L50_em_fields_3" onchange="toggleCompletion('L50_em_fields_3', this)">
+    </div>
+  </div>
+</div>
 
-<p style="margin-top:2rem;text-align:center;color:#999;font-size:0.9rem;">
-  <a href="../study_plan.md">📅 Study Plan</a> &nbsp;·&nbsp;
-  <a href="../diagnosis.md">🔍 Diagnosis</a> &nbsp;·&nbsp;
-  <a href="../syllabus_overview.md">✅ Syllabus Checklist</a> &nbsp;·&nbsp;
-  <a href="data_booklet.html">📖 Data Booklet</a>
-</p>
+<!-- Topic 4 -->
+<div class="topic-section" id="topic4">
+  <div class="topic-header" onclick="toggleSection(this)">
+    <div>
+      <h2>Topic 4</h2>
+      <span class="topic-meta">15 lessons</span>
+    </div>
+    <span class="collapse-icon">▼</span>
+  </div>
+  <div class="topic-content">
+    <div class="lesson-row" data-lesson-id="L51_em_fields_4">
+      <div class="lesson-num">46</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L51_em_fields_4.html">L51 Em Fields 4</a>
+        </div>
+        <div class="lesson-code">46</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L51_em_fields_4')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L51_em_fields_4" onchange="toggleCompletion('L51_em_fields_4', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L52_motion_em_1">
+      <div class="lesson-num">47</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L52_motion_em_1.html">L52 Motion Em 1</a>
+        </div>
+        <div class="lesson-code">47</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L52_motion_em_1')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L52_motion_em_1" onchange="toggleCompletion('L52_motion_em_1', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L53_motion_em_2">
+      <div class="lesson-num">48</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L53_motion_em_2.html">L53 Motion Em 2</a>
+        </div>
+        <div class="lesson-code">48</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L53_motion_em_2')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L53_motion_em_2" onchange="toggleCompletion('L53_motion_em_2', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L54_induction_1">
+      <div class="lesson-num">49</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L54_induction_1.html">L54 Induction 1</a>
+        </div>
+        <div class="lesson-code">49</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L54_induction_1')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L54_induction_1" onchange="toggleCompletion('L54_induction_1', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L55_induction_2">
+      <div class="lesson-num">50</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L55_induction_2.html">L55 Induction 2</a>
+        </div>
+        <div class="lesson-code">50</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L55_induction_2')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L55_induction_2" onchange="toggleCompletion('L55_induction_2', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L56_induction_3">
+      <div class="lesson-num">51</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L56_induction_3.html">L56 Induction 3</a>
+        </div>
+        <div class="lesson-code">51</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L56_induction_3')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L56_induction_3" onchange="toggleCompletion('L56_induction_3', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L57_atom_1">
+      <div class="lesson-num">52</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L57_atom_1.html">L57 Atom 1</a>
+        </div>
+        <div class="lesson-code">52</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L57_atom_1')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L57_atom_1" onchange="toggleCompletion('L57_atom_1', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L58_atom_2">
+      <div class="lesson-num">53</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L58_atom_2.html">L58 Atom 2</a>
+        </div>
+        <div class="lesson-code">53</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L58_atom_2')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L58_atom_2" onchange="toggleCompletion('L58_atom_2', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L59_atom_3">
+      <div class="lesson-num">54</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L59_atom_3.html">L59 Atom 3</a>
+        </div>
+        <div class="lesson-code">54</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L59_atom_3')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L59_atom_3" onchange="toggleCompletion('L59_atom_3', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L5_energy_power">
+      <div class="lesson-num">55</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L5_energy_power.html">L5 Energy Power</a>
+        </div>
+        <div class="lesson-code">55</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L5_energy_power')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L5_energy_power" onchange="toggleCompletion('L5_energy_power', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L60_quantum_1">
+      <div class="lesson-num">56</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L60_quantum_1.html">L60 Quantum 1</a>
+        </div>
+        <div class="lesson-code">56</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L60_quantum_1')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L60_quantum_1" onchange="toggleCompletion('L60_quantum_1', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L61_quantum_2">
+      <div class="lesson-num">57</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L61_quantum_2.html">L61 Quantum 2</a>
+        </div>
+        <div class="lesson-code">57</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L61_quantum_2')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L61_quantum_2" onchange="toggleCompletion('L61_quantum_2', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L62_quantum_3">
+      <div class="lesson-num">58</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L62_quantum_3.html">L62 Quantum 3</a>
+        </div>
+        <div class="lesson-code">58</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L62_quantum_3')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L62_quantum_3" onchange="toggleCompletion('L62_quantum_3', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L63_quantum_4">
+      <div class="lesson-num">59</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L63_quantum_4.html">L63 Quantum 4</a>
+        </div>
+        <div class="lesson-code">59</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L63_quantum_4')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L63_quantum_4" onchange="toggleCompletion('L63_quantum_4', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L64_radioactive_decay_1">
+      <div class="lesson-num">60</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L64_radioactive_decay_1.html">L64 Radioactive Decay 1</a>
+        </div>
+        <div class="lesson-code">60</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L64_radioactive_decay_1')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L64_radioactive_decay_1" onchange="toggleCompletion('L64_radioactive_decay_1', this)">
+    </div>
+  </div>
+</div>
+
+<!-- Topic 5 -->
+<div class="topic-section" id="topic5">
+  <div class="topic-header" onclick="toggleSection(this)">
+    <div>
+      <h2>Topic 5</h2>
+      <span class="topic-meta">7 lessons</span>
+    </div>
+    <span class="collapse-icon">▼</span>
+  </div>
+  <div class="topic-content">
+    <div class="lesson-row" data-lesson-id="L65_radioactive_decay_2">
+      <div class="lesson-num">61</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L65_radioactive_decay_2.html">L65 Radioactive Decay 2</a>
+        </div>
+        <div class="lesson-code">61</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L65_radioactive_decay_2')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L65_radioactive_decay_2" onchange="toggleCompletion('L65_radioactive_decay_2', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L66_fission">
+      <div class="lesson-num">62</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L66_fission.html">L66 Fission</a>
+        </div>
+        <div class="lesson-code">62</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L66_fission')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L66_fission" onchange="toggleCompletion('L66_fission', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L67_fusion_stars">
+      <div class="lesson-num">63</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L67_fusion_stars.html">L67 Fusion Stars</a>
+        </div>
+        <div class="lesson-code">63</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L67_fusion_stars')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L67_fusion_stars" onchange="toggleCompletion('L67_fusion_stars', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L6_rigid_body_1">
+      <div class="lesson-num">64</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L6_rigid_body_1.html">L6 Rigid Body 1</a>
+        </div>
+        <div class="lesson-code">64</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L6_rigid_body_1')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L6_rigid_body_1" onchange="toggleCompletion('L6_rigid_body_1', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L7_rigid_body_2">
+      <div class="lesson-num">65</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L7_rigid_body_2.html">L7 Rigid Body 2</a>
+        </div>
+        <div class="lesson-code">65</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L7_rigid_body_2')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L7_rigid_body_2" onchange="toggleCompletion('L7_rigid_body_2', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L8_rigid_body_3">
+      <div class="lesson-num">66</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L8_rigid_body_3.html">L8 Rigid Body 3</a>
+        </div>
+        <div class="lesson-code">66</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L8_rigid_body_3')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L8_rigid_body_3" onchange="toggleCompletion('L8_rigid_body_3', this)">
+    </div>
+    <div class="lesson-row" data-lesson-id="L9_relativity_1">
+      <div class="lesson-num">67</div>
+      <div class="lesson-info">
+        <div class="lesson-title">
+          <a href="L9_relativity_1.html">L9 Relativity 1</a>
+        </div>
+        <div class="lesson-code">67</div>
+      </div>
+      <span class="mastery-badge not-started" data-level="0" onclick="cycleMastery(this, 'L9_relativity_1')">Not Started</span>
+      <input type="checkbox" class="lesson-checkbox" data-lesson-id="L9_relativity_1" onchange="toggleCompletion('L9_relativity_1', this)">
+    </div>
+  </div>
+</div>
+  </div>
+
+  <div class="mastery-legend">
+    <div class="legend-item">
+      <span class="mastery-badge not-started">Not Started</span>
+      <span>Haven't viewed yet</span>
+    </div>
+    <div class="legend-item">
+      <span class="mastery-badge learning">Learning</span>
+      <span>Currently studying</span>
+    </div>
+    <div class="legend-item">
+      <span class="mastery-badge proficient">Proficient</span>
+      <span>Understand the concepts</span>
+    </div>
+    <div class="legend-item">
+      <span class="mastery-badge mastery">Mastery</span>
+      <span>Can teach others</span>
+    </div>
+  </div>
+</div>
+
+<script>
+const SUBJECT_KEY = "physics";
+
+function cycleMastery(badge, lessonId) {
+  const currentLevel = parseInt(badge.dataset.level) || 0;
+  const nextLevel = (currentLevel + 1) % 4;
+  badge.dataset.level = nextLevel;
+  badge.className = 'mastery-badge';
+  const labels = ['Not Started', 'Learning', 'Proficient', 'Mastery'];
+  const classes = ['not-started', 'learning', 'proficient', 'mastery'];
+  badge.classList.add(classes[nextLevel]);
+  badge.textContent = labels[nextLevel];
+  updateMastery(lessonId, nextLevel);
+}
+
+async function loadProgress() {
+  try {
+    const response = await fetch('/api/subject_progress/' + SUBJECT_KEY);
+    if (!response.ok) return {};
+    const data = await response.json();
+    return data;
+  } catch (e) {
+    console.error('Failed to load progress:', e);
+    return {};
+  }
+}
+
+async function toggleCompletion(lessonId, checkbox) {
+  const completed = checkbox.checked;
+  try {
+    const response = await fetch('/toggle_completion', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({subject: SUBJECT_KEY, lesson: lessonId, completed: completed})
+    });
+    if (response.ok) {
+      const row = checkbox.closest('.lesson-row');
+      if (row) row.classList.toggle('completed', completed);
+      updateStats();
+    }
+  } catch (e) {
+    console.error('Failed to save completion:', e);
+    checkbox.checked = !completed;
+  }
+}
+
+async function updateMastery(lessonId, level) {
+  try {
+    await fetch('/update_mastery', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({subject: SUBJECT_KEY, lesson: lessonId, level: level})
+    });
+    updateStats();
+  } catch (e) {
+    console.error('Failed to update mastery:', e);
+  }
+}
+
+function updateStats() {
+  const checkboxes = document.querySelectorAll('.lesson-checkbox');
+  const total = checkboxes.length;
+  const completed = Array.from(checkboxes).filter(cb => cb.checked).length;
+  const remaining = total - completed;
+  const pct = total > 0 ? Math.round((completed / total) * 100) : 0;
+  document.getElementById('completed-count').textContent = completed;
+  document.getElementById('remaining-count').textContent = remaining;
+  document.getElementById('progress-pct').textContent = pct + '%';
+  document.getElementById('progress-bar-fill').style.width = pct + '%';
+}
+
+document.getElementById('search-input')?.addEventListener('input', (e) => {
+  const query = e.target.value.toLowerCase();
+  document.querySelectorAll('.lesson-row').forEach(row => {
+    row.style.display = row.textContent.toLowerCase().includes(query) ? '' : 'none';
+  });
+});
+
+function expandAll() {
+  document.querySelectorAll('.topic-section').forEach(s => s.classList.remove('collapsed'));
+}
+
+function collapseAll() {
+  document.querySelectorAll('.topic-section').forEach(s => s.classList.add('collapsed'));
+}
+
+function toggleSection(element) {
+  element.closest('.topic-section').classList.toggle('collapsed');
+}
+
+function showMasteryFilter() {
+  const filter = prompt('Filter by mastery level:\n0 = Not Started\n1 = Learning\n2 = Proficient\n3 = Mastery\n\nEnter level (0-3) or leave empty to show all:');
+  if (filter === null) return;
+  document.querySelectorAll('.lesson-row').forEach(row => {
+    if (filter === '') {
+      row.style.display = '';
+    } else {
+      const badge = row.querySelector('.mastery-badge');
+      const level = badge?.dataset.level || '0';
+      row.style.display = level === filter ? '' : 'none';
+    }
+  });
+}
+
+async function init() {
+  const progress = await loadProgress();
+  document.querySelectorAll('.lesson-checkbox').forEach(checkbox => {
+    const lessonId = checkbox.dataset.lessonId;
+    const lessonData = progress.lessons?.[lessonId];
+    if (lessonData) {
+      checkbox.checked = lessonData.completed || false;
+      const row = checkbox.closest('.lesson-row');
+      if (row && checkbox.checked) row.classList.add('completed');
+      const badge = row?.querySelector('.mastery-badge');
+      if (badge && lessonData.mastery_level !== undefined) {
+        const level = lessonData.mastery_level;
+        badge.dataset.level = level;
+        badge.className = 'mastery-badge';
+        const labels = ['Not Started', 'Learning', 'Proficient', 'Mastery'];
+        const classes = ['not-started', 'learning', 'proficient', 'mastery'];
+        badge.classList.add(classes[level]);
+        badge.textContent = labels[level];
+      }
+    }
+  });
+  try {
+    const streakResponse = await fetch('/api/user_streak');
+    if (streakResponse.ok) {
+      const streakData = await streakResponse.json();
+      document.getElementById('streak-days').textContent = streakData.streak || 0;
+    }
+  } catch (e) {}
+  updateStats();
+}
+
+document.addEventListener('DOMContentLoaded', init);
+</script>
 
 </body>
 </html>
