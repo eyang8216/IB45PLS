@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 54: Lesson 54: Induction I — Magnetic Flux and Faraday's Law — IB Physics HL</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']]
+  },
+  options: {
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap');
+  
+  :root {
+    --bg: #fdfcf9;
+    --text: #1a1a1a;
+    --accent: #2c5f2d;
+    --border: #d0cec7;
+    --code-bg: #f4f3ef;
+    --callout-bg: #f0f7f0;
+    --callout-border: #2c5f2d;
+    --warning-bg: #fff8e6;
+    --warning-border: #c4941a;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  body {
+    font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid var(--accent);
+    color: var(--accent);
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 2.5rem 0 0.75rem;
+    color: #1a1a1a;
+  }
+  
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.5rem;
+  }
+  
+  p { margin: 0 0 1rem; }
+  
+  ul, ol { margin: 0 0 1rem 1.5rem; }
+  li { margin-bottom: 0.35rem; }
+  
+  code {
+    background: var(--code-bg);
+    padding: 0.15em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+    font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+  }
+  
+  pre {
+    background: var(--code-bg);
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 0 0 1rem;
+    font-size: 0.85em;
+    line-height: 1.5;
+  }
+  
+  pre code {
+    background: none;
+    padding: 0;
+    font-size: inherit;
+  }
+  
+  blockquote {
+    border-left: 4px solid var(--callout-border);
+    background: var(--callout-bg);
+    margin: 0 0 1rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+  }
+  
+  blockquote.warning {
+    border-left-color: var(--warning-border);
+    background: var(--warning-bg);
+  }
+  
+  strong { font-weight: 700; }
+  
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.5rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  
+  .nav a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+  
+  .nav a:hover { background: var(--callout-bg); }
+  
+  .worked-example, .answer {
+    background: var(--code-bg);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin: 0.75rem 0 1.25rem;
+  }
+  
+  .worked-example strong:first-child, .answer strong:first-child {
+    color: var(--accent);
+  }
+  
+  @media print {
+    body { font-size: 12pt; max-width: 100%; padding: 0; }
+    .nav { display: none; }
+    h1 { font-size: 18pt; }
+    h2 { font-size: 14pt; }
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 0 1rem;
+  }
+  
+  th, td {
+    border: 1px solid var(--border);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  
+  th {
+    background: var(--code-bg);
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L53_motion_em_2.html">← Lesson 53</a>
+  <a href="L55_induction_2.html">Lesson 55 →</a>
+</nav>
+
+<h1>Lesson 54: Induction I — Magnetic Flux and Faraday's Law</h1>
+
+<h2>What You'll Learn</h2>
+<ul>
+<li>Define magnetic flux $\Phi = BA\cos\theta$ and understand what it physically represents</li>
+<li>State Faraday's Law and use it to calculate induced EMF</li>
+<li>Apply Lenz's Law to determine the direction of induced current</li>
+<li>Identify the three ways to change magnetic flux: change B, change A, change angle</li>
+</ul>
+
+<hr>
+
+<h2>1. Magnetic Flux — Counting Field Lines</h2>
+
+<h3>1.1 What Flux Means</h3>
+
+<p>Imagine a loop of wire placed in a magnetic field. How much of the field passes through the loop? That quantity is <strong>magnetic flux</strong> $\Phi$. Physically, you can think of flux as counting the number of magnetic field lines that pass through the loop's area.</p>
+
+<p>$$\Phi = BA\cos\theta$$</p>
+
+<p>where:</p>
+<ul>
+<li>$B$ is the magnetic field strength (T)</li>
+<li>$A$ is the area of the loop (m²)</li>
+<li>$\theta$ is the angle between the magnetic field direction and the <strong>normal</strong> (perpendicular) to the loop's surface</li>
+</ul>
+
+<p>The unit of flux is the <strong>weber</strong> (Wb): $1\text{ Wb} = 1\text{ T}\cdot\text{m}^2$.</p>
+
+<h3>1.2 Understanding the Cosine</h3>
+
+<p>When the field is perpendicular to the loop ($\theta = 0^\circ$), $\cos 0^\circ = 1$ and $\Phi = BA$ — maximum flux. The field passes straight through.</p>
+
+<p>When the field is parallel to the loop ($\theta = 90^\circ$), $\cos 90^\circ = 0$ and $\Phi = 0$ — no field lines pass through. They skim along the surface.</p>
+
+<p>For a coil of $N$ turns, the <strong>flux linkage</strong> is $N\Phi$.</p>
+
+<hr>
+
+<h2>2. Faraday's Law — Changing Flux Creates EMF</h2>
+
+<h3>2.1 The Discovery That Changed the World</h3>
+
+<p>In 1831, Michael Faraday discovered that a changing magnetic flux through a coil induces an electromotive force (EMF) in the coil. This single discovery is the basis of every electrical generator on Earth, every transformer in the power grid, and every wireless charger.</p>
+
+<p>$$\varepsilon = -N\frac{\Delta\Phi}{\Delta t}$$</p>
+
+<ul>
+<li>$\varepsilon$ is the induced EMF (V)</li>
+<li>$N$ is the number of turns</li>
+<li>$\Delta\Phi/\Delta t$ is the rate of change of flux (Wb s⁻¹)</li>
+</ul>
+
+<h3>2.2 Three Ways to Change Flux</h3>
+
+<p>Since $\Phi = BA\cos\theta$, there are exactly three ways to change it:</p>
+
+<ol>
+<li><strong>Change $B$:</strong> Move a magnet toward or away from a coil. Vary the current in an electromagnet.</li>
+<li><strong>Change $A$:</strong> Deform the loop, or have a sliding rod change the enclosed area.</li>
+<li><strong>Change $\theta$:</strong> Rotate the coil in a magnetic field — this is how AC generators work.</li>
+</ol>
+
+<p>Any one of these produces an induced EMF. The key is CHANGE — a constant flux produces zero EMF, no matter how large.</p>
+
+<hr>
+
+<h2>3. Lenz's Law — The Direction of Opposition</h2>
+
+<h3>3.1 The Negative Sign Has Meaning</h3>
+
+<p>The minus sign in Faraday's Law is Lenz's Law: <strong>the induced current flows in a direction that opposes the change in flux that produced it.</strong></p>
+
+<p>This is not an arbitrary rule — it is required by conservation of energy. If the induced current REINFORCED the change, you would get a runaway effect producing infinite energy. Lenz's Law ensures you always have to do work to generate electrical energy.</p>
+
+<h3>3.2 Applying Lenz's Law</h3>
+
+<ol>
+<li>Determine whether flux is <strong>increasing</strong> or <strong>decreasing</strong> through the loop</li>
+<li>The induced current creates its own magnetic field that <strong>opposes</strong> this change</li>
+<li>Use the right-hand grip rule to find the current direction</li>
+</ol>
+
+<p><strong>Example:</strong> A bar magnet's N-pole moves TOWARD a coil. Flux through the coil increases (more field lines). The coil "wants" to oppose this increase, so it creates a magnetic field pointing OPPOSITE to the magnet's field. This requires current in a specific direction — the end of the coil facing the magnet becomes a N-pole, repelling the approaching magnet. You feel this as resistance when you push a magnet into a coil.</p>
+
+<hr>
+
+<h2>4. Motional EMF — A Moving Conductor in a Field</h2>
+
+<h3>4.1 The Simplest Case</h3>
+
+<p>A conducting rod of length $L$ moves at speed $v$ perpendicular to a uniform magnetic field $B$. The area swept out per unit time is $Lv$, so the flux change per second is $B \times Lv$:</p>
+
+<p>$$\varepsilon = BLv$$</p>
+
+<p>This is called <strong>motional EMF</strong>. It's a special case of Faraday's Law — the area of the loop is changing because the rod is moving.</p>
+
+<hr>
+
+<h2>Worked Examples</h2>
+
+<h3>Worked Example 54.1 — Flux Calculation</h3>
+
+<p><strong>Problem:</strong> A square coil of side $0.10\text{ m}$ with $50$ turns sits in a $0.40\text{ T}$ field perpendicular to its plane. Find the flux linkage.</p>
+
+<p><strong>Solution:</strong></p>
+<p>$A = (0.10)^2 = 0.010\text{ m}^2$. $\Phi = BA = (0.40)(0.010) = 0.0040\text{ Wb}$. Flux linkage = $N\Phi = 50 \times 0.0040 = 0.20\text{ Wb}$.</p>
+
+<hr>
+
+<h3>Worked Example 54.2 — Faraday's Law</h3>
+
+<p><strong>Problem:</strong> A 100-turn coil experiences flux changing from $0.30\text{ Wb}$ to $0.10\text{ Wb}$ in $0.050\text{ s}$. Find the average induced EMF.</p>
+
+<p><strong>Solution:</strong></p>
+<p>$\Delta\Phi = 0.10 - 0.30 = -0.20\text{ Wb}$. $\varepsilon = -N\Delta\Phi/\Delta t = -100(-0.20)/0.050 = 400\text{ V}$.</p>
+
+<hr>
+
+<h3>Worked Example 54.3 — Motional EMF</h3>
+
+<p><strong>Problem:</strong> A $0.50\text{ m}$ rod moves at $8.0\text{ m s}^{-1}$ perpendicular to a $0.25\text{ T}$ field. Find the induced EMF. If the rod slides on rails connected by a $4.0\text{ Ω}$ resistor, find the current.</p>
+
+<p><strong>Solution:</strong></p>
+<p>$\varepsilon = BLv = (0.25)(0.50)(8.0) = 1.0\text{ V}$. $I = \varepsilon/R = 1.0/4.0 = 0.25\text{ A}$.</p>
+
+<hr>
+
+<h3>Worked Example 54.4 — IB-Style Lenz's Law</h3>
+
+<p><strong>Problem:</strong> A magnet's S-pole is pulled AWAY from a coil. Determine the direction of induced current.</p>
+
+<p><strong>Solution:</strong></p>
+<p>The S-pole pulling away means flux directed toward the coil is DECREASING. To oppose this decrease, the coil creates flux in the SAME direction as the magnet (trying to maintain the flux). The coil's end facing the magnet becomes a S-pole, attracting — you must do work to pull against this attraction.</p>
+
+<hr>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1</h3>
+<p>A 200-turn circular coil of radius $0.030\text{ m}$ sits in a $0.60\text{ T}$ field perpendicular to its plane. The field is reduced to zero in $0.12\text{ s}$. Find the average induced EMF.</p>
+
+<h3>Problem 2</h3>
+<p>A $0.40\text{ m}$ rod moves at $6.0\text{ m s}^{-1}$ through a $0.35\text{ T}$ field on frictionless rails connected by a $7.0\text{ Ω}$ resistor. Find: (a) EMF, (b) current, (c) force required to maintain constant speed.</p>
+
+<h3>Problem 3</h3>
+<p>A magnet is pushed into a coil and then held stationary inside it. Describe the induced EMF during: (a) the pushing phase, and (b) the holding phase. Explain using Faraday's Law.</p>
+
+<h3>Problem 4</h3>
+<p>A coil is rotated from $\theta = 0^\circ$ (field perpendicular) to $\theta = 90^\circ$ (field parallel) in $0.020\text{ s}$. The coil has $100$ turns, area $0.0050\text{ m}^2$, and $B = 0.30\text{ T}$. Find the average EMF.</p>
+
+<h3>Problem 5 — IB-Style</h3>
+<p>A student drops a bar magnet through a horizontal coil connected to a data logger. The EMF-vs-time graph shows a positive peak followed by a negative peak.</p>
+
+<p>(a) Explain why the two peaks have opposite signs. (2 marks)</p>
+<p>(b) The second peak has a larger magnitude than the first. Explain this observation. (2 marks)</p>
+<p>(c) State how the area under each peak relates to the flux change $N\Delta\Phi$. (2 marks)</p>
+<p>(d) The student repeats the experiment with a stronger magnet. Describe and explain two changes in the EMF-time graph. (2 marks)</p>
+
+<hr>
+
+<h2>Answers</h2>
+
+<h3>Answer 1</h3>
+<p>$A = \pi(0.030)^2 = 2.83\times 10^{-3}\text{ m}^2$. $\Phi_{\text{initial}} = (0.60)(2.83\times 10^{-3}) = 1.70\times 10^{-3}\text{ Wb}$. $\varepsilon = 200(1.70\times 10^{-3})/0.12 = 2.83\text{ V}$.</p>
+
+<h3>Answer 2</h3>
+<p><strong>(a)</strong> $\varepsilon = (0.35)(0.40)(6.0) = 0.84\text{ V}$. <strong>(b)</strong> $I = 0.84/7.0 = 0.12\text{ A}$. <strong>(c)</strong> $F = BIL = (0.35)(0.12)(0.40) = 0.017\text{ N}$ opposing motion — you must push with $0.017\text{ N}$.</p>
+
+<h3>Answer 3</h3>
+<p><strong>(a)</strong> EMF is non-zero — flux is changing. <strong>(b)</strong> EMF is zero — flux is constant (magnet not moving), so $\Delta\Phi/\Delta t = 0$. Faraday's Law: EMF only when flux CHANGES.</p>
+
+<h3>Answer 4</h3>
+<p>$\Phi_{\text{initial}} = (0.30)(0.0050) = 1.50\times 10^{-3}\text{ Wb}$. $\Phi_{\text{final}} = (0.30)(0.0050)\cos 90^\circ = 0$. $\varepsilon = 100(1.50\times 10^{-3})/0.020 = 7.5\text{ V}$.</p>
+
+<h3>Answer 5 — IB-Style</h3>
+<p><strong>(a)</strong> (2 marks) As the magnet enters, flux through the coil increases → EMF in one direction (say positive). As it leaves, flux decreases → EMF in opposite direction (negative). Lenz's Law gives opposite induced EMF for increasing vs. decreasing flux.</p>
+
+<p><strong>(b)</strong> (2 marks) The magnet accelerates due to gravity, so it's moving faster when it exits the coil than when it entered. Greater speed → faster rate of flux change → larger induced EMF ($\varepsilon \propto \Delta\Phi/\Delta t \propto v$).</p>
+
+<p><strong>(c)</strong> (2 marks) The area under each EMF-time peak equals the total flux change $N\Delta\Phi$ for that portion of the motion ($\int \varepsilon\,dt = N\Delta\Phi$). This is independent of the speed — faster motion gives taller but narrower peaks with the same area.</p>
+
+<p><strong>(d)</strong> (2 marks) Stronger magnet → larger $B$ → larger flux AND faster flux change → both peaks taller. Same transit times (speed unchanged by magnet strength) but larger EMF throughout. (1 mark for taller peaks, 1 mark for linking to $B$.)</p>
+
+<hr>
+
+<h2>Key Takeaways</h2>
+
+<ol>
+<li><strong>Flux:</strong> $\Phi = BA\cos\theta$. Measures magnetic field passing through an area.</li>
+</ol>
+
+<ol>
+<li><strong>Faraday's Law:</strong> $\varepsilon = -N\Delta\Phi/\Delta t$. EMF induced whenever flux CHANGES — not when it's constant.</li>
+</ol>
+
+<ol>
+<li><strong>Three ways to change flux:</strong> Change B, change A, change angle.</li>
+</ol>
+
+<ol>
+<li><strong>Lenz's Law:</strong> Induced current opposes the flux change. The minus sign matters — it's energy conservation.</li>
+</ol>
+
+<ol>
+<li><strong>Motional EMF:</strong> $\varepsilon = BLv$ for a rod cutting field lines.</li>
+</ol>
+
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L53_motion_em_2.html">← Lesson 53</a>
+  <a href="L55_induction_2.html">Lesson 55 →</a>
+</nav>
+
+</body>
+</html>

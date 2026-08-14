@@ -1,14 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lesson 37 — Chemistry HL — Alkanes & Alkenes: Structure, Reactions & Mechanisms</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lesson 37 — Chemistry HL — Alkanes &amp; Alkenes: Structure, Reactions &amp; Mechanisms</title>
 <script>
 window.MathJax = {tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] },
   loader: { load: ['[tex]/mhchem'] }};
 </script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <style>
 :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -42,387 +43,306 @@ pre.ascii-art { font-family: 'Courier New', monospace; font-size: 0.75rem; line-
 </style>
 </head>
 <body>
-
 <h1>Lesson 37: Alkanes &amp; Alkenes — Structure, Reactions &amp; Mechanisms</h1>
-
 <p><b>Syllabus reference:</b> 10.2, 20.2 (Alkanes and Alkenes)</p>
-
 <!-- SECTION A -->
 <div class="objectives">
 <h3>Learning Objectives</h3>
 <p>By the end of this lesson, you will be able to:</p>
 <ul>
-  <li><b>Describe</b> the structure, bonding ($sp^3$ and $sp^2$ hybridisation), and physical properties of alkanes and alkenes.</li>
-  <li><b>Explain</b> the free-radical substitution mechanism of alkanes with halogens, including initiation, propagation, and termination steps.</li>
-  <li><b>Apply</b> Markovnikov's rule to predict the major product of electrophilic addition to unsymmetrical alkenes.</li>
-  <li><b>Draw</b> curly-arrow mechanisms for electrophilic addition of $\ce{HX}$, $\ce{X2}$, and $\ce{H2O}$ (with $\ce{H+}$ catalyst) to alkenes.</li>
-  <li><b>Compare</b> the reactivity of alkanes and alkenes in terms of bond energies and reaction types.</li>
+<li><b>Describe</b> the structure, bonding ($sp^3$ and $sp^2$ hybridisation), and physical properties of alkanes and alkenes.</li>
+<li><b>Explain</b> the free-radical substitution mechanism of alkanes with halogens, including initiation, propagation, and termination steps.</li>
+<li><b>Apply</b> Markovnikov's rule to predict the major product of electrophilic addition to unsymmetrical alkenes.</li>
+<li><b>Draw</b> curly-arrow mechanisms for electrophilic addition of $\ce{HX}$, $\ce{X2}$, and $\ce{H2O}$ (with $\ce{H+}$ catalyst) to alkenes.</li>
+<li><b>Compare</b> the reactivity of alkanes and alkenes in terms of bond energies and reaction types.</li>
 </ul>
 </div>
-
 <!-- SECTION B -->
-<h2>1. Prior Knowledge Check</h2>
 
+<div class="lesson-completion" style="margin: 1rem 0; padding: 1rem; background: #f0f9ff; border-radius: 8px;">
+<label class="completion-checkbox" style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer;">
+<input id="lesson-complete" style="width: 24px; height: 24px; cursor: pointer; accent-color: #10b981;" type="checkbox"/>
+<span style="font-size: 1rem; color: #0f172a; font-weight: 500;">✓ Mark this lesson as complete</span>
+</label>
+</div>
+<h2>1. Prior Knowledge Check</h2>
 <p><b>Question 1:</b> What is the general formula of alkanes and alkenes, and what type of bonds does each contain?</p>
 <div class="check-in">
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">Alkanes: $\ce{C_nH_{2n+2}}$, all carbon–carbon bonds are single $\sigma$ bonds ($sp^3$ hybridised). Alkenes: $\ce{C_nH_{2n}}$, contain at least one $\ce{C=C}$ double bond — one $\sigma$ bond and one $\pi$ bond ($sp^2$ hybridised). The $\pi$ bond is weaker than the $\sigma$ bond and is the site of reactivity.</div>
 </div>
-
 <p><b>Question 2:</b> What is a "curly arrow" in organic mechanism diagrams, and what does it represent?</p>
 <div class="check-in">
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">A <b>curly arrow</b> represents the movement of an <b>electron pair</b>. It starts from a source of electrons (a lone pair, a $\pi$ bond, or a $\sigma$ bond) and points to where the electrons go (an atom, a bond-forming position). A "fish-hook" arrow (half-headed) represents the movement of a <b>single electron</b> — used only in free-radical mechanisms.</div>
 </div>
-
 <p><b>Question 3:</b> What is an electrophile and why do alkenes react with electrophiles?</p>
 <div class="check-in">
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">An <b>electrophile</b> is an electron-deficient species (electron-pair acceptor) that is attracted to regions of high electron density. Alkenes have a $\pi$ bond — a region of high electron density above and below the plane of the molecule. Electrophiles attack the $\pi$ electrons. Examples: $\ce{H+}$, $\ce{Br2}$ (polarised), $\ce{HBr}$.</div>
 </div>
-
 <!-- SECTION C -->
 <h2>2. Alkanes — The "Unreactive" Hydrocarbons</h2>
-
 <p>Alkanes are saturated hydrocarbons with the general formula $\ce{C_nH_{2n+2}}$. They were once called "paraffins" (Latin: <em>parum affinis</em> = little affinity) because they appeared unreactive. This is only partly true — they are unreactive towards <em>polar</em> reagents but undergo reactions with radicals.</p>
-
 <h3>2.1 Structure and Bonding in Alkanes</h3>
-
 <p>Every carbon in an alkane is $sp^3$ hybridised — four identical hybrid orbitals arranged tetrahedrally (109.5°). All bonds are $\sigma$ bonds: cylindrically symmetrical around the bond axis with free rotation. This is why alkanes can adopt many <b>conformations</b> (shapes by rotation around single bonds).</p>
-
 <div class="diagram">
-<svg width="500" height="200" viewBox="0 0 500 200">
-  <text x="250" y="18" text-anchor="middle" font-size="13" font-weight="bold" fill="#2c5f2d">Tetrahedral $sp^3$ Carbon in Methane ($\ce{CH4}$)</text>
-  <!-- Central carbon -->
-  <circle cx="250" cy="115" r="18" fill="#333" opacity="0.3"/>
-  <text x="250" y="120" text-anchor="middle" font-size="12" fill="#fff" font-weight="bold">C</text>
-  <!-- 4 bonds tetrahedral (approximately) -->
-  <line x1="250" y1="115" x2="155" y2="55" stroke="#2c5f2d" stroke-width="3"/>
-  <circle cx="148" cy="48" r="14" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="1.5"/>
-  <text x="148" y="53" text-anchor="middle" font-size="11" fill="#1a1a1a">H</text>
-
-  <line x1="250" y1="115" x2="345" y2="55" stroke="#2c5f2d" stroke-width="3"/>
-  <circle cx="352" cy="48" r="14" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="1.5"/>
-  <text x="352" y="53" text-anchor="middle" font-size="11" fill="#1a1a1a">H</text>
-
-  <line x1="250" y1="115" x2="160" y2="172" stroke="#2c5f2d" stroke-width="3"/>
-  <circle cx="153" cy="179" r="14" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="1.5"/>
-  <text x="153" y="184" text-anchor="middle" font-size="11" fill="#1a1a1a">H</text>
-
-  <line x1="250" y1="115" x2="340" y2="172" stroke="#2c5f2d" stroke-width="3"/>
-  <circle cx="347" cy="179" r="14" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="1.5"/>
-  <text x="347" y="184" text-anchor="middle" font-size="11" fill="#1a1a1a">H</text>
-
-  <text x="250" y="195" text-anchor="middle" font-size="10" fill="#666">H–C–H bond angle = 109.5°</text>
+<svg height="200" viewbox="0 0 500 200" width="500">
+<text fill="#2c5f2d" font-size="13" font-weight="bold" text-anchor="middle" x="250" y="18">Tetrahedral $sp^3$ Carbon in Methane ($\ce{CH4}$)</text>
+<!-- Central carbon -->
+<circle cx="250" cy="115" fill="#333" opacity="0.3" r="18"></circle>
+<text fill="#fff" font-size="12" font-weight="bold" text-anchor="middle" x="250" y="120">C</text>
+<!-- 4 bonds tetrahedral (approximately) -->
+<line stroke="#2c5f2d" stroke-width="3" x1="250" x2="155" y1="115" y2="55"></line>
+<circle cx="148" cy="48" fill="#e8f5e9" r="14" stroke="#2c5f2d" stroke-width="1.5"></circle>
+<text fill="#1a1a1a" font-size="11" text-anchor="middle" x="148" y="53">H</text>
+<line stroke="#2c5f2d" stroke-width="3" x1="250" x2="345" y1="115" y2="55"></line>
+<circle cx="352" cy="48" fill="#e8f5e9" r="14" stroke="#2c5f2d" stroke-width="1.5"></circle>
+<text fill="#1a1a1a" font-size="11" text-anchor="middle" x="352" y="53">H</text>
+<line stroke="#2c5f2d" stroke-width="3" x1="250" x2="160" y1="115" y2="172"></line>
+<circle cx="153" cy="179" fill="#e8f5e9" r="14" stroke="#2c5f2d" stroke-width="1.5"></circle>
+<text fill="#1a1a1a" font-size="11" text-anchor="middle" x="153" y="184">H</text>
+<line stroke="#2c5f2d" stroke-width="3" x1="250" x2="340" y1="115" y2="172"></line>
+<circle cx="347" cy="179" fill="#e8f5e9" r="14" stroke="#2c5f2d" stroke-width="1.5"></circle>
+<text fill="#1a1a1a" font-size="11" text-anchor="middle" x="347" y="184">H</text>
+<text fill="#666" font-size="10" text-anchor="middle" x="250" y="195">H–C–H bond angle = 109.5°</text>
 </svg>
 <div class="caption">Figure 1: Tetrahedral geometry of $sp^3$ hybridised carbon. All four bonds are equivalent $\sigma$ bonds with 109.5° bond angles.</div>
 </div>
-
 <h3>2.2 Free-Radical Substitution (FRS) — The Key Reaction of Alkanes</h3>
-
 <p>When alkanes react with halogens (especially $\ce{Cl2}$ or $\ce{Br2}$) in the presence of <b>UV light</b>, a hydrogen atom is replaced by a halogen atom. This is a <b>free-radical chain reaction</b> with three stages.</p>
-
 <div class="diagram">
-<svg width="700" height="440" viewBox="0 0 700 440">
-  <text x="350" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c5f2d">Free-Radical Substitution: $\ce{CH4 + Cl2 ->[UV] CH3Cl + HCl}$</text>
-
-  <!-- Initiation -->
-  <rect x="15" y="38" width="670" height="82" rx="8" fill="#ffebee" stroke="#c62828" stroke-width="1.5"/>
-  <text x="350" y="60" text-anchor="middle" font-size="12" font-weight="bold" fill="#c62828">INITIATION — homolytic fission (UV light breaks Cl–Cl bond)</text>
-  <text x="350" y="82" text-anchor="middle" font-size="13">$\ce{Cl-Cl ->[hv] 2 Cl\cdot}$</text>
-  <text x="350" y="104" text-anchor="middle" font-size="11">Each chlorine atom has an unpaired electron — it is a <b>free radical</b> (highly reactive)</text>
-
-  <!-- Propagation -->
-  <rect x="15" y="132" width="670" height="135" rx="8" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="1.5"/>
-  <text x="350" y="154" text-anchor="middle" font-size="12" font-weight="bold" fill="#2c5f2d">PROPAGATION — chain-carrying steps (radicals consumed AND regenerated)</text>
-  <text x="350" y="178" text-anchor="middle" font-size="12">Step 1: $\ce{CH4 + Cl\cdot -> CH3\cdot + HCl}$</text>
-  <!-- Curly arrow diagram for step 1 -->
-  <line x1="160" y1="200" x2="260" y2="200" stroke="#c62828" stroke-width="2"/>
-  <text x="210" y="195" text-anchor="middle" font-size="10" fill="#c62828">fish-hook arrow: 1 e⁻ from Cl•</text>
-  <text x="350" y="222" text-anchor="middle" font-size="12">Step 2: $\ce{CH3\cdot + Cl2 -> CH3Cl + Cl\cdot}$</text>
-  <line x1="240" y1="244" x2="330" y2="244" stroke="#c62828" stroke-width="2"/>
-  <text x="285" y="239" text-anchor="middle" font-size="10" fill="#c62828">fish-hook arrow: e⁻ from CH₃• takes one Cl</text>
-  <text x="350" y="260" text-anchor="middle" font-size="10" font-style="italic">The Cl• regenerated in step 2 can start step 1 again — chain reaction!</text>
-
-  <!-- Termination -->
-  <rect x="15" y="280" width="670" height="120" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.5"/>
-  <text x="350" y="302" text-anchor="middle" font-size="12" font-weight="bold" fill="#1565c0">TERMINATION — two radicals combine, ending chains</text>
-  <text x="350" y="326" text-anchor="middle" font-size="12">$\ce{Cl\cdot + Cl\cdot -> Cl2}$</text>
-  <text x="350" y="348" text-anchor="middle" font-size="12">$\ce{CH3\cdot + Cl\cdot -> CH3Cl}$ &nbsp;&nbsp;|&nbsp;&nbsp; $\ce{CH3\cdot + CH3\cdot -> C2H6}$</text>
-
-  <!-- Summary -->
-  <rect x="15" y="410" width="670" height="25" rx="4" fill="#f5f5f5"/>
-  <text x="350" y="427" text-anchor="middle" font-size="11">Overall: $\ce{CH4 + Cl2 -> CH3Cl + HCl}$ (but further substitution to $\ce{CH2Cl2}$, $\ce{CHCl3}$, $\ce{CCl4}$ is common)</text>
+<svg height="440" viewbox="0 0 700 440" width="700">
+<text fill="#2c5f2d" font-size="14" font-weight="bold" text-anchor="middle" x="350" y="20">Free-Radical Substitution: $\ce{CH4 + Cl2 -&gt;[UV] CH3Cl + HCl}$</text>
+<!-- Initiation -->
+<rect fill="#ffebee" height="82" rx="8" stroke="#c62828" stroke-width="1.5" width="670" x="15" y="38"></rect>
+<text fill="#c62828" font-size="12" font-weight="bold" text-anchor="middle" x="350" y="60">INITIATION — homolytic fission (UV light breaks Cl–Cl bond)</text>
+<text font-size="13" text-anchor="middle" x="350" y="82">$\ce{Cl-Cl -&gt;[hv] 2 Cl\cdot}$</text>
+<text font-size="11" text-anchor="middle" x="350" y="104">Each chlorine atom has an unpaired electron — it is a <b>free radical</b> (highly reactive)</text>
+<!-- Propagation -->
+<rect fill="#e8f5e9" height="135" rx="8" stroke="#2c5f2d" stroke-width="1.5" width="670" x="15" y="132"></rect>
+<text fill="#2c5f2d" font-size="12" font-weight="bold" text-anchor="middle" x="350" y="154">PROPAGATION — chain-carrying steps (radicals consumed AND regenerated)</text>
+<text font-size="12" text-anchor="middle" x="350" y="178">Step 1: $\ce{CH4 + Cl\cdot -&gt; CH3\cdot + HCl}$</text>
+<!-- Curly arrow diagram for step 1 -->
+<line stroke="#c62828" stroke-width="2" x1="160" x2="260" y1="200" y2="200"></line>
+<text fill="#c62828" font-size="10" text-anchor="middle" x="210" y="195">fish-hook arrow: 1 e⁻ from Cl•</text>
+<text font-size="12" text-anchor="middle" x="350" y="222">Step 2: $\ce{CH3\cdot + Cl2 -&gt; CH3Cl + Cl\cdot}$</text>
+<line stroke="#c62828" stroke-width="2" x1="240" x2="330" y1="244" y2="244"></line>
+<text fill="#c62828" font-size="10" text-anchor="middle" x="285" y="239">fish-hook arrow: e⁻ from CH₃• takes one Cl</text>
+<text font-size="10" font-style="italic" text-anchor="middle" x="350" y="260">The Cl• regenerated in step 2 can start step 1 again — chain reaction!</text>
+<!-- Termination -->
+<rect fill="#e3f2fd" height="120" rx="8" stroke="#1565c0" stroke-width="1.5" width="670" x="15" y="280"></rect>
+<text fill="#1565c0" font-size="12" font-weight="bold" text-anchor="middle" x="350" y="302">TERMINATION — two radicals combine, ending chains</text>
+<text font-size="12" text-anchor="middle" x="350" y="326">$\ce{Cl\cdot + Cl\cdot -&gt; Cl2}$</text>
+<text font-size="12" text-anchor="middle" x="350" y="348">$\ce{CH3\cdot + Cl\cdot -&gt; CH3Cl}$   |   $\ce{CH3\cdot + CH3\cdot -&gt; C2H6}$</text>
+<!-- Summary -->
+<rect fill="#f5f5f5" height="25" rx="4" width="670" x="15" y="410"></rect>
+<text font-size="11" text-anchor="middle" x="350" y="427">Overall: $\ce{CH4 + Cl2 -&gt; CH3Cl + HCl}$ (but further substitution to $\ce{CH2Cl2}$, $\ce{CHCl3}$, $\ce{CCl4}$ is common)</text>
 </svg>
 <div class="caption">Figure 2: The free-radical substitution mechanism. The reaction uses half-headed (fish-hook) arrows because radicals have single unpaired electrons. UV light provides the energy for homolytic fission of Cl–Cl (bond enthalpy ~242 kJ mol⁻¹).</div>
 </div>
-
 <div class="check-in">
 <p><b>Check-in:</b> Why does bromination of methane require UV light, while addition of $\ce{Br2}$ to ethene occurs instantly in the dark?</p>
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">Two different mechanisms. <b>Alkanes</b> react via <b>free-radical substitution</b> — UV is needed to homolytically cleave $\ce{Br–Br}$ into $\ce{2 Br\cdot}$ (radical initiator). The $\ce{C–H}$ bond is strong and not polarised — electrophiles and nucleophiles have nothing to attack. <b>Alkenes</b> react via <b>electrophilic addition</b> — the $\pi$ bond is electron-rich and polarises the approaching $\ce{Br2}$ molecule. No UV needed. The reaction type is dictated by the functional group, not the reagent.</div>
 </div>
-
 <h2>3. Alkenes — Electrophilic Addition</h2>
-
 <p>Alkenes contain a $\ce{C=C}$ double bond: one $\sigma$ bond (strong, $sp^2$–$sp^2$ overlap) and one $\pi$ bond (weaker, sideways overlap of unhybridised $p$ orbitals). The $\pi$ electrons sit above and below the molecular plane — exposed and available for attack by electrophiles.</p>
-
 <h3>3.1 Structure of the $\ce{C=C}$ Double Bond</h3>
-
 <div class="diagram">
-<svg width="600" height="240" viewBox="0 0 600 240">
-  <text x="300" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#2c5f2d">Ethene ($\ce{C2H4}$): $sp^2$ Hybridisation and $\pi$ Bond Formation</text>
-
-  <!-- sp2 carbon left -->
-  <circle cx="230" cy="120" r="15" fill="#333" opacity="0.3"/>
-  <text x="230" y="125" text-anchor="middle" font-size="10" fill="#fff" font-weight="bold">C</text>
-
-  <!-- sp2 carbon right -->
-  <circle cx="370" cy="120" r="15" fill="#333" opacity="0.3"/>
-  <text x="370" y="125" text-anchor="middle" font-size="10" fill="#fff" font-weight="bold">C</text>
-
-  <!-- sigma bond -->
-  <line x1="245" y1="120" x2="355" y2="120" stroke="#2c5f2d" stroke-width="4"/>
-
-  <!-- pi bond lobes above -->
-  <ellipse cx="300" cy="85" rx="55" ry="22" fill="#ffcc80" opacity="0.5" stroke="#e65100" stroke-width="1.5"/>
-  <text x="300" y="70" text-anchor="middle" font-size="9" fill="#e65100">π bond (above plane)</text>
-
-  <!-- pi bond lobes below -->
-  <ellipse cx="300" cy="155" rx="55" ry="22" fill="#ffcc80" opacity="0.5" stroke="#e65100" stroke-width="1.5"/>
-  <text x="300" y="180" text-anchor="middle" font-size="9" fill="#e65100">π bond (below plane)</text>
-
-  <!-- H atoms on left C -->
-  <line x1="230" y1="120" x2="170" y2="60" stroke="#333" stroke-width="2.5"/>
-  <circle cx="164" cy="53" r="10" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="1"/>
-  <text x="164" y="57" text-anchor="middle" font-size="9">H</text>
-
-  <line x1="230" y1="120" x2="170" y2="180" stroke="#333" stroke-width="2.5"/>
-  <circle cx="164" cy="186" r="10" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="1"/>
-  <text x="164" y="191" text-anchor="middle" font-size="9">H</text>
-
-  <!-- H atoms on right C -->
-  <line x1="370" y1="120" x2="430" y2="60" stroke="#333" stroke-width="2.5"/>
-  <circle cx="436" cy="53" r="10" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="1"/>
-  <text x="436" y="57" text-anchor="middle" font-size="9">H</text>
-
-  <line x1="370" y1="120" x2="430" y2="180" stroke="#333" stroke-width="2.5"/>
-  <circle cx="436" cy="186" r="10" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="1"/>
-  <text x="436" y="191" text-anchor="middle" font-size="9">H</text>
-
-  <text x="300" y="215" text-anchor="middle" font-size="10">σ bond = C–C axis overlap (strong, ~348 kJ/mol) &nbsp;|&nbsp; π bond = p-orbital sideways overlap (weaker, ~264 kJ/mol)</text>
-  <text x="300" y="232" text-anchor="middle" font-size="10">Total C=C bond enthalpy = 612 kJ/mol. H–C–H angle ≈ 117°, H–C–C angle ≈ 121.5°</text>
+<svg height="240" viewbox="0 0 600 240" width="600">
+<text fill="#2c5f2d" font-size="13" font-weight="bold" text-anchor="middle" x="300" y="20">Ethene ($\ce{C2H4}$): $sp^2$ Hybridisation and $\pi$ Bond Formation</text>
+<!-- sp2 carbon left -->
+<circle cx="230" cy="120" fill="#333" opacity="0.3" r="15"></circle>
+<text fill="#fff" font-size="10" font-weight="bold" text-anchor="middle" x="230" y="125">C</text>
+<!-- sp2 carbon right -->
+<circle cx="370" cy="120" fill="#333" opacity="0.3" r="15"></circle>
+<text fill="#fff" font-size="10" font-weight="bold" text-anchor="middle" x="370" y="125">C</text>
+<!-- sigma bond -->
+<line stroke="#2c5f2d" stroke-width="4" x1="245" x2="355" y1="120" y2="120"></line>
+<!-- pi bond lobes above -->
+<ellipse cx="300" cy="85" fill="#ffcc80" opacity="0.5" rx="55" ry="22" stroke="#e65100" stroke-width="1.5"></ellipse>
+<text fill="#e65100" font-size="9" text-anchor="middle" x="300" y="70">π bond (above plane)</text>
+<!-- pi bond lobes below -->
+<ellipse cx="300" cy="155" fill="#ffcc80" opacity="0.5" rx="55" ry="22" stroke="#e65100" stroke-width="1.5"></ellipse>
+<text fill="#e65100" font-size="9" text-anchor="middle" x="300" y="180">π bond (below plane)</text>
+<!-- H atoms on left C -->
+<line stroke="#333" stroke-width="2.5" x1="230" x2="170" y1="120" y2="60"></line>
+<circle cx="164" cy="53" fill="#e8f5e9" r="10" stroke="#2c5f2d" stroke-width="1"></circle>
+<text font-size="9" text-anchor="middle" x="164" y="57">H</text>
+<line stroke="#333" stroke-width="2.5" x1="230" x2="170" y1="120" y2="180"></line>
+<circle cx="164" cy="186" fill="#e8f5e9" r="10" stroke="#2c5f2d" stroke-width="1"></circle>
+<text font-size="9" text-anchor="middle" x="164" y="191">H</text>
+<!-- H atoms on right C -->
+<line stroke="#333" stroke-width="2.5" x1="370" x2="430" y1="120" y2="60"></line>
+<circle cx="436" cy="53" fill="#e8f5e9" r="10" stroke="#2c5f2d" stroke-width="1"></circle>
+<text font-size="9" text-anchor="middle" x="436" y="57">H</text>
+<line stroke="#333" stroke-width="2.5" x1="370" x2="430" y1="120" y2="180"></line>
+<circle cx="436" cy="186" fill="#e8f5e9" r="10" stroke="#2c5f2d" stroke-width="1"></circle>
+<text font-size="9" text-anchor="middle" x="436" y="191">H</text>
+<text font-size="10" text-anchor="middle" x="300" y="215">σ bond = C–C axis overlap (strong, ~348 kJ/mol)  |  π bond = p-orbital sideways overlap (weaker, ~264 kJ/mol)</text>
+<text font-size="10" text-anchor="middle" x="300" y="232">Total C=C bond enthalpy = 612 kJ/mol. H–C–H angle ≈ 117°, H–C–C angle ≈ 121.5°</text>
 </svg>
 <div class="caption">Figure 3: Bonding in ethene. The $\sigma$ framework keeps the molecule planar; the $\pi$ bond is formed by sideways overlap of unhybridised $p$ orbitals — this creates electron density above and below the plane, making alkenes susceptible to electrophilic attack.</div>
 </div>
-
 <h3>3.2 Electrophilic Addition Mechanism</h3>
-
 <p>The general mechanism for electrophilic addition to alkenes involves two steps:</p>
-
 <p><b>Step 1 (rate-determining):</b> The $\pi$ electrons attack the electrophile, forming a <b>carbocation</b> intermediate and expelling a leaving group or forming a new bond to the electrophile.</p>
-
 <p><b>Step 2 (fast):</b> A nucleophile (often the counter-ion or solvent) attacks the carbocation, forming the final addition product.</p>
-
 <div class="diagram">
-<svg width="720" height="380" viewBox="0 0 720 380">
-  <text x="360" y="18" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c5f2d">Electrophilic Addition of $\ce{HBr}$ to Ethene</text>
-
-  <!-- ethene -->
-  <line x1="80" y1="140" x2="150" y2="140" stroke="#333" stroke-width="3"/>
-  <line x1="80" y1="140" x2="60" y2="110" stroke="#333" stroke-width="2"/>
-  <line x1="80" y1="140" x2="60" y2="170" stroke="#333" stroke-width="2"/>
-  <line x1="150" y1="140" x2="170" y2="110" stroke="#333" stroke-width="2"/>
-  <line x1="150" y1="140" x2="170" y2="170" stroke="#333" stroke-width="2"/>
-  <text x="115" y="125" text-anchor="middle" font-size="10">π electrons</text>
-
-  <!-- HBr -->
-  <text x="220" y="138" font-size="13">$\ce{H^{\delta+}–Br^{\delta-}}$</text>
-
-  <!-- curly arrow from π bond to H -->
-  <path d="M150,130 C180,110 190,120 210,135" fill="none" stroke="#c62828" stroke-width="2" marker-end="url(#arrowRed)"/>
-
-  <!-- curly arrow from H-Br to Br -->
-  <path d="M235,145 C240,165 250,170 260,165" fill="none" stroke="#c62828" stroke-width="2" marker-end="url(#arrowRed)"/>
-
-  <defs><marker id="arrowRed" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#c62828"/></marker></defs>
-
-  <text x="360" y="120" text-anchor="middle" font-size="16">→</text>
-
-  <!-- carbocation intermediate -->
-  <line x1="420" y1="140" x2="490" y2="140" stroke="#333" stroke-width="2"/>
-  <circle cx="490" cy="140" r="18" fill="#ffebee" stroke="#c62828" stroke-width="2"/>
-  <text x="490" y="145" text-anchor="middle" font-size="10" fill="#c62828" font-weight="bold">⊕</text>
-  <line x1="420" y1="140" x2="400" y2="110" stroke="#333" stroke-width="2"/>
-  <line x1="420" y1="140" x2="400" y2="170" stroke="#333" stroke-width="2"/>
-  <line x1="490" y1="140" x2="510" y2="110" stroke="#333" stroke-width="2"/>
-  <text x="455" y="165" text-anchor="middle" font-size="10">ethyl carbocation</text>
-
-  <text x="545" y="145" font-size="10">+ $\ce{:Br-}$</text>
-
-  <!-- arrow from Br- to carbocation -->
-  <text x="360" y="195" text-anchor="middle" font-size="16">↓</text>
-
-  <!-- product -->
-  <line x1="400" y1="230" x2="470" y2="230" stroke="#333" stroke-width="3"/>
-  <line x1="400" y1="230" x2="380" y2="200" stroke="#333" stroke-width="2"/>
-  <line x1="400" y1="230" x2="380" y2="260" stroke="#333" stroke-width="2"/>
-  <line x1="470" y1="230" x2="490" y2="200" stroke="#333" stroke-width="2"/>
-  <line x1="470" y1="230" x2="490" y2="260" stroke="#333" stroke-width="2"/>
-  <text x="435" y="285" text-anchor="middle" font-size="11">bromoethane $\ce{CH3CH2Br}$</text>
-
-  <!-- Overall equation -->
-  <rect x="80" y="305" width="560" height="30" rx="5" fill="#f5f5f5"/>
-  <text x="360" y="325" text-anchor="middle" font-size="12">Overall: $\ce{CH2=CH2 + HBr -> CH3CH2Br}$</text>
-
-  <text x="360" y="360" text-anchor="middle" font-size="10" fill="#666">Step 1 (slow, RDS): $\pi$ electrons attack $\ce{H^{\delta+}}$, $\ce{Br-}$ leaves — carbocation formed.</text>
-  <text x="360" y="375" text-anchor="middle" font-size="10" fill="#666">Step 2 (fast): $\ce{Br-}$ (nucleophile) attacks the carbocation — product formed.</text>
+<svg height="380" viewbox="0 0 720 380" width="720">
+<text fill="#2c5f2d" font-size="14" font-weight="bold" text-anchor="middle" x="360" y="18">Electrophilic Addition of $\ce{HBr}$ to Ethene</text>
+<!-- ethene -->
+<line stroke="#333" stroke-width="3" x1="80" x2="150" y1="140" y2="140"></line>
+<line stroke="#333" stroke-width="2" x1="80" x2="60" y1="140" y2="110"></line>
+<line stroke="#333" stroke-width="2" x1="80" x2="60" y1="140" y2="170"></line>
+<line stroke="#333" stroke-width="2" x1="150" x2="170" y1="140" y2="110"></line>
+<line stroke="#333" stroke-width="2" x1="150" x2="170" y1="140" y2="170"></line>
+<text font-size="10" text-anchor="middle" x="115" y="125">π electrons</text>
+<!-- HBr -->
+<text font-size="13" x="220" y="138">$\ce{H^{\delta+}–Br^{\delta-}}$</text>
+<!-- curly arrow from π bond to H -->
+<path d="M150,130 C180,110 190,120 210,135" fill="none" marker-end="url(#arrowRed)" stroke="#c62828" stroke-width="2"></path>
+<!-- curly arrow from H-Br to Br -->
+<path d="M235,145 C240,165 250,170 260,165" fill="none" marker-end="url(#arrowRed)" stroke="#c62828" stroke-width="2"></path>
+<defs><marker id="arrowRed" markerheight="6" markerwidth="8" orient="auto" refx="8" refy="3"><path d="M0,0 L8,3 L0,6 Z" fill="#c62828"></path></marker></defs>
+<text font-size="16" text-anchor="middle" x="360" y="120">→</text>
+<!-- carbocation intermediate -->
+<line stroke="#333" stroke-width="2" x1="420" x2="490" y1="140" y2="140"></line>
+<circle cx="490" cy="140" fill="#ffebee" r="18" stroke="#c62828" stroke-width="2"></circle>
+<text fill="#c62828" font-size="10" font-weight="bold" text-anchor="middle" x="490" y="145">⊕</text>
+<line stroke="#333" stroke-width="2" x1="420" x2="400" y1="140" y2="110"></line>
+<line stroke="#333" stroke-width="2" x1="420" x2="400" y1="140" y2="170"></line>
+<line stroke="#333" stroke-width="2" x1="490" x2="510" y1="140" y2="110"></line>
+<text font-size="10" text-anchor="middle" x="455" y="165">ethyl carbocation</text>
+<text font-size="10" x="545" y="145">+ $\ce{:Br-}$</text>
+<!-- arrow from Br- to carbocation -->
+<text font-size="16" text-anchor="middle" x="360" y="195">↓</text>
+<!-- product -->
+<line stroke="#333" stroke-width="3" x1="400" x2="470" y1="230" y2="230"></line>
+<line stroke="#333" stroke-width="2" x1="400" x2="380" y1="230" y2="200"></line>
+<line stroke="#333" stroke-width="2" x1="400" x2="380" y1="230" y2="260"></line>
+<line stroke="#333" stroke-width="2" x1="470" x2="490" y1="230" y2="200"></line>
+<line stroke="#333" stroke-width="2" x1="470" x2="490" y1="230" y2="260"></line>
+<text font-size="11" text-anchor="middle" x="435" y="285">bromoethane $\ce{CH3CH2Br}$</text>
+<!-- Overall equation -->
+<rect fill="#f5f5f5" height="30" rx="5" width="560" x="80" y="305"></rect>
+<text font-size="12" text-anchor="middle" x="360" y="325">Overall: $\ce{CH2=CH2 + HBr -&gt; CH3CH2Br}$</text>
+<text fill="#666" font-size="10" text-anchor="middle" x="360" y="360">Step 1 (slow, RDS): $\pi$ electrons attack $\ce{H^{\delta+}}$, $\ce{Br-}$ leaves — carbocation formed.</text>
+<text fill="#666" font-size="10" text-anchor="middle" x="360" y="375">Step 2 (fast): $\ce{Br-}$ (nucleophile) attacks the carbocation — product formed.</text>
 </svg>
 <div class="caption">Figure 4: Electrophilic addition of HBr to ethene. Curly arrows show electron-pair movement: $\pi$ electrons → H; H–Br bond electrons → Br. The carbocation is a reactive intermediate — planar, $sp^2$ hybridised, with an empty $p$ orbital.</div>
 </div>
-
 <div class="check-in">
 <p><b>Check-in:</b> Why does $\ce{Br2}$ addition to ethene require the $\ce{Br–Br}$ bond to be polarised, and how does this happen?</p>
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">$\ce{Br2}$ is non-polar in isolation. As it approaches the electron-rich $\pi$ bond, the $\pi$ electrons repel the Br electrons, creating an <b>induced dipole</b>: the nearer Br becomes $\ce{Br^{\delta+}}$, the farther becomes $\ce{Br^{\delta-}}$. The $\pi$ electrons attack $\ce{Br^{\delta+}}$, breaking $\ce{Br–Br}$ heterolytically. A <b>bromonium ion</b> (three-membered ring) forms initially, then $\ce{Br-}$ attacks from the opposite side of the ring.</div>
 </div>
-
 <h3>3.3 Markovnikov's Rule</h3>
-
 <p>When $\ce{HX}$ adds to an <b>unsymmetrical</b> alkene, there are two possible products. Markovnikov's rule predicts the major product:</p>
-
 <div class="definition" style="background:#fdf5e6;border-left:4px solid #d4a017;padding:0.6rem 1rem;margin:0.8rem 0;border-radius:0 8px 8px 0;">
 <b>Markovnikov's Rule:</b> In the addition of HX to an unsymmetrical alkene, the <b>hydrogen atom attaches to the carbon that already has more hydrogen atoms</b> (the less substituted carbon). The halogen attaches to the more substituted carbon. This is equivalent to: the more stable carbocation intermediate is formed.
 </div>
-
 <div class="diagram">
-<svg width="700" height="280" viewBox="0 0 700 280">
-  <text x="350" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c5f2d">Markovnikov Addition: $\ce{CH3CH=CH2 + HBr ->}$ ?</text>
-
-  <!-- Propene structure -->
-  <line x1="250" y1="70" x2="290" y2="70" stroke="#333" stroke-width="3"/>
-  <line x1="290" y1="70" x2="330" y2="70" stroke="#333" stroke-width="2"/>
-  <line x1="250" y1="70" x2="235" y2="50" stroke="#333" stroke-width="2"/>
-  <line x1="250" y1="70" x2="235" y2="90" stroke="#333" stroke-width="2"/>
-  <line x1="330" y1="70" x2="345" y2="50" stroke="#333" stroke-width="2"/>
-  <text x="270" y="105" text-anchor="middle" font-size="10">propene</text>
-
-  <text x="380" y="75" font-size="14">+ HBr →</text>
-
-  <!-- Path A: Markovnikov (major) -->
-  <rect x="420" y="40" width="260" height="105" rx="6" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="2"/>
-  <text x="550" y="60" text-anchor="middle" font-size="11" font-weight="bold" fill="#2c5f2d">Path A: MARKOVNIKOV (MAJOR)</text>
-  <text x="550" y="78" text-anchor="middle" font-size="10">H adds to C with more H</text>
-  <text x="550" y="93" text-anchor="middle" font-size="10">→ 2° carbocation (more stable)</text>
-  <text x="550" y="115" text-anchor="middle" font-size="12" font-weight="bold">$\ce{CH3CHBrCH3}$</text>
-  <text x="550" y="135" text-anchor="middle" font-size="10">2-bromopropane</text>
-
-  <!-- Path B: anti-Markovnikov (minor) -->
-  <rect x="420" y="155" width="260" height="105" rx="6" fill="#ffebee" stroke="#c62828" stroke-width="2"/>
-  <text x="550" y="175" text-anchor="middle" font-size="11" font-weight="bold" fill="#c62828">Path B: ANTI-MARKOVNIKOV (MINOR)</text>
-  <text x="550" y="193" text-anchor="middle" font-size="10">H adds to C with fewer H</text>
-  <text x="550" y="208" text-anchor="middle" font-size="10">→ 1° carbocation (less stable)</text>
-  <text x="550" y="230" text-anchor="middle" font-size="12">$\ce{CH3CH2CH2Br}$</text>
-  <text x="550" y="250" text-anchor="middle" font-size="10">1-bromopropane</text>
-
-  <!-- Carbocation stability ladder -->
-  <rect x="15" y="60" width="200" height="180" rx="6" fill="#fafafa" stroke="#999" stroke-width="1"/>
-  <text x="115" y="80" text-anchor="middle" font-size="11" font-weight="bold">Carbocation Stability</text>
-  <text x="115" y="100" text-anchor="middle" font-size="10">3° > 2° > 1° > methyl</text>
-  <line x1="30" y1="118" x2="200" y2="118" stroke="#ccc" stroke-width="1"/>
-  <text x="115" y="138" text-anchor="middle" font-size="10">Alkyl groups are</text>
-  <text x="115" y="155" text-anchor="middle" font-size="10"><b>electron-donating</b></text>
-  <text x="115" y="172" text-anchor="middle" font-size="10">(+I effect) — they</text>
-  <text x="115" y="189" text-anchor="middle" font-size="10">stabilise the positive</text>
-  <text x="115" y="206" text-anchor="middle" font-size="10">charge on the cation.</text>
-  <text x="115" y="230" text-anchor="middle" font-size="10">More alkyl groups =</text>
-  <text x="115" y="245" text-anchor="middle" font-size="10">more stable cation.</text>
+<svg height="280" viewbox="0 0 700 280" width="700">
+<text fill="#2c5f2d" font-size="14" font-weight="bold" text-anchor="middle" x="350" y="20">Markovnikov Addition: $\ce{CH3CH=CH2 + HBr -&gt;}$ ?</text>
+<!-- Propene structure -->
+<line stroke="#333" stroke-width="3" x1="250" x2="290" y1="70" y2="70"></line>
+<line stroke="#333" stroke-width="2" x1="290" x2="330" y1="70" y2="70"></line>
+<line stroke="#333" stroke-width="2" x1="250" x2="235" y1="70" y2="50"></line>
+<line stroke="#333" stroke-width="2" x1="250" x2="235" y1="70" y2="90"></line>
+<line stroke="#333" stroke-width="2" x1="330" x2="345" y1="70" y2="50"></line>
+<text font-size="10" text-anchor="middle" x="270" y="105">propene</text>
+<text font-size="14" x="380" y="75">+ HBr →</text>
+<!-- Path A: Markovnikov (major) -->
+<rect fill="#e8f5e9" height="105" rx="6" stroke="#2c5f2d" stroke-width="2" width="260" x="420" y="40"></rect>
+<text fill="#2c5f2d" font-size="11" font-weight="bold" text-anchor="middle" x="550" y="60">Path A: MARKOVNIKOV (MAJOR)</text>
+<text font-size="10" text-anchor="middle" x="550" y="78">H adds to C with more H</text>
+<text font-size="10" text-anchor="middle" x="550" y="93">→ 2° carbocation (more stable)</text>
+<text font-size="12" font-weight="bold" text-anchor="middle" x="550" y="115">$\ce{CH3CHBrCH3}$</text>
+<text font-size="10" text-anchor="middle" x="550" y="135">2-bromopropane</text>
+<!-- Path B: anti-Markovnikov (minor) -->
+<rect fill="#ffebee" height="105" rx="6" stroke="#c62828" stroke-width="2" width="260" x="420" y="155"></rect>
+<text fill="#c62828" font-size="11" font-weight="bold" text-anchor="middle" x="550" y="175">Path B: ANTI-MARKOVNIKOV (MINOR)</text>
+<text font-size="10" text-anchor="middle" x="550" y="193">H adds to C with fewer H</text>
+<text font-size="10" text-anchor="middle" x="550" y="208">→ 1° carbocation (less stable)</text>
+<text font-size="12" text-anchor="middle" x="550" y="230">$\ce{CH3CH2CH2Br}$</text>
+<text font-size="10" text-anchor="middle" x="550" y="250">1-bromopropane</text>
+<!-- Carbocation stability ladder -->
+<rect fill="#fafafa" height="180" rx="6" stroke="#999" stroke-width="1" width="200" x="15" y="60"></rect>
+<text font-size="11" font-weight="bold" text-anchor="middle" x="115" y="80">Carbocation Stability</text>
+<text font-size="10" text-anchor="middle" x="115" y="100">3° &gt; 2° &gt; 1° &gt; methyl</text>
+<line stroke="#ccc" stroke-width="1" x1="30" x2="200" y1="118" y2="118"></line>
+<text font-size="10" text-anchor="middle" x="115" y="138">Alkyl groups are</text>
+<text font-size="10" text-anchor="middle" x="115" y="155"><b>electron-donating</b></text>
+<text font-size="10" text-anchor="middle" x="115" y="172">(+I effect) — they</text>
+<text font-size="10" text-anchor="middle" x="115" y="189">stabilise the positive</text>
+<text font-size="10" text-anchor="middle" x="115" y="206">charge on the cation.</text>
+<text font-size="10" text-anchor="middle" x="115" y="230">More alkyl groups =</text>
+<text font-size="10" text-anchor="middle" x="115" y="245">more stable cation.</text>
 </svg>
 <div class="caption">Figure 5: Markovnikov addition to propene. The 2° carbocation (Path A) is more stable than the 1° carbocation (Path B) due to the +I effect of two alkyl groups vs. one. The more stable carbocation forms faster → major product.</div>
 </div>
-
 <div class="check-in">
 <p><b>Check-in:</b> Predict the major product when $\ce{HCl}$ adds to 2-methylbut-2-ene.</p>
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">2-methylbut-2-ene is $\ce{(CH3)2C=CHCH3}$. The $\ce{C=C}$ is between C2 (bonded to two methyls + one ethyl-like group) and C3 (bonded to one methyl + one H). The two carbons of the double bond have <b>unequal</b> substitution. Markovnikov: H⁺ adds to C3 (more H atoms there), forming a 3° carbocation at C2 (stabilised by 3 alkyl groups). Cl⁻ then attacks C2. <b>Product: 2-chloro-2-methylbutane</b> $\ce{(CH3)2CClCH2CH3}$.</div>
 </div>
-
 <h2>4. Addition of $\ce{H2O}$ — Hydration of Alkenes</h2>
-
 <p>Alkenes react with steam in the presence of an <b>acid catalyst</b> ($\ce{H3PO4}$ or $\ce{H2SO4}$) to form alcohols. This follows Markovnikov's rule. Industrially, this is how ethanol is produced from ethene:</p>
 
-$$\ce{CH2=CH2 + H2O ->[H3PO4][300°C, 60 atm] CH3CH2OH}$$
+$$\ce{CH2=CH2 + H2O -&gt;[H3PO4][300°C, 60 atm] CH3CH2OH}$$
 
 <p>For unsymmetrical alkenes, the –OH group attaches to the more substituted carbon.</p>
-
 <!-- SECTION D -->
 <h2>5. Worked Examples</h2>
-
 <div class="example">
-<b>Example 1 — Free-Radical Substitution Product Distribution:</b><br><br>
-When ethane and chlorine react under UV light, a mixture of products is obtained: $\ce{C2H5Cl}$, $\ce{C2H4Cl2}$, $\ce{C2H3Cl3}$, etc. Explain why.<br><br>
-<b>Answer:</b> The free-radical chain mechanism is <b>non-selective</b>. Once $\ce{C2H5Cl}$ is formed, it can undergo further substitution because $\ce{Cl\cdot}$ radicals attack any $\ce{C–H}$ bond they encounter. The product $\ce{C2H5Cl}$ still has $\ce{C–H}$ bonds — the radicals don't "know" to stop. This is why FRS gives mixtures. <b>In contrast</b>, electrophilic addition stops after one addition because the product (e.g., bromoethane) no longer has a $\pi$ bond to attack.<br><br>
-<b>⚠️ Common wrong approach:</b> Writing $\ce{C2H6 + Cl2 -> C2H5Cl + HCl}$ as the only reaction. IB expects you to recognise that further chlorination occurs and that $\ce{C2H4Cl2}$ (dichloroethane, isomers) and higher chlorinated products are also formed.
+<b>Example 1 — Free-Radical Substitution Product Distribution:</b><br/><br/>
+When ethane and chlorine react under UV light, a mixture of products is obtained: $\ce{C2H5Cl}$, $\ce{C2H4Cl2}$, $\ce{C2H3Cl3}$, etc. Explain why.<br/><br/>
+<b>Answer:</b> The free-radical chain mechanism is <b>non-selective</b>. Once $\ce{C2H5Cl}$ is formed, it can undergo further substitution because $\ce{Cl\cdot}$ radicals attack any $\ce{C–H}$ bond they encounter. The product $\ce{C2H5Cl}$ still has $\ce{C–H}$ bonds — the radicals don't "know" to stop. This is why FRS gives mixtures. <b>In contrast</b>, electrophilic addition stops after one addition because the product (e.g., bromoethane) no longer has a $\pi$ bond to attack.<br/><br/>
+<b>⚠️ Common wrong approach:</b> Writing $\ce{C2H6 + Cl2 -&gt; C2H5Cl + HCl}$ as the only reaction. IB expects you to recognise that further chlorination occurs and that $\ce{C2H4Cl2}$ (dichloroethane, isomers) and higher chlorinated products are also formed.
 </div>
-
 <div class="example">
-<b>Example 2 — Mechanism with Curly Arrows:</b><br><br>
-Draw the mechanism for the reaction of propene with $\ce{Br2}$ dissolved in $\ce{CCl4}$ (inert solvent). Name the product.<br><br>
-<b>Mechanism:</b> The $\pi$ electrons of propene approach $\ce{Br2}$, inducing a dipole. $\pi$ electrons attack $\ce{Br^{\delta+}}$; $\ce{Br–Br}$ breaks heterolytically. A <b>cyclic bromonium ion</b> (three-membered $\ce{C–C–Br+}$ ring) forms — NOT an open carbocation for $\ce{Br2}$ addition. $\ce{Br-}$ then attacks from the <b>opposite face</b> of the bromonium ion (back-side attack), opening the ring. <b>Product: 1,2-dibromopropane</b> $\ce{CH2BrCHBrCH3}$.<br><br>
+<b>Example 2 — Mechanism with Curly Arrows:</b><br/><br/>
+Draw the mechanism for the reaction of propene with $\ce{Br2}$ dissolved in $\ce{CCl4}$ (inert solvent). Name the product.<br/><br/>
+<b>Mechanism:</b> The $\pi$ electrons of propene approach $\ce{Br2}$, inducing a dipole. $\pi$ electrons attack $\ce{Br^{\delta+}}$; $\ce{Br–Br}$ breaks heterolytically. A <b>cyclic bromonium ion</b> (three-membered $\ce{C–C–Br+}$ ring) forms — NOT an open carbocation for $\ce{Br2}$ addition. $\ce{Br-}$ then attacks from the <b>opposite face</b> of the bromonium ion (back-side attack), opening the ring. <b>Product: 1,2-dibromopropane</b> $\ce{CH2BrCHBrCH3}$.<br/><br/>
 <b>⚠️ Common wrong approach:</b> Drawing a carbocation intermediate for $\ce{Br2}$ addition (this is correct for HBr but NOT for $\ce{Br2}$). $\ce{Br2}$ addition proceeds via a bromonium ion, not a carbocation — this is a key distinction IB examiners look for.
 </div>
-
 <div class="example">
-<b>Example 3 — Predicting Major Product with Multiple $\pi$ Bonds:</b><br><br>
-Compound X is $\ce{CH3CH=CHCH2CH=CH2}$ (hexa-1,4-diene). When treated with 1 equivalent of $\ce{HBr}$, what is the major product?<br><br>
-<b>Answer:</b> The two $\ce{C=C}$ bonds are in different chemical environments. C1=C2 is a terminal alkene (monosubstituted). C4=C5 is also disubstituted (both C4 and C5 have one alkyl and one H… wait: C4 is $\ce{–CH=}$, attached to H and $\ce{CH2}$; C5 is $\ce{=CH2}$, terminal). Both are similar. The electrophilic addition is faster at the more electron-rich $\pi$ bond. The product after Markovnikov addition at C4=C5 gives a more stable carbocation. <b>Major product: 4-bromohex-1-ene</b> (addition at C4=C5, Markovnikov).<br><br>
+<b>Example 3 — Predicting Major Product with Multiple $\pi$ Bonds:</b><br/><br/>
+Compound X is $\ce{CH3CH=CHCH2CH=CH2}$ (hexa-1,4-diene). When treated with 1 equivalent of $\ce{HBr}$, what is the major product?<br/><br/>
+<b>Answer:</b> The two $\ce{C=C}$ bonds are in different chemical environments. C1=C2 is a terminal alkene (monosubstituted). C4=C5 is also disubstituted (both C4 and C5 have one alkyl and one H… wait: C4 is $\ce{–CH=}$, attached to H and $\ce{CH2}$; C5 is $\ce{=CH2}$, terminal). Both are similar. The electrophilic addition is faster at the more electron-rich $\pi$ bond. The product after Markovnikov addition at C4=C5 gives a more stable carbocation. <b>Major product: 4-bromohex-1-ene</b> (addition at C4=C5, Markovnikov).<br/><br/>
 <b>⚠️ Common wrong approach:</b> Assuming addition always occurs at the terminal alkene because it is "less hindered." Steric effects matter, but carbocation stability is the dominant factor.
 </div>
-
 <!-- SECTION F -->
 <div class="misconception">
 <h3>⚠️ Common Mistakes to Avoid</h3>
 <ol>
-  <li><b>Carbocation vs. bromonium ion.</b> $\ce{HX}$ addition to alkenes proceeds via a <b>carbocation</b> intermediate. $\ce{X2}$ (especially $\ce{Br2}$ and $\ce{Cl2}$) addition proceeds via a <b>cyclic halonium ion</b>. Drawing a carbocation for $\ce{Br2}$ addition will lose marks on Paper 2.</li>
-  <li><b>Markovnikov's rule is about carbocation stability, not "rich get richer."</b> The H goes to the carbon with more H atoms because that leaves the more substituted (more stable) carbocation. It is a consequence of mechanism, not an arbitrary rule.</li>
-  <li><b>Free-radical substitution produces mixtures.</b> Unlike electrophilic addition, FRS is non-selective. The exam expects you to mention that further substitution occurs and that a mixture of mono-, di-, and poly-substituted products forms.</li>
-  <li><b>Alkanes are not completely unreactive.</b> They react with halogens under UV — but ONLY by free-radical substitution. They do <b>not</b> react with polar reagents (acids, bases, nucleophiles, electrophiles) because $\ce{C–C}$ and $\ce{C–H}$ $\sigma$ bonds are strong and non-polar.</li>
-  <li><b>Curly arrows show electron movement, not atom movement.</b> The arrow starts at the electron source (lone pair, $\pi$ bond) and points to where the electrons end up. Never draw an arrow from a positive charge or from a hydrogen atom.</li>
+<li><b>Carbocation vs. bromonium ion.</b> $\ce{HX}$ addition to alkenes proceeds via a <b>carbocation</b> intermediate. $\ce{X2}$ (especially $\ce{Br2}$ and $\ce{Cl2}$) addition proceeds via a <b>cyclic halonium ion</b>. Drawing a carbocation for $\ce{Br2}$ addition will lose marks on Paper 2.</li>
+<li><b>Markovnikov's rule is about carbocation stability, not "rich get richer."</b> The H goes to the carbon with more H atoms because that leaves the more substituted (more stable) carbocation. It is a consequence of mechanism, not an arbitrary rule.</li>
+<li><b>Free-radical substitution produces mixtures.</b> Unlike electrophilic addition, FRS is non-selective. The exam expects you to mention that further substitution occurs and that a mixture of mono-, di-, and poly-substituted products forms.</li>
+<li><b>Alkanes are not completely unreactive.</b> They react with halogens under UV — but ONLY by free-radical substitution. They do <b>not</b> react with polar reagents (acids, bases, nucleophiles, electrophiles) because $\ce{C–C}$ and $\ce{C–H}$ $\sigma$ bonds are strong and non-polar.</li>
+<li><b>Curly arrows show electron movement, not atom movement.</b> The arrow starts at the electron source (lone pair, $\pi$ bond) and points to where the electrons end up. Never draw an arrow from a positive charge or from a hydrogen atom.</li>
 </ol>
 </div>
-
 <!-- SECTION G -->
 <h2>6. End-of-Lesson Practice</h2>
-
-<p><b>Question 1 (Paper 1 style):</b> Which species is the electrophile in the reaction of ethene with $\ce{Br2}$?<br>
-A. $\ce{Br2}$ (unpolarised) &nbsp; B. $\ce{Br^{\delta+}}$ in polarised $\ce{Br2}$ &nbsp; C. $\ce{Br-}$ &nbsp; D. The $\pi$ electrons of ethene</p>
-
+<p><b>Question 1 (Paper 1 style):</b> Which species is the electrophile in the reaction of ethene with $\ce{Br2}$?<br/>
+A. $\ce{Br2}$ (unpolarised)   B. $\ce{Br^{\delta+}}$ in polarised $\ce{Br2}$   C. $\ce{Br-}$   D. The $\pi$ electrons of ethene</p>
 <p><b>Question 2:</b> Write the full mechanism (with curly arrows) for the addition of $\ce{HBr}$ to 2-methylpropene $\ce{(CH3)2C=CH2}$.</p>
-
 <p><b>Question 3:</b> Draw and name all possible products when ethane reacts with excess chlorine under UV light.</p>
-
 <p><b>Question 4:</b> Predict the major product when $\ce{HI}$ adds to 3-methylbut-1-ene. Justify using carbocation stability.</p>
-
 <p><b>Question 5:</b> Explain the difference between homolytic and heterolytic bond fission. Give one example of each from alkane/alkene chemistry.</p>
-
 <p><b>Question 6 (Paper 2 style):</b> But-1-ene and but-2-ene are structural isomers with the molecular formula $\ce{C4H8}$. (a) Draw the structural formula of each isomer. (b) Predict the major product when each isomer reacts with $\ce{HBr}$, applying Markovnikov's rule. Name each product using IUPAC nomenclature. (c) Explain why but-1-ene and but-2-ene give the same major product with $\ce{HBr}$.</p>
-
 <button class="practice-toggle" onclick="var a=this.nextElementSibling;a.classList.toggle('open');this.textContent=a.classList.contains('open')?'▴ Hide Answers':'▸ Show Answers'">▸ Show Answers</button>
 <div class="practice-answers">
-
 <p><b>Answer 1:</b> B. The $\pi$ electrons of ethene polarise the $\ce{Br2}$ molecule, creating $\ce{Br^{\delta+}–Br^{\delta-}}$. The $\pi$ electrons attack $\ce{Br^{\delta+}}$ — the electrophile. $\ce{Br-}$ is the nucleophile in step 2. The $\pi$ electrons are the <em>nucleophile</em>, not the electrophile.</p>
-
-<p><b>Answer 2:</b> $\ce{(CH3)2C=CH2 + HBr -> (CH3)2CBr–CH3}$ (2-bromo-2-methylpropane, Markovnikov). <b>Step 1:</b> $\pi$ electrons attack $\ce{H^{\delta+}}$ of $\ce{HBr}$; $\ce{Br-}$ leaves. A 3° carbocation $\ce{(CH3)2C+–CH3}$ forms. <b>Step 2:</b> $\ce{Br-}$ attacks the carbocation. <b>Curly arrows:</b> from $\pi$ bond → H; from H–Br bond → Br; from $\ce{Br-}$ lone pair → carbocation C⁺.</p>
-
+<p><b>Answer 2:</b> $\ce{(CH3)2C=CH2 + HBr -&gt; (CH3)2CBr–CH3}$ (2-bromo-2-methylpropane, Markovnikov). <b>Step 1:</b> $\pi$ electrons attack $\ce{H^{\delta+}}$ of $\ce{HBr}$; $\ce{Br-}$ leaves. A 3° carbocation $\ce{(CH3)2C+–CH3}$ forms. <b>Step 2:</b> $\ce{Br-}$ attacks the carbocation. <b>Curly arrows:</b> from $\pi$ bond → H; from H–Br bond → Br; from $\ce{Br-}$ lone pair → carbocation C⁺.</p>
 <p><b>Answer 3:</b> Ethane $\ce{C2H6}$ → mono-substitution: $\ce{C2H5Cl}$ (chloroethane). Di-substitution: $\ce{CH3CHCl2}$ (1,1-dichloroethane) and $\ce{CH2ClCH2Cl}$ (1,2-dichloroethane). Tri- through hexa-substitution up to $\ce{C2Cl6}$ (hexachloroethane). All C–H bonds are potential substitution sites.</p>
-
 <p><b>Answer 4:</b> 3-methylbut-1-ene = $\ce{(CH3)2CHCH=CH2}$. Markovnikov: H⁺ adds to C1 (more H), forming a 2° carbocation at C2 ($\ce{(CH3)2CHC+HCH3}$). However, a <b>hydride shift</b> can occur: 2° → 3° carbocation ($\ce{(CH3)2C+CH2CH3}$) via a 1,2-hydride shift. The 3° carbocation is more stable. $\ce{I-}$ attacks. <b>Major product: 2-iodo-2-methylbutane</b> $\ce{(CH3)2CI–CH2CH3}$. (IB may accept the 2° product if hydride shift is not considered — check context.)</p>
-
-<p><b>Answer 5:</b> <b>Homolytic fission:</b> Each atom retains one electron from the bond — produces two radicals. Example: $\ce{Cl–Cl ->[hv] 2 Cl\cdot}$ (initiation step of FRS). <b>Heterolytic fission:</b> One atom takes both electrons — produces a cation and an anion. Example: $\ce{H–Br}$ in electrophilic addition → $\ce{H+}$ and $\ce{:Br-}$ (both electrons go to Br).</p>
-
+<p><b>Answer 5:</b> <b>Homolytic fission:</b> Each atom retains one electron from the bond — produces two radicals. Example: $\ce{Cl–Cl -&gt;[hv] 2 Cl\cdot}$ (initiation step of FRS). <b>Heterolytic fission:</b> One atom takes both electrons — produces a cation and an anion. Example: $\ce{H–Br}$ in electrophilic addition → $\ce{H+}$ and $\ce{:Br-}$ (both electrons go to Br).</p>
 <p><b>Answer 6:</b> (a) But-1-ene: $\ce{CH2=CHCH2CH3}$ (double bond between C1 and C2). But-2-ene: $\ce{CH3CH=CHCH3}$ (double bond between C2 and C3). (b) With $\ce{HBr}$, both isomers undergo electrophilic addition. But-1-ene: the $\ce{H+}$ adds to C1 (the less substituted carbon of the double bond, following Markovnikov's rule — hydrogen goes to the carbon that already has more hydrogen atoms), forming the more stable secondary carbocation at C2. $\ce{Br-}$ then attacks C2. Product: <b>2-bromobutane</b>, $\ce{CH3CHBrCH2CH3}$. But-2-ene: the double bond is symmetrically substituted (both carbons have one H and one $\ce{CH3}$), so the carbocation formed at either end is equally stable. $\ce{Br-}$ attacks. Product: <b>2-bromobutane</b>, $\ce{CH3CHBrCH2CH3}$. (c) Both isomers yield the same product because the carbocation intermediate formed in each case ends up with the bromine attached to the more substituted carbon. In but-1-ene, Markovnikov addition places Br on C2. In but-2-ene, the symmetry of the double bond also places Br on C2 (or equivalently C3 — they are the same position in the chain).</p>
 </div>
-
 <!-- SECTION H -->
 <h2>7. Key Terms</h2>
 <table>
@@ -440,15 +360,138 @@ A. $\ce{Br2}$ (unpolarised) &nbsp; B. $\ce{Br^{\delta+}}$ in polarised $\ce{Br2}
 <tr><td>Markovnikov's rule</td><td>In HX addition to an unsymmetrical alkene, H attaches to the less substituted carbon (more H atoms), X to the more substituted carbon — driven by carbocation stability</td></tr>
 <tr><td>Bromonium ion</td><td>A three-membered cyclic cation $\ce{[C–C–Br]+}$ formed during $\ce{Br2}$ addition to alkenes; leads to the two Br atoms adding to opposite faces of the original double bond</td></tr>
 </table>
-
 <!-- SECTION I -->
 <h2>8. Exam Tips</h2>
-
-<div class="exam-tip"><b>Paper 1 (Multiple Choice):</b> Carbocation stability ordering (3° > 2° > 1° > methyl) is tested almost every year. Also, "which reagent could be used to distinguish an alkane from an alkene?" — the answer is bromine water (alkane: no reaction in dark; alkene: decolourises instantly). $\ce{Br2/CCl4}$ also works. Know the difference between $\ce{Br2}$ in water vs. $\ce{Br2}$ in $\ce{CCl4}$.</div>
-
+<div class="exam-tip"><b>Paper 1 (Multiple Choice):</b> Carbocation stability ordering (3° &gt; 2° &gt; 1° &gt; methyl) is tested almost every year. Also, "which reagent could be used to distinguish an alkane from an alkene?" — the answer is bromine water (alkane: no reaction in dark; alkene: decolourises instantly). $\ce{Br2/CCl4}$ also works. Know the difference between $\ce{Br2}$ in water vs. $\ce{Br2}$ in $\ce{CCl4}$.</div>
 <div class="exam-tip"><b>Paper 2 — Mechanism Drawing (4–6 marks):</b> You MUST show: (1) the $\pi$ bond and all relevant lone pairs on the starting material; (2) curly arrows starting from the electron source; (3) the carbocation intermediate (with the + charge on the correct carbon); (4) the curly arrow from the nucleophile to the carbocation; (5) the final product. Miss any of these and you lose marks. Practice until it is automatic.</div>
-
 <div class="exam-tip"><b>Free-radical substitution questions:</b> IB examiners look for three distinct stages: initiation (UV + homolytic fission), propagation (two equations, radical consumed AND produced in each), and termination (any two radical–radical combinations). If you forget the termination step, you lose 1–2 marks. Remember: radicals combine in termination; they are not "neutralised" by anything else.</div>
 
+<div class="lesson-actions" style="margin: 2rem 0; padding: 1.5rem; background: #f8fafc; border-radius: 8px; display: flex; gap: 1rem; flex-wrap: wrap;">
+<button class="action-btn" id="generate-flashcards-btn" style="padding: 0.75rem 1.5rem; background: #3b82f6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        🗂️ Generate Flashcards
+    </button>
+<button class="action-btn" id="practice-problems-btn" style="padding: 0.75rem 1.5rem; background: #10b981; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        ✏️ Practice Problems
+    </button>
+<button class="action-btn" id="ask-ai-btn" style="padding: 0.75rem 1.5rem; background: #8b5cf6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        💬 Ask AI
+    </button>
+</div>
+<script>
+(function() {
+    const subjectKey = "chemistry";
+    const lessonId = "lesson_37";
+    const lessonTitle = "Lesson 37: Alkanes & Alkenes — Structure, Reactions & Mechanisms";
+
+    function getCsrf() {
+        var m = document.querySelector('meta[name="csrf-token"]');
+        return m ? m.getAttribute('content') : '';
+    }
+
+    // Completion checkbox
+    const checkbox = document.getElementById('lesson-complete');
+    if (checkbox) {
+        // Load saved state
+        const saved = localStorage.getItem(`completed_${subjectKey}_${lessonId}`);
+        if (saved === 'true') checkbox.checked = true;
+
+        checkbox.addEventListener('change', async function() {
+            const completed = this.checked;
+            localStorage.setItem(`completed_${subjectKey}_${lessonId}`, completed);
+
+            try {
+                await fetch('/toggle_completion', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': getCsrf()
+                    },
+                    body: JSON.stringify({
+                        subject: subjectKey,
+                        lesson: lessonId,
+                        completed: completed
+                    })
+                });
+            } catch(e) {
+                console.error('Error saving completion:', e);
+            }
+        });
+    }
+
+    // Generate Flashcards
+    const flashcardsBtn = document.getElementById('generate-flashcards-btn');
+    if (flashcardsBtn) {
+        flashcardsBtn.addEventListener('click', async function() {
+            this.disabled = true;
+            this.textContent = '⏳ Generating...';
+
+            try {
+                const content = document.body.innerText.substring(0, 2000);
+                const response = await fetch('/generate_flashcards', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': getCsrf()
+                    },
+                    body: JSON.stringify({
+                        subject: subjectKey,
+                        lesson: lessonTitle,
+                        content_summary: content
+                    })
+                });
+
+                const data = await response.json();
+                if (data.error) {
+                    alert('Error: ' + data.error);
+                } else {
+                    alert(`✅ Created ${data.count} flashcards! View them at /flashcards/${subjectKey}`);
+                }
+            } catch(e) {
+                alert('Error generating flashcards: ' + e.message);
+            } finally {
+                this.disabled = false;
+                this.textContent = '🗂️ Generate Flashcards';
+            }
+        });
+    }
+
+    // Practice Problems - open in new section
+    const practiceBtn = document.getElementById('practice-problems-btn');
+    if (practiceBtn) {
+        practiceBtn.addEventListener('click', function() {
+            alert('Practice problems feature coming soon! Use the AI chatbot to generate custom questions.');
+        });
+    }
+
+    // Ask AI - scroll to chatbot
+    const aiBtn = document.getElementById('ask-ai-btn');
+    if (aiBtn) {
+        aiBtn.addEventListener('click', function() {
+            const chatbot = document.getElementById('lessons-chatbot');
+            if (chatbot) {
+                chatbot.scrollIntoView({ behavior: 'smooth' });
+                const toggleBtn = chatbot.querySelector('.chatbot-toggle');
+                if (toggleBtn) toggleBtn.click();
+            } else {
+                alert('AI chatbot not available on this page. It will be added soon!');
+            }
+        });
+    }
+
+    // Track lesson view
+    fetch('/mark_viewed', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': getCsrf()
+        },
+        body: JSON.stringify({
+            subject: subjectKey,
+            lesson: lessonId
+        })
+    }).catch(e => console.error('Error tracking view:', e));
+
+})();
+</script>
 </body>
 </html>

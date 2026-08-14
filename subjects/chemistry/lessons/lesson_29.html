@@ -1,14 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Lesson 29 — Chemistry HL — Buffer Solutions</title>
 <script>
 window.MathJax = {tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] },
   loader: { load: ['[tex]/mhchem'] }};
 </script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <style>
 :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -42,218 +43,181 @@ pre.ascii-art { font-family: 'Courier New', monospace; font-size: 0.75rem; line-
 </style>
 </head>
 <body>
-
-<h1>Lesson 29: Buffer Solutions — Mechanism & Calculations</h1>
-
+<h1>Lesson 29: Buffer Solutions — Mechanism &amp; Calculations</h1>
 <p><b>Syllabus reference:</b> 18.2–18.3 (HL) — Buffer Solutions, Henderson–Hasselbalch Equation</p>
-
 <!-- SECTION A -->
 <div class="objectives">
 <h3>Learning Objectives</h3>
 <p>By the end of this lesson, you will be able to:</p>
 <ul>
-  <li><b>Define</b> a buffer solution and <b>explain</b> how it resists pH changes using equilibrium principles.</li>
-  <li><b>Identify</b> whether a given mixture will form a buffer (weak acid + conjugate base, or partial neutralisation).</li>
-  <li><b>Calculate</b> the pH of a buffer solution using the Henderson–Hasselbalch equation.</li>
-  <li><b>Calculate</b> the pH change when small amounts of strong acid or base are added to a buffer.</li>
-  <li><b>Describe</b> how to prepare a buffer of a desired pH in the laboratory.</li>
+<li><b>Define</b> a buffer solution and <b>explain</b> how it resists pH changes using equilibrium principles.</li>
+<li><b>Identify</b> whether a given mixture will form a buffer (weak acid + conjugate base, or partial neutralisation).</li>
+<li><b>Calculate</b> the pH of a buffer solution using the Henderson–Hasselbalch equation.</li>
+<li><b>Calculate</b> the pH change when small amounts of strong acid or base are added to a buffer.</li>
+<li><b>Describe</b> how to prepare a buffer of a desired pH in the laboratory.</li>
 </ul>
 </div>
-
 <!-- SECTION B -->
-<h2>1. Prior Knowledge Check</h2>
 
+<div class="lesson-completion" style="margin: 1rem 0; padding: 1rem; background: #f0f9ff; border-radius: 8px;">
+<label class="completion-checkbox" style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer;">
+<input id="lesson-complete" style="width: 24px; height: 24px; cursor: pointer; accent-color: #10b981;" type="checkbox"/>
+<span style="font-size: 1rem; color: #0f172a; font-weight: 500;">✓ Mark this lesson as complete</span>
+</label>
+</div>
+<h2>1. Prior Knowledge Check</h2>
 <p><b>Question 1:</b> What species must be present in a buffer solution?</p>
 <div class="check-in">
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">A buffer must contain a <b>weak acid and its conjugate base</b> (or a weak base and its conjugate acid) in significant concentrations. Both species must be present — one to neutralise added acid, the other to neutralise added base.</div>
 </div>
-
 <p><b>Question 2:</b> Write the $K_a$ expression for a generic weak acid $\ce{HA}$ and rearrange it to solve for $[\ce{H+}]$.</p>
 <div class="check-in">
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">$K_a = [\ce{H+}][\ce{A-}] / [\ce{HA}]$. Rearranging: $[\ce{H+}] = K_a \times [\ce{HA}] / [\ce{A-}]$. Taking $-\log$ of both sides gives the Henderson–Hasselbalch equation.</div>
 </div>
-
 <!-- SECTION C -->
 <h2>2. What Is a Buffer Solution?</h2>
-
 <p>A <b>buffer solution</b> is an aqueous solution that <b>resists changes in pH</b> when small amounts of strong acid or strong base are added. Buffers are essential in biological systems — your blood is buffered at pH 7.4 by the $\ce{H2CO3/HCO3-}$ system.</p>
-
 <p>A buffer contains a <b>weak acid–conjugate base pair</b>, such as:</p>
 <ul>
-  <li>$\ce{CH3COOH / CH3COO-}$ (ethanoic acid / ethanoate)</li>
-  <li>$\ce{NH4+ / NH3}$ (ammonium / ammonia — this is a weak acid/conjugate base pair!)</li>
-  <li>$\ce{H2CO3 / HCO3-}$ (carbonic acid / hydrogencarbonate)</li>
+<li>$\ce{CH3COOH / CH3COO-}$ (ethanoic acid / ethanoate)</li>
+<li>$\ce{NH4+ / NH3}$ (ammonium / ammonia — this is a weak acid/conjugate base pair!)</li>
+<li>$\ce{H2CO3 / HCO3-}$ (carbonic acid / hydrogencarbonate)</li>
 </ul>
-
 <h3>2.1 How a Buffer Works — The Two-Way Defence</h3>
-
 <p>Consider an ethanoic acid / ethanoate buffer: $\ce{CH3COOH}$ (the weak acid, HA) and $\ce{CH3COONa}$ (providing the conjugate base, $\ce{CH3COO-}$).</p>
-
 <div class="diagram">
-<svg width="620" height="280" viewBox="0 0 620 280">
-  <text x="310" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c5f2d">Buffer Action: Adding Acid or Base</text>
-  <!-- Buffer reservoir -->
-  <rect x="185" y="45" width="250" height="60" rx="10" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="2"/>
-  <text x="310" y="68" text-anchor="middle" font-size="12" font-weight="bold" fill="#2c5f2d">BUFFER RESERVOIR</text>
-  <text x="310" y="88" text-anchor="middle" font-size="11">CH₃COOH (large reservoir) + CH₃COO⁻ (large reservoir)</text>
-  <!-- Left: adding acid -->
-  <rect x="15" y="55" width="120" height="40" rx="6" fill="#ffebee" stroke="#c62828" stroke-width="2"/>
-  <text x="75" y="80" text-anchor="middle" font-size="11">Add H⁺ (acid)</text>
-  <line x1="135" y1="75" x2="180" y2="75" stroke="#c62828" stroke-width="2" marker-end="url(#arrR)"/>
-  <!-- Right: adding base -->
-  <rect x="485" y="55" width="120" height="40" rx="6" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
-  <text x="545" y="80" text-anchor="middle" font-size="11">Add OH⁻ (base)</text>
-  <line x1="480" y1="75" x2="440" y2="75" stroke="#1565c0" stroke-width="2" marker-end="url(#arrL)"/>
-  <!-- Below buffer: mechanisms -->
-  <rect x="30" y="140" width="250" height="55" rx="8" fill="#fff3e0" stroke="#e65100" stroke-width="1"/>
-  <text x="155" y="160" text-anchor="middle" font-size="11" font-weight="bold">H⁺ consumed by conjugate base:</text>
-  <text x="155" y="180" text-anchor="middle" font-size="11" fill="#c62828">CH₃COO⁻ + H⁺ → CH₃COOH</text>
-  <rect x="340" y="140" width="250" height="55" rx="8" fill="#fff3e0" stroke="#e65100" stroke-width="1"/>
-  <text x="465" y="160" text-anchor="middle" font-size="11" font-weight="bold">OH⁻ consumed by weak acid:</text>
-  <text x="465" y="180" text-anchor="middle" font-size="11" fill="#1565c0">CH₃COOH + OH⁻ → CH₃COO⁻ + H₂O</text>
-  <text x="310" y="230" text-anchor="middle" font-size="12" font-weight="bold" fill="#2c5f2d">RESULT: pH barely changes!</text>
-  <text x="310" y="255" text-anchor="middle" font-size="11" fill="#555">The equilibrium CH₃COOH ⇌ CH₃COO⁻ + H⁺ shifts to absorb the disturbance.</text>
-  <defs><marker id="arrR" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#c62828"/></marker>
-  <marker id="arrL" markerWidth="8" markerHeight="6" refX="0" refY="3" orient="auto"><path d="M8,0 L0,3 L8,6 Z" fill="#1565c0"/></marker></defs>
+<svg height="280" viewbox="0 0 620 280" width="620">
+<text fill="#2c5f2d" font-size="14" font-weight="bold" text-anchor="middle" x="310" y="22">Buffer Action: Adding Acid or Base</text>
+<!-- Buffer reservoir -->
+<rect fill="#e8f5e9" height="60" rx="10" stroke="#2c5f2d" stroke-width="2" width="250" x="185" y="45"></rect>
+<text fill="#2c5f2d" font-size="12" font-weight="bold" text-anchor="middle" x="310" y="68">BUFFER RESERVOIR</text>
+<text font-size="11" text-anchor="middle" x="310" y="88">CH₃COOH (large reservoir) + CH₃COO⁻ (large reservoir)</text>
+<!-- Left: adding acid -->
+<rect fill="#ffebee" height="40" rx="6" stroke="#c62828" stroke-width="2" width="120" x="15" y="55"></rect>
+<text font-size="11" text-anchor="middle" x="75" y="80">Add H⁺ (acid)</text>
+<line marker-end="url(#arrR)" stroke="#c62828" stroke-width="2" x1="135" x2="180" y1="75" y2="75"></line>
+<!-- Right: adding base -->
+<rect fill="#e3f2fd" height="40" rx="6" stroke="#1565c0" stroke-width="2" width="120" x="485" y="55"></rect>
+<text font-size="11" text-anchor="middle" x="545" y="80">Add OH⁻ (base)</text>
+<line marker-end="url(#arrL)" stroke="#1565c0" stroke-width="2" x1="480" x2="440" y1="75" y2="75"></line>
+<!-- Below buffer: mechanisms -->
+<rect fill="#fff3e0" height="55" rx="8" stroke="#e65100" stroke-width="1" width="250" x="30" y="140"></rect>
+<text font-size="11" font-weight="bold" text-anchor="middle" x="155" y="160">H⁺ consumed by conjugate base:</text>
+<text fill="#c62828" font-size="11" text-anchor="middle" x="155" y="180">CH₃COO⁻ + H⁺ → CH₃COOH</text>
+<rect fill="#fff3e0" height="55" rx="8" stroke="#e65100" stroke-width="1" width="250" x="340" y="140"></rect>
+<text font-size="11" font-weight="bold" text-anchor="middle" x="465" y="160">OH⁻ consumed by weak acid:</text>
+<text fill="#1565c0" font-size="11" text-anchor="middle" x="465" y="180">CH₃COOH + OH⁻ → CH₃COO⁻ + H₂O</text>
+<text fill="#2c5f2d" font-size="12" font-weight="bold" text-anchor="middle" x="310" y="230">RESULT: pH barely changes!</text>
+<text fill="#555" font-size="11" text-anchor="middle" x="310" y="255">The equilibrium CH₃COOH ⇌ CH₃COO⁻ + H⁺ shifts to absorb the disturbance.</text>
+<defs><marker id="arrR" markerheight="6" markerwidth="8" orient="auto" refx="8" refy="3"><path d="M0,0 L8,3 L0,6 Z" fill="#c62828"></path></marker>
+<marker id="arrL" markerheight="6" markerwidth="8" orient="auto" refx="0" refy="3"><path d="M8,0 L0,3 L8,6 Z" fill="#1565c0"></path></marker></defs>
 </svg>
 <div class="caption">Figure 1: Buffer action. Adding H⁺ is neutralised by the conjugate base; adding OH⁻ is neutralised by the weak acid. The large reservoirs of both species ensure the pH stays stable.</div>
 </div>
-
 <div class="check-in">
 <p><b>Check-in:</b> Which of these mixtures forms a buffer? (a) $\ce{HCl + NaCl}$, (b) $\ce{CH3COOH + CH3COONa}$, (c) $\ce{NH3 + NH4Cl}$, (d) $\ce{HNO3 + NaNO3}$.</p>
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">(a) No — HCl is a strong acid, not a buffer system. (b) <b>Yes</b> — weak acid + its conjugate base salt. (c) <b>Yes</b> — $\ce{NH4+}$ is a weak acid, $\ce{NH3}$ is its conjugate base. (d) No — HNO₃ is a strong acid. Buffers require <b>weak</b> acid/base + conjugate.</div>
 </div>
-
 <h2>3. The Henderson–Hasselbalch Equation</h2>
-
 <p>The pH of a buffer is calculated using the <b>Henderson–Hasselbalch equation</b>, derived from the $K_a$ expression:</p>
-
 <div class="definition" style="background:#fdf5e6;border-left:4px solid #d4a017;padding:0.6rem 1rem;margin:0.8rem 0;border-radius:0 8px 8px 0;">
 <b>Henderson–Hasselbalch Equation:</b>
 $$\mathrm{pH} = \mathrm{p}K_a + \log_{10}\frac{[\ce{A-}]}{[\ce{HA}]}$$
 where $[\ce{A-}]$ = concentration of conjugate base, $[\ce{HA}]$ = concentration of weak acid.
 </div>
-
 <p><b>Key insight:</b> When $[\ce{A-}] = [\ce{HA}]$, the log term becomes $\log(1) = 0$, and $\mathrm{pH} = \mathrm{p}K_a$. This is the <b>point of maximum buffering capacity</b> — the buffer works best within ±1 pH unit of $\mathrm{p}K_a$.</p>
-
 <h3>3.1 Making a Buffer by Partial Neutralisation</h3>
-
 <p>You can make a buffer by <b>partially neutralising</b> a weak acid with a strong base. For example, adding 0.5 equivalents of $\ce{NaOH}$ to $\ce{CH3COOH}$ leaves half the acid unreacted and converts the other half to $\ce{CH3COO-}$ — creating an equimolar buffer at $\mathrm{pH} = \mathrm{p}K_a = 4.76$.</p>
-
 <div class="diagram">
-<svg width="550" height="200" viewBox="0 0 550 200">
-  <text x="275" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c5f2d">Buffer Capacity vs. pH — Effective Range</text>
-  <line x1="40" y1="120" x2="510" y2="120" stroke="#333" stroke-width="2"/>
-  <text x="275" y="105" text-anchor="middle" font-size="11" fill="#555">Buffer pH</text>
-  <line x1="40" y1="115" x2="40" y2="125" stroke="#333" stroke-width="2"/>
-  <line x1="275" y1="115" x2="275" y2="125" stroke="#333" stroke-width="2"/>
-  <line x1="510" y1="115" x2="510" y2="125" stroke="#333" stroke-width="2"/>
-  <text x="40" y="140" text-anchor="middle" font-size="11">pKₐ−1</text>
-  <text x="275" y="140" text-anchor="middle" font-size="11" fill="#2c5f2d">pKₐ</text>
-  <text x="510" y="140" text-anchor="middle" font-size="11">pKₐ+1</text>
-  <!-- bell curve -->
-  <path d="M40,120 Q60,120 100,100 Q160,55 275,45 Q390,55 450,100 Q490,120 510,120" fill="none" stroke="#2c5f2d" stroke-width="3"/>
-  <path d="M40,120 Q100,120 140,105 Q210,65 275,55 Q340,65 410,105 Q450,120 510,120" fill="#e8f5e9" fill-opacity="0.3" stroke="none"/>
-  <text x="275" y="70" text-anchor="middle" font-size="12" fill="#e65100" font-weight="bold">Maximum buffering capacity</text>
-  <text x="275" y="175" text-anchor="middle" font-size="11" fill="#555">Effective range: [A⁻]/[HA] between 0.1 and 10 (ratio 1:10 to 10:1)</text>
+<svg height="200" viewbox="0 0 550 200" width="550">
+<text fill="#2c5f2d" font-size="14" font-weight="bold" text-anchor="middle" x="275" y="20">Buffer Capacity vs. pH — Effective Range</text>
+<line stroke="#333" stroke-width="2" x1="40" x2="510" y1="120" y2="120"></line>
+<text fill="#555" font-size="11" text-anchor="middle" x="275" y="105">Buffer pH</text>
+<line stroke="#333" stroke-width="2" x1="40" x2="40" y1="115" y2="125"></line>
+<line stroke="#333" stroke-width="2" x1="275" x2="275" y1="115" y2="125"></line>
+<line stroke="#333" stroke-width="2" x1="510" x2="510" y1="115" y2="125"></line>
+<text font-size="11" text-anchor="middle" x="40" y="140">pKₐ−1</text>
+<text fill="#2c5f2d" font-size="11" text-anchor="middle" x="275" y="140">pKₐ</text>
+<text font-size="11" text-anchor="middle" x="510" y="140">pKₐ+1</text>
+<!-- bell curve -->
+<path d="M40,120 Q60,120 100,100 Q160,55 275,45 Q390,55 450,100 Q490,120 510,120" fill="none" stroke="#2c5f2d" stroke-width="3"></path>
+<path d="M40,120 Q100,120 140,105 Q210,65 275,55 Q340,65 410,105 Q450,120 510,120" fill="#e8f5e9" fill-opacity="0.3" stroke="none"></path>
+<text fill="#e65100" font-size="12" font-weight="bold" text-anchor="middle" x="275" y="70">Maximum buffering capacity</text>
+<text fill="#555" font-size="11" text-anchor="middle" x="275" y="175">Effective range: [A⁻]/[HA] between 0.1 and 10 (ratio 1:10 to 10:1)</text>
 </svg>
 <div class="caption">Figure 2: Buffering capacity is highest at pH = pKₐ and falls off beyond ±1 pH unit. Outside this range, the buffer is effectively exhausted.</div>
 </div>
-
 <div class="check-in">
 <p><b>Check-in:</b> A buffer is made from 0.200 mol dm⁻³ $\ce{CH3COOH}$ and 0.150 mol dm⁻³ $\ce{CH3COONa}$ (pKₐ = 4.76). Calculate its pH.</p>
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">$\mathrm{pH} = 4.76 + \log(0.150/0.200) = 4.76 + \log(0.750) = 4.76 - 0.125 = \mathbf{4.64}$. The pH is slightly below pKₐ because there is more acid than conjugate base.</div>
 </div>
-
 <h2>4. Calculating pH Change After Adding Strong Acid/Base</h2>
-
 <p>When a strong acid is added to a buffer, the added $\ce{H+}$ reacts <em>completely</em> with the conjugate base $\ce{A-}$, converting it to $\ce{HA}$. Then recalculate using the new $[\ce{A-}]$ and $[\ce{HA}]$ in the Henderson–Hasselbalch equation.</p>
-
 <div class="check-in">
 <p><b>Check-in:</b> 1.00 dm³ of buffer contains 0.500 mol $\ce{CH3COOH}$ and 0.500 mol $\ce{CH3COONa}$ (pKₐ = 4.76). Calculate the pH after adding 0.050 mol $\ce{HCl}$.</p>
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">$\ce{H+}$ (0.050 mol) reacts with $\ce{CH3COO-}$: new $n(\ce{CH3COO-}) = 0.500 - 0.050 = 0.450$ mol. New $n(\ce{CH3COOH}) = 0.500 + 0.050 = 0.550$ mol. Volume unchanged (1.00 dm³). $\mathrm{pH} = 4.76 + \log(0.450/0.550) = 4.76 + \log(0.818) = 4.76 - 0.087 = \mathbf{4.67}$. Without the buffer, 0.050 mol HCl in 1 dm³ gives pH = 1.30 — the buffer kept it at 4.67!</div>
 </div>
-
 <!-- SECTION D -->
 <h2>5. Worked Examples</h2>
-
 <div class="example">
-<b>Example 1 — Preparing a Buffer at a Desired pH:</b><br><br>
-You need to prepare a buffer at pH 5.00 using ethanoic acid ($\mathrm{p}K_a = 4.76$) and sodium ethanoate. What must the ratio $[\ce{CH3COO-}]/[\ce{CH3COOH}]$ be?<br><br>
-<b>Step 1:</b> Use Henderson–Hasselbalch: $5.00 = 4.76 + \log([\ce{A-}]/[\ce{HA}])$.<br>
-<b>Step 2:</b> $\log([\ce{A-}]/[\ce{HA}]) = 5.00 - 4.76 = 0.24$.<br>
-<b>Step 3:</b> $[\ce{A-}]/[\ce{HA}] = 10^{0.24} = \mathbf{1.74}$. So you need 1.74× more ethanoate than ethanoic acid.<br>
-<b>Practical:</b> If you want $[\ce{HA}] = 0.100$ mol dm⁻³, then $[\ce{A-}] = 0.174$ mol dm⁻³.<br><br>
+<b>Example 1 — Preparing a Buffer at a Desired pH:</b><br/><br/>
+You need to prepare a buffer at pH 5.00 using ethanoic acid ($\mathrm{p}K_a = 4.76$) and sodium ethanoate. What must the ratio $[\ce{CH3COO-}]/[\ce{CH3COOH}]$ be?<br/><br/>
+<b>Step 1:</b> Use Henderson–Hasselbalch: $5.00 = 4.76 + \log([\ce{A-}]/[\ce{HA}])$.<br/>
+<b>Step 2:</b> $\log([\ce{A-}]/[\ce{HA}]) = 5.00 - 4.76 = 0.24$.<br/>
+<b>Step 3:</b> $[\ce{A-}]/[\ce{HA}] = 10^{0.24} = \mathbf{1.74}$. So you need 1.74× more ethanoate than ethanoic acid.<br/>
+<b>Practical:</b> If you want $[\ce{HA}] = 0.100$ mol dm⁻³, then $[\ce{A-}] = 0.174$ mol dm⁻³.<br/><br/>
 <b>⚠️ Common wrong approach:</b> Assuming pH = pKₐ means you can use any concentrations. pH = pKₐ only when $[\ce{A-}] = [\ce{HA}]$. For any other pH, you need to calculate the ratio.
 </div>
-
 <div class="example">
-<b>Example 2 — Buffer from Partial Neutralisation:</b><br><br>
-25.0 cm³ of 0.100 mol dm⁻³ $\ce{CH3COOH}$ is mixed with 15.0 cm³ of 0.100 mol dm⁻³ $\ce{NaOH}$. Calculate the pH of the resulting buffer. (pKₐ = 4.76)<br><br>
-<b>Step 1: Moles initially.</b> $n(\ce{CH3COOH})_{\text{initial}} = 0.100 \times 0.0250 = 0.00250$ mol. $n(\ce{NaOH}) = 0.100 \times 0.0150 = 0.00150$ mol.<br>
-<b>Step 2: Reaction.</b> $\ce{CH3COOH + OH- -> CH3COO- + H2O}$. OH⁻ is limiting. $n(\ce{CH3COOH})_{\text{remaining}} = 0.00250 - 0.00150 = 0.00100$ mol. $n(\ce{CH3COO-})_{\text{formed}} = 0.00150$ mol.<br>
-<b>Step 3: Total volume =</b> 40.0 cm³ = 0.0400 dm³. Concentrations: $[\ce{CH3COOH}] = 0.00100/0.0400 = 0.0250$, $[\ce{CH3COO-}] = 0.00150/0.0400 = 0.0375$ mol dm⁻³.<br>
-<b>Step 4:</b> $\mathrm{pH} = 4.76 + \log(0.0375/0.0250) = 4.76 + \log(1.50) = 4.76 + 0.176 = \mathbf{4.94}$.<br><br>
+<b>Example 2 — Buffer from Partial Neutralisation:</b><br/><br/>
+25.0 cm³ of 0.100 mol dm⁻³ $\ce{CH3COOH}$ is mixed with 15.0 cm³ of 0.100 mol dm⁻³ $\ce{NaOH}$. Calculate the pH of the resulting buffer. (pKₐ = 4.76)<br/><br/>
+<b>Step 1: Moles initially.</b> $n(\ce{CH3COOH})_{\text{initial}} = 0.100 \times 0.0250 = 0.00250$ mol. $n(\ce{NaOH}) = 0.100 \times 0.0150 = 0.00150$ mol.<br/>
+<b>Step 2: Reaction.</b> $\ce{CH3COOH + OH- -&gt; CH3COO- + H2O}$. OH⁻ is limiting. $n(\ce{CH3COOH})_{\text{remaining}} = 0.00250 - 0.00150 = 0.00100$ mol. $n(\ce{CH3COO-})_{\text{formed}} = 0.00150$ mol.<br/>
+<b>Step 3: Total volume =</b> 40.0 cm³ = 0.0400 dm³. Concentrations: $[\ce{CH3COOH}] = 0.00100/0.0400 = 0.0250$, $[\ce{CH3COO-}] = 0.00150/0.0400 = 0.0375$ mol dm⁻³.<br/>
+<b>Step 4:</b> $\mathrm{pH} = 4.76 + \log(0.0375/0.0250) = 4.76 + \log(1.50) = 4.76 + 0.176 = \mathbf{4.94}$.<br/><br/>
 <b>⚠️ Common wrong approach:</b> Forgetting to account for the total volume when converting moles to concentration. Since both species are in the same solution, the volume cancels in the ratio — you can use moles directly: $\mathrm{pH} = 4.76 + \log(0.00150/0.00100) = 4.94$. This shortcut works!
 </div>
-
 <div class="example">
-<b>Example 3 — Adding Strong Base to a Buffer:</b><br><br>
-A buffer is prepared with 0.300 mol $\ce{NH4Cl}$ and 0.200 mol $\ce{NH3}$ in 1.00 dm³. ($\mathrm{p}K_a$ of $\ce{NH4+}$ = 9.25). (a) Calculate the initial pH. (b) Calculate the pH after adding 0.050 mol $\ce{NaOH}$.<br><br>
-<b>(a)</b> $\mathrm{pH} = 9.25 + \log([\ce{NH3}]/[\ce{NH4+}]) = 9.25 + \log(0.200/0.300) = 9.25 - 0.176 = \mathbf{9.07}$.<br>
-<b>(b)</b> $\ce{OH-}$ reacts with $\ce{NH4+}$: $\ce{NH4+ + OH- -> NH3 + H2O}$. New $n(\ce{NH4+}) = 0.300 - 0.050 = 0.250$ mol. New $n(\ce{NH3}) = 0.200 + 0.050 = 0.250$ mol.<br>
-$\mathrm{pH} = 9.25 + \log(0.250/0.250) = 9.25 + 0 = \mathbf{9.25}$. Now the buffer is exactly at its pKₐ!<br><br>
+<b>Example 3 — Adding Strong Base to a Buffer:</b><br/><br/>
+A buffer is prepared with 0.300 mol $\ce{NH4Cl}$ and 0.200 mol $\ce{NH3}$ in 1.00 dm³. ($\mathrm{p}K_a$ of $\ce{NH4+}$ = 9.25). (a) Calculate the initial pH. (b) Calculate the pH after adding 0.050 mol $\ce{NaOH}$.<br/><br/>
+<b>(a)</b> $\mathrm{pH} = 9.25 + \log([\ce{NH3}]/[\ce{NH4+}]) = 9.25 + \log(0.200/0.300) = 9.25 - 0.176 = \mathbf{9.07}$.<br/>
+<b>(b)</b> $\ce{OH-}$ reacts with $\ce{NH4+}$: $\ce{NH4+ + OH- -&gt; NH3 + H2O}$. New $n(\ce{NH4+}) = 0.300 - 0.050 = 0.250$ mol. New $n(\ce{NH3}) = 0.200 + 0.050 = 0.250$ mol.<br/>
+$\mathrm{pH} = 9.25 + \log(0.250/0.250) = 9.25 + 0 = \mathbf{9.25}$. Now the buffer is exactly at its pKₐ!<br/><br/>
 <b>⚠️ Common wrong approach:</b> For the $\ce{NH4+/NH3}$ buffer, students sometimes use pKb instead of pKa. Remember: Henderson–Hasselbalch uses the pKa of the <b>acid form</b> — here $\ce{NH4+}$ is the acid, so use its pKa (which is 14 − pKb = 14 − 4.75 = 9.25).
 </div>
-
 <!-- SECTION F -->
 <div class="misconception">
 <h3>⚠️ Common Mistakes to Avoid</h3>
 <ol>
-  <li><b>Thinking any mixture of acid and base makes a buffer.</b> A buffer requires a <b>weak</b> acid/base pair. Mixtures of strong acids and strong bases do not create buffers — they simply neutralise each other.</li>
-  <li><b>Forgetting that buffers have limited capacity.</b> If you add too much strong acid or base, the buffer will be overwhelmed and the pH will change dramatically. Buffer capacity is proportional to the concentrations of HA and A⁻.</li>
-  <li><b>Using pKb instead of pKa</b> for buffers involving weak bases like NH₃. In the Henderson–Hasselbalch equation, always use the pKa of the acid form. For NH₄⁺/NH₃, the acid is NH₄⁺.</li>
-  <li><b>Diluting a buffer changes concentrations but not pH significantly.</b> Since both [HA] and [A⁻] are diluted by the same factor, their ratio (and therefore pH) remains approximately constant. This is because the Henderson–Hasselbalch equation uses the ratio, not absolute concentrations.</li>
+<li><b>Thinking any mixture of acid and base makes a buffer.</b> A buffer requires a <b>weak</b> acid/base pair. Mixtures of strong acids and strong bases do not create buffers — they simply neutralise each other.</li>
+<li><b>Forgetting that buffers have limited capacity.</b> If you add too much strong acid or base, the buffer will be overwhelmed and the pH will change dramatically. Buffer capacity is proportional to the concentrations of HA and A⁻.</li>
+<li><b>Using pKb instead of pKa</b> for buffers involving weak bases like NH₃. In the Henderson–Hasselbalch equation, always use the pKa of the acid form. For NH₄⁺/NH₃, the acid is NH₄⁺.</li>
+<li><b>Diluting a buffer changes concentrations but not pH significantly.</b> Since both [HA] and [A⁻] are diluted by the same factor, their ratio (and therefore pH) remains approximately constant. This is because the Henderson–Hasselbalch equation uses the ratio, not absolute concentrations.</li>
 </ol>
 </div>
-
 <!-- SECTION G -->
 <h2>6. End-of-Lesson Practice</h2>
-
-<p><b>Question 1 (Paper 1 style):</b> Which mixture produces a buffer solution?<br>
-A. $\ce{HCl}$ and $\ce{NaCl}$ &nbsp; B. $\ce{NaOH}$ and $\ce{NaCl}$ &nbsp; C. $\ce{CH3COOH}$ and $\ce{CH3COONa}$ &nbsp; D. $\ce{HNO3}$ and $\ce{NaNO3}$</p>
-
+<p><b>Question 1 (Paper 1 style):</b> Which mixture produces a buffer solution?<br/>
+A. $\ce{HCl}$ and $\ce{NaCl}$   B. $\ce{NaOH}$ and $\ce{NaCl}$   C. $\ce{CH3COOH}$ and $\ce{CH3COONa}$   D. $\ce{HNO3}$ and $\ce{NaNO3}$</p>
 <p><b>Question 2:</b> A buffer contains 0.200 mol dm⁻³ $\ce{HCOOH}$ (pKₐ = 3.75) and 0.300 mol dm⁻³ $\ce{HCOONa}$. Calculate its pH.</p>
-
 <p><b>Question 3:</b> 40.0 cm³ of 0.200 mol dm⁻³ $\ce{CH3COOH}$ is mixed with 30.0 cm³ of 0.200 mol dm⁻³ $\ce{NaOH}$. (a) Show that the resulting solution is a buffer. (b) Calculate its pH. (pKₐ = 4.76)</p>
-
 <p><b>Question 4:</b> A buffer is made by dissolving 0.400 mol $\ce{CH3COOH}$ and 0.400 mol $\ce{CH3COONa}$ in water to make 1.00 dm³ of solution. (a) Calculate the pH. (b) What is the new pH after adding 0.100 mol of $\ce{HCl}$?</p>
-
 <p><b>Question 5:</b> A biochemist needs a buffer at pH 7.40. She has $\ce{NaH2PO4}$ (pKₐ = 7.21 for $\ce{H2PO4-}$). What mass of $\ce{Na2HPO4}$ (molar mass 142 g mol⁻¹) must be added to 500 cm³ of 0.100 mol dm⁻³ $\ce{NaH2PO4}$ to achieve this pH?</p>
-
 <p><b>Question 6 (IB-style):</b> A student makes a buffer by mixing 50.0 cm³ of 0.500 mol dm⁻³ $\ce{CH3COOH}$ with 50.0 cm³ of 0.500 mol dm⁻³ $\ce{NaOH}$. (a) Explain why this does NOT produce a buffer. (b) What volume of 0.500 mol dm⁻³ $\ce{NaOH}$ should have been used to make a buffer at pH = pKₐ (4.76)?</p>
-
 <button class="practice-toggle" onclick="var a=this.nextElementSibling;a.classList.toggle('open');this.textContent=a.classList.contains('open')?'▴ Hide Answers':'▸ Show Answers'">▸ Show Answers</button>
 <div class="practice-answers">
-
 <p><b>Answer 1:</b> C. Only a weak acid + its conjugate base salt produces a buffer. HCl, HNO₃ and NaOH are all strong — they fully dissociate/neutralise.</p>
-
 <p><b>Answer 2:</b> $\mathrm{pH} = 3.75 + \log(0.300/0.200) = 3.75 + \log(1.50) = 3.75 + 0.176 = \mathbf{3.93}$.</p>
-
 <p><b>Answer 3:</b> (a) $n(\ce{CH3COOH})_{\text{initial}} = 0.200 \times 0.0400 = 0.00800$. $n(\ce{NaOH}) = 0.200 \times 0.0300 = 0.00600$. After reaction: $n(\ce{CH3COOH}) = 0.00200$, $n(\ce{CH3COO-}) = 0.00600$. Both are present → buffer. (b) Ratio = 0.00600/0.00200 = 3.00. $\mathrm{pH} = 4.76 + \log(3.00) = 4.76 + 0.477 = \mathbf{5.24}$.</p>
-
 <p><b>Answer 4:</b> (a) pH = 4.76 + log(0.400/0.400) = 4.76. (b) After HCl: $n(\ce{CH3COO-}) = 0.400 - 0.100 = 0.300$, $n(\ce{CH3COOH}) = 0.400 + 0.100 = 0.500$. pH = 4.76 + log(0.300/0.500) = 4.76 − 0.222 = 4.54. Change is only −0.22 units.</p>
-
 <p><b>Answer 5:</b> pH = 7.40, pKₐ = 7.21. $\log([\ce{HPO4^{2-}}]/[\ce{H2PO4-}]) = 7.40 − 7.21 = 0.19$. Ratio = $10^{0.19} = 1.55$. So $[\ce{HPO4^{2-}}] = 1.55 \times 0.100 = 0.155$ mol dm⁻³. Moles in 0.500 dm³ = 0.155 × 0.500 = 0.0775 mol. Mass = 0.0775 × 142 = <b>11.0 g</b>.</p>
-
 <p><b>Answer 6:</b> (a) Both have 0.0250 mol. NaOH completely neutralises CH₃COOH, leaving only CH₃COO⁻ — no weak acid remains, so it's not a buffer. (b) For pH = pKₐ, need equal moles of HA and A⁻. So add half as much NaOH: 0.0125 mol → 25.0 cm³ of 0.500 mol dm⁻³ NaOH.</p>
 </div>
-
 <!-- SECTION H -->
 <h2>7. Key Terms</h2>
 <table>
@@ -266,15 +230,138 @@ A. $\ce{HCl}$ and $\ce{NaCl}$ &nbsp; B. $\ce{NaOH}$ and $\ce{NaCl}$ &nbsp; C. $\
 <tr><td>Effective buffer range</td><td>$\mathrm{p}K_a \pm 1$; outside this range, the buffer is largely ineffective</td></tr>
 <tr><td>Equimolar buffer</td><td>A buffer where $[\ce{A-}] = [\ce{HA}]$, giving $\mathrm{pH} = \mathrm{p}K_a$</td></tr>
 </table>
-
 <!-- SECTION I -->
 <h2>8. Exam Tips</h2>
-
 <div class="exam-tip"><b>Paper 1 (Multiple Choice):</b> Questions often ask you to identify which mixture is a buffer. Look for a <b>weak acid/base plus its conjugate</b>. If both species are strong (e.g., HCl + NaCl), it is NOT a buffer. Also, if you see equimolar amounts of a weak acid and strong base, check carefully — that produces the conjugate base only, not a buffer.</div>
-
 <div class="exam-tip"><b>Paper 2 (Structured):</b> Buffer calculations are typically 3–5 mark questions. You earn marks for: (1) identifying the acid and conjugate base, (2) writing the Henderson–Hasselbalch equation, (3) correctly calculating moles before and after reaction for partial neutralisation questions, (4) correctly substituting the ratio. <b>Show the equation before plugging in numbers.</b></div>
+<div class="exam-tip"><b>Explaining buffer action:</b> If asked "how does a buffer work?", use the two-equation model: $\ce{A- + H+ -&gt; HA}$ (for added acid) and $\ce{HA + OH- -&gt; A- + H2O}$ (for added base). Then state that the equilibrium $\ce{HA &lt;=&gt; H+ + A-}$ shifts to counteract the disturbance — this is Le Chatelier's principle in action.</div>
 
-<div class="exam-tip"><b>Explaining buffer action:</b> If asked "how does a buffer work?", use the two-equation model: $\ce{A- + H+ -> HA}$ (for added acid) and $\ce{HA + OH- -> A- + H2O}$ (for added base). Then state that the equilibrium $\ce{HA <=> H+ + A-}$ shifts to counteract the disturbance — this is Le Chatelier's principle in action.</div>
+<div class="lesson-actions" style="margin: 2rem 0; padding: 1.5rem; background: #f8fafc; border-radius: 8px; display: flex; gap: 1rem; flex-wrap: wrap;">
+<button class="action-btn" id="generate-flashcards-btn" style="padding: 0.75rem 1.5rem; background: #3b82f6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        🗂️ Generate Flashcards
+    </button>
+<button class="action-btn" id="practice-problems-btn" style="padding: 0.75rem 1.5rem; background: #10b981; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        ✏️ Practice Problems
+    </button>
+<button class="action-btn" id="ask-ai-btn" style="padding: 0.75rem 1.5rem; background: #8b5cf6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        💬 Ask AI
+    </button>
+</div>
+<script>
+(function() {
+    const subjectKey = "chemistry";
+    const lessonId = "lesson_29";
+    const lessonTitle = "Lesson 29: Buffer Solutions — Mechanism & Calculations";
 
+    function getCsrf() {
+        var m = document.querySelector('meta[name="csrf-token"]');
+        return m ? m.getAttribute('content') : '';
+    }
+
+    // Completion checkbox
+    const checkbox = document.getElementById('lesson-complete');
+    if (checkbox) {
+        // Load saved state
+        const saved = localStorage.getItem(`completed_${subjectKey}_${lessonId}`);
+        if (saved === 'true') checkbox.checked = true;
+
+        checkbox.addEventListener('change', async function() {
+            const completed = this.checked;
+            localStorage.setItem(`completed_${subjectKey}_${lessonId}`, completed);
+
+            try {
+                await fetch('/toggle_completion', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': getCsrf()
+                    },
+                    body: JSON.stringify({
+                        subject: subjectKey,
+                        lesson: lessonId,
+                        completed: completed
+                    })
+                });
+            } catch(e) {
+                console.error('Error saving completion:', e);
+            }
+        });
+    }
+
+    // Generate Flashcards
+    const flashcardsBtn = document.getElementById('generate-flashcards-btn');
+    if (flashcardsBtn) {
+        flashcardsBtn.addEventListener('click', async function() {
+            this.disabled = true;
+            this.textContent = '⏳ Generating...';
+
+            try {
+                const content = document.body.innerText.substring(0, 2000);
+                const response = await fetch('/generate_flashcards', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': getCsrf()
+                    },
+                    body: JSON.stringify({
+                        subject: subjectKey,
+                        lesson: lessonTitle,
+                        content_summary: content
+                    })
+                });
+
+                const data = await response.json();
+                if (data.error) {
+                    alert('Error: ' + data.error);
+                } else {
+                    alert(`✅ Created ${data.count} flashcards! View them at /flashcards/${subjectKey}`);
+                }
+            } catch(e) {
+                alert('Error generating flashcards: ' + e.message);
+            } finally {
+                this.disabled = false;
+                this.textContent = '🗂️ Generate Flashcards';
+            }
+        });
+    }
+
+    // Practice Problems - open in new section
+    const practiceBtn = document.getElementById('practice-problems-btn');
+    if (practiceBtn) {
+        practiceBtn.addEventListener('click', function() {
+            alert('Practice problems feature coming soon! Use the AI chatbot to generate custom questions.');
+        });
+    }
+
+    // Ask AI - scroll to chatbot
+    const aiBtn = document.getElementById('ask-ai-btn');
+    if (aiBtn) {
+        aiBtn.addEventListener('click', function() {
+            const chatbot = document.getElementById('lessons-chatbot');
+            if (chatbot) {
+                chatbot.scrollIntoView({ behavior: 'smooth' });
+                const toggleBtn = chatbot.querySelector('.chatbot-toggle');
+                if (toggleBtn) toggleBtn.click();
+            } else {
+                alert('AI chatbot not available on this page. It will be added soon!');
+            }
+        });
+    }
+
+    // Track lesson view
+    fetch('/mark_viewed', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': getCsrf()
+        },
+        body: JSON.stringify({
+            subject: subjectKey,
+            lesson: lessonId
+        })
+    }).catch(e => console.error('Error tracking view:', e));
+
+})();
+</script>
 </body>
 </html>

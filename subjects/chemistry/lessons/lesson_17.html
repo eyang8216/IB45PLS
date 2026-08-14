@@ -1,14 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Lesson 17 — Chemistry HL — Born-Haber Cycles &amp; Enthalpy of Solution</title>
 <script>
 window.MathJax = {tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] },
   loader: { load: ['[tex]/mhchem'] }};
 </script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <style>
 :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -42,288 +43,234 @@ pre.ascii-art { font-family: 'Courier New', monospace; font-size: 0.75rem; line-
 </style>
 </head>
 <body>
-
 <h1>Lesson 17: Born-Haber Cycles &amp; Enthalpy of Solution <span style="font-size:0.7em;color:#e65100;">[HL]</span></h1>
-
 <p><b>Syllabus reference:</b> 5.1 (HL) — Born-Haber Cycle; 5.4 (HL) — Enthalpy of Solution</p>
-
 <!-- SECTION A -->
 <div class="objectives">
 <h3>Learning Objectives</h3>
 <p>By the end of this lesson, you will be able to:</p>
 <ul>
-  <li><b>Define</b> lattice enthalpy ($\Delta H_{\text{latt}}$) as the enthalpy change when one mole of an ionic solid is formed from its gaseous ions.</li>
-  <li><b>Construct</b> a Born-Haber cycle for an ionic compound, identifying all enthalpy terms: atomisation, ionisation energy, electron affinity, and lattice enthalpy.</li>
-  <li><b>Calculate</b> an unknown enthalpy term (typically lattice enthalpy) from a Born-Haber cycle using Hess's Law.</li>
-  <li><b>Define and calculate</b> enthalpy of solution ($\Delta H_{\text{sol}}$) from hydration enthalpies and lattice enthalpy.</li>
-  <li><b>Explain</b> why some ionic compounds are soluble and others are not, using the balance between lattice enthalpy and hydration enthalpy.</li>
+<li><b>Define</b> lattice enthalpy ($\Delta H_{\text{latt}}$) as the enthalpy change when one mole of an ionic solid is formed from its gaseous ions.</li>
+<li><b>Construct</b> a Born-Haber cycle for an ionic compound, identifying all enthalpy terms: atomisation, ionisation energy, electron affinity, and lattice enthalpy.</li>
+<li><b>Calculate</b> an unknown enthalpy term (typically lattice enthalpy) from a Born-Haber cycle using Hess's Law.</li>
+<li><b>Define and calculate</b> enthalpy of solution ($\Delta H_{\text{sol}}$) from hydration enthalpies and lattice enthalpy.</li>
+<li><b>Explain</b> why some ionic compounds are soluble and others are not, using the balance between lattice enthalpy and hydration enthalpy.</li>
 </ul>
 </div>
-
 <!-- SECTION B -->
-<h2>1. Prior Knowledge Check</h2>
 
+<div class="lesson-completion" style="margin: 1rem 0; padding: 1rem; background: #f0f9ff; border-radius: 8px;">
+<label class="completion-checkbox" style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer;">
+<input id="lesson-complete" style="width: 24px; height: 24px; cursor: pointer; accent-color: #10b981;" type="checkbox"/>
+<span style="font-size: 1rem; color: #0f172a; font-weight: 500;">✓ Mark this lesson as complete</span>
+</label>
+</div>
+<h2>1. Prior Knowledge Check</h2>
 <p><b>Question 1:</b> Define first ionisation energy and explain whether it is endothermic or exothermic.</p>
 <div class="check-in">
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
-<div class="answer-content"><b>First ionisation energy</b> is the energy required to remove one mole of electrons from one mole of gaseous atoms: $\ce{X(g) -> X+(g) + e-}$. It is always <b>endothermic</b> (positive) because removing an electron requires overcoming the electrostatic attraction to the nucleus.</div>
+<div class="answer-content"><b>First ionisation energy</b> is the energy required to remove one mole of electrons from one mole of gaseous atoms: $\ce{X(g) -&gt; X+(g) + e-}$. It is always <b>endothermic</b> (positive) because removing an electron requires overcoming the electrostatic attraction to the nucleus.</div>
 </div>
-
 <p><b>Question 2:</b> What is electron affinity, and what is its sign?</p>
 <div class="check-in">
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
-<div class="answer-content"><b>Electron affinity</b> is the enthalpy change when one mole of gaseous atoms gains one mole of electrons: $\ce{X(g) + e- -> X-(g)}$. The <b>first</b> electron affinity is usually <b>exothermic</b> (negative) because the electron is attracted to the nucleus. The <b>second</b> electron affinity (adding an electron to a negative ion) is <b>endothermic</b> (positive) — you are forcing an electron onto an already negative species, overcoming repulsion.</div>
+<div class="answer-content"><b>Electron affinity</b> is the enthalpy change when one mole of gaseous atoms gains one mole of electrons: $\ce{X(g) + e- -&gt; X-(g)}$. The <b>first</b> electron affinity is usually <b>exothermic</b> (negative) because the electron is attracted to the nucleus. The <b>second</b> electron affinity (adding an electron to a negative ion) is <b>endothermic</b> (positive) — you are forcing an electron onto an already negative species, overcoming repulsion.</div>
 </div>
-
 <p><b>Question 3:</b> What does "atomisation enthalpy" mean?</p>
 <div class="check-in">
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
-<div class="answer-content"><b>Standard enthalpy of atomisation</b> ($\Delta H_{\text{at}}^\ominus$) is the enthalpy change when one mole of gaseous atoms is formed from the element in its standard state. For example: $\ce{Na(s) -> Na(g)}$ (sublimation of sodium metal, +107 kJ mol⁻¹) or $\ce{1/2 Cl2(g) -> Cl(g)}$ (half the bond enthalpy of Cl₂, +121 kJ mol⁻¹). It is always <b>endothermic</b> (positive) — you must break bonds or overcome intermolecular forces.</div>
+<div class="answer-content"><b>Standard enthalpy of atomisation</b> ($\Delta H_{\text{at}}^\ominus$) is the enthalpy change when one mole of gaseous atoms is formed from the element in its standard state. For example: $\ce{Na(s) -&gt; Na(g)}$ (sublimation of sodium metal, +107 kJ mol⁻¹) or $\ce{1/2 Cl2(g) -&gt; Cl(g)}$ (half the bond enthalpy of Cl₂, +121 kJ mol⁻¹). It is always <b>endothermic</b> (positive) — you must break bonds or overcome intermolecular forces.</div>
 </div>
-
 <!-- SECTION C -->
 <h2>2. The Born-Haber Cycle — An Energy "Map" of Ionic Compound Formation</h2>
-
 <h3>2.1 What Is Lattice Enthalpy?</h3>
-
 <p><b>Lattice enthalpy</b> ($\Delta H_{\text{latt}}$) is the enthalpy change when one mole of a solid ionic compound is formed from its <b>gaseous ions</b>:</p>
 
-$$\ce{Na+(g) + Cl-(g) -> NaCl(s)}, \quad \Delta H_{\text{latt}}^\ominus = -790\text{ kJ mol}^{-1}$$
+$$\ce{Na+(g) + Cl-(g) -&gt; NaCl(s)}, \quad \Delta H_{\text{latt}}^\ominus = -790\text{ kJ mol}^{-1}$$
 
 <p>Lattice enthalpy is always <b>negative</b> (exothermic) because bringing oppositely charged ions together releases a large amount of energy. The magnitude depends on ionic charge and ionic radius — the stronger the electrostatic attraction, the more exothermic the lattice enthalpy.</p>
-
 <div class="definition" style="background:#fdf5e6;border-left:4px solid #d4a017;padding:0.6rem 1rem;margin:0.8rem 0;border-radius:0 8px 8px 0;">
-<b>Two conventions (IB uses both — read carefully):</b><br>
-• Lattice <b>formation</b> enthalpy: gaseous ions → solid, exothermic (−)<br>
-• Lattice <b>dissociation</b> enthalpy: solid → gaseous ions, endothermic (+), same magnitude, opposite sign.<br>
+<b>Two conventions (IB uses both — read carefully):</b><br/>
+• Lattice <b>formation</b> enthalpy: gaseous ions → solid, exothermic (−)<br/>
+• Lattice <b>dissociation</b> enthalpy: solid → gaseous ions, endothermic (+), same magnitude, opposite sign.<br/>
 The IB Data Booklet gives lattice <b>dissociation</b> enthalpies (positive values). In Born-Haber cycles, you must be consistent about which convention you use.
 </div>
-
 <h3>2.2 The Born-Haber Cycle for NaCl</h3>
-
-<p>A Born-Haber cycle is an application of Hess's Law to ionic compound formation. It breaks the overall formation reaction ($\ce{Na(s) + 1/2 Cl2(g) -> NaCl(s)}$) into a series of steps, each with a known or calculable enthalpy change.</p>
-
+<p>A Born-Haber cycle is an application of Hess's Law to ionic compound formation. It breaks the overall formation reaction ($\ce{Na(s) + 1/2 Cl2(g) -&gt; NaCl(s)}$) into a series of steps, each with a known or calculable enthalpy change.</p>
 <div class="diagram">
-<svg width="520" height="400" viewBox="0 0 520 400">
-  <text x="260" y="16" text-anchor="middle" font-size="12" font-weight="bold">Born-Haber Cycle for NaCl(s)</text>
-  
-  <!-- Level 1: Na(s) + 1/2 Cl2(g) -->
-  <rect x="90" y="30" width="340" height="30" rx="5" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="1.5"/>
-  <text x="260" y="50" text-anchor="middle" font-size="11">Na(s) + ½Cl₂(g)  ← [ΔH°<sub>f</sub> = −411]</text>
-  
-  <!-- Arrow down to NaCl -->
-  <line x1="260" y1="60" x2="260" y2="95" stroke="#2c5f2d" stroke-width="2" marker-end="url(#aG)"/>
-  
-  <!-- Level 2: Na(g) + 1/2 Cl2(g) Atomisation of Na -->
-  <line x1="90" y1="45" x2="90" y2="115" stroke="#1565c0" stroke-width="1.5" marker-end="url(#aB)"/>
-  <text x="70" y="80" font-size="8" fill="#1565c0">+107</text>
-  <rect x="90" y="110" width="200" height="25" rx="4" fill="#e3f2fd" stroke="#1565c0" stroke-width="1"/>
-  <text x="190" y="127" text-anchor="middle" font-size="10">Na(g) + ½Cl₂(g)</text>
-  
-  <!-- Level 3: Na+(g) + e- + 1/2 Cl2(g) Ionisation -->
-  <line x1="90" y1="135" x2="90" y2="175" stroke="#1565c0" stroke-width="1.5" marker-end="url(#aB)"/>
-  <text x="70" y="158" font-size="8" fill="#1565c0">+496</text>
-  <rect x="90" y="170" width="240" height="25" rx="4" fill="#e3f2fd" stroke="#1565c0" stroke-width="1"/>
-  <text x="210" y="187" text-anchor="middle" font-size="10">Na⁺(g) + e⁻ + ½Cl₂(g)</text>
-  
-  <!-- Level 4: Na+(g) + Cl(g) + e- Atomisation of Cl -->
-  <line x1="90" y1="195" x2="90" y2="235" stroke="#1565c0" stroke-width="1.5" marker-end="url(#aB)"/>
-  <text x="70" y="218" font-size="8" fill="#1565c0">+121</text>
-  <rect x="90" y="230" width="240" height="25" rx="4" fill="#e3f2fd" stroke="#1565c0" stroke-width="1"/>
-  <text x="210" y="247" text-anchor="middle" font-size="10">Na⁺(g) + Cl(g) + e⁻</text>
-  
-  <!-- Level 5: Na+(g) + Cl-(g) Electron affinity -->
-  <line x1="90" y1="255" x2="90" y2="295" stroke="#1565c0" stroke-width="1.5" marker-end="url(#aB)"/>
-  <text x="70" y="278" font-size="8" fill="#1565c0">−349</text>
-  <rect x="90" y="290" width="220" height="25" rx="4" fill="#e3f2fd" stroke="#1565c0" stroke-width="1"/>
-  <text x="200" y="307" text-anchor="middle" font-size="10">Na⁺(g) + Cl⁻(g)</text>
-  
-  <!-- Level 6: NaCl(s) -->
-  <line x1="90" y1="315" x2="90" y2="355" stroke="#c62828" stroke-width="1.5" marker-end="url(#aR)"/>
-  <text x="70" y="340" font-size="8" fill="#c62828">ΔH<sub>latt</sub></text>
-  <rect x="90" y="350" width="340" height="30" rx="5" fill="#ffebee" stroke="#c62828" stroke-width="1.5"/>
-  <text x="260" y="370" text-anchor="middle" font-size="11">NaCl(s)  [Route: elements → compound = sum of steps]</text>
-  
-  <defs>
-    <marker id="aG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#2c5f2d"/></marker>
-    <marker id="aB" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#1565c0"/></marker>
-    <marker id="aR" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#c62828"/></marker>
-  </defs>
+<svg height="400" viewbox="0 0 520 400" width="520">
+<text font-size="12" font-weight="bold" text-anchor="middle" x="260" y="16">Born-Haber Cycle for NaCl(s)</text>
+<!-- Level 1: Na(s) + 1/2 Cl2(g) -->
+<rect fill="#e8f5e9" height="30" rx="5" stroke="#2c5f2d" stroke-width="1.5" width="340" x="90" y="30"></rect>
+<text font-size="11" text-anchor="middle" x="260" y="50">Na(s) + ½Cl₂(g)  ← [ΔH°<sub>f</sub> = −411]</text>
+<!-- Arrow down to NaCl -->
+<line marker-end="url(#aG)" stroke="#2c5f2d" stroke-width="2" x1="260" x2="260" y1="60" y2="95"></line>
+<!-- Level 2: Na(g) + 1/2 Cl2(g) Atomisation of Na -->
+<line marker-end="url(#aB)" stroke="#1565c0" stroke-width="1.5" x1="90" x2="90" y1="45" y2="115"></line>
+<text fill="#1565c0" font-size="8" x="70" y="80">+107</text>
+<rect fill="#e3f2fd" height="25" rx="4" stroke="#1565c0" stroke-width="1" width="200" x="90" y="110"></rect>
+<text font-size="10" text-anchor="middle" x="190" y="127">Na(g) + ½Cl₂(g)</text>
+<!-- Level 3: Na+(g) + e- + 1/2 Cl2(g) Ionisation -->
+<line marker-end="url(#aB)" stroke="#1565c0" stroke-width="1.5" x1="90" x2="90" y1="135" y2="175"></line>
+<text fill="#1565c0" font-size="8" x="70" y="158">+496</text>
+<rect fill="#e3f2fd" height="25" rx="4" stroke="#1565c0" stroke-width="1" width="240" x="90" y="170"></rect>
+<text font-size="10" text-anchor="middle" x="210" y="187">Na⁺(g) + e⁻ + ½Cl₂(g)</text>
+<!-- Level 4: Na+(g) + Cl(g) + e- Atomisation of Cl -->
+<line marker-end="url(#aB)" stroke="#1565c0" stroke-width="1.5" x1="90" x2="90" y1="195" y2="235"></line>
+<text fill="#1565c0" font-size="8" x="70" y="218">+121</text>
+<rect fill="#e3f2fd" height="25" rx="4" stroke="#1565c0" stroke-width="1" width="240" x="90" y="230"></rect>
+<text font-size="10" text-anchor="middle" x="210" y="247">Na⁺(g) + Cl(g) + e⁻</text>
+<!-- Level 5: Na+(g) + Cl-(g) Electron affinity -->
+<line marker-end="url(#aB)" stroke="#1565c0" stroke-width="1.5" x1="90" x2="90" y1="255" y2="295"></line>
+<text fill="#1565c0" font-size="8" x="70" y="278">−349</text>
+<rect fill="#e3f2fd" height="25" rx="4" stroke="#1565c0" stroke-width="1" width="220" x="90" y="290"></rect>
+<text font-size="10" text-anchor="middle" x="200" y="307">Na⁺(g) + Cl⁻(g)</text>
+<!-- Level 6: NaCl(s) -->
+<line marker-end="url(#aR)" stroke="#c62828" stroke-width="1.5" x1="90" x2="90" y1="315" y2="355"></line>
+<text fill="#c62828" font-size="8" x="70" y="340">ΔH<sub>latt</sub></text>
+<rect fill="#ffebee" height="30" rx="5" stroke="#c62828" stroke-width="1.5" width="340" x="90" y="350"></rect>
+<text font-size="11" text-anchor="middle" x="260" y="370">NaCl(s)  [Route: elements → compound = sum of steps]</text>
+<defs>
+<marker id="aG" markerheight="6" markerwidth="8" orient="auto" refx="8" refy="3"><path d="M0,0 L8,3 L0,6 Z" fill="#2c5f2d"></path></marker>
+<marker id="aB" markerheight="6" markerwidth="8" orient="auto" refx="8" refy="3"><path d="M0,0 L8,3 L0,6 Z" fill="#1565c0"></path></marker>
+<marker id="aR" markerheight="6" markerwidth="8" orient="auto" refx="8" refy="3"><path d="M0,0 L8,3 L0,6 Z" fill="#c62828"></path></marker>
+</defs>
 </svg>
 <div class="caption">Figure 1: Born-Haber cycle for NaCl. Starting from elements (top) to final ionic solid (bottom), the cycle traces five steps: atomisation of Na, ionisation of Na, atomisation of Cl, electron affinity of Cl, and lattice enthalpy. By Hess's Law, the sum of all steps equals $\Delta H_f^\ominus(\ce{NaCl}) = -411\text{ kJ mol}^{-1}$.</div>
 </div>
-
 <div class="check-in">
 <p><b>Check-in:</b> Using the Born-Haber cycle for NaCl above, calculate the lattice formation enthalpy. $\Delta H_f^\ominus(\ce{NaCl}) = -411$, $\Delta H_{\text{at}}(\ce{Na}) = +107$, IE₁(Na) = +496, $\Delta H_{\text{at}}(\ce{1/2 Cl2}) = +121$, EA₁(Cl) = −349 kJ mol⁻¹.</p>
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">By Hess's Law: $\Delta H_f = +107 + 496 + 121 + (-349) + \Delta H_{\text{latt}} = -411$. So $\Delta H_{\text{latt}} = -411 - 107 - 496 - 121 + 349 = \mathbf{-786\text{ kJ mol}^{-1}}$ (formation). This is the energy released when $\ce{Na+}$ and $\ce{Cl-}$ ions come together to form the lattice.</div>
 </div>
-
 <h2>3. Enthalpy of Solution — Why Do Some Salts Dissolve?</h2>
-
 <h3>3.1 The Two-Step Process</h3>
-
 <p>When an ionic solid dissolves in water, two energy changes compete:</p>
-
 <ol>
-  <li><b>Breaking the lattice</b> — separating gaseous ions from the solid. This is the lattice <b>dissociation</b> enthalpy (endothermic, $+\Delta H_{\text{latt diss}}$).</li>
-  <li><b>Hydrating the ions</b> — surrounding each gaseous ion with water molecules. This is the <b>hydration enthalpy</b> (exothermic, $\Delta H_{\text{hyd}}$).</li>
+<li><b>Breaking the lattice</b> — separating gaseous ions from the solid. This is the lattice <b>dissociation</b> enthalpy (endothermic, $+\Delta H_{\text{latt diss}}$).</li>
+<li><b>Hydrating the ions</b> — surrounding each gaseous ion with water molecules. This is the <b>hydration enthalpy</b> (exothermic, $\Delta H_{\text{hyd}}$).</li>
 </ol>
-
 <div class="definition" style="background:#fdf5e6;border-left:4px solid #d4a017;padding:0.6rem 1rem;margin:0.8rem 0;border-radius:0 8px 8px 0;">
 <b>Enthalpy of solution:</b>
 $$\Delta H_{\text{sol}}^\ominus = \Delta H_{\text{latt diss}}^\ominus + \Delta H_{\text{hyd}}^\ominus$$
-$\Delta H_{\text{latt diss}}^\ominus$ = lattice dissociation enthalpy (positive). $\Delta H_{\text{hyd}}^\ominus$ = sum of hydration enthalpies of cation and anion (negative). If $|\Delta H_{\text{hyd}}| > \Delta H_{\text{latt diss}}$, the salt dissolves exothermically — but solubility depends on $\Delta G$, not just $\Delta H$ (see Lesson 18).
+$\Delta H_{\text{latt diss}}^\ominus$ = lattice dissociation enthalpy (positive). $\Delta H_{\text{hyd}}^\ominus$ = sum of hydration enthalpies of cation and anion (negative). If $|\Delta H_{\text{hyd}}| &gt; \Delta H_{\text{latt diss}}$, the salt dissolves exothermically — but solubility depends on $\Delta G$, not just $\Delta H$ (see Lesson 18).
 </div>
-
 <div class="diagram">
-<svg width="500" height="270" viewBox="0 0 500 270">
-  <text x="250" y="18" text-anchor="middle" font-size="11" font-weight="bold">Enthalpy of Solution: NaCl(s) → Na⁺(aq) + Cl⁻(aq)</text>
-  
-  <!-- NaCl(s) -->
-  <rect x="15" y="35" width="130" height="35" rx="6" fill="#ffebee" stroke="#c62828" stroke-width="1.5"/>
-  <text x="80" y="57" text-anchor="middle" font-size="11">NaCl(s)</text>
-  
-  <!-- Gaseous ions -->
-  <rect x="185" y="195" width="130" height="35" rx="6" fill="#fff8e1" stroke="#d4a017" stroke-width="1.5"/>
-  <text x="250" y="210" text-anchor="middle" font-size="10">Na⁺(g) + Cl⁻(g)</text>
-  <text x="250" y="225" text-anchor="middle" font-size="9" fill="#666">separated gaseous ions</text>
-  
-  <!-- Hydrated ions -->
-  <rect x="355" y="35" width="130" height="35" rx="6" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="1.5"/>
-  <text x="420" y="57" text-anchor="middle" font-size="11">Na⁺(aq) + Cl⁻(aq)</text>
-  
-  <!-- Step 1: Lattice dissociation (up) -->
-  <line x1="80" y1="70" x2="80" y2="190" stroke="#c62828" stroke-width="2"/>
-  <line x1="80" y1="190" x2="180" y2="210" stroke="#c62828" stroke-width="2" marker-end="url(#arR)"/>
-  <text x="65" y="130" font-size="9" fill="#c62828" transform="rotate(-90,65,130)">+ΔH<sub>latt diss</sub> (endothermic)</text>
-  
-  <!-- Step 2: Hydration (down) -->
-  <line x1="315" y1="210" x2="415" y2="210" stroke="#1565c0" stroke-width="2"/>
-  <line x1="415" y1="210" x2="415" y2="75" stroke="#1565c0" stroke-width="2" marker-end="url(#arB)"/>
-  <text x="430" y="145" font-size="9" fill="#1565c0" transform="rotate(90,430,145)">ΔH<sub>hyd</sub> (exothermic, −)</text>
-  
-  <!-- Direct arrow -->
-  <line x1="145" y1="52" x2="350" y2="52" stroke="#2c5f2d" stroke-width="2.5" marker-end="url(#arG)"/>
-  <text x="248" y="40" text-anchor="middle" font-size="11" font-weight="bold" fill="#2c5f2d">ΔH<sub>sol</sub> = ΔH<sub>latt diss</sub> + ΔH<sub>hyd</sub></text>
-  
-  <defs>
-    <marker id="arR" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#c62828"/></marker>
-    <marker id="arB" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#1565c0"/></marker>
-    <marker id="arG" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#2c5f2d"/></marker>
-  </defs>
+<svg height="270" viewbox="0 0 500 270" width="500">
+<text font-size="11" font-weight="bold" text-anchor="middle" x="250" y="18">Enthalpy of Solution: NaCl(s) → Na⁺(aq) + Cl⁻(aq)</text>
+<!-- NaCl(s) -->
+<rect fill="#ffebee" height="35" rx="6" stroke="#c62828" stroke-width="1.5" width="130" x="15" y="35"></rect>
+<text font-size="11" text-anchor="middle" x="80" y="57">NaCl(s)</text>
+<!-- Gaseous ions -->
+<rect fill="#fff8e1" height="35" rx="6" stroke="#d4a017" stroke-width="1.5" width="130" x="185" y="195"></rect>
+<text font-size="10" text-anchor="middle" x="250" y="210">Na⁺(g) + Cl⁻(g)</text>
+<text fill="#666" font-size="9" text-anchor="middle" x="250" y="225">separated gaseous ions</text>
+<!-- Hydrated ions -->
+<rect fill="#e8f5e9" height="35" rx="6" stroke="#2c5f2d" stroke-width="1.5" width="130" x="355" y="35"></rect>
+<text font-size="11" text-anchor="middle" x="420" y="57">Na⁺(aq) + Cl⁻(aq)</text>
+<!-- Step 1: Lattice dissociation (up) -->
+<line stroke="#c62828" stroke-width="2" x1="80" x2="80" y1="70" y2="190"></line>
+<line marker-end="url(#arR)" stroke="#c62828" stroke-width="2" x1="80" x2="180" y1="190" y2="210"></line>
+<text fill="#c62828" font-size="9" transform="rotate(-90,65,130)" x="65" y="130">+ΔH<sub>latt diss</sub> (endothermic)</text>
+<!-- Step 2: Hydration (down) -->
+<line stroke="#1565c0" stroke-width="2" x1="315" x2="415" y1="210" y2="210"></line>
+<line marker-end="url(#arB)" stroke="#1565c0" stroke-width="2" x1="415" x2="415" y1="210" y2="75"></line>
+<text fill="#1565c0" font-size="9" transform="rotate(90,430,145)" x="430" y="145">ΔH<sub>hyd</sub> (exothermic, −)</text>
+<!-- Direct arrow -->
+<line marker-end="url(#arG)" stroke="#2c5f2d" stroke-width="2.5" x1="145" x2="350" y1="52" y2="52"></line>
+<text fill="#2c5f2d" font-size="11" font-weight="bold" text-anchor="middle" x="248" y="40">ΔH<sub>sol</sub> = ΔH<sub>latt diss</sub> + ΔH<sub>hyd</sub></text>
+<defs>
+<marker id="arR" markerheight="6" markerwidth="8" orient="auto" refx="8" refy="3"><path d="M0,0 L8,3 L0,6 Z" fill="#c62828"></path></marker>
+<marker id="arB" markerheight="6" markerwidth="8" orient="auto" refx="8" refy="3"><path d="M0,0 L8,3 L0,6 Z" fill="#1565c0"></path></marker>
+<marker id="arG" markerheight="6" markerwidth="8" orient="auto" refx="8" refy="3"><path d="M0,0 L8,3 L0,6 Z" fill="#2c5f2d"></path></marker>
+</defs>
 </svg>
 <div class="caption">Figure 2: Enthalpy of solution as the sum of lattice dissociation (up, endothermic) and hydration (down, exothermic). The balance determines whether dissolving is overall endothermic or exothermic.</div>
 </div>
-
 <div class="check-in">
 <p><b>Check-in:</b> For NaCl, $\Delta H_{\text{latt diss}}^\ominus = +786$ kJ mol⁻¹ and $\Delta H_{\text{hyd}}^\ominus(\ce{Na+}) = -406$, $\Delta H_{\text{hyd}}^\ominus(\ce{Cl-}) = -378$ kJ mol⁻¹. Calculate $\Delta H_{\text{sol}}^\ominus$ and state whether dissolving NaCl is endothermic or exothermic.</p>
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">$\Delta H_{\text{hyd}}^\ominus = (-406) + (-378) = -784$ kJ mol⁻¹. $\Delta H_{\text{sol}}^\ominus = +786 + (-784) = \mathbf{+2\text{ kJ mol}^{-1}}$. Dissolving NaCl is <b>slightly endothermic</b>. Yet NaCl dissolves readily — this tells you that entropy (disorder), not just enthalpy, drives solubility (see Lesson 18).</div>
 </div>
-
 <h3>3.2 Factors Affecting Lattice and Hydration Enthalpies</h3>
-
 <table>
 <tr><th>Factor</th><th>Effect on lattice enthalpy</th><th>Effect on hydration enthalpy</th></tr>
 <tr><td><b>Increasing ionic charge</b></td><td>Much more exothermic (stronger attraction)</td><td>Much more exothermic (stronger ion–dipole)</td></tr>
 <tr><td><b>Increasing ionic radius</b></td><td>Less exothermic (weaker attraction)</td><td>Less exothermic (weaker ion–dipole)</td></tr>
 </table>
-
 <p>The balance between these competing effects determines solubility trends. For example, $\ce{MgO}$ has high lattice enthalpy (due to 2+/2− charges) and is <b>insoluble</b> — the lattice enthalpy dominates over hydration. $\ce{NaCl}$ (1+/1−) has moderate lattice enthalpy and dissolves.</p>
-
 <div class="check-in">
 <p><b>Check-in:</b> Explain why $\ce{CaCl2}$ is more soluble than $\ce{CaF2}$, even though both contain $\ce{Ca^2+}$.</p>
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">$\ce{F-}$ is much smaller than $\ce{Cl-}$, so the lattice enthalpy of $\ce{CaF2}$ is significantly more exothermic (stronger electrostatic attraction). The hydration enthalpy of $\ce{F-}$ is also more exothermic (small ion = stronger hydration), but the increase in lattice enthalpy outweighs the increase in hydration enthalpy. The net $\Delta H_{\text{sol}}$ for $\ce{CaF2}$ is less favourable, and fluoride's small radius also means the entropy change upon dissolution is less favourable.</div>
 </div>
-
 <h2>4. Worked Examples</h2>
-
 <div class="example">
-<b>Example 1 — Born-Haber for MgO:</b><br><br>
-Construct a Born-Haber cycle to calculate the lattice enthalpy of $\ce{MgO(s)}$.<br>
-Data (kJ mol⁻¹): $\Delta H_f^\ominus(\ce{MgO}) = -602$, $\Delta H_{\text{at}}(\ce{Mg}) = +148$, IE₁(Mg) = +738, IE₂(Mg) = +1451, $\Delta H_{\text{at}}(\ce{1/2 O2}) = +249$, EA₁(O) = −142, EA₂(O) = +844.<br><br>
-<b>Step 1: Write the formation equation.</b> $\ce{Mg(s) + 1/2 O2(g) -> MgO(s)}$, $\Delta H_f = -602$.<br>
-<b>Step 2: Atomise Mg.</b> $\ce{Mg(s) -> Mg(g)}$, +148.<br>
-<b>Step 3: Ionise Mg — twice.</b> $\ce{Mg(g) -> Mg+(g) + e-}$, +738. $\ce{Mg+(g) -> Mg^2+(g) + e-}$, +1451. Total IE = +2189.<br>
-<b>Step 4: Atomise O.</b> $\ce{1/2 O2(g) -> O(g)}$, +249.<br>
-<b>Step 5: Add electrons to O — twice.</b> EA₁ = −142, EA₂ = +844. Total EA = +702.<br>
-<b>Step 6: Apply Hess's Law.</b> $\Delta H_f = 148 + 2189 + 249 + 702 + \Delta H_{\text{latt}} = -602$. So $\Delta H_{\text{latt}} = -602 - 148 - 2189 - 249 - 702 = \mathbf{-3890\text{ kJ mol}^{-1}}$ (formation).<br><br>
-Note the enormous lattice enthalpy — direct consequence of the 2+/2− charges.<br><br>
+<b>Example 1 — Born-Haber for MgO:</b><br/><br/>
+Construct a Born-Haber cycle to calculate the lattice enthalpy of $\ce{MgO(s)}$.<br/>
+Data (kJ mol⁻¹): $\Delta H_f^\ominus(\ce{MgO}) = -602$, $\Delta H_{\text{at}}(\ce{Mg}) = +148$, IE₁(Mg) = +738, IE₂(Mg) = +1451, $\Delta H_{\text{at}}(\ce{1/2 O2}) = +249$, EA₁(O) = −142, EA₂(O) = +844.<br/><br/>
+<b>Step 1: Write the formation equation.</b> $\ce{Mg(s) + 1/2 O2(g) -&gt; MgO(s)}$, $\Delta H_f = -602$.<br/>
+<b>Step 2: Atomise Mg.</b> $\ce{Mg(s) -&gt; Mg(g)}$, +148.<br/>
+<b>Step 3: Ionise Mg — twice.</b> $\ce{Mg(g) -&gt; Mg+(g) + e-}$, +738. $\ce{Mg+(g) -&gt; Mg^2+(g) + e-}$, +1451. Total IE = +2189.<br/>
+<b>Step 4: Atomise O.</b> $\ce{1/2 O2(g) -&gt; O(g)}$, +249.<br/>
+<b>Step 5: Add electrons to O — twice.</b> EA₁ = −142, EA₂ = +844. Total EA = +702.<br/>
+<b>Step 6: Apply Hess's Law.</b> $\Delta H_f = 148 + 2189 + 249 + 702 + \Delta H_{\text{latt}} = -602$. So $\Delta H_{\text{latt}} = -602 - 148 - 2189 - 249 - 702 = \mathbf{-3890\text{ kJ mol}^{-1}}$ (formation).<br/><br/>
+Note the enormous lattice enthalpy — direct consequence of the 2+/2− charges.<br/><br/>
 <b>⚠️ Common wrong approach:</b> Forgetting that IE and EA for doubly-charged ions require TWO steps. Mg needs IE₁ + IE₂; O needs EA₁ + EA₂. Using only one of each gives a wildly inaccurate lattice enthalpy.
 </div>
-
 <div class="example">
-<b>Example 2 — Enthalpy of Solution of KBr:</b><br><br>
-Calculate $\Delta H_{\text{sol}}$ for $\ce{KBr(s)}$. Data (kJ mol⁻¹): $\Delta H_{\text{latt diss}} = +671$, $\Delta H_{\text{hyd}}(\ce{K+}) = -322$, $\Delta H_{\text{hyd}}(\ce{Br-}) = -336$.<br><br>
-<b>Step 1:</b> $\Delta H_{\text{hyd}}^\ominus = (-322) + (-336) = -658$ kJ mol⁻¹.<br>
-<b>Step 2:</b> $\Delta H_{\text{sol}} = +671 + (-658) = \mathbf{+13\text{ kJ mol}^{-1}}$.<br><br>
+<b>Example 2 — Enthalpy of Solution of KBr:</b><br/><br/>
+Calculate $\Delta H_{\text{sol}}$ for $\ce{KBr(s)}$. Data (kJ mol⁻¹): $\Delta H_{\text{latt diss}} = +671$, $\Delta H_{\text{hyd}}(\ce{K+}) = -322$, $\Delta H_{\text{hyd}}(\ce{Br-}) = -336$.<br/><br/>
+<b>Step 1:</b> $\Delta H_{\text{hyd}}^\ominus = (-322) + (-336) = -658$ kJ mol⁻¹.<br/>
+<b>Step 2:</b> $\Delta H_{\text{sol}} = +671 + (-658) = \mathbf{+13\text{ kJ mol}^{-1}}$.<br/><br/>
 <b>⚠️ Common wrong approach:</b> Using the lattice <b>formation</b> enthalpy (−671) instead of dissociation (+671). If you use −671, you get $\Delta H_{\text{sol}} = −671 − 658 = −1329$, which is absurdly large. Always confirm which convention you are using.
 </div>
-
 <div class="example">
-<b>Example 3 — Predicting Solubility from Enthalpy Data:</b><br><br>
-Compare $\Delta H_{\text{sol}}$ of LiCl and NaCl. Explain the trend in terms of ionic radii.<br>
-Data (kJ mol⁻¹): LiCl: $\Delta H_{\text{latt diss}} = +853$, $\Delta H_{\text{hyd}}(\ce{Li+}) = -520$, $\Delta H_{\text{hyd}}(\ce{Cl-}) = -378$. NaCl: as calculated earlier ($+786$, $−406$, $−378$).<br><br>
-<b>Step 1:</b> LiCl: $\Delta H_{\text{sol}} = 853 + (-520 - 378) = 853 - 898 = \mathbf{-45\text{ kJ mol}^{-1}}$ (exothermic).<br>
-<b>Step 2:</b> NaCl: $\Delta H_{\text{sol}} = 786 + (-406 - 378) = 786 - 784 = \mathbf{+2\text{ kJ mol}^{-1}}$ (slightly endothermic).<br>
-<b>Step 3: Explanation.</b> Li⁺ has a smaller ionic radius than Na⁺, so both $\Delta H_{\text{latt diss}}$ and $|\Delta H_{\text{hyd}}|$ are larger for LiCl. However, $|\Delta H_{\text{hyd}}|$ increases more sharply for the small Li⁺ ion, outweighing the increased lattice enthalpy — making LiCl dissolution exothermic.<br><br>
+<b>Example 3 — Predicting Solubility from Enthalpy Data:</b><br/><br/>
+Compare $\Delta H_{\text{sol}}$ of LiCl and NaCl. Explain the trend in terms of ionic radii.<br/>
+Data (kJ mol⁻¹): LiCl: $\Delta H_{\text{latt diss}} = +853$, $\Delta H_{\text{hyd}}(\ce{Li+}) = -520$, $\Delta H_{\text{hyd}}(\ce{Cl-}) = -378$. NaCl: as calculated earlier ($+786$, $−406$, $−378$).<br/><br/>
+<b>Step 1:</b> LiCl: $\Delta H_{\text{sol}} = 853 + (-520 - 378) = 853 - 898 = \mathbf{-45\text{ kJ mol}^{-1}}$ (exothermic).<br/>
+<b>Step 2:</b> NaCl: $\Delta H_{\text{sol}} = 786 + (-406 - 378) = 786 - 784 = \mathbf{+2\text{ kJ mol}^{-1}}$ (slightly endothermic).<br/>
+<b>Step 3: Explanation.</b> Li⁺ has a smaller ionic radius than Na⁺, so both $\Delta H_{\text{latt diss}}$ and $|\Delta H_{\text{hyd}}|$ are larger for LiCl. However, $|\Delta H_{\text{hyd}}|$ increases more sharply for the small Li⁺ ion, outweighing the increased lattice enthalpy — making LiCl dissolution exothermic.<br/><br/>
 <b>⚠️ Common wrong approach:</b> Assuming that smaller ions = less soluble because of higher lattice enthalpy. This is only half the story — smaller ions also have more exothermic hydration. You must consider both.
 </div>
-
 <!-- SECTION F -->
 <div class="misconception">
 <h3>⚠️ Common Mistakes to Avoid</h3>
 <ol>
-  <li><b>"Confusing lattice formation and lattice dissociation enthalpy."</b> Lattice formation (gaseous ions → solid) is exothermic (−). Lattice dissociation (solid → gaseous ions) is endothermic (+). The IB Data Booklet historically gives <b>dissociation</b> values (positive). Always check which direction the question uses.</li>
-  <li><b>"Forgetting that second electron affinity is endothermic."</b> EA₁ is exothermic (electron attracted to neutral atom). EA₂ is always <b>endothermic</b> — you are forcing a second electron onto an already negative ion against electrostatic repulsion. For O²⁻, EA₁ = −142 but EA₂ = +844 kJ mol⁻¹.</li>
-  <li><b>"Treating atomisation of diatomic gases as the bond enthalpy."</b> For $\ce{1/2 Cl2(g) -> Cl(g)}$, you need <b>half</b> the bond enthalpy of $\ce{Cl-Cl}$ (half of +242 = +121), not the full +242. For $\ce{1/2 O2(g) -> O(g)}$, you need half of +498 = +249.</b></li>
-  <li><b>"Assuming $\Delta H_{\text{sol}} < 0$ means soluble, and $\Delta H_{\text{sol}} > 0$ means insoluble."</b> Solubility depends on $\Delta G$, not $\Delta H$. NaCl has $\Delta H_{\text{sol}} \approx +2$ kJ mol⁻¹ but is highly soluble because the large positive entropy change ($\Delta S \gg 0$) makes $\Delta G < 0$ at 298 K.</li>
+<li><b>"Confusing lattice formation and lattice dissociation enthalpy."</b> Lattice formation (gaseous ions → solid) is exothermic (−). Lattice dissociation (solid → gaseous ions) is endothermic (+). The IB Data Booklet historically gives <b>dissociation</b> values (positive). Always check which direction the question uses.</li>
+<li><b>"Forgetting that second electron affinity is endothermic."</b> EA₁ is exothermic (electron attracted to neutral atom). EA₂ is always <b>endothermic</b> — you are forcing a second electron onto an already negative ion against electrostatic repulsion. For O²⁻, EA₁ = −142 but EA₂ = +844 kJ mol⁻¹.</li>
+<li><b>"Treating atomisation of diatomic gases as the bond enthalpy."</b> For $\ce{1/2 Cl2(g) -&gt; Cl(g)}$, you need <b>half</b> the bond enthalpy of $\ce{Cl-Cl}$ (half of +242 = +121), not the full +242. For $\ce{1/2 O2(g) -&gt; O(g)}$, you need half of +498 = +249.</li>
+<li><b>"Assuming $\Delta H_{\text{sol}} &lt; 0$ means soluble, and $\Delta H_{\text{sol}} &gt; 0$ means insoluble."</b> Solubility depends on $\Delta G$, not $\Delta H$. NaCl has $\Delta H_{\text{sol}} \approx +2$ kJ mol⁻¹ but is highly soluble because the large positive entropy change ($\Delta S \gg 0$) makes $\Delta G &lt; 0$ at 298 K.</li>
 </ol>
 </div>
-
 <!-- SECTION G -->
 <h2>5. End-of-Lesson Practice</h2>
-
-<p><b>Question 1 (Paper 1 style):</b> In a Born-Haber cycle, which step is always endothermic?<br>
-A. First electron affinity &nbsp; B. Lattice formation &nbsp; C. Ionisation energy &nbsp; D. Hydration of ions</p>
-
+<p><b>Question 1 (Paper 1 style):</b> In a Born-Haber cycle, which step is always endothermic?<br/>
+A. First electron affinity   B. Lattice formation   C. Ionisation energy   D. Hydration of ions</p>
 <p><b>Question 2:</b> Use the following data to calculate the lattice formation enthalpy of $\ce{KCl(s)}$ (kJ mol⁻¹): $\Delta H_f^\ominus(\ce{KCl}) = -437$, $\Delta H_{\text{at}}(\ce{K}) = +89$, IE₁(K) = +419, $\Delta H_{\text{at}}(\ce{1/2 Cl2}) = +121$, EA₁(Cl) = −349.</p>
-
 <p><b>Question 3:</b> Calculate $\Delta H_{\text{sol}}$ for $\ce{CaCl2(s)}$ given (kJ mol⁻¹): $\Delta H_{\text{latt diss}} = +2258$, $\Delta H_{\text{hyd}}(\ce{Ca^2+}) = -1650$, $\Delta H_{\text{hyd}}(\ce{Cl-}) = -378$.</p>
-
 <p><b>Question 4:</b> The lattice dissociation enthalpy of AgCl is +915 kJ mol⁻¹ and that of NaCl is +786 kJ mol⁻¹. Both have the same structure (rock salt). Explain why AgCl has a larger lattice enthalpy, even though Ag⁺ and Na⁺ have similar ionic radii.</p>
-
 <p><b>Question 5:</b> Construct a Born-Haber cycle for $\ce{CaO(s)}$ and calculate its lattice formation enthalpy. Data (kJ mol⁻¹): $\Delta H_f^\ominus(\ce{CaO}) = -635$, $\Delta H_{\text{at}}(\ce{Ca}) = +178$, IE₁(Ca) = +590, IE₂(Ca) = +1145, $\Delta H_{\text{at}}(\ce{1/2 O2}) = +249$, EA₁(O) = −142, EA₂(O) = +844.</p>
-
-<p><b>Question 6 (IB-style):</b> The solubility of Group 2 sulfates decreases down the group: $\ce{MgSO4}$ is soluble, $\ce{CaSO4}$ is sparingly soluble, $\ce{BaSO4}$ is insoluble.<br>
-(a) Explain this trend in terms of lattice and hydration enthalpies.<br>
+<p><b>Question 6 (IB-style):</b> The solubility of Group 2 sulfates decreases down the group: $\ce{MgSO4}$ is soluble, $\ce{CaSO4}$ is sparingly soluble, $\ce{BaSO4}$ is insoluble.<br/>
+(a) Explain this trend in terms of lattice and hydration enthalpies.<br/>
 (b) Why does the trend reverse for Group 2 hydroxides?</p>
-
 <button class="practice-toggle" onclick="var a=this.nextElementSibling;a.classList.toggle('open');this.textContent=a.classList.contains('open')?'▴ Hide Answers':'▸ Show Answers'">▸ Show Answers</button>
 <div class="practice-answers">
-
 <p><b>Answer 1:</b> C. Ionisation energy is always endothermic (positive). First electron affinity (A) is usually exothermic. Lattice formation (B) is exothermic. Hydration (D) is exothermic.</p>
-
 <p><b>Answer 2:</b> $\Delta H_f = +89 + 419 + 121 + (-349) + \Delta H_{\text{latt}} = -437$. $\Delta H_{\text{latt}} = -437 - 89 - 419 - 121 + 349 = \mathbf{-717\text{ kJ mol}^{-1}}$ (formation).</p>
-
 <p><b>Answer 3:</b> Total hydration = (−1650) + 2(−378) = −2406 kJ mol⁻¹ (note: 2 Cl⁻ ions). $\Delta H_{\text{sol}} = +2258 + (-2406) = \mathbf{-148\text{ kJ mol}^{-1}}$ (exothermic).</p>
-
 <p><b>Answer 4:</b> Ag⁺ has a much higher polarising power than Na⁺ because Ag⁺ has a d¹⁰ electron configuration that does not shield the nuclear charge effectively. This leads to significant <b>covalent character</b> in the Ag–Cl bond, which adds to the purely ionic lattice enthalpy. The AgCl lattice enthalpy is "extra" large because of this partial covalent bonding — not because of simple ionic electrostatics.</p>
-
 <p><b>Answer 5:</b> Total IE(Ca) = 590 + 1145 = +1735. Total EA(O) = −142 + 844 = +702. $\Delta H_f = 178 + 1735 + 249 + 702 + \Delta H_{\text{latt}} = -635$. $\Delta H_{\text{latt}} = -635 - 178 - 1735 - 249 - 702 = \mathbf{-3499\text{ kJ mol}^{-1}}$.</p>
-
-<p><b>Answer 6:</b> (a) As you go down Group 2, the cation radius increases from Mg²⁺ to Ba²⁺. Both lattice enthalpy and hydration enthalpy become less exothermic (weaker), but for sulfates, the <b>lattice enthalpy decreases more slowly</b> than hydration enthalpy because the large sulfate ion dominates the lattice spacing. The hydration enthalpy drops sharply as the cation gets larger, making $\Delta H_{\text{sol}}$ increasingly endothermic — and $\Delta G_{\text{sol}}$ becomes less negative/positive, reducing solubility.<br>
+<p><b>Answer 6:</b> (a) As you go down Group 2, the cation radius increases from Mg²⁺ to Ba²⁺. Both lattice enthalpy and hydration enthalpy become less exothermic (weaker), but for sulfates, the <b>lattice enthalpy decreases more slowly</b> than hydration enthalpy because the large sulfate ion dominates the lattice spacing. The hydration enthalpy drops sharply as the cation gets larger, making $\Delta H_{\text{sol}}$ increasingly endothermic — and $\Delta G_{\text{sol}}$ becomes less negative/positive, reducing solubility.<br/>
 (b) For Group 2 hydroxides, the trend reverses because OH⁻ is a small anion. As the cation gets larger, the lattice enthalpy decreases <b>more sharply</b> than for sulfates (since OH⁻ is small, the cation size matters more for lattice spacing). The hydration enthalpy still drops, but the lattice enthalpy drops faster, making $\Delta G_{\text{sol}}$ more favourable down the group — so solubility increases from Mg(OH)₂ (insoluble) to Ba(OH)₂ (soluble).</p>
 </div>
-
 <!-- SECTION H -->
 <h2>6. Key Terms</h2>
 <table>
 <tr><th>Term</th><th>Definition</th></tr>
-<tr><td>Lattice enthalpy (formation)</td><td>The enthalpy change when one mole of a solid ionic compound forms from its gaseous ions; always exothermic ($\Delta H < 0$)</td></tr>
-<tr><td>Lattice dissociation enthalpy</td><td>The enthalpy change when one mole of an ionic solid separates into gaseous ions; always endothermic ($\Delta H > 0$), equal in magnitude to lattice formation enthalpy but opposite in sign</td></tr>
+<tr><td>Lattice enthalpy (formation)</td><td>The enthalpy change when one mole of a solid ionic compound forms from its gaseous ions; always exothermic ($\Delta H &lt; 0$)</td></tr>
+<tr><td>Lattice dissociation enthalpy</td><td>The enthalpy change when one mole of an ionic solid separates into gaseous ions; always endothermic ($\Delta H &gt; 0$), equal in magnitude to lattice formation enthalpy but opposite in sign</td></tr>
 <tr><td>Born-Haber cycle</td><td>A thermochemical cycle applying Hess's Law to the formation of an ionic compound, breaking it into atomisation, ionisation, electron affinity, and lattice enthalpy steps</td></tr>
 <tr><td>Enthalpy of atomisation</td><td>The enthalpy change when one mole of gaseous atoms forms from an element in its standard state; always endothermic</td></tr>
 <tr><td>Ionisation energy (IE)</td><td>The energy required to remove an electron from a gaseous atom or ion; always endothermic</td></tr>
@@ -331,15 +278,138 @@ A. First electron affinity &nbsp; B. Lattice formation &nbsp; C. Ionisation ener
 <tr><td>Hydration enthalpy</td><td>The enthalpy change when one mole of gaseous ions is surrounded by water molecules; always exothermic</td></tr>
 <tr><td>Enthalpy of solution ($\Delta H_{\text{sol}}$)</td><td>The enthalpy change when one mole of a solute dissolves in a solvent; $\Delta H_{\text{sol}} = \Delta H_{\text{latt diss}} + \Delta H_{\text{hyd}}$</td></tr>
 </table>
-
 <!-- SECTION I -->
 <h2>7. Exam Tips</h2>
-
-<div class="exam-tip"><b>Paper 1 (Multiple Choice):</b> Expect questions testing whether you can identify which Born-Haber step corresponds to a given equation. E.g., "$\ce{K(g) -> K+(g) + e-}$ represents..." Answer: first ionisation energy of potassium. Also, look for questions on the sign of EA₂ — second electron affinity is always endothermic, and this is a favourite trap.</div>
-
+<div class="exam-tip"><b>Paper 1 (Multiple Choice):</b> Expect questions testing whether you can identify which Born-Haber step corresponds to a given equation. E.g., "$\ce{K(g) -&gt; K+(g) + e-}$ represents..." Answer: first ionisation energy of potassium. Also, look for questions on the sign of EA₂ — second electron affinity is always endothermic, and this is a favourite trap.</div>
 <div class="exam-tip"><b>Paper 2 — Born-Haber Calculation:</b> Draw the cycle with clear, labelled arrows. List each step on a separate line with its value and sign. The data booklet gives ionisation energies (Section 8), bond enthalpies (Section 10), and some $\Delta H_f^\ominus$ values (Section 12). You are expected to halve bond enthalpies for diatomic atomisation yourself. Always check: does your final lattice enthalpy have the correct sign (negative for formation, positive for dissociation)?</div>
-
 <div class="exam-tip"><b>Paper 2 — Solubility Explanation:</b> When explaining solubility trends, you must discuss <b>both</b> lattice enthalpy and hydration enthalpy. "The lattice enthalpy becomes less exothermic" alone is worth only half the marks — you must compare the <b>relative rates</b> of change of the two factors. Use the phrases "lattice enthalpy decreases more slowly than hydration enthalpy" or vice versa to show you understand the balance.</div>
 
+<div class="lesson-actions" style="margin: 2rem 0; padding: 1.5rem; background: #f8fafc; border-radius: 8px; display: flex; gap: 1rem; flex-wrap: wrap;">
+<button class="action-btn" id="generate-flashcards-btn" style="padding: 0.75rem 1.5rem; background: #3b82f6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        🗂️ Generate Flashcards
+    </button>
+<button class="action-btn" id="practice-problems-btn" style="padding: 0.75rem 1.5rem; background: #10b981; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        ✏️ Practice Problems
+    </button>
+<button class="action-btn" id="ask-ai-btn" style="padding: 0.75rem 1.5rem; background: #8b5cf6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        💬 Ask AI
+    </button>
+</div>
+<script>
+(function() {
+    const subjectKey = "chemistry";
+    const lessonId = "lesson_17";
+    const lessonTitle = "Lesson 17: Born-Haber Cycles & Enthalpy of Solution [HL]";
+
+    function getCsrf() {
+        var m = document.querySelector('meta[name="csrf-token"]');
+        return m ? m.getAttribute('content') : '';
+    }
+
+    // Completion checkbox
+    const checkbox = document.getElementById('lesson-complete');
+    if (checkbox) {
+        // Load saved state
+        const saved = localStorage.getItem(`completed_${subjectKey}_${lessonId}`);
+        if (saved === 'true') checkbox.checked = true;
+
+        checkbox.addEventListener('change', async function() {
+            const completed = this.checked;
+            localStorage.setItem(`completed_${subjectKey}_${lessonId}`, completed);
+
+            try {
+                await fetch('/toggle_completion', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': getCsrf()
+                    },
+                    body: JSON.stringify({
+                        subject: subjectKey,
+                        lesson: lessonId,
+                        completed: completed
+                    })
+                });
+            } catch(e) {
+                console.error('Error saving completion:', e);
+            }
+        });
+    }
+
+    // Generate Flashcards
+    const flashcardsBtn = document.getElementById('generate-flashcards-btn');
+    if (flashcardsBtn) {
+        flashcardsBtn.addEventListener('click', async function() {
+            this.disabled = true;
+            this.textContent = '⏳ Generating...';
+
+            try {
+                const content = document.body.innerText.substring(0, 2000);
+                const response = await fetch('/generate_flashcards', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': getCsrf()
+                    },
+                    body: JSON.stringify({
+                        subject: subjectKey,
+                        lesson: lessonTitle,
+                        content_summary: content
+                    })
+                });
+
+                const data = await response.json();
+                if (data.error) {
+                    alert('Error: ' + data.error);
+                } else {
+                    alert(`✅ Created ${data.count} flashcards! View them at /flashcards/${subjectKey}`);
+                }
+            } catch(e) {
+                alert('Error generating flashcards: ' + e.message);
+            } finally {
+                this.disabled = false;
+                this.textContent = '🗂️ Generate Flashcards';
+            }
+        });
+    }
+
+    // Practice Problems - open in new section
+    const practiceBtn = document.getElementById('practice-problems-btn');
+    if (practiceBtn) {
+        practiceBtn.addEventListener('click', function() {
+            alert('Practice problems feature coming soon! Use the AI chatbot to generate custom questions.');
+        });
+    }
+
+    // Ask AI - scroll to chatbot
+    const aiBtn = document.getElementById('ask-ai-btn');
+    if (aiBtn) {
+        aiBtn.addEventListener('click', function() {
+            const chatbot = document.getElementById('lessons-chatbot');
+            if (chatbot) {
+                chatbot.scrollIntoView({ behavior: 'smooth' });
+                const toggleBtn = chatbot.querySelector('.chatbot-toggle');
+                if (toggleBtn) toggleBtn.click();
+            } else {
+                alert('AI chatbot not available on this page. It will be added soon!');
+            }
+        });
+    }
+
+    // Track lesson view
+    fetch('/mark_viewed', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': getCsrf()
+        },
+        body: JSON.stringify({
+            subject: subjectKey,
+            lesson: lessonId
+        })
+    }).catch(e => console.error('Error tracking view:', e));
+
+})();
+</script>
 </body>
 </html>

@@ -1,14 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Lesson 5 — Chemistry HL — Ionisation Energy I</title>
 <script>
 window.MathJax = {tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] },
   loader: { load: ['[tex]/mhchem'] }};
 </script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <style>
 :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -42,429 +43,351 @@ pre.ascii-art { font-family: 'Courier New', monospace; font-size: 0.75rem; line-
 </style>
 </head>
 <body>
-
 <h1>Lesson 5: Ionisation Energy I — First IE and Periodic Trends</h1>
-
 <p><b>Syllabus reference:</b> 3.1 (The Periodic Table — Periodic Trends), 12.1 (Electrons in Atoms — Ionisation Energy)</p>
-
 <!-- SECTION A -->
 <div class="objectives">
 <h3>Learning Objectives</h3>
 <p>By the end of this lesson, you will be able to:</p>
 <ul>
-  <li><b>Define</b> first ionisation energy and write balanced chemical equations for the process.</li>
-  <li><b>Identify</b> the three key factors that determine ionisation energy: nuclear charge, distance/shielding, and electron–electron repulsion.</li>
-  <li><b>Describe and explain</b> the general trend in first ionisation energy across a period and down a group.</li>
-  <li><b>Explain</b> the anomalous dips in first ionisation energy at Group 13 (e.g., Be → B) and Group 16 (e.g., N → O).</li>
-  <li><b>Compare</b> the first ionisation energies of given elements using electron configuration to justify your reasoning.</li>
+<li><b>Define</b> first ionisation energy and write balanced chemical equations for the process.</li>
+<li><b>Identify</b> the three key factors that determine ionisation energy: nuclear charge, distance/shielding, and electron–electron repulsion.</li>
+<li><b>Describe and explain</b> the general trend in first ionisation energy across a period and down a group.</li>
+<li><b>Explain</b> the anomalous dips in first ionisation energy at Group 13 (e.g., Be → B) and Group 16 (e.g., N → O).</li>
+<li><b>Compare</b> the first ionisation energies of given elements using electron configuration to justify your reasoning.</li>
 </ul>
 </div>
-
 <!-- SECTION B -->
-<h2>1. Prior Knowledge Check</h2>
 
+<div class="lesson-completion" style="margin: 1rem 0; padding: 1rem; background: #f0f9ff; border-radius: 8px;">
+<label class="completion-checkbox" style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer;">
+<input id="lesson-complete" style="width: 24px; height: 24px; cursor: pointer; accent-color: #10b981;" type="checkbox"/>
+<span style="font-size: 1rem; color: #0f172a; font-weight: 500;">✓ Mark this lesson as complete</span>
+</label>
+</div>
+<h2>1. Prior Knowledge Check</h2>
 <p><b>Question 1:</b> Write the full electron configuration of magnesium ($Z = 12$) using $1s$, $2s$, $2p$, $3s$ notation.</p>
 <div class="check-in">
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">$\ce{Mg}$: $\mathrm{1s^2\ 2s^2\ 2p^6\ 3s^2}$. Notice that the outermost electron is in the $3s$ subshell — this is the electron removed in the first ionisation.</div>
 </div>
-
 <p><b>Question 2:</b> What is meant by "shielding" in the context of atomic structure?</p>
 <div class="check-in">
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content"><b>Shielding</b> is the repulsion experienced by outer-shell electrons from inner-shell (core) electrons. Inner electrons lie between the nucleus and the outer electrons, reducing the full attractive pull of the nucleus. The <em>effective nuclear charge</em>, $Z_{\text{eff}}$, is the net positive charge actually felt by an outer electron after shielding is accounted for.</div>
 </div>
-
 <p><b>Question 3:</b> What is the relationship between atomic radius and the attraction between the nucleus and outer electrons?</p>
 <div class="check-in">
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">Electrostatic attraction follows Coulomb's law: $F \propto \frac{q_1 q_2}{r^2}$. The greater the distance ($r$) between the nucleus and the outer electron, the <b>weaker</b> the attraction — so less energy is required to remove the electron.</div>
 </div>
-
 <!-- SECTION C -->
 <h2>2. What Is First Ionisation Energy?</h2>
-
 <p>The <b>first ionisation energy</b> (IE₁) of an element is the <b>minimum energy required to remove one mole of electrons from one mole of gaseous atoms</b> to form one mole of gaseous singly charged cations:</p>
-
 <div class="definition" style="background:#fdf5e6;border-left:4px solid #d4a017;padding:0.6rem 1rem;margin:0.8rem 0;border-radius:0 8px 8px 0;">
 <b>General equation:</b>
-$$\ce{X(g) -> X+(g) + e-}\qquad \Delta H = \text{IE}_1$$
-<p style="margin-top:0.4rem;">Ionisation energy is always <b>endothermic</b> ($\Delta H > 0$) because energy must be <em>supplied</em> to overcome the electrostatic attraction between the nucleus and the electron.</p>
+$$\ce{X(g) -&gt; X+(g) + e-}\qquad \Delta H = \text{IE}_1$$
+<p style="margin-top:0.4rem;">Ionisation energy is always <b>endothermic</b> ($\Delta H &gt; 0$) because energy must be <em>supplied</em> to overcome the electrostatic attraction between the nucleus and the electron.</p>
 </div>
-
 <p>Three things to note about this definition — <b>all three must appear in an IB exam answer</b>:</p>
 <ol>
-  <li><b>Gaseous state</b> — the atom must be isolated in the gas phase so that no intermolecular forces interfere.</li>
-  <li><b>One mole</b> — IE is quoted in kJ mol⁻¹, i.e., per mole of atoms.</li>
-  <li><b>Removal of one electron</b> — first IE removes the outermost electron only.</li>
+<li><b>Gaseous state</b> — the atom must be isolated in the gas phase so that no intermolecular forces interfere.</li>
+<li><b>One mole</b> — IE is quoted in kJ mol⁻¹, i.e., per mole of atoms.</li>
+<li><b>Removal of one electron</b> — first IE removes the outermost electron only.</li>
 </ol>
-
 <div class="check-in">
 <p><b>Check-in:</b> Write the equation for the first ionisation energy of aluminium.</p>
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
-<div class="answer-content">$\ce{Al(g) -> Al+(g) + e-}$. The state symbol <b>(g)</b> is essential — omitting it loses the mark. The electron configuration of Al is $\mathrm{[Ne]\ 3s^2\ 3p^1}$, so the $3p$ electron is the one removed.</div>
+<div class="answer-content">$\ce{Al(g) -&gt; Al+(g) + e-}$. The state symbol <b>(g)</b> is essential — omitting it loses the mark. The electron configuration of Al is $\mathrm{[Ne]\ 3s^2\ 3p^1}$, so the $3p$ electron is the one removed.</div>
 </div>
-
 <h2>3. Three Factors That Determine Ionisation Energy</h2>
-
 <p>The energy required to remove an electron depends on how strongly the electron is held by the nucleus. Three factors compete:</p>
-
 <table>
 <tr><th>Factor</th><th>Effect on IE</th><th>Reason</th></tr>
 <tr><td><b>1. Nuclear charge ($Z$)</b></td><td>↑ $Z$ → ↑ IE</td><td>More protons in the nucleus → stronger electrostatic attraction on all electrons.</td></tr>
 <tr><td><b>2. Distance / shielding</b></td><td>↑ distance → ↓ IE</td><td>Outer electrons in higher energy levels are further from the nucleus and are shielded by inner electrons, reducing $Z_{\text{eff}}$.</td></tr>
 <tr><td><b>3. Electron–electron repulsion</b></td><td>↑ repulsion → ↓ IE</td><td>Electrons in the same subshell repel each other. Pairing electrons in an orbital raises energy, making one of them easier to remove.</td></tr>
 </table>
-
 <div class="diagram">
-<svg width="620" height="340" viewBox="0 0 620 340">
-  <defs>
-    <radialGradient id="nucGrad" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#e53935"/><stop offset="100%" stop-color="#b71c1c"/></radialGradient>
-    <marker id="arrowR" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#1565c0"/></marker>
-  </defs>
-
-  <!-- Nucleus -->
-  <circle cx="160" cy="180" r="28" fill="url(#nucGrad)" stroke="#7f0000" stroke-width="2"/>
-  <text x="160" y="176" text-anchor="middle" font-size="11" fill="white" font-weight="bold">+Z</text>
-  <text x="160" y="192" text-anchor="middle" font-size="9" fill="#ffcdd2">nucleus</text>
-
-  <!-- Inner shell (1s) -->
-  <circle cx="160" cy="180" r="58" fill="none" stroke="#5d4037" stroke-width="2" stroke-dasharray="6,3"/>
-  <text x="160" y="115" text-anchor="middle" font-size="10" fill="#5d4037">n = 1 (core)</text>
-  <!-- Inner electrons -->
-  <circle cx="132" cy="195" r="4" fill="#5d4037"/>
-  <circle cx="182" cy="200" r="4" fill="#5d4037"/>
-
-  <!-- Middle shell (2s/2p) -->
-  <circle cx="160" cy="180" r="92" fill="none" stroke="#5d4037" stroke-width="2" stroke-dasharray="6,3"/>
-  <text x="160" y="82" text-anchor="middle" font-size="10" fill="#5d4037">n = 2 (core)</text>
-  <circle cx="110" cy="150" r="3.5" fill="#5d4037"/>
-  <circle cx="195" cy="135" r="3.5" fill="#5d4037"/>
-  <circle cx="210" cy="195" r="3.5" fill="#5d4037"/>
-  <circle cx="100" cy="210" r="3.5" fill="#5d4037"/>
-
-  <!-- Outer shell (valence) -->
-  <circle cx="160" cy="180" r="130" fill="none" stroke="#1565c0" stroke-width="2.5"/>
-  <text x="160" y="42" text-anchor="middle" font-size="10" fill="#1565c0" font-weight="bold">n = 3 (valence)</text>
-
-  <!-- Valence electron being pulled out -->
-  <circle cx="275" cy="155" r="7" fill="#ff9800" stroke="#e65100" stroke-width="2"/>
-  <text x="275" y="150" text-anchor="middle" font-size="12" fill="#e65100" font-weight="bold">e⁻</text>
-  <!-- Arrow from electron to infinity -->
-  <line x1="282" y1="152" x2="340" y2="140" stroke="#e65100" stroke-width="2" marker-end="url(#arrowR)"/>
-  <text x="330" y="132" text-anchor="middle" font-size="11" fill="#e65100">IE = energy to remove</text>
-
-  <!-- Distance r arrow -->
-  <line x1="160" y1="208" x2="275" y2="240" stroke="#2c5f2d" stroke-width="1.5" stroke-dasharray="4,2"/>
-  <text x="235" y="258" text-anchor="middle" font-size="11" fill="#2c5f2d">distance r → weaker attraction</text>
-
-  <!-- Shielding annotation -->
-  <text x="420" y="110" font-size="12" fill="#5d4037">
-    <tspan x="420" dy="0" font-weight="bold">Shielding effect:</tspan>
-    <tspan x="420" dy="20">Inner (core) electrons</tspan>
-    <tspan x="420" dy="18">repel the outer electron,</tspan>
-    <tspan x="420" dy="18">reducing Z<subscript>eff</subscript> felt.</tspan>
-  </text>
-
-  <!-- Nuclear charge annotation -->
-  <text x="420" y="230" font-size="12" fill="#b71c1c">
-    <tspan x="420" dy="0" font-weight="bold">Nuclear charge Z:</tspan>
-    <tspan x="420" dy="20">More protons = stronger</tspan>
-    <tspan x="420" dy="18">pull on all electrons.</tspan>
-    <tspan x="420" dy="18">↑ Z → ↑ IE.</tspan>
-  </text>
+<svg height="340" viewbox="0 0 620 340" width="620">
+<defs>
+<radialgradient cx="50%" cy="50%" id="nucGrad" r="50%"><stop offset="0%" stop-color="#e53935"></stop><stop offset="100%" stop-color="#b71c1c"></stop></radialgradient>
+<marker id="arrowR" markerheight="6" markerwidth="8" orient="auto" refx="8" refy="3"><path d="M0,0 L8,3 L0,6 Z" fill="#1565c0"></path></marker>
+</defs>
+<!-- Nucleus -->
+<circle cx="160" cy="180" fill="url(#nucGrad)" r="28" stroke="#7f0000" stroke-width="2"></circle>
+<text fill="white" font-size="11" font-weight="bold" text-anchor="middle" x="160" y="176">+Z</text>
+<text fill="#ffcdd2" font-size="9" text-anchor="middle" x="160" y="192">nucleus</text>
+<!-- Inner shell (1s) -->
+<circle cx="160" cy="180" fill="none" r="58" stroke="#5d4037" stroke-dasharray="6,3" stroke-width="2"></circle>
+<text fill="#5d4037" font-size="10" text-anchor="middle" x="160" y="115">n = 1 (core)</text>
+<!-- Inner electrons -->
+<circle cx="132" cy="195" fill="#5d4037" r="4"></circle>
+<circle cx="182" cy="200" fill="#5d4037" r="4"></circle>
+<!-- Middle shell (2s/2p) -->
+<circle cx="160" cy="180" fill="none" r="92" stroke="#5d4037" stroke-dasharray="6,3" stroke-width="2"></circle>
+<text fill="#5d4037" font-size="10" text-anchor="middle" x="160" y="82">n = 2 (core)</text>
+<circle cx="110" cy="150" fill="#5d4037" r="3.5"></circle>
+<circle cx="195" cy="135" fill="#5d4037" r="3.5"></circle>
+<circle cx="210" cy="195" fill="#5d4037" r="3.5"></circle>
+<circle cx="100" cy="210" fill="#5d4037" r="3.5"></circle>
+<!-- Outer shell (valence) -->
+<circle cx="160" cy="180" fill="none" r="130" stroke="#1565c0" stroke-width="2.5"></circle>
+<text fill="#1565c0" font-size="10" font-weight="bold" text-anchor="middle" x="160" y="42">n = 3 (valence)</text>
+<!-- Valence electron being pulled out -->
+<circle cx="275" cy="155" fill="#ff9800" r="7" stroke="#e65100" stroke-width="2"></circle>
+<text fill="#e65100" font-size="12" font-weight="bold" text-anchor="middle" x="275" y="150">e⁻</text>
+<!-- Arrow from electron to infinity -->
+<line marker-end="url(#arrowR)" stroke="#e65100" stroke-width="2" x1="282" x2="340" y1="152" y2="140"></line>
+<text fill="#e65100" font-size="11" text-anchor="middle" x="330" y="132">IE = energy to remove</text>
+<!-- Distance r arrow -->
+<line stroke="#2c5f2d" stroke-dasharray="4,2" stroke-width="1.5" x1="160" x2="275" y1="208" y2="240"></line>
+<text fill="#2c5f2d" font-size="11" text-anchor="middle" x="235" y="258">distance r → weaker attraction</text>
+<!-- Shielding annotation -->
+<text fill="#5d4037" font-size="12" x="420" y="110">
+<tspan dy="0" font-weight="bold" x="420">Shielding effect:</tspan>
+<tspan dy="20" x="420">Inner (core) electrons</tspan>
+<tspan dy="18" x="420">repel the outer electron,</tspan>
+<tspan dy="18" x="420">reducing Z<subscript>eff</subscript> felt.</tspan>
+</text>
+<!-- Nuclear charge annotation -->
+<text fill="#b71c1c" font-size="12" x="420" y="230">
+<tspan dy="0" font-weight="bold" x="420">Nuclear charge Z:</tspan>
+<tspan dy="20" x="420">More protons = stronger</tspan>
+<tspan dy="18" x="420">pull on all electrons.</tspan>
+<tspan dy="18" x="420">↑ Z → ↑ IE.</tspan>
+</text>
 </svg>
 <div class="caption">Figure 1: The three factors determining ionisation energy. The nucleus (red, charge +Z) attracts the outermost electron (orange). Core electrons (brown) shield the outer electron, reducing the effective nuclear charge. The greater the distance r, the weaker the attraction — so less energy is needed to remove the electron.</div>
 </div>
-
 <div class="check-in">
 <p><b>Check-in:</b> Sodium ($Z = 11$) has a lower first IE than neon ($Z = 10$). Using the three factors, explain why.</p>
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">Neon: $\mathrm{1s^2\ 2s^2\ 2p^6}$ — the outermost electron is in $n = 2$. Sodium: $\mathrm{[Ne]\ 3s^1}$ — the outermost electron is in $n = 3$. Although Na has a <em>larger</em> nuclear charge (+11 vs. +10), the $3s$ electron is <b>further from the nucleus</b> and <b>shielded by all 10 core electrons</b> ($\mathrm{1s^2\ 2s^2\ 2p^6}$). The increased distance and shielding outweigh the increase in nuclear charge, so Na has a much lower IE₁ (496 vs. 2081 kJ mol⁻¹).</div>
 </div>
-
 <h2>4. Periodic Trends in First Ionisation Energy</h2>
-
 <h3>4.1 Across a Period (→): General Increase</h3>
-
 <p>Moving from left to right across a period, first ionisation energy <b>generally increases</b>. This is because:</p>
 <ul>
-  <li><b>Nuclear charge ($Z$) increases</b> — each step adds one proton.</li>
-  <li><b>Shielding stays approximately constant</b> — electrons are added to the <em>same</em> outer shell, so the number of inner (shielding) electrons does not change.</li>
-  <li><b>Atomic radius decreases</b> — the increased nuclear charge pulls the same shell inward.</li>
+<li><b>Nuclear charge ($Z$) increases</b> — each step adds one proton.</li>
+<li><b>Shielding stays approximately constant</b> — electrons are added to the <em>same</em> outer shell, so the number of inner (shielding) electrons does not change.</li>
+<li><b>Atomic radius decreases</b> — the increased nuclear charge pulls the same shell inward.</li>
 </ul>
-
 <p>The result: $Z_{\text{eff}}$ increases across the period, outer electrons are held more tightly, and IE₁ rises.</p>
-
 <h3>4.2 Down a Group (↓): General Decrease</h3>
-
 <p>Moving down a group, first ionisation energy <b>decreases</b>. This is because:</p>
 <ul>
-  <li>The outer electron occupies a <b>higher principal energy level</b> ($n$ increases).</li>
-  <li>The outer electron is <b>further from the nucleus</b> → weaker attraction.</li>
-  <li>There are <b>more inner shells of electrons</b> → increased shielding.</li>
+<li>The outer electron occupies a <b>higher principal energy level</b> ($n$ increases).</li>
+<li>The outer electron is <b>further from the nucleus</b> → weaker attraction.</li>
+<li>There are <b>more inner shells of electrons</b> → increased shielding.</li>
 </ul>
-
 <p>Although nuclear charge also increases down a group, the effects of increased distance and increased shielding <b>dominate</b>, so IE₁ falls.</p>
-
 <h3>4.3 The Anomalies — Where the Trend "Breaks"</h3>
-
 <p>The general increase across a period is not smooth — there are two notable <b>dips</b> in each period (from Period 2 onwards). These are exam favourites.</p>
-
 <p><b>Anomaly 1: Group 2 → Group 13 (e.g., Be → B, Mg → Al)</b></p>
-
 <p>IE₁ drops from Group 2 to Group 13 despite the increase in nuclear charge. This happens because the electron being removed comes from a <b>new, higher-energy subshell</b>:</p>
-
 <table>
 <tr><th>Element</th><th>Electron removed from</th><th>IE₁ / kJ mol⁻¹</th></tr>
 <tr><td>Be ($Z = 4$)</td><td>$2s$ subshell</td><td>900</td></tr>
 <tr><td>B ($Z = 5$)</td><td>$2p$ subshell</td><td>801</td></tr>
 </table>
-
 <p>The $2p$ subshell is at a <b>higher energy</b> (further from the nucleus on average) than the $2s$ subshell. Removing an electron from $2p$ therefore requires <b>less</b> energy than from $2s$, despite the higher nuclear charge of boron. The same logic applies to Mg → Al ($3s$ → $3p$).</p>
-
 <p><b>Anomaly 2: Group 15 → Group 16 (e.g., N → O, P → S)</b></p>
-
 <p>IE₁ drops from Group 15 to Group 16. This is due to <b>electron–electron repulsion</b> within a doubly occupied orbital:</p>
-
 <table>
 <tr><th>Element</th><th>$p$-subshell configuration</th><th>IE₁ / kJ mol⁻¹</th></tr>
 <tr><td>N ($Z = 7$)</td><td>$2p_x^1\ 2p_y^1\ 2p_z^1$ (all half-filled)</td><td>1402</td></tr>
 <tr><td>O ($Z = 8$)</td><td>$2p_x^2\ 2p_y^1\ 2p_z^1$ (one orbital doubly occupied)</td><td>1314</td></tr>
 </table>
-
 <p>In nitrogen, each $2p$ orbital has exactly one electron — a <b>stable half-filled arrangement</b>. In oxygen, one $2p$ orbital contains <b>two paired electrons</b>. The repulsion between these paired electrons makes one of them easier to remove, so IE₁ drops despite the higher nuclear charge. The same logic applies to P → S ($3p$).</p>
-
 <div class="diagram">
-<svg width="680" height="420" viewBox="0 0 680 420">
-  <!-- Title -->
-  <text x="340" y="24" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a1a">First Ionisation Energies — Periods 2 and 3</text>
-
-  <!-- Y axis -->
-  <line x1="65" y1="50" x2="65" y2="370" stroke="#333" stroke-width="2"/>
-  <text x="20" y="215" text-anchor="middle" font-size="11" fill="#333" transform="rotate(-90,20,215)">IE₁ / kJ mol⁻¹</text>
-
-  <!-- X axis -->
-  <line x1="65" y1="370" x2="650" y2="370" stroke="#333" stroke-width="2"/>
-  <text x="358" y="395" text-anchor="middle" font-size="11" fill="#333">Element (increasing atomic number →)</text>
-
-  <!-- Y labels and grid lines -->
-  <!-- 0, 400, 800, 1200, 1600, 2000 -->
-  <!-- Range: 370 (bottom=0) to 50 (top=2100). Scale: 320/2100 = 0.152 px per unit -->
-  <!-- 0 → 370, 400 → 309, 800 → 248, 1200 → 187, 1600 → 126, 2000 → 65 -->
-  <line x1="65" y1="309" x2="650" y2="309" stroke="#e0e0e0" stroke-width="0.5"/>
-  <text x="58" y="313" text-anchor="end" font-size="10" fill="#888">400</text>
-  <line x1="65" y1="248" x2="650" y2="248" stroke="#e0e0e0" stroke-width="0.5"/>
-  <text x="58" y="252" text-anchor="end" font-size="10" fill="#888">800</text>
-  <line x1="65" y1="187" x2="650" y2="187" stroke="#e0e0e0" stroke-width="0.5"/>
-  <text x="58" y="191" text-anchor="end" font-size="10" fill="#888">1200</text>
-  <line x1="65" y1="126" x2="650" y2="126" stroke="#e0e0e0" stroke-width="0.5"/>
-  <text x="58" y="130" text-anchor="end" font-size="10" fill="#888">1600</text>
-  <line x1="65" y1="65" x2="650" y2="65" stroke="#e0e0e0" stroke-width="0.5"/>
-  <text x="58" y="69" text-anchor="end" font-size="10" fill="#888">2000</text>
-
-  <!-- Period 2 bars — positioned at x=100, 135, 170, 205, 240, 275, 310, 345 -->
-  <!-- Li=520 → y=291, Be=900 → y=233, B=801 → y=248, C=1087 → y=204, N=1402 → y=156, O=1314 → y=170, F=1681 → y=114, Ne=2081 → y=53 -->
-
-  <!-- Li -->
-  <rect x="82" y="291" width="30" height="79" fill="#42a5f5" stroke="#1e88e5" stroke-width="1"/>
-  <text x="97" y="285" text-anchor="middle" font-size="9" fill="#333">520</text>
-  <text x="97" y="385" text-anchor="middle" font-size="11" fill="#333">Li</text>
-
-  <!-- Be -->
-  <rect x="117" y="233" width="30" height="137" fill="#42a5f5" stroke="#1e88e5" stroke-width="1"/>
-  <text x="132" y="227" text-anchor="middle" font-size="9" fill="#333">900</text>
-  <text x="132" y="385" text-anchor="middle" font-size="11" fill="#333">Be</text>
-
-  <!-- B -->
-  <rect x="152" y="248" width="30" height="122" fill="#ff7043" stroke="#e64a19" stroke-width="1"/>
-  <text x="167" y="242" text-anchor="middle" font-size="9" fill="#333">801 ↓</text>
-  <text x="167" y="385" text-anchor="middle" font-size="11" fill="#333">B</text>
-
-  <!-- C -->
-  <rect x="187" y="204" width="30" height="166" fill="#42a5f5" stroke="#1e88e5" stroke-width="1"/>
-  <text x="202" y="198" text-anchor="middle" font-size="9" fill="#333">1087</text>
-  <text x="202" y="385" text-anchor="middle" font-size="11" fill="#333">C</text>
-
-  <!-- N -->
-  <rect x="222" y="156" width="30" height="214" fill="#42a5f5" stroke="#1e88e5" stroke-width="1"/>
-  <text x="237" y="150" text-anchor="middle" font-size="9" fill="#333">1402</text>
-  <text x="237" y="385" text-anchor="middle" font-size="11" fill="#333">N</text>
-
-  <!-- O -->
-  <rect x="257" y="170" width="30" height="200" fill="#ff7043" stroke="#e64a19" stroke-width="1"/>
-  <text x="272" y="164" text-anchor="middle" font-size="9" fill="#333">1314 ↓</text>
-  <text x="272" y="385" text-anchor="middle" font-size="11" fill="#333">O</text>
-
-  <!-- F -->
-  <rect x="292" y="114" width="30" height="256" fill="#42a5f5" stroke="#1e88e5" stroke-width="1"/>
-  <text x="307" y="108" text-anchor="middle" font-size="9" fill="#333">1681</text>
-  <text x="307" y="385" text-anchor="middle" font-size="11" fill="#333">F</text>
-
-  <!-- Ne -->
-  <rect x="327" y="53" width="30" height="317" fill="#66bb6a" stroke="#43a047" stroke-width="1"/>
-  <text x="342" y="47" text-anchor="middle" font-size="9" fill="#333">2081</text>
-  <text x="342" y="385" text-anchor="middle" font-size="11" fill="#333">Ne</text>
-
-  <!-- Separator -->
-  <line x1="365" y1="50" x2="365" y2="370" stroke="#999" stroke-width="1" stroke-dasharray="4,4"/>
-
-  <!-- Period 3 bars — x=375, 410, 445, 480, 515, 550, 585, 620 -->
-  <!-- Na=496 → y=294, Mg=738 → y=258, Al=578 → y=282, Si=787 → y=250, P=1012 → y=216, S=1000 → y=218, Cl=1251 → y=179, Ar=1521 → y=138 -->
-
-  <!-- Na -->
-  <rect x="375" y="294" width="30" height="76" fill="#42a5f5" stroke="#1e88e5" stroke-width="1"/>
-  <text x="390" y="288" text-anchor="middle" font-size="9" fill="#333">496</text>
-  <text x="390" y="385" text-anchor="middle" font-size="11" fill="#333">Na</text>
-
-  <!-- Mg -->
-  <rect x="410" y="258" width="30" height="112" fill="#42a5f5" stroke="#1e88e5" stroke-width="1"/>
-  <text x="425" y="252" text-anchor="middle" font-size="9" fill="#333">738</text>
-  <text x="425" y="385" text-anchor="middle" font-size="11" fill="#333">Mg</text>
-
-  <!-- Al -->
-  <rect x="445" y="282" width="30" height="88" fill="#ff7043" stroke="#e64a19" stroke-width="1"/>
-  <text x="460" y="276" text-anchor="middle" font-size="9" fill="#333">578 ↓</text>
-  <text x="460" y="385" text-anchor="middle" font-size="11" fill="#333">Al</text>
-
-  <!-- Si -->
-  <rect x="480" y="250" width="30" height="120" fill="#42a5f5" stroke="#1e88e5" stroke-width="1"/>
-  <text x="495" y="244" text-anchor="middle" font-size="9" fill="#333">787</text>
-  <text x="495" y="385" text-anchor="middle" font-size="11" fill="#333">Si</text>
-
-  <!-- P -->
-  <rect x="515" y="216" width="30" height="154" fill="#42a5f5" stroke="#1e88e5" stroke-width="1"/>
-  <text x="530" y="210" text-anchor="middle" font-size="9" fill="#333">1012</text>
-  <text x="530" y="385" text-anchor="middle" font-size="11" fill="#333">P</text>
-
-  <!-- S -->
-  <rect x="550" y="218" width="30" height="152" fill="#ff7043" stroke="#e64a19" stroke-width="1"/>
-  <text x="565" y="212" text-anchor="middle" font-size="9" fill="#333">1000 ↓</text>
-  <text x="565" y="385" text-anchor="middle" font-size="11" fill="#333">S</text>
-
-  <!-- Cl -->
-  <rect x="585" y="179" width="30" height="191" fill="#42a5f5" stroke="#1e88e5" stroke-width="1"/>
-  <text x="600" y="173" text-anchor="middle" font-size="9" fill="#333">1251</text>
-  <text x="600" y="385" text-anchor="middle" font-size="11" fill="#333">Cl</text>
-
-  <!-- Ar -->
-  <rect x="620" y="138" width="30" height="232" fill="#66bb6a" stroke="#43a047" stroke-width="1"/>
-  <text x="635" y="132" text-anchor="middle" font-size="9" fill="#333">1521</text>
-  <text x="635" y="385" text-anchor="middle" font-size="11" fill="#333">Ar</text>
-
-  <!-- Legend -->
-  <rect x="80" y="405" width="12" height="12" fill="#42a5f5" stroke="#1e88e5" stroke-width="1"/>
-  <text x="96" y="415" font-size="10" fill="#333">Normal trend</text>
-  <rect x="200" y="405" width="12" height="12" fill="#ff7043" stroke="#e64a19" stroke-width="1"/>
-  <text x="216" y="415" font-size="10" fill="#333">Anomalous dip</text>
-  <rect x="320" y="405" width="12" height="12" fill="#66bb6a" stroke="#43a047" stroke-width="1"/>
-  <text x="336" y="415" font-size="10" fill="#333">Noble gas</text>
+<svg height="420" viewbox="0 0 680 420" width="680">
+<!-- Title -->
+<text fill="#1a1a1a" font-size="14" font-weight="bold" text-anchor="middle" x="340" y="24">First Ionisation Energies — Periods 2 and 3</text>
+<!-- Y axis -->
+<line stroke="#333" stroke-width="2" x1="65" x2="65" y1="50" y2="370"></line>
+<text fill="#333" font-size="11" text-anchor="middle" transform="rotate(-90,20,215)" x="20" y="215">IE₁ / kJ mol⁻¹</text>
+<!-- X axis -->
+<line stroke="#333" stroke-width="2" x1="65" x2="650" y1="370" y2="370"></line>
+<text fill="#333" font-size="11" text-anchor="middle" x="358" y="395">Element (increasing atomic number →)</text>
+<!-- Y labels and grid lines -->
+<!-- 0, 400, 800, 1200, 1600, 2000 -->
+<!-- Range: 370 (bottom=0) to 50 (top=2100). Scale: 320/2100 = 0.152 px per unit -->
+<!-- 0 → 370, 400 → 309, 800 → 248, 1200 → 187, 1600 → 126, 2000 → 65 -->
+<line stroke="#e0e0e0" stroke-width="0.5" x1="65" x2="650" y1="309" y2="309"></line>
+<text fill="#888" font-size="10" text-anchor="end" x="58" y="313">400</text>
+<line stroke="#e0e0e0" stroke-width="0.5" x1="65" x2="650" y1="248" y2="248"></line>
+<text fill="#888" font-size="10" text-anchor="end" x="58" y="252">800</text>
+<line stroke="#e0e0e0" stroke-width="0.5" x1="65" x2="650" y1="187" y2="187"></line>
+<text fill="#888" font-size="10" text-anchor="end" x="58" y="191">1200</text>
+<line stroke="#e0e0e0" stroke-width="0.5" x1="65" x2="650" y1="126" y2="126"></line>
+<text fill="#888" font-size="10" text-anchor="end" x="58" y="130">1600</text>
+<line stroke="#e0e0e0" stroke-width="0.5" x1="65" x2="650" y1="65" y2="65"></line>
+<text fill="#888" font-size="10" text-anchor="end" x="58" y="69">2000</text>
+<!-- Period 2 bars — positioned at x=100, 135, 170, 205, 240, 275, 310, 345 -->
+<!-- Li=520 → y=291, Be=900 → y=233, B=801 → y=248, C=1087 → y=204, N=1402 → y=156, O=1314 → y=170, F=1681 → y=114, Ne=2081 → y=53 -->
+<!-- Li -->
+<rect fill="#42a5f5" height="79" stroke="#1e88e5" stroke-width="1" width="30" x="82" y="291"></rect>
+<text fill="#333" font-size="9" text-anchor="middle" x="97" y="285">520</text>
+<text fill="#333" font-size="11" text-anchor="middle" x="97" y="385">Li</text>
+<!-- Be -->
+<rect fill="#42a5f5" height="137" stroke="#1e88e5" stroke-width="1" width="30" x="117" y="233"></rect>
+<text fill="#333" font-size="9" text-anchor="middle" x="132" y="227">900</text>
+<text fill="#333" font-size="11" text-anchor="middle" x="132" y="385">Be</text>
+<!-- B -->
+<rect fill="#ff7043" height="122" stroke="#e64a19" stroke-width="1" width="30" x="152" y="248"></rect>
+<text fill="#333" font-size="9" text-anchor="middle" x="167" y="242">801 ↓</text>
+<text fill="#333" font-size="11" text-anchor="middle" x="167" y="385">B</text>
+<!-- C -->
+<rect fill="#42a5f5" height="166" stroke="#1e88e5" stroke-width="1" width="30" x="187" y="204"></rect>
+<text fill="#333" font-size="9" text-anchor="middle" x="202" y="198">1087</text>
+<text fill="#333" font-size="11" text-anchor="middle" x="202" y="385">C</text>
+<!-- N -->
+<rect fill="#42a5f5" height="214" stroke="#1e88e5" stroke-width="1" width="30" x="222" y="156"></rect>
+<text fill="#333" font-size="9" text-anchor="middle" x="237" y="150">1402</text>
+<text fill="#333" font-size="11" text-anchor="middle" x="237" y="385">N</text>
+<!-- O -->
+<rect fill="#ff7043" height="200" stroke="#e64a19" stroke-width="1" width="30" x="257" y="170"></rect>
+<text fill="#333" font-size="9" text-anchor="middle" x="272" y="164">1314 ↓</text>
+<text fill="#333" font-size="11" text-anchor="middle" x="272" y="385">O</text>
+<!-- F -->
+<rect fill="#42a5f5" height="256" stroke="#1e88e5" stroke-width="1" width="30" x="292" y="114"></rect>
+<text fill="#333" font-size="9" text-anchor="middle" x="307" y="108">1681</text>
+<text fill="#333" font-size="11" text-anchor="middle" x="307" y="385">F</text>
+<!-- Ne -->
+<rect fill="#66bb6a" height="317" stroke="#43a047" stroke-width="1" width="30" x="327" y="53"></rect>
+<text fill="#333" font-size="9" text-anchor="middle" x="342" y="47">2081</text>
+<text fill="#333" font-size="11" text-anchor="middle" x="342" y="385">Ne</text>
+<!-- Separator -->
+<line stroke="#999" stroke-dasharray="4,4" stroke-width="1" x1="365" x2="365" y1="50" y2="370"></line>
+<!-- Period 3 bars — x=375, 410, 445, 480, 515, 550, 585, 620 -->
+<!-- Na=496 → y=294, Mg=738 → y=258, Al=578 → y=282, Si=787 → y=250, P=1012 → y=216, S=1000 → y=218, Cl=1251 → y=179, Ar=1521 → y=138 -->
+<!-- Na -->
+<rect fill="#42a5f5" height="76" stroke="#1e88e5" stroke-width="1" width="30" x="375" y="294"></rect>
+<text fill="#333" font-size="9" text-anchor="middle" x="390" y="288">496</text>
+<text fill="#333" font-size="11" text-anchor="middle" x="390" y="385">Na</text>
+<!-- Mg -->
+<rect fill="#42a5f5" height="112" stroke="#1e88e5" stroke-width="1" width="30" x="410" y="258"></rect>
+<text fill="#333" font-size="9" text-anchor="middle" x="425" y="252">738</text>
+<text fill="#333" font-size="11" text-anchor="middle" x="425" y="385">Mg</text>
+<!-- Al -->
+<rect fill="#ff7043" height="88" stroke="#e64a19" stroke-width="1" width="30" x="445" y="282"></rect>
+<text fill="#333" font-size="9" text-anchor="middle" x="460" y="276">578 ↓</text>
+<text fill="#333" font-size="11" text-anchor="middle" x="460" y="385">Al</text>
+<!-- Si -->
+<rect fill="#42a5f5" height="120" stroke="#1e88e5" stroke-width="1" width="30" x="480" y="250"></rect>
+<text fill="#333" font-size="9" text-anchor="middle" x="495" y="244">787</text>
+<text fill="#333" font-size="11" text-anchor="middle" x="495" y="385">Si</text>
+<!-- P -->
+<rect fill="#42a5f5" height="154" stroke="#1e88e5" stroke-width="1" width="30" x="515" y="216"></rect>
+<text fill="#333" font-size="9" text-anchor="middle" x="530" y="210">1012</text>
+<text fill="#333" font-size="11" text-anchor="middle" x="530" y="385">P</text>
+<!-- S -->
+<rect fill="#ff7043" height="152" stroke="#e64a19" stroke-width="1" width="30" x="550" y="218"></rect>
+<text fill="#333" font-size="9" text-anchor="middle" x="565" y="212">1000 ↓</text>
+<text fill="#333" font-size="11" text-anchor="middle" x="565" y="385">S</text>
+<!-- Cl -->
+<rect fill="#42a5f5" height="191" stroke="#1e88e5" stroke-width="1" width="30" x="585" y="179"></rect>
+<text fill="#333" font-size="9" text-anchor="middle" x="600" y="173">1251</text>
+<text fill="#333" font-size="11" text-anchor="middle" x="600" y="385">Cl</text>
+<!-- Ar -->
+<rect fill="#66bb6a" height="232" stroke="#43a047" stroke-width="1" width="30" x="620" y="138"></rect>
+<text fill="#333" font-size="9" text-anchor="middle" x="635" y="132">1521</text>
+<text fill="#333" font-size="11" text-anchor="middle" x="635" y="385">Ar</text>
+<!-- Legend -->
+<rect fill="#42a5f5" height="12" stroke="#1e88e5" stroke-width="1" width="12" x="80" y="405"></rect>
+<text fill="#333" font-size="10" x="96" y="415">Normal trend</text>
+<rect fill="#ff7043" height="12" stroke="#e64a19" stroke-width="1" width="12" x="200" y="405"></rect>
+<text fill="#333" font-size="10" x="216" y="415">Anomalous dip</text>
+<rect fill="#66bb6a" height="12" stroke="#43a047" stroke-width="1" width="12" x="320" y="405"></rect>
+<text fill="#333" font-size="10" x="336" y="415">Noble gas</text>
 </svg>
 <div class="caption">Figure 2: First ionisation energies across Periods 2 and 3. Notice the general upward trend, interrupted by dips at Group 13 (B, Al — new subshell) and Group 16 (O, S — paired electron repulsion). Noble gases (Ne, Ar) sit at the peak due to their stable full-shell configuration.</div>
 </div>
-
 <div class="check-in">
 <p><b>Check-in:</b> Phosphorus ($Z = 15$) has a higher first IE than sulfur ($Z = 16$). Explain this anomaly using electron configurations.</p>
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">Phosphorus: $\mathrm{[Ne]\ 3s^2\ 3p_x^1\ 3p_y^1\ 3p_z^1}$ — each $3p$ orbital has one electron (half-filled, stable arrangement). Sulfur: $\mathrm{[Ne]\ 3s^2\ 3p_x^2\ 3p_y^1\ 3p_z^1}$ — one $3p$ orbital contains two paired electrons. The <b>electron–electron repulsion</b> between the paired electrons in sulfur's $3p$ orbital makes one of them easier to remove, so IE₁ drops despite sulfur's higher nuclear charge.</div>
 </div>
-
 <!-- SECTION D -->
 <h2>5. Worked Examples</h2>
-
 <div class="example">
-<b>Example 1 — Writing IE Equations:</b><br><br>
-Write the equation for the first ionisation energy of potassium and state why the value (419 kJ mol⁻¹) is much lower than that of sodium (496 kJ mol⁻¹).<br><br>
-<b>Equation:</b> $\ce{K(g) -> K+(g) + e-}$<br><br>
-<b>Explanation:</b> Potassium ($Z = 19$) has electron configuration $\mathrm{[Ar]\ 4s^1}$. The electron removed is from the $4s$ subshell. Sodium ($Z = 11$) has configuration $\mathrm{[Ne]\ 3s^1}$ — the electron removed is from the $3s$ subshell.<br><br>
-Although K has a larger nuclear charge (+19 vs. +11), the $4s$ electron is <b>further from the nucleus</b> (in $n = 4$ vs. $n = 3$) and is <b>shielded by more core electrons</b> (18 core electrons in K vs. 10 in Na). The increased distance and shielding outweigh the increased nuclear charge, so K has a lower IE₁.<br><br>
+<b>Example 1 — Writing IE Equations:</b><br/><br/>
+Write the equation for the first ionisation energy of potassium and state why the value (419 kJ mol⁻¹) is much lower than that of sodium (496 kJ mol⁻¹).<br/><br/>
+<b>Equation:</b> $\ce{K(g) -&gt; K+(g) + e-}$<br/><br/>
+<b>Explanation:</b> Potassium ($Z = 19$) has electron configuration $\mathrm{[Ar]\ 4s^1}$. The electron removed is from the $4s$ subshell. Sodium ($Z = 11$) has configuration $\mathrm{[Ne]\ 3s^1}$ — the electron removed is from the $3s$ subshell.<br/><br/>
+Although K has a larger nuclear charge (+19 vs. +11), the $4s$ electron is <b>further from the nucleus</b> (in $n = 4$ vs. $n = 3$) and is <b>shielded by more core electrons</b> (18 core electrons in K vs. 10 in Na). The increased distance and shielding outweigh the increased nuclear charge, so K has a lower IE₁.<br/><br/>
 <b>💡 Key exam phrase:</b> "The increased distance and shielding outweigh the increase in nuclear charge" — this exact wording scores the mark for explaining a trend down a group.
 </div>
-
 <div class="example">
-<b>Example 2 — Explaining the Be → B Anomaly:</b><br><br>
-Beryllium has IE₁ = 900 kJ mol⁻¹, while boron has IE₁ = 801 kJ mol⁻¹. Despite boron having the larger nuclear charge, its IE₁ is <em>lower</em>. Explain.<br><br>
-<b>Electron configurations:</b><br>
-Be: $\mathrm{1s^2\ 2s^2}$ — the electron to be removed is from the $2s$ subshell.<br>
-B: $\mathrm{1s^2\ 2s^2\ 2p^1}$ — the electron to be removed is from the $2p$ subshell.<br><br>
-<b>Explanation:</b> The $2p$ subshell is at a <b>higher energy level</b> than the $2s$ subshell within the same $n = 2$ shell. An electron in $2p$ is, on average, <b>further from the nucleus</b> and therefore <b>easier to remove</b>. This effect dominates over the small increase in nuclear charge (+4 → +5), causing the IE₁ to drop.<br><br>
+<b>Example 2 — Explaining the Be → B Anomaly:</b><br/><br/>
+Beryllium has IE₁ = 900 kJ mol⁻¹, while boron has IE₁ = 801 kJ mol⁻¹. Despite boron having the larger nuclear charge, its IE₁ is <em>lower</em>. Explain.<br/><br/>
+<b>Electron configurations:</b><br/>
+Be: $\mathrm{1s^2\ 2s^2}$ — the electron to be removed is from the $2s$ subshell.<br/>
+B: $\mathrm{1s^2\ 2s^2\ 2p^1}$ — the electron to be removed is from the $2p$ subshell.<br/><br/>
+<b>Explanation:</b> The $2p$ subshell is at a <b>higher energy level</b> than the $2s$ subshell within the same $n = 2$ shell. An electron in $2p$ is, on average, <b>further from the nucleus</b> and therefore <b>easier to remove</b>. This effect dominates over the small increase in nuclear charge (+4 → +5), causing the IE₁ to drop.<br/><br/>
 <b>💡 The same logic applies to Mg → Al</b> ($3s$ → $3p$), another common exam question.
 </div>
-
 <div class="example">
-<b>Example 3 — Explaining the N → O Anomaly:</b><br><br>
-Nitrogen has IE₁ = 1402 kJ mol⁻¹, while oxygen has IE₁ = 1314 kJ mol⁻¹. Explain why oxygen's IE₁ is lower despite having a higher nuclear charge.<br><br>
-<b>Electron configurations (using orbital box notation for the $2p$ subshell):</b><br>
-N ($Z = 7$): $2p$: $\uparrow\ \ \ \uparrow\ \ \ \uparrow$ &nbsp; (three unpaired electrons; half-filled, all orbitals singly occupied)<br>
-O ($Z = 8$): $2p$: $\uparrow\downarrow\ \ \ \uparrow\ \ \ \uparrow$ &nbsp; (one orbital doubly occupied, two singly occupied)<br><br>
-<b>Explanation:</b> In nitrogen, each $2p$ orbital has exactly one electron — a <b>symmetrical, half-filled configuration</b> that is particularly stable. In oxygen, one $2p$ orbital contains <b>two paired electrons</b>. The electrostatic <b>repulsion between these paired electrons</b> raises their energy, making one of them easier to remove. This pairing energy penalty outweighs the small increase in nuclear charge (+7 → +8), so IE₁ drops.<br><br>
+<b>Example 3 — Explaining the N → O Anomaly:</b><br/><br/>
+Nitrogen has IE₁ = 1402 kJ mol⁻¹, while oxygen has IE₁ = 1314 kJ mol⁻¹. Explain why oxygen's IE₁ is lower despite having a higher nuclear charge.<br/><br/>
+<b>Electron configurations (using orbital box notation for the $2p$ subshell):</b><br/>
+N ($Z = 7$): $2p$: $\uparrow\ \ \ \uparrow\ \ \ \uparrow$   (three unpaired electrons; half-filled, all orbitals singly occupied)<br/>
+O ($Z = 8$): $2p$: $\uparrow\downarrow\ \ \ \uparrow\ \ \ \uparrow$   (one orbital doubly occupied, two singly occupied)<br/><br/>
+<b>Explanation:</b> In nitrogen, each $2p$ orbital has exactly one electron — a <b>symmetrical, half-filled configuration</b> that is particularly stable. In oxygen, one $2p$ orbital contains <b>two paired electrons</b>. The electrostatic <b>repulsion between these paired electrons</b> raises their energy, making one of them easier to remove. This pairing energy penalty outweighs the small increase in nuclear charge (+7 → +8), so IE₁ drops.<br/><br/>
 <b>💡 Exam note:</b> You must mention "paired electrons" and "repulsion" explicitly. Simply saying "O has a lower IE because it has more electrons" is insufficient and will not earn marks.
 </div>
-
 <!-- SECTION F -->
 <div class="misconception">
 <h3>⚠️ Common Mistakes to Avoid</h3>
 <ol>
-  <li><b>Confusing "nuclear charge" with "effective nuclear charge."</b> Nuclear charge ($Z$) is simply the number of protons. <em>Effective</em> nuclear charge ($Z_{\text{eff}}$) is what an outer electron actually experiences after shielding is taken into account. When explaining trends, always talk about <b>$Z_{\text{eff}}$</b>, not just $Z$. Across a period, $Z_{\text{eff}}$ increases because $Z$ increases but shielding stays the same. Down a group, $Z_{\text{eff}}$ does <em>not</em> increase significantly because the added protons are offset by added shielding.</li>
-  <li><b>Thinking that more protons always means higher IE.</b> This is the most common error. Sodium has 11 protons and neon has 10, yet Na has a much lower IE₁. Distance and shielding matter just as much as nuclear charge. You must consider <em>all three factors</em> together.</li>
-  <li><b>Forgetting state symbols in IE equations.</b> The IB definition specifies <b>gaseous</b> atoms. Writing $\ce{Na(s) -> Na+(s) + e-}$ instead of $\ce{Na(g) -> Na+(g) + e-}$ will lose the mark. All species must be (g).</li>
-  <li><b>Explaining the N → O anomaly as "N has a half-filled shell so it's more stable."</b> While this captures part of the idea, the IB mark scheme requires you to mention <b>electron–electron repulsion in the doubly occupied orbital</b> of oxygen. The stability of nitrogen's configuration is only half the story — the repulsion in oxygen is the active cause of the drop.</li>
-  <li><b>Confusing first IE with electronegativity.</b> Both increase across a period and decrease down a group, and both relate to how strongly an atom attracts electrons. But IE measures the energy to <em>remove</em> an electron from an isolated gaseous atom, while electronegativity describes how strongly an atom attracts a <em>shared</em> electron pair in a bond. They are different concepts measured in different ways.</li>
+<li><b>Confusing "nuclear charge" with "effective nuclear charge."</b> Nuclear charge ($Z$) is simply the number of protons. <em>Effective</em> nuclear charge ($Z_{\text{eff}}$) is what an outer electron actually experiences after shielding is taken into account. When explaining trends, always talk about <b>$Z_{\text{eff}}$</b>, not just $Z$. Across a period, $Z_{\text{eff}}$ increases because $Z$ increases but shielding stays the same. Down a group, $Z_{\text{eff}}$ does <em>not</em> increase significantly because the added protons are offset by added shielding.</li>
+<li><b>Thinking that more protons always means higher IE.</b> This is the most common error. Sodium has 11 protons and neon has 10, yet Na has a much lower IE₁. Distance and shielding matter just as much as nuclear charge. You must consider <em>all three factors</em> together.</li>
+<li><b>Forgetting state symbols in IE equations.</b> The IB definition specifies <b>gaseous</b> atoms. Writing $\ce{Na(s) -&gt; Na+(s) + e-}$ instead of $\ce{Na(g) -&gt; Na+(g) + e-}$ will lose the mark. All species must be (g).</li>
+<li><b>Explaining the N → O anomaly as "N has a half-filled shell so it's more stable."</b> While this captures part of the idea, the IB mark scheme requires you to mention <b>electron–electron repulsion in the doubly occupied orbital</b> of oxygen. The stability of nitrogen's configuration is only half the story — the repulsion in oxygen is the active cause of the drop.</li>
+<li><b>Confusing first IE with electronegativity.</b> Both increase across a period and decrease down a group, and both relate to how strongly an atom attracts electrons. But IE measures the energy to <em>remove</em> an electron from an isolated gaseous atom, while electronegativity describes how strongly an atom attracts a <em>shared</em> electron pair in a bond. They are different concepts measured in different ways.</li>
 </ol>
 </div>
-
 <!-- SECTION G -->
 <h2>6. End-of-Lesson Practice</h2>
-
-<p><b>Question 1 (Paper 1 style):</b> Which of the following correctly explains why the first ionisation energy of aluminium is lower than that of magnesium?<br>
-A. Al has a smaller atomic radius than Mg.<br>
-B. Al has a lower nuclear charge than Mg.<br>
-C. The electron removed from Al comes from a $3p$ orbital, which is higher in energy than the $3s$ orbital of Mg.<br>
+<p><b>Question 1 (Paper 1 style):</b> Which of the following correctly explains why the first ionisation energy of aluminium is lower than that of magnesium?<br/>
+A. Al has a smaller atomic radius than Mg.<br/>
+B. Al has a lower nuclear charge than Mg.<br/>
+C. The electron removed from Al comes from a $3p$ orbital, which is higher in energy than the $3s$ orbital of Mg.<br/>
 D. Al has more shielding than Mg because it has more electrons.</p>
-
 <p><b>Question 2:</b> Write the equation for the first ionisation energy of chlorine and state whether the process is endothermic or exothermic. Justify your answer.</p>
-
-<p><b>Question 3:</b> The first ionisation energies of the Period 3 elements are given below (in kJ mol⁻¹):<br>
-Na: 496 &nbsp; Mg: 738 &nbsp; Al: 578 &nbsp; Si: 787 &nbsp; P: 1012 &nbsp; S: 1000 &nbsp; Cl: 1251 &nbsp; Ar: 1521<br>
-(a) Explain the general trend from Na to Ar.<br>
-(b) Explain the drop from Mg to Al.<br>
+<p><b>Question 3:</b> The first ionisation energies of the Period 3 elements are given below (in kJ mol⁻¹):<br/>
+Na: 496   Mg: 738   Al: 578   Si: 787   P: 1012   S: 1000   Cl: 1251   Ar: 1521<br/>
+(a) Explain the general trend from Na to Ar.<br/>
+(b) Explain the drop from Mg to Al.<br/>
 (c) Explain the drop from P to S.</p>
-
-<p><b>Question 4:</b> The first ionisation energies of the Group 1 elements are:<br>
-Li: 520 &nbsp; Na: 496 &nbsp; K: 419 &nbsp; Rb: 403 &nbsp; Cs: 376 kJ mol⁻¹<br>
+<p><b>Question 4:</b> The first ionisation energies of the Group 1 elements are:<br/>
+Li: 520   Na: 496   K: 419   Rb: 403   Cs: 376 kJ mol⁻¹<br/>
 Explain this trend.</p>
-
-<p><b>Question 5 (IB-style multi-part):</b> The first five ionisation energies of element X are (in kJ mol⁻¹):<br>
-IE₁ = 578 &nbsp; IE₂ = 1817 &nbsp; IE₃ = 2745 &nbsp; IE₄ = 11578 &nbsp; IE₅ = 14831<br>
-(a) Identify the group of element X in the periodic table. Justify your answer by referring to the data.<br>
-(b) Write the electron configuration of element X and identify the element.<br>
+<p><b>Question 5 (IB-style multi-part):</b> The first five ionisation energies of element X are (in kJ mol⁻¹):<br/>
+IE₁ = 578   IE₂ = 1817   IE₃ = 2745   IE₄ = 11578   IE₅ = 14831<br/>
+(a) Identify the group of element X in the periodic table. Justify your answer by referring to the data.<br/>
+(b) Write the electron configuration of element X and identify the element.<br/>
 (c) Explain why there is a very large jump between IE₃ and IE₄.</p>
-
 <button class="practice-toggle" onclick="var a=this.nextElementSibling;a.classList.toggle('open');this.textContent=a.classList.contains('open')?'▴ Hide Answers':'▸ Show Answers'">▸ Show Answers</button>
 <div class="practice-answers">
-
 <p><b>Answer 1:</b> C. Mg: $\mathrm{[Ne]\ 3s^2}$ — the electron removed is from $3s$. Al: $\mathrm{[Ne]\ 3s^2\ 3p^1}$ — the electron removed is from $3p$. The $3p$ subshell is higher in energy than $3s$, so less energy is required. <b>Exam trap:</b> Option D is tempting but wrong — Al and Mg have the <em>same</em> number of inner shielding electrons ($\mathrm{1s^2\ 2s^2\ 2p^6}$); the extra electron in Al is in the outer shell and does not contribute to shielding.</p>
-
-<p><b>Answer 2:</b> Equation: $\ce{Cl(g) -> Cl+(g) + e-}$. The process is <b>endothermic</b> ($\Delta H > 0$). Energy must be <em>supplied</em> to overcome the electrostatic attraction between the positively charged nucleus and the negatively charged electron. Ionisation is always endothermic — energy goes <em>into</em> the system.</p>
-
-<p><b>Answer 3:</b><br>
-(a) Across Period 3, nuclear charge increases (+11 to +18) while shielding stays approximately constant (electrons are added to the same $n = 3$ shell). This increases $Z_{\text{eff}}$, pulling the outer electrons in more tightly, so IE₁ generally rises.<br>
-(b) Mg → Al: The electron removed from Mg is in a $3s$ orbital; the electron removed from Al is in a $3p$ orbital. The $3p$ subshell is higher in energy than $3s$, so the electron is easier to remove despite Al's higher nuclear charge.<br>
+<p><b>Answer 2:</b> Equation: $\ce{Cl(g) -&gt; Cl+(g) + e-}$. The process is <b>endothermic</b> ($\Delta H &gt; 0$). Energy must be <em>supplied</em> to overcome the electrostatic attraction between the positively charged nucleus and the negatively charged electron. Ionisation is always endothermic — energy goes <em>into</em> the system.</p>
+<p><b>Answer 3:</b><br/>
+(a) Across Period 3, nuclear charge increases (+11 to +18) while shielding stays approximately constant (electrons are added to the same $n = 3$ shell). This increases $Z_{\text{eff}}$, pulling the outer electrons in more tightly, so IE₁ generally rises.<br/>
+(b) Mg → Al: The electron removed from Mg is in a $3s$ orbital; the electron removed from Al is in a $3p$ orbital. The $3p$ subshell is higher in energy than $3s$, so the electron is easier to remove despite Al's higher nuclear charge.<br/>
 (c) P → S: In P, all three $3p$ orbitals are singly occupied (half-filled). In S, one $3p$ orbital contains a pair of electrons. The repulsion between these paired electrons makes one easier to remove — so IE₁ drops.</p>
-
 <p><b>Answer 4:</b> Going down Group 1, the outer electron occupies progressively higher principal energy levels ($2s$ → $3s$ → $4s$ → $5s$ → $6s$). The outer electron is increasingly <b>further from the nucleus</b> and <b>shielded by more inner shells</b>. Although nuclear charge also increases, the effects of increased distance and increased shielding <b>dominate</b>, so $Z_{\text{eff}}$ experienced by the outermost electron decreases down the group, and IE₁ falls.</p>
-
-<p><b>Answer 5:</b><br>
-(a) The very large jump occurs between IE₃ (2745) and IE₄ (11578) — a factor of ~4.2. This indicates that the fourth electron is being removed from an <b>inner shell</b> (closer to the nucleus, less shielded). Element X therefore has <b>3 valence electrons</b> and belongs to <b>Group 13</b>.<br>
-(b) Configuration: $\mathrm{1s^2\ 2s^2\ 2p^6\ 3s^2\ 3p^1}$. This is aluminium (Al, $Z = 13$).<br>
+<p><b>Answer 5:</b><br/>
+(a) The very large jump occurs between IE₃ (2745) and IE₄ (11578) — a factor of ~4.2. This indicates that the fourth electron is being removed from an <b>inner shell</b> (closer to the nucleus, less shielded). Element X therefore has <b>3 valence electrons</b> and belongs to <b>Group 13</b>.<br/>
+(b) Configuration: $\mathrm{1s^2\ 2s^2\ 2p^6\ 3s^2\ 3p^1}$. This is aluminium (Al, $Z = 13$).<br/>
 (c) The first three electrons come from the $n = 3$ shell ($3s^2\ 3p^1$). The fourth electron must come from the $n = 2$ shell ($2p$). This electron is much closer to the nucleus, experiences far less shielding, and thus requires significantly more energy to remove — hence the large jump.</p>
 </div>
-
 <!-- SECTION H -->
 <h2>7. Key Terms</h2>
 <table>
 <tr><th>Term</th><th>Definition</th></tr>
-<tr><td>First ionisation energy (IE₁)</td><td>The minimum energy required to remove one mole of electrons from one mole of gaseous atoms to form one mole of gaseous singly charged cations: $\ce{X(g) -> X+(g) + e-}$</td></tr>
+<tr><td>First ionisation energy (IE₁)</td><td>The minimum energy required to remove one mole of electrons from one mole of gaseous atoms to form one mole of gaseous singly charged cations: $\ce{X(g) -&gt; X+(g) + e-}$</td></tr>
 <tr><td>Effective nuclear charge ($Z_{\text{eff}}$)</td><td>The net positive charge experienced by an electron after accounting for the shielding effect of inner (core) electrons</td></tr>
 <tr><td>Shielding</td><td>The reduction in nuclear attraction felt by outer electrons due to the repulsive effect of inner-shell electrons lying between them and the nucleus</td></tr>
 <tr><td>Electron–electron repulsion</td><td>The electrostatic repulsion between two electrons occupying the same orbital; this raises their energy and makes one of them easier to remove</td></tr>
@@ -473,15 +396,138 @@ IE₁ = 578 &nbsp; IE₂ = 1817 &nbsp; IE₃ = 2745 &nbsp; IE₄ = 11578 &nbsp; 
 <tr><td>Half-filled subshell stability</td><td>A configuration in which each orbital in a subshell is singly occupied (e.g., $\mathrm{N}\ 2p^3$ or $\mathrm{Cr}\ 3d^5$), conferring extra stability due to symmetry and reduced electron–electron repulsion</td></tr>
 <tr><td>Successive ionisation energies</td><td>The energies required to remove the 1st, 2nd, 3rd, … electron from a gaseous species; large jumps indicate a change to an inner shell, revealing the element's group</td></tr>
 </table>
-
 <!-- SECTION I -->
 <h2>8. Exam Tips</h2>
-
 <div class="exam-tip"><b>Paper 1 (Multiple Choice):</b> Questions on IE anomalies are extremely common — expect at least one on Be → B or N → O. Remember: the Group 2 → 13 dip is about <b>subshell energy</b> ($s$ vs. $p$), while the Group 15 → 16 dip is about <b>electron pairing and repulsion</b>. If you mix these up, you will pick the wrong answer. Also watch for questions that give you a table of successive IEs and ask you to identify the group — look for the <b>largest jump</b>.</div>
-
 <div class="exam-tip"><b>Paper 2 (Structured):</b> "Explain" questions on IE trends typically carry 3 marks. The mark scheme expects you to mention <b>all three factors</b>: (1) nuclear charge, (2) distance/shielding, and (3) which one <em>dominates</em>. For across a period: "shielding stays constant, nuclear charge increases, so $Z_{\text{eff}}$ increases." For down a group: "increased distance and shielding outweigh the increased nuclear charge." Use these exact phrases.</div>
-
 <div class="exam-tip"><b>State symbols matter.</b> If a question asks you to "write the equation for the first ionisation energy of …", you MUST include (g) on all species. The IB mark scheme specifically awards a mark for correct state symbols. Without them, the equation is simply wrong by definition — ionisation energy is defined for gaseous species only.</div>
 
+<div class="lesson-actions" style="margin: 2rem 0; padding: 1.5rem; background: #f8fafc; border-radius: 8px; display: flex; gap: 1rem; flex-wrap: wrap;">
+<button class="action-btn" id="generate-flashcards-btn" style="padding: 0.75rem 1.5rem; background: #3b82f6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        🗂️ Generate Flashcards
+    </button>
+<button class="action-btn" id="practice-problems-btn" style="padding: 0.75rem 1.5rem; background: #10b981; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        ✏️ Practice Problems
+    </button>
+<button class="action-btn" id="ask-ai-btn" style="padding: 0.75rem 1.5rem; background: #8b5cf6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        💬 Ask AI
+    </button>
+</div>
+<script>
+(function() {
+    const subjectKey = "chemistry";
+    const lessonId = "lesson_05";
+    const lessonTitle = "Lesson 5: Ionisation Energy I — First IE and Periodic Trends";
+
+    function getCsrf() {
+        var m = document.querySelector('meta[name="csrf-token"]');
+        return m ? m.getAttribute('content') : '';
+    }
+
+    // Completion checkbox
+    const checkbox = document.getElementById('lesson-complete');
+    if (checkbox) {
+        // Load saved state
+        const saved = localStorage.getItem(`completed_${subjectKey}_${lessonId}`);
+        if (saved === 'true') checkbox.checked = true;
+
+        checkbox.addEventListener('change', async function() {
+            const completed = this.checked;
+            localStorage.setItem(`completed_${subjectKey}_${lessonId}`, completed);
+
+            try {
+                await fetch('/toggle_completion', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': getCsrf()
+                    },
+                    body: JSON.stringify({
+                        subject: subjectKey,
+                        lesson: lessonId,
+                        completed: completed
+                    })
+                });
+            } catch(e) {
+                console.error('Error saving completion:', e);
+            }
+        });
+    }
+
+    // Generate Flashcards
+    const flashcardsBtn = document.getElementById('generate-flashcards-btn');
+    if (flashcardsBtn) {
+        flashcardsBtn.addEventListener('click', async function() {
+            this.disabled = true;
+            this.textContent = '⏳ Generating...';
+
+            try {
+                const content = document.body.innerText.substring(0, 2000);
+                const response = await fetch('/generate_flashcards', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': getCsrf()
+                    },
+                    body: JSON.stringify({
+                        subject: subjectKey,
+                        lesson: lessonTitle,
+                        content_summary: content
+                    })
+                });
+
+                const data = await response.json();
+                if (data.error) {
+                    alert('Error: ' + data.error);
+                } else {
+                    alert(`✅ Created ${data.count} flashcards! View them at /flashcards/${subjectKey}`);
+                }
+            } catch(e) {
+                alert('Error generating flashcards: ' + e.message);
+            } finally {
+                this.disabled = false;
+                this.textContent = '🗂️ Generate Flashcards';
+            }
+        });
+    }
+
+    // Practice Problems - open in new section
+    const practiceBtn = document.getElementById('practice-problems-btn');
+    if (practiceBtn) {
+        practiceBtn.addEventListener('click', function() {
+            alert('Practice problems feature coming soon! Use the AI chatbot to generate custom questions.');
+        });
+    }
+
+    // Ask AI - scroll to chatbot
+    const aiBtn = document.getElementById('ask-ai-btn');
+    if (aiBtn) {
+        aiBtn.addEventListener('click', function() {
+            const chatbot = document.getElementById('lessons-chatbot');
+            if (chatbot) {
+                chatbot.scrollIntoView({ behavior: 'smooth' });
+                const toggleBtn = chatbot.querySelector('.chatbot-toggle');
+                if (toggleBtn) toggleBtn.click();
+            } else {
+                alert('AI chatbot not available on this page. It will be added soon!');
+            }
+        });
+    }
+
+    // Track lesson view
+    fetch('/mark_viewed', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': getCsrf()
+        },
+        body: JSON.stringify({
+            subject: subjectKey,
+            lesson: lessonId
+        })
+    }).catch(e => console.error('Error tracking view:', e));
+
+})();
+</script>
 </body>
 </html>

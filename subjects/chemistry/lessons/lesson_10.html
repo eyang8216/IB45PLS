@@ -1,14 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lesson 10 — Chemistry HL — VSEPR Theory: Molecular Shapes & Bond Angles</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lesson 10 — Chemistry HL — VSEPR Theory: Molecular Shapes &amp; Bond Angles</title>
 <script>
 window.MathJax = {tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] },
   loader: { load: ['[tex]/mhchem'] }};
 </script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <style>
 :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -42,119 +43,108 @@ pre.ascii-art { font-family: 'Courier New', monospace; font-size: 0.75rem; line-
 </style>
 </head>
 <body>
-
-<h1>Lesson 10: VSEPR Theory — Molecular Shapes & Bond Angles</h1>
-
+<h1>Lesson 10: VSEPR Theory — Molecular Shapes &amp; Bond Angles</h1>
 <p><b>Syllabus reference:</b> 4.3/14.1 — VSEPR theory, molecular shapes, bond angles, polarity of molecules</p>
-
 <div class="objectives">
 <h3>Learning Objectives</h3>
 <p>By the end of this lesson, you will be able to:</p>
 <ul>
-  <li><b>State</b> the central principle of VSEPR theory: electron pairs repel and arrange themselves to minimise repulsion.</li>
-  <li><b>Determine</b> the electron domain geometry and molecular geometry for any molecule or ion given its Lewis structure.</li>
-  <li><b>Predict</b> bond angles and explain deviations from ideal angles due to lone-pair repulsion.</li>
-  <li><b>Identify</b> all 11 molecular shapes tested by the IB from 2 to 6 electron domains.</li>
-  <li><b>Apply</b> VSEPR to deduce shape, then use shape to determine molecular polarity.</li>
+<li><b>State</b> the central principle of VSEPR theory: electron pairs repel and arrange themselves to minimise repulsion.</li>
+<li><b>Determine</b> the electron domain geometry and molecular geometry for any molecule or ion given its Lewis structure.</li>
+<li><b>Predict</b> bond angles and explain deviations from ideal angles due to lone-pair repulsion.</li>
+<li><b>Identify</b> all 11 molecular shapes tested by the IB from 2 to 6 electron domains.</li>
+<li><b>Apply</b> VSEPR to deduce shape, then use shape to determine molecular polarity.</li>
 </ul>
 </div>
 
+<div class="lesson-completion" style="margin: 1rem 0; padding: 1rem; background: #f0f9ff; border-radius: 8px;">
+<label class="completion-checkbox" style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer;">
+<input id="lesson-complete" style="width: 24px; height: 24px; cursor: pointer; accent-color: #10b981;" type="checkbox"/>
+<span style="font-size: 1rem; color: #0f172a; font-weight: 500;">✓ Mark this lesson as complete</span>
+</label>
+</div>
 <h2>1. Prior Knowledge Check</h2>
-
 <p><b>Question 1:</b> What does VSEPR stand for and what is its basic premise?</p>
 <div class="check-in">
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">VSEPR = <b>Valence Shell Electron Pair Repulsion</b>. The premise: electron pairs (both bonding and non-bonding) around a central atom repel each other and arrange themselves as far apart as possible in three-dimensional space to minimise repulsion. The resulting arrangement determines the molecular shape.</div>
 </div>
-
 <p><b>Question 2:</b> What is the difference between an electron domain and a bonding pair?</p>
 <div class="check-in">
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">An <b>electron domain</b> is any region of electron density around the central atom — it can be a single bond, double bond, triple bond, or lone pair. All count as ONE domain for VSEPR purposes. A double bond counts as one domain, not two.</div>
 </div>
-
 <p><b>Question 3:</b> Draw the Lewis structure of $\ce{NH3}$ and $\ce{NH4+}$. How many electron domains around N in each?</p>
 <div class="check-in">
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">$\ce{NH3}$: N has 3 bonding pairs + 1 lone pair = <b>4 electron domains</b>. $\ce{NH4+}$: N has 4 bonding pairs + 0 lone pairs = <b>4 electron domains</b>. Both have tetrahedral electron domain geometry, but different molecular shapes (trigonal pyramidal vs. tetrahedral).</div>
 </div>
-
 <h2>2. The VSEPR Method — Step by Step</h2>
-
 <h3>2.1 The Five Steps</h3>
-
 <ol>
-  <li><b>Draw the Lewis structure</b> — this is non-negotiable; you cannot do VSEPR without it.</li>
-  <li><b>Count electron domains</b> around the central atom: each bond (single, double, triple) = 1 domain; each lone pair = 1 domain.</li>
-  <li><b>Determine the electron domain geometry</b> (the arrangement of all domains) based on the count.</li>
-  <li><b>Determine the molecular geometry</b> (the arrangement of atoms only, ignoring lone pairs).</li>
-  <li><b>Predict bond angles</b> and account for lone-pair compression.</li>
+<li><b>Draw the Lewis structure</b> — this is non-negotiable; you cannot do VSEPR without it.</li>
+<li><b>Count electron domains</b> around the central atom: each bond (single, double, triple) = 1 domain; each lone pair = 1 domain.</li>
+<li><b>Determine the electron domain geometry</b> (the arrangement of all domains) based on the count.</li>
+<li><b>Determine the molecular geometry</b> (the arrangement of atoms only, ignoring lone pairs).</li>
+<li><b>Predict bond angles</b> and account for lone-pair compression.</li>
 </ol>
-
 <h3>2.2 The Repulsion Hierarchy</h3>
-
 <p>Not all electron pair repulsions are equal:</p>
 
-$$\text{Lone pair–lone pair} > \text{Lone pair–bonding pair} > \text{Bonding pair–bonding pair}$$
+$$\text{Lone pair–lone pair} &gt; \text{Lone pair–bonding pair} &gt; \text{Bonding pair–bonding pair}$$
 
 <p>Lone pairs are held closer to the nucleus and occupy more space than bonding pairs (which are stretched between two nuclei). Therefore, lone pairs <b>compress</b> bond angles — the more lone pairs, the smaller the bond angle.</p>
-
 <div class="diagram">
-<svg width="520" height="260" viewBox="0 0 520 260">
-  <text x="260" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c5f2d">Effect of Lone Pairs on Bond Angles — 4 Electron Domains</text>
-  <!-- CH4 tetrahedral 109.5 -->
-  <rect x="15" y="40" width="155" height="200" rx="8" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="1.5"/>
-  <text x="92" y="65" text-anchor="middle" font-size="12" font-weight="bold" fill="#2c5f2d">$\ce{CH4}$</text>
-  <text x="92" y="85" text-anchor="middle" font-size="10">4 bonding pairs</text>
-  <text x="92" y="100" text-anchor="middle" font-size="10">0 lone pairs</text>
-  <text x="92" y="130" text-anchor="middle" font-size="16" font-weight="bold" fill="#2c5f2d">109.5°</text>
-  <text x="92" y="150" text-anchor="middle" font-size="9" fill="#555">Tetrahedral</text>
-  <!-- Methane tetrahedron -->
-  <polygon points="92,170 60,210 92,235 124,210" fill="none" stroke="#2c5f2d" stroke-width="1.5"/>
-  <circle cx="92" cy="205" r="3" fill="#2c5f2d"/>
-  <circle cx="60" cy="210" r="3" fill="#2c5f2d"/>
-  <circle cx="124" cy="210" r="3" fill="#2c5f2d"/>
-  <circle cx="92" cy="170" r="3" fill="#2c5f2d"/>
-
-  <!-- NH3 trigonal pyramidal 107 -->
-  <rect x="182" y="40" width="155" height="200" rx="8" fill="#fff8e1" stroke="#f9a825" stroke-width="1.5"/>
-  <text x="259" y="65" text-anchor="middle" font-size="12" font-weight="bold" fill="#e65100">$\ce{NH3}$</text>
-  <text x="259" y="85" text-anchor="middle" font-size="10">3 bonding pairs</text>
-  <text x="259" y="100" text-anchor="middle" font-size="10">1 lone pair</text>
-  <text x="259" y="130" text-anchor="middle" font-size="16" font-weight="bold" fill="#e65100">107°</text>
-  <text x="259" y="150" text-anchor="middle" font-size="9" fill="#555">Trigonal pyramidal</text>
-  <polygon points="259,175 232,210 259,230 286,210" fill="none" stroke="#e65100" stroke-width="1.5"/>
-  <circle cx="259" cy="200" r="3" fill="#e65100"/>
-  <circle cx="232" cy="210" r="3" fill="#e65100"/>
-  <circle cx="286" cy="210" r="3" fill="#e65100"/>
-  <text x="259" y="245" text-anchor="middle" font-size="8" fill="#e65100">1 LP (not shown)</text>
-
-  <!-- H2O bent 104.5 -->
-  <rect x="349" y="40" width="155" height="200" rx="8" fill="#ffebee" stroke="#c62828" stroke-width="1.5"/>
-  <text x="426" y="65" text-anchor="middle" font-size="12" font-weight="bold" fill="#c62828">$\ce{H2O}$</text>
-  <text x="426" y="85" text-anchor="middle" font-size="10">2 bonding pairs</text>
-  <text x="426" y="100" text-anchor="middle" font-size="10">2 lone pairs</text>
-  <text x="426" y="130" text-anchor="middle" font-size="16" font-weight="bold" fill="#c62828">104.5°</text>
-  <text x="426" y="150" text-anchor="middle" font-size="9" fill="#555">Bent/V-shaped</text>
-  <!-- V-shape -->
-  <line x1="426" y1="195" x2="402" y2="225" stroke="#c62828" stroke-width="2"/>
-  <line x1="426" y1="195" x2="450" y2="225" stroke="#c62828" stroke-width="2"/>
-  <circle cx="426" cy="195" r="3" fill="#c62828"/>
-  <circle cx="402" cy="225" r="3" fill="#c62828"/>
-  <circle cx="450" cy="225" r="3" fill="#c62828"/>
-  <text x="426" y="245" text-anchor="middle" font-size="8" fill="#c62828">2 LP (not shown)</text>
+<svg height="260" viewbox="0 0 520 260" width="520">
+<text fill="#2c5f2d" font-size="14" font-weight="bold" text-anchor="middle" x="260" y="20">Effect of Lone Pairs on Bond Angles — 4 Electron Domains</text>
+<!-- CH4 tetrahedral 109.5 -->
+<rect fill="#e8f5e9" height="200" rx="8" stroke="#2c5f2d" stroke-width="1.5" width="155" x="15" y="40"></rect>
+<text fill="#2c5f2d" font-size="12" font-weight="bold" text-anchor="middle" x="92" y="65">$\ce{CH4}$</text>
+<text font-size="10" text-anchor="middle" x="92" y="85">4 bonding pairs</text>
+<text font-size="10" text-anchor="middle" x="92" y="100">0 lone pairs</text>
+<text fill="#2c5f2d" font-size="16" font-weight="bold" text-anchor="middle" x="92" y="130">109.5°</text>
+<text fill="#555" font-size="9" text-anchor="middle" x="92" y="150">Tetrahedral</text>
+<!-- Methane tetrahedron -->
+<polygon fill="none" points="92,170 60,210 92,235 124,210" stroke="#2c5f2d" stroke-width="1.5"></polygon>
+<circle cx="92" cy="205" fill="#2c5f2d" r="3"></circle>
+<circle cx="60" cy="210" fill="#2c5f2d" r="3"></circle>
+<circle cx="124" cy="210" fill="#2c5f2d" r="3"></circle>
+<circle cx="92" cy="170" fill="#2c5f2d" r="3"></circle>
+<!-- NH3 trigonal pyramidal 107 -->
+<rect fill="#fff8e1" height="200" rx="8" stroke="#f9a825" stroke-width="1.5" width="155" x="182" y="40"></rect>
+<text fill="#e65100" font-size="12" font-weight="bold" text-anchor="middle" x="259" y="65">$\ce{NH3}$</text>
+<text font-size="10" text-anchor="middle" x="259" y="85">3 bonding pairs</text>
+<text font-size="10" text-anchor="middle" x="259" y="100">1 lone pair</text>
+<text fill="#e65100" font-size="16" font-weight="bold" text-anchor="middle" x="259" y="130">107°</text>
+<text fill="#555" font-size="9" text-anchor="middle" x="259" y="150">Trigonal pyramidal</text>
+<polygon fill="none" points="259,175 232,210 259,230 286,210" stroke="#e65100" stroke-width="1.5"></polygon>
+<circle cx="259" cy="200" fill="#e65100" r="3"></circle>
+<circle cx="232" cy="210" fill="#e65100" r="3"></circle>
+<circle cx="286" cy="210" fill="#e65100" r="3"></circle>
+<text fill="#e65100" font-size="8" text-anchor="middle" x="259" y="245">1 LP (not shown)</text>
+<!-- H2O bent 104.5 -->
+<rect fill="#ffebee" height="200" rx="8" stroke="#c62828" stroke-width="1.5" width="155" x="349" y="40"></rect>
+<text fill="#c62828" font-size="12" font-weight="bold" text-anchor="middle" x="426" y="65">$\ce{H2O}$</text>
+<text font-size="10" text-anchor="middle" x="426" y="85">2 bonding pairs</text>
+<text font-size="10" text-anchor="middle" x="426" y="100">2 lone pairs</text>
+<text fill="#c62828" font-size="16" font-weight="bold" text-anchor="middle" x="426" y="130">104.5°</text>
+<text fill="#555" font-size="9" text-anchor="middle" x="426" y="150">Bent/V-shaped</text>
+<!-- V-shape -->
+<line stroke="#c62828" stroke-width="2" x1="426" x2="402" y1="195" y2="225"></line>
+<line stroke="#c62828" stroke-width="2" x1="426" x2="450" y1="195" y2="225"></line>
+<circle cx="426" cy="195" fill="#c62828" r="3"></circle>
+<circle cx="402" cy="225" fill="#c62828" r="3"></circle>
+<circle cx="450" cy="225" fill="#c62828" r="3"></circle>
+<text fill="#c62828" font-size="8" text-anchor="middle" x="426" y="245">2 LP (not shown)</text>
 </svg>
 <div class="caption">Figure 1: The progressive compression of bond angles with increasing lone pairs. All three molecules have 4 electron domains (tetrahedral arrangement), but the bond angle shrinks from 109.5° → 107° → 104.5° as lone pair count increases from 0 → 1 → 2.</div>
 </div>
-
 <div class="check-in">
 <p><b>Check-in:</b> Why is the bond angle in $\ce{NH3}$ (107°) smaller than in $\ce{CH4}$ (109.5°)?</p>
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">Both have 4 electron domains (tetrahedral). However, $\ce{NH3}$ has one lone pair which occupies more space than a bonding pair. The lone pair–bonding pair repulsion is stronger than bonding pair–bonding pair repulsion, so the N–H bonds are pushed closer together, compressing the H–N–H angle from 109.5° to about 107°.</div>
 </div>
-
 <h2>3. The Complete VSEPR Geometry Table</h2>
-
 <table>
 <tr><th>Electron Domains</th><th>Bonding Pairs</th><th>Lone Pairs</th><th>Electron Domain Geometry</th><th>Molecular Geometry</th><th>Bond Angle</th><th>Example</th></tr>
 <tr><td>2</td><td>2</td><td>0</td><td>Linear</td><td>Linear</td><td>180°</td><td>$\ce{BeCl2}$, $\ce{CO2}$</td></tr>
@@ -171,218 +161,179 @@ $$\text{Lone pair–lone pair} > \text{Lone pair–bonding pair} > \text{Bonding
 <tr><td>6</td><td>5</td><td>1</td><td>Octahedral</td><td>Square pyramidal</td><td>&lt;90°</td><td>$\ce{BrF5}$</td></tr>
 <tr><td>6</td><td>4</td><td>2</td><td>Octahedral</td><td>Square planar</td><td>90°</td><td>$\ce{XeF4}$</td></tr>
 </table>
-
 <div class="diagram">
-<svg width="520" height="310" viewBox="0 0 520 310">
-  <text x="260" y="18" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c5f2d">Key Molecular Geometries (4, 5, and 6 domains)</text>
-
-  <!-- Tetrahedral -->
-  <text x="85" y="50" text-anchor="middle" font-size="11" font-weight="bold">Tetrahedral</text>
-  <line x1="85" y1="60" x2="70" y2="90" stroke="#2c5f2d" stroke-width="2"/>
-  <line x1="85" y1="60" x2="100" y2="90" stroke="#2c5f2d" stroke-width="2"/>
-  <line x1="85" y1="60" x2="60" y2="100" stroke="#2c5f2d" stroke-width="1.5" stroke-dasharray="3,2"/>
-  <line x1="85" y1="60" x2="110" y2="100" stroke="#2c5f2d" stroke-width="1.5" stroke-dasharray="3,2"/>
-  <circle cx="85" cy="60" r="3" fill="#2c5f2d"/>
-  <circle cx="70" cy="90" r="2.5" fill="#1565c0"/>
-  <circle cx="100" cy="90" r="2.5" fill="#1565c0"/>
-  <circle cx="60" cy="100" r="2.5" fill="#1565c0"/>
-  <circle cx="110" cy="100" r="2.5" fill="#1565c0"/>
-  <text x="85" y="120" text-anchor="middle" font-size="9">109.5°</text>
-
-  <!-- Trigonal bipyramidal -->
-  <text x="190" y="50" text-anchor="middle" font-size="11" font-weight="bold">Trigonal bipyramidal</text>
-  <line x1="190" y1="60" x2="165" y2="100" stroke="#e65100" stroke-width="2"/>
-  <line x1="190" y1="60" x2="215" y2="100" stroke="#e65100" stroke-width="2"/>
-  <line x1="190" y1="60" x2="190" y2="105" stroke="#e65100" stroke-width="2"/>
-  <line x1="190" y1="60" x2="175" y2="75" stroke="#e65100" stroke-width="1.5" stroke-dasharray="3,2"/>
-  <line x1="190" y1="60" x2="205" y2="75" stroke="#e65100" stroke-width="1.5" stroke-dasharray="3,2"/>
-  <circle cx="190" cy="60" r="3" fill="#e65100"/>
-  <circle cx="165" cy="100" r="2.5" fill="#1565c0"/>
-  <circle cx="215" cy="100" r="2.5" fill="#1565c0"/>
-  <circle cx="190" cy="105" r="2.5" fill="#1565c0"/>
-  <circle cx="175" cy="75" r="2.5" fill="#1565c0"/>
-  <circle cx="205" cy="75" r="2.5" fill="#1565c0"/>
-  <text x="190" y="120" text-anchor="middle" font-size="9">90° (ax-eq), 120° (eq-eq)</text>
-
-  <!-- Seesaw -->
-  <text x="310" y="50" text-anchor="middle" font-size="11" font-weight="bold">Seesaw (4 BP + 1 LP)</text>
-  <line x1="310" y1="60" x2="285" y2="100" stroke="#e65100" stroke-width="2"/>
-  <line x1="310" y1="60" x2="335" y2="100" stroke="#e65100" stroke-width="2"/>
-  <line x1="310" y1="60" x2="310" y2="105" stroke="#e65100" stroke-width="2"/>
-  <circle cx="310" cy="60" r="3" fill="#e65100"/>
-  <circle cx="285" cy="100" r="2.5" fill="#1565c0"/>
-  <circle cx="335" cy="100" r="2.5" fill="#1565c0"/>
-  <circle cx="310" cy="105" r="2.5" fill="#1565c0"/>
-  <text x="295" y="70" font-size="8" fill="#c62828">LP</text>
-  <text x="310" y="120" text-anchor="middle" font-size="9">&lt;90°, &lt;120°</text>
-
-  <!-- Octahedral -->
-  <text x="435" y="50" text-anchor="middle" font-size="11" font-weight="bold">Octahedral</text>
-  <line x1="435" y1="65" x2="415" y2="95" stroke="#7b1fa2" stroke-width="2"/>
-  <line x1="435" y1="65" x2="455" y2="95" stroke="#7b1fa2" stroke-width="2"/>
-  <line x1="435" y1="65" x2="415" y2="75" stroke="#7b1fa2" stroke-width="1.5" stroke-dasharray="3,2"/>
-  <line x1="435" y1="65" x2="455" y2="75" stroke="#7b1fa2" stroke-width="1.5" stroke-dasharray="3,2"/>
-  <line x1="435" y1="65" x2="435" y2="100" stroke="#7b1fa2" stroke-width="2"/>
-  <line x1="435" y1="65" x2="435" y2="30" stroke="#7b1fa2" stroke-width="2"/>
-  <circle cx="435" cy="65" r="3" fill="#7b1fa2"/>
-  <circle cx="415" cy="95" r="2.5" fill="#1565c0"/>
-  <circle cx="455" cy="95" r="2.5" fill="#1565c0"/>
-  <circle cx="415" cy="75" r="2.5" fill="#1565c0"/>
-  <circle cx="455" cy="75" r="2.5" fill="#1565c0"/>
-  <circle cx="435" cy="100" r="2.5" fill="#1565c0"/>
-  <circle cx="435" cy="30" r="2.5" fill="#1565c0"/>
-  <text x="435" y="120" text-anchor="middle" font-size="9">90°</text>
-
-  <!-- Additional shapes row -->
-  <text x="65" y="165" text-anchor="middle" font-size="10" font-weight="bold">Square planar</text>
-  <rect x="30" y="175" width="70" height="55" rx="5" fill="none" stroke="#7b1fa2" stroke-width="1.5"/>
-  <circle cx="65" cy="202" r="2.5" fill="#7b1fa2"/>
-  <circle cx="45" cy="185" r="2.5" fill="#1565c0"/>
-  <circle cx="85" cy="185" r="2.5" fill="#1565c0"/>
-  <circle cx="45" cy="220" r="2.5" fill="#1565c0"/>
-  <circle cx="85" cy="220" r="2.5" fill="#1565c0"/>
-  <text x="65" y="245" text-anchor="middle" font-size="8">$\ce{XeF4}$</text>
-
-  <text x="170" y="165" text-anchor="middle" font-size="10" font-weight="bold">T-shaped</text>
-  <line x1="170" y1="185" x2="150" y2="220" stroke="#e65100" stroke-width="2"/>
-  <line x1="170" y1="185" x2="190" y2="220" stroke="#e65100" stroke-width="2"/>
-  <line x1="170" y1="185" x2="170" y2="225" stroke="#e65100" stroke-width="2"/>
-  <circle cx="170" cy="185" r="3" fill="#e65100"/>
-  <circle cx="150" cy="220" r="2.5" fill="#1565c0"/>
-  <circle cx="190" cy="220" r="2.5" fill="#1565c0"/>
-  <circle cx="170" cy="225" r="2.5" fill="#1565c0"/>
-  <text x="170" y="245" text-anchor="middle" font-size="8">$\ce{ClF3}$</text>
-
-  <text x="270" y="165" text-anchor="middle" font-size="10" font-weight="bold">Square pyramidal</text>
-  <polygon points="255,225 240,195 250,180 270,180 280,195" fill="none" stroke="#7b1fa2" stroke-width="1.5"/>
-  <line x1="260" y1="190" x2="260" y2="170" stroke="#7b1fa2" stroke-width="2"/>
-  <circle cx="260" cy="190" r="2.5" fill="#7b1fa2"/>
-  <circle cx="255" cy="225" r="2.5" fill="#1565c0"/>
-  <circle cx="240" cy="195" r="2.5" fill="#1565c0"/>
-  <circle cx="250" cy="180" r="2.5" fill="#1565c0"/>
-  <circle cx="270" cy="180" r="2.5" fill="#1565c0"/>
-  <circle cx="280" cy="195" r="2.5" fill="#1565c0"/>
-  <circle cx="260" cy="170" r="2.5" fill="#1565c0"/>
-  <text x="270" y="245" text-anchor="middle" font-size="8">$\ce{BrF5}$</text>
-
-  <text x="380" y="165" text-anchor="middle" font-size="10" font-weight="bold">Trigonal pyramidal</text>
-  <line x1="380" y1="185" x2="365" y2="220" stroke="#e65100" stroke-width="2"/>
-  <line x1="380" y1="185" x2="395" y2="220" stroke="#e65100" stroke-width="2"/>
-  <line x1="380" y1="185" x2="380" y2="195" stroke="#e65100" stroke-width="1.5" stroke-dasharray="2,2"/>
-  <circle cx="380" cy="185" r="3" fill="#e65100"/>
-  <circle cx="365" cy="220" r="2.5" fill="#1565c0"/>
-  <circle cx="395" cy="220" r="2.5" fill="#1565c0"/>
-  <text x="380" y="210" font-size="8" fill="#c62828">LP ↑</text>
-  <text x="380" y="245" text-anchor="middle" font-size="8">$\ce{NH3}$</text>
-
-  <text x="470" y="165" text-anchor="middle" font-size="10" font-weight="bold">Bent</text>
-  <line x1="460" y1="185" x2="450" y2="220" stroke="#c62828" stroke-width="2"/>
-  <line x1="460" y1="185" x2="475" y2="220" stroke="#c62828" stroke-width="2"/>
-  <circle cx="460" cy="185" r="3" fill="#c62828"/>
-  <circle cx="450" cy="220" r="2.5" fill="#1565c0"/>
-  <circle cx="475" cy="220" r="2.5" fill="#1565c0"/>
-  <text x="465" y="210" font-size="8" fill="#c62828">2LP</text>
-  <text x="470" y="245" text-anchor="middle" font-size="8">$\ce{H2O}$</text>
-
-  <text x="260" y="285" text-anchor="middle" font-size="9" fill="#666">Note: dashed wedges go into the page; solid wedges come out of the page. Lone pairs are labelled "LP".</text>
+<svg height="310" viewbox="0 0 520 310" width="520">
+<text fill="#2c5f2d" font-size="14" font-weight="bold" text-anchor="middle" x="260" y="18">Key Molecular Geometries (4, 5, and 6 domains)</text>
+<!-- Tetrahedral -->
+<text font-size="11" font-weight="bold" text-anchor="middle" x="85" y="50">Tetrahedral</text>
+<line stroke="#2c5f2d" stroke-width="2" x1="85" x2="70" y1="60" y2="90"></line>
+<line stroke="#2c5f2d" stroke-width="2" x1="85" x2="100" y1="60" y2="90"></line>
+<line stroke="#2c5f2d" stroke-dasharray="3,2" stroke-width="1.5" x1="85" x2="60" y1="60" y2="100"></line>
+<line stroke="#2c5f2d" stroke-dasharray="3,2" stroke-width="1.5" x1="85" x2="110" y1="60" y2="100"></line>
+<circle cx="85" cy="60" fill="#2c5f2d" r="3"></circle>
+<circle cx="70" cy="90" fill="#1565c0" r="2.5"></circle>
+<circle cx="100" cy="90" fill="#1565c0" r="2.5"></circle>
+<circle cx="60" cy="100" fill="#1565c0" r="2.5"></circle>
+<circle cx="110" cy="100" fill="#1565c0" r="2.5"></circle>
+<text font-size="9" text-anchor="middle" x="85" y="120">109.5°</text>
+<!-- Trigonal bipyramidal -->
+<text font-size="11" font-weight="bold" text-anchor="middle" x="190" y="50">Trigonal bipyramidal</text>
+<line stroke="#e65100" stroke-width="2" x1="190" x2="165" y1="60" y2="100"></line>
+<line stroke="#e65100" stroke-width="2" x1="190" x2="215" y1="60" y2="100"></line>
+<line stroke="#e65100" stroke-width="2" x1="190" x2="190" y1="60" y2="105"></line>
+<line stroke="#e65100" stroke-dasharray="3,2" stroke-width="1.5" x1="190" x2="175" y1="60" y2="75"></line>
+<line stroke="#e65100" stroke-dasharray="3,2" stroke-width="1.5" x1="190" x2="205" y1="60" y2="75"></line>
+<circle cx="190" cy="60" fill="#e65100" r="3"></circle>
+<circle cx="165" cy="100" fill="#1565c0" r="2.5"></circle>
+<circle cx="215" cy="100" fill="#1565c0" r="2.5"></circle>
+<circle cx="190" cy="105" fill="#1565c0" r="2.5"></circle>
+<circle cx="175" cy="75" fill="#1565c0" r="2.5"></circle>
+<circle cx="205" cy="75" fill="#1565c0" r="2.5"></circle>
+<text font-size="9" text-anchor="middle" x="190" y="120">90° (ax-eq), 120° (eq-eq)</text>
+<!-- Seesaw -->
+<text font-size="11" font-weight="bold" text-anchor="middle" x="310" y="50">Seesaw (4 BP + 1 LP)</text>
+<line stroke="#e65100" stroke-width="2" x1="310" x2="285" y1="60" y2="100"></line>
+<line stroke="#e65100" stroke-width="2" x1="310" x2="335" y1="60" y2="100"></line>
+<line stroke="#e65100" stroke-width="2" x1="310" x2="310" y1="60" y2="105"></line>
+<circle cx="310" cy="60" fill="#e65100" r="3"></circle>
+<circle cx="285" cy="100" fill="#1565c0" r="2.5"></circle>
+<circle cx="335" cy="100" fill="#1565c0" r="2.5"></circle>
+<circle cx="310" cy="105" fill="#1565c0" r="2.5"></circle>
+<text fill="#c62828" font-size="8" x="295" y="70">LP</text>
+<text font-size="9" text-anchor="middle" x="310" y="120">&lt;90°, &lt;120°</text>
+<!-- Octahedral -->
+<text font-size="11" font-weight="bold" text-anchor="middle" x="435" y="50">Octahedral</text>
+<line stroke="#7b1fa2" stroke-width="2" x1="435" x2="415" y1="65" y2="95"></line>
+<line stroke="#7b1fa2" stroke-width="2" x1="435" x2="455" y1="65" y2="95"></line>
+<line stroke="#7b1fa2" stroke-dasharray="3,2" stroke-width="1.5" x1="435" x2="415" y1="65" y2="75"></line>
+<line stroke="#7b1fa2" stroke-dasharray="3,2" stroke-width="1.5" x1="435" x2="455" y1="65" y2="75"></line>
+<line stroke="#7b1fa2" stroke-width="2" x1="435" x2="435" y1="65" y2="100"></line>
+<line stroke="#7b1fa2" stroke-width="2" x1="435" x2="435" y1="65" y2="30"></line>
+<circle cx="435" cy="65" fill="#7b1fa2" r="3"></circle>
+<circle cx="415" cy="95" fill="#1565c0" r="2.5"></circle>
+<circle cx="455" cy="95" fill="#1565c0" r="2.5"></circle>
+<circle cx="415" cy="75" fill="#1565c0" r="2.5"></circle>
+<circle cx="455" cy="75" fill="#1565c0" r="2.5"></circle>
+<circle cx="435" cy="100" fill="#1565c0" r="2.5"></circle>
+<circle cx="435" cy="30" fill="#1565c0" r="2.5"></circle>
+<text font-size="9" text-anchor="middle" x="435" y="120">90°</text>
+<!-- Additional shapes row -->
+<text font-size="10" font-weight="bold" text-anchor="middle" x="65" y="165">Square planar</text>
+<rect fill="none" height="55" rx="5" stroke="#7b1fa2" stroke-width="1.5" width="70" x="30" y="175"></rect>
+<circle cx="65" cy="202" fill="#7b1fa2" r="2.5"></circle>
+<circle cx="45" cy="185" fill="#1565c0" r="2.5"></circle>
+<circle cx="85" cy="185" fill="#1565c0" r="2.5"></circle>
+<circle cx="45" cy="220" fill="#1565c0" r="2.5"></circle>
+<circle cx="85" cy="220" fill="#1565c0" r="2.5"></circle>
+<text font-size="8" text-anchor="middle" x="65" y="245">$\ce{XeF4}$</text>
+<text font-size="10" font-weight="bold" text-anchor="middle" x="170" y="165">T-shaped</text>
+<line stroke="#e65100" stroke-width="2" x1="170" x2="150" y1="185" y2="220"></line>
+<line stroke="#e65100" stroke-width="2" x1="170" x2="190" y1="185" y2="220"></line>
+<line stroke="#e65100" stroke-width="2" x1="170" x2="170" y1="185" y2="225"></line>
+<circle cx="170" cy="185" fill="#e65100" r="3"></circle>
+<circle cx="150" cy="220" fill="#1565c0" r="2.5"></circle>
+<circle cx="190" cy="220" fill="#1565c0" r="2.5"></circle>
+<circle cx="170" cy="225" fill="#1565c0" r="2.5"></circle>
+<text font-size="8" text-anchor="middle" x="170" y="245">$\ce{ClF3}$</text>
+<text font-size="10" font-weight="bold" text-anchor="middle" x="270" y="165">Square pyramidal</text>
+<polygon fill="none" points="255,225 240,195 250,180 270,180 280,195" stroke="#7b1fa2" stroke-width="1.5"></polygon>
+<line stroke="#7b1fa2" stroke-width="2" x1="260" x2="260" y1="190" y2="170"></line>
+<circle cx="260" cy="190" fill="#7b1fa2" r="2.5"></circle>
+<circle cx="255" cy="225" fill="#1565c0" r="2.5"></circle>
+<circle cx="240" cy="195" fill="#1565c0" r="2.5"></circle>
+<circle cx="250" cy="180" fill="#1565c0" r="2.5"></circle>
+<circle cx="270" cy="180" fill="#1565c0" r="2.5"></circle>
+<circle cx="280" cy="195" fill="#1565c0" r="2.5"></circle>
+<circle cx="260" cy="170" fill="#1565c0" r="2.5"></circle>
+<text font-size="8" text-anchor="middle" x="270" y="245">$\ce{BrF5}$</text>
+<text font-size="10" font-weight="bold" text-anchor="middle" x="380" y="165">Trigonal pyramidal</text>
+<line stroke="#e65100" stroke-width="2" x1="380" x2="365" y1="185" y2="220"></line>
+<line stroke="#e65100" stroke-width="2" x1="380" x2="395" y1="185" y2="220"></line>
+<line stroke="#e65100" stroke-dasharray="2,2" stroke-width="1.5" x1="380" x2="380" y1="185" y2="195"></line>
+<circle cx="380" cy="185" fill="#e65100" r="3"></circle>
+<circle cx="365" cy="220" fill="#1565c0" r="2.5"></circle>
+<circle cx="395" cy="220" fill="#1565c0" r="2.5"></circle>
+<text fill="#c62828" font-size="8" x="380" y="210">LP ↑</text>
+<text font-size="8" text-anchor="middle" x="380" y="245">$\ce{NH3}$</text>
+<text font-size="10" font-weight="bold" text-anchor="middle" x="470" y="165">Bent</text>
+<line stroke="#c62828" stroke-width="2" x1="460" x2="450" y1="185" y2="220"></line>
+<line stroke="#c62828" stroke-width="2" x1="460" x2="475" y1="185" y2="220"></line>
+<circle cx="460" cy="185" fill="#c62828" r="3"></circle>
+<circle cx="450" cy="220" fill="#1565c0" r="2.5"></circle>
+<circle cx="475" cy="220" fill="#1565c0" r="2.5"></circle>
+<text fill="#c62828" font-size="8" x="465" y="210">2LP</text>
+<text font-size="8" text-anchor="middle" x="470" y="245">$\ce{H2O}$</text>
+<text fill="#666" font-size="9" text-anchor="middle" x="260" y="285">Note: dashed wedges go into the page; solid wedges come out of the page. Lone pairs are labelled "LP".</text>
 </svg>
 <div class="caption">Figure 2: Key molecular geometries with 4, 5, and 6 electron domains. The shape name describes the arrangement of ATOMS only — lone pairs are invisible in the molecular geometry but determine the shape.</div>
 </div>
-
 <h2>4. Special Considerations</h2>
-
 <h3>4.1 Multiple Bonds Count as ONE Domain</h3>
-
 <p>A double or triple bond is treated as <b>one electron domain</b> in VSEPR, because all the electron density is concentrated in the same region between the two nuclei. $\ce{CO2}$ has 2 domains (two double bonds) → linear; $\ce{SO2}$ has 3 domains (one double bond, one single bond, one lone pair) → bent.</p>
-
 <h3>4.2 5-Domain Geometries — Axial vs. Equatorial</h3>
-
 <p>In a <b>trigonal bipyramid</b>, there are two types of positions: <b>axial</b> (180° apart, 3 × 90° interactions with equatorial ligands) and <b>equatorial</b> (120° apart, 2 × 90° interactions). Lone pairs always occupy <b>equatorial</b> positions first because they minimise the number of 90° LP–BP repulsions (2 vs. 3).</p>
-
 <div class="check-in">
 <p><b>Check-in:</b> In $\ce{SF4}$ (seesaw shape), where is the lone pair located — axial or equatorial? Why?</p>
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">The lone pair occupies an <b>equatorial</b> position. If it were axial, it would have three 90° LP–BP repulsions with the equatorial fluorine atoms. In the equatorial position, it has only two 90° LP–BP repulsions. This minimises overall repulsion, making the seesaw shape more stable.</div>
 </div>
-
 <div class="check-in">
 <p><b>Check-in:</b> $\ce{XeF2}$ has 5 electron domains but is linear. Explain.</p>
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">$\ce{XeF2}$: Xe(8) + 2×F(7) = 22 valence electrons. Lewis structure: two Xe–F bonds + three lone pairs on Xe. That's 5 electron domains (trigonal bipyramidal). The three lone pairs occupy all three equatorial positions (to minimise 90° repulsions), leaving the two F atoms in axial positions — exactly 180° apart. The molecular geometry (atoms only) is <b>linear</b>.</div>
 </div>
-
 <h2>5. Worked Examples</h2>
-
 <div class="example">
-<b>Example 1 — Complete VSEPR Analysis of $\ce{PCl3}$:</b><br><br>
-<b>Lewis structure:</b> P(5) + 3×Cl(7) = 26 e⁻. Three P–Cl single bonds + 1 lone pair on P. Each Cl has 3 lone pairs.<br>
-<b>Electron domains:</b> 3 bonding + 1 lone = 4 → tetrahedral electron domain geometry.<br>
-<b>Molecular geometry:</b> 3 bonding + 1 lone → <b>trigonal pyramidal</b>.<br>
-<b>Bond angle:</b> ~107° (less than 109.5° due to lone pair compression).<br>
+<b>Example 1 — Complete VSEPR Analysis of $\ce{PCl3}$:</b><br/><br/>
+<b>Lewis structure:</b> P(5) + 3×Cl(7) = 26 e⁻. Three P–Cl single bonds + 1 lone pair on P. Each Cl has 3 lone pairs.<br/>
+<b>Electron domains:</b> 3 bonding + 1 lone = 4 → tetrahedral electron domain geometry.<br/>
+<b>Molecular geometry:</b> 3 bonding + 1 lone → <b>trigonal pyramidal</b>.<br/>
+<b>Bond angle:</b> ~107° (less than 109.5° due to lone pair compression).<br/>
 <b>Polarity:</b> The molecule is polar — the Cl–P bonds are polar (Cl more EN) and the trigonal pyramidal shape prevents cancellation of bond dipoles. The net dipole points downward (toward the lone pair).
 </div>
-
 <div class="example">
-<b>Example 2 — $\ce{XeF4}$ (Square Planar, HL):</b><br><br>
-<b>Lewis structure:</b> Xe(8) + 4×F(7) = 36 e⁻. Four Xe–F bonds (8 e⁻), each F with 3 lone pairs (24 e⁻), remaining 4 e⁻ = 2 lone pairs on Xe.<br>
-<b>Electron domains:</b> 4 bonding + 2 lone = 6 → octahedral electron domain geometry.<br>
-<b>Lone pair placement:</b> The two lone pairs must be placed opposite each other (180° apart, axial positions) to minimise LP–LP repulsion.<br>
-<b>Molecular geometry:</b> 4 bonding pairs in a square plane → <b>square planar</b>.<br>
-<b>Bond angle:</b> 90° (between adjacent F atoms).<br>
+<b>Example 2 — $\ce{XeF4}$ (Square Planar, HL):</b><br/><br/>
+<b>Lewis structure:</b> Xe(8) + 4×F(7) = 36 e⁻. Four Xe–F bonds (8 e⁻), each F with 3 lone pairs (24 e⁻), remaining 4 e⁻ = 2 lone pairs on Xe.<br/>
+<b>Electron domains:</b> 4 bonding + 2 lone = 6 → octahedral electron domain geometry.<br/>
+<b>Lone pair placement:</b> The two lone pairs must be placed opposite each other (180° apart, axial positions) to minimise LP–LP repulsion.<br/>
+<b>Molecular geometry:</b> 4 bonding pairs in a square plane → <b>square planar</b>.<br/>
+<b>Bond angle:</b> 90° (between adjacent F atoms).<br/>
 <b>Polarity:</b> Non-polar — the four bond dipoles are symmetrically arranged in a plane and cancel.
 </div>
-
 <div class="example">
-<b>Example 3 — $\ce{SO4^{2-}}$ vs. $\ce{SO3^{2-}}$:</b><br><br>
-These two sulfur oxoanions have very different shapes despite both having a central S atom bonded to oxygen. Explain.<br><br>
-<b>$\ce{SO4^{2-}}$ (sulfate):</b> S(6) + 4×O(6) + 2 = 32 e⁻. Four S–O bonds (with resonance), <b>no lone pair on S</b>. 4 domains → tetrahedral, 109.5°.<br>
-<b>$\ce{SO3^{2-}}$ (sulfite):</b> S(6) + 3×O(6) + 2 = 26 e⁻. Three S–O bonds + <b>1 lone pair on S</b>. 4 domains → trigonal pyramidal, ~107°.<br><br>
+<b>Example 3 — $\ce{SO4^{2-}}$ vs. $\ce{SO3^{2-}}$:</b><br/><br/>
+These two sulfur oxoanions have very different shapes despite both having a central S atom bonded to oxygen. Explain.<br/><br/>
+<b>$\ce{SO4^{2-}}$ (sulfate):</b> S(6) + 4×O(6) + 2 = 32 e⁻. Four S–O bonds (with resonance), <b>no lone pair on S</b>. 4 domains → tetrahedral, 109.5°.<br/>
+<b>$\ce{SO3^{2-}}$ (sulfite):</b> S(6) + 3×O(6) + 2 = 26 e⁻. Three S–O bonds + <b>1 lone pair on S</b>. 4 domains → trigonal pyramidal, ~107°.<br/><br/>
 The difference: adding one more O atom to sulfite uses the lone pair in bonding, converting trigonal pyramidal to tetrahedral. The bond angle increases and the polarity changes.
 </div>
-
 <h2>6. Common Misconceptions</h2>
-
 <div class="misconception">
 <h3>⚠️ Common Mistakes to Avoid</h3>
 <ol>
-  <li><b>Counting a double bond as two electron domains.</b> A double bond is <b>one domain</b>. $\ce{CO2}$ has 2 domains (not 4), so it's linear, not bent. This is the single most common VSEPR error.</li>
-  <li><b>Confusing electron domain geometry with molecular geometry.</b> The electron domain geometry includes lone pairs; the molecular geometry describes atom positions only. $\ce{NH3}$ has tetrahedral <em>electron</em> geometry but trigonal pyramidal <em>molecular</em> geometry.</li>
-  <li><b>Thinking ionic compounds have molecular shapes.</b> VSEPR applies only to discrete covalent molecules and polyatomic ions. NaCl does not have a "shape" — it has a crystal lattice structure.</li>
-  <li><b>Forgetting that lone pairs on terminal atoms do not affect the central atom's geometry.</b> Only lone pairs <em>on the central atom</em> influence shape. The three lone pairs on each Cl in $\ce{PCl3}$ do not affect the trigonal pyramidal shape — only the one lone pair on P matters.</li>
-  <li><b>Assuming the ideal angle without accounting for lone pair compression.</b> If asked for the bond angle in $\ce{NH3}$, writing 109.5° is wrong. It's 107°. The IB expects you to know that lone pairs compress bond angles by about 2.5° per lone pair.</li>
+<li><b>Counting a double bond as two electron domains.</b> A double bond is <b>one domain</b>. $\ce{CO2}$ has 2 domains (not 4), so it's linear, not bent. This is the single most common VSEPR error.</li>
+<li><b>Confusing electron domain geometry with molecular geometry.</b> The electron domain geometry includes lone pairs; the molecular geometry describes atom positions only. $\ce{NH3}$ has tetrahedral <em>electron</em> geometry but trigonal pyramidal <em>molecular</em> geometry.</li>
+<li><b>Thinking ionic compounds have molecular shapes.</b> VSEPR applies only to discrete covalent molecules and polyatomic ions. NaCl does not have a "shape" — it has a crystal lattice structure.</li>
+<li><b>Forgetting that lone pairs on terminal atoms do not affect the central atom's geometry.</b> Only lone pairs <em>on the central atom</em> influence shape. The three lone pairs on each Cl in $\ce{PCl3}$ do not affect the trigonal pyramidal shape — only the one lone pair on P matters.</li>
+<li><b>Assuming the ideal angle without accounting for lone pair compression.</b> If asked for the bond angle in $\ce{NH3}$, writing 109.5° is wrong. It's 107°. The IB expects you to know that lone pairs compress bond angles by about 2.5° per lone pair.</li>
 </ol>
 </div>
-
 <h2>7. End-of-Lesson Practice</h2>
-
 <p><b>Question 1:</b> State the electron domain geometry, molecular geometry, and approximate bond angle for: (a) $\ce{BeCl2}$, (b) $\ce{BF3}$, (c) $\ce{CH4}$.</p>
-
 <p><b>Question 2:</b> Predict the shape and bond angle of $\ce{SO2}$. Explain why it is not linear like $\ce{CO2}$.</p>
-
 <p><b>Question 3:</b> Draw the Lewis structure of $\ce{IF5}$ and predict its molecular shape. Where is the lone pair? (HL)</p>
-
 <p><b>Question 4:</b> Compare the shapes and bond angles of $\ce{NH3}$, $\ce{PH3}$, and $\ce{AsH3}$. All are Group 15 hydrides — explain any differences.</p>
-
 <p><b>Question 5:</b> $\ce{ClF3}$ has the molecular formula $\ce{AX3E2}$ (3 bonding, 2 lone pairs). Predict its shape and explain the positions of the lone pairs. (HL)</p>
-
 <p><b>Question 6 (HL synthesis):</b> For $\ce{XeOF4}$ (xenon oxytetrafluoride): (a) draw the Lewis structure, (b) determine the number of electron domains around Xe, (c) predict the molecular geometry, (d) state the approximate O–Xe–F and F–Xe–F bond angles.</p>
-
 <button class="practice-toggle" onclick="var a=this.nextElementSibling;a.classList.toggle('open');this.textContent=a.classList.contains('open')?'▴ Hide Answers':'▸ Show Answers'">▸ Show Answers</button>
 <div class="practice-answers">
-
 <p><b>Answer 1:</b> (a) $\ce{BeCl2}$: 2 domains (2 bonding, 0 lone) → linear, 180°. (b) $\ce{BF3}$: 3 domains (3 bonding, 0 lone) → trigonal planar, 120°. (c) $\ce{CH4}$: 4 domains (4 bonding, 0 lone) → tetrahedral, 109.5°.</p>
-
 <p><b>Answer 2:</b> $\ce{SO2}$: 3 electron domains (S=O double bond, S–O single bond, 1 lone pair on S) → <b>bent/V-shaped</b>, ~119°. $\ce{CO2}$ has only 2 domains (two C=O double bonds, no lone pair on C) → linear. The lone pair on S is the crucial difference.</p>
-
 <p><b>Answer 3:</b> $\ce{IF5}$: I(7) + 5×F(7) = 42 e⁻. Five I–F bonds (10 e⁻), each F with 3 lone pairs (30 e⁻), 2 e⁻ left = 1 lone pair on I. Six electron domains (octahedral), 5 bonding + 1 lone → <b>square pyramidal</b>. The lone pair is opposite one F, pushing the four equatorial F atoms slightly down. Bond angles: slightly less than 90°.</p>
-
-<p><b>Answer 4:</b> All three are trigonal pyramidal (4 domains, 3 bonding + 1 lone). Bond angles: $\ce{NH3}$ (107°) > $\ce{PH3}$ (93.5°) > $\ce{AsH3}$ (91.8°). As the central atom gets larger down the group, the bonding pairs are further from the central atom, reducing BP–BP repulsion. Consequently, the lone pair compresses the bond angle more severely in the heavier hydrides. Additionally, the H–X–H angle approaches 90° as the central atom uses almost pure p orbitals for bonding (little hybridisation in heavier elements).</p>
-
+<p><b>Answer 4:</b> All three are trigonal pyramidal (4 domains, 3 bonding + 1 lone). Bond angles: $\ce{NH3}$ (107°) &gt; $\ce{PH3}$ (93.5°) &gt; $\ce{AsH3}$ (91.8°). As the central atom gets larger down the group, the bonding pairs are further from the central atom, reducing BP–BP repulsion. Consequently, the lone pair compresses the bond angle more severely in the heavier hydrides. Additionally, the H–X–H angle approaches 90° as the central atom uses almost pure p orbitals for bonding (little hybridisation in heavier elements).</p>
 <p><b>Answer 5:</b> $\ce{ClF3}$: 5 electron domains — trigonal bipyramidal. The two lone pairs occupy equatorial positions (to minimise 90° LP–LP and LP–BP repulsions). The three F atoms occupy the remaining two axial positions and one equatorial position → <b>T-shaped</b>. F–Cl–F angles are approximately 87.5° (between axial and equatorial F) and 175° (between axial F atoms, slightly bent due to equatorial lone pairs).</p>
-
 <p><b>Answer 6:</b> (a) Xe(8) + O(6) + 4×F(7) = 42 e⁻. One Xe=O double bond, four Xe–F single bonds, one lone pair on Xe. (b) 6 electron domains (1 double bond + 4 single bonds + 1 lone pair). (c) Octahedral electron geometry, 5 bonding + 1 lone → <b>square pyramidal</b> — but the oxygen occupies one position. The preferred structure places the double-bonded O opposite the lone pair (to minimise LP–double bond repulsion), with the four F atoms in the square plane. (d) O–Xe–F ≈ 90° (axial-equatorial), F–Xe–F ≈ 90° (adjacent in square plane). The F atoms are slightly pushed away from the lone pair.</p>
 </div>
-
 <h2>8. Key Terms</h2>
 <table>
 <tr><th>Term</th><th>Definition</th></tr>
@@ -397,14 +348,137 @@ The difference: adding one more O atom to sulfite uses the lone pair in bonding,
 <tr><td>Trigonal planar</td><td>3 electron domains, 120° apart in a plane (e.g., $\ce{BF3}$)</td></tr>
 <tr><td>Octahedral</td><td>6 electron domains, 90° apart, arranged around a central point like the vertices of an octahedron</td></tr>
 </table>
-
 <h2>9. Exam Tips</h2>
-
 <div class="exam-tip"><b>Paper 1 — "Which species has shape X?":</b> These questions test whether you can quickly count electron domains. Strategy: (1) identify the central atom, (2) count groups around it (each bond = 1, double bond = 1), (3) subtract from group valence to find lone pairs, (4) match to shape. Time-saving: $\ce{NH4+}$ = tetrahedral, $\ce{H3O+}$ = trigonal pyramidal, $\ce{CO3^{2-}}$ = trigonal planar — memorise these.</div>
-
 <div class="exam-tip"><b>Paper 2 — Drawing shapes:</b> You MUST use wedges and dashes to show 3D structure. Solid wedge = coming out of page; dashed wedge = going into page; solid line = in plane. For tetrahedral: two in plane, one out, one in. For trigonal planar: all in plane (no wedges needed). For octahedral: four in plane, one out, one in. Label bond angles and name the shape explicitly.</div>
-
 <div class="exam-tip"><b>HL — 5 and 6 domain shapes:</b> The IB only tests seesaw, T-shaped, square pyramidal, and square planar for 5- and 6-domain species. Know how lone pairs are placed: equatorial first for 5-domain, opposite each other for 6-domain. $\ce{XeF2}$ (linear), $\ce{SF4}$ (seesaw), $\ce{ClF3}$ (T-shaped), $\ce{BrF5}$ (square pyramidal), and $\ce{XeF4}$ (square planar) are the classic examples.</div>
 
+<div class="lesson-actions" style="margin: 2rem 0; padding: 1.5rem; background: #f8fafc; border-radius: 8px; display: flex; gap: 1rem; flex-wrap: wrap;">
+<button class="action-btn" id="generate-flashcards-btn" style="padding: 0.75rem 1.5rem; background: #3b82f6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        🗂️ Generate Flashcards
+    </button>
+<button class="action-btn" id="practice-problems-btn" style="padding: 0.75rem 1.5rem; background: #10b981; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        ✏️ Practice Problems
+    </button>
+<button class="action-btn" id="ask-ai-btn" style="padding: 0.75rem 1.5rem; background: #8b5cf6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        💬 Ask AI
+    </button>
+</div>
+<script>
+(function() {
+    const subjectKey = "chemistry";
+    const lessonId = "lesson_10";
+    const lessonTitle = "Lesson 10: VSEPR Theory — Molecular Shapes & Bond Angles";
+
+    function getCsrf() {
+        var m = document.querySelector('meta[name="csrf-token"]');
+        return m ? m.getAttribute('content') : '';
+    }
+
+    // Completion checkbox
+    const checkbox = document.getElementById('lesson-complete');
+    if (checkbox) {
+        // Load saved state
+        const saved = localStorage.getItem(`completed_${subjectKey}_${lessonId}`);
+        if (saved === 'true') checkbox.checked = true;
+
+        checkbox.addEventListener('change', async function() {
+            const completed = this.checked;
+            localStorage.setItem(`completed_${subjectKey}_${lessonId}`, completed);
+
+            try {
+                await fetch('/toggle_completion', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': getCsrf()
+                    },
+                    body: JSON.stringify({
+                        subject: subjectKey,
+                        lesson: lessonId,
+                        completed: completed
+                    })
+                });
+            } catch(e) {
+                console.error('Error saving completion:', e);
+            }
+        });
+    }
+
+    // Generate Flashcards
+    const flashcardsBtn = document.getElementById('generate-flashcards-btn');
+    if (flashcardsBtn) {
+        flashcardsBtn.addEventListener('click', async function() {
+            this.disabled = true;
+            this.textContent = '⏳ Generating...';
+
+            try {
+                const content = document.body.innerText.substring(0, 2000);
+                const response = await fetch('/generate_flashcards', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': getCsrf()
+                    },
+                    body: JSON.stringify({
+                        subject: subjectKey,
+                        lesson: lessonTitle,
+                        content_summary: content
+                    })
+                });
+
+                const data = await response.json();
+                if (data.error) {
+                    alert('Error: ' + data.error);
+                } else {
+                    alert(`✅ Created ${data.count} flashcards! View them at /flashcards/${subjectKey}`);
+                }
+            } catch(e) {
+                alert('Error generating flashcards: ' + e.message);
+            } finally {
+                this.disabled = false;
+                this.textContent = '🗂️ Generate Flashcards';
+            }
+        });
+    }
+
+    // Practice Problems - open in new section
+    const practiceBtn = document.getElementById('practice-problems-btn');
+    if (practiceBtn) {
+        practiceBtn.addEventListener('click', function() {
+            alert('Practice problems feature coming soon! Use the AI chatbot to generate custom questions.');
+        });
+    }
+
+    // Ask AI - scroll to chatbot
+    const aiBtn = document.getElementById('ask-ai-btn');
+    if (aiBtn) {
+        aiBtn.addEventListener('click', function() {
+            const chatbot = document.getElementById('lessons-chatbot');
+            if (chatbot) {
+                chatbot.scrollIntoView({ behavior: 'smooth' });
+                const toggleBtn = chatbot.querySelector('.chatbot-toggle');
+                if (toggleBtn) toggleBtn.click();
+            } else {
+                alert('AI chatbot not available on this page. It will be added soon!');
+            }
+        });
+    }
+
+    // Track lesson view
+    fetch('/mark_viewed', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': getCsrf()
+        },
+        body: JSON.stringify({
+            subject: subjectKey,
+            lesson: lessonId
+        })
+    }).catch(e => console.error('Error tracking view:', e));
+
+})();
+</script>
 </body>
 </html>

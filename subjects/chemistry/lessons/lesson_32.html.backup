@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 32 — Chemistry HL — Oxidation Numbers & Redox</title>
+<script>
+window.MathJax = {tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] },
+  loader: { load: ['[tex]/mhchem'] }};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+:root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Georgia', 'Times New Roman', serif; font-size: 17px; line-height: 1.7; color: var(--text); background: var(--bg); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; }
+h1 { font-size: 1.8rem; color: var(--accent); border-bottom: 3px solid var(--accent); padding-bottom: 0.5rem; margin-bottom: 1rem; }
+h2 { font-size: 1.35rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+h3 { font-size: 1.15rem; color: var(--accent); margin: 1.5rem 0 0.5rem; }
+p { margin-bottom: 0.8rem; }
+.objectives { background: #f0f4ff; border-left: 4px solid var(--accent); padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+.objectives h3 { margin-top: 0; }
+.check-in { background: #fff8e1; border: 1px solid #ffc107; padding: 0.8rem 1rem; margin: 1rem 0; border-radius: 8px; }
+.check-in p { margin-bottom: 0.3rem; }
+.answer-toggle { display: inline-block; padding: 0.2rem 0.8rem; border-radius: 16px; cursor: pointer; font-size: 0.8rem; font-weight: 600; background: #e8f5e9; color: #2e7d32; border: 1px solid #2e7d32; user-select: none; margin-top: 0.3rem; }
+.answer-content { display: none; background: #f1f8e9; padding: 0.6rem 1rem; border-radius: 8px; margin-top: 0.5rem; }
+.answer-content.open { display: block; }
+.example { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem; margin: 1rem 0; }
+.misconception { background: #fff3e0; border-left: 4px solid #e65100; padding: 1rem 1.2rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+.misconception h3 { color: #e65100; }
+.exam-tip { background: #e8f5e9; border-left: 4px solid #2e7d32; padding: 0.8rem 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+th { background: var(--accent); color: white; padding: 0.5rem 0.8rem; text-align: left; }
+td { padding: 0.5rem 0.8rem; border-bottom: 1px solid var(--border); }
+tr:nth-child(even) td { background: #f8f8f6; }
+.diagram { text-align: center; margin: 1.5rem 0; }
+.diagram svg { max-width: 100%; }
+.diagram .caption { font-size: 0.9rem; color: #666; margin-top: 0.3rem; font-style: italic; }
+pre.ascii-art { font-family: 'Courier New', monospace; font-size: 0.75rem; line-height: 1.2; background: #f5f5f5; padding: 0.8rem; border-radius: 8px; overflow-x: auto; }
+.practice-toggle { display: block; width: 100%; padding: 0.8rem; background: var(--accent); color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem; font-weight: 600; margin: 1.5rem 0; }
+.practice-answers { display: none; }
+.practice-answers.open { display: block; }
+</style>
+</head>
+<body>
+
+<h1>Lesson 32: Oxidation Numbers & Identifying Redox Reactions</h1>
+
+<p><b>Syllabus reference:</b> 9.1 — Oxidation and Reduction, Oxidation States</p>
+
+<!-- SECTION A -->
+<div class="objectives">
+<h3>Learning Objectives</h3>
+<p>By the end of this lesson, you will be able to:</p>
+<ul>
+  <li><b>Define</b> oxidation and reduction in terms of electron transfer and oxidation number changes.</li>
+  <li><b>Apply</b> the rules for assigning oxidation numbers to atoms in any compound or ion.</li>
+  <li><b>Identify</b> which species is oxidised and which is reduced in a redox reaction.</li>
+  <li><b>Distinguish</b> redox reactions from non-redox reactions (e.g., precipitation, acid–base, ligand exchange).</li>
+  <li><b>Determine</b> the oxidising agent and reducing agent in a reaction.</li>
+</ul>
+</div>
+
+<!-- SECTION B -->
+<h2>1. Prior Knowledge Check</h2>
+
+<p><b>Question 1:</b> What does OIL RIG stand for?</p>
+<div class="check-in">
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content"><b>O</b>xidation <b>I</b>s <b>L</b>oss (of electrons). <b>R</b>eduction <b>I</b>s <b>G</b>ain (of electrons). This is the electron-transfer definition. The species that loses electrons is <b>oxidised</b>; the species that gains electrons is <b>reduced</b>.</div>
+</div>
+
+<p><b>Question 2:</b> What is the charge on (a) an oxide ion, (b) a chloride ion, (c) a sodium ion?</p>
+<div class="check-in">
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">(a) $\ce{O^{2-}}$, (b) $\ce{Cl-}$, (c) $\ce{Na+}$. These are the common monatomic ions — their oxidation numbers equal their charges.</div>
+</div>
+
+<!-- SECTION C -->
+<h2>2. The Oxidation Number — A Bookkeeping Tool</h2>
+
+<p>The <b>oxidation number</b> (or oxidation state) is the <b>apparent charge</b> an atom would have if all bonds were completely ionic — with the more electronegative atom taking all the bonding electrons. It is a formalism, not a real charge, but it is indispensable for tracking electron transfer.</p>
+
+<h3>2.1 The Nine Rules for Assigning Oxidation Numbers</h3>
+
+<p>Apply these rules <b>in order</b> — when a conflict arises, the rule that appears earlier takes priority:</p>
+
+<table>
+<tr><th>#</th><th>Rule</th><th>Example</th></tr>
+<tr><td>1</td><td>The oxidation number of an atom in a <b>free element</b> is <b>0</b>.</td><td>$\ce{O2}$: O = 0; $\ce{Na(s)}$: Na = 0; $\ce{P4}$: P = 0</td></tr>
+<tr><td>2</td><td>For a <b>monatomic ion</b>, the oxidation number equals the <b>charge</b> of the ion.</td><td>$\ce{Cl-}$: −1; $\ce{Fe^{3+}}$: +3; $\ce{S^{2-}}$: −2</td></tr>
+<tr><td>3</td><td><b>Fluorine</b> in compounds is always <b>−1</b>.</td><td>$\ce{HF}$, $\ce{OF2}$, $\ce{NaF}$: F = −1</td></tr>
+<tr><td>4</td><td><b>Group 1</b> metals (Li, Na, K, etc.) are always <b>+1</b>. <b>Group 2</b> (Mg, Ca, etc.) are always <b>+2</b>.</td><td>$\ce{NaCl}$: Na = +1; $\ce{CaO}$: Ca = +2</td></tr>
+<tr><td>5</td><td><b>Hydrogen</b> is <b>+1</b> when bonded to non-metals, <b>−1</b> when bonded to metals (hydrides).</td><td>$\ce{H2O}$: H = +1; $\ce{NaH}$: H = −1</td></tr>
+<tr><td>6</td><td><b>Oxygen</b> is <b>−2</b> in most compounds. Exceptions: peroxides (−1), superoxides (−½), $\ce{OF2}$ (+2).</td><td>$\ce{H2O}$: O = −2; $\ce{H2O2}$: O = −1</td></tr>
+<tr><td>7</td><td><b>Group 17</b> (halogens) are usually <b>−1</b>, except when bonded to O or a more electronegative halogen.</td><td>$\ce{NaCl}$: Cl = −1; $\ce{ClO-}$: Cl = +1</td></tr>
+<tr><td>8</td><td>The <b>sum</b> of oxidation numbers in a neutral compound is <b>0</b>.</td><td>$\ce{H2SO4}$: 2(+1) + S + 4(−2) = 0 → S = +6</td></tr>
+<tr><td>9</td><td>The <b>sum</b> of oxidation numbers in a polyatomic ion equals the <b>ion's charge</b>.</td><td>$\ce{MnO4-}$: Mn + 4(−2) = −1 → Mn = +7</td></tr>
+</table>
+
+<div class="diagram">
+<svg width="560" height="200" viewBox="0 0 560 200">
+  <text x="280" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c5f2d">Oxidation Number Scale — Tracking Electrons</text>
+  <line x1="30" y1="100" x2="530" y2="100" stroke="#333" stroke-width="2"/>
+  <line x1="30" y1="90" x2="30" y2="110" stroke="#333" stroke-width="2"/><text x="30" y="125" text-anchor="middle" font-size="10">−4</text>
+  <line x1="130" y1="90" x2="130" y2="110" stroke="#333" stroke-width="2"/><text x="130" y="125" text-anchor="middle" font-size="10">−2</text>
+  <line x1="230" y1="90" x2="230" y2="110" stroke="#333" stroke-width="2"/><text x="230" y="125" text-anchor="middle" font-size="10">0</text>
+  <line x1="330" y1="90" x2="330" y2="110" stroke="#333" stroke-width="2"/><text x="330" y="125" text-anchor="middle" font-size="10">+2</text>
+  <line x1="430" y1="90" x2="430" y2="110" stroke="#333" stroke-width="2"/><text x="430" y="125" text-anchor="middle" font-size="10">+4</text>
+  <line x1="530" y1="90" x2="530" y2="110" stroke="#333" stroke-width="2"/><text x="530" y="125" text-anchor="middle" font-size="10">+6</text>
+  <text x="30" y="80" text-anchor="middle" font-size="11" fill="#c62828">REDUCTION</text>
+  <text x="30" y="68" text-anchor="middle" font-size="10">(gain e⁻)</text>
+  <text x="530" y="80" text-anchor="middle" font-size="11" fill="#1565c0">OXIDATION</text>
+  <text x="530" y="68" text-anchor="middle" font-size="10">(lose e⁻)</text>
+  <line x1="30" y1="80" x2="530" y2="80" stroke="#c62828" stroke-width="2" marker-end="url(#arrR2)"/>
+  <defs><marker id="arrR2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#c62828"/></marker></defs>
+  <text x="280" y="155" text-anchor="middle" font-size="11" fill="#555">Mn in MnO₄⁻ (+7) → Mn²⁺ (+2): 5 e⁻ gained → reduced (Mn decreases by 5)</text>
+  <text x="280" y="175" text-anchor="middle" font-size="11" fill="#555">Fe²⁺ (+2) → Fe³⁺ (+3): 1 e⁻ lost → oxidised (Fe increases by 1)</text>
+</svg>
+<div class="caption">Figure 1: Oxidation number changes. An increase means oxidation (loss of electrons). A decrease means reduction (gain of electrons).</div>
+</div>
+
+<div class="check-in">
+<p><b>Check-in:</b> Assign oxidation numbers to all atoms in $\ce{KMnO4}$.</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">K (Group 1): <b>+1</b>. O: <b>−2</b> each (4 oxygen atoms). Sum must be 0: +1 + Mn + 4(−2) = 0 → Mn − 7 = 0 → Mn = <b>+7</b>. So $\ce{KMnO4}$: K = +1, Mn = +7, O = −2.</div>
+</div>
+
+<div class="check-in">
+<p><b>Check-in:</b> What is the oxidation number of Cr in $\ce{Cr2O7^{2-}}$?</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">O: −2 each (7 O → −14 total). Sum must equal ion charge: 2Cr + 7(−2) = −2 → 2Cr − 14 = −2 → 2Cr = +12 → Cr = <b>+6</b>.</div>
+</div>
+
+<h2>3. Identifying Redox Reactions</h2>
+
+<p>A reaction is a <b>redox reaction</b> if <b>any atom changes its oxidation number</b> between reactants and products. If no oxidation numbers change, the reaction is not redox — it may be precipitation, acid–base, or ligand exchange.</p>
+
+<div class="check-in">
+<p><b>Check-in:</b> Is $\ce{NaCl(aq) + AgNO3(aq) -> AgCl(s) + NaNO3(aq)}$ a redox reaction?</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">No. Check oxidation numbers: Na = +1 throughout, Cl = −1 throughout, Ag = +1 throughout, N in NO₃⁻ = +5 throughout, O = −2 throughout. No oxidation number changes → <b>not redox</b> — it's a precipitation reaction.</div>
+</div>
+
+<h2>4. Oxidising and Reducing Agents</h2>
+
+<ul>
+  <li>The <b>oxidising agent</b> (oxidant) is the species that <b>causes oxidation</b> of another species — it is <b>itself reduced</b> (gains electrons).</li>
+  <li>The <b>reducing agent</b> (reductant) is the species that <b>causes reduction</b> of another species — it is <b>itself oxidised</b> (loses electrons).</li>
+</ul>
+
+<div class="diagram">
+<svg width="500" height="160" viewBox="0 0 500 160">
+  <text x="250" y="18" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c5f2d">Agent vs. Process — The Crucial Distinction</text>
+  <rect x="20" y="35" width="200" height="55" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+  <text x="120" y="57" text-anchor="middle" font-size="12" font-weight="bold" fill="#1565c0">Reducing Agent</text>
+  <text x="120" y="78" text-anchor="middle" font-size="11">Is itself OXIDISED (loses e⁻)</text>
+  <rect x="280" y="35" width="200" height="55" rx="8" fill="#ffebee" stroke="#c62828" stroke-width="2"/>
+  <text x="380" y="57" text-anchor="middle" font-size="12" font-weight="bold" fill="#c62828">Oxidising Agent</text>
+  <text x="380" y="78" text-anchor="middle" font-size="11">Is itself REDUCED (gains e⁻)</text>
+  <text x="250" y="120" text-anchor="middle" font-size="12" fill="#e65100"><b>Memory:</b> "The agent does the opposite of what happens to itself."</text>
+</svg>
+<div class="caption">Figure 2: The reducing agent is oxidised; the oxidising agent is reduced. The names describe what they do to the OTHER species.</div>
+</div>
+
+<!-- SECTION D -->
+<h2>5. Worked Examples</h2>
+
+<div class="example">
+<b>Example 1 — Oxidation Numbers in an Organic Compound:</b><br><br>
+Find the oxidation number of each carbon atom in $\ce{CH3CH2OH}$ (ethanol).<br><br>
+<b>Method:</b> H = +1, O = −2 always. For each carbon, solve using the atoms directly attached.<br>
+<b>C1 (CH₃−):</b> bonded to 3 H (+1 each) and 1 C (0). Sum: C1 + 3(+1) + 0 = 0 → C1 = <b>−3</b>.<br>
+<b>C2 (−CH₂OH):</b> bonded to 2 H (+1 each), 1 O (−2), 1 C (0). Sum: C2 + 2(+1) + (−2) + 0 = 0 → C2 = <b>−1</b>.<br><br>
+<b>⚠️ Common wrong approach:</b> Treating all carbons as having the same oxidation number. In organic molecules, different carbon atoms can have different oxidation states — you must treat them individually.
+</div>
+
+<div class="example">
+<b>Example 2 — Identifying the Redox Process:</b><br><br>
+$\ce{2Fe^{3+}(aq) + 2I-(aq) -> 2Fe^{2+}(aq) + I2(aq)}$<br>
+Identify: (a) what is oxidised, (b) what is reduced, (c) the oxidising agent, (d) the reducing agent.<br><br>
+<b>Oxidation numbers:</b> Fe: +3 → +2 (decrease of 1 — reduction). I: −1 → 0 (increase of 1 — oxidation).<br>
+<b>(a) Oxidised:</b> I⁻ (loses electrons, ON increases from −1 to 0).<br>
+<b>(b) Reduced:</b> Fe³⁺ (gains electrons, ON decreases from +3 to +2).<br>
+<b>(c) Oxidising agent:</b> Fe³⁺ (it causes oxidation of I⁻).<br>
+<b>(d) Reducing agent:</b> I⁻ (it causes reduction of Fe³⁺).<br><br>
+<b>⚠️ Common wrong approach:</b> Saying Fe³⁺ is the reducing agent because it gets reduced. The agent is named for what it DOES to the other species — the oxidising agent oxidises the other (and is itself reduced).
+</div>
+
+<div class="example">
+<b>Example 3 — Is It Redox?</b><br><br>
+Classify each as redox or not:<br>
+(a) $\ce{CaCO3 ->[\Delta] CaO + CO2}$<br>
+(b) $\ce{2Na + Cl2 -> 2NaCl}$<br>
+(c) $\ce{HCl + NaOH -> NaCl + H2O}$<br><br>
+<b>(a)</b> Ca: +2 → +2; C: +4 → +4; O: −2 → −2. No changes → <b>not redox</b> (thermal decomposition).<br>
+<b>(b)</b> Na: 0 → +1 (oxidised); Cl: 0 → −1 (reduced). Changes → <b>redox</b>.<br>
+<b>(c)</b> H: +1 → +1; Cl: −1 → −1; Na: +1 → +1; O: −2 → −2. No changes → <b>not redox</b> (acid–base neutralisation).<br><br>
+<b>⚠️ Common wrong approach:</b> Assuming any reaction that forms a new substance is redox. Many reactions — precipitation, acid–base, ligand exchange, thermal decomposition — are NOT redox.
+</div>
+
+<!-- SECTION F -->
+<div class="misconception">
+<h3>⚠️ Common Mistakes to Avoid</h3>
+<ol>
+  <li><b>Confusing the agent with the process.</b> The oxidising agent is <em>reduced</em>. The reducing agent is <em>oxidised</em>. Think: the agent "does" what its name says to the other species.</li>
+  <li><b>Forgetting that oxidation numbers are per atom, not per formula unit.</b> In $\ce{Cr2O7^{2-}}$, each Cr is +6 — not +12. Divide by the subscript when assigning to individual atoms.</li>
+  <li><b>Assuming oxygen is always −2.</b> In peroxides ($\ce{H2O2}$, $\ce{Na2O2}$) it's −1. In superoxides ($\ce{KO2}$) it's −½. In $\ce{OF2}$ it's +2 (fluorine is more electronegative).</li>
+  <li><b>Treating all reactions as redox.</b> Precipitation ($\ce{Ag+ + Cl- -> AgCl}$), acid–base neutralisation, and ligand exchange reactions involve no change in oxidation numbers.</li>
+</ol>
+</div>
+
+<!-- SECTION G -->
+<h2>6. End-of-Lesson Practice</h2>
+
+<p><b>Question 1:</b> Assign oxidation numbers to all atoms: (a) $\ce{SO2}$, (b) $\ce{H2SO4}$, (c) $\ce{MnO2}$, (d) $\ce{Cr2O7^{2-}}$, (e) $\ce{VO2+}$.</p>
+
+<p><b>Question 2:</b> In the reaction $\ce{Zn + CuSO4 -> ZnSO4 + Cu}$, identify what is oxidised, what is reduced, the oxidising agent, and the reducing agent.</p>
+
+<p><b>Question 3:</b> Which of these are redox reactions? (a) $\ce{2H2 + O2 -> 2H2O}$, (b) $\ce{CaO + H2O -> Ca(OH)2}$, (c) $\ce{Cl2 + 2KBr -> 2KCl + Br2}$.</p>
+
+<p><b>Question 4:</b> Determine the oxidation number of: (a) N in $\ce{NH4+}$, (b) S in $\ce{S2O3^{2-}}$, (c) Fe in $\ce{Fe3O4}$.</p>
+
+<p><b>Question 5 (Paper 1 style):</b> In which compound does chlorine have an oxidation number of +5?<br>
+A. $\ce{HCl}$ &nbsp; B. $\ce{HClO}$ &nbsp; C. $\ce{HClO2}$ &nbsp; D. $\ce{HClO3}$</p>
+
+<p><b>Question 6:</b> $\ce{5Fe^{2+} + MnO4- + 8H+ -> 5Fe^{3+} + Mn^{2+} + 4H2O}$. (a) Which species is the oxidising agent? (b) By how many units does the oxidation number of Mn change?</p>
+
+<button class="practice-toggle" onclick="var a=this.nextElementSibling;a.classList.toggle('open');this.textContent=a.classList.contains('open')?'▴ Hide Answers':'▸ Show Answers'">▸ Show Answers</button>
+<div class="practice-answers">
+
+<p><b>Answer 1:</b> (a) SO₂: O = −2 each, S + 2(−2) = 0 → S = +4. (b) H₂SO₄: H = +1, O = −2, 2(+1) + S + 4(−2) = 0 → S = +6. (c) MnO₂: O = −2, Mn + 2(−2) = 0 → Mn = +4. (d) Cr₂O₇²⁻: O = −2, 2Cr + 7(−2) = −2 → 2Cr = +12 → Cr = +6. (e) VO₂⁺: O = −2, V + 2(−2) = +1 → V = +5.</p>
+
+<p><b>Answer 2:</b> Zn: 0 → +2 (oxidised — loses 2 e⁻). Cu: +2 → 0 (reduced — gains 2 e⁻). <b>Reducing agent:</b> Zn (causes Cu²⁺ to be reduced). <b>Oxidising agent:</b> Cu²⁺ (causes Zn to be oxidised).</p>
+
+<p><b>Answer 3:</b> (a) Redox — H: 0→+1 (oxidised), O: 0→−2 (reduced). (b) NOT redox — Ca: +2→+2, O: −2→−2, H: +1→+1. (c) Redox — Cl: 0→−1 (reduced), Br: −1→0 (oxidised).</p>
+
+<p><b>Answer 4:</b> (a) NH₄⁺: H = +1, N + 4(+1) = +1 → N = −3. (b) S₂O₃²⁻: O = −2, 2S + 3(−2) = −2 → 2S = +4 → S = +2. (c) Fe₃O₄: O = −2, 3Fe + 4(−2) = 0 → 3Fe = +8 → average Fe = +8/3. Actually Fe₃O₄ is FeO·Fe₂O₃: two Fe³⁺ (+3 each) and one Fe²⁺ (+2).</p>
+
+<p><b>Answer 5:</b> D. HClO₃: H = +1, O = −2 each. +1 + Cl + 3(−2) = 0 → Cl = +5. (A: −1, B: +1, C: +3).</p>
+
+<p><b>Answer 6:</b> (a) MnO₄⁻ is the oxidising agent (Mn is reduced from +7 to +2, causing Fe²⁺ to be oxidised). (b) Mn goes from +7 to +2 — a decrease of <b>5 units</b>, meaning each Mn gains 5 electrons.</p>
+</div>
+
+<!-- SECTION H -->
+<h2>7. Key Terms</h2>
+<table>
+<tr><th>Term</th><th>Definition</th></tr>
+<tr><td>Oxidation number</td><td>The apparent charge on an atom if all bonds were treated as completely ionic</td></tr>
+<tr><td>Oxidation</td><td>Loss of electrons; an <b>increase</b> in oxidation number</td></tr>
+<tr><td>Reduction</td><td>Gain of electrons; a <b>decrease</b> in oxidation number</td></tr>
+<tr><td>Redox reaction</td><td>A reaction in which at least one atom changes its oxidation number</td></tr>
+<tr><td>Oxidising agent</td><td>The species that gains electrons (is reduced) and causes oxidation of another species</td></tr>
+<tr><td>Reducing agent</td><td>The species that loses electrons (is oxidised) and causes reduction of another species</td></tr>
+<tr><td>Disproportionation</td><td>A redox reaction where the same element is both oxidised and reduced</td></tr>
+<tr><td>Peroxide</td><td>A compound containing O–O bond where oxygen has oxidation number −1</td></tr>
+</table>
+
+<!-- SECTION I -->
+<h2>8. Exam Tips</h2>
+
+<div class="exam-tip"><b>Paper 1 (Multiple Choice):</b> Questions often test exceptions to the rules — especially peroxides (O = −1), metal hydrides (H = −1), and compounds like $\ce{OF2}$ (O = +2). The most common trap is asking for the oxidation number in a polyatomic ion and giving answer choices that correspond to the sum rather than per atom (e.g., Cr = +6, not +12, in Cr₂O₇²⁻).</div>
+
+<div class="exam-tip"><b>Paper 2 (Structured):</b> When asked to identify the oxidising/reducing agent, always name the <b>species</b>, not the element. For example, "MnO₄⁻ is the oxidising agent", not "Mn is the oxidising agent". The distinction between "oxidised" (the process) and "oxidising agent" (the species) is a mark that students frequently lose.</div>
+
+<div class="exam-tip"><b>Disproportionation:</b> This is a favourite IB concept. Look for reactions where the same element appears in three different oxidation states — one intermediate state splits into a higher and lower state. Classic examples: $\ce{2H2O2 -> 2H2O + O2}$ and $\ce{Cl2 + 2NaOH -> NaCl + NaClO + H2O}$.</div>
+
+</body>
+</html>

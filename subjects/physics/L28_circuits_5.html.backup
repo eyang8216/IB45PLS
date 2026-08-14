@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 28: Lesson 28: Circuits V — Capacitors & RC Circuits (HL) — IB Physics HL</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']]
+  },
+  options: {
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap');
+  
+  :root {
+    --bg: #fdfcf9;
+    --text: #1a1a1a;
+    --accent: #2c5f2d;
+    --border: #d0cec7;
+    --code-bg: #f4f3ef;
+    --callout-bg: #f0f7f0;
+    --callout-border: #2c5f2d;
+    --warning-bg: #fff8e6;
+    --warning-border: #c4941a;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  body {
+    font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid var(--accent);
+    color: var(--accent);
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 2.5rem 0 0.75rem;
+    color: #1a1a1a;
+  }
+  
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.5rem;
+  }
+  
+  p { margin: 0 0 1rem; }
+  
+  ul, ol { margin: 0 0 1rem 1.5rem; }
+  li { margin-bottom: 0.35rem; }
+  
+  code {
+    background: var(--code-bg);
+    padding: 0.15em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+    font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+  }
+  
+  pre {
+    background: var(--code-bg);
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 0 0 1rem;
+    font-size: 0.85em;
+    line-height: 1.5;
+  }
+  
+  pre code {
+    background: none;
+    padding: 0;
+    font-size: inherit;
+  }
+  
+  blockquote {
+    border-left: 4px solid var(--callout-border);
+    background: var(--callout-bg);
+    margin: 0 0 1rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+  }
+  
+  blockquote.warning {
+    border-left-color: var(--warning-border);
+    background: var(--warning-bg);
+  }
+  
+  strong { font-weight: 700; }
+  
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.5rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  
+  .nav a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+  
+  .nav a:hover { background: var(--callout-bg); }
+  
+  .worked-example, .answer {
+    background: var(--code-bg);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin: 0.75rem 0 1.25rem;
+  }
+  
+  .worked-example strong:first-child, .answer strong:first-child {
+    color: var(--accent);
+  }
+  
+  @media print {
+    body { font-size: 12pt; max-width: 100%; padding: 0; }
+    .nav { display: none; }
+    h1 { font-size: 18pt; }
+    h2 { font-size: 14pt; }
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 0 1rem;
+  }
+  
+  th, td {
+    border: 1px solid var(--border);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  
+  th {
+    background: var(--code-bg);
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L27_circuits_4.html">← Lesson 27</a>
+  <a href="L29_shm_1.html">Lesson 29 →</a>
+</nav>
+
+<h1>Lesson 28: Circuits V — Capacitors & RC Circuits (HL)</h1>
+
+<blockquote><strong>IB Data Booklet references:</strong> $C = \frac{Q}{V}$, $C = \varepsilon_0 \frac{A}{d}$, $C = \kappa \varepsilon_0 \frac{A}{d}$, $E = \frac{1}{2}QV = \frac{1}{2}CV^2$, $\tau = RC$, $Q = Q_0(1 - e^{-t/RC})$, $I = I_0 e^{-t/RC}$</blockquote>
+
+<h2>What You'll Learn</h2>
+<ul>
+<li><strong>Capacitance</strong>: $C = Q/V$, energy stored, parallel-plate capacitor</li>
+<li><strong>Dielectrics</strong>: how they increase capacitance; dielectric constant $\kappa$</li>
+<li><strong>RC circuits</strong>: the time constant $\tau = RC$</li>
+<li><strong>Charging and discharging</strong>: exponential growth and decay equations</li>
+<li>How to analyze RC graphs and extract $\tau$</li>
+</ul>
+
+<hr>
+
+<h2>1. Capacitance</h2>
+
+<p>A <strong>capacitor</strong> is a device that stores electrical charge and energy. Two conducting plates separated by an insulator (dielectric) or vacuum.</p>
+
+<h3>Definition of Capacitance</h3>
+
+<p>$$\boxed{C = \frac{Q}{V}}$$</p>
+
+<table>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>SI Unit</th>
+</tr>
+<tr>
+<td>$C$</td>
+<td>Capacitance</td>
+<td>Farad (F) = C/V</td>
+</tr>
+<tr>
+<td>$Q$</td>
+<td>Charge stored (on one plate)</td>
+<td>Coulomb (C)</td>
+</tr>
+<tr>
+<td>$V$</td>
+<td>Potential difference across plates</td>
+<td>Volt (V)</td>
+</tr>
+</table>
+
+<blockquote>$1\ \mathrm{F}$ is enormous! Most practical capacitors are in $\mathrm{\mu F}$ ($10^{-6}$), $\mathrm{nF}$ ($10^{-9}$), or $\mathrm{pF}$ ($10^{-12}$).</blockquote>
+
+<h3>Capacitance depends on geometry, not charge</h3>
+<p>For a given capacitor, $C$ is constant (like resistance). Doubling the voltage doubles the charge stored: $Q = CV$.</p>
+
+<hr>
+
+<h2>2. The Parallel-Plate Capacitor</h2>
+
+<p>For two parallel plates of area $A$, separated by distance $d$, with vacuum between:</p>
+
+<p>$$\boxed{C = \varepsilon_0 \frac{A}{d}}$$</p>
+
+<p>where $\varepsilon_0 = 8.85 \times 10^{-12}\ \mathrm{F/m}$ is the <strong>permittivity of free space</strong>.</p>
+
+<h3>Intuition</h3>
+<ul>
+<li><strong>Larger plates</strong> ($A \uparrow$): More "room" for charge → $C \uparrow$</li>
+<li><strong>Closer plates</strong> ($d \downarrow$): Stronger electric field for given $V$ → more charge for same $V$ → $C \uparrow$</li>
+<li><strong>Capacitance does NOT depend on $Q$ or $V$</strong> — it's purely geometric (for vacuum)</li>
+</ul>
+
+<hr>
+
+<h2>3. Dielectric Materials</h2>
+
+<p>A <strong>dielectric</strong> is an insulating material placed between capacitor plates. It becomes <strong>polarized</strong> in the electric field, reducing the net field between the plates for a given charge.</p>
+
+<h3>Effect on Capacitance</h3>
+<p>With a dielectric of <strong>dielectric constant</strong> $\kappa$ (also called relative permittivity $\varepsilon_r$):</p>
+
+<p>$$\boxed{C = \kappa \varepsilon_0 \frac{A}{d} = \kappa C_0}$$</p>
+
+<p>where $C_0$ is the vacuum capacitance.</p>
+
+<table>
+<tr>
+<th>Material</th>
+<th>$\kappa$ (approx.)</th>
+</tr>
+<tr>
+<td>Vacuum</td>
+<td>1 (by definition)</td>
+</tr>
+<tr>
+<td>Air</td>
+<td>1.0006</td>
+</tr>
+<tr>
+<td>Paper</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>Glass</td>
+<td>5–10</td>
+</tr>
+<tr>
+<td>Mica</td>
+<td>6–7</td>
+</tr>
+<tr>
+<td>Water</td>
+<td>80</td>
+</tr>
+<tr>
+<td>Ceramic</td>
+<td>100–1000+</td>
+</tr>
+</table>
+
+<h3>Why dielectrics help</h3>
+<ol>
+<li><strong>Increased capacitance</strong> — same size, more charge storage for same voltage</li>
+<li><strong>Increased maximum voltage</strong> — dielectric prevents sparking/breakdown between plates</li>
+<li><strong>Mechanical support</strong> — holds thin plates at fixed separation</li>
+</ol>
+
+<h3>Permittivity</h3>
+<p>The general formula is $C = \varepsilon_0 \varepsilon_r \frac{A}{d} = \varepsilon \frac{A}{d}$, where $\varepsilon = \kappa \varepsilon_0$ is the absolute permittivity.</p>
+
+<hr>
+
+<h2>4. Energy Stored in a Capacitor</h2>
+
+<p>The energy stored in a charged capacitor is the work done to charge it:</p>
+
+<p>$$\boxed{E = \frac{1}{2}QV = \frac{1}{2}CV^2 = \frac{Q^2}{2C}}$$</p>
+
+<h3>Derivation (qualitative)</h3>
+<p>Charging is not "all at once" — as charge builds up, the voltage rises ($V = Q/C$), making it progressively harder to add more charge. The average voltage during charging is $V/2$, so work = average voltage × total charge = $\frac{1}{2}QV$.</p>
+
+<h3>Energy density</h3>
+<p>The energy per unit volume in the electric field between plates:</p>
+
+<p>$$u = \frac{E}{\text{volume}} = \frac{1}{2}\varepsilon_0 E^2$$</p>
+
+<hr>
+
+<h2>5. RC Circuits — The Time Constant</h2>
+
+<p>When a capacitor charges or discharges through a resistor, the voltage and current change <strong>exponentially</strong> (not instantly).</p>
+
+<h3>The Time Constant</h3>
+
+<p>$$\boxed{\tau = RC}$$</p>
+
+<table>
+<tr>
+<th>Quantity</th>
+<th>Unit check</th>
+</tr>
+<tr>
+<td>$R \times C$</td>
+<td>$\Omega \times \mathrm{F} = (\mathrm{V/A}) \times (\mathrm{C/V}) = \mathrm{C/A} = \mathrm{s}$</td>
+</tr>
+</table>
+
+<p><strong>$\tau$ is the time for:</strong></p>
+<ul>
+<li>Voltage to reach <strong>63.2%</strong> of its final value during charging</li>
+<li>Voltage to fall to <strong>36.8%</strong> ($e^{-1}$) of its initial value during discharging</li>
+<li>Current to fall to <strong>36.8%</strong> of its initial value in either case</li>
+</ul>
+
+<h3>Charging Equations</h3>
+
+<p>Voltage across capacitor:</p>
+<p>$$\boxed{V_C = V_0\left(1 - e^{-t/RC}\right)}$$</p>
+
+<p>Current in circuit:</p>
+<p>$$I = I_0 e^{-t/RC}$$</p>
+
+<p>where $V_0$ is the supply voltage and $I_0 = V_0/R$ is the initial current.</p>
+
+<h3>Discharging Equations</h3>
+
+<p>Voltage across capacitor:</p>
+<p>$$\boxed{V_C = V_0 e^{-t/RC}}$$</p>
+
+<p>Current in circuit:</p>
+<p>$$I = I_0 e^{-t/RC}$$</p>
+
+<p>where $V_0$ is the initial capacitor voltage and $I_0 = V_0/R$.</p>
+
+<h3>Behavior at Key Times</h3>
+
+<table>
+<tr>
+<th>Time</th>
+<th>Charging $V_C/V_0$</th>
+<th>Discharging $V_C/V_0$</th>
+</tr>
+<tr>
+<td>$t = 0$</td>
+<td>0 (0%)</td>
+<td>1 (100%)</td>
+</tr>
+<tr>
+<td>$t = \tau$</td>
+<td>$1 - e^{-1} \approx 0.632$ (63.2%)</td>
+<td>$e^{-1} \approx 0.368$ (36.8%)</td>
+</tr>
+<tr>
+<td>$t = 2\tau$</td>
+<td>$1 - e^{-2} \approx 0.865$ (86.5%)</td>
+<td>$e^{-2} \approx 0.135$ (13.5%)</td>
+</tr>
+<tr>
+<td>$t = 3\tau$</td>
+<td>$1 - e^{-3} \approx 0.950$ (95.0%)</td>
+<td>$e^{-3} \approx 0.050$ (5.0%)</td>
+</tr>
+<tr>
+<td>$t = 5\tau$</td>
+<td>$1 - e^{-5} \approx 0.993$ (99.3%)</td>
+<td>$e^{-5} \approx 0.007$ (0.7%)</td>
+</tr>
+</table>
+
+<blockquote><strong>Rule of thumb:</strong> After $5\tau$, the capacitor is "fully" charged or discharged (>99%).</blockquote>
+
+<hr>
+
+<h2>6. Finding $\tau$ from Graphs</h2>
+
+<h3>From a discharging $V$ vs. $t$ graph</h3>
+<ul>
+<li>$\tau$ is the time at which $V = 0.368 V_0$</li>
+<li>Alternatively, $\tau$ = time for voltage to halve divided by $\ln 2$ ($t_{1/2} / \ln 2$)</li>
+</ul>
+
+<h3>From a $\ln V$ vs. $t$ graph (linearization)</h3>
+<p>Taking $\ln$ of the discharge equation: $V = V_0 e^{-t/RC}$</p>
+
+<p>$$\ln V = \ln V_0 - \frac{t}{RC}$$</p>
+
+<p>Plot $\ln V$ (y-axis) vs. $t$ (x-axis):</p>
+<ul>
+<li><strong>Slope</strong> = $-1/RC$ → $\tau = -1/\text{slope}$</li>
+<li><strong>y-intercept</strong> = $\ln V_0$</li>
+</ul>
+
+<hr>
+
+<h2>Worked Examples</h2>
+
+<h3>Worked Example 28.1 — Energy Stored in a Capacitor</h3>
+<p><strong>Problem:</strong> A $470\ \mathrm{\mu F}$ capacitor is charged to $12.0\ \mathrm{V}$. Calculate:</p>
+<p>(a) the charge stored</p>
+<p>(b) the energy stored</p>
+
+<p><strong>Solution:</strong></p>
+<p><strong>(a)</strong> $Q = CV = (470 \times 10^{-6}) \times 12.0 = 5.64 \times 10^{-3}\ \mathrm{C} = 5.64\ \mathrm{mC}$</p>
+
+<p><strong>(b)</strong> $E = \frac{1}{2}CV^2 = 0.5 \times (470 \times 10^{-6}) \times (12.0)^2 = 0.5 \times 470\times10^{-6} \times 144 = 3.38 \times 10^{-2}\ \mathrm{J} = 33.8\ \mathrm{mJ}$</p>
+
+<hr>
+
+<h3>Worked Example 28.2 — Parallel-Plate Capacitor</h3>
+<p><strong>Problem:</strong> A parallel-plate capacitor has plates of area $0.0500\ \mathrm{m^2}$ separated by $0.200\ \mathrm{mm}$. Calculate the capacitance (a) with vacuum, (b) with mica ($\kappa = 6.0$).</p>
+
+<p><strong>Solution:</strong></p>
+<p>$d = 0.200\ \mathrm{mm} = 2.00 \times 10^{-4}\ \mathrm{m}$</p>
+
+<p><strong>(a)</strong> $C_0 = \varepsilon_0 \frac{A}{d} = \frac{(8.85 \times 10^{-12})(0.0500)}{2.00 \times 10^{-4}} = 2.21 \times 10^{-9}\ \mathrm{F} = 2.21\ \mathrm{nF}$</p>
+
+<p><strong>(b)</strong> $C = \kappa C_0 = 6.0 \times 2.21 = 13.3\ \mathrm{nF}$</p>
+
+<hr>
+
+<h3>Worked Example 28.3 — Time Constant and Charging</h3>
+<p><strong>Problem:</strong> A $100\ \mathrm{\mu F}$ capacitor is charged through a $50.0\ \mathrm{k\Omega}$ resistor from a $9.00\ \mathrm{V}$ supply.</p>
+<p>(a) Calculate the time constant.</p>
+<p>(b) Find the capacitor voltage after $3.00\ \mathrm{s}$.</p>
+<p>(c) How long until the capacitor voltage reaches $8.00\ \mathrm{V}$?</p>
+
+<p><strong>Solution:</strong></p>
+<p><strong>(a)</strong> $\tau = RC = (50.0 \times 10^3) \times (100 \times 10^{-6}) = 50,000 \times 0.000100 = 5.00\ \mathrm{s}$</p>
+
+<p><strong>(b)</strong> $t = 3.00\ \mathrm{s}$, $t/\tau = 3.00/5.00 = 0.600$</p>
+<p>$V_C = 9.00(1 - e^{-0.600}) = 9.00(1 - 0.549) = 9.00 \times 0.451 = 4.06\ \mathrm{V}$</p>
+
+<p><strong>(c)</strong> $8.00 = 9.00(1 - e^{-t/5.00})$</p>
+<p>$1 - e^{-t/5.00} = 8.00/9.00 = 0.889$</p>
+<p>$e^{-t/5.00} = 0.111$</p>
+<p>$-t/5.00 = \ln(0.111) = -2.20$</p>
+<p>$t = 5.00 \times 2.20 = 11.0\ \mathrm{s}$</p>
+
+<hr>
+
+<h3>Worked Example 28.4 — Discharging and Half-life</h3>
+<p><strong>Problem:</strong> A $220\ \mathrm{\mu F}$ capacitor charged to $15.0\ \mathrm{V}$ discharges through a $10.0\ \mathrm{k\Omega}$ resistor.</p>
+<p>(a) Calculate $\tau$ and the half-life $t_{1/2}$.</p>
+<p>(b) What is the capacitor voltage after $4.40\ \mathrm{s}$?</p>
+
+<p><strong>Solution:</strong></p>
+<p><strong>(a)</strong> $\tau = RC = (10.0 \times 10^3)(220 \times 10^{-6}) = 2.20\ \mathrm{s}$</p>
+<p>$t_{1/2} = \tau \ln 2 = 2.20 \times 0.693 = 1.52\ \mathrm{s}$</p>
+
+<p><strong>(b)</strong> $t = 4.40\ \mathrm{s} = 2\tau$</p>
+<p>$V = V_0 e^{-t/\tau} = 15.0 \times e^{-2} = 15.0 \times 0.135 = 2.03\ \mathrm{V}$</p>
+
+<hr>
+
+<h3>Worked Example 28.5 — RC Graph Analysis (IB-Style)</h3>
+<p><strong>Problem:</strong> A student discharges a capacitor through a resistor and records the voltage:</p>
+
+<table>
+<tr>
+<th>$t$ (s)</th>
+<th>0</th>
+<th>10</th>
+<th>20</th>
+<th>30</th>
+<th>40</th>
+<th>50</th>
+<th>60</th>
+</tr>
+<tr>
+<td>$V$ (V)</td>
+<td>6.00</td>
+<td>3.64</td>
+<td>2.21</td>
+<td>1.34</td>
+<td>0.81</td>
+<td>0.49</td>
+<td>0.30</td>
+</tr>
+</table>
+
+<p>(a) Plot $\ln V$ vs. $t$ and use the graph to determine the time constant $\tau$. <strong>[4 marks]</strong></p>
+<p>(b) If $C = 470\ \mathrm{\mu F}$, calculate the resistance $R$. <strong>[2 marks]</strong></p>
+<p>(c) Calculate the initial energy stored in the capacitor. <strong>[2 marks]</strong></p>
+<p>(d) Calculate how much energy remains after one time constant. <strong>[3 marks]</strong></p>
+
+<p><strong>Solution:</strong></p>
+<p><strong>(a)</strong> Calculate $\ln V$:</p>
+
+<table>
+<tr>
+<th>$t$ (s)</th>
+<th>0</th>
+<th>10</th>
+<th>20</th>
+<th>30</th>
+<th>40</th>
+<th>50</th>
+<th>60</th>
+</tr>
+<tr>
+<td>$\ln V$</td>
+<td>1.79</td>
+<td>1.29</td>
+<td>0.793</td>
+<td>0.293</td>
+<td>-0.211</td>
+<td>-0.713</td>
+<td>-1.20</td>
+</tr>
+</table>
+
+<p>Plot $\ln V$ (y) vs. $t$ (x). This should be a straight line.</p>
+
+<p>Gradient: Using endpoints $\frac{-1.20 - 1.79}{60 - 0} = \frac{-2.99}{60} = -0.0498\ \mathrm{s^{-1}}$</p>
+
+<p>$\tau = -1/\text{gradient} = -1/(-0.0498) = 20.1\ \mathrm{s}$</p>
+
+<p>(Or read from original: $V = 0.368 \times 6.00 = 2.21\ \mathrm{V}$, which occurs at $t = 20\ \mathrm{s}$ → $\tau \approx 20\ \mathrm{s}$) ✓✓✓✓</p>
+
+<p><strong>(b)</strong> $\tau = RC$</p>
+<p>$R = \frac{\tau}{C} = \frac{20.1}{470 \times 10^{-6}} = 4.28 \times 10^4\ \Omega = 42.8\ \mathrm{k\Omega}$ ✓✓</p>
+
+<p><strong>(c)</strong> $E_0 = \frac{1}{2}CV_0^2 = 0.5 \times (470 \times 10^{-6}) \times 6.00^2 = 0.5 \times 470\times10^{-6} \times 36 = 8.46 \times 10^{-3}\ \mathrm{J} = 8.46\ \mathrm{mJ}$ ✓✓</p>
+
+<p><strong>(d)</strong> After one time constant, $V = V_0 e^{-1} = 6.00 \times 0.368 = 2.21\ \mathrm{V}$</p>
+<p>$E = \frac{1}{2}CV^2 = 0.5 \times (470\times10^{-6}) \times (2.21)^2 = 0.5 \times 470\times10^{-6} \times 4.88 = 1.15 \times 10^{-3}\ \mathrm{J} = 1.15\ \mathrm{mJ}$</p>
+
+<p>Alternatively: $E = E_0(e^{-1})^2 = E_0 e^{-2} = 8.46 \times 0.135 = 1.14\ \mathrm{mJ}$ ✓✓✓</p>
+
+<hr>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1 — Capacitance Basics</h3>
+<p>A $220\ \mathrm{\mu F}$ capacitor stores $1.10 \times 10^{-3}\ \mathrm{C}$ of charge. Calculate: (a) the voltage across it, (b) the energy stored. <strong>[2 marks]</strong></p>
+
+<h3>Problem 2 — Dielectric Effect</h3>
+<p>A parallel-plate capacitor with vacuum has capacitance $50.0\ \mathrm{pF}$. A dielectric of $\kappa = 4.0$ is inserted, completely filling the space. Calculate: (a) the new capacitance, (b) the factor by which the energy stored changes if the capacitor remains connected to a battery. <strong>[3 marks]</strong></p>
+
+<h3>Problem 3 — RC Charging</h3>
+<p>A $100\ \mathrm{\mu F}$ capacitor is charged through a $20.0\ \mathrm{k\Omega}$ resistor from a $6.00\ \mathrm{V}$ supply. (a) Calculate the time constant. (b) At what time will the capacitor voltage be $4.00\ \mathrm{V}$? <strong>[3 marks]</strong></p>
+
+<h3>Problem 4 — RC Discharging Half-life</h3>
+<p>A capacitor discharges through a resistor. Its voltage falls from $12.0\ \mathrm{V}$ to $6.0\ \mathrm{V}$ in $3.50\ \mathrm{s}$. (a) Calculate the half-life and the time constant. (b) What will the voltage be after $10.0\ \mathrm{s}$? <strong>[4 marks]</strong></p>
+
+<h3>Problem 5 — IB-Style: Comprehensive RC Analysis</h3>
+<p>A student investigates an RC circuit using a $9.00\ \mathrm{V}$ battery, a switch, a $47.0\ \mathrm{k\Omega}$ resistor, and an unknown capacitor $C$. She charges the capacitor fully, then flips the switch to discharge mode and records:</p>
+
+<table>
+<tr>
+<th>$t$ (s)</th>
+<th>0</th>
+<th>5.0</th>
+<th>10.0</th>
+<th>15.0</th>
+<th>20.0</th>
+<th>25.0</th>
+</tr>
+<tr>
+<td>$V$ (V)</td>
+<td>9.00</td>
+<td>6.32</td>
+<td>4.44</td>
+<td>3.11</td>
+<td>2.19</td>
+<td>1.54</td>
+</tr>
+</table>
+
+<p>(a) Explain why the voltage decreases exponentially rather than linearly. <strong>[2 marks]</strong></p>
+<p>(b) Use the data to determine the time constant $\tau$ by two methods. <strong>[4 marks]</strong></p>
+<p>(c) Calculate the capacitance $C$. <strong>[2 marks]</strong></p>
+<p>(d) Calculate the initial current when the discharge begins. <strong>[1 mark]</strong></p>
+<p>(e) The student repeats with a $94.0\ \mathrm{k\Omega}$ resistor instead. Sketch (on the same axes) how the discharge curve would differ. Explain the difference. <strong>[3 marks]</strong></p>
+
+<hr>
+
+<h2>Answers</h2>
+
+<h3>Answer 1</h3>
+<p><strong>(a)</strong> $V = Q/C = 1.10\times10^{-3} / (220\times10^{-6}) = 5.00\ \mathrm{V}$</p>
+<p><strong>(b)</strong> $E = \frac{1}{2}QV = 0.5 \times 1.10\times10^{-3} \times 5.00 = 2.75 \times 10^{-3}\ \mathrm{J} = 2.75\ \mathrm{mJ}$ ✓✓</p>
+
+<h3>Answer 2</h3>
+<p><strong>(a)</strong> $C = \kappa C_0 = 4.0 \times 50.0 = 200\ \mathrm{pF}$</p>
+<p><strong>(b)</strong> Connected to battery → $V$ is constant. $E = \frac{1}{2}CV^2$, so $E \propto C$.</p>
+<p>Energy increases by factor $\kappa = 4.0$. (The battery supplies additional charge.) ✓✓✓</p>
+
+<h3>Answer 3</h3>
+<p><strong>(a)</strong> $\tau = RC = (20.0 \times 10^3)(100 \times 10^{-6}) = 2.00\ \mathrm{s}$</p>
+<p><strong>(b)</strong> $V = V_0(1 - e^{-t/\tau})$, so $4.00 = 6.00(1 - e^{-t/2.00})$</p>
+<p>$1 - e^{-t/2.00} = 0.667$, $e^{-t/2.00} = 0.333$</p>
+<p>$-t/2.00 = \ln(0.333) = -1.10$</p>
+<p>$t = 2.20\ \mathrm{s}$ ✓✓✓</p>
+
+<h3>Answer 4</h3>
+<p><strong>(a)</strong> Voltage halves in $3.50\ \mathrm{s}$ → $t_{1/2} = 3.50\ \mathrm{s}$</p>
+<p>$\tau = t_{1/2} / \ln 2 = 3.50 / 0.693 = 5.05\ \mathrm{s}$</p>
+<p><strong>(b)</strong> $V = V_0 e^{-t/\tau} = 12.0 \times e^{-10.0/5.05} = 12.0 \times e^{-1.98} = 12.0 \times 0.138 = 1.66\ \mathrm{V}$ ✓✓✓✓</p>
+
+<h3>Answer 5 — IB-Style Full Solution</h3>
+<p><strong>(a)</strong> During discharge, the current $I = V/R$. But $V$ is also related to $Q$ by $V = Q/C$. As charge leaves, $V$ decreases, reducing the current, which reduces the rate of charge loss. This self-limiting feedback produces an exponential, not linear, decay: $\frac{dQ}{dt} = -\frac{Q}{RC}$ → $Q = Q_0 e^{-t/RC}$. ✓✓</p>
+
+<p><strong>(b)</strong> <strong>Method 1 — $36.8\%$ point:</strong> $0.368 \times 9.00 = 3.31\ \mathrm{V}$. From data, this is between $t = 10\ \mathrm{s}$ ($4.44\ \mathrm{V}$) and $t = 15\ \mathrm{s}$ ($3.11\ \mathrm{V}$). Interpolation: $\tau \approx 14\ \mathrm{s}$.</p>
+
+<p><strong>Method 2 — $\ln V$ graph:</strong></p>
+<table>
+<tr>
+<th>$t$</th>
+<th>0</th>
+<th>5</th>
+<th>10</th>
+<th>15</th>
+<th>20</th>
+<th>25</th>
+</tr>
+<tr>
+<td>$\ln V$</td>
+<td>2.20</td>
+<td>1.84</td>
+<td>1.49</td>
+<td>1.13</td>
+<td>0.784</td>
+<td>0.432</td>
+</tr>
+</table>
+
+<p>Gradient $\approx (0.432 - 2.20)/(25 - 0) = -1.768/25 = -0.0707$</p>
+<p>$\tau = -1/(-0.0707) = 14.1\ \mathrm{s}$</p>
+
+<p>Also check: $t_{1/2}$ is when $V = 4.5\ \mathrm{V}$ → about $9.8\ \mathrm{s}$. $\tau = 9.8/\ln 2 = 14.1\ \mathrm{s}$.</p>
+
+<p>$\tau \approx 14.0\ \mathrm{s}$ ✓✓✓✓</p>
+
+<p><strong>(c)</strong> $C = \tau/R = 14.0 / (47.0 \times 10^3) = 2.98 \times 10^{-4}\ \mathrm{F} = 298\ \mathrm{\mu F} \approx 300\ \mathrm{\mu F}$ ✓✓</p>
+
+<p><strong>(d)</strong> $I_0 = V_0/R = 9.00 / (47.0 \times 10^3) = 1.91 \times 10^{-4}\ \mathrm{A} = 191\ \mathrm{\mu A}$ ✓</p>
+
+<p><strong>(e)</strong> With $R = 94.0\ \mathrm{k\Omega}$ (doubled), $\tau = 28.0\ \mathrm{s}$ (doubled). The new discharge curve would:</p>
+<ul>
+<li>Start at the same $V_0 = 9.00\ \mathrm{V}$</li>
+<li>Decay <strong>more slowly</strong> — the curve is less steep</li>
+<li>The initial current is halved ($I_0 = 95.5\ \mathrm{\mu A}$)</li>
+</ul>
+
+<p>Sketch: both curves start at $(0, 9.00)$. The $94\ \mathrm{k\Omega}$ curve always lies <strong>above</strong> the $47\ \mathrm{k\Omega}$ curve at any $t > 0$, because the larger resistance allows slower discharge. ✓✓✓</p>
+
+<hr>
+
+<h2>Key Takeaways</h2>
+<ol>
+<li><strong>Capacitance</strong> $C = Q/V$ measures charge storage per volt. For a parallel-plate: $C = \kappa \varepsilon_0 A/d$.</li>
+<li><strong>Dielectrics</strong> increase capacitance by factor $\kappa$: they polarize, reducing the net electric field.</li>
+<li><strong>Energy stored</strong>: $E = \frac{1}{2}CV^2 = \frac{1}{2}QV = Q^2/(2C)$.</li>
+<li><strong>RC time constant</strong>: $\tau = RC$. After $\tau$, a charging capacitor reaches 63.2% of final voltage; a discharging one falls to 36.8%.</li>
+<li><strong>Charging</strong>: $V = V_0(1 - e^{-t/RC})$. <strong>Discharging</strong>: $V = V_0 e^{-t/RC}$.</li>
+<li>Use $\ln V$ vs. $t$ graphs to find $\tau$ from the gradient = $-1/RC$. After $5\tau$, charging/discharging is ~99% complete.</li>
+</ol>
+
+<hr>
+
+<p><em>This concludes the Circuits series and the full set of Gas Laws, Thermodynamics, and Circuits lessons for IB Physics HL.</em></p>
+
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L27_circuits_4.html">← Lesson 27</a>
+  <a href="L29_shm_1.html">Lesson 29 →</a>
+</nav>
+
+</body>
+</html>

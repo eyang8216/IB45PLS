@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 37: Lesson 37: Wave Phenomena II — Single-Slit Diffraction and Gratings (HL) — IB Physics HL</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']]
+  },
+  options: {
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap');
+  
+  :root {
+    --bg: #fdfcf9;
+    --text: #1a1a1a;
+    --accent: #2c5f2d;
+    --border: #d0cec7;
+    --code-bg: #f4f3ef;
+    --callout-bg: #f0f7f0;
+    --callout-border: #2c5f2d;
+    --warning-bg: #fff8e6;
+    --warning-border: #c4941a;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  body {
+    font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid var(--accent);
+    color: var(--accent);
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 2.5rem 0 0.75rem;
+    color: #1a1a1a;
+  }
+  
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.5rem;
+  }
+  
+  p { margin: 0 0 1rem; }
+  
+  ul, ol { margin: 0 0 1rem 1.5rem; }
+  li { margin-bottom: 0.35rem; }
+  
+  code {
+    background: var(--code-bg);
+    padding: 0.15em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+    font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+  }
+  
+  pre {
+    background: var(--code-bg);
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 0 0 1rem;
+    font-size: 0.85em;
+    line-height: 1.5;
+  }
+  
+  pre code {
+    background: none;
+    padding: 0;
+    font-size: inherit;
+  }
+  
+  blockquote {
+    border-left: 4px solid var(--callout-border);
+    background: var(--callout-bg);
+    margin: 0 0 1rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+  }
+  
+  blockquote.warning {
+    border-left-color: var(--warning-border);
+    background: var(--warning-bg);
+  }
+  
+  strong { font-weight: 700; }
+  
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.5rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  
+  .nav a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+  
+  .nav a:hover { background: var(--callout-bg); }
+  
+  .worked-example, .answer {
+    background: var(--code-bg);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin: 0.75rem 0 1.25rem;
+  }
+  
+  .worked-example strong:first-child, .answer strong:first-child {
+    color: var(--accent);
+  }
+  
+  @media print {
+    body { font-size: 12pt; max-width: 100%; padding: 0; }
+    .nav { display: none; }
+    h1 { font-size: 18pt; }
+    h2 { font-size: 14pt; }
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 0 1rem;
+  }
+  
+  th, td {
+    border: 1px solid var(--border);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  
+  th {
+    background: var(--code-bg);
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L36_wave_phenomena_1.html">← Lesson 36</a>
+  <a href="L38_wave_phenomena_3.html">Lesson 38 →</a>
+</nav>
+
+<h1>Lesson 37: Wave Phenomena II — Single-Slit Diffraction and Gratings (HL)</h1>
+
+<h2>What You'll Learn</h2>
+<ul>
+<li>Calculate the position of the first minimum in single-slit diffraction: $\theta \approx \lambda/b$</li>
+<li>Explain why the central maximum is twice as wide as side maxima</li>
+<li>Use the diffraction grating equation $n\lambda = d\sin\theta$</li>
+<li>Determine wavelengths and grating spacing from diffraction patterns</li>
+</ul>
+
+<hr>
+
+<h2>1. Single-Slit Diffraction — When One Slit Is Enough</h2>
+
+<h3>1.1 What Happens</h3>
+
+<p>Shine monochromatic light through a single narrow slit. Instead of a single bright line on the screen (as ray optics would predict), you see a pattern: a wide, bright central maximum flanked by narrower, dimmer side maxima, separated by dark minima. This is single-slit diffraction.</p>
+
+<h3>1.2 The First Minimum</h3>
+
+<p>The first dark fringe (minimum) occurs at an angle $\theta$ given by:</p>
+
+<p>$$\theta \approx \frac{\lambda}{b}$$</p>
+
+<p>where $b$ is the slit width. This is the small-angle approximation ($\sin\theta \approx \theta$ in radians). More precisely: $b\sin\theta = \lambda$ for the first minimum.</p>
+
+<p>The central maximum extends from $\theta = -\lambda/b$ to $\theta = +\lambda/b$, so its angular width is $2\lambda/b$ — twice the width of the side maxima.</p>
+
+<h3>1.3 Why Does Diffraction Happen?</h3>
+
+<p>Huygens' principle: every point across the slit acts as a source of wavelets. When the path difference between wavelets from opposite edges of the slit equals $\lambda$, the wavelets from the top half of the slit cancel with those from the bottom half — producing the first dark fringe. For $b\sin\theta = n\lambda$ ($n = 1, 2, 3\dots$), we get minima.</p>
+
+<h3>1.4 Effect of Slit Width</h3>
+
+<ul>
+<li>Narrower slit ($b$ small) → wider diffraction pattern ($\theta$ large)</li>
+<li>Wider slit ($b$ large) → narrower pattern ($\theta$ small)</li>
+<li>When $b \gg \lambda$: diffraction negligible — light travels in straight lines (ray optics)</li>
+</ul>
+
+<hr>
+
+<h2>2. Diffraction Gratings — Many Slits, Sharp Lines</h2>
+
+<h3>2.1 What a Grating Is</h3>
+
+<p>A diffraction grating consists of many parallel, equally spaced slits (or grooves). Commercial gratings have hundreds or thousands of lines per millimetre. The grating spacing $d$ is the distance between adjacent slits: $d = 1/N$ where $N$ is lines per metre.</p>
+
+<h3>2.2 The Grating Equation</h3>
+
+<p>For a transmission grating, bright maxima occur at angles $\theta_n$ where:</p>
+
+<p>$$n\lambda = d\sin\theta_n$$</p>
+
+<ul>
+<li>$n = 0, \pm 1, \pm 2, \dots$ is the order number</li>
+<li>$n = 0$ gives the central maximum (all wavelengths overlap — white for white light)</li>
+<li>Higher orders: red light (longer $\lambda$) appears at larger angles than blue</li>
+</ul>
+
+<h3>2.3 Why Gratings Are Better Than Double Slits</h3>
+
+<p>A grating produces much sharper, brighter maxima than Young's double slit because:</p>
+<ul>
+<li>Many slits (not just two) contribute to each maximum</li>
+<li>Maxima are very narrow — the angular width decreases as the number of slits increases</li>
+<li>This allows precise wavelength measurements</li>
+</ul>
+
+<h3>2.4 Maximum Order</h3>
+
+<p>Since $\sin\theta \leq 1$, the maximum observable order is $n_{\text{max}} = d/\lambda$ (rounded down). If $d < \lambda$, only $n = 0$ appears.</p>
+
+<hr>
+
+<h2>3. Comparing Single-Slit, Double-Slit, and Grating Patterns</h2>
+
+<table>
+<tr>
+<th>Feature</th>
+<th>Single Slit</th>
+<th>Double Slit</th>
+<th>Grating</th>
+</tr>
+<tr>
+<td>Central maximum</td>
+<td>Wide ($2\lambda/b$)</td>
+<td>Same width as others</td>
+<td>Very narrow</td>
+</tr>
+<tr>
+<td>Fringe spacing</td>
+<td>Unequal (central wider)</td>
+<td>Equal ($s = \lambda D/d$)</td>
+<td>Equal</td>
+</tr>
+<tr>
+<td>Intensity</td>
+<td>Bright central, dim sides</td>
+<td>Equal bright fringes</td>
+<td>Very sharp bright lines</td>
+</tr>
+<tr>
+<td>Number of slits</td>
+<td>1</td>
+<td>2</td>
+<td>Many (hundreds+)</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>Worked Examples</h2>
+
+<h3>Worked Example 37.1 — Single-Slit Minimum</h3>
+
+<p><strong>Problem:</strong> Light of wavelength $600\text{ nm}$ passes through a slit $0.20\text{ mm}$ wide. The screen is $1.5\text{ m}$ away. Find the distance from the centre to the first dark fringe.</p>
+
+<p><strong>Solution:</strong></p>
+<p>$\theta \approx \lambda/b = 600\times 10^{-9}/(0.20\times 10^{-3}) = 3.0 \times 10^{-3}\text{ rad}$. Distance $y = D\theta = 1.5 \times 3.0\times 10^{-3} = 4.5\text{ mm}$. Central maximum width: $2 \times 4.5 = 9.0\text{ mm}$.</p>
+
+<hr>
+
+<h3>Worked Example 37.2 — Grating Wavelength</h3>
+
+<p><strong>Problem:</strong> A grating with 400 lines per mm produces a first-order maximum at $14.5^\circ$. Find the wavelength.</p>
+
+<p><strong>Solution:</strong></p>
+<p>$d = 1/(400\times 10^3) = 2.50 \times 10^{-6}\text{ m}$. $\lambda = d\sin\theta = (2.50\times 10^{-6})\sin 14.5^\circ = 6.25 \times 10^{-7}\text{ m} = 625\text{ nm}$.</p>
+
+<hr>
+
+<h3>Worked Example 37.3 — Maximum Order</h3>
+
+<p><strong>Problem:</strong> A grating with 600 lines/mm is illuminated with light of wavelength $500\text{ nm}$. What is the highest observable order?</p>
+
+<p><strong>Solution:</strong></p>
+<p>$d = 1/(600\times 10^3) = 1.667 \times 10^{-6}\text{ m}$. $n_{\text{max}} = d/\lambda = 1.667\times 10^{-6}/500\times 10^{-9} = 3.33$. Only $n = 0, 1, 2, 3$ are observable (order 3 appears at $\sin\theta = 3(500)/1667 = 0.90$, $\theta = 64^\circ$). $n = 4$ would require $\sin\theta > 1$.</p>
+
+<hr>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1</h3>
+<p>Light of $550\text{ nm}$ falls on a single slit of width $0.15\text{ mm}$. Find the angular width of the central maximum.</p>
+
+<h3>Problem 2</h3>
+<p>A grating with 500 lines/mm produces a second-order maximum at $36.9^\circ$. Find the wavelength.</p>
+
+<h3>Problem 3</h3>
+<p>A grating with 300 lines/mm is illuminated by light containing two wavelengths: $400\text{ nm}$ and $700\text{ nm}$. Find the angular separation between the first-order maxima for these wavelengths.</p>
+
+<h3>Problem 4</h3>
+<p>Explain why a CD or DVD acts as a reflection diffraction grating, producing rainbow colours.</p>
+
+<h3>Problem 5 — IB-Style</h3>
+<p>A student uses a grating with $250\text{ lines per mm}$ and a laser of unknown wavelength. The distance from grating to screen is $1.20\text{ m}$.</p>
+
+<p>(a) Calculate the grating spacing $d$. (1 mark)</p>
+<p>(b) The first-order bright spot appears $18.5\text{ cm}$ from the central spot. Calculate $\theta_1$ and the laser wavelength. (3 marks)</p>
+<p>(c) Determine the highest order visible for this wavelength. (2 marks)</p>
+<p>(d) The student replaces the laser with white light. Describe the appearance of the pattern. (2 marks)</p>
+
+<hr>
+
+<h2>Answers</h2>
+
+<h3>Answer 1</h3>
+<p>$\theta \approx \lambda/b = 550\times 10^{-9}/(0.15\times 10^{-3}) = 3.67\times 10^{-3}\text{ rad}$. Central maximum angular width = $2\theta = 7.33\times 10^{-3}\text{ rad} \approx 0.42^\circ$.</p>
+
+<h3>Answer 2</h3>
+<p>$d = 1/(500\times 10^3) = 2.0\times 10^{-6}\text{ m}$. $\lambda = d\sin\theta/n = (2.0\times 10^{-6})\sin 36.9^\circ/2 = 6.0\times 10^{-7}\text{ m} = 600\text{ nm}$.</p>
+
+<h3>Answer 3</h3>
+<p>$d = 1/(300\times 10^3) = 3.33\times 10^{-6}\text{ m}$. $\theta_{400} = \sin^{-1}(400\times 10^{-9}/3.33\times 10^{-6}) = 6.90^\circ$. $\theta_{700} = \sin^{-1}(700\times 10^{-9}/3.33\times 10^{-6}) = 12.1^\circ$. Separation = $5.2^\circ$.</p>
+
+<h3>Answer 4</h3>
+<p>CD/DVD surfaces have microscopic spiral grooves (pits) spaced at regular intervals (~1.6 μm for CD). These act as a reflection grating. Different wavelengths are reflected at different angles ($n\lambda = d\sin\theta$), separating white light into its component colours — visible as rainbow patterns when the disc is tilted in light.</p>
+
+<h3>Answer 5 — IB-Style</h3>
+<p><strong>(a)</strong> $d = 1/(250,000) = 4.00 \times 10^{-6}\text{ m}$. (1 mark)</p>
+<p><strong>(b)</strong> $\tan\theta_1 = 0.185/1.20 = 0.154$, $\theta_1 = 8.77^\circ$. $\lambda = d\sin\theta_1 = (4.00\times 10^{-6})\sin 8.77^\circ = 6.10\times 10^{-7}\text{ m} = 610\text{ nm}$. (3 marks)</p>
+<p><strong>(c)</strong> $n_{\text{max}} = d/\lambda = 4.00\times 10^{-6}/610\times 10^{-9} = 6.56$. Orders $0, 1, 2, 3, 4, 5, 6$. Highest = 6. (2 marks)</p>
+<p><strong>(d)</strong> (2 marks) Central maximum ($n=0$) is white — all wavelengths overlap at $\theta=0$. For $n \geq 1$, each wavelength appears at a different angle ($\sin\theta = n\lambda/d$), producing continuous spectra (rainbow bands). Red appears at larger angles; blue at smaller angles. Higher orders may overlap (e.g., blue in order 3 may coincide with red in order 2).</p>
+
+<hr>
+
+<h2>Key Takeaways</h2>
+
+<ol>
+<li><strong>Single slit:</strong> $\theta \approx \lambda/b$ for first minimum. Central max is twice as wide as side maxima.</li>
+</ol>
+
+<ol>
+<li><strong>Grating:</strong> $n\lambda = d\sin\theta$. Sharp, bright maxima. $d = 1/N$ where $N$ = lines per metre.</li>
+</ol>
+
+<ol>
+<li><strong>Maximum order:</strong> $n_{\text{max}} = \lfloor d/\lambda \rfloor$. Limited by $\sin\theta \leq 1$.</li>
+</ol>
+
+<ol>
+<li><strong>Gratings separate wavelengths</strong> — used in spectrometers. Longer $\lambda$ → larger angle.</li>
+</ol>
+
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L36_wave_phenomena_1.html">← Lesson 36</a>
+  <a href="L38_wave_phenomena_3.html">Lesson 38 →</a>
+</nav>
+
+</body>
+</html>

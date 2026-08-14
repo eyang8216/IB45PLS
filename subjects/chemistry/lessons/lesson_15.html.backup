@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 15 — Chemistry HL — Hess's Law</title>
+<script>
+window.MathJax = {tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] },
+  loader: { load: ['[tex]/mhchem'] }};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+:root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Georgia', 'Times New Roman', serif; font-size: 17px; line-height: 1.7; color: var(--text); background: var(--bg); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; }
+h1 { font-size: 1.8rem; color: var(--accent); border-bottom: 3px solid var(--accent); padding-bottom: 0.5rem; margin-bottom: 1rem; }
+h2 { font-size: 1.35rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+h3 { font-size: 1.15rem; color: var(--accent); margin: 1.5rem 0 0.5rem; }
+p { margin-bottom: 0.8rem; }
+.objectives { background: #f0f4ff; border-left: 4px solid var(--accent); padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+.objectives h3 { margin-top: 0; }
+.check-in { background: #fff8e1; border: 1px solid #ffc107; padding: 0.8rem 1rem; margin: 1rem 0; border-radius: 8px; }
+.check-in p { margin-bottom: 0.3rem; }
+.answer-toggle { display: inline-block; padding: 0.2rem 0.8rem; border-radius: 16px; cursor: pointer; font-size: 0.8rem; font-weight: 600; background: #e8f5e9; color: #2e7d32; border: 1px solid #2e7d32; user-select: none; margin-top: 0.3rem; }
+.answer-content { display: none; background: #f1f8e9; padding: 0.6rem 1rem; border-radius: 8px; margin-top: 0.5rem; }
+.answer-content.open { display: block; }
+.example { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem; margin: 1rem 0; }
+.misconception { background: #fff3e0; border-left: 4px solid #e65100; padding: 1rem 1.2rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+.misconception h3 { color: #e65100; }
+.exam-tip { background: #e8f5e9; border-left: 4px solid #2e7d32; padding: 0.8rem 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+th { background: var(--accent); color: white; padding: 0.5rem 0.8rem; text-align: left; }
+td { padding: 0.5rem 0.8rem; border-bottom: 1px solid var(--border); }
+tr:nth-child(even) td { background: #f8f8f6; }
+.diagram { text-align: center; margin: 1.5rem 0; }
+.diagram svg { max-width: 100%; }
+.diagram .caption { font-size: 0.9rem; color: #666; margin-top: 0.3rem; font-style: italic; }
+pre.ascii-art { font-family: 'Courier New', monospace; font-size: 0.75rem; line-height: 1.2; background: #f5f5f5; padding: 0.8rem; border-radius: 8px; overflow-x: auto; }
+.practice-toggle { display: block; width: 100%; padding: 0.8rem; background: var(--accent); color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem; font-weight: 600; margin: 1.5rem 0; }
+.practice-answers { display: none; }
+.practice-answers.open { display: block; }
+</style>
+</head>
+<body>
+
+<h1>Lesson 15: Hess's Law — Enthalpy Cycles, ΔH<sub>f</sub><sup>⦵</sup> &amp; ΔH<sub>c</sub><sup>⦵</sup> Methods</h1>
+
+<p><b>Syllabus reference:</b> 5.2 — Hess's Law</p>
+
+<!-- SECTION A -->
+<div class="objectives">
+<h3>Learning Objectives</h3>
+<p>By the end of this lesson, you will be able to:</p>
+<ul>
+  <li><b>State</b> Hess's Law and explain why it is a consequence of enthalpy as a state function.</li>
+  <li><b>Construct</b> enthalpy cycles using $\Delta H_f^\ominus$ data (formation method) to calculate an unknown $\Delta H$.</li>
+  <li><b>Construct</b> enthalpy cycles using $\Delta H_c^\ominus$ data (combustion method) to calculate an unknown $\Delta H$.</li>
+  <li><b>Use</b> algebraic addition of thermochemical equations to determine enthalpy changes indirectly.</li>
+</ul>
+</div>
+
+<!-- SECTION B -->
+<h2>1. Prior Knowledge Check</h2>
+
+<p><b>Question 1:</b> What does it mean that enthalpy is a "state function"?</p>
+<div class="check-in">
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">A <b>state function</b> is a property whose value depends only on the current state of the system (temperature, pressure, composition), not on the path taken to reach that state. Enthalpy ($H$) is a state function — the enthalpy change between reactants and products is the same whether the reaction happens in one step or through multiple intermediate steps. This is the entire basis of Hess's Law.</div>
+</div>
+
+<p><b>Question 2:</b> Write a balanced equation for the <b>formation</b> of $\ce{H2SO4(l)}$ from its elements in their standard states.</p>
+<div class="check-in">
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">$\ce{H2(g) + S(s) + 2O2(g) -> H2SO4(l)}$. The elements must be in their standard states at 298 K and 100 kPa: $\ce{H2}$ is a gas, $\ce{S}$ is solid (rhombic), $\ce{O2}$ is a gas. Note that this produces exactly <b>one mole</b> of $\ce{H2SO4}$.</div>
+</div>
+
+<p><b>Question 3:</b> What is the sign of $\Delta H_c^\ominus$ for all substances, and why?</p>
+<div class="check-in">
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">$\Delta H_c^\ominus$ is <b>always negative</b> (exothermic) because combustion releases energy. By definition, combustion is the reaction of a substance with oxygen to form the most stable oxides — and breaking bonds in the fuel plus forming strong $\ce{C=O}$ and $\ce{O-H}$ bonds in $\ce{CO2}$ and $\ce{H2O}$ always releases net energy.</div>
+</div>
+
+<!-- SECTION C -->
+<h2>2. Hess's Law — The Statement</h2>
+
+<div class="definition" style="background:#fdf5e6;border-left:4px solid #d4a017;padding:0.6rem 1rem;margin:0.8rem 0;border-radius:0 8px 8px 0;">
+<b>Hess's Law:</b> The enthalpy change for a reaction is the same regardless of the route taken, provided the initial and final conditions are the same. Mathematically: if a reaction can be expressed as the sum of two or more steps, then $\Delta H_{\text{total}} = \Delta H_1 + \Delta H_2 + \Delta H_3 + \cdots$
+</div>
+
+<p>Why does this matter? Because you cannot always measure $\Delta H$ directly. For example, you cannot simply put carbon and hydrogen together and expect them to form ethane — the direct reaction is impractical. But you <em>can</em> burn carbon, hydrogen, and ethane separately, measure each $\Delta H_c$, and use Hess's Law to find $\Delta H_f$ of ethane.</p>
+
+<div class="diagram">
+<svg width="500" height="280" viewBox="0 0 500 280">
+  <!-- Main reaction arrow -->
+  <rect x="30" y="110" width="140" height="50" rx="8" fill="#ffebee" stroke="#c62828" stroke-width="2"/>
+  <text x="100" y="130" text-anchor="middle" font-size="12" fill="#c62828">Reactants</text>
+  <text x="100" y="150" text-anchor="middle" font-size="11">(State 1)</text>
+  
+  <rect x="330" y="110" width="140" height="50" rx="8" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="2"/>
+  <text x="400" y="130" text-anchor="middle" font-size="12" fill="#2c5f2d">Products</text>
+  <text x="400" y="150" text-anchor="middle" font-size="11">(State 2)</text>
+  
+  <!-- Direct route (bottom) -->
+  <line x1="170" y1="135" x2="325" y2="135" stroke="#2c5f2d" stroke-width="2.5" marker-end="url(#arrowGreen)"/>
+  <text x="248" y="125" text-anchor="middle" font-size="11" fill="#2c5f2d">Direct route: ΔH<sub>direct</sub></text>
+  
+  <!-- Indirect route (top) -->
+  <rect x="180" y="20" width="140" height="40" rx="8" fill="#fff8e1" stroke="#d4a017" stroke-width="1.5"/>
+  <text x="250" y="45" text-anchor="middle" font-size="11">Intermediate A</text>
+  
+  <line x1="100" y1="110" x2="100" y2="60" stroke="#1565c0" stroke-width="2"/>
+  <line x1="100" y1="60" x2="175" y2="40" stroke="#1565c0" stroke-width="2" marker-end="url(#arrowBlue)"/>
+  <text x="55" y="85" font-size="10" fill="#1565c0">Route 1: ΔH₁</text>
+  
+  <line x1="320" y1="40" x2="395" y2="40" stroke="#1565c0" stroke-width="2"/>
+  <line x1="395" y1="40" x2="395" y2="105" stroke="#1565c0" stroke-width="2" marker-end="url(#arrowBlue)"/>
+  <text x="405" y="80" font-size="10" fill="#1565c0">Route 2: ΔH₂</text>
+  
+  <!-- Hess's Law annotation -->
+  <rect x="135" y="200" width="230" height="55" rx="10" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="1.5"/>
+  <text x="250" y="220" text-anchor="middle" font-size="12" font-weight="bold" fill="#2c5f2d">ΔH<sub>direct</sub> = ΔH₁ + ΔH₂</text>
+  <text x="250" y="242" text-anchor="middle" font-size="11" fill="#666">The path does not matter — only the endpoints.</text>
+
+  <defs>
+    <marker id="arrowGreen" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#2c5f2d"/></marker>
+    <marker id="arrowBlue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#1565c0"/></marker>
+  </defs>
+</svg>
+<div class="caption">Figure 1: Hess's Law illustrated. The direct enthalpy change equals the sum of the indirect route — because enthalpy is a state function and the start/end points are identical.</div>
+</div>
+
+<div class="check-in">
+<p><b>Check-in:</b> Given: $\ce{C(s) + O2(g) -> CO2(g)}$, $\Delta H = -394\text{ kJ mol}^{-1}$ and $\ce{CO(g) + 1/2 O2(g) -> CO2(g)}$, $\Delta H = -283\text{ kJ mol}^{-1}$. Find $\Delta H$ for $\ce{C(s) + 1/2 O2(g) -> CO(g)}$.</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">Think of the route: C + O₂ → CO₂ (−394) is the direct combustion. The indirect route: C + ½O₂ → CO (unknown $x$), then CO + ½O₂ → CO₂ (−283). By Hess's Law: $x + (-283) = -394$, so $x = -394 + 283 = \mathbf{-111\text{ kJ mol}^{-1}}$.</div>
+</div>
+
+<h2>3. The Two Standard Methods</h2>
+
+<h3>3.1 Method 1: Using $\Delta H_f^\ominus$ (Formation Method)</h3>
+
+<p>This method works for <b>any</b> reaction where you have $\Delta H_f^\ominus$ data for all reactants and products. The general cycle goes from elements (enthalpy baseline) up to compounds:</p>
+
+$$\Delta H_{\text{reaction}}^\ominus = \sum \Delta H_f^\ominus(\text{products}) - \sum \Delta H_f^\ominus(\text{reactants})$$
+
+<div class="diagram">
+<svg width="500" height="260" viewBox="0 0 500 260">
+  <text x="250" y="18" text-anchor="middle" font-size="12" font-weight="bold">Formation Cycle: ΔH°<sub>f</sub> Method</text>
+  
+  <!-- Elements baseline -->
+  <rect x="130" y="200" width="240" height="40" rx="6" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="250" y="225" text-anchor="middle" font-size="12" fill="#1565c0">Elements in standard states</text>
+  
+  <!-- Reactants -->
+  <rect x="40" y="40" width="160" height="50" rx="8" fill="#ffebee" stroke="#c62828" stroke-width="2"/>
+  <text x="120" y="62" text-anchor="middle" font-size="12" fill="#c62828">Reactants</text>
+  <text x="120" y="80" text-anchor="middle" font-size="10">(compounds)</text>
+  
+  <!-- Products -->
+  <rect x="300" y="40" width="160" height="50" rx="8" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="2"/>
+  <text x="380" y="62" text-anchor="middle" font-size="12" fill="#2c5f2d">Products</text>
+  <text x="380" y="80" text-anchor="middle" font-size="10">(compounds)</text>
+  
+  <!-- Arrow reactants to products -->
+  <line x1="200" y1="65" x2="295" y2="65" stroke="#333" stroke-width="2" marker-end="url(#arrowDark)"/>
+  <text x="248" y="58" text-anchor="middle" font-size="11" font-weight="bold">ΔH<sub>rxn</sub></text>
+  
+  <!-- Down arrow from reactants to elements -->
+  <line x1="120" y1="90" x2="120" y2="195" stroke="#c62828" stroke-width="2" marker-end="url(#arrowRed)"/>
+  <text x="105" y="145" text-anchor="middle" font-size="10" fill="#c62828" transform="rotate(-90,105,145)">−ΣΔH°<sub>f</sub>(reactants)</text>
+  
+  <!-- Down arrow from products to elements -->
+  <line x1="380" y1="90" x2="380" y2="195" stroke="#2c5f2d" stroke-width="2" marker-end="url(#arrowGreen)"/>
+  <text x="395" y="145" text-anchor="middle" font-size="10" fill="#2c5f2d" transform="rotate(90,395,145)">−ΣΔH°<sub>f</sub>(products)</text>
+  
+  <!-- Equation -->
+  <rect x="100" y="245" width="300" height="8" rx="3" fill="none"/>
+
+  <defs>
+    <marker id="arrowDark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#333"/></marker>
+    <marker id="arrowRed" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#c62828"/></marker>
+    <marker id="arrowGreen" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#2c5f2d"/></marker>
+  </defs>
+</svg>
+<div class="caption">Figure 2: The formation cycle. All compounds are "formed" from elements. Going clockwise: reactants → elements is $-\sum\Delta H_f^\ominus$(reactants); elements → products is $+\sum\Delta H_f^\ominus$(products). The sum equals the direct reaction arrow.</div>
+</div>
+
+<div class="check-in">
+<p><b>Check-in:</b> Use $\Delta H_f^\ominus$ data to find $\Delta H^\ominus$ for: $\ce{Fe2O3(s) + 3CO(g) -> 2Fe(s) + 3CO2(g)}$. Data (kJ mol⁻¹): $\Delta H_f^\ominus(\ce{Fe2O3}) = -824$, $\Delta H_f^\ominus(\ce{CO}) = -111$, $\Delta H_f^\ominus(\ce{CO2}) = -394$.</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">$\Delta H^\ominus = \sum\Delta H_f^\ominus(\text{prod}) - \sum\Delta H_f^\ominus(\text{react})$. Products: $2(0) + 3(-394) = -1182$ (Fe element = 0). Reactants: $(-824) + 3(-111) = -824 - 333 = -1157$. $\Delta H^\ominus = -1182 - (-1157) = \mathbf{-25\text{ kJ mol}^{-1}}$.</div>
+</div>
+
+<h3>3.2 Method 2: Using $\Delta H_c^\ominus$ (Combustion Method)</h3>
+
+<p>This method is used when the reaction involves <b>organic compounds</b> (which burn easily). The cycle goes from compounds down to combustion products ($\ce{CO2}$ and $\ce{H2O}$):</p>
+
+$$\Delta H_{\text{reaction}}^\ominus = \sum \Delta H_c^\ominus(\text{reactants}) - \sum \Delta H_c^\ominus(\text{products})$$
+
+<p>Note the order is <b>swapped</b> compared to the formation method! Reactants come first. This is because the cycle goes <em>down</em> to combustion products rather than <em>up</em> from elements.</p>
+
+<div class="diagram">
+<svg width="500" height="250" viewBox="0 0 500 250">
+  <text x="250" y="18" text-anchor="middle" font-size="12" font-weight="bold">Combustion Cycle: ΔH°<sub>c</sub> Method</text>
+  
+  <!-- Reactants -->
+  <rect x="40" y="40" width="160" height="50" rx="8" fill="#ffebee" stroke="#c62828" stroke-width="2"/>
+  <text x="120" y="62" text-anchor="middle" font-size="12" fill="#c62828">Reactants</text>
+  <text x="120" y="80" text-anchor="middle" font-size="10">(organic compounds)</text>
+  
+  <!-- Products -->
+  <rect x="300" y="40" width="160" height="50" rx="8" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="2"/>
+  <text x="380" y="62" text-anchor="middle" font-size="12" fill="#2c5f2d">Products</text>
+  <text x="380" y="80" text-anchor="middle" font-size="10">(organic compounds)</text>
+  
+  <!-- Arrow reactants to products -->
+  <line x1="200" y1="65" x2="295" y2="65" stroke="#333" stroke-width="2" marker-end="url(#arrDark)"/>
+  <text x="248" y="58" text-anchor="middle" font-size="11" font-weight="bold">ΔH<sub>rxn</sub></text>
+  
+  <!-- Combustion products baseline -->
+  <rect x="130" y="190" width="240" height="40" rx="6" fill="#e3f2fd" stroke="#1565c0" stroke-width="1.5"/>
+  <text x="250" y="206" text-anchor="middle" font-size="10" fill="#1565c0">CO₂(g) + H₂O(l)</text>
+  <text x="250" y="221" text-anchor="middle" font-size="10" fill="#1565c0">(combustion products)</text>
+  
+  <!-- Down arrows from reactants -->
+  <line x1="120" y1="90" x2="120" y2="185" stroke="#c62828" stroke-width="2" marker-end="url(#arrRed)"/>
+  <text x="105" y="140" text-anchor="middle" font-size="9" fill="#c62828" transform="rotate(-90,105,140)">ΣΔH°<sub>c</sub>(reactants)</text>
+  
+  <!-- Down arrows from products -->
+  <line x1="380" y1="90" x2="380" y2="185" stroke="#2c5f2d" stroke-width="2" marker-end="url(#arrGreen)"/>
+  <text x="395" y="140" text-anchor="middle" font-size="9" fill="#2c5f2d" transform="rotate(90,395,140)">ΣΔH°<sub>c</sub>(products)</text>
+  
+  <defs>
+    <marker id="arrDark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#333"/></marker>
+    <marker id="arrRed" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#c62828"/></marker>
+    <marker id="arrGreen" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#2c5f2d"/></marker>
+  </defs>
+</svg>
+<div class="caption">Figure 3: The combustion cycle. All organic compounds are "burned down" to CO₂ and H₂O. Going clockwise: reactants → combustion products → products. Note that $\Delta H^\ominus_{\text{rxn}} = \sum\Delta H_c^\ominus(\text{reactants}) - \sum\Delta H_c^\ominus(\text{products})$.</div>
+</div>
+
+<div class="check-in">
+<p><b>Check-in:</b> Given: $\Delta H_c^\ominus(\ce{C(s)}) = -394$, $\Delta H_c^\ominus(\ce{H2(g)}) = -286$, $\Delta H_c^\ominus(\ce{C2H6(g)}) = -1560$ kJ mol⁻¹. Find $\Delta H_f^\ominus$ of $\ce{C2H6(g)}$.</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">Formation reaction: $\ce{2C(s) + 3H2(g) -> C2H6(g)}$. Using combustion cycle: $\Delta H^\ominus = \sum\Delta H_c^\ominus(\text{reactants}) - \sum\Delta H_c^\ominus(\text{products}) = [2(-394) + 3(-286)] - [-1560] = [-788 - 858] + 1560 = -1646 + 1560 = \mathbf{-86\text{ kJ mol}^{-1}}$.</div>
+</div>
+
+<h2>4. Worked Examples</h2>
+
+<div class="example">
+<b>Example 1 — Formation Method with Three Compounds:</b><br><br>
+Calculate $\Delta H^\ominus$ for: $\ce{2Al(s) + Fe2O3(s) -> Al2O3(s) + 2Fe(s)}$ (the thermite reaction). Data: $\Delta H_f^\ominus(\ce{Fe2O3}) = -824$, $\Delta H_f^\ominus(\ce{Al2O3}) = -1676$ kJ mol⁻¹.<br><br>
+<b>Step 1:</b> $\sum\Delta H_f^\ominus(\text{products}) = (-1676) + 2(0) = -1676$ kJ.<br>
+<b>Step 2:</b> $\sum\Delta H_f^\ominus(\text{reactants}) = 2(0) + (-824) = -824$ kJ.<br>
+<b>Step 3:</b> $\Delta H^\ominus = -1676 - (-824) = \mathbf{-852\text{ kJ mol}^{-1}}$.<br><br>
+This is highly exothermic — which is why thermite is used for welding railway tracks!<br><br>
+<b>⚠️ Common wrong approach:</b> Forgetting that elements (Al, Fe) have $\Delta H_f^\ominus = 0$. Students sometimes look them up or invent a value, which ruins the calculation.
+</div>
+
+<div class="example">
+<b>Example 2 — Combustion Method for Isomerisation:</b><br><br>
+Calculate $\Delta H^\ominus$ for the isomerisation: $\ce{CH3CH2CH2OH(l) -> (CH3)2CHOH(l)}$. Data (kJ mol⁻¹): $\Delta H_c^\ominus(\text{propan-1-ol}) = -2021$, $\Delta H_c^\ominus(\text{propan-2-ol}) = -2005$.<br><br>
+<b>Step 1:</b> Identify which is reactant and which is product.<br>
+<b>Step 2:</b> $\Delta H^\ominus = \Delta H_c^\ominus(\text{reactant}) - \Delta H_c^\ominus(\text{product}) = (-2021) - (-2005) = -2021 + 2005 = \mathbf{-16\text{ kJ mol}^{-1}}$.<br><br>
+The reaction is slightly exothermic — propan-2-ol is marginally more stable.<br><br>
+<b>⚠️ Common wrong approach:</b> Reversing the order: products minus reactants. With the combustion method, the formula is reactants minus products. If you get the sign wrong here, you lose both marks.
+</div>
+
+<div class="example">
+<b>Example 3 — Multi-step Algebraic Addition:</b><br><br>
+Given the following data, calculate $\Delta H^\ominus$ for $\ce{N2(g) + 2O2(g) -> 2NO2(g)}$:<br>
+(1) $\ce{N2(g) + O2(g) -> 2NO(g)}$, $\Delta H = +180\text{ kJ}$<br>
+(2) $\ce{2NO(g) + O2(g) -> 2NO2(g)}$, $\Delta H = -114\text{ kJ}$<br><br>
+<b>Step 1:</b> Add equations (1) and (2): $\ce{N2 + O2 + 2NO + O2 -> 2NO + 2NO2}$.<br>
+<b>Step 2:</b> Cancel $\ce{2NO}$ on both sides: $\ce{N2 + 2O2 -> 2NO2}$.<br>
+<b>Step 3:</b> $\Delta H = (+180) + (-114) = \mathbf{+66\text{ kJ}}$.<br><br>
+<b>⚠️ Common wrong approach:</b> Failing to check that the intermediate ($\ce{2NO}$) cancels exactly. If the coefficients don't match, you must multiply one equation first — Hess's Law allows multiplying $\Delta H$ by the same factor.
+</div>
+
+<!-- SECTION F -->
+<div class="misconception">
+<h3>⚠️ Common Mistakes to Avoid</h3>
+<ol>
+  <li><b>"Using the formation formula for a combustion cycle, or vice versa."</b> Formation: $\Delta H = \sum\Delta H_f(\text{products}) - \sum\Delta H_f(\text{reactants})$. Combustion: $\Delta H = \sum\Delta H_c(\text{reactants}) - \sum\Delta H_c(\text{products})$. The order is reversed. Always <b>draw the cycle</b> and trace arrows; never memorise the formula blindly.</li>
+  <li><b>"Forgetting that $\Delta H_f^\ominus$ of elements = 0."</b> This is the most common arithmetic error. Fe(s), O₂(g), Al(s), C(s, graphite) all have $\Delta H_f^\ominus = 0$. Including a non-zero value for an element will give a wrong answer that examiners will spot immediately.</li>
+  <li><b>"Not multiplying $\Delta H$ by the stoichiometric coefficient."</b> If the balanced equation has $3\ce{CO2}$, you need $3 \times \Delta H_f^\ominus(\ce{CO2})$. Every term in the sum must be multiplied by its coefficient from the balanced equation.</li>
+  <li><b>"Confusing $\Delta H_c^\ominus$ of $\ce{H2O}$ — is it water liquid or gas?"</b> Combustion produces $\ce{H2O(l)}$ at 298 K, so $\Delta H_c^\ominus$ data tables assume liquid water. If the question gives $\ce{H2O(g)}$, the value will be different (by the enthalpy of vaporisation, ~+44 kJ mol⁻¹). Read the state symbols.</li>
+</ol>
+</div>
+
+<!-- SECTION G -->
+<h2>5. End-of-Lesson Practice</h2>
+
+<p><b>Question 1 (Paper 1 style):</b> Given: $\Delta H_f^\ominus(\ce{C2H5OH(l)}) = -278$ kJ mol⁻¹. Which equation does this value refer to?<br>
+A. $\ce{C2H5OH(l) + 3O2(g) -> 2CO2(g) + 3H2O(l)}$<br>
+B. $\ce{2C(s) + 3H2(g) + 1/2 O2(g) -> C2H5OH(l)}$<br>
+C. $\ce{C2H4(g) + H2O(l) -> C2H5OH(l)}$<br>
+D. $\ce{4C(s) + 6H2(g) + O2(g) -> 2C2H5OH(l)}$</p>
+
+<p><b>Question 2:</b> Calculate $\Delta H^\ominus$ for $\ce{CH4(g) + 2O2(g) -> CO2(g) + 2H2O(l)}$ using $\Delta H_f^\ominus$ values (kJ mol⁻¹): $\ce{CH4(g)} = -75$, $\ce{CO2(g)} = -394$, $\ce{H2O(l)} = -286$.</p>
+
+<p><b>Question 3:</b> Use combustion data to find $\Delta H^\ominus$ for $\ce{C2H4(g) + H2(g) -> C2H6(g)}$. Data (kJ mol⁻¹): $\Delta H_c^\ominus(\ce{C2H4}) = -1411$, $\Delta H_c^\ominus(\ce{H2}) = -286$, $\Delta H_c^\ominus(\ce{C2H6}) = -1560$.</p>
+
+<p><b>Question 4:</b> Given: (1) $\ce{C(s) + O2(g) -> CO2(g)}$, $\Delta H = -394$ kJ; (2) $\ce{H2(g) + 1/2 O2(g) -> H2O(l)}$, $\Delta H = -286$ kJ; (3) $\ce{C3H8(g) + 5O2(g) -> 3CO2(g) + 4H2O(l)}$, $\Delta H = -2220$ kJ. Calculate $\Delta H_f^\ominus$ of $\ce{C3H8(g)}$.</p>
+
+<p><b>Question 5:</b> Calculate $\Delta H^\ominus$ for $\ce{4NH3(g) + 5O2(g) -> 4NO(g) + 6H2O(g)}$ using $\Delta H_f^\ominus$ (kJ mol⁻¹): $\ce{NH3(g)} = -46$, $\ce{NO(g)} = +90$, $\ce{H2O(g)} = -242$.</p>
+
+<p><b>Question 6 (IB-style):</b> A student wants to determine $\Delta H^\ominus$ for the decomposition of $\ce{CaCO3}$. She has the following data (kJ mol⁻¹): $\Delta H_f^\ominus(\ce{CaCO3}) = -1207$, $\Delta H_f^\ominus(\ce{CaO}) = -635$, $\Delta H_f^\ominus(\ce{CO2}) = -394$.<br>
+(a) Write the balanced equation for the decomposition of $\ce{CaCO3}$.<br>
+(b) Calculate $\Delta H^\ominus$ for this reaction.<br>
+(c) Is the reaction exothermic or endothermic? Justify.<br>
+(d) Hence explain why $\ce{CaCO3}$ must be heated strongly for decomposition to occur.</p>
+
+<button class="practice-toggle" onclick="var a=this.nextElementSibling;a.classList.toggle('open');this.textContent=a.classList.contains('open')?'▴ Hide Answers':'▸ Show Answers'">▸ Show Answers</button>
+<div class="practice-answers">
+
+<p><b>Answer 1:</b> B. The formation reaction starts from elements in their standard states and produces exactly <b>one mole</b> of the compound. A is combustion, C is hydration, D produces two moles (coefficient 2 is not allowed for $\Delta H_f$).</p>
+
+<p><b>Answer 2:</b> $\sum\Delta H_f^\ominus(\text{products}) = (-394) + 2(-286) = -394 - 572 = -966$. $\sum\Delta H_f^\ominus(\text{reactants}) = (-75) + 2(0) = -75$. $\Delta H^\ominus = -966 - (-75) = \mathbf{-891\text{ kJ mol}^{-1}}$. This is the standard enthalpy of combustion of methane.</p>
+
+<p><b>Answer 3:</b> $\Delta H^\ominus = \sum\Delta H_c^\ominus(\text{reactants}) - \sum\Delta H_c^\ominus(\text{products}) = [(-1411) + (-286)] - [-1560] = -1697 + 1560 = \mathbf{-137\text{ kJ mol}^{-1}}$.</p>
+
+<p><b>Answer 4:</b> Formation: $\ce{3C(s) + 4H2(g) -> C3H8(g)}$. Construct $\ce{C3H8}$ from elements. Hess cycle: $\Delta H_f = 3(-394) + 4(-286) - (-2220) = -1182 - 1144 + 2220 = \mathbf{-106\text{ kJ mol}^{-1}}$.</p>
+
+<p><b>Answer 5:</b> Products: $4(+90) + 6(-242) = 360 - 1452 = -1092$. Reactants: $4(-46) + 5(0) = -184$. $\Delta H^\ominus = -1092 - (-184) = \mathbf{-908\text{ kJ mol}^{-1}}$.</p>
+
+<p><b>Answer 6:</b> (a) $\ce{CaCO3(s) -> CaO(s) + CO2(g)}$. (b) $\Delta H^\ominus = [(-635) + (-394)] - [-1207] = -1029 + 1207 = \mathbf{+178\text{ kJ mol}^{-1}}$. (c) Endothermic — $\Delta H > 0$. (d) The reaction requires energy input to break bonds in the carbonate ion. Heating provides the activation energy and the endothermic enthalpy change; at room temperature, the reverse reaction (quicklime absorbing $\ce{CO2}$) is spontaneous.</p>
+</div>
+
+<!-- SECTION H -->
+<h2>6. Key Terms</h2>
+<table>
+<tr><th>Term</th><th>Definition</th></tr>
+<tr><td>Hess's Law</td><td>The enthalpy change for a reaction is independent of the route taken; $\Delta H$ is the same whether the reaction occurs in one step or multiple steps</td></tr>
+<tr><td>State function</td><td>A property that depends only on the current state of the system, not the path taken to reach it (e.g., enthalpy, internal energy, entropy)</td></tr>
+<tr><td>Enthalpy cycle</td><td>A diagram showing alternative routes between reactants and products, used to calculate an unknown $\Delta H$ using known enthalpy changes</td></tr>
+<tr><td>$\Delta H_f^\ominus$ method</td><td>Cycle through elements in standard states: $\Delta H_{\text{rxn}} = \sum\Delta H_f^\ominus(\text{products}) - \sum\Delta H_f^\ominus(\text{reactants})$</td></tr>
+<tr><td>$\Delta H_c^\ominus$ method</td><td>Cycle through combustion products: $\Delta H_{\text{rxn}} = \sum\Delta H_c^\ominus(\text{reactants}) - \sum\Delta H_c^\ominus(\text{products})$</td></tr>
+<tr><td>Standard state of an element</td><td>The most stable form of the element at 298 K and 100 kPa; $\Delta H_f^\ominus = 0$ by definition</td></tr>
+<tr><td>Algebraic addition method</td><td>Combining thermochemical equations (with their $\Delta H$ values) to obtain a target equation; intermediates must cancel</td></tr>
+</table>
+
+<!-- SECTION I -->
+<h2>7. Exam Tips</h2>
+
+<div class="exam-tip"><b>Paper 1 (Multiple Choice):</b> Be ready for questions that give you 3–4 equations with $\Delta H$ values and ask you to find the $\Delta H$ for a target reaction by combining them. The method: identify the target equation, then decide which given equations to reverse (flip the sign of $\Delta H$) and which to multiply (multiply $\Delta H$ by the same factor). The intermediates must cancel exactly.</div>
+
+<div class="exam-tip"><b>Paper 2 — Hess Cycle Construction:</b> Always draw the cycle on the exam paper — even if the question doesn't explicitly ask for it. The cycle earns method marks, and if you make an arithmetic error, the examiner can still see you understood the principle. Label each arrow with the compound name and its $\Delta H$ value. <b>Tip:</b> For formation cycles, put elements at the bottom. For combustion cycles, put $\ce{CO2 + H2O}$ at the bottom.</div>
+
+<div class="exam-tip"><b>Paper 2 — Data Booklet:</b> The IB Data Booklet (Section 12) contains $\Delta H_f^\ominus$ and $\Delta H_c^\ominus$ values. You are expected to select the correct ones for your calculation. Check state symbols — $\ce{H2O(l)}$ vs $\ce{H2O(g)}$ have different values, and using the wrong one is a common error in exams.</div>
+
+</body>
+</html>

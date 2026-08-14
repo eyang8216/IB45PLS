@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Lesson 33: Neural Signaling II ⚠️ HL (C2.2) — IB Biology HL</title>
 <script>window.MathJax = { tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] } };</script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <style>
   :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #1a6b3c; --border: #c4d4a9; --highlight: #e8f5e9; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -30,12 +31,15 @@
 </style>
 </head>
 <body>
-
+<div class="lesson-completion" style="margin: 0 0 2rem 0; padding: 1rem; background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-radius: 8px; border: 2px solid #bae6fd;">
+<label class="completion-checkbox" style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer;">
+<input id="lesson-complete" style="width: 24px; height: 24px; cursor: pointer; accent-color: #10b981;" type="checkbox"/>
+<span style="font-size: 1rem; color: #0f172a; font-weight: 600;">✓ Mark this lesson as complete</span>
+</label>
+</div>
 
 <h2>What You'll Learn</h2>
-
 <p>A single neuron in your brain may receive input from 10,000 other neurons. Some whisper "fire!", some shout "don't!", and the neuron must integrate this cacophony of signals to make a binary decision: fire or don't fire. This is the essence of neural computation. In this lesson — the HL extension of neural signaling — you'll learn how neurons perform this integration, how the pattern of firing encodes information, and how synapses physically change to store memories. By the end, you'll understand:</p>
-
 <ul>
 <li>How graded potentials differ from action potentials and why this distinction is fundamental</li>
 <li>The arithmetic of the neuron: spatial and temporal summation at the axon hillock</li>
@@ -44,20 +48,13 @@
 <li>How synapses get stronger (LTP) and weaker (LTD) — the cellular basis of learning and memory</li>
 <li>The critical role of NMDA receptors as "coincidence detectors"</li>
 </ul>
-<hr>
-
+<hr/>
 <h2>1. Graded Potentials: The Input Language of Neurons</h2>
-
 <p>Before we dive into integration, we need to understand the signals being integrated. Graded potentials are the "whispers" that dendrites and the soma receive — fundamentally different from action potentials.</p>
-
 <div class="definition">
-
 <p><strong>Graded potential</strong> — A local, non-propagated change in membrane potential whose amplitude is <strong>proportional to stimulus intensity</strong> and that <strong>decays with distance</strong> from the site of stimulation. Unlike action potentials, graded potentials are NOT all-or-none.</p>
-
 </div>
-
 <h3>1.1 Properties of Graded Potentials</h3>
-
 <table>
 <tr>
 <td>Property</td>
@@ -100,14 +97,12 @@
 <td>Absolute + relative</td>
 </tr>
 </table>
-
 <p><strong>Analogies:</strong></p>
 <ul>
 <li><strong>Graded potential</strong> is like a ripple in a pond — it starts where the stone hits, fades as it spreads, and bigger stones make bigger ripples</li>
 <li><strong>Action potential</strong> is like a line of dominoes — once knocked, each domino falls fully and the signal propagates without weakening</li>
 </ul>
 <h3>1.2 Types of Graded Potentials</h3>
-
 <p><strong>EPSP — Excitatory Postsynaptic Potential:</strong></p>
 <ul>
 <li><strong>Depolarization</strong> (membrane moves toward threshold, e.g., from −70 to −60 mV)</li>
@@ -128,9 +123,7 @@
 <li>Label both: "Graded — amplitude proportional to stimulus" and "Decays with distance from synapse"</li>
 </ul>
 <h3>1.3 Why Graded Potentials Decay</h3>
-
 <p>Graded potentials decay with distance because of two passive electrical properties of the membrane:</p>
-
 <ol>
 <li><strong>Membrane resistance (R_m):</strong> The membrane is "leaky" — ions leak out through channels, so the charge dissipates as it spreads. High membrane resistance (few open channels) = less decay. Low membrane resistance = more decay.</li>
 </ol>
@@ -138,50 +131,32 @@
 <li><strong>Internal (axial) resistance (R_a):</strong> The cytoplasm resists current flow. A thin dendrite has higher internal resistance than a thick axon.</li>
 </ol>
 <p>The <strong>length constant (λ)</strong> is the distance over which the potential decays to 37% of its original amplitude. Larger λ = potential spreads further. This depends on the ratio of membrane resistance to internal resistance:</p>
-
 <p style="text-align:center;margin:0.8rem 0;">$$\lambda \propto \sqrt{\frac{R_m}{R_a}}$$</p>
-
 <p>For IB purposes, the key concept is: <strong>graded potentials decay over distance</strong> and the decay is greater in thin processes with leaky membranes. This is why most synapses are on dendrites close to the soma — if a synapse is too far out on a dendrite, its EPSP may decay to insignificance by the time it reaches the axon hillock.</p>
-
-<hr>
-
+<hr/>
 <h2>2. Summation: The Arithmetic of the Neuron</h2>
-
 <p>A single EPSP is rarely enough to bring a neuron to threshold. The neuron must <strong>sum</strong> (add together) many inputs to decide whether to fire. This is called <strong>synaptic integration</strong> and it occurs primarily at the <strong>axon hillock</strong>.</p>
-
 <div class="definition">
-
 <p><strong>Summation</strong> — The process by which multiple postsynaptic potentials combine to produce a larger change in membrane potential at the axon hillock.</p>
-
 </div>
-
 <h3>2.1 Spatial Summation</h3>
-
 <p><strong>Spatial summation</strong> occurs when EPSPs (or IPSPs) from <strong>multiple different synapses</strong> arrive at approximately the same time and add together.</p>
-
 <ul>
 <li>Imagine three friends all pushing a stalled car at the same time from different positions — their forces add together to move the car</li>
 <li>Synapse A produces +3 mV EPSP, Synapse B produces +4 mV EPSP, Synapse C produces +5 mV EPSP</li>
 <li>If all arrive simultaneously at the hillock: 3 + 4 + 5 = <strong>+12 mV depolarization</strong> — possibly enough to reach threshold (−70 + 12 = −58 mV, which is above −55 mV threshold)</li>
 </ul>
 <p><strong>Draw and label:</strong> A neuron with three different presynaptic inputs (labeled A, B, C) synapsing at different locations on the dendrites. Show the EPSP from each individual synapse (small, subthreshold depolarizations) and then the combined EPSP at the axon hillock (larger, potentially suprathreshold).</p>
-
 <h3>2.2 Temporal Summation</h3>
-
 <p><strong>Temporal summation</strong> occurs when EPSPs from a <strong>single synapse</strong> arrive in rapid succession and add together.</p>
-
 <ul>
 <li>Imagine one friend pushing the car repeatedly, each push coming before the car has stopped moving from the previous one — the pushes accumulate</li>
 <li>If Synapse A fires at t=0 ms (+3 mV), t=5 ms (+3 mV before first EPSP decays), and t=10 ms (+3 mV), the combined depolarization might reach ~+8-9 mV</li>
 </ul>
 <p><strong>Draw and label:</strong> A single synapse firing three times in quick succession. Show three EPSPs that overlap and add to produce a larger depolarization than any single EPSP.</p>
-
 <h3>2.3 Combining Spatial and Temporal Summation</h3>
-
 <p>Real neurons use both simultaneously. Thousands of synapses, some firing multiple times — the axon hillock is continuously integrating this complex pattern of inputs.</p>
-
 <h3>2.4 IPSPs Subtract from the Sum</h3>
-
 <p>Inhibition matters! An IPSP arriving at the same time as EPSPs reduces the net depolarization. This is <strong>algebraic summation:</strong></p>
 <ul>
 <li>Two EPSPs (+5 mV each) + one IPSP (−3 mV) = +7 mV net depolarization</li>
@@ -194,11 +169,8 @@
 <li>The resulting summed potential at the axon hillock (blue) — smaller than the sum of EPSPs alone</li>
 </ul>
 <div class="worked">
-
 <p><strong>Worked Example: Predicting Whether a Neuron Fires</strong></p>
-
 <p><strong>Scenario:</strong> A neuron has a resting potential of −70 mV and a threshold of −55 mV. In one 10 ms window, it receives the following synaptic inputs, all of which reach the axon hillock simultaneously:</p>
-
 <ul>
 <li>Synapse 1 (excitatory): EPSP of +5 mV</li>
 <li>Synapse 2 (excitatory): EPSP of +4 mV</li>
@@ -208,40 +180,24 @@
 <p><strong>(a)</strong> What is the net depolarization at the axon hillock?</p>
 <p><strong>(b)</strong> Does the neuron reach threshold and fire an action potential?</p>
 <p><strong>(c)</strong> If Synapse 3 (inhibitory) were silenced, would the neuron fire?</p>
-
 <p><strong>Answers:</strong></p>
-
 <p><strong>(a)</strong> Net = (+5) + (+4) + (−3) + (+6) = <strong>+12 mV</strong></p>
 <p>Membrane potential: −70 + 12 = <strong>−58 mV</strong></p>
-
 <p><strong>(b)</strong> No. −58 mV is below the threshold of −55 mV. Despite strong excitation, the single IPSP is enough to prevent firing.</p>
-
 <p><strong>(c)</strong> Without Synapse 3: Net = (+5) + (+4) + (+6) = +15 mV</p>
 <p>Membrane potential: −70 + 15 = <strong>−55 mV</strong></p>
 <p>Yes — exactly at threshold, so the neuron would fire.</p>
-
 <p><strong>IB significance:</strong> This demonstrates how a single inhibitory synapse can veto the combined input of multiple excitatory synapses. This is the basis of <strong>lateral inhibition</strong> in sensory processing (sharpening contrast) and the balanced excitation/inhibition that prevents seizures.</p>
-
 </div>
-
 <div class="tip">
-
 <p><strong>Paper 1 Tip:</strong> A common question asks: "Where does summation occur?" The answer is the <strong>axon hillock</strong> — this is where the integrated signal determines whether threshold is reached. Summation begins in the dendrites but the "decision point" is the hillock.</p>
-
 <p><strong>Paper 2 Tip:</strong> If given a diagram of a neuron with multiple inputs, you may be asked to predict whether an action potential will fire. Calculate the net depolarization (EPSP sum minus IPSP sum) and compare to threshold (usually given as −55 mV or a 15 mV depolarization from rest).</p>
-
 </div>
-
-<hr>
-
+<hr/>
 <h2>3. Oscilloscope Traces: Reading the Neural Code</h2>
-
 <p>The IB expects you to be able to interpret oscilloscope recordings of neural activity. This is a core skill for Paper 2 data-analysis questions.</p>
-
 <h3>3.1 What the Oscilloscope Shows</h3>
-
 <p>An oscilloscope connected to a neuron displays <strong>membrane potential (voltage) on the y-axis</strong> and <strong>time on the x-axis</strong>. You can identify:</p>
-
 <ul>
 <li><strong>Resting potential:</strong> The baseline voltage</li>
 <li><strong>EPSPs:</strong> Small upward (depolarizing) bumps that don't reach threshold</li>
@@ -262,13 +218,9 @@
 <li>A scale bar: vertical = 20 mV, horizontal = 10 ms</li>
 </ul>
 <h3>3.2 Measuring from Oscilloscope Traces</h3>
-
 <div class="worked">
-
 <p><strong>Worked Example: Oscilloscope Analysis</strong></p>
-
 <p><strong>Scenario:</strong> Below is data from an oscilloscope recording. The resting potential is −70 mV.</p>
-
 <table>
 <tr>
 <td>Time (ms)</td>
@@ -327,41 +279,25 @@
 <td>−70</td>
 </tr>
 </table>
-
 <p><strong>(a)</strong> What type of event occurs at 10-13 ms?</p>
 <p><strong>(b)</strong> What is the amplitude of this event?</p>
 <p><strong>(c)</strong> What is the approximate duration?</p>
 <p><strong>(d)</strong> How large was the EPSP that preceded the event?</p>
 <p><strong>(e)</strong> Why does the membrane go to −75 mV at 13 ms?</p>
-
 <p><strong>Answers:</strong></p>
-
 <p><strong>(a)</strong> An <strong>action potential</strong> — the rapid depolarization from −55 mV (threshold) to +30 mV followed by repolarization is the classic AP signature.</p>
-
 <p><strong>(b)</strong> Amplitude = Peak − Resting = +30 − (−70) = <strong>100 mV</strong></p>
-
 <p><strong>(c)</strong> Duration ≈ from threshold (10 ms) to return to resting (15 ms) ≈ <strong>5 ms</strong>. Note: the actual spike is narrower (threshold to repolarization ≈ 2.5 ms), but the after-hyperpolarization extends the total event.</p>
-
 <p><strong>(d)</strong> The EPSP peaked at −63 mV from a baseline of −70 mV → EPSP amplitude = <strong>7 mV</strong>. This was subthreshold (threshold is −55 mV), so no AP was triggered directly — the AP at 10 ms must have been triggered by additional EPSPs arriving later.</p>
-
 <p><strong>(e)</strong> This is the <strong>after-hyperpolarization</strong> (undershoot). Voltage-gated K⁺ channels are slow to close, so excess K⁺ efflux drives the membrane below resting potential. This is the relative refractory period.</p>
-
 </div>
-
-<hr>
-
+<hr/>
 <h2>4. Frequency Coding: How Stimulus Intensity is Encoded</h2>
-
 <p>If all action potentials have the same amplitude, how does the nervous system distinguish a weak stimulus from a strong one?</p>
-
 <div class="definition">
-
 <p><strong>Frequency coding</strong> — The encoding of stimulus intensity by the <strong>frequency</strong> (rate) of action potential firing. A more intense stimulus produces a higher frequency of action potentials; the amplitude of individual action potentials remains constant.</p>
-
 </div>
-
 <h3>4.1 The Principle</h3>
-
 <p>Think of a fire alarm:</p>
 <ul>
 <li>A small fire might trigger one alarm pulse per second</li>
@@ -375,16 +311,13 @@
 <li>Each action potential is identical in amplitude (~100 mV)</li>
 </ul>
 <h3>4.2 Why Frequency, Not Amplitude?</h3>
-
 <p>The all-or-none property of the action potential means amplitude is fixed. But the <strong>refractory period</strong> sets a maximum firing rate:</p>
-
 <ul>
 <li>Absolute refractory period: ~1 ms → theoretical maximum ~1,000 Hz</li>
 <li>Relative refractory period extends this → practical maximum in most neurons: ~200-500 Hz</li>
 <li>Within this range, the neuron can fire at any frequency proportional to stimulus intensity</li>
 </ul>
 <h3>4.3 Mechanisms of Frequency Coding</h3>
-
 <p><strong>At the receptor level:</strong> A stronger stimulus:</p>
 <ul>
 <li>Produces a larger <strong>receptor (generator) potential</strong> (graded)</li>
@@ -392,7 +325,6 @@
 <li>After the first AP and refractory period, the membrane is still above threshold → second AP fires sooner → shorter inter-spike interval → higher frequency</li>
 </ul>
 <p><strong>At the synaptic level:</strong> A stronger presynaptic stimulus releases more neurotransmitter, producing a larger EPSP that reaches threshold faster, leading to higher-frequency firing in the postsynaptic neuron.</p>
-
 <p><strong>Draw and label:</strong> Two oscilloscope traces, one above the other:</p>
 <ul>
 <li>Top trace: "Weak stimulus" — 2 action potentials in 100 ms = 20 Hz</li>
@@ -401,27 +333,16 @@
 <li>Label: "Amplitude constant — Frequency varies with stimulus intensity"</li>
 </ul>
 <div class="tip">
-
 <p><strong>Paper 1 Tip:</strong> A classic trick question: "How does a neuron encode a more intense stimulus?" Options include "larger action potentials" (WRONG), "more action potentials per second" (CORRECT), and "longer action potentials" (WRONG). Remember: amplitude is constant, frequency varies.</p>
-
 </div>
-
-<hr>
-
+<hr/>
 <h2>5. Synaptic Plasticity: The Cellular Basis of Learning and Memory</h2>
-
 <p>Neurons that fire together, wire together. This famous phrase captures the essence of synaptic plasticity — the ability of synapses to strengthen or weaken over time based on their activity patterns. This is the mechanism underlying learning, memory formation, and brain development.</p>
-
 <div class="definition">
-
 <p><strong>Synaptic plasticity</strong> — The ability of synapses to change their strength (the magnitude of the postsynaptic response to a presynaptic input) in response to patterns of activity. The two major forms are <strong>long-term potentiation (LTP)</strong> — strengthening — and <strong>long-term depression (LTD)</strong> — weakening.</p>
-
 </div>
-
 <h3>5.1 Long-Term Potentiation (LTP)</h3>
-
 <p>LTP is the cellular model for memory formation. It was first discovered in the <strong>hippocampus</strong> (a brain region critical for memory) and has since been found throughout the brain.</p>
-
 <p><strong>The Cast of Molecular Characters:</strong></p>
 <ul>
 <li><strong>AMPA receptor (AMPAR):</strong> A ligand-gated Na⁺ channel that opens when <strong>glutamate</strong> binds. This is the "workhorse" receptor that produces the EPSP during normal synaptic transmission.</li>
@@ -430,7 +351,6 @@
 <li><strong>CaMKII:</strong> Calcium/calmodulin-dependent protein kinase II — activated by Ca²⁺, it phosphorylates targets that strengthen the synapse.</li>
 </ul>
 <p><strong>The Mechanism of LTP (Step-by-Step):</strong></p>
-
 <p><strong>Phase 1 — Baseline (Weak Stimulation):</strong></p>
 <ol>
 <li>Presynaptic terminal releases glutamate</li>
@@ -457,16 +377,13 @@
 <li>The synapse has been <strong>potentiated</strong> (strengthened) — and this can last for hours, days, or even years</li>
 </ol>
 <p><strong>The Mg²⁺ Block — The Key to Coincidence Detection:</strong></p>
-
 <p>The NMDA receptor is a <strong>molecular coincidence detector.</strong> It only opens when:</p>
 <ul>
 <li><strong>Condition 1:</strong> Glutamate is bound (indicating the presynaptic neuron fired — signal "1")</li>
 <li><strong>Condition 2:</strong> The postsynaptic neuron is depolarized (indicating it received other strong inputs and is active — signal "2")</li>
 </ul>
 <p>When both conditions are met simultaneously, the synapse is strengthened. This implements a fundamental learning rule: <strong>neurons that fire together, wire together.</strong></p>
-
 <p><strong>Draw and label:</strong> A detailed diagram of an excitatory synapse undergoing LTP:</p>
-
 <p><strong>Panel A — Before LTP (weak stimulation):</strong></p>
 <ul>
 <li>Glutamate shown binding to AMPAR and NMDAR</li>
@@ -490,13 +407,9 @@
 <li>Label: "Potentiated synapse — more AMPA receptors inserted"</li>
 </ul>
 <div class="worked">
-
 <p><strong>Worked Example: LTP as a Memory Mechanism</strong></p>
-
 <p><strong>Scenario:</strong> Explain how LTP at hippocampal synapses could underlie the formation of a memory for a new fact (e.g., learning that "Paris is the capital of France").</p>
-
 <p><strong>Step-by-step reasoning:</strong></p>
-
 <ol>
 <li>When you first hear "Paris is the capital of France," specific neurons in the hippocampus and cortex are activated simultaneously (those representing "Paris," "capital," and "France")</li>
 <li>Synapses connecting these co-active neurons receive correlated input — presynaptic and postsynaptic neurons fire together</li>
@@ -506,13 +419,9 @@
 <li>The memory is <strong>retrieved</strong> through reactivation of this cell assembly</li>
 </ol>
 <p><strong>Key IB point:</strong> LTP is the leading cellular model for memory. Memories are thought to be stored as patterns of strengthened synapses (increased synaptic weights) in specific neural circuits. The hippocampus is critical for forming new declarative memories, and LTP in hippocampal synapses (especially at CA3→CA1 Schaffer collateral synapses) is the most studied model system.</p>
-
 </div>
-
 <h3>5.2 Long-Term Depression (LTD)</h3>
-
 <p>If LTP is "turning up the volume" on a synapse, LTD is "turning it down." Not all experiences should strengthen synapses — the brain must also forget, refine, and recalibrate.</p>
-
 <p><strong>Induction:</strong></p>
 <ul>
 <li>Triggered by <strong>low-frequency stimulation</strong> (e.g., 1-5 Hz for several minutes)</li>
@@ -533,7 +442,6 @@
 <li><strong>Habituation</strong> — learning to ignore repeated, harmless stimuli</li>
 </ul>
 <h3>5.3 LTP vs. LTD Comparison</h3>
-
 <table>
 <tr>
 <td>Feature</td>
@@ -576,21 +484,13 @@
 <td>Forgetting, refinement</td>
 </tr>
 </table>
-
 <div class="tip">
-
 <p><strong>Paper 1 Tip:</strong> The IB may ask about the role of the NMDA receptor. The key phrase is <strong>"coincidence detector"</strong> — it requires both glutamate binding AND postsynaptic depolarization (to remove Mg²⁺). This is a favorite HL concept.</p>
-
 <p><strong>Paper 2 Tip:</strong> If given experimental data — e.g., applying an NMDA receptor blocker (like APV) and showing that LTP is prevented — you must explain that blocking NMDARs prevents Ca²⁺ influx, so CaMKII is not activated and AMPA receptors are not inserted.</p>
-
 </div>
-
-<hr>
-
+<hr/>
 <h2>6. Integration at the Axon Hillock — The Full Picture</h2>
-
 <p>Let's now put it all together. The axon hillock is where:</p>
-
 <ol>
 <li><strong>Graded potentials</strong> (EPSPs and IPSPs) from thousands of synapses arrive</li>
 <li>These are <strong>summated</strong> both spatially (across synapses) and temporally (across time)</li>
@@ -599,7 +499,6 @@
 <li>The AP propagates along the axon (saltatory if myelinated) to the synaptic terminals</li>
 </ol>
 <p>The hillock has the <strong>highest density of voltage-gated Na⁺ channels</strong> in the neuron, making it the most excitable region and the site where the "decision" is made.</p>
-
 <p><strong>Draw and label:</strong> A comprehensive diagram showing:</p>
 <ul>
 <li>A neuron with multiple synaptic inputs on dendrites and soma</li>
@@ -609,10 +508,8 @@
 <li>An action potential emerging from the hillock and propagating down the axon</li>
 <li>Label: "Integration at axon hillock — threshold reached → AP fired"</li>
 </ul>
-<hr>
-
+<hr/>
 <h2>7. Common Misconceptions</h2>
-
 <table>
 <tr>
 <td>Misconception</td>
@@ -647,41 +544,26 @@
 <td>It's the <strong>integration zone</strong> — the site with the highest Na⁺ channel density where the decision to fire is made.</td>
 </tr>
 </table>
-
-<hr>
-
+<hr/>
 <h2>8. Practice Problems</h2>
-
 <h3>Problem 1 (Paper 1 Style — Multiple Choice)</h3>
-
 <p>At the resting membrane potential, NMDA receptors do not conduct ions even when glutamate binds because:</p>
-
 <p>A. NMDA receptors are voltage-gated and only open during depolarization.</p>
 <p>B. The NMDA receptor pore is blocked by Mg²⁺ ions.</p>
 <p>C. NMDA receptors are only found on presynaptic terminals.</p>
 <p>D. Glutamate is an inhibitory neurotransmitter at NMDA receptors.</p>
-
 <p><strong>Answer:</strong> <strong>B</strong>. NMDA receptors are ligand-gated (they require glutamate), but at resting potential (~−70 mV), extracellular Mg²⁺ ions are drawn into the pore and block it. Depolarization repels the Mg²⁺, allowing the channel to conduct. This is the basis of coincidence detection.</p>
-
-<hr>
-
+<hr/>
 <h3>Problem 2 (Paper 1 Style — Multiple Choice)</h3>
-
 <p>A neuron receives EPSPs from three synapses simultaneously. The EPSPs are +4 mV, +6 mV, and +3 mV. At the same time, it receives an IPSP of −5 mV. If the resting potential is −70 mV and threshold is −55 mV, what happens?</p>
-
 <p>A. The neuron fires an action potential.</p>
 <p>B. The neuron does not fire.</p>
 <p>C. The neuron fires twice.</p>
 <p>D. The neuron hyperpolarizes.</p>
-
 <p><strong>Answer:</strong> <strong>B</strong>. Net depolarization = (+4 +6 +3) + (−5) = +8 mV. Membrane potential = −70 + 8 = −62 mV. This is below the threshold of −55 mV, so no action potential fires.</p>
-
-<hr>
-
+<hr/>
 <h3>Problem 3 (Paper 2 Style — Data Analysis)</h3>
-
 <p>Researchers stimulated a presynaptic neuron with either low-frequency (5 Hz) or high-frequency (100 Hz) stimulation and measured the EPSP amplitude in the postsynaptic neuron before and after stimulation.</p>
-
 <table>
 <tr>
 <td>Condition</td>
@@ -704,20 +586,16 @@
 <td>5.1</td>
 </tr>
 </table>
-
 <p><strong>(a)</strong> Identify the type of plasticity induced by each condition. [2 marks]</p>
 <p><strong>(b)</strong> Explain the cellular mechanism responsible for the change in EPSP after high-frequency stimulation. [4 marks]</p>
 <p><strong>(c)</strong> Explain why APV (an NMDA receptor antagonist) prevents the high-frequency effect. [2 marks]</p>
-
 <p><strong>Answers:</strong></p>
-
 <p><strong>(a)</strong></p>
 <ul>
 <li>Low-frequency (5 Hz): <strong>LTD</strong> — EPSP decreased from 5.0 to 3.2 mV (synaptic weakening)</li>
 <li>High-frequency (100 Hz): <strong>LTP</strong> — EPSP increased from 5.0 to 8.7 mV (synaptic strengthening)</li>
 </ul>
 <p>[2 marks]</p>
-
 <p><strong>(b)</strong> High-frequency stimulation causes LTP through:</p>
 <ol>
 <li>Rapid successive EPSPs summate, strongly depolarizing the postsynaptic membrane [1 mark]</li>
@@ -726,17 +604,11 @@
 <li>CaMKII also triggers <strong>insertion of additional AMPA receptors</strong> into the postsynaptic membrane from intracellular vesicles → larger EPSP for the same glutamate release [1 mark]</li>
 </ol>
 <p>[4 marks]</p>
-
 <p><strong>(c)</strong> APV blocks NMDA receptors, preventing Ca²⁺ influx through these channels. Without the Ca²⁺ signal, CaMKII is not activated, so AMPA receptors are not phosphorylated or inserted. The synapse cannot be potentiated. This demonstrates that NMDAR activation is <strong>necessary</strong> for LTP induction. [2 marks]</p>
-
-<hr>
-
+<hr/>
 <h3>Problem 4 (Paper 2 Style — Long Answer)</h3>
-
 <p>Explain how a postsynaptic neuron integrates multiple synaptic inputs to determine whether it will fire an action potential. [6 marks]</p>
-
 <p><strong>Model Answer:</strong></p>
-
 <ol>
 <li>The postsynaptic neuron receives <strong>excitatory inputs</strong> (producing EPSPs — depolarization via Na⁺ influx) and <strong>inhibitory inputs</strong> (producing IPSPs — hyperpolarization via Cl⁻ influx or K⁺ efflux) at synapses distributed across its dendrites and soma [1 mark]</li>
 <li>These postsynaptic potentials are <strong>graded</strong> — their amplitude is proportional to neurotransmitter release and they <strong>decay with distance</strong> as they spread passively toward the soma [1 mark]</li>
@@ -746,29 +618,18 @@
 <li>If the net depolarization at the axon hillock reaches <strong>threshold</strong> (approximately −55 mV), voltage-gated Na⁺ channels open in sufficient numbers to trigger an all-or-none action potential. If not, no action potential occurs. [1 mark]</li>
 </ol>
 <p>[6 marks]</p>
-
-<hr>
-
+<hr/>
 <h3>Problem 5 (Paper 2 Style — Application)</h3>
-
 <p>A student records from a sensory neuron responding to touch. When they apply a light touch, they observe 3 action potentials in 100 ms. When they apply firm pressure, they observe 15 action potentials in 100 ms. The amplitude of individual action potentials is the same in both cases.</p>
-
 <p><strong>(a)</strong> Calculate the firing frequency for light touch and firm pressure. [1 mark]</p>
 <p><strong>(b)</strong> Explain why the action potential amplitude is the same despite different stimulus intensities. [2 marks]</p>
 <p><strong>(c)</strong> Explain the mechanism by which a stronger stimulus produces higher-frequency firing at the level of the sensory receptor. [3 marks]</p>
-
 <p><strong>Answers:</strong></p>
-
 <p><strong>(a)</strong> Light touch: 3 AP / 0.1 s = <strong>30 Hz</strong>. Firm pressure: 15 AP / 0.1 s = <strong>150 Hz</strong>. [1 mark]</p>
-
 <p><strong>(b)</strong> Action potentials are <strong>all-or-none</strong> events. Once threshold is reached, voltage-gated Na⁺ channels open in a positive-feedback loop that drives the membrane to approximately the same peak voltage (~+30 to +40 mV) regardless of stimulus intensity. The Na⁺ channel inactivation and K⁺ channel activation that terminate the AP are also independent of stimulus intensity. Stimulus intensity is encoded by firing <strong>frequency</strong>, not amplitude. [2 marks]</p>
-
 <p><strong>(c)</strong> A stronger stimulus produces a larger <strong>receptor (generator) potential</strong> in the sensory receptor. This larger graded depolarization reaches threshold <strong>faster</strong> after the first action potential. During the relative refractory period, the membrane is closer to threshold because of the larger sustained generator potential. Therefore, the <strong>inter-spike interval</strong> is shorter, and more action potentials are generated per unit time. The stronger the stimulus, the shorter the interval between successive APs, resulting in higher frequency. [3 marks]</p>
-
-<hr>
-
+<hr/>
 <h2>9. Key Terms Quick Reference</h2>
-
 <table>
 <tr>
 <td>Term</td>
@@ -839,12 +700,389 @@
 <td>Undershoot below resting potential due to slow K⁺ channel closure</td>
 </tr>
 </table>
-
-<hr>
-
+<hr/>
 <p>This HL extension builds on the fundamentals from Lesson 32 to give you a complete picture of neural computation. The concepts of summation, frequency coding, and synaptic plasticity are not just exam material — they explain how your brain processes information, learns, and remembers. Understanding LTP and the NMDA receptor's role as a coincidence detector is one of the most satisfying intellectual achievements in biology, connecting molecular events to the phenomenon of memory.</p>
+<div class="lesson-actions" style="margin: 2rem 0; padding: 1.5rem; background: #f8fafc; border-radius: 8px; display: flex; gap: 1rem; flex-wrap: wrap;">
+<button class="action-btn" id="generate-flashcards-btn" style="padding: 0.75rem 1.5rem; background: #3b82f6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        🗂️ Generate Flashcards
+    </button>
+<button class="action-btn" id="practice-problems-btn" style="padding: 0.75rem 1.5rem; background: #10b981; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        ✏️ Practice Problems
+    </button>
+<button class="action-btn" id="ask-ai-btn" style="padding: 0.75rem 1.5rem; background: #8b5cf6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        💬 Ask AI
+    </button>
+</div>
+<script>
+(function() {
+    const subjectKey = "biology";
+    const lessonId = "lesson_33";
+    const lessonTitle = "Lesson 33: Neural Signaling II ⚠️ HL (C2.2) — IB Biology HL";
 
-<div class="nav"><a href="lesson_32.html">&#8592; Lesson 32</a><a href="index.html">&#8962; Index</a><a href="lesson_34.html">Lesson 34 &#8594;</a></div>
+    function getCsrf() {
+        var m = document.querySelector('meta[name="csrf-token"]');
+        return m ? m.getAttribute('content') : '';
+    }
 
+    // Completion checkbox
+    const checkbox = document.getElementById('lesson-complete');
+    if (checkbox) {
+        // Load saved state
+        const saved = localStorage.getItem(`completed_${subjectKey}_${lessonId}`);
+        if (saved === 'true') checkbox.checked = true;
+
+        checkbox.addEventListener('change', async function() {
+            const completed = this.checked;
+            localStorage.setItem(`completed_${subjectKey}_${lessonId}`, completed);
+
+            try {
+                await fetch('/toggle_completion', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': getCsrf()
+                    },
+                    body: JSON.stringify({
+                        subject: subjectKey,
+                        lesson: lessonId,
+                        completed: completed
+                    })
+                });
+            } catch(e) {
+                console.error('Error saving completion:', e);
+            }
+        });
+    }
+
+    // Generate Flashcards
+    const flashcardsBtn = document.getElementById('generate-flashcards-btn');
+    if (flashcardsBtn) {
+        flashcardsBtn.addEventListener('click', async function() {
+            this.disabled = true;
+            this.textContent = '⏳ Generating...';
+
+            try {
+                const content = document.body.innerText.substring(0, 2000);
+                const response = await fetch('/generate_flashcards', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': getCsrf()
+                    },
+                    body: JSON.stringify({
+                        subject: subjectKey,
+                        lesson: lessonTitle,
+                        content_summary: content
+                    })
+                });
+
+                const data = await response.json();
+                if (data.error) {
+                    alert('Error: ' + data.error);
+                } else {
+                    alert(`✅ Created ${data.count} flashcards! View them at /flashcards/${subjectKey}`);
+                }
+            } catch(e) {
+                alert('Error generating flashcards: ' + e.message);
+            } finally {
+                this.disabled = false;
+                this.textContent = '🗂️ Generate Flashcards';
+            }
+        });
+    }
+
+    // Practice Problems - open in new section
+    const practiceBtn = document.getElementById('practice-problems-btn');
+    if (practiceBtn) {
+        practiceBtn.addEventListener('click', function() {
+            alert('Practice problems feature coming soon! Use the AI chatbot to generate custom questions.');
+        });
+    }
+
+    // Ask AI - scroll to chatbot
+    const aiBtn = document.getElementById('ask-ai-btn');
+    if (aiBtn) {
+        aiBtn.addEventListener('click', function() {
+            const chatbot = document.getElementById('lessons-chatbot');
+            if (chatbot) {
+                chatbot.scrollIntoView({ behavior: 'smooth' });
+                const toggleBtn = chatbot.querySelector('.chatbot-toggle');
+                if (toggleBtn) toggleBtn.click();
+            } else {
+                alert('AI chatbot not available on this page. It will be added soon!');
+            }
+        });
+    }
+
+    // Track lesson view
+    fetch('/mark_viewed', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': getCsrf()
+        },
+        body: JSON.stringify({
+            subject: subjectKey,
+            lesson: lessonId
+        })
+    }).catch(e => console.error('Error tracking view:', e));
+
+})();
+</script>
+<div class="lesson-actions" style="margin: 2rem 0; padding: 1.5rem; background: #f8fafc; border-radius: 8px; display: flex; gap: 1rem; flex-wrap: wrap;">
+<button class="action-btn" id="generate-flashcards-btn" style="padding: 0.75rem 1.5rem; background: #3b82f6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        🗂️ Generate Flashcards
+    </button>
+<button class="action-btn" id="practice-problems-btn" style="padding: 0.75rem 1.5rem; background: #10b981; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        ✏️ Practice Problems
+    </button>
+<button class="action-btn" id="ask-ai-btn" style="padding: 0.75rem 1.5rem; background: #8b5cf6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        💬 Ask AI
+    </button>
+</div>
+<script>
+(function() {
+    const subjectKey = "biology";
+    const lessonId = "lesson_33";
+    const lessonTitle = "Lesson 33: Neural Signaling II ⚠️ HL (C2.2) — IB Biology HL";
+
+    function getCsrf() {
+        var m = document.querySelector('meta[name="csrf-token"]');
+        return m ? m.getAttribute('content') : '';
+    }
+
+    // Completion checkbox
+    const checkbox = document.getElementById('lesson-complete');
+    if (checkbox) {
+        // Load saved state
+        const saved = localStorage.getItem(`completed_${subjectKey}_${lessonId}`);
+        if (saved === 'true') checkbox.checked = true;
+
+        checkbox.addEventListener('change', async function() {
+            const completed = this.checked;
+            localStorage.setItem(`completed_${subjectKey}_${lessonId}`, completed);
+
+            try {
+                await fetch('/toggle_completion', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': getCsrf()
+                    },
+                    body: JSON.stringify({
+                        subject: subjectKey,
+                        lesson: lessonId,
+                        completed: completed
+                    })
+                });
+            } catch(e) {
+                console.error('Error saving completion:', e);
+            }
+        });
+    }
+
+    // Generate Flashcards
+    const flashcardsBtn = document.getElementById('generate-flashcards-btn');
+    if (flashcardsBtn) {
+        flashcardsBtn.addEventListener('click', async function() {
+            this.disabled = true;
+            this.textContent = '⏳ Generating...';
+
+            try {
+                const content = document.body.innerText.substring(0, 2000);
+                const response = await fetch('/generate_flashcards', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': getCsrf()
+                    },
+                    body: JSON.stringify({
+                        subject: subjectKey,
+                        lesson: lessonTitle,
+                        content_summary: content
+                    })
+                });
+
+                const data = await response.json();
+                if (data.error) {
+                    alert('Error: ' + data.error);
+                } else {
+                    alert(`✅ Created ${data.count} flashcards! View them at /flashcards/${subjectKey}`);
+                }
+            } catch(e) {
+                alert('Error generating flashcards: ' + e.message);
+            } finally {
+                this.disabled = false;
+                this.textContent = '🗂️ Generate Flashcards';
+            }
+        });
+    }
+
+    // Practice Problems - open in new section
+    const practiceBtn = document.getElementById('practice-problems-btn');
+    if (practiceBtn) {
+        practiceBtn.addEventListener('click', function() {
+            alert('Practice problems feature coming soon! Use the AI chatbot to generate custom questions.');
+        });
+    }
+
+    // Ask AI - scroll to chatbot
+    const aiBtn = document.getElementById('ask-ai-btn');
+    if (aiBtn) {
+        aiBtn.addEventListener('click', function() {
+            const chatbot = document.getElementById('lessons-chatbot');
+            if (chatbot) {
+                chatbot.scrollIntoView({ behavior: 'smooth' });
+                const toggleBtn = chatbot.querySelector('.chatbot-toggle');
+                if (toggleBtn) toggleBtn.click();
+            } else {
+                alert('AI chatbot not available on this page. It will be added soon!');
+            }
+        });
+    }
+
+    // Track lesson view
+    fetch('/mark_viewed', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': getCsrf()
+        },
+        body: JSON.stringify({
+            subject: subjectKey,
+            lesson: lessonId
+        })
+    }).catch(e => console.error('Error tracking view:', e));
+
+})();
+</script>
+<div class="lesson-actions" style="margin: 2rem 0; padding: 1.5rem; background: #f8fafc; border-radius: 8px; display: flex; gap: 1rem; flex-wrap: wrap;">
+<button class="action-btn" id="generate-flashcards-btn" style="padding: 0.75rem 1.5rem; background: #3b82f6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        🗂️ Generate Flashcards
+    </button>
+<button class="action-btn" id="practice-problems-btn" style="padding: 0.75rem 1.5rem; background: #10b981; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        ✏️ Practice Problems
+    </button>
+<button class="action-btn" id="ask-ai-btn" style="padding: 0.75rem 1.5rem; background: #8b5cf6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        💬 Ask AI
+    </button>
+</div>
+<script>
+(function() {
+    const subjectKey = "biology";
+    const lessonId = "lesson_33";
+    const lessonTitle = "Lesson 33: Neural Signaling II ⚠️ HL (C2.2) — IB Biology HL";
+
+    function getCsrf() {
+        var m = document.querySelector('meta[name="csrf-token"]');
+        return m ? m.getAttribute('content') : '';
+    }
+
+    // Completion checkbox
+    const checkbox = document.getElementById('lesson-complete');
+    if (checkbox) {
+        // Load saved state
+        const saved = localStorage.getItem(`completed_${subjectKey}_${lessonId}`);
+        if (saved === 'true') checkbox.checked = true;
+
+        checkbox.addEventListener('change', async function() {
+            const completed = this.checked;
+            localStorage.setItem(`completed_${subjectKey}_${lessonId}`, completed);
+
+            try {
+                await fetch('/toggle_completion', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': getCsrf()
+                    },
+                    body: JSON.stringify({
+                        subject: subjectKey,
+                        lesson: lessonId,
+                        completed: completed
+                    })
+                });
+            } catch(e) {
+                console.error('Error saving completion:', e);
+            }
+        });
+    }
+
+    // Generate Flashcards
+    const flashcardsBtn = document.getElementById('generate-flashcards-btn');
+    if (flashcardsBtn) {
+        flashcardsBtn.addEventListener('click', async function() {
+            this.disabled = true;
+            this.textContent = '⏳ Generating...';
+
+            try {
+                const content = document.body.innerText.substring(0, 2000);
+                const response = await fetch('/generate_flashcards', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': getCsrf()
+                    },
+                    body: JSON.stringify({
+                        subject: subjectKey,
+                        lesson: lessonTitle,
+                        content_summary: content
+                    })
+                });
+
+                const data = await response.json();
+                if (data.error) {
+                    alert('Error: ' + data.error);
+                } else {
+                    alert(`✅ Created ${data.count} flashcards! View them at /flashcards/${subjectKey}`);
+                }
+            } catch(e) {
+                alert('Error generating flashcards: ' + e.message);
+            } finally {
+                this.disabled = false;
+                this.textContent = '🗂️ Generate Flashcards';
+            }
+        });
+    }
+
+    // Practice Problems - open in new section
+    const practiceBtn = document.getElementById('practice-problems-btn');
+    if (practiceBtn) {
+        practiceBtn.addEventListener('click', function() {
+            alert('Practice problems feature coming soon! Use the AI chatbot to generate custom questions.');
+        });
+    }
+
+    // Ask AI - scroll to chatbot
+    const aiBtn = document.getElementById('ask-ai-btn');
+    if (aiBtn) {
+        aiBtn.addEventListener('click', function() {
+            const chatbot = document.getElementById('lessons-chatbot');
+            if (chatbot) {
+                chatbot.scrollIntoView({ behavior: 'smooth' });
+                const toggleBtn = chatbot.querySelector('.chatbot-toggle');
+                if (toggleBtn) toggleBtn.click();
+            } else {
+                alert('AI chatbot not available on this page. It will be added soon!');
+            }
+        });
+    }
+
+    // Track lesson view
+    fetch('/mark_viewed', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': getCsrf()
+        },
+        body: JSON.stringify({
+            subject: subjectKey,
+            lesson: lessonId
+        })
+    }).catch(e => console.error('Error tracking view:', e));
+
+})();
+</script>
+<div class="nav"><a href="lesson_32.html">← Lesson 32</a><a href="index.html">⌂ Index</a><a href="lesson_34.html">Lesson 34 →</a></div>
 </body>
 </html>

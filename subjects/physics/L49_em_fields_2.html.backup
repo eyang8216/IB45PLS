@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 49: Lesson 49: Electric & Magnetic Fields II — Electric Potential — IB Physics HL</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']]
+  },
+  options: {
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap');
+  
+  :root {
+    --bg: #fdfcf9;
+    --text: #1a1a1a;
+    --accent: #2c5f2d;
+    --border: #d0cec7;
+    --code-bg: #f4f3ef;
+    --callout-bg: #f0f7f0;
+    --callout-border: #2c5f2d;
+    --warning-bg: #fff8e6;
+    --warning-border: #c4941a;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  body {
+    font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid var(--accent);
+    color: var(--accent);
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 2.5rem 0 0.75rem;
+    color: #1a1a1a;
+  }
+  
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.5rem;
+  }
+  
+  p { margin: 0 0 1rem; }
+  
+  ul, ol { margin: 0 0 1rem 1.5rem; }
+  li { margin-bottom: 0.35rem; }
+  
+  code {
+    background: var(--code-bg);
+    padding: 0.15em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+    font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+  }
+  
+  pre {
+    background: var(--code-bg);
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 0 0 1rem;
+    font-size: 0.85em;
+    line-height: 1.5;
+  }
+  
+  pre code {
+    background: none;
+    padding: 0;
+    font-size: inherit;
+  }
+  
+  blockquote {
+    border-left: 4px solid var(--callout-border);
+    background: var(--callout-bg);
+    margin: 0 0 1rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+  }
+  
+  blockquote.warning {
+    border-left-color: var(--warning-border);
+    background: var(--warning-bg);
+  }
+  
+  strong { font-weight: 700; }
+  
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.5rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  
+  .nav a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+  
+  .nav a:hover { background: var(--callout-bg); }
+  
+  .worked-example, .answer {
+    background: var(--code-bg);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin: 0.75rem 0 1.25rem;
+  }
+  
+  .worked-example strong:first-child, .answer strong:first-child {
+    color: var(--accent);
+  }
+  
+  @media print {
+    body { font-size: 12pt; max-width: 100%; padding: 0; }
+    .nav { display: none; }
+    h1 { font-size: 18pt; }
+    h2 { font-size: 14pt; }
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 0 1rem;
+  }
+  
+  th, td {
+    border: 1px solid var(--border);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  
+  th {
+    background: var(--code-bg);
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L48_em_fields_1.html">← Lesson 48</a>
+  <a href="L50_em_fields_3.html">Lesson 50 →</a>
+</nav>
+
+<h1>Lesson 49: Electric & Magnetic Fields II — Electric Potential</h1>
+
+<h2>What You'll Learn</h2>
+<ul>
+<li>Electric potential V = kQ/r (scalar!)</li>
+<li>Potential due to multiple charges: simple scalar addition</li>
+<li>Equipotential surfaces in electric fields</li>
+<li>The electronvolt (eV): energy unit for atomic physics</li>
+<li>Relationship between E-field and potential: E = −ΔV/Δr</li>
+</ul>
+
+<hr>
+
+<h2>1. Electric Potential V</h2>
+
+<h3>Definition</h3>
+
+<p>Electric potential at a point is the <strong>work done per unit charge</strong> to bring a small positive test charge from <strong>infinity</strong> to that point.</p>
+
+<p>$$V = \frac{kQ}{r} = \frac{Q}{4\pi\varepsilon_0 r}$$</p>
+
+<p>where:</p>
+<ul>
+<li><strong>V</strong> = electric potential (volts, V = J/C)</li>
+<li><strong>r</strong> = distance from point charge Q (m)</li>
+<li>Reference: V(∞) = 0</li>
+</ul>
+
+<h3>Sign of Potential</h3>
+
+<ul>
+<li><strong>Positive charge</strong> (+Q): V is <strong>positive</strong> (work done AGAINST repulsion to bring + test charge in)</li>
+<li><strong>Negative charge</strong> (−Q): V is <strong>negative</strong> (work done BY attraction as + test charge comes in)</li>
+</ul>
+
+<h3>Why Scalar Matters</h3>
+
+<p>Unlike the electric field (vector), potential is a <strong>scalar</strong>. For multiple charges, you just add the potentials algebraically:</p>
+
+<p>$$V_{\text{total}} = V_1 + V_2 + V_3 + ... = \frac{kq_1}{r_1} + \frac{kq_2}{r_2} + \frac{kq_3}{r_3} + ...$$</p>
+
+<p>No vector components needed! This makes potential calculations much simpler than field calculations.</p>
+
+<hr>
+
+<h2>2. Potential Difference and Work Done</h2>
+
+<h3>Potential Difference (Voltage)</h3>
+
+<p>$$\Delta V = V_B - V_A$$</p>
+
+<h3>Work Done to Move a Charge</h3>
+
+<p>$$W = q \Delta V$$</p>
+
+<ul>
+<li>If ΔV > 0 (moving to higher potential): work done <strong>on</strong> charge by external agent</li>
+<li>If ΔV < 0 (moving to lower potential): work done <strong>by</strong> field on charge</li>
+</ul>
+
+<h3>Energy Gained by Accelerated Charge</h3>
+
+<p>When a charge q moves freely through a potential difference ΔV:</p>
+
+<p>$$\Delta KE = q\Delta V$$</p>
+
+<p>$$v = \sqrt{\frac{2q\Delta V}{m}} \quad (\text{starting from rest})$$</p>
+
+<hr>
+
+<h2>3. The Electronvolt (eV)</h2>
+
+<h3>Definition</h3>
+
+<p>One electronvolt is the energy gained (or lost) by one electron when it moves through a potential difference of 1 volt.</p>
+
+<p>$$1 \text{ eV} = 1.60 \times 10^{-19} \text{ J}$$</p>
+
+<h3>Why eV?</h3>
+
+<p>Atomic and subatomic energies are tiny in joules. An electron accelerated through 100 V gains:</p>
+
+<p>$$KE = 100 \text{ eV} = 100 \times 1.60 \times 10^{-19} = 1.60 \times 10^{-17} \text{ J}$$</p>
+
+<p>Much more convenient to say "100 eV" than "1.60 × 10⁻¹⁷ J"!</p>
+
+<h3>Conversion</h3>
+
+<table>
+<tr>
+<th>To convert...</th>
+<th>Multiply by...</th>
+</tr>
+<tr>
+<td>eV → J</td>
+<td>1.60 × 10⁻¹⁹</td>
+</tr>
+<tr>
+<td>J → eV</td>
+<td>6.25 × 10¹⁸</td>
+</tr>
+<tr>
+<td>MeV → J</td>
+<td>1.60 × 10⁻¹³</td>
+</tr>
+<tr>
+<td>GeV → J</td>
+<td>1.60 × 10⁻¹⁰</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>4. Equipotential Surfaces</h2>
+
+<h3>Definition</h3>
+
+<p>An equipotential surface is a surface on which the potential is constant everywhere.</p>
+
+<h3>Properties</h3>
+
+<table>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>Orientation</td>
+<td><strong>Perpendicular</strong> to E-field lines everywhere</td>
+</tr>
+<tr>
+<td>Work</td>
+<td>No work is done moving a charge along an equipotential (ΔV = 0)</td>
+</tr>
+<tr>
+<td>Spacing</td>
+<td>Closer equipotentials = stronger E-field</td>
+</tr>
+<tr>
+<td>Shape for point charge</td>
+<td>Concentric spheres centred on the charge</td>
+</tr>
+</table>
+
+<h3>Visualizing Equipotentials</h3>
+
+<pre><code>
+Point charge (+Q):
+
+   E-field lines (radial outward)
+        → → →
+       ←—·—→     ← equipotential circles (spheres in 3D)
+        → → →
+</code></pre>
+
+<hr>
+
+<h2>5. Relationship Between E and V</h2>
+
+<h3>Field as Potential Gradient</h3>
+
+<p>$$E = -\frac{\Delta V}{\Delta r}$$</p>
+
+<p>In words: the electric field strength is the <strong>negative gradient</strong> of the potential.</p>
+
+<ul>
+<li>The steeper the V-vs-r graph, the stronger the E-field</li>
+<li>E points in the direction of <strong>decreasing</strong> V</li>
+</ul>
+
+<h3>For Parallel Plates</h3>
+
+<p>$$E = \frac{V}{d}$$</p>
+
+<p>This is the uniform field case. The potential drops linearly from the positive plate to the negative plate.</p>
+
+<h3>For a Point Charge</h3>
+
+<p>$$E = \frac{kQ}{r^2}, \quad V = \frac{kQ}{r}$$</p>
+
+<p>Check: E = −dV/dr = −d(kQ/r)/dr = −(−kQ/r²) = kQ/r² ✓</p>
+
+<hr>
+
+<h2>6. Electron Accelerated Through a p.d.</h2>
+
+<p>This is one of the most common IB problems. An electron (or proton) is accelerated from rest through a potential difference V:</p>
+
+<h3>Electron Speed</h3>
+
+<p>$$\frac{1}{2}mv^2 = eV$$</p>
+
+<p>$$v = \sqrt{\frac{2eV}{m}}$$</p>
+
+<h3>Example Values</h3>
+
+<table>
+<tr>
+<th>ΔV</th>
+<th>Electron speed</th>
+<th>Proton speed</th>
+</tr>
+<tr>
+<td>100 V</td>
+<td>5.93 × 10⁶ m/s</td>
+<td>1.38 × 10⁵ m/s</td>
+</tr>
+<tr>
+<td>1000 V</td>
+<td>1.87 × 10⁷ m/s</td>
+<td>4.38 × 10⁵ m/s</td>
+</tr>
+<tr>
+<td>10 kV</td>
+<td>5.93 × 10⁷ m/s</td>
+<td>1.38 × 10⁶ m/s</td>
+</tr>
+</table>
+
+<p>Note: For V ≥ ~10 kV, relativistic corrections become significant for electrons (v approaches c).</p>
+
+<hr>
+
+<h2>Worked Examples</h2>
+
+<h3>Worked Example 49.1 — Potential at Midpoint</h3>
+
+<p><strong>Problem:</strong> Charges of +4.0 μC and −2.0 μC are 0.60 m apart. Find the electric potential at the midpoint.</p>
+
+<p><strong>Solution:</strong></p>
+
+<p>Midpoint: r = 0.30 m from each charge.</p>
+
+<p>$$V = \frac{kq_1}{r} + \frac{kq_2}{r} = \frac{k}{r}(q_1 + q_2) = \frac{8.99 \times 10^9}{0.30} \times (4.0 \times 10^{-6} + (-2.0) \times 10^{-6})$$</p>
+
+<p>$$V = 3.00 \times 10^{10} \times 2.0 \times 10^{-6} = \mathbf{6.0 \times 10^4 \text{ V}}$$</p>
+
+<p>Note: even though one charge is negative, potential is positive here because the +4.0 μC contribution is larger.</p>
+
+<hr>
+
+<h3>Worked Example 49.2 — Work to Move a Charge</h3>
+
+<p><strong>Problem:</strong> A +3.0 nC charge is moved from a point where V = 500 V to a point where V = −200 V. Find:</p>
+<p>(a) the potential difference</p>
+<p>(b) the work done</p>
+
+<p><strong>Solution:</strong></p>
+
+<p><strong>(a)</strong> ΔV = V_final − V_initial = −200 − 500 = <strong>−700 V</strong></p>
+
+<p><strong>(b)</strong> W = qΔV = 3.0×10⁻⁹ × (−700) = <strong>−2.1 × 10⁻⁶ J</strong></p>
+
+<p>Negative work means the field does the work — the charge naturally moves to lower potential (positive charge moves toward negative charges).</p>
+
+<hr>
+
+<h3>Worked Example 49.3 — eV Conversion and Electron Speed</h3>
+
+<p><strong>Problem:</strong> An electron is accelerated from rest through 5000 V.</p>
+<p>(a) Find its kinetic energy in eV and joules.</p>
+<p>(b) Calculate its final speed. (e = 1.60×10⁻¹⁹ C, mₑ = 9.11×10⁻³¹ kg)</p>
+<p>(c) A proton accelerated through the same p.d. — how does its speed compare?</p>
+
+<p><strong>Solution:</strong></p>
+
+<p><strong>(a)</strong> KE = 5000 eV = 5000 × 1.60×10⁻¹⁹ = <strong>8.00 × 10⁻¹⁶ J</strong></p>
+
+<p><strong>(b)</strong></p>
+<p>$$v = \sqrt{\frac{2eV}{m}} = \sqrt{\frac{2 \times 1.60 \times 10^{-19} \times 5000}{9.11 \times 10^{-31}}}$$</p>
+<p>$$v = \sqrt{\frac{1.60 \times 10^{-15}}{9.11 \times 10^{-31}}} = \sqrt{1.756 \times 10^{15}} = \mathbf{4.19 \times 10^7 \text{ m/s}}$$</p>
+
+<p>(About 14% of the speed of light — relativistic effects are becoming noticeable.)</p>
+
+<p><strong>(c)</strong> Proton mass = 1.67×10⁻²⁷ kg (1836× heavier). </p>
+<p>v_p = √(2eV/m_p). Since m_p/mₑ = 1836, v_p/vₑ = √(mₑ/m_p) = 1/√1836 ≈ 1/42.8.</p>
+<p>v_p ≈ 4.19×10⁷/42.8 = <strong>9.79 × 10⁵ m/s</strong> — much slower!</p>
+
+<hr>
+
+<h3>Worked Example 49.4 — Potential Due to Multiple Charges</h3>
+
+<p><strong>Problem:</strong> Three charges lie on a line: q₁ = +2.0 μC at x = 0, q₂ = −3.0 μC at x = 0.20 m, q₃ = +4.0 μC at x = 0.50 m. Find the potential at x = 0.35 m (between q₂ and q₃).</p>
+
+<p><strong>Solution:</strong></p>
+
+<p>Distances: r₁ = 0.35 m, r₂ = 0.15 m, r₃ = 0.15 m.</p>
+
+<p>$$V = k\left(\frac{q_1}{r_1} + \frac{q_2}{r_2} + \frac{q_3}{r_3}\right)$$</p>
+
+<p>$$V = 8.99 \times 10^9 \left(\frac{2.0 \times 10^{-6}}{0.35} + \frac{-3.0 \times 10^{-6}}{0.15} + \frac{4.0 \times 10^{-6}}{0.15}\right)$$</p>
+
+<p>$$V = 8.99 \times 10^9 \left(5.71 \times 10^{-6} - 2.00 \times 10^{-5} + 2.67 \times 10^{-5}\right)$$</p>
+
+<p>$$V = 8.99 \times 10^9 \times 1.24 \times 10^{-5} = \mathbf{1.11 \times 10^5 \text{ V}}$$</p>
+
+<hr>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1</h3>
+<p>Calculate the electric potential at a distance of 0.50 m from a +6.0 μC point charge. How much work is required to bring a +2.0 μC charge from infinity to this point?</p>
+
+<h3>Problem 2</h3>
+<p>Two parallel plates are 2.0 cm apart with a 500 V potential difference.</p>
+<p>(a) Find the E-field between the plates.</p>
+<p>(b) An electron starts from rest at the negative plate. What is its speed when it reaches the positive plate?</p>
+<p>(c) Express the electron's final kinetic energy in eV.</p>
+
+<h3>Problem 3</h3>
+<p>Charges +5.0 μC and −5.0 μC are placed at opposite corners of a square of side 0.40 m. Find the potential at the other two corners (the "empty" corners).</p>
+
+<h3>Problem 4</h3>
+<p>An alpha particle (q = +2e, m = 6.64 × 10⁻²⁷ kg) is accelerated from rest through 2000 V. Find:</p>
+<p>(a) its kinetic energy in eV and joules</p>
+<p>(b) its final speed</p>
+
+<h3>Problem 5 (IB-Style — Potential Graph)</h3>
+<p>Charges q₁ = +4.0 nC and q₂ = −2.0 nC are fixed on the x-axis at x = −0.20 m and x = +0.20 m respectively.</p>
+
+<p><strong>(a)</strong> Calculate the potential at x = 0 (the origin).</p>
+<p><strong>(b)</strong> Calculate the potential at x = 0.50 m.</p>
+<p><strong>(c)</strong> A positive test charge of +1.0 nC is released from rest at x = 0.50 m. Describe its subsequent motion qualitatively.</p>
+<p><strong>(d)</strong> There is a point on the x-axis to the right of q₂ where V = 0. Find this point.</p>
+
+<hr>
+
+<h2>Answers</h2>
+
+<h3>Answer 1</h3>
+<p>V = kQ/r = 8.99×10⁹ × 6.0×10⁻⁶ / 0.50 = <strong>1.08 × 10⁵ V</strong></p>
+<p>W = qV = 2.0×10⁻⁶ × 1.08×10⁵ = <strong>0.216 J</strong></p>
+
+<hr>
+
+<h3>Answer 2</h3>
+<p><strong>(a)</strong> E = V/d = 500/0.020 = <strong>2.5 × 10⁴ V/m</strong></p>
+
+<p><strong>(b)</strong> ½mv² = eV → v = √(2eV/m) = √(2 × 1.60×10⁻¹⁹ × 500 / 9.11×10⁻³¹)</p>
+<p>= √(1.60×10⁻¹⁶/9.11×10⁻³¹) = √(1.756×10¹⁴) = <strong>1.33 × 10⁷ m/s</strong></p>
+
+<p><strong>(c)</strong> KE = <strong>500 eV</strong> (the potential difference in volts = the KE in eV for an electron!)</p>
+
+<hr>
+
+<h3>Answer 3</h3>
+<p>At an empty corner: distance to +5.0 μC is 0.40 m, distance to −5.0 μC is diagonal = √(0.40² + 0.40²) = 0.566 m.</p>
+
+<p>V = k(5.0×10⁻⁶/0.40 + (−5.0×10⁻⁶)/0.566)</p>
+<p>= 8.99×10⁹(1.25×10⁻⁵ − 8.83×10⁻⁶)</p>
+<p>= 8.99×10⁹ × 3.67×10⁻⁶ = <strong>3.30 × 10⁴ V</strong></p>
+
+<p>By symmetry, both empty corners have the same potential.</p>
+
+<hr>
+
+<h3>Answer 4</h3>
+<p><strong>(a)</strong> KE = qV = 2e × 2000 = <strong>4000 eV</strong> (= 4 keV)</p>
+<p>In joules: 4000 × 1.60×10⁻¹⁹ = <strong>6.40 × 10⁻¹⁶ J</strong></p>
+
+<p><strong>(b)</strong> v = √(2KE/m) = √(2 × 6.40×10⁻¹⁶ / 6.64×10⁻²⁷) = √(1.28×10⁻¹⁵/6.64×10⁻²⁷) = √(1.93×10¹¹) = <strong>4.39 × 10⁵ m/s</strong></p>
+
+<hr>
+
+<h3>Answer 5 (IB-Style)</h3>
+<p><strong>(a)</strong> At x = 0: r₁ = 0.20 m, r₂ = 0.20 m.</p>
+<p>V = k[4.0×10⁻⁹/0.20 + (−2.0×10⁻⁹)/0.20] = (8.99×10⁹/0.20)(2.0×10⁻⁹)</p>
+<p>= 4.495×10¹⁰ × 2.0×10⁻⁹ = <strong>89.9 V</strong></p>
+
+<p><strong>(b)</strong> At x = 0.50 m: r₁ = 0.70 m (to q₁ at −0.20), r₂ = 0.30 m (to q₂ at +0.20).</p>
+<p>V = 8.99×10⁹[4.0×10⁻⁹/0.70 + (−2.0×10⁻⁹)/0.30]</p>
+<p>= 8.99×10⁹[5.71×10⁻⁹ − 6.67×10⁻⁹]</p>
+<p>= 8.99×10⁹ × (−9.52×10⁻¹⁰) = <strong>−8.56 V</strong></p>
+
+<p><strong>(c)</strong> The test charge (+1.0 nC) at x = 0.50 m is in a region of slightly negative potential. Positive charges are repelled from + charges and attracted to − charges. Since q₂ = −2.0 nC at x = +0.20 m, the test charge will be attracted leftward toward q₂. As it moves left, it gains KE as potential decreases (becomes more negative near q₂). It will accelerate toward and past q₂ (assuming it can pass through), then decelerate as it approaches q₁ = +4.0 nC. The motion is oscillatory if it's trapped between the charges.</p>
+
+<p><strong>(d)</strong> For V = 0 to the right of q₂ (at x = d > 0.20):</p>
+<p>k×4.0×10⁻⁹/(d + 0.20) + k×(−2.0×10⁻⁹)/(d − 0.20) = 0</p>
+<p>4.0/(d + 0.20) = 2.0/(d − 0.20)</p>
+<p>4.0(d − 0.20) = 2.0(d + 0.20)</p>
+<p>4.0d − 0.80 = 2.0d + 0.40</p>
+<p>2.0d = 1.20</p>
+<p><strong>d = 0.60 m</strong> (from origin), or 0.40 m to the right of q₂.</p>
+
+<hr>
+
+<h2>Key Takeaways</h2>
+
+<table>
+<tr>
+<th>Concept</th>
+<th>Equation</th>
+<th>Notes</th>
+</tr>
+<tr>
+<td>Electric potential (point charge)</td>
+<td>V = kQ/r</td>
+<td>Scalar, sign matters</td>
+</tr>
+<tr>
+<td>Multiple charges</td>
+<td>V = Σ(kqᵢ/rᵢ)</td>
+<td>Simple algebraic addition</td>
+</tr>
+<tr>
+<td>Work done</td>
+<td>W = qΔV</td>
+<td>W > 0: against field; W < 0: by field</td>
+</tr>
+<tr>
+<td>Electronvolt</td>
+<td>1 eV = 1.60 × 10⁻¹⁹ J</td>
+<td>Energy unit for atomic scales</td>
+</tr>
+<tr>
+<td>E from V (uniform)</td>
+<td>E = V/d</td>
+<td>For parallel plates</td>
+</tr>
+<tr>
+<td>E from V (general)</td>
+<td>E = −ΔV/Δr</td>
+<td>E points toward decreasing V</td>
+</tr>
+<tr>
+<td>Electron through p.d.</td>
+<td>v = √(2eV/m)</td>
+<td>Very common IB problem</td>
+</tr>
+</table>
+
+<blockquote><strong>IB Data Booklet:</strong> V = kQ/r, W = qV, and E = V/d are given in Sub-topic 5.1. The electronvolt conversion 1 eV = 1.60 × 10⁻¹⁹ J is explicitly provided. Remember: potential is a scalar (simple addition), field is a vector (directional addition). This is a key difference frequently tested.</blockquote>
+
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L48_em_fields_1.html">← Lesson 48</a>
+  <a href="L50_em_fields_3.html">Lesson 50 →</a>
+</nav>
+
+</body>
+</html>

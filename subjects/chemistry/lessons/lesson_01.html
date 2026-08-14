@@ -1,14 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Lesson 1 — Chemistry HL — Stoichiometry Review</title>
 <script>
 window.MathJax = {tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] },
   loader: { load: ['[tex]/mhchem'] }};
 </script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <style>
 :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -42,142 +43,119 @@ pre.ascii-art { font-family: 'Courier New', monospace; font-size: 0.75rem; line-
 </style>
 </head>
 <body>
-
 <h1>Lesson 1: Stoichiometry Review — The Mole and Reacting Quantities</h1>
-
 <p><b>Syllabus reference:</b> 1.1–1.7 (Stoichiometric Relationships)</p>
-
 <!-- SECTION A -->
 <div class="objectives">
 <h3>Learning Objectives</h3>
 <p>By the end of this lesson, you will be able to:</p>
 <ul>
-  <li><b>Calculate</b> the amount of substance (in moles) from mass, volume of gas, or concentration of solution.</li>
-  <li><b>Determine</b> empirical and molecular formulas from percentage composition and combustion data.</li>
-  <li><b>Identify</b> the limiting reagent in a reaction and calculate theoretical and percentage yield.</li>
-  <li><b>Apply</b> the ideal gas equation $PV = nRT$ to calculate properties of gases.</li>
-  <li><b>Solve</b> multi-step stoichiometry problems involving solutions, gases, and limiting reagents simultaneously.</li>
+<li><b>Calculate</b> the amount of substance (in moles) from mass, volume of gas, or concentration of solution.</li>
+<li><b>Determine</b> empirical and molecular formulas from percentage composition and combustion data.</li>
+<li><b>Identify</b> the limiting reagent in a reaction and calculate theoretical and percentage yield.</li>
+<li><b>Apply</b> the ideal gas equation $PV = nRT$ to calculate properties of gases.</li>
+<li><b>Solve</b> multi-step stoichiometry problems involving solutions, gases, and limiting reagents simultaneously.</li>
 </ul>
 </div>
-
 <!-- SECTION B -->
-<h2>1. Prior Knowledge Check</h2>
 
+<div class="lesson-completion" style="margin: 1rem 0; padding: 1rem; background: #f0f9ff; border-radius: 8px;">
+<label class="completion-checkbox" style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer;">
+<input id="lesson-complete" style="width: 24px; height: 24px; cursor: pointer; accent-color: #10b981;" type="checkbox"/>
+<span style="font-size: 1rem; color: #0f172a; font-weight: 500;">✓ Mark this lesson as complete</span>
+</label>
+</div>
+<h2>1. Prior Knowledge Check</h2>
 <p><b>Question 1:</b> How many atoms are in one molecule of $\ce{H2SO4}$?</p>
 <div class="check-in">
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">7 atoms: 2 hydrogen + 1 sulfur + 4 oxygen. The subscript multiplies only the element it follows; if no subscript is written, it is 1.</div>
 </div>
-
 <p><b>Question 2:</b> What does "STP" mean, and what is the molar volume of an ideal gas at STP?</p>
 <div class="check-in">
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">STP = Standard Temperature and Pressure (273 K, 100 kPa). The molar volume of an ideal gas at STP is <b>22.7 dm³ mol⁻¹</b>. This means one mole of any ideal gas occupies 22.7 dm³ under these conditions.</div>
 </div>
-
-<p><b>Question 3:</b> Balance this equation: $\ce{Fe2O3 + CO -> Fe + CO2}$</p>
+<p><b>Question 3:</b> Balance this equation: $\ce{Fe2O3 + CO -&gt; Fe + CO2}$</p>
 <div class="check-in">
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
-<div class="answer-content">$\ce{Fe2O3 + 3CO -> 2Fe + 3CO2}$. Strategy: balance Fe first (2 on left → need 2 on right), then balance O: left has 3 (from Fe₂O₃) + 3 (from 3CO) = 6; right needs 3CO₂ to get 6 O. Check C: 3 on left, 3 on right. ✓</div>
+<div class="answer-content">$\ce{Fe2O3 + 3CO -&gt; 2Fe + 3CO2}$. Strategy: balance Fe first (2 on left → need 2 on right), then balance O: left has 3 (from Fe₂O₃) + 3 (from 3CO) = 6; right needs 3CO₂ to get 6 O. Check C: 3 on left, 3 on right. ✓</div>
 </div>
-
 <!-- SECTION C -->
 <h2>2. The Mole Concept — the Chemist's Counting Unit</h2>
-
 <p>Chemistry happens between particles — atoms, molecules, and ions — but you cannot count them one by one. The <b>mole</b> solves this problem. One mole is simply a specific number of particles: <b>$6.02 \times 10^{23}$</b>, called <b>Avogadro's number</b> ($N_A$ or $L$).</p>
-
 <p>Think of the mole like a dozen. A dozen eggs is 12 eggs. A mole of carbon atoms is $6.02 \times 10^{23}$ carbon atoms. The mole is just bigger — much bigger — because atoms are unimaginably small.</p>
-
 <h3>2.1 Connecting Mass to Moles</h3>
-
 <p>The <b>molar mass</b> ($M$) of a substance is the mass of one mole of that substance, expressed in grams per mole (g mol⁻¹). Numerically, it equals the relative atomic mass ($A_r$) or relative molecular mass ($M_r$) from the periodic table — but now it carries units.</p>
-
 <div class="definition" style="background:#fdf5e6;border-left:4px solid #d4a017;padding:0.6rem 1rem;margin:0.8rem 0;border-radius:0 8px 8px 0;">
 <b>Key formula — moles from mass:</b>
 $$n = \frac{m}{M}$$
 where $n$ = amount (mol), $m$ = mass (g), $M$ = molar mass (g mol⁻¹)
 </div>
-
 <div class="diagram">
-<svg width="500" height="180" viewBox="0 0 500 180">
-  <defs><marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#2c5f2d"/></marker></defs>
-  <rect x="30" y="60" width="100" height="50" rx="8" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="2"/>
-  <text x="80" y="90" text-anchor="middle" font-size="14" fill="#1a1a1a">Mass (g)</text>
-  <rect x="220" y="60" width="100" height="50" rx="8" fill="#fff8e1" stroke="#d4a017" stroke-width="2"/>
-  <text x="270" y="90" text-anchor="middle" font-size="14" fill="#1a1a1a">Moles (mol)</text>
-  <rect x="370" y="60" width="100" height="50" rx="8" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="2"/>
-  <text x="420" y="90" text-anchor="middle" font-size="14" fill="#1a1a1a">Particles</text>
-  <line x1="130" y1="85" x2="215" y2="85" stroke="#2c5f2d" stroke-width="2" marker-end="url(#arrow)"/>
-  <text x="173" y="78" text-anchor="middle" font-size="11" fill="#2c5f2d">÷ M</text>
-  <line x1="215" y1="70" x2="130" y2="70" stroke="#2c5f2d" stroke-width="2" marker-end="url(#arrow)"/>
-  <text x="173" y="63" text-anchor="middle" font-size="11" fill="#2c5f2d">× M</text>
-  <line x1="320" y1="85" x2="365" y2="85" stroke="#d4a017" stroke-width="2" marker-end="url(#arrow)"/>
-  <text x="343" y="78" text-anchor="middle" font-size="11" fill="#d4a017">× Nₐ</text>
-  <line x1="365" y1="70" x2="320" y2="70" stroke="#d4a017" stroke-width="2" marker-end="url(#arrow)"/>
-  <text x="343" y="63" text-anchor="middle" font-size="11" fill="#d4a017">÷ Nₐ</text>
+<svg height="180" viewbox="0 0 500 180" width="500">
+<defs><marker id="arrow" markerheight="6" markerwidth="8" orient="auto" refx="8" refy="3"><path d="M0,0 L8,3 L0,6 Z" fill="#2c5f2d"></path></marker></defs>
+<rect fill="#e8f5e9" height="50" rx="8" stroke="#2c5f2d" stroke-width="2" width="100" x="30" y="60"></rect>
+<text fill="#1a1a1a" font-size="14" text-anchor="middle" x="80" y="90">Mass (g)</text>
+<rect fill="#fff8e1" height="50" rx="8" stroke="#d4a017" stroke-width="2" width="100" x="220" y="60"></rect>
+<text fill="#1a1a1a" font-size="14" text-anchor="middle" x="270" y="90">Moles (mol)</text>
+<rect fill="#e8f5e9" height="50" rx="8" stroke="#2c5f2d" stroke-width="2" width="100" x="370" y="60"></rect>
+<text fill="#1a1a1a" font-size="14" text-anchor="middle" x="420" y="90">Particles</text>
+<line marker-end="url(#arrow)" stroke="#2c5f2d" stroke-width="2" x1="130" x2="215" y1="85" y2="85"></line>
+<text fill="#2c5f2d" font-size="11" text-anchor="middle" x="173" y="78">÷ M</text>
+<line marker-end="url(#arrow)" stroke="#2c5f2d" stroke-width="2" x1="215" x2="130" y1="70" y2="70"></line>
+<text fill="#2c5f2d" font-size="11" text-anchor="middle" x="173" y="63">× M</text>
+<line marker-end="url(#arrow)" stroke="#d4a017" stroke-width="2" x1="320" x2="365" y1="85" y2="85"></line>
+<text fill="#d4a017" font-size="11" text-anchor="middle" x="343" y="78">× Nₐ</text>
+<line marker-end="url(#arrow)" stroke="#d4a017" stroke-width="2" x1="365" x2="320" y1="70" y2="70"></line>
+<text fill="#d4a017" font-size="11" text-anchor="middle" x="343" y="63">÷ Nₐ</text>
 </svg>
 <div class="caption">Figure 1: The three connected quantities — mass, moles, and number of particles. You can move between them using molar mass (M) and Avogadro's number (Nₐ).</div>
 </div>
-
 <div class="check-in">
 <p><b>Check-in:</b> What is the mass of 0.500 mol of $\ce{NaOH}$? ($\ce{Na}$ = 23.0, $\ce{O}$ = 16.0, $\ce{H}$ = 1.00)</p>
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">$M(\ce{NaOH}) = 23.0 + 16.0 + 1.00 = 40.0$ g mol⁻¹. $m = n \times M = 0.500 \times 40.0 = \mathbf{20.0\text{ g}}$.</div>
 </div>
-
 <h3>2.2 Moles from Solution Concentration</h3>
-
 <p>When a substance is dissolved in water, you cannot weigh it directly — you measure the <b>volume</b> of the solution and its <b>concentration</b>.</p>
-
 <div class="definition" style="background:#fdf5e6;border-left:4px solid #d4a017;padding:0.6rem 1rem;margin:0.8rem 0;border-radius:0 8px 8px 0;">
 <b>Key formula — moles from solution:</b>
 $$n = c \times V$$
 where $c$ = concentration (mol dm⁻³) and $V$ = volume (dm³). Remember: 1 dm³ = 1000 cm³. If your volume is given in cm³, divide by 1000 first.
 </div>
-
 <h3>2.3 Moles from Gas Volumes</h3>
-
 <p>Gases are special: at the same temperature and pressure, <b>equal volumes of all gases contain the same number of moles</b> (Avogadro's Law). At STP (273 K, 100 kPa), one mole of any ideal gas occupies <b>22.7 dm³</b>.</p>
-
 <p>For conditions that are <em>not</em> STP, use the <b>ideal gas equation</b>:</p>
-
 <div class="definition" style="background:#fdf5e6;border-left:4px solid #d4a017;padding:0.6rem 1rem;margin:0.8rem 0;border-radius:0 8px 8px 0;">
 <b>Ideal gas equation:</b>
 $$PV = nRT$$
 $P$ = pressure (Pa or kPa), $V$ = volume (m³ or dm³), $n$ = moles, $R = 8.31$ J K⁻¹ mol⁻¹, $T$ = temperature (K).
 <b>Units must match:</b> if $P$ is in Pa, $V$ must be in m³. If $P$ is in kPa, $V$ must be in dm³.
 </div>
-
 <div class="check-in">
 <p><b>Check-in:</b> A gas occupies 49.3 cm³ at 102 kPa and 20°C. How many moles are present? ($R = 8.31$ J K⁻¹ mol⁻¹)</p>
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">Convert: $V = 49.3\text{ cm}^3 = 4.93 \times 10^{-5}\text{ m}^3$, $P = 1.02 \times 10^5\text{ Pa}$, $T = 293\text{ K}$. $n = PV/RT = (1.02\times10^5 \times 4.93\times10^{-5}) / (8.31 \times 293) = \mathbf{2.07 \times 10^{-3}\text{ mol}}$.</div>
 </div>
-
 <h2>3. Empirical and Molecular Formulas</h2>
-
 <h3>3.1 Empirical Formula — the Simplest Ratio</h3>
-
 <p>The <b>empirical formula</b> tells you the simplest whole-number ratio of atoms in a compound. For example, glucose has molecular formula $\ce{C6H12O6}$, but its empirical formula is $\ce{CH2O}$ (divide all subscripts by 6).</p>
-
 <p><b>How to find the empirical formula from percentage composition:</b></p>
 <ol>
-  <li>Assume a 100 g sample (so percentages become masses in grams).</li>
-  <li>Convert each mass to moles by dividing by the atomic mass.</li>
-  <li>Divide all mole values by the smallest value to get the simplest ratio.</li>
-  <li>If any ratio is not a whole number (e.g., 1.5), multiply ALL ratios by the same integer to make them whole (e.g., multiply by 2).</li>
+<li>Assume a 100 g sample (so percentages become masses in grams).</li>
+<li>Convert each mass to moles by dividing by the atomic mass.</li>
+<li>Divide all mole values by the smallest value to get the simplest ratio.</li>
+<li>If any ratio is not a whole number (e.g., 1.5), multiply ALL ratios by the same integer to make them whole (e.g., multiply by 2).</li>
 </ol>
-
 <div class="example">
-<b>Worked:</b> A compound is 40.0% C, 6.70% H, and 53.3% O by mass. Find its empirical formula.<br><br>
-<b>Step 1:</b> Assume 100 g → 40.0 g C, 6.70 g H, 53.3 g O.<br>
-<b>Step 2:</b> Moles: C = 40.0/12.0 = 3.33, H = 6.70/1.00 = 6.70, O = 53.3/16.0 = 3.33.<br>
-<b>Step 3:</b> Divide by smallest (3.33): C = 1, H = 2.01 ≈ 2, O = 1.<br>
+<b>Worked:</b> A compound is 40.0% C, 6.70% H, and 53.3% O by mass. Find its empirical formula.<br/><br/>
+<b>Step 1:</b> Assume 100 g → 40.0 g C, 6.70 g H, 53.3 g O.<br/>
+<b>Step 2:</b> Moles: C = 40.0/12.0 = 3.33, H = 6.70/1.00 = 6.70, O = 53.3/16.0 = 3.33.<br/>
+<b>Step 3:</b> Divide by smallest (3.33): C = 1, H = 2.01 ≈ 2, O = 1.<br/>
 <b>Empirical formula:</b> $\ce{CH2O}$.
 </div>
-
 <h3>3.2 Molecular Formula — the Actual Formula</h3>
-
 <p>The molecular formula is a whole-number multiple of the empirical formula. To find it, you need the <b>molar mass</b> of the compound:</p>
 
 $$\text{Multiplier} = \frac{\text{molar mass of compound}}{\text{empirical formula mass}}$$
@@ -187,37 +165,30 @@ $$\text{Multiplier} = \frac{\text{molar mass of compound}}{\text{empirical formu
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">Empirical formula mass = 12.0 + 2.00 + 16.0 = 30.0 g mol⁻¹. Multiplier = 180 / 30.0 = 6. Molecular formula = $\ce{C6H12O6}$ (glucose).</div>
 </div>
-
 <h2>4. Limiting Reagents and Percentage Yield</h2>
-
 <h3>4.1 Finding the Limiting Reagent</h3>
-
 <p>In most reactions, one reactant runs out first — that is the <b>limiting reagent</b>. The other reactants are <b>in excess</b>. The limiting reagent determines how much product can form.</p>
-
 <p><b>Method:</b> Divide the moles of each reactant by its coefficient in the balanced equation. The smallest result identifies the limiting reagent.</p>
-
 <div class="diagram">
-<svg width="500" height="200" viewBox="0 0 500 200">
-  <rect x="20" y="30" width="130" height="140" rx="10" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
-  <text x="85" y="60" text-anchor="middle" font-size="13" font-weight="bold" fill="#1565c0">Reactant A</text>
-  <text x="85" y="85" text-anchor="middle" font-size="12">4.0 mol</text>
-  <text x="85" y="105" text-anchor="middle" font-size="12">÷ coefficient 2</text>
-  <text x="85" y="130" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c5f2d">= 2.0</text>
-  <rect x="185" y="30" width="130" height="140" rx="10" fill="#ffebee" stroke="#c62828" stroke-width="2"/>
-  <text x="250" y="60" text-anchor="middle" font-size="13" font-weight="bold" fill="#c62828">Reactant B</text>
-  <text x="250" y="85" text-anchor="middle" font-size="12">3.0 mol</text>
-  <text x="250" y="105" text-anchor="middle" font-size="12">÷ coefficient 1</text>
-  <text x="250" y="130" text-anchor="middle" font-size="14" font-weight="bold" fill="#c62828">= 3.0</text>
-  <text x="170" y="45" text-anchor="middle" font-size="20">→</text>
-  <rect x="350" y="60" width="120" height="80" rx="10" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="2"/>
-  <text x="410" y="90" text-anchor="middle" font-size="13" font-weight="bold" fill="#2c5f2d">Smaller value</text>
-  <text x="410" y="115" text-anchor="middle" font-size="13">= LIMITING</text>
+<svg height="200" viewbox="0 0 500 200" width="500">
+<rect fill="#e3f2fd" height="140" rx="10" stroke="#1565c0" stroke-width="2" width="130" x="20" y="30"></rect>
+<text fill="#1565c0" font-size="13" font-weight="bold" text-anchor="middle" x="85" y="60">Reactant A</text>
+<text font-size="12" text-anchor="middle" x="85" y="85">4.0 mol</text>
+<text font-size="12" text-anchor="middle" x="85" y="105">÷ coefficient 2</text>
+<text fill="#2c5f2d" font-size="14" font-weight="bold" text-anchor="middle" x="85" y="130">= 2.0</text>
+<rect fill="#ffebee" height="140" rx="10" stroke="#c62828" stroke-width="2" width="130" x="185" y="30"></rect>
+<text fill="#c62828" font-size="13" font-weight="bold" text-anchor="middle" x="250" y="60">Reactant B</text>
+<text font-size="12" text-anchor="middle" x="250" y="85">3.0 mol</text>
+<text font-size="12" text-anchor="middle" x="250" y="105">÷ coefficient 1</text>
+<text fill="#c62828" font-size="14" font-weight="bold" text-anchor="middle" x="250" y="130">= 3.0</text>
+<text font-size="20" text-anchor="middle" x="170" y="45">→</text>
+<rect fill="#e8f5e9" height="80" rx="10" stroke="#2c5f2d" stroke-width="2" width="120" x="350" y="60"></rect>
+<text fill="#2c5f2d" font-size="13" font-weight="bold" text-anchor="middle" x="410" y="90">Smaller value</text>
+<text font-size="13" text-anchor="middle" x="410" y="115">= LIMITING</text>
 </svg>
 <div class="caption">Figure 2: Identifying the limiting reagent. Divide moles by the coefficient — the smallest result wins. Here, Reactant A (2.0) is limiting despite having more moles initially.</div>
 </div>
-
 <h3>4.2 Percentage Yield</h3>
-
 <p>The <b>theoretical yield</b> is the maximum amount of product possible (calculated from the limiting reagent). The <b>actual yield</b> is what you actually collect in the lab. No reaction is perfect — some product is always lost during transfer, purification, or due to side reactions.</p>
 
 $$\text{Percentage yield} = \frac{\text{actual yield}}{\text{theoretical yield}} \times 100\%$$
@@ -227,98 +198,78 @@ $$\text{Percentage yield} = \frac{\text{actual yield}}{\text{theoretical yield}}
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">Percentage yield = (18.5 / 25.0) × 100 = <b>74.0%</b>. This means 26% of the potential product was lost — reasonable for many lab syntheses.</div>
 </div>
-
 <!-- SECTION D -->
 <h2>5. Worked Examples</h2>
-
 <div class="example">
-<b>Example 1 — Back-Titration (exam favorite):</b><br><br>
-1.50 g of impure $\ce{CaCO3}$ is reacted with 50.0 cm³ of 1.00 mol dm⁻³ $\ce{HCl}$ (an excess). The remaining $\ce{HCl}$ requires 28.0 cm³ of 1.00 mol dm⁻³ $\ce{NaOH}$ for neutralisation. Find the percentage purity of the $\ce{CaCO3}$ sample.<br><br>
-$\ce{CaCO3 + 2HCl -> CaCl2 + CO2 + H2O}$<br>
-$\ce{HCl + NaOH -> NaCl + H2O}$<br><br>
-<b>Step 1: Moles of NaOH used.</b> $n(\ce{NaOH}) = 1.00 \times 0.0280 = 0.0280$ mol.<br>
-<b>Step 2: Moles of HCl remaining after CaCO₃ reaction.</b> From the second equation, HCl and NaOH react 1:1, so $n(\ce{HCl\ remaining}) = 0.0280$ mol.<br>
-<b>Step 3: Moles of HCl originally added.</b> $n(\ce{HCl\ original}) = 1.00 \times 0.0500 = 0.0500$ mol.<br>
-<b>Step 4: Moles of HCl that reacted with CaCO₃.</b> $0.0500 - 0.0280 = 0.0220$ mol.<br>
-<b>Step 5: Moles of CaCO₃.</b> From equation, 1 mol $\ce{CaCO3}$ reacts with 2 mol $\ce{HCl}$. So $n(\ce{CaCO3}) = 0.0220 / 2 = 0.0110$ mol.<br>
-<b>Step 6: Mass of pure CaCO₃.</b> $M(\ce{CaCO3}) = 100$ g mol⁻¹. $m = 0.0110 \times 100 = 1.10$ g.<br>
-<b>Step 7: Percentage purity.</b> $(1.10 / 1.50) \times 100 = \mathbf{73.3\%}$.<br><br>
+<b>Example 1 — Back-Titration (exam favorite):</b><br/><br/>
+1.50 g of impure $\ce{CaCO3}$ is reacted with 50.0 cm³ of 1.00 mol dm⁻³ $\ce{HCl}$ (an excess). The remaining $\ce{HCl}$ requires 28.0 cm³ of 1.00 mol dm⁻³ $\ce{NaOH}$ for neutralisation. Find the percentage purity of the $\ce{CaCO3}$ sample.<br/><br/>
+$\ce{CaCO3 + 2HCl -&gt; CaCl2 + CO2 + H2O}$<br/>
+$\ce{HCl + NaOH -&gt; NaCl + H2O}$<br/><br/>
+<b>Step 1: Moles of NaOH used.</b> $n(\ce{NaOH}) = 1.00 \times 0.0280 = 0.0280$ mol.<br/>
+<b>Step 2: Moles of HCl remaining after CaCO₃ reaction.</b> From the second equation, HCl and NaOH react 1:1, so $n(\ce{HCl\ remaining}) = 0.0280$ mol.<br/>
+<b>Step 3: Moles of HCl originally added.</b> $n(\ce{HCl\ original}) = 1.00 \times 0.0500 = 0.0500$ mol.<br/>
+<b>Step 4: Moles of HCl that reacted with CaCO₃.</b> $0.0500 - 0.0280 = 0.0220$ mol.<br/>
+<b>Step 5: Moles of CaCO₃.</b> From equation, 1 mol $\ce{CaCO3}$ reacts with 2 mol $\ce{HCl}$. So $n(\ce{CaCO3}) = 0.0220 / 2 = 0.0110$ mol.<br/>
+<b>Step 6: Mass of pure CaCO₃.</b> $M(\ce{CaCO3}) = 100$ g mol⁻¹. $m = 0.0110 \times 100 = 1.10$ g.<br/>
+<b>Step 7: Percentage purity.</b> $(1.10 / 1.50) \times 100 = \mathbf{73.3\%}$.<br/><br/>
 <b>⚠️ Common wrong approach:</b> Students often forget that HCl reacts with both CaCO₃ AND NaOH, so they incorrectly use all 0.0500 mol of HCl as having reacted with CaCO₃. This gives a purity over 100% — an obvious clue something is wrong.
 </div>
-
 <div class="example">
-<b>Example 2 — Limiting Reagent with Gas Volume:</b><br><br>
-2.00 g of $\ce{Mg}$ reacts with 500 cm³ of 0.200 mol dm⁻³ $\ce{HCl}$. What volume of $\ce{H2}$ is produced at STP? ($\ce{Mg}$ = 24.3)<br><br>
-$\ce{Mg + 2HCl -> MgCl2 + H2}$<br><br>
-<b>Step 1: Moles of each reactant.</b> $n(\ce{Mg}) = 2.00 / 24.3 = 0.0823$ mol. $n(\ce{HCl}) = 0.200 \times 0.500 = 0.100$ mol.<br>
-<b>Step 2: Find limiting reagent.</b> Mg: $0.0823 / 1 = 0.0823$. HCl: $0.100 / 2 = 0.0500$. <b>HCl is limiting</b> (0.0500 < 0.0823).<br>
-<b>Step 3: Moles of H₂.</b> From equation, 2 mol HCl → 1 mol H₂, so $n(\ce{H2}) = 0.100 / 2 = 0.0500$ mol.<br>
-<b>Step 4: Volume of H₂ at STP.</b> $V = n \times 22.7 = 0.0500 \times 22.7 = \mathbf{1.14\text{ dm}^3}$.<br><br>
+<b>Example 2 — Limiting Reagent with Gas Volume:</b><br/><br/>
+2.00 g of $\ce{Mg}$ reacts with 500 cm³ of 0.200 mol dm⁻³ $\ce{HCl}$. What volume of $\ce{H2}$ is produced at STP? ($\ce{Mg}$ = 24.3)<br/><br/>
+$\ce{Mg + 2HCl -&gt; MgCl2 + H2}$<br/><br/>
+<b>Step 1: Moles of each reactant.</b> $n(\ce{Mg}) = 2.00 / 24.3 = 0.0823$ mol. $n(\ce{HCl}) = 0.200 \times 0.500 = 0.100$ mol.<br/>
+<b>Step 2: Find limiting reagent.</b> Mg: $0.0823 / 1 = 0.0823$. HCl: $0.100 / 2 = 0.0500$. <b>HCl is limiting</b> (0.0500 &lt; 0.0823).<br/>
+<b>Step 3: Moles of H₂.</b> From equation, 2 mol HCl → 1 mol H₂, so $n(\ce{H2}) = 0.100 / 2 = 0.0500$ mol.<br/>
+<b>Step 4: Volume of H₂ at STP.</b> $V = n \times 22.7 = 0.0500 \times 22.7 = \mathbf{1.14\text{ dm}^3}$.<br/><br/>
 <b>⚠️ Common wrong approach:</b> Using Mg as limiting (because you have fewer grams) without converting to moles first. Grams are misleading — always convert to moles.
 </div>
-
 <div class="example">
-<b>Example 3 — Ideal Gas Equation with Molar Mass:</b><br><br>
-0.586 g of an unknown gas occupies 282 cm³ at 102 kPa and −18°C. Find its molar mass. ($R = 8.31$ J K⁻¹ mol⁻¹)<br><br>
-<b>Step 1: Convert all units.</b> $P = 1.02 \times 10^5$ Pa, $V = 2.82 \times 10^{-4}$ m³, $T = 255$ K.<br>
-<b>Step 2: Find moles using PV = nRT.</b> $n = PV/RT = (1.02\times10^5 \times 2.82\times10^{-4}) / (8.31 \times 255) = 0.0136$ mol.<br>
-<b>Step 3: Calculate molar mass.</b> $M = m/n = 0.586 / 0.0136 = \mathbf{43.1\text{ g mol}^{-1}}$.<br><br>
+<b>Example 3 — Ideal Gas Equation with Molar Mass:</b><br/><br/>
+0.586 g of an unknown gas occupies 282 cm³ at 102 kPa and −18°C. Find its molar mass. ($R = 8.31$ J K⁻¹ mol⁻¹)<br/><br/>
+<b>Step 1: Convert all units.</b> $P = 1.02 \times 10^5$ Pa, $V = 2.82 \times 10^{-4}$ m³, $T = 255$ K.<br/>
+<b>Step 2: Find moles using PV = nRT.</b> $n = PV/RT = (1.02\times10^5 \times 2.82\times10^{-4}) / (8.31 \times 255) = 0.0136$ mol.<br/>
+<b>Step 3: Calculate molar mass.</b> $M = m/n = 0.586 / 0.0136 = \mathbf{43.1\text{ g mol}^{-1}}$.<br/><br/>
 This could be $\ce{C3H8}$ (propane, $M = 44.1$) — close within experimental error.
 </div>
-
 <!-- SECTION F -->
 <div class="misconception">
 <h3>⚠️ Common Mistakes to Avoid</h3>
 <ol>
-  <li><b>Confusing mass with moles when finding the limiting reagent.</b> A reactant with a smaller mass is NOT necessarily limiting. You <em>must</em> convert to moles, then divide by the coefficient. A reactant that weighs less could still be in excess if it has a low molar mass.</li>
-  <li><b>Forgetting to divide by 1000 when converting cm³ to dm³.</b> 1 dm³ = 1000 cm³. If a volume is given as 250 cm³, that is 0.250 dm³. Using 250 in $n = cV$ will give an answer 1000 times too large.</li>
-  <li><b>Using the wrong gas constant units.</b> $R = 8.31$ J K⁻¹ mol⁻¹ requires pressure in <b>Pa</b> and volume in <b>m³</b>. If you use kPa and dm³, $R = 8.31$ works too — but <em>you must be consistent</em>. The common trap: mixing Pa with dm³.</li>
-  <li><b>Not checking that the percentage yield is under 100%.</b> If your calculation gives a yield above 100%, you have made an error — usually using the wrong limiting reagent or incorrect stoichiometric ratio.</li>
-  <li><b>Using the molecular formula when only the empirical formula is needed.</b> If the question does not give the molar mass, you can only find the empirical formula. Do not guess the multiplier.</li>
+<li><b>Confusing mass with moles when finding the limiting reagent.</b> A reactant with a smaller mass is NOT necessarily limiting. You <em>must</em> convert to moles, then divide by the coefficient. A reactant that weighs less could still be in excess if it has a low molar mass.</li>
+<li><b>Forgetting to divide by 1000 when converting cm³ to dm³.</b> 1 dm³ = 1000 cm³. If a volume is given as 250 cm³, that is 0.250 dm³. Using 250 in $n = cV$ will give an answer 1000 times too large.</li>
+<li><b>Using the wrong gas constant units.</b> $R = 8.31$ J K⁻¹ mol⁻¹ requires pressure in <b>Pa</b> and volume in <b>m³</b>. If you use kPa and dm³, $R = 8.31$ works too — but <em>you must be consistent</em>. The common trap: mixing Pa with dm³.</li>
+<li><b>Not checking that the percentage yield is under 100%.</b> If your calculation gives a yield above 100%, you have made an error — usually using the wrong limiting reagent or incorrect stoichiometric ratio.</li>
+<li><b>Using the molecular formula when only the empirical formula is needed.</b> If the question does not give the molar mass, you can only find the empirical formula. Do not guess the multiplier.</li>
 </ol>
 </div>
-
 <!-- SECTION G -->
 <h2>6. End-of-Lesson Practice</h2>
-
-<p><b>Question 1 (Paper 1 style):</b> 0.200 mol of $\ce{C3H8}$ contains how many atoms? ($L = 6.02 \times 10^{23}$)<br>
-A. $1.20 \times 10^{23}$ &nbsp; B. $1.32 \times 10^{24}$ &nbsp; C. $6.62 \times 10^{23}$ &nbsp; D. $1.02 \times 10^{24}$</p>
-
+<p><b>Question 1 (Paper 1 style):</b> 0.200 mol of $\ce{C3H8}$ contains how many atoms? ($L = 6.02 \times 10^{23}$)<br/>
+A. $1.20 \times 10^{23}$   B. $1.32 \times 10^{24}$   C. $6.62 \times 10^{23}$   D. $1.02 \times 10^{24}$</p>
 <p><b>Question 2:</b> A compound contains 85.7% C and 14.3% H by mass. Its molar mass is 56.0 g mol⁻¹. Determine its empirical and molecular formulas.</p>
-
-<p><b>Question 3:</b> 3.00 g of $\ce{Zn}$ reacts with 50.0 cm³ of 2.00 mol dm⁻³ $\ce{HCl}$.<br>
-$\ce{Zn + 2HCl -> ZnCl2 + H2}$<br>
+<p><b>Question 3:</b> 3.00 g of $\ce{Zn}$ reacts with 50.0 cm³ of 2.00 mol dm⁻³ $\ce{HCl}$.<br/>
+$\ce{Zn + 2HCl -&gt; ZnCl2 + H2}$<br/>
 (a) Identify the limiting reagent. (b) Calculate the volume of $\ce{H2}$ produced at STP. ($\ce{Zn}$ = 65.4)</p>
-
 <p><b>Question 4:</b> A solution of $\ce{Na2CO3}$ is made by dissolving 5.30 g of the solid in water and making up to 250 cm³. Calculate: (a) the concentration in mol dm⁻³, (b) the concentration of $\ce{Na+}$ ions in the solution. ($\ce{Na}$ = 23.0, $\ce{C}$ = 12.0, $\ce{O}$ = 16.0)</p>
-
 <p><b>Question 5:</b> 0.320 g of an ideal gas occupies 148 cm³ at 298 K and 101 kPa. Calculate its molar mass and suggest a possible identity. ($R = 8.31$ J K⁻¹ mol⁻¹)</p>
-
-<p><b>Question 6 (IB-style multi-step):</b> 2.50 g of an impure sample of $\ce{NaHCO3}$ is heated, decomposing according to:<br>
-$\ce{2NaHCO3 -> Na2CO3 + H2O + CO2}$<br>
-The $\ce{CO2}$ produced is collected and occupies 280 cm³ at STP.<br>
-(a) Calculate the moles of $\ce{CO2}$ produced.<br>
-(b) Calculate the moles of $\ce{NaHCO3}$ that decomposed.<br>
-(c) Calculate the mass of pure $\ce{NaHCO3}$ in the sample.<br>
-(d) Calculate the percentage purity of the original sample.<br>
+<p><b>Question 6 (IB-style multi-step):</b> 2.50 g of an impure sample of $\ce{NaHCO3}$ is heated, decomposing according to:<br/>
+$\ce{2NaHCO3 -&gt; Na2CO3 + H2O + CO2}$<br/>
+The $\ce{CO2}$ produced is collected and occupies 280 cm³ at STP.<br/>
+(a) Calculate the moles of $\ce{CO2}$ produced.<br/>
+(b) Calculate the moles of $\ce{NaHCO3}$ that decomposed.<br/>
+(c) Calculate the mass of pure $\ce{NaHCO3}$ in the sample.<br/>
+(d) Calculate the percentage purity of the original sample.<br/>
 ($\ce{Na}$ = 23.0, $\ce{H}$ = 1.00, $\ce{C}$ = 12.0, $\ce{O}$ = 16.0)</p>
-
 <button class="practice-toggle" onclick="var a=this.nextElementSibling;a.classList.toggle('open');this.textContent=a.classList.contains('open')?'▴ Hide Answers':'▸ Show Answers'">▸ Show Answers</button>
 <div class="practice-answers">
-
 <p><b>Answer 1:</b> D. $\ce{C3H8}$ has 11 atoms per molecule. Number of molecules = $0.200 \times 6.02\times10^{23} = 1.204\times10^{23}$. Total atoms = $11 \times 1.204\times10^{23} = 1.32\times10^{24}$. <b>Exam trap:</b> Answer A forgets to multiply by 11 atoms. Answer C multiplies only by 3 carbon atoms.</p>
-
 <p><b>Answer 2:</b> Assume 100 g: C = 85.7/12.0 = 7.14 mol, H = 14.3/1.00 = 14.3 mol. Divide by 7.14: C = 1, H = 2.00. Empirical formula = $\ce{CH2}$, mass = 14.0. Multiplier = 56.0/14.0 = 4. Molecular formula = $\ce{C4H8}$.</p>
-
 <p><b>Answer 3:</b> (a) $n(\ce{Zn}) = 3.00/65.4 = 0.0459$ mol. $n(\ce{HCl}) = 2.00 \times 0.0500 = 0.100$ mol. Zn: 0.0459/1 = 0.0459. HCl: 0.100/2 = 0.0500. <b>Zn is limiting.</b> (b) 1 mol Zn → 1 mol H₂, so $n(\ce{H2}) = 0.0459$ mol. $V = 0.0459 \times 22.7 = 1.04$ dm³.</p>
-
 <p><b>Answer 4:</b> (a) $M(\ce{Na2CO3}) = (2\times23.0) + 12.0 + (3\times16.0) = 106$ g mol⁻¹. $n = 5.30/106 = 0.0500$ mol. $c = 0.0500/0.250 = \mathbf{0.200\text{ mol dm}^{-3}}$. (b) Each $\ce{Na2CO3}$ dissociates to give 2 $\ce{Na+}$ ions, so $[\ce{Na+}] = 2 \times 0.200 = \mathbf{0.400\text{ mol dm}^{-3}}$.</p>
-
 <p><b>Answer 5:</b> $P = 1.01\times10^5$ Pa, $V = 1.48\times10^{-4}$ m³, $T = 298$ K. $n = PV/RT = (1.01\times10^5 \times 1.48\times10^{-4})/(8.31 \times 298) = 0.00604$ mol. $M = 0.320/0.00604 = 53.0$ g mol⁻¹. Possible identity: $\ce{CH3CH2Cl}$ (chloroethane, 64.5) or $\ce{C4H6}$ (butyne, 54.0).</p>
-
 <p><b>Answer 6:</b> (a) $n(\ce{CO2}) = 0.280/22.7 = 0.01233$ mol. (b) From equation, 2 mol $\ce{NaHCO3}$ → 1 mol $\ce{CO2}$, so $n(\ce{NaHCO3}) = 2 \times 0.01233 = 0.02467$ mol. (c) $M(\ce{NaHCO3}) = 23.0+1.00+12.0+48.0 = 84.0$ g mol⁻¹. $m = 0.02467\times84.0 = 2.07$ g. (d) Purity = $(2.07/2.50)\times100 = \mathbf{82.9\%}$.</p>
 </div>
-
 <!-- SECTION H -->
 <h2>7. Key Terms</h2>
 <table>
@@ -335,15 +286,138 @@ The $\ce{CO2}$ produced is collected and occupies 280 cm³ at STP.<br>
 <tr><td>Ideal gas</td><td>A gas that obeys $PV = nRT$ exactly; real gases deviate at high pressure and low temperature</td></tr>
 <tr><td>Concentration</td><td>Amount of solute per unit volume, typically mol dm⁻³</td></tr>
 </table>
-
 <!-- SECTION I -->
 <h2>8. Exam Tips</h2>
-
 <div class="exam-tip"><b>Paper 1 (Multiple Choice):</b> You will NOT have a calculator. Questions using the ideal gas equation or Avogadro's number are designed to be solved by estimation or by comparing powers of 10. The "atoms vs. molecules" trap appears almost every year — underline those words in the question before you answer.</div>
-
 <div class="exam-tip"><b>Paper 2 (Structured):</b> Stoichiometry questions in Section A are often 4–8 marks and require clear working. Even if your final answer is wrong, you earn method marks for: (1) correctly calculating moles of a reactant, (2) identifying the limiting reagent correctly, (3) using the correct mole ratio from the equation, (4) converting moles to the required quantity. <b>Show every step.</b></div>
-
 <div class="exam-tip"><b>Paper 2/3 — Back-Titrations:</b> These are worth 5–7 marks and test whether you understand that the titrant reacts with the EXCESS acid, not the original acid. The key insight: $n(\ce{acid\ reacted}) = n(\ce{acid\ originally}) - n(\ce{acid\ remaining})$. If you write this line in your working, the rest is straightforward stoichiometry.</div>
 
+<div class="lesson-actions" style="margin: 2rem 0; padding: 1.5rem; background: #f8fafc; border-radius: 8px; display: flex; gap: 1rem; flex-wrap: wrap;">
+<button class="action-btn" id="generate-flashcards-btn" style="padding: 0.75rem 1.5rem; background: #3b82f6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        🗂️ Generate Flashcards
+    </button>
+<button class="action-btn" id="practice-problems-btn" style="padding: 0.75rem 1.5rem; background: #10b981; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        ✏️ Practice Problems
+    </button>
+<button class="action-btn" id="ask-ai-btn" style="padding: 0.75rem 1.5rem; background: #8b5cf6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        💬 Ask AI
+    </button>
+</div>
+<script>
+(function() {
+    const subjectKey = "chemistry";
+    const lessonId = "lesson_01";
+    const lessonTitle = "Lesson 1: Stoichiometry Review — The Mole and Reacting Quantities";
+
+    function getCsrf() {
+        var m = document.querySelector('meta[name="csrf-token"]');
+        return m ? m.getAttribute('content') : '';
+    }
+
+    // Completion checkbox
+    const checkbox = document.getElementById('lesson-complete');
+    if (checkbox) {
+        // Load saved state
+        const saved = localStorage.getItem(`completed_${subjectKey}_${lessonId}`);
+        if (saved === 'true') checkbox.checked = true;
+
+        checkbox.addEventListener('change', async function() {
+            const completed = this.checked;
+            localStorage.setItem(`completed_${subjectKey}_${lessonId}`, completed);
+
+            try {
+                await fetch('/toggle_completion', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': getCsrf()
+                    },
+                    body: JSON.stringify({
+                        subject: subjectKey,
+                        lesson: lessonId,
+                        completed: completed
+                    })
+                });
+            } catch(e) {
+                console.error('Error saving completion:', e);
+            }
+        });
+    }
+
+    // Generate Flashcards
+    const flashcardsBtn = document.getElementById('generate-flashcards-btn');
+    if (flashcardsBtn) {
+        flashcardsBtn.addEventListener('click', async function() {
+            this.disabled = true;
+            this.textContent = '⏳ Generating...';
+
+            try {
+                const content = document.body.innerText.substring(0, 2000);
+                const response = await fetch('/generate_flashcards', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': getCsrf()
+                    },
+                    body: JSON.stringify({
+                        subject: subjectKey,
+                        lesson: lessonTitle,
+                        content_summary: content
+                    })
+                });
+
+                const data = await response.json();
+                if (data.error) {
+                    alert('Error: ' + data.error);
+                } else {
+                    alert(`✅ Created ${data.count} flashcards! View them at /flashcards/${subjectKey}`);
+                }
+            } catch(e) {
+                alert('Error generating flashcards: ' + e.message);
+            } finally {
+                this.disabled = false;
+                this.textContent = '🗂️ Generate Flashcards';
+            }
+        });
+    }
+
+    // Practice Problems - open in new section
+    const practiceBtn = document.getElementById('practice-problems-btn');
+    if (practiceBtn) {
+        practiceBtn.addEventListener('click', function() {
+            alert('Practice problems feature coming soon! Use the AI chatbot to generate custom questions.');
+        });
+    }
+
+    // Ask AI - scroll to chatbot
+    const aiBtn = document.getElementById('ask-ai-btn');
+    if (aiBtn) {
+        aiBtn.addEventListener('click', function() {
+            const chatbot = document.getElementById('lessons-chatbot');
+            if (chatbot) {
+                chatbot.scrollIntoView({ behavior: 'smooth' });
+                const toggleBtn = chatbot.querySelector('.chatbot-toggle');
+                if (toggleBtn) toggleBtn.click();
+            } else {
+                alert('AI chatbot not available on this page. It will be added soon!');
+            }
+        });
+    }
+
+    // Track lesson view
+    fetch('/mark_viewed', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': getCsrf()
+        },
+        body: JSON.stringify({
+            subject: subjectKey,
+            lesson: lessonId
+        })
+    }).catch(e => console.error('Error tracking view:', e));
+
+})();
+</script>
 </body>
 </html>

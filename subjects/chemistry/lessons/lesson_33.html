@@ -1,14 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Lesson 33 — Chemistry HL — Balancing Redox Equations</title>
 <script>
 window.MathJax = {tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] },
   loader: { load: ['[tex]/mhchem'] }};
 </script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <style>
 :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -42,204 +43,170 @@ pre.ascii-art { font-family: 'Courier New', monospace; font-size: 0.75rem; line-
 </style>
 </head>
 <body>
-
 <h1>Lesson 33: Balancing Redox Equations — The Half-Equation Method</h1>
-
 <p><b>Syllabus reference:</b> 9.1–9.2 (HL) — Half-Equations, Redox Titrations</p>
-
 <!-- SECTION A -->
 <div class="objectives">
 <h3>Learning Objectives</h3>
 <p>By the end of this lesson, you will be able to:</p>
 <ul>
-  <li><b>Split</b> a redox reaction into its oxidation and reduction half-equations.</li>
-  <li><b>Balance</b> half-equations for atoms, oxygen (using $\ce{H2O}$), hydrogen (using $\ce{H+}$), and charge (using electrons).</li>
-  <li><b>Combine</b> half-equations to produce the balanced overall redox equation, cancelling electrons.</li>
-  <li><b>Adapt</b> half-equations for reactions in basic solution by adding $\ce{OH-}$ to neutralise $\ce{H+}$.</li>
-  <li><b>Apply</b> stoichiometric ratios from balanced redox equations in titration calculations.</li>
+<li><b>Split</b> a redox reaction into its oxidation and reduction half-equations.</li>
+<li><b>Balance</b> half-equations for atoms, oxygen (using $\ce{H2O}$), hydrogen (using $\ce{H+}$), and charge (using electrons).</li>
+<li><b>Combine</b> half-equations to produce the balanced overall redox equation, cancelling electrons.</li>
+<li><b>Adapt</b> half-equations for reactions in basic solution by adding $\ce{OH-}$ to neutralise $\ce{H+}$.</li>
+<li><b>Apply</b> stoichiometric ratios from balanced redox equations in titration calculations.</li>
 </ul>
 </div>
-
 <!-- SECTION B -->
-<h2>1. Prior Knowledge Check</h2>
 
-<p><b>Question 1:</b> In the reaction $\ce{Zn + Cu^{2+} -> Zn^{2+} + Cu}$, write the oxidation half-equation and the reduction half-equation.</p>
+<div class="lesson-completion" style="margin: 1rem 0; padding: 1rem; background: #f0f9ff; border-radius: 8px;">
+<label class="completion-checkbox" style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer;">
+<input id="lesson-complete" style="width: 24px; height: 24px; cursor: pointer; accent-color: #10b981;" type="checkbox"/>
+<span style="font-size: 1rem; color: #0f172a; font-weight: 500;">✓ Mark this lesson as complete</span>
+</label>
+</div>
+<h2>1. Prior Knowledge Check</h2>
+<p><b>Question 1:</b> In the reaction $\ce{Zn + Cu^{2+} -&gt; Zn^{2+} + Cu}$, write the oxidation half-equation and the reduction half-equation.</p>
 <div class="check-in">
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
-<div class="answer-content"><b>Oxidation:</b> $\ce{Zn -> Zn^{2+} + 2e-}$ (Zn loses 2 electrons). <b>Reduction:</b> $\ce{Cu^{2+} + 2e- -> Cu}$ (Cu²⁺ gains 2 electrons). Combined: $\ce{Zn + Cu^{2+} -> Zn^{2+} + Cu}$. Electrons cancel.</div>
+<div class="answer-content"><b>Oxidation:</b> $\ce{Zn -&gt; Zn^{2+} + 2e-}$ (Zn loses 2 electrons). <b>Reduction:</b> $\ce{Cu^{2+} + 2e- -&gt; Cu}$ (Cu²⁺ gains 2 electrons). Combined: $\ce{Zn + Cu^{2+} -&gt; Zn^{2+} + Cu}$. Electrons cancel.</div>
 </div>
-
 <p><b>Question 2:</b> What species provide $\ce{H+}$ and $\ce{H2O}$ when balancing half-equations in acidic solution?</p>
 <div class="check-in">
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">In acidic solution: use $\ce{H2O}$ to balance oxygen atoms, then use $\ce{H+}$ to balance hydrogen atoms. In basic solution: balance as if in acid first, then add $\ce{OH-}$ to both sides to neutralise all $\ce{H+}$ (converting them to $\ce{H2O}$).</div>
 </div>
-
 <!-- SECTION C -->
 <h2>2. The Half-Equation Method — Step-by-Step</h2>
-
 <p>Many redox reactions — especially those involving oxyanions like $\ce{MnO4-}$, $\ce{Cr2O7^{2-}}$, $\ce{NO3-}$ — are impossible to balance by inspection. The <b>half-equation method</b> provides a systematic approach.</p>
-
 <h3>Step-by-Step for Acidic Solution</h3>
-
 <ol>
-  <li><b>Write the skeleton half-equations</b> — one for oxidation, one for reduction. Include only the species that change oxidation number.</li>
-  <li><b>Balance all atoms EXCEPT H and O.</b></li>
-  <li><b>Balance O atoms</b> by adding $\ce{H2O}$ molecules.</li>
-  <li><b>Balance H atoms</b> by adding $\ce{H+}$ ions.</li>
-  <li><b>Balance charge</b> by adding electrons ($e^-$) to the more positive side.</li>
-  <li><b>Multiply</b> each half-equation so the number of electrons is the same in both.</li>
-  <li><b>Add</b> the half-equations, cancelling electrons and any species appearing on both sides.</li>
+<li><b>Write the skeleton half-equations</b> — one for oxidation, one for reduction. Include only the species that change oxidation number.</li>
+<li><b>Balance all atoms EXCEPT H and O.</b></li>
+<li><b>Balance O atoms</b> by adding $\ce{H2O}$ molecules.</li>
+<li><b>Balance H atoms</b> by adding $\ce{H+}$ ions.</li>
+<li><b>Balance charge</b> by adding electrons ($e^-$) to the more positive side.</li>
+<li><b>Multiply</b> each half-equation so the number of electrons is the same in both.</li>
+<li><b>Add</b> the half-equations, cancelling electrons and any species appearing on both sides.</li>
 </ol>
-
 <div class="diagram">
-<svg width="580" height="280" viewBox="0 0 580 280">
-  <text x="290" y="18" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c5f2d">The Half-Equation Balancing Algorithm</text>
-  <rect x="15" y="30" width="170" height="35" rx="6" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="1.5"/>
-  <text x="100" y="52" text-anchor="middle" font-size="10">1. Split into half-equations</text>
-  <line x1="185" y1="47" x2="210" y2="47" stroke="#333" stroke-width="1.5" marker-end="url(#arrS)"/>
-  <rect x="215" y="30" width="170" height="35" rx="6" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="1.5"/>
-  <text x="300" y="52" text-anchor="middle" font-size="10">2. Balance atoms (except H,O)</text>
-  <line x1="385" y1="47" x2="410" y2="47" stroke="#333" stroke-width="1.5" marker-end="url(#arrS)"/>
-  <rect x="415" y="30" width="150" height="35" rx="6" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="1.5"/>
-  <text x="490" y="52" text-anchor="middle" font-size="10">3. Balance O with H₂O</text>
-  <!-- second row -->
-  <rect x="15" y="85" width="170" height="35" rx="6" fill="#fff8e1" stroke="#d4a017" stroke-width="1.5"/>
-  <text x="100" y="107" text-anchor="middle" font-size="10">4. Balance H with H⁺</text>
-  <line x1="185" y1="102" x2="210" y2="102" stroke="#333" stroke-width="1.5" marker-end="url(#arrS)"/>
-  <rect x="215" y="85" width="170" height="35" rx="6" fill="#fff8e1" stroke="#d4a017" stroke-width="1.5"/>
-  <text x="300" y="107" text-anchor="middle" font-size="10">5. Balance charge with e⁻</text>
-  <line x1="385" y1="102" x2="410" y2="102" stroke="#333" stroke-width="1.5" marker-end="url(#arrS)"/>
-  <rect x="415" y="85" width="150" height="35" rx="6" fill="#fff8e1" stroke="#d4a017" stroke-width="1.5"/>
-  <text x="490" y="107" text-anchor="middle" font-size="10">6. Multiply to equalise e⁻</text>
-  <!-- third row -->
-  <rect x="100" y="140" width="380" height="35" rx="6" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
-  <text x="290" y="162" text-anchor="middle" font-size="11" font-weight="bold">7. Add half-equations and cancel e⁻, H₂O, H⁺</text>
-  <!-- basic -->
-  <rect x="100" y="195" width="380" height="30" rx="6" fill="#ffebee" stroke="#c62828" stroke-width="1.5"/>
-  <text x="290" y="215" text-anchor="middle" font-size="10">If BASIC: add OH⁻ to both sides to neutralise H⁺ → H₂O</text>
-  <defs><marker id="arrS" markerWidth="6" markerHeight="5" refX="6" refY="2.5" orient="auto"><path d="M0,0 L6,2.5 L0,5 Z" fill="#333"/></marker></defs>
+<svg height="280" viewbox="0 0 580 280" width="580">
+<text fill="#2c5f2d" font-size="14" font-weight="bold" text-anchor="middle" x="290" y="18">The Half-Equation Balancing Algorithm</text>
+<rect fill="#e8f5e9" height="35" rx="6" stroke="#2c5f2d" stroke-width="1.5" width="170" x="15" y="30"></rect>
+<text font-size="10" text-anchor="middle" x="100" y="52">1. Split into half-equations</text>
+<line marker-end="url(#arrS)" stroke="#333" stroke-width="1.5" x1="185" x2="210" y1="47" y2="47"></line>
+<rect fill="#e8f5e9" height="35" rx="6" stroke="#2c5f2d" stroke-width="1.5" width="170" x="215" y="30"></rect>
+<text font-size="10" text-anchor="middle" x="300" y="52">2. Balance atoms (except H,O)</text>
+<line marker-end="url(#arrS)" stroke="#333" stroke-width="1.5" x1="385" x2="410" y1="47" y2="47"></line>
+<rect fill="#e8f5e9" height="35" rx="6" stroke="#2c5f2d" stroke-width="1.5" width="150" x="415" y="30"></rect>
+<text font-size="10" text-anchor="middle" x="490" y="52">3. Balance O with H₂O</text>
+<!-- second row -->
+<rect fill="#fff8e1" height="35" rx="6" stroke="#d4a017" stroke-width="1.5" width="170" x="15" y="85"></rect>
+<text font-size="10" text-anchor="middle" x="100" y="107">4. Balance H with H⁺</text>
+<line marker-end="url(#arrS)" stroke="#333" stroke-width="1.5" x1="185" x2="210" y1="102" y2="102"></line>
+<rect fill="#fff8e1" height="35" rx="6" stroke="#d4a017" stroke-width="1.5" width="170" x="215" y="85"></rect>
+<text font-size="10" text-anchor="middle" x="300" y="107">5. Balance charge with e⁻</text>
+<line marker-end="url(#arrS)" stroke="#333" stroke-width="1.5" x1="385" x2="410" y1="102" y2="102"></line>
+<rect fill="#fff8e1" height="35" rx="6" stroke="#d4a017" stroke-width="1.5" width="150" x="415" y="85"></rect>
+<text font-size="10" text-anchor="middle" x="490" y="107">6. Multiply to equalise e⁻</text>
+<!-- third row -->
+<rect fill="#e3f2fd" height="35" rx="6" stroke="#1565c0" stroke-width="2" width="380" x="100" y="140"></rect>
+<text font-size="11" font-weight="bold" text-anchor="middle" x="290" y="162">7. Add half-equations and cancel e⁻, H₂O, H⁺</text>
+<!-- basic -->
+<rect fill="#ffebee" height="30" rx="6" stroke="#c62828" stroke-width="1.5" width="380" x="100" y="195"></rect>
+<text font-size="10" text-anchor="middle" x="290" y="215">If BASIC: add OH⁻ to both sides to neutralise H⁺ → H₂O</text>
+<defs><marker id="arrS" markerheight="5" markerwidth="6" orient="auto" refx="6" refy="2.5"><path d="M0,0 L6,2.5 L0,5 Z" fill="#333"></path></marker></defs>
 </svg>
 <div class="caption">Figure 1: The seven-step algorithm for balancing redox equations. Follow in strict order — never skip a step.</div>
 </div>
-
 <div class="check-in">
-<p><b>Check-in:</b> Balance $\ce{MnO4- -> Mn^{2+}}$ (reduction half-equation in acid).</p>
+<p><b>Check-in:</b> Balance $\ce{MnO4- -&gt; Mn^{2+}}$ (reduction half-equation in acid).</p>
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
-<div class="answer-content">1. Mn already balanced (1 each side).<br>2. Balance O: 4 O on left → add 4 H₂O to right: $\ce{MnO4- -> Mn^{2+} + 4H2O}$.<br>3. Balance H: 8 H on right → add 8 H⁺ to left: $\ce{MnO4- + 8H+ -> Mn^{2+} + 4H2O}$.<br>4. Balance charge: left (−1 + 8 = +7), right (+2). Add 5 e⁻ to left: $\ce{MnO4- + 8H+ + 5e- -> Mn^{2+} + 4H2O}$. <b>Done.</b></div>
+<div class="answer-content">1. Mn already balanced (1 each side).<br/>2. Balance O: 4 O on left → add 4 H₂O to right: $\ce{MnO4- -&gt; Mn^{2+} + 4H2O}$.<br/>3. Balance H: 8 H on right → add 8 H⁺ to left: $\ce{MnO4- + 8H+ -&gt; Mn^{2+} + 4H2O}$.<br/>4. Balance charge: left (−1 + 8 = +7), right (+2). Add 5 e⁻ to left: $\ce{MnO4- + 8H+ + 5e- -&gt; Mn^{2+} + 4H2O}$. <b>Done.</b></div>
 </div>
-
 <h2>3. Worked Full Example — Acidic Conditions</h2>
-
-<p><b>Balance:</b> $\ce{Fe^{2+} + MnO4- -> Fe^{3+} + Mn^{2+}}$ (acidic)</p>
-
-<p><b>Oxidation half:</b> $\ce{Fe^{2+} -> Fe^{3+} + e-}$ (Fe and charge already balanced — 1 e⁻ needed).</p>
-
-<p><b>Reduction half:</b> $\ce{MnO4- + 8H+ + 5e- -> Mn^{2+} + 4H2O}$ (as derived above).</p>
-
-<p><b>Equalise electrons:</b> Multiply oxidation by 5: $\ce{5Fe^{2+} -> 5Fe^{3+} + 5e-}$.</p>
-
-<p><b>Add:</b> $\ce{5Fe^{2+} + MnO4- + 8H+ + 5e- -> 5Fe^{3+} + Mn^{2+} + 4H2O + 5e-}$.</p>
-
-<p><b>Cancel 5e⁻:</b> $\ce{5Fe^{2+} + MnO4- + 8H+ -> 5Fe^{3+} + Mn^{2+} + 4H2O}$.</p>
-
+<p><b>Balance:</b> $\ce{Fe^{2+} + MnO4- -&gt; Fe^{3+} + Mn^{2+}}$ (acidic)</p>
+<p><b>Oxidation half:</b> $\ce{Fe^{2+} -&gt; Fe^{3+} + e-}$ (Fe and charge already balanced — 1 e⁻ needed).</p>
+<p><b>Reduction half:</b> $\ce{MnO4- + 8H+ + 5e- -&gt; Mn^{2+} + 4H2O}$ (as derived above).</p>
+<p><b>Equalise electrons:</b> Multiply oxidation by 5: $\ce{5Fe^{2+} -&gt; 5Fe^{3+} + 5e-}$.</p>
+<p><b>Add:</b> $\ce{5Fe^{2+} + MnO4- + 8H+ + 5e- -&gt; 5Fe^{3+} + Mn^{2+} + 4H2O + 5e-}$.</p>
+<p><b>Cancel 5e⁻:</b> $\ce{5Fe^{2+} + MnO4- + 8H+ -&gt; 5Fe^{3+} + Mn^{2+} + 4H2O}$.</p>
 <h2>4. Balancing in Basic Solution</h2>
-
 <p>For reactions in basic solution, first balance as if in acid (using $\ce{H+}$ and $\ce{H2O}$), then <b>add $\ce{OH-}$ to both sides to convert every $\ce{H+}$ to $\ce{H2O}$</b>. If $\ce{OH-}$ appears, cancel any $\ce{H2O}$ that appears on both sides.</p>
-
 <div class="check-in">
-<p><b>Check-in:</b> Balance $\ce{MnO4- + SO3^{2-} -> MnO2 + SO4^{2-}}$ in basic solution.</p>
+<p><b>Check-in:</b> Balance $\ce{MnO4- + SO3^{2-} -&gt; MnO2 + SO4^{2-}}$ in basic solution.</p>
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
-<div class="answer-content"><b>Reduction:</b> $\ce{MnO4- + 2H2O + 3e- -> MnO2 + 4OH-}$. <b>Oxidation:</b> $\ce{SO3^{2-} + 2OH- -> SO4^{2-} + H2O + 2e-}$. Equalise: multiply reduction by 2, oxidation by 3. Add: $\ce{2MnO4- + 3SO3^{2-} + H2O -> 2MnO2 + 3SO4^{2-} + 2OH-}$.</div>
+<div class="answer-content"><b>Reduction:</b> $\ce{MnO4- + 2H2O + 3e- -&gt; MnO2 + 4OH-}$. <b>Oxidation:</b> $\ce{SO3^{2-} + 2OH- -&gt; SO4^{2-} + H2O + 2e-}$. Equalise: multiply reduction by 2, oxidation by 3. Add: $\ce{2MnO4- + 3SO3^{2-} + H2O -&gt; 2MnO2 + 3SO4^{2-} + 2OH-}$.</div>
 </div>
-
 <div class="diagram">
-<svg width="500" height="180" viewBox="0 0 500 180">
-  <text x="250" y="18" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c5f2d">Acid → Base Conversion</text>
-  <rect x="30" y="35" width="180" height="60" rx="8" fill="#ffebee" stroke="#c62828" stroke-width="2"/>
-  <text x="120" y="58" text-anchor="middle" font-size="11" font-weight="bold">Balanced in acid</text>
-  <text x="120" y="78" text-anchor="middle" font-size="10" fill="#c62828">MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O</text>
-  <line x1="210" y1="65" x2="255" y2="65" stroke="#333" stroke-width="2" marker-end="url(#arB)"/>
-  <rect x="260" y="35" width="210" height="60" rx="8" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="2"/>
-  <text x="365" y="58" text-anchor="middle" font-size="11" font-weight="bold">Add 8OH⁻ both sides</text>
-  <text x="365" y="78" text-anchor="middle" font-size="10" fill="#2c5f2d">MnO₄⁻ + 4H₂O + 5e⁻ → Mn²⁺ + 8OH⁻</text>
-  <text x="250" y="130" text-anchor="middle" font-size="11" fill="#555">8H⁺ + 8OH⁻ → 8H₂O (left); 4H₂O already on right → cancel to 4H₂O left</text>
-  <text x="250" y="150" text-anchor="middle" font-size="11" fill="#e65100">Result: 8H₂O(left) − 4H₂O(right) = 4H₂O(left), 8OH⁻(right)</text>
-  <defs><marker id="arB" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#333"/></marker></defs>
+<svg height="180" viewbox="0 0 500 180" width="500">
+<text fill="#2c5f2d" font-size="14" font-weight="bold" text-anchor="middle" x="250" y="18">Acid → Base Conversion</text>
+<rect fill="#ffebee" height="60" rx="8" stroke="#c62828" stroke-width="2" width="180" x="30" y="35"></rect>
+<text font-size="11" font-weight="bold" text-anchor="middle" x="120" y="58">Balanced in acid</text>
+<text fill="#c62828" font-size="10" text-anchor="middle" x="120" y="78">MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O</text>
+<line marker-end="url(#arB)" stroke="#333" stroke-width="2" x1="210" x2="255" y1="65" y2="65"></line>
+<rect fill="#e8f5e9" height="60" rx="8" stroke="#2c5f2d" stroke-width="2" width="210" x="260" y="35"></rect>
+<text font-size="11" font-weight="bold" text-anchor="middle" x="365" y="58">Add 8OH⁻ both sides</text>
+<text fill="#2c5f2d" font-size="10" text-anchor="middle" x="365" y="78">MnO₄⁻ + 4H₂O + 5e⁻ → Mn²⁺ + 8OH⁻</text>
+<text fill="#555" font-size="11" text-anchor="middle" x="250" y="130">8H⁺ + 8OH⁻ → 8H₂O (left); 4H₂O already on right → cancel to 4H₂O left</text>
+<text fill="#e65100" font-size="11" text-anchor="middle" x="250" y="150">Result: 8H₂O(left) − 4H₂O(right) = 4H₂O(left), 8OH⁻(right)</text>
+<defs><marker id="arB" markerheight="6" markerwidth="8" orient="auto" refx="8" refy="3"><path d="M0,0 L8,3 L0,6 Z" fill="#333"></path></marker></defs>
 </svg>
 <div class="caption">Figure 2: Converting an acidic half-equation to basic conditions. Add OH⁻ to neutralise all H⁺, then cancel water molecules on both sides.</div>
 </div>
-
 <!-- SECTION D -->
 <h2>5. Worked Examples</h2>
-
 <div class="example">
-<b>Example 1 — Dichromate with Iron(II) in Acid:</b><br><br>
-Balance: $\ce{Cr2O7^{2-} + Fe^{2+} -> Cr^{3+} + Fe^{3+}}$ (acidic)<br><br>
-<b>Reduction:</b> $\ce{Cr2O7^{2-} -> 2Cr^{3+}}$. Balance O: +7H₂O right. Balance H: +14H⁺ left. Balance charge: left −2 + 14 = +12, right +6 → add 6e⁻: $\ce{Cr2O7^{2-} + 14H+ + 6e- -> 2Cr^{3+} + 7H2O}$.<br>
-<b>Oxidation:</b> $\ce{Fe^{2+} -> Fe^{3+} + e-}$. Multiply by 6.<br>
-<b>Combined:</b> $\ce{Cr2O7^{2-} + 6Fe^{2+} + 14H+ -> 2Cr^{3+} + 6Fe^{3+} + 7H2O}$.<br><br>
+<b>Example 1 — Dichromate with Iron(II) in Acid:</b><br/><br/>
+Balance: $\ce{Cr2O7^{2-} + Fe^{2+} -&gt; Cr^{3+} + Fe^{3+}}$ (acidic)<br/><br/>
+<b>Reduction:</b> $\ce{Cr2O7^{2-} -&gt; 2Cr^{3+}}$. Balance O: +7H₂O right. Balance H: +14H⁺ left. Balance charge: left −2 + 14 = +12, right +6 → add 6e⁻: $\ce{Cr2O7^{2-} + 14H+ + 6e- -&gt; 2Cr^{3+} + 7H2O}$.<br/>
+<b>Oxidation:</b> $\ce{Fe^{2+} -&gt; Fe^{3+} + e-}$. Multiply by 6.<br/>
+<b>Combined:</b> $\ce{Cr2O7^{2-} + 6Fe^{2+} + 14H+ -&gt; 2Cr^{3+} + 6Fe^{3+} + 7H2O}$.<br/><br/>
 <b>⚠️ Common wrong approach:</b> Forgetting to balance Cr atoms first (Cr₂O₇²⁻ → 2Cr³⁺). Also, adding 6 e⁻ to the reduction is correct — Cr goes from +6 to +3 (×2 atoms = 6 e⁻ total).
 </div>
-
 <div class="example">
-<b>Example 2 — Disproportionation of Chlorine in Base:</b><br><br>
-Balance: $\ce{Cl2 -> Cl- + ClO-}$ in basic solution.<br><br>
-<b>Reduction:</b> $\ce{Cl2 + 2e- -> 2Cl-}$.<br>
-<b>Oxidation:</b> $\ce{Cl2 -> 2ClO-}$. Balance O: +2H₂O left: $\ce{Cl2 + 2H2O -> 2ClO-}$. Balance H: +4H⁺ right: $\ce{Cl2 + 2H2O -> 2ClO- + 4H+}$. Balance charge: right (−2 + 4 = +2) → add 2e⁻: $\ce{Cl2 + 2H2O -> 2ClO- + 4H+ + 2e-}$.<br>
-<b>In base:</b> Add 4OH⁻ both sides → $\ce{Cl2 + 2H2O + 4OH- -> 2ClO- + 4H2O + 2e-}$. Cancel 2H₂O: $\ce{Cl2 + 4OH- -> 2ClO- + 2H2O + 2e-}$.<br>
-<b>Combine with reduction:</b> $\ce{2Cl2 + 4OH- -> 2Cl- + 2ClO- + 2H2O}$. Divide by 2: $\ce{Cl2 + 2OH- -> Cl- + ClO- + H2O}$.<br><br>
+<b>Example 2 — Disproportionation of Chlorine in Base:</b><br/><br/>
+Balance: $\ce{Cl2 -&gt; Cl- + ClO-}$ in basic solution.<br/><br/>
+<b>Reduction:</b> $\ce{Cl2 + 2e- -&gt; 2Cl-}$.<br/>
+<b>Oxidation:</b> $\ce{Cl2 -&gt; 2ClO-}$. Balance O: +2H₂O left: $\ce{Cl2 + 2H2O -&gt; 2ClO-}$. Balance H: +4H⁺ right: $\ce{Cl2 + 2H2O -&gt; 2ClO- + 4H+}$. Balance charge: right (−2 + 4 = +2) → add 2e⁻: $\ce{Cl2 + 2H2O -&gt; 2ClO- + 4H+ + 2e-}$.<br/>
+<b>In base:</b> Add 4OH⁻ both sides → $\ce{Cl2 + 2H2O + 4OH- -&gt; 2ClO- + 4H2O + 2e-}$. Cancel 2H₂O: $\ce{Cl2 + 4OH- -&gt; 2ClO- + 2H2O + 2e-}$.<br/>
+<b>Combine with reduction:</b> $\ce{2Cl2 + 4OH- -&gt; 2Cl- + 2ClO- + 2H2O}$. Divide by 2: $\ce{Cl2 + 2OH- -&gt; Cl- + ClO- + H2O}$.<br/><br/>
 <b>⚠️ Common wrong approach:</b> Not realising this is disproportionation — Cl goes from 0 to +1 (oxidised) and 0 to −1 (reduced). Each Cl₂ molecule must appear in both half-equations.
 </div>
-
 <div class="example">
-<b>Example 3 — Redox Titration Calculation:</b><br><br>
-25.0 cm³ of 0.0200 mol dm⁻³ $\ce{KMnO4}$ reacts completely with 20.0 cm³ of $\ce{FeSO4}$ solution in acid. Calculate the concentration of $\ce{FeSO4}$.<br><br>
-$\ce{MnO4- + 5Fe^{2+} + 8H+ -> Mn^{2+} + 5Fe^{3+} + 4H2O}$<br><br>
-<b>Step 1:</b> $n(\ce{MnO4-}) = 0.0200 \times 0.0250 = 5.00\times10^{-4}$ mol.<br>
-<b>Step 2:</b> Mole ratio 1:5. $n(\ce{Fe^{2+}}) = 5 \times 5.00\times10^{-4} = 2.50\times10^{-3}$ mol.<br>
-<b>Step 3:</b> $[\ce{Fe^{2+}}] = 2.50\times10^{-3} / 0.0200 = \mathbf{0.125\text{ mol dm}^{-3}}$.<br><br>
+<b>Example 3 — Redox Titration Calculation:</b><br/><br/>
+25.0 cm³ of 0.0200 mol dm⁻³ $\ce{KMnO4}$ reacts completely with 20.0 cm³ of $\ce{FeSO4}$ solution in acid. Calculate the concentration of $\ce{FeSO4}$.<br/><br/>
+$\ce{MnO4- + 5Fe^{2+} + 8H+ -&gt; Mn^{2+} + 5Fe^{3+} + 4H2O}$<br/><br/>
+<b>Step 1:</b> $n(\ce{MnO4-}) = 0.0200 \times 0.0250 = 5.00\times10^{-4}$ mol.<br/>
+<b>Step 2:</b> Mole ratio 1:5. $n(\ce{Fe^{2+}}) = 5 \times 5.00\times10^{-4} = 2.50\times10^{-3}$ mol.<br/>
+<b>Step 3:</b> $[\ce{Fe^{2+}}] = 2.50\times10^{-3} / 0.0200 = \mathbf{0.125\text{ mol dm}^{-3}}$.<br/><br/>
 <b>⚠️ Common wrong approach:</b> Using a 1:1 ratio instead of 1:5. The stoichiometry comes from the balanced equation — always derive the ratio from the number of electrons transferred.
 </div>
-
 <!-- SECTION F -->
 <div class="misconception">
 <h3>⚠️ Common Mistakes to Avoid</h3>
 <ol>
-  <li><b>Skipping the charge balance step.</b> The most common error is balancing atoms but forgetting electrons. A half-equation is only correct when both atoms AND charge are balanced.</li>
-  <li><b>Using the wrong mole ratio in redox titrations.</b> The ratio comes from the electrons transferred, not from the coefficients of the unbalanced equation. Always write the balanced equation first.</li>
-  <li><b>Forgetting to convert to basic conditions when required.</b> If the reaction says "in basic solution", you must add OH⁻ after balancing as if in acid. Simply adding OH⁻ at the end without the acid→base conversion gives the wrong equation.</li>
-  <li><b>Adding H⁺ and OH⁻ to the same side.</b> When converting to basic conditions, add OH⁻ to BOTH sides. Then H⁺ + OH⁻ → H₂O on whichever side H⁺ was. Never have both H⁺ and OH⁻ on the same side in the final equation.</li>
+<li><b>Skipping the charge balance step.</b> The most common error is balancing atoms but forgetting electrons. A half-equation is only correct when both atoms AND charge are balanced.</li>
+<li><b>Using the wrong mole ratio in redox titrations.</b> The ratio comes from the electrons transferred, not from the coefficients of the unbalanced equation. Always write the balanced equation first.</li>
+<li><b>Forgetting to convert to basic conditions when required.</b> If the reaction says "in basic solution", you must add OH⁻ after balancing as if in acid. Simply adding OH⁻ at the end without the acid→base conversion gives the wrong equation.</li>
+<li><b>Adding H⁺ and OH⁻ to the same side.</b> When converting to basic conditions, add OH⁻ to BOTH sides. Then H⁺ + OH⁻ → H₂O on whichever side H⁺ was. Never have both H⁺ and OH⁻ on the same side in the final equation.</li>
 </ol>
 </div>
-
 <!-- SECTION G -->
 <h2>6. End-of-Lesson Practice</h2>
-
-<p><b>Question 1:</b> Balance $\ce{Zn + NO3- -> Zn^{2+} + NH4+}$ in acidic solution.</p>
-
-<p><b>Question 2:</b> Balance $\ce{Cr2O7^{2-} + I- -> Cr^{3+} + I2}$ in acidic solution.</p>
-
-<p><b>Question 3:</b> Balance $\ce{MnO4- + C2O4^{2-} -> MnO2 + CO3^{2-}}$ in basic solution.</p>
-
-<p><b>Question 4:</b> Balance the disproportionation: $\ce{H2O2 -> H2O + O2}$ (acidic). Show both half-equations.</p>
-
+<p><b>Question 1:</b> Balance $\ce{Zn + NO3- -&gt; Zn^{2+} + NH4+}$ in acidic solution.</p>
+<p><b>Question 2:</b> Balance $\ce{Cr2O7^{2-} + I- -&gt; Cr^{3+} + I2}$ in acidic solution.</p>
+<p><b>Question 3:</b> Balance $\ce{MnO4- + C2O4^{2-} -&gt; MnO2 + CO3^{2-}}$ in basic solution.</p>
+<p><b>Question 4:</b> Balance the disproportionation: $\ce{H2O2 -&gt; H2O + O2}$ (acidic). Show both half-equations.</p>
 <p><b>Question 5 (Redox titration):</b> 25.0 cm³ of acidified $\ce{K2Cr2O7}$ (0.0167 mol dm⁻³) oxidises 30.0 cm³ of $\ce{Fe^{2+}}$ solution. Calculate $[\ce{Fe^{2+}}]$. The half-equation for Cr₂O₇²⁻ → Cr³⁺ requires 6 e⁻.</p>
-
 <button class="practice-toggle" onclick="var a=this.nextElementSibling;a.classList.toggle('open');this.textContent=a.classList.contains('open')?'▴ Hide Answers':'▸ Show Answers'">▸ Show Answers</button>
 <div class="practice-answers">
-
-<p><b>Answer 1:</b> $\ce{4Zn + NO3- + 10H+ -> 4Zn^{2+} + NH4+ + 3H2O}$.<br>Reduction: $\ce{NO3- + 10H+ + 8e- -> NH4+ + 3H2O}$. Oxidation: $\ce{Zn -> Zn^{2+} + 2e-}$ (×4).</p>
-
-<p><b>Answer 2:</b> $\ce{Cr2O7^{2-} + 6I- + 14H+ -> 2Cr^{3+} + 3I2 + 7H2O}$.<br>Reduction: $\ce{Cr2O7^{2-} + 14H+ + 6e- -> 2Cr^{3+} + 7H2O}$. Oxidation: $\ce{2I- -> I2 + 2e-}$ (×3).</p>
-
-<p><b>Answer 3:</b> $\ce{2MnO4- + 3C2O4^{2-} + 2H2O -> 2MnO2 + 6CO3^{2-} + 4H+}$ then convert to base: $\ce{2MnO4- + 3C2O4^{2-} + 4OH- -> 2MnO2 + 6CO3^{2-} + 2H2O}$.</p>
-
-<p><b>Answer 4:</b> Oxidation: $\ce{H2O2 -> O2 + 2H+ + 2e-}$. Reduction: $\ce{H2O2 + 2H+ + 2e- -> 2H2O}$. Combining: $\ce{2H2O2 -> 2H2O + O2}$.</p>
-
-<p><b>Answer 5:</b> $n(\ce{Cr2O7^{2-}}) = 0.0167 \times 0.0250 = 4.175\times10^{-4}$ mol. $\ce{Cr2O7^{2-} + 6Fe^{2+} + 14H+ -> 2Cr^{3+} + 6Fe^{3+} + 7H2O}$. Ratio 1:6. $n(\ce{Fe^{2+}}) = 6 \times 4.175\times10^{-4} = 2.505\times10^{-3}$ mol. $[\ce{Fe^{2+}}] = 2.505\times10^{-3}/0.0300 = \mathbf{0.0835\text{ mol dm}^{-3}}$.</p>
+<p><b>Answer 1:</b> $\ce{4Zn + NO3- + 10H+ -&gt; 4Zn^{2+} + NH4+ + 3H2O}$.<br/>Reduction: $\ce{NO3- + 10H+ + 8e- -&gt; NH4+ + 3H2O}$. Oxidation: $\ce{Zn -&gt; Zn^{2+} + 2e-}$ (×4).</p>
+<p><b>Answer 2:</b> $\ce{Cr2O7^{2-} + 6I- + 14H+ -&gt; 2Cr^{3+} + 3I2 + 7H2O}$.<br/>Reduction: $\ce{Cr2O7^{2-} + 14H+ + 6e- -&gt; 2Cr^{3+} + 7H2O}$. Oxidation: $\ce{2I- -&gt; I2 + 2e-}$ (×3).</p>
+<p><b>Answer 3:</b> $\ce{2MnO4- + 3C2O4^{2-} + 2H2O -&gt; 2MnO2 + 6CO3^{2-} + 4H+}$ then convert to base: $\ce{2MnO4- + 3C2O4^{2-} + 4OH- -&gt; 2MnO2 + 6CO3^{2-} + 2H2O}$.</p>
+<p><b>Answer 4:</b> Oxidation: $\ce{H2O2 -&gt; O2 + 2H+ + 2e-}$. Reduction: $\ce{H2O2 + 2H+ + 2e- -&gt; 2H2O}$. Combining: $\ce{2H2O2 -&gt; 2H2O + O2}$.</p>
+<p><b>Answer 5:</b> $n(\ce{Cr2O7^{2-}}) = 0.0167 \times 0.0250 = 4.175\times10^{-4}$ mol. $\ce{Cr2O7^{2-} + 6Fe^{2+} + 14H+ -&gt; 2Cr^{3+} + 6Fe^{3+} + 7H2O}$. Ratio 1:6. $n(\ce{Fe^{2+}}) = 6 \times 4.175\times10^{-4} = 2.505\times10^{-3}$ mol. $[\ce{Fe^{2+}}] = 2.505\times10^{-3}/0.0300 = \mathbf{0.0835\text{ mol dm}^{-3}}$.</p>
 </div>
-
 <!-- SECTION H -->
 <h2>7. Key Terms</h2>
 <table>
@@ -252,15 +219,138 @@ $\ce{MnO4- + 5Fe^{2+} + 8H+ -> Mn^{2+} + 5Fe^{3+} + 4H2O}$<br><br>
 <tr><td>Redox titration</td><td>A titration based on a redox reaction; the equivalence point is detected by colour change (often self-indicating, e.g., $\ce{MnO4-}$ purple → colourless)</td></tr>
 <tr><td>Disproportionation</td><td>A redox reaction where the same species is both oxidised and reduced</td></tr>
 </table>
-
 <!-- SECTION I -->
 <h2>8. Exam Tips</h2>
-
 <div class="exam-tip"><b>Paper 2 (Structured):</b> Balancing redox equations is typically 3–4 marks. You earn marks for: (1) correct half-equations with proper electron counts, (2) correct H⁺/H₂O balance, (3) multiplying and combining correctly, (4) the final balanced equation. Even if the final equation is wrong, half-equation marks are awarded independently.</div>
-
 <div class="exam-tip"><b>Redox Titrations:</b> These appear in Paper 2 Section A. The mole ratio always comes from the balanced redox equation. Common examined pairs: $\ce{MnO4-/Fe^{2+}}$ (1:5), $\ce{Cr2O7^{2-}/Fe^{2+}}$ (1:6), $\ce{I2/S2O3^{2-}}$ (1:2). Memorise these ratios — they save time.</div>
-
 <div class="exam-tip"><b>Self-indicating titrations:</b> $\ce{KMnO4}$ titrations need no indicator — the intense purple colour of $\ce{MnO4-}$ disappears as it's reduced to colourless $\ce{Mn^{2+}}$. The end point is the first permanent pink colour. Iodine titrations use starch indicator (deep blue-black complex with $\ce{I2}$).</div>
 
+<div class="lesson-actions" style="margin: 2rem 0; padding: 1.5rem; background: #f8fafc; border-radius: 8px; display: flex; gap: 1rem; flex-wrap: wrap;">
+<button class="action-btn" id="generate-flashcards-btn" style="padding: 0.75rem 1.5rem; background: #3b82f6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        🗂️ Generate Flashcards
+    </button>
+<button class="action-btn" id="practice-problems-btn" style="padding: 0.75rem 1.5rem; background: #10b981; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        ✏️ Practice Problems
+    </button>
+<button class="action-btn" id="ask-ai-btn" style="padding: 0.75rem 1.5rem; background: #8b5cf6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        💬 Ask AI
+    </button>
+</div>
+<script>
+(function() {
+    const subjectKey = "chemistry";
+    const lessonId = "lesson_33";
+    const lessonTitle = "Lesson 33: Balancing Redox Equations — The Half-Equation Method";
+
+    function getCsrf() {
+        var m = document.querySelector('meta[name="csrf-token"]');
+        return m ? m.getAttribute('content') : '';
+    }
+
+    // Completion checkbox
+    const checkbox = document.getElementById('lesson-complete');
+    if (checkbox) {
+        // Load saved state
+        const saved = localStorage.getItem(`completed_${subjectKey}_${lessonId}`);
+        if (saved === 'true') checkbox.checked = true;
+
+        checkbox.addEventListener('change', async function() {
+            const completed = this.checked;
+            localStorage.setItem(`completed_${subjectKey}_${lessonId}`, completed);
+
+            try {
+                await fetch('/toggle_completion', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': getCsrf()
+                    },
+                    body: JSON.stringify({
+                        subject: subjectKey,
+                        lesson: lessonId,
+                        completed: completed
+                    })
+                });
+            } catch(e) {
+                console.error('Error saving completion:', e);
+            }
+        });
+    }
+
+    // Generate Flashcards
+    const flashcardsBtn = document.getElementById('generate-flashcards-btn');
+    if (flashcardsBtn) {
+        flashcardsBtn.addEventListener('click', async function() {
+            this.disabled = true;
+            this.textContent = '⏳ Generating...';
+
+            try {
+                const content = document.body.innerText.substring(0, 2000);
+                const response = await fetch('/generate_flashcards', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': getCsrf()
+                    },
+                    body: JSON.stringify({
+                        subject: subjectKey,
+                        lesson: lessonTitle,
+                        content_summary: content
+                    })
+                });
+
+                const data = await response.json();
+                if (data.error) {
+                    alert('Error: ' + data.error);
+                } else {
+                    alert(`✅ Created ${data.count} flashcards! View them at /flashcards/${subjectKey}`);
+                }
+            } catch(e) {
+                alert('Error generating flashcards: ' + e.message);
+            } finally {
+                this.disabled = false;
+                this.textContent = '🗂️ Generate Flashcards';
+            }
+        });
+    }
+
+    // Practice Problems - open in new section
+    const practiceBtn = document.getElementById('practice-problems-btn');
+    if (practiceBtn) {
+        practiceBtn.addEventListener('click', function() {
+            alert('Practice problems feature coming soon! Use the AI chatbot to generate custom questions.');
+        });
+    }
+
+    // Ask AI - scroll to chatbot
+    const aiBtn = document.getElementById('ask-ai-btn');
+    if (aiBtn) {
+        aiBtn.addEventListener('click', function() {
+            const chatbot = document.getElementById('lessons-chatbot');
+            if (chatbot) {
+                chatbot.scrollIntoView({ behavior: 'smooth' });
+                const toggleBtn = chatbot.querySelector('.chatbot-toggle');
+                if (toggleBtn) toggleBtn.click();
+            } else {
+                alert('AI chatbot not available on this page. It will be added soon!');
+            }
+        });
+    }
+
+    // Track lesson view
+    fetch('/mark_viewed', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': getCsrf()
+        },
+        body: JSON.stringify({
+            subject: subjectKey,
+            lesson: lessonId
+        })
+    }).catch(e => console.error('Error tracking view:', e));
+
+})();
+</script>
 </body>
 </html>

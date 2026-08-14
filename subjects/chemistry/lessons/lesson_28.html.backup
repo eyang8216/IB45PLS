@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 28 — Chemistry HL — Weak Acids, Ka & pKa</title>
+<script>
+window.MathJax = {tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] },
+  loader: { load: ['[tex]/mhchem'] }};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+:root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Georgia', 'Times New Roman', serif; font-size: 17px; line-height: 1.7; color: var(--text); background: var(--bg); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; }
+h1 { font-size: 1.8rem; color: var(--accent); border-bottom: 3px solid var(--accent); padding-bottom: 0.5rem; margin-bottom: 1rem; }
+h2 { font-size: 1.35rem; color: var(--accent); margin: 2rem 0 0.8rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+h3 { font-size: 1.15rem; color: var(--accent); margin: 1.5rem 0 0.5rem; }
+p { margin-bottom: 0.8rem; }
+.objectives { background: #f0f4ff; border-left: 4px solid var(--accent); padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+.objectives h3 { margin-top: 0; }
+.check-in { background: #fff8e1; border: 1px solid #ffc107; padding: 0.8rem 1rem; margin: 1rem 0; border-radius: 8px; }
+.check-in p { margin-bottom: 0.3rem; }
+.answer-toggle { display: inline-block; padding: 0.2rem 0.8rem; border-radius: 16px; cursor: pointer; font-size: 0.8rem; font-weight: 600; background: #e8f5e9; color: #2e7d32; border: 1px solid #2e7d32; user-select: none; margin-top: 0.3rem; }
+.answer-content { display: none; background: #f1f8e9; padding: 0.6rem 1rem; border-radius: 8px; margin-top: 0.5rem; }
+.answer-content.open { display: block; }
+.example { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem; margin: 1rem 0; }
+.misconception { background: #fff3e0; border-left: 4px solid #e65100; padding: 1rem 1.2rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; }
+.misconception h3 { color: #e65100; }
+.exam-tip { background: #e8f5e9; border-left: 4px solid #2e7d32; padding: 0.8rem 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+th { background: var(--accent); color: white; padding: 0.5rem 0.8rem; text-align: left; }
+td { padding: 0.5rem 0.8rem; border-bottom: 1px solid var(--border); }
+tr:nth-child(even) td { background: #f8f8f6; }
+.diagram { text-align: center; margin: 1.5rem 0; }
+.diagram svg { max-width: 100%; }
+.diagram .caption { font-size: 0.9rem; color: #666; margin-top: 0.3rem; font-style: italic; }
+pre.ascii-art { font-family: 'Courier New', monospace; font-size: 0.75rem; line-height: 1.2; background: #f5f5f5; padding: 0.8rem; border-radius: 8px; overflow-x: auto; }
+.practice-toggle { display: block; width: 100%; padding: 0.8rem; background: var(--accent); color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 1rem; font-weight: 600; margin: 1.5rem 0; }
+.practice-answers { display: none; }
+.practice-answers.open { display: block; }
+</style>
+</head>
+<body>
+
+<h1>Lesson 28: Weak Acids — Ka, pKa, and Equilibrium Calculations</h1>
+
+<p><b>Syllabus reference:</b> 18.2 (HL) — Weak Acids and Bases, Ka and pKa</p>
+
+<!-- SECTION A -->
+<div class="objectives">
+<h3>Learning Objectives</h3>
+<p>By the end of this lesson, you will be able to:</p>
+<ul>
+  <li><b>Write</b> the equilibrium expression ($K_a$) for any weak monoprotic acid and state what $K_a$ tells you about acid strength.</li>
+  <li><b>Calculate</b> $[\ce{H+}]$ and pH of a weak acid solution given $K_a$ and initial concentration, using the approximation when appropriate.</li>
+  <li><b>Convert</b> between $K_a$ and $\mathrm{p}K_a$ and use $\mathrm{p}K_a$ to compare the relative strengths of acids.</li>
+  <li><b>Determine</b> $K_a$ experimentally from pH measurements at known concentration.</li>
+</ul>
+</div>
+
+<!-- SECTION B -->
+<h2>1. Prior Knowledge Check</h2>
+
+<p><b>Question 1:</b> What is the difference between a strong acid and a weak acid?</p>
+<div class="check-in">
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">A <b>strong acid</b> (e.g., $\ce{HCl}$, $\ce{HNO3}$, $\ce{H2SO4}$) dissociates <b>completely</b> in water: every molecule releases its proton. A <b>weak acid</b> (e.g., $\ce{CH3COOH}$, $\ce{HF}$) dissociates only <b>partially</b> — an equilibrium is established between the undissociated acid and its ions.</div>
+</div>
+
+<p><b>Question 2:</b> Write the equilibrium expression $K_c$ for the reaction $\ce{HA <=> H+ + A-}$.</p>
+<div class="check-in">
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">$$K_c = \frac{[\ce{H+}][\ce{A-}]}{[\ce{HA}]}$$ This is the general form. When the reaction is specifically an acid dissociation, we call this $K_a$ instead of $K_c$.</div>
+</div>
+
+<!-- SECTION C -->
+<h2>2. The Acid Dissociation Constant, $K_a$</h2>
+
+<p>For a weak monoprotic acid $\ce{HA}$, dissociation in water is <b>incomplete</b> — it reaches a dynamic equilibrium:</p>
+
+$$\ce{HA(aq) + H2O(l) <=> H3O+(aq) + A-(aq)}$$
+
+<p>The <b>acid dissociation constant</b>, $K_a$, is the equilibrium constant for this reaction:</p>
+
+<div class="definition" style="background:#fdf5e6;border-left:4px solid #d4a017;padding:0.6rem 1rem;margin:0.8rem 0;border-radius:0 8px 8px 0;">
+<b>Key formula — Acid Dissociation Constant:</b>
+$$K_a = \frac{[\ce{H3O+}][\ce{A-}]}{[\ce{HA}]}$$
+Often abbreviated as: $\displaystyle K_a = \frac{[\ce{H+}][\ce{A-}]}{[\ce{HA}]}$
+</div>
+
+<p>$K_a$ is a <b>constant at a given temperature</b> (usually reported at 298 K). It does NOT depend on concentration — it is an intrinsic property of the acid. The <b>smaller</b> $K_a$, the <b>weaker</b> the acid: fewer products, more reactants at equilibrium.</p>
+
+<h3>2.1 The pKa Scale</h3>
+
+<p>Since $K_a$ values span many orders of magnitude (e.g., $\ce{HF}$: $K_a \approx 6.8\times10^{-4}$; $\ce{HCN}$: $K_a \approx 4.9\times10^{-10}$), chemists use a logarithmic scale:</p>
+
+$$\mathrm{p}K_a = -\log_{10} K_a \qquad \text{and} \qquad K_a = 10^{-\mathrm{p}K_a}$$
+
+<p><b>Key intuition:</b> <em>smaller</em> $\mathrm{p}K_a$ = <em>stronger</em> acid. Each unit decrease in $\mathrm{p}K_a$ means the acid is <b>10 times stronger</b>. Carboxylic acids have $\mathrm{p}K_a \approx 4-5$; phenols have $\mathrm{p}K_a \approx 10$.</p>
+
+<div class="diagram">
+<svg width="600" height="180" viewBox="0 0 600 180">
+  <line x1="40" y1="100" x2="580" y2="100" stroke="#333" stroke-width="2"/>
+  <text x="310" y="40" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a1a">pKa Scale — Acid Strength</text>
+  <text x="40" y="85" text-anchor="middle" font-size="11" fill="#c62828">0</text>
+  <text x="150" y="85" text-anchor="middle" font-size="11" fill="#c62828">5</text>
+  <text x="260" y="85" text-anchor="middle" font-size="11" fill="#c62828">10</text>
+  <text x="370" y="85" text-anchor="middle" font-size="11" fill="#c62828">15</text>
+  <text x="480" y="85" text-anchor="middle" font-size="11" fill="#c62828">20</text>
+  <line x1="40" y1="95" x2="40" y2="105" stroke="#333" stroke-width="2"/>
+  <line x1="150" y1="95" x2="150" y2="105" stroke="#333" stroke-width="2"/>
+  <line x1="260" y1="95" x2="260" y2="105" stroke="#333" stroke-width="2"/>
+  <line x1="370" y1="95" x2="370" y2="105" stroke="#333" stroke-width="2"/>
+  <line x1="480" y1="95" x2="480" y2="105" stroke="#333" stroke-width="2"/>
+  <text x="40" y="130" text-anchor="middle" font-size="11" fill="#2c5f2d">Stronger</text>
+  <text x="40" y="145" text-anchor="middle" font-size="11" fill="#2c5f2d">acids</text>
+  <text x="480" y="130" text-anchor="middle" font-size="11" fill="#e65100">Weaker</text>
+  <text x="480" y="145" text-anchor="middle" font-size="11" fill="#e65100">acids</text>
+  <text x="90" y="130" text-anchor="middle" font-size="10" fill="#555">HCl</text>
+  <text x="200" y="130" text-anchor="middle" font-size="10" fill="#555">CH₃COOH</text>
+  <text x="310" y="130" text-anchor="middle" font-size="10" fill="#555">HCN</text>
+  <text x="420" y="130" text-anchor="middle" font-size="10" fill="#555">H₂O</text>
+  <line x1="40" y1="120" x2="480" y2="120" stroke="#e65100" stroke-width="3" marker-end="url(#arrowRight)"/>
+  <defs><marker id="arrowRight" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#e65100"/></marker></defs>
+</svg>
+<div class="caption">Figure 1: The pKa scale. Stronger acids have smaller pKa values. Moving right → weaker acids.</div>
+</div>
+
+<div class="check-in">
+<p><b>Check-in:</b> Acid X has $K_a = 1.8 \times 10^{-5}$. Acid Y has $\mathrm{p}K_a = 3.2$. Which is stronger?</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">$\mathrm{p}K_a$(X) = $-\log(1.8\times10^{-5}) = 4.74$. $\mathrm{p}K_a$(Y) = 3.2. Since smaller $\mathrm{p}K_a$ means stronger acid, <b>Y is stronger</b>. You can also compare: $K_a$(Y) = $10^{-3.2} = 6.3\times10^{-4}$, which is larger than $K_a$(X).</div>
+</div>
+
+<h2>3. Calculating [H⁺] and pH from $K_a$</h2>
+
+<p>For a weak acid with initial concentration $c$, we set up an <b>ICE table</b> (Initial, Change, Equilibrium):</p>
+
+<table>
+<tr><th></th><th>$\ce{HA}$</th><th>$\ce{H+}$</th><th>$\ce{A-}$</th></tr>
+<tr><td>Initial</td><td>$c$</td><td>$0$</td><td>$0$</td></tr>
+<tr><td>Change</td><td>$-x$</td><td>$+x$</td><td>$+x$</td></tr>
+<tr><td>Equilibrium</td><td>$c - x$</td><td>$x$</td><td>$x$</td></tr>
+</table>
+
+<p>Substituting into $K_a$:</p>
+
+$$K_a = \frac{(x)(x)}{c-x} = \frac{x^2}{c-x}$$
+
+<p>This is a quadratic. However, for <b>weak acids where $K_a \ll c$</b>, only a tiny fraction dissociates — meaning $x \ll c$. In this case we can <b>approximate</b> $c - x \approx c$, giving:</p>
+
+<div class="definition" style="background:#fdf5e6;border-left:4px solid #d4a017;padding:0.6rem 1rem;margin:0.8rem 0;border-radius:0 8px 8px 0;">
+<b>Approximation (valid when $K_a/c \leq 10^{-3}$):</b>
+$$K_a \approx \frac{x^2}{c} \quad\Rightarrow\quad x = [\ce{H+}] = \sqrt{K_a \cdot c}$$
+$$\text{pH} = -\log_{10}[\ce{H+}]$$
+</div>
+
+<div class="diagram">
+<svg width="520" height="240" viewBox="0 0 520 240">
+  <text x="260" y="25" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c5f2d">Decision Flow: Quadratic vs. Approximation</text>
+  <rect x="130" y="45" width="260" height="45" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+  <text x="260" y="65" text-anchor="middle" font-size="12" fill="#1565c0">Is Kₐ / c ≤ 10⁻³ ?</text>
+  <text x="260" y="82" text-anchor="middle" font-size="11" fill="#555">(c = initial acid concentration)</text>
+  <line x1="180" y1="90" x2="80" y2="140" stroke="#2c5f2d" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="130" y="115" text-anchor="middle" font-size="11" fill="#2c5f2d">YES</text>
+  <rect x="10" y="140" width="140" height="50" rx="8" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="2"/>
+  <text x="80" y="160" text-anchor="middle" font-size="11">Use approximation:</text>
+  <text x="80" y="178" text-anchor="middle" font-size="12" fill="#2c5f2d">x = √(Kₐ·c)</text>
+  <line x1="340" y1="90" x2="440" y2="140" stroke="#c62828" stroke-width="2" marker-end="url(#arr2)"/>
+  <text x="390" y="115" text-anchor="middle" font-size="11" fill="#c62828">NO</text>
+  <rect x="360" y="140" width="145" height="50" rx="8" fill="#ffebee" stroke="#c62828" stroke-width="2"/>
+  <text x="432" y="160" text-anchor="middle" font-size="11">Solve quadratic:</text>
+  <text x="432" y="178" text-anchor="middle" font-size="12" fill="#c62828">Kₐ = x²/(c−x)</text>
+  <text x="260" y="225" text-anchor="middle" font-size="11" fill="#555">Thermodynamic Kₐ values are always at 298 K unless stated otherwise.</text>
+  <defs><marker id="arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#2c5f2d"/></marker>
+  <marker id="arr2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#c62828"/></marker></defs>
+</svg>
+<div class="caption">Figure 2: When to use the approximation. The rule of thumb: if Kₐ/c is smaller than 10⁻³, the approximation introduces less than ~3% error.</div>
+</div>
+
+<div class="check-in">
+<p><b>Check-in:</b> Calculate the pH of 0.100 mol dm⁻³ $\ce{CH3COOH}$ ($K_a = 1.8 \times 10^{-5}$).</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">Check: $K_a / c = 1.8\times10^{-5} / 0.100 = 1.8\times10^{-4} \leq 10^{-3}$ ✓ — approximation valid.<br>
+$x = \sqrt{1.8\times10^{-5} \times 0.100} = \sqrt{1.8\times10^{-6}} = 1.34\times10^{-3}$ mol dm⁻³.<br>
+$\text{pH} = -\log(1.34\times10^{-3}) = \mathbf{2.87}$.</div>
+</div>
+
+<h2>4. Finding $K_a$ from Experimental Data</h2>
+
+<p>If you measure the pH of a weak acid solution of known concentration, you can calculate $K_a$:</p>
+
+<ol>
+  <li>From pH, calculate $[\ce{H+}] = 10^{-\text{pH}}$.</li>
+  <li>Since $[\ce{H+}] = [\ce{A-}] = x$ and $[\ce{HA}]_{\text{eq}} = c - x$, substitute into $K_a = x^2 / (c - x)$.</li>
+  <li>If $x \ll c$, use $K_a \approx x^2 / c$ (then verify the assumption).</li>
+</ol>
+
+<div class="check-in">
+<p><b>Check-in:</b> A 0.0500 mol dm⁻³ solution of a weak acid has pH = 3.46. Calculate its $K_a$ and $\mathrm{p}K_a$.</p>
+<span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
+<div class="answer-content">$[\ce{H+}] = 10^{-3.46} = 3.47\times10^{-4}$ mol dm⁻³. Since $x = 3.47\times10^{-4}$ and $c = 0.0500$, indeed $x \ll c$.<br>
+$K_a = (3.47\times10^{-4})^2 / 0.0500 = 1.20\times10^{-8} / 0.0500 = \mathbf{2.41\times10^{-6}}$<br>
+$\mathrm{p}K_a = -\log(2.41\times10^{-6}) = \mathbf{5.62}$.</div>
+</div>
+
+<!-- SECTION D -->
+<h2>5. Worked Examples</h2>
+
+<div class="example">
+<b>Example 1 — Direct pH from Ka (approximation):</b><br><br>
+Calculate the pH of 0.250 mol dm⁻³ $\ce{HCOOH}$ (methanoic acid, $K_a = 1.8 \times 10^{-4}$).<br><br>
+<b>Step 1:</b> Check approximation: $K_a/c = 1.8\times10^{-4}/0.250 = 7.2\times10^{-4}$. This is close to $10^{-3}$ — let's use approximation first, then verify.<br>
+<b>Step 2:</b> $[\ce{H+}] = \sqrt{K_a \cdot c} = \sqrt{1.8\times10^{-4}\times0.250} = \sqrt{4.5\times10^{-5}} = 6.71\times10^{-3}$ mol dm⁻³.<br>
+<b>Step 3:</b> $\text{pH} = -\log(6.71\times10^{-3}) = \mathbf{2.17}$.<br>
+<b>Verification:</b> $x/c = 6.71\times10^{-3}/0.250 = 0.0268 = 2.68\%$. This is just above the usual 5% threshold — a full quadratic would give $x = 6.61\times10^{-3}$ (pH 2.18), a negligible difference.<br><br>
+<b>⚠️ Common wrong approach:</b> Treating HCOOH as a strong acid and using $\text{pH} = -\log(0.250) = 0.60$. This is completely wrong — weak acids do NOT fully dissociate.
+</div>
+
+<div class="example">
+<b>Example 2 — Finding Ka from pH (no approximation needed):</b><br><br>
+A 0.0200 mol dm⁻³ solution of $\ce{HF}$ has pH = 2.47. Calculate $K_a$ and $\mathrm{p}K_a$ for $\ce{HF}$.<br><br>
+<b>Step 1:</b> $[\ce{H+}] = 10^{-2.47} = 3.39\times10^{-3}$ mol dm⁻³.<br>
+<b>Step 2:</b> $[\ce{F-}] = [\ce{H+}] = 3.39\times10^{-3}$ mol dm⁻³. $[\ce{HF}]_{\text{eq}} = 0.0200 - 0.00339 = 0.01661$ mol dm⁻³.<br>
+<b>Step 3:</b> $K_a = (3.39\times10^{-3})^2 / 0.01661 = 1.15\times10^{-5} / 0.01661 = \mathbf{6.92\times10^{-4}}$.<br>
+<b>Step 4:</b> $\mathrm{p}K_a = -\log(6.92\times10^{-4}) = \mathbf{3.16}$.<br><br>
+<b>⚠️ Common wrong approach:</b> Using $K_a = [\ce{H+}]^2 / c$ without subtracting $x$ from $c$. This gives $(3.39\times10^{-3})^2 / 0.0200 = 5.75\times10^{-4}$, which is a 17% error — unacceptable for a moderate acid like HF where dissociation is ~17%.
+</div>
+
+<div class="example">
+<b>Example 3 — Comparing Acid Strengths with pKa:</b><br><br>
+Three acids: $\ce{CH3COOH}$ (pKa = 4.76), $\ce{HClO}$ (pKa = 7.54), and $\ce{HNO2}$ (pKa = 3.34).<br>
+(a) Rank them from strongest to weakest.<br>
+(b) How many times stronger is $\ce{HNO2}$ than $\ce{CH3COOH}$?<br><br>
+<b>(a)</b> Strongest = smallest pKa: $\ce{HNO2}$ (3.34) > $\ce{CH3COOH}$ (4.76) > $\ce{HClO}$ (7.54).<br>
+<b>(b)</b> $\Delta\mathrm{p}K_a = 4.76 - 3.34 = 1.42$. Each unit is a factor of 10, so $\ce{HNO2}$ is $10^{1.42} \approx \mathbf{26\times}$ stronger than $\ce{CH3COOH}$.<br><br>
+<b>⚠️ Common wrong approach:</b> Saying pKa difference of 1.42 means the acid is 1.42× stronger. It's on a logarithmic scale — the factor is $10^{\Delta\mathrm{p}K_a}$, not $\Delta\mathrm{p}K_a$ itself.
+</div>
+
+<!-- SECTION F -->
+<div class="misconception">
+<h3>⚠️ Common Mistakes to Avoid</h3>
+<ol>
+  <li><b>Treating weak acids as strong acids.</b> You cannot simply say $\text{pH} = -\log c$ for a weak acid. A 0.1 mol dm⁻³ solution of a weak acid does <em>not</em> have pH = 1 — it will typically be pH 2–4 depending on $K_a$.</li>
+  <li><b>Confusing $K_a$ with acid strength.</b> Larger $K_a$ = stronger acid. Larger $\mathrm{p}K_a$ = <b>weaker</b> acid. Students frequently reverse this.</li>
+  <li><b>Using the approximation when it is not valid.</b> If $K_a/c > 10^{-3}$ (or dissociation > 5%), you must solve the quadratic. IB markers will check whether you verified your assumption.</li>
+  <li><b>Forgetting that $K_a$ is temperature-dependent.</b> All equilibrium constants vary with temperature. The $K_a$ values in data booklets are for 298 K. If the question states a different temperature, the values change.</li>
+  <li><b>Using $[\ce{HA}]_{\text{initial}}$ instead of $[\ce{HA}]_{\text{equilibrium}}$ in $K_a$.</b> $K_a = [\ce{H+}][\ce{A-}]/[\ce{HA}]_{\textbf{eq}}$, not $[\ce{HA}]_{\text{initial}}$. The "a" in $K_a$ is always about the equilibrium concentrations.</li>
+</ol>
+</div>
+
+<!-- SECTION G -->
+<h2>6. End-of-Lesson Practice</h2>
+
+<p><b>Question 1 (Paper 1 style):</b> Which statement about a weak acid is correct?<br>
+A. It has a large $K_a$ value. &nbsp; B. It fully dissociates in water. &nbsp; C. Its conjugate base is a strong base. &nbsp; D. It has a $\mathrm{p}K_a$ greater than about 3.</p>
+
+<p><b>Question 2:</b> A 0.150 mol dm⁻³ solution of a weak monoprotic acid $\ce{HA}$ has pH = 3.12. Calculate the $K_a$ and $\mathrm{p}K_a$ of the acid.</p>
+
+<p><b>Question 3:</b> Benzoic acid ($\ce{C6H5COOH}$) has $K_a = 6.3 \times 10^{-5}$. Calculate the pH of a 0.0500 mol dm⁻³ solution.</p>
+
+<p><b>Question 4:</b> The $\mathrm{p}K_a$ of propanoic acid ($\ce{CH3CH2COOH}$) is 4.88. (a) Calculate its $K_a$. (b) Find $[\ce{H+}]$ in a 0.200 mol dm⁻³ solution. (c) What percentage of the acid molecules are dissociated at this concentration?</p>
+
+<p><b>Question 5:</b> A student prepares a 0.0800 mol dm⁻³ solution of acid $\ce{HX}$ and measures pH = 2.67. (a) Calculate $K_a$ and $\mathrm{p}K_a$. (b) By comparing to data table values, suggest whether $\ce{HX}$ could be lactic acid ($\mathrm{p}K_a$ = 3.86).</p>
+
+<p><b>Question 6 (IB-style):</b> Two weak acids: $\ce{HA}$ ($\mathrm{p}K_a = 4.20$) and $\ce{HB}$ ($\mathrm{p}K_a = 5.80$). (a) Calculate the ratio $K_a(\ce{HA})/K_a(\ce{HB})$. (b) If both are at the same concentration, which solution has the lower pH? (c) Explain why a solution of $\ce{HA}$ is a better conductor of electricity than $\ce{HB}$ at equal concentrations.</p>
+
+<button class="practice-toggle" onclick="var a=this.nextElementSibling;a.classList.toggle('open');this.textContent=a.classList.contains('open')?'▴ Hide Answers':'▸ Show Answers'">▸ Show Answers</button>
+<div class="practice-answers">
+
+<p><b>Answer 1:</b> D. Weak acids have pKa > 3 typically. A is wrong (weak acids have small Ka). B describes a strong acid. C is wrong (weak acid → weak conjugate base, or more precisely, the conjugate base of a weak acid is relatively strong but still a weak base).</p>
+
+<p><b>Answer 2:</b> $[\ce{H+}] = 10^{-3.12} = 7.59\times10^{-4}$. $K_a = (7.59\times10^{-4})^2 / 0.150 = \mathbf{3.84\times10^{-6}}$. $\mathrm{p}K_a = -\log(3.84\times10^{-6}) = \mathbf{5.42}$.</p>
+
+<p><b>Answer 3:</b> Check: $K_a/c = 6.3\times10^{-5}/0.0500 = 1.26\times10^{-3}$ — borderline, use quadratic or approximation with check. Using approximation: $x = \sqrt{6.3\times10^{-5} \times 0.0500} = \sqrt{3.15\times10^{-6}} = 1.77\times10^{-3}$. pH = $-\log(1.77\times10^{-3}) = \mathbf{2.75}$. Verification: $1.77\times10^{-3}/0.0500 = 3.5\%$, acceptable.</p>
+
+<p><b>Answer 4:</b> (a) $K_a = 10^{-4.88} = 1.32\times10^{-5}$. (b) $x = \sqrt{1.32\times10^{-5}\times0.200} = \sqrt{2.64\times10^{-6}} = 1.62\times10^{-3}$ mol dm⁻³. pH = 2.79. (c) % dissociated = $(1.62\times10^{-3}/0.200)\times100 = \mathbf{0.81\%}$.</p>
+
+<p><b>Answer 5:</b> (a) $[\ce{H+}] = 10^{-2.67} = 2.14\times10^{-3}$. $K_a = (2.14\times10^{-3})^2/(0.0800 - 0.00214) = 4.58\times10^{-6}/0.07786 = 5.88\times10^{-5}$. $\mathrm{p}K_a = 4.23$. (b) Lactate pKa = 3.86 vs. our 4.23 — these differ by 0.37 units, so HX is probably not pure lactic acid (though isomers with different pKa values exist).</p>
+
+<p><b>Answer 6:</b> (a) $K_a(\ce{HA})/K_a(\ce{HB}) = 10^{-4.20}/10^{-5.80} = 10^{1.60} \approx 39.8$. HA is about 40× stronger than HB. (b) HA has the lower pH (stronger acid → more $\ce{H+}$ at same concentration). (c) HA produces more ions (higher degree of dissociation), so it has more charge carriers and conducts electricity better.</p>
+</div>
+
+<!-- SECTION H -->
+<h2>7. Key Terms</h2>
+<table>
+<tr><th>Term</th><th>Definition</th></tr>
+<tr><td>Weak acid</td><td>An acid that dissociates only partially in aqueous solution, establishing an equilibrium</td></tr>
+<tr><td>$K_a$ (acid dissociation constant)</td><td>The equilibrium constant for the dissociation of a weak acid: $K_a = [\ce{H+}][\ce{A-}]/[\ce{HA}]$</td></tr>
+<tr><td>$\mathrm{p}K_a$</td><td>The negative base-10 logarithm of $K_a$: $\mathrm{p}K_a = -\log_{10}K_a$. Smaller $\mathrm{p}K_a$ = stronger acid</td></tr>
+<tr><td>ICE table</td><td>A structured method (Initial, Change, Equilibrium) for calculating equilibrium concentrations</td></tr>
+<tr><td>Approximation</td><td>Assuming $c - x \approx c$ when $x$ is very small compared to $c$ (valid when $K_a/c \leq 10^{-3}$)</td></tr>
+<tr><td>Degree of dissociation ($\alpha$)</td><td>The fraction of acid molecules that have dissociated: $\alpha = x/c = [\ce{H+}]/[\ce{HA}]_{\text{initial}}$</td></tr>
+<tr><td>Monoprotic acid</td><td>An acid that can donate only one proton per molecule (e.g., $\ce{HCl}$, $\ce{CH3COOH}$)</td></tr>
+<tr><td>Conjugate base</td><td>The species formed when an acid donates a proton; $\ce{A-}$ is the conjugate base of $\ce{HA}$</td></tr>
+</table>
+
+<!-- SECTION I -->
+<h2>8. Exam Tips</h2>
+
+<div class="exam-tip"><b>Paper 1 (Multiple Choice):</b> Expect questions that ask you to compare acid strengths given $K_a$ or $\mathrm{p}K_a$ values. Remember: <b>larger $K_a$ = stronger, smaller $\mathrm{p}K_a$ = stronger</b>. A common distractor reverses this. Also look for questions where you estimate $[\ce{H+}]$ using $K_a$ and concentration without a calculator — use $\sqrt{K_a c}$ and round sensibly.</div>
+
+<div class="exam-tip"><b>Paper 2 (Structured):</b> When calculating pH from $K_a$, always <b>state your assumption</b> explicitly (e.g., "assuming $x \ll c$, so $c-x \approx c$") and then <b>verify it</b>. IB examiners award a mark for checking that the assumption is valid. If your calculated $x$ is more than 5% of $c$, you must note that the quadratic should be used.</div>
+
+<div class="exam-tip"><b>Data Booklet:</b> The IB Chemistry Data Booklet contains $K_a$ and $\mathrm{p}K_a$ values for common weak acids. Familiarise yourself with the location — you may need to find a value quickly. $\ce{CH3COOH}$: $K_a = 1.8\times10^{-5}$, $\mathrm{p}K_a = 4.76$ is the most commonly tested weak acid.</div>
+
+</body>
+</html>

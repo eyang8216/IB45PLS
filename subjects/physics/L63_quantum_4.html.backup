@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 63: Lesson 63: Quantum 4 — Barrier Tunneling, STM, and Applications — IB Physics HL</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']]
+  },
+  options: {
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap');
+  
+  :root {
+    --bg: #fdfcf9;
+    --text: #1a1a1a;
+    --accent: #2c5f2d;
+    --border: #d0cec7;
+    --code-bg: #f4f3ef;
+    --callout-bg: #f0f7f0;
+    --callout-border: #2c5f2d;
+    --warning-bg: #fff8e6;
+    --warning-border: #c4941a;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  body {
+    font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid var(--accent);
+    color: var(--accent);
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 2.5rem 0 0.75rem;
+    color: #1a1a1a;
+  }
+  
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.5rem;
+  }
+  
+  p { margin: 0 0 1rem; }
+  
+  ul, ol { margin: 0 0 1rem 1.5rem; }
+  li { margin-bottom: 0.35rem; }
+  
+  code {
+    background: var(--code-bg);
+    padding: 0.15em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+    font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+  }
+  
+  pre {
+    background: var(--code-bg);
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 0 0 1rem;
+    font-size: 0.85em;
+    line-height: 1.5;
+  }
+  
+  pre code {
+    background: none;
+    padding: 0;
+    font-size: inherit;
+  }
+  
+  blockquote {
+    border-left: 4px solid var(--callout-border);
+    background: var(--callout-bg);
+    margin: 0 0 1rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+  }
+  
+  blockquote.warning {
+    border-left-color: var(--warning-border);
+    background: var(--warning-bg);
+  }
+  
+  strong { font-weight: 700; }
+  
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.5rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  
+  .nav a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+  
+  .nav a:hover { background: var(--callout-bg); }
+  
+  .worked-example, .answer {
+    background: var(--code-bg);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin: 0.75rem 0 1.25rem;
+  }
+  
+  .worked-example strong:first-child, .answer strong:first-child {
+    color: var(--accent);
+  }
+  
+  @media print {
+    body { font-size: 12pt; max-width: 100%; padding: 0; }
+    .nav { display: none; }
+    h1 { font-size: 18pt; }
+    h2 { font-size: 14pt; }
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 0 1rem;
+  }
+  
+  th, td {
+    border: 1px solid var(--border);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  
+  th {
+    background: var(--code-bg);
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L62_quantum_3.html">← Lesson 62</a>
+  <a href="L64_radioactive_decay_1.html">Lesson 64 →</a>
+</nav>
+
+<h1>Lesson 63: Quantum 4 — Barrier Tunneling, STM, and Applications</h1>
+
+<h2>What You'll Learn</h2>
+
+<p>You've learned that particles have wave-like properties (de Broglie, Lesson 59) and are described by wavefunctions that give probabilities (Lesson 62). Now we explore the most dramatic consequence of matter waves: <strong>quantum tunneling</strong> — the ability of a particle to pass through a barrier that, according to classical physics, should be impassable.</p>
+
+<p>Quantum tunneling sounds like science fiction. It isn't. It's happening right now in every star in the universe (including the Sun), in the flash memory of your phone, and in the scanning tunneling microscopes that image individual atoms. Without tunneling, the Sun wouldn't shine, radioactive elements wouldn't decay, and we'd have no way to see atoms.</p>
+
+<p>This lesson explains HOW tunneling works, WHY it's a direct consequence of the wave nature of matter, and HOW it's exploited in one of the most important scientific instruments ever invented: the scanning tunneling microscope.</p>
+
+<hr>
+
+<h2>1. What Is Quantum Tunneling?</h2>
+
+<h3>Why This Matters</h3>
+
+<p>Classical physics has a simple rule: an object can only go where it has enough energy to go. A ball at the bottom of a hill stays there unless you give it enough kinetic energy to reach the top. Electrons in a wire can't jump through insulating gaps. This rule seems so obvious that we rarely think about it. But it's WRONG at the quantum scale. Tunneling is nature's way of saying: particles aren't tiny balls — they're waves, and waves don't stop abruptly at barriers.</p>
+
+<h3>The Key Ideas</h3>
+
+<p><strong>The classical picture.</strong> Imagine a potential energy barrier — a region where the potential energy is higher than the particle's total energy. In classical mechanics:</p>
+<ul>
+<li>If the particle approaches the barrier with E < V (energy less than barrier height), it reflects. It cannot enter the barrier. It cannot appear on the far side.</li>
+<li>If E > V, it passes over.</li>
+</ul>
+
+<p>This is like a ball rolling up a hill. If it doesn't reach the top, it rolls back. End of story.</p>
+
+<p><strong>The quantum picture.</strong> A quantum particle approaching a barrier is described by a wavefunction ψ(x). When the wavefunction encounters the barrier:</p>
+<ol>
+<li>Part of the wave reflects.</li>
+<li>Part of the wave enters the barrier and decays exponentially (it gets smaller the deeper it goes).</li>
+<li>If the barrier is thin enough, some of the wave emerges on the far side.</li>
+</ol>
+
+<p>The particle has a non-zero probability of being detected on the far side, EVEN THOUGH its energy is less than the barrier height. This is <strong>quantum tunneling</strong>.</p>
+
+<p><strong>Why it's not a violation of energy conservation.</strong> A common worry: "If the particle doesn't have enough energy to be on top of the barrier, how can it appear on the other side?" The answer: the particle never has negative kinetic energy. It doesn't "go over" the barrier. It goes THROUGH it — its wavefunction extends into and past the barrier. The energy of the particle before and after tunneling is the SAME. Energy is conserved. The particle's wavefunction simply has non-zero amplitude in a classically forbidden region.</p>
+
+<p><strong>The exponential dependence.</strong> The probability of tunneling through a rectangular barrier of height V₀ and width L is approximately:</p>
+
+<p>$$T \approx e^{-2\kappa L}$$</p>
+
+<p>where:</p>
+<p>$$\kappa = \frac{\sqrt{2m(V_0 - E)}}{\hbar}$$</p>
+
+<ul>
+<li>T is the <strong>transmission coefficient</strong> (tunneling probability)</li>
+<li>m is the particle mass</li>
+<li>V₀ − E is the "energy deficit" — how far below the barrier top the particle is</li>
+<li>L is the barrier width</li>
+</ul>
+
+<p>The tunneling probability depends EXPONENTIALLY on the barrier width. Doubling the width doesn't halve the probability — it SQUARES it (approximately). A barrier that's twice as wide is squared less likely. This extreme sensitivity is what makes the scanning tunneling microscope possible.</p>
+
+<p><strong>What affects tunneling probability:</strong></p>
+<ol>
+<li><strong>Barrier width L</strong>: Thinner → exponentially more tunneling.</li>
+<li><strong>Barrier height (V₀ − E)</strong>: Lower → more tunneling.</li>
+<li><strong>Particle mass m</strong>: Lighter → more tunneling (because κ ∝ √m).</li>
+</ol>
+
+<p>This is why electrons tunnel more readily than protons, and protons tunnel more readily than alpha particles. The electron, being the lightest massive particle, is the champion tunneler.</p>
+
+<h3>Common Misconceptions</h3>
+
+<p><strong>"The particle digs a hole through the barrier."</strong> No. Nothing physical happens to the barrier. The barrier isn't physically altered. The particle simply appears on the other side because its wavefunction extends there.</p>
+
+<p><strong>"Tunneling means the particle borrows energy and pays it back."</strong> This is a misleading pop-science explanation. The particle's energy is constant throughout the process. There's no "borrowing." The wavefunction has non-zero amplitude in the classically forbidden region — that's it. The "energy borrowing" language comes from a misinterpretation of the energy-time uncertainty principle.</p>
+
+<p><strong>"Tunneling violates classical physics, so classical physics is wrong."</strong> Classical physics is an approximation that works perfectly when actions are large compared to ℏ. Tunneling is a quantum effect that becomes negligible when mass, width, or barrier height become macroscopic. Classical physics isn't "wrong" — it's incomplete. It correctly describes the limiting behavior where quantum effects vanish.</p>
+
+<hr>
+
+<h2>2. Real-World Tunneling: Nuclear Fusion in the Sun</h2>
+
+<h3>Why This Matters</h3>
+
+<p>The Sun produces energy by fusing hydrogen into helium (we'll study this in detail in Lesson 67). But there's a problem: two protons approaching each other experience enormous electrostatic repulsion. At the temperature of the Sun's core (~15 million K), the average proton kinetic energy is only about 1 keV. The Coulomb barrier between two protons at nuclear distances (~10⁻¹⁵ m) is about 1 MeV — a THOUSAND times higher.</p>
+
+<p>Classically, the Sun shouldn't shine. Protons don't have enough energy to overcome their mutual repulsion. But the Sun DOES shine, and it's because of quantum tunneling: protons tunnel THROUGH the Coulomb barrier.</p>
+
+<p><strong>The Gamow factor.</strong> George Gamow showed in 1928 that the tunneling probability for two nuclei approaching each other depends exponentially on their relative velocity and charges. For the proton-proton reaction in the Sun:</p>
+
+<ul>
+<li>The Coulomb barrier height: ~1 MeV</li>
+<li>Average proton thermal energy: ~1 keV</li>
+<li>Tunneling probability per collision: EXTREMELY small (~10⁻²⁰)</li>
+</ul>
+
+<p>But the Sun has a LOT of protons (~10⁵⁷) colliding billions of times per second in an enormous volume. The tiny tunneling probability multiplied by the astronomical number of collisions produces enough fusion to power the Sun at 4 × 10²⁶ watts.</p>
+
+<p><strong>Why the Sun burns slowly.</strong> If protons could just smash through the Coulomb barrier classically, the Sun would burn all its fuel in a violent flash — like a hydrogen bomb. Instead, the tiny tunneling probability acts like a thermostat, regulating the reaction rate. This is why the Sun can shine steadily for 10 billion years. Tunneling makes the Sun possible AND makes it stable.</p>
+
+<h3>Common Misconceptions</h3>
+
+<p><strong>"The Sun is a giant fusion reactor that works at high temperature, so tunneling isn't needed."</strong> Even at 15 million K, the thermal energy is far too low to overcome the Coulomb barrier classically. Temperature alone CANNOT explain solar fusion. Tunneling is essential. The high temperature just provides enough collisions at the high-energy tail of the Maxwell-Boltzmann distribution — it still requires tunneling for those rare high-energy collisions to actually fuse.</p>
+
+<hr>
+
+<h2>3. Tunneling in Radioactive Decay: Alpha Emission</h2>
+
+<h3>Why This Matters</h3>
+
+<p>Alpha decay is another phenomenon that classical physics cannot explain. An alpha particle inside a heavy nucleus is bound by the strong nuclear force. Outside the nucleus, it would be repelled by the Coulomb force. There's a potential barrier between "inside" and "outside." Alpha particles in the nucleus have less energy than the barrier height — so classically, they should NEVER escape. But they do. This was one of the earliest successful applications of quantum tunneling.</p>
+
+<h3>The Key Ideas</h3>
+
+<p><strong>The alpha decay paradox.</strong> Consider uranium-238, which decays by alpha emission with a half-life of 4.5 billion years. The alpha particle that eventually escapes has about 4.2 MeV of kinetic energy. But the Coulomb barrier at the nuclear surface (radius ~7.4 × 10⁻¹⁵ m, Z = 92 for uranium) is about 30 MeV. How can a 4.2 MeV alpha particle escape a 30 MeV barrier?</p>
+
+<p><strong>The tunneling explanation.</strong> The alpha particle is constantly "bouncing" against the inside of the nuclear potential well — about 10²¹ times per second. Each bounce, there's a tiny probability of tunneling through the barrier. For U-238, this probability is so small that the average waiting time is 4.5 billion years. For other alpha emitters:</p>
+<ul>
+<li>Po-212: half-life 0.3 μs (very high tunneling probability)</li>
+<li>Rn-222: half-life 3.8 days</li>
+<li>U-238: half-life 4.5 billion years (very low tunneling probability)</li>
+</ul>
+
+<p><strong>The Geiger-Nuttall law.</strong> In 1911, Hans Geiger and John Nuttall observed an empirical relationship: alpha emitters with shorter half-lives emit higher-energy alpha particles. A small increase in alpha energy produces a DRAMATIC decrease in half-life. This makes perfect sense in the tunneling model: higher energy means a thinner effective barrier (the alpha particle needs to tunnel through less of the barrier's width before reaching the "exit"), which exponentially increases the tunneling probability.</p>
+
+<p>This was a huge triumph for quantum mechanics: an empirical law that had baffled physicists for years emerged naturally from Schrödinger's equation applied to alpha decay.</p>
+
+<hr>
+
+<h2>4. Scanning Tunneling Microscope (STM)</h2>
+
+<h3>Why This Matters</h3>
+
+<p>The STM is arguably the most direct application of quantum tunneling to technology. It lets us see and manipulate individual atoms — something that was pure science fiction before 1981. The inventors, Gerd Binnig and Heinrich Rohrer at IBM Zürich, won the 1986 Nobel Prize in Physics.</p>
+
+<h3>The Key Ideas</h3>
+
+<p><strong>How an STM works.</strong> The principle is elegantly simple:</p>
+<ol>
+<li>A very sharp metal tip (ideally ending in a single atom) is brought extremely close to a conducting surface — about 0.5 to 1.0 nm away.</li>
+<li>A small voltage (typically 10 mV to 2 V) is applied between the tip and the sample.</li>
+<li>Even though there's a physical gap (vacuum, or sometimes air), electrons tunnel across the gap.</li>
+<li>The resulting <strong>tunneling current</strong> is measured.</li>
+</ol>
+
+<p><strong>Why the exponential sensitivity matters.</strong> The tunneling current I depends exponentially on the tip-sample distance d:</p>
+
+<p>$$I \propto e^{-2\kappa d}$$</p>
+
+<p>where κ depends on the work function of the material. For a typical metal work function (~4-5 eV), κ ≈ 1 × 10¹⁰ m⁻¹. This means:</p>
+
+<ul>
+<li>Changing d by 0.1 nm (1 Å, about the size of an atom) changes the current by a factor of e² ≈ 7.4.</li>
+<li>An atom-sized bump on the surface changes the current by almost an order of magnitude!</li>
+</ul>
+
+<p>This extreme sensitivity is what gives the STM its atomic resolution. As the tip scans across the surface, the tunneling current rises over atoms (tip gets closer) and falls in the gaps between atoms (tip gets farther).</p>
+
+<p><strong>Two modes of operation:</strong></p>
+<ol>
+<li><strong>Constant height mode:</strong> The tip moves at a fixed height, and the varying tunneling current maps the surface. Fast but risky (tip might crash into bumps).</li>
+<li><strong>Constant current mode:</strong> A feedback loop adjusts the tip height to keep the current constant. The height adjustments create a topographic map of the surface. This is the most common mode.</li>
+</ol>
+
+<p><strong>What STMs can do:</strong></p>
+<ul>
+<li>Image individual atoms with resolution ~0.01 nm vertically and ~0.1 nm laterally.</li>
+<li>Measure the local density of electron states (spectroscopy mode).</li>
+<li>Manipulate individual atoms — IBM researchers famously spelled "IBM" with 35 xenon atoms on a nickel surface in 1989.</li>
+<li>Study surface chemistry, molecular adsorption, and thin-film growth.</li>
+</ul>
+
+<h3>Common Misconceptions</h3>
+
+<p><strong>"The STM touches the surface."</strong> No. There's a physical gap of about 0.5-1 nm. The tip and surface never make contact. If they touched, the tip would crash and be destroyed. The current flows entirely by quantum tunneling through the vacuum gap.</p>
+
+<p><strong>"STM works with any material."</strong> STM requires the sample to be conducting (or semiconducting). Insulators don't allow tunneling current because there are no available electron states at the Fermi level. For insulating samples, the Atomic Force Microscope (AFM) is used instead.</p>
+
+<hr>
+
+<h2>5. Other Applications of Tunneling</h2>
+
+<h3>Why This Matters</h3>
+
+<p>Tunneling isn't just a laboratory curiosity — it's engineered into devices you use every day, from the flash storage in your phone to the semiconductors in every computer chip.</p>
+
+<h3>Tunnel Diodes</h3>
+
+<p>A tunnel diode (also called an Esaki diode, after Leo Esaki, 1973 Nobel Prize) uses heavily doped semiconductor junctions so thin that electrons can tunnel through the depletion region. This produces a negative resistance region in the I-V characteristic, making tunnel diodes useful for high-speed switching and microwave oscillators. They can operate at frequencies up to hundreds of gigahertz.</p>
+
+<h3>Flash Memory</h3>
+
+<p>The flash memory in USB drives, SD cards, and SSDs uses tunneling to store and erase data. Each memory cell contains a "floating gate" — a conducting island completely surrounded by insulating oxide. Electrons are injected onto the floating gate by tunneling (Fowler-Nordheim tunneling). Once there, they're trapped (the oxide insulates them), and the stored charge represents a binary 0 or 1. To erase, a reverse voltage tunnels the electrons back off the gate. This is why flash memory retains data without power and can be rewritten thousands of times.</p>
+
+<h3>Field Emission</h3>
+
+<p>When a very strong electric field is applied to a metal surface, electrons can tunnel out of the metal even without heating or photon excitation. This is <strong>field emission</strong> (also called Fowler-Nordheim tunneling). It's used in field-emission displays, electron sources for electron microscopes, and some types of vacuum electronics.</p>
+
+<h3>Josephson Junctions</h3>
+
+<p>When two superconductors are separated by a thin insulating barrier, Cooper pairs (bound electron pairs responsible for superconductivity) can tunnel across the junction. This produces the Josephson effect, which is the basis for SQUIDs (Superconducting Quantum Interference Devices) — the most sensitive magnetic field detectors ever built, used in medical imaging and geological surveying.</p>
+
+<hr>
+
+<h3>Tunneling in Modern Electronics</h3>
+
+<p>As transistors shrink to nanometer scales (the latest processors use features as small as 3 nm), quantum tunneling becomes both a problem and an opportunity:</p>
+
+<ul>
+<li><strong>Gate leakage:</strong> In MOSFET transistors, the insulating gate oxide is now only a few atomic layers thick. Electrons can tunnel through this oxide, creating unwanted leakage current that wastes power and generates heat. This is a major challenge in continuing Moore's Law.</li>
+</ul>
+
+<ul>
+<li><strong>Tunnel FETs:</strong> Researchers are developing transistors that DELIBERATELY use tunneling for switching. These "tunnel FETs" could potentially operate at lower voltages than conventional transistors, reducing power consumption.</li>
+</ul>
+
+<ul>
+<li><strong>Flash memory (deeper look):</strong> In a flash memory cell, a "floating gate" is completely surrounded by silicon dioxide insulation. To WRITE data, a high voltage (~12 V) is applied, causing electrons to tunnel through the oxide onto the floating gate via Fowler-Nordheim tunneling. The stored charge shifts the threshold voltage of the transistor, representing a 0 or 1. To ERASE, a reverse voltage tunnels the electrons back. This charge can remain trapped for decades.</li>
+</ul>
+
+<h3>Cold Emission and Field Emission Displays</h3>
+
+<p>When a strong electric field is applied to a sharp metal tip, the potential barrier at the surface becomes thin enough for electrons to tunnel out of the metal. This is <strong>field emission</strong> or <strong>cold emission</strong> (cold because the metal doesn't need to be heated, unlike thermionic emission).</p>
+
+<p>Field-emission electron sources are used in:</p>
+<ul>
+<li><strong>Electron microscopes:</strong> Providing a bright, coherent electron beam</li>
+<li><strong>Field-emission displays (FED):</strong> An array of microscopic tips, each emitting electrons that strike a phosphor-coated screen, similar to a CRT but flat and more efficient</li>
+<li><strong>X-ray tubes:</strong> For medical and industrial imaging</li>
+</ul>
+
+<p>The Fowler-Nordheim equation describes the field-emission current density J as a function of the applied electric field E:</p>
+
+<p>$$J \propto E^2 \exp\left(-\frac{B}{E}\right)$$</p>
+
+<p>The exponential term dominates — small increases in the field produce enormous increases in current. A factor-of-2 field increase can change the current by many orders of magnitude.</p>
+
+
+<h2>Worked Examples</h2>
+
+<h3>Example 1: Tunneling Probability for an Electron</h3>
+
+<p>An electron with energy 2.0 eV approaches a rectangular barrier of height 5.0 eV and width 0.30 nm. Calculate the approximate tunneling probability.</p>
+
+<p><strong>Approach:</strong> Calculate κ = √(2m(V₀−E))/ℏ, then T ≈ e^(−2κL).</p>
+
+<p><strong>Step 1:</strong> V₀ − E = 3.0 eV = 4.80 × 10⁻¹⁹ J.</p>
+<p>κ = √(2 × 9.11 × 10⁻³¹ × 4.80 × 10⁻¹⁹) / 1.055 × 10⁻³⁴</p>
+<p>= √(8.746 × 10⁻⁴⁹) / 1.055 × 10⁻³⁴</p>
+<p>= 9.351 × 10⁻²⁵ / 1.055 × 10⁻³⁴ = 8.86 × 10⁹ m⁻¹.</p>
+
+<p><strong>Step 2:</strong> L = 0.30 × 10⁻⁹ m = 3.0 × 10⁻¹⁰ m.</p>
+<p>2κL = 2 × 8.86 × 10⁹ × 3.0 × 10⁻¹⁰ = 5.316.</p>
+<p>T ≈ e⁻⁵·³¹⁶ = 4.92 × 10⁻³ ≈ 0.49%.</p>
+
+<p><strong>Why this makes sense:</strong> About 1 in 200 electrons tunnel through. This is a measurable probability but not large. A slightly wider barrier would dramatically reduce it.</p>
+
+<hr>
+
+<h3>Example 2: Effect of Doubling Barrier Width</h3>
+
+<p>For the barrier in Example 1, calculate the tunneling probability if the width is doubled to 0.60 nm.</p>
+
+<p><strong>Step 1:</strong> 2κL = 2 × 8.86 × 10⁹ × 6.0 × 10⁻¹⁰ = 10.632.</p>
+<p>T ≈ e⁻¹⁰·⁶³² = 2.43 × 10⁻⁵.</p>
+
+<p><strong>Step 2:</strong> Compare: (4.92 × 10⁻³) / (2.43 × 10⁻⁵) = 202.</p>
+
+<p><strong>Why this makes sense:</strong> Doubling the width didn't halve the probability — it reduced it by a factor of about 200 (approximately (e⁻⁵·³)² = (0.0049)² ≈ 2.4 × 10⁻⁵). This exponential dependence is the hallmark of tunneling.</p>
+
+<hr>
+
+<h3>Example 3: STM Tip-Sample Distance</h3>
+
+<p>In a scanning tunneling microscope, the tunneling current is given by I ∝ e^(−2κd). For a particular setup, κ = 1.00 × 10¹⁰ m⁻¹ and the current at distance d₀ is 1.0 nA. The tip is moved 0.10 nm farther from the surface. Calculate the new current.</p>
+
+<p><strong>Approach:</strong> I/I₀ = e^(−2κΔd).</p>
+
+<p><strong>Step 1:</strong> Δd = 0.10 nm = 1.0 × 10⁻¹⁰ m.</p>
+<p>2κΔd = 2 × 1.00 × 10¹⁰ × 1.0 × 10⁻¹⁰ = 2.0.</p>
+<p>I/I₀ = e⁻²·⁰ = 0.135.</p>
+<p>I = 0.135 × 1.0 nA = 0.135 nA.</p>
+
+<p><strong>Step 2:</strong> The tip moved 0.10 nm farther away, and the current dropped to about 14% of its original value.</p>
+
+<p><strong>Why this makes sense:</strong> This is why STM works! A distance change of atomic dimensions produces a large, easily measured change in current. Moving the tip by just one atom's width changes the current by a factor of ~7.</p>
+
+<hr>
+
+<h3>Example 4: Alpha Decay and the Geiger-Nuttall Law</h3>
+
+<p>Two radioactive isotopes emit alpha particles. Isotope A emits 4.0 MeV alphas with a half-life of 10⁷ seconds. A similar isotope B emits 5.0 MeV alphas. Explain qualitatively (using tunneling concepts) how the half-life of B would compare to A.</p>
+
+<p><strong>Approach:</strong> Higher alpha energy → thinner effective barrier → exponentially higher tunneling probability → shorter half-life.</p>
+
+<p><strong>Explanation:</strong> A higher-energy alpha particle doesn't need to tunnel through as much of the Coulomb barrier. The tunneling probability increases dramatically (exponentially) with a small increase in energy. The half-life is inversely related to the tunneling probability. So B (5.0 MeV) would have a MUCH shorter half-life than A (4.0 MeV). This is the Geiger-Nuttall law: a small increase in alpha energy corresponds to many orders of magnitude decrease in half-life.</p>
+
+<p><strong>Why this makes sense:</strong> Empirically, going from 4 MeV to 5 MeV alphas can reduce the half-life by 10-15 orders of magnitude. The exponential dependence of tunneling on energy explains this extreme sensitivity.</p>
+
+<hr>
+
+<h3>Example 5: Field Emission</h3>
+
+<p>Electrons in a metal are bound by the work function ϕ = 4.5 eV. When an external electric field E_ext is applied, the potential barrier becomes triangular with an effective width that decreases as E_ext increases. The field emission current is approximately:</p>
+
+<p>$$I \propto E_{\text{ext}}^2 \exp\left(-\frac{4\sqrt{2m}\phi^{3/2}}{3e\hbar E_{\text{ext}}}\right)$$</p>
+
+<p>Calculate the ratio of field emission currents when the applied field is increased from 3.0 × 10⁹ V/m to 5.0 × 10⁹ V/m for a metal with ϕ = 4.5 eV.</p>
+
+<p><strong>Approach:</strong> Use the exponential factor. The prefactor E_ext² changes slowly compared to the exponential.</p>
+
+<p><strong>Step 1:</strong> Calculate the exponent factor B = 4√(2m)ϕ^(3/2) / (3eℏ).</p>
+<p>ϕ = 4.5 eV = 7.20 × 10⁻¹⁹ J.</p>
+<p>ϕ^(3/2) = (7.20 × 10⁻¹⁹)^(3/2) = (7.20)^(3/2) × 10⁻²⁸·⁵ = 19.31 × 10⁻²⁸·⁵ J^(3/2).</p>
+
+<p>This is getting complicated. Let's use the approximation:</p>
+<p>B ≈ 6.83 × 10⁹ × ϕ^(3/2) with ϕ in eV: B ≈ 6.83 × 10⁹ × (4.5)^(3/2) = 6.83 × 10⁹ × 9.546 = 6.52 × 10¹⁰ V/m.</p>
+
+<p>Exponent at E₁ = 3.0 × 10⁹: −B/E₁ = −6.52 × 10¹⁰ / 3.0 × 10⁹ = −21.7.</p>
+<p>Exponent at E₂ = 5.0 × 10⁹: −B/E₂ = −6.52 × 10¹⁰ / 5.0 × 10⁹ = −13.0.</p>
+
+<p>Ratio (exponential only) = e⁻¹³·⁰ / e⁻²¹·⁷ = e⁸·⁷ = 6.0 × 10³.</p>
+
+<p>Include E² factor: (5.0/3.0)² = 2.78. Total ratio ≈ 2.78 × 6.0 × 10³ ≈ 1.7 × 10⁴.</p>
+
+<p><strong>Why this makes sense:</strong> Increasing the field by 67% increases the current by a factor of ~17,000. Field emission is extremely sensitive to applied field, which is why field-emission electron sources can achieve enormous current densities with modest voltage changes.</p>
+
+<hr>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1</h3>
+<p>An electron with kinetic energy 3.0 eV encounters a potential barrier of height 6.0 eV and width 0.25 nm. (a) Show that the characteristic decay constant κ is approximately 8.86 × 10⁹ m⁻¹. (b) Estimate the tunneling probability. (c) If the barrier height were 8.0 eV instead of 6.0 eV, would the tunneling probability increase or decrease? Explain without calculation.</p>
+
+<h3>Problem 2</h3>
+<p>In an STM, the tunneling current I is related to the tip-sample distance d by I ∝ e^(−2κd), where κ ≈ 1.0 × 10¹⁰ m⁻¹. (a) If the current is 2.0 nA at a certain distance, what is the current when the tip is moved 0.05 nm closer? (b) If the tip is moved 0.15 nm farther away, by what factor does the current decrease? (c) Explain why the STM can resolve individual atoms.</p>
+
+<h3>Problem 3</h3>
+<p>Alpha particles from polonium-212 have energy 8.95 MeV, and the isotope has a half-life of 0.30 μs. Alpha particles from uranium-238 have energy 4.27 MeV with a half-life of 4.5 × 10⁹ years. (a) Explain, using the concept of quantum tunneling, why such a "small" change in alpha energy (roughly a factor of 2) corresponds to such an enormous change in half-life (roughly a factor of 5 × 10²³). (b) Would you expect radon-222 (alpha energy 5.49 MeV) to have a half-life longer or shorter than uranium-238? Justify using tunneling concepts.</p>
+
+<h3>Problem 4</h3>
+<p>A student says: "Quantum tunneling violates conservation of energy because the particle gets through a barrier it doesn't have enough energy to climb." Explain why this statement is incorrect, addressing what actually happens during tunneling and why energy is conserved.</p>
+
+<h3>Problem 5</h3>
+<p>Consider a proton (mass 1.67 × 10⁻²⁷ kg) and an electron (mass 9.11 × 10⁻³¹ kg) both approaching the same potential barrier (height 6.0 eV, width 0.25 nm) with the same kinetic energy 3.0 eV. (a) Which particle has the higher tunneling probability? (b) Explain physically why mass affects tunneling. (c) Estimate the ratio of their tunneling probabilities.</p>
+
+<h3>Problem 6 (IB Exam Style)</h3>
+<p>Quantum tunneling is a phenomenon in which particles can pass through potential barriers that would be insurmountable according to classical physics.</p>
+
+<p>(a) Explain why classical physics does not predict quantum tunneling. [2 marks]</p>
+
+<p>(b) State one piece of experimental evidence for quantum tunneling. [2 marks]</p>
+
+<p>(c) In a simplified model, an electron of energy E approaches a rectangular potential barrier of height U > E and width L. The probability T that the electron tunnels through the barrier is given by T ∝ e^(−2κL), where κ = √(2m(U−E))/ℏ. (i) Calculate κ for an electron with E = 2.0 eV and U = 5.0 eV. (ii) The barrier width is L = 0.50 nm. Determine the factor by which the tunneling probability changes if the width is reduced to 0.40 nm. [5 marks]</p>
+
+<p>(d) The scanning tunneling microscope (STM) relies on quantum tunneling. Outline how an STM produces an image of a surface at the atomic scale. [3 marks]</p>
+
+<hr>
+
+<h2>Answers</h2>
+
+<h3>Answer 1</h3>
+<p>(a) V₀ − E = 3.0 eV = 4.80 × 10⁻¹⁹ J.</p>
+<p>κ = √(2 × 9.11 × 10⁻³¹ × 4.80 × 10⁻¹⁹) / 1.055 × 10⁻³⁴</p>
+<p>= √(8.746 × 10⁻⁴⁹) / 1.055 × 10⁻³⁴ = 9.351 × 10⁻²⁵ / 1.055 × 10⁻³⁴ = 8.86 × 10⁹ m⁻¹. ✓</p>
+
+<p>(b) 2κL = 2 × 8.86 × 10⁹ × 2.5 × 10⁻¹⁰ = 4.43.</p>
+<p>T ≈ e⁻⁴·⁴³ ≈ 1.19 × 10⁻² ≈ 1.2%.</p>
+
+<p>(c) The tunneling probability would DECREASE. Higher barrier height means larger (V₀ − E), which means larger κ, which means more rapid decay of the wavefunction inside the barrier. For the same barrier width, a higher barrier means exponentially less tunneling.</p>
+
+<h3>Answer 2</h3>
+<p>(a) Δd = −0.05 nm (moving closer, so negative).</p>
+<p>2κΔd = 2 × 1.0 × 10¹⁰ × (−0.05 × 10⁻⁹) = −1.0.</p>
+<p>I_new/I_old = e¹·⁰ = 2.718.</p>
+<p>I_new = 2.0 × 2.718 = 5.44 nA.</p>
+
+<p>(b) Δd = +0.15 nm = 1.5 × 10⁻¹⁰ m.</p>
+<p>2κΔd = 2 × 1.0 × 10¹⁰ × 1.5 × 10⁻¹⁰ = 3.0.</p>
+<p>I_new/I_old = e⁻³·⁰ = 0.0498.</p>
+<p>The current decreases by a factor of about 20.</p>
+
+<p>(c) The STM can resolve individual atoms because the tunneling current depends exponentially on the tip-sample distance. An atom-sized "bump" on the surface (height ~0.2 nm) changes the current by a factor of e^(2κ × 0.2 nm) ≈ e⁴ ≈ 55. This enormous signal difference for sub-nanometer height variations means the STM can "feel" individual atoms. As the tip scans across a surface, the current rises when over atoms (closer) and falls in the gaps between atoms (farther), producing an atomically resolved image.</p>
+
+<h3>Answer 3</h3>
+<p>(a) The tunneling probability T depends exponentially on √(V₀ − E) via κ. For alpha emission, the Coulomb barrier height V₀ is roughly the same for similar nuclei, but the alpha energy E determines how much of the barrier must be tunneled through. </p>
+
+<p>For Po-212 (E = 8.95 MeV): the effective barrier the alpha must tunnel through is thin (the alpha is already high in the potential well, close to the barrier top). The tunneling probability per "bounce" is relatively high, so the alpha escapes quickly (0.30 μs).</p>
+
+<p>For U-238 (E = 4.27 MeV): the alpha is much lower in the potential well. The effective barrier width is larger, making κ L much larger and the tunneling probability exponentially smaller. The alpha "bounces" ~10²¹ times per second for billions of years before finally tunneling through.</p>
+
+<p>The exponential dependence on energy explains why a factor of ~2 in alpha energy produces a factor of ~10²³ in half-life. This is the Geiger-Nuttall law: log(half-life) is roughly linear in 1/√E_alpha.</p>
+
+<p>(b) Radon-222 (5.49 MeV) has higher alpha energy than uranium-238 (4.27 MeV), so it would have a shorter half-life — and indeed it does: 3.8 days vs. 4.5 billion years. The higher energy means the alpha particle needs to tunnel through less of the barrier, giving a much higher tunneling probability.</p>
+
+<h3>Answer 4</h3>
+<p>The student's statement is based on a misunderstanding. Tunneling does NOT violate conservation of energy. Here's why:</p>
+
+<p>During tunneling, the particle's total energy E is constant throughout the process. The particle does not gain or lose energy. It enters the barrier region with energy E and emerges from the other side with the same energy E. There is no "climbing" — the particle doesn't go over the barrier.</p>
+
+<p>What happens instead: the particle is described by a wavefunction. The wavefunction extends into the classically forbidden region (where the potential energy U > E) and, if the barrier is thin enough, has non-zero amplitude on the far side. The particle is detected on the far side with exactly the same energy it had before. No energy was created or destroyed.</p>
+
+<p>The classically forbidden region seems paradoxical only if you insist on thinking of the particle as having a well-defined trajectory and kinetic energy at every point. In quantum mechanics, the particle doesn't have a well-defined kinetic energy while inside the barrier — the concepts of kinetic and potential energy are not separately well-defined in a region where the wavefunction decays. But the total energy, which is what's conserved, never changes.</p>
+
+<h3>Answer 5</h3>
+<p>(a) The electron has the higher tunneling probability. Electrons are about 1836 times lighter than protons.</p>
+
+<p>(b) κ ∝ √m. A heavier particle has a larger κ, meaning the wavefunction decays more rapidly inside the barrier. For the same barrier, a heavier particle has an exponentially lower tunneling probability. You can think of it this way: the de Broglie wavelength is shorter for heavier particles, so the wave "penetrates" less.</p>
+
+<p>(c) κ_p/κ_e = √(m_p/m_e) = √1836 = 42.85.</p>
+<p>For L = 0.25 nm: 2κ_e L ≈ 4.43 (from problem 1).</p>
+<p>T_p/T_e ≈ e^(−2κ_p L) / e^(−2κ_e L) = e^(−2(κ_p−κ_e)L).</p>
+<p>2(κ_p−κ_e)L ≈ 2 × (42.85 − 1) × 8.86 × 10⁹ × 2.5 × 10⁻¹⁰ = 2 × 41.85 × 8.86 × 10⁹ × 2.5 × 10⁻¹⁰ ≈ 2 × 41.85 × 2.215 = 185.5.</p>
+<p>T_p/T_e ≈ e⁻¹⁸⁵·⁵ ≈ 10⁻⁸⁰ (essentially zero).</p>
+
+<p>The proton's tunneling probability is so small it's effectively zero for this barrier. This is why biological systems use electron tunneling (not proton tunneling) for processes like photosynthesis and cellular respiration.</p>
+
+<h3>Answer 6</h3>
+<p>(a) Classical physics treats particles as localized objects with well-defined trajectories. If a particle's total energy E is less than the barrier height U, it has insufficient energy to surmount the barrier. It would reflect and could never be found on the far side. Classical physics has no mechanism for a particle to pass through a region where its kinetic energy would be negative. The concept of a wavefunction extending into a classically forbidden region is purely quantum mechanical.</p>
+
+<p>(b) Evidence includes: (i) Alpha decay — alpha particles escape nuclei even though their kinetic energy (a few MeV) is well below the Coulomb barrier height (~30 MeV for heavy nuclei). (ii) The scanning tunneling microscope — electrons tunnel across a vacuum gap, producing a measurable current, enabling atomic-resolution imaging. (iii) Tunnel diodes — semiconductor devices that exhibit negative resistance due to electron tunneling, operating at frequencies where classical charge transport is impossible. (iv) Nuclear fusion in stars — protons tunnel through the Coulomb barrier at temperatures far too low for classical barrier crossing.</p>
+
+<p>(c) (i) U − E = 3.0 eV = 4.80 × 10⁻¹⁹ J.</p>
+<p>κ = √(2 × 9.11 × 10⁻³¹ × 4.80 × 10⁻¹⁹) / 1.055 × 10⁻³⁴ = 8.86 × 10⁹ m⁻¹.</p>
+
+<p>(ii) T₁ ∝ e^(−2κL₁) for L₁ = 0.50 nm: 2κL₁ = 2 × 8.86 × 10⁹ × 5.0 × 10⁻¹⁰ = 8.86.</p>
+<p>T₂ ∝ e^(−2κL₂) for L₂ = 0.40 nm: 2κL₂ = 2 × 8.86 × 10⁹ × 4.0 × 10⁻¹⁰ = 7.088.</p>
+<p>T₂/T₁ = e^(8.86 − 7.088) = e¹·⁷⁷² = 5.88.</p>
+
+<p>Reducing the width from 0.50 nm to 0.40 nm increases the tunneling probability by a factor of ~5.9. This exponential sensitivity to barrier width is the basis of the STM and many other tunneling-based technologies.</p>
+
+<p>(d) An STM uses a sharp metal tip brought within ~0.5-1.0 nm of a conducting surface. A voltage is applied between the tip and sample, causing electrons to tunnel across the vacuum gap. The tunneling current I depends exponentially on the gap distance: I ∝ e^(−2κd). As the tip scans across the surface (using piezoelectric transducers for sub-atomic precision), variations in surface height of even 0.01 nm produce measurable changes in the tunneling current. A feedback system adjusts the tip height to maintain constant current (constant-current mode), and these height adjustments are recorded to create a topographic map. Because of the exponential sensitivity, individual atoms can be resolved as bumps on the surface. The STM can achieve lateral resolution of ~0.1 nm and vertical resolution of ~0.01 nm.</p>
+
+<hr>
+
+<h2>Key Takeaways</h2>
+
+<ol>
+<li>Quantum tunneling is the phenomenon where a particle passes through a potential barrier that it classically lacks the energy to surmount. It arises from the wave nature of matter.</li>
+</ol>
+
+<ol>
+<li>Tunneling probability T ∝ e^(−2κL), where κ ∝ √(m(V₀−E)). It depends exponentially on barrier width, barrier height, and particle mass.</li>
+</ol>
+
+<ol>
+<li>Tunneling explains alpha decay (Geiger-Nuttall law), nuclear fusion in stars (Gamow factor), and the operation of tunnel diodes and flash memory.</li>
+</ol>
+
+<ol>
+<li>The Scanning Tunneling Microscope (STM) exploits the exponential sensitivity of tunneling current to tip-sample distance, achieving atomic resolution (~0.1 nm lateral, ~0.01 nm vertical).</li>
+</ol>
+
+<ol>
+<li>Tunneling does NOT violate energy conservation. The particle's total energy is constant throughout; the wavefunction simply has non-zero amplitude in the classically forbidden region.</li>
+</ol>
+
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L62_quantum_3.html">← Lesson 62</a>
+  <a href="L64_radioactive_decay_1.html">Lesson 64 →</a>
+</nav>
+
+</body>
+</html>

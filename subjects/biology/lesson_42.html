@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Lesson 42: Mutations and Gene Editing (D1.3) — IB Biology HL</title>
 <script>window.MathJax = { tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] } };</script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <style>
   :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #1a6b3c; --border: #c4d4a9; --highlight: #e8f5e9; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -30,10 +31,14 @@
 </style>
 </head>
 <body>
-
+<div class="lesson-completion" style="margin: 0 0 2rem 0; padding: 1rem; background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-radius: 8px; border: 2px solid #bae6fd;">
+<label class="completion-checkbox" style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer;">
+<input id="lesson-complete" style="width: 24px; height: 24px; cursor: pointer; accent-color: #10b981;" type="checkbox"/>
+<span style="font-size: 1rem; color: #0f172a; font-weight: 600;">✓ Mark this lesson as complete</span>
+</label>
+</div>
 
 <h2>What You'll Learn</h2>
-
 <ul>
 <li>Types of mutations: substitution (silent, missense, nonsense), insertion, deletion, and frameshift</li>
 <li>Causes of mutations: spontaneous errors, chemical mutagens, radiation, and carcinogens</li>
@@ -45,26 +50,16 @@
 <li>Ethical issues: germline editing, designer babies, off-target effects, equity, and ecological risks</li>
 <li>Somatic gene therapy vs germline editing</li>
 </ul>
-<hr>
-
+<hr/>
 <h2>1. What Is a Mutation?</h2>
-
 <div class="definition">
-
 <p><strong>Mutation:</strong> A permanent change in the nucleotide sequence of DNA. Mutations can occur in coding regions (affecting protein sequence), regulatory regions (affecting gene expression), or non-coding regions (may have no effect). Mutations are the ultimate source of all genetic variation and the raw material for evolution.</p>
-
 </div>
-
 <p><strong>Analogy:</strong> DNA is like an instruction manual for building and operating a cell. A mutation is a typographical error in that manual. Some typos don't change the meaning (silent mutations), some change a word slightly (missense), some turn a sentence into nonsense (nonsense), and some scramble everything that follows (frameshift).</p>
-
-<hr>
-
+<hr/>
 <h2>2. Types of Mutations</h2>
-
 <h3>2.1 Substitution (Point Mutation)</h3>
-
 <p>A single nucleotide is replaced by a different nucleotide.</p>
-
 <table>
 <tr>
 <td>Type</td>
@@ -91,7 +86,6 @@
 <td>CAG (Gln) → UAG (STOP). Severe consequence.</td>
 </tr>
 </table>
-
 <p><strong>Draw and label:</strong> A diagram showing a short gene sequence and its translation. Then show the three substitution outcomes:</p>
 <ul>
 <li>Original: ...TTC... → ...AAG... → Lys</li>
@@ -100,16 +94,11 @@
 <li>Nonsense: ...ATC... → ...UAG... → STOP (truncation — wait, that example doesn't work. Let me use: TAC (Tyr) → TAA (STOP))</li>
 </ul>
 <h3>2.2 Insertion and Deletion (Indels)</h3>
-
 <p><strong>Insertion:</strong> One or more nucleotides are added to the DNA sequence.</p>
 <p><strong>Deletion:</strong> One or more nucleotides are removed.</p>
-
 <p>If the number of inserted/deleted nucleotides is <strong>not a multiple of 3</strong>, the result is a <strong>frameshift mutation</strong> — the reading frame of the ribosome shifts, and <strong>every codon downstream</strong> is read incorrectly.</p>
-
 <p><strong>Analogy:</strong> Imagine the sentence "THE FAT CAT ATE THE RAT." A deletion of the first "E" shifts everything: "THF ATC ATA TET HER AT..." — every three-letter word after the deletion is nonsense. This is exactly what happens in a frameshift.</p>
-
 <p>If the insertion or deletion is a multiple of 3, the reading frame is preserved downstream, but one or more amino acids are added/removed. This is usually less severe than a frameshift.</p>
-
 <p><strong>Draw and label:</strong> A diagram comparing:</p>
 <ul>
 <li>Original: THE | FAT | CAT | ATE | THE | RAT</li>
@@ -117,48 +106,32 @@
 <li>Deletion of FAT (3 letters): THE | CAT | ATE | THE | RAT → one word missing, but rest preserved</li>
 </ul>
 <div class="worked">
-
 <p><strong>Frameshift Analysis</strong></p>
-
 <p>Original DNA template: 3'-TAC TTT GGA CGC ATT-5'</p>
 <p>Original mRNA: 5'-AUG AAA CCU GCG UAA-3'</p>
 <p>Original polypeptide: Met-Lys-Pro-Ala (STOP at UAA)</p>
-
 <p>A deletion removes the 4th nucleotide (the first T of TTT).</p>
-
 <p>(a) Write the new mRNA sequence.</p>
 <p>(b) Translate the new mRNA.</p>
 <p>(c) Compare the two polypeptides.</p>
-
 <p><strong>Answers:</strong></p>
 <p>(a) New template: 3'-TAC TTG GAC GCA TT-5' (removed first T from TTT, so TTT→TTG — wait, the deletion is in the template strand. Let me be more careful.)</p>
-
 <p>Original template (3'→5'): TAC | TTT | GGA | CGC | ATT</p>
 <p>Delete the 4th base (first T in the second codon): TAC | TTG | GAC | GCA | TT (the last codon loses a base)</p>
 <p>New template: 3'-TAC TTG GAC GCA TT-5'</p>
-
 <p>New mRNA (5'→3'): AUG | AAC | CUG | CGU | AA</p>
 <p>(Wait - I need to redo. Template: TAC TTG GAC GCA TT. mRNA: AUG AAC CUG CGU AA — the last "codon" only has 2 bases.)</p>
-
 <p>Actually let me reconsider. Deletion of one base shifts everything downstream:</p>
 <p>Original: TAC-TTT-GGA-CGC-ATT</p>
 <p>After deletion of first T in TTT: TAC-TTG-GAC-GCA-TT</p>
 <p>mRNA: AUG-AAC-CUG-CGU-AA</p>
-
 <p>(b) New polypeptide: Met-Asn-Leu-Arg — and then what? The ribosome reaches "AA" which isn't a complete codon. In reality, it would read into the next codon (whatever follows) until it hits a stop. But with our truncated sequence: AUG (Met), AAC (Asn), CUG (Leu), CGU (Arg), and then "AA" plus whatever follows would form additional codons until a stop is encountered.</p>
-
 <p>The key point: every amino acid after the deletion site is different from the original. Original: Met-<strong>Lys-Pro-Ala</strong>-STOP. New: Met-<strong>Asn-Leu-Arg</strong>-? The frameshift completely changed the sequence.</p>
-
 <p>(c) The original and new polypeptides are completely different after the mutation site. The frameshift not only changes amino acids but also likely introduces a premature stop codon or eliminates the original stop, producing a non-functional protein.</p>
-
 </div>
-
-<hr>
-
+<hr/>
 <h2>3. Causes of Mutations</h2>
-
 <h3>3.1 Spontaneous Mutations</h3>
-
 <p>Even without external agents, mutations occur naturally:</p>
 <ul>
 <li><strong>DNA polymerase errors:</strong> Despite proofreading (3'→5' exonuclease), DNA Pol III makes about 1 error per 10⁹ bases replicated. The error rate after proofreading is ~10⁻⁹ to 10⁻¹⁰ per base pair per replication.</li>
@@ -167,11 +140,8 @@
 <li><strong>Deamination:</strong> Cytosine can spontaneously deaminate to uracil. If unrepaired, this creates a C→U transition.</li>
 </ul>
 <h3>3.2 Induced Mutations (Mutagens)</h3>
-
 <p>A <strong>mutagen</strong> is any agent that increases the rate of mutation above the spontaneous background level.</p>
-
 <p>#### Chemical Mutagens</p>
-
 <table>
 <tr>
 <td>Mutagen</td>
@@ -204,9 +174,7 @@
 <td>Laboratory DNA staining</td>
 </tr>
 </table>
-
 <p>#### Radiation</p>
-
 <table>
 <tr>
 <td>Type</td>
@@ -224,29 +192,17 @@
 <td>Medical imaging, radon gas, cosmic rays, nuclear accidents</td>
 </tr>
 </table>
-
 <p><strong>Draw and label:</strong> A diagram of a thymine dimer. Show two adjacent thymines on the same DNA strand with covalent bonds (cyclobutane ring) linking them. Label: "UV-induced thymine dimer — blocks DNA polymerase, distorts helix."</p>
-
 <div class="definition">
-
 <p><strong>Carcinogen:</strong> A mutagen that specifically leads to cancer. Not all mutagens are carcinogens (some cause mutations that don't lead to cancer), but many carcinogens are mutagens (they cause the mutations that initiate and drive tumour development).</p>
-
 </div>
-
 <div class="tip">
-
 <p><strong>Paper 1:</strong> "Distinguish between a mutagen and a carcinogen." → A mutagen is any agent that causes changes to the DNA sequence. A carcinogen is a mutagen that specifically leads to cancer. All carcinogens are mutagens (broadly speaking), but not all mutagens cause cancer.</p>
-
 </div>
-
-<hr>
-
+<hr/>
 <h2>4. Sickle Cell Anemia: A Case Study in Mutation</h2>
-
 <p>Sickle cell anemia is the classic IB example of a point mutation with profound consequences — and a fascinating evolutionary story.</p>
-
 <h3>4.1 The Mutation</h3>
-
 <ul>
 <li><strong>Gene:</strong> β-globin gene (HBB) on chromosome 11.</li>
 <li><strong>Mutation:</strong> A single base substitution in the coding strand: <strong>GAG → GTG</strong>.</li>
@@ -255,11 +211,8 @@
 <li><strong>Type:</strong> <strong>Missense mutation.</strong></li>
 </ul>
 <h3>4.2 The Molecular and Cellular Effect</h3>
-
 <p>Normal hemoglobin (HbA) is a tetramer: 2 α-globin + 2 β-globin chains. The β-globin has a glutamate at position 6 — a hydrophilic (water-loving), negatively charged amino acid that sits on the surface of the protein.</p>
-
 <p>In sickle cell hemoglobin (HbS), the glutamate is replaced by valine — a hydrophobic (water-hating) amino acid. This creates a <strong>sticky hydrophobic patch</strong> on the hemoglobin surface.</p>
-
 <p><strong>Consequence at low oxygen tension (e.g., high altitude, exercise, dehydration):</strong></p>
 <ol>
 <li>Deoxygenated HbS molecules aggregate via the hydrophobic valine patches.</li>
@@ -278,7 +231,6 @@
 <li>Sickled RBC: crescent-shaped, rigid, stuck in a capillary, blocking blood flow. Downstream tissue shown as oxygen-starved.</li>
 </ul>
 <h3>4.3 The Heterozygote Advantage</h3>
-
 <p><strong>Genotypes:</strong></p>
 <ul>
 <li><strong>HbA/HbA:</strong> Normal hemoglobin. Susceptible to malaria.</li>
@@ -294,15 +246,10 @@
 <li>The immune system may clear infected sickled cells more efficiently.</li>
 </ul>
 <p><strong>Evolutionary consequence:</strong> In malaria-endemic regions (sub-Saharan Africa, parts of India, the Mediterranean), the HbS allele frequency can be as high as 10-20%. The <strong>heterozygote advantage</strong> (balancing selection) maintains the allele despite the lethality of the homozygous state. This is a classic example of <strong>balanced polymorphism</strong>.</p>
-
 <p><strong>Analogy:</strong> The sickle cell allele is like a genetic "seatbelt." In a world without car crashes (malaria), wearing a seatbelt might be slightly inconvenient (mild trait). In a world with frequent crashes (malaria), the seatbelt saves your life. But having two seatbelts (homozygous) somehow strangles you. The best situation is exactly one seatbelt.</p>
-
-<hr>
-
+<hr/>
 <h2>5. Consequences of Mutations</h2>
-
 <p>Not all mutations are bad. Evolution depends on them.</p>
-
 <table>
 <tr>
 <td>Category</td>
@@ -325,36 +272,24 @@
 <td>Cystic fibrosis (CFTR ΔF508 deletion); Huntington's disease (CAG repeat expansion); sickle cell disease (homozygous); many cancers</td>
 </tr>
 </table>
-
 <div class="worked">
-
 <p><strong>Classifying Mutations</strong></p>
-
 <p>Classify each scenario and state whether the mutation is likely neutral, beneficial, or harmful:</p>
-
 <p>(a) A substitution in the third base of a codon changes GAU to GAC. Both code for aspartate.</p>
 <p>(b) A deletion of three nucleotides removes a single amino acid from a non-critical loop region of a protein.</p>
 <p>(c) A substitution creates a premature stop codon in the first exon of the <em>BRCA1</em> tumour suppressor gene.</p>
 <p>(d) In a population of bacteria exposed to an antibiotic, a mutation in the ribosomal protein gene prevents antibiotic binding while still allowing ribosome function.</p>
-
 <p><strong>Answers:</strong></p>
 <p>(a) <strong>Silent mutation.</strong> The amino acid is unchanged → protein identical → <strong>neutral.</strong></p>
 <p>(b) <strong>In-frame deletion.</strong> One amino acid missing. If the loop region is non-critical for folding/function, likely <strong>neutral</strong> (or mildly deleterious).</p>
 <p>(c) <strong>Nonsense mutation.</strong> Premature stop codon → truncated, non-functional BRCA1 protein. Loss of tumour suppressor function → increased cancer risk. <strong>Harmful.</strong></p>
 <p>(d) <strong>Missense mutation</strong> that confers antibiotic resistance. Allows survival and reproduction in antibiotic environment. <strong>Beneficial</strong> (for the bacteria — harmful for us!).</p>
-
 </div>
-
-<hr>
-
+<hr/>
 <h2>6. CRISPR-Cas9: Rewriting the Code of Life</h2>
-
 <p>CRISPR-Cas9 is the most transformative tool in molecular biology since PCR. It allows scientists to <strong>edit genes with unprecedented precision, efficiency, and low cost</strong>.</p>
-
 <h3>6.1 The Natural Origin: A Bacterial Immune System</h3>
-
 <p>CRISPR (Clustered Regularly Interspaced Short Palindromic Repeats) was discovered as part of the bacterial adaptive immune system against viruses (bacteriophages).</p>
-
 <p><strong>How it works naturally in bacteria:</strong></p>
 <ol>
 <li>When a bacterium survives a viral infection, it incorporates a short fragment of the viral DNA into its own genome at the CRISPR locus (as a "spacer").</li>
@@ -364,11 +299,8 @@
 <li>This is <strong>adaptive immunity</strong> — the bacterium "remembers" past infections and can rapidly destroy the same virus if it attacks again.</li>
 </ol>
 <p><strong>Analogy:</strong> The CRISPR locus is like a library of "mug shots" (viral DNA fragments). Cas9 is the police officer. The crRNA is the officer holding a mug shot, scanning crowds (incoming DNA) for a match. If found, Cas9 "arrests" (cuts) the suspect DNA.</p>
-
 <h3>6.2 CRISPR-Cas9 as a Gene-Editing Tool</h3>
-
 <p>Scientists adapted this system for gene editing by creating a simplified version:</p>
-
 <p><strong>Components:</strong></p>
 <ol>
 <li><strong>Cas9 nuclease:</strong> The "molecular scissors." Cuts both strands of DNA at a specific site.</li>
@@ -406,13 +338,9 @@
 <li>Path 2 (HDR): Donor DNA template present → homology-directed repair → "Gene correction / precise edit."</li>
 </ul>
 <div class="tip">
-
 <p><strong>Paper 2:</strong> "Explain how CRISPR-Cas9 can be used to knock out a gene." → Design a gRNA complementary to a coding exon of the target gene. Introduce gRNA + Cas9 into cells. Cas9 creates a double-strand break. The cell repairs via NHEJ, introducing random indels → frameshift mutations → premature stop codons → non-functional protein. The gene is knocked out.</p>
-
 </div>
-
 <h3>6.3 Applications of CRISPR-Cas9</h3>
-
 <table>
 <tr>
 <td>Application</td>
@@ -450,11 +378,8 @@
 <td>Early clinical development</td>
 </tr>
 </table>
-
 <h3>6.4 Gene Drives</h3>
-
 <p>A <strong>gene drive</strong> is a genetic system that ensures a particular gene is inherited by more than the normal 50% of offspring — it "drives" itself through a population.</p>
-
 <p><strong>How CRISPR gene drives work:</strong></p>
 <ol>
 <li>Insert the CRISPR-Cas9 system (both Cas9 gene + gRNA gene) into the target locus on one chromosome.</li>
@@ -472,13 +397,9 @@
 <li>Release into wild populations → the gene drive spreads → malaria transmission is reduced or eliminated.</li>
 </ul>
 <p><strong>Analogy:</strong> A gene drive is like a computer virus for genes. Once released into a population, it copies itself onto the matching chromosome in every generation, ensuring near-100% inheritance instead of the usual 50%. It spreads whether or not it benefits the organism.</p>
-
-<hr>
-
+<hr/>
 <h2>7. Ethical Issues in Gene Editing</h2>
-
 <h3>7.1 Somatic vs Germline Editing</h3>
-
 <table>
 <tr>
 <td></td>
@@ -511,9 +432,7 @@
 <td>The 2018 case of He Jiankui, who edited embryos resulting in the birth of twin girls (CCR5 gene for HIV resistance) — widely condemned</td>
 </tr>
 </table>
-
 <h3>7.2 Key Ethical Concerns</h3>
-
 <p><strong>1. Germline Editing and "Designer Babies"</strong></p>
 <ul>
 <li>Editing embryos creates heritable changes that will affect all future generations.</li>
@@ -544,15 +463,10 @@
 <li>The 2018 He Jiankui case is a stark example of violating ethical norms — no proper regulatory approval, inadequate informed consent, uncertain medical necessity (CCR5-Δ32 provides HIV resistance, but the twins were not at high risk for HIV).</li>
 </ul>
 <div class="tip">
-
 <p><strong>Paper 2 Nature of Science / Ethics question:</strong> "Discuss the ethical considerations of using CRISPR-Cas9 for human germline editing." Structure your answer around: (1) distinction between somatic and germline, (2) potential benefits (eliminating devastating genetic diseases from a family line), (3) risks (off-target effects, unknown long-term consequences), (4) consent issues (future generations), (5) slippery slope to enhancement/eugenics, (6) regulatory approaches (moratorium vs cautious research).</p>
-
 </div>
-
-<hr>
-
+<hr/>
 <h2>Common Misconceptions</h2>
-
 <table>
 <tr>
 <td>Misconception</td>
@@ -587,90 +501,56 @@
 <td>Gene drives have been demonstrated in laboratory settings but have <strong>not yet been released into wild populations</strong>. Extensive safety testing and regulatory frameworks are still under development.</td>
 </tr>
 </table>
-
-<hr>
-
+<hr/>
 <h2>Practice Problems</h2>
-
 <h3>Problem 1: Mutation Types</h3>
-
 <p>Original DNA template strand: 3'-TAC GGA TCA CCT-5'</p>
-
 <p>For each of the following mutations to the template strand, identify the type of mutation (silent, missense, nonsense, or frameshift) and describe the effect on the polypeptide:</p>
-
 <p>(a) Position 6: C → T (3'-TAC GGA TTA CCT-5')</p>
 <p>(b) Position 4: G → C (3'-TAC CCA TCA CCT-5')</p>
 <p>(c) Insertion of A after position 3 (3'-TAC A GGA TCA CCT-5')</p>
 <p>(d) Deletion of positions 4-6 (3'-TAC TCA CCT-5')</p>
-
-<hr>
-
+<hr/>
 <h3>Problem 2: Sickle Cell Anemia</h3>
-
 <p>(a) Describe the mutation that causes sickle cell anemia at the DNA, mRNA, and protein levels.</p>
 <p>(b) Explain why the sickle cell allele is maintained at high frequency in malaria-endemic regions despite being lethal in the homozygous state.</p>
 <p>(c) A couple, both heterozygous for the sickle cell allele (HbA/HbS), plan to have children. State the probability that their child will:</p>
 <p>(i) Have sickle cell disease.</p>
 <p>(ii) Be resistant to malaria.</p>
 <p>(iii) Be susceptible to malaria and not have sickle cell disease.</p>
-
-<hr>
-
+<hr/>
 <h3>Problem 3: CRISPR-Cas9</h3>
-
 <p>(a) Describe the roles of Cas9 and the guide RNA in CRISPR gene editing.</p>
 <p>(b) Explain the difference between NHEJ and HDR repair pathways and when each would be used in gene editing.</p>
 <p>(c) A researcher wants to correct a single point mutation in the CFTR gene that causes cystic fibrosis. Which repair pathway should she promote, and what additional component must she provide?</p>
-
-<hr>
-
+<hr/>
 <h3>Problem 4: Gene Drives</h3>
-
 <p>(a) Explain how a CRISPR-based gene drive ensures that a genetic modification is inherited by more than 50% of offspring.</p>
 <p>(b) Discuss one potential benefit and one potential risk of using a gene drive to control malaria-transmitting mosquitoes.</p>
 <p>(c) Explain why gene drives are considered particularly risky from an ecological perspective compared to other genetic modifications.</p>
-
-<hr>
-
+<hr/>
 <h3>Problem 5: Ethical Analysis</h3>
-
 <p>A biotech company proposes to offer CRISPR-based "genetic enhancement" to healthy parents who want their children to have specific traits (e.g., increased height, reduced risk of Alzheimer's, blue eyes). The editing would be performed on embryos (germline editing).</p>
-
 <p>(a) Distinguish between this proposal and somatic gene therapy for a child with sickle cell disease.</p>
 <p>(b) Discuss TWO ethical arguments in favour of allowing such enhancements.</p>
 <p>(c) Discuss TWO ethical arguments against allowing such enhancements.</p>
 <p>(d) Explain why germline editing raises issues of intergenerational justice that somatic therapy does not.</p>
-
-<hr>
-
+<hr/>
 <h2>Answers</h2>
-
 <h3>Answer 1</h3>
-
 <p><strong>Original:</strong> Template 3'-TAC GGA TCA CCT-5' → mRNA 5'-AUG CCU AGU GGA-3' → Met-Pro-Ser-Gly</p>
-
 <p>(a) Position 6: C→T in template. New template: 3'-TAC GGA TTA CCT-5' → mRNA: 5'-AUG CCU AAU GGA-3'. Codon 3: AGU (Ser) → AAU (<strong>Asn</strong>). <strong>Missense mutation</strong> — one amino acid changes (Ser → Asn).</p>
-
 <p>(b) Position 4: G→C in template. New template: 3'-TAC CCA TCA CCT-5' → mRNA: 5'-AUG GGU AGU GGA-3'. Codon 2: CCU (Pro) → GGU (<strong>Gly</strong>). <strong>Missense mutation</strong> — Pro → Gly.</p>
-
 <p>(c) Insertion of A after position 3. New template: 3'-TAC A GGA TCA CCT-5' — wait, an insertion shifts everything. Let me re-index: Original: T(1)-A(2)-C(3)-G(4)-G(5)-A(6)-T(7)-C(8)-A(9)-C(10)-C(11)-T(12). Insert A after position 3: T-A-C-<strong>A</strong>-G-G-A-T-C-A-C-C-T. mRNA: 5'-AUG <strong>U</strong>CC UAG UGG A-3'. (Wait, let me recalculate. Template: TAC A GGA TCA CCT → template read 3'→5': TAC|AGG|ATC|ACC|T → mRNA: AUG|UCC|UAG|UGG|A. UAG is a STOP codon.)</p>
-
 <p>mRNA: AUG (Met) — UCC (Ser) — UAG (<strong>STOP</strong>). The insertion created a frameshift that introduced a premature stop codon at position 3. <strong>Frameshift → nonsense (premature stop)</strong>. The polypeptide is truncated: Met-Ser-STOP (only 2 amino acids instead of 4).</p>
-
 <p>(d) Deletion of positions 4-6 (GGA). New template: 3'-TAC TCA CCT-5' → mRNA: 5'-AUG AGU GGA-3'. <strong>In-frame deletion (3 bases, multiple of 3)</strong> — the codon for Pro (CCU) is deleted. Polypeptide: Met-Ser-Gly (3 amino acids instead of 4, but the reading frame is preserved for the remaining codons).</p>
-
-<hr>
-
+<hr/>
 <h3>Answer 2</h3>
-
 <p>(a) <strong>DNA level:</strong> Substitution in the β-globin gene: GAG → GTG in the coding strand (CTC → CAC in the template strand).</p>
 <p><strong>mRNA level:</strong> GAG → GUG.</p>
 <p><strong>Protein level:</strong> Glutamate (Glu, a hydrophilic, negatively charged amino acid) → Valine (Val, a hydrophobic amino acid) at position 6 of the β-globin chain. This is a <strong>missense mutation</strong>.</p>
-
 <p>(b) The sickle cell allele is maintained by <strong>balancing selection</strong> — the <strong>heterozygote advantage</strong>. HbA/HbS individuals are resistant to malaria (they can still contract it but are much less likely to die from it), while HbA/HbA individuals are susceptible. In malaria-endemic regions, the fitness of heterozygotes is higher than either homozygote (HbA/HbA die from malaria; HbS/HbS die from sickle cell disease). This maintains both alleles in the population.</p>
-
 <p>(c) Punnett square for HbA/HbS × HbA/HbS:</p>
-
 <table>
 <tr>
 <td></td>
@@ -688,40 +568,24 @@
 <td>HbS/HbS</td>
 </tr>
 </table>
-
 <p>(i) Sickle cell disease (HbS/HbS): <strong>¼ or 25%</strong>.</p>
 <p>(ii) Malaria resistant (HbA/HbS heterozygotes): <strong>½ or 50%</strong>.</p>
 <p>(iii) Susceptible to malaria and no sickle cell disease (HbA/HbA): <strong>¼ or 25%</strong>.</p>
-
-<hr>
-
+<hr/>
 <h3>Answer 3</h3>
-
 <p>(a) <strong>Cas9</strong> is a nuclease that creates a double-strand break in DNA. <strong>Guide RNA (gRNA)</strong> is a synthetic RNA (~20 nucleotides) complementary to the target DNA sequence. The gRNA binds to Cas9 and guides it to the specific genomic locus by base-pairing with the complementary DNA. Cas9 only cuts when the gRNA is bound AND a PAM sequence (NGG) is adjacent to the target.</p>
-
 <p>(b) <strong>NHEJ (Non-Homologous End Joining):</strong> The cell directly ligates the broken ends without a template. This is error-prone and often introduces small indels → frameshift → gene knockout. Used when the goal is to <strong>inactivate</strong> a gene.</p>
 <p><strong>HDR (Homology-Directed Repair):</strong> The cell uses a homologous donor DNA template to accurately repair the break. Used when the goal is to <strong>correct a mutation</strong> or insert a specific sequence.</p>
-
 <p>(c) She should promote <strong>HDR</strong>. She must provide a <strong>donor DNA template</strong> containing the correct (wild-type) CFTR sequence flanked by homology arms matching the regions on either side of the break. The cell will use this template to repair the Cas9-induced break, replacing the mutant sequence with the correct one.</p>
-
-<hr>
-
+<hr/>
 <h3>Answer 4</h3>
-
-<p>(a) A CRISPR gene drive cassette (containing Cas9 + gRNA genes) is inserted into one chromosome at the target locus. In a heterozygous organism (one modified, one wild-type chromosome), the Cas9 and gRNA are expressed. The gRNA-Cas9 complex cuts the <strong>wild-type chromosome</strong> at the target site. The cell repairs the break using the <strong>modified chromosome as an HDR template</strong>, copying the gene drive cassette onto the wild-type chromosome. Both chromosomes now carry the drive → the organism is homozygous. This happens in the germline, so all gametes carry the drive → all offspring inherit it → >99% inheritance instead of 50%.</p>
-
+<p>(a) A CRISPR gene drive cassette (containing Cas9 + gRNA genes) is inserted into one chromosome at the target locus. In a heterozygous organism (one modified, one wild-type chromosome), the Cas9 and gRNA are expressed. The gRNA-Cas9 complex cuts the <strong>wild-type chromosome</strong> at the target site. The cell repairs the break using the <strong>modified chromosome as an HDR template</strong>, copying the gene drive cassette onto the wild-type chromosome. Both chromosomes now carry the drive → the organism is homozygous. This happens in the germline, so all gametes carry the drive → all offspring inherit it → &gt;99% inheritance instead of 50%.</p>
 <p>(b) <strong>Benefit:</strong> Could drastically reduce or eliminate malaria transmission, saving hundreds of thousands of lives annually, particularly children under 5 in sub-Saharan Africa. This would be a more sustainable and equitable intervention than drugs, bed nets, or insecticide spraying, which require ongoing effort and resources.</p>
-
 <p><strong>Risk:</strong> Unintended ecological consequences. Mosquitoes are part of food webs — their elimination/reduction could affect species that depend on them (fish, birds, bats). Additionally, the gene drive could mutate or spread to non-target mosquito species. Once released, it may be impossible to recall.</p>
-
 <p>(c) Gene drives are <strong>self-propagating</strong> — they spread through a population even if they reduce fitness. Unlike standard GMOs (which can be contained or will die out without selection), a gene drive is designed to spread to every individual in the population and across national borders. There is no effective "undo" button. Ecological impacts (trophic cascades, effects on pollination, competition with other species) are unpredictable and could be irreversible.</p>
-
-<hr>
-
+<hr/>
 <h3>Answer 5</h3>
-
 <p>(a) <strong>Somatic gene therapy</strong> edits body cells (e.g., blood stem cells) of an existing individual with a disease. The changes affect only that individual and are <strong>not inherited</strong>. The patient (or guardians) can consent. <strong>Germline enhancement</strong> edits embryos to introduce traits into children who don't yet exist and have no medical need. Changes are <strong>heritable</strong> — affecting all future generations who cannot consent.</p>
-
 <p>(b) Arguments in favour:</p>
 <ul>
 <li><strong>Parental autonomy:</strong> Parents already shape their children's traits through education, nutrition, and environment. Genetic enhancement is an extension of this — parents should have the right to give their children the best possible start.</li>
@@ -733,11 +597,8 @@
 <li><strong>Unpredictable consequences and loss of diversity:</strong> We don't fully understand the pleiotropic effects of genes — a gene variant that increases height might also increase cancer risk. Eliminating genetic variation (even for "negative" traits) reduces the gene pool's resilience. The CCR5-Δ32 mutation (HIV resistance) also increases susceptibility to West Nile virus — genes often have trade-offs.</li>
 </ul>
 <p>(d) Germline editing makes changes that will be passed to all future descendants. These future generations have no say in decisions that will affect their genetic makeup, their health, and potentially their identity. This raises <strong>intergenerational justice</strong> concerns: do current generations have the right to make irreversible genetic decisions for all future humanity? Somatic therapy does not raise this issue because the changes die with the treated individual.</p>
-
-<hr>
-
+<hr/>
 <h2>Key Takeaways</h2>
-
 <table>
 <tr>
 <td>Concept</td>
@@ -765,7 +626,7 @@
 </tr>
 <tr>
 <td>Gene drive</td>
-<td>CRISPR cassette copies itself to wild-type chromosome via HDR → >99% inheritance → spreads through population.</td>
+<td>CRISPR cassette copies itself to wild-type chromosome via HDR → &gt;99% inheritance → spreads through population.</td>
 </tr>
 <tr>
 <td>Somatic vs germline</td>
@@ -776,12 +637,389 @@
 <td>Off-target effects, designer babies, equity, consent of future generations, ecological risks of gene drives.</td>
 </tr>
 </table>
-
-<hr>
-
+<hr/>
 <p><em>End of Lesson 42 — You've completed the D1 and C4 modules!</em></p>
+<div class="lesson-actions" style="margin: 2rem 0; padding: 1.5rem; background: #f8fafc; border-radius: 8px; display: flex; gap: 1rem; flex-wrap: wrap;">
+<button class="action-btn" id="generate-flashcards-btn" style="padding: 0.75rem 1.5rem; background: #3b82f6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        🗂️ Generate Flashcards
+    </button>
+<button class="action-btn" id="practice-problems-btn" style="padding: 0.75rem 1.5rem; background: #10b981; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        ✏️ Practice Problems
+    </button>
+<button class="action-btn" id="ask-ai-btn" style="padding: 0.75rem 1.5rem; background: #8b5cf6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        💬 Ask AI
+    </button>
+</div>
+<script>
+(function() {
+    const subjectKey = "biology";
+    const lessonId = "lesson_42";
+    const lessonTitle = "Lesson 42: Mutations and Gene Editing (D1.3) — IB Biology HL";
 
-<div class="nav"><a href="lesson_41.html">&#8592; Lesson 41</a><a href="index.html">&#8962; Index</a><a href="lesson_43.html">Lesson 43 &#8594;</a></div>
+    function getCsrf() {
+        var m = document.querySelector('meta[name="csrf-token"]');
+        return m ? m.getAttribute('content') : '';
+    }
 
+    // Completion checkbox
+    const checkbox = document.getElementById('lesson-complete');
+    if (checkbox) {
+        // Load saved state
+        const saved = localStorage.getItem(`completed_${subjectKey}_${lessonId}`);
+        if (saved === 'true') checkbox.checked = true;
+
+        checkbox.addEventListener('change', async function() {
+            const completed = this.checked;
+            localStorage.setItem(`completed_${subjectKey}_${lessonId}`, completed);
+
+            try {
+                await fetch('/toggle_completion', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': getCsrf()
+                    },
+                    body: JSON.stringify({
+                        subject: subjectKey,
+                        lesson: lessonId,
+                        completed: completed
+                    })
+                });
+            } catch(e) {
+                console.error('Error saving completion:', e);
+            }
+        });
+    }
+
+    // Generate Flashcards
+    const flashcardsBtn = document.getElementById('generate-flashcards-btn');
+    if (flashcardsBtn) {
+        flashcardsBtn.addEventListener('click', async function() {
+            this.disabled = true;
+            this.textContent = '⏳ Generating...';
+
+            try {
+                const content = document.body.innerText.substring(0, 2000);
+                const response = await fetch('/generate_flashcards', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': getCsrf()
+                    },
+                    body: JSON.stringify({
+                        subject: subjectKey,
+                        lesson: lessonTitle,
+                        content_summary: content
+                    })
+                });
+
+                const data = await response.json();
+                if (data.error) {
+                    alert('Error: ' + data.error);
+                } else {
+                    alert(`✅ Created ${data.count} flashcards! View them at /flashcards/${subjectKey}`);
+                }
+            } catch(e) {
+                alert('Error generating flashcards: ' + e.message);
+            } finally {
+                this.disabled = false;
+                this.textContent = '🗂️ Generate Flashcards';
+            }
+        });
+    }
+
+    // Practice Problems - open in new section
+    const practiceBtn = document.getElementById('practice-problems-btn');
+    if (practiceBtn) {
+        practiceBtn.addEventListener('click', function() {
+            alert('Practice problems feature coming soon! Use the AI chatbot to generate custom questions.');
+        });
+    }
+
+    // Ask AI - scroll to chatbot
+    const aiBtn = document.getElementById('ask-ai-btn');
+    if (aiBtn) {
+        aiBtn.addEventListener('click', function() {
+            const chatbot = document.getElementById('lessons-chatbot');
+            if (chatbot) {
+                chatbot.scrollIntoView({ behavior: 'smooth' });
+                const toggleBtn = chatbot.querySelector('.chatbot-toggle');
+                if (toggleBtn) toggleBtn.click();
+            } else {
+                alert('AI chatbot not available on this page. It will be added soon!');
+            }
+        });
+    }
+
+    // Track lesson view
+    fetch('/mark_viewed', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': getCsrf()
+        },
+        body: JSON.stringify({
+            subject: subjectKey,
+            lesson: lessonId
+        })
+    }).catch(e => console.error('Error tracking view:', e));
+
+})();
+</script>
+<div class="lesson-actions" style="margin: 2rem 0; padding: 1.5rem; background: #f8fafc; border-radius: 8px; display: flex; gap: 1rem; flex-wrap: wrap;">
+<button class="action-btn" id="generate-flashcards-btn" style="padding: 0.75rem 1.5rem; background: #3b82f6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        🗂️ Generate Flashcards
+    </button>
+<button class="action-btn" id="practice-problems-btn" style="padding: 0.75rem 1.5rem; background: #10b981; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        ✏️ Practice Problems
+    </button>
+<button class="action-btn" id="ask-ai-btn" style="padding: 0.75rem 1.5rem; background: #8b5cf6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        💬 Ask AI
+    </button>
+</div>
+<script>
+(function() {
+    const subjectKey = "biology";
+    const lessonId = "lesson_42";
+    const lessonTitle = "Lesson 42: Mutations and Gene Editing (D1.3) — IB Biology HL";
+
+    function getCsrf() {
+        var m = document.querySelector('meta[name="csrf-token"]');
+        return m ? m.getAttribute('content') : '';
+    }
+
+    // Completion checkbox
+    const checkbox = document.getElementById('lesson-complete');
+    if (checkbox) {
+        // Load saved state
+        const saved = localStorage.getItem(`completed_${subjectKey}_${lessonId}`);
+        if (saved === 'true') checkbox.checked = true;
+
+        checkbox.addEventListener('change', async function() {
+            const completed = this.checked;
+            localStorage.setItem(`completed_${subjectKey}_${lessonId}`, completed);
+
+            try {
+                await fetch('/toggle_completion', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': getCsrf()
+                    },
+                    body: JSON.stringify({
+                        subject: subjectKey,
+                        lesson: lessonId,
+                        completed: completed
+                    })
+                });
+            } catch(e) {
+                console.error('Error saving completion:', e);
+            }
+        });
+    }
+
+    // Generate Flashcards
+    const flashcardsBtn = document.getElementById('generate-flashcards-btn');
+    if (flashcardsBtn) {
+        flashcardsBtn.addEventListener('click', async function() {
+            this.disabled = true;
+            this.textContent = '⏳ Generating...';
+
+            try {
+                const content = document.body.innerText.substring(0, 2000);
+                const response = await fetch('/generate_flashcards', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': getCsrf()
+                    },
+                    body: JSON.stringify({
+                        subject: subjectKey,
+                        lesson: lessonTitle,
+                        content_summary: content
+                    })
+                });
+
+                const data = await response.json();
+                if (data.error) {
+                    alert('Error: ' + data.error);
+                } else {
+                    alert(`✅ Created ${data.count} flashcards! View them at /flashcards/${subjectKey}`);
+                }
+            } catch(e) {
+                alert('Error generating flashcards: ' + e.message);
+            } finally {
+                this.disabled = false;
+                this.textContent = '🗂️ Generate Flashcards';
+            }
+        });
+    }
+
+    // Practice Problems - open in new section
+    const practiceBtn = document.getElementById('practice-problems-btn');
+    if (practiceBtn) {
+        practiceBtn.addEventListener('click', function() {
+            alert('Practice problems feature coming soon! Use the AI chatbot to generate custom questions.');
+        });
+    }
+
+    // Ask AI - scroll to chatbot
+    const aiBtn = document.getElementById('ask-ai-btn');
+    if (aiBtn) {
+        aiBtn.addEventListener('click', function() {
+            const chatbot = document.getElementById('lessons-chatbot');
+            if (chatbot) {
+                chatbot.scrollIntoView({ behavior: 'smooth' });
+                const toggleBtn = chatbot.querySelector('.chatbot-toggle');
+                if (toggleBtn) toggleBtn.click();
+            } else {
+                alert('AI chatbot not available on this page. It will be added soon!');
+            }
+        });
+    }
+
+    // Track lesson view
+    fetch('/mark_viewed', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': getCsrf()
+        },
+        body: JSON.stringify({
+            subject: subjectKey,
+            lesson: lessonId
+        })
+    }).catch(e => console.error('Error tracking view:', e));
+
+})();
+</script>
+<div class="lesson-actions" style="margin: 2rem 0; padding: 1.5rem; background: #f8fafc; border-radius: 8px; display: flex; gap: 1rem; flex-wrap: wrap;">
+<button class="action-btn" id="generate-flashcards-btn" style="padding: 0.75rem 1.5rem; background: #3b82f6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        🗂️ Generate Flashcards
+    </button>
+<button class="action-btn" id="practice-problems-btn" style="padding: 0.75rem 1.5rem; background: #10b981; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        ✏️ Practice Problems
+    </button>
+<button class="action-btn" id="ask-ai-btn" style="padding: 0.75rem 1.5rem; background: #8b5cf6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        💬 Ask AI
+    </button>
+</div>
+<script>
+(function() {
+    const subjectKey = "biology";
+    const lessonId = "lesson_42";
+    const lessonTitle = "Lesson 42: Mutations and Gene Editing (D1.3) — IB Biology HL";
+
+    function getCsrf() {
+        var m = document.querySelector('meta[name="csrf-token"]');
+        return m ? m.getAttribute('content') : '';
+    }
+
+    // Completion checkbox
+    const checkbox = document.getElementById('lesson-complete');
+    if (checkbox) {
+        // Load saved state
+        const saved = localStorage.getItem(`completed_${subjectKey}_${lessonId}`);
+        if (saved === 'true') checkbox.checked = true;
+
+        checkbox.addEventListener('change', async function() {
+            const completed = this.checked;
+            localStorage.setItem(`completed_${subjectKey}_${lessonId}`, completed);
+
+            try {
+                await fetch('/toggle_completion', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': getCsrf()
+                    },
+                    body: JSON.stringify({
+                        subject: subjectKey,
+                        lesson: lessonId,
+                        completed: completed
+                    })
+                });
+            } catch(e) {
+                console.error('Error saving completion:', e);
+            }
+        });
+    }
+
+    // Generate Flashcards
+    const flashcardsBtn = document.getElementById('generate-flashcards-btn');
+    if (flashcardsBtn) {
+        flashcardsBtn.addEventListener('click', async function() {
+            this.disabled = true;
+            this.textContent = '⏳ Generating...';
+
+            try {
+                const content = document.body.innerText.substring(0, 2000);
+                const response = await fetch('/generate_flashcards', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': getCsrf()
+                    },
+                    body: JSON.stringify({
+                        subject: subjectKey,
+                        lesson: lessonTitle,
+                        content_summary: content
+                    })
+                });
+
+                const data = await response.json();
+                if (data.error) {
+                    alert('Error: ' + data.error);
+                } else {
+                    alert(`✅ Created ${data.count} flashcards! View them at /flashcards/${subjectKey}`);
+                }
+            } catch(e) {
+                alert('Error generating flashcards: ' + e.message);
+            } finally {
+                this.disabled = false;
+                this.textContent = '🗂️ Generate Flashcards';
+            }
+        });
+    }
+
+    // Practice Problems - open in new section
+    const practiceBtn = document.getElementById('practice-problems-btn');
+    if (practiceBtn) {
+        practiceBtn.addEventListener('click', function() {
+            alert('Practice problems feature coming soon! Use the AI chatbot to generate custom questions.');
+        });
+    }
+
+    // Ask AI - scroll to chatbot
+    const aiBtn = document.getElementById('ask-ai-btn');
+    if (aiBtn) {
+        aiBtn.addEventListener('click', function() {
+            const chatbot = document.getElementById('lessons-chatbot');
+            if (chatbot) {
+                chatbot.scrollIntoView({ behavior: 'smooth' });
+                const toggleBtn = chatbot.querySelector('.chatbot-toggle');
+                if (toggleBtn) toggleBtn.click();
+            } else {
+                alert('AI chatbot not available on this page. It will be added soon!');
+            }
+        });
+    }
+
+    // Track lesson view
+    fetch('/mark_viewed', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': getCsrf()
+        },
+        body: JSON.stringify({
+            subject: subjectKey,
+            lesson: lessonId
+        })
+    }).catch(e => console.error('Error tracking view:', e));
+
+})();
+</script>
+<div class="nav"><a href="lesson_41.html">← Lesson 41</a><a href="index.html">⌂ Index</a><a href="lesson_43.html">Lesson 43 →</a></div>
 </body>
 </html>

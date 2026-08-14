@@ -1094,6 +1094,80 @@ def submit_exam():
     return jsonify({"success": True})
 
 
+@app.route("/toggle_completion", methods=["POST"])
+@login_required
+def toggle_completion():
+    """Toggle lesson completion status"""
+    username = session.get("user", "")
+    data = request.get_json()
+
+    subject = data.get("subject", "")
+    lesson = data.get("lesson", "")
+    completed = data.get("completed", False)
+
+    if not subject or not lesson:
+        return jsonify({"error": "Missing subject or lesson"}), 400
+
+    profile = UserProfile(username)
+
+    # Initialize subject data if needed
+    if subject not in profile.data["subjects"]:
+        profile.data["subjects"][subject] = {"lessons": {}}
+
+    if lesson not in profile.data["subjects"][subject]["lessons"]:
+        profile.data["subjects"][subject]["lessons"][lesson] = {}
+
+    profile.data["subjects"][subject]["lessons"][lesson]["completed"] = completed
+    profile.save()
+
+    return jsonify({"success": True})
+
+
+@app.route("/update_mastery", methods=["POST"])
+@login_required
+def update_mastery():
+    """Update lesson mastery level"""
+    username = session.get("user", "")
+    data = request.get_json()
+
+    subject = data.get("subject", "")
+    lesson = data.get("lesson", "")
+    level = data.get("level", 0)
+
+    if not subject or not lesson:
+        return jsonify({"error": "Missing subject or lesson"}), 400
+
+    profile = UserProfile(username)
+    profile.update_mastery(subject, lesson, level)
+
+    return jsonify({"success": True})
+
+
+@app.route("/api/subject_progress/<subject_key>")
+@login_required
+def get_subject_progress(subject_key):
+    """Get progress data for a subject"""
+    username = session.get("user", "")
+    profile = UserProfile(username)
+
+    subject_data = profile.data["subjects"].get(subject_key, {"lessons": {}})
+
+    return jsonify(subject_data)
+
+
+@app.route("/api/user_streak")
+@login_required
+def get_user_streak():
+    """Get user's current study streak"""
+    username = session.get("user", "")
+    profile = UserProfile(username)
+
+    return jsonify({
+        "streak": profile.data.get("streak", 0),
+        "last_activity": profile.data.get("last_activity", "")
+    })
+
+
 @app.route("/api-config")
 @login_required
 def api_config():

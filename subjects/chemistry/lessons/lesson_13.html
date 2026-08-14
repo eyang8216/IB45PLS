@@ -1,14 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Lesson 13 — Chemistry HL — Transition Metals: Complex Ions, Colour, CFT</title>
 <script>
 window.MathJax = {tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] },
   loader: { load: ['[tex]/mhchem'] }};
 </script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <style>
 :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -42,57 +43,51 @@ pre.ascii-art { font-family: 'Courier New', monospace; font-size: 0.75rem; line-
 </style>
 </head>
 <body>
-
 <h1>Lesson 13: Transition Metals — Complex Ions, Colour, Crystal Field Theory</h1>
-
 <p><b>Syllabus reference:</b> 13.1–13.2 (The Transition Metals, HL only)</p>
-
 <!-- SECTION A -->
 <div class="objectives">
 <h3>Learning Objectives</h3>
 <p>By the end of this lesson, you will be able to:</p>
 <ul>
-  <li><b>Define</b> a transition metal by its electron configuration — a d-block element that forms at least one ion with an incomplete d-subshell.</li>
-  <li><b>Identify</b> ligands as Lewis bases and explain how they bind to a central metal ion to form complex ions.</li>
-  <li><b>Determine</b> the coordination number and shape of a complex from its formula (octahedral, tetrahedral, square planar).</li>
-  <li><b>Apply</b> Crystal Field Theory to explain why the five d-orbitals split into two energy levels in an octahedral field.</li>
-  <li><b>Explain</b> the origin of colour in transition metal complexes using d–d electronic transitions and the spectrochemical series.</li>
-  <li><b>Relate</b> the colour observed to the wavelength absorbed and the complementary colour wheel.</li>
+<li><b>Define</b> a transition metal by its electron configuration — a d-block element that forms at least one ion with an incomplete d-subshell.</li>
+<li><b>Identify</b> ligands as Lewis bases and explain how they bind to a central metal ion to form complex ions.</li>
+<li><b>Determine</b> the coordination number and shape of a complex from its formula (octahedral, tetrahedral, square planar).</li>
+<li><b>Apply</b> Crystal Field Theory to explain why the five d-orbitals split into two energy levels in an octahedral field.</li>
+<li><b>Explain</b> the origin of colour in transition metal complexes using d–d electronic transitions and the spectrochemical series.</li>
+<li><b>Relate</b> the colour observed to the wavelength absorbed and the complementary colour wheel.</li>
 </ul>
 </div>
-
 <!-- SECTION B -->
-<h2>1. Prior Knowledge Check</h2>
 
+<div class="lesson-completion" style="margin: 1rem 0; padding: 1rem; background: #f0f9ff; border-radius: 8px;">
+<label class="completion-checkbox" style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer;">
+<input id="lesson-complete" style="width: 24px; height: 24px; cursor: pointer; accent-color: #10b981;" type="checkbox"/>
+<span style="font-size: 1rem; color: #0f172a; font-weight: 500;">✓ Mark this lesson as complete</span>
+</label>
+</div>
+<h2>1. Prior Knowledge Check</h2>
 <p><b>Question 1:</b> Write the electron configuration of iron, $\ce{Fe}$ ($Z = 26$), using the noble-gas abbreviation.</p>
 <div class="check-in">
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">$\ce{Fe}$: $\ce{[Ar] 4s^2 3d^6}$. Remember that the 4s orbital fills before 3d, but 4s electrons are lost first when forming cations.</div>
 </div>
-
 <p><b>Question 2:</b> What is a Lewis base? Give an example of a molecule or ion that can act as a Lewis base.</p>
 <div class="check-in">
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">A <b>Lewis base</b> is an electron-pair donor — it has a lone pair of electrons that it can donate to form a coordinate (dative covalent) bond. Examples: $\ce{NH3}$ (lone pair on N), $\ce{H2O\!:}$ (lone pairs on O), $\ce{Cl-}$ (lone pairs on Cl⁻).</div>
 </div>
-
 <p><b>Question 3:</b> Why does an aqueous solution of $\ce{CuSO4}$ appear blue, while solid $\ce{CuSO4}$ (anhydrous) appears white?</p>
 <div class="check-in">
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">Anhydrous $\ce{CuSO4}$ has no ligands bonded to $\ce{Cu^{2+}}$ — the d-orbitals are not split, so no d–d transitions are possible. When water ligands coordinate to form $\ce{[Cu(H2O)6]^{2+}}$, the d-orbitals split, and the complex absorbs orange/red light, transmitting blue — which we see. The colour is a <b>ligand-field effect</b>.</div>
 </div>
-
 <!-- SECTION C -->
 <h2>2. What Is a Transition Metal?</h2>
-
 <p>The IUPAC definition is precise: a <b>transition metal</b> is a d-block element that forms at least one stable ion with a <b>partially filled d-subshell</b>. This is the key — not simply being in the d-block.</p>
-
 <p>This means <b>zinc</b> ($\ce{[Ar] 3d^{10} 4s^2}$) and <b>scandium</b> ($\ce{[Ar] 3d^1 4s^2}$) are <em>not</em> transition metals. Zinc only forms $\ce{Zn^{2+}}$ ($\ce{[Ar] 3d^{10}}$ — a full d-subshell), and scandium only forms $\ce{Sc^{3+}}$ ($\ce{[Ar]}$ — an empty d-subshell). No partially filled d-orbitals means no d–d transitions, and therefore <b>no colour from d–d transitions</b> — $\ce{Zn^{2+}}$ and $\ce{Sc^{3+}}$ compounds are typically white or colourless.</p>
-
 <h3>2.1 Characteristic Properties</h3>
-
 <p>Transition metals share a set of properties that arise directly from their partially filled d-orbitals:</p>
-
 <table>
 <tr><th>Property</th><th>Explanation</th></tr>
 <tr><td>Variable oxidation states</td><td>Small energy differences between 3d and 4s allow loss of different numbers of electrons (e.g. $\ce{Fe^{2+}}$, $\ce{Fe^{3+}}$).</td></tr>
@@ -101,81 +96,71 @@ pre.ascii-art { font-family: 'Courier New', monospace; font-size: 0.75rem; line-
 <tr><td>Catalytic activity</td><td>Variable oxidation states allow transition metals to provide alternative reaction pathways with lower $E_a$ (homogeneous and heterogeneous catalysis).</td></tr>
 <tr><td>Magnetic properties</td><td>Unpaired d-electrons make many complexes paramagnetic.</td></tr>
 </table>
-
 <div class="check-in">
 <p><b>Check-in:</b> Chromium has electron configuration $\ce{[Ar] 3d^5 4s^1}$. Explain why copper, $\ce{[Ar] 3d^{10} 4s^1}$, IS a transition metal but zinc is not.</p>
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">Copper forms $\ce{Cu^{2+}}$, which has configuration $\ce{[Ar] 3d^9}$ — a <b>partially filled</b> d-subshell. This satisfies the IUPAC definition. Zinc forms only $\ce{Zn^{2+}}$ ($\ce{[Ar] 3d^{10}}$) — a full d-subshell, so it fails the definition. The key is the <em>ion</em>, not the neutral atom.</div>
 </div>
-
 <h2>3. Complex Ions — Ligands, Coordination, and Shapes</h2>
-
 <h3>3.1 What Is a Complex Ion?</h3>
-
 <p>A <b>complex ion</b> consists of a central metal ion bonded to a set of <b>ligands</b>. A ligand is a Lewis base — an ion or molecule with at least one lone pair that it can donate to form a <b>coordinate (dative covalent) bond</b> with the metal ion. The metal ion acts as a Lewis acid (electron-pair acceptor).</p>
 
-$$\ce{Cu^{2+} + 6H2O\!: -> [Cu(H2O)6]^{2+}}$$
+$$\ce{Cu^{2+} + 6H2O\!: -&gt; [Cu(H2O)6]^{2+}}$$
 
 <p>Each $\ce{H2O}$ molecule donates one lone pair from oxygen. The resulting complex carries a 2+ charge because the six neutral water molecules do not alter the charge of the central $\ce{Cu^{2+}}$ ion.</p>
-
 <h3>3.2 Coordination Number and Denticity</h3>
-
 <p>The <b>coordination number (CN)</b> is the number of coordinate bonds from ligands to the central metal ion. It is NOT the same as the number of ligands — a single polydentate ligand can form multiple bonds.</p>
-
 <table>
 <tr><th>Denticity</th><th>Ligand</th><th>Donor atoms</th><th>Bonds per ligand</th></tr>
 <tr><td>Monodentate</td><td>$\ce{H2O\!:}$, $\ce{:\!NH3}$, $\ce{Cl-}$, $\ce{CN-}$, $\ce{OH-}$</td><td>1</td><td>1</td></tr>
 <tr><td>Bidentate</td><td>$\ce{H2NCH2CH2NH2}$ (en), $\ce{C2O4^{2-}}$ (oxalate)</td><td>2</td><td>2</td></tr>
 <tr><td>Hexadentate</td><td>$\ce{EDTA^{4-}}$</td><td>6 (4 × O, 2 × N)</td><td>6</td></tr>
 </table>
-
 <div class="diagram">
-<svg width="520" height="280" viewBox="0 0 520 280">
-  <!-- Central metal -->
-  <circle cx="260" cy="140" r="24" fill="#c8e6c9" stroke="#2c5f2d" stroke-width="2.5"/>
-  <text x="260" y="136" text-anchor="middle" font-size="11" font-weight="bold" fill="#1a1a1a">Cu²⁺</text>
-  <text x="260" y="150" text-anchor="middle" font-size="9" fill="#555">3d⁹</text>
-  <!-- Octahedral axes -->
-  <!-- Top ligand -->
-  <circle cx="260" cy="42" r="18" fill="#fff8e1" stroke="#d4a017" stroke-width="2"/>
-  <text x="260" y="39" text-anchor="middle" font-size="10" font-weight="bold" fill="#d4a017">H₂O</text>
-  <text x="260" y="52" text-anchor="middle" font-size="8" fill="#888">(L)</text>
-  <line x1="260" y1="60" x2="260" y2="116" stroke="#2c5f2d" stroke-width="1.8" stroke-dasharray="5,3"/>
-  <!-- Bottom ligand -->
-  <circle cx="260" cy="238" r="18" fill="#fff8e1" stroke="#d4a017" stroke-width="2"/>
-  <text x="260" y="235" text-anchor="middle" font-size="10" font-weight="bold" fill="#d4a017">H₂O</text>
-  <text x="260" y="248" text-anchor="middle" font-size="8" fill="#888">(L)</text>
-  <line x1="260" y1="164" x2="260" y2="220" stroke="#2c5f2d" stroke-width="1.8" stroke-dasharray="5,3"/>
-  <!-- Left ligand -->
-  <circle cx="112" cy="140" r="18" fill="#fff8e1" stroke="#d4a017" stroke-width="2"/>
-  <text x="112" y="137" text-anchor="middle" font-size="10" font-weight="bold" fill="#d4a017">H₂O</text>
-  <text x="112" y="150" text-anchor="middle" font-size="8" fill="#888">(L)</text>
-  <line x1="130" y1="140" x2="236" y2="140" stroke="#2c5f2d" stroke-width="1.8" stroke-dasharray="5,3"/>
-  <!-- Right ligand -->
-  <circle cx="408" cy="140" r="18" fill="#fff8e1" stroke="#d4a017" stroke-width="2"/>
-  <text x="408" y="137" text-anchor="middle" font-size="10" font-weight="bold" fill="#d4a017">H₂O</text>
-  <text x="408" y="150" text-anchor="middle" font-size="8" fill="#888">(L)</text>
-  <line x1="284" y1="140" x2="390" y2="140" stroke="#2c5f2d" stroke-width="1.8" stroke-dasharray="5,3"/>
-  <!-- Front ligand (wedge) -->
-  <circle cx="340" cy="210" r="18" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="2.5"/>
-  <text x="340" y="207" text-anchor="middle" font-size="10" font-weight="bold" fill="#2c5f2d">H₂O</text>
-  <text x="340" y="220" text-anchor="middle" font-size="8" fill="#888">(L)</text>
-  <line x1="278" y1="155" x2="326" y2="196" stroke="#2c5f2d" stroke-width="2.2"/>
-  <!-- Back ligand (dashed) -->
-  <circle cx="180" cy="70" r="18" fill="#f5f5f5" stroke="#999" stroke-width="1.5" stroke-dasharray="4,3"/>
-  <text x="180" y="67" text-anchor="middle" font-size="10" font-weight="bold" fill="#888">H₂O</text>
-  <text x="180" y="80" text-anchor="middle" font-size="8" fill="#aaa">(L)</text>
-  <line x1="246" y1="124" x2="195" y2="83" stroke="#999" stroke-width="1.5" stroke-dasharray="4,3"/>
-  <!-- Brackets and charge -->
-  <text x="435" y="145" font-size="16" fill="#2c5f2d" font-weight="bold">]</text>
-  <text x="88" y="145" font-size="16" fill="#2c5f2d" font-weight="bold">[</text>
-  <text x="450" y="148" font-size="13" fill="#c62828" font-weight="bold">2+</text>
+<svg height="280" viewbox="0 0 520 280" width="520">
+<!-- Central metal -->
+<circle cx="260" cy="140" fill="#c8e6c9" r="24" stroke="#2c5f2d" stroke-width="2.5"></circle>
+<text fill="#1a1a1a" font-size="11" font-weight="bold" text-anchor="middle" x="260" y="136">Cu²⁺</text>
+<text fill="#555" font-size="9" text-anchor="middle" x="260" y="150">3d⁹</text>
+<!-- Octahedral axes -->
+<!-- Top ligand -->
+<circle cx="260" cy="42" fill="#fff8e1" r="18" stroke="#d4a017" stroke-width="2"></circle>
+<text fill="#d4a017" font-size="10" font-weight="bold" text-anchor="middle" x="260" y="39">H₂O</text>
+<text fill="#888" font-size="8" text-anchor="middle" x="260" y="52">(L)</text>
+<line stroke="#2c5f2d" stroke-dasharray="5,3" stroke-width="1.8" x1="260" x2="260" y1="60" y2="116"></line>
+<!-- Bottom ligand -->
+<circle cx="260" cy="238" fill="#fff8e1" r="18" stroke="#d4a017" stroke-width="2"></circle>
+<text fill="#d4a017" font-size="10" font-weight="bold" text-anchor="middle" x="260" y="235">H₂O</text>
+<text fill="#888" font-size="8" text-anchor="middle" x="260" y="248">(L)</text>
+<line stroke="#2c5f2d" stroke-dasharray="5,3" stroke-width="1.8" x1="260" x2="260" y1="164" y2="220"></line>
+<!-- Left ligand -->
+<circle cx="112" cy="140" fill="#fff8e1" r="18" stroke="#d4a017" stroke-width="2"></circle>
+<text fill="#d4a017" font-size="10" font-weight="bold" text-anchor="middle" x="112" y="137">H₂O</text>
+<text fill="#888" font-size="8" text-anchor="middle" x="112" y="150">(L)</text>
+<line stroke="#2c5f2d" stroke-dasharray="5,3" stroke-width="1.8" x1="130" x2="236" y1="140" y2="140"></line>
+<!-- Right ligand -->
+<circle cx="408" cy="140" fill="#fff8e1" r="18" stroke="#d4a017" stroke-width="2"></circle>
+<text fill="#d4a017" font-size="10" font-weight="bold" text-anchor="middle" x="408" y="137">H₂O</text>
+<text fill="#888" font-size="8" text-anchor="middle" x="408" y="150">(L)</text>
+<line stroke="#2c5f2d" stroke-dasharray="5,3" stroke-width="1.8" x1="284" x2="390" y1="140" y2="140"></line>
+<!-- Front ligand (wedge) -->
+<circle cx="340" cy="210" fill="#e8f5e9" r="18" stroke="#2c5f2d" stroke-width="2.5"></circle>
+<text fill="#2c5f2d" font-size="10" font-weight="bold" text-anchor="middle" x="340" y="207">H₂O</text>
+<text fill="#888" font-size="8" text-anchor="middle" x="340" y="220">(L)</text>
+<line stroke="#2c5f2d" stroke-width="2.2" x1="278" x2="326" y1="155" y2="196"></line>
+<!-- Back ligand (dashed) -->
+<circle cx="180" cy="70" fill="#f5f5f5" r="18" stroke="#999" stroke-dasharray="4,3" stroke-width="1.5"></circle>
+<text fill="#888" font-size="10" font-weight="bold" text-anchor="middle" x="180" y="67">H₂O</text>
+<text fill="#aaa" font-size="8" text-anchor="middle" x="180" y="80">(L)</text>
+<line stroke="#999" stroke-dasharray="4,3" stroke-width="1.5" x1="246" x2="195" y1="124" y2="83"></line>
+<!-- Brackets and charge -->
+<text fill="#2c5f2d" font-size="16" font-weight="bold" x="435" y="145">]</text>
+<text fill="#2c5f2d" font-size="16" font-weight="bold" x="88" y="145">[</text>
+<text fill="#c62828" font-size="13" font-weight="bold" x="450" y="148">2+</text>
 </svg>
 <div class="caption">Figure 1: The octahedral complex $\ce{[Cu(H2O)6]^{2+}}$. Six water ligands (Lewis bases) surround the central Cu²⁺ ion (Lewis acid). Solid wedges/bonds project towards you; dashed lines recede behind the plane. Coordination number = 6.</div>
 </div>
-
 <h3>3.3 Common Shapes of Complex Ions</h3>
-
 <table>
 <tr><th>Coordination Number</th><th>Shape</th><th>Bond angles</th><th>Example</th></tr>
 <tr><td>6</td><td>Octahedral</td><td>90°</td><td>$\ce{[Cu(H2O)6]^{2+}}$, $\ce{[Fe(CN)6]^{4-}}$</td></tr>
@@ -183,256 +168,214 @@ $$\ce{Cu^{2+} + 6H2O\!: -> [Cu(H2O)6]^{2+}}$$
 <tr><td>4</td><td>Square planar</td><td>90°</td><td>$\ce{[Pt(NH3)2Cl2]}$, $\ce{[Ni(CN)4]^{2-}}$</td></tr>
 <tr><td>2</td><td>Linear</td><td>180°</td><td>$\ce{[Ag(NH3)2]+}$, $\ce{[CuCl2]-}$</td></tr>
 </table>
-
 <p><b>Square planar vs. tetrahedral:</b> Both have CN = 4, but square planar complexes are favoured by d⁸ metal ions with strong-field ligands (e.g., $\ce{Pt^{2+}}$, $\ce{Ni^{2+}}$ with $\ce{CN-}$). Tetrahedral is more common for d¹⁰ ions and with bulky ligands like $\ce{Cl-}$.</p>
-
 <div class="check-in">
 <p><b>Check-in:</b> Ethylenediamine (en), $\ce{H2NCH2CH2NH2}$, is a bidentate ligand. What is the coordination number of $\ce{Ni^{2+}}$ in $\ce{[Ni(en)3]^{2+}}$? What is the shape?</p>
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">Each en ligand forms 2 coordinate bonds (one per N atom). With 3 en ligands: CN = 3 × 2 = <b>6</b>. Shape: <b>octahedral</b>. The formula might look like "3 ligands" but the coordination number is 6.</div>
 </div>
-
 <h2>4. Crystal Field Theory — d-Orbital Splitting</h2>
-
 <h3>4.1 The Five d-Orbitals</h3>
-
 <p>In an isolated transition metal ion, all five 3d orbitals ($d_{xy}$, $d_{xz}$, $d_{yz}$, $d_{x^2-y^2}$, $d_{z^2}$) have the <b>same energy</b> — they are <b>degenerate</b>.</p>
-
 <p>When ligands approach, this changes. Crystal Field Theory (CFT) models ligands as <b>negative point charges</b> (or dipoles) that repel the d-electrons. The key insight: the repulsion is <em>not equal</em> for all five d-orbitals.</p>
-
 <h3>4.2 Octahedral Splitting — The Key Diagram</h3>
-
 <p>In an octahedral complex, six ligands approach along the x, y, and z axes. Two orbitals — $d_{x^2-y^2}$ and $d_{z^2}$ — point <b>directly along</b> these axes, experiencing strong repulsion. The other three — $d_{xy}$, $d_{xz}$, $d_{yz}$ — point <b>between</b> the axes, experiencing less repulsion.</p>
-
 <div class="diagram">
-<svg width="500" height="320" viewBox="0 0 500 320">
-  <!-- Energy axis -->
-  <line x1="270" y1="30" x2="270" y2="290" stroke="#1a1a1a" stroke-width="2"/>
-  <text x="260" y="20" text-anchor="end" font-size="12" fill="#1a1a1a">Energy</text>
-  <!-- Degenerate level label -->
-  <line x1="200" y1="255" x2="340" y2="255" stroke="#999" stroke-width="1.5" stroke-dasharray="4,3"/>
-  <text x="345" y="259" font-size="10" fill="#888">Degenerate</text>
-  <text x="345" y="272" font-size="10" fill="#888">d-orbitals</text>
-  <text x="345" y="285" font-size="10" fill="#888">(free ion)</text>
-  <!-- Upper level e_g -->
-  <line x1="210" y1="60" x2="350" y2="60" stroke="#c62828" stroke-width="2.5"/>
-  <text x="355" y="64" font-size="13" font-weight="bold" fill="#c62828">e<sub>g</sub></text>
-  <text x="420" y="64" font-size="11" fill="#555">d<sub>x²−y²</sub>, d<sub>z²</sub></text>
-  <!-- Lower level t_2g -->
-  <line x1="210" y1="160" x2="350" y2="160" stroke="#1565c0" stroke-width="2.5"/>
-  <text x="355" y="164" font-size="13" font-weight="bold" fill="#1565c0">t<sub>2g</sub></text>
-  <text x="420" y="164" font-size="11" fill="#555">d<sub>xy</sub>, d<sub>xz</sub>, d<sub>yz</sub></text>
-  <!-- Δ_oct bracket -->
-  <line x1="180" y1="60" x2="180" y2="160" stroke="#2c5f2d" stroke-width="2"/>
-  <line x1="175" y1="60" x2="185" y2="60" stroke="#2c5f2d" stroke-width="1.5"/>
-  <line x1="175" y1="160" x2="185" y2="160" stroke="#2c5f2d" stroke-width="1.5"/>
-  <text x="170" y="114" text-anchor="end" font-size="14" font-weight="bold" fill="#2c5f2d">Δ<sub>oct</sub></text>
-  <!-- Barycenter label -->
-  <line x1="195" y1="122" x2="210" y2="122" stroke="#999" stroke-width="0.8" stroke-dasharray="3,3"/>
-  <text x="190" y="126" text-anchor="end" font-size="9" fill="#888">barycentre</text>
-  <!-- Energy level labels -->
-  <text x="155" y="56" text-anchor="start" font-size="11" fill="#c62828">+0.6 Δ<sub>oct</sub></text>
-  <text x="155" y="175" text-anchor="start" font-size="11" fill="#1565c0">−0.4 Δ<sub>oct</sub></text>
-  <!-- Orbital lobe mini-pictures -->
-  <text x="40" y="55" font-size="9" fill="#888">Lobes point</text>
-  <text x="40" y="68" font-size="9" fill="#888">ALONG axes</text>
-  <text x="40" y="81" font-size="9" fill="#888">→ strong repulsion</text>
-  <text x="40" y="155" font-size="9" fill="#888">Lobes point</text>
-  <text x="40" y="168" font-size="9" fill="#888">BETWEEN axes</text>
-  <text x="40" y="181" font-size="9" fill="#888">→ less repulsion</text>
-  <!-- Arrow from free ion to split -->
-  <line x1="270" y1="255" x2="270" y2="170" stroke="#555" stroke-width="1.2"/>
-  <text x="250" y="215" font-size="9" fill="#666">+ ligands</text>
+<svg height="320" viewbox="0 0 500 320" width="500">
+<!-- Energy axis -->
+<line stroke="#1a1a1a" stroke-width="2" x1="270" x2="270" y1="30" y2="290"></line>
+<text fill="#1a1a1a" font-size="12" text-anchor="end" x="260" y="20">Energy</text>
+<!-- Degenerate level label -->
+<line stroke="#999" stroke-dasharray="4,3" stroke-width="1.5" x1="200" x2="340" y1="255" y2="255"></line>
+<text fill="#888" font-size="10" x="345" y="259">Degenerate</text>
+<text fill="#888" font-size="10" x="345" y="272">d-orbitals</text>
+<text fill="#888" font-size="10" x="345" y="285">(free ion)</text>
+<!-- Upper level e_g -->
+<line stroke="#c62828" stroke-width="2.5" x1="210" x2="350" y1="60" y2="60"></line>
+<text fill="#c62828" font-size="13" font-weight="bold" x="355" y="64">e<sub>g</sub></text>
+<text fill="#555" font-size="11" x="420" y="64">d<sub>x²−y²</sub>, d<sub>z²</sub></text>
+<!-- Lower level t_2g -->
+<line stroke="#1565c0" stroke-width="2.5" x1="210" x2="350" y1="160" y2="160"></line>
+<text fill="#1565c0" font-size="13" font-weight="bold" x="355" y="164">t<sub>2g</sub></text>
+<text fill="#555" font-size="11" x="420" y="164">d<sub>xy</sub>, d<sub>xz</sub>, d<sub>yz</sub></text>
+<!-- Δ_oct bracket -->
+<line stroke="#2c5f2d" stroke-width="2" x1="180" x2="180" y1="60" y2="160"></line>
+<line stroke="#2c5f2d" stroke-width="1.5" x1="175" x2="185" y1="60" y2="60"></line>
+<line stroke="#2c5f2d" stroke-width="1.5" x1="175" x2="185" y1="160" y2="160"></line>
+<text fill="#2c5f2d" font-size="14" font-weight="bold" text-anchor="end" x="170" y="114">Δ<sub>oct</sub></text>
+<!-- Barycenter label -->
+<line stroke="#999" stroke-dasharray="3,3" stroke-width="0.8" x1="195" x2="210" y1="122" y2="122"></line>
+<text fill="#888" font-size="9" text-anchor="end" x="190" y="126">barycentre</text>
+<!-- Energy level labels -->
+<text fill="#c62828" font-size="11" text-anchor="start" x="155" y="56">+0.6 Δ<sub>oct</sub></text>
+<text fill="#1565c0" font-size="11" text-anchor="start" x="155" y="175">−0.4 Δ<sub>oct</sub></text>
+<!-- Orbital lobe mini-pictures -->
+<text fill="#888" font-size="9" x="40" y="55">Lobes point</text>
+<text fill="#888" font-size="9" x="40" y="68">ALONG axes</text>
+<text fill="#888" font-size="9" x="40" y="81">→ strong repulsion</text>
+<text fill="#888" font-size="9" x="40" y="155">Lobes point</text>
+<text fill="#888" font-size="9" x="40" y="168">BETWEEN axes</text>
+<text fill="#888" font-size="9" x="40" y="181">→ less repulsion</text>
+<!-- Arrow from free ion to split -->
+<line stroke="#555" stroke-width="1.2" x1="270" x2="270" y1="255" y2="170"></line>
+<text fill="#666" font-size="9" x="250" y="215">+ ligands</text>
 </svg>
 <div class="caption">Figure 2: d-orbital splitting in an octahedral field. The five degenerate orbitals split into a lower-energy t<sub>2g</sub> set (3 orbitals) and a higher-energy e<sub>g</sub> set (2 orbitals). The splitting energy, Δ<sub>oct</sub>, corresponds to the energy of visible-light photons — the origin of colour.</div>
 </div>
-
 <p>The energy gap, $\Delta_{\text{oct}}$ (or $10Dq$), is the <b>crystal field splitting energy</b>. Its magnitude depends on:</p>
 <ol>
-  <li><b>The metal ion:</b> Higher oxidation state → larger $\Delta$. 3d &lt; 4d &lt; 5d series (Δ increases down a group).</li>
-  <li><b>The ligands:</b> Stronger-field ligands produce larger splitting (see spectrochemical series).</li>
-  <li><b>The geometry:</b> $\Delta_{\text{tet}} \approx \frac{4}{9}\Delta_{\text{oct}}$ — tetrahedral splitting is smaller.</li>
+<li><b>The metal ion:</b> Higher oxidation state → larger $\Delta$. 3d &lt; 4d &lt; 5d series (Δ increases down a group).</li>
+<li><b>The ligands:</b> Stronger-field ligands produce larger splitting (see spectrochemical series).</li>
+<li><b>The geometry:</b> $\Delta_{\text{tet}} \approx \frac{4}{9}\Delta_{\text{oct}}$ — tetrahedral splitting is smaller.</li>
 </ol>
-
 <h3>4.3 The Spectrochemical Series</h3>
-
 <p>Ligands can be ranked by the size of $\Delta$ they produce. This is the <b>spectrochemical series</b>:</p>
-
 <div class="definition" style="background:#fdf5e6;border-left:4px solid #d4a017;padding:0.6rem 1rem;margin:0.8rem 0;border-radius:0 8px 8px 0;">
-<b>Spectrochemical Series (increasing Δ):</b><br>
-$\ce{I- < Br- < Cl- < F- < OH- < H2O < NH3 < en < NO2- < CN- < CO}$<br><br>
-<span style="color:#888;">Weak-field (small Δ, high-spin) &nbsp; → &nbsp; Strong-field (large Δ, low-spin)</span>
+<b>Spectrochemical Series (increasing Δ):</b><br/>
+$\ce{I- &lt; Br- &lt; Cl- &lt; F- &lt; OH- &lt; H2O &lt; NH3 &lt; en &lt; NO2- &lt; CN- &lt; CO}$<br/><br/>
+<span style="color:#888;">Weak-field (small Δ, high-spin)   →   Strong-field (large Δ, low-spin)</span>
 </div>
-
 <div class="check-in">
 <p><b>Check-in:</b> $\ce{[CoF6]^{3-}}$ is green; $\ce{[Co(NH3)6]^{3+}}$ is yellow-orange. Which has the larger Δ? Use the spectrochemical series to justify your answer.</p>
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">$\ce{NH3}$ is a stronger-field ligand than $\ce{F-}$ (it's further right in the spectrochemical series), so $\ce{[Co(NH3)6]^{3+}}$ has a <b>larger Δ</b>. A larger Δ means the absorbed photon has higher energy (shorter wavelength). $\ce{[Co(NH3)6]^{3+}}$ absorbs violet/blue (higher energy), transmitting yellow-orange. $\ce{[CoF6]^{3-}}$ absorbs lower-energy red light, transmitting green.</div>
 </div>
-
 <h2>5. Colour of Transition Metal Complexes</h2>
-
 <h3>5.1 The d–d Transition Mechanism</h3>
-
 <p>When white light passes through a complex ion, a photon of energy exactly equal to $\Delta_{\text{oct}}$ can be absorbed, promoting an electron from a $t_{2g}$ orbital to an $e_g$ orbital. This is a <b>d–d transition</b>. The wavelengths <em>not</em> absorbed are transmitted — and that is the colour we see.</p>
 
 $$\Delta E = h\nu = \frac{hc}{\lambda}$$
 
 <p>If $\Delta_{\text{oct}}$ is small (weak-field ligands), low-energy red photons are absorbed, and the complex appears <b>green/blue</b>. If $\Delta_{\text{oct}}$ is large (strong-field ligands), high-energy violet photons are absorbed, and the complex appears <b>yellow/orange/red</b>.</p>
-
 <h3>5.2 The Complementary Colour Wheel</h3>
-
 <div class="diagram">
-<svg width="360" height="360" viewBox="0 0 360 360">
-  <!-- Colour wheel -->
-  <defs>
-    <radialGradient id="wheel" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="white"/>
-      <stop offset="100%" stop-color="white"/>
-    </radialGradient>
-  </defs>
-  <circle cx="180" cy="180" r="150" fill="none" stroke="#ddd" stroke-width="1"/>
-  <!-- Coloured arcs around the wheel -->
-  <!-- Red sector -->
-  <path d="M180,180 L180,30 A150,150 0 0,1 310,105 Z" fill="#e57373" opacity="0.7"/>
-  <!-- Orange sector -->
-  <path d="M180,180 L310,105 A150,150 0 0,1 330,180 Z" fill="#ffb74d" opacity="0.7"/>
-  <!-- Yellow sector -->
-  <path d="M180,180 L330,180 A150,150 0 0,1 310,255 Z" fill="#fff176" opacity="0.7"/>
-  <!-- Green sector -->
-  <path d="M180,180 L310,255 A150,150 0 0,1 180,330 Z" fill="#81c784" opacity="0.7"/>
-  <!-- Blue sector -->
-  <path d="M180,180 L180,330 A150,150 0 0,1 50,255 Z" fill="#64b5f6" opacity="0.7"/>
-  <!-- Violet sector -->
-  <path d="M180,180 L50,255 A150,150 0 0,1 30,180 Z" fill="#ce93d8" opacity="0.7"/>
-  <!-- Purple sector -->
-  <path d="M180,180 L30,180 A150,150 0 0,1 50,105 Z" fill="#ba68c8" opacity="0.6"/>
-  <path d="M180,180 L50,105 A150,150 0 0,1 180,30 Z" fill="#e57373" opacity="0.5"/>
-  <!-- Centre circle -->
-  <circle cx="180" cy="180" r="28" fill="white" stroke="#aaa" stroke-width="1"/>
-  <text x="180" y="184" text-anchor="middle" font-size="10" fill="#555">Absorbed</text>
-  <!-- Complementary arrows -->
-  <!-- Red (absorbed) ↔ Green (seen) -->
-  <line x1="145" y1="48" x2="215" y2="312" stroke="#1a1a1a" stroke-width="1" stroke-dasharray="4,3"/>
-  <!-- Labels -->
-  <text x="95" y="52" font-size="10" font-weight="bold" fill="#c62828">RED</text>
-  <text x="255" y="320" font-size="10" font-weight="bold" fill="#2e7d32">GREEN</text>
-  <!-- Orange ↔ Blue -->
-  <text x="300" y="115" font-size="10" font-weight="bold" fill="#e65100">ORANGE</text>
-  <text x="32" y="270" font-size="10" font-weight="bold" fill="#1565c0">BLUE</text>
-  <!-- Yellow ↔ Violet -->
-  <text x="295" y="195" font-size="10" font-weight="bold" fill="#f9a825">YELLOW</text>
-  <text x="30" y="125" font-size="10" font-weight="bold" fill="#7b1fa2">VIOLET</text>
+<svg height="360" viewbox="0 0 360 360" width="360">
+<!-- Colour wheel -->
+<defs>
+<radialgradient cx="50%" cy="50%" id="wheel" r="50%">
+<stop offset="0%" stop-color="white"></stop>
+<stop offset="100%" stop-color="white"></stop>
+</radialgradient>
+</defs>
+<circle cx="180" cy="180" fill="none" r="150" stroke="#ddd" stroke-width="1"></circle>
+<!-- Coloured arcs around the wheel -->
+<!-- Red sector -->
+<path d="M180,180 L180,30 A150,150 0 0,1 310,105 Z" fill="#e57373" opacity="0.7"></path>
+<!-- Orange sector -->
+<path d="M180,180 L310,105 A150,150 0 0,1 330,180 Z" fill="#ffb74d" opacity="0.7"></path>
+<!-- Yellow sector -->
+<path d="M180,180 L330,180 A150,150 0 0,1 310,255 Z" fill="#fff176" opacity="0.7"></path>
+<!-- Green sector -->
+<path d="M180,180 L310,255 A150,150 0 0,1 180,330 Z" fill="#81c784" opacity="0.7"></path>
+<!-- Blue sector -->
+<path d="M180,180 L180,330 A150,150 0 0,1 50,255 Z" fill="#64b5f6" opacity="0.7"></path>
+<!-- Violet sector -->
+<path d="M180,180 L50,255 A150,150 0 0,1 30,180 Z" fill="#ce93d8" opacity="0.7"></path>
+<!-- Purple sector -->
+<path d="M180,180 L30,180 A150,150 0 0,1 50,105 Z" fill="#ba68c8" opacity="0.6"></path>
+<path d="M180,180 L50,105 A150,150 0 0,1 180,30 Z" fill="#e57373" opacity="0.5"></path>
+<!-- Centre circle -->
+<circle cx="180" cy="180" fill="white" r="28" stroke="#aaa" stroke-width="1"></circle>
+<text fill="#555" font-size="10" text-anchor="middle" x="180" y="184">Absorbed</text>
+<!-- Complementary arrows -->
+<!-- Red (absorbed) ↔ Green (seen) -->
+<line stroke="#1a1a1a" stroke-dasharray="4,3" stroke-width="1" x1="145" x2="215" y1="48" y2="312"></line>
+<!-- Labels -->
+<text fill="#c62828" font-size="10" font-weight="bold" x="95" y="52">RED</text>
+<text fill="#2e7d32" font-size="10" font-weight="bold" x="255" y="320">GREEN</text>
+<!-- Orange ↔ Blue -->
+<text fill="#e65100" font-size="10" font-weight="bold" x="300" y="115">ORANGE</text>
+<text fill="#1565c0" font-size="10" font-weight="bold" x="32" y="270">BLUE</text>
+<!-- Yellow ↔ Violet -->
+<text fill="#f9a825" font-size="10" font-weight="bold" x="295" y="195">YELLOW</text>
+<text fill="#7b1fa2" font-size="10" font-weight="bold" x="30" y="125">VIOLET</text>
 </svg>
 <div class="caption">Figure 3: The complementary colour wheel. A complex absorbs one colour and transmits the complementary colour directly opposite. If a complex absorbs orange light (~600 nm), it appears blue. The dashed line shows the red–green complementary pair.</div>
 </div>
-
 <h3>5.3 When Is a Complex Colourless?</h3>
-
 <p>A complex appears colourless when d–d transitions are <b>impossible</b>. This happens in three cases:</p>
 <ol>
-  <li><b>d⁰ configuration:</b> No d-electrons to promote (e.g., $\ce{Sc^{3+}}$, $\ce{Ti^{4+}}$).</li>
-  <li><b>d¹⁰ configuration:</b> All d-orbitals are full; there is no empty orbital to receive an electron (e.g., $\ce{Zn^{2+}}$, $\ce{Cu+}$).</li>
-  <li><b>Δ falls outside the visible range:</b> If Δ is very small (far-IR absorption) or very large (UV absorption), no visible light is absorbed. This is rare for first-row transition metals with common ligands.</li>
+<li><b>d⁰ configuration:</b> No d-electrons to promote (e.g., $\ce{Sc^{3+}}$, $\ce{Ti^{4+}}$).</li>
+<li><b>d¹⁰ configuration:</b> All d-orbitals are full; there is no empty orbital to receive an electron (e.g., $\ce{Zn^{2+}}$, $\ce{Cu+}$).</li>
+<li><b>Δ falls outside the visible range:</b> If Δ is very small (far-IR absorption) or very large (UV absorption), no visible light is absorbed. This is rare for first-row transition metals with common ligands.</li>
 </ol>
-
 <div class="check-in">
 <p><b>Check-in:</b> $\ce{[Cu(NH3)4(H2O)2]^{2+}}$ appears deep blue. Explain why an aqueous solution of $\ce{ZnSO4}$ is colourless, even though both contain d-block metal ions.</p>
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">$\ce{Cu^{2+}}$ is $\ce{[Ar] 3d^9}$ — it has a hole in the d-subshell, allowing d–d transitions. $\ce{Zn^{2+}}$ is $\ce{[Ar] 3d^{10}}$ — all five d-orbitals are fully occupied. There is no empty orbital for an electron to be promoted into, so no d–d transition is possible. Any absorbed UV photon would not produce visible colour.</div>
 </div>
-
 <!-- SECTION D: Worked Examples -->
 <h2>6. Worked Examples</h2>
-
 <div class="example">
-<b>Example 1 — Determining the Formula of a Complex Ion:</b><br><br>
-When excess aqueous ammonia is added to a solution of $\ce{NiCl2}$, a violet-blue complex forms with the formula $\ce{[Ni(NH3)6]Cl2}$. (a) What is the oxidation state of nickel? (b) What is the coordination number? (c) How many ions are present per formula unit when dissolved in water?<br><br>
-<b>Answer:</b><br>
-(a) The two $\ce{Cl-}$ counter-ions outside the brackets carry a total charge of 2−. For the compound to be neutral, the complex cation must be 2+: $\ce{[Ni(NH3)6]^{2+}}$. Since $\ce{NH3}$ is neutral, Ni must be <b>+2</b>.<br>
-(b) Six $\ce{NH3}$ ligands, each monodentate → CN = <b>6</b>.<br>
-(c) In water: $\ce{[Ni(NH3)6]Cl2 -> [Ni(NH3)6]^{2+} + 2Cl-}$. Total ions = <b>3</b> (one complex cation + two chloride anions).<br><br>
+<b>Example 1 — Determining the Formula of a Complex Ion:</b><br/><br/>
+When excess aqueous ammonia is added to a solution of $\ce{NiCl2}$, a violet-blue complex forms with the formula $\ce{[Ni(NH3)6]Cl2}$. (a) What is the oxidation state of nickel? (b) What is the coordination number? (c) How many ions are present per formula unit when dissolved in water?<br/><br/>
+<b>Answer:</b><br/>
+(a) The two $\ce{Cl-}$ counter-ions outside the brackets carry a total charge of 2−. For the compound to be neutral, the complex cation must be 2+: $\ce{[Ni(NH3)6]^{2+}}$. Since $\ce{NH3}$ is neutral, Ni must be <b>+2</b>.<br/>
+(b) Six $\ce{NH3}$ ligands, each monodentate → CN = <b>6</b>.<br/>
+(c) In water: $\ce{[Ni(NH3)6]Cl2 -&gt; [Ni(NH3)6]^{2+} + 2Cl-}$. Total ions = <b>3</b> (one complex cation + two chloride anions).<br/><br/>
 <b>⚠ Common trap:</b> Students write $\ce{Ni^{2+}}$ and 6 $\ce{NH3}$ as separate ions. The $\ce{NH3}$ molecules are <em>coordinated</em> to the metal — they do not dissociate. Only the counter-ions outside the brackets dissociate.
 </div>
-
 <div class="example">
-<b>Example 2 — Predicting Colour Using the Spectrochemical Series:</b><br><br>
-$\ce{[Cr(H2O)6]^{3+}}$ appears violet. Predict whether $\ce{[Cr(NH3)6]^{3+}}$ absorbs light of higher or lower energy, and state the colour you expect for this complex. ($\ce{NH3}$ is a stronger-field ligand than $\ce{H2O}$.)<br><br>
-<b>Answer:</b><br>
-$\ce{NH3}$ produces a <b>larger Δ</b> than $\ce{H2O}$. A larger Δ means the absorbed photon has higher energy ($\Delta E = hc/\lambda$), so $\ce{[Cr(NH3)6]^{3+}}$ absorbs <b>shorter-wavelength</b> light (shifted towards violet/UV).<br><br>
-$\ce{[Cr(H2O)6]^{3+}}$ absorbs yellow (~570 nm) → appears violet (complementary).<br>
-$\ce{[Cr(NH3)6]^{3+}}$ absorbs violet/blue (~420 nm) → appears <b>yellow-orange</b> (complementary).<br><br>
+<b>Example 2 — Predicting Colour Using the Spectrochemical Series:</b><br/><br/>
+$\ce{[Cr(H2O)6]^{3+}}$ appears violet. Predict whether $\ce{[Cr(NH3)6]^{3+}}$ absorbs light of higher or lower energy, and state the colour you expect for this complex. ($\ce{NH3}$ is a stronger-field ligand than $\ce{H2O}$.)<br/><br/>
+<b>Answer:</b><br/>
+$\ce{NH3}$ produces a <b>larger Δ</b> than $\ce{H2O}$. A larger Δ means the absorbed photon has higher energy ($\Delta E = hc/\lambda$), so $\ce{[Cr(NH3)6]^{3+}}$ absorbs <b>shorter-wavelength</b> light (shifted towards violet/UV).<br/><br/>
+$\ce{[Cr(H2O)6]^{3+}}$ absorbs yellow (~570 nm) → appears violet (complementary).<br/>
+$\ce{[Cr(NH3)6]^{3+}}$ absorbs violet/blue (~420 nm) → appears <b>yellow-orange</b> (complementary).<br/><br/>
 This is the reason complexes of the same metal ion with different ligands have different colours. The ligand determines Δ, which determines the absorbed wavelength, which determines the observed colour.
 </div>
-
 <div class="example">
-<b>Example 3 — Relating Absorption Wavelength to Δ:</b><br><br>
-$\ce{[Ti(H2O)6]^{3+}}$ ($d^1$) absorbs light maximally at $\lambda = 510$ nm. Calculate the crystal field splitting energy Δ in kJ mol⁻¹.<br>
-($h = 6.63 \times 10^{-34}$ J s, $c = 3.00 \times 10^8$ m s⁻¹, $N_A = 6.02 \times 10^{23}$ mol⁻¹)<br><br>
-<b>Step 1:</b> $\Delta E = hc/\lambda = (6.63\times10^{-34} \times 3.00\times10^8) / (510 \times 10^{-9}) = 3.90 \times 10^{-19}$ J <b>per ion</b>.<br>
-<b>Step 2:</b> Per mole: $\Delta E_{\text{mol}} = 3.90\times10^{-19} \times 6.02\times10^{23} = 2.35 \times 10^5$ J mol⁻¹ = <b>235 kJ mol⁻¹</b>.<br><br>
+<b>Example 3 — Relating Absorption Wavelength to Δ:</b><br/><br/>
+$\ce{[Ti(H2O)6]^{3+}}$ ($d^1$) absorbs light maximally at $\lambda = 510$ nm. Calculate the crystal field splitting energy Δ in kJ mol⁻¹.<br/>
+($h = 6.63 \times 10^{-34}$ J s, $c = 3.00 \times 10^8$ m s⁻¹, $N_A = 6.02 \times 10^{23}$ mol⁻¹)<br/><br/>
+<b>Step 1:</b> $\Delta E = hc/\lambda = (6.63\times10^{-34} \times 3.00\times10^8) / (510 \times 10^{-9}) = 3.90 \times 10^{-19}$ J <b>per ion</b>.<br/>
+<b>Step 2:</b> Per mole: $\Delta E_{\text{mol}} = 3.90\times10^{-19} \times 6.02\times10^{23} = 2.35 \times 10^5$ J mol⁻¹ = <b>235 kJ mol⁻¹</b>.<br/><br/>
 This energy is comparable to the strength of a chemical bond — which is why ligand substitution can dramatically alter a complex's properties.
 </div>
-
 <!-- Common Mistakes -->
 <div class="misconception">
 <h3>⚠️ Common Mistakes to Avoid</h3>
 <ol>
-  <li><b>Confusing zinc and copper as transition metals.</b> Zinc is NOT a transition metal ($\ce{Zn^{2+}}$ is d¹⁰); copper IS ($\ce{Cu^{2+}}$ is d⁹). Check the <em>ion</em>, not the neutral atom. IB examiners love this distinction.</li>
-  <li><b>Mixing up coordination number and number of ligands.</b> With polydentate ligands like en or EDTA, the CN is larger than the ligand count. $\ce{[Ni(en)3]^{2+}}$ has 3 ligands but CN = 6.</li>
-  <li><b>Thinking the complex ion dissociates completely in water.</b> Only the counter-ions outside the coordination sphere dissociate. The ligands inside the brackets stay bound to the metal — they do not become free ions.</li>
-  <li><b>Confusing the colour absorbed with the colour observed.</b> The complex transmits the <em>complementary</em> colour of the light absorbed. If red is absorbed (~650 nm), the complex appears green. Always use the colour wheel.</li>
-  <li><b>Forgetting that tetrahedral splitting is smaller than octahedral.</b> $\Delta_{\text{tet}} \approx \frac{4}{9}\Delta_{\text{oct}}$ because only 4 ligands approach (vs. 6) and they do not point directly at the d-orbitals. Tetrahedral complexes tend to absorb lower-energy light and often appear more deeply coloured.</li>
-  <li><b>Assuming all d-block compounds are coloured.</b> d⁰ and d¹⁰ configurations produce colourless compounds. $\ce{CuSO4}$ is blue while $\ce{ZnSO4}$ is colourless — despite both being d-block sulfates.</li>
+<li><b>Confusing zinc and copper as transition metals.</b> Zinc is NOT a transition metal ($\ce{Zn^{2+}}$ is d¹⁰); copper IS ($\ce{Cu^{2+}}$ is d⁹). Check the <em>ion</em>, not the neutral atom. IB examiners love this distinction.</li>
+<li><b>Mixing up coordination number and number of ligands.</b> With polydentate ligands like en or EDTA, the CN is larger than the ligand count. $\ce{[Ni(en)3]^{2+}}$ has 3 ligands but CN = 6.</li>
+<li><b>Thinking the complex ion dissociates completely in water.</b> Only the counter-ions outside the coordination sphere dissociate. The ligands inside the brackets stay bound to the metal — they do not become free ions.</li>
+<li><b>Confusing the colour absorbed with the colour observed.</b> The complex transmits the <em>complementary</em> colour of the light absorbed. If red is absorbed (~650 nm), the complex appears green. Always use the colour wheel.</li>
+<li><b>Forgetting that tetrahedral splitting is smaller than octahedral.</b> $\Delta_{\text{tet}} \approx \frac{4}{9}\Delta_{\text{oct}}$ because only 4 ligands approach (vs. 6) and they do not point directly at the d-orbitals. Tetrahedral complexes tend to absorb lower-energy light and often appear more deeply coloured.</li>
+<li><b>Assuming all d-block compounds are coloured.</b> d⁰ and d¹⁰ configurations produce colourless compounds. $\ce{CuSO4}$ is blue while $\ce{ZnSO4}$ is colourless — despite both being d-block sulfates.</li>
 </ol>
 </div>
-
 <!-- SECTION G: End-of-Lesson Practice -->
 <h2>7. End-of-Lesson Practice</h2>
-
-<p><b>Question 1 (Paper 1 style):</b> Which of the following is NOT a transition metal according to the IUPAC definition?<br>
-A. $\ce{Fe}$ &nbsp; B. $\ce{Cu}$ &nbsp; C. $\ce{Zn}$ &nbsp; D. $\ce{Mn}$</p>
-
-<p><b>Question 2:</b> Determine the oxidation state of the metal and the coordination number in each complex:<br>
-(a) $\ce{[Fe(CN)6]^{4-}}$ &nbsp; (b) $\ce{[Co(NH3)5Cl]^{2+}}$ &nbsp; (c) $\ce{[Cr(en)3]^{3+}}$</p>
-
+<p><b>Question 1 (Paper 1 style):</b> Which of the following is NOT a transition metal according to the IUPAC definition?<br/>
+A. $\ce{Fe}$   B. $\ce{Cu}$   C. $\ce{Zn}$   D. $\ce{Mn}$</p>
+<p><b>Question 2:</b> Determine the oxidation state of the metal and the coordination number in each complex:<br/>
+(a) $\ce{[Fe(CN)6]^{4-}}$   (b) $\ce{[Co(NH3)5Cl]^{2+}}$   (c) $\ce{[Cr(en)3]^{3+}}$</p>
 <p><b>Question 3:</b> $\ce{[Fe(H2O)6]^{2+}}$ is pale green, while $\ce{[Fe(CN)6]^{4-}}$ is deep yellow. Use Crystal Field Theory and the spectrochemical series to explain this difference clearly.</p>
-
 <p><b>Question 4:</b> The complex $\ce{[Ni(H2O)6]^{2+}}$ is green. It absorbs light at approximately 680 nm (red region). (a) Explain, using CFT, why this absorption occurs. (b) $\ce{[Ni(NH3)6]^{2+}}$ is blue. State and explain whether $\ce{NH3}$ produces a larger or smaller Δ than $\ce{H2O}$.</p>
-
 <p><b>Question 5:</b> The complex $\ce{[Cu(H2O)6]^{2+}}$ absorbs light at 800 nm. Calculate the crystal field splitting energy Δ in kJ mol⁻¹. ($h = 6.63 \times 10^{-34}$ J s, $c = 3.00 \times 10^8$ m s⁻¹, $L = 6.02 \times 10^{23}$ mol⁻¹)</p>
-
-<p><b>Question 6 (IB-style multi-step):</b> Chromium(III) forms a complex with water, $\ce{[Cr(H2O)6]^{3+}}$, which is violet.<br>
-(a) Write the electron configuration of $\ce{Cr^{3+}}$ using the noble-gas abbreviation.<br>
-(b) In an octahedral field, how many electrons occupy the $t_{2g}$ and $e_g$ sets for this ion? Sketch the orbital filling.<br>
-(c) The complex absorbs light in the yellow region (570 nm). Calculate the energy of this transition in kJ mol⁻¹.<br>
+<p><b>Question 6 (IB-style multi-step):</b> Chromium(III) forms a complex with water, $\ce{[Cr(H2O)6]^{3+}}$, which is violet.<br/>
+(a) Write the electron configuration of $\ce{Cr^{3+}}$ using the noble-gas abbreviation.<br/>
+(b) In an octahedral field, how many electrons occupy the $t_{2g}$ and $e_g$ sets for this ion? Sketch the orbital filling.<br/>
+(c) The complex absorbs light in the yellow region (570 nm). Calculate the energy of this transition in kJ mol⁻¹.<br/>
 (d) When $\ce{NH3}$ replaces $\ce{H2O}$, the complex turns yellow-orange. Use the spectrochemical series to explain this colour change.</p>
-
 <button class="practice-toggle" onclick="var a=this.nextElementSibling;a.classList.toggle('open');this.textContent=a.classList.contains('open')?'▴ Hide Answers':'▸ Show Answers'">▸ Show Answers</button>
 <div class="practice-answers">
-
 <p><b>Answer 1:</b> C. Zinc ($\ce{Zn}$) forms only $\ce{Zn^{2+}}$, which has a full d¹⁰ configuration, so it does not meet the IUPAC definition of a transition metal. Fe, Cu, and Mn all form ions with incomplete d-subshells.</p>
-
-<p><b>Answer 2:</b><br>
-(a) $\ce{[Fe(CN)6]^{4-}}$: 6 × $\ce{CN-}$ (charge −1 each) = −6 total from ligands. Complex has −4 overall, so Fe must be +2 (since +2 − 6 = −4). CN = <b>6</b>, Fe = <b>+2</b>.<br>
-(b) $\ce{[Co(NH3)5Cl]^{2+}}$: 5 × $\ce{NH3}$ (0) + 1 × $\ce{Cl-}$ (−1) = −1 total from ligands. Overall +2, so Co = +3 (since +3 − 1 = +2). CN = <b>6</b> (5 × monodentate $\ce{NH3}$ + 1 × monodentate $\ce{Cl-}$).<br>
+<p><b>Answer 2:</b><br/>
+(a) $\ce{[Fe(CN)6]^{4-}}$: 6 × $\ce{CN-}$ (charge −1 each) = −6 total from ligands. Complex has −4 overall, so Fe must be +2 (since +2 − 6 = −4). CN = <b>6</b>, Fe = <b>+2</b>.<br/>
+(b) $\ce{[Co(NH3)5Cl]^{2+}}$: 5 × $\ce{NH3}$ (0) + 1 × $\ce{Cl-}$ (−1) = −1 total from ligands. Overall +2, so Co = +3 (since +3 − 1 = +2). CN = <b>6</b> (5 × monodentate $\ce{NH3}$ + 1 × monodentate $\ce{Cl-}$).<br/>
 (c) $\ce{[Cr(en)3]^{3+}}$: 3 × en (neutral) = 0 from ligands. Overall +3, so Cr = <b>+3</b>. CN = 3 × 2 = <b>6</b> (each en is bidentate).</p>
-
 <p><b>Answer 3:</b> $\ce{CN-}$ is a much stronger-field ligand than $\ce{H2O}$ (farther right on the spectrochemical series). $\ce{[Fe(CN)6]^{4-}}$ has a <b>larger Δ</b>, absorbing higher-energy violet/blue photons → transmits yellow. $\ce{[Fe(H2O)6]^{2+}}$ has a <b>smaller Δ</b>, absorbing lower-energy red photons → transmits green. Additionally, Fe is +2 in both, but the stronger field from $\ce{CN-}$ can lead to low-spin pairing, further affecting the electronic structure. The key is: stronger ligand → larger Δ → higher-energy absorption → shorter-wavelength absorbed.</p>
-
-<p><b>Answer 4:</b><br>
-(a) $\ce{Ni^{2+}}$ is d⁸. In an octahedral field, the d-orbitals split into $t_{2g}$ (lower) and $e_g$ (higher). A photon of red light (680 nm, ~1.82 eV) has energy equal to Δ, promoting an electron from a $t_{2g}$ to an $e_g$ orbital. Red light is absorbed; the complementary colour green is transmitted.<br>
+<p><b>Answer 4:</b><br/>
+(a) $\ce{Ni^{2+}}$ is d⁸. In an octahedral field, the d-orbitals split into $t_{2g}$ (lower) and $e_g$ (higher). A photon of red light (680 nm, ~1.82 eV) has energy equal to Δ, promoting an electron from a $t_{2g}$ to an $e_g$ orbital. Red light is absorbed; the complementary colour green is transmitted.<br/>
 (b) $\ce{[Ni(NH3)6]^{2+}}$ is blue, meaning it absorbs orange light (~600 nm). Since orange has <em>shorter</em> wavelength (higher energy) than red, $\ce{NH3}$ must produce a <b>larger Δ</b> than $\ce{H2O}$. This matches the spectrochemical series: $\ce{NH3}$ is a stronger-field ligand than $\ce{H2O}$.</p>
-
 <p><b>Answer 5:</b> $\Delta E = hc/\lambda = (6.63\times10^{-34} \times 3.00\times10^8) / (800 \times 10^{-9}) = 2.49 \times 10^{-19}$ J per ion. Per mole: $2.49\times10^{-19} \times 6.02\times10^{23} = 1.50 \times 10^5$ J mol⁻¹ = <b>150 kJ mol⁻¹</b>.</p>
-
-<p><b>Answer 6:</b><br>
-(a) $\ce{Cr^{3+}}$: Cr is $\ce{[Ar] 3d^5 4s^1}$. Remove 3 electrons (4s first, then two from 3d): $\ce{Cr^{3+}}$ = <b>$\ce{[Ar] 3d^3}$</b>.<br>
-(b) All three d-electrons occupy the lower-energy $t_{2g}$ set: $t_{2g}^3\ e_g^0$. By Hund's rule, each $t_{2g}$ orbital gets one electron with parallel spins.<br>
-(c) $\Delta E = hc/\lambda = (6.63\times10^{-34} \times 3.00\times10^8) / (570 \times 10^{-9}) = 3.49 \times 10^{-19}$ J. Per mole: $3.49\times10^{-19} \times 6.02\times10^{23} = 2.10 \times 10^5$ J mol⁻¹ = <b>210 kJ mol⁻¹</b>.<br>
+<p><b>Answer 6:</b><br/>
+(a) $\ce{Cr^{3+}}$: Cr is $\ce{[Ar] 3d^5 4s^1}$. Remove 3 electrons (4s first, then two from 3d): $\ce{Cr^{3+}}$ = <b>$\ce{[Ar] 3d^3}$</b>.<br/>
+(b) All three d-electrons occupy the lower-energy $t_{2g}$ set: $t_{2g}^3\ e_g^0$. By Hund's rule, each $t_{2g}$ orbital gets one electron with parallel spins.<br/>
+(c) $\Delta E = hc/\lambda = (6.63\times10^{-34} \times 3.00\times10^8) / (570 \times 10^{-9}) = 3.49 \times 10^{-19}$ J. Per mole: $3.49\times10^{-19} \times 6.02\times10^{23} = 2.10 \times 10^5$ J mol⁻¹ = <b>210 kJ mol⁻¹</b>.<br/>
 (d) $\ce{NH3}$ is a stronger-field ligand than $\ce{H2O}$, so Δ increases. The complex absorbs higher-energy (shorter-wavelength) light — shifting from yellow absorption (~570 nm) towards violet/blue absorption. With violet/blue absorbed, the complementary colour yellow-orange is transmitted. Hence the colour change from violet to yellow-orange.</p>
 </div>
-
 <!-- SECTION H -->
 <h2>8. Key Terms</h2>
 <table>
@@ -446,23 +389,145 @@ A. $\ce{Fe}$ &nbsp; B. $\ce{Cu}$ &nbsp; C. $\ce{Zn}$ &nbsp; D. $\ce{Mn}$</p>
 <tr><td>Crystal Field Theory (CFT)</td><td>A model that explains the electronic structure and colour of complexes: ligands are treated as negative point charges that split the d-orbitals into different energy levels</td></tr>
 <tr><td>$\Delta_{\text{oct}}$</td><td>The crystal field splitting energy in an octahedral complex — the energy gap between the $t_{2g}$ and $e_g$ sets</td></tr>
 <tr><td>$t_{2g}$ / $e_g$</td><td>In an octahedral field: $t_{2g}$ = the lower-energy set of three d-orbitals ($d_{xy}$, $d_{xz}$, $d_{yz}$); $e_g$ = the higher-energy set of two d-orbitals ($d_{x^2-y^2}$, $d_{z^2}$)</td></tr>
-<tr><td>Spectrochemical series</td><td>An ordering of ligands by the size of Δ they produce: $\ce{I- < Br- < Cl- < F- < OH- < H2O < NH3 < en < CN- < CO}$</td></tr>
+<tr><td>Spectrochemical series</td><td>An ordering of ligands by the size of Δ they produce: $\ce{I- &lt; Br- &lt; Cl- &lt; F- &lt; OH- &lt; H2O &lt; NH3 &lt; en &lt; CN- &lt; CO}$</td></tr>
 <tr><td>d–d transition</td><td>An electronic transition in which an electron is promoted from a lower-energy d-orbital to a higher-energy d-orbital by absorbing a photon of visible light</td></tr>
 <tr><td>Complementary colour</td><td>The colour observed when a specific wavelength of light is absorbed; the colour directly opposite on the colour wheel</td></tr>
 <tr><td>Strong-field ligand</td><td>A ligand that produces a large Δ (e.g. $\ce{CN-}$, $\ce{CO}$), often leading to low-spin configurations</td></tr>
 <tr><td>Weak-field ligand</td><td>A ligand that produces a small Δ (e.g. $\ce{I-}$, $\ce{Cl-}$), generally leading to high-spin configurations</td></tr>
 </table>
-
 <!-- SECTION I -->
 <h2>9. Exam Tips</h2>
-
 <div class="exam-tip"><b>Paper 1 (Multiple Choice):</b> The "zinc is NOT a transition metal" question appears in some form almost every year. Memorise: Zn is d¹⁰ in its only ion ($\ce{Zn^{2+}}$), so it fails the definition. Also, Sc ($\ce{Sc^{3+}}$ is d⁰) is not a transition metal. The definition hinges on the <em>ion</em> having an incomplete d-subshell.</div>
-
 <div class="exam-tip"><b>Paper 2 (Structured):</b> When asked to explain the colour of a complex, use the full chain of reasoning: (1) state the d-electron configuration, (2) name the geometry and state that the d-orbitals split, (3) identify which light is absorbed (Δ = photon energy), (4) state the complementary colour transmitted. Four clear sentences earn full marks. A vague "the complex is blue because of d-orbitals" gets almost nothing.</div>
-
 <div class="exam-tip"><b>Paper 2 — Oxidation State Calculations:</b> When given a complex like $\ce{[Co(NH3)5Cl]Cl2}$, remember: ligands inside the brackets plus the metal must balance the overall charge of the complex ion. Counter-ions outside the brackets balance the complex ion's charge. Write an equation: $x + 5(0) + (-1) = +2$ → $x = +3$ for cobalt. Always check your answer — the oxidation state should be a common one for that metal (Co is often +2 or +3).</div>
-
 <div class="exam-tip"><b>Paper 2/3 — CFT Diagrams:</b> You may be asked to sketch the d-orbital splitting diagram for an octahedral complex. Label the axes (Energy), show the degenerate set splitting into $t_{2g}$ (lower, three orbitals) and $e_g$ (higher, two orbitals), label $\Delta_{\text{oct}}$, and populate the orbitals with electrons for the given dⁿ configuration. Marks are awarded for correct relative energies, correct labels, and correct electron filling (follow Hund's rule).</div>
 
+<div class="lesson-actions" style="margin: 2rem 0; padding: 1.5rem; background: #f8fafc; border-radius: 8px; display: flex; gap: 1rem; flex-wrap: wrap;">
+<button class="action-btn" id="generate-flashcards-btn" style="padding: 0.75rem 1.5rem; background: #3b82f6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        🗂️ Generate Flashcards
+    </button>
+<button class="action-btn" id="practice-problems-btn" style="padding: 0.75rem 1.5rem; background: #10b981; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        ✏️ Practice Problems
+    </button>
+<button class="action-btn" id="ask-ai-btn" style="padding: 0.75rem 1.5rem; background: #8b5cf6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        💬 Ask AI
+    </button>
+</div>
+<script>
+(function() {
+    const subjectKey = "chemistry";
+    const lessonId = "lesson_13";
+    const lessonTitle = "Lesson 13: Transition Metals — Complex Ions, Colour, Crystal Field Theory";
+
+    function getCsrf() {
+        var m = document.querySelector('meta[name="csrf-token"]');
+        return m ? m.getAttribute('content') : '';
+    }
+
+    // Completion checkbox
+    const checkbox = document.getElementById('lesson-complete');
+    if (checkbox) {
+        // Load saved state
+        const saved = localStorage.getItem(`completed_${subjectKey}_${lessonId}`);
+        if (saved === 'true') checkbox.checked = true;
+
+        checkbox.addEventListener('change', async function() {
+            const completed = this.checked;
+            localStorage.setItem(`completed_${subjectKey}_${lessonId}`, completed);
+
+            try {
+                await fetch('/toggle_completion', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': getCsrf()
+                    },
+                    body: JSON.stringify({
+                        subject: subjectKey,
+                        lesson: lessonId,
+                        completed: completed
+                    })
+                });
+            } catch(e) {
+                console.error('Error saving completion:', e);
+            }
+        });
+    }
+
+    // Generate Flashcards
+    const flashcardsBtn = document.getElementById('generate-flashcards-btn');
+    if (flashcardsBtn) {
+        flashcardsBtn.addEventListener('click', async function() {
+            this.disabled = true;
+            this.textContent = '⏳ Generating...';
+
+            try {
+                const content = document.body.innerText.substring(0, 2000);
+                const response = await fetch('/generate_flashcards', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': getCsrf()
+                    },
+                    body: JSON.stringify({
+                        subject: subjectKey,
+                        lesson: lessonTitle,
+                        content_summary: content
+                    })
+                });
+
+                const data = await response.json();
+                if (data.error) {
+                    alert('Error: ' + data.error);
+                } else {
+                    alert(`✅ Created ${data.count} flashcards! View them at /flashcards/${subjectKey}`);
+                }
+            } catch(e) {
+                alert('Error generating flashcards: ' + e.message);
+            } finally {
+                this.disabled = false;
+                this.textContent = '🗂️ Generate Flashcards';
+            }
+        });
+    }
+
+    // Practice Problems - open in new section
+    const practiceBtn = document.getElementById('practice-problems-btn');
+    if (practiceBtn) {
+        practiceBtn.addEventListener('click', function() {
+            alert('Practice problems feature coming soon! Use the AI chatbot to generate custom questions.');
+        });
+    }
+
+    // Ask AI - scroll to chatbot
+    const aiBtn = document.getElementById('ask-ai-btn');
+    if (aiBtn) {
+        aiBtn.addEventListener('click', function() {
+            const chatbot = document.getElementById('lessons-chatbot');
+            if (chatbot) {
+                chatbot.scrollIntoView({ behavior: 'smooth' });
+                const toggleBtn = chatbot.querySelector('.chatbot-toggle');
+                if (toggleBtn) toggleBtn.click();
+            } else {
+                alert('AI chatbot not available on this page. It will be added soon!');
+            }
+        });
+    }
+
+    // Track lesson view
+    fetch('/mark_viewed', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': getCsrf()
+        },
+        body: JSON.stringify({
+            subject: subjectKey,
+            lesson: lessonId
+        })
+    }).catch(e => console.error('Error tracking view:', e));
+
+})();
+</script>
 </body>
 </html>

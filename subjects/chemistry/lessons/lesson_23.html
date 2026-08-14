@@ -1,14 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Lesson 23 — Chemistry HL — Dynamic Equilibrium &amp; Le Chatelier's Principle</title>
 <script>
 window.MathJax = {tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] },
   loader: { load: ['[tex]/mhchem'] }};
 </script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <style>
 :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -42,218 +43,182 @@ tr:nth-child(even) td { background: #f8f8f6; }
 </style>
 </head>
 <body>
-
 <h1>Lesson 23: Dynamic Equilibrium &amp; Le Chatelier's Principle</h1>
 <p><b>Syllabus reference:</b> 7.1 — Equilibrium</p>
-
 <div class="objectives">
 <h3>Learning Objectives</h3>
 <p>By the end of this lesson, you will be able to:</p>
 <ul>
-  <li><b>Define</b> dynamic equilibrium and explain why it requires a closed system.</li>
-  <li><b>State</b> Le Chatelier's principle and apply it to predict the direction of shift when concentration, pressure, or temperature is changed.</li>
-  <li><b>Explain</b> why a catalyst does not affect the position of equilibrium.</li>
-  <li><b>Analyse</b> the Haber and Contact processes as industrial applications of equilibrium principles.</li>
-  <li><b>Sketch</b> concentration–time graphs showing how a system responds to perturbations.</li>
+<li><b>Define</b> dynamic equilibrium and explain why it requires a closed system.</li>
+<li><b>State</b> Le Chatelier's principle and apply it to predict the direction of shift when concentration, pressure, or temperature is changed.</li>
+<li><b>Explain</b> why a catalyst does not affect the position of equilibrium.</li>
+<li><b>Analyse</b> the Haber and Contact processes as industrial applications of equilibrium principles.</li>
+<li><b>Sketch</b> concentration–time graphs showing how a system responds to perturbations.</li>
 </ul>
 </div>
 
+<div class="lesson-completion" style="margin: 1rem 0; padding: 1rem; background: #f0f9ff; border-radius: 8px;">
+<label class="completion-checkbox" style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer;">
+<input id="lesson-complete" style="width: 24px; height: 24px; cursor: pointer; accent-color: #10b981;" type="checkbox"/>
+<span style="font-size: 1rem; color: #0f172a; font-weight: 500;">✓ Mark this lesson as complete</span>
+</label>
+</div>
 <h2>1. Prior Knowledge Check</h2>
-
 <p><b>Question 1:</b> What is the difference between a reversible and an irreversible reaction? Give an example of each.</p>
 <div class="check-in">
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
-<div class="answer-content">An <b>irreversible</b> reaction goes essentially to completion — the reverse reaction is negligible (e.g., $\ce{2Mg + O2 -> 2MgO}$, combustion). A <b>reversible</b> reaction can proceed in both directions under the same conditions (e.g., $\ce{N2 + 3H2 <=> 2NH3}$). Reversible reactions are denoted by the $\ce{<=>}$ arrow.</div>
+<div class="answer-content">An <b>irreversible</b> reaction goes essentially to completion — the reverse reaction is negligible (e.g., $\ce{2Mg + O2 -&gt; 2MgO}$, combustion). A <b>reversible</b> reaction can proceed in both directions under the same conditions (e.g., $\ce{N2 + 3H2 &lt;=&gt; 2NH3}$). Reversible reactions are denoted by the $\ce{&lt;=&gt;}$ arrow.</div>
 </div>
-
 <p><b>Question 2:</b> For a reaction at equilibrium, is the reaction still occurring? Explain.</p>
 <div class="check-in">
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content"><b>Yes.</b> At equilibrium, the forward and reverse reactions continue at <b>exactly equal rates</b>. The concentrations of all species remain constant because they are being produced and consumed at the same rate. This is why equilibrium is called <b>dynamic</b> — it is active, not static. A common analogy: a busy shop where customers enter and leave at the same rate; the number inside is constant, but movement continues.</div>
 </div>
-
 <h2>2. Dynamic Equilibrium — The Core Concept</h2>
-
 <p>A chemical system is at <b>dynamic equilibrium</b> when:</p>
 <ol>
-  <li>The forward and reverse reactions occur at <b>equal rates</b>.</li>
-  <li>The <b>concentrations</b> of all reactants and products remain <b>constant</b> (not necessarily equal).</li>
-  <li>The system must be <b>closed</b> — no matter can enter or leave.</li>
-  <li>Equilibrium can be approached from <b>either direction</b>.</li>
+<li>The forward and reverse reactions occur at <b>equal rates</b>.</li>
+<li>The <b>concentrations</b> of all reactants and products remain <b>constant</b> (not necessarily equal).</li>
+<li>The system must be <b>closed</b> — no matter can enter or leave.</li>
+<li>Equilibrium can be approached from <b>either direction</b>.</li>
 </ol>
-
 <div class="diagram">
-<svg width="500" height="250" viewBox="0 0 500 250">
-  <line x1="60" y1="210" x2="470" y2="210" stroke="#333" stroke-width="2"/>
-  <line x1="60" y1="215" x2="60" y2="25" stroke="#333" stroke-width="2"/>
-  <text x="265" y="242" text-anchor="middle" font-size="13">Time</text>
-  <text x="18" y="120" text-anchor="middle" font-size="13" transform="rotate(-90,18,120)">Concentration / Rate</text>
-  <!-- forward rate -->
-  <path d="M60,50 Q120,75 200,120 Q260,142 300,142 L470,142" fill="none" stroke="#1565c0" stroke-width="2.5"/>
-  <text x="430" y="132" font-size="11" fill="#1565c0">Forward rate</text>
-  <!-- reverse rate -->
-  <path d="M60,200 Q120,175 200,142 Q260,142 300,142 L470,142" fill="none" stroke="#c62828" stroke-width="2.5"/>
-  <text x="430" y="155" font-size="11" fill="#c62828">Reverse rate</text>
-  <!-- merge point -->
-  <text x="290" y="168" text-anchor="middle" font-size="10" fill="#2c5f2d">Rate_forward</text>
-  <text x="290" y="180" text-anchor="middle" font-size="10" fill="#2c5f2d">= Rate_reverse</text>
-  <!-- reactant conc -->
-  <path d="M60,60 Q150,90 250,125 Q320,140 360,143 L470,143" fill="none" stroke="#ff8f00" stroke-width="2" stroke-dasharray="6,3"/>
-  <text x="440" y="120" font-size="10" fill="#ff8f00">[Reactant]</text>
-  <!-- product conc -->
-  <path d="M60,190 Q150,160 250,140 Q320,143 360,143 L470,143" fill="none" stroke="#6a1b9a" stroke-width="2" stroke-dasharray="6,3"/>
-  <text x="440" y="170" font-size="10" fill="#6a1b9a">[Product]</text>
+<svg height="250" viewbox="0 0 500 250" width="500">
+<line stroke="#333" stroke-width="2" x1="60" x2="470" y1="210" y2="210"></line>
+<line stroke="#333" stroke-width="2" x1="60" x2="60" y1="215" y2="25"></line>
+<text font-size="13" text-anchor="middle" x="265" y="242">Time</text>
+<text font-size="13" text-anchor="middle" transform="rotate(-90,18,120)" x="18" y="120">Concentration / Rate</text>
+<!-- forward rate -->
+<path d="M60,50 Q120,75 200,120 Q260,142 300,142 L470,142" fill="none" stroke="#1565c0" stroke-width="2.5"></path>
+<text fill="#1565c0" font-size="11" x="430" y="132">Forward rate</text>
+<!-- reverse rate -->
+<path d="M60,200 Q120,175 200,142 Q260,142 300,142 L470,142" fill="none" stroke="#c62828" stroke-width="2.5"></path>
+<text fill="#c62828" font-size="11" x="430" y="155">Reverse rate</text>
+<!-- merge point -->
+<text fill="#2c5f2d" font-size="10" text-anchor="middle" x="290" y="168">Rate_forward</text>
+<text fill="#2c5f2d" font-size="10" text-anchor="middle" x="290" y="180">= Rate_reverse</text>
+<!-- reactant conc -->
+<path d="M60,60 Q150,90 250,125 Q320,140 360,143 L470,143" fill="none" stroke="#ff8f00" stroke-dasharray="6,3" stroke-width="2"></path>
+<text fill="#ff8f00" font-size="10" x="440" y="120">[Reactant]</text>
+<!-- product conc -->
+<path d="M60,190 Q150,160 250,140 Q320,143 360,143 L470,143" fill="none" stroke="#6a1b9a" stroke-dasharray="6,3" stroke-width="2"></path>
+<text fill="#6a1b9a" font-size="10" x="440" y="170">[Product]</text>
 </svg>
 <div class="caption">Figure 1: Approach to equilibrium. Initially, forward rate is high (lots of reactant) and reverse rate is zero. As reactants are consumed, forward rate decreases and reverse rate increases until they become equal. At this point, concentrations stop changing — dynamic equilibrium is established.</div>
 </div>
-
 <div class="check-in">
 <p><b>Check-in:</b> Why must the system be closed for equilibrium to be established?</p>
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
-<div class="answer-content">In an open system, products (especially gases) can escape. This means the reverse reaction cannot occur at a rate sufficient to balance the forward reaction — products are continuously lost. The reaction goes to completion instead. For example, $\ce{CaCO3(s) <=> CaO(s) + CO2(g)}$: in an open container, $\ce{CO2}$ escapes and equilibrium is never reached; in a sealed container, equilibrium is established.</div>
+<div class="answer-content">In an open system, products (especially gases) can escape. This means the reverse reaction cannot occur at a rate sufficient to balance the forward reaction — products are continuously lost. The reaction goes to completion instead. For example, $\ce{CaCO3(s) &lt;=&gt; CaO(s) + CO2(g)}$: in an open container, $\ce{CO2}$ escapes and equilibrium is never reached; in a sealed container, equilibrium is established.</div>
 </div>
-
 <h2>3. Le Chatelier's Principle</h2>
-
 <div class="definition">
 <b>Le Chatelier's Principle:</b> If a system at dynamic equilibrium is subjected to a change (in concentration, pressure, or temperature), the position of equilibrium shifts to <b>oppose</b> (partially counteract) that change.
 </div>
-
 <h3>3.1 Effect of Concentration</h3>
 <p>Adding a reactant shifts equilibrium to the <b>right</b> (towards products) to consume the added species. Removing a product also shifts equilibrium right. Adding a product shifts equilibrium <b>left</b>. The value of the equilibrium constant $K_c$ does <b>not</b> change — only the position shifts.</p>
-
 <h3>3.2 Effect of Pressure (Gaseous Systems Only)</h3>
 <p>Increasing pressure (by decreasing volume) shifts equilibrium towards the side with <b>fewer moles of gas</b>. If the number of gas moles is the same on both sides, pressure has <b>no effect</b>. This is because the system "wants" to reduce the total number of particles to lower the pressure.</p>
-
 <div class="diagram">
-<svg width="500" height="220" viewBox="0 0 500 220">
-  <!-- Before -->
-  <rect x="30" y="20" width="200" height="180" rx="10" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
-  <text x="130" y="50" text-anchor="middle" font-size="14" font-weight="bold" fill="#1565c0">$\ce{N2 + 3H2 <=> 2NH3}$</text>
-  <text x="130" y="80" text-anchor="middle" font-size="12">4 moles gas ⇌ 2 moles gas</text>
-  <!-- pressure increase -->
-  <text x="250" y="40" font-size="32" fill="#c62828" font-weight="bold">→ P↑</text>
-  <!-- After -->
-  <rect x="290" y="20" width="180" height="180" rx="10" fill="#e8f5e9" stroke="#2c5f2d" stroke-width="2"/>
-  <text x="380" y="55" text-anchor="middle" font-size="12" fill="#2c5f2d">Shift RIGHT</text>
-  <text x="380" y="75" text-anchor="middle" font-size="12" fill="#2c5f2d">(fewer moles)</text>
-  <text x="380" y="105" text-anchor="middle" font-size="12" fill="#2c5f2d">More NH₃</text>
-  <text x="380" y="125" text-anchor="middle" font-size="12" fill="#666">Kc unchanged</text>
-  <!-- count -->
-  <text x="130" y="115" text-anchor="middle" font-size="11" fill="#666">⇐ fewer gas</text>
-  <text x="130" y="130" text-anchor="middle" font-size="11" fill="#666">molecules →</text>
-  <text x="380" y="155" text-anchor="middle" font-size="11" fill="#666">System opposes</text>
-  <text x="380" y="170" text-anchor="middle" font-size="11" fill="#666">pressure increase</text>
+<svg height="220" viewbox="0 0 500 220" width="500">
+<!-- Before -->
+<rect fill="#e3f2fd" height="180" rx="10" stroke="#1565c0" stroke-width="2" width="200" x="30" y="20"></rect>
+<text fill="#1565c0" font-size="14" font-weight="bold" text-anchor="middle" x="130" y="50">$\ce{N2 + 3H2 &lt;=&gt; 2NH3}$</text>
+<text font-size="12" text-anchor="middle" x="130" y="80">4 moles gas ⇌ 2 moles gas</text>
+<!-- pressure increase -->
+<text fill="#c62828" font-size="32" font-weight="bold" x="250" y="40">→ P↑</text>
+<!-- After -->
+<rect fill="#e8f5e9" height="180" rx="10" stroke="#2c5f2d" stroke-width="2" width="180" x="290" y="20"></rect>
+<text fill="#2c5f2d" font-size="12" text-anchor="middle" x="380" y="55">Shift RIGHT</text>
+<text fill="#2c5f2d" font-size="12" text-anchor="middle" x="380" y="75">(fewer moles)</text>
+<text fill="#2c5f2d" font-size="12" text-anchor="middle" x="380" y="105">More NH₃</text>
+<text fill="#666" font-size="12" text-anchor="middle" x="380" y="125">Kc unchanged</text>
+<!-- count -->
+<text fill="#666" font-size="11" text-anchor="middle" x="130" y="115">⇐ fewer gas</text>
+<text fill="#666" font-size="11" text-anchor="middle" x="130" y="130">molecules →</text>
+<text fill="#666" font-size="11" text-anchor="middle" x="380" y="155">System opposes</text>
+<text fill="#666" font-size="11" text-anchor="middle" x="380" y="170">pressure increase</text>
 </svg>
 <div class="caption">Figure 2: Effect of pressure increase on the Haber process. High pressure shifts equilibrium towards fewer gas molecules (right, towards NH₃), increasing yield.</div>
 </div>
-
 <h3>3.3 Effect of Temperature</h3>
 <p>This is the <b>only</b> perturbation that changes $K_c$. Treat heat as a reactant (endothermic) or product (exothermic):</p>
 <ul>
-  <li><b>Exothermic</b> ($\Delta H < 0$): heat is a product. Increasing temperature shifts equilibrium <b>left</b>; $K_c$ <b>decreases</b>.</li>
-  <li><b>Endothermic</b> ($\Delta H > 0$): heat is a reactant. Increasing temperature shifts equilibrium <b>right</b>; $K_c$ <b>increases</b>.</li>
+<li><b>Exothermic</b> ($\Delta H &lt; 0$): heat is a product. Increasing temperature shifts equilibrium <b>left</b>; $K_c$ <b>decreases</b>.</li>
+<li><b>Endothermic</b> ($\Delta H &gt; 0$): heat is a reactant. Increasing temperature shifts equilibrium <b>right</b>; $K_c$ <b>increases</b>.</li>
 </ul>
-
 <h3>3.4 Effect of a Catalyst</h3>
 <p>A catalyst <b>does NOT shift equilibrium</b>. It lowers $E_a$ equally for the forward and reverse reactions, so both rates increase by the same factor. The system reaches equilibrium <b>faster</b>, but the equilibrium composition is unchanged. $K_c$ is unaffected.</p>
-
 <div class="check-in">
-<p><b>Check-in:</b> For $\ce{2SO2(g) + O2(g) <=> 2SO3(g)}$, $\Delta H = -197$ kJ mol⁻¹. Predict the effect of: (a) increasing pressure, (b) raising temperature, (c) adding a $\ce{V2O5}$ catalyst.</p>
+<p><b>Check-in:</b> For $\ce{2SO2(g) + O2(g) &lt;=&gt; 2SO3(g)}$, $\Delta H = -197$ kJ mol⁻¹. Predict the effect of: (a) increasing pressure, (b) raising temperature, (c) adding a $\ce{V2O5}$ catalyst.</p>
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">(a) 3 moles gas → 2 moles gas. Increasing pressure shifts equilibrium <b>right</b>, increasing $\ce{SO3}$ yield. (b) Exothermic — heat is a product. Raising temperature shifts equilibrium <b>left</b>, decreasing $\ce{SO3}$ yield and lowering $K_c$. (c) Catalyst increases the rate of both forward and reverse reactions equally — reaches equilibrium faster but <b>no change in position or $K_c$</b>.</div>
 </div>
-
 <h2>4. Industrial Applications</h2>
-
-<h3>4.1 The Haber Process: $\ce{N2(g) + 3H2(g) <=> 2NH3(g)}$, $\Delta H = -92$ kJ mol⁻¹</h3>
-
+<h3>4.1 The Haber Process: $\ce{N2(g) + 3H2(g) &lt;=&gt; 2NH3(g)}$, $\Delta H = -92$ kJ mol⁻¹</h3>
 <table>
 <tr><th>Condition</th><th>Compromise Used</th><th>Reason</th></tr>
 <tr><td>Pressure</td><td>~200 atm</td><td>High pressure favours NH₃ (fewer moles), but very high pressure is expensive and dangerous</td></tr>
 <tr><td>Temperature</td><td>~450°C</td><td>Low T favours NH₃ (exothermic), but rate would be too slow; 450°C is a compromise between yield and rate</td></tr>
 <tr><td>Catalyst</td><td>Iron (Fe)</td><td>Speeds up attainment of equilibrium; does not affect yield</td></tr>
 </table>
-
-<h3>4.2 The Contact Process: $\ce{2SO2(g) + O2(g) <=> 2SO3(g)}$, $\Delta H = -197$ kJ mol⁻¹</h3>
-
+<h3>4.2 The Contact Process: $\ce{2SO2(g) + O2(g) &lt;=&gt; 2SO3(g)}$, $\Delta H = -197$ kJ mol⁻¹</h3>
 <table>
 <tr><th>Condition</th><th>Compromise Used</th><th>Reason</th></tr>
 <tr><td>Pressure</td><td>~2 atm (low)</td><td>3→2 moles, but equilibrium already lies far right at low P — high P not needed economically</td></tr>
 <tr><td>Temperature</td><td>~450°C</td><td>Compromise: lower T gives better yield but slower rate</td></tr>
 <tr><td>Catalyst</td><td>$\ce{V2O5}$</td><td>Increases rate without affecting equilibrium position</td></tr>
 </table>
-
 <div class="check-in">
 <p><b>Check-in:</b> In the Haber process, why not use a temperature of 200°C for a higher yield?</p>
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">At 200°C, the equilibrium yield of NH₃ would indeed be higher (exothermic reaction favours lower T). However, the <b>rate</b> would be unacceptably slow — even with a catalyst, the reaction would take far too long to reach equilibrium. Industrial processes prioritise <b>rate</b> (productivity per unit time) over maximum theoretical yield. 450°C is the economical compromise: acceptable yield at an acceptable rate.</div>
 </div>
-
 <h2>5. Worked Examples</h2>
-
 <div class="example">
-<b>Example 1 — Predicting Shifts:</b><br><br>
-$\ce{2NO2(g) <=> N2O4(g)}$, $\Delta H = -58$ kJ mol⁻¹. (Brown) ⇌ (Colourless). Predict the colour change when: (a) pressure is increased, (b) temperature is decreased, (c) a catalyst is added.<br><br>
-<b>Solution:</b> (a) 2 moles → 1 mole. Increasing P shifts right → more colourless $\ce{N2O4}$ → mixture becomes <b>paler</b>. (b) Exothermic. Decreasing T favours the exothermic direction (right) → more $\ce{N2O4}$ → mixture becomes <b>paler</b>. (c) Catalyst does not shift equilibrium → <b>no colour change</b>, but equilibrium is reached faster.<br><br>
+<b>Example 1 — Predicting Shifts:</b><br/><br/>
+$\ce{2NO2(g) &lt;=&gt; N2O4(g)}$, $\Delta H = -58$ kJ mol⁻¹. (Brown) ⇌ (Colourless). Predict the colour change when: (a) pressure is increased, (b) temperature is decreased, (c) a catalyst is added.<br/><br/>
+<b>Solution:</b> (a) 2 moles → 1 mole. Increasing P shifts right → more colourless $\ce{N2O4}$ → mixture becomes <b>paler</b>. (b) Exothermic. Decreasing T favours the exothermic direction (right) → more $\ce{N2O4}$ → mixture becomes <b>paler</b>. (c) Catalyst does not shift equilibrium → <b>no colour change</b>, but equilibrium is reached faster.<br/><br/>
 <b>⚠️ Common wrong approach:</b> Saying "the mixture turns colourless." At equilibrium, both species are present, so the mixture is never fully colourless — it becomes lighter brown (paler), not colourless. Equilibrium mixtures almost always contain all species.
 </div>
-
 <div class="example">
-<b>Example 2 — Concentration–Time Graph:</b><br><br>
-For $\ce{A + B <=> C + D}$, the system is at equilibrium. At $t_1$, more A is added. At $t_2$, some C is removed. Sketch the concentration–time graph for all four species.<br><br>
+<b>Example 2 — Concentration–Time Graph:</b><br/><br/>
+For $\ce{A + B &lt;=&gt; C + D}$, the system is at equilibrium. At $t_1$, more A is added. At $t_2$, some C is removed. Sketch the concentration–time graph for all four species.<br/><br/>
 <b>Solution:</b> At $t_1$: [A] jumps up (added). Equilibrium shifts right: [A] and [B] decrease (B is consumed), [C] and [D] increase. New equilibrium established. At $t_2$: [C] jumps down (removed). Equilibrium shifts right: [A] and [B] decrease further, [C] and [D] increase. All concentrations eventually level off at new constant values. The key graph feature: after each perturbation, concentrations smoothly approach new plateau values — they do not return to original values (except in very specific cases).
 </div>
-
 <div class="example">
-<b>Example 3 — Temperature and $K_c$:</b><br><br>
-For $\ce{CO(g) + 2H2(g) <=> CH3OH(g)}$, $K_c = 14.5$ at 500 K and $K_c = 1.6 \times 10^{-2}$ at 700 K. Is the forward reaction exothermic or endothermic? Explain.<br><br>
-<b>Solution:</b> As temperature increases from 500 K to 700 K, $K_c$ <b>decreases</b> dramatically (from 14.5 to 0.016). By Le Chatelier's principle, increasing temperature shifts equilibrium in the <b>endothermic</b> direction. Since $K_c$ decreases (products are less favoured), the equilibrium must be shifting <b>left</b> (towards reactants). Therefore, the reverse reaction is endothermic, meaning the forward reaction is <b>exothermic</b>.<br><br>
+<b>Example 3 — Temperature and $K_c$:</b><br/><br/>
+For $\ce{CO(g) + 2H2(g) &lt;=&gt; CH3OH(g)}$, $K_c = 14.5$ at 500 K and $K_c = 1.6 \times 10^{-2}$ at 700 K. Is the forward reaction exothermic or endothermic? Explain.<br/><br/>
+<b>Solution:</b> As temperature increases from 500 K to 700 K, $K_c$ <b>decreases</b> dramatically (from 14.5 to 0.016). By Le Chatelier's principle, increasing temperature shifts equilibrium in the <b>endothermic</b> direction. Since $K_c$ decreases (products are less favoured), the equilibrium must be shifting <b>left</b> (towards reactants). Therefore, the reverse reaction is endothermic, meaning the forward reaction is <b>exothermic</b>.<br/><br/>
 <b>⚠️ Common wrong approach:</b> "Higher temperature favours products because molecules have more energy." This is wrong. Temperature effects depend on whether the reaction is exothermic or endothermic. For exothermic reactions, higher T <b>decreases</b> product yield. Always check the sign of $\Delta H$ or the trend in $K_c$ with temperature.
 </div>
-
 <div class="misconception">
 <h3>⚠️ Common Mistakes to Avoid</h3>
 <ol>
-  <li><b>"Equilibrium means equal concentrations of reactants and products."</b> No. Equilibrium means <b>constant</b> concentrations — they are rarely equal. The ratio is determined by $K_c$, which can be huge (products favoured) or tiny (reactants favoured).</li>
-  <li><b>"A catalyst increases the yield of products."</b> A catalyst affects only the <b>rate</b> at which equilibrium is reached, not the position. It lowers $E_a$ equally for forward and reverse reactions, so both rates increase by the same factor and the equilibrium composition is unchanged.</li>
-  <li><b>"Le Chatelier's principle says the system completely reverses the change."</b> The key word is <b>"partially"</b> — the system opposes the change but never fully cancels it. Adding a reactant shifts equilibrium right, but some of the added reactant remains.</li>
-  <li><b>"Pressure changes always shift equilibrium."</b> Only if the number of moles of gas differs between the two sides. For $\ce{H2(g) + I2(g) <=> 2HI(g)}$, both sides have 2 moles — pressure changes have <b>no effect</b> on the position of equilibrium.</li>
-  <li><b>"Adding an inert gas at constant volume shifts equilibrium."</b> No. Adding an inert gas (e.g., Ar) at constant volume increases total pressure but does <b>not</b> change the partial pressures of the reacting gases. Therefore, equilibrium is unaffected.</li>
+<li><b>"Equilibrium means equal concentrations of reactants and products."</b> No. Equilibrium means <b>constant</b> concentrations — they are rarely equal. The ratio is determined by $K_c$, which can be huge (products favoured) or tiny (reactants favoured).</li>
+<li><b>"A catalyst increases the yield of products."</b> A catalyst affects only the <b>rate</b> at which equilibrium is reached, not the position. It lowers $E_a$ equally for forward and reverse reactions, so both rates increase by the same factor and the equilibrium composition is unchanged.</li>
+<li><b>"Le Chatelier's principle says the system completely reverses the change."</b> The key word is <b>"partially"</b> — the system opposes the change but never fully cancels it. Adding a reactant shifts equilibrium right, but some of the added reactant remains.</li>
+<li><b>"Pressure changes always shift equilibrium."</b> Only if the number of moles of gas differs between the two sides. For $\ce{H2(g) + I2(g) &lt;=&gt; 2HI(g)}$, both sides have 2 moles — pressure changes have <b>no effect</b> on the position of equilibrium.</li>
+<li><b>"Adding an inert gas at constant volume shifts equilibrium."</b> No. Adding an inert gas (e.g., Ar) at constant volume increases total pressure but does <b>not</b> change the partial pressures of the reacting gases. Therefore, equilibrium is unaffected.</li>
 </ol>
 </div>
-
 <h2>6. End-of-Lesson Practice</h2>
-
-<p><b>Question 1 (Paper 1 style):</b> $\ce{2X(g) + Y(g) <=> 2Z(g)}$, $\Delta H < 0$. Which change increases the equilibrium yield of Z?<br>
-A. Increasing temperature &nbsp; B. Decreasing pressure &nbsp; C. Adding a catalyst &nbsp; D. Increasing pressure</p>
-
-<p><b>Question 2:</b> For $\ce{PCl5(g) <=> PCl3(g) + Cl2(g)}$, $\Delta H = +87$ kJ mol⁻¹, predict the effect on the equilibrium position and on $K_c$ of: (a) increasing temperature, (b) increasing pressure, (c) adding more $\ce{Cl2}$.</p>
-
+<p><b>Question 1 (Paper 1 style):</b> $\ce{2X(g) + Y(g) &lt;=&gt; 2Z(g)}$, $\Delta H &lt; 0$. Which change increases the equilibrium yield of Z?<br/>
+A. Increasing temperature   B. Decreasing pressure   C. Adding a catalyst   D. Increasing pressure</p>
+<p><b>Question 2:</b> For $\ce{PCl5(g) &lt;=&gt; PCl3(g) + Cl2(g)}$, $\Delta H = +87$ kJ mol⁻¹, predict the effect on the equilibrium position and on $K_c$ of: (a) increasing temperature, (b) increasing pressure, (c) adding more $\ce{Cl2}$.</p>
 <p><b>Question 3:</b> The Haber process uses 450°C despite the forward reaction being exothermic. Justify this choice in terms of both equilibrium and kinetics.</p>
-
-<p><b>Question 4:</b> For $\ce{N2O4(g) <=> 2NO2(g)}$, a sealed syringe containing the equilibrium mixture is compressed. Predict and explain the colour change observed immediately and after re-establishment of equilibrium.</p>
-
-<p><b>Question 5:</b> $\ce{2HI(g) <=> H2(g) + I2(g)}$, $\Delta H = +53$ kJ mol⁻¹. The system is at equilibrium. State the effect (increase/decrease/no change) on [HI] of: (a) adding $\ce{H2}$, (b) increasing pressure, (c) raising temperature.</p>
-
-<p><b>Question 6 (IB extended):</b> For $\ce{CO(g) + H2O(g) <=> CO2(g) + H2(g)}$, $\Delta H = -41$ kJ mol⁻¹, explain: (a) why pressure changes have no effect, (b) the effect of cooling the mixture, (c) why a catalyst is used industrially despite having no effect on yield.</p>
-
+<p><b>Question 4:</b> For $\ce{N2O4(g) &lt;=&gt; 2NO2(g)}$, a sealed syringe containing the equilibrium mixture is compressed. Predict and explain the colour change observed immediately and after re-establishment of equilibrium.</p>
+<p><b>Question 5:</b> $\ce{2HI(g) &lt;=&gt; H2(g) + I2(g)}$, $\Delta H = +53$ kJ mol⁻¹. The system is at equilibrium. State the effect (increase/decrease/no change) on [HI] of: (a) adding $\ce{H2}$, (b) increasing pressure, (c) raising temperature.</p>
+<p><b>Question 6 (IB extended):</b> For $\ce{CO(g) + H2O(g) &lt;=&gt; CO2(g) + H2(g)}$, $\Delta H = -41$ kJ mol⁻¹, explain: (a) why pressure changes have no effect, (b) the effect of cooling the mixture, (c) why a catalyst is used industrially despite having no effect on yield.</p>
 <button class="practice-toggle" onclick="var a=this.nextElementSibling;a.classList.toggle('open');this.textContent=a.classList.contains('open')?'▴ Hide Answers':'▸ Show Answers'">▸ Show Answers</button>
 <div class="practice-answers">
-
 <p><b>Answer 1:</b> D. 3 moles → 2 moles. Increasing pressure shifts equilibrium right (towards fewer moles), increasing Z yield. A: exothermic — increasing T shifts left. B: decreasing P shifts left. C: catalyst does not affect position.</p>
-
 <p><b>Answer 2:</b> (a) Endothermic: increasing T shifts right, $K_c$ <b>increases</b>. (b) 1 mole → 2 moles: increasing P shifts <b>left</b> (towards fewer moles). $K_c$ unchanged. (c) Adding $\ce{Cl2}$ shifts equilibrium <b>left</b> (opposes the addition). $K_c$ unchanged.</p>
-
 <p><b>Answer 3:</b> Lower temperature would give a higher equilibrium yield (exothermic), but the rate would be too slow for economic viability. 450°C is a <b>compromise</b>: the yield is lower than at, say, 200°C, but the rate is fast enough for continuous industrial production. The iron catalyst further increases rate without affecting yield. Continuous removal of NH₃ also drives equilibrium right.</p>
-
 <p><b>Answer 4:</b> Immediately on compression, [NO₂] increases (same amount in smaller volume) → mixture appears <b>darker brown</b>. Then equilibrium shifts left (2 moles → 1 mole, towards fewer gas molecules), forming more N₂O₄ (colourless). After re-equilibration, the mixture is <b>paler</b> than immediately after compression, but still darker (or about as dark) as the original because the volume is smaller.</p>
-
 <p><b>Answer 5:</b> (a) Adding H₂ shifts equilibrium left → [HI] <b>increases</b>. (b) 2 moles ⇌ 2 moles → <b>no change</b> in position or [HI]. (c) Endothermic: raising T shifts equilibrium right → [HI] <b>decreases</b>.</p>
-
 <p><b>Answer 6:</b> (a) Both sides have 2 moles of gas (1+1 ⇌ 1+1) — pressure changes have no effect because the system cannot reduce the number of gas molecules by shifting either way. (b) Exothermic: cooling (decreasing T) shifts equilibrium <b>right</b>, increasing CO₂ and H₂ yield; $K_c$ increases. (c) The catalyst ($\ce{Fe3O4/Cr2O3}$) dramatically increases the rate, allowing equilibrium to be reached much faster. This reduces reactor size and energy costs. Although yield is unchanged, the <b>rate of production</b> is what matters economically.</p>
 </div>
-
 <h2>7. Key Terms</h2>
 <table>
 <tr><th>Term</th><th>Definition</th></tr>
@@ -261,18 +226,141 @@ A. Increasing temperature &nbsp; B. Decreasing pressure &nbsp; C. Adding a catal
 <tr><td>Le Chatelier's principle</td><td>A system at equilibrium, when disturbed, shifts to partially counteract the disturbance</td></tr>
 <tr><td>Position of equilibrium</td><td>The relative amounts of reactants and products at equilibrium; described as "left" (reactant-favoured) or "right" (product-favoured)</td></tr>
 <tr><td>Closed system</td><td>A system where no matter can enter or leave; energy may be exchanged with surroundings</td></tr>
-<tr><td>Haber process</td><td>Industrial synthesis of ammonia: $\ce{N2 + 3H2 <=> 2NH3}$, using Fe catalyst at ~450°C, ~200 atm</td></tr>
-<tr><td>Contact process</td><td>Industrial synthesis of sulfuric acid via $\ce{2SO2 + O2 <=> 2SO3}$, using $\ce{V2O5}$ catalyst at ~450°C</td></tr>
+<tr><td>Haber process</td><td>Industrial synthesis of ammonia: $\ce{N2 + 3H2 &lt;=&gt; 2NH3}$, using Fe catalyst at ~450°C, ~200 atm</td></tr>
+<tr><td>Contact process</td><td>Industrial synthesis of sulfuric acid via $\ce{2SO2 + O2 &lt;=&gt; 2SO3}$, using $\ce{V2O5}$ catalyst at ~450°C</td></tr>
 <tr><td>Compromise conditions</td><td>Industrial conditions that balance equilibrium yield, reaction rate, and economic cost</td></tr>
 </table>
-
 <h2>8. Exam Tips</h2>
-
 <div class="exam-tip"><b>Paper 1 (Multiple Choice):</b> When a question asks about the effect of a change on "the equilibrium yield" or "the amount of product," check whether $\Delta H$ is given. If it is exothermic, increasing T <b>decreases</b> yield. Students often pick the opposite — assuming heat always helps. Remember: treat heat as a chemical species (product for exothermic, reactant for endothermic).</div>
-
 <div class="exam-tip"><b>Paper 2 (Structured):</b> Industrial equilibrium questions (Haber/Contact) typically have 3–4 marks. You must mention (1) the effect on equilibrium position, (2) the effect on rate, (3) why a compromise is chosen. Simply saying "high pressure gives more product" is insufficient — you must state <b>why</b> (fewer moles on product side) and why it is not used even higher (cost, safety).</div>
-
 <div class="exam-tip"><b>Graph Sketching:</b> When asked to sketch concentration–time graphs after a perturbation: concentrations jump <b>instantly</b> when a substance is added/removed (vertical line), then change <b>smoothly</b> as equilibrium re-establishes (curved approach to new plateau). Temperature and pressure changes do not cause instantaneous jumps — only smooth transitions.</div>
 
+<div class="lesson-actions" style="margin: 2rem 0; padding: 1.5rem; background: #f8fafc; border-radius: 8px; display: flex; gap: 1rem; flex-wrap: wrap;">
+<button class="action-btn" id="generate-flashcards-btn" style="padding: 0.75rem 1.5rem; background: #3b82f6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        🗂️ Generate Flashcards
+    </button>
+<button class="action-btn" id="practice-problems-btn" style="padding: 0.75rem 1.5rem; background: #10b981; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        ✏️ Practice Problems
+    </button>
+<button class="action-btn" id="ask-ai-btn" style="padding: 0.75rem 1.5rem; background: #8b5cf6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        💬 Ask AI
+    </button>
+</div>
+<script>
+(function() {
+    const subjectKey = "chemistry";
+    const lessonId = "lesson_23";
+    const lessonTitle = "Lesson 23: Dynamic Equilibrium & Le Chatelier's Principle";
+
+    function getCsrf() {
+        var m = document.querySelector('meta[name="csrf-token"]');
+        return m ? m.getAttribute('content') : '';
+    }
+
+    // Completion checkbox
+    const checkbox = document.getElementById('lesson-complete');
+    if (checkbox) {
+        // Load saved state
+        const saved = localStorage.getItem(`completed_${subjectKey}_${lessonId}`);
+        if (saved === 'true') checkbox.checked = true;
+
+        checkbox.addEventListener('change', async function() {
+            const completed = this.checked;
+            localStorage.setItem(`completed_${subjectKey}_${lessonId}`, completed);
+
+            try {
+                await fetch('/toggle_completion', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': getCsrf()
+                    },
+                    body: JSON.stringify({
+                        subject: subjectKey,
+                        lesson: lessonId,
+                        completed: completed
+                    })
+                });
+            } catch(e) {
+                console.error('Error saving completion:', e);
+            }
+        });
+    }
+
+    // Generate Flashcards
+    const flashcardsBtn = document.getElementById('generate-flashcards-btn');
+    if (flashcardsBtn) {
+        flashcardsBtn.addEventListener('click', async function() {
+            this.disabled = true;
+            this.textContent = '⏳ Generating...';
+
+            try {
+                const content = document.body.innerText.substring(0, 2000);
+                const response = await fetch('/generate_flashcards', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': getCsrf()
+                    },
+                    body: JSON.stringify({
+                        subject: subjectKey,
+                        lesson: lessonTitle,
+                        content_summary: content
+                    })
+                });
+
+                const data = await response.json();
+                if (data.error) {
+                    alert('Error: ' + data.error);
+                } else {
+                    alert(`✅ Created ${data.count} flashcards! View them at /flashcards/${subjectKey}`);
+                }
+            } catch(e) {
+                alert('Error generating flashcards: ' + e.message);
+            } finally {
+                this.disabled = false;
+                this.textContent = '🗂️ Generate Flashcards';
+            }
+        });
+    }
+
+    // Practice Problems - open in new section
+    const practiceBtn = document.getElementById('practice-problems-btn');
+    if (practiceBtn) {
+        practiceBtn.addEventListener('click', function() {
+            alert('Practice problems feature coming soon! Use the AI chatbot to generate custom questions.');
+        });
+    }
+
+    // Ask AI - scroll to chatbot
+    const aiBtn = document.getElementById('ask-ai-btn');
+    if (aiBtn) {
+        aiBtn.addEventListener('click', function() {
+            const chatbot = document.getElementById('lessons-chatbot');
+            if (chatbot) {
+                chatbot.scrollIntoView({ behavior: 'smooth' });
+                const toggleBtn = chatbot.querySelector('.chatbot-toggle');
+                if (toggleBtn) toggleBtn.click();
+            } else {
+                alert('AI chatbot not available on this page. It will be added soon!');
+            }
+        });
+    }
+
+    // Track lesson view
+    fetch('/mark_viewed', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': getCsrf()
+        },
+        body: JSON.stringify({
+            subject: subjectKey,
+            lesson: lessonId
+        })
+    }).catch(e => console.error('Error tracking view:', e));
+
+})();
+</script>
 </body>
 </html>

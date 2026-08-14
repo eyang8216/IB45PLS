@@ -1,14 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Lesson 27 — Chemistry HL — Brønsted-Lowry Theory, pH, Strong Acids &amp; Bases</title>
 <script>
 window.MathJax = {tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] },
   loader: { load: ['[tex]/mhchem'] }};
 </script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <style>
 :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -42,239 +43,203 @@ tr:nth-child(even) td { background: #f8f8f6; }
 </style>
 </head>
 <body>
-
 <h1>Lesson 27: Brønsted-Lowry Theory, pH, Strong Acids &amp; Bases</h1>
 <p><b>Syllabus reference:</b> 8.1 — Theories of Acids and Bases; 8.2 — Properties of Acids and Bases</p>
-
 <div class="objectives">
 <h3>Learning Objectives</h3>
 <p>By the end of this lesson, you will be able to:</p>
 <ul>
-  <li><b>Define</b> acids and bases according to the Brønsted-Lowry theory: proton donors and proton acceptors.</li>
-  <li><b>Identify</b> conjugate acid–base pairs in reactions and explain amphiprotic behaviour.</li>
-  <li><b>Calculate</b> pH from $[\ce{H+}]$: $\text{pH} = -\log_{10}[\ce{H+}]$, and $[\ce{H+}]$ from pH: $[\ce{H+}] = 10^{-\text{pH}}$.</li>
-  <li><b>Determine</b> the pH of strong acids and strong bases, accounting for complete dissociation and stoichiometry.</li>
-  <li><b>Apply</b> the ionic product of water: $K_w = [\ce{H+}][\ce{OH-}] = 1.0 \times 10^{-14}$ at 298 K, and calculate pH of strong bases via pOH.</li>
+<li><b>Define</b> acids and bases according to the Brønsted-Lowry theory: proton donors and proton acceptors.</li>
+<li><b>Identify</b> conjugate acid–base pairs in reactions and explain amphiprotic behaviour.</li>
+<li><b>Calculate</b> pH from $[\ce{H+}]$: $\text{pH} = -\log_{10}[\ce{H+}]$, and $[\ce{H+}]$ from pH: $[\ce{H+}] = 10^{-\text{pH}}$.</li>
+<li><b>Determine</b> the pH of strong acids and strong bases, accounting for complete dissociation and stoichiometry.</li>
+<li><b>Apply</b> the ionic product of water: $K_w = [\ce{H+}][\ce{OH-}] = 1.0 \times 10^{-14}$ at 298 K, and calculate pH of strong bases via pOH.</li>
 </ul>
 </div>
 
+<div class="lesson-completion" style="margin: 1rem 0; padding: 1rem; background: #f0f9ff; border-radius: 8px;">
+<label class="completion-checkbox" style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer;">
+<input id="lesson-complete" style="width: 24px; height: 24px; cursor: pointer; accent-color: #10b981;" type="checkbox"/>
+<span style="font-size: 1rem; color: #0f172a; font-weight: 500;">✓ Mark this lesson as complete</span>
+</label>
+</div>
 <h2>1. Prior Knowledge Check</h2>
-
 <p><b>Question 1:</b> What is a proton in the context of acid–base chemistry? Why is $\ce{H+}$ called a proton?</p>
 <div class="check-in">
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">A hydrogen atom consists of one proton and one electron. When hydrogen loses its electron, $\ce{H+}$ is simply a <b>bare proton</b> (for the isotope $\ce{^1H}$). In aqueous solution, $\ce{H+}$ immediately bonds to a water molecule to form $\ce{H3O+}$ (hydronium ion). The Brønsted-Lowry theory defines acid–base reactions as <b>proton transfers</b> from one species to another.</div>
 </div>
-
 <p><b>Question 2:</b> What is a logarithm? Calculate $\log_{10}(1000)$, $\log_{10}(0.01)$, and $\log_{10}(2.0)$.</p>
 <div class="check-in">
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">$\log_{10}(1000) = 3$ (since $10^3 = 1000$). $\log_{10}(0.01) = -2$ (since $10^{-2} = 0.01$). $\log_{10}(2.0) \approx 0.301$. The pH scale is logarithmic: a decrease of 1 pH unit means the $[\ce{H+}]$ has increased by a <b>factor of 10</b>. Small changes in pH correspond to large changes in acidity.</div>
 </div>
-
 <h2>2. Brønsted-Lowry Theory — Proton Transfer</h2>
-
 <div class="definition">
 <b>Brønsted-Lowry definitions:</b>
 <ul>
-  <li><b>Acid:</b> A proton ($\ce{H+}$) <b>donor</b>.</li>
-  <li><b>Base:</b> A proton ($\ce{H+}$) <b>acceptor</b>.</li>
+<li><b>Acid:</b> A proton ($\ce{H+}$) <b>donor</b>.</li>
+<li><b>Base:</b> A proton ($\ce{H+}$) <b>acceptor</b>.</li>
 </ul>
 Every acid–base reaction involves the transfer of a proton from the acid to the base. The acid becomes its <b>conjugate base</b> (after losing $\ce{H+}$); the base becomes its <b>conjugate acid</b> (after gaining $\ce{H+}$).
 </div>
-
 <div class="diagram">
-<svg width="520" height="200" viewBox="0 0 520 200">
-  <text x="260" y="30" text-anchor="middle" font-size="15" font-weight="bold">$\ce{HA + B <=> A- + HB+}$</text>
-  <!-- acid and base -->
-  <rect x="40" y="55" width="120" height="50" rx="10" fill="#ffcdd2" stroke="#c62828" stroke-width="2"/>
-  <text x="100" y="78" text-anchor="middle" font-size="13" fill="#c62828" font-weight="bold">Acid (HA)</text>
-  <text x="100" y="95" text-anchor="middle" font-size="11" fill="#555">proton donor</text>
-  <rect x="360" y="55" width="120" height="50" rx="10" fill="#bbdefb" stroke="#1565c0" stroke-width="2"/>
-  <text x="420" y="78" text-anchor="middle" font-size="13" fill="#1565c0" font-weight="bold">Base (B)</text>
-  <text x="420" y="95" text-anchor="middle" font-size="11" fill="#555">proton acceptor</text>
-  <!-- arrow with H+ -->
-  <text x="230" y="65" text-anchor="middle" font-size="16" fill="#333">— H⁺ →</text>
-  <!-- products -->
-  <rect x="40" y="130" width="120" height="50" rx="10" fill="#bbdefb" stroke="#1565c0" stroke-width="2"/>
-  <text x="100" y="153" text-anchor="middle" font-size="13" fill="#1565c0" font-weight="bold">Conj. Base (A⁻)</text>
-  <text x="100" y="170" text-anchor="middle" font-size="10" fill="#555">after losing H⁺</text>
-  <rect x="360" y="130" width="120" height="50" rx="10" fill="#ffcdd2" stroke="#c62828" stroke-width="2"/>
-  <text x="420" y="153" text-anchor="middle" font-size="13" fill="#c62828" font-weight="bold">Conj. Acid (HB⁺)</text>
-  <text x="420" y="170" text-anchor="middle" font-size="10" fill="#555">after gaining H⁺</text>
-  <!-- conjugate pair lines -->
-  <line x1="160" y1="80" x2="160" y2="155" stroke="#d4a017" stroke-width="2" stroke-dasharray="6,3"/>
-  <text x="175" y="120" font-size="10" fill="#d4a017" font-weight="bold">Conjugate pair</text>
-  <line x1="360" y1="80" x2="360" y2="155" stroke="#d4a017" stroke-width="2" stroke-dasharray="6,3"/>
+<svg height="200" viewbox="0 0 520 200" width="520">
+<text font-size="15" font-weight="bold" text-anchor="middle" x="260" y="30">$\ce{HA + B &lt;=&gt; A- + HB+}$</text>
+<!-- acid and base -->
+<rect fill="#ffcdd2" height="50" rx="10" stroke="#c62828" stroke-width="2" width="120" x="40" y="55"></rect>
+<text fill="#c62828" font-size="13" font-weight="bold" text-anchor="middle" x="100" y="78">Acid (HA)</text>
+<text fill="#555" font-size="11" text-anchor="middle" x="100" y="95">proton donor</text>
+<rect fill="#bbdefb" height="50" rx="10" stroke="#1565c0" stroke-width="2" width="120" x="360" y="55"></rect>
+<text fill="#1565c0" font-size="13" font-weight="bold" text-anchor="middle" x="420" y="78">Base (B)</text>
+<text fill="#555" font-size="11" text-anchor="middle" x="420" y="95">proton acceptor</text>
+<!-- arrow with H+ -->
+<text fill="#333" font-size="16" text-anchor="middle" x="230" y="65">— H⁺ →</text>
+<!-- products -->
+<rect fill="#bbdefb" height="50" rx="10" stroke="#1565c0" stroke-width="2" width="120" x="40" y="130"></rect>
+<text fill="#1565c0" font-size="13" font-weight="bold" text-anchor="middle" x="100" y="153">Conj. Base (A⁻)</text>
+<text fill="#555" font-size="10" text-anchor="middle" x="100" y="170">after losing H⁺</text>
+<rect fill="#ffcdd2" height="50" rx="10" stroke="#c62828" stroke-width="2" width="120" x="360" y="130"></rect>
+<text fill="#c62828" font-size="13" font-weight="bold" text-anchor="middle" x="420" y="153">Conj. Acid (HB⁺)</text>
+<text fill="#555" font-size="10" text-anchor="middle" x="420" y="170">after gaining H⁺</text>
+<!-- conjugate pair lines -->
+<line stroke="#d4a017" stroke-dasharray="6,3" stroke-width="2" x1="160" x2="160" y1="80" y2="155"></line>
+<text fill="#d4a017" font-size="10" font-weight="bold" x="175" y="120">Conjugate pair</text>
+<line stroke="#d4a017" stroke-dasharray="6,3" stroke-width="2" x1="360" x2="360" y1="80" y2="155"></line>
 </svg>
 <div class="caption">Figure 1: The Brønsted-Lowry acid–base reaction. The acid (HA) donates a proton to the base (B). After the transfer, HA becomes its conjugate base (A⁻) and B becomes its conjugate acid (HB⁺). The two species on the left (HA and A⁻) form a conjugate acid–base pair.</div>
 </div>
-
 <h3>2.1 Conjugate Acid–Base Pairs</h3>
 <p>A conjugate pair consists of two species that differ by exactly <b>one proton</b> ($\ce{H+}$). Examples:</p>
 <ul>
-  <li>$\ce{HCl}$ / $\ce{Cl-}$: HCl is the acid; Cl⁻ is its conjugate base.</li>
-  <li>$\ce{NH3}$ / $\ce{NH4+}$: NH₃ is the base; NH₄⁺ is its conjugate acid.</li>
-  <li>$\ce{H2O}$ / $\ce{OH-}$: H₂O acts as an acid; OH⁻ is its conjugate base.</li>
-  <li>$\ce{H2O}$ / $\ce{H3O+}$: H₂O acts as a base; H₃O⁺ is its conjugate acid.</li>
+<li>$\ce{HCl}$ / $\ce{Cl-}$: HCl is the acid; Cl⁻ is its conjugate base.</li>
+<li>$\ce{NH3}$ / $\ce{NH4+}$: NH₃ is the base; NH₄⁺ is its conjugate acid.</li>
+<li>$\ce{H2O}$ / $\ce{OH-}$: H₂O acts as an acid; OH⁻ is its conjugate base.</li>
+<li>$\ce{H2O}$ / $\ce{H3O+}$: H₂O acts as a base; H₃O⁺ is its conjugate acid.</li>
 </ul>
-
 <h3>2.2 Amphiprotic Species</h3>
 <p>An <b>amphiprotic</b> species can both donate and accept a proton — it can act as either an acid or a base. $\ce{H2O}$ is the classic example: it can accept a proton to become $\ce{H3O+}$ or donate a proton to become $\ce{OH-}$. Other examples: $\ce{HCO3-}$, $\ce{HSO4-}$, $\ce{H2PO4-}$.</p>
-
 <div class="check-in">
-<p><b>Check-in:</b> Identify the conjugate acid–base pairs in: $\ce{HNO3 + H2O -> H3O+ + NO3-}$</p>
+<p><b>Check-in:</b> Identify the conjugate acid–base pairs in: $\ce{HNO3 + H2O -&gt; H3O+ + NO3-}$</p>
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">Two conjugate pairs: (1) $\ce{HNO3}$ (acid) / $\ce{NO3-}$ (conjugate base). (2) $\ce{H2O}$ (base) / $\ce{H3O+}$ (conjugate acid). HNO₃ donates a proton to H₂O. After the transfer: HNO₃ becomes NO₃⁻ (lost H⁺), H₂O becomes H₃O⁺ (gained H⁺).</div>
 </div>
-
 <h2>3. The pH Scale</h2>
-
 <p>pH is a logarithmic measure of the hydrogen ion concentration:</p>
-
 <div class="definition">
 $$\text{pH} = -\log_{10}[\ce{H+}] \quad \text{and} \quad [\ce{H+}] = 10^{-\text{pH}}$$
 where $[\ce{H+}]$ is in mol dm⁻³. Analogously: $\text{pOH} = -\log_{10}[\ce{OH-}]$.
 </div>
-
 <div class="diagram">
-<svg width="520" height="220" viewBox="0 0 520 220">
-  <!-- pH scale bar -->
-  <defs>
-    <linearGradient id="phGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#c62828"/>
-      <stop offset="30%" style="stop-color:#ff8f00"/>
-      <stop offset="50%" style="stop-color:#2c5f2d"/>
-      <stop offset="70%" style="stop-color:#1565c0"/>
-      <stop offset="100%" style="stop-color:#6a1b9a"/>
-    </linearGradient>
-  </defs>
-  <rect x="30" y="100" width="460" height="30" rx="15" fill="url(#phGrad)"/>
-  <!-- labels -->
-  <text x="30" y="80" text-anchor="middle" font-size="11" font-weight="bold">0</text>
-  <text x="122" y="80" text-anchor="middle" font-size="11" font-weight="bold">3</text>
-  <text x="260" y="80" text-anchor="middle" font-size="11" font-weight="bold">7</text>
-  <text x="398" y="80" text-anchor="middle" font-size="11" font-weight="bold">11</text>
-  <text x="490" y="80" text-anchor="middle" font-size="11" font-weight="bold">14</text>
-  <text x="30" y="155" text-anchor="middle" font-size="10" fill="#c62828">Acidic</text>
-  <text x="260" y="155" text-anchor="middle" font-size="10" fill="#2c5f2d">Neutral</text>
-  <text x="490" y="155" text-anchor="middle" font-size="10" fill="#6a1b9a">Basic</text>
-  <!-- H+ concentrations at key points -->
-  <text x="30" y="190" text-anchor="middle" font-size="10" fill="#555">[H⁺]=10⁰=1</text>
-  <text x="122" y="190" text-anchor="middle" font-size="10" fill="#555">[H⁺]=10⁻³</text>
-  <text x="260" y="190" text-anchor="middle" font-size="10" fill="#555">[H⁺]=10⁻⁷</text>
-  <text x="398" y="190" text-anchor="middle" font-size="10" fill="#555">[H⁺]=10⁻¹¹</text>
-  <text x="490" y="190" text-anchor="middle" font-size="10" fill="#555">[H⁺]=10⁻¹⁴</text>
+<svg height="220" viewbox="0 0 520 220" width="520">
+<!-- pH scale bar -->
+<defs>
+<lineargradient id="phGrad" x1="0%" x2="100%" y1="0%" y2="0%">
+<stop offset="0%" style="stop-color:#c62828"></stop>
+<stop offset="30%" style="stop-color:#ff8f00"></stop>
+<stop offset="50%" style="stop-color:#2c5f2d"></stop>
+<stop offset="70%" style="stop-color:#1565c0"></stop>
+<stop offset="100%" style="stop-color:#6a1b9a"></stop>
+</lineargradient>
+</defs>
+<rect fill="url(#phGrad)" height="30" rx="15" width="460" x="30" y="100"></rect>
+<!-- labels -->
+<text font-size="11" font-weight="bold" text-anchor="middle" x="30" y="80">0</text>
+<text font-size="11" font-weight="bold" text-anchor="middle" x="122" y="80">3</text>
+<text font-size="11" font-weight="bold" text-anchor="middle" x="260" y="80">7</text>
+<text font-size="11" font-weight="bold" text-anchor="middle" x="398" y="80">11</text>
+<text font-size="11" font-weight="bold" text-anchor="middle" x="490" y="80">14</text>
+<text fill="#c62828" font-size="10" text-anchor="middle" x="30" y="155">Acidic</text>
+<text fill="#2c5f2d" font-size="10" text-anchor="middle" x="260" y="155">Neutral</text>
+<text fill="#6a1b9a" font-size="10" text-anchor="middle" x="490" y="155">Basic</text>
+<!-- H+ concentrations at key points -->
+<text fill="#555" font-size="10" text-anchor="middle" x="30" y="190">[H⁺]=10⁰=1</text>
+<text fill="#555" font-size="10" text-anchor="middle" x="122" y="190">[H⁺]=10⁻³</text>
+<text fill="#555" font-size="10" text-anchor="middle" x="260" y="190">[H⁺]=10⁻⁷</text>
+<text fill="#555" font-size="10" text-anchor="middle" x="398" y="190">[H⁺]=10⁻¹¹</text>
+<text fill="#555" font-size="10" text-anchor="middle" x="490" y="190">[H⁺]=10⁻¹⁴</text>
 </svg>
 <div class="caption">Figure 2: The pH scale. Each unit decrease in pH represents a 10× increase in [H⁺]. pH 0 (1 mol dm⁻³ H⁺) to pH 14 (10⁻¹⁴ mol dm⁻³ H⁺). At 298 K, pH 7 is neutral where [H⁺] = [OH⁻] = 10⁻⁷.</div>
 </div>
-
 <div class="check-in">
 <p><b>Check-in:</b> Solution A has pH = 3.0 and Solution B has pH = 5.0. How many times more acidic is Solution A than B?</p>
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">$[\ce{H+}]_A = 10^{-3} = 1.0 \times 10^{-3}$ mol dm⁻³. $[\ce{H+}]_B = 10^{-5} = 1.0 \times 10^{-5}$ mol dm⁻³. Ratio = $10^{-3} / 10^{-5} = 10^2 = 100$. Solution A is <b>100 times</b> more acidic than B. The difference of 2 pH units = factor of $10^2 = 100$ in [H⁺].</div>
 </div>
-
 <h2>4. Strong Acids and Bases — Complete Dissociation</h2>
-
 <h3>4.1 Strong Acids</h3>
 <p>A <b>strong acid</b> dissociates <b>completely</b> in aqueous solution. The concentration of $\ce{H+}$ equals the concentration of the acid (for monoprotic acids like HCl) or a multiple of it (for diprotic acids like $\ce{H2SO4}$).</p>
-
 <table>
 <tr><th>Strong Acid</th><th>Dissociation Equation</th><th>$[\ce{H+}]$ from $c$ mol dm⁻³</th></tr>
-<tr><td>$\ce{HCl}$</td><td>$\ce{HCl -> H+ + Cl-}$</td><td>$[\ce{H+}] = c$</td></tr>
-<tr><td>$\ce{HNO3}$</td><td>$\ce{HNO3 -> H+ + NO3-}$</td><td>$[\ce{H+}] = c$</td></tr>
-<tr><td>$\ce{H2SO4}$</td><td>$\ce{H2SO4 -> 2H+ + SO4^{2-}}$</td><td>$[\ce{H+}] = 2c$ (first dissociation is strong; second is also strong in dilute solution for IB purposes)</td></tr>
+<tr><td>$\ce{HCl}$</td><td>$\ce{HCl -&gt; H+ + Cl-}$</td><td>$[\ce{H+}] = c$</td></tr>
+<tr><td>$\ce{HNO3}$</td><td>$\ce{HNO3 -&gt; H+ + NO3-}$</td><td>$[\ce{H+}] = c$</td></tr>
+<tr><td>$\ce{H2SO4}$</td><td>$\ce{H2SO4 -&gt; 2H+ + SO4^{2-}}$</td><td>$[\ce{H+}] = 2c$ (first dissociation is strong; second is also strong in dilute solution for IB purposes)</td></tr>
 </table>
-
 <h3>4.2 Strong Bases</h3>
 <p>A <b>strong base</b> dissociates completely, releasing $\ce{OH-}$ ions. Common strong bases: $\ce{NaOH}$, $\ce{KOH}$, $\ce{Ba(OH)2}$.</p>
-
 <table>
 <tr><th>Strong Base</th><th>Dissociation Equation</th><th>$[\ce{OH-}]$ from $c$ mol dm⁻³</th></tr>
-<tr><td>$\ce{NaOH}$</td><td>$\ce{NaOH -> Na+ + OH-}$</td><td>$[\ce{OH-}] = c$</td></tr>
-<tr><td>$\ce{Ba(OH)2}$</td><td>$\ce{Ba(OH)2 -> Ba^{2+} + 2OH-}$</td><td>$[\ce{OH-}] = 2c$</td></tr>
+<tr><td>$\ce{NaOH}$</td><td>$\ce{NaOH -&gt; Na+ + OH-}$</td><td>$[\ce{OH-}] = c$</td></tr>
+<tr><td>$\ce{Ba(OH)2}$</td><td>$\ce{Ba(OH)2 -&gt; Ba^{2+} + 2OH-}$</td><td>$[\ce{OH-}] = 2c$</td></tr>
 </table>
-
 <h3>4.3 The Ionic Product of Water, $K_w$</h3>
 <div class="definition">
 $$K_w = [\ce{H+}][\ce{OH-}] = 1.0 \times 10^{-14} \text{ at 298 K}$$
 This relationship holds in <b>all</b> aqueous solutions — acidic, neutral, or basic. For a strong base, find $[\ce{OH-}]$, then $[\ce{H+}] = K_w / [\ce{OH-}]$, then pH = $-\log_{10}[\ce{H+}]$. Alternatively: pOH = $-\log_{10}[\ce{OH-}]$, and pH + pOH = 14 (at 298 K).
 </div>
-
 <div class="check-in">
 <p><b>Check-in:</b> Calculate the pH of 0.025 mol dm⁻³ $\ce{Ba(OH)2}$ at 298 K.</p>
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">Ba(OH)₂ → Ba²⁺ + 2OH⁻, so $[\ce{OH-}] = 2 \times 0.025 = 0.050$ mol dm⁻³. $[\ce{H+}] = K_w / [\ce{OH-}] = 1.0\times10^{-14} / 0.050 = 2.0\times10^{-13}$ mol dm⁻³. pH = $-\log_{10}(2.0\times10^{-13}) = 12.70$. Alternatively: pOH = $-\log_{10}(0.050) = 1.30$, pH = $14 - 1.30 = 12.70$.</div>
 </div>
-
 <h2>5. Worked Examples</h2>
-
 <div class="example">
-<b>Example 1 — pH of a Strong Acid:</b><br><br>
-Calculate the pH of 0.0030 mol dm⁻³ $\ce{HNO3}$.<br><br>
-<b>Solution:</b> HNO₃ is a strong monoprotic acid → complete dissociation: $[\ce{H+}] = 0.0030$ mol dm⁻³. pH = $-\log_{10}(0.0030) = -\log_{10}(3.0 \times 10^{-3}) = 2.52$.<br><br>
+<b>Example 1 — pH of a Strong Acid:</b><br/><br/>
+Calculate the pH of 0.0030 mol dm⁻³ $\ce{HNO3}$.<br/><br/>
+<b>Solution:</b> HNO₃ is a strong monoprotic acid → complete dissociation: $[\ce{H+}] = 0.0030$ mol dm⁻³. pH = $-\log_{10}(0.0030) = -\log_{10}(3.0 \times 10^{-3}) = 2.52$.<br/><br/>
 <b>⚠️ Common wrong approach:</b> Reporting pH = 3.0 (just taking the exponent). $-\log(3.0\times10^{-3}) = 3 - \log(3.0) = 3 - 0.48 = 2.52$. The mantissa (decimal part) matters — it is not simply the exponent.
 </div>
-
 <div class="example">
-<b>Example 2 — pH of a Strong Diprotic Acid:</b><br><br>
-Calculate $[\ce{H+}]$ and pH of 0.050 mol dm⁻³ $\ce{H2SO4}$.<br><br>
-<b>Solution:</b> H₂SO₄ is a strong diprotic acid. Both protons dissociate completely in dilute solution: $[\ce{H+}] = 2 \times 0.050 = 0.100$ mol dm⁻³. pH = $-\log_{10}(0.100) = 1.00$.<br><br>
+<b>Example 2 — pH of a Strong Diprotic Acid:</b><br/><br/>
+Calculate $[\ce{H+}]$ and pH of 0.050 mol dm⁻³ $\ce{H2SO4}$.<br/><br/>
+<b>Solution:</b> H₂SO₄ is a strong diprotic acid. Both protons dissociate completely in dilute solution: $[\ce{H+}] = 2 \times 0.050 = 0.100$ mol dm⁻³. pH = $-\log_{10}(0.100) = 1.00$.<br/><br/>
 <b>Note:</b> At IB level, treat the second dissociation of H₂SO₄ as complete unless told otherwise. In reality, the second dissociation ($K_{a2} \approx 1.2\times10^{-2}$) is not fully complete, but this simplification is accepted at HL.
 </div>
-
 <div class="example">
-<b>Example 3 — Finding [H⁺] from pH and Dilution:</b><br><br>
-A solution of HCl has pH = 1.30. (a) Calculate [H⁺]. (b) If 10.0 cm³ of this solution is diluted to 250 cm³, calculate the new pH.<br><br>
-<b>Solution:</b><br>
-(a) $[\ce{H+}] = 10^{-1.30} = 0.0501$ mol dm⁻³. (Since HCl is monoprotic and strong, [HCl] = 0.0501 mol dm⁻³.)<br>
-(b) Dilution factor = 250/10.0 = 25. New [H⁺] = 0.0501/25 = 0.00200 mol dm⁻³. pH = $-\log_{10}(0.00200) = 2.70$.<br><br>
+<b>Example 3 — Finding [H⁺] from pH and Dilution:</b><br/><br/>
+A solution of HCl has pH = 1.30. (a) Calculate [H⁺]. (b) If 10.0 cm³ of this solution is diluted to 250 cm³, calculate the new pH.<br/><br/>
+<b>Solution:</b><br/>
+(a) $[\ce{H+}] = 10^{-1.30} = 0.0501$ mol dm⁻³. (Since HCl is monoprotic and strong, [HCl] = 0.0501 mol dm⁻³.)<br/>
+(b) Dilution factor = 250/10.0 = 25. New [H⁺] = 0.0501/25 = 0.00200 mol dm⁻³. pH = $-\log_{10}(0.00200) = 2.70$.<br/><br/>
 <b>⚠️ Common wrong approach:</b> "Diluting by factor 25 changes pH by factor 25." pH is <b>logarithmic</b>: a dilution by factor 10 changes pH by +1. Dilution by 25 changes pH by $\log_{10}(25) = 1.40$. Verify: $1.30 + 1.40 = 2.70$ ✓.
 </div>
-
 <div class="misconception">
 <h3>⚠️ Common Mistakes to Avoid</h3>
 <ol>
-  <li><b>"pH + pOH always equals 14."</b> Only at <b>298 K</b> ($K_w = 1.0\times10^{-14}$). At higher temperatures, $K_w$ increases (water autoionisation is endothermic), so pH + pOH < 14 at higher T. Always check the temperature before using 14.</li>
-  <li><b>"Strong acids have low pH; weak acids are less acidic."</b> "Strong" and "weak" refer to the <b>extent of dissociation</b>, not the concentration. A 10⁻⁵ mol dm⁻³ strong acid (pH 5) has a higher pH than a 1 mol dm⁻³ weak acid (pH could be ~2). "Strong" ≠ "concentrated."</li>
-  <li><b>"$\ce{H2SO4}$ always gives $[\ce{H+}] = 2c$."</b> The second dissociation has $K_{a2} = 1.2\times10^{-2}$, so it is not 100% complete in concentrated solutions. However, IB generally treats H₂SO₄ as fully dissociating in both steps unless a question specifically tests the partial dissociation.</li>
-  <li><b>"Water is neutral because $[\ce{H+}] = [\ce{OH-}]$."</b> Yes, but this does <b>not</b> mean pH = 7 at all temperatures. At 373 K, $K_w \approx 5\times10^{-13}$, so neutral pH ≈ 6.1. Neutral means $[\ce{H+}] = [\ce{OH-}]$, whatever that value is at the given temperature.</li>
-  <li><b>"pH can be negative."</b> Yes — if $[\ce{H+}] > 1$ mol dm⁻³, pH is negative (e.g., 10 mol dm⁻³ HCl has pH = −1). The pH scale typically ranges 0–14, but it extends beyond these limits for very concentrated solutions.</li>
+<li><b>"pH + pOH always equals 14."</b> Only at <b>298 K</b> ($K_w = 1.0\times10^{-14}$). At higher temperatures, $K_w$ increases (water autoionisation is endothermic), so pH + pOH &lt; 14 at higher T. Always check the temperature before using 14.</li>
+<li><b>"Strong acids have low pH; weak acids are less acidic."</b> "Strong" and "weak" refer to the <b>extent of dissociation</b>, not the concentration. A 10⁻⁵ mol dm⁻³ strong acid (pH 5) has a higher pH than a 1 mol dm⁻³ weak acid (pH could be ~2). "Strong" ≠ "concentrated."</li>
+<li><b>"$\ce{H2SO4}$ always gives $[\ce{H+}] = 2c$."</b> The second dissociation has $K_{a2} = 1.2\times10^{-2}$, so it is not 100% complete in concentrated solutions. However, IB generally treats H₂SO₄ as fully dissociating in both steps unless a question specifically tests the partial dissociation.</li>
+<li><b>"Water is neutral because $[\ce{H+}] = [\ce{OH-}]$."</b> Yes, but this does <b>not</b> mean pH = 7 at all temperatures. At 373 K, $K_w \approx 5\times10^{-13}$, so neutral pH ≈ 6.1. Neutral means $[\ce{H+}] = [\ce{OH-}]$, whatever that value is at the given temperature.</li>
+<li><b>"pH can be negative."</b> Yes — if $[\ce{H+}] &gt; 1$ mol dm⁻³, pH is negative (e.g., 10 mol dm⁻³ HCl has pH = −1). The pH scale typically ranges 0–14, but it extends beyond these limits for very concentrated solutions.</li>
 </ol>
 </div>
-
 <h2>6. End-of-Lesson Practice</h2>
-
-<p><b>Question 1 (Paper 1 style):</b> Which species is the conjugate base of $\ce{HSO4-}$?<br>
-A. $\ce{H2SO4}$ &nbsp; B. $\ce{SO4^{2-}}$ &nbsp; C. $\ce{H3SO4+}$ &nbsp; D. $\ce{H2SO3}$</p>
-
-<p><b>Question 2:</b> Identify all conjugate acid–base pairs in: $\ce{NH3 + H2O <=> NH4+ + OH-}$</p>
-
+<p><b>Question 1 (Paper 1 style):</b> Which species is the conjugate base of $\ce{HSO4-}$?<br/>
+A. $\ce{H2SO4}$   B. $\ce{SO4^{2-}}$   C. $\ce{H3SO4+}$   D. $\ce{H2SO3}$</p>
+<p><b>Question 2:</b> Identify all conjugate acid–base pairs in: $\ce{NH3 + H2O &lt;=&gt; NH4+ + OH-}$</p>
 <p><b>Question 3:</b> Calculate the pH of: (a) 0.0015 mol dm⁻³ $\ce{HCl}$, (b) 0.020 mol dm⁻³ $\ce{NaOH}$, (c) 0.010 mol dm⁻³ $\ce{H2SO4}$.</p>
-
 <p><b>Question 4:</b> A solution has pH = 4.70. Calculate $[\ce{H+}]$ and $[\ce{OH-}]$ at 298 K.</p>
-
 <p><b>Question 5:</b> 5.0 cm³ of 0.10 mol dm⁻³ $\ce{HNO3}$ is diluted to 100 cm³. Calculate the pH of the original and diluted solutions.</p>
-
-<p><b>Question 6 (IB multi-step):</b> 0.400 g of $\ce{NaOH}$ is dissolved in water and made up to 250 cm³. ($M(\ce{NaOH}) = 40.0$ g mol⁻¹)<br>(a) Calculate the concentration of the NaOH solution.<br>(b) Write the dissociation equation and find $[\ce{OH-}]$.<br>(c) Calculate pOH and hence pH at 298 K.<br>(d) This solution is diluted by a factor of 10. Calculate the new pH.</p>
-
+<p><b>Question 6 (IB multi-step):</b> 0.400 g of $\ce{NaOH}$ is dissolved in water and made up to 250 cm³. ($M(\ce{NaOH}) = 40.0$ g mol⁻¹)<br/>(a) Calculate the concentration of the NaOH solution.<br/>(b) Write the dissociation equation and find $[\ce{OH-}]$.<br/>(c) Calculate pOH and hence pH at 298 K.<br/>(d) This solution is diluted by a factor of 10. Calculate the new pH.</p>
 <button class="practice-toggle" onclick="var a=this.nextElementSibling;a.classList.toggle('open');this.textContent=a.classList.contains('open')?'▴ Hide Answers':'▸ Show Answers'">▸ Show Answers</button>
 <div class="practice-answers">
-
 <p><b>Answer 1:</b> B. The conjugate base of HSO₄⁻ is formed by removing one H⁺: HSO₄⁻ → SO₄²⁻ + H⁺. SO₄²⁻ is the conjugate base. H₂SO₄ is the conjugate <em>acid</em> of HSO₄⁻.</p>
-
 <p><b>Answer 2:</b> Two conjugate pairs: (1) NH₃ (base) / NH₄⁺ (conjugate acid) — NH₃ accepts a proton. (2) H₂O (acid) / OH⁻ (conjugate base) — H₂O donates a proton. In this reaction, H₂O acts as an <b>acid</b> and NH₃ acts as a <b>base</b>.</p>
-
 <p><b>Answer 3:</b> (a) [H⁺] = 0.0015, pH = $-\log(1.5\times10^{-3}) = 2.82$. (b) [OH⁻] = 0.020, pOH = $-\log(0.020) = 1.70$, pH = 14 − 1.70 = <b>12.30</b>. (c) [H⁺] = 2×0.010 = 0.020, pH = $-\log(0.020) = 1.70$.</p>
-
 <p><b>Answer 4:</b> $[\ce{H+}] = 10^{-4.70} = 2.00 \times 10^{-5}$ mol dm⁻³. $[\ce{OH-}] = K_w/[\ce{H+}] = 1.0\times10^{-14} / 2.00\times10^{-5} = 5.00 \times 10^{-10}$ mol dm⁻³.</p>
-
 <p><b>Answer 5:</b> Original: [H⁺] = 0.10, pH = 1.00. Dilution factor = 100/5.0 = 20. New [H⁺] = 0.10/20 = 0.0050, pH = $-\log(5.0\times10^{-3}) = 2.30$. Check: dilution×20 → pH increase = $\log_{10}(20) = 1.30$ → $1.00 + 1.30 = 2.30$ ✓.</p>
-
 <p><b>Answer 6:</b> (a) n(NaOH) = 0.400/40.0 = 0.0100 mol. c = 0.0100/0.250 = 0.0400 mol dm⁻³. (b) NaOH → Na⁺ + OH⁻ → [OH⁻] = 0.0400 mol dm⁻³. (c) pOH = $-\log(0.0400) = 1.40$, pH = 14 − 1.40 = <b>12.60</b>. (d) New [OH⁻] = 0.00400, pOH = $-\log(0.00400) = 2.40$, pH = 14 − 2.40 = <b>11.60</b>. Each 10× dilution of a strong base reduces pH by 1 unit.</p>
 </div>
-
 <h2>7. Key Terms</h2>
 <table>
 <tr><th>Term</th><th>Definition</th></tr>
@@ -288,14 +253,137 @@ A. $\ce{H2SO4}$ &nbsp; B. $\ce{SO4^{2-}}$ &nbsp; C. $\ce{H3SO4+}$ &nbsp; D. $\ce
 <tr><td>Strong acid</td><td>An acid that dissociates <b>completely</b> in aqueous solution (e.g., $\ce{HCl}$, $\ce{HNO3}$, $\ce{H2SO4}$)</td></tr>
 <tr><td>Strong base</td><td>A base that dissociates <b>completely</b> in aqueous solution (e.g., $\ce{NaOH}$, $\ce{KOH}$, $\ce{Ba(OH)2}$)</td></tr>
 </table>
-
 <h2>8. Exam Tips</h2>
-
 <div class="exam-tip"><b>Paper 1 (Multiple Choice):</b> Conjugate pair identification is a classic question. Look for the two species that differ by exactly one $\ce{H+}$. The acid has one more H than its conjugate base. Common trap: $\ce{H3PO4}$ and $\ce{HPO4^{2-}}$ differ by <b>two</b> H⁺ — they are <b>not</b> a conjugate pair. The conjugate base of H₃PO₄ is H₂PO₄⁻.</div>
-
 <div class="exam-tip"><b>Paper 2 pH Calculations:</b> Always check whether the acid/base is monoprotic or diprotic before calculating [H⁺] or [OH⁻]. For H₂SO₄, $[\ce{H+}] = 2c$. For Ba(OH)₂, $[\ce{OH-}] = 2c$. Missing the factor of 2 is the most common error. Also: show the $K_w$ step explicitly when calculating pH of bases — it earns a method mark.</div>
-
 <div class="exam-tip"><b>Sig Figs for pH:</b> The number of <b>decimal places</b> in pH equals the number of <b>significant figures</b> in [H⁺]. If [H⁺] = $3.0 \times 10^{-4}$ (2 sig figs), pH = 3.52 (2 decimal places). The integer part of pH (the characteristic) corresponds to the exponent and does not count towards significant figures.</div>
 
+<div class="lesson-actions" style="margin: 2rem 0; padding: 1.5rem; background: #f8fafc; border-radius: 8px; display: flex; gap: 1rem; flex-wrap: wrap;">
+<button class="action-btn" id="generate-flashcards-btn" style="padding: 0.75rem 1.5rem; background: #3b82f6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        🗂️ Generate Flashcards
+    </button>
+<button class="action-btn" id="practice-problems-btn" style="padding: 0.75rem 1.5rem; background: #10b981; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        ✏️ Practice Problems
+    </button>
+<button class="action-btn" id="ask-ai-btn" style="padding: 0.75rem 1.5rem; background: #8b5cf6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        💬 Ask AI
+    </button>
+</div>
+<script>
+(function() {
+    const subjectKey = "chemistry";
+    const lessonId = "lesson_27";
+    const lessonTitle = "Lesson 27: Brønsted-Lowry Theory, pH, Strong Acids & Bases";
+
+    function getCsrf() {
+        var m = document.querySelector('meta[name="csrf-token"]');
+        return m ? m.getAttribute('content') : '';
+    }
+
+    // Completion checkbox
+    const checkbox = document.getElementById('lesson-complete');
+    if (checkbox) {
+        // Load saved state
+        const saved = localStorage.getItem(`completed_${subjectKey}_${lessonId}`);
+        if (saved === 'true') checkbox.checked = true;
+
+        checkbox.addEventListener('change', async function() {
+            const completed = this.checked;
+            localStorage.setItem(`completed_${subjectKey}_${lessonId}`, completed);
+
+            try {
+                await fetch('/toggle_completion', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': getCsrf()
+                    },
+                    body: JSON.stringify({
+                        subject: subjectKey,
+                        lesson: lessonId,
+                        completed: completed
+                    })
+                });
+            } catch(e) {
+                console.error('Error saving completion:', e);
+            }
+        });
+    }
+
+    // Generate Flashcards
+    const flashcardsBtn = document.getElementById('generate-flashcards-btn');
+    if (flashcardsBtn) {
+        flashcardsBtn.addEventListener('click', async function() {
+            this.disabled = true;
+            this.textContent = '⏳ Generating...';
+
+            try {
+                const content = document.body.innerText.substring(0, 2000);
+                const response = await fetch('/generate_flashcards', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': getCsrf()
+                    },
+                    body: JSON.stringify({
+                        subject: subjectKey,
+                        lesson: lessonTitle,
+                        content_summary: content
+                    })
+                });
+
+                const data = await response.json();
+                if (data.error) {
+                    alert('Error: ' + data.error);
+                } else {
+                    alert(`✅ Created ${data.count} flashcards! View them at /flashcards/${subjectKey}`);
+                }
+            } catch(e) {
+                alert('Error generating flashcards: ' + e.message);
+            } finally {
+                this.disabled = false;
+                this.textContent = '🗂️ Generate Flashcards';
+            }
+        });
+    }
+
+    // Practice Problems - open in new section
+    const practiceBtn = document.getElementById('practice-problems-btn');
+    if (practiceBtn) {
+        practiceBtn.addEventListener('click', function() {
+            alert('Practice problems feature coming soon! Use the AI chatbot to generate custom questions.');
+        });
+    }
+
+    // Ask AI - scroll to chatbot
+    const aiBtn = document.getElementById('ask-ai-btn');
+    if (aiBtn) {
+        aiBtn.addEventListener('click', function() {
+            const chatbot = document.getElementById('lessons-chatbot');
+            if (chatbot) {
+                chatbot.scrollIntoView({ behavior: 'smooth' });
+                const toggleBtn = chatbot.querySelector('.chatbot-toggle');
+                if (toggleBtn) toggleBtn.click();
+            } else {
+                alert('AI chatbot not available on this page. It will be added soon!');
+            }
+        });
+    }
+
+    // Track lesson view
+    fetch('/mark_viewed', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': getCsrf()
+        },
+        body: JSON.stringify({
+            subject: subjectKey,
+            lesson: lessonId
+        })
+    }).catch(e => console.error('Error tracking view:', e));
+
+})();
+</script>
 </body>
 </html>

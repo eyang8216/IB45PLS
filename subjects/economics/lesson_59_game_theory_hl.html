@@ -1,15 +1,16 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Lesson 59 — Game Theory and Strategic Behavior (HL Extension)</title>
 <script>
 MathJax = {
   tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }
 };
 </script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <style>
   body {
     max-width: 800px; margin: 40px auto; font-family: 'Times New Roman', Georgia, serif;
@@ -38,208 +39,215 @@ MathJax = {
 </style>
 </head>
 <body>
+<div class="lesson-completion" style="margin: 0 0 2rem 0; padding: 1rem; background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-radius: 8px; border: 2px solid #bae6fd;">
+<label class="completion-checkbox" style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer;">
+<input id="lesson-complete" style="width: 24px; height: 24px; cursor: pointer; accent-color: #10b981;" type="checkbox"/>
+<span style="font-size: 1rem; color: #0f172a; font-weight: 600;">✓ Mark this lesson as complete</span>
+</label>
+</div>
+
 <div class="nav"><a href="index.html">← Back to Index</a></div>
 <span class="hl-badge">HL ONLY</span>
 <h1>Lesson 59: Game Theory and Strategic Behavior</h1>
-
 <h2>Introduction to Game Theory</h2>
-
 <p><b>Game theory</b> is the study of strategic decision-making where the outcome for each participant depends not only on their own actions but also on the actions of others. In oligopolistic markets, firms must anticipate rivals' reactions when making pricing, output, or advertising decisions.</p>
+<div class="objectives" style="background: #f0f4ff; border-left: 4px solid #2563eb; padding: 1rem 1.2rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0;">
+    <h3 style="margin-top: 0; color: #1e40af;">Learning Objectives</h3>
+    <p>By the end of this lesson, you will be able to:</p>
+    <ul>
+        <li><strong>Understand</strong> the key concepts in Game Theory and Strategic Behavior</li>
+        <li><strong>Explain</strong> basic components of a game</li>
+        <li><strong>Explain</strong> the prisoner's dilemma</li>
+        <li><strong>Apply</strong> your knowledge through practice problems and examples</li>
+    </ul>
+</div>
+
 
 <p>Game theory provides a framework for analyzing these interdependent decisions and predicting market outcomes. This is a key HL extension that helps explain why oligopolies behave differently from perfectly competitive or monopolistic markets.</p>
-
 <h2>Basic Components of a Game</h2>
-
 <p>Every game has three essential elements:</p>
-
 <ul>
-  <li><b>Players:</b> The decision-makers (e.g., firms in an oligopoly)</li>
-  <li><b>Strategies:</b> The possible actions each player can take</li>
-  <li><b>Payoffs:</b> The outcomes resulting from each combination of strategies</li>
+<li><b>Players:</b> The decision-makers (e.g., firms in an oligopoly)</li>
+<li><b>Strategies:</b> The possible actions each player can take</li>
+<li><b>Payoffs:</b> The outcomes resulting from each combination of strategies</li>
 </ul>
-
 <h2>The Prisoner's Dilemma</h2>
-
 <p>The <b>Prisoner's Dilemma</b> is the most famous game theory model and illustrates why rational individuals might not cooperate even when it's in their collective interest.</p>
-
 <h3>The Story</h3>
-
 <p>Two suspects are arrested and interrogated separately. The prosecutor offers each the same deal:</p>
-
 <ul>
-  <li>If both remain silent, each serves 1 year in prison (light evidence)</li>
-  <li>If both confess, each serves 5 years</li>
-  <li>If one confesses and the other remains silent, the confessor goes free while the silent one serves 10 years</li>
+<li>If both remain silent, each serves 1 year in prison (light evidence)</li>
+<li>If both confess, each serves 5 years</li>
+<li>If one confesses and the other remains silent, the confessor goes free while the silent one serves 10 years</li>
 </ul>
-
 <h3>Payoff Matrix</h3>
-
 <div class="payoff-matrix">
 <table>
-  <tr>
-    <th colspan="2" rowspan="2"></th>
-    <th colspan="2">Prisoner B</th>
-  </tr>
-  <tr>
-    <th>Stay Silent</th>
-    <th>Confess</th>
-  </tr>
-  <tr>
-    <th rowspan="2">Prisoner A</th>
-    <th class="label-cell">Stay Silent</th>
-    <td><span class="player1">-1</span>, <span class="player2">-1</span></td>
-    <td><span class="player1">-10</span>, <span class="player2">0</span></td>
-  </tr>
-  <tr>
-    <th class="label-cell">Confess</th>
-    <td><span class="player1">0</span>, <span class="player2">-10</span></td>
-    <td><span class="player1">-5</span>, <span class="player2">-5</span></td>
-  </tr>
+<tr>
+<th colspan="2" rowspan="2"></th>
+<th colspan="2">Prisoner B</th>
+</tr>
+<tr>
+<th>Stay Silent</th>
+<th>Confess</th>
+</tr>
+<tr>
+<th rowspan="2">Prisoner A</th>
+<th class="label-cell">Stay Silent</th>
+<td><span class="player1">-1</span>, <span class="player2">-1</span></td>
+<td><span class="player1">-10</span>, <span class="player2">0</span></td>
+</tr>
+<tr>
+<th class="label-cell">Confess</th>
+<td><span class="player1">0</span>, <span class="player2">-10</span></td>
+<td><span class="player1">-5</span>, <span class="player2">-5</span></td>
+</tr>
 </table>
 </div>
-
 <p><i>Note: Numbers represent years in prison (negative payoffs). First number is Prisoner A's outcome, second is Prisoner B's.</i></p>
-
 <h2>Dominant Strategy and Nash Equilibrium</h2>
-
 <p>A <b>dominant strategy</b> is one that yields a better payoff regardless of what the other player does.</p>
-
 <p>In the Prisoner's Dilemma:</p>
-
 <ul>
-  <li>If B stays silent, A gets -1 (silent) or 0 (confess) → confess is better</li>
-  <li>If B confesses, A gets -10 (silent) or -5 (confess) → confess is better</li>
-  <li>Therefore, confessing is A's dominant strategy</li>
-  <li>By symmetry, confessing is also B's dominant strategy</li>
+<li>If B stays silent, A gets -1 (silent) or 0 (confess) → confess is better</li>
+<li>If B confesses, A gets -10 (silent) or -5 (confess) → confess is better</li>
+<li>Therefore, confessing is A's dominant strategy</li>
+<li>By symmetry, confessing is also B's dominant strategy</li>
 </ul>
-
 <p>A <b>Nash equilibrium</b> occurs when each player chooses their best strategy given the other player's choice, and no player has an incentive to deviate unilaterally.</p>
-
 <p>The Nash equilibrium is <b>(Confess, Confess)</b> with payoffs (-5, -5), even though both would be better off at (-1, -1) if they cooperated. This illustrates the conflict between individual rationality and collective welfare.</p>
-
 <h2>The Oligopoly Pricing Game</h2>
-
 <p>The Prisoner's Dilemma applies directly to oligopolistic pricing decisions. Consider two firms deciding whether to keep prices high or cut prices:</p>
-
 <div class="payoff-matrix">
 <table>
-  <tr>
-    <th colspan="2" rowspan="2"></th>
-    <th colspan="2">Firm B</th>
-  </tr>
-  <tr>
-    <th>High Price</th>
-    <th>Low Price</th>
-  </tr>
-  <tr>
-    <th rowspan="2">Firm A</th>
-    <th class="label-cell">High Price</th>
-    <td><span class="player1">$100m</span>, <span class="player2">$100m</span></td>
-    <td><span class="player1">$20m</span>, <span class="player2">$150m</span></td>
-  </tr>
-  <tr>
-    <th class="label-cell">Low Price</th>
-    <td><span class="player1">$150m</span>, <span class="player2">$20m</span></td>
-    <td><span class="player1">$60m</span>, <span class="player2">$60m</span></td>
-  </tr>
+<tr>
+<th colspan="2" rowspan="2"></th>
+<th colspan="2">Firm B</th>
+</tr>
+<tr>
+<th>High Price</th>
+<th>Low Price</th>
+</tr>
+<tr>
+<th rowspan="2">Firm A</th>
+<th class="label-cell">High Price</th>
+<td><span class="player1">$100m</span>, <span class="player2">$100m</span></td>
+<td><span class="player1">$20m</span>, <span class="player2">$150m</span></td>
+</tr>
+<tr>
+<th class="label-cell">Low Price</th>
+<td><span class="player1">$150m</span>, <span class="player2">$20m</span></td>
+<td><span class="player1">$60m</span>, <span class="player2">$60m</span></td>
+</tr>
 </table>
 </div>
-
 <p>Analysis:</p>
-
 <ul>
-  <li><b>If both charge high prices:</b> Each earns $100m (collusive outcome)</li>
-  <li><b>If both charge low prices:</b> Each earns $60m (Nash equilibrium)</li>
-  <li><b>If one undercuts:</b> The price-cutter gains market share and earns $150m while the other earns only $20m</li>
+<li><b>If both charge high prices:</b> Each earns $100m (collusive outcome)</li>
+<li><b>If both charge low prices:</b> Each earns $60m (Nash equilibrium)</li>
+<li><b>If one undercuts:</b> The price-cutter gains market share and earns $150m while the other earns only $20m</li>
 </ul>
-
 <p>Each firm's dominant strategy is to charge a low price, leading to a Nash equilibrium at (Low, Low) even though (High, High) would be mutually beneficial. This explains why:</p>
-
 <ul>
-  <li>Cartels are unstable — firms have incentives to cheat</li>
-  <li>Price wars can occur in oligopolies</li>
-  <li>Firms may prefer explicit or tacit collusion to avoid the low-price trap</li>
+<li>Cartels are unstable — firms have incentives to cheat</li>
+<li>Price wars can occur in oligopolies</li>
+<li>Firms may prefer explicit or tacit collusion to avoid the low-price trap</li>
 </ul>
-
 <h2>Repeated Games and Cooperation</h2>
-
 <p>The analysis changes when firms interact repeatedly over time. In a <b>repeated game</b>, firms may cooperate to achieve the mutually beneficial outcome by using strategies like:</p>
-
 <ul>
-  <li><b>Tit-for-tat:</b> Start by cooperating, then mirror the opponent's previous move</li>
-  <li><b>Trigger strategies:</b> Cooperate until the rival cheats, then punish them permanently</li>
+<li><b>Tit-for-tat:</b> Start by cooperating, then mirror the opponent's previous move</li>
+<li><b>Trigger strategies:</b> Cooperate until the rival cheats, then punish them permanently</li>
 </ul>
-
 <p>Repeated interaction creates an incentive to maintain a good reputation and avoid triggering retaliation. This explains why stable oligopolies can maintain high prices without formal collusion.</p>
-
 <h2>Advertising Game</h2>
-
 <p>Game theory also explains advertising behavior in oligopolies:</p>
-
 <div class="payoff-matrix">
 <table>
-  <tr>
-    <th colspan="2" rowspan="2"></th>
-    <th colspan="2">Firm B</th>
-  </tr>
-  <tr>
-    <th>Don't Advertise</th>
-    <th>Advertise</th>
-  </tr>
-  <tr>
-    <th rowspan="2">Firm A</th>
-    <th class="label-cell">Don't Advertise</th>
-    <td><span class="player1">$50m</span>, <span class="player2">$50m</span></td>
-    <td><span class="player1">$20m</span>, <span class="player2">$70m</span></td>
-  </tr>
-  <tr>
-    <th class="label-cell">Advertise</th>
-    <td><span class="player1">$70m</span>, <span class="player2">$20m</span></td>
-    <td><span class="player1">$40m</span>, <span class="player2">$40m</span></td>
-  </tr>
+<tr>
+<th colspan="2" rowspan="2"></th>
+<th colspan="2">Firm B</th>
+</tr>
+<tr>
+<th>Don't Advertise</th>
+<th>Advertise</th>
+</tr>
+<tr>
+<th rowspan="2">Firm A</th>
+<th class="label-cell">Don't Advertise</th>
+<td><span class="player1">$50m</span>, <span class="player2">$50m</span></td>
+<td><span class="player1">$20m</span>, <span class="player2">$70m</span></td>
+</tr>
+<tr>
+<th class="label-cell">Advertise</th>
+<td><span class="player1">$70m</span>, <span class="player2">$20m</span></td>
+<td><span class="player1">$40m</span>, <span class="player2">$40m</span></td>
+</tr>
 </table>
 </div>
-
 <p>The dominant strategy for both firms is to advertise, leading to the Nash equilibrium at (Advertise, Advertise) with profits of $40m each. Both would be better off not advertising ($50m each), but each fears losing market share if the rival advertises.</p>
-
 <p>This explains why oligopolies often engage in heavy advertising even though it reduces overall industry profits — a form of "arms race."</p>
-
 <h2>The Kinked Demand Curve Revisited</h2>
-
 <p>Game theory provides a theoretical foundation for the kinked demand curve model. Firms expect that:</p>
-
 <ul>
-  <li>If they raise prices, rivals won't follow (lose market share)</li>
-  <li>If they cut prices, rivals will match (price war with little gain)</li>
+<li>If they raise prices, rivals won't follow (lose market share)</li>
+<li>If they cut prices, rivals will match (price war with little gain)</li>
 </ul>
-
 <p>This asymmetric expectation about rivals' reactions creates a kink at the current price and explains price rigidity in oligopolies.</p>
-
 <h2>HL Exam Applications</h2>
-
 <p>You may be asked to:</p>
-
 <ul>
-  <li>Identify dominant strategies in a payoff matrix</li>
-  <li>Find the Nash equilibrium</li>
-  <li>Explain why the Nash equilibrium may not be the best collective outcome</li>
-  <li>Apply game theory to explain oligopoly behavior (pricing, advertising, collusion)</li>
-  <li>Discuss how repeated games affect the likelihood of cooperation</li>
+<li>Identify dominant strategies in a payoff matrix</li>
+<li>Find the Nash equilibrium</li>
+<li>Explain why the Nash equilibrium may not be the best collective outcome</li>
+<li>Apply game theory to explain oligopoly behavior (pricing, advertising, collusion)</li>
+<li>Discuss how repeated games affect the likelihood of cooperation</li>
 </ul>
-
 <h2>Summary</h2>
-
 <p>Game theory is essential for understanding strategic behavior in oligopolies:</p>
-
 <ul>
-  <li>The Prisoner's Dilemma shows why rational firms may not cooperate even when it would be mutually beneficial</li>
-  <li>Dominant strategies and Nash equilibria predict market outcomes</li>
-  <li>Game theory explains price wars, advertising races, and the instability of cartels</li>
-  <li>Repeated games increase the potential for cooperation through reputation effects</li>
+<li>The Prisoner's Dilemma shows why rational firms may not cooperate even when it would be mutually beneficial</li>
+<li>Dominant strategies and Nash equilibria predict market outcomes</li>
+<li>Game theory explains price wars, advertising races, and the instability of cartels</li>
+<li>Repeated games increase the potential for cooperation through reputation effects</li>
 </ul>
-
 <p>This framework provides deeper insight into why oligopolistic markets behave so differently from the competitive ideal.</p>
-
 <div class="nav"><a href="index.html">← Back to Index</a></div>
+
+<div class="lesson-actions" style="margin: 2rem 0; padding: 1.5rem; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0;">
+    <h3 style="margin: 0 0 1rem 0; font-size: 1.1rem; color: #334155;">📚 Study Tools</h3>
+    <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+        <button onclick="generateFlashcards()" style="flex: 1; min-width: 140px; padding: 0.75rem 1rem; background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: transform 0.2s;">
+            🃏 Generate Flashcards
+        </button>
+        <button onclick="generatePractice()" style="flex: 1; min-width: 140px; padding: 0.75rem 1rem; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: transform 0.2s;">
+            📝 Practice Problems
+        </button>
+        <button onclick="openAI()" style="flex: 1; min-width: 140px; padding: 0.75rem 1rem; background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: transform 0.2s;">
+            🤖 Ask AI Tutor
+        </button>
+    </div>
+</div>
+
+<script>
+function generateFlashcards() {
+    const lessonTitle = document.querySelector('h1').textContent;
+    alert('Flashcard generation coming soon for: ' + lessonTitle);
+    // TODO: Implement flashcard generation
+}
+
+function generatePractice() {
+    const lessonTitle = document.querySelector('h1').textContent;
+    alert('Practice problem generation coming soon for: ' + lessonTitle);
+    // TODO: Implement practice generation
+}
+
+function openAI() {
+    const lessonTitle = document.querySelector('h1').textContent;
+    alert('AI tutor coming soon for: ' + lessonTitle);
+    // TODO: Implement AI tutor
+}
+</script>
+
 </body>
 </html>

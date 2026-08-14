@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IB Biology HL — Lesson Index</title>
+<style>
+  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #1a6b3c; --accent2: #2e8b57; --border: #c4d4a9; --card: #fff; --hl: #e65100; --hover: #e8f5e9; --done: #d4edda; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Palatino', 'Georgia', 'Segoe UI', serif; background: #f0f2e8; color: var(--text); min-height: 100vh; }
+  
+  /* Header */
+  .header { background: linear-gradient(135deg, #1a6b3c 0%, #2e8b57 50%, #1a5632 100%); color: #fff; padding: 2.5rem 2rem 2rem; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.15); position: relative; overflow: hidden; }
+  .header::before { content: '🧬'; position: absolute; font-size: 12rem; opacity: 0.06; top: -40px; left: -30px; }
+  .header::after { content: '🧬'; position: absolute; font-size: 10rem; opacity: 0.05; bottom: -40px; right: -30px; }
+  .header h1 { font-size: 2.2rem; margin-bottom: 0.4rem; position: relative; z-index: 1; letter-spacing: -0.5px; }
+  .header .subtitle { font-size: 1.05rem; opacity: 0.9; position: relative; z-index: 1; font-style: italic; }
+  
+  /* Stats Bar */
+  .stats { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; padding: 1.2rem 2rem; background: #fff; border-bottom: 1px solid #ddd; box-shadow: 0 2px 8px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 10; }
+  .stat-card { background: #f9faf7; border: 1px solid var(--border); border-radius: 10px; padding: 0.8rem 1.4rem; text-align: center; min-width: 90px; transition: transform 0.2s; }
+  .stat-card:hover { transform: translateY(-2px); }
+  .stat-card .num { font-size: 2rem; font-weight: bold; color: var(--accent); }
+  .stat-card .lbl { font-size: 0.75rem; color: #666; text-transform: uppercase; letter-spacing: 0.5px; }
+  .stat-card.progress { background: linear-gradient(135deg, #e8f5e9, #d4edda); border-color: #a3d4a8; }
+  
+  /* Progress Bar */
+  .progress-wrap { padding: 0 2rem 0.5rem; background: #fff; border-bottom: 1px solid #ddd; }
+  .progress-bar-outer { height: 8px; background: #e0e0e0; border-radius: 4px; overflow: hidden; }
+  .progress-bar-inner { height: 100%; background: linear-gradient(90deg, #1a6b3c, #43a047); border-radius: 4px; transition: width 0.4s ease; width: 0%; }
+  
+  /* Content */
+  .container { max-width: 1000px; margin: 0 auto; padding: 1.5rem; }
+  
+  /* Theme Sections */
+  .theme { margin-bottom: 2rem; }
+  .theme-header { display: flex; align-items: center; gap: 0.8rem; padding: 0.8rem 1.2rem; background: linear-gradient(135deg, #f5f8f0, #eef3e5); border: 1px solid var(--border); border-radius: 10px; cursor: pointer; user-select: none; transition: background 0.2s; }
+  .theme-header:hover { background: linear-gradient(135deg, #e8f5e9, #dcecd0); }
+  .theme-header .icon { font-size: 1.6rem; }
+  .theme-header .title { font-size: 1.15rem; font-weight: bold; color: var(--accent); flex: 1; }
+  .theme-header .count { font-size: 0.8rem; color: #888; }
+  .theme-header .arrow { transition: transform 0.3s; font-size: 0.9rem; }
+  .theme.collapsed .arrow { transform: rotate(-90deg); }
+  
+  .theme-table-wrap { overflow: hidden; transition: max-height 0.4s ease; }
+  .theme.collapsed .theme-table-wrap { max-height: 0 !important; }
+  
+  /* Table */
+  table { width: 100%; border-collapse: collapse; margin-top: 0.5rem; }
+  th { background: #f5f0e8; color: #555; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; padding: 0.7rem 0.8rem; text-align: left; border-bottom: 2px solid var(--border); }
+  td { padding: 0.55rem 0.8rem; border-bottom: 1px solid #eee; font-size: 0.95rem; }
+  tr { transition: background 0.15s; }
+  tr:hover { background: #fafcf7; }
+  tr.completed { background: var(--done); }
+  tr.completed td { text-decoration: none; }
+  
+  td:nth-child(1) { width: 40px; text-align: center; font-weight: bold; color: #999; }
+  td:nth-child(3) { width: 80px; text-align: center; }
+  
+  /* Checkbox */
+  input[type="checkbox"] { width: 18px; height: 18px; cursor: pointer; accent-color: var(--accent); }
+  
+  /* Links */
+  td a { color: var(--accent); text-decoration: none; font-weight: 500; transition: color 0.15s; }
+  td a:hover { color: #0d4726; text-decoration: underline; }
+  td a:visited { color: #5a8f6a; }
+  
+  /* HL Badge */
+  .hl-badge { display: inline-block; background: var(--hl); color: #fff; font-size: 0.65rem; font-weight: bold; padding: 0.15rem 0.45rem; border-radius: 4px; margin-left: 0.3rem; letter-spacing: 0.3px; vertical-align: middle; }
+  
+  /* Buttons */
+  .btn-row { display: flex; gap: 0.5rem; padding: 1rem 0; flex-wrap: wrap; justify-content: center; }
+  .btn { padding: 0.5rem 1.2rem; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; font-size: 0.85rem; font-family: inherit; background: #fff; color: #555; transition: all 0.2s; }
+  .btn:hover { background: #f0f5e8; border-color: var(--accent); color: var(--accent); }
+  .btn.accent { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .btn.accent:hover { background: #1a5632; }
+  
+  /* Footer */
+  .footer { text-align: center; padding: 2rem; color: #999; font-size: 0.85rem; border-top: 1px solid #ddd; margin-top: 2rem; }
+  .footer a { color: var(--accent); text-decoration: none; }
+  
+  /* Search */
+  .search-wrap { position: relative; margin: 0 2rem 1rem; }
+  .search-wrap input { width: 100%; padding: 0.7rem 1rem 0.7rem 2.5rem; border: 1px solid #ddd; border-radius: 8px; font-size: 0.95rem; font-family: inherit; }
+  .search-wrap input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(26,107,60,0.1); }
+  .search-icon { position: absolute; left: 0.8rem; top: 0.75rem; opacity: 0.4; }
+  
+  @media (max-width: 700px) {
+    .header { padding: 1.5rem 1rem; }
+    .header h1 { font-size: 1.5rem; }
+    .stats { padding: 0.8rem; gap: 0.5rem; }
+    .stat-card { padding: 0.5rem 0.8rem; min-width: 70px; }
+    .stat-card .num { font-size: 1.4rem; }
+    .container { padding: 0.5rem; }
+    td, th { padding: 0.4rem 0.4rem; font-size: 0.85rem; }
+  }
+  @media print {
+    .header, .stats, .btn-row, .search-wrap, .footer, .progress-wrap { display: none; }
+    body { background: #fff; }
+    .container { max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🧬 IB Biology HL — Lesson Index</h1>
+  <p class="subtitle">54 comprehensive lessons • First assessment 2025 curriculum • Built for a 7</p>
+</div>
+
+<div class="stats" id="stats">
+  <div class="stat-card progress">
+    <div class="num" id="pct">0%</div>
+    <div class="lbl">Complete</div>
+  </div>
+  <div class="stat-card">
+    <div class="num" id="done">0</div>
+    <div class="lbl">Done</div>
+  </div>
+  <div class="stat-card">
+    <div class="num">54</div>
+    <div class="lbl">Total</div>
+  </div>
+  <div class="stat-card">
+    <div class="num" id="remaining">54</div>
+    <div class="lbl">Remaining</div>
+  </div>
+</div>
+
+<div class="progress-wrap">
+  <div class="progress-bar-outer"><div class="progress-bar-inner" id="progressBar"></div></div>
+</div>
+
+<div class="search-wrap">
+  <span class="search-icon">🔍</span>
+  <input type="text" id="search" placeholder="Search lessons by topic or keyword..." oninput="filterLessons()">
+</div>
+
+<div class="btn-row">
+  <button class="btn accent" onclick="resetAll()">🔄 Reset All Progress</button>
+  <button class="btn" onclick="checkAll()">✅ Mark All Complete</button>
+  <button class="btn" onclick="expandAll()">📖 Expand All Themes</button>
+  <a href="../study_plan.md" class="btn">📋 Study Plan</a>
+  <a href="../syllabus_overview.md" class="btn">📊 Syllabus Checklist</a>
+</div>
+
+<div class="container">
+
+<!-- THEME A -->
+<div class="theme" id="themeA">
+  <div class="theme-header" onclick="toggleTheme('themeA')">
+    <span class="icon">🔬</span>
+    <span class="title">Theme A: Unity and Diversity</span>
+    <span class="count">11 lessons</span>
+    <span class="arrow">▼</span>
+  </div>
+  <div class="theme-table-wrap">
+  <table>
+    <tr><th>#</th><th>Lesson</th><th>✓</th></tr>
+    <tr id="row1"><td>1</td><td><a href="lesson_01.html">Water — the medium for life</a></td><td><input type="checkbox" onchange="save()" data-id="1"></td></tr>
+    <tr id="row2"><td>2</td><td><a href="lesson_02.html">Nucleic Acids I — DNA structure and evidence</a></td><td><input type="checkbox" onchange="save()" data-id="2"></td></tr>
+    <tr id="row3"><td>3</td><td><a href="lesson_03.html">Nucleic Acids II — RNA, nucleosomes <span class="hl-badge">HL</span></a></td><td><input type="checkbox" onchange="save()" data-id="3"></td></tr>
+    <tr id="row4"><td>4</td><td><a href="lesson_04.html">Origin of Cells — Miller-Urey, RNA World, endosymbiosis <span class="hl-badge">HL</span></a></td><td><input type="checkbox" onchange="save()" data-id="4"></td></tr>
+    <tr id="row5"><td>5</td><td><a href="lesson_05.html">Cell Structure I — prokaryotic vs. eukaryotic cells, organelles</a></td><td><input type="checkbox" onchange="save()" data-id="5"></td></tr>
+    <tr id="row6"><td>6</td><td><a href="lesson_06.html">Cell Structure II — techniques, atypical cells, cytoskeleton <span class="hl-badge">HL</span></a></td><td><input type="checkbox" onchange="save()" data-id="6"></td></tr>
+    <tr id="row7"><td>7</td><td><a href="lesson_07.html">Diversity of Organisms — variation, species concepts <span class="hl-badge">HL</span></a></td><td><input type="checkbox" onchange="save()" data-id="7"></td></tr>
+    <tr id="row8"><td>8</td><td><a href="lesson_08.html">Classification and Cladistics — domains, cladograms, keys <span class="hl-badge">HL</span></a></td><td><input type="checkbox" onchange="save()" data-id="8"></td></tr>
+    <tr id="row9"><td>9</td><td><a href="lesson_09.html">Evolution and Speciation I — evidence, natural selection <span class="hl-badge">HL</span></a></td><td><input type="checkbox" onchange="save()" data-id="9"></td></tr>
+    <tr id="row10"><td>10</td><td><a href="lesson_10.html">Evolution and Speciation II — speciation, Hardy-Weinberg <span class="hl-badge">HL</span></a></td><td><input type="checkbox" onchange="save()" data-id="10"></td></tr>
+    <tr id="row11"><td>11</td><td><a href="lesson_11.html">Conservation of Biodiversity — threats, strategies, CITES <span class="hl-badge">HL</span></a></td><td><input type="checkbox" onchange="save()" data-id="11"></td></tr>
+  </table>
+  </div>
+</div>
+
+<!-- THEME B -->
+<div class="theme" id="themeB">
+  <div class="theme-header" onclick="toggleTheme('themeB')">
+    <span class="icon">🧪</span>
+    <span class="title">Theme B: Form and Function</span>
+    <span class="count">13 lessons</span>
+    <span class="arrow">▼</span>
+  </div>
+  <div class="theme-table-wrap">
+  <table>
+    <tr><th>#</th><th>Lesson</th><th>✓</th></tr>
+    <tr id="row12"><td>12</td><td><a href="lesson_12.html">Carbohydrates and Lipids I — monosaccharides to polysaccharides</a></td><td><input type="checkbox" onchange="save()" data-id="12"></td></tr>
+    <tr id="row13"><td>13</td><td><a href="lesson_13.html">Carbohydrates and Lipids II — phospholipids, steroids <span class="hl-badge">HL</span></a></td><td><input type="checkbox" onchange="save()" data-id="13"></td></tr>
+    <tr id="row14"><td>14</td><td><a href="lesson_14.html">Proteins I — amino acids to tertiary structure</a></td><td><input type="checkbox" onchange="save()" data-id="14"></td></tr>
+    <tr id="row15"><td>15</td><td><a href="lesson_15.html">Proteins II — quaternary structure, folding <span class="hl-badge">HL</span></a></td><td><input type="checkbox" onchange="save()" data-id="15"></td></tr>
+    <tr id="row16"><td>16</td><td><a href="lesson_16.html">Membranes and Membrane Transport — fluid mosaic model</a></td><td><input type="checkbox" onchange="save()" data-id="16"></td></tr>
+    <tr id="row17"><td>17</td><td><a href="lesson_17.html">Organelles and Compartmentalization <span class="hl-badge">HL</span></a></td><td><input type="checkbox" onchange="save()" data-id="17"></td></tr>
+    <tr id="row18"><td>18</td><td><a href="lesson_18.html">Cell Specialization — stem cells, differentiation, iPSCs</a></td><td><input type="checkbox" onchange="save()" data-id="18"></td></tr>
+    <tr id="row19"><td>19</td><td><a href="lesson_19.html">Gas Exchange I — Fick's Law, human ventilation, alveoli</a></td><td><input type="checkbox" onchange="save()" data-id="19"></td></tr>
+    <tr id="row20"><td>20</td><td><a href="lesson_20.html">Gas Exchange II — plants, insects, fish, O₂ curves <span class="hl-badge">HL</span></a></td><td><input type="checkbox" onchange="save()" data-id="20"></td></tr>
+    <tr id="row21"><td>21</td><td><a href="lesson_21.html">Transport I — circulatory systems, heart, cardiac cycle</a></td><td><input type="checkbox" onchange="save()" data-id="21"></td></tr>
+    <tr id="row22"><td>22</td><td><a href="lesson_22.html">Transport II — blood, lymph, plant transport, ECG <span class="hl-badge">HL</span></a></td><td><input type="checkbox" onchange="save()" data-id="22"></td></tr>
+    <tr id="row23"><td>23</td><td><a href="lesson_23.html">Muscle and Motility — sarcomere, sliding filament <span class="hl-badge">HL</span></a></td><td><input type="checkbox" onchange="save()" data-id="23"></td></tr>
+    <tr id="row24"><td>24</td><td><a href="lesson_24.html">Adaptation to Environment and Ecological Niches</a></td><td><input type="checkbox" onchange="save()" data-id="24"></td></tr>
+  </table>
+  </div>
+</div>
+
+<!-- THEME C -->
+<div class="theme" id="themeC">
+  <div class="theme-header" onclick="toggleTheme('themeC')">
+    <span class="icon">⚡</span>
+    <span class="title">Theme C: Interaction and Interdependence</span>
+    <span class="count">14 lessons</span>
+    <span class="arrow">▼</span>
+  </div>
+  <div class="theme-table-wrap">
+  <table>
+    <tr><th>#</th><th>Lesson</th><th>✓</th></tr>
+    <tr id="row25"><td>25</td><td><a href="lesson_25.html">Enzymes and Metabolism I — catalysis, models, inhibition</a></td><td><input type="checkbox" onchange="save()" data-id="25"></td></tr>
+    <tr id="row26"><td>26</td><td><a href="lesson_26.html">Enzymes and Metabolism II — Michaelis-Menten kinetics <span class="hl-badge">HL</span></a></td><td><input type="checkbox" onchange="save()" data-id="26"></td></tr>
+    <tr id="row27"><td>27</td><td><a href="lesson_27.html">Cell Respiration I — glycolysis, Krebs cycle, ETC</a></td><td><input type="checkbox" onchange="save()" data-id="27"></td></tr>
+    <tr id="row28"><td>28</td><td><a href="lesson_28.html">Cell Respiration II — detailed pathways, chemiosmosis <span class="hl-badge">HL</span></a></td><td><input type="checkbox" onchange="save()" data-id="28"></td></tr>
+    <tr id="row29"><td>29</td><td><a href="lesson_29.html">Photosynthesis I — light-dependent and Calvin cycle</a></td><td><input type="checkbox" onchange="save()" data-id="29"></td></tr>
+    <tr id="row30"><td>30</td><td><a href="lesson_30.html">Photosynthesis II — Z-scheme, C4/CAM plants <span class="hl-badge">HL</span></a></td><td><input type="checkbox" onchange="save()" data-id="30"></td></tr>
+    <tr id="row31"><td>31</td><td><a href="lesson_31.html">Chemical Signaling — hormones, second messengers <span class="hl-badge">HL</span></a></td><td><input type="checkbox" onchange="save()" data-id="31"></td></tr>
+    <tr id="row32"><td>32</td><td><a href="lesson_32.html">Neural Signaling I — resting potential to synapse</a></td><td><input type="checkbox" onchange="save()" data-id="32"></td></tr>
+    <tr id="row33"><td>33</td><td><a href="lesson_33.html">Neural Signaling II — graded potentials, plasticity <span class="hl-badge">HL</span></a></td><td><input type="checkbox" onchange="save()" data-id="33"></td></tr>
+    <tr id="row34"><td>34</td><td><a href="lesson_34.html">Integration of Body Systems — homeostasis, kidney</a></td><td><input type="checkbox" onchange="save()" data-id="34"></td></tr>
+    <tr id="row35"><td>35</td><td><a href="lesson_35.html">Defence Against Disease I — innate and adaptive immunity</a></td><td><input type="checkbox" onchange="save()" data-id="35"></td></tr>
+    <tr id="row36"><td>36</td><td><a href="lesson_36.html">Defence Against Disease II — clonal selection, MHC <span class="hl-badge">HL</span></a></td><td><input type="checkbox" onchange="save()" data-id="36"></td></tr>
+    <tr id="row37"><td>37</td><td><a href="lesson_37.html">Populations and Communities — sampling, succession</a></td><td><input type="checkbox" onchange="save()" data-id="37"></td></tr>
+    <tr id="row38"><td>38</td><td><a href="lesson_38.html">Transfers of Energy and Matter — pyramids, cycles</a></td><td><input type="checkbox" onchange="save()" data-id="38"></td></tr>
+  </table>
+  </div>
+</div>
+
+<!-- THEME D -->
+<div class="theme" id="themeD">
+  <div class="theme-header" onclick="toggleTheme('themeD')">
+    <span class="icon">🧬</span>
+    <span class="title">Theme D: Continuity and Change</span>
+    <span class="count">16 lessons</span>
+    <span class="arrow">▼</span>
+  </div>
+  <div class="theme-table-wrap">
+  <table>
+    <tr><th>#</th><th>Lesson</th><th>✓</th></tr>
+    <tr id="row39"><td>39</td><td><a href="lesson_39.html">DNA Replication — semiconservative, PCR, sequencing <span class="hl-badge">HL</span></a></td><td><input type="checkbox" onchange="save()" data-id="39"></td></tr>
+    <tr id="row40"><td>40</td><td><a href="lesson_40.html">Protein Synthesis I — transcription, translation</a></td><td><input type="checkbox" onchange="save()" data-id="40"></td></tr>
+    <tr id="row41"><td>41</td><td><a href="lesson_41.html">Protein Synthesis II — regulation, epigenetics <span class="hl-badge">HL</span></a></td><td><input type="checkbox" onchange="save()" data-id="41"></td></tr>
+    <tr id="row42"><td>42</td><td><a href="lesson_42.html">Mutations and Gene Editing — CRISPR-Cas9</a></td><td><input type="checkbox" onchange="save()" data-id="42"></td></tr>
+    <tr id="row43"><td>43</td><td><a href="lesson_43.html">Cell Division I — mitosis, cell cycle, cancer</a></td><td><input type="checkbox" onchange="save()" data-id="43"></td></tr>
+    <tr id="row44"><td>44</td><td><a href="lesson_44.html">Cell Division II — meiosis, non-disjunction <span class="hl-badge">HL</span></a></td><td><input type="checkbox" onchange="save()" data-id="44"></td></tr>
+    <tr id="row45"><td>45</td><td><a href="lesson_45.html">Gene Expression — lac operon, epigenetics <span class="hl-badge">HL</span></a></td><td><input type="checkbox" onchange="save()" data-id="45"></td></tr>
+    <tr id="row46"><td>46</td><td><a href="lesson_46.html">Water Potential — components, calculations</a></td><td><input type="checkbox" onchange="save()" data-id="46"></td></tr>
+    <tr id="row47"><td>47</td><td><a href="lesson_47.html">Reproduction I — gametogenesis, fertilization</a></td><td><input type="checkbox" onchange="save()" data-id="47"></td></tr>
+    <tr id="row48"><td>48</td><td><a href="lesson_48.html">Reproduction II — flower reproduction <span class="hl-badge">HL</span></a></td><td><input type="checkbox" onchange="save()" data-id="48"></td></tr>
+    <tr id="row49"><td>49</td><td><a href="lesson_49.html">Inheritance I — Mendel, monohybrid/dihybrid, pedigrees</a></td><td><input type="checkbox" onchange="save()" data-id="49"></td></tr>
+    <tr id="row50"><td>50</td><td><a href="lesson_50.html">Inheritance II — linked genes, chi-squared <span class="hl-badge">HL</span></a></td><td><input type="checkbox" onchange="save()" data-id="50"></td></tr>
+    <tr id="row51"><td>51</td><td><a href="lesson_51.html">Homeostasis — negative feedback, thermoregulation</a></td><td><input type="checkbox" onchange="save()" data-id="51"></td></tr>
+    <tr id="row52"><td>52</td><td><a href="lesson_52.html">Natural Selection — Darwin-Wallace, types of selection</a></td><td><input type="checkbox" onchange="save()" data-id="52"></td></tr>
+    <tr id="row53"><td>53</td><td><a href="lesson_53.html">Stability and Change — resilience, tipping points</a></td><td><input type="checkbox" onchange="save()" data-id="53"></td></tr>
+    <tr id="row54"><td>54</td><td><a href="lesson_54.html">Climate Change — greenhouse effect to Paris Agreement</a></td><td><input type="checkbox" onchange="save()" data-id="54"></td></tr>
+  </table>
+  </div>
+</div>
+
+</div>
+
+<div class="footer">
+  <p>🧬 <strong>IB Biology HL</strong> — 54 lessons covering the complete 2025+ curriculum.</p>
+  <p><a href="../study_plan.md">Study Plan</a> • <a href="../syllabus_overview.md">Syllabus Checklist</a> • <a href="lesson_01.html">Start Lesson 1 →</a></p>
+</div>
+
+<script>
+// --- Persistence ---
+const STORE_KEY = 'ib_bio_hl_progress_v2';
+
+function loadProgress() {
+  try { return JSON.parse(localStorage.getItem(STORE_KEY)) || {}; } catch(e) { return {}; }
+}
+function save() {
+  const data = loadProgress();
+  document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+    data[cb.dataset.id] = cb.checked;
+  });
+  localStorage.setItem(STORE_KEY, JSON.stringify(data));
+  updateStats();
+}
+
+function restoreProgress() {
+  const data = loadProgress();
+  document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+    const id = cb.dataset.id;
+    cb.checked = !!data[id];
+    const row = document.getElementById('row' + id);
+    if (row && data[id]) row.classList.add('completed');
+    else if (row) row.classList.remove('completed');
+  });
+  updateStats();
+  // Set initial heights for theme sections
+  document.querySelectorAll('.theme-table-wrap').forEach(w => {
+    w.style.maxHeight = w.scrollHeight + 'px';
+  });
+}
+
+function updateStats() {
+  const cbs = document.querySelectorAll('input[type="checkbox"]');
+  const total = cbs.length;
+  const done = Array.from(cbs).filter(c => c.checked).length;
+  const pct = total > 0 ? Math.round(done / total * 100) : 0;
+  document.getElementById('done').textContent = done;
+  document.getElementById('remaining').textContent = total - done;
+  document.getElementById('pct').textContent = pct + '%';
+  document.getElementById('progressBar').style.width = pct + '%';
+  // Update row styles
+  cbs.forEach(cb => {
+    const row = document.getElementById('row' + cb.dataset.id);
+    if (row) {
+      if (cb.checked) row.classList.add('completed');
+      else row.classList.remove('completed');
+    }
+  });
+}
+
+function resetAll() {
+  if (confirm('Reset all lesson progress? This cannot be undone.')) {
+    localStorage.removeItem(STORE_KEY);
+    restoreProgress();
+  }
+}
+function checkAll() {
+  document.querySelectorAll('input[type="checkbox"]').forEach(c => c.checked = true);
+  save();
+}
+function expandAll() {
+  document.querySelectorAll('.theme').forEach(t => t.classList.remove('collapsed'));
+  document.querySelectorAll('.theme-table-wrap').forEach(w => { w.style.maxHeight = w.scrollHeight + 'px'; });
+}
+
+// --- Collapse/Expand ---
+function toggleTheme(id) {
+  const theme = document.getElementById(id);
+  theme.classList.toggle('collapsed');
+}
+
+// --- Search ---
+function filterLessons() {
+  const q = document.getElementById('search').value.toLowerCase();
+  document.querySelectorAll('tbody tr, table tr').forEach(tr => {
+    if (tr.querySelector('input[type="checkbox"]')) {
+      const text = tr.textContent.toLowerCase();
+      tr.style.display = (!q || text.includes(q)) ? '' : 'none';
+    }
+  });
+  // Also expand all if searching
+  if (q) expandAll();
+}
+
+// --- Init ---
+document.addEventListener('DOMContentLoaded', () => {
+  restoreProgress();
+  updateStats();
+  // Add change handler that also updates row styling
+  document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+    cb.addEventListener('change', () => {
+      const row = document.getElementById('row' + cb.dataset.id);
+      if (row) {
+        if (cb.checked) row.classList.add('completed');
+        else row.classList.remove('completed');
+      }
+      save();
+    });
+  });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 42: Lesson 42: Standing Waves III — Advanced & Energy (HL) — IB Physics HL</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']]
+  },
+  options: {
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap');
+  
+  :root {
+    --bg: #fdfcf9;
+    --text: #1a1a1a;
+    --accent: #2c5f2d;
+    --border: #d0cec7;
+    --code-bg: #f4f3ef;
+    --callout-bg: #f0f7f0;
+    --callout-border: #2c5f2d;
+    --warning-bg: #fff8e6;
+    --warning-border: #c4941a;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  body {
+    font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid var(--accent);
+    color: var(--accent);
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 2.5rem 0 0.75rem;
+    color: #1a1a1a;
+  }
+  
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.5rem;
+  }
+  
+  p { margin: 0 0 1rem; }
+  
+  ul, ol { margin: 0 0 1rem 1.5rem; }
+  li { margin-bottom: 0.35rem; }
+  
+  code {
+    background: var(--code-bg);
+    padding: 0.15em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+    font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+  }
+  
+  pre {
+    background: var(--code-bg);
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 0 0 1rem;
+    font-size: 0.85em;
+    line-height: 1.5;
+  }
+  
+  pre code {
+    background: none;
+    padding: 0;
+    font-size: inherit;
+  }
+  
+  blockquote {
+    border-left: 4px solid var(--callout-border);
+    background: var(--callout-bg);
+    margin: 0 0 1rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+  }
+  
+  blockquote.warning {
+    border-left-color: var(--warning-border);
+    background: var(--warning-bg);
+  }
+  
+  strong { font-weight: 700; }
+  
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.5rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  
+  .nav a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+  
+  .nav a:hover { background: var(--callout-bg); }
+  
+  .worked-example, .answer {
+    background: var(--code-bg);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin: 0.75rem 0 1.25rem;
+  }
+  
+  .worked-example strong:first-child, .answer strong:first-child {
+    color: var(--accent);
+  }
+  
+  @media print {
+    body { font-size: 12pt; max-width: 100%; padding: 0; }
+    .nav { display: none; }
+    h1 { font-size: 18pt; }
+    h2 { font-size: 14pt; }
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 0 1rem;
+  }
+  
+  th, td {
+    border: 1px solid var(--border);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  
+  th {
+    background: var(--code-bg);
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L41_standing_waves_2.html">← Lesson 41</a>
+  <a href="L43_doppler_1.html">Lesson 43 →</a>
+</nav>
+
+<h1>Lesson 42: Standing Waves III — Advanced & Energy (HL)</h1>
+
+<h2>What You'll Learn</h2>
+<ul>
+<li>The standing wave equation: y = 2A cos(kx) sin(ωt)</li>
+<li>Energy in standing waves — no net energy transfer</li>
+<li>Standing waves in 2D: Chladni plates</li>
+<li>Acoustic resonance and Helmholtz resonators</li>
+<li>Physics of musical instruments</li>
+</ul>
+
+<hr>
+
+<h2>1. The Standing Wave Equation</h2>
+
+<h3>Derivation (Recap)</h3>
+
+<p>A standing wave is the superposition of two identical travelling waves moving in opposite directions:</p>
+
+<p><strong>Wave travelling right:</strong> y₁ = A sin(kx − ωt)</p>
+<p><strong>Wave travelling left:</strong> y₂ = A sin(kx + ωt) _(reflected with π phase change, equivalent to −A sin(kx + ωt) at a fixed end)_</p>
+
+<p>For a string fixed at x = 0, the reflected wave is inverted: y₂ = −A sin(−kx − ωt)... but the general result is:</p>
+
+<p>$$y = y_1 + y_2 = 2A \cos(kx) \sin(\omega t)$$</p>
+
+<h3>Interpretation</h3>
+
+<ul>
+<li><strong>2A cos(kx)</strong> — the <strong>spatial amplitude envelope</strong>. At any position x, the maximum displacement (over time) is |2A cos(kx)|.</li>
+<li><strong>sin(ωt)</strong> — the <strong>temporal oscillation</strong>. All positions oscillate at the same angular frequency ω (but possibly with different amplitudes and sign).</li>
+</ul>
+
+<h3>Key Features</h3>
+
+<table>
+<tr>
+<th>Feature</th>
+<th>Mathematical Condition</th>
+<th>Physical Meaning</th>
+</tr>
+<tr>
+<td>Node</td>
+<td>cos(kx) = 0</td>
+<td>Zero displacement at all t</td>
+</tr>
+<tr>
+<td>Antinode</td>
+<td>cos(kx)</td>
+<td>= 1</td>
+<td>Maximum displacement ±2A</td>
+</tr>
+<tr>
+<td>Node positions</td>
+<td>x = (2m+1)λ/4, m = 0,1,2...</td>
+<td>Nodes spaced λ/2 apart</td>
+</tr>
+<tr>
+<td>Antinode positions</td>
+<td>x = mλ/2, m = 0,1,2...</td>
+<td>Antinodes spaced λ/2 apart</td>
+</tr>
+</table>
+
+<h3>Phase</h3>
+
+<p>Within one "loop" (between consecutive nodes), cos(kx) has the same sign — all points move <strong>in phase</strong>. Across a node, cos(kx) flips sign — points move <strong>in antiphase</strong>.</p>
+
+<hr>
+
+<h2>2. Energy in Standing Waves</h2>
+
+<h3>The Critical Insight</h3>
+
+<p>In a <strong>travelling wave</strong>, energy propagates — each particle transfers energy to the next, and energy moves through the medium.</p>
+
+<p>In a <strong>standing wave</strong>, <strong>no net energy is transferred!</strong> Energy is trapped between nodes.</p>
+
+<h3>Why?</h3>
+
+<ul>
+<li>At a <strong>node</strong>, the string never moves (v = 0 always), so no energy passes through a node.</li>
+<li>Energy oscillates between kinetic (when string is moving fast through equilibrium) and elastic potential (when string is maximally stretched at the extremes).</li>
+<li>This is analogous to energy oscillating between KE and PE in a mass-spring system.</li>
+</ul>
+
+<h3>Energy Distribution</h3>
+
+<ul>
+<li><strong>Antinodes:</strong> Both KE and elastic PE are maximum (alternately, not simultaneously). At equilibrium position, KE is max; at extremes, PE is max.</li>
+<li><strong>Nodes:</strong> KE is always zero (no displacement → no velocity). PE is zero because adjacent segments don't stretch the string at a node.</li>
+<li><strong>Between nodes:</strong> Energy sloshes back and forth but never crosses a node.</li>
+</ul>
+
+<h3>Comparison</h3>
+
+<table>
+<tr>
+<th>Travelling Wave</th>
+<th>Standing Wave</th>
+</tr>
+<tr>
+<td>Energy flow</td>
+<td>Energy propagates at wave speed</td>
+<td>No net energy transfer</td>
+</tr>
+<tr>
+<td>Energy at nodes</td>
+<td>Energy passes through</td>
+<td>Energy never passes through</td>
+</tr>
+<tr>
+<td>Medium behaviour</td>
+<td>Each particle slightly delayed from neighbour</td>
+<td>Particles in same loop move in phase</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>3. Standing Waves in Two Dimensions — Chladni Plates</h2>
+
+<p>When a flat plate is vibrated (e.g., by a violin bow or speaker), 2D standing wave patterns appear. Sand sprinkled on the plate collects along <strong>nodal lines</strong> (where there is no vibration), creating beautiful geometric patterns.</p>
+
+<h3>Characteristics</h3>
+
+<ul>
+<li>Nodal <strong>lines</strong> (instead of nodal points in 1D)</li>
+<li>Patterns depend on:</li>
+<li>Plate shape (square, circular, etc.)</li>
+<li>Frequency of vibration</li>
+<li>Where the plate is held/clamped</li>
+<li>Higher frequencies → more complex patterns → more nodal lines</li>
+</ul>
+
+<h3>IB Connection</h3>
+
+<p>Chladni plates demonstrate that standing waves are not limited to 1D — the same principles of nodes (zero displacement) and antinodes (maximum displacement) extend to 2D and 3D.</p>
+
+<hr>
+
+<h2>4. Acoustic Resonance</h2>
+
+<h3>What is Acoustic Resonance?</h3>
+
+<p>When a sound wave encounters a cavity or object with a natural frequency matching the sound frequency, the amplitude builds dramatically. This is the same resonance principle as pushing a swing at the right moment.</p>
+
+<h3>Examples</h3>
+
+<table>
+<tr>
+<th>System</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><strong>Organ pipe</strong></td>
+<td>Air column resonates at harmonic frequencies</td>
+</tr>
+<tr>
+<td><strong>Guitar body</strong></td>
+<td>Hollow body resonates, amplifying string vibrations</td>
+</tr>
+<tr>
+<td><strong>Room modes</strong></td>
+<td>Rooms have resonant frequencies based on dimensions</td>
+</tr>
+<tr>
+<td><strong>Helmholtz resonator</strong></td>
+<td>A cavity with a neck — resonates at a single frequency</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>5. The Helmholtz Resonator</h2>
+
+<p>A <strong>Helmholtz resonator</strong> is a rigid cavity with a narrow neck. When you blow across the neck (like a bottle), the air in the neck acts as a mass, and the air in the cavity acts as a spring.</p>
+
+<h3>Resonant Frequency</h3>
+
+<p>$$f = \frac{v}{2\pi}\sqrt{\frac{A}{V L_{\text{neck}}}}$$</p>
+
+<p>where:</p>
+<ul>
+<li>v = speed of sound in air</li>
+<li>A = cross-sectional area of the neck</li>
+<li>V = volume of the cavity</li>
+<li>L_neck = length of the neck (including end correction, L_eff ≈ L_neck + 1.7r for flanged end)</li>
+</ul>
+
+<h3>Simplified Bottle Formula</h3>
+
+<p>For a bottle with neck area A, neck length L_n, and cavity volume V:</p>
+
+<p>$$f = \frac{v}{2\pi}\sqrt{\frac{A}{V L_{\text{eff}}}}$$</p>
+
+<h3>Real-World Examples</h3>
+
+<ul>
+<li>Blowing across a bottle top</li>
+<li>Bass-reflex speaker ports</li>
+<li>Car exhaust mufflers</li>
+<li>Some musical instruments (ocarina)</li>
+</ul>
+
+<hr>
+
+<h2>6. Musical Instruments Physics</h2>
+
+<h3>String Instruments (Guitar, Violin, Piano)</h3>
+
+<ul>
+<li><strong>Source:</strong> Vibrating string</li>
+<li><strong>Harmonics:</strong> Full series (n = 1,2,3...)</li>
+<li><strong>Frequency control:</strong> f ∝ 1/L (finger position), f ∝ √T (tuning pegs), f ∝ 1/√μ (string thickness)</li>
+<li><strong>Amplification:</strong> Soundboard/body resonance</li>
+<li><strong>Timbre:</strong> Mix of harmonics (not just fundamental)</li>
+</ul>
+
+<h3>Wind Instruments — Open Pipes (Flute, Recorder)</h3>
+
+<ul>
+<li><strong>Source:</strong> Vibrating air column</li>
+<li><strong>Harmonics:</strong> Full series</li>
+<li><strong>Frequency control:</strong> Opening/closing holes changes effective L</li>
+<li><strong>Overblowing:</strong> Excites higher harmonics</li>
+</ul>
+
+<h3>Wind Instruments — Closed Pipes (Clarinet)</h3>
+
+<ul>
+<li><strong>Source:</strong> Vibrating air column</li>
+<li><strong>Harmonics:</strong> Odd only! (n = 1,3,5...)</li>
+<li><strong>Frequency control:</strong> Keys change effective L</li>
+<li><strong>Register key:</strong> Opens a small hole near the mouthpiece, forcing the pipe to behave as open → jumps to 3rd harmonic (a 12th higher, not just an octave!)</li>
+</ul>
+
+<h3>Brass Instruments (Trumpet, Trombone)</h3>
+
+<ul>
+<li><strong>Source:</strong> Lips buzzing (drives mouthpiece)</li>
+<li><strong>Harmonics:</strong> Closed-pipe-like behaviour (odd) modified by bell flare</li>
+<li><strong>Frequency control:</strong> Valves/slide change L; lip tension selects harmonic</li>
+</ul>
+
+<h3>Percussion (Drums, Xylophone)</h3>
+
+<ul>
+<li><strong>Source:</strong> Membrane or bar vibration</li>
+<li><strong>Harmonics:</strong> Usually <strong>non-harmonic</strong> — frequencies are not simple multiples</li>
+<li><strong>Pitch clarity:</strong> Varies; xylophone bars are undercut for harmonic tuning</li>
+</ul>
+
+<hr>
+
+<h2>Worked Examples</h2>
+
+<h3>Worked Example 42.1 — Standing Wave Equation Analysis</h3>
+
+<p><strong>Problem:</strong> The standing wave on a string is described by:</p>
+<p>y = 0.050 cos(4.0x) sin(120t)  <em>(SI units)</em></p>
+
+<p>Find:</p>
+<p>(a) the amplitude of each original travelling wave</p>
+<p>(b) the wavelength</p>
+<p>(c) the frequency</p>
+<p>(d) the positions of the first three nodes from x = 0</p>
+
+<p><strong>Solution:</strong></p>
+
+<p>Comparing to y = 2A cos(kx) sin(ωt):</p>
+
+<p><strong>(a)</strong> 2A = 0.050 → <strong>A = 0.025 m</strong> (each travelling wave amplitude is 2.5 cm)</p>
+
+<p><strong>(b)</strong> k = 4.0 rad/m. λ = 2π/k = 2π/4.0 = <strong>1.57 m</strong></p>
+
+<p><strong>(c)</strong> ω = 120 rad/s. f = ω/(2π) = 120/(2π) = <strong>19.1 Hz</strong></p>
+
+<p><strong>(d)</strong> Nodes: cos(kx) = 0 → kx = π/2, 3π/2, 5π/2...</p>
+<ul>
+<li>x₁ = (π/2)/4.0 = <strong>0.393 m</strong></li>
+<li>x₂ = (3π/2)/4.0 = <strong>1.18 m</strong></li>
+<li>x₃ = (5π/2)/4.0 = <strong>1.96 m</strong></li>
+</ul>
+
+<hr>
+
+<h3>Worked Example 42.2 — Bottle Resonant Frequency</h3>
+
+<p><strong>Problem:</strong> A glass bottle has a cavity volume of 500 cm³ and a neck of length 5.0 cm with diameter 2.0 cm. The speed of sound is 340 m/s. Estimate the resonant frequency (blowing across the top).</p>
+
+<p><strong>Solution:</strong></p>
+
+<p>Convert to SI:</p>
+<ul>
+<li>V = 500 cm³ = 5.0 × 10⁻⁴ m³</li>
+<li>r = 1.0 cm = 0.010 m, A = πr² = π × (0.010)² = 3.14 × 10⁻⁴ m²</li>
+<li>L_neck = 0.050 m</li>
+<li>End correction for flanged end: L_eff ≈ L_neck + 1.7r = 0.050 + 1.7(0.010) = 0.067 m</li>
+</ul>
+
+<p>$$f = \frac{v}{2\pi}\sqrt{\frac{A}{V L_{\text{eff}}}} = \frac{340}{2\pi}\sqrt{\frac{3.14 \times 10^{-4}}{5.0 \times 10^{-4} \times 0.067}}$$</p>
+
+<p>$$f = \frac{340}{6.28}\sqrt{\frac{3.14 \times 10^{-4}}{3.35 \times 10^{-5}}} = 54.1 \times \sqrt{9.37}$$</p>
+
+<p>$$f = 54.1 \times 3.06 = \mathbf{166 \text{ Hz}}$$</p>
+
+<p>This is near E₃ on a piano — a typical bottle note.</p>
+
+<hr>
+
+<h3>Worked Example 42.3 — Energy in Standing Waves (Conceptual)</h3>
+
+<p><strong>Problem:</strong> A standing wave is established on a string. Explain:</p>
+<p>(a) Why no net energy is transferred along the string.</p>
+<p>(b) What happens to the energy that was put in to create the wave.</p>
+<p>(c) How this differs from a travelling wave pulse.</p>
+
+<p><strong>Solution:</strong></p>
+
+<p><strong>(a)</strong> At nodes, the string is always stationary, so no displacement or velocity ever occurs there. Energy cannot be transferred through a point that never moves — the nodes act as energy barriers. Energy is confined to each segment between nodes.</p>
+
+<p><strong>(b)</strong> The energy continuously interconverts between kinetic energy (when the string segments pass through equilibrium at maximum speed) and elastic potential energy (when the segments are maximally displaced and stretched). This is analogous to a mass on a spring — continuous oscillation without dissipation (in the ideal case). In reality, some energy is lost to internal friction and air resistance.</p>
+
+<p><strong>(c)</strong> In a travelling pulse, energy moves with the pulse — each particle transfers its energy to the next particle. The pulse carries energy from one end to the other. In a standing wave, energy stays in place, oscillating between KE and PE but never migrating.</p>
+
+<hr>
+
+<h3>Worked Example 42.4 — Helmholtz Resonator Applied</h3>
+
+<p><strong>Problem:</strong> A 1-litre bottle (V = 1.0 × 10⁻³ m³) with neck length 8 cm and neck radius 1.2 cm produces a resonant frequency of 120 Hz when blown. Use this to estimate the speed of sound. (Use end correction L_eff = L + 1.7r.)</p>
+
+<p><strong>Solution:</strong></p>
+
+<p>A = πr² = π × (0.012)² = 4.52 × 10⁻⁴ m²</p>
+<p>L_eff = 0.080 + 1.7(0.012) = 0.1004 m</p>
+
+<p>Rearrange Helmholtz formula:</p>
+<p>$$f = \frac{v}{2\pi}\sqrt{\frac{A}{V L_{\text{eff}}}}$$</p>
+<p>$$v = 2\pi f \sqrt{\frac{V L_{\text{eff}}}{A}}$$</p>
+<p>$$v = 2\pi \times 120 \times \sqrt{\frac{1.0 \times 10^{-3} \times 0.1004}{4.52 \times 10^{-4}}}$$</p>
+<p>$$v = 754 \times \sqrt{0.222} = 754 \times 0.471 = \mathbf{355 \text{ m/s}}$$</p>
+
+<p>Reasonable for warm air (~30°C).</p>
+
+<hr>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1</h3>
+<p>A standing wave on a string is given by: y = 0.080 cos(5.0x) sin(200t) (SI units).</p>
+<p>(a) What is the amplitude of each travelling wave component?</p>
+<p>(b) Determine the frequency and wavelength.</p>
+<p>(c) At t = 0.010 s, what is the displacement at x = 0.30 m?</p>
+
+<h3>Problem 2</h3>
+<p>A Helmholtz resonator (bottle) has cavity volume 750 cm³, neck radius 1.5 cm, and neck length 6.0 cm. Speed of sound = 345 m/s.</p>
+<p>(a) Calculate the resonant frequency.</p>
+<p>(b) If the bottle is half-filled with water (reducing V to 375 cm³), what happens to the frequency?</p>
+<p>(c) Explain this trend physically.</p>
+
+<h3>Problem 3</h3>
+<p>A standing wave on a string fixed at both ends has total length 1.20 m and carries its 3rd harmonic. At one instant, the antinode displacement is +3.0 cm and all points between the first two nodes are moving downward.</p>
+<p>(a) Sketch the wave at this instant.</p>
+<p>(b) Describe the motion of the middle antinode.</p>
+<p>(c) A quarter-period later, what is the displacement of the middle antinode?</p>
+
+<h3>Problem 4 (IB-Style — Conceptual + Calculation)</h3>
+<p>A student investigates standing waves on a string and in pipes.</p>
+
+<p><strong>(a)</strong> On a stretched string, standing waves are observed at 60 Hz, 120 Hz, and 180 Hz but NOT at 90 Hz or 150 Hz. Explain this pattern. If the string length is 0.80 m, find the wave speed.</p>
+
+<p><strong>(b)</strong> In an organ pipe closed at one end, standing waves are observed at 150 Hz, 450 Hz, and 750 Hz. The pipe length is 0.57 m. Using this data, determine the speed of sound and identify which harmonics these are.</p>
+
+<p><strong>(c)</strong> The student notices that when the pipe in (b) is played loudly, additional higher frequencies are faintly audible. Two of these are measured at approximately 300 Hz and 600 Hz. Suggest a physical explanation. <em>(Hint: real pipes are not perfectly closed/open.)</em></p>
+
+<hr>
+
+<h2>Answers</h2>
+
+<h3>Answer 1</h3>
+<p><strong>(a)</strong> 2A = 0.080 → <strong>A = 0.040 m</strong></p>
+
+<p><strong>(b)</strong> k = 5.0 → λ = 2π/5.0 = <strong>1.26 m</strong></p>
+<p>ω = 200 → f = 200/(2π) = <strong>31.8 Hz</strong></p>
+
+<p><strong>(c)</strong> y = 0.080 cos(5.0 × 0.30) sin(200 × 0.010)</p>
+<p>= 0.080 cos(1.5) sin(2.0)</p>
+<p>cos(1.5) = 0.0707, sin(2.0) = 0.909</p>
+<p>y = 0.080 × 0.0707 × 0.909 = <strong>0.00514 m ≈ 5.1 mm</strong></p>
+
+<hr>
+
+<h3>Answer 2</h3>
+<p><strong>(a)</strong> A = π(0.015)² = 7.07×10⁻⁴ m², L_eff = 0.060 + 1.7(0.015) = 0.0855 m</p>
+<p>f = (345/2π) × √(7.07×10⁻⁴ / (7.5×10⁻⁴ × 0.0855))</p>
+<p>= 54.9 × √(11.04) = 54.9 × 3.32 = <strong>182 Hz</strong></p>
+
+<p><strong>(b)</strong> V halves → (1/V) doubles → f_new = f_old × √2 = 182 × 1.414 = <strong>257 Hz</strong></p>
+
+<p><strong>(c)</strong> Less air in the cavity → stiffer "spring" → higher resonant frequency. This is why adding water to a bottle raises the pitch when you blow across it.</p>
+
+<hr>
+
+<h3>Answer 3</h3>
+<p><strong>(a)</strong> 3rd harmonic: N–A–N–A–N–A–N. Antinodes at x = L/6, L/2, 5L/6 = 0.20 m, 0.60 m, 1.00 m. At this instant, positive displacement at antinodes.</p>
+
+<p><strong>(b)</strong> The middle antinode is at maximum positive displacement (+3.0 cm) right now. It will move downward, pass through equilibrium, reach −3.0 cm, then move back up — simple harmonic motion at frequency f₃.</p>
+
+<p><strong>(c)</strong> A quarter-period later (t = T/4), sin(ωt + π/2) means displacement = 0 for all points since the time-dependent part is sin(ωt) and at T/4 from max, sin = 0. <strong>Displacement = 0 everywhere</strong> (the string is momentarily straight).</p>
+
+<hr>
+
+<h3>Answer 4 (IB-Style)</h3>
+
+<p><strong>(a)</strong> The pattern 60, 120, 180 Hz corresponds to f₁, 2f₁, 3f₁ with f₁ = 60 Hz. The missing 90 Hz and 150 Hz are 1.5f₁ and 2.5f₁ — these are not integer multiples, so they don't form standing waves on a string fixed at both ends (which requires integer n).</p>
+
+<p>v = 2L f₁ = 2 × 0.80 × 60 = <strong>96 m/s</strong></p>
+
+<p><strong>(b)</strong> 150, 450, 750 Hz: these are in ratio 1:3:5, so f₁ = 150 Hz, and these are the 1st, 3rd, and 5th harmonics of a closed pipe.</p>
+
+<p>For closed pipe: f₁ = v/(4L) → v = 4L f₁ = 4 × 0.57 × 150 = <strong>342 m/s</strong></p>
+
+<p><strong>(c)</strong> The frequencies 300 Hz and 600 Hz are 2f₁ and 4f₁ — the even harmonics that should not exist in an ideal closed pipe. Their faint presence suggests the pipe is not perfectly closed: perhaps the stopper is slightly loose, or the pipe has a small leak, partially allowing even harmonics. Alternatively, the pipe may be exciting some open-pipe-like modes if the end isn't perfectly rigid. In real instruments, boundary conditions are never perfectly ideal.</p>
+
+<hr>
+
+<h2>Key Takeaways</h2>
+
+<table>
+<tr>
+<th>Concept</th>
+<th>Key Points</th>
+</tr>
+<tr>
+<td>Standing wave equation</td>
+<td>y = 2A cos(kx) sin(ωt) — spatial envelope × temporal oscillation</td>
+</tr>
+<tr>
+<td>Nodes & antinodes</td>
+<td>cos(kx) = 0 → nodes;</td>
+<td>cos(kx)</td>
+<td>= 1 → antinodes</td>
+</tr>
+<tr>
+<td>Energy in standing waves</td>
+<td>No net transfer — energy trapped between nodes</td>
+</tr>
+<tr>
+<td>Chladni plates</td>
+<td>2D standing waves, nodal lines visible with sand</td>
+</tr>
+<tr>
+<td>Helmholtz resonator</td>
+<td>f = (v/2π)√(A/(V·L_eff)) — neck air = mass, cavity air = spring</td>
+</tr>
+<tr>
+<td>Musical instruments</td>
+<td>Strings: all harmonics. Closed pipes: odd only. Percussion: often non-harmonic.</td>
+</tr>
+</table>
+
+<blockquote><strong>IB Data Booklet:</strong> y = A sin(kx − ωt) and v = fλ. The standing wave equation and Helmholtz resonator formula should be understood conceptually; calculations require correct interpretation. The energy analysis (no net transfer) is a key HL conceptual point frequently tested in Paper 2.</blockquote>
+
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L41_standing_waves_2.html">← Lesson 41</a>
+  <a href="L43_doppler_1.html">Lesson 43 →</a>
+</nav>
+
+</body>
+</html>

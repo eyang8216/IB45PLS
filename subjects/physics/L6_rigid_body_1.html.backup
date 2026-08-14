@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 6: Lesson 6: Rigid Body Mechanics I — Torque and Static Equilibrium (HL) — IB Physics HL</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']]
+  },
+  options: {
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap');
+  
+  :root {
+    --bg: #fdfcf9;
+    --text: #1a1a1a;
+    --accent: #2c5f2d;
+    --border: #d0cec7;
+    --code-bg: #f4f3ef;
+    --callout-bg: #f0f7f0;
+    --callout-border: #2c5f2d;
+    --warning-bg: #fff8e6;
+    --warning-border: #c4941a;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  body {
+    font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid var(--accent);
+    color: var(--accent);
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 2.5rem 0 0.75rem;
+    color: #1a1a1a;
+  }
+  
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.5rem;
+  }
+  
+  p { margin: 0 0 1rem; }
+  
+  ul, ol { margin: 0 0 1rem 1.5rem; }
+  li { margin-bottom: 0.35rem; }
+  
+  code {
+    background: var(--code-bg);
+    padding: 0.15em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+    font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+  }
+  
+  pre {
+    background: var(--code-bg);
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 0 0 1rem;
+    font-size: 0.85em;
+    line-height: 1.5;
+  }
+  
+  pre code {
+    background: none;
+    padding: 0;
+    font-size: inherit;
+  }
+  
+  blockquote {
+    border-left: 4px solid var(--callout-border);
+    background: var(--callout-bg);
+    margin: 0 0 1rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+  }
+  
+  blockquote.warning {
+    border-left-color: var(--warning-border);
+    background: var(--warning-bg);
+  }
+  
+  strong { font-weight: 700; }
+  
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.5rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  
+  .nav a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+  
+  .nav a:hover { background: var(--callout-bg); }
+  
+  .worked-example, .answer {
+    background: var(--code-bg);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin: 0.75rem 0 1.25rem;
+  }
+  
+  .worked-example strong:first-child, .answer strong:first-child {
+    color: var(--accent);
+  }
+  
+  @media print {
+    body { font-size: 12pt; max-width: 100%; padding: 0; }
+    .nav { display: none; }
+    h1 { font-size: 18pt; }
+    h2 { font-size: 14pt; }
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 0 1rem;
+  }
+  
+  th, td {
+    border: 1px solid var(--border);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  
+  th {
+    background: var(--code-bg);
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L5_energy_power.html">← Lesson 5</a>
+  <a href="L7_rigid_body_2.html">Lesson 7 →</a>
+</nav>
+
+<h1>Lesson 6: Rigid Body Mechanics I — Torque and Static Equilibrium (HL)</h1>
+
+<h2>What You'll Learn</h2>
+<ul>
+<li>Define torque and understand why it depends on both force and lever arm</li>
+<li>Calculate torque using $\tau = Fr\sin\theta$</li>
+<li>Apply the two conditions for static equilibrium: $\Sigma F = 0$ and $\Sigma\tau = 0$</li>
+<li>Solve equilibrium problems involving beams, ladders, and seesaws</li>
+</ul>
+
+<hr>
+
+<h2>1. What Is Torque?</h2>
+
+<h3>1.1 Why Forces Aren't Enough</h3>
+
+<p>In Lessons 2–4, we treated every object as a point particle. A force applied to a point particle causes it to accelerate in a straight line. But real objects are extended — they have size and shape. Apply a force to an extended object, and it might not just translate; it might also <strong>rotate</strong>.</p>
+
+<p>Torque is the rotational analogue of force. Just as a net force causes linear acceleration ($F = ma$), a net torque causes angular acceleration ($\tau = I\alpha$). And just as forces can balance to produce equilibrium ($\Sigma F = 0$), torques can balance to prevent rotation ($\Sigma\tau = 0$).</p>
+
+<p>Understanding torque is essential for everything from tightening a bolt (why a longer wrench works better) to designing bridges (why forces must be placed carefully to prevent collapse).</p>
+
+<h3>1.2 The Definition</h3>
+
+<p>Torque is the ability of a force to cause rotation about a pivot point:</p>
+
+<p>$$\tau = Fr\sin\theta$$</p>
+
+<p>where:</p>
+<ul>
+<li>$F$ is the magnitude of the applied force (N)</li>
+<li>$r$ is the distance from the pivot to the point where the force is applied (m) — called the <strong>lever arm</strong> or <strong>moment arm</strong></li>
+<li>$\theta$ is the angle between the force vector and the line from the pivot to the point of application</li>
+</ul>
+
+<p>The unit of torque is the newton-metre (N m). Do not confuse this with joules — torque is not energy. They share the same base units but measure fundamentally different things.</p>
+
+<h3>1.3 Understanding the Sine Factor</h3>
+
+<p>The factor $\sin\theta$ accounts for the fact that only the <strong>perpendicular component</strong> of the force produces rotation. A force applied parallel to the lever arm ($\theta = 0^\circ$ or $180^\circ$) produces zero torque — it pulls directly toward or away from the pivot and cannot cause rotation. A force applied perpendicular to the lever arm ($\theta = 90^\circ$) produces maximum torque — every newton of force goes into causing rotation.</p>
+
+<p>You can think of torque in two equivalent ways, which is useful for problem-solving:</p>
+<ul>
+<li>$\tau = F(r\sin\theta)$ — the force $F$ times the perpendicular distance from the pivot to the line of action of the force</li>
+<li>$\tau = r(F\sin\theta)$ — the distance $r$ times the perpendicular component of the force</li>
+</ul>
+
+<h3>1.4 Sign Convention</h3>
+
+<p>Torque can be clockwise or counterclockwise. Choose one direction as positive and be consistent throughout the problem. If you define counterclockwise as positive, then a force that tends to rotate the object counterclockwise produces a positive torque.</p>
+
+<hr>
+
+<h2>2. Static Equilibrium — When Nothing Moves</h2>
+
+<h3>2.1 The Two Conditions</h3>
+
+<p>For an extended object to be in <strong>static equilibrium</strong> (completely at rest, no translation, no rotation), two conditions must be satisfied simultaneously:</p>
+
+<p><strong>Condition 1 — No net force (translational equilibrium):</strong></p>
+<p>$$\Sigma F_x = 0 \quad \text{and} \quad \Sigma F_y = 0$$</p>
+
+<p>The vector sum of all forces acting on the object must be zero. If this were not true, the object would accelerate in a straight line.</p>
+
+<p><strong>Condition 2 — No net torque (rotational equilibrium):</strong></p>
+<p>$$\Sigma\tau = 0$$</p>
+
+<p>The sum of all torques about ANY axis must be zero. If this were not true, the object would undergo angular acceleration (start spinning).</p>
+
+<h3>2.2 Why "About Any Axis"?</h3>
+
+<p>A remarkable property of static equilibrium: if the net torque is zero about one axis, it is zero about ALL axes. This means you can choose whichever pivot point makes the problem easiest. The standard strategy is to choose the pivot at a point where an unknown force acts — that way, the unknown force produces zero torque about that point (since $r = 0$) and disappears from the torque equation.</p>
+
+<h3>2.3 The Centre of Mass and Centre of Gravity</h3>
+
+<p>The weight of an extended object acts as if it is concentrated at a single point called the <strong>centre of gravity</strong>. For uniform objects in a uniform gravitational field, the centre of gravity is at the geometric centre. For a uniform rod, it's at the midpoint. For a uniform rectangular block, it's at the intersection of the diagonals.</p>
+
+<p>When calculating torques due to weight, treat the entire weight $mg$ as acting at the centre of gravity, with the lever arm being the horizontal distance from the pivot to that point.</p>
+
+<hr>
+
+<h2>3. Couples — Pure Rotation</h2>
+
+<p>A <strong>couple</strong> is a pair of equal and opposite forces whose lines of action do not coincide. Because the net force is zero, a couple produces no translation. But because the forces are separated by a perpendicular distance $d$, they produce a net torque:</p>
+
+<p>$$\tau = Fd$$</p>
+
+<p>A couple produces pure rotation — a steering wheel being turned, a tap being opened, a compass needle aligning with a magnetic field.</p>
+
+<hr>
+
+<h2>Worked Examples</h2>
+
+<h3>Worked Example 6.1 — Torque on a Wrench</h3>
+
+<p><strong>Problem:</strong> A mechanic applies a force of $80\text{ N}$ to the end of a $0.30\text{ m}$ wrench at an angle of $60^\circ$ to the wrench handle. Calculate the torque about the bolt.</p>
+
+<p><strong>Approach:</strong> Use $\tau = Fr\sin\theta$ with $r = 0.30\text{ m}$, $F = 80\text{ N}$, $\theta = 60^\circ$.</p>
+
+<p><strong>Solution:</strong></p>
+<p>$$\tau = (80)(0.30)\sin 60^\circ = 24 \times 0.866 = 20.8\text{ N m}$$</p>
+
+<p><strong>Why this makes sense:</strong> If the force were perpendicular ($90^\circ$), $\tau = 24\text{ N m}$. At $60^\circ$, we get $87\%$ of the maximum — typical for someone pulling at a comfortable angle.</p>
+
+<hr>
+
+<h3>Worked Example 6.2 — Beam Supported at Both Ends</h3>
+
+<p><strong>Problem:</strong> A uniform beam of length $4.0\text{ m}$ and weight $300\text{ N}$ rests on two supports, one at each end. A $200\text{ N}$ weight is placed $1.0\text{ m}$ from the left end. Calculate the upward forces from the two supports.</p>
+
+<p><strong>Approach:</strong> The beam is in static equilibrium. Two unknown support forces: $F_L$ (left) and $F_R$ (right). Use $\Sigma F_y = 0$ and $\Sigma\tau = 0$. Choose the pivot at the left support to eliminate $F_L$ from the torque equation.</p>
+
+<p><strong>Solution:</strong></p>
+
+<p>$\Sigma F_y = 0$: $F_L + F_R - 300 - 200 = 0$, so $F_L + F_R = 500\text{ N}$. (Equation 1)</p>
+
+<p>$\Sigma\tau = 0$ about left support (counterclockwise positive):</p>
+<ul>
+<li>$F_L$: torque = $0$ (at pivot)</li>
+<li>Beam weight ($300\text{ N}$ at $2.0\text{ m}$ from left): torque = $-(300)(2.0) = -600\text{ N m}$ (clockwise)</li>
+<li>Placed weight ($200\text{ N}$ at $1.0\text{ m}$): torque = $-(200)(1.0) = -200\text{ N m}$</li>
+<li>$F_R$ at $4.0\text{ m}$: torque = $+F_R(4.0) = 4.0F_R$ (counterclockwise)</li>
+</ul>
+
+<p>Sum: $-600 - 200 + 4.0F_R = 0$, so $4.0F_R = 800$, $F_R = 200\text{ N}$.</p>
+
+<p>From Equation 1: $F_L = 500 - 200 = 300\text{ N}$.</p>
+
+<p><strong>Why this makes sense:</strong> The beam's weight (300 N) is centred, so half goes to each support (150 N each from the beam). The 200 N weight is closer to the left, so the left support bears more of it. Total left: $150 + 150 = 300\text{ N}$. Total right: $150 + 50 = 200\text{ N}$. Checks out.</p>
+
+<hr>
+
+<h3>Worked Example 6.3 — Ladder Against a Wall</h3>
+
+<p><strong>Problem:</strong> A uniform ladder of length $5.0\text{ m}$ and weight $400\text{ N}$ leans against a smooth vertical wall at an angle such that its base is $3.0\text{ m}$ from the wall. There is no friction at the wall; the ground provides both normal force and friction. Calculate: (a) the reaction force from the wall, and (b) the friction force at the ground.</p>
+
+<p><strong>Approach:</strong> The wall has no friction, so its force is purely horizontal ($R_w$). The ground has normal force $N$ (vertical) and friction $f$ (horizontal). Four unknowns. Use both force conditions and a torque condition. Choose pivot at the base.</p>
+
+<p><strong>Solution:</strong></p>
+
+<p>Geometry: height of ladder top = $\sqrt{5.0^2 - 3.0^2} = 4.0\text{ m}$.</p>
+
+<p>$\Sigma F_x = 0$: $R_w - f = 0$, so $f = R_w$. (Equation 1)</p>
+<p>$\Sigma F_y = 0$: $N - 400 = 0$, so $N = 400\text{ N}$. (Equation 2)</p>
+
+<p>$\Sigma\tau = 0$ about base (counterclockwise positive):</p>
+<ul>
+<li>$N$, $f$: torque = 0 (at pivot)</li>
+<li>Weight at $1.5\text{ m}$ horizontal from base (half of $3.0\text{ m}$): torque = $-(400)(1.5) = -600\text{ N m}$</li>
+<li>Wall force $R_w$ at height $4.0\text{ m}$: torque = $+R_w(4.0) = 4.0R_w$</li>
+</ul>
+
+<p>Sum: $-600 + 4.0R_w = 0$, so $R_w = 150\text{ N}$.</p>
+
+<p>From Equation 1: $f = 150\text{ N}$.</p>
+
+<p><strong>Why this makes sense:</strong> The wall pushes with $150\text{ N}$ to prevent the ladder from falling, and friction at the ground provides an equal and opposite $150\text{ N}$ to prevent sliding. A rough calculation: the weight (400 N) at half the horizontal distance creates a torque balanced by the wall force over the full height.</p>
+
+<hr>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1</h3>
+<p>A $2.0\text{ m}$ uniform plank of mass $10\text{ kg}$ is supported at its centre. A $5.0\text{ kg}$ mass is placed $0.40\text{ m}$ to the left of the centre and a $3.0\text{ kg}$ mass is placed $0.60\text{ m}$ to the right of the centre. Taking $g = 10\text{ m s}^{-2}$, determine whether the plank is balanced. If not, in which direction does it tip?</p>
+
+<h3>Problem 2</h3>
+<p>A uniform beam $6.0\text{ m}$ long weighing $500\text{ N}$ is supported $1.0\text{ m}$ from its left end and $1.5\text{ m}$ from its right end. A $300\text{ N}$ load is placed at the left end. Find the upward forces at both supports.</p>
+
+<h3>Problem 3</h3>
+<p>A $50\text{ N}$ sign hangs from a uniform horizontal rod $2.0\text{ m}$ long weighing $30\text{ N}$. The rod is attached to a wall by a hinge at its left end and supported by a cable at its right end, making an angle of $30^\circ$ above the horizontal. The sign hangs from the right end. Find the tension in the cable.</p>
+
+<h3>Problem 4</h3>
+<p>Explain why a longer wrench makes it easier to loosen a tight bolt, using the concept of torque.</p>
+
+<h3>Problem 5 — IB-Style Examination Question</h3>
+<p>A uniform beam AB of length $3.0\text{ m}$ and weight $200\text{ N}$ is hinged to a wall at point A. The beam is held horizontal by a cable attached at point B, making an angle of $40^\circ$ with the beam. A $150\text{ N}$ weight hangs from the beam at a point $2.0\text{ m}$ from the hinge. Using $g = 10\text{ m s}^{-2}$:</p>
+
+<p>(a) Draw a free-body diagram showing all forces acting on the beam. (2 marks)</p>
+<p>(b) Write the condition for rotational equilibrium about point A. (1 mark)</p>
+<p>(c) Calculate the tension in the cable. (2 marks)</p>
+<p>(d) Determine the magnitude and direction of the reaction force at the hinge. (3 marks)</p>
+
+<hr>
+
+<h2>Answers</h2>
+
+<h3>Answer 1</h3>
+<p>Weights: plank $= 100\text{ N}$ (at centre), left mass $= 50\text{ N}$, right mass $= 30\text{ N}$. About centre: left torque $= -(50)(0.40) = -20\text{ N m}$, right torque $= +(30)(0.60) = +18\text{ N m}$. Net torque $= -2\text{ N m}$. Not balanced — tips to the left.</p>
+
+<h3>Answer 2</h3>
+<p>Support positions from left end: $L$ at $1.0\text{ m}$, $R$ at $4.5\text{ m}$. Beam weight at $3.0\text{ m}$ (centre). About left support: $-(500)(2.0) - (300)(-1.0) + F_R(3.5) = 0$. $F_R = 371\text{ N}$. From $\Sigma F_y = 0$: $F_L = 500 + 300 - 371 = 429\text{ N}$.</p>
+
+<h3>Answer 3</h3>
+<p>About hinge: rod weight (torque $30 \times 1.0 = 30\text{ N m}$ clockwise), sign weight ($50 \times 2.0 = 100\text{ N m}$ clockwise), cable tension $T\sin 30^\circ \times 2.0$ counterclockwise. $T(0.5)(2.0) = 130$, $T = 130\text{ N}$.</p>
+
+<h3>Answer 4</h3>
+<p>Torque $\tau = Fr$. For a given force, doubling the wrench length doubles the torque — the bolt experiences twice the turning effect. Equivalently, to achieve a given torque, a longer wrench requires proportionally less force. This is leverage: a small force at a large distance produces the same torque as a large force at a small distance.</p>
+
+<h3>Answer 5 — IB-Style</h3>
+<p><strong>(a)</strong> (2 marks) Forces: weight of beam ($200\text{ N}$ downward at $1.5\text{ m}$ from A), hanging weight ($150\text{ N}$ downward at $2.0\text{ m}$), cable tension $T$ at $40^\circ$ above horizontal at B ($3.0\text{ m}$ from A), hinge reaction with horizontal ($R_x$) and vertical ($R_y$) components at A.</p>
+
+<p><strong>(b)</strong> $\Sigma\tau_A = 0$: $-(200)(1.5) - (150)(2.0) + T\sin 40^\circ(3.0) = 0$. (1 mark)</p>
+
+<p><strong>(c)</strong> $3.0T\sin 40^\circ = 300 + 300 = 600$, so $T = 600/(3.0 \times 0.643) = 311\text{ N}$. (2 marks)</p>
+
+<p><strong>(d)</strong> (3 marks) $\Sigma F_x = 0$: $R_x - T\cos 40^\circ = 0$, $R_x = 311 \times 0.766 = 238\text{ N}$ (right). $\Sigma F_y = 0$: $R_y + T\sin 40^\circ - 200 - 150 = 0$, $R_y = 350 - 311 \times 0.643 = 350 - 200 = 150\text{ N}$ (up). Reaction: $R = \sqrt{238^2 + 150^2} = 281\text{ N}$ at $\theta = \tan^{-1}(150/238) = 32^\circ$ above horizontal.</p>
+
+<hr>
+
+<h2>Key Takeaways</h2>
+
+<ol>
+<li><strong>Torque:</strong> $\tau = Fr\sin\theta$ — the rotational analogue of force. Only the perpendicular component of force produces rotation.</li>
+</ol>
+
+<ol>
+<li><strong>Static equilibrium requires BOTH</strong> $\Sigma F = 0$ (no translation) AND $\Sigma\tau = 0$ (no rotation) about any axis.</li>
+</ol>
+
+<ol>
+<li><strong>Choose the pivot to eliminate unknowns.</strong> Put the pivot at a point where unknown forces act — they contribute zero torque there.</li>
+</ol>
+
+<ol>
+<li><strong>Weight acts at centre of gravity.</strong> For uniform objects, this is the geometric centre.</li>
+</ol>
+
+<ol>
+<li><strong>A couple produces pure rotation</strong> — two equal opposite forces separated by distance $d$ give $\tau = Fd$ with no net force.</li>
+</ol>
+
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L5_energy_power.html">← Lesson 5</a>
+  <a href="L7_rigid_body_2.html">Lesson 7 →</a>
+</nav>
+
+</body>
+</html>

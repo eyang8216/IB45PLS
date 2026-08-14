@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 39: Lesson 39: Wave Phenomena IV — Resolution and Polarisation (HL) — IB Physics HL</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']]
+  },
+  options: {
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap');
+  
+  :root {
+    --bg: #fdfcf9;
+    --text: #1a1a1a;
+    --accent: #2c5f2d;
+    --border: #d0cec7;
+    --code-bg: #f4f3ef;
+    --callout-bg: #f0f7f0;
+    --callout-border: #2c5f2d;
+    --warning-bg: #fff8e6;
+    --warning-border: #c4941a;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  body {
+    font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid var(--accent);
+    color: var(--accent);
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 2.5rem 0 0.75rem;
+    color: #1a1a1a;
+  }
+  
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.5rem;
+  }
+  
+  p { margin: 0 0 1rem; }
+  
+  ul, ol { margin: 0 0 1rem 1.5rem; }
+  li { margin-bottom: 0.35rem; }
+  
+  code {
+    background: var(--code-bg);
+    padding: 0.15em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+    font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+  }
+  
+  pre {
+    background: var(--code-bg);
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 0 0 1rem;
+    font-size: 0.85em;
+    line-height: 1.5;
+  }
+  
+  pre code {
+    background: none;
+    padding: 0;
+    font-size: inherit;
+  }
+  
+  blockquote {
+    border-left: 4px solid var(--callout-border);
+    background: var(--callout-bg);
+    margin: 0 0 1rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+  }
+  
+  blockquote.warning {
+    border-left-color: var(--warning-border);
+    background: var(--warning-bg);
+  }
+  
+  strong { font-weight: 700; }
+  
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.5rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  
+  .nav a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+  
+  .nav a:hover { background: var(--callout-bg); }
+  
+  .worked-example, .answer {
+    background: var(--code-bg);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin: 0.75rem 0 1.25rem;
+  }
+  
+  .worked-example strong:first-child, .answer strong:first-child {
+    color: var(--accent);
+  }
+  
+  @media print {
+    body { font-size: 12pt; max-width: 100%; padding: 0; }
+    .nav { display: none; }
+    h1 { font-size: 18pt; }
+    h2 { font-size: 14pt; }
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 0 1rem;
+  }
+  
+  th, td {
+    border: 1px solid var(--border);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  
+  th {
+    background: var(--code-bg);
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L38_wave_phenomena_3.html">← Lesson 38</a>
+  <a href="L40_standing_waves_1.html">Lesson 40 →</a>
+</nav>
+
+<h1>Lesson 39: Wave Phenomena IV — Resolution and Polarisation (HL)</h1>
+
+<h2>What You'll Learn</h2>
+<ul>
+<li>Apply the Rayleigh criterion for resolvability: $\theta = 1.22\lambda/b$</li>
+<li>Calculate the resolving power of a diffraction grating: $R = \lambda/\Delta\lambda = Nn$</li>
+<li>Use Malus's Law for polarised light: $I = I_0\cos^2\theta$</li>
+<li>Understand polarisation by reflection (Brewster's angle)</li>
+</ul>
+
+<hr>
+
+<h2>1. Resolution — When Two Points Become One</h2>
+
+<h3>1.1 The Problem</h3>
+
+<p>Every optical instrument — eye, telescope, microscope — has a limit to how much detail it can see. Two stars very close together in the sky appear as one. Two tiny structures in a cell blur together. This limit comes from diffraction: when light passes through a circular aperture (lens, pupil), it diffracts, forming a fuzzy disc (Airy disc) rather than a perfect point.</p>
+
+<h3>1.2 The Rayleigh Criterion</h3>
+
+<p>Two point sources are said to be <strong>just resolved</strong> when the central maximum of one diffraction pattern falls on the first minimum of the other. For a circular aperture of diameter $b$:</p>
+
+<p>$$\theta = 1.22\frac{\lambda}{b}$$</p>
+
+<p>where $\theta$ is the minimum angular separation that can be resolved (in radians), $\lambda$ is the wavelength, and $b$ is the aperture diameter.</p>
+
+<ul>
+<li>Larger aperture → better resolution (smaller $\theta$)</li>
+<li>Shorter wavelength → better resolution</li>
+<li>The factor $1.22$ comes from the mathematics of circular apertures</li>
+</ul>
+
+<h3>1.3 Resolving Power of a Grating</h3>
+
+<p>For a diffraction grating, the ability to separate two close wavelengths is:</p>
+
+<p>$$R = \frac{\lambda}{\Delta\lambda} = Nn$$</p>
+
+<p>where $N$ is the total number of lines (slits) illuminated and $n$ is the order. More lines and higher orders give better wavelength resolution.</p>
+
+<hr>
+
+<h2>2. Polarisation — Light Has an Orientation</h2>
+
+<h3>2.1 What Is Polarisation?</h3>
+
+<p>Unpolarised light (from the Sun, a light bulb) has electric field oscillations in ALL directions perpendicular to the direction of travel. <strong>Polarised light</strong> has oscillations restricted to a single plane. Only TRANSVERSE waves can be polarised — this is evidence that light is a transverse electromagnetic wave. (Sound, being longitudinal, cannot be polarised.)</p>
+
+<h3>2.2 Polarisation by Filter (Polaroid)</h3>
+
+<p>A Polaroid filter transmits only the component of the electric field parallel to its transmission axis. For unpolarised light passing through one polariser, the intensity is halved: $I = I_0/2$.</p>
+
+<h3>2.3 Malus's Law</h3>
+
+<p>When already-polarised light passes through a second polariser (analyser) at angle $\theta$ to the polarisation direction:</p>
+
+<p>$$I = I_0\cos^2\theta$$</p>
+
+<ul>
+<li>$\theta = 0^\circ$ (axes aligned): $I = I_0$ (full transmission)</li>
+<li>$\theta = 90^\circ$ (crossed): $I = 0$ (complete extinction)</li>
+<li>$\theta = 45^\circ$: $I = I_0/2$</li>
+</ul>
+
+<h3>2.4 Polarisation by Reflection — Brewster's Angle</h3>
+
+<p>When unpolarised light reflects from a surface, the reflected light is partially polarised. At a specific angle — <strong>Brewster's angle</strong> — the reflected light is COMPLETELY polarised parallel to the surface:</p>
+
+<p>$$\tan\theta_B = n$$</p>
+
+<p>where $n$ is the refractive index of the reflecting medium. At Brewster's angle, the reflected and refracted rays are perpendicular ($\theta_B + \theta_r = 90^\circ$). Polaroid sunglasses use this principle to reduce glare from horizontal surfaces (water, roads).</p>
+
+<hr>
+
+<h2>Worked Examples</h2>
+
+<h3>Worked Example 39.1 — Telescope Resolution</h3>
+
+<p><strong>Problem:</strong> A telescope has a $5.0\text{ m}$ diameter mirror. Using light of $550\text{ nm}$, find the minimum angular separation of two stars that can just be resolved.</p>
+
+<p><strong>Solution:</strong></p>
+<p>$\theta = 1.22\lambda/b = 1.22(550\times 10^{-9})/5.0 = 1.34 \times 10^{-7}\text{ rad}$ (about $0.028$ arcseconds).</p>
+
+<hr>
+
+<h3>Worked Example 39.2 — Malus's Law</h3>
+
+<p><strong>Problem:</strong> Unpolarised light of intensity $80\text{ W m}^{-2}$ passes through two polarisers with axes at $30^\circ$. Find the transmitted intensity.</p>
+
+<p><strong>Solution:</strong></p>
+<p>After first polariser: $I_1 = 80/2 = 40\text{ W m}^{-2}$.</p>
+<p>After second: $I_2 = 40\cos^2 30^\circ = 40 \times 0.75 = 30\text{ W m}^{-2}$.</p>
+
+<hr>
+
+<h3>Worked Example 39.3 — Brewster's Angle</h3>
+
+<p><strong>Problem:</strong> Find Brewster's angle for light reflecting from water ($n = 1.33$).</p>
+
+<p><strong>Solution:</strong></p>
+<p>$\theta_B = \tan^{-1}(1.33) = 53.1^\circ$. At this angle, reflected light is fully polarised parallel to the water surface.</p>
+
+<hr>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1</h3>
+<p>The human pupil is about $5.0\text{ mm}$ in diameter. Using $\lambda = 550\text{ nm}$, find the minimum angular separation the eye can resolve. At $10\text{ m}$ distance, what is the minimum separation between two points that can be distinguished?</p>
+
+<h3>Problem 2</h3>
+<p>A diffraction grating with $5,000$ lines illuminated is used in second order. Find the resolving power. Can it resolve two lines at $600.00\text{ nm}$ and $600.06\text{ nm}$?</p>
+
+<h3>Problem 3</h3>
+<p>Unpolarised light of intensity $I_0$ passes through two polarisers at $60^\circ$. Express the transmitted intensity as a fraction of $I_0$.</p>
+
+<h3>Problem 4</h3>
+<p>Calculate Brewster's angle for glass ($n = 1.55$). Explain why Polaroid sunglasses are effective at reducing glare from horizontal surfaces.</p>
+
+<h3>Problem 5 — IB-Style</h3>
+<p>(a) Explain why two stars that are very close together in the sky may appear as a single star when viewed through a small telescope. (2 marks)</p>
+<p>(b) A telescope with aperture $0.30\text{ m}$ observes light of wavelength $600\text{ nm}$. Calculate the minimum angular separation it can resolve. (2 marks)</p>
+<p>(c) The telescope is replaced with one having a $1.2\text{ m}$ aperture. By what factor does the resolution improve? (1 mark)</p>
+<p>(d) Unpolarised light passes through a polariser and then through an analyser at $45^\circ$ to the first. The transmitted intensity is $25\text{ W m}^{-2}$. Determine the intensity of the original unpolarised light. (3 marks)</p>
+
+<hr>
+
+<h2>Answers</h2>
+
+<h3>Answer 1</h3>
+<p>$\theta = 1.22(550\times 10^{-9})/(5.0\times 10^{-3}) = 1.34 \times 10^{-4}\text{ rad}$. At $10\text{ m}$: $y = 10 \times 1.34\times 10^{-4} = 1.34\text{ mm}$.</p>
+
+<h3>Answer 2</h3>
+<p>$R = Nn = 5,000 \times 2 = 10,000$. $\lambda/\Delta\lambda = 600/0.06 = 10,000$. Required $R = 10,000$ = available $R$ — just resolvable (by the Rayleigh criterion).</p>
+
+<h3>Answer 3</h3>
+<p>$I_1 = I_0/2$. $I_2 = (I_0/2)\cos^2 60^\circ = (I_0/2)(0.25) = I_0/8$.</p>
+
+<h3>Answer 4</h3>
+<p>$\theta_B = \tan^{-1}(1.55) = 57.2^\circ$. Sunlight reflecting from horizontal surfaces (water, wet roads) arrives at angles near Brewster's angle and is strongly polarised horizontally. Polaroid sunglasses have vertically-oriented transmission axes, blocking this horizontally-polarised glare.</p>
+
+<h3>Answer 5 — IB-Style</h3>
+<p><strong>(a)</strong> (2 marks) Light from each star diffracts at the telescope aperture, forming Airy disc patterns. If the angular separation is less than the Rayleigh criterion ($\theta < 1.22\lambda/b$), the central maxima overlap and the stars cannot be distinguished — they appear as a single point.</p>
+
+<p><strong>(b)</strong> (2 marks) $\theta = 1.22(600\times 10^{-9})/0.30 = 2.44 \times 10^{-6}\text{ rad}$.</p>
+
+<p><strong>(c)</strong> (1 mark) Aperture quadrupled → $\theta$ divided by 4. Resolution improves by factor of 4.</p>
+
+<p><strong>(d)</strong> (3 marks) After analyser: $25 = I_0/2 \times \cos^2 45^\circ = I_0/2 \times 0.5 = I_0/4$. So $I_0 = 100\text{ W m}^{-2}$. (1 mark for halving at first polariser, 1 for Malus's Law, 1 for answer.)</p>
+
+<hr>
+
+<h2>Key Takeaways</h2>
+
+<ol>
+<li><strong>Rayleigh criterion:</strong> $\theta = 1.22\lambda/b$. Smaller $\theta$ = better resolution. Larger aperture or shorter wavelength helps.</li>
+</ol>
+
+<ol>
+<li><strong>Grating resolving power:</strong> $R = \lambda/\Delta\lambda = Nn$. More lines, higher order → better separation.</li>
+</ol>
+
+<ol>
+<li><strong>Malus's Law:</strong> $I = I_0\cos^2\theta$. Crossed polarisers ($90^\circ$) give zero transmission. Unpolarised light halves at first polariser.</li>
+</ol>
+
+<ol>
+<li><strong>Brewster's angle:</strong> $\tan\theta_B = n$. Reflected light fully polarised. Used in Polaroid sunglasses and photography.</li>
+</ol>
+
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L38_wave_phenomena_3.html">← Lesson 38</a>
+  <a href="L40_standing_waves_1.html">Lesson 40 →</a>
+</nav>
+
+</body>
+</html>

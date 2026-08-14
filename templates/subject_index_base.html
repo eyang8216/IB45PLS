@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ subject_name }} — Course Index</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='subject_index.css') }}">
+</head>
+<body>
+
+<div class="container">
+  <header class="page-header">
+    <h1>{{ subject_emoji }} {{ subject_name }}</h1>
+    <p class="subtitle">{{ total_lessons }} lessons · {{ level_badge }} · Target: Grade 7</p>
+  </header>
+
+  <div class="stats-bar">
+    <div class="stat-card">
+      <div class="stat-num" id="completed-count">0</div>
+      <div class="stat-label">Completed</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num" id="remaining-count">{{ total_lessons }}</div>
+      <div class="stat-label">Remaining</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num" id="progress-pct">0%</div>
+      <div class="stat-label">Progress</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num" id="streak-days">0</div>
+      <div class="stat-label">Day Streak</div>
+    </div>
+  </div>
+
+  <div class="progress-bar-container">
+    <div class="progress-bar" id="progress-bar-fill"></div>
+  </div>
+
+  <div class="controls">
+    <input type="text" id="search-input" placeholder="Search lessons..." class="search-box">
+    <div class="control-buttons">
+      <button onclick="expandAll()" class="btn-secondary">Expand All</button>
+      <button onclick="collapseAll()" class="btn-secondary">Collapse All</button>
+      <button onclick="showMasteryFilter()" class="btn-secondary">Filter by Mastery</button>
+    </div>
+  </div>
+
+  <div id="lessons-container">
+    {{ lessons_content|safe }}
+  </div>
+
+  <div class="mastery-legend">
+    <div class="legend-item">
+      <span class="mastery-badge not-started">Not Started</span>
+      <span>Haven't viewed yet</span>
+    </div>
+    <div class="legend-item">
+      <span class="mastery-badge learning">Learning</span>
+      <span>Currently studying</span>
+    </div>
+    <div class="legend-item">
+      <span class="mastery-badge proficient">Proficient</span>
+      <span>Understand the concepts</span>
+    </div>
+    <div class="legend-item">
+      <span class="mastery-badge mastery">Mastery</span>
+      <span>Can teach others</span>
+    </div>
+  </div>
+</div>
+
+<script>
+const SUBJECT_KEY = "{{ subject_key }}";
+
+// Load progress from backend
+async function loadProgress() {
+  try {
+    const response = await fetch('/api/subject_progress/' + SUBJECT_KEY);
+    if (!response.ok) return {};
+    const data = await response.json();
+    return data;
+  } catch (e) {
+    console.error('Failed to load progress:', e);
+    return {};
+  }
+}
+
+// Update completion status
+async function toggleCompletion(lessonId, checkbox) {
+  const completed = checkbox.checked;
+
+  try {
+    const response = await fetch('/toggle_completion', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        subject: SUBJECT_KEY,
+        lesson: lessonId,
+        completed: completed
+      })
+    });
+
+    if (response.ok) {
+      const row = checkbox.closest('.lesson-row');
+      if (row) {
+        row.classList.toggle('completed', completed);
+      }
+      updateStats();
+    }
+  } catch (e) {
+    console.error('Failed to save completion:', e);
+    checkbox.checked = !completed; // Revert on error
+  }
+}
+
+// Update mastery level
+async function updateMastery(lessonId, level) {
+  try {
+    const response = await fetch('/update_mastery', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        subject: SUBJECT_KEY,
+        lesson: lessonId,
+        level: level
+      })
+    });
+
+    if (response.ok) {
+      updateStats();
+    }
+  } catch (e) {
+    console.error('Failed to update mastery:', e);
+  }
+}
+
+// Update stats bar
+function updateStats() {
+  const checkboxes = document.querySelectorAll('.lesson-checkbox');
+  const total = checkboxes.length;
+  const completed = Array.from(checkboxes).filter(cb => cb.checked).length;
+  const remaining = total - completed;
+  const pct = total > 0 ? Math.round((completed / total) * 100) : 0;
+
+  document.getElementById('completed-count').textContent = completed;
+  document.getElementById('remaining-count').textContent = remaining;
+  document.getElementById('progress-pct').textContent = pct + '%';
+  document.getElementById('progress-bar-fill').style.width = pct + '%';
+}
+
+// Search functionality
+document.getElementById('search-input')?.addEventListener('input', (e) => {
+  const query = e.target.value.toLowerCase();
+  const rows = document.querySelectorAll('.lesson-row');
+
+  rows.forEach(row => {
+    const text = row.textContent.toLowerCase();
+    row.style.display = text.includes(query) ? '' : 'none';
+  });
+});
+
+// Expand/collapse sections
+function expandAll() {
+  document.querySelectorAll('.topic-section').forEach(section => {
+    section.classList.remove('collapsed');
+  });
+}
+
+function collapseAll() {
+  document.querySelectorAll('.topic-section').forEach(section => {
+    section.classList.add('collapsed');
+  });
+}
+
+// Toggle individual sections
+function toggleSection(element) {
+  const section = element.closest('.topic-section');
+  section.classList.toggle('collapsed');
+}
+
+// Mastery filter
+function showMasteryFilter() {
+  const filter = prompt('Filter by mastery level:\n0 = Not Started\n1 = Learning\n2 = Proficient\n3 = Mastery\n\nEnter level (0-3) or leave empty to show all:');
+
+  if (filter === null) return; // Cancelled
+
+  const rows = document.querySelectorAll('.lesson-row');
+  rows.forEach(row => {
+    if (filter === '') {
+      row.style.display = '';
+    } else {
+      const masteryBadge = row.querySelector('.mastery-badge');
+      const level = masteryBadge?.dataset.level || '0';
+      row.style.display = level === filter ? '' : 'none';
+    }
+  });
+}
+
+// Initialize on page load
+async function init() {
+  const progress = await loadProgress();
+
+  // Restore checkboxes and mastery badges
+  document.querySelectorAll('.lesson-checkbox').forEach(checkbox => {
+    const lessonId = checkbox.dataset.lessonId;
+    const lessonData = progress.lessons?.[lessonId];
+
+    if (lessonData) {
+      checkbox.checked = lessonData.completed || false;
+
+      const row = checkbox.closest('.lesson-row');
+      if (row) {
+        if (checkbox.checked) {
+          row.classList.add('completed');
+        }
+
+        // Update mastery badge
+        const masteryBadge = row.querySelector('.mastery-badge');
+        if (masteryBadge && lessonData.mastery_level !== undefined) {
+          const level = lessonData.mastery_level;
+          masteryBadge.dataset.level = level;
+          masteryBadge.className = 'mastery-badge';
+
+          if (level === 0) masteryBadge.classList.add('not-started');
+          else if (level === 1) masteryBadge.classList.add('learning');
+          else if (level === 2) masteryBadge.classList.add('proficient');
+          else if (level === 3) masteryBadge.classList.add('mastery');
+
+          const labels = ['Not Started', 'Learning', 'Proficient', 'Mastery'];
+          masteryBadge.textContent = labels[level] || 'Not Started';
+        }
+      }
+    }
+  });
+
+  // Load streak
+  try {
+    const streakResponse = await fetch('/api/user_streak');
+    if (streakResponse.ok) {
+      const streakData = await streakResponse.json();
+      document.getElementById('streak-days').textContent = streakData.streak || 0;
+    }
+  } catch (e) {
+    console.error('Failed to load streak:', e);
+  }
+
+  updateStats();
+}
+
+// Run on page load
+document.addEventListener('DOMContentLoaded', init);
+</script>
+
+</body>
+</html>

@@ -1,14 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Lesson 26 — Chemistry HL — Kp &amp; Advanced Equilibrium</title>
 <script>
 window.MathJax = {tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] },
   loader: { load: ['[tex]/mhchem'] }};
 </script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <style>
 :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -42,207 +43,172 @@ tr:nth-child(even) td { background: #f8f8f6; }
 </style>
 </head>
 <body>
-
 <h1>Lesson 26: $K_p$ &amp; Advanced Equilibrium (HL)</h1>
 <p><b>Syllabus reference:</b> 17.1 — The Equilibrium Law (HL): $K_p$, mole fractions, partial pressures</p>
-
 <div class="objectives">
 <h3>Learning Objectives</h3>
 <p>By the end of this lesson, you will be able to:</p>
 <ul>
-  <li><b>Define</b> partial pressure and mole fraction; calculate partial pressure as $p_i = x_i \times P_{\text{total}}$.</li>
-  <li><b>Write</b> the $K_p$ expression for any gaseous equilibrium and determine its units.</li>
-  <li><b>Calculate</b> $K_p$ from equilibrium amounts and total pressure using ICE tables adapted for pressures.</li>
-  <li><b>Derive</b> the relationship $K_p = K_c(RT)^{\Delta n}$ and use it to interconvert $K_p$ and $K_c$.</li>
-  <li><b>Explain</b> how $K_p$ (like $K_c$) depends only on temperature and is independent of pressure or catalyst.</li>
+<li><b>Define</b> partial pressure and mole fraction; calculate partial pressure as $p_i = x_i \times P_{\text{total}}$.</li>
+<li><b>Write</b> the $K_p$ expression for any gaseous equilibrium and determine its units.</li>
+<li><b>Calculate</b> $K_p$ from equilibrium amounts and total pressure using ICE tables adapted for pressures.</li>
+<li><b>Derive</b> the relationship $K_p = K_c(RT)^{\Delta n}$ and use it to interconvert $K_p$ and $K_c$.</li>
+<li><b>Explain</b> how $K_p$ (like $K_c$) depends only on temperature and is independent of pressure or catalyst.</li>
 </ul>
 </div>
 
+<div class="lesson-completion" style="margin: 1rem 0; padding: 1rem; background: #f0f9ff; border-radius: 8px;">
+<label class="completion-checkbox" style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer;">
+<input id="lesson-complete" style="width: 24px; height: 24px; cursor: pointer; accent-color: #10b981;" type="checkbox"/>
+<span style="font-size: 1rem; color: #0f172a; font-weight: 500;">✓ Mark this lesson as complete</span>
+</label>
+</div>
 <h2>1. Prior Knowledge Check</h2>
-
 <p><b>Question 1:</b> For a mixture of gases, what is Dalton's Law of partial pressures?</p>
 <div class="check-in">
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">Dalton's Law: The <b>total pressure</b> of a gas mixture is the sum of the <b>partial pressures</b> of each component: $P_{\text{total}} = p_A + p_B + p_C + \dots$. Each gas behaves as if it alone occupied the entire volume. The partial pressure of component $i$ is $p_i = x_i \times P_{\text{total}}$, where $x_i$ is the mole fraction.</div>
 </div>
-
 <p><b>Question 2:</b> How is the mole fraction of a gas in a mixture calculated?</p>
 <div class="check-in">
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">Mole fraction $x_i = n_i / n_{\text{total}}$, where $n_i$ is the number of moles of component $i$ and $n_{\text{total}}$ is the total moles of all gases present. The sum of all mole fractions in a mixture equals 1.</div>
 </div>
-
 <h2>2. Partial Pressure and Mole Fraction</h2>
-
 <p>When dealing with gaseous equilibria, it is often more convenient to use <b>partial pressures</b> instead of concentrations. The equilibrium constant expressed in terms of partial pressures is $K_p$.</p>
-
 <div class="definition">
 <b>Partial pressure:</b> $p_i = x_i \times P_{\text{total}}$, where $x_i = n_i / n_{\text{total}}$ (mole fraction).
 </div>
-
 <div class="diagram">
-<svg width="500" height="240" viewBox="0 0 500 240">
-  <!-- container -->
-  <rect x="30" y="30" width="440" height="180" rx="10" fill="#f0f4ff" stroke="#1565c0" stroke-width="2"/>
-  <text x="250" y="55" text-anchor="middle" font-size="14" font-weight="bold" fill="#1565c0">Gas mixture: P_total = 200 kPa</text>
-  <!-- gases -->
-  <circle cx="120" cy="115" r="35" fill="#bbdefb" stroke="#1565c0" stroke-width="1.5"/>
-  <text x="120" y="110" text-anchor="middle" font-size="11" fill="#1565c0">N₂: 0.50 mol</text>
-  <text x="120" y="125" text-anchor="middle" font-size="10" fill="#555">x = 0.50</text>
-  <circle cx="260" cy="115" r="35" fill="#c8e6c9" stroke="#2c5f2d" stroke-width="1.5"/>
-  <text x="260" y="110" text-anchor="middle" font-size="11" fill="#2c5f2d">H₂: 0.30 mol</text>
-  <text x="260" y="125" text-anchor="middle" font-size="10" fill="#555">x = 0.30</text>
-  <circle cx="400" cy="115" r="35" fill="#ffcdd2" stroke="#c62828" stroke-width="1.5"/>
-  <text x="400" y="110" text-anchor="middle" font-size="11" fill="#c62828">NH₃: 0.20 mol</text>
-  <text x="400" y="125" text-anchor="middle" font-size="10" fill="#555">x = 0.20</text>
-  <!-- calculations -->
-  <text x="250" y="185" text-anchor="middle" font-size="11" fill="#333">n_total = 1.00 mol</text>
-  <text x="250" y="200" text-anchor="middle" font-size="11" fill="#333">p(N₂)=100 kPa, p(H₂)=60 kPa, p(NH₃)=40 kPa</text>
+<svg height="240" viewbox="0 0 500 240" width="500">
+<!-- container -->
+<rect fill="#f0f4ff" height="180" rx="10" stroke="#1565c0" stroke-width="2" width="440" x="30" y="30"></rect>
+<text fill="#1565c0" font-size="14" font-weight="bold" text-anchor="middle" x="250" y="55">Gas mixture: P_total = 200 kPa</text>
+<!-- gases -->
+<circle cx="120" cy="115" fill="#bbdefb" r="35" stroke="#1565c0" stroke-width="1.5"></circle>
+<text fill="#1565c0" font-size="11" text-anchor="middle" x="120" y="110">N₂: 0.50 mol</text>
+<text fill="#555" font-size="10" text-anchor="middle" x="120" y="125">x = 0.50</text>
+<circle cx="260" cy="115" fill="#c8e6c9" r="35" stroke="#2c5f2d" stroke-width="1.5"></circle>
+<text fill="#2c5f2d" font-size="11" text-anchor="middle" x="260" y="110">H₂: 0.30 mol</text>
+<text fill="#555" font-size="10" text-anchor="middle" x="260" y="125">x = 0.30</text>
+<circle cx="400" cy="115" fill="#ffcdd2" r="35" stroke="#c62828" stroke-width="1.5"></circle>
+<text fill="#c62828" font-size="11" text-anchor="middle" x="400" y="110">NH₃: 0.20 mol</text>
+<text fill="#555" font-size="10" text-anchor="middle" x="400" y="125">x = 0.20</text>
+<!-- calculations -->
+<text fill="#333" font-size="11" text-anchor="middle" x="250" y="185">n_total = 1.00 mol</text>
+<text fill="#333" font-size="11" text-anchor="middle" x="250" y="200">p(N₂)=100 kPa, p(H₂)=60 kPa, p(NH₃)=40 kPa</text>
 </svg>
 <div class="caption">Figure 1: Calculating partial pressures from mole fractions. Each gas contributes to the total pressure in proportion to its mole fraction. $p_i = x_i \times P_{\text{total}}$.</div>
 </div>
-
 <h2>3. The $K_p$ Expression</h2>
-
 <div class="definition">
-<b>For a general gaseous equilibrium:</b> $\ce{aA(g) + bB(g) <=> cC(g) + dD(g)}$
+<b>For a general gaseous equilibrium:</b> $\ce{aA(g) + bB(g) &lt;=&gt; cC(g) + dD(g)}$
 $$K_p = \frac{(p_{\ce{C}})^c (p_{\ce{D}})^d}{(p_{\ce{A}})^a (p_{\ce{B}})^b}$$
 All partial pressures are equilibrium values. $K_p$ has units of (pressure)$^{\Delta n}$, where $\Delta n$ counts gaseous species only.
 </div>
-
 <p>The rules for $K_p$ mirror those for $K_c$: solids and pure liquids are omitted, exponents are stoichiometric coefficients, and $K_p$ is constant at a given temperature. The standard pressure unit at IB is typically kPa or atm — be consistent.</p>
-
 <div class="check-in">
-<p><b>Check-in:</b> Write $K_p$ for $\ce{N2(g) + 3H2(g) <=> 2NH3(g)}$. What are its units if pressures are in kPa?</p>
+<p><b>Check-in:</b> Write $K_p$ for $\ce{N2(g) + 3H2(g) &lt;=&gt; 2NH3(g)}$. What are its units if pressures are in kPa?</p>
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">$K_p = (p_{\ce{NH3}})^2 / (p_{\ce{N2}} \times (p_{\ce{H2}})^3)$. Δn = 2 − (1+3) = −2. Units: kPa⁻². The negative exponent means $K_p$ has units of 1/(pressure)² — a larger $K_p$ numerical value at higher pressure units. Always state the units.</div>
 </div>
-
 <h2>4. $K_p$ Calculations Using ICE Tables for Pressure</h2>
-
 <p>The ICE method adapts naturally to $K_p$. Instead of tracking concentrations, you track <b>moles</b> (or mole fractions) and then convert to partial pressures using the total pressure.</p>
-
 <div class="diagram">
-<svg width="520" height="200" viewBox="0 0 520 200">
-  <text x="260" y="25" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c5f2d">ICE Table for $K_p$: $\ce{PCl5(g) <=> PCl3(g) + Cl2(g)}$, P_total = 200 kPa</text>
-  <!-- table -->
-  <rect x="20" y="40" width="480" height="130" rx="6" fill="#f8f8f6" stroke="#333" stroke-width="1"/>
-  <line x1="20" y1="72" x2="500" y2="72" stroke="#333" stroke-width="1"/>
-  <line x1="140" y1="40" x2="140" y2="170" stroke="#333" stroke-width="1"/>
-  <line x1="260" y1="40" x2="260" y2="170" stroke="#333" stroke-width="1"/>
-  <line x1="380" y1="40" x2="380" y2="170" stroke="#333" stroke-width="1"/>
-  <text x="80" y="65" text-anchor="middle" font-size="12" font-weight="bold"></text>
-  <text x="200" y="65" text-anchor="middle" font-size="12" font-weight="bold" fill="#1565c0">PCl₅</text>
-  <text x="320" y="65" text-anchor="middle" font-size="12" font-weight="bold" fill="#c62828">PCl₃</text>
-  <text x="440" y="65" text-anchor="middle" font-size="12" font-weight="bold" fill="#c62828">Cl₂</text>
-  <text x="80" y="100" text-anchor="middle" font-size="12" font-weight="bold" fill="#2c5f2d">I (mol)</text>
-  <text x="200" y="100" text-anchor="middle" font-size="12">n₀</text>
-  <text x="320" y="100" text-anchor="middle" font-size="12">0</text>
-  <text x="440" y="100" text-anchor="middle" font-size="12">0</text>
-  <text x="80" y="130" text-anchor="middle" font-size="12" font-weight="bold" fill="#e65100">C (mol)</text>
-  <text x="200" y="130" text-anchor="middle" font-size="12">−x</text>
-  <text x="320" y="130" text-anchor="middle" font-size="12">+x</text>
-  <text x="440" y="130" text-anchor="middle" font-size="12">+x</text>
-  <text x="80" y="160" text-anchor="middle" font-size="12" font-weight="bold" fill="#2c5f2d">E (mol)</text>
-  <text x="200" y="160" text-anchor="middle" font-size="12">n₀−x</text>
-  <text x="320" y="160" text-anchor="middle" font-size="12">x</text>
-  <text x="440" y="160" text-anchor="middle" font-size="12">x</text>
+<svg height="200" viewbox="0 0 520 200" width="520">
+<text fill="#2c5f2d" font-size="14" font-weight="bold" text-anchor="middle" x="260" y="25">ICE Table for $K_p$: $\ce{PCl5(g) &lt;=&gt; PCl3(g) + Cl2(g)}$, P_total = 200 kPa</text>
+<!-- table -->
+<rect fill="#f8f8f6" height="130" rx="6" stroke="#333" stroke-width="1" width="480" x="20" y="40"></rect>
+<line stroke="#333" stroke-width="1" x1="20" x2="500" y1="72" y2="72"></line>
+<line stroke="#333" stroke-width="1" x1="140" x2="140" y1="40" y2="170"></line>
+<line stroke="#333" stroke-width="1" x1="260" x2="260" y1="40" y2="170"></line>
+<line stroke="#333" stroke-width="1" x1="380" x2="380" y1="40" y2="170"></line>
+<text font-size="12" font-weight="bold" text-anchor="middle" x="80" y="65"></text>
+<text fill="#1565c0" font-size="12" font-weight="bold" text-anchor="middle" x="200" y="65">PCl₅</text>
+<text fill="#c62828" font-size="12" font-weight="bold" text-anchor="middle" x="320" y="65">PCl₃</text>
+<text fill="#c62828" font-size="12" font-weight="bold" text-anchor="middle" x="440" y="65">Cl₂</text>
+<text fill="#2c5f2d" font-size="12" font-weight="bold" text-anchor="middle" x="80" y="100">I (mol)</text>
+<text font-size="12" text-anchor="middle" x="200" y="100">n₀</text>
+<text font-size="12" text-anchor="middle" x="320" y="100">0</text>
+<text font-size="12" text-anchor="middle" x="440" y="100">0</text>
+<text fill="#e65100" font-size="12" font-weight="bold" text-anchor="middle" x="80" y="130">C (mol)</text>
+<text font-size="12" text-anchor="middle" x="200" y="130">−x</text>
+<text font-size="12" text-anchor="middle" x="320" y="130">+x</text>
+<text font-size="12" text-anchor="middle" x="440" y="130">+x</text>
+<text fill="#2c5f2d" font-size="12" font-weight="bold" text-anchor="middle" x="80" y="160">E (mol)</text>
+<text font-size="12" text-anchor="middle" x="200" y="160">n₀−x</text>
+<text font-size="12" text-anchor="middle" x="320" y="160">x</text>
+<text font-size="12" text-anchor="middle" x="440" y="160">x</text>
 </svg>
 <div class="caption">Figure 2: ICE table for $K_p$. Track moles first, then convert to mole fractions and partial pressures using $x_i = n_i/n_{\text{total}}$ and $p_i = x_i \times P_{\text{total}}$.</div>
 </div>
-
 <div class="check-in">
-<p><b>Check-in:</b> For $\ce{2SO2(g) + O2(g) <=> 2SO3(g)}$, the total pressure at equilibrium is 500 kPa. The mole fractions are: $x_{\ce{SO2}} = 0.10$, $x_{\ce{O2}} = 0.20$, $x_{\ce{SO3}} = 0.70$. Calculate $K_p$.</p>
+<p><b>Check-in:</b> For $\ce{2SO2(g) + O2(g) &lt;=&gt; 2SO3(g)}$, the total pressure at equilibrium is 500 kPa. The mole fractions are: $x_{\ce{SO2}} = 0.10$, $x_{\ce{O2}} = 0.20$, $x_{\ce{SO3}} = 0.70$. Calculate $K_p$.</p>
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">$p_{\ce{SO2}} = 0.10 \times 500 = 50$ kPa, $p_{\ce{O2}} = 0.20 \times 500 = 100$ kPa, $p_{\ce{SO3}} = 0.70 \times 500 = 350$ kPa. $K_p = (350)^2 / ((50)^2 \times 100) = 122500 / (2500 \times 100) = 122500 / 250000 = 0.49$. Units: kPa⁻¹. (Δn = 2−3 = −1.)</div>
 </div>
-
 <h2>5. The Relationship: $K_p = K_c(RT)^{\Delta n}$</h2>
-
 <p>For a gaseous equilibrium, $K_p$ and $K_c$ are related through the ideal gas law. Starting from $p_i = (n_i/V)RT = [i]RT$:</p>
-
 <div class="definition">
 $$K_p = K_c(RT)^{\Delta n}$$
 where $\Delta n$ = (moles of gaseous products) − (moles of gaseous reactants), $R = 8.31$ J K⁻¹ mol⁻¹ (if using Pa), and $T$ is in kelvin.
 </div>
-
 <p><b>Important:</b> If you use $R = 8.31$ (J K⁻¹ mol⁻¹ = Pa m³ K⁻¹ mol⁻¹), partial pressures must be in <b>Pa</b> and $K_c$ must use concentrations in <b>mol m⁻³</b>. In practice, IB often gives pressures in kPa — be careful with unit conversions, or use $R = 8.31 \times 10^{-3}$ kPa m³ K⁻¹ mol⁻¹ when $p$ is in kPa and concentration is in mol dm⁻³: the effective constant becomes $RT$ in appropriate units.</p>
-
 <div class="check-in">
-<p><b>Check-in:</b> For $\ce{N2O4(g) <=> 2NO2(g)}$ at 298 K, $K_c = 0.0058$ mol dm⁻³. Calculate $K_p$ in kPa. ($R = 8.31$ J K⁻¹ mol⁻¹)</p>
+<p><b>Check-in:</b> For $\ce{N2O4(g) &lt;=&gt; 2NO2(g)}$ at 298 K, $K_c = 0.0058$ mol dm⁻³. Calculate $K_p$ in kPa. ($R = 8.31$ J K⁻¹ mol⁻¹)</p>
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">Δn = 2−1 = 1. $RT = 8.31 \times 298 = 2476$ J mol⁻¹. But $K_c$ is in mol dm⁻³ and $K_p$ should be in kPa. We need: $K_p = K_c \times (RT)^{\Delta n}$, with care on units. Using $R = 0.008314$ kPa m³ K⁻¹ mol⁻¹ and noting 1 m³ = 1000 dm³, $R$ (adjusted) = 8.314 kPa dm³ K⁻¹ mol⁻¹. $RT = 8.314 \times 298 = 2478$ kPa dm³ mol⁻¹. $K_p = 0.0058 \times 2478 = 14.4$ kPa. Units: kPa¹.</div>
 </div>
-
 <h2>6. Worked Examples</h2>
-
 <div class="example">
-<b>Example 1 — Calculating $K_p$ from Initial Amounts and Total Pressure:</b><br><br>
-0.200 mol of $\ce{PCl5}$ is heated to 500 K in a container. At equilibrium, the total pressure is 300 kPa and the mixture contains 0.120 mol of $\ce{PCl5}$: $\ce{PCl5(g) <=> PCl3(g) + Cl2(g)}$. Find $K_p$.<br><br>
-<b>Solution:</b> ICE in moles: I = [0.200, 0, 0]; C = [−x, +x, +x]; E = [0.200−x, x, x]. Given 0.200−x = 0.120 → $x = 0.080$. E: n(PCl₅) = 0.120, n(PCl₃) = 0.080, n(Cl₂) = 0.080. $n_{\text{total}} = 0.280$ mol.<br>
-Mole fractions: $x_{\ce{PCl5}} = 0.120/0.280 = 0.4286$, $x_{\ce{PCl3}} = x_{\ce{Cl2}} = 0.080/0.280 = 0.2857$.<br>
-Partial pressures: $p_{\ce{PCl5}} = 0.4286 \times 300 = 128.6$ kPa, $p_{\ce{PCl3}} = p_{\ce{Cl2}} = 85.7$ kPa.<br>
-$K_p = (85.7 \times 85.7) / 128.6 = 7344 / 128.6 = \mathbf{57.1\text{ kPa}}$ (units: kPa¹).<br><br>
+<b>Example 1 — Calculating $K_p$ from Initial Amounts and Total Pressure:</b><br/><br/>
+0.200 mol of $\ce{PCl5}$ is heated to 500 K in a container. At equilibrium, the total pressure is 300 kPa and the mixture contains 0.120 mol of $\ce{PCl5}$: $\ce{PCl5(g) &lt;=&gt; PCl3(g) + Cl2(g)}$. Find $K_p$.<br/><br/>
+<b>Solution:</b> ICE in moles: I = [0.200, 0, 0]; C = [−x, +x, +x]; E = [0.200−x, x, x]. Given 0.200−x = 0.120 → $x = 0.080$. E: n(PCl₅) = 0.120, n(PCl₃) = 0.080, n(Cl₂) = 0.080. $n_{\text{total}} = 0.280$ mol.<br/>
+Mole fractions: $x_{\ce{PCl5}} = 0.120/0.280 = 0.4286$, $x_{\ce{PCl3}} = x_{\ce{Cl2}} = 0.080/0.280 = 0.2857$.<br/>
+Partial pressures: $p_{\ce{PCl5}} = 0.4286 \times 300 = 128.6$ kPa, $p_{\ce{PCl3}} = p_{\ce{Cl2}} = 85.7$ kPa.<br/>
+$K_p = (85.7 \times 85.7) / 128.6 = 7344 / 128.6 = \mathbf{57.1\text{ kPa}}$ (units: kPa¹).<br/><br/>
 <b>⚠️ Common wrong approach:</b> Using initial moles instead of equilibrium moles to calculate mole fractions. The total moles change during the reaction because Δn ≠ 0 — $n_{\text{total}}$ at equilibrium must be calculated from the E row, not the I row.
 </div>
-
 <div class="example">
-<b>Example 2 — $K_p$ to $K_c$ Conversion:</b><br><br>
-For $\ce{2HI(g) <=> H2(g) + I2(g)}$ at 700 K, $K_p = 0.020$. Calculate $K_c$.<br><br>
-<b>Solution:</b> Δn = (1+1) − 2 = 0. Since Δn = 0, $K_p = K_c(RT)^0 = K_c$. Therefore, $K_c = \mathbf{0.020}$ (dimensionless). When Δn = 0, $K_p$ and $K_c$ are numerically equal and both dimensionless. This is a time-saving insight — always check Δn first.<br><br>
-<b>⚠️ Common wrong approach:</b> Assuming $K_p$ and $K_c$ always differ. They are equal whenever the number of moles of gas is the same on both sides. For $\ce{H2 + I2 <=> 2HI}$, both sides have 2 moles → $K_p = K_c$ at all temperatures.
+<b>Example 2 — $K_p$ to $K_c$ Conversion:</b><br/><br/>
+For $\ce{2HI(g) &lt;=&gt; H2(g) + I2(g)}$ at 700 K, $K_p = 0.020$. Calculate $K_c$.<br/><br/>
+<b>Solution:</b> Δn = (1+1) − 2 = 0. Since Δn = 0, $K_p = K_c(RT)^0 = K_c$. Therefore, $K_c = \mathbf{0.020}$ (dimensionless). When Δn = 0, $K_p$ and $K_c$ are numerically equal and both dimensionless. This is a time-saving insight — always check Δn first.<br/><br/>
+<b>⚠️ Common wrong approach:</b> Assuming $K_p$ and $K_c$ always differ. They are equal whenever the number of moles of gas is the same on both sides. For $\ce{H2 + I2 &lt;=&gt; 2HI}$, both sides have 2 moles → $K_p = K_c$ at all temperatures.
 </div>
-
 <div class="example">
-<b>Example 3 — $K_p$ from $K_c$ with Unit Conversion:</b><br><br>
-For $\ce{N2(g) + 3H2(g) <=> 2NH3(g)}$ at 673 K, $K_c = 0.50$ dm⁶ mol⁻². Calculate $K_p$ in atm. ($R = 0.0821$ dm³ atm K⁻¹ mol⁻¹)<br><br>
-<b>Solution:</b> Δn = 2 − 4 = −2. $RT = 0.0821 \times 673 = 55.25$ dm³ atm mol⁻¹.<br>
-$K_p = K_c \times (RT)^{-2} = 0.50 / (55.25)^2 = 0.50 / 3052 = \mathbf{1.64 \times 10^{-4}\text{ atm}^{-2}}$.<br><br>
+<b>Example 3 — $K_p$ from $K_c$ with Unit Conversion:</b><br/><br/>
+For $\ce{N2(g) + 3H2(g) &lt;=&gt; 2NH3(g)}$ at 673 K, $K_c = 0.50$ dm⁶ mol⁻². Calculate $K_p$ in atm. ($R = 0.0821$ dm³ atm K⁻¹ mol⁻¹)<br/><br/>
+<b>Solution:</b> Δn = 2 − 4 = −2. $RT = 0.0821 \times 673 = 55.25$ dm³ atm mol⁻¹.<br/>
+$K_p = K_c \times (RT)^{-2} = 0.50 / (55.25)^2 = 0.50 / 3052 = \mathbf{1.64 \times 10^{-4}\text{ atm}^{-2}}$.<br/><br/>
 Note how the large $RT$ value (55.25) squared makes $K_p$ much smaller than $K_c$ when Δn is negative. The conversion is highly sensitive to $T$ and Δn.
 </div>
-
 <div class="misconception">
 <h3>⚠️ Common Mistakes to Avoid</h3>
 <ol>
-  <li><b>"Mole fraction is moles of that gas divided by volume."</b> No. Mole fraction is $n_i / n_{\text{total}}$ — it is dimensionless, based on moles, not concentration. It does not depend on volume.</li>
-  <li><b>"$K_p$ has the same numerical value as $K_c$."</b> Only when Δn = 0. When Δn ≠ 0, they are related by $(RT)^{\Delta n}$, which can differ by many orders of magnitude.</li>
-  <li><b>"Adding an inert gas at constant volume changes partial pressures and shifts equilibrium."</b> Adding an inert gas at constant volume increases total pressure but does <b>not</b> change the partial pressures of reactants or products (their mole fractions decrease proportionally, but their partial pressures remain unchanged because $p_i = (n_i/V)RT$ and $n_i/V$ is unchanged). Therefore, $Q_p$ is unchanged and equilibrium does <b>not</b> shift.</li>
-  <li><b>"The total pressure at equilibrium equals the initial pressure."</b> Only if Δn = 0. If the number of moles of gas changes during reaction, the total pressure changes even at constant volume and temperature, because $P \propto n_{\text{total}}$.</li>
-  <li><b>"$K_p$ changes when the total pressure changes."</b> No. Like $K_c$, $K_p$ depends only on temperature. Changing the total pressure (by changing volume) shifts the position of equilibrium (by Le Chatelier) but does not change $K_p$.</li>
+<li><b>"Mole fraction is moles of that gas divided by volume."</b> No. Mole fraction is $n_i / n_{\text{total}}$ — it is dimensionless, based on moles, not concentration. It does not depend on volume.</li>
+<li><b>"$K_p$ has the same numerical value as $K_c$."</b> Only when Δn = 0. When Δn ≠ 0, they are related by $(RT)^{\Delta n}$, which can differ by many orders of magnitude.</li>
+<li><b>"Adding an inert gas at constant volume changes partial pressures and shifts equilibrium."</b> Adding an inert gas at constant volume increases total pressure but does <b>not</b> change the partial pressures of reactants or products (their mole fractions decrease proportionally, but their partial pressures remain unchanged because $p_i = (n_i/V)RT$ and $n_i/V$ is unchanged). Therefore, $Q_p$ is unchanged and equilibrium does <b>not</b> shift.</li>
+<li><b>"The total pressure at equilibrium equals the initial pressure."</b> Only if Δn = 0. If the number of moles of gas changes during reaction, the total pressure changes even at constant volume and temperature, because $P \propto n_{\text{total}}$.</li>
+<li><b>"$K_p$ changes when the total pressure changes."</b> No. Like $K_c$, $K_p$ depends only on temperature. Changing the total pressure (by changing volume) shifts the position of equilibrium (by Le Chatelier) but does not change $K_p$.</li>
 </ol>
 </div>
-
 <h2>6. End-of-Lesson Practice</h2>
-
-<p><b>Question 1 (Paper 1 style):</b> For which reaction does $K_p = K_c$?<br>
-A. $\ce{N2 + 3H2 <=> 2NH3}$ &nbsp; B. $\ce{PCl5 <=> PCl3 + Cl2}$ &nbsp; C. $\ce{H2 + I2 <=> 2HI}$ &nbsp; D. $\ce{2SO2 + O2 <=> 2SO3}$</p>
-
-<p><b>Question 2:</b> At equilibrium for $\ce{2NO2(g) <=> N2O4(g)}$, $x_{\ce{NO2}} = 0.30$, $x_{\ce{N2O4}} = 0.70$, and $P_{\text{total}} = 150$ kPa. Calculate $K_p$ with units.</p>
-
-<p><b>Question 3:</b> 0.500 mol $\ce{SO2Cl2}$ is heated at 375 K: $\ce{SO2Cl2(g) <=> SO2(g) + Cl2(g)}$. At equilibrium, $n_{\text{total}} = 0.700$ mol and $P_{\text{total}} = 250$ kPa. Calculate $K_p$.</p>
-
-<p><b>Question 4:</b> For $\ce{2NH3(g) <=> N2(g) + 3H2(g)}$ at 298 K, $K_c = 2.5 \times 10^{-8}$ mol² dm⁻⁶. Calculate $K_p$ in kPa. ($R = 8.31$ J K⁻¹ mol⁻¹)</p>
-
-<p><b>Question 5:</b> $\ce{COCl2(g) <=> CO(g) + Cl2(g)}$. At 600 K, $K_p = 12.5$ kPa. Initially, $p_{\ce{COCl2}} = 80$ kPa with no CO or Cl₂. Calculate the equilibrium partial pressures of all species.</p>
-
-<p><b>Question 6 (IB multi-step):</b> 1.00 mol of $\ce{N2O4}$ is placed in a sealed container at 350 K. At equilibrium, 20% has dissociated: $\ce{N2O4(g) <=> 2NO2(g)}$. The total pressure is 180 kPa.<br>(a) Calculate the equilibrium moles of each species.<br>(b) Calculate mole fractions and partial pressures.<br>(c) Calculate $K_p$ with units.<br>(d) Using $R = 8.31$, calculate $K_c$.</p>
-
+<p><b>Question 1 (Paper 1 style):</b> For which reaction does $K_p = K_c$?<br/>
+A. $\ce{N2 + 3H2 &lt;=&gt; 2NH3}$   B. $\ce{PCl5 &lt;=&gt; PCl3 + Cl2}$   C. $\ce{H2 + I2 &lt;=&gt; 2HI}$   D. $\ce{2SO2 + O2 &lt;=&gt; 2SO3}$</p>
+<p><b>Question 2:</b> At equilibrium for $\ce{2NO2(g) &lt;=&gt; N2O4(g)}$, $x_{\ce{NO2}} = 0.30$, $x_{\ce{N2O4}} = 0.70$, and $P_{\text{total}} = 150$ kPa. Calculate $K_p$ with units.</p>
+<p><b>Question 3:</b> 0.500 mol $\ce{SO2Cl2}$ is heated at 375 K: $\ce{SO2Cl2(g) &lt;=&gt; SO2(g) + Cl2(g)}$. At equilibrium, $n_{\text{total}} = 0.700$ mol and $P_{\text{total}} = 250$ kPa. Calculate $K_p$.</p>
+<p><b>Question 4:</b> For $\ce{2NH3(g) &lt;=&gt; N2(g) + 3H2(g)}$ at 298 K, $K_c = 2.5 \times 10^{-8}$ mol² dm⁻⁶. Calculate $K_p$ in kPa. ($R = 8.31$ J K⁻¹ mol⁻¹)</p>
+<p><b>Question 5:</b> $\ce{COCl2(g) &lt;=&gt; CO(g) + Cl2(g)}$. At 600 K, $K_p = 12.5$ kPa. Initially, $p_{\ce{COCl2}} = 80$ kPa with no CO or Cl₂. Calculate the equilibrium partial pressures of all species.</p>
+<p><b>Question 6 (IB multi-step):</b> 1.00 mol of $\ce{N2O4}$ is placed in a sealed container at 350 K. At equilibrium, 20% has dissociated: $\ce{N2O4(g) &lt;=&gt; 2NO2(g)}$. The total pressure is 180 kPa.<br/>(a) Calculate the equilibrium moles of each species.<br/>(b) Calculate mole fractions and partial pressures.<br/>(c) Calculate $K_p$ with units.<br/>(d) Using $R = 8.31$, calculate $K_c$.</p>
 <button class="practice-toggle" onclick="var a=this.nextElementSibling;a.classList.toggle('open');this.textContent=a.classList.contains('open')?'▴ Hide Answers':'▸ Show Answers'">▸ Show Answers</button>
 <div class="practice-answers">
-
-<p><b>Answer 1:</b> C. $\ce{H2 + I2 <=> 2HI}$ has 2 moles on both sides → Δn = 0 → $K_p = K_c$. All others have Δn ≠ 0.</p>
-
+<p><b>Answer 1:</b> C. $\ce{H2 + I2 &lt;=&gt; 2HI}$ has 2 moles on both sides → Δn = 0 → $K_p = K_c$. All others have Δn ≠ 0.</p>
 <p><b>Answer 2:</b> $p_{\ce{NO2}} = 0.30 \times 150 = 45$ kPa, $p_{\ce{N2O4}} = 0.70 \times 150 = 105$ kPa. $K_p = 105/(45)^2 = 105/2025 = \mathbf{0.0519\text{ kPa}^{-1}}$.</p>
-
 <p><b>Answer 3:</b> ICE: n₀(SO₂Cl₂) = 0.500. At equilibrium: 0.500−x + x + x = 0.700 → $x = 0.200$. n(SO₂Cl₂) = 0.300, n(SO₂) = n(Cl₂) = 0.200. $x_{\ce{SO2Cl2}} = 0.300/0.700 = 0.4286$, $x_{\ce{SO2}} = x_{\ce{Cl2}} = 0.200/0.700 = 0.2857$. $p_{\ce{SO2Cl2}} = 107.2$, $p_{\ce{SO2}} = p_{\ce{Cl2}} = 71.4$ kPa. $K_p = (71.4\times71.4)/107.2 = \mathbf{47.6\text{ kPa}}$.</p>
-
 <p><b>Answer 4:</b> Δn = (1+3) − 2 = +2. $RT = 8.31 \times 298 = 2476$ J mol⁻¹. But careful: $K_c$ in mol² dm⁻⁶ → need consistent units. $R = 8.314$ kPa dm³ K⁻¹ mol⁻¹. $RT = 8.314 \times 298 = 2478$ kPa dm³ mol⁻¹. $K_p = K_c(RT)^2 = 2.5\times10^{-8} \times (2478)^2 = 2.5\times10^{-8} \times 6.14\times10^6 = \mathbf{0.154\text{ kPa}^2}$.</p>
-
 <p><b>Answer 5:</b> ICE in pressures: I = [80, 0, 0]; C = [−p, +p, +p]; E = [80−p, p, p]. $K_p = p^2/(80-p) = 12.5$. $p^2 = 1000 - 12.5p$ → $p^2 + 12.5p - 1000 = 0$. $p = (-12.5 + \sqrt{156.25 + 4000})/2 = (-12.5 + 64.5)/2 = 26.0$ kPa. Equil: $p_{\ce{COCl2}} = 54.0$ kPa, $p_{\ce{CO}} = p_{\ce{Cl2}} = 26.0$ kPa. Check: $(26)^2/54 = 676/54 = 12.5$ ✓.</p>
-
 <p><b>Answer 6:</b> (a) 20% dissociated → 0.20 mol N₂O₄ reacted. n(N₂O₄)eq = 0.80, n(NO₂)eq = 2×0.20 = 0.40. $n_{\text{total}} = 1.20$. (b) $x_{\ce{N2O4}} = 0.80/1.20 = 0.667$, $x_{\ce{NO2}} = 0.40/1.20 = 0.333$. $p_{\ce{N2O4}} = 0.667\times180 = 120$ kPa, $p_{\ce{NO2}} = 0.333\times180 = 60$ kPa. (c) $K_p = (60)^2/120 = 3600/120 = 30$ kPa. (d) Δn = 1. $K_p = K_c(RT)$. Need RT in kPa dm³ mol⁻¹: $RT = 8.314\times350 = 2910$ kPa dm³ mol⁻¹. $K_c = 30/2910 = \mathbf{0.0103\text{ mol dm}^{-3}}$.</p>
 </div>
-
 <h2>7. Key Terms</h2>
 <table>
 <tr><th>Term</th><th>Definition</th></tr>
@@ -253,14 +219,137 @@ A. $\ce{N2 + 3H2 <=> 2NH3}$ &nbsp; B. $\ce{PCl5 <=> PCl3 + Cl2}$ &nbsp; C. $\ce{
 <tr><td>$K_p = K_c(RT)^{\Delta n}$</td><td>Relationship linking the two equilibrium constants; depends on Δn and temperature</td></tr>
 <tr><td>Δn (for $K_p$)</td><td>Change in moles of <b>gas</b> only: (gaseous products) − (gaseous reactants)</td></tr>
 </table>
-
 <h2>8. Exam Tips</h2>
-
 <div class="exam-tip"><b>Paper 2 (Structured):</b> $K_p$ calculations follow the same ICE logic as $K_c$, but track <b>moles</b> in the table, then convert to partial pressures. The most commonly missed step: recalculating $n_{\text{total}}$ at equilibrium (it changes when Δn ≠ 0). Always write: "$n_{\text{total}} = \text{sum of E row}$" before calculating mole fractions.</div>
-
 <div class="exam-tip"><b>Unit Conversion for $K_p \leftrightarrow K_c$:</b> When using $R = 8.31$ J K⁻¹ mol⁻¹, remember this is Pa m³ K⁻¹ mol⁻¹. If $K_c$ is in mol dm⁻³, convert: 1 mol dm⁻³ = 1000 mol m⁻³. Alternatively, use $R = 8.314$ kPa dm³ K⁻¹ mol⁻¹ if pressures are in kPa — this avoids cubic-metre conversions and is safer for IB.</div>
-
 <div class="exam-tip"><b>Paper 1 Trap:</b> Adding inert gas questions are common. At <b>constant volume</b>: adding inert gas increases $P_{\text{total}}$ but does NOT change partial pressures of reacting gases → $Q_p = K_p$ → no shift. At <b>constant pressure</b>: adding inert gas increases volume, decreasing all partial pressures proportionally, which <b>may</b> shift equilibrium if Δn ≠ 0 (like a pressure decrease). Know the distinction.</div>
 
+<div class="lesson-actions" style="margin: 2rem 0; padding: 1.5rem; background: #f8fafc; border-radius: 8px; display: flex; gap: 1rem; flex-wrap: wrap;">
+<button class="action-btn" id="generate-flashcards-btn" style="padding: 0.75rem 1.5rem; background: #3b82f6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        🗂️ Generate Flashcards
+    </button>
+<button class="action-btn" id="practice-problems-btn" style="padding: 0.75rem 1.5rem; background: #10b981; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        ✏️ Practice Problems
+    </button>
+<button class="action-btn" id="ask-ai-btn" style="padding: 0.75rem 1.5rem; background: #8b5cf6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        💬 Ask AI
+    </button>
+</div>
+<script>
+(function() {
+    const subjectKey = "chemistry";
+    const lessonId = "lesson_26";
+    const lessonTitle = "Lesson 26: $K_p$ & Advanced Equilibrium (HL)";
+
+    function getCsrf() {
+        var m = document.querySelector('meta[name="csrf-token"]');
+        return m ? m.getAttribute('content') : '';
+    }
+
+    // Completion checkbox
+    const checkbox = document.getElementById('lesson-complete');
+    if (checkbox) {
+        // Load saved state
+        const saved = localStorage.getItem(`completed_${subjectKey}_${lessonId}`);
+        if (saved === 'true') checkbox.checked = true;
+
+        checkbox.addEventListener('change', async function() {
+            const completed = this.checked;
+            localStorage.setItem(`completed_${subjectKey}_${lessonId}`, completed);
+
+            try {
+                await fetch('/toggle_completion', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': getCsrf()
+                    },
+                    body: JSON.stringify({
+                        subject: subjectKey,
+                        lesson: lessonId,
+                        completed: completed
+                    })
+                });
+            } catch(e) {
+                console.error('Error saving completion:', e);
+            }
+        });
+    }
+
+    // Generate Flashcards
+    const flashcardsBtn = document.getElementById('generate-flashcards-btn');
+    if (flashcardsBtn) {
+        flashcardsBtn.addEventListener('click', async function() {
+            this.disabled = true;
+            this.textContent = '⏳ Generating...';
+
+            try {
+                const content = document.body.innerText.substring(0, 2000);
+                const response = await fetch('/generate_flashcards', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': getCsrf()
+                    },
+                    body: JSON.stringify({
+                        subject: subjectKey,
+                        lesson: lessonTitle,
+                        content_summary: content
+                    })
+                });
+
+                const data = await response.json();
+                if (data.error) {
+                    alert('Error: ' + data.error);
+                } else {
+                    alert(`✅ Created ${data.count} flashcards! View them at /flashcards/${subjectKey}`);
+                }
+            } catch(e) {
+                alert('Error generating flashcards: ' + e.message);
+            } finally {
+                this.disabled = false;
+                this.textContent = '🗂️ Generate Flashcards';
+            }
+        });
+    }
+
+    // Practice Problems - open in new section
+    const practiceBtn = document.getElementById('practice-problems-btn');
+    if (practiceBtn) {
+        practiceBtn.addEventListener('click', function() {
+            alert('Practice problems feature coming soon! Use the AI chatbot to generate custom questions.');
+        });
+    }
+
+    // Ask AI - scroll to chatbot
+    const aiBtn = document.getElementById('ask-ai-btn');
+    if (aiBtn) {
+        aiBtn.addEventListener('click', function() {
+            const chatbot = document.getElementById('lessons-chatbot');
+            if (chatbot) {
+                chatbot.scrollIntoView({ behavior: 'smooth' });
+                const toggleBtn = chatbot.querySelector('.chatbot-toggle');
+                if (toggleBtn) toggleBtn.click();
+            } else {
+                alert('AI chatbot not available on this page. It will be added soon!');
+            }
+        });
+    }
+
+    // Track lesson view
+    fetch('/mark_viewed', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': getCsrf()
+        },
+        body: JSON.stringify({
+            subject: subjectKey,
+            lesson: lessonId
+        })
+    }).catch(e => console.error('Error tracking view:', e));
+
+})();
+</script>
 </body>
 </html>

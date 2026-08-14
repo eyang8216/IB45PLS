@@ -1,14 +1,15 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lesson 30 — Chemistry HL — Titration Curves & Indicators</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lesson 30 — Chemistry HL — Titration Curves &amp; Indicators</title>
 <script>
 window.MathJax = {tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] },
   loader: { load: ['[tex]/mhchem'] }};
 </script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <style>
 :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f2d; --border: #d4c5a9; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -42,120 +43,105 @@ pre.ascii-art { font-family: 'Courier New', monospace; font-size: 0.75rem; line-
 </style>
 </head>
 <body>
-
-<h1>Lesson 30: Titration Curves & Indicators</h1>
-
+<h1>Lesson 30: Titration Curves &amp; Indicators</h1>
 <p><b>Syllabus reference:</b> 18.3–18.4 (HL) — pH Curves, Buffer Regions, Acid–Base Indicators</p>
-
 <!-- SECTION A -->
 <div class="objectives">
 <h3>Learning Objectives</h3>
 <p>By the end of this lesson, you will be able to:</p>
 <ul>
-  <li><b>Sketch and interpret</b> pH titration curves for all four acid–base combinations (SA–SB, SA–WB, WA–SB, WA–WB).</li>
-  <li><b>Identify</b> key features: initial pH, buffer region, equivalence point, and the vertical jump.</li>
-  <li><b>Select</b> an appropriate indicator for a given titration using pKIn values.</li>
-  <li><b>Explain</b> why the equivalence point pH varies depending on the acid–base combination.</li>
+<li><b>Sketch and interpret</b> pH titration curves for all four acid–base combinations (SA–SB, SA–WB, WA–SB, WA–WB).</li>
+<li><b>Identify</b> key features: initial pH, buffer region, equivalence point, and the vertical jump.</li>
+<li><b>Select</b> an appropriate indicator for a given titration using pKIn values.</li>
+<li><b>Explain</b> why the equivalence point pH varies depending on the acid–base combination.</li>
 </ul>
 </div>
-
 <!-- SECTION B -->
-<h2>1. Prior Knowledge Check</h2>
 
+<div class="lesson-completion" style="margin: 1rem 0; padding: 1rem; background: #f0f9ff; border-radius: 8px;">
+<label class="completion-checkbox" style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer;">
+<input id="lesson-complete" style="width: 24px; height: 24px; cursor: pointer; accent-color: #10b981;" type="checkbox"/>
+<span style="font-size: 1rem; color: #0f172a; font-weight: 500;">✓ Mark this lesson as complete</span>
+</label>
+</div>
+<h2>1. Prior Knowledge Check</h2>
 <p><b>Question 1:</b> Define the <b>equivalence point</b> and the <b>end point</b> in a titration.</p>
 <div class="check-in">
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content"><b>Equivalence point:</b> The point where exactly enough titrant has been added to react completely with the analyte (stoichiometric equivalence). <b>End point:</b> The point where the indicator changes colour. Ideally these coincide, but in practice there is a small difference (titration error).</div>
 </div>
-
 <p><b>Question 2:</b> What is the pH of pure water at 298 K? What happens to this pH if salt is dissolved in it?</p>
 <div class="check-in">
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
-<div class="answer-content">pH = 7.00 at 298 K. Dissolving a salt may change the pH if the ions undergo hydrolysis — e.g., $\ce{CH3COONa}$ produces a basic solution (pH > 7), while $\ce{NH4Cl}$ produces an acidic solution (pH < 7).</div>
+<div class="answer-content">pH = 7.00 at 298 K. Dissolving a salt may change the pH if the ions undergo hydrolysis — e.g., $\ce{CH3COONa}$ produces a basic solution (pH &gt; 7), while $\ce{NH4Cl}$ produces an acidic solution (pH &lt; 7).</div>
 </div>
-
 <!-- SECTION C -->
 <h2>2. The Four Types of Titration Curves</h2>
-
 <p>A <b>pH titration curve</b> plots pH (y-axis) against volume of titrant added (x-axis). The shape reveals whether the acid and base are strong or weak. The IB expects you to recognise and sketch all four combinations.</p>
-
 <h3>2.1 Strong Acid + Strong Base (SA–SB)</h3>
-
-<p><b>Example:</b> $\ce{HCl + NaOH -> NaCl + H2O}$. The salt ($\ce{NaCl}$) is neutral — no hydrolysis. <b>Equivalence point pH = 7.00.</b> The vertical jump is large: pH ~3 to ~11 over a few drops.</p>
-
+<p><b>Example:</b> $\ce{HCl + NaOH -&gt; NaCl + H2O}$. The salt ($\ce{NaCl}$) is neutral — no hydrolysis. <b>Equivalence point pH = 7.00.</b> The vertical jump is large: pH ~3 to ~11 over a few drops.</p>
 <div class="diagram">
-<svg width="500" height="320" viewBox="0 0 500 320">
-  <text x="250" y="18" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c5f2d">SA–SB: HCl + NaOH</text>
-  <line x1="60" y1="30" x2="60" y2="280" stroke="#333" stroke-width="2"/>
-  <line x1="60" y1="280" x2="470" y2="280" stroke="#333" stroke-width="2"/>
-  <text x="250" y="305" text-anchor="middle" font-size="11">Volume NaOH / cm³</text>
-  <text x="15" y="155" text-anchor="middle" font-size="11" transform="rotate(-90,15,155)">pH</text>
-  <!-- axis labels -->
-  <text x="60" y="295" text-anchor="middle" font-size="10">0</text><text x="240" y="295" text-anchor="middle" font-size="10">25</text><text x="410" y="295" text-anchor="middle" font-size="10">50</text>
-  <text x="50" y="283" text-anchor="end" font-size="10">0</text><text x="50" y="196" text-anchor="end" font-size="10">7</text><text x="50" y="108" text-anchor="end" font-size="10">14</text>
-  <line x1="220" y1="30" x2="220" y2="275" stroke="#aaa" stroke-dasharray="5,3"/>
-  <!-- curve: SA-SB -->
-  <path d="M60,103 L140,105 L160,115 L180,130 Q200,155 220,196 Q240,245 260,260 L400,272 L460,275" fill="none" stroke="#c62828" stroke-width="2.5"/>
-  <text x="380" y="120" font-size="11" fill="#c62828">Equiv. pt: pH=7</text>
-  <!-- vertical region shaded -->
-  <rect x="200" y="30" width="40" height="250" fill="#e8f5e9" fill-opacity="0.4"/>
-  <text x="220" y="50" text-anchor="middle" font-size="10" fill="#2c5f2d">Vertical</text>
-  <text x="220" y="62" text-anchor="middle" font-size="10" fill="#2c5f2d">jump</text>
+<svg height="320" viewbox="0 0 500 320" width="500">
+<text fill="#2c5f2d" font-size="14" font-weight="bold" text-anchor="middle" x="250" y="18">SA–SB: HCl + NaOH</text>
+<line stroke="#333" stroke-width="2" x1="60" x2="60" y1="30" y2="280"></line>
+<line stroke="#333" stroke-width="2" x1="60" x2="470" y1="280" y2="280"></line>
+<text font-size="11" text-anchor="middle" x="250" y="305">Volume NaOH / cm³</text>
+<text font-size="11" text-anchor="middle" transform="rotate(-90,15,155)" x="15" y="155">pH</text>
+<!-- axis labels -->
+<text font-size="10" text-anchor="middle" x="60" y="295">0</text><text font-size="10" text-anchor="middle" x="240" y="295">25</text><text font-size="10" text-anchor="middle" x="410" y="295">50</text>
+<text font-size="10" text-anchor="end" x="50" y="283">0</text><text font-size="10" text-anchor="end" x="50" y="196">7</text><text font-size="10" text-anchor="end" x="50" y="108">14</text>
+<line stroke="#aaa" stroke-dasharray="5,3" x1="220" x2="220" y1="30" y2="275"></line>
+<!-- curve: SA-SB -->
+<path d="M60,103 L140,105 L160,115 L180,130 Q200,155 220,196 Q240,245 260,260 L400,272 L460,275" fill="none" stroke="#c62828" stroke-width="2.5"></path>
+<text fill="#c62828" font-size="11" x="380" y="120">Equiv. pt: pH=7</text>
+<!-- vertical region shaded -->
+<rect fill="#e8f5e9" fill-opacity="0.4" height="250" width="40" x="200" y="30"></rect>
+<text fill="#2c5f2d" font-size="10" text-anchor="middle" x="220" y="50">Vertical</text>
+<text fill="#2c5f2d" font-size="10" text-anchor="middle" x="220" y="62">jump</text>
 </svg>
 <div class="caption">Figure 1: SA–SB titration curve. Starts low (pH ~1 for 0.1 mol dm⁻³ HCl), ends high (pH ~13). Equivalence at pH 7. Largest vertical jump of all four types.</div>
 </div>
-
 <h3>2.2 Weak Acid + Strong Base (WA–SB)</h3>
-
-<p><b>Example:</b> $\ce{CH3COOH + NaOH -> CH3COONa + H2O}$. The salt ($\ce{CH3COONa}$) is basic — acetate hydrolyses: $\ce{CH3COO- + H2O <=> CH3COOH + OH-}$. <b>Equivalence point pH > 7</b> (typically 8–10).</p>
-
+<p><b>Example:</b> $\ce{CH3COOH + NaOH -&gt; CH3COONa + H2O}$. The salt ($\ce{CH3COONa}$) is basic — acetate hydrolyses: $\ce{CH3COO- + H2O &lt;=&gt; CH3COOH + OH-}$. <b>Equivalence point pH &gt; 7</b> (typically 8–10).</p>
 <p>Key features: starts higher than SA–SB, has a <b>buffer region</b> (gentle slope near half-equivalence), pH = pKₐ at half-equivalence.</p>
-
 <div class="diagram">
-<svg width="500" height="320" viewBox="0 0 500 320">
-  <text x="250" y="18" text-anchor="middle" font-size="14" font-weight="bold" fill="#2c5f2d">WA–SB: CH₃COOH + NaOH</text>
-  <line x1="60" y1="30" x2="60" y2="280" stroke="#333" stroke-width="2"/>
-  <line x1="60" y1="280" x2="470" y2="280" stroke="#333" stroke-width="2"/>
-  <text x="250" y="305" text-anchor="middle" font-size="11">Volume NaOH / cm³</text>
-  <text x="15" y="155" text-anchor="middle" font-size="11" transform="rotate(-90,15,155)">pH</text>
-  <text x="60" y="295" text-anchor="middle" font-size="10">0</text><text x="240" y="295" text-anchor="middle" font-size="10">25</text><text x="410" y="295" text-anchor="middle" font-size="10">50</text>
-  <text x="50" y="283" text-anchor="end" font-size="10">0</text><text x="50" y="196" text-anchor="end" font-size="10">7</text><text x="50" y="108" text-anchor="end" font-size="10">14</text>
-  <line x1="220" y1="30" x2="220" y2="275" stroke="#aaa" stroke-dasharray="5,3"/>
-  <line x1="140" y1="30" x2="140" y2="275" stroke="#aaa" stroke-dasharray="3,3"/>
-  <!-- curve -->
-  <path d="M60,155 L100,165 L130,175 Q140,180 150,185 L180,200 Q200,215 220,240 Q240,255 260,262 L380,272 L460,275" fill="none" stroke="#2c5f2d" stroke-width="2.5"/>
-  <text x="370" y="120" font-size="11" fill="#2c5f2d">Equiv. pt</text>
-  <text x="370" y="134" font-size="11" fill="#2c5f2d">pH ≈ 8.7</text>
-  <!-- buffer region -->
-  <rect x="100" y="30" width="80" height="250" fill="#fff8e1" fill-opacity="0.5"/>
-  <text x="140" y="260" text-anchor="middle" font-size="9" fill="#d4a017">Buffer</text>
-  <text x="140" y="272" text-anchor="middle" font-size="9" fill="#d4a017">region</text>
-  <!-- half-equivalence -->
-  <circle cx="140" cy="178" r="4" fill="#e65100"/>
-  <text x="160" y="178" font-size="9" fill="#e65100">½ equiv: pH=pKa</text>
+<svg height="320" viewbox="0 0 500 320" width="500">
+<text fill="#2c5f2d" font-size="14" font-weight="bold" text-anchor="middle" x="250" y="18">WA–SB: CH₃COOH + NaOH</text>
+<line stroke="#333" stroke-width="2" x1="60" x2="60" y1="30" y2="280"></line>
+<line stroke="#333" stroke-width="2" x1="60" x2="470" y1="280" y2="280"></line>
+<text font-size="11" text-anchor="middle" x="250" y="305">Volume NaOH / cm³</text>
+<text font-size="11" text-anchor="middle" transform="rotate(-90,15,155)" x="15" y="155">pH</text>
+<text font-size="10" text-anchor="middle" x="60" y="295">0</text><text font-size="10" text-anchor="middle" x="240" y="295">25</text><text font-size="10" text-anchor="middle" x="410" y="295">50</text>
+<text font-size="10" text-anchor="end" x="50" y="283">0</text><text font-size="10" text-anchor="end" x="50" y="196">7</text><text font-size="10" text-anchor="end" x="50" y="108">14</text>
+<line stroke="#aaa" stroke-dasharray="5,3" x1="220" x2="220" y1="30" y2="275"></line>
+<line stroke="#aaa" stroke-dasharray="3,3" x1="140" x2="140" y1="30" y2="275"></line>
+<!-- curve -->
+<path d="M60,155 L100,165 L130,175 Q140,180 150,185 L180,200 Q200,215 220,240 Q240,255 260,262 L380,272 L460,275" fill="none" stroke="#2c5f2d" stroke-width="2.5"></path>
+<text fill="#2c5f2d" font-size="11" x="370" y="120">Equiv. pt</text>
+<text fill="#2c5f2d" font-size="11" x="370" y="134">pH ≈ 8.7</text>
+<!-- buffer region -->
+<rect fill="#fff8e1" fill-opacity="0.5" height="250" width="80" x="100" y="30"></rect>
+<text fill="#d4a017" font-size="9" text-anchor="middle" x="140" y="260">Buffer</text>
+<text fill="#d4a017" font-size="9" text-anchor="middle" x="140" y="272">region</text>
+<!-- half-equivalence -->
+<circle cx="140" cy="178" fill="#e65100" r="4"></circle>
+<text fill="#e65100" font-size="9" x="160" y="178">½ equiv: pH=pKa</text>
 </svg>
 <div class="caption">Figure 2: WA–SB titration. Note the buffer region (gentle slope), half-equivalence point at pH = pKₐ, and equivalence point above pH 7.</div>
 </div>
-
 <h3>2.3 Strong Acid + Weak Base (SA–WB)</h3>
-
-<p><b>Example:</b> $\ce{HCl + NH3 -> NH4Cl}$. The salt ($\ce{NH4Cl}$) is acidic — ammonium hydrolyses: $\ce{NH4+ + H2O <=> NH3 + H3O+}$. <b>Equivalence point pH < 7</b> (typically 4–6). The buffer region after half-equivalence.</p>
-
+<p><b>Example:</b> $\ce{HCl + NH3 -&gt; NH4Cl}$. The salt ($\ce{NH4Cl}$) is acidic — ammonium hydrolyses: $\ce{NH4+ + H2O &lt;=&gt; NH3 + H3O+}$. <b>Equivalence point pH &lt; 7</b> (typically 4–6). The buffer region after half-equivalence.</p>
 <h3>2.4 Weak Acid + Weak Base (WA–WB)</h3>
-
 <p>No sharp vertical jump — you <b>cannot</b> use indicators for WA–WB titrations. The curve is very gradual, and the equivalence point is ill-defined. These titrations are done by conductometry, not indicators.</p>
-
 <div class="check-in">
 <p><b>Check-in:</b> For the titration of $\ce{NH3}$ (weak base) with $\ce{HCl}$ (strong acid), would the equivalence point pH be above, below, or equal to 7?</p>
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content"><b>Below 7</b> (typically pH 4–6). The product $\ce{NH4Cl}$ is acidic — $\ce{NH4+}$ is a weak acid that donates H⁺ to water, making the solution acidic at the equivalence point.</div>
 </div>
-
 <h2>3. Acid–Base Indicators</h2>
-
 <p>An <b>indicator</b> is itself a weak acid ($\ce{HIn}$) whose conjugate base ($\ce{In-}$) has a different colour:</p>
 
-$$\ce{HIn <=> H+ + In-}$$
+$$\ce{HIn &lt;=&gt; H+ + In-}$$
 $$\text{colour 1} \qquad \text{colour 2}$$
 
 <p>The indicator's colour depends on the pH of the solution. The <b>indicator dissociation constant</b> $K_{\mathrm{In}}$ determines the transition range:</p>
@@ -163,15 +149,12 @@ $$\text{colour 1} \qquad \text{colour 2}$$
 $$\mathrm{pH} = \mathrm{p}K_{\mathrm{In}} \pm 1$$
 
 <p>At $\mathrm{pH} = \mathrm{p}K_{\mathrm{In}}$, $[\ce{HIn}] = [\ce{In-}]$ and the indicator shows an intermediate colour. For a useful titration, the indicator must change colour <b>within the vertical jump</b> of the titration curve.</p>
-
 <div class="check-in">
 <p><b>Check-in:</b> Phenolphthalein has pKIn = 9.3 (colourless → pink). Methyl orange has pKIn = 3.7 (red → yellow). Which indicator would you use for (a) HCl + NaOH, (b) CH₃COOH + NaOH?</p>
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">(a) HCl + NaOH: equivalence at pH 7, vertical jump from ~3 to ~11 — <b>both</b> work (phenolphthalein better since its range 8.3–10 lies squarely in the jump). (b) CH₃COOH + NaOH: equivalence at pH ~8.7 — <b>phenolphthalein</b> (range 8.3–10) works well; methyl orange (range 3.1–4.4) would change colour far too early, well before the equivalence point.</div>
 </div>
-
 <h2>4. Selecting the Right Indicator</h2>
-
 <table>
 <tr><th>Titration type</th><th>Equiv. point pH</th><th>Suitable indicator</th><th>pKIn</th></tr>
 <tr><td>SA–SB</td><td>7.00</td><td>Bromothymol blue</td><td>7.0</td></tr>
@@ -179,82 +162,63 @@ $$\mathrm{pH} = \mathrm{p}K_{\mathrm{In}} \pm 1$$
 <tr><td>SA–WB</td><td>4–6</td><td>Methyl orange</td><td>3.7</td></tr>
 <tr><td>WA–WB</td><td>~7 (no jump)</td><td>None — use conductometry</td><td>—</td></tr>
 </table>
-
 <div class="check-in">
 <p><b>Check-in:</b> The titration of $\ce{Na2CO3}$ with $\ce{HCl}$ has two equivalence points. At the first (pH ~8.3), $\ce{CO3^{2-}}$ is converted to $\ce{HCO3-}$. At the second (pH ~3.8), $\ce{HCO3-}$ is converted to $\ce{H2CO3/CO2}$. Suggest indicators for each.</p>
 <span class="answer-toggle" onclick="var c=this.nextElementSibling;c.classList.toggle('open');this.textContent=c.classList.contains('open')?'▴ Hide':'▸ Show'">▸ Show</span>
 <div class="answer-content">First equivalence (pH ~8.3): <b>Phenolphthalein</b> (range 8.3–10.0, colourless→pink). Second equivalence (pH ~3.8): <b>Methyl orange</b> (range 3.1–4.4, yellow→red). This is a classic double-indicator titration for carbonate analysis.</div>
 </div>
-
 <!-- SECTION D -->
 <h2>5. Worked Examples</h2>
-
 <div class="example">
-<b>Example 1 — Sketching a Titration Curve:</b><br><br>
-Sketch the pH curve for 25.0 cm³ of 0.100 mol dm⁻³ $\ce{HCl}$ titrated with 0.100 mol dm⁻³ $\ce{NaOH}$. Label the initial pH, equivalence volume, equivalence pH, and the vertical region.<br><br>
-<b>Step 1 — Initial pH:</b> $[\ce{H+}] = 0.100$ mol dm⁻³, pH = 1.00.<br>
-<b>Step 2 — Equivalence volume:</b> $n(\ce{HCl}) = 0.100 \times 0.0250 = 0.00250$ mol. Same moles of NaOH needed: $V = 0.00250/0.100 = 0.0250$ dm³ = <b>25.0 cm³</b>.<br>
-<b>Step 3 — Equivalence pH:</b> NaCl is neutral, pH = 7.00.<br>
-<b>Sketch:</b> Start at (0, 1), gentle rise to ~pH 3 by 24.5 cm³, vertical jump from ~3 to ~11 at 25.0 cm³, then gentle rise to pH ~13 at 50 cm³.<br><br>
+<b>Example 1 — Sketching a Titration Curve:</b><br/><br/>
+Sketch the pH curve for 25.0 cm³ of 0.100 mol dm⁻³ $\ce{HCl}$ titrated with 0.100 mol dm⁻³ $\ce{NaOH}$. Label the initial pH, equivalence volume, equivalence pH, and the vertical region.<br/><br/>
+<b>Step 1 — Initial pH:</b> $[\ce{H+}] = 0.100$ mol dm⁻³, pH = 1.00.<br/>
+<b>Step 2 — Equivalence volume:</b> $n(\ce{HCl}) = 0.100 \times 0.0250 = 0.00250$ mol. Same moles of NaOH needed: $V = 0.00250/0.100 = 0.0250$ dm³ = <b>25.0 cm³</b>.<br/>
+<b>Step 3 — Equivalence pH:</b> NaCl is neutral, pH = 7.00.<br/>
+<b>Sketch:</b> Start at (0, 1), gentle rise to ~pH 3 by 24.5 cm³, vertical jump from ~3 to ~11 at 25.0 cm³, then gentle rise to pH ~13 at 50 cm³.<br/><br/>
 <b>⚠️ Common wrong approach:</b> Drawing the equivalence point at 12.5 cm³ (half the final volume) instead of the stoichiometric equivalence volume (25.0 cm³).
 </div>
-
 <div class="example">
-<b>Example 2 — Choosing an Indicator:</b><br><br>
-A student titrates 0.100 mol dm⁻³ $\ce{CH3COOH}$ with 0.100 mol dm⁻³ $\ce{NaOH}$. The equivalence point occurs at pH 8.7. The available indicators are: bromocresol green (pKIn = 4.7), bromothymol blue (pKIn = 7.0), and phenolphthalein (pKIn = 9.3). Which indicator should she choose?<br><br>
-<b>Analysis:</b> The indicator's transition range is pKIn ± 1. Phenolphthalein: range 8.3–10.0. The equivalence pH (8.7) falls within this range. Bromothymol blue (6.0–8.0) misses slightly. Bromocresol green (3.7–5.7) is far too low — it would change colour during the buffer region.<br>
-<b>Answer: Phenolphthalein.</b><br><br>
+<b>Example 2 — Choosing an Indicator:</b><br/><br/>
+A student titrates 0.100 mol dm⁻³ $\ce{CH3COOH}$ with 0.100 mol dm⁻³ $\ce{NaOH}$. The equivalence point occurs at pH 8.7. The available indicators are: bromocresol green (pKIn = 4.7), bromothymol blue (pKIn = 7.0), and phenolphthalein (pKIn = 9.3). Which indicator should she choose?<br/><br/>
+<b>Analysis:</b> The indicator's transition range is pKIn ± 1. Phenolphthalein: range 8.3–10.0. The equivalence pH (8.7) falls within this range. Bromothymol blue (6.0–8.0) misses slightly. Bromocresol green (3.7–5.7) is far too low — it would change colour during the buffer region.<br/>
+<b>Answer: Phenolphthalein.</b><br/><br/>
 <b>⚠️ Common wrong approach:</b> Choosing the indicator whose pKIn is closest to 7 regardless of the equivalence point pH. The indicator must match the <em>actual</em> equivalence point pH, not pH 7.
 </div>
-
 <div class="example">
-<b>Example 3 — Analysing an Unknown Titration Curve:</b><br><br>
-A titration curve shows: initial pH ≈ 2.9, a buffer region from 5–22 cm³, half-equivalence at 12.5 cm³ where pH = 4.76, equivalence at 25.0 cm³, equivalence pH ≈ 8.7, and final pH ≈ 12.5. (a) Identify the acid as strong or weak. (b) Identify the base as strong or weak. (c) What is the pKₐ of the acid?<br><br>
-<b>(a) Weak acid.</b> Initial pH 2.9 (not 1.0 for 0.1 mol dm⁻³ strong acid) and presence of a buffer region confirm it's weak.<br>
-<b>(b) Strong base.</b> Equivalence pH > 7 and final pH ~12.5 (not ~11 for a weak base) indicate a strong base.<br>
-<b>(c) pKₐ = 4.76</b> (pH at half-equivalence). This matches ethanoic acid.<br><br>
+<b>Example 3 — Analysing an Unknown Titration Curve:</b><br/><br/>
+A titration curve shows: initial pH ≈ 2.9, a buffer region from 5–22 cm³, half-equivalence at 12.5 cm³ where pH = 4.76, equivalence at 25.0 cm³, equivalence pH ≈ 8.7, and final pH ≈ 12.5. (a) Identify the acid as strong or weak. (b) Identify the base as strong or weak. (c) What is the pKₐ of the acid?<br/><br/>
+<b>(a) Weak acid.</b> Initial pH 2.9 (not 1.0 for 0.1 mol dm⁻³ strong acid) and presence of a buffer region confirm it's weak.<br/>
+<b>(b) Strong base.</b> Equivalence pH &gt; 7 and final pH ~12.5 (not ~11 for a weak base) indicate a strong base.<br/>
+<b>(c) pKₐ = 4.76</b> (pH at half-equivalence). This matches ethanoic acid.<br/><br/>
 <b>⚠️ Common wrong approach:</b> Assuming the acid is strong because the initial pH is low. Even weak acids can have pH 2–3 at 0.1 mol dm⁻³ — the telltale sign of a weak acid is the buffer region.
 </div>
-
 <!-- SECTION F -->
 <div class="misconception">
 <h3>⚠️ Common Mistakes to Avoid</h3>
 <ol>
-  <li><b>Thinking all equivalence points are at pH 7.</b> Only SA–SB titrations have equivalence at pH 7. WA–SB gives pH > 7 (basic salt). SA–WB gives pH < 7 (acidic salt).</li>
-  <li><b>Believing the buffer region makes the acid strong.</b> Only weak acids show a buffer region. Strong acids have no buffer region because they are fully dissociated — there is no HA reservoir to buffer with.</li>
-  <li><b>Selecting an indicator without checking the vertical jump pH range.</b> The indicator's transition range (pKIn ± 1) must overlap with the vertical section of the curve. If not, the end point and equivalence point will differ significantly.</li>
-  <li><b>Confusing the half-equivalence point with the equivalence point.</b> At half-equivalence, half the acid has been neutralised — this is where pH = pKₐ. At equivalence, the neutralisation is complete — this is where the vertical jump occurs.</li>
+<li><b>Thinking all equivalence points are at pH 7.</b> Only SA–SB titrations have equivalence at pH 7. WA–SB gives pH &gt; 7 (basic salt). SA–WB gives pH &lt; 7 (acidic salt).</li>
+<li><b>Believing the buffer region makes the acid strong.</b> Only weak acids show a buffer region. Strong acids have no buffer region because they are fully dissociated — there is no HA reservoir to buffer with.</li>
+<li><b>Selecting an indicator without checking the vertical jump pH range.</b> The indicator's transition range (pKIn ± 1) must overlap with the vertical section of the curve. If not, the end point and equivalence point will differ significantly.</li>
+<li><b>Confusing the half-equivalence point with the equivalence point.</b> At half-equivalence, half the acid has been neutralised — this is where pH = pKₐ. At equivalence, the neutralisation is complete — this is where the vertical jump occurs.</li>
 </ol>
 </div>
-
 <!-- SECTION G -->
 <h2>6. End-of-Lesson Practice</h2>
-
-<p><b>Question 1 (Paper 1 style):</b> The equivalence point of a titration between 0.100 mol dm⁻³ $\ce{HCl}$ and 0.100 mol dm⁻³ $\ce{NH3}$ occurs at pH:<br>
-A. 7.0 &nbsp; B. Below 7.0 &nbsp; C. Above 7.0 &nbsp; D. Cannot be determined</p>
-
+<p><b>Question 1 (Paper 1 style):</b> The equivalence point of a titration between 0.100 mol dm⁻³ $\ce{HCl}$ and 0.100 mol dm⁻³ $\ce{NH3}$ occurs at pH:<br/>
+A. 7.0   B. Below 7.0   C. Above 7.0   D. Cannot be determined</p>
 <p><b>Question 2:</b> Sketch and label the pH curve for 20.0 cm³ of 0.200 mol dm⁻³ $\ce{CH3COOH}$ titrated with 0.200 mol dm⁻³ $\ce{NaOH}$. Mark: initial pH (~2.7), buffer region, half-equivalence (10.0 cm³, pH = 4.76), equivalence (20.0 cm³, pH ~8.7).</p>
-
 <p><b>Question 3:</b> A student titrates $\ce{HCl}$ with $\ce{NaOH}$ and uses phenolphthalein (range 8.3–10.0). (a) Explain whether this is appropriate. (b) Would methyl orange (range 3.1–4.4) also work?</p>
-
 <p><b>Question 4:</b> A titration curve has these features: initial pH = 11.1, buffer region, equivalence pH = 5.3, final pH ~1. (a) What is being titrated (acid or base in the flask)? (b) Is it strong or weak? (c) Is the titrant strong or weak?</p>
-
 <p><b>Question 5:</b> Explain why WA–WB titrations cannot use indicators. What alternative method is used?</p>
-
 <button class="practice-toggle" onclick="var a=this.nextElementSibling;a.classList.toggle('open');this.textContent=a.classList.contains('open')?'▴ Hide Answers':'▸ Show Answers'">▸ Show Answers</button>
 <div class="practice-answers">
-
 <p><b>Answer 1:</b> B. The product NH₄Cl is acidic because NH₄⁺ hydrolyses: NH₄⁺ + H₂O ⇌ NH₃ + H₃O⁺. The equivalence point is below pH 7 (typically pH ~5).</p>
-
 <p><b>Answer 2:</b> The curve should show: starts at pH ~2.7, gentle rise (buffer) from ~5–18 cm³, half-equivalence at 10.0 cm³ (pH = 4.76), vertical jump from ~pH 6 to ~11 at 20.0 cm³, then levelling to pH ~13. Equivalence at 20.0 cm³ and pH ~8.7.</p>
-
 <p><b>Answer 3:</b> (a) Yes. HCl + NaOH has equivalence at pH 7.0, with a vertical jump from ~3 to ~11. Phenolphthalein (8.3–10.0) lies within the vertical jump — appropriate. (b) Yes, methyl orange (3.1–4.4) also lies within the jump, so both work for SA–SB.</p>
-
 <p><b>Answer 4:</b> (a) A base is in the flask (initial pH is basic). (b) Weak base (buffer region present). (c) Strong acid (low final pH, sharp drop at equivalence). This is a WB–SA titration (e.g., NH₃ + HCl).</p>
-
 <p><b>Answer 5:</b> WA–WB titrations have no sharp vertical jump — the pH changes very gradually through the equivalence point. Without a sharp jump, any indicator will change colour gradually over a range of volumes, making the end point impossible to locate precisely. <b>Conductometric titration</b> (measuring conductivity) or using a pH meter and plotting the first derivative are alternatives.</p>
 </div>
-
 <!-- SECTION H -->
 <h2>7. Key Terms</h2>
 <table>
@@ -269,15 +233,138 @@ A. 7.0 &nbsp; B. Below 7.0 &nbsp; C. Above 7.0 &nbsp; D. Cannot be determined</p
 <tr><td>Phenolphthalein</td><td>Indicator with pKIn = 9.3, colourless in acid, pink in base; used for WA–SB titrations</td></tr>
 <tr><td>Methyl orange</td><td>Indicator with pKIn = 3.7, red in acid, yellow in base; used for SA–WB titrations</td></tr>
 </table>
-
 <!-- SECTION I -->
 <h2>8. Exam Tips</h2>
-
 <div class="exam-tip"><b>Paper 1 (Multiple Choice):</b> Expect questions asking which indicator is suitable for a given titration. First identify the titration type (SA–SB, WA–SB, etc.), recall the equivalence pH, then match the indicator whose pKIn ± 1 range covers it. A common trick: phenolphthalein for WA–SB is the most frequently tested combination.</div>
-
 <div class="exam-tip"><b>Paper 2 (Structured):</b> When asked to sketch a titration curve, you must show: (1) correct initial pH (not just "low" — use actual numbers), (2) buffer region for weak species, (3) equivalence volume correctly calculated, (4) equivalence pH above/below 7 as appropriate, (5) vertical jump. Label all features. Even a rough sketch earns most marks if key features are present.</div>
-
 <div class="exam-tip"><b>Data Analysis questions:</b> In Paper 3 or Section B, you may be given a titration curve and asked to determine pKₐ, concentration, or identify the acid. Read pKₐ at the half-equivalence volume (halfway to the vertical jump). Concentration is found from the equivalence volume and the known titrant concentration.</div>
 
+<div class="lesson-actions" style="margin: 2rem 0; padding: 1.5rem; background: #f8fafc; border-radius: 8px; display: flex; gap: 1rem; flex-wrap: wrap;">
+<button class="action-btn" id="generate-flashcards-btn" style="padding: 0.75rem 1.5rem; background: #3b82f6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        🗂️ Generate Flashcards
+    </button>
+<button class="action-btn" id="practice-problems-btn" style="padding: 0.75rem 1.5rem; background: #10b981; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        ✏️ Practice Problems
+    </button>
+<button class="action-btn" id="ask-ai-btn" style="padding: 0.75rem 1.5rem; background: #8b5cf6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        💬 Ask AI
+    </button>
+</div>
+<script>
+(function() {
+    const subjectKey = "chemistry";
+    const lessonId = "lesson_30";
+    const lessonTitle = "Lesson 30: Titration Curves & Indicators";
+
+    function getCsrf() {
+        var m = document.querySelector('meta[name="csrf-token"]');
+        return m ? m.getAttribute('content') : '';
+    }
+
+    // Completion checkbox
+    const checkbox = document.getElementById('lesson-complete');
+    if (checkbox) {
+        // Load saved state
+        const saved = localStorage.getItem(`completed_${subjectKey}_${lessonId}`);
+        if (saved === 'true') checkbox.checked = true;
+
+        checkbox.addEventListener('change', async function() {
+            const completed = this.checked;
+            localStorage.setItem(`completed_${subjectKey}_${lessonId}`, completed);
+
+            try {
+                await fetch('/toggle_completion', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': getCsrf()
+                    },
+                    body: JSON.stringify({
+                        subject: subjectKey,
+                        lesson: lessonId,
+                        completed: completed
+                    })
+                });
+            } catch(e) {
+                console.error('Error saving completion:', e);
+            }
+        });
+    }
+
+    // Generate Flashcards
+    const flashcardsBtn = document.getElementById('generate-flashcards-btn');
+    if (flashcardsBtn) {
+        flashcardsBtn.addEventListener('click', async function() {
+            this.disabled = true;
+            this.textContent = '⏳ Generating...';
+
+            try {
+                const content = document.body.innerText.substring(0, 2000);
+                const response = await fetch('/generate_flashcards', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': getCsrf()
+                    },
+                    body: JSON.stringify({
+                        subject: subjectKey,
+                        lesson: lessonTitle,
+                        content_summary: content
+                    })
+                });
+
+                const data = await response.json();
+                if (data.error) {
+                    alert('Error: ' + data.error);
+                } else {
+                    alert(`✅ Created ${data.count} flashcards! View them at /flashcards/${subjectKey}`);
+                }
+            } catch(e) {
+                alert('Error generating flashcards: ' + e.message);
+            } finally {
+                this.disabled = false;
+                this.textContent = '🗂️ Generate Flashcards';
+            }
+        });
+    }
+
+    // Practice Problems - open in new section
+    const practiceBtn = document.getElementById('practice-problems-btn');
+    if (practiceBtn) {
+        practiceBtn.addEventListener('click', function() {
+            alert('Practice problems feature coming soon! Use the AI chatbot to generate custom questions.');
+        });
+    }
+
+    // Ask AI - scroll to chatbot
+    const aiBtn = document.getElementById('ask-ai-btn');
+    if (aiBtn) {
+        aiBtn.addEventListener('click', function() {
+            const chatbot = document.getElementById('lessons-chatbot');
+            if (chatbot) {
+                chatbot.scrollIntoView({ behavior: 'smooth' });
+                const toggleBtn = chatbot.querySelector('.chatbot-toggle');
+                if (toggleBtn) toggleBtn.click();
+            } else {
+                alert('AI chatbot not available on this page. It will be added soon!');
+            }
+        });
+    }
+
+    // Track lesson view
+    fetch('/mark_viewed', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': getCsrf()
+        },
+        body: JSON.stringify({
+            subject: subjectKey,
+            lesson: lessonId
+        })
+    }).catch(e => console.error('Error tracking view:', e));
+
+})();
+</script>
 </body>
 </html>

@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 40: Lesson 40: Standing Waves I — Nodes, Antinodes & Strings — IB Physics HL</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']]
+  },
+  options: {
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap');
+  
+  :root {
+    --bg: #fdfcf9;
+    --text: #1a1a1a;
+    --accent: #2c5f2d;
+    --border: #d0cec7;
+    --code-bg: #f4f3ef;
+    --callout-bg: #f0f7f0;
+    --callout-border: #2c5f2d;
+    --warning-bg: #fff8e6;
+    --warning-border: #c4941a;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  body {
+    font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid var(--accent);
+    color: var(--accent);
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 2.5rem 0 0.75rem;
+    color: #1a1a1a;
+  }
+  
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.5rem;
+  }
+  
+  p { margin: 0 0 1rem; }
+  
+  ul, ol { margin: 0 0 1rem 1.5rem; }
+  li { margin-bottom: 0.35rem; }
+  
+  code {
+    background: var(--code-bg);
+    padding: 0.15em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+    font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+  }
+  
+  pre {
+    background: var(--code-bg);
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 0 0 1rem;
+    font-size: 0.85em;
+    line-height: 1.5;
+  }
+  
+  pre code {
+    background: none;
+    padding: 0;
+    font-size: inherit;
+  }
+  
+  blockquote {
+    border-left: 4px solid var(--callout-border);
+    background: var(--callout-bg);
+    margin: 0 0 1rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+  }
+  
+  blockquote.warning {
+    border-left-color: var(--warning-border);
+    background: var(--warning-bg);
+  }
+  
+  strong { font-weight: 700; }
+  
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.5rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  
+  .nav a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+  
+  .nav a:hover { background: var(--callout-bg); }
+  
+  .worked-example, .answer {
+    background: var(--code-bg);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin: 0.75rem 0 1.25rem;
+  }
+  
+  .worked-example strong:first-child, .answer strong:first-child {
+    color: var(--accent);
+  }
+  
+  @media print {
+    body { font-size: 12pt; max-width: 100%; padding: 0; }
+    .nav { display: none; }
+    h1 { font-size: 18pt; }
+    h2 { font-size: 14pt; }
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 0 1rem;
+  }
+  
+  th, td {
+    border: 1px solid var(--border);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  
+  th {
+    background: var(--code-bg);
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L39_wave_phenomena_4.html">← Lesson 39</a>
+  <a href="L41_standing_waves_2.html">Lesson 41 →</a>
+</nav>
+
+<h1>Lesson 40: Standing Waves I — Nodes, Antinodes & Strings</h1>
+
+<h2>What You'll Learn</h2>
+<ul>
+<li>How standing waves form from incident + reflected waves</li>
+<li>Nodes (zero displacement) and antinodes (maximum displacement)</li>
+<li>Boundary conditions and harmonics on strings</li>
+<li>The harmonic series: λₙ = 2L/n and fₙ = nf₁</li>
+<li>Wave speed on a stretched string: v = √(T/μ)</li>
+</ul>
+
+<hr>
+
+<h2>1. Formation of Standing Waves</h2>
+
+<p>A <strong>standing wave</strong> is not a travelling wave — it is a pattern of oscillation that appears to stand still. It forms when two identical waves travelling in <strong>opposite directions</strong> superpose.</p>
+
+<h3>The Key Mechanism</h3>
+
+<p>Consider a wave pulse sent down a string fixed at one end. Upon reaching the fixed end, it reflects and travels back. If you continuously send waves (incident waves), they meet the reflected waves and interfere.</p>
+
+<p>At certain frequencies, the interference produces a <strong>stable, stationary pattern</strong> — a standing wave.</p>
+
+<p><strong>Incident wave:</strong> <code>y₁ = A sin(kx − ωt)</code></p>
+<p><strong>Reflected wave:</strong> <code>y₂ = A sin(kx + ωt)</code> <em>(phase change of π at fixed end)</em></p>
+
+<p><strong>Superposition:</strong> <code>y = y₁ + y₂ = 2A cos(kx) sin(ωt)</code></p>
+
+<p>This is the standing wave equation. Note:</p>
+<ul>
+<li><code>2A cos(kx)</code> is the <strong>amplitude envelope</strong> — varies with position x</li>
+<li><code>sin(ωt)</code> is the <strong>time oscillation</strong> — all points oscillate in phase or antiphase</li>
+</ul>
+
+<hr>
+
+<h2>2. Nodes and Antinodes</h2>
+
+<h3>Definitions</h3>
+
+<table>
+<tr>
+<th>Feature</th>
+<th>Definition</th>
+<th>Displacement</th>
+<th>Spacing</th>
+</tr>
+<tr>
+<td><strong>Node (N)</strong></td>
+<td>Point of <strong>zero</strong> displacement at all times</td>
+<td>Always 0</td>
+<td>λ/2 apart</td>
+</tr>
+<tr>
+<td><strong>Antinode (A)</strong></td>
+<td>Point of <strong>maximum</strong> displacement</td>
+<td>Varies between ±2A</td>
+<td>λ/2 apart</td>
+</tr>
+</table>
+
+<p>In the standing wave equation <code>y = 2A cos(kx) sin(ωt)</code>:</p>
+<ul>
+<li><strong>Nodes</strong> occur where <code>cos(kx) = 0</code> → <code>kx = π/2, 3π/2, 5π/2, ...</code> → <code>x = λ/4, 3λ/4, 5λ/4, ...</code></li>
+<li><strong>Antinodes</strong> occur where <code>cos(kx) = ±1</code> → <code>kx = 0, π, 2π, ...</code> → <code>x = 0, λ/2, λ, ...</code></li>
+</ul>
+
+<h3>Phase Relationship</h3>
+<ul>
+<li>Points between two consecutive nodes oscillate <strong>in phase</strong> (move up and down together)</li>
+<li>Points separated by one node oscillate <strong>in antiphase</strong> (180° out of phase)</li>
+<li><strong>No energy is transmitted</strong> along a standing wave — energy is trapped between nodes</li>
+</ul>
+
+<hr>
+
+<h2>3. Boundary Conditions on Strings</h2>
+
+<h3>Fixed End → Node</h3>
+<p>When a string is fixed (tied down), the end cannot move → <strong>node at a fixed end</strong>.</p>
+
+<h3>Free End → Antinode</h3>
+<p>If the end is free to move (unusual for strings, common for pipes), maximum displacement occurs → <strong>antinode at a free end</strong>.</p>
+
+<h3>Both Ends Fixed (Most Common String Case)</h3>
+<ul>
+<li>Both ends are nodes</li>
+<li>Standing waves can only form when an integer number of half-wavelengths fit into the string length</li>
+</ul>
+
+<hr>
+
+<h2>4. Harmonics on Strings</h2>
+
+<p>For a string of length L, fixed at both ends:</p>
+
+<p>$$L = n \cdot \frac{\lambda_n}{2} \quad \text{where } n = 1, 2, 3, ...$$</p>
+
+<p>$$\lambda_n = \frac{2L}{n}$$</p>
+
+<h3>Fundamental Frequency (n = 1)</h3>
+
+<p>The fundamental (first harmonic) has one antinode in the middle:</p>
+
+<p>$$\lambda_1 = 2L$$</p>
+
+<p>$$f_1 = \frac{v}{\lambda_1} = \frac{v}{2L}$$</p>
+
+<p>where v is the wave speed on the string.</p>
+
+<h3>Harmonic Frequencies</h3>
+
+<p>$$f_n = n \cdot f_1 = \frac{nv}{2L}$$</p>
+
+<h3>Wave Speed on a Stretched String</h3>
+
+<p>$$v = \sqrt{\frac{T}{\mu}}$$</p>
+
+<p>where:</p>
+<ul>
+<li><strong>T</strong> = tension in the string (N)</li>
+<li><strong>μ</strong> = mass per unit length = m/L (kg/m)</li>
+</ul>
+
+<h3>Full String Equation</h3>
+
+<p>$$f_n = \frac{n}{2L}\sqrt{\frac{T}{\mu}}$$</p>
+
+<h3>Harmonic Series Summary</h3>
+
+<table>
+<tr>
+<th>Harmonic</th>
+<th>n</th>
+<th>λ</th>
+<th>f</th>
+<th>Pattern</th>
+</tr>
+<tr>
+<td>1st (fundamental)</td>
+<td>1</td>
+<td>2L</td>
+<td>f₁</td>
+<td>N–A–N</td>
+</tr>
+<tr>
+<td>2nd</td>
+<td>2</td>
+<td>L</td>
+<td>2f₁</td>
+<td>N–A–N–A–N</td>
+</tr>
+<tr>
+<td>3rd</td>
+<td>3</td>
+<td>2L/3</td>
+<td>3f₁</td>
+<td>N–A–N–A–N–A–N</td>
+</tr>
+<tr>
+<td>nth</td>
+<td>n</td>
+<td>2L/n</td>
+<td>n·f₁</td>
+<td>n antinodes</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>Worked Examples</h2>
+
+<h3>Worked Example 40.1 — Frequency of Third Harmonic</h3>
+
+<p><strong>Problem:</strong> A guitar string is 0.65 m long with mass 2.6 g. It is under tension of 80 N. Find:</p>
+<p>(a) the wave speed on the string</p>
+<p>(b) the fundamental frequency</p>
+<p>(c) the frequency of the third harmonic</p>
+
+<p><strong>Solution:</strong></p>
+
+<p><strong>(a) Wave speed:</strong></p>
+<p>$$\mu = \frac{m}{L} = \frac{2.6 \times 10^{-3}}{0.65} = 4.0 \times 10^{-3} \text{ kg/m}$$</p>
+
+<p>$$v = \sqrt{\frac{T}{\mu}} = \sqrt{\frac{80}{4.0 \times 10^{-3}}} = \sqrt{20000} = 141 \text{ m/s}$$</p>
+
+<p><strong>(b) Fundamental frequency:</strong></p>
+<p>$$f_1 = \frac{v}{2L} = \frac{141}{2 \times 0.65} = \frac{141}{1.30} = 108 \text{ Hz}$$</p>
+
+<p><strong>(c) Third harmonic:</strong></p>
+<p>$$f_3 = 3f_1 = 3 \times 108 = 325 \text{ Hz}$$</p>
+
+<p><em>(Alternatively: λ₃ = 2L/3 = 0.433 m, f₃ = v/λ₃ = 141/0.433 = 326 Hz — same result)</em></p>
+
+<hr>
+
+<h3>Worked Example 40.2 — Finding Tension for a Given Frequency</h3>
+
+<p><strong>Problem:</strong> A violin string of length 0.33 m and linear density 4.0 × 10⁻⁴ kg/m produces a fundamental frequency of 440 Hz (concert A). What tension is required?</p>
+
+<p><strong>Solution:</strong></p>
+
+<p>Use the fundamental frequency equation:</p>
+<p>$$f_1 = \frac{1}{2L}\sqrt{\frac{T}{\mu}}$$</p>
+
+<p>Rearrange for T:</p>
+<p>$$\sqrt{\frac{T}{\mu}} = 2L f_1$$</p>
+<p>$$\frac{T}{\mu} = (2L f_1)^2$$</p>
+<p>$$T = \mu (2L f_1)^2$$</p>
+
+<p>Substitute:</p>
+<p>$$T = (4.0 \times 10^{-4}) \times (2 \times 0.33 \times 440)^2$$</p>
+<p>$$T = (4.0 \times 10^{-4}) \times (290.4)^2$$</p>
+<p>$$T = (4.0 \times 10^{-4}) \times 84332$$</p>
+<p>$$T = 33.7 \text{ N}$$</p>
+
+<hr>
+
+<h3>Worked Example 40.3 — Identifying Harmonic from Pattern</h3>
+
+<p><strong>Problem:</strong> A string 1.20 m long oscillates with 5 nodes (including the fixed ends) and 4 antinodes. Determine:</p>
+<p>(a) the harmonic number</p>
+<p>(b) the wavelength</p>
+<p>(c) the frequency if the wave speed is 240 m/s</p>
+
+<p><strong>Solution:</strong></p>
+
+<p><strong>(a)</strong> For a string fixed at both ends, n = number of antinodes = 4. This is the <strong>4th harmonic</strong>.</p>
+
+<p>Alternatively: number of nodes = n + 1 = 5, so n = 4.</p>
+
+<p><strong>(b)</strong></p>
+<p>$$\lambda_4 = \frac{2L}{n} = \frac{2 \times 1.20}{4} = 0.60 \text{ m}$$</p>
+
+<p><strong>(c)</strong></p>
+<p>$$f_4 = \frac{v}{\lambda_4} = \frac{240}{0.60} = 400 \text{ Hz}$$</p>
+
+<p>Or: f₁ = v/(2L) = 240/(2×1.20) = 100 Hz, f₄ = 4 × 100 = 400 Hz.</p>
+
+<hr>
+
+<h3>Worked Example 40.4 — Changing Tension and Its Effect</h3>
+
+<p><strong>Problem:</strong> A guitar string tuned to 196 Hz (G note) has its tension increased by 21%. What is the new frequency?</p>
+
+<p><strong>Solution:</strong></p>
+
+<p>Since f ∝ √T, when tension changes:</p>
+<p>$$\frac{f_{\text{new}}}{f_{\text{old}}} = \sqrt{\frac{T_{\text{new}}}{T_{\text{old}}}}$$</p>
+
+<p>If T increases by 21%, then T_new/T_old = 1.21:</p>
+<p>$$\frac{f_{\text{new}}}{f_{\text{old}}} = \sqrt{1.21} = 1.10$$</p>
+
+<p>$$f_{\text{new}} = 1.10 \times 196 = 216 \text{ Hz}$$</p>
+
+<p>The pitch rises — this is how guitarists tune by tightening pegs.</p>
+
+<hr>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1</h3>
+<p>A nylon guitar string is 0.70 m long and has a mass of 2.8 g. It vibrates in its fundamental mode at 125 Hz.</p>
+<p>(a) Calculate the linear density of the string.</p>
+<p>(b) Find the wave speed on the string.</p>
+<p>(c) Determine the tension in the string.</p>
+
+<h3>Problem 2</h3>
+<p>A string fixed at both ends is 2.40 m long. Standing waves are observed at frequencies of 60 Hz, 90 Hz, 120 Hz, and 150 Hz. No standing waves are seen between these values.</p>
+<p>(a) What is the fundamental frequency?</p>
+<p>(b) What is the wave speed on the string?</p>
+<p>(c) What harmonic is the 150 Hz wave?</p>
+
+<h3>Problem 3</h3>
+<p>A 0.50 m string vibrates in its 3rd harmonic at 450 Hz. Find:</p>
+<p>(a) the wavelength of this standing wave</p>
+<p>(b) the wave speed</p>
+<p>(c) the fundamental frequency</p>
+
+<h3>Problem 4</h3>
+<p>A steel wire of length 1.50 m and diameter 0.50 mm (density of steel = 7800 kg/m³) is under tension of 200 N. Find:</p>
+<p>(a) the linear density μ</p>
+<p>(b) the fundamental frequency</p>
+<p>(c) the frequency of the 5th harmonic</p>
+
+<h3>Problem 5 (IB-Style — Challenging)</h3>
+<p>A student investigates standing waves on a string. One end is attached to a vibration generator set at frequency f, and the string passes over a pulley with a hanging mass M to provide tension. The string has linear density μ.</p>
+
+<p>When f = 50.0 Hz and M = 1.00 kg, a standing wave with 3 antinodes is observed between the vibrator and the pulley (distance L = 1.50 m).</p>
+
+<p>(a) Show that the hanging mass is 1.00 kg, calculate the tension. (g = 10 m/s²)</p>
+<p>(b) Determine the wave speed and hence μ.</p>
+<p>(c) The student increases f to 75.0 Hz while keeping everything else the same. Explain why no clear standing wave pattern is observed initially, and state what change must be made to M to restore a 3-antinode pattern.</p>
+
+<hr>
+
+<h2>Answers</h2>
+
+<h3>Answer 1</h3>
+<p><strong>(a)</strong> μ = m/L = 2.8×10⁻³ / 0.70 = <strong>4.0 × 10⁻³ kg/m</strong></p>
+
+<p><strong>(b)</strong> For fundamental: v = f₁ × 2L = 125 × 2 × 0.70 = <strong>175 m/s</strong></p>
+
+<p><strong>(c)</strong> T = μ v² = 4.0×10⁻³ × (175)² = <strong>123 N</strong></p>
+
+<hr>
+
+<h3>Answer 2</h3>
+<p><strong>(a)</strong> The frequencies are multiples: 60, 90, 120, 150. This is 2f₁, 3f₁, 4f₁, 5f₁ (the fundamental 30 Hz is missing from observations but implied since 60 = 2×30, etc.).</p>
+<p><strong>f₁ = 30 Hz</strong></p>
+
+<p><strong>(b)</strong> f₁ = v/(2L) → v = 2L f₁ = 2 × 2.40 × 30 = <strong>144 m/s</strong></p>
+
+<p><strong>(c)</strong> 150/30 = 5 → <strong>5th harmonic</strong></p>
+
+<hr>
+
+<h3>Answer 3</h3>
+<p><strong>(a)</strong> λ₃ = 2L/3 = 2 × 0.50 / 3 = <strong>0.333 m</strong></p>
+
+<p><strong>(b)</strong> v = f₃ × λ₃ = 450 × 0.333 = <strong>150 m/s</strong> (or: v = f₃ × 2L/3)</p>
+
+<p><strong>(c)</strong> f₁ = f₃/3 = 450/3 = <strong>150 Hz</strong></p>
+
+<hr>
+
+<h3>Answer 4</h3>
+<p><strong>(a)</strong> Cross-sectional area: A = π(d/2)² = π(0.25×10⁻³)² = 1.96×10⁻⁷ m²</p>
+<p>μ = ρA = 7800 × 1.96×10⁻⁷ = <strong>1.53 × 10⁻³ kg/m</strong></p>
+
+<p><strong>(b)</strong> v = √(T/μ) = √(200 / 1.53×10⁻³) = 361 m/s</p>
+<p>f₁ = v/(2L) = 361/(2 × 1.50) = <strong>120 Hz</strong></p>
+
+<p><strong>(c)</strong> f₅ = 5f₁ = 5 × 120 = <strong>600 Hz</strong></p>
+
+<hr>
+
+<h3>Answer 5 (IB-Style)</h3>
+<p><strong>(a)</strong> T = Mg = 1.00 × 10 = <strong>10.0 N</strong></p>
+
+<p><strong>(b)</strong> With 3 antinodes: n = 3, λ = 2L/3 = 2×1.50/3 = 1.00 m</p>
+<p>v = fλ = 50.0 × 1.00 = 50.0 m/s</p>
+
+<p>v = √(T/μ) → μ = T/v² = 10.0/(50.0)² = <strong>4.0 × 10⁻³ kg/m</strong></p>
+
+<p><strong>(c)</strong> At f = 75.0 Hz, the wave speed hasn't changed (T and μ unchanged), so v = 50.0 m/s. </p>
+<p>Wavelength for 3 antinodes would be: λ = v/f = 50.0/75.0 = 0.667 m. </p>
+<p>But for n = 3, we need λ = 2L/3 = 1.00 m. These don't match, so no standing wave forms.</p>
+
+<p>To restore the 3-antinode pattern at 75.0 Hz, we need v = fλ = 75.0 × 1.00 = 75.0 m/s.</p>
+<p>Since v ∝ √T and T ∝ M, we need v² ∝ M:</p>
+<p>M_new / M_old = (75.0/50.0)² = 2.25</p>
+<p><strong>M_new = 2.25 kg</strong> — the mass must be increased to 2.25 kg.</p>
+
+<hr>
+
+<h2>Key Takeaways</h2>
+
+<table>
+<tr>
+<th>Concept</th>
+<th>Key Equation</th>
+<th>Notes</th>
+</tr>
+<tr>
+<td>Standing wave formation</td>
+<td>Superposition of incident + reflected waves</td>
+<td>Frequencies must match</td>
+</tr>
+<tr>
+<td>Nodes</td>
+<td>cos(kx) = 0</td>
+<td>λ/2 spacing</td>
+</tr>
+<tr>
+<td>Antinodes</td>
+<td>cos(kx) = ±1</td>
+<td>λ/2 spacing</td>
+</tr>
+<tr>
+<td>String harmonics</td>
+<td>fₙ = nf₁ = (n/2L)√(T/μ)</td>
+<td>n = 1,2,3,...</td>
+</tr>
+<tr>
+<td>Wave speed on string</td>
+<td>v = √(T/μ)</td>
+<td>Depends on tension and linear density</td>
+</tr>
+<tr>
+<td>Boundary: fixed end</td>
+<td>Node</td>
+<td>Displacement = 0</td>
+</tr>
+<tr>
+<td>Harmonic number</td>
+<td>n = number of antinodes</td>
+<td>n = nodes − 1 (strings)</td>
+</tr>
+</table>
+
+<blockquote><strong>IB Data Booklet references:</strong> v = fλ, f = 1/T (Sub-topic 4.2). The string harmonic formula fₙ = nv/(2L) and v = √(T/μ) must be memorized — they are not in the formula booklet but are directly tested.</blockquote>
+
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L39_wave_phenomena_4.html">← Lesson 39</a>
+  <a href="L41_standing_waves_2.html">Lesson 41 →</a>
+</nav>
+
+</body>
+</html>

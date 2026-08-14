@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 66: Lesson 66: Fission — Chain Reactions, Binding Energy Curve, and Nuclear Reactors — IB Physics HL</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']]
+  },
+  options: {
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap');
+  
+  :root {
+    --bg: #fdfcf9;
+    --text: #1a1a1a;
+    --accent: #2c5f2d;
+    --border: #d0cec7;
+    --code-bg: #f4f3ef;
+    --callout-bg: #f0f7f0;
+    --callout-border: #2c5f2d;
+    --warning-bg: #fff8e6;
+    --warning-border: #c4941a;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  body {
+    font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid var(--accent);
+    color: var(--accent);
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 2.5rem 0 0.75rem;
+    color: #1a1a1a;
+  }
+  
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.5rem;
+  }
+  
+  p { margin: 0 0 1rem; }
+  
+  ul, ol { margin: 0 0 1rem 1.5rem; }
+  li { margin-bottom: 0.35rem; }
+  
+  code {
+    background: var(--code-bg);
+    padding: 0.15em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+    font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+  }
+  
+  pre {
+    background: var(--code-bg);
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 0 0 1rem;
+    font-size: 0.85em;
+    line-height: 1.5;
+  }
+  
+  pre code {
+    background: none;
+    padding: 0;
+    font-size: inherit;
+  }
+  
+  blockquote {
+    border-left: 4px solid var(--callout-border);
+    background: var(--callout-bg);
+    margin: 0 0 1rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+  }
+  
+  blockquote.warning {
+    border-left-color: var(--warning-border);
+    background: var(--warning-bg);
+  }
+  
+  strong { font-weight: 700; }
+  
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.5rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  
+  .nav a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+  
+  .nav a:hover { background: var(--callout-bg); }
+  
+  .worked-example, .answer {
+    background: var(--code-bg);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin: 0.75rem 0 1.25rem;
+  }
+  
+  .worked-example strong:first-child, .answer strong:first-child {
+    color: var(--accent);
+  }
+  
+  @media print {
+    body { font-size: 12pt; max-width: 100%; padding: 0; }
+    .nav { display: none; }
+    h1 { font-size: 18pt; }
+    h2 { font-size: 14pt; }
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 0 1rem;
+  }
+  
+  th, td {
+    border: 1px solid var(--border);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  
+  th {
+    background: var(--code-bg);
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L65_radioactive_decay_2.html">← Lesson 65</a>
+  <a href="L67_fusion_stars.html">Lesson 67 →</a>
+</nav>
+
+<h1>Lesson 66: Fission — Chain Reactions, Binding Energy Curve, and Nuclear Reactors</h1>
+
+<h2>What You'll Learn</h2>
+
+<p>In 1938, two German chemists (Otto Hahn and Fritz Strassmann) bombarded uranium with neutrons and detected barium in the products. Their colleague Lise Meitner (a physicist who had fled Nazi Germany) realized what had happened: the uranium nucleus had SPLIT. Nuclear fission had been discovered.</p>
+
+<p>This lesson explains what fission is, WHY it releases energy (the binding energy curve is the key), how a single splitting nucleus can trigger a chain reaction that releases enormous amounts of energy, and how nuclear reactors harness this process for peaceful purposes. You'll learn the physics behind both nuclear power and nuclear weapons, and understand why certain isotopes can sustain chain reactions while others cannot.</p>
+
+<hr>
+
+<h2>1. What Is Nuclear Fission?</h2>
+
+<h3>Why This Matters</h3>
+
+<p>Fission is the process that powers nuclear reactors and nuclear weapons. It's fundamentally different from chemical reactions like burning coal. One fission event releases about 200 MeV of energy — roughly 50 million times more than burning one carbon atom. Understanding fission means understanding the most concentrated energy source humanity has ever harnessed.</p>
+
+<h3>The Key Ideas</h3>
+
+<p><strong>Definition.</strong> <strong>Nuclear fission</strong> is the splitting of a heavy nucleus into two (or occasionally three) lighter nuclei, accompanied by the release of energy and usually several neutrons. The products are called <strong>fission fragments</strong>. The process can be spontaneous (very rare) or induced by neutron capture.</p>
+
+<p><strong>A typical fission reaction.</strong> When uranium-235 captures a slow neutron, it becomes uranium-236 in an excited state. The excited ²³⁶U nucleus oscillates wildly, deforms into an elongated shape, and splits. A typical fission yields:</p>
+
+<p>$${}^{235}_{92}\text{U} + n \rightarrow {}^{141}_{56}\text{Ba} + {}^{92}_{36}\text{Kr} + 3n + \text{energy}$$</p>
+
+<p>This is ONE possible outcome. Fission is a messy process — the exact products vary. The mass distribution of fission fragments shows two peaks around A ≈ 95 and A ≈ 140 (asymmetric fission is more common than symmetric splitting into two equal fragments).</p>
+
+<p><strong>Energy released: ~200 MeV per fission.</strong> Where does this energy go?</p>
+<ul>
+<li>Kinetic energy of fission fragments: ~165 MeV</li>
+<li>Kinetic energy of prompt neutrons: ~5 MeV</li>
+<li>Gamma rays (prompt): ~7 MeV</li>
+<li>Beta particles and gamma rays from fission product decay: ~20 MeV</li>
+<li>Neutrinos (from beta decay): ~10 MeV (these escape and are unrecoverable)</li>
+</ul>
+
+<p><strong>The source of the energy: the binding energy curve.</strong> Why does splitting a heavy nucleus release energy? The answer is the most important graph in nuclear physics.</p>
+
+<hr>
+
+<h2>2. The Binding Energy Curve</h2>
+
+<h3>Why This Matters</h3>
+
+<p>The binding energy curve is the Rosetta Stone of nuclear physics. It explains why fission releases energy for heavy nuclei, why fusion releases energy for light nuclei, why iron is the most stable element, and why the universe has the elemental abundances it does. If you understand this curve, you understand why stars shine and why nuclear reactors work.</p>
+
+<h3>The Key Ideas</h3>
+
+<p><strong>What is binding energy?</strong> The <strong>binding energy</strong> of a nucleus is the energy required to separate it into its individual protons and neutrons. It is also the energy RELEASED when the nucleus forms from free nucleons. A larger binding energy means a more tightly bound, more stable nucleus.</p>
+
+<p>Because E = mc², the mass of a nucleus is LESS than the sum of the masses of its individual nucleons. This <strong>mass defect</strong> Δm is converted to binding energy:</p>
+
+<p>$$E_{\text{binding}} = \Delta m \, c^2$$</p>
+
+<p>For example, a helium-4 nucleus (²He) consists of 2 protons and 2 neutrons:</p>
+<p>Mass of 2 protons + 2 neutrons = 2(1.007276 u) + 2(1.008665 u) = 4.031882 u</p>
+<p>Actual mass of ²He nucleus = 4.002603 u</p>
+<p>Mass defect Δm = 0.029279 u</p>
+<p>Binding energy = 0.029279 u × 931.5 MeV/u = 27.27 MeV</p>
+
+<p><strong>Binding energy per nucleon.</strong> A more useful quantity is the <strong>binding energy per nucleon</strong> (BE/A) — the total binding energy divided by the number of nucleons. This tells you how tightly bound the AVERAGE nucleon is in that nucleus.</p>
+
+<p><strong>The curve.</strong> Plot BE/A (y-axis) against mass number A (x-axis):</p>
+
+<ul>
+<li>BE/A rises steeply from low A, reaching a broad maximum around A = 56-62 (iron and nickel).</li>
+<li>BE/A for iron-56 is about 8.79 MeV per nucleon — the highest of any nucleus.</li>
+<li>Beyond iron, BE/A gradually decreases, falling to about 7.6 MeV per nucleon for uranium.</li>
+</ul>
+
+<p><strong>What the curve tells us:</strong></p>
+
+<ol>
+<li><strong>Light nuclei gain BE/A by fusing.</strong> If you fuse two very light nuclei (low BE/A) into a heavier one (higher BE/A), the products are more tightly bound, and energy is released. This is nuclear FUSION.</li>
+</ol>
+
+<ol>
+<li><strong>Heavy nuclei gain BE/A by splitting.</strong> If you split a very heavy nucleus (BE/A ≈ 7.6 MeV) into two medium-mass nuclei (BE/A ≈ 8.5 MeV), the products are more tightly bound, and energy is released. This is nuclear FISSION.</li>
+</ol>
+
+<ol>
+<li><strong>Iron-56 is the "dead end."</strong> Neither fusion nor fission can extract energy from iron-56 — it's already at the peak of the binding energy curve. You can't gain binding energy per nucleon by fusing iron or splitting iron. This is why the cores of massive stars accumulate iron before they collapse — the star runs out of nuclear fuel.</li>
+</ol>
+
+<p><strong>Why fission releases ~200 MeV.</strong> For uranium-235 (A = 235, BE/A ≈ 7.6 MeV/nucleon):</p>
+<p>Total binding energy of ²³⁵U: 235 × 7.6 ≈ 1786 MeV.</p>
+<p>Two medium-mass fission fragments (A ≈ 95 and 140): BE/A ≈ 8.5 MeV/nucleon.</p>
+<p>Total binding energy of fragments: 95 × 8.5 + 140 × 8.5 ≈ 1998 MeV.</p>
+<p>Energy released = 1998 − 1786 ≈ 212 MeV (close to the measured ~200 MeV, considering approximations).</p>
+
+<p>The energy released per fission, while enormous on the atomic scale, is tiny in joules: 200 MeV = 3.2 × 10⁻¹¹ J. But for 1 gram of ²³⁵U undergoing complete fission: (N_A/235) × 3.2 × 10⁻¹¹ = 2.56 × 10²¹ × 3.2 × 10⁻¹¹ ≈ 8.2 × 10¹⁰ J ≈ 23,000 kWh — the energy equivalent of burning about 2.7 tonnes of coal.</p>
+
+<h3>Common Misconceptions</h3>
+
+<p><strong>"Fission and fusion both release energy because they're 'nuclear,' regardless of which elements are involved."</strong> This is FALSE and it's a critical misconception. Fission releases energy ONLY for heavy nuclei (above iron on the binding energy curve). Fusion releases energy ONLY for light nuclei (below iron). Both processes move products TOWARD the peak of the binding energy curve (iron-56). Fission of a light nucleus would CONSUME energy. Fusion of heavy nuclei would CONSUME energy. The direction that releases energy is always toward greater binding energy per nucleon.</p>
+
+<p><strong>"Binding energy is the energy that holds the nucleus together."</strong> The binding energy IS the energy that holds the nucleus together — it's the energy you would need to ADD to pull the nucleus apart. But the binding energy per nucleon curve shows the energy ALREADY released when those nucleons came together. A higher BE/A means more energy was released per nucleon during the nucleus's formation (and more energy would be needed to pull it apart).</p>
+
+<hr>
+
+<h2>3. Chain Reactions</h2>
+
+<h3>Why This Matters</h3>
+
+<p>A single fission releases ~200 MeV — about 3.2 × 10⁻¹¹ J. That's a completely negligible amount of energy. What makes fission useful (or dangerous) is the possibility of a <strong>chain reaction</strong>: the neutrons released by one fission can induce further fissions, which release more neutrons, and so on. If each fission causes, on average, one more fission, the reaction is self-sustaining and can produce steady power. If each fission causes more than one, the reaction grows exponentially — this is the principle of nuclear weapons.</p>
+
+<h3>The Key Ideas</h3>
+
+<p><strong>The chain reaction mechanism.</strong> Fission of ²³⁵U releases, on average, about 2.5 neutrons. These neutrons can:</p>
+<ol>
+<li>Cause another ²³⁵U nucleus to fission (sustaining the chain).</li>
+<li>Be absorbed by ²³⁸U without causing fission (²³⁸U captures neutrons to become ²³⁹U, which beta-decays to ²³⁹Pu).</li>
+<li>Escape from the system entirely (leakage).</li>
+<li>Be absorbed by control rods or other structural materials.</li>
+</ol>
+
+<p><strong>The multiplication factor k.</strong> The <strong>neutron multiplication factor</strong> k (also called k_eff) is the average number of neutrons from one fission that go on to cause another fission.</p>
+
+<ul>
+<li>k < 1: subcritical — the reaction dies out.</li>
+<li>k = 1: critical — the reaction is self-sustaining at a constant rate. This is the operating condition for a nuclear reactor.</li>
+<li>k > 1: supercritical — the reaction grows exponentially. This is what happens in a nuclear weapon (deliberately) or a nuclear accident (unintentionally).</li>
+</ul>
+
+<p><strong>Critical mass.</strong> The <strong>critical mass</strong> is the minimum mass of fissile material needed to sustain a chain reaction. If the mass is too small, too many neutrons escape through the surface before causing fissions — the surface-to-volume ratio is too high. The critical mass depends on:</p>
+<ul>
+<li>The isotope (²³⁵U: ~50 kg for bare sphere; ²³⁹Pu: ~10 kg)</li>
+<li>The shape (sphere minimizes surface area)</li>
+<li>The presence of a neutron reflector (surrounding the material with a material that reflects neutrons back inward)</li>
+<li>The density (compression increases density, reducing the mean free path of neutrons and thus the critical mass)</li>
+</ul>
+
+<p><strong>Enrichment.</strong> Natural uranium is only 0.72% ²³⁵U (the rest is ²³⁸U, which doesn't sustain a chain reaction with slow neutrons). Most reactors require uranium "enriched" to 3-5% ²³⁵U. Weapons-grade uranium is enriched to >90% ²³⁵U.</p>
+
+<h3>Common Misconceptions</h3>
+
+<p><strong>"A nuclear reactor can explode like a nuclear bomb."</strong> No. The enrichment and design of a reactor make a nuclear explosion physically impossible. Reactor fuel is 3-5% ²³⁵U; bomb fuel is >90%. A reactor can experience a steam explosion or hydrogen explosion (as at Chernobyl and Fukushima), which can rupture the containment and spread radioactive material, but there is no mechanism for a nuclear detonation in a power reactor.</p>
+
+<p><strong>"The chain reaction is uncontrolled in a reactor."</strong> No. Reactors are carefully controlled to maintain k = 1. Control rods made of neutron-absorbing materials (boron, cadmium, hafnium) are inserted to reduce k and withdrawn to increase it. The reactor operates at exactly critical, with k maintained at 1.0000 by automatic control systems.</p>
+
+<hr>
+
+<h2>4. Nuclear Reactors</h2>
+
+<h3>Why This Matters</h3>
+
+<p>Nuclear power provides about 10% of the world's electricity from about 440 reactors in 32 countries. Understanding how a reactor works — the fuel, the moderator, the control systems, and the safety features — is essential for evaluating the role of nuclear energy in addressing climate change and energy security.</p>
+
+<h3>The Key Ideas</h3>
+
+<p><strong>Core components of a thermal nuclear reactor:</strong></p>
+
+<ol>
+<li><strong>Fuel:</strong> Usually uranium dioxide (UO₂) pellets enriched to 3-5% ²³⁵U, sealed in zirconium alloy tubes (fuel rods). The fuel rods are assembled into bundles.</li>
+</ol>
+
+<ol>
+<li><strong>Moderator:</strong> Fission neutrons are "fast" — they're born with ~2 MeV of kinetic energy. But ²³⁵U is much more likely to fission with SLOW ("thermal") neutrons (~0.025 eV). The moderator slows the neutrons down through elastic collisions. Good moderators use light nuclei (so neutrons lose more energy per collision) and have low neutron absorption:</li>
+<li>Water (H₂O): Most common moderator. Light hydrogen nuclei are excellent at slowing neutrons, but hydrogen also absorbs some neutrons. This is why light-water reactors need enriched uranium.</li>
+<li>Heavy water (D₂O): Deuterium absorbs far fewer neutrons than ordinary hydrogen, so heavy-water reactors (like CANDU) can use natural (unenriched) uranium.</li>
+<li>Graphite (carbon): Used in early reactors (and the Chernobyl RBMK design). Does not absorb many neutrons but is flammable at very high temperatures.</li>
+</ol>
+
+<ol>
+<li><strong>Control rods:</strong> Made of neutron-absorbing materials (boron carbide, cadmium, hafnium, or silver-indium-cadmium alloy). Inserted into the core to absorb neutrons and reduce k; withdrawn to increase k. In an emergency, control rods are rapidly inserted ("SCRAM") to shut down the chain reaction.</li>
+</ol>
+
+<ol>
+<li><strong>Coolant:</strong> Removes heat from the core and transfers it to a steam generator (in PWRs) or directly to a turbine (in BWRs). Common coolants: water, heavy water, carbon dioxide, helium, liquid sodium.</li>
+</ol>
+
+<ol>
+<li><strong>Containment:</strong> A thick reinforced concrete and steel structure that encloses the reactor. Designed to withstand internal pressures from accidents and external impacts.</li>
+</ol>
+
+<p><strong>Types of reactors:</strong></p>
+<ul>
+<li><strong>Pressurized Water Reactor (PWR):</strong> The most common type. Water at high pressure (~150 atm) serves as both moderator and coolant. The primary loop transfers heat to a secondary loop where steam is generated.</li>
+<li><strong>Boiling Water Reactor (BWR):</strong> Water boils directly in the core, and the steam drives the turbine. Simpler design but the turbine becomes radioactive.</li>
+<li><strong>CANDU (CANada Deuterium Uranium):</strong> Uses heavy water moderator, allowing natural uranium fuel. Can be refueled while operating.</li>
+</ul>
+
+<p><strong>Fertile materials and breeder reactors.</strong> ²³⁸U (99.3% of natural uranium) is not fissile — it doesn't fission with slow neutrons. But when ²³⁸U captures a neutron, it becomes ²³⁹U, which beta-decays (half-life 23.5 min) to ²³⁹Np, which beta-decays (half-life 2.36 days) to ²³⁹Pu, which IS fissile. A breeder reactor produces MORE fissile material (²³⁹Pu) than it consumes, by surrounding the core with a "blanket" of ²³⁸U.</p>
+
+<h3>Common Misconceptions</h3>
+
+<p><strong>"Nuclear waste is all dangerously radioactive for millions of years."</strong> Most fission products have half-lives of seconds to decades. The ones that matter for long-term storage are a handful of isotopes with half-lives of thousands to millions of years (like ⁹⁹Tc, 211,000 yr), plus the transuranic elements (plutonium, americium, curium). High-level waste is intensely radioactive for the first few hundred years, after which the activity drops significantly. The long-lived components have lower activity and are primarily an ingestion/inhalation hazard, not an external radiation hazard.</p>
+
+<hr>
+
+<h3>The Oklo Natural Reactor</h3>
+
+<p>About 2 billion years ago, in what is now Gabon, Africa, a natural nuclear reactor operated spontaneously. At Oklo, uranium deposits in the rock became critical when groundwater moderated neutrons. The reactor ran intermittently for hundreds of thousands of years, producing about 100 kW of thermal power.</p>
+
+<p>How was this possible? Two billion years ago, the isotopic abundance of ²³⁵U was about 3% (compared to 0.72% today) because ²³⁵U decays faster than ²³⁸U (half-life 0.70 billion years vs. 4.47 billion years). With 3% enrichment and groundwater as moderator, natural uranium deposits could reach criticality.</p>
+
+<p>The Oklo reactor is evidence that the laws of physics haven't changed over billions of years. The fission product distribution and neutron capture cross-sections inferred from the Oklo rocks match modern measurements perfectly. This is an extraordinary confirmation that nuclear physics constants have been stable over cosmological timescales.</p>
+
+<h3>Why Nuclear Waste Is Challenging</h3>
+
+<p>Spent nuclear fuel contains a complex mixture of radioactive isotopes:</p>
+
+<ul>
+<li><strong>Fission products:</strong> ⁹⁰Sr (T₁/₂ = 29 years), ¹³⁷Cs (30 years), ⁹⁹Tc (211,000 years), ¹²⁹I (15.7 million years). These are mostly beta/gamma emitters. The 30-year half-life isotopes dominate the radiation hazard for the first few hundred years.</li>
+<li><strong>Transuranic elements:</strong> ²³⁹Pu (24,100 years), ²⁴⁰Pu (6,560 years), ²⁴¹Am (432 years). These are alpha emitters produced by neutron capture on ²³⁸U. They dominate the long-term radiotoxicity.</li>
+</ul>
+
+<p>The "high-level waste" challenge: after ~300 years of cooling in storage pools, the short-lived fission products have decayed significantly. What remains is primarily the transuranic elements and long-lived fission products, which need isolation for ~10,000-100,000 years. This is the timescale for geological disposal — burying the waste deep underground in stable rock formations.</p>
+
+<p>Reprocessing (chemically separating plutonium and uranium from spent fuel) can reduce the waste volume and recover fissile material, but it raises proliferation concerns because separated plutonium could be diverted for weapons.</p>
+
+<hr>
+
+<h3>Separated Isotopes and Enrichment</h3>
+
+<p>Naturally occurring elements consist of isotopic mixtures, but for many applications, specific isotopes are needed. <strong>Isotope separation</strong> (enrichment) is the process of increasing the proportion of a particular isotope. </p>
+
+<p>Methods include:</p>
+<ul>
+<li><strong>Gas diffusion:</strong> UF₆ gas is forced through porous membranes. Lighter ²³⁵UF₆ diffuses slightly faster than ²³⁸UF₆. Repeating thousands of times achieves the desired enrichment.</li>
+<li><strong>Gas centrifugation:</strong> UF₆ gas is spun at extremely high speeds (~50,000-70,000 rpm). The heavier ²³⁸UF₆ concentrates at the outer wall; the lighter ²³⁵UF₆ concentrates near the center. This is the dominant method today.</li>
+<li><strong>Mass spectrometry:</strong> Ionized atoms are deflected by magnetic fields. Different isotopes follow paths with slightly different radii. Used for small-scale separation (like producing radioisotopes for medicine).</li>
+</ul>
+
+<p>The enrichment level determines use:</p>
+<ul>
+<li>Natural uranium (0.72% ²³⁵U): CANDU reactors (with heavy water moderator)</li>
+<li>Low-enriched uranium (3-5% ²³⁵U): Most power reactors (PWR, BWR)</li>
+<li>Highly enriched uranium (>20% ²³⁵U): Research reactors, naval propulsion</li>
+<li>Weapons-grade uranium (>90% ²³⁵U): Nuclear weapons</li>
+</ul>
+
+<p>The same technology that enriches uranium for reactors can be used to produce weapons-grade material — this is the central challenge of nuclear non-proliferation. The distinction between peaceful and weapons applications is political, not technological.</p>
+
+<hr>
+
+<h2>Worked Examples</h2>
+
+<h3>Example 1: Energy from Fission</h3>
+
+<p>Calculate the energy released when 1.00 kg of ²³⁵U undergoes complete fission. Assume 200 MeV per fission.</p>
+
+<p><strong>Approach:</strong> Find number of nuclei, multiply by energy per fission.</p>
+
+<p><strong>Step 1:</strong> N = (1.00 × 10³ g / 235 g/mol) × 6.022 × 10²³ = 2.563 × 10²⁴ nuclei.</p>
+
+<p><strong>Step 2:</strong> E = 2.563 × 10²⁴ × 200 MeV = 5.126 × 10²⁶ MeV.</p>
+<p>Convert to joules: 5.126 × 10²⁶ × 1.60 × 10⁻¹³ = 8.20 × 10¹³ J.</p>
+
+<p><strong>Why this makes sense:</strong> This is about 8.2 × 10¹³ J, which is the energy equivalent of burning ~2,700 tonnes of coal or ~20 kilotons of TNT. The energy density of nuclear fuel is about 2 million times that of chemical fuel.</p>
+
+<hr>
+
+<h3>Example 2: Binding Energy per Nucleon</h3>
+
+<p>Calculate the binding energy per nucleon for iron-56. The mass of ⁵⁶Fe is 55.934937 u. The mass of a proton is 1.007276 u and the mass of a neutron is 1.008665 u.</p>
+
+<p><strong>Approach:</strong> Δm = (Z·m_p + N·m_n) − m_nucleus. Then E = Δm c² with 1 u = 931.5 MeV/c².</p>
+
+<p><strong>Step 1:</strong> ⁵⁶Fe has Z = 26, N = 30.</p>
+<p>Sum of nucleon masses = 26 × 1.007276 + 30 × 1.008665 = 26.18918 + 30.25995 = 56.44913 u.</p>
+
+<p><strong>Step 2:</strong> Δm = 56.44913 − 55.93494 = 0.51419 u.</p>
+
+<p><strong>Step 3:</strong> E = 0.51419 × 931.5 = 479.0 MeV.</p>
+<p>BE/A = 479.0 / 56 = 8.55 MeV/nucleon.</p>
+
+<p>(The accepted value is ~8.79 MeV/nucleon. The difference arises because we used the mass of the neutral iron-56 ATOM, which includes 26 electrons, and the masses of protons (hydrogen atoms) include electrons. A more careful calculation accounting for electron binding energies gives the accepted value.)</p>
+
+<hr>
+
+<h3>Example 3: Energy from Mass Defect</h3>
+
+<p>In the fission reaction: n + ²³⁵U → ¹⁴¹Ba + ⁹²Kr + 3n, the masses are:</p>
+<p>²³⁵U: 235.0439 u</p>
+<p>n: 1.008665 u</p>
+<p>¹⁴¹Ba: 140.9144 u</p>
+<p>⁹²Kr: 91.9262 u</p>
+<p>Calculate the energy released in MeV.</p>
+
+<p><strong>Approach:</strong> Total mass before − total mass after = Δm. E = Δm c².</p>
+
+<p><strong>Step 1:</strong> Mass before: 235.0439 + 1.0087 = 236.0526 u.</p>
+<p>Mass after: 140.9144 + 91.9262 + 3 × 1.0087 = 140.9144 + 91.9262 + 3.0260 = 235.8666 u.</p>
+
+<p><strong>Step 2:</strong> Δm = 236.0526 − 235.8666 = 0.1860 u.</p>
+
+<p><strong>Step 3:</strong> E = 0.1860 × 931.5 = 173.3 MeV.</p>
+
+<p><strong>Why this makes sense:</strong> This is in the 200 MeV ballpark. The exact energy depends on the specific fission products. Some energy also appears as gamma rays and delayed beta decays, bringing the total to ~200 MeV. The 173 MeV here is just the prompt energy from this particular fission channel.</p>
+
+<hr>
+
+<h3>Example 4: Critical Mass Concept</h3>
+
+<p>Explain why a subcritical mass of ²³⁵U cannot sustain a chain reaction, and how a critical mass is achieved in a nuclear weapon.</p>
+
+<p><strong>Approach:</strong> Surface-to-volume ratio argument. Two techniques: gun-type and implosion.</p>
+
+<p><strong>Explanation:</strong> A subcritical mass is too small for a chain reaction because the surface-to-volume ratio is too high — too many neutrons escape through the surface before they can cause further fissions. The neutron multiplication factor k < 1.</p>
+
+<p>Nuclear weapons achieve supercriticality by:</p>
+<ul>
+<li><strong>Gun-type (Hiroshima bomb):</strong> Two subcritical pieces of ²³⁵U are brought together rapidly using a conventional explosive charge. Once combined, the mass exceeds critical, and the chain reaction multiplies exponentially until the energy released blows the assembly apart.</li>
+<li><strong>Implosion (Nagasaki bomb, modern weapons):</strong> A subcritical sphere of plutonium is surrounded by conventional high explosives arranged to produce an inwardly directed shock wave. The shock wave compresses the plutonium, increasing its density. Since critical mass is inversely proportional to the square of density, compression dramatically reduces the critical mass, making the sphere highly supercritical.</li>
+</ul>
+
+<hr>
+
+<h3>Example 5: Reactor Power</h3>
+
+<p>A nuclear reactor operates at a thermal power of 3000 MW. Assuming 200 MeV per fission and that the energy is entirely from fission, calculate: (a) the number of fissions per second, (b) the mass of ²³⁵U consumed per day.</p>
+
+<p><strong>Approach:</strong> Power = energy per fission × fissions per second.</p>
+
+<p><strong>Step 1:</strong> Energy per fission = 200 MeV = 3.20 × 10⁻¹¹ J.</p>
+<p>Fissions/s = 3000 × 10⁶ J/s / (3.20 × 10⁻¹¹ J) = 9.375 × 10¹⁹ fissions/s.</p>
+
+<p><strong>Step 2:</strong> Number of fissions per day = 9.375 × 10¹⁹ × 86400 = 8.10 × 10²⁴.</p>
+<p>Moles = 8.10 × 10²⁴ / (6.022 × 10²³) = 13.45 mol.</p>
+<p>Mass = 13.45 × 235 = 3160 g ≈ 3.16 kg/day.</p>
+
+<p><strong>Why this makes sense:</strong> A 3000 MW thermal reactor consumes about 3 kg of ²³⁵U per day. A coal plant of the same power would burn about 10,000 tonnes per day — a factor of ~3 million. This enormous difference in fuel consumption is why nuclear power, despite its challenges, remains a significant energy source.</p>
+
+<hr>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1</h3>
+<p>Calculate the binding energy per nucleon of uranium-238. The atomic mass of ²³⁸U is 238.05079 u. (m_p = 1.007276 u, m_n = 1.008665 u.)</p>
+
+<h3>Problem 2</h3>
+<p>A nuclear reactor consumes 2.50 kg of ²³⁵U per day through fission, with each fission releasing approximately 200 MeV. (a) Calculate the total energy released per day in joules. (b) Calculate the average thermal power output in MW. (c) If the plant's electrical efficiency is 33%, calculate the electrical power output.</p>
+
+<h3>Problem 3</h3>
+<p>Explain why: (a) ²³⁵U can sustain a chain reaction with slow neutrons but ²³⁸U cannot. (b) A moderator is necessary in most reactors. (c) Nuclear reactors must be carefully controlled to maintain k ≈ 1.</p>
+
+<h3>Problem 4</h3>
+<p>Using the binding energy per nucleon curve, explain: (a) Why fission of ²³⁵U releases energy. (b) Why fusion of hydrogen to helium releases energy. (c) Why neither fission nor fusion of iron-56 can release energy.</p>
+
+<h3>Problem 5</h3>
+<p>A student says: "Nuclear power is dangerous because the reactor can explode like an atomic bomb." Evaluate this statement, explaining why a nuclear reactor cannot produce a nuclear explosion.</p>
+
+<h3>Problem 6 (IB Exam Style)</h3>
+<p>The fission of uranium-235 can be induced by the absorption of a slow neutron.</p>
+
+<p>(a) State what is meant by nuclear fission. [1 mark]</p>
+
+<p>(b) One possible fission reaction is:</p>
+<p>n + ²³⁵U → ¹⁴⁰Xe + ⁹⁴Sr + 2n</p>
+<p>The masses are: ²³⁵U = 235.0439 u, ¹⁴⁰Xe = 139.9216 u, ⁹⁴Sr = 93.9154 u, n = 1.008665 u. (i) Show that the mass defect for this reaction is approximately 0.198 u. (ii) Calculate the energy released in MeV. [4 marks]</p>
+
+<p>(c) On average, 2.5 neutrons are released in each fission of ²³⁵U. Explain how this enables a self-sustaining chain reaction. [2 marks]</p>
+
+<p>(d) Outline the role of the following components in a nuclear reactor: (i) moderator, (ii) control rods. [4 marks]</p>
+
+<p>(e) State one advantage and one disadvantage of nuclear power compared to fossil fuel power stations. [2 marks]</p>
+
+<hr>
+
+<h2>Answers</h2>
+
+<h3>Answer 1</h3>
+<p>Z = 92, N = 238 − 92 = 146.</p>
+<p>Sum of nucleon masses = 92 × 1.007276 + 146 × 1.008665 = 92.6694 + 147.2651 = 239.9345 u.</p>
+<p>Δm = 239.9345 − 238.0508 = 1.8837 u.</p>
+<p>E = 1.8837 × 931.5 = 1754.7 MeV.</p>
+<p>BE/A = 1754.7 / 238 = 7.37 MeV/nucleon.</p>
+
+<p>This is lower than iron's 8.79 MeV/nucleon — confirming that uranium is less tightly bound, and splitting it releases energy.</p>
+
+<h3>Answer 2</h3>
+<p>(a) N = (2.50 × 10³ / 235) × 6.022 × 10²³ = 6.407 × 10²⁴ nuclei.</p>
+<p>E = 6.407 × 10²⁴ × 200 MeV = 1.281 × 10²⁷ MeV = 2.050 × 10¹⁴ J.</p>
+
+<p>(b) P_thermal = 2.050 × 10¹⁴ J / (24 × 3600 s) = 2.373 × 10⁹ W = 2373 MW.</p>
+
+<p>(c) P_electrical = 0.33 × 2373 = 783 MW.</p>
+
+<h3>Answer 3</h3>
+<p>(a) ²³⁵U is fissile: it undergoes fission when it captures a slow (thermal) neutron. The compound nucleus ²³⁶U has enough excitation energy to fission. ²³⁸U captures slow neutrons but the compound nucleus ²³⁹U has insufficient excitation energy to fission — it de-excites by gamma emission instead. ²³⁸U can fission with FAST neutrons (>1 MeV), but those are rare in a moderated reactor. This is why ²³⁵U sustains a chain reaction and ²³⁸U does not in a thermal reactor.</p>
+
+<p>(b) Fission neutrons are born fast (~2 MeV). ²³⁵U has a much higher fission cross-section (probability) for SLOW neutrons. The moderator slows the neutrons through elastic collisions with light nuclei (hydrogen in water), increasing the probability that the next neutron interaction causes fission rather than being captured. Without a moderator, fast-neutron reactors are possible, but they require higher enrichment and different design.</p>
+
+<p>(c) k = 1 means exactly one neutron from each fission goes on to cause another fission. k > 1 causes exponential growth — the reactor power would surge dangerously, potentially melting the fuel. k < 1 causes the chain reaction to die out. Maintaining k ≈ 1.0000 is achieved by fine adjustment of control rods and (in PWRs) boron concentration in the coolant. The delayed neutrons (from fission product decay) provide a crucial margin of controllability — without them, reactor control would be impossible.</p>
+
+<h3>Answer 4</h3>
+<p>(a) Uranium-235 has BE/A ≈ 7.6 MeV/nucleon — relatively low. When it splits into two medium-mass fragments, those fragments have BE/A ≈ 8.5 MeV/nucleon — higher. The nucleons become more tightly bound. The difference in binding energy (about 0.9 MeV per nucleon × 235 nucleons ≈ 200 MeV) is released.</p>
+
+<p>(b) Hydrogen nuclei (protons) have BE/A = 0 (they're not bound to anything). When four protons fuse to form helium-4 (BE/A = 7.07 MeV/nucleon), the nucleons go from zero binding to very tightly bound. The difference is released as energy: about 26.7 MeV per helium nucleus formed.</p>
+
+<p>(c) Iron-56 sits at the PEAK of the BE/A curve (~8.79 MeV/nucleon). To move away from the peak — by fusing iron into heavier nuclei or splitting iron into lighter nuclei — would DECREASE binding energy per nucleon. That would CONSUME energy rather than release it. Iron is the most stable nucleus; you can't extract nuclear energy from it by either fission or fusion. This is why fusion in stars stops at iron.</p>
+
+<h3>Answer 5</h3>
+<p>The student's statement reflects a fundamental misunderstanding. A nuclear reactor CANNOT explode like an atomic bomb. Here's why:</p>
+
+<ol>
+<li><strong>Enrichment:</strong> Reactor fuel is typically 3-5% ²³⁵U. Bomb-grade uranium is >90% enriched. At 3-5%, a rapid supercritical chain reaction is physically impossible — there are too many ²³⁸U atoms absorbing neutrons.</li>
+</ol>
+
+<ol>
+<li><strong>Geometry and configuration:</strong> An atomic bomb requires precisely timed assembly of a supercritical mass. A reactor's fuel is distributed in thousands of separate fuel rods with moderator and coolant between them. Even if control were completely lost, the geometry prevents the rapid exponential multiplication required for a nuclear explosion.</li>
+</ol>
+
+<ol>
+<li><strong>What CAN happen:</strong> The worst reactor accidents (Chernobyl, Fukushima) involved steam explosions, hydrogen explosions, or core meltdowns — NOT nuclear detonations. At Chernobyl, a power surge ruptured the reactor vessel and a steam explosion dispersed radioactive material. At Fukushima, hydrogen gas exploded outside the containment. These were chemical/physical explosions, not nuclear.</li>
+</ol>
+
+<ol>
+<li><strong>Physics limitation:</strong> Even in a prompt criticality event (which DID happen at Chernobyl), the energy release is limited by the Doppler broadening effect (fuel heats up, thermal motion of nuclei makes neutron capture less likely) and by the eventual dispersal of the fuel. You get a steam explosion from the rapid energy release, not a nuclear detonation.</li>
+</ol>
+
+<p>So: nuclear reactors can be dangerous, and accidents can release radioactive material, but they cannot produce a nuclear explosion. The statement conflates two very different designs.</p>
+
+<h3>Answer 6</h3>
+<p>(a) Nuclear fission is the splitting of a heavy nucleus into two (or more) lighter nuclei, accompanied by the release of energy and typically several neutrons.</p>
+
+<p>(b) (i) Mass before: 235.0439 + 1.008665 = 236.052565 u.</p>
+<p>Mass after: 139.9216 + 93.9154 + 2 × 1.008665 = 139.9216 + 93.9154 + 2.017330 = 235.854330 u.</p>
+<p>Δm = 236.052565 − 235.854330 = 0.198235 u ≈ 0.198 u. ✓</p>
+
+<p>(ii) E = 0.1982 × 931.5 = 184.6 MeV ≈ 185 MeV.</p>
+
+<p>(c) Each fission releases 2-3 neutrons on average. If at least one of these neutrons goes on to induce another fission, the process becomes self-sustaining — each generation of fissions produces the neutrons for the next generation. This is a chain reaction. If k = 1, exactly one neutron per fission creates another fission, and the reaction continues at a steady rate. If k > 1, the reaction grows exponentially.</p>
+
+<p>(d) (i) <strong>Moderator:</strong> Slows down fast fission neutrons through elastic collisions. Most reactors use water as moderator. Slow (thermal) neutrons are much more likely to cause fission in ²³⁵U than fast neutrons. The moderator material must have light nuclei (for efficient energy transfer) and low neutron absorption cross-section. Without the moderator, the chain reaction would not be sustainable at low enrichment levels.</p>
+
+<p>(ii) <strong>Control rods:</strong> Contain materials with high neutron absorption cross-sections (boron, cadmium, hafnium). By inserting or withdrawing control rods, operators adjust the neutron multiplication factor k. Inserting rods absorbs more neutrons, decreasing k; withdrawing rods increases k. During normal operation, control rods are positioned to maintain k ≈ 1.000. In an emergency, rods are rapidly fully inserted (SCRAM) to shut down the chain reaction by making k ≪ 1.</p>
+
+<p>(e) <strong>Advantage:</strong> Nuclear power produces extremely low greenhouse gas emissions during operation (essentially zero CO₂, unlike fossil fuel plants). It has a very high energy density — a few kg of uranium replaces thousands of tonnes of coal. It provides reliable baseload power independent of weather conditions (unlike solar and wind).</p>
+
+<p><strong>Disadvantage:</strong> Nuclear power produces radioactive waste that requires safe long-term storage (thousands of years for some isotopes). There are risks of severe accidents (though very rare) that can contaminate large areas, as at Chernobyl and Fukushima. The capital costs of building nuclear plants are very high. There are also proliferation concerns related to the fuel cycle.</p>
+
+<hr>
+
+<h2>Key Takeaways</h2>
+
+<ol>
+<li>Nuclear fission is the splitting of a heavy nucleus (typically ²³⁵U) by neutron capture, releasing ~200 MeV, fission fragments, and 2-3 neutrons.</li>
+</ol>
+
+<ol>
+<li>The binding energy per nucleon curve explains WHY fission releases energy: heavy nuclei have lower BE/A, so splitting them into medium-mass nuclei (higher BE/A) releases the difference.</li>
+</ol>
+
+<ol>
+<li>A chain reaction occurs when neutrons from one fission induce further fissions. The multiplication factor k determines whether the reaction is subcritical (k < 1), critical (k = 1), or supercritical (k > 1).</li>
+</ol>
+
+<ol>
+<li>Critical mass depends on isotope, enrichment, shape, density, and the presence of reflectors. ²³⁵U requires ~50 kg (bare sphere); ²³⁹Pu requires ~10 kg.</li>
+</ol>
+
+<ol>
+<li>A nuclear reactor consists of fuel (enriched uranium), moderator (to slow neutrons), control rods (to regulate k), coolant (to remove heat), and containment. The most common type is the PWR.</li>
+</ol>
+
+<ol>
+<li>Fission releases energy only for heavy nuclei (moving TOWARD iron on the BE/A curve). Fusion releases energy only for light nuclei. Iron-56, at the peak, can release energy by neither process.</li>
+</ol>
+
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L65_radioactive_decay_2.html">← Lesson 65</a>
+  <a href="L67_fusion_stars.html">Lesson 67 →</a>
+</nav>
+
+</body>
+</html>

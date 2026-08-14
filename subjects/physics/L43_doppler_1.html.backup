@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 43: Lesson 43: The Doppler Effect I — Sound Waves — IB Physics HL</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']]
+  },
+  options: {
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap');
+  
+  :root {
+    --bg: #fdfcf9;
+    --text: #1a1a1a;
+    --accent: #2c5f2d;
+    --border: #d0cec7;
+    --code-bg: #f4f3ef;
+    --callout-bg: #f0f7f0;
+    --callout-border: #2c5f2d;
+    --warning-bg: #fff8e6;
+    --warning-border: #c4941a;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  body {
+    font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid var(--accent);
+    color: var(--accent);
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 2.5rem 0 0.75rem;
+    color: #1a1a1a;
+  }
+  
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.5rem;
+  }
+  
+  p { margin: 0 0 1rem; }
+  
+  ul, ol { margin: 0 0 1rem 1.5rem; }
+  li { margin-bottom: 0.35rem; }
+  
+  code {
+    background: var(--code-bg);
+    padding: 0.15em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+    font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+  }
+  
+  pre {
+    background: var(--code-bg);
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 0 0 1rem;
+    font-size: 0.85em;
+    line-height: 1.5;
+  }
+  
+  pre code {
+    background: none;
+    padding: 0;
+    font-size: inherit;
+  }
+  
+  blockquote {
+    border-left: 4px solid var(--callout-border);
+    background: var(--callout-bg);
+    margin: 0 0 1rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+  }
+  
+  blockquote.warning {
+    border-left-color: var(--warning-border);
+    background: var(--warning-bg);
+  }
+  
+  strong { font-weight: 700; }
+  
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.5rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  
+  .nav a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+  
+  .nav a:hover { background: var(--callout-bg); }
+  
+  .worked-example, .answer {
+    background: var(--code-bg);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin: 0.75rem 0 1.25rem;
+  }
+  
+  .worked-example strong:first-child, .answer strong:first-child {
+    color: var(--accent);
+  }
+  
+  @media print {
+    body { font-size: 12pt; max-width: 100%; padding: 0; }
+    .nav { display: none; }
+    h1 { font-size: 18pt; }
+    h2 { font-size: 14pt; }
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 0 1rem;
+  }
+  
+  th, td {
+    border: 1px solid var(--border);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  
+  th {
+    background: var(--code-bg);
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L42_standing_waves_3.html">← Lesson 42</a>
+  <a href="L44_doppler_2.html">Lesson 44 →</a>
+</nav>
+
+<h1>Lesson 43: The Doppler Effect I — Sound Waves</h1>
+
+<h2>What You'll Learn</h2>
+<ul>
+<li>What the Doppler effect is and why it happens</li>
+<li>The Doppler equation for sound: what each symbol means</li>
+<li>The sign convention — when to use + and when to use −</li>
+<li>How moving source and moving observer differ physically</li>
+<li>Sonic booms, shock waves, and the Mach number</li>
+<li>Applications to police radar, astronomy, and medical ultrasound</li>
+</ul>
+
+<hr>
+
+<h2>1. What Is the Doppler Effect?</h2>
+
+<h3>The Basic Observation</h3>
+
+<p>Imagine you are standing on a sidewalk. An ambulance drives past you with its siren on. As it approaches, the siren sounds <strong>higher in pitch</strong>. The moment it passes, the pitch <strong>drops</strong> and sounds lower as it drives away. The siren itself never changes — the ambulance driver hears the same steady note the whole time.</p>
+
+<p>This is the <strong>Doppler effect</strong>: the change in observed frequency when a wave source and an observer move relative to each other.</p>
+
+<p>The effect is named after Christian Doppler, an Austrian physicist who first described it mathematically in 1842.</p>
+
+<h3>Why It Happens — The Intuition</h3>
+
+<p>A sound wave is a series of compressions (high pressure regions) travelling through the air. The <strong>frequency</strong> is the number of compressions that reach your ear per second. The <strong>wavelength</strong> is the distance between successive compressions.</p>
+
+<ul>
+<li><strong>Stationary source:</strong> The compressions spread out evenly in all directions. The distance between compressions is the same everywhere. An observer at any position hears the same frequency that the source emits.</li>
+</ul>
+
+<ul>
+<li><strong>Source moving toward you:</strong> Each time the source emits a new compression, it has moved closer to you. The compressions are now closer together — the wavelength is <strong>shorter</strong>. Since the wave speed in air is fixed (at a given temperature), a shorter wavelength means a <strong>higher frequency</strong>. You hear a higher pitch.</li>
+</ul>
+
+<ul>
+<li><strong>Source moving away from you:</strong> The source moves away between emitting each compression. The compressions spread out — the wavelength is <strong>longer</strong>. This means a <strong>lower frequency</strong>. You hear a lower pitch.</li>
+</ul>
+
+<p><strong>The key physical idea:</strong> The wave speed in the medium does NOT change. The wavelength changes because the source moves between emitting successive wavefronts. Since v = fλ and v is constant, a change in λ forces a change in f.</p>
+
+<h3>Common Misconception #1</h3>
+
+<blockquote>"The sound waves travel faster when the source moves toward me."</blockquote>
+
+<p>No. The speed of sound in air is determined by the properties of the air (temperature, pressure), not by the motion of the source. The waves travel at the same speed regardless. The frequency and wavelength change, but the wave speed stays the same.</p>
+
+<h3>Common Misconception #2</h3>
+
+<blockquote>"The Doppler effect only happens with sound."</blockquote>
+
+<p>The Doppler effect happens with <strong>all</strong> waves — sound, light, water waves, even the ripples on a pond. For light waves, the effect produces redshift and blueshift (Lesson 44).</p>
+
+<hr>
+
+<h2>2. The Doppler Equation for Sound</h2>
+
+<p>For sound waves, which require a medium (air, water, solid), the observed frequency is:</p>
+
+<p>$$f' = f \left(\frac{v \pm v_o}{v \mp v_s}\right)$$</p>
+
+<p>Where each symbol means:</p>
+
+<table>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+<th>Units</th>
+</tr>
+<tr>
+<td><strong>f</strong></td>
+<td>Frequency emitted by the source</td>
+<td>Hz (hertz, per second)</td>
+</tr>
+<tr>
+<td><strong>f'</strong></td>
+<td>Frequency detected by the observer</td>
+<td>Hz</td>
+</tr>
+<tr>
+<td><strong>v</strong></td>
+<td>Speed of sound in the medium</td>
+<td>m/s</td>
+</tr>
+<tr>
+<td><strong>v_o</strong></td>
+<td>Speed of the observer relative to the medium</td>
+<td>m/s</td>
+</tr>
+<tr>
+<td><strong>v_s</strong></td>
+<td>Speed of the source relative to the medium</td>
+<td>m/s</td>
+</tr>
+</table>
+
+<p><strong>All speeds are measured relative to the medium (usually still air).</strong> This is crucial — we are not measuring speeds relative to each other. The air is the reference frame.</p>
+
+<h3>The Sign Convention</h3>
+
+<p>This is the part that trips up almost everyone. Learn it carefully.</p>
+
+<p><strong>Upper signs give an increase in frequency (approaching). Lower signs give a decrease (receding).</strong></p>
+
+<h4>Numerator: v ± v_o</h4>
+
+<p>The numerator deals with the <strong>observer's</strong> motion.</p>
+
+<ul>
+<li>Use <strong>+</strong> (plus) when the observer moves <strong>toward</strong> the source.</li>
+<li>Use <strong>−</strong> (minus) when the observer moves <strong>away</strong> from the source.</li>
+</ul>
+
+<h4>Denominator: v ∓ v_s</h4>
+
+<p>The denominator deals with the <strong>source's</strong> motion.</p>
+
+<ul>
+<li>Use <strong>−</strong> (minus) when the source moves <strong>toward</strong> the observer.</li>
+<li>Use <strong>+</strong> (plus) when the source moves <strong>away</strong> from the observer.</li>
+</ul>
+
+<p>The ∓ symbol means "use the opposite of whatever the numerator used." If you used + in the numerator, use − in the denominator, and vice versa. But it's simpler to remember this rule:</p>
+
+<blockquote>The fraction should get <strong>bigger</strong> (f' > f) when source and observer are getting closer together, and <strong>smaller</strong> (f' < f) when they are moving apart. Choose the signs that make this happen.</blockquote>
+
+<h3>Memory Strategy</h3>
+
+<p>Think of an ambulance approaching you:</p>
+<ul>
+<li>The source moves toward you: v_s should make the denominator <strong>smaller</strong> → use minus → f' gets bigger. ✓</li>
+<li>You move toward the source: v_o should make the numerator <strong>bigger</strong> → use plus → f' gets bigger. ✓</li>
+</ul>
+
+<p>Think of an ambulance receding:</p>
+<ul>
+<li>Source moves away: denominator gets <strong>bigger</strong> → use plus → f' gets smaller. ✓</li>
+<li>You move away: numerator gets <strong>smaller</strong> → use minus → f' gets smaller. ✓</li>
+</ul>
+
+<h3>Special Case: Only the Source Moves</h3>
+
+<p>If the observer is stationary (v_o = 0):</p>
+
+<p>$$f' = f \left(\frac{v}{v \mp v_s}\right)$$</p>
+
+<ul>
+<li>Source approaching: $f' = f \left(\frac{v}{v - v_s}\right)$ → larger denominator → f' > f</li>
+<li>Source receding: $f' = f \left(\frac{v}{v + v_s}\right)$ → smaller denominator → f' < f</li>
+</ul>
+
+<h3>Special Case: Only the Observer Moves</h3>
+
+<p>If the source is stationary (v_s = 0):</p>
+
+<p>$$f' = f \left(\frac{v \pm v_o}{v}\right)$$</p>
+
+<ul>
+<li>Observer approaching source: $f' = f \left(\frac{v + v_o}{v}\right)$</li>
+<li>Observer receding from source: $f' = f \left(\frac{v - v_o}{v}\right)$</li>
+</ul>
+
+<h3>Why Moving Source and Moving Observer Give Different Results</h3>
+
+<p>A source moving at 10 m/s toward a stationary observer does NOT produce the same frequency shift as an observer moving at 10 m/s toward a stationary source. The physics is different.</p>
+
+<p>When the <strong>source</strong> moves, the wavelength in the medium actually changes (compressions bunch up or spread out). When the <strong>observer</strong> moves, the wavelength in the medium stays the same, but the observer encounters the wave crests at a different rate.</p>
+
+<p>The full equation accounts for both effects simultaneously.</p>
+
+<hr>
+
+<h2>3. The Speed of Sound</h2>
+
+<p>The Doppler equation needs v, the speed of sound. At room temperature (20°C):</p>
+
+<p>$$v \approx 343 \text{ m/s}$$</p>
+
+<p>For IB problems, you will usually be told the speed of sound. If not stated, use 340 m/s (unless the problem specifically says otherwise). Sound travels faster in warmer air and slower in colder air, but IB problems typically give you v directly.</p>
+
+<hr>
+
+<h2>4. Sonic Booms and Mach Number</h2>
+
+<h3>What Happens When v_s = v?</h3>
+
+<p>Look at the equation: if the source moves toward you at exactly the speed of sound, the denominator becomes v − v_s = v − v = 0. The frequency becomes infinite. This is not physically meaningful — it tells you that something drastic happens.</p>
+
+<p>When v_s = v, all the wavefronts pile up on top of each other at the source. A massive pressure wall builds up. This is the <strong>sound barrier</strong>.</p>
+
+<h3>What Happens When v_s > v?</h3>
+
+<p>When the source moves faster than sound (supersonic), it outruns its own wavefronts. The wavefronts form a cone behind the source — a <strong>shock wave</strong>. When this shock wave passes over you, you hear a <strong>sonic boom</strong>.</p>
+
+<p>The <strong>Mach number</strong> is defined as:</p>
+
+<p>$$M = \frac{v_s}{v}$$</p>
+
+<ul>
+<li>M < 1: subsonic</li>
+<li>M = 1: sonic (sound barrier)</li>
+<li>M > 1: supersonic</li>
+</ul>
+
+<p>A person on the ground does not hear a continuous sonic boom. They hear a single "boom" when the shock wave passes over them. The pilot does not hear the boom at all — they are ahead of it.</p>
+
+<hr>
+
+<h2>5. Common Misconceptions Summary</h2>
+
+<table>
+<tr>
+<th>Misconception</th>
+<th>Reality</th>
+</tr>
+<tr>
+<td>Sound waves travel faster from a moving source</td>
+<td>Wave speed depends on the medium, not the source speed</td>
+</tr>
+<tr>
+<td>The Doppler effect changes the source frequency</td>
+<td>The source emits the same f; only the observed f' changes</td>
+</tr>
+<tr>
+<td>Moving source and moving observer give identical shifts</td>
+<td>They differ physically; the equation accounts for both</td>
+</tr>
+<tr>
+<td>The Doppler effect is only for sound</td>
+<td>All waves experience it, including light</td>
+</tr>
+<tr>
+<td>Sonic boom happens exactly at M = 1</td>
+<td>The boom is a continuous shock cone when M > 1; you hear it once as it passes</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>Worked Examples</h2>
+
+<h3>Example 1: Ambulance Approaching</h3>
+
+<p>An ambulance emits a siren at 800 Hz. It approaches a stationary observer at 30 m/s. The speed of sound is 340 m/s. What frequency does the observer hear?</p>
+
+<p><strong>Approach:</strong> The source moves toward the observer (v_s subtracts in denominator). Observer is stationary (v_o = 0). Use upper signs (approach → f' should increase).</p>
+
+<p>$$f' = f \left(\frac{v}{v - v_s}\right) = 800 \times \frac{340}{340 - 30} = 800 \times \frac{340}{310}$$</p>
+
+<p>$$f' = 800 \times 1.0968 = 877.4 \text{ Hz}$$</p>
+
+<p><strong>Why this makes sense:</strong> The source is approaching, so the frequency should increase. 877 Hz > 800 Hz. The ambulance is moving at about 9% of the speed of sound, so we expect roughly a 9% frequency increase — and that's what we got.</p>
+
+<hr>
+
+<h3>Example 2: Ambulance Receding</h3>
+
+<p>The same ambulance, after passing, moves away at 30 m/s. What does the observer now hear?</p>
+
+<p><strong>Approach:</strong> Source moves away → add v_s in denominator.</p>
+
+<p>$$f' = 800 \times \frac{340}{340 + 30} = 800 \times \frac{340}{370} = 800 \times 0.9189 = 735.1 \text{ Hz}$$</p>
+
+<p><strong>Why this makes sense:</strong> Moving away → frequency drops. 735 Hz < 800 Hz.</p>
+
+<hr>
+
+<h3>Example 3: Observer Moving Toward a Stationary Source</h3>
+
+<p>A stationary speaker emits a tone at 500 Hz. A student runs toward it at 5 m/s. What frequency does the student hear? Take v = 340 m/s.</p>
+
+<p><strong>Approach:</strong> Source is stationary (v_s = 0). Observer moves toward source → add v_o in numerator.</p>
+
+<p>$$f' = f \left(\frac{v + v_o}{v}\right) = 500 \times \frac{340 + 5}{340} = 500 \times \frac{345}{340}$$</p>
+
+<p>$$f' = 500 \times 1.0147 = 507.4 \text{ Hz}$$</p>
+
+<p><strong>Why this makes sense:</strong> Small speed (5 m/s is only about 1.5% of the speed of sound), small frequency increase. ✓</p>
+
+<hr>
+
+<h3>Example 4: Both Moving</h3>
+
+<p>A train blows its horn at 400 Hz while approaching a station at 25 m/s. A passenger on the platform walks toward the train at 2 m/s. What frequency does the passenger hear? v = 340 m/s.</p>
+
+<p><strong>Approach:</strong> Both moving toward each other. Both motions increase f'. Numerator: +v_o (observer toward source). Denominator: −v_s (source toward observer).</p>
+
+<p>$$f' = 400 \times \frac{340 + 2}{340 - 25} = 400 \times \frac{342}{315}$$</p>
+
+<p>$$f' = 400 \times 1.0857 = 434.3 \text{ Hz}$$</p>
+
+<p><strong>Why this makes sense:</strong> Both motions increase the frequency. The source's motion (25 m/s) is the dominant effect since it's much larger than the observer's speed (2 m/s).</p>
+
+<hr>
+
+<h3>Example 5: Bat Echolocation</h3>
+
+<p>A bat flies at 8 m/s toward a wall while emitting a chirp at 50 kHz. The sound reflects off the wall and returns to the bat. What frequency does the bat hear in the echo? v = 340 m/s. (Hint: treat this as a two-step problem.)</p>
+
+<p><strong>Approach:</strong> Step 1: The wall is a stationary "observer" that receives a frequency from the approaching bat. Step 2: The wall acts as a stationary "source" reflecting that frequency. Step 3: The bat is now an observer moving toward this reflected sound.</p>
+
+<p>Step 1 — frequency at the wall (f_wall):</p>
+<p>$$f_{wall} = 50000 \times \frac{340}{340 - 8} = 50000 \times \frac{340}{332} = 50000 \times 1.0241 = 51205 \text{ Hz}$$</p>
+
+<p>Step 2 — the wall reflects 51205 Hz. The bat now approaches this reflected sound as an observer:</p>
+<p>$$f' = 51205 \times \frac{340 + 8}{340} = 51205 \times \frac{348}{340} = 51205 \times 1.0235 = 52398 \text{ Hz}$$</p>
+
+<p><strong>Why this makes sense:</strong> The frequency shift is nearly doubled because the bat experiences the Doppler shift twice — once as the source approaching a stationary reflector, and once as the observer approaching the reflected wave.</p>
+
+<hr>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1</h3>
+<p>A police car siren emits a frequency of 600 Hz. The car approaches a stationary pedestrian at 20 m/s. The speed of sound is 340 m/s.</p>
+<p>(a) Calculate the frequency the pedestrian hears as the car approaches.</p>
+<p>(b) Calculate the frequency the pedestrian hears after the car has passed and is receding.</p>
+<p>(c) The pedestrian claims the pitch dropped by an octave. An octave is a factor of 2 in frequency. Is the pedestrian's claim correct? Explain using your calculations.</p>
+
+<h3>Problem 2</h3>
+<p>A stationary loudspeaker emits a constant 1000 Hz tone. A student on a bicycle rides directly away from the speaker at 6 m/s. Take v = 340 m/s.</p>
+<p>(a) What frequency does the student hear?</p>
+<p>(b) The student then turns around and rides toward the speaker at the same speed. What frequency does she hear now?</p>
+<p>(c) Explain why the answer to (b) is not simply 1000 Hz plus the difference found in (a).</p>
+
+<h3>Problem 3</h3>
+<p>A train horn sounds at 440 Hz. The train approaches a crossing at 35 m/s. At the same time, a car drives toward the train at 15 m/s. v = 340 m/s.</p>
+<p>(a) What frequency does the driver of the car hear?</p>
+<p>(b) What frequency would the driver hear if the car were stationary?</p>
+<p>(c) What frequency does a passenger on the train hear directly from the horn? (Hint: what is the relative speed of the passenger with respect to the horn?)</p>
+
+<h3>Problem 4</h3>
+<p>A bat emits ultrasonic chirps at 40 kHz. It flies at 10 m/s toward a moth. v = 340 m/s.</p>
+<p>(a) If the moth is stationary, what frequency does the moth receive?</p>
+<p>(b) The reflected echo returns to the bat. What frequency does the bat hear in the echo?</p>
+<p>(c) Explain why the bat hears a higher frequency in the echo than the moth hears directly.</p>
+
+<h3>Problem 5</h3>
+<p>An airplane flies at Mach 1.5 at an altitude where the speed of sound is 330 m/s.</p>
+<p>(a) What is the speed of the airplane in m/s?</p>
+<p>(b) Explain why a person on the ground does not hear the airplane at all until it has already passed overhead.</p>
+<p>(c) Why does the pilot not hear a sonic boom?</p>
+
+<h3>Problem 6 (IB Exam-Style)</h3>
+<p>A car with a horn of frequency 520 Hz is involved in a police chase. The speed of sound in air is 340 m/s.</p>
+<p>(a) The car travels at 28 m/s toward a stationary observer. Show that the observed frequency is approximately 570 Hz. [2 marks]</p>
+<p>(b) After passing the observer, the car moves away. The observer measures the frequency as 480 Hz. Calculate the speed of the car. [3 marks]</p>
+<p>(c) A second car also has a horn at 520 Hz. When both cars are stationary, a beat frequency of 0 Hz is observed. When one car moves toward the other at speed u, a beat frequency of 12 Hz is heard by the stationary car. Estimate u. You may use the approximation (1 − x)⁻¹ ≈ 1 + x for small x. [3 marks]</p>
+
+<hr>
+
+<h2>Answers</h2>
+
+<h3>Answer 1</h3>
+<p>(a) $f' = 600 \times \frac{340}{340 - 20} = 600 \times \frac{340}{320} = 637.5 \text{ Hz}$</p>
+
+<p>(b) $f' = 600 \times \frac{340}{340 + 20} = 600 \times \frac{340}{360} = 566.7 \text{ Hz}$</p>
+
+<p>(c) An octave drop would mean f' = 300 Hz. The actual drop is from 637.5 Hz to 566.7 Hz, which is a ratio of only about 0.89, not 0.5. The pedestrian is incorrect. For the frequency to halve, the source would need to move at a significant fraction of the speed of sound — specifically, for f'/f = 0.5, we would need v/(v+v_s) = 0.5, giving v_s = v = 340 m/s (Mach 1). A police car at 20 m/s cannot produce an octave drop.</p>
+
+<h3>Answer 2</h3>
+<p>(a) Observer receding: $f' = 1000 \times \frac{340 - 6}{340} = 1000 \times \frac{334}{340} = 982.4 \text{ Hz}$</p>
+
+<p>(b) Observer approaching: $f' = 1000 \times \frac{340 + 6}{340} = 1000 \times \frac{346}{340} = 1017.6 \text{ Hz}$</p>
+
+<p>(c) 1000 − 982.4 = 17.6 Hz decrease, and 1017.6 − 1000 = 17.6 Hz increase. In this case the shifts are symmetric because only the observer moves at a low speed. However, this symmetry breaks down at higher speeds and when both source and observer move. The Doppler equation is not linear in speed, so the shifts are only approximately symmetric for small v_o.</p>
+
+<h3>Answer 3</h3>
+<p>(a) Both moving toward each other: $f' = 440 \times \frac{340 + 15}{340 - 35} = 440 \times \frac{355}{305} = 440 \times 1.1639 = 512.1 \text{ Hz}$</p>
+
+<p>(b) Car stationary, only train moving: $f' = 440 \times \frac{340}{340 - 35} = 440 \times \frac{340}{305} = 490.5 \text{ Hz}$</p>
+
+<p>(c) The passenger is stationary relative to the horn, so there is no Doppler shift. The passenger hears 440 Hz. The Doppler effect requires relative motion between source and observer, and the train passenger moves with the horn.</p>
+
+<h3>Answer 4</h3>
+<p>(a) $f_{\text{moth}} = 40000 \times \frac{340}{340 - 10} = 40000 \times \frac{340}{330} = 41,212 \text{ Hz}$</p>
+
+<p>(b) The moth reflects 41,212 Hz. The bat approaches this reflection: $f' = 41212 \times \frac{340 + 10}{340} = 41212 \times \frac{350}{340} = 42,433 \text{ Hz}$</p>
+
+<p>(c) The bat hears a higher frequency because the frequency shift happens twice. First, the bat's motion as a source increases the frequency received by the moth. Second, the bat's motion as an observer of the reflected wave increases the frequency again. The moth only experiences the first shift.</p>
+
+<h3>Answer 5</h3>
+<p>(a) $v_s = M \times v = 1.5 \times 330 = 495 \text{ m/s}$</p>
+
+<p>(b) When an object moves faster than sound, the sound waves it emits trail behind it in a cone (the Mach cone). The wavefronts never reach a point ahead of the airplane. A person on the ground only hears the airplane after it has passed overhead and the shock cone sweeps over them.</p>
+
+<p>(c) The pilot is ahead of the shock wave. The sonic boom propagates outward and backward from the plane. The pilot is inside the plane, moving with it, and never crosses the shock front.</p>
+
+<h3>Answer 6</h3>
+<p>(a) $f' = 520 \times \frac{340}{340 - 28} = 520 \times \frac{340}{312} = 520 \times 1.0897 = 566.7 \text{ Hz} \approx 570 \text{ Hz}$ ✓ [2 marks]</p>
+
+<p>(b) $480 = 520 \times \frac{340}{340 + v_s}$ → $340 + v_s = 520 \times 340 / 480 = 368.33$ → $v_s = 28.3 \text{ m/s}$ [3 marks]</p>
+
+<p>(c) For the moving car approaching: $f' \approx 520(1 + u/v)$. Beat frequency = |f' − 520| = 520 × u/340 = 12 Hz. So u = 12 × 340 / 520 = 7.85 m/s. The approximation is valid since u/v ≈ 0.023, which is small. [3 marks]</p>
+
+<hr>
+
+<h2>Key Takeaways</h2>
+
+<ol>
+<li><strong>The Doppler effect is a change in observed frequency when source and observer move relative to each other.</strong> The source frequency itself never changes.</li>
+</ol>
+
+<ol>
+<li><strong>The wave speed in the medium does NOT change.</strong> Only the wavelength and the rate at which the observer encounters wavefronts change.</li>
+</ol>
+
+<ol>
+<li><strong>Use the full equation $f' = f(v \pm v_o)/(v \mp v_s)$</strong> and choose signs so that f' increases when approaching and decreases when receding.</li>
+</ol>
+
+<ol>
+<li><strong>Moving source and moving observer are physically different.</strong> A source moving at 10 m/s does not produce the same shift as an observer moving at 10 m/s.</li>
+</ol>
+
+<ol>
+<li><strong>Sonic booms occur when v_s > v.</strong> The sound waves form a shock cone behind the source. You hear the boom once as the cone passes over you.</li>
+</ol>
+
+<ol>
+<li><strong>Always identify your reference frame</strong> — all speeds are measured relative to the medium (usually still air).</li>
+</ol>
+
+<ol>
+<li><strong>For reflected waves (radar, bat echolocation), the Doppler shift happens twice</strong> — once on the way to the reflector and once on the way back.</li>
+</ol>
+
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L42_standing_waves_3.html">← Lesson 42</a>
+  <a href="L44_doppler_2.html">Lesson 44 →</a>
+</nav>
+
+</body>
+</html>

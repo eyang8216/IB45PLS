@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 41: Lesson 41: Standing Waves II — Pipes & Resonance — IB Physics HL</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']]
+  },
+  options: {
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap');
+  
+  :root {
+    --bg: #fdfcf9;
+    --text: #1a1a1a;
+    --accent: #2c5f2d;
+    --border: #d0cec7;
+    --code-bg: #f4f3ef;
+    --callout-bg: #f0f7f0;
+    --callout-border: #2c5f2d;
+    --warning-bg: #fff8e6;
+    --warning-border: #c4941a;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  body {
+    font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid var(--accent);
+    color: var(--accent);
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 2.5rem 0 0.75rem;
+    color: #1a1a1a;
+  }
+  
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.5rem;
+  }
+  
+  p { margin: 0 0 1rem; }
+  
+  ul, ol { margin: 0 0 1rem 1.5rem; }
+  li { margin-bottom: 0.35rem; }
+  
+  code {
+    background: var(--code-bg);
+    padding: 0.15em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+    font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+  }
+  
+  pre {
+    background: var(--code-bg);
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 0 0 1rem;
+    font-size: 0.85em;
+    line-height: 1.5;
+  }
+  
+  pre code {
+    background: none;
+    padding: 0;
+    font-size: inherit;
+  }
+  
+  blockquote {
+    border-left: 4px solid var(--callout-border);
+    background: var(--callout-bg);
+    margin: 0 0 1rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+  }
+  
+  blockquote.warning {
+    border-left-color: var(--warning-border);
+    background: var(--warning-bg);
+  }
+  
+  strong { font-weight: 700; }
+  
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.5rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  
+  .nav a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+  
+  .nav a:hover { background: var(--callout-bg); }
+  
+  .worked-example, .answer {
+    background: var(--code-bg);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin: 0.75rem 0 1.25rem;
+  }
+  
+  .worked-example strong:first-child, .answer strong:first-child {
+    color: var(--accent);
+  }
+  
+  @media print {
+    body { font-size: 12pt; max-width: 100%; padding: 0; }
+    .nav { display: none; }
+    h1 { font-size: 18pt; }
+    h2 { font-size: 14pt; }
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 0 1rem;
+  }
+  
+  th, td {
+    border: 1px solid var(--border);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  
+  th {
+    background: var(--code-bg);
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L40_standing_waves_1.html">← Lesson 40</a>
+  <a href="L42_standing_waves_3.html">Lesson 42 →</a>
+</nav>
+
+<h1>Lesson 41: Standing Waves II — Pipes & Resonance</h1>
+
+<h2>What You'll Learn</h2>
+<ul>
+<li>Standing waves in open pipes (both ends open)</li>
+<li>Standing waves in closed pipes (one end closed)</li>
+<li>Why closed pipes only produce odd harmonics</li>
+<li>End correction and its effect on effective pipe length</li>
+<li>Comparing open and closed pipe behaviour</li>
+</ul>
+
+<hr>
+
+<h2>1. Standing Waves in Pipes</h2>
+
+<p>Sound waves in pipes form standing waves when the frequency matches the pipe's natural (resonant) frequencies. The boundary conditions differ from strings:</p>
+
+<table>
+<tr>
+<th>Boundary</th>
+<th>Condition</th>
+<th>What forms there</th>
+</tr>
+<tr>
+<td><strong>Open end</strong></td>
+<td>Pressure node, displacement antinode</td>
+<td>Antinode (A)</td>
+</tr>
+<tr>
+<td><strong>Closed end</strong></td>
+<td>Pressure antinode, displacement node</td>
+<td>Node (N)</td>
+</tr>
+</table>
+
+<blockquote><strong>Why?</strong> At an open end, air is free to move (max displacement), but pressure equals atmospheric (pressure node). At a closed end, air cannot move (zero displacement = node), but pressure varies maximally.</blockquote>
+
+<hr>
+
+<h2>2. Open Pipes (Both Ends Open)</h2>
+
+<p>Both ends are <strong>antinodes</strong> (A). The simplest standing wave has one node in the middle.</p>
+
+<h3>Harmonics</h3>
+
+<p>$$L = n \cdot \frac{\lambda_n}{2} \quad n = 1, 2, 3, ...$$</p>
+
+<p>$$\lambda_n = \frac{2L}{n}$$</p>
+
+<p>$$f_n = \frac{nv}{2L} = n \cdot f_1$$</p>
+
+<p><strong>All harmonics are possible.</strong> This is the same formula as strings!</p>
+
+<h3>Patterns</h3>
+
+<table>
+<tr>
+<th>Harmonic</th>
+<th>n</th>
+<th>Pattern</th>
+<th>λ</th>
+<th>f</th>
+</tr>
+<tr>
+<td>1st (fundamental)</td>
+<td>1</td>
+<td>A–N–A</td>
+<td>2L</td>
+<td>v/(2L)</td>
+</tr>
+<tr>
+<td>2nd</td>
+<td>2</td>
+<td>A–N–A–N–A</td>
+<td>L</td>
+<td>v/L</td>
+</tr>
+<tr>
+<td>3rd</td>
+<td>3</td>
+<td>A–N–A–N–A–N–A</td>
+<td>2L/3</td>
+<td>3v/(2L)</td>
+</tr>
+</table>
+
+<pre><code>
+Open Pipe Patterns (displacement):
+
+Fundamental (n=1):     A     N     A
+                       ↑     .     ↑
+
+2nd Harmonic (n=2):    A  N  A  N  A
+                       ↑  .  ↑  .  ↑
+
+3rd Harmonic (n=3):    A N A N A N A
+                       ↑ . ↑ . ↑ . ↑
+</code></pre>
+
+<hr>
+
+<h2>3. Closed Pipes (One End Closed)</h2>
+
+<p>One end is a <strong>node</strong> (closed), one end is an <strong>antinode</strong> (open). The simplest standing wave fits 1/4 wavelength.</p>
+
+<h3>Harmonics — Odd Only!</h3>
+
+<p>$$L = n \cdot \frac{\lambda_n}{4} \quad n = 1, 3, 5, ...$$</p>
+
+<p>$$\lambda_n = \frac{4L}{n}$$</p>
+
+<p>$$f_n = \frac{nv}{4L} = n \cdot f_1$$</p>
+
+<p><strong>Only odd harmonics exist!</strong> (n = 1, 3, 5, 7, ...)</p>
+
+<h3>Why No Even Harmonics?</h3>
+
+<p>An even harmonic would require an antinode at the closed end or a node at the open end — both violate boundary conditions. Try n = 2: λ = 2L, which would put a node at the open end. Impossible.</p>
+
+<h3>Patterns</h3>
+
+<table>
+<tr>
+<th>Harmonic</th>
+<th>n</th>
+<th>Pattern</th>
+<th>λ</th>
+<th>f</th>
+</tr>
+<tr>
+<td>1st (fundamental)</td>
+<td>1</td>
+<td>N–A (one node, one antinode)</td>
+<td>4L</td>
+<td>v/(4L)</td>
+</tr>
+<tr>
+<td>3rd (1st overtone)</td>
+<td>3</td>
+<td>N–A–N–A</td>
+<td>4L/3</td>
+<td>3v/(4L)</td>
+</tr>
+<tr>
+<td>5th (2nd overtone)</td>
+<td>5</td>
+<td>N–A–N–A–N–A</td>
+<td>4L/5</td>
+<td>5v/(4L)</td>
+</tr>
+</table>
+
+<pre><code>
+Closed Pipe Patterns (displacement, closed end on left):
+
+Fundamental (n=1):     N        A
+                       .        ↑
+
+3rd Harmonic (n=3):    N  A  N  A
+                       .  ↑  .  ↑
+
+5th Harmonic (n=5):    N A N A N A
+                       . ↑ . ↑ . ↑
+</code></pre>
+
+<hr>
+
+<h2>4. Comparison: Open vs Closed Pipes</h2>
+
+<table>
+<tr>
+<th>Property</th>
+<th>Open Pipe</th>
+<th>Closed Pipe</th>
+</tr>
+<tr>
+<td>End conditions</td>
+<td>A–A (both antinodes)</td>
+<td>N–A (node, antinode)</td>
+</tr>
+<tr>
+<td>Fundamental λ</td>
+<td>2L</td>
+<td>4L</td>
+</tr>
+<tr>
+<td>Fundamental f</td>
+<td>v/(2L)</td>
+<td>v/(4L)</td>
+</tr>
+<tr>
+<td>Harmonics</td>
+<td>All: 1, 2, 3, 4, 5...</td>
+<td>Odd only: 1, 3, 5, 7...</td>
+</tr>
+<tr>
+<td>f₁ for same L</td>
+<td>Higher</td>
+<td>Lower (half of open pipe f₁)</td>
+</tr>
+</table>
+
+<p><strong>Key insight:</strong> For pipes of the same length, a closed pipe's fundamental frequency is half that of an open pipe — it sounds an octave lower.</p>
+
+<hr>
+
+<h2>5. End Correction (Qualitative)</h2>
+
+<p>In practice, the antinode at an open end is <strong>slightly beyond</strong> the physical end of the pipe. The vibrating air column extends a small distance past the opening.</p>
+
+<p>$$L_{\text{effective}} = L_{\text{physical}} + c$$</p>
+
+<p>where c ≈ 0.6 × r (r = pipe radius) for each open end.</p>
+
+<h3>Effect:</h3>
+<ul>
+<li>Open pipe: two end corrections (both ends), L_eff = L + 2c</li>
+<li>Closed pipe: one end correction (open end only), L_eff = L + c</li>
+</ul>
+
+<p>This means:</p>
+<ul>
+<li>Actual frequencies are <strong>slightly lower</strong> than the simple theory predicts</li>
+<li>For precise work, use an effective length: measure f experimentally and calculate L_eff</li>
+</ul>
+
+<p>The end correction is usually on the order of a few mm for typical lab pipes, so the simple formula is a good first approximation.</p>
+
+<hr>
+
+<h2>6. Resonance</h2>
+
+<p><strong>Resonance</strong> occurs when a driving frequency matches a natural frequency of a system, causing large-amplitude oscillations.</p>
+
+<p>In pipes:</p>
+<ul>
+<li>The air column has natural frequencies (harmonics)</li>
+<li>When a sound wave of matching frequency enters, a standing wave forms with large amplitude</li>
+<li>This is why blowing across a bottle top produces a tone — you're exciting the resonant frequency</li>
+</ul>
+
+<h3>Resonance Tube Experiment (IB Classic)</h3>
+<p>A tuning fork is held over a tube with water. By adjusting the water level (changing L), resonance positions are found where the sound becomes loud. The distance between consecutive resonances = λ/2.</p>
+
+<hr>
+
+<h2>Worked Examples</h2>
+
+<h3>Worked Example 41.1 — Fundamental of a Closed Pipe</h3>
+
+<p><strong>Problem:</strong> A closed organ pipe (stopped at one end) is 0.85 m long. The speed of sound in air is 340 m/s. Find:</p>
+<p>(a) the fundamental frequency</p>
+<p>(b) the frequencies of the first two overtones</p>
+
+<p><strong>Solution:</strong></p>
+
+<p><strong>(a) Closed pipe fundamental:</strong></p>
+<p>$$f_1 = \frac{v}{4L} = \frac{340}{4 \times 0.85} = \frac{340}{3.40} = 100 \text{ Hz}$$</p>
+
+<p><strong>(b)</strong> Closed pipes have only odd harmonics:</p>
+<ul>
+<li>1st overtone = 3rd harmonic: f₃ = 3f₁ = 3 × 100 = <strong>300 Hz</strong></li>
+<li>2nd overtone = 5th harmonic: f₅ = 5f₁ = 5 × 100 = <strong>500 Hz</strong></li>
+</ul>
+
+<hr>
+
+<h3>Worked Example 41.2 — Open Pipe Harmonics</h3>
+
+<p><strong>Problem:</strong> An open organ pipe produces a fundamental of 256 Hz. The speed of sound is 340 m/s. Find:</p>
+<p>(a) the length of the pipe</p>
+<p>(b) the frequency of the 4th harmonic</p>
+
+<p><strong>Solution:</strong></p>
+
+<p><strong>(a)</strong> For an open pipe:</p>
+<p>$$f_1 = \frac{v}{2L}$$</p>
+<p>$$L = \frac{v}{2f_1} = \frac{340}{2 \times 256} = \frac{340}{512} = 0.664 \text{ m}$$</p>
+
+<p><strong>(b)</strong> Open pipe has all harmonics:</p>
+<p>$$f_4 = 4f_1 = 4 \times 256 = 1024 \text{ Hz}$$</p>
+
+<hr>
+
+<h3>Worked Example 41.3 — Finding Pipe Length for a Given Note</h3>
+
+<p><strong>Problem:</strong> You need a closed pipe that resonates at 440 Hz (concert A). Sound speed = 340 m/s.</p>
+<p>(a) What length should the pipe be?</p>
+<p>(b) What are the next two possible resonant frequencies of this pipe?</p>
+
+<p><strong>Solution:</strong></p>
+
+<p><strong>(a)</strong> For fundamental in closed pipe:</p>
+<p>$$f_1 = \frac{v}{4L}$$</p>
+<p>$$L = \frac{v}{4f_1} = \frac{340}{4 \times 440} = \frac{340}{1760} = 0.193 \text{ m} \approx 19.3 \text{ cm}$$</p>
+
+<p><strong>(b)</strong> Only odd harmonics:</p>
+<p>f₃ = 3 × 440 = <strong>1320 Hz</strong></p>
+<p>f₅ = 5 × 440 = <strong>2200 Hz</strong></p>
+
+<hr>
+
+<h3>Worked Example 41.4 — Comparing Open and Closed Pipes</h3>
+
+<p><strong>Problem:</strong> Two pipes have the same length of 1.00 m. One is open at both ends, the other is closed at one end. Speed of sound = 340 m/s. Compare:</p>
+<p>(a) their fundamental frequencies</p>
+<p>(b) the number of harmonics below 1000 Hz for each</p>
+
+<p><strong>Solution:</strong></p>
+
+<p><strong>(a)</strong></p>
+<ul>
+<li>Open: f₁ = v/(2L) = 340/(2×1.00) = <strong>170 Hz</strong></li>
+<li>Closed: f₁ = v/(4L) = 340/(4×1.00) = <strong>85.0 Hz</strong></li>
+</ul>
+
+<p>The closed pipe's fundamental is half — it sounds an octave lower.</p>
+
+<p><strong>(b)</strong></p>
+<ul>
+<li><strong>Open:</strong> f₁=170, f₂=340, f₃=510, f₄=680, f₅=850 → <strong>5 harmonics below 1000 Hz</strong></li>
+<li><strong>Closed:</strong> f₁=85, f₃=255, f₅=425, f₇=595, f₉=765, f₁₁=935 → <strong>6 harmonics below 1000 Hz</strong></li>
+</ul>
+
+<hr>
+
+<h3>Worked Example 41.5 — End Correction (IB-Style)</h3>
+
+<p><strong>Problem:</strong> A student holds a tuning fork of frequency 512 Hz over a resonance tube. The first resonance (loudest sound) occurs when the air column length is 16.2 cm. The second resonance occurs at 49.8 cm. The tube diameter is 3.0 cm.</p>
+
+<p>(a) Use the difference between resonance positions to find the wavelength and speed of sound.</p>
+<p>(b) Calculate the end correction.</p>
+<p>(c) Compare your end correction with the theoretical value c ≈ 0.6r.</p>
+
+<p><strong>Solution:</strong></p>
+
+<p><strong>(a)</strong> The distance between consecutive resonances in a closed pipe = λ/2:</p>
+<p>$$\frac{\lambda}{2} = 49.8 - 16.2 = 33.6 \text{ cm}$$</p>
+<p>$$\lambda = 67.2 \text{ cm} = 0.672 \text{ m}$$</p>
+<p>$$v = f\lambda = 512 \times 0.672 = 344 \text{ m/s}$$</p>
+
+<p><strong>(b)</strong> For first resonance (n = 1): L_eff = λ/4 = 67.2/4 = 16.8 cm</p>
+<p>Physical length L = 16.2 cm</p>
+<p>End correction c = L_eff − L = 16.8 − 16.2 = <strong>0.6 cm</strong></p>
+
+<p><strong>(c)</strong> Tube radius r = 3.0/2 = 1.5 cm</p>
+<p>Theoretical: c ≈ 0.6r = 0.6 × 1.5 = <strong>0.9 cm</strong></p>
+<p>The measured 0.6 cm is reasonably close to the theoretical 0.9 cm.</p>
+
+<hr>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1</h3>
+<p>An open organ pipe is 1.20 m long. Speed of sound in air = 340 m/s.</p>
+<p>(a) Find the fundamental frequency.</p>
+<p>(b) List the frequencies of the first four harmonics.</p>
+<p>(c) What is the wavelength of the 3rd harmonic?</p>
+
+<h3>Problem 2</h3>
+<p>A closed pipe (stopped at one end) is 0.40 m long. Speed of sound = 340 m/s.</p>
+<p>(a) Find the fundamental frequency.</p>
+<p>(b) Explain why the 2nd harmonic cannot exist in this pipe.</p>
+<p>(c) Find the frequencies of the first three harmonics that do exist.</p>
+
+<h3>Problem 3</h3>
+<p>A pipe produces its 3rd harmonic at 750 Hz. The sound speed is 340 m/s.</p>
+<p>(a) If the pipe is open at both ends, find its length.</p>
+<p>(b) If instead the pipe is closed at one end, find its length.</p>
+
+<h3>Problem 4</h3>
+<p>In a resonance tube experiment, a tuning fork of 440 Hz gives first resonance at 18.5 cm air column length, and second resonance at 57.0 cm.</p>
+<p>(a) Determine the wavelength of the sound.</p>
+<p>(b) Calculate the speed of sound from this data.</p>
+<p>(c) Find the end correction.</p>
+
+<h3>Problem 5 (IB-Style)</h3>
+<p>An organ pipe closed at one end has length 0.60 m and is played in a room where the temperature is such that v = 345 m/s. The pipe diameter is 4.0 cm.</p>
+
+<p>(a) Calculate the fundamental frequency using the simple formula (ignoring end correction).</p>
+<p>(b) Estimate the effective length including end correction (c ≈ 0.6r) and recalculate the fundamental.</p>
+<p>(c) A second pipe, open at both ends, is cut so that its fundamental matches the corrected fundamental from (b). Determine its length.</p>
+<p>(d) The temperature rises, increasing the speed of sound by 2%. Explain the effect on the pitch of both pipes — does the open or closed pipe change more in absolute terms?</p>
+
+<hr>
+
+<h2>Answers</h2>
+
+<h3>Answer 1</h3>
+<p><strong>(a)</strong> f₁ = v/(2L) = 340/(2 × 1.20) = <strong>142 Hz</strong></p>
+
+<p><strong>(b)</strong> f₁ = 142 Hz, f₂ = 283 Hz, f₃ = 425 Hz, f₄ = 567 Hz</p>
+
+<p><strong>(c)</strong> λ₃ = v/f₃ = 340/425 = 0.800 m (or: λ₃ = 2L/3 = 0.800 m)</p>
+
+<hr>
+
+<h3>Answer 2</h3>
+<p><strong>(a)</strong> f₁ = v/(4L) = 340/(4 × 0.40) = <strong>213 Hz</strong></p>
+
+<p><strong>(b)</strong> The 2nd harmonic would require a node at the open end or an antinode at the closed end, violating boundary conditions. Mathematically, n = 2 gives λ = 2L, which doesn't fit N–A in L.</p>
+
+<p><strong>(c)</strong> Only odd harmonics exist: f₁ = 213 Hz, f₃ = 638 Hz, f₅ = 1063 Hz</p>
+
+<hr>
+
+<h3>Answer 3</h3>
+<p><strong>(a) Open pipe, 3rd harmonic:</strong> f₃ = 3v/(2L) → L = 3v/(2f₃) = 3×340/(2×750) = <strong>0.680 m</strong></p>
+
+<p><strong>(b) Closed pipe, 3rd harmonic:</strong> f₃ = 3v/(4L) → L = 3v/(4f₃) = 3×340/(4×750) = <strong>0.340 m</strong></p>
+
+<hr>
+
+<h3>Answer 4</h3>
+<p><strong>(a)</strong> λ/2 = 57.0 − 18.5 = 38.5 cm → λ = <strong>0.770 m</strong></p>
+
+<p><strong>(b)</strong> v = fλ = 440 × 0.770 = <strong>339 m/s</strong></p>
+
+<p><strong>(c)</strong> L_eff (1st resonance) = λ/4 = 0.770/4 = 0.1925 m = 19.25 cm</p>
+<p>c = L_eff − L = 19.25 − 18.5 = <strong>0.75 cm</strong></p>
+
+<hr>
+
+<h3>Answer 5 (IB-Style)</h3>
+<p><strong>(a)</strong> f₁ = v/(4L) = 345/(4 × 0.60) = 345/2.40 = <strong>144 Hz</strong></p>
+
+<p><strong>(b)</strong> r = 2.0 cm = 0.020 m, c ≈ 0.6 × 0.020 = 0.012 m</p>
+<p>L_eff = L + c = 0.60 + 0.012 = 0.612 m</p>
+<p>f₁_corrected = 345/(4 × 0.612) = 345/2.448 = <strong>141 Hz</strong></p>
+
+<p><strong>(c)</strong> Open pipe: f₁ = v/(2L) → L = v/(2f₁) = 345/(2 × 141) = <strong>1.22 m</strong></p>
+
+<p>Adding end corrections (two ends): L_physical = L_eff − 2c = 1.22 − 0.024 = 1.20 m</p>
+
+<p><strong>(d)</strong> New v = 345 × 1.02 = 352 m/s</p>
+<p>Both frequencies increase by 2% since f ∝ v (length unchanged). Absolute change:</p>
+<ul>
+<li>Closed: Δf = 141 × 0.02 = <strong>2.82 Hz</strong></li>
+<li>Open: Δf = 141 × 0.02 = <strong>2.82 Hz</strong></li>
+</ul>
+<p>They change by the same percentage but if open pipe is longer (lower f₁), its absolute change might differ — however here the fundamentals match, so the absolute change is the same.</p>
+
+<hr>
+
+<h2>Key Takeaways</h2>
+
+<table>
+<tr>
+<th>Concept</th>
+<th>Open Pipe</th>
+<th>Closed Pipe</th>
+</tr>
+<tr>
+<td>Boundary</td>
+<td>A–A</td>
+<td>N–A</td>
+</tr>
+<tr>
+<td>λ_n</td>
+<td>2L/n (all n)</td>
+<td>4L/n (odd n only)</td>
+</tr>
+<tr>
+<td>f_n</td>
+<td>nv/(2L)</td>
+<td>nv/(4L), n odd</td>
+</tr>
+<tr>
+<td>Harmonics</td>
+<td>All: 1,2,3,4,5...</td>
+<td>Odd only: 1,3,5,7...</td>
+</tr>
+<tr>
+<td>Fundamental</td>
+<td>v/(2L)</td>
+<td>v/(4L)</td>
+</tr>
+<tr>
+<td>End correction</td>
+<td>2c (both ends)</td>
+<td>c (open end only)</td>
+</tr>
+</table>
+
+<blockquote><strong>IB Data Booklet:</strong> v = fλ (Sub-topic 4.2). Pipe formulas must be derived from boundary conditions. Remember: open pipes have all harmonics (like strings); closed pipes have only odd harmonics.</blockquote>
+
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L40_standing_waves_1.html">← Lesson 40</a>
+  <a href="L42_standing_waves_3.html">Lesson 42 →</a>
+</nav>
+
+</body>
+</html>

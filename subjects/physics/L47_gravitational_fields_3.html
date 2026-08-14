@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lesson 47: Lesson 47: Gravitational Fields III — Kepler's Laws & Advanced Orbits — IB Physics HL</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lesson 47: Lesson 47: Gravitational Fields III — Kepler's Laws &amp; Advanced Orbits — IB Physics HL</title>
 <script>
 MathJax = {
   tex: {
@@ -15,7 +16,7 @@ MathJax = {
   }
 };
 </script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap');
   
@@ -174,14 +175,159 @@ MathJax = {
 </head>
 <body>
 
+<div class="lesson-actions" style="margin: 2rem 0; padding: 1.5rem; background: #f8fafc; border-radius: 8px; display: flex; gap: 1rem; flex-wrap: wrap;">
+<button class="action-btn" id="generate-flashcards-btn" style="padding: 0.75rem 1.5rem; background: #3b82f6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        🗂️ Generate Flashcards
+    </button>
+<button class="action-btn" id="practice-problems-btn" style="padding: 0.75rem 1.5rem; background: #10b981; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        ✏️ Practice Problems
+    </button>
+<button class="action-btn" id="ask-ai-btn" style="padding: 0.75rem 1.5rem; background: #8b5cf6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        💬 Ask AI
+    </button>
+</div>
+<script>
+(function() {
+    const subjectKey = "physics";
+    const lessonId = "L47_gravitational_fields_3";
+    const lessonTitle = "Lesson 47: Gravitational Fields III — Kepler's Laws & Advanced Orbits";
+
+    function getCsrf() {
+        var m = document.querySelector('meta[name="csrf-token"]');
+        return m ? m.getAttribute('content') : '';
+    }
+
+    // Completion checkbox
+    const checkbox = document.getElementById('lesson-complete');
+    if (checkbox) {
+        // Load saved state
+        const saved = localStorage.getItem(`completed_${subjectKey}_${lessonId}`);
+        if (saved === 'true') checkbox.checked = true;
+
+        checkbox.addEventListener('change', async function() {
+            const completed = this.checked;
+            localStorage.setItem(`completed_${subjectKey}_${lessonId}`, completed);
+
+            try {
+                await fetch('/toggle_completion', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': getCsrf()
+                    },
+                    body: JSON.stringify({
+                        subject: subjectKey,
+                        lesson: lessonId,
+                        completed: completed
+                    })
+                });
+            } catch(e) {
+                console.error('Error saving completion:', e);
+            }
+        });
+    }
+
+    // Generate Flashcards
+    const flashcardsBtn = document.getElementById('generate-flashcards-btn');
+    if (flashcardsBtn) {
+        flashcardsBtn.addEventListener('click', async function() {
+            this.disabled = true;
+            this.textContent = '⏳ Generating...';
+
+            try {
+                const content = document.body.innerText.substring(0, 2000);
+                const response = await fetch('/generate_flashcards', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': getCsrf()
+                    },
+                    body: JSON.stringify({
+                        subject: subjectKey,
+                        lesson: lessonTitle,
+                        content_summary: content
+                    })
+                });
+
+                const data = await response.json();
+                if (data.error) {
+                    alert('Error: ' + data.error);
+                } else {
+                    alert(`✅ Created ${data.count} flashcards! View them at /flashcards/${subjectKey}`);
+                }
+            } catch(e) {
+                alert('Error generating flashcards: ' + e.message);
+            } finally {
+                this.disabled = false;
+                this.textContent = '🗂️ Generate Flashcards';
+            }
+        });
+    }
+
+    // Practice Problems - open in new section
+    const practiceBtn = document.getElementById('practice-problems-btn');
+    if (practiceBtn) {
+        practiceBtn.addEventListener('click', function() {
+            alert('Practice problems feature coming soon! Use the AI chatbot to generate custom questions.');
+        });
+    }
+
+    // Ask AI - scroll to chatbot
+    const aiBtn = document.getElementById('ask-ai-btn');
+    if (aiBtn) {
+        aiBtn.addEventListener('click', function() {
+            const chatbot = document.getElementById('lessons-chatbot');
+            if (chatbot) {
+                chatbot.scrollIntoView({ behavior: 'smooth' });
+                const toggleBtn = chatbot.querySelector('.chatbot-toggle');
+                if (toggleBtn) toggleBtn.click();
+            } else {
+                alert('AI chatbot not available on this page. It will be added soon!');
+            }
+        });
+    }
+
+    // Track lesson view
+    fetch('/mark_viewed', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': getCsrf()
+        },
+        body: JSON.stringify({
+            subject: subjectKey,
+            lesson: lessonId
+        })
+    }).catch(e => console.error('Error tracking view:', e));
+
+})();
+</script>
 <nav class="nav">
-  <a href="index.html">← Lesson Index</a>
-  <a href="L46_gravitational_fields_2.html">← Lesson 46</a>
-  <a href="L48_em_fields_1.html">Lesson 48 →</a>
+<a href="index.html">← Lesson Index</a>
+<a href="L46_gravitational_fields_2.html">← Lesson 46</a>
+<a href="L48_em_fields_1.html">Lesson 48 →</a>
 </nav>
+<h1>Lesson 47: Gravitational Fields III — Kepler's Laws &amp; Advanced Orbits</h1>
+<div class="objectives" style="background: #f0f4ff; border-left: 4px solid #2563eb; padding: 1rem 1.2rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0;">
+    <h3 style="margin-top: 0; color: #1e40af;">Learning Objectives</h3>
+    <p>By the end of this lesson, you will be able to:</p>
+    <ul>
+        <li><strong>Understand</strong> the key concepts in Gravitational Fields III</li>
+        <li><strong>Explain</strong> what you'll learn</li>
+        <li><strong>Explain</strong> kepler's three laws</li>
+        <li><strong>Explain</strong> escape velocity</li>
+        <li><strong>Apply</strong> your knowledge through practice problems and examples</li>
+    </ul>
+</div>
 
-<h1>Lesson 47: Gravitational Fields III — Kepler's Laws & Advanced Orbits</h1>
 
+
+<div class="lesson-completion" style="margin: 1rem 0; padding: 1rem; background: #f0f9ff; border-radius: 8px;">
+<label class="completion-checkbox" style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer;">
+<input id="lesson-complete" style="width: 24px; height: 24px; cursor: pointer; accent-color: #10b981;" type="checkbox"/>
+<span style="font-size: 1rem; color: #0f172a; font-weight: 500;">✓ Mark this lesson as complete</span>
+</label>
+</div>
 <h2>What You'll Learn</h2>
 <ul>
 <li>Kepler's Three Laws of planetary motion</li>
@@ -190,15 +336,10 @@ MathJax = {
 <li>Binary star systems and centre of mass orbits</li>
 <li>Gravitational slingshot and Roche limit</li>
 </ul>
-
-<hr>
-
+<hr/>
 <h2>1. Kepler's Three Laws</h2>
-
 <h3>Kepler's First Law — Law of Ellipses</h3>
-
 <p>Planets move in <strong>elliptical</strong> orbits with the Sun at one focus.</p>
-
 <pre><code>
         Planet
        ○
@@ -209,16 +350,12 @@ MathJax = {
      ·     ·
        ○
 </code></pre>
-
 <ul>
 <li>The semi-major axis <strong>a</strong> is half the longest diameter</li>
 <li>For a circle (special case), a = r and both foci coincide</li>
 </ul>
-
 <h3>Kepler's Second Law — Law of Equal Areas</h3>
-
 <p>A line from the planet to the Sun sweeps out <strong>equal areas in equal times</strong>.</p>
-
 <pre><code>
    t₂
     ○
@@ -228,45 +365,25 @@ MathJax = {
    · ·              t₁
     ○ → Sun
 </code></pre>
-
 <p><strong>Consequence:</strong> Orbital speed is NOT constant — faster when closer to the Sun.</p>
-
 <h3>Kepler's Third Law — The Harmonic Law</h3>
-
 <p>$$T^2 \propto a^3$$</p>
-
 <p>For orbits around the same central body, the square of the period is proportional to the cube of the semi-major axis.</p>
-
 <p>$$\frac{T^2}{a^3} = \frac{4\pi^2}{GM}$$</p>
-
 <p>This is the same as the circular orbit formula, with a replacing r.</p>
-
 <h3>Using Kepler's Third Law</h3>
-
 <p>If you know the period and semi-major axis of one planet, you can find another:</p>
-
 <p>$$\frac{T_1^2}{T_2^2} = \frac{a_1^3}{a_2^3}$$</p>
-
-<hr>
-
+<hr/>
 <h2>2. Escape Velocity</h2>
-
 <h3>Definition</h3>
-
 <p>Escape velocity is the minimum speed an object needs at a distance r from a mass M to escape its gravitational field and coast to infinity.</p>
-
 <h3>Derivation</h3>
-
 <p>For escape: total energy E = KE + PE ≥ 0 at infinity. At the starting point:</p>
-
 <p>$$\frac{1}{2}mv_{\text{esc}}^2 + \left(-\frac{GMm}{r}\right) = 0$$</p>
-
 <p>$$\frac{1}{2}mv_{\text{esc}}^2 = \frac{GMm}{r}$$</p>
-
 <p>$$v_{\text{esc}} = \sqrt{\frac{2GM}{r}}$$</p>
-
 <h3>Key Points</h3>
-
 <table>
 <tr>
 <th>Property</th>
@@ -293,23 +410,14 @@ MathJax = {
 <td>v_esc = √2 × v_orbital (at same r)</td>
 </tr>
 </table>
-
-<hr>
-
+<hr/>
 <h2>3. Total Orbital Energy</h2>
-
 <p>For a satellite in circular orbit:</p>
-
 <p>$$E_{\text{total}} = KE + PE = \frac{1}{2}mv^2 + \left(-\frac{GMm}{r}\right)$$</p>
-
 <p>Substituting v = √(GM/r):</p>
-
 <p>$$\frac{1}{2}m \cdot \frac{GM}{r} - \frac{GMm}{r} = -\frac{GMm}{2r}$$</p>
-
 <h3>Important Result</h3>
-
 <p>$$E_{\text{total}} = -\frac{GMm}{2r} = \frac{PE}{2}$$</p>
-
 <p>For circular orbits:</p>
 <ul>
 <li>Total energy is <strong>negative</strong> (bound orbit)</li>
@@ -317,9 +425,7 @@ MathJax = {
 <li>PE = 2E_total (PE = −GMm/r)</li>
 <li>|KE| = |E_total| and |PE| = 2|KE|</li>
 </ul>
-
 <h3>Energy Level Interpretation</h3>
-
 <pre><code>
 E
 ↑
@@ -331,41 +437,25 @@ E
 ──┼───────────╲────────→ r
   |  More bound   Less bound
 </code></pre>
-
 <ul>
 <li>More negative total energy = more tightly bound</li>
 <li>To move to a higher orbit, you must ADD energy</li>
 <li>To escape: add enough energy to make E ≥ 0</li>
 </ul>
-
-<hr>
-
+<hr/>
 <h2>4. Binary Star Systems</h2>
-
 <p>In a binary star system, two stars orbit their <strong>common centre of mass (CM)</strong>.</p>
-
 <h3>Centre of Mass</h3>
-
 <p>$$r_1 = \frac{m_2}{m_1 + m_2} d, \quad r_2 = \frac{m_1}{m_1 + m_2} d$$</p>
-
 <p>where d is the distance between their centres.</p>
-
 <h3>Period</h3>
-
 <p>Both stars have the SAME orbital period T. Using Newton's form of Kepler's Third Law:</p>
-
 <p>$$T^2 = \frac{4\pi^2 d^3}{G(m_1 + m_2)}$$</p>
-
 <p>Note: the denominator uses (m₁ + m₂) not just the central mass — both masses matter!</p>
-
-<hr>
-
+<hr/>
 <h2>5. Gravitational Slingshot (Gravity Assist)</h2>
-
 <p>Spacecraft use planetary flybys to gain speed without using fuel.</p>
-
 <h3>How It Works</h3>
-
 <ol>
 <li>Spacecraft approaches a planet from behind (relative to planet's orbital motion)</li>
 <li>Spacecraft falls into the planet's gravity well, gaining speed</li>
@@ -373,206 +463,133 @@ E
 <li>The planet loses a tiny amount of orbital energy (negligible due to huge mass difference)</li>
 <li><strong>Net result:</strong> Spacecraft gains significant speed relative to the Sun</li>
 </ol>
-
 <h3>Key Physics</h3>
-
 <ul>
 <li>In the planet's reference frame: elastic "collision" — speed in/out is same, direction changes</li>
 <li>In the Sun's frame: speed can increase dramatically</li>
 <li>Used by Voyager, Cassini, New Horizons, and many other missions</li>
 </ul>
-
-<hr>
-
+<hr/>
 <h2>6. Roche Limit (Qualitative)</h2>
-
 <p>The <strong>Roche limit</strong> is the distance from a planet within which a satellite (moon) will be torn apart by tidal forces — the planet's gravity pulling more strongly on the near side than the far side.</p>
-
 <h3>Approximate Roche Limit</h3>
-
 <p>$$d \approx 2.44 R_{\text{planet}} \left(\frac{\rho_{\text{planet}}}{\rho_{\text{moon}}}\right)^{1/3}$$</p>
-
 <ul>
 <li>Saturn's rings lie within Saturn's Roche limit — a moon that strayed too close was torn apart</li>
 <li>This is why rings form and why moons don't exist very close to planets</li>
 </ul>
-
-<hr>
-
+<hr/>
 <h2>Worked Examples</h2>
-
 <h3>Worked Example 47.1 — Escape Velocity from Earth</h3>
-
 <p><strong>Problem:</strong> Calculate the escape velocity from Earth's surface.</p>
 <p>M_Earth = 5.97 × 10²⁴ kg, R = 6.37 × 10⁶ m.</p>
-
 <p><strong>Solution:</strong></p>
-
 <p>$$v_{\text{esc}} = \sqrt{\frac{2GM}{R}} = \sqrt{\frac{2 \times 6.67 \times 10^{-11} \times 5.97 \times 10^{24}}{6.37 \times 10^6}}$$</p>
-
 <p>$$v_{\text{esc}} = \sqrt{\frac{7.96 \times 10^{14}}{6.37 \times 10^6}} = \sqrt{1.25 \times 10^8} = \mathbf{1.12 \times 10^4 \text{ m/s} = 11.2 \text{ km/s}}$$</p>
-
-<hr>
-
+<hr/>
 <h3>Worked Example 47.2 — Orbital Energy Change</h3>
-
 <p><strong>Problem:</strong> A 1000 kg satellite moves from a circular orbit at r = 7000 km to one at r = 14000 km (measured from Earth's centre). M_Earth = 6.0 × 10²⁴ kg.</p>
 <p>(a) Calculate the total energy in each orbit.</p>
 <p>(b) How much energy must be added?</p>
-
 <p><strong>Solution:</strong></p>
-
 <p><strong>(a)</strong> Lower orbit:</p>
 <p>$$E_1 = -\frac{GMm}{2r_1} = -\frac{6.67 \times 10^{-11} \times 6.0 \times 10^{24} \times 1000}{2 \times 7.0 \times 10^6}$$</p>
 <p>$$E_1 = -\frac{4.0 \times 10^{17}}{1.4 \times 10^7} = -2.86 \times 10^{10} \text{ J}$$</p>
-
 <p>Higher orbit:</p>
 <p>$$E_2 = -\frac{4.0 \times 10^{17}}{2 \times 1.4 \times 10^7} = -1.43 \times 10^{10} \text{ J}$$</p>
-
 <p><strong>(b)</strong> Energy to add = E₂ − E₁ = −1.43×10¹⁰ − (−2.86×10¹⁰) = <strong>+1.43 × 10¹⁰ J</strong></p>
-
 <p>Note: E₁ is more negative (more tightly bound) than E₂. Moving to a higher orbit requires positive energy input.</p>
-
-<hr>
-
+<hr/>
 <h3>Worked Example 47.3 — Kepler's Third Law with Two Planets</h3>
-
 <p><strong>Problem:</strong> Earth orbits the Sun at r = 1.50 × 10¹¹ m (1 AU) with T = 365 days. Mars orbits at 2.28 × 10¹¹ m (1.52 AU). Use Kepler's Third Law to find Mars's orbital period.</p>
-
 <p><strong>Solution:</strong></p>
-
 <p>$$\frac{T_{\text{Mars}}^2}{T_{\text{Earth}}^2} = \frac{a_{\text{Mars}}^3}{a_{\text{Earth}}^3}$$</p>
-
 <p>$$T_{\text{Mars}} = T_{\text{Earth}} \left(\frac{a_{\text{Mars}}}{a_{\text{Earth}}}\right)^{3/2} = 365 \times (1.52)^{3/2}$$</p>
-
 <p>(1.52)^(3/2) = (1.52)^(1.5) = 1.87</p>
-
 <p>$$T_{\text{Mars}} = 365 \times 1.87 = \mathbf{684 \text{ days}}$$</p>
-
 <p>(The actual value is about 687 days — close!)</p>
-
-<hr>
-
+<hr/>
 <h3>Worked Example 47.4 — Binary Star Period</h3>
-
 <p><strong>Problem:</strong> Two stars of masses 2.0 × 10³⁰ kg and 3.0 × 10³⁰ kg orbit their common CM separated by distance 4.0 × 10¹¹ m. Find:</p>
 <p>(a) the orbital period</p>
 <p>(b) the orbital speed of each star</p>
-
 <p><strong>Solution:</strong></p>
-
 <p><strong>(a)</strong> Using Kepler's Third Law for binaries:</p>
 <p>$$T^2 = \frac{4\pi^2 d^3}{G(m_1 + m_2)} = \frac{4\pi^2 (4.0 \times 10^{11})^3}{6.67 \times 10^{-11} (5.0 \times 10^{30})}$$</p>
-
 <p>$$T^2 = \frac{4\pi^2 \times 6.4 \times 10^{34}}{3.335 \times 10^{20}} = \frac{2.53 \times 10^{36}}{3.335 \times 10^{20}} = 7.58 \times 10^{15}$$</p>
-
 <p>$$T = \mathbf{8.71 \times 10^7 \text{ s} \approx 2.76 \text{ years}}$$</p>
-
 <p><strong>(b)</strong> Distance from CM:</p>
 <ul>
 <li>r₁ = d × m₂/(m₁+m₂) = 4.0×10¹¹ × 3.0/5.0 = 2.4 × 10¹¹ m</li>
 <li>r₂ = d × m₁/(m₁+m₂) = 4.0×10¹¹ × 2.0/5.0 = 1.6 × 10¹¹ m</li>
 </ul>
-
 <p>Speeds:</p>
 <ul>
 <li>v₁ = 2πr₁/T = 2π(2.4×10¹¹)/8.71×10⁷ = <strong>1.73 × 10⁴ m/s</strong></li>
 <li>v₂ = 2πr₂/T = 2π(1.6×10¹¹)/8.71×10⁷ = <strong>1.15 × 10⁴ m/s</strong></li>
 </ul>
-
-<hr>
-
+<hr/>
 <h2>Practice Problems</h2>
-
 <h3>Problem 1</h3>
 <p>Calculate the escape velocity from:</p>
 <p>(a) The Moon's surface (M = 7.35 × 10²² kg, R = 1.74 × 10⁶ m)</p>
 <p>(b) A point 3.0 × 10⁷ m from Earth's centre (M = 6.0 × 10²⁴ kg)</p>
-
 <h3>Problem 2</h3>
 <p>A 500 kg satellite has total energy E = −1.0 × 10¹⁰ J in circular orbit around Earth (M = 6.0 × 10²⁴ kg).</p>
 <p>(a) What is its orbital radius?</p>
 <p>(b) Find its kinetic energy and orbital speed.</p>
 <p>(c) How much additional energy is needed to escape?</p>
-
 <h3>Problem 3</h3>
 <p>Jupiter orbits the Sun at 5.2 AU with period 11.9 years. Saturn orbits at 9.5 AU. Use Kepler's Third Law to find Saturn's orbital period.</p>
-
 <h3>Problem 4</h3>
 <p>A comet has a highly elliptical orbit with semi-major axis 18 AU. Using Earth's orbit (a = 1 AU, T = 1 year), find the comet's period. This is Halley's Comet — verify the period is about 76 years.</p>
-
 <h3>Problem 5 (IB-Style — Escape + Orbit Combined)</h3>
 <p>A probe of mass 2000 kg is launched from Earth's surface.</p>
-
 <p><strong>(a)</strong> Calculate the escape velocity from Earth's surface. (M_E = 5.97 × 10²⁴ kg, R_E = 6.37 × 10⁶ m)</p>
-
 <p><strong>(b)</strong> The probe is instead placed into a circular orbit at altitude 500 km.</p>
 <p>    (i) Find its orbital speed.</p>
 <p>    (ii) Calculate the total energy of the probe in this orbit.</p>
 <p>    (iii) Determine the minimum additional impulse (change in velocity) needed for the probe to escape from this orbit, assuming the engines fire instantaneously.</p>
-
 <p><strong>(c)</strong> The probe uses a gravitational slingshot around Mars to gain speed. Explain qualitatively:</p>
 <p>    (i) Why the probe gains energy relative to the Sun.</p>
 <p>    (ii) What happens to Mars's orbital energy as a result.</p>
-
-<hr>
-
+<hr/>
 <h2>Answers</h2>
-
 <h3>Answer 1</h3>
 <p><strong>(a)</strong> v_esc = √(2GM/R) = √(2 × 6.67×10⁻¹¹ × 7.35×10²² / 1.74×10⁶)</p>
 <p>= √(9.81×10¹² / 1.74×10⁶) = √(5.64×10⁶) = <strong>2.37 × 10³ m/s = 2.37 km/s</strong></p>
-
 <p><strong>(b)</strong> v_esc = √(2GM/r) = √(2 × 6.67×10⁻¹¹ × 6.0×10²⁴ / 3.0×10⁷)</p>
 <p>= √(8.0×10¹⁴ / 3.0×10⁷) = √(2.67×10⁷) = <strong>5.16 × 10³ m/s = 5.16 km/s</strong></p>
-
-<hr>
-
+<hr/>
 <h3>Answer 2</h3>
 <p><strong>(a)</strong> E = −GMm/(2r) → r = −GMm/(2E) = −4.0×10¹⁷/(2 × (−1.0×10¹⁰)) = 4.0×10¹⁷ / 2.0×10¹⁰ = <strong>2.0 × 10⁷ m</strong></p>
-
 <p><strong>(b)</strong> KE = −E_total = <strong>1.0 × 10¹⁰ J</strong></p>
 <p>v = √(2KE/m) = √(2.0×10¹⁰/500) = √(4.0×10⁷) = <strong>6.32 × 10³ m/s</strong></p>
-
 <p><strong>(c)</strong> To escape: E must go from −1.0×10¹⁰ to 0, so <strong>ΔE = +1.0 × 10¹⁰ J</strong></p>
-
-<hr>
-
+<hr/>
 <h3>Answer 3</h3>
 <p>T_Saturn = T_Jupiter × (a_Saturn/a_Jupiter)^(3/2) = 11.9 × (9.5/5.2)^(3/2)</p>
 <p>(9.5/5.2) = 1.827, (1.827)^(3/2) = 1.827^(1.5) = 2.47</p>
 <p>T_Saturn = 11.9 × 2.47 = <strong>29.4 years</strong> (actual: ~29.5 years)</p>
-
-<hr>
-
+<hr/>
 <h3>Answer 4</h3>
 <p>T_comet = T_Earth × (a_comet/a_Earth)^(3/2) = 1 × (18/1)^(3/2)</p>
 <p>18^(3/2) = 18^(1.5) = 76.4</p>
 <p><strong>T ≈ 76.4 years</strong> ✓ Halley's Comet period is ~76 years.</p>
-
-<hr>
-
+<hr/>
 <h3>Answer 5 (IB-Style)</h3>
 <p><strong>(a)</strong> v_esc = √(2GM/R) = √(2 × 6.67×10⁻¹¹ × 5.97×10²⁴ / 6.37×10⁶)</p>
 <p>= √(7.96×10¹⁴ / 6.37×10⁶) = √(1.25×10⁸) = <strong>11.2 km/s</strong></p>
-
 <p><strong>(b)(i)</strong> r = R + h = 6.37×10⁶ + 5.00×10⁵ = 6.87×10⁶ m</p>
 <p>v_orb = √(GM/r) = √(3.98×10¹⁴/6.87×10⁶) = √(5.79×10⁷) = <strong>7.61 km/s</strong></p>
-
 <p><strong>(b)(ii)</strong> E_total = −GMm/(2r) = −3.98×10¹⁴ × 2000/(2 × 6.87×10⁶) = −7.96×10¹⁷/(1.374×10⁷)</p>
 <p>= <strong>−5.79 × 10¹⁰ J</strong></p>
-
 <p><strong>(b)(iii)</strong> Escape from orbit requires v_esc_orbit = √(2GM/r) = √2 × v_orb = 1.414 × 7.61 = 10.76 km/s.</p>
 <p>Δv = 10.76 − 7.61 = <strong>3.15 km/s</strong></p>
-
 <p><strong>(c)(i)</strong> In the Sun's reference frame: the probe approaches Mars from behind (relative to Mars's orbital motion). It falls into Mars's gravity well, swings around, and leaves. The planet's orbital motion effectively "drags" the probe, adding to its heliocentric speed — like a tennis ball bouncing off a moving racquet.</p>
-
 <p><strong>(c)(ii)</strong> By conservation of energy and momentum, Mars loses a tiny amount of orbital energy. However, because Mars is ~10²³ kg and the probe is ~10³ kg, the change in Mars's orbit is utterly negligible — Mars slows down by less than a nanometer per year. The slingshot is effectively "free" energy from the probe's perspective.</p>
-
-<hr>
-
+<hr/>
 <h2>Key Takeaways</h2>
-
 <table>
 <tr>
 <th>Concept</th>
@@ -615,15 +632,11 @@ E
 <td>Planet effectively "lends" energy</td>
 </tr>
 </table>
-
 <blockquote><strong>IB Data Booklet:</strong> Kepler's Third Law (T² ∝ r³) and escape velocity are referenced in Sub-topic 6.2 (HL). The orbital energy equation E = −GMm/(2r) is implied but should be understood. Binary systems, slingshot effects, and Roche limit are conceptual HL topics that may appear in Paper 2 or Paper 3.</blockquote>
-
-
 <nav class="nav">
-  <a href="index.html">← Lesson Index</a>
-  <a href="L46_gravitational_fields_2.html">← Lesson 46</a>
-  <a href="L48_em_fields_1.html">Lesson 48 →</a>
+<a href="index.html">← Lesson Index</a>
+<a href="L46_gravitational_fields_2.html">← Lesson 46</a>
+<a href="L48_em_fields_1.html">Lesson 48 →</a>
 </nav>
-
 </body>
 </html>

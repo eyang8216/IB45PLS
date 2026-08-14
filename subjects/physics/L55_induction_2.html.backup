@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 55: Lesson 55: Induction II — AC Generators, RMS Values and Power — IB Physics HL</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']]
+  },
+  options: {
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap');
+  
+  :root {
+    --bg: #fdfcf9;
+    --text: #1a1a1a;
+    --accent: #2c5f2d;
+    --border: #d0cec7;
+    --code-bg: #f4f3ef;
+    --callout-bg: #f0f7f0;
+    --callout-border: #2c5f2d;
+    --warning-bg: #fff8e6;
+    --warning-border: #c4941a;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  body {
+    font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid var(--accent);
+    color: var(--accent);
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 2.5rem 0 0.75rem;
+    color: #1a1a1a;
+  }
+  
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.5rem;
+  }
+  
+  p { margin: 0 0 1rem; }
+  
+  ul, ol { margin: 0 0 1rem 1.5rem; }
+  li { margin-bottom: 0.35rem; }
+  
+  code {
+    background: var(--code-bg);
+    padding: 0.15em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+    font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+  }
+  
+  pre {
+    background: var(--code-bg);
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 0 0 1rem;
+    font-size: 0.85em;
+    line-height: 1.5;
+  }
+  
+  pre code {
+    background: none;
+    padding: 0;
+    font-size: inherit;
+  }
+  
+  blockquote {
+    border-left: 4px solid var(--callout-border);
+    background: var(--callout-bg);
+    margin: 0 0 1rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+  }
+  
+  blockquote.warning {
+    border-left-color: var(--warning-border);
+    background: var(--warning-bg);
+  }
+  
+  strong { font-weight: 700; }
+  
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.5rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  
+  .nav a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+  
+  .nav a:hover { background: var(--callout-bg); }
+  
+  .worked-example, .answer {
+    background: var(--code-bg);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin: 0.75rem 0 1.25rem;
+  }
+  
+  .worked-example strong:first-child, .answer strong:first-child {
+    color: var(--accent);
+  }
+  
+  @media print {
+    body { font-size: 12pt; max-width: 100%; padding: 0; }
+    .nav { display: none; }
+    h1 { font-size: 18pt; }
+    h2 { font-size: 14pt; }
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 0 1rem;
+  }
+  
+  th, td {
+    border: 1px solid var(--border);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  
+  th {
+    background: var(--code-bg);
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L54_induction_1.html">← Lesson 54</a>
+  <a href="L56_induction_3.html">Lesson 56 →</a>
+</nav>
+
+<h1>Lesson 55: Induction II — AC Generators, RMS Values and Power</h1>
+
+<h2>What You'll Learn</h2>
+<ul>
+<li>Explain how a rotating coil in a magnetic field generates sinusoidal EMF</li>
+<li>Calculate peak EMF using $\varepsilon_0 = NBA\omega$</li>
+<li>Define and use RMS (root-mean-square) values for AC voltage and current</li>
+<li>Distinguish between AC generators (slip rings) and DC generators (commutator)</li>
+</ul>
+
+<hr>
+
+<h2>1. The AC Generator — Turning Motion into Electricity</h2>
+
+<h3>1.1 Why This Matters</h3>
+
+<p>Nearly all the electricity on Earth is produced by generators that spin coils in magnetic fields. Whether the turbine is turned by steam (coal, gas, nuclear), falling water (hydroelectric), or wind, the physics at the generator is the same: a coil rotates in a magnetic field, the flux through it changes continuously, and an alternating EMF is induced. Understanding the AC generator is understanding where electricity comes from.</p>
+
+<h3>1.2 The Rotating Coil</h3>
+
+<p>Consider a rectangular coil of $N$ turns, each of area $A$, rotating at constant angular velocity $\omega$ in a uniform magnetic field $B$. At time $t$, the angle between the field and the normal to the coil is $\theta = \omega t$ (if $\theta = 0$ at $t = 0$).</p>
+
+<p>The flux through one turn is:</p>
+<p>$$\Phi = BA\cos\theta = BA\cos(\omega t)$$</p>
+
+<p>By Faraday's Law, the induced EMF is:</p>
+<p>$$\varepsilon = -N\frac{d\Phi}{dt} = -N(-BA\omega\sin(\omega t)) = NBA\omega\sin(\omega t)$$</p>
+
+<h3>1.3 The Generator Equation</h3>
+
+<p>$$\varepsilon = \varepsilon_0\sin(\omega t) \quad \text{where} \quad \varepsilon_0 = NBA\omega$$</p>
+
+<ul>
+<li>$\varepsilon_0$ is the <strong>peak EMF</strong> (maximum value)</li>
+<li>$N$ = number of turns</li>
+<li>$B$ = magnetic field strength</li>
+<li>$A$ = area of each turn</li>
+<li>$\omega = 2\pi f$ = angular frequency</li>
+</ul>
+
+<p>The output is a sinusoidal voltage. The EMF is zero when the coil is perpendicular to the field ($\theta = 0^\circ$, flux maximum but not changing) and maximum in magnitude when the coil is parallel to the field ($\theta = 90^\circ$, flux zero but changing fastest).</p>
+
+<h3>1.4 Slip Rings</h3>
+
+<p>To connect the rotating coil to the external circuit without twisting the wires, the coil ends are connected to <strong>slip rings</strong> — continuous circular contacts that rotate with the coil. Carbon brushes press against the rings, conducting current to the external circuit. Because the connections never reverse, the output alternates between positive and negative — true AC.</p>
+
+<hr>
+
+<h2>2. RMS Values — What "230 Volts" Really Means</h2>
+
+<h3>2.1 Why Not Just Use Peak?</h3>
+
+<p>Mains electricity in Europe is described as "230 V AC." But the voltage is constantly changing from $+325\text{ V}$ to $-325\text{ V}$ and back, 50 times per second. What does "230 V" mean?</p>
+
+<p>The power delivered to a resistor depends on $V^2$. The average of $\sin^2(\omega t)$ over a complete cycle is $\frac{1}{2}$. So the average power is half the peak power:</p>
+
+<p>$$P_{\text{avg}} = \frac{V_0^2}{2R}$$</p>
+
+<p>The <strong>RMS (root-mean-square) voltage</strong> is the DC voltage that would deliver the same average power:</p>
+
+<p>$$V_{\text{rms}} = \frac{V_0}{\sqrt{2}} \qquad I_{\text{rms}} = \frac{I_0}{\sqrt{2}}$$</p>
+
+<p>For sinusoidal AC:</p>
+<p>$$V_{\text{rms}} \approx 0.707\,V_0$$</p>
+
+<p>For UK mains ($V_{\text{rms}} = 230\text{ V}$): $V_0 = 230 \times \sqrt{2} = 325\text{ V}$. The peak-to-peak voltage is $650\text{ V}$.</p>
+
+<h3>2.2 Why RMS Matters</h3>
+
+<p>Almost all AC meters display RMS values. When you see "230 V" on a multimeter, it's $V_{\text{rms}}$. Power calculations with RMS values work exactly like DC formulas:</p>
+<p>$$P_{\text{avg}} = I_{\text{rms}}V_{\text{rms}} = I_{\text{rms}}^2R = \frac{V_{\text{rms}}^2}{R}$$</p>
+
+<hr>
+
+<h2>3. The DC Generator — The Commutator</h2>
+
+<h3>3.1 Converting AC to Pulsating DC</h3>
+
+<p>Replace the slip rings with a <strong>split-ring commutator</strong>. The commutator reverses the coil's connection to the external circuit every half-turn, exactly when the EMF would reverse. The output never goes negative — it is a rectified sine wave:</p>
+
+<p>$$\varepsilon = |\varepsilon_0\sin(\omega t)|$$</p>
+
+<p>This is pulsating DC — it always pushes current in the same direction, but the magnitude still varies. For smoother DC, multiple coils at different angles are used, each contributing overlapping pulses.</p>
+
+<hr>
+
+<h2>Worked Examples</h2>
+
+<h3>Worked Example 55.1 — Generator Peak EMF</h3>
+
+<p><strong>Problem:</strong> A generator coil has 250 turns, each of area $0.015\text{ m}^2$, rotating at 3,600 rpm in a $0.20\text{ T}$ field. Find the peak EMF and output frequency.</p>
+
+<p><strong>Solution:</strong></p>
+<p>$f = 3,600/60 = 60\text{ Hz}$. $\omega = 2\pi(60) = 377\text{ rad s}^{-1}$. $\varepsilon_0 = (250)(0.20)(0.015)(377) = 283\text{ V}$. Frequency = 60 Hz.</p>
+
+<hr>
+
+<h3>Worked Example 55.2 — RMS Values</h3>
+
+<p><strong>Problem:</strong> UK mains is $230\text{ V}$ RMS at $50\text{ Hz}$. Find the peak voltage and peak-to-peak voltage.</p>
+
+<p><strong>Solution:</strong></p>
+<p>$V_0 = 230 \times \sqrt{2} = 325\text{ V}$. $V_{\text{pp}} = 2 \times 325 = 650\text{ V}$.</p>
+
+<hr>
+
+<h3>Worked Example 55.3 — AC Power</h3>
+
+<p><strong>Problem:</strong> A $60\text{ W}$, $120\text{ V}$ (RMS) light bulb operates on AC mains. Find its resistance and the peak current.</p>
+
+<p><strong>Solution:</strong></p>
+<p>$R = V_{\text{rms}}^2/P = 120^2/60 = 240\text{ Ω}$. $I_{\text{rms}} = P/V_{\text{rms}} = 60/120 = 0.50\text{ A}$. $I_0 = 0.50 \times \sqrt{2} = 0.707\text{ A}$.</p>
+
+<hr>
+
+<h3>Worked Example 55.4 — IB-Style Generator Problem</h3>
+
+<p><strong>Problem:</strong> A simple AC generator has a rectangular coil of 500 turns, dimensions 5.0 cm × 10 cm, rotating at 50 revolutions per second in a 0.15 T field.</p>
+
+<p>(a) Calculate the peak EMF. (2 marks)</p>
+<p>(b) Calculate the RMS voltage. (1 mark)</p>
+<p>(c) The coil is connected to a 100 Ω resistor. Calculate the average power dissipated. (2 marks)</p>
+<p>(d) If the rotation speed doubles, state how this affects: (i) the peak EMF, (ii) the frequency, and (iii) the average power. (3 marks)</p>
+
+<p><strong>Solution:</strong></p>
+<p><strong>(a)</strong> $A = 0.050 \times 0.10 = 5.0 \times 10^{-3}\text{ m}^2$. $f = 50\text{ Hz}$, $\omega = 2\pi(50) = 314\text{ rad s}^{-1}$. $\varepsilon_0 = (500)(0.15)(5.0 \times 10^{-3})(314) = 118\text{ V}$.</p>
+
+<p><strong>(b)</strong> $V_{\text{rms}} = 118/\sqrt{2} = 83.4\text{ V}$.</p>
+
+<p><strong>(c)</strong> $P = V_{\text{rms}}^2/R = 83.4^2/100 = 69.5\text{ W}$.</p>
+
+<p><strong>(d)</strong> (i) $\varepsilon_0 \propto \omega$, so peak EMF doubles. (ii) Frequency doubles (from 50 to 100 Hz). (iii) $P \propto \varepsilon_0^2$, so power quadruples — double the EMF gives four times the power at the same resistance.</p>
+
+<hr>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1</h3>
+<p>A generator coil has 400 turns of area $0.010\text{ m}^2$ in a $0.25\text{ T}$ field, rotating at 1,800 rpm. Find the peak EMF.</p>
+
+<h3>Problem 2</h3>
+<p>An AC source has a peak voltage of $170\text{ V}$. Calculate the RMS voltage. A $50\text{ Ω}$ resistor is connected. Find the RMS current and average power.</p>
+
+<h3>Problem 3</h3>
+<p>Sketch the output waveform of an AC generator (slip rings) and a DC generator (commutator) for two complete rotations, starting at $\theta = 0$.</p>
+
+<h3>Problem 4</h3>
+<p>Explain why the EMF from a rotating coil is sinusoidal. What determines when the EMF is maximum and when it is zero?</p>
+
+<h3>Problem 5 — IB-Style</h3>
+<p>A generator consists of a 250-turn coil of area $0.020\text{ m}^2$ rotating at frequency $f$ in a $0.12\text{ T}$ field. The output is connected to a data logger.</p>
+
+<p>(a) When $f = 25\text{ Hz}$, the peak EMF is measured as $94\text{ V}$. Determine whether this is consistent with the theoretical value. (2 marks)</p>
+<p>(b) The rotation frequency is increased to $50\text{ Hz}$. Calculate the new peak EMF and RMS voltage. (2 marks)</p>
+<p>(c) A $200\text{ Ω}$ resistor is connected. Calculate the power dissipated at $f = 50\text{ Hz}$. (2 marks)</p>
+<p>(d) The generator is converted to DC output by replacing slip rings with a commutator. Sketch the new waveform for one rotation and explain qualitatively how the average power delivered compares to the AC case. (3 marks)</p>
+
+<hr>
+
+<h2>Answers</h2>
+
+<h3>Answer 1</h3>
+<p>$f = 1,800/60 = 30\text{ Hz}$. $\omega = 2\pi(30) = 188.5\text{ rad s}^{-1}$. $\varepsilon_0 = (400)(0.25)(0.010)(188.5) = 189\text{ V}$.</p>
+
+<h3>Answer 2</h3>
+<p>$V_{\text{rms}} = 170/\sqrt{2} = 120\text{ V}$. $I_{\text{rms}} = 120/50 = 2.4\text{ A}$. $P = (2.4)(120) = 288\text{ W}$, or $P = 120^2/50 = 288\text{ W}$.</p>
+
+<h3>Answer 3</h3>
+<p>AC (slip rings): sine wave crossing zero twice per cycle. DC (commutator): $|\sin|$ shape, always positive, touches zero twice per cycle. Both have the same peak value.</p>
+
+<h3>Answer 4</h3>
+<p>$\Phi = BA\cos(\omega t)$. $\varepsilon = -d\Phi/dt = BA\omega\sin(\omega t)$. EMF is sinusoidal because the derivative of a cosine is a sine. EMF is zero when $\sin(\omega t) = 0$ — when the coil is perpendicular to the field (flux at maximum). EMF peaks when $\sin(\omega t) = \pm 1$ — when the coil is parallel to the field (flux zero, changing fastest).</p>
+
+<h3>Answer 5 — IB-Style</h3>
+<p><strong>(a)</strong> $\omega = 2\pi(25) = 157\text{ rad s}^{-1}$. $\varepsilon_0 = (250)(0.12)(0.020)(157) = 94.2\text{ V}$. Measured value is 94 V — excellent agreement. (2 marks)</p>
+
+<p><strong>(b)</strong> Doubling $f$ doubles $\omega$, so $\varepsilon_0 = 188\text{ V}$. $V_{\text{rms}} = 188/\sqrt{2} = 133\text{ V}$. (2 marks)</p>
+
+<p><strong>(c)</strong> $P = V_{\text{rms}}^2/R = 133^2/200 = 88.4\text{ W}$. (2 marks)</p>
+
+<p><strong>(d)</strong> (3 marks) DC waveform is $|\varepsilon_0\sin(\omega t)|$ — always positive. The average power with a resistive load is the same as AC for the same peak voltage because $P \propto V^2$ and $|V|^2 = V^2$ — squaring removes the negative signs. However, practical DC generators use multiple coils to reduce pulsation. (1 mark for correct sketch, 1 mark for noting power is the same, 1 mark for explaining why.)</p>
+
+<hr>
+
+<h2>Key Takeaways</h2>
+
+<ol>
+<li><strong>AC generator:</strong> $\varepsilon = \varepsilon_0\sin(\omega t)$ where $\varepsilon_0 = NBA\omega$. Sinusoidal because $\Phi = BA\cos(\omega t)$.</li>
+</ol>
+
+<ol>
+<li><strong>RMS values:</strong> $V_{\text{rms}} = V_0/\sqrt{2}$. This is what meters display. Power calculations use RMS: $P = I_{\text{rms}}V_{\text{rms}}$.</li>
+</ol>
+
+<ol>
+<li><strong>Slip rings = AC.</strong> <strong>Commutator = pulsating DC</strong> (always same polarity).</li>
+</ol>
+
+<ol>
+<li><strong>Peak EMF</strong> depends on $N$, $B$, $A$, and $\omega$. Double the rotation speed → double the frequency AND quadruple the power.</li>
+</ol>
+
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L54_induction_1.html">← Lesson 54</a>
+  <a href="L56_induction_3.html">Lesson 56 →</a>
+</nav>
+
+</body>
+</html>

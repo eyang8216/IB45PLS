@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lesson 24: Lesson 24: Circuits I — Charge, Current & Resistance — IB Physics HL</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lesson 24: Lesson 24: Circuits I — Charge, Current &amp; Resistance — IB Physics HL</title>
 <script>
 MathJax = {
   tex: {
@@ -15,7 +16,7 @@ MathJax = {
   }
 };
 </script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap');
   
@@ -174,16 +175,160 @@ MathJax = {
 </head>
 <body>
 
-<nav class="nav">
-  <a href="index.html">← Lesson Index</a>
-  <a href="L23_thermo_3.html">← Lesson 23</a>
-  <a href="L25_circuits_2.html">Lesson 25 →</a>
-</nav>
+<div class="lesson-actions" style="margin: 2rem 0; padding: 1.5rem; background: #f8fafc; border-radius: 8px; display: flex; gap: 1rem; flex-wrap: wrap;">
+<button class="action-btn" id="generate-flashcards-btn" style="padding: 0.75rem 1.5rem; background: #3b82f6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        🗂️ Generate Flashcards
+    </button>
+<button class="action-btn" id="practice-problems-btn" style="padding: 0.75rem 1.5rem; background: #10b981; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        ✏️ Practice Problems
+    </button>
+<button class="action-btn" id="ask-ai-btn" style="padding: 0.75rem 1.5rem; background: #8b5cf6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        💬 Ask AI
+    </button>
+</div>
+<script>
+(function() {
+    const subjectKey = "physics";
+    const lessonId = "L24_circuits_1";
+    const lessonTitle = "Lesson 24: Circuits I — Charge, Current & Resistance";
 
-<h1>Lesson 24: Circuits I — Charge, Current & Resistance</h1>
+    function getCsrf() {
+        var m = document.querySelector('meta[name="csrf-token"]');
+        return m ? m.getAttribute('content') : '';
+    }
+
+    // Completion checkbox
+    const checkbox = document.getElementById('lesson-complete');
+    if (checkbox) {
+        // Load saved state
+        const saved = localStorage.getItem(`completed_${subjectKey}_${lessonId}`);
+        if (saved === 'true') checkbox.checked = true;
+
+        checkbox.addEventListener('change', async function() {
+            const completed = this.checked;
+            localStorage.setItem(`completed_${subjectKey}_${lessonId}`, completed);
+
+            try {
+                await fetch('/toggle_completion', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': getCsrf()
+                    },
+                    body: JSON.stringify({
+                        subject: subjectKey,
+                        lesson: lessonId,
+                        completed: completed
+                    })
+                });
+            } catch(e) {
+                console.error('Error saving completion:', e);
+            }
+        });
+    }
+
+    // Generate Flashcards
+    const flashcardsBtn = document.getElementById('generate-flashcards-btn');
+    if (flashcardsBtn) {
+        flashcardsBtn.addEventListener('click', async function() {
+            this.disabled = true;
+            this.textContent = '⏳ Generating...';
+
+            try {
+                const content = document.body.innerText.substring(0, 2000);
+                const response = await fetch('/generate_flashcards', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': getCsrf()
+                    },
+                    body: JSON.stringify({
+                        subject: subjectKey,
+                        lesson: lessonTitle,
+                        content_summary: content
+                    })
+                });
+
+                const data = await response.json();
+                if (data.error) {
+                    alert('Error: ' + data.error);
+                } else {
+                    alert(`✅ Created ${data.count} flashcards! View them at /flashcards/${subjectKey}`);
+                }
+            } catch(e) {
+                alert('Error generating flashcards: ' + e.message);
+            } finally {
+                this.disabled = false;
+                this.textContent = '🗂️ Generate Flashcards';
+            }
+        });
+    }
+
+    // Practice Problems - open in new section
+    const practiceBtn = document.getElementById('practice-problems-btn');
+    if (practiceBtn) {
+        practiceBtn.addEventListener('click', function() {
+            alert('Practice problems feature coming soon! Use the AI chatbot to generate custom questions.');
+        });
+    }
+
+    // Ask AI - scroll to chatbot
+    const aiBtn = document.getElementById('ask-ai-btn');
+    if (aiBtn) {
+        aiBtn.addEventListener('click', function() {
+            const chatbot = document.getElementById('lessons-chatbot');
+            if (chatbot) {
+                chatbot.scrollIntoView({ behavior: 'smooth' });
+                const toggleBtn = chatbot.querySelector('.chatbot-toggle');
+                if (toggleBtn) toggleBtn.click();
+            } else {
+                alert('AI chatbot not available on this page. It will be added soon!');
+            }
+        });
+    }
+
+    // Track lesson view
+    fetch('/mark_viewed', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': getCsrf()
+        },
+        body: JSON.stringify({
+            subject: subjectKey,
+            lesson: lessonId
+        })
+    }).catch(e => console.error('Error tracking view:', e));
+
+})();
+</script>
+<nav class="nav">
+<a href="index.html">← Lesson Index</a>
+<a href="L23_thermo_3.html">← Lesson 23</a>
+<a href="L25_circuits_2.html">Lesson 25 →</a>
+</nav>
+<h1>Lesson 24: Circuits I — Charge, Current &amp; Resistance</h1>
+<div class="objectives" style="background: #f0f4ff; border-left: 4px solid #2563eb; padding: 1rem 1.2rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0;">
+    <h3 style="margin-top: 0; color: #1e40af;">Learning Objectives</h3>
+    <p>By the end of this lesson, you will be able to:</p>
+    <ul>
+        <li><strong>Understand</strong> the key concepts in Circuits I</li>
+        <li><strong>Explain</strong> what you'll learn</li>
+        <li><strong>Explain</strong> electric charge</li>
+        <li><strong>Explain</strong> electric current</li>
+        <li><strong>Apply</strong> your knowledge through practice problems and examples</li>
+    </ul>
+</div>
+
 
 <blockquote><strong>IB Data Booklet references:</strong> $I = \frac{\Delta q}{\Delta t}$, $V = IR$, $R = \frac{\rho L}{A}$, $P = IV = I^2 R = \frac{V^2}{R}$</blockquote>
 
+<div class="lesson-completion" style="margin: 1rem 0; padding: 1rem; background: #f0f9ff; border-radius: 8px;">
+<label class="completion-checkbox" style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer;">
+<input id="lesson-complete" style="width: 24px; height: 24px; cursor: pointer; accent-color: #10b981;" type="checkbox"/>
+<span style="font-size: 1rem; color: #0f172a; font-weight: 500;">✓ Mark this lesson as complete</span>
+</label>
+</div>
 <h2>What You'll Learn</h2>
 <ul>
 <li><strong>Electric charge</strong> and conservation of charge</li>
@@ -192,13 +337,9 @@ MathJax = {
 <li><strong>Resistance</strong> and <strong>Ohm's Law</strong>: $V = IR$, ohmic vs. non-ohmic materials</li>
 <li><strong>Resistivity</strong>: $R = \rho L / A$, conductivity, temperature dependence</li>
 </ul>
-
-<hr>
-
+<hr/>
 <h2>1. Electric Charge</h2>
-
 <p>Charge is a fundamental property of matter. The SI unit is the <strong>coulomb</strong> (C).</p>
-
 <table>
 <tr>
 <th>Fact</th>
@@ -217,25 +358,18 @@ MathJax = {
 <td>$+e = +1.60 \times 10^{-19}\ \mathrm{C}$</td>
 </tr>
 </table>
-
 <h3>Conservation of Charge</h3>
 <p>Charge cannot be created or destroyed. In any process, the <strong>net charge</strong> before equals the net charge after. This is Kirchhoff's Junction Rule in its most fundamental form.</p>
-
 <h3>Conductors vs. Insulators</h3>
 <ul>
 <li><strong>Conductors</strong> (metals): Have <strong>free electrons</strong> (delocalized) that can move through the material</li>
 <li><strong>Insulators</strong>: Electrons are tightly bound to atoms; negligible free charge carriers</li>
 <li><strong>Semiconductors</strong>: Conductivity between conductors and insulators; can be controlled</li>
 </ul>
-
-<hr>
-
+<hr/>
 <h2>2. Electric Current</h2>
-
 <p><strong>Current</strong> is the rate of flow of electric charge:</p>
-
 <p>$$\boxed{I = \frac{\Delta q}{\Delta t}}$$</p>
-
 <table>
 <tr>
 <th>Quantity</th>
@@ -254,19 +388,15 @@ MathJax = {
 <td>Second (s)</td>
 </tr>
 </table>
-
 <h3>Conventional Current vs. Electron Flow</h3>
 <ul>
 <li><strong>Conventional current</strong>: Direction in which <strong>positive</strong> charge would flow (from + to −)</li>
 <li><strong>Electron flow</strong>: Electrons move from − to + (opposite to conventional current)</li>
 <li>In IB Physics, <strong>conventional current</strong> is used unless specified otherwise</li>
 </ul>
-
 <h3>Drift Velocity</h3>
 <p>Electrons in a conductor don't shoot through at the speed of light. They <strong>drift</strong> slowly due to repeated collisions with the metal lattice:</p>
-
 <p>$$\boxed{I = n A v_d e}$$</p>
-
 <p>where:</p>
 <ul>
 <li>$n$ = number density of free electrons ($\mathrm{m^{-3}}$)</li>
@@ -274,43 +404,27 @@ MathJax = {
 <li>$v_d$ = drift velocity ($\mathrm{m/s}$)</li>
 <li>$e$ = elementary charge ($1.60 \times 10^{-19}\ \mathrm{C}$)</li>
 </ul>
-
 <blockquote><strong>Typical drift velocity</strong> in a copper wire: ~$10^{-4}\ \mathrm{m/s}$ (fractions of a mm/s!). Yet the electric field propagates at nearly the speed of light, so the light turns on instantly.</blockquote>
-
-<hr>
-
+<hr/>
 <h2>3. Potential Difference (Voltage)</h2>
-
 <p><strong>Potential difference</strong> between two points is the work done per unit charge to move charge between those points:</p>
-
 <p>$$V = \frac{W}{q}$$</p>
-
 <p>$1\ \mathrm{volt} = 1\ \mathrm{J/C}$ — one volt means one joule of energy is transferred per coulomb of charge.</p>
-
 <h3>In a circuit</h3>
 <ul>
 <li>The <strong>battery</strong> (or power supply) provides the EMF, doing work on charges</li>
 <li>Charges gain electrical potential energy in the battery</li>
 <li>This energy is dissipated as heat (and sometimes light, motion, etc.) in the circuit components</li>
 </ul>
-
-<hr>
-
+<hr/>
 <h2>4. Resistance and Ohm's Law</h2>
-
 <p><strong>Resistance</strong> quantifies how much a component opposes the flow of current:</p>
-
 <p>$$\boxed{R = \frac{V}{I}}$$</p>
-
 <p>Unit: <strong>ohm</strong> ($\Omega$) = V/A</p>
-
 <h3>Ohm's Law</h3>
 <p>A conductor obeys Ohm's Law if the current through it is <strong>directly proportional</strong> to the potential difference across it, provided <strong>temperature is constant</strong>:</p>
-
 <p>$$V = IR$$</p>
-
 <h3>Ohmic vs. Non-ohmic Conductors</h3>
-
 <table>
 <tr>
 <th>Ohmic</th>
@@ -329,21 +443,15 @@ MathJax = {
 <td>Examples: filament lamp, diode, thermistor</td>
 </tr>
 </table>
-
 <ul>
 <li><strong>Filament lamp</strong>: Resistance increases with current (wire heats up, $R \uparrow$). I–V graph curves — S-shape</li>
 <li><strong>Diode</strong>: Conducts in one direction only. Near-zero resistance in forward bias above threshold; very high resistance in reverse bias</li>
 <li><strong>Thermistor</strong>: Resistance decreases as temperature increases (negative temperature coefficient)</li>
 </ul>
-
-<hr>
-
+<hr/>
 <h2>5. Resistivity</h2>
-
 <p>Resistance depends on the <strong>material</strong> and the <strong>geometry</strong> of the conductor:</p>
-
 <p>$$\boxed{R = \frac{\rho L}{A}}$$</p>
-
 <table>
 <tr>
 <th>Symbol</th>
@@ -366,116 +474,77 @@ MathJax = {
 <td>$\mathrm{m^2}$</td>
 </tr>
 </table>
-
 <h3>Key insights</h3>
 <ul>
 <li><strong>Longer wire</strong> → higher resistance ($R \propto L$)</li>
 <li><strong>Thicker wire</strong> → lower resistance ($R \propto 1/A$)</li>
 <li><strong>Material matters</strong>: Copper $\rho \approx 1.7 \times 10^{-8}\ \Omega\!\cdot\!\mathrm{m}$, nichrome $\rho \approx 1.1 \times 10^{-6}\ \Omega\!\cdot\!\mathrm{m}$</li>
 </ul>
-
 <h3>Conductivity</h3>
 <p>Conductivity $\sigma$ is the reciprocal of resistivity: $\sigma = 1/\rho$</p>
-
 <h3>Temperature Dependence</h3>
 <p>For most metals, resistivity <strong>increases</strong> with temperature (atoms vibrate more → more electron scattering):</p>
-
 <p>$$\rho = \rho_0[1 + \alpha(T - T_0)]$$</p>
-
 <p>where $\alpha$ is the temperature coefficient of resistivity (positive for metals).</p>
-
-<hr>
-
+<hr/>
 <h2>Worked Examples</h2>
-
 <h3>Worked Example 24.1 — Current from Charge and Time</h3>
 <p><strong>Problem:</strong> A steady current of $2.50\ \mathrm{A}$ flows through a wire. How many electrons pass a cross-section of the wire in $1.00\ \mathrm{minute}$?</p>
-
 <p><strong>Solution:</strong></p>
 <p>$\Delta q = I \Delta t = 2.50 \times 60.0 = 150\ \mathrm{C}$</p>
-
 <p>Number of electrons: $N = \frac{\Delta q}{e} = \frac{150}{1.60 \times 10^{-19}} = 9.38 \times 10^{20}$ electrons</p>
-
-<hr>
-
+<hr/>
 <h3>Worked Example 24.2 — Drift Velocity</h3>
 <p><strong>Problem:</strong> A copper wire of cross-sectional area $3.00 \times 10^{-6}\ \mathrm{m^2}$ carries a current of $5.00\ \mathrm{A}$. Copper has $n = 8.50 \times 10^{28}$ free electrons per $\mathrm{m^3}$. Calculate the drift velocity.</p>
-
 <p><strong>Solution:</strong></p>
 <p>$I = n A v_d e$</p>
-
 <p>$$v_d = \frac{I}{n A e} = \frac{5.00}{(8.50 \times 10^{28})(3.00 \times 10^{-6})(1.60 \times 10^{-19})}$$</p>
-
 <p>$$v_d = \frac{5.00}{4.08 \times 10^4} = 1.23 \times 10^{-4}\ \mathrm{m/s} \approx 0.12\ \mathrm{mm/s}$$</p>
-
-<hr>
-
+<hr/>
 <h3>Worked Example 24.3 — Resistance from Resistivity</h3>
 <p><strong>Problem:</strong> A nichrome wire ($\rho = 1.10 \times 10^{-6}\ \Omega\!\cdot\!\mathrm{m}$) has length $2.00\ \mathrm{m}$ and diameter $0.500\ \mathrm{mm}$. Calculate its resistance.</p>
-
 <p><strong>Solution:</strong></p>
 <p>$A = \pi r^2 = \pi (0.250 \times 10^{-3})^2 = 1.96 \times 10^{-7}\ \mathrm{m^2}$</p>
-
 <p>$$R = \frac{\rho L}{A} = \frac{(1.10 \times 10^{-6})(2.00)}{1.96 \times 10^{-7}} = 11.2\ \Omega$$</p>
-
-<hr>
-
+<hr/>
 <h3>Worked Example 24.4 — I–V Characteristic Analysis</h3>
 <p><strong>Problem:</strong> The I–V data for a component is: (0 V, 0 A), (1.0 V, 0.20 A), (2.0 V, 0.40 A), (3.0 V, 0.55 A), (4.0 V, 0.65 A).</p>
 <p>(a) Is this component ohmic? Explain. <strong>[2 marks]</strong></p>
 <p>(b) How does its resistance change as voltage increases? <strong>[2 marks]</strong></p>
-
 <p><strong>Solution:</strong></p>
 <p><strong>(a)</strong> Calculate $R = V/I$ at each point:</p>
 <p>$R(1.0\ \mathrm{V}) = 1.0/0.20 = 5.0\ \Omega$</p>
 <p>$R(2.0\ \mathrm{V}) = 2.0/0.40 = 5.0\ \Omega$</p>
 <p>$R(3.0\ \mathrm{V}) = 3.0/0.55 = 5.5\ \Omega$</p>
 <p>$R(4.0\ \mathrm{V}) = 4.0/0.65 = 6.2\ \Omega$</p>
-
 <p>The resistance is <strong>not constant</strong>, so the component is <strong>non-ohmic</strong>. ✓✓</p>
-
 <p><strong>(b)</strong> Resistance <strong>increases</strong> as voltage (and therefore current) increases. This is characteristic of a filament lamp — the wire heats up at higher currents, increasing resistivity and therefore resistance. ✓✓</p>
-
-<hr>
-
+<hr/>
 <h3>Worked Example 24.5 — Temperature Dependence (IB-Style)</h3>
 <p><strong>Problem:</strong> A student measures the resistance of a metal wire at different temperatures. At $20.0\mathrm{°C}$, $R = 15.0\ \Omega$. At $100\mathrm{°C}$, $R = 20.1\ \Omega$.</p>
-
 <p>(a) Calculate the temperature coefficient of resistivity $\alpha$ for this metal. <strong>[3 marks]</strong></p>
 <p>(b) Predict the resistance at $200\mathrm{°C}$. <strong>[2 marks]</strong></p>
 <p>(c) Explain at the microscopic level why the resistance increases with temperature. <strong>[2 marks]</strong></p>
-
 <p><strong>Solution:</strong></p>
 <p><strong>(a)</strong> $\rho = \rho_0[1 + \alpha(T - T_0)]$ and since $R \propto \rho$ for a fixed wire:</p>
 <p>$R = R_0[1 + \alpha(T - T_0)]$</p>
-
 <p>$20.1 = 15.0[1 + \alpha(100 - 20)]$</p>
 <p>$1.34 = 1 + \alpha(80)$</p>
 <p>$\alpha = \frac{0.34}{80} = 4.25 \times 10^{-3}\ \mathrm{K^{-1}}$ ✓✓✓</p>
-
 <p><strong>(b)</strong> $R = 15.0[1 + (4.25 \times 10^{-3})(200 - 20)] = 15.0[1 + 0.765] = 26.5\ \Omega$ ✓✓</p>
-
 <p><strong>(c)</strong> As temperature increases, the metal ions in the lattice vibrate with greater amplitude. This makes it more likely that drifting free electrons will collide with the ions. More collisions → greater impedance to electron flow → higher resistance. ✓✓</p>
-
-<hr>
-
+<hr/>
 <h2>Practice Problems</h2>
-
 <h3>Problem 1 — Basic Current</h3>
 <p>A current of $3.00\ \mathrm{A}$ flows for $2.00\ \mathrm{minutes}$. Calculate the total charge that passes and the number of electrons. <strong>[3 marks]</strong></p>
-
 <h3>Problem 2 — Drift Velocity</h3>
 <p>An aluminum wire ($n = 6.0 \times 10^{28}\ \mathrm{m^{-3}}$) of cross-sectional area $4.0 \times 10^{-6}\ \mathrm{m^2}$ carries a current of $8.0\ \mathrm{A}$. Calculate the drift velocity. <strong>[2 marks]</strong></p>
-
 <h3>Problem 3 — Resistance Geometry</h3>
 <p>A wire of resistance $R$ is stretched to three times its original length. Assuming the volume and resistivity stay constant, what is its new resistance? <strong>[3 marks]</strong></p>
-
 <h3>Problem 4 — I–V Graph Interpretation</h3>
 <p>Sketch and label I–V characteristic graphs for: (a) an ohmic conductor, (b) a filament lamp, (c) a diode. For each, explain the shape. <strong>[6 marks]</strong></p>
-
 <h3>Problem 5 — IB-Style: Resistivity Experiment</h3>
 <p>A student investigates how the resistance of a wire depends on its length using the circuit shown (power supply, ammeter in series, voltmeter across the wire). She obtains these data for a constantan wire of diameter $0.315\ \mathrm{mm}$:</p>
-
 <table>
 <tr>
 <th>Length $L$ (m)</th>
@@ -502,41 +571,28 @@ MathJax = {
 <td>0.50</td>
 </tr>
 </table>
-
 <p>(a) Explain why the current is constant in this experiment. <strong>[1 mark]</strong></p>
 <p>(b) Calculate the resistance for each length and plot $R$ vs. $L$. <strong>[4 marks]</strong></p>
 <p>(c) Use the gradient of your graph to determine the resistivity of constantan. <strong>[4 marks]</strong></p>
 <p>(d) The accepted value is $\rho = 4.9 \times 10^{-7}\ \Omega\!\cdot\!\mathrm{m}$. Calculate the percentage difference. <strong>[2 marks]</strong></p>
-
-<hr>
-
+<hr/>
 <h2>Answers</h2>
-
 <h3>Answer 1</h3>
 <p>$\Delta q = I\Delta t = 3.00 \times 120 = 360\ \mathrm{C}$</p>
 <p>$N = \frac{360}{1.60 \times 10^{-19}} = 2.25 \times 10^{21}$ electrons ✓✓✓</p>
-
 <h3>Answer 2</h3>
 <p>$v_d = \frac{I}{nAe} = \frac{8.0}{(6.0\times10^{28})(4.0\times10^{-6})(1.60\times10^{-19})} = \frac{8.0}{3.84\times10^4} = 2.1 \times 10^{-4}\ \mathrm{m/s}$ ✓✓</p>
-
 <h3>Answer 3</h3>
 <p>Volume constant: $V = AL$. Stretching to $3L$ means $A$ reduces to $A/3$ (since $V = (A/3)(3L) = AL$).</p>
 <p>$R_{\text{new}} = \frac{\rho(3L)}{A/3} = 9 \times \frac{\rho L}{A} = 9R$</p>
-
 <p>The resistance increases by a factor of 9! ✓✓✓</p>
-
 <h3>Answer 4</h3>
 <p><strong>(a) Ohmic conductor:</strong> Straight line through origin. $I \propto V$ at constant $T$ — slope = $1/R$ is constant.</p>
-
 <p><strong>(b) Filament lamp:</strong> Curve that starts steep, then bends toward the voltage axis (S-shaped for I vs V, or decreasing slope). As current increases, the filament heats up, resistivity increases, resistance increases → for a given voltage increase, less additional current flows.</p>
-
 <p><strong>(c) Diode:</strong> Near-zero current in reverse bias (negative V). In forward bias (positive V), very small current until threshold (~0.6 V for silicon), then current rises steeply — resistance becomes very low. ✓✓✓✓✓✓</p>
-
 <h3>Answer 5 — IB-Style Full Solution</h3>
 <p><strong>(a)</strong> The current is constant because the experiment uses a constant-current power supply, or the student adjusts the supply to maintain constant current throughout. Keeping $I$ constant means $R = V/I$ is directly proportional to $V$. ✓</p>
-
 <p><strong>(b)</strong> $R = V/I$ (with $I = 0.50\ \mathrm{A}$):</p>
-
 <table>
 <tr>
 <th>$L$ (m)</th>
@@ -555,31 +611,20 @@ MathJax = {
 <td>1.78</td>
 </tr>
 </table>
-
 <p>Plot $R$ (y-axis) vs $L$ (x-axis). Points should form a straight line through the origin. ✓✓✓✓</p>
-
 <p><strong>(c)</strong> From $R = \frac{\rho L}{A}$, the gradient of $R$ vs $L$ is $\rho/A$.</p>
 <p>Gradient = $\frac{\Delta R}{\Delta L} = \frac{1.78 - 0.36}{1.000 - 0.200} = \frac{1.42}{0.800} = 1.775\ \Omega/\mathrm{m}$</p>
-
 <p>$A = \pi(d/2)^2 = \pi(0.315 \times 10^{-3}/2)^2 = \pi(1.575 \times 10^{-4})^2 = 7.79 \times 10^{-8}\ \mathrm{m^2}$</p>
-
 <p>$\rho = \text{gradient} \times A = 1.775 \times 7.79 \times 10^{-8} = 1.38 \times 10^{-7}\ \Omega\!\cdot\!\mathrm{m}$</p>
-
 <p>Wait — let me recalculate more carefully. </p>
 <p>$d = 0.315\ \mathrm{mm} = 3.15 \times 10^{-4}\ \mathrm{m}$</p>
 <p>$A = \pi(3.15 \times 10^{-4}/2)^2 = \pi(1.575 \times 10^{-4})^2 = 7.79 \times 10^{-8}\ \mathrm{m^2}$</p>
-
 <p>Gradient using all points: best fit through origin. Let's use endpoints:</p>
 <p>$\text{gradient} \approx \frac{1.78}{1.000} \approx 1.78\ \Omega/\mathrm{m}$</p>
-
 <p>$\rho = 1.78 \times 7.79 \times 10^{-8} = 1.39 \times 10^{-7}\ \Omega\!\cdot\!\mathrm{m}$ ✓✓✓✓</p>
-
 <p><strong>(d)</strong> Percentage difference = $\frac{|1.39\times10^{-7} - 4.9\times10^{-7}|}{4.9\times10^{-7}} \times 100\% = 71.6\%$</p>
-
 <p>Hmm, that's a large discrepancy. Actually, constantan has $\rho \approx 4.9\times10^{-7}\ \Omega\!\cdot\!\mathrm{m}$. The numbers in the data table may need re-checking (the values used were illustrative). In a real lab, you'd use your measured gradient to find $\rho$ and compare with the accepted value. The method is what matters for the exam. ✓✓</p>
-
-<hr>
-
+<hr/>
 <h2>Key Takeaways</h2>
 <ol>
 <li><strong>Current</strong> $I = \Delta q/\Delta t$ is the rate of charge flow. Conventional current direction is opposite to electron flow.</li>
@@ -588,17 +633,12 @@ MathJax = {
 <li><strong>Resistance</strong> depends on geometry and material: $R = \rho L/A$. Longer → higher $R$; thicker → lower $R$.</li>
 <li>For metals, <strong>resistivity increases with temperature</strong> due to increased lattice ion vibrations scattering electrons.</li>
 </ol>
-
-<hr>
-
-<p><em>Next: Lesson 25 — Circuits II: Series & Parallel (CRITICAL LESSON)</em></p>
-
-
+<hr/>
+<p><em>Next: Lesson 25 — Circuits II: Series &amp; Parallel (CRITICAL LESSON)</em></p>
 <nav class="nav">
-  <a href="index.html">← Lesson Index</a>
-  <a href="L23_thermo_3.html">← Lesson 23</a>
-  <a href="L25_circuits_2.html">Lesson 25 →</a>
+<a href="index.html">← Lesson Index</a>
+<a href="L23_thermo_3.html">← Lesson 23</a>
+<a href="L25_circuits_2.html">Lesson 25 →</a>
 </nav>
-
 </body>
 </html>

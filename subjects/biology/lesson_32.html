@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Lesson 32: Neural Signaling I (C2.2) — IB Biology HL</title>
 <script>window.MathJax = { tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] } };</script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <style>
   :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #1a6b3c; --border: #c4d4a9; --highlight: #e8f5e9; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -30,12 +31,15 @@
 </style>
 </head>
 <body>
-
+<div class="lesson-completion" style="margin: 0 0 2rem 0; padding: 1rem; background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-radius: 8px; border: 2px solid #bae6fd;">
+<label class="completion-checkbox" style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer;">
+<input id="lesson-complete" style="width: 24px; height: 24px; cursor: pointer; accent-color: #10b981;" type="checkbox"/>
+<span style="font-size: 1rem; color: #0f172a; font-weight: 600;">✓ Mark this lesson as complete</span>
+</label>
+</div>
 
 <h2>What You'll Learn</h2>
-
 <p>Imagine you touch a hot stove. Before you even consciously register the pain, your hand has already jerked away. This lightning-fast response — faster than thought itself — is the work of your nervous system. In this lesson, you'll learn how neurons generate and transmit electrical signals, from the tiny voltage across a resting membrane to the explosive all-or-none action potential that races along your nerves at up to 120 meters per second. By the end, you'll understand:</p>
-
 <ul>
 <li>The intricate structure of a neuron and how each part contributes to signal transmission</li>
 <li>How the resting potential is established and maintained at −70 mV</li>
@@ -44,16 +48,11 @@
 <li>The molecular dance of synaptic transmission — how one neuron talks to the next</li>
 <li>Why neonicotinoid pesticides are devastating bee populations — a real-world application of cholinergic synapse biology</li>
 </ul>
-<hr>
-
+<hr/>
 <h2>1. Neuron Structure: The Cellular Hardware</h2>
-
 <p>Neurons are the most morphologically specialized cells in your body. Some extend over a meter in length (from your spinal cord to your toes). Their structure is perfectly adapted for receiving, integrating, and transmitting electrical signals.</p>
-
 <h3>1.1 The Parts of a Neuron</h3>
-
 <p><strong>Draw and label:</strong> A multipolar motor neuron showing all major structures. Use a large diagram with arrows pointing to each component.</p>
-
 <p><strong>Dendrites:</strong></p>
 <ul>
 <li>Branched, tree-like extensions from the soma (cell body)</li>
@@ -113,7 +112,6 @@
 <li>Label: "CNS: oligodendrocytes (myelinate multiple axons)" and "PNS: Schwann cells (one segment per axon)"</li>
 </ul>
 <h3>1.2 Structural Adaptations for Function</h3>
-
 <table>
 <tr>
 <td>Structure</td>
@@ -146,44 +144,28 @@
 <td>Converts electrical signal to chemical signal</td>
 </tr>
 </table>
-
 <div class="tip">
-
 <p><strong>Paper 1 Tip:</strong> Be crystal clear on CNS vs PNS myelination. <strong>Oligodendrocytes = CNS, Schwann cells = PNS.</strong> Each oligodendrocyte myelinates multiple axons; each Schwann cell myelinates only one segment. This is a favorite multiple-choice distinction.</p>
-
 </div>
-
-<hr>
-
+<hr/>
 <h2>2. The Resting Membrane Potential (~−70 mV)</h2>
-
 <p>Every living cell has a voltage across its membrane, but neurons have perfected this property. The resting potential is the foundation upon which all neural signaling is built.</p>
-
 <div class="definition">
-
 <p><strong>Resting membrane potential</strong> — The electrical potential difference across the neuron's plasma membrane when the cell is not transmitting a signal, typically −70 mV (inside negative relative to outside).</p>
-
 </div>
-
 <h3>2.1 What Creates the Resting Potential?</h3>
-
 <p>Imagine two water tanks at different heights connected by a pipe — water flows until the levels equalize. But what if you had a pump constantly moving water back up? The resting potential is like this: a dynamic equilibrium maintained by the interplay of pumps, channels, and impermeant ions.</p>
-
 <p><strong>Factor 1 — The Na⁺/K⁺ Pump (Na⁺/K⁺-ATPase):</strong></p>
-
 <p>This is the active transport pump that sets up the concentration gradients:</p>
-
 <ul>
 <li>Pumps <strong>3 Na⁺ out</strong> and <strong>2 K⁺ in</strong> for each ATP hydrolyzed</li>
 <li>This is <strong>electrogenic</strong> — each cycle removes one net positive charge from the cell, contributing a small amount (~−5 to −10 mV) to the resting potential</li>
 <li>More importantly, it establishes the <strong>concentration gradients</strong> that drive ion movement through channels:</li>
-<li>[Na⁺] outside (~140 mM) >> [Na⁺] inside (~10-15 mM)</li>
-<li>[K⁺] inside (~140 mM) >> [K⁺] outside (~4-5 mM)</li>
+<li>[Na⁺] outside (~140 mM) &gt;&gt; [Na⁺] inside (~10-15 mM)</li>
+<li>[K⁺] inside (~140 mM) &gt;&gt; [K⁺] outside (~4-5 mM)</li>
 </ul>
 <p><strong>Factor 2 — K⁺ Leak Channels (the Dominant Factor):</strong></p>
-
 <p>The membrane at rest is <strong>far more permeable to K⁺ than to Na⁺</strong> (about 25-50× more permeable). This is because there are many <strong>K⁺ leak channels</strong> (always open) and very few open Na⁺ channels.</p>
-
 <ul>
 <li>K⁺, driven by its concentration gradient, diffuses <strong>out of the cell</strong> through leak channels</li>
 <li>As positive charges leave, the inside becomes <strong>more negative</strong></li>
@@ -192,13 +174,9 @@
 <li>The resting potential (−70 mV) is close to but not exactly at E_K because there is some Na⁺ permeability</li>
 </ul>
 <p><strong>Factor 3 — Membrane Impermeability to Na⁺ at Rest:</strong></p>
-
 <p>Most voltage-gated Na⁺ channels are <strong>closed</strong> at rest. The small number that are open allow a trickle of Na⁺ influx, which makes the resting potential slightly more positive than E_K (−70 mV, not −90 mV). If the membrane were perfectly permeable only to K⁺, the resting potential would be −90 mV.</p>
-
 <p><strong>Factor 4 — Fixed Intracellular Anions:</strong></p>
-
 <p>Inside the cell, there are large, negatively charged molecules — proteins, nucleic acids, organic phosphates — that <strong>cannot cross the membrane</strong> (they are "fixed"). These contribute to the net negative charge inside.</p>
-
 <p><strong>Draw and label:</strong> A neuron membrane at rest showing:</p>
 <ul>
 <li>Outside: High Na⁺, low K⁺, many "+" signs</li>
@@ -209,11 +187,8 @@
 <li>Voltage: "−70 mV inside relative to outside" with voltmeter symbol</li>
 </ul>
 <h3>2.2 The Nernst Equation (Conceptual Understanding)</h3>
-
 <p>For IB HL, you should understand conceptually that the equilibrium potential for an ion depends on its concentration gradient:</p>
-
 <p style="text-align:center;margin:0.8rem 0;">$$E_{ion} = \frac{RT}{zF} \ln \frac{[ion]_{out}}{[ion]_{in}}$$</p>
-
 <p>Key points:</p>
 <ul>
 <li>E_K ≈ −90 mV (K⁺ wants to leave the cell)</li>
@@ -221,29 +196,17 @@
 <li>The resting potential (−70 mV) is between these values but closer to E_K because the membrane is more permeable to K⁺</li>
 </ul>
 <div class="tip">
-
 <p><strong>Paper 2 Tip:</strong> If asked to "explain how the resting potential is established," always include ALL three factors: (1) Na⁺/K⁺ pump creating gradients, (2) K⁺ leak channels allowing K⁺ efflux, and (3) low Na⁺ permeability at rest. Don't forget the fixed anions. Four factors = four marks.</p>
-
 </div>
-
-<hr>
-
+<hr/>
 <h2>3. The Action Potential: The Neural "Spike"</h2>
-
 <p>The action potential is the all-or-none electrical event that carries information along the axon. It's like a domino falling — once triggered, it goes to completion in a stereotyped, unvarying fashion.</p>
-
 <div class="definition">
-
 <p><strong>Action potential</strong> — A brief, rapid, and large reversal of membrane potential (from −70 mV to about +40 mV and back) that propagates along the axon without decrement. It is all-or-none: either it fires fully or not at all.</p>
-
 <p><strong>Threshold</strong> — The membrane potential (typically ~−55 mV) at which voltage-gated Na⁺ channels open in sufficient numbers to trigger a self-sustaining depolarization.</p>
-
 </div>
-
 <h3>3.1 The Phases of an Action Potential</h3>
-
 <p><strong>Draw and label:</strong> A graph with membrane potential (mV) on the y-axis (−90 to +50) and time (ms) on the x-axis (0 to ~5 ms). The classic action potential shape should show all phases clearly.</p>
-
 <p><strong>Phase 1 — Resting State (−70 mV):</strong></p>
 <ul>
 <li>Na⁺/K⁺ pump maintains gradients</li>
@@ -290,9 +253,7 @@
 <li>Na⁺ channels reset: inactivation gate opens, activation gate closes → ready for next stimulus</li>
 </ul>
 <h3>3.2 Ion Channel States During the Action Potential</h3>
-
 <p>Understanding channel gating is essential for the IB:</p>
-
 <table>
 <tr>
 <td>Phase</td>
@@ -330,15 +291,10 @@
 <td>Closed</td>
 </tr>
 </table>
-
 <p><strong>Crucial distinction:</strong> Na⁺ channels have TWO gates (activation and inactivation), while K⁺ channels have only one (activation). The inactivation gate on Na⁺ channels is what ensures the action potential is brief and unidirectional.</p>
-
 <div class="worked">
-
 <p><strong>Worked Example: Interpreting the Action Potential Graph</strong></p>
-
 <p><strong>Scenario:</strong> Below is data from an oscilloscope recording of a single action potential:</p>
-
 <table>
 <tr>
 <td>Time (ms)</td>
@@ -389,14 +345,11 @@
 <td>−70</td>
 </tr>
 </table>
-
 <p><strong>(a)</strong> Identify the phases at each time point.</p>
 <p><strong>(b)</strong> What is the amplitude of this action potential?</p>
 <p><strong>(c)</strong> What is the duration?</p>
 <p><strong>(d)</strong> At what time are voltage-gated K⁺ channels most open?</p>
-
 <p><strong>Answers:</strong></p>
-
 <p><strong>(a)</strong></p>
 <ul>
 <li>0.0-0.5 ms: Resting state (−70 mV)</li>
@@ -407,15 +360,10 @@
 <li>3.0-5.0 ms: Return to resting</li>
 </ul>
 <p><strong>(b)</strong> Amplitude = Peak − Resting = +35 − (−70) = <strong>105 mV</strong></p>
-
 <p><strong>(c)</strong> Duration ≈ 1.5 ms (from threshold at 1.0 ms to return to −70 mV at 2.5 ms)</p>
-
 <p><strong>(d)</strong> K⁺ channels are most open during the falling phase and after-hyperpolarization — roughly 1.8-3.0 ms</p>
-
 </div>
-
 <h3>3.3 The All-or-None Principle</h3>
-
 <p>The action potential is <strong>all-or-none:</strong></p>
 <ul>
 <li>Subthreshold stimuli produce only <strong>graded potentials</strong> that decay</li>
@@ -423,9 +371,7 @@
 <li>A stronger stimulus does NOT produce a "bigger" action potential — it produces a <strong>higher frequency</strong> of action potentials (frequency coding)</li>
 </ul>
 <p><strong>Think of it like a toilet flush:</strong> Pressing the handle harder doesn't make it flush "more" — it either flushes or it doesn't. But you can flush repeatedly.</p>
-
 <h3>3.4 Refractory Periods</h3>
-
 <p><strong>Absolute refractory period:</strong></p>
 <ul>
 <li>During the action potential (rising phase to early repolarization)</li>
@@ -446,16 +392,11 @@
 <li>Shade the rising phase through early repolarization and label: "Absolute refractory period — no AP possible"</li>
 <li>Shade the hyperpolarization and label: "Relative refractory period — stronger stimulus needed"</li>
 </ul>
-<hr>
-
+<hr/>
 <h2>4. Propagation: How the Action Potential Travels</h2>
-
 <p>Once initiated at the axon hillock, the action potential must travel to the synaptic terminals — sometimes over a meter away.</p>
-
 <h3>4.1 Continuous Conduction (Unmyelinated Axons)</h3>
-
 <p>In unmyelinated axons, the action potential propagates by <strong>local current flow:</strong></p>
-
 <ol>
 <li>At the site of the action potential, the membrane depolarizes (inside becomes positive)</li>
 <li>This positive charge spreads passively to adjacent regions of the axon — both forward and backward</li>
@@ -464,11 +405,8 @@
 <li>This process repeats, like a line of falling dominoes</li>
 </ol>
 <p>This is slow (~0.5-2 m/s) because every segment of membrane must undergo the full action potential cycle.</p>
-
 <h3>4.2 Saltatory Conduction (Myelinated Axons)</h3>
-
 <p><strong>Saltatory conduction</strong> (saltare = to jump) is the rapid, energy-efficient mode of propagation in myelinated axons.</p>
-
 <ul>
 <li>Myelin acts as an <strong>electrical insulator</strong> — ions cannot cross through the myelin-wrapped membrane</li>
 <li>The action potential can only be generated at the <strong>nodes of Ranvier</strong>, where the membrane is exposed and packed with voltage-gated Na⁺ channels</li>
@@ -477,7 +415,6 @@
 <li>The action potential appears to <strong>jump</strong> from node to node</li>
 </ul>
 <p><strong>Advantages of saltatory conduction:</strong></p>
-
 <ol>
 <li><strong>Speed:</strong> Conduction velocity is 10-100× faster than in unmyelinated axons of the same diameter (up to 120 m/s vs ~1 m/s)</li>
 <li><strong>Energy efficiency:</strong> Only the nodes (~0.2% of membrane area in heavily myelinated axons) need to pump ions. The Na⁺/K⁺ pump works far less, conserving ATP</li>
@@ -522,23 +459,14 @@
 <td>Can be much thinner</td>
 </tr>
 </table>
-
 <div class="tip">
-
 <p><strong>Paper 1 Tip:</strong> Multiple sclerosis (MS) is an autoimmune disease where the immune system attacks myelin in the CNS (oligodendrocytes are targeted). This slows or blocks conduction, causing symptoms like muscle weakness, vision problems, and coordination issues. MS is a classic IB example linking myelin structure to function.</p>
-
 </div>
-
-<hr>
-
+<hr/>
 <h2>5. Synaptic Transmission: The Neuron-to-Neuron Handoff</h2>
-
 <p>The action potential is electrical, but communication between neurons is chemical (with rare exceptions — electrical synapses via gap junctions). The synapse converts an electrical signal into a chemical signal and back again.</p>
-
 <h3>5.1 The Synapse: Key Structures</h3>
-
 <p><strong>Draw and label:</strong> A detailed diagram of a chemical synapse:</p>
-
 <p><strong>Presynaptic terminal (bouton):</strong></p>
 <ul>
 <li>Synaptic vesicles containing <strong>neurotransmitter</strong> (small clear circles)</li>
@@ -557,27 +485,19 @@
 <li>May also contain <strong>G-protein-coupled receptors</strong> (metabotropic) for slower, modulatory effects</li>
 </ul>
 <h3>5.2 The Sequence of Synaptic Transmission</h3>
-
 <p>This is a step-by-step process that IB expects you to know in precise detail:</p>
-
 <p><strong>Step 1 — Action Potential Arrives:</strong></p>
 <p>The action potential propagates down the axon and depolarizes the <strong>presynaptic terminal</strong>.</p>
-
 <p><strong>Step 2 — Ca²⁺ Influx:</strong></p>
 <p>Depolarization opens <strong>voltage-gated Ca²⁺ channels</strong> in the presynaptic membrane. Ca²⁺ rushes into the terminal, driven by both its concentration gradient ([Ca²⁺] outside ~1-2 mM, inside ~100 nM) and the electrical gradient.</p>
-
 <p><strong>Step 3 — Vesicle Fusion (Exocytosis):</strong></p>
 <p>The rise in intracellular [Ca²⁺] triggers <strong>synaptic vesicles</strong> to fuse with the presynaptic membrane. This involves <strong>SNARE proteins</strong> (synaptobrevin on vesicles, syntaxin and SNAP-25 on the membrane) that bring the vesicle and membrane together. Ca²⁺ binds to <strong>synaptotagmin</strong>, which triggers the final fusion step.</p>
-
 <p><strong>Step 4 — Neurotransmitter Release:</strong></p>
 <p>The vesicle contents (<strong>neurotransmitter</strong>) are released into the synaptic cleft by exocytosis. A single vesicle releases a "quantum" of neurotransmitter (typically thousands of molecules).</p>
-
 <p><strong>Step 5 — Diffusion Across the Cleft:</strong></p>
-<p>Neurotransmitter molecules diffuse rapidly across the narrow synaptic cleft (~20-30 nm — diffusion is fast over such short distances, typically <1 ms).</p>
-
+<p>Neurotransmitter molecules diffuse rapidly across the narrow synaptic cleft (~20-30 nm — diffusion is fast over such short distances, typically &lt;1 ms).</p>
 <p><strong>Step 6 — Binding to Postsynaptic Receptors:</strong></p>
 <p>Neurotransmitter binds to specific <strong>ligand-gated ion channels</strong> on the postsynaptic membrane. This binding is reversible and specific — like a key fitting a lock. The channel opens, allowing specific ions to flow through.</p>
-
 <p><strong>Step 7 — Postsynaptic Potential:</strong></p>
 <p>The ion flow through the opened channels changes the postsynaptic membrane potential:</p>
 <ul>
@@ -586,20 +506,15 @@
 </ul>
 <p><strong>Step 8 — Neurotransmitter Removal:</strong></p>
 <p>The signal must be terminated! Otherwise, the postsynaptic cell would remain stimulated indefinitely. Three mechanisms:</p>
-
 <ol>
 <li><strong>Enzymatic degradation:</strong> e.g., acetylcholinesterase breaks ACh → acetate + choline in the cleft</li>
 <li><strong>Reuptake:</strong> Neurotransmitter is pumped back into the presynaptic terminal by transporter proteins (e.g., serotonin reuptake, dopamine reuptake, norepinephrine reuptake)</li>
 <li><strong>Diffusion:</strong> Neurotransmitter simply diffuses away from the synapse</li>
 </ol>
 <div class="worked">
-
 <p><strong>Worked Example: The Cholinergic Synapse</strong></p>
-
 <p><strong>Scenario:</strong> Trace the transmission at a neuromuscular junction (a specialized synapse between a motor neuron and a skeletal muscle fiber) from AP arrival to muscle contraction.</p>
-
 <p><strong>Step-by-step:</strong></p>
-
 <ol>
 <li>Motor neuron action potential arrives at the terminal</li>
 <li>Voltage-gated Ca²⁺ channels open → Ca²⁺ enters the terminal</li>
@@ -611,11 +526,8 @@
 <li><strong>Acetylcholinesterase</strong> in the cleft rapidly degrades ACh → signal terminated in ~1 ms</li>
 </ol>
 <p><strong>Why this is important:</strong> This synapse is the target of many toxins (botulinum toxin blocks ACh release → paralysis; nerve agents like sarin inhibit acetylcholinesterase → ACh accumulates → overstimulation → paralysis). Understanding the mechanism explains the toxicity.</p>
-
 </div>
-
 <h3>5.3 Excitatory vs. Inhibitory Synapses</h3>
-
 <table>
 <tr>
 <td>Feature</td>
@@ -653,13 +565,9 @@
 <td>Decreases</td>
 </tr>
 </table>
-
-<hr>
-
+<hr/>
 <h2>6. Neurotransmitters: The Chemical Messengers</h2>
-
 <h3>6.1 Major Neurotransmitters — IB Overview</h3>
-
 <table>
 <tr>
 <td>Neurotransmitter</td>
@@ -711,23 +619,14 @@
 <td>Excitotoxicity in stroke</td>
 </tr>
 </table>
-
 <div class="tip">
-
 <p><strong>Paper 1 Tip:</strong> You must know that GABA is the main <strong>inhibitory</strong> neurotransmitter and glutamate is the main <strong>excitatory</strong> neurotransmitter in the CNS. ACh is the main NT at the neuromuscular junction (PNS). Confusing these is a common error.</p>
-
 </div>
-
-<hr>
-
+<hr/>
 <h2>7. Neonicotinoid Pesticides — A Real-World Application</h2>
-
 <p>This is a high-yield IB topic that connects synaptic biology to environmental science.</p>
-
 <h3>7.1 Mechanism of Action</h3>
-
 <p><strong>Neonicotinoids</strong> (e.g., imidacloprid, clothianidin) are synthetic insecticides structurally similar to <strong>nicotine</strong>.</p>
-
 <ul>
 <li>They bind <strong>irreversibly</strong> (or with very high affinity) to <strong>nicotinic acetylcholine receptors (nAChRs)</strong> in the insect CNS</li>
 <li>Unlike ACh, they are <strong>not broken down by acetylcholinesterase</strong></li>
@@ -735,7 +634,6 @@
 <li>The overstimulation leads to <strong>paralysis, tremors, and death</strong></li>
 </ul>
 <h3>7.2 Why Are Bees Particularly Vulnerable?</h3>
-
 <ul>
 <li>Bees have nAChRs with high affinity for neonicotinoids</li>
 <li>Neonicotinoids are <strong>systemic pesticides</strong> — they are absorbed by plants and present in pollen, nectar, and even guttation droplets</li>
@@ -746,17 +644,14 @@
 <li>The combination of lethal and sub-lethal effects contributes to <strong>colony collapse disorder (CCD)</strong></li>
 </ul>
 <h3>7.3 Selectivity: Insects vs. Mammals</h3>
-
 <p>Neonicotinoids are more toxic to insects than mammals because:</p>
 <ul>
 <li>Insect nAChRs have higher binding affinity for neonicotinoids</li>
 <li>Mammalian nAChRs have structural differences that reduce binding</li>
 <li>However, they are not entirely safe — concerns exist about effects on human neurodevelopment</li>
 </ul>
-<hr>
-
+<hr/>
 <h2>8. Common Misconceptions</h2>
-
 <table>
 <tr>
 <td>Misconception</td>
@@ -791,43 +686,27 @@
 <td>It's only ~20-30 nm. Diffusion is extremely rapid across this tiny distance.</td>
 </tr>
 </table>
-
-<hr>
-
+<hr/>
 <h2>9. Practice Problems</h2>
-
 <h3>Problem 1 (Paper 1 Style — Multiple Choice)</h3>
-
 <p>During the rising phase of the action potential:</p>
-
 <p>A. Voltage-gated K⁺ channels open and K⁺ leaves the cell.</p>
 <p>B. Voltage-gated Na⁺ channels open and Na⁺ enters the cell.</p>
 <p>C. The Na⁺/K⁺ pump reverses direction.</p>
 <p>D. Voltage-gated Cl⁻ channels open and Cl⁻ enters the cell.</p>
-
 <p><strong>Answer:</strong> <strong>B</strong>. The rising phase is driven by the opening of voltage-gated Na⁺ channels, allowing Na⁺ to rush into the cell down its electrochemical gradient. K⁺ channels open later, during repolarization.</p>
-
-<hr>
-
+<hr/>
 <h3>Problem 2 (Paper 1 Style — Multiple Choice)</h3>
-
 <p>Which statement correctly describes saltatory conduction?</p>
-
 <p>A. The action potential is continuously regenerated along the entire length of the axon.</p>
 <p>B. Myelin increases membrane capacitance, slowing the action potential.</p>
 <p>C. The action potential jumps from node to node, where voltage-gated Na⁺ channels are concentrated.</p>
 <p>D. Saltatory conduction occurs only in unmyelinated neurons.</p>
-
 <p><strong>Answer:</strong> <strong>C</strong>. Saltatory conduction is the "jumping" of the action potential between nodes of Ranvier in myelinated axons. The nodes have high densities of voltage-gated Na⁺ channels that regenerate the AP.</p>
-
-<hr>
-
+<hr/>
 <h3>Problem 3 (Paper 2 Style — Long Answer)</h3>
-
 <p>Describe the sequence of events in synaptic transmission, from the arrival of an action potential at the presynaptic terminal to the generation of a postsynaptic potential. [6 marks]</p>
-
 <p><strong>Model Answer:</strong></p>
-
 <ol>
 <li>The action potential depolarizes the <strong>presynaptic terminal</strong>, causing voltage-gated <strong>Ca²⁺ channels</strong> to open [1 mark]</li>
 <li>Ca²⁺ ions flow into the terminal down their electrochemical gradient (high outside, low inside, inside negative) [1 mark]</li>
@@ -837,13 +716,9 @@
 <li>The ion channels open, allowing specific ions to flow through. For excitatory synapses, Na⁺ enters causing <strong>depolarization (EPSP)</strong>. For inhibitory synapses, Cl⁻ enters or K⁺ exits causing <strong>hyperpolarization (IPSP)</strong> [1 mark]</li>
 </ol>
 <p>[6 marks total — one for each clearly stated step with correct terminology]</p>
-
-<hr>
-
+<hr/>
 <h3>Problem 4 (Paper 2 Style — Data Analysis)</h3>
-
 <p>Researchers applied neonicotinoid pesticide (imidacloprid) at varying concentrations to isolated insect neurons and measured the frequency of action potentials in postsynaptic neurons.</p>
-
 <table>
 <tr>
 <td>Imidacloprid concentration (nM)</td>
@@ -876,27 +751,17 @@
 <td>0 (silent)</td>
 </tr>
 </table>
-
 <p><strong>(a)</strong> Describe the effect of 10 nM and 50 nM imidacloprid on AP frequency. [2 marks]</p>
 <p><strong>(b)</strong> Explain the results at 100 nM and 500 nM — why do the neurons go silent at 10 minutes? [3 marks]</p>
 <p><strong>(c)</strong> Predict how adding acetylcholinesterase to the preparation would affect the results. [1 mark]</p>
-
 <p><strong>Answers:</strong></p>
-
-<p><strong>(a)</strong> Both 10 nM and 50 nM imidacloprid increase AP frequency compared to control, with the effect being concentration-dependent (50 nM produces a greater increase than 10 nM). The effect also increases over time (AP frequency at 10 min > at 1 min at both concentrations). [2 marks]</p>
-
+<p><strong>(a)</strong> Both 10 nM and 50 nM imidacloprid increase AP frequency compared to control, with the effect being concentration-dependent (50 nM produces a greater increase than 10 nM). The effect also increases over time (AP frequency at 10 min &gt; at 1 min at both concentrations). [2 marks]</p>
 <p><strong>(b)</strong> At low concentrations, imidacloprid binds to some nicotinic ACh receptors, causing partial depolarization and increased excitability (higher AP frequency). At high concentrations (100 nM+), it binds to a large proportion of nAChRs. Because neonicotinoids are <strong>not degraded by acetylcholinesterase</strong>, they cause persistent receptor activation. This leads to sustained depolarization of the postsynaptic neuron. Voltage-gated Na⁺ channels enter the <strong>inactivated state</strong> and cannot recover, so the neuron becomes inexcitable and goes silent — a phenomenon called <strong>depolarization block</strong>. [3 marks]</p>
-
 <p><strong>(c)</strong> Acetylcholinesterase would have <strong>no effect</strong>. Neonicotinoids are not substrates for acetylcholinesterase — that's precisely why they're toxic. Adding the enzyme would not break down imidacloprid. [1 mark]</p>
-
-<hr>
-
+<hr/>
 <h3>Problem 5 (Paper 2 Style — Application)</h3>
-
 <p>A patient has an autoimmune disease that destroys voltage-gated Ca²⁺ channels at the presynaptic terminals of motor neurons. Predict the effects on neuromuscular transmission and explain the symptoms the patient would experience. [4 marks]</p>
-
 <p><strong>Answer:</strong></p>
-
 <p>Without voltage-gated Ca²⁺ channels at the presynaptic terminal:</p>
 <ol>
 <li>When the action potential arrives at the terminal, the depolarization cannot trigger Ca²⁺ influx [1 mark]</li>
@@ -905,13 +770,9 @@
 <li>No end-plate potential is generated → no muscle action potential → no muscle contraction</li>
 </ol>
 <p>The patient would experience <strong>muscle weakness or flaccid paralysis</strong> (muscles cannot contract). This is similar to the effect of botulinum toxin, which also prevents ACh release (though by a different mechanism — botulinum cleaves SNARE proteins). Breathing could be fatal if respiratory muscles are affected. [1 mark]</p>
-
 <p>[4 marks]</p>
-
-<hr>
-
+<hr/>
 <h2>10. Key Terms Quick Reference</h2>
-
 <table>
 <tr>
 <td>Term</td>
@@ -994,12 +855,389 @@
 <td>Synthetic pesticide; irreversible agonist of insect nAChRs → overstimulation → paralysis</td>
 </tr>
 </table>
-
-<hr>
-
+<hr/>
 <p>This lesson covers the structural and functional foundations of neural signaling. The action potential — with its precisely timed opening and closing of ion channels — is one of the most elegant examples of molecular machinery in biology. Master it, and you'll have a powerful framework for understanding everything from reflexes to consciousness.</p>
+<div class="lesson-actions" style="margin: 2rem 0; padding: 1.5rem; background: #f8fafc; border-radius: 8px; display: flex; gap: 1rem; flex-wrap: wrap;">
+<button class="action-btn" id="generate-flashcards-btn" style="padding: 0.75rem 1.5rem; background: #3b82f6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        🗂️ Generate Flashcards
+    </button>
+<button class="action-btn" id="practice-problems-btn" style="padding: 0.75rem 1.5rem; background: #10b981; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        ✏️ Practice Problems
+    </button>
+<button class="action-btn" id="ask-ai-btn" style="padding: 0.75rem 1.5rem; background: #8b5cf6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        💬 Ask AI
+    </button>
+</div>
+<script>
+(function() {
+    const subjectKey = "biology";
+    const lessonId = "lesson_32";
+    const lessonTitle = "Lesson 32: Neural Signaling I (C2.2) — IB Biology HL";
 
-<div class="nav"><a href="lesson_31.html">&#8592; Lesson 31</a><a href="index.html">&#8962; Index</a><a href="lesson_33.html">Lesson 33 &#8594;</a></div>
+    function getCsrf() {
+        var m = document.querySelector('meta[name="csrf-token"]');
+        return m ? m.getAttribute('content') : '';
+    }
 
+    // Completion checkbox
+    const checkbox = document.getElementById('lesson-complete');
+    if (checkbox) {
+        // Load saved state
+        const saved = localStorage.getItem(`completed_${subjectKey}_${lessonId}`);
+        if (saved === 'true') checkbox.checked = true;
+
+        checkbox.addEventListener('change', async function() {
+            const completed = this.checked;
+            localStorage.setItem(`completed_${subjectKey}_${lessonId}`, completed);
+
+            try {
+                await fetch('/toggle_completion', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': getCsrf()
+                    },
+                    body: JSON.stringify({
+                        subject: subjectKey,
+                        lesson: lessonId,
+                        completed: completed
+                    })
+                });
+            } catch(e) {
+                console.error('Error saving completion:', e);
+            }
+        });
+    }
+
+    // Generate Flashcards
+    const flashcardsBtn = document.getElementById('generate-flashcards-btn');
+    if (flashcardsBtn) {
+        flashcardsBtn.addEventListener('click', async function() {
+            this.disabled = true;
+            this.textContent = '⏳ Generating...';
+
+            try {
+                const content = document.body.innerText.substring(0, 2000);
+                const response = await fetch('/generate_flashcards', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': getCsrf()
+                    },
+                    body: JSON.stringify({
+                        subject: subjectKey,
+                        lesson: lessonTitle,
+                        content_summary: content
+                    })
+                });
+
+                const data = await response.json();
+                if (data.error) {
+                    alert('Error: ' + data.error);
+                } else {
+                    alert(`✅ Created ${data.count} flashcards! View them at /flashcards/${subjectKey}`);
+                }
+            } catch(e) {
+                alert('Error generating flashcards: ' + e.message);
+            } finally {
+                this.disabled = false;
+                this.textContent = '🗂️ Generate Flashcards';
+            }
+        });
+    }
+
+    // Practice Problems - open in new section
+    const practiceBtn = document.getElementById('practice-problems-btn');
+    if (practiceBtn) {
+        practiceBtn.addEventListener('click', function() {
+            alert('Practice problems feature coming soon! Use the AI chatbot to generate custom questions.');
+        });
+    }
+
+    // Ask AI - scroll to chatbot
+    const aiBtn = document.getElementById('ask-ai-btn');
+    if (aiBtn) {
+        aiBtn.addEventListener('click', function() {
+            const chatbot = document.getElementById('lessons-chatbot');
+            if (chatbot) {
+                chatbot.scrollIntoView({ behavior: 'smooth' });
+                const toggleBtn = chatbot.querySelector('.chatbot-toggle');
+                if (toggleBtn) toggleBtn.click();
+            } else {
+                alert('AI chatbot not available on this page. It will be added soon!');
+            }
+        });
+    }
+
+    // Track lesson view
+    fetch('/mark_viewed', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': getCsrf()
+        },
+        body: JSON.stringify({
+            subject: subjectKey,
+            lesson: lessonId
+        })
+    }).catch(e => console.error('Error tracking view:', e));
+
+})();
+</script>
+<div class="lesson-actions" style="margin: 2rem 0; padding: 1.5rem; background: #f8fafc; border-radius: 8px; display: flex; gap: 1rem; flex-wrap: wrap;">
+<button class="action-btn" id="generate-flashcards-btn" style="padding: 0.75rem 1.5rem; background: #3b82f6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        🗂️ Generate Flashcards
+    </button>
+<button class="action-btn" id="practice-problems-btn" style="padding: 0.75rem 1.5rem; background: #10b981; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        ✏️ Practice Problems
+    </button>
+<button class="action-btn" id="ask-ai-btn" style="padding: 0.75rem 1.5rem; background: #8b5cf6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        💬 Ask AI
+    </button>
+</div>
+<script>
+(function() {
+    const subjectKey = "biology";
+    const lessonId = "lesson_32";
+    const lessonTitle = "Lesson 32: Neural Signaling I (C2.2) — IB Biology HL";
+
+    function getCsrf() {
+        var m = document.querySelector('meta[name="csrf-token"]');
+        return m ? m.getAttribute('content') : '';
+    }
+
+    // Completion checkbox
+    const checkbox = document.getElementById('lesson-complete');
+    if (checkbox) {
+        // Load saved state
+        const saved = localStorage.getItem(`completed_${subjectKey}_${lessonId}`);
+        if (saved === 'true') checkbox.checked = true;
+
+        checkbox.addEventListener('change', async function() {
+            const completed = this.checked;
+            localStorage.setItem(`completed_${subjectKey}_${lessonId}`, completed);
+
+            try {
+                await fetch('/toggle_completion', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': getCsrf()
+                    },
+                    body: JSON.stringify({
+                        subject: subjectKey,
+                        lesson: lessonId,
+                        completed: completed
+                    })
+                });
+            } catch(e) {
+                console.error('Error saving completion:', e);
+            }
+        });
+    }
+
+    // Generate Flashcards
+    const flashcardsBtn = document.getElementById('generate-flashcards-btn');
+    if (flashcardsBtn) {
+        flashcardsBtn.addEventListener('click', async function() {
+            this.disabled = true;
+            this.textContent = '⏳ Generating...';
+
+            try {
+                const content = document.body.innerText.substring(0, 2000);
+                const response = await fetch('/generate_flashcards', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': getCsrf()
+                    },
+                    body: JSON.stringify({
+                        subject: subjectKey,
+                        lesson: lessonTitle,
+                        content_summary: content
+                    })
+                });
+
+                const data = await response.json();
+                if (data.error) {
+                    alert('Error: ' + data.error);
+                } else {
+                    alert(`✅ Created ${data.count} flashcards! View them at /flashcards/${subjectKey}`);
+                }
+            } catch(e) {
+                alert('Error generating flashcards: ' + e.message);
+            } finally {
+                this.disabled = false;
+                this.textContent = '🗂️ Generate Flashcards';
+            }
+        });
+    }
+
+    // Practice Problems - open in new section
+    const practiceBtn = document.getElementById('practice-problems-btn');
+    if (practiceBtn) {
+        practiceBtn.addEventListener('click', function() {
+            alert('Practice problems feature coming soon! Use the AI chatbot to generate custom questions.');
+        });
+    }
+
+    // Ask AI - scroll to chatbot
+    const aiBtn = document.getElementById('ask-ai-btn');
+    if (aiBtn) {
+        aiBtn.addEventListener('click', function() {
+            const chatbot = document.getElementById('lessons-chatbot');
+            if (chatbot) {
+                chatbot.scrollIntoView({ behavior: 'smooth' });
+                const toggleBtn = chatbot.querySelector('.chatbot-toggle');
+                if (toggleBtn) toggleBtn.click();
+            } else {
+                alert('AI chatbot not available on this page. It will be added soon!');
+            }
+        });
+    }
+
+    // Track lesson view
+    fetch('/mark_viewed', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': getCsrf()
+        },
+        body: JSON.stringify({
+            subject: subjectKey,
+            lesson: lessonId
+        })
+    }).catch(e => console.error('Error tracking view:', e));
+
+})();
+</script>
+<div class="lesson-actions" style="margin: 2rem 0; padding: 1.5rem; background: #f8fafc; border-radius: 8px; display: flex; gap: 1rem; flex-wrap: wrap;">
+<button class="action-btn" id="generate-flashcards-btn" style="padding: 0.75rem 1.5rem; background: #3b82f6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        🗂️ Generate Flashcards
+    </button>
+<button class="action-btn" id="practice-problems-btn" style="padding: 0.75rem 1.5rem; background: #10b981; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        ✏️ Practice Problems
+    </button>
+<button class="action-btn" id="ask-ai-btn" style="padding: 0.75rem 1.5rem; background: #8b5cf6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
+        💬 Ask AI
+    </button>
+</div>
+<script>
+(function() {
+    const subjectKey = "biology";
+    const lessonId = "lesson_32";
+    const lessonTitle = "Lesson 32: Neural Signaling I (C2.2) — IB Biology HL";
+
+    function getCsrf() {
+        var m = document.querySelector('meta[name="csrf-token"]');
+        return m ? m.getAttribute('content') : '';
+    }
+
+    // Completion checkbox
+    const checkbox = document.getElementById('lesson-complete');
+    if (checkbox) {
+        // Load saved state
+        const saved = localStorage.getItem(`completed_${subjectKey}_${lessonId}`);
+        if (saved === 'true') checkbox.checked = true;
+
+        checkbox.addEventListener('change', async function() {
+            const completed = this.checked;
+            localStorage.setItem(`completed_${subjectKey}_${lessonId}`, completed);
+
+            try {
+                await fetch('/toggle_completion', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': getCsrf()
+                    },
+                    body: JSON.stringify({
+                        subject: subjectKey,
+                        lesson: lessonId,
+                        completed: completed
+                    })
+                });
+            } catch(e) {
+                console.error('Error saving completion:', e);
+            }
+        });
+    }
+
+    // Generate Flashcards
+    const flashcardsBtn = document.getElementById('generate-flashcards-btn');
+    if (flashcardsBtn) {
+        flashcardsBtn.addEventListener('click', async function() {
+            this.disabled = true;
+            this.textContent = '⏳ Generating...';
+
+            try {
+                const content = document.body.innerText.substring(0, 2000);
+                const response = await fetch('/generate_flashcards', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-Token': getCsrf()
+                    },
+                    body: JSON.stringify({
+                        subject: subjectKey,
+                        lesson: lessonTitle,
+                        content_summary: content
+                    })
+                });
+
+                const data = await response.json();
+                if (data.error) {
+                    alert('Error: ' + data.error);
+                } else {
+                    alert(`✅ Created ${data.count} flashcards! View them at /flashcards/${subjectKey}`);
+                }
+            } catch(e) {
+                alert('Error generating flashcards: ' + e.message);
+            } finally {
+                this.disabled = false;
+                this.textContent = '🗂️ Generate Flashcards';
+            }
+        });
+    }
+
+    // Practice Problems - open in new section
+    const practiceBtn = document.getElementById('practice-problems-btn');
+    if (practiceBtn) {
+        practiceBtn.addEventListener('click', function() {
+            alert('Practice problems feature coming soon! Use the AI chatbot to generate custom questions.');
+        });
+    }
+
+    // Ask AI - scroll to chatbot
+    const aiBtn = document.getElementById('ask-ai-btn');
+    if (aiBtn) {
+        aiBtn.addEventListener('click', function() {
+            const chatbot = document.getElementById('lessons-chatbot');
+            if (chatbot) {
+                chatbot.scrollIntoView({ behavior: 'smooth' });
+                const toggleBtn = chatbot.querySelector('.chatbot-toggle');
+                if (toggleBtn) toggleBtn.click();
+            } else {
+                alert('AI chatbot not available on this page. It will be added soon!');
+            }
+        });
+    }
+
+    // Track lesson view
+    fetch('/mark_viewed', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': getCsrf()
+        },
+        body: JSON.stringify({
+            subject: subjectKey,
+            lesson: lessonId
+        })
+    }).catch(e => console.error('Error tracking view:', e));
+
+})();
+</script>
+<div class="nav"><a href="lesson_31.html">← Lesson 31</a><a href="index.html">⌂ Index</a><a href="lesson_33.html">Lesson 33 →</a></div>
 </body>
 </html>

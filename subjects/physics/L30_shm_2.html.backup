@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 30: Lesson 30: Simple Harmonic Motion II — Kinematics: Displacement, Velocity, Acceleration, and Phase — IB Physics HL</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']]
+  },
+  options: {
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap');
+  
+  :root {
+    --bg: #fdfcf9;
+    --text: #1a1a1a;
+    --accent: #2c5f2d;
+    --border: #d0cec7;
+    --code-bg: #f4f3ef;
+    --callout-bg: #f0f7f0;
+    --callout-border: #2c5f2d;
+    --warning-bg: #fff8e6;
+    --warning-border: #c4941a;
+  }
+  
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  body {
+    font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text);
+    background: var(--bg);
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid var(--accent);
+    color: var(--accent);
+  }
+  
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 2.5rem 0 0.75rem;
+    color: #1a1a1a;
+  }
+  
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.5rem;
+  }
+  
+  p { margin: 0 0 1rem; }
+  
+  ul, ol { margin: 0 0 1rem 1.5rem; }
+  li { margin-bottom: 0.35rem; }
+  
+  code {
+    background: var(--code-bg);
+    padding: 0.15em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+    font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
+  }
+  
+  pre {
+    background: var(--code-bg);
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 0 0 1rem;
+    font-size: 0.85em;
+    line-height: 1.5;
+  }
+  
+  pre code {
+    background: none;
+    padding: 0;
+    font-size: inherit;
+  }
+  
+  blockquote {
+    border-left: 4px solid var(--callout-border);
+    background: var(--callout-bg);
+    margin: 0 0 1rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0 6px 6px 0;
+  }
+  
+  blockquote.warning {
+    border-left-color: var(--warning-border);
+    background: var(--warning-bg);
+  }
+  
+  strong { font-weight: 700; }
+  
+  hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.5rem 0 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  
+  .nav a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+  
+  .nav a:hover { background: var(--callout-bg); }
+  
+  .worked-example, .answer {
+    background: var(--code-bg);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin: 0.75rem 0 1.25rem;
+  }
+  
+  .worked-example strong:first-child, .answer strong:first-child {
+    color: var(--accent);
+  }
+  
+  @media print {
+    body { font-size: 12pt; max-width: 100%; padding: 0; }
+    .nav { display: none; }
+    h1 { font-size: 18pt; }
+    h2 { font-size: 14pt; }
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 0 1rem;
+  }
+  
+  th, td {
+    border: 1px solid var(--border);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  
+  th {
+    background: var(--code-bg);
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L29_shm_1.html">← Lesson 29</a>
+  <a href="L31_shm_3.html">Lesson 31 →</a>
+</nav>
+
+<h1>Lesson 30: Simple Harmonic Motion II — Kinematics: Displacement, Velocity, Acceleration, and Phase</h1>
+
+<blockquote><strong>IB Data Booklet references:</strong> $x = x_0 \sin(\omega t)$, $x = x_0 \cos(\omega t)$, $v = \omega\sqrt{x_0^2 - x^2}$, $a = -\omega^2 x$, $\omega = \frac{2\pi}{T}$</blockquote>
+
+<h2>What You'll Learn</h2>
+<ul>
+<li>The <strong>displacement equation</strong> for SHM: $x = x_0\sin(\omega t)$ and $x = x_0\cos(\omega t)$ — when to use which</li>
+<li>The <strong>velocity equation</strong>: $v = \omega\sqrt{x_0^2 - x^2}$ and $v = \omega x_0\cos(\omega t)$</li>
+<li>How $x$, $v$, and $a$ graphs relate to each other and to the circular motion picture</li>
+<li>What <strong>phase</strong> and <strong>phase difference</strong> mean, and how to calculate them</li>
+<li>How to extract all kinematic information from a given SHM equation</li>
+</ul>
+
+<hr>
+
+<h2>1. Displacement as a Function of Time: $x(t)$</h2>
+
+<h3>Where We Left Off</h3>
+
+<p>In Lesson 29, we established that SHM is the projection of uniform circular motion onto a straight line. A point P moves around a circle of radius $x_0$ (the amplitude) at constant angular speed $\omega$. The shadow of P on a line shows SHM.</p>
+
+<p>Now we write the equation that tells us exactly where the shadow is at any time $t$.</p>
+
+<h3>The General Displacement Equations</h3>
+
+<p>$$\boxed{x(t) = x_0 \sin(\omega t)} \quad \text{or} \quad \boxed{x(t) = x_0 \cos(\omega t)}$$</p>
+
+<p>Both equations describe SHM. The only difference is <strong>where the object is at $t = 0$</strong>.</p>
+
+<table>
+<tr>
+<th>Equation</th>
+<th>Position at $t = 0$</th>
+<th>Initial motion</th>
+</tr>
+<tr>
+<td>$x = x_0 \sin(\omega t)$</td>
+<td>$x = 0$ (equilibrium)</td>
+<td>Moving toward positive $x$</td>
+</tr>
+<tr>
+<td>$x = x_0 \cos(\omega t)$</td>
+<td>$x = +x_0$ (maximum positive)</td>
+<td>Momentarily at rest</td>
+</tr>
+</table>
+
+<p>Think of it this way: you can start your stopwatch at any moment during the oscillation. Where you start the stopwatch determines which function describes the motion.</p>
+
+<h3>The Most General Form: Phase Constant $\phi$</h3>
+
+<p>In the most general case, the oscillator could be anywhere when you start the clock:</p>
+
+<p>$$\boxed{x(t) = x_0 \sin(\omega t + \phi)}$$</p>
+
+<p>The quantity $\phi$ (Greek letter phi) is called the <strong>phase constant</strong> or <strong>initial phase</strong>. It tells you the position at $t = 0$:</p>
+
+<ul>
+<li>If $\phi = 0$: $x(0) = x_0\sin(0) = 0$, starting at equilibrium, moving positive.</li>
+<li>If $\phi = \pi/2$: $x(0) = x_0\sin(\pi/2) = x_0$, starting at max positive (same as cosine).</li>
+<li>If $\phi = \pi$: $x(0) = x_0\sin(\pi) = 0$, starting at equilibrium, moving negative.</li>
+<li>If $\phi = 3\pi/2$: $x(0) = x_0\sin(3\pi/2) = -x_0$, starting at max negative.</li>
+</ul>
+
+<p>The argument of the sine (or cosine) — the whole thing inside the parentheses, $\omega t + \phi$ — is called the <strong>phase</strong> of the motion at time $t$.</p>
+
+<hr>
+
+<h2>2. Velocity in SHM</h2>
+
+<h3>Two Forms of the Velocity Equation</h3>
+
+<p>The velocity at any instant can be written in two ways. The first relates velocity to <strong>displacement</strong>:</p>
+
+<p>$$\boxed{v = \pm\,\omega\sqrt{x_0^2 - x^2}}$$</p>
+
+<p>The $\pm$ sign means: velocity can be positive (moving in the $+x$ direction) or negative (moving in the $-x$ direction). The magnitude of the velocity depends only on how far the object is from equilibrium.</p>
+
+<p>The second form relates velocity to <strong>time</strong> (assuming $x = x_0\sin(\omega t)$):</p>
+
+<p>$$\boxed{v = \omega x_0 \cos(\omega t)}$$</p>
+
+<p>Key observations:</p>
+
+<ul>
+<li><strong>At equilibrium</strong> ($x = 0$): $v = \pm\,\omega x_0$, the maximum speed. All energy is kinetic.</li>
+<li><strong>At the extremes</strong> ($x = \pm x_0$): $v = 0$. The object turns around.</li>
+<li><strong>The speed is symmetric</strong>: the object has the same speed at $x = +d$ and $x = -d$.</li>
+</ul>
+
+<h3>Where Does $v = \omega\sqrt{x_0^2 - x^2}$ Come From?</h3>
+
+<p>From the circular motion picture: the point on the circle has constant tangential speed $v_{\text{tan}} = \omega x_0$. The shadow's speed is the component of this velocity along the projection line. At an angle $\theta = \omega t$, the tangential velocity makes an angle $\theta$ with the vertical (depending on your projection). The component along the projection line is $v_{\text{tan}}\cos(\omega t) = \omega x_0\cos(\omega t)$.</p>
+
+<p>Meanwhile, the position of the shadow is $x = x_0\sin(\omega t)$. Using $\sin^2\theta + \cos^2\theta = 1$:</p>
+
+<p>$$\cos(\omega t) = \sqrt{1 - \sin^2(\omega t)} = \sqrt{1 - (x/x_0)^2}$$</p>
+
+<p>Substituting into $v$:</p>
+
+<p>$$v = \omega x_0\sqrt{1 - (x/x_0)^2} = \omega\sqrt{x_0^2 - x^2}$$</p>
+
+<h3>Maximum Speed</h3>
+
+<p>$$\boxed{v_{\max} = \omega x_0}$$</p>
+
+<p>This is the speed at equilibrium. It's also the tangential speed of the equivalent circular motion.</p>
+
+<hr>
+
+<h2>3. Acceleration in SHM</h2>
+
+<p>The acceleration is always:</p>
+
+<p>$$\boxed{a = -\omega^2 x}$$</p>
+
+<p>This is the <strong>defining equation</strong> of SHM. We discussed it in Lesson 29, but now let's integrate it with our understanding of $x(t)$ and $v(t)$.</p>
+
+<p>If $x = x_0\sin(\omega t)$, then differentiating twice (or using the circular motion picture):</p>
+
+<p>$$\boxed{a = -\omega^2 x_0 \sin(\omega t)}$$</p>
+
+<p>Key observations:</p>
+<ul>
+<li><strong>At equilibrium</strong> ($x = 0$): $a = 0$. No net force.</li>
+<li><strong>At the extremes</strong> ($x = \pm x_0$): $a = \mp\,\omega^2 x_0$, maximum magnitude.</li>
+<li><strong>Maximum acceleration</strong>: $a_{\max} = \omega^2 x_0$.</li>
+</ul>
+
+<h3>The Direction of Acceleration</h3>
+
+<p>The acceleration always points toward equilibrium. If the object is on the right side ($x > 0$), it accelerates left. If on the left ($x < 0$), it accelerates right. This is why $a$ is negative when $x$ is positive, and positive when $x$ is negative.</p>
+
+<hr>
+
+<h2>4. The Graphs of SHM — Seeing the Relationships</h2>
+
+<h3>Displacement vs. Time: $x(t)$</h3>
+
+<p>The $x$–$t$ graph for SHM starting at $x = 0$ (using sine) is a smooth wave that oscillates between $+x_0$ and $-x_0$. One complete cycle ($0$ to $T$) corresponds to the phase going from $0$ to $2\pi$.</p>
+
+<p>The slope of the $x$–$t$ graph at any point IS the velocity at that instant. Steepest slope = fastest speed (at equilibrium). Zero slope = zero speed (at extremes).</p>
+
+<h3>Velocity vs. Time: $v(t)$</h3>
+
+<p>The $v$–$t$ graph is also sinusoidal, but it is <strong>shifted</strong> relative to $x(t)$. When $x$ is at a maximum, $v$ is at zero. When $x$ crosses zero, $v$ is at its maximum (positive or negative).</p>
+
+<p>Specifically, if $x = x_0\sin(\omega t)$, then $v = \omega x_0\cos(\omega t)$. The velocity graph leads the displacement graph by a quarter cycle ($T/4$, or $\pi/2$ radians).</p>
+
+<h3>Acceleration vs. Time: $a(t)$</h3>
+
+<p>The $a$–$t$ graph is the <strong>negative</strong> of the $x$–$t$ graph, scaled by $\omega^2$. If $x = x_0\sin(\omega t)$, then $a = -\omega^2 x_0\sin(\omega t) = -\omega^2 x$.</p>
+
+<p>The acceleration is always opposite in sign to the displacement. When $x$ is most positive, $a$ is most negative.</p>
+
+<h3>The Three Graphs Side by Side</h3>
+
+<table>
+<tr>
+<th>Time $t$</th>
+<th>$x$ (displacement)</th>
+<th>$v$ (velocity)</th>
+<th>$a$ (acceleration)</th>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>$+\omega x_0$ (max)</td>
+<td>0</td>
+</tr>
+<tr>
+<td>$T/4$</td>
+<td>$+x_0$ (max)</td>
+<td>0</td>
+<td>$-\omega^2 x_0$ (max negative)</td>
+</tr>
+<tr>
+<td>$T/2$</td>
+<td>0</td>
+<td>$-\omega x_0$ (max negative)</td>
+<td>0</td>
+</tr>
+<tr>
+<td>$3T/4$</td>
+<td>$-x_0$ (max negative)</td>
+<td>0</td>
+<td>$+\omega^2 x_0$ (max)</td>
+</tr>
+<tr>
+<td>$T$</td>
+<td>0</td>
+<td>$+\omega x_0$ (max)</td>
+<td>0</td>
+</tr>
+</table>
+
+<h3>How to Read the Graphs</h3>
+
+<p>If you are given one graph, you can construct the others:</p>
+<ul>
+<li>$v$ is the slope (gradient) of $x$.</li>
+<li>$a$ is the slope (gradient) of $v$.</li>
+<li>$a$ is proportional to $-x$.</li>
+</ul>
+
+<p><strong>Common Misconception:</strong> Many students look at the $x$–$t$ graph and think the velocity is zero wherever the displacement is zero. That is backwards. Velocity is the slope of the $x$–$t$ graph. Where $x$ crosses zero, the slope is steepest → velocity is maximum.</p>
+
+<hr>
+
+<h2>5. Phase and Phase Difference</h2>
+
+<h3>What Is Phase?</h3>
+
+<p>The <strong>phase</strong> of an oscillator at any moment is the quantity $\omega t + \phi$ — the argument of the sine or cosine. It is measured in radians. The phase tells you exactly where in the cycle the oscillator is.</p>
+
+<p>Think of phase as an angle on the reference circle. A phase of $0$ means the reference point is at angle $0$. A phase of $\pi/2$ means it's at $90^\circ$. A phase of $2\pi$ means one full cycle is complete.</p>
+
+<h3>What Is Phase Difference?</h3>
+
+<p>When you have <strong>two oscillators</strong> (or two points on a wave), the <strong>phase difference</strong> tells you how much one lags behind or leads the other in its cycle.</p>
+
+<p>$$\boxed{\Delta\phi = \phi_2 - \phi_1}$$</p>
+
+<p>Phase difference is measured in radians (or degrees). Key values:</p>
+
+<table>
+<tr>
+<th>$\Delta\phi$</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td>0</td>
+<td><strong>In phase</strong> — both reach max at the same time, both cross equilibrium together</td>
+</tr>
+<tr>
+<td>$\pi/2$ ($90^\circ$)</td>
+<td>One reaches max a quarter-cycle after the other</td>
+</tr>
+<tr>
+<td>$\pi$ ($180^\circ$)</td>
+<td><strong>Out of phase / antiphase</strong> — one is at $+x_0$ when the other is at $-x_0$</td>
+</tr>
+<tr>
+<td>$2\pi$ ($360^\circ$)</td>
+<td>Back in phase — equivalent to zero</td>
+</tr>
+</table>
+
+<h3>Relating Phase Difference to Time Difference</h3>
+
+<p>If two oscillators have the same period $T$ and a phase difference of $\Delta\phi$, the time difference between corresponding events (e.g., both passing through equilibrium in the same direction) is:</p>
+
+<p>$$\Delta t = \frac{\Delta\phi}{2\pi}\,T = \frac{\Delta\phi}{\omega}$$</p>
+
+<p>For example, if oscillator B lags oscillator A by $\pi/2$ radians (a quarter cycle), then B does everything a time $T/4$ later than A does.</p>
+
+<h3>Common Misconception</h3>
+
+<p><strong>Many students think "in phase" and "out of phase" are the only two options.</strong> There is a continuous range of phase differences. Two oscillators can be $\pi/3$ out of phase, or any other value. "In phase" just means $\Delta\phi = 0, 2\pi, 4\pi, \ldots$ and "antiphase" means $\Delta\phi = \pi, 3\pi, 5\pi, \ldots$.</p>
+
+<p><strong>Many students confuse phase difference with path difference.</strong> Phase difference describes timing; path difference describes spatial separation. They are related for waves (we will see this later), but for simple oscillators, phase is purely about timing.</p>
+
+<hr>
+
+<h2>Worked Examples</h2>
+
+<h3>Example 1: Reading an SHM Equation</h3>
+
+<p><strong>Problem:</strong> An oscillator's displacement is given by $x = 0.15\cos(3t + \pi/4)$, with $x$ in meters and $t$ in seconds. Find: (a) the amplitude, (b) the angular frequency, (c) the period, (d) the phase constant, (e) the displacement at $t = 0$.</p>
+
+<p><strong>Approach:</strong> Match to standard form $x = x_0\cos(\omega t + \phi)$.</p>
+
+<p><strong>Solution:</strong></p>
+
+<p>(a) Amplitude: $x_0 = 0.15\ \mathrm{m}$.</p>
+
+<p>(b) Angular frequency: $\omega = 3.0\ \mathrm{rad/s}$.</p>
+
+<p>(c) Period: $T = 2\pi/\omega = 2\pi/3 \approx 2.09\ \mathrm{s}$.</p>
+
+<p>(d) Phase constant: $\phi = \pi/4$ rad ($45^\circ$).</p>
+
+<p>(e) At $t = 0$: $x = 0.15\cos(\pi/4) = 0.15 \times \frac{\sqrt{2}}{2} \approx 0.106\ \mathrm{m}$.</p>
+
+<p><strong>Why this makes sense:</strong> The oscillator starts partway out from equilibrium (not at max and not at zero), which is what a non-zero phase constant does.</p>
+
+<hr>
+
+<h3>Example 2: Finding Velocity at a Given Position</h3>
+
+<p><strong>Problem:</strong> An oscillator has amplitude 0.200 m and period 0.500 s. Find its speed when it is 0.100 m from equilibrium.</p>
+
+<p><strong>Approach:</strong> Use $v = \omega\sqrt{x_0^2 - x^2}$.</p>
+
+<p><strong>Solution:</strong></p>
+
+<p>First find $\omega$: $\omega = 2\pi/T = 2\pi/0.500 = 4\pi\ \mathrm{rad/s}$.</p>
+
+<p>Now $|v| = \omega\sqrt{x_0^2 - x^2} = 4\pi\sqrt{(0.200)^2 - (0.100)^2}$</p>
+<p>$= 4\pi\sqrt{0.0400 - 0.0100} = 4\pi\sqrt{0.0300}$</p>
+<p>$= 4\pi\sqrt{3/100} = (4\pi/10)\sqrt{3} = 0.4\pi\sqrt{3} \approx 2.18\ \mathrm{m/s}$.</p>
+
+<p><strong>Why this makes sense:</strong> At half the amplitude, the speed is not half the maximum — it's higher. $v_{\max} = \omega x_0 = 4\pi \times 0.200 = 0.8\pi \approx 2.51\ \mathrm{m/s}$. Our answer of $2.18\ \mathrm{m/s}$ is about $87\%$ of max, which is correct — at half amplitude, $v/v_{\max} = \sqrt{1 - (1/2)^2} = \sqrt{3/4} \approx 86.6\%$.</p>
+
+<p><strong>Common pitfall:</strong> Many students assume speed varies linearly with displacement (half the displacement = half the speed). It does not. The relationship is $v = \omega\sqrt{x_0^2 - x^2}$, which is a quarter-circle in the $x$–$v$ plane.</p>
+
+<hr>
+
+<h3>Example 3: Maximum Values from Graphs</h3>
+
+<p><strong>Problem:</strong> The displacement–time graph for an oscillator shows that it takes 0.40 s to go from equilibrium to maximum displacement (0.080 m). Find: (a) the period, (b) the frequency, (c) the angular frequency, (d) the maximum speed, (e) the maximum acceleration.</p>
+
+<p><strong>Approach:</strong> Going from equilibrium to max is one-quarter of a cycle. Amplitude is read directly.</p>
+
+<p><strong>Solution:</strong></p>
+
+<p>(a) $T/4 = 0.40\ \mathrm{s}$, so $T = 1.60\ \mathrm{s}$.</p>
+
+<p>(b) $f = 1/T = 1/1.60 = 0.625\ \mathrm{Hz}$.</p>
+
+<p>(c) $\omega = 2\pi f = 2\pi \times 0.625 = 1.25\pi \approx 3.93\ \mathrm{rad/s}$.</p>
+
+<p>(d) $v_{\max} = \omega x_0 = 1.25\pi \times 0.080 = 0.10\pi \approx 0.314\ \mathrm{m/s}$.</p>
+
+<p>(e) $a_{\max} = \omega^2 x_0 = (1.25\pi)^2 \times 0.080 = 1.5625\pi^2 \times 0.080 = 0.125\pi^2 \approx 1.23\ \mathrm{m/s^2}$.</p>
+
+<hr>
+
+<h3>Example 4: Phase Difference</h3>
+
+<p><strong>Problem:</strong> Two identical pendulums oscillate with the same period but are started at different times. Pendulum A is at maximum positive displacement when $t = 0$. Pendulum B is at equilibrium moving positive when $t = 0$. Find the phase difference between them, and state whether B leads or lags A.</p>
+
+<p><strong>Approach:</strong> Write the equations for both and compare the phase constants.</p>
+
+<p><strong>Solution:</strong></p>
+
+<p>Pendulum A: $x_A = x_0\cos(\omega t)$ (max positive at $t = 0$). Phase = $\omega t$.</p>
+<p>Pendulum B: $x_B = x_0\sin(\omega t)$ (equilibrium, moving positive at $t = 0$). Phase = $\omega t$.</p>
+
+<p>But wait — $\sin(\omega t) = \cos(\omega t - \pi/2)$. So we can write $x_B = x_0\cos(\omega t - \pi/2)$.</p>
+
+<p>Comparing: $\phi_A = 0$, $\phi_B = -\pi/2$ (or equivalently $\phi_B = 3\pi/2$).</p>
+
+<p>Phase difference: $\Delta\phi = \phi_A - \phi_B = 0 - (-\pi/2) = +\pi/2$.</p>
+
+<p>A leads B by $\pi/2$ radians. Equivalently, B lags A by $\pi/2$ radians. B reaches any given point a quarter-cycle after A does.</p>
+
+<p><strong>Why this makes sense:</strong> At $t = 0$, A is already at the top, while B is just starting upward from the bottom. A is ahead.</p>
+
+<hr>
+
+<h3>Example 5: Extracting $\omega$ and $x_0$ from $v_{\max}$ and $a_{\max}$</h3>
+
+<p><strong>Problem:</strong> An object in SHM has a maximum speed of 3.0 m/s and a maximum acceleration of 18 m/s². Determine the amplitude and the period.</p>
+
+<p><strong>Approach:</strong> Use $v_{\max} = \omega x_0$ and $a_{\max} = \omega^2 x_0$. Divide to get $\omega$, then solve for $x_0$.</p>
+
+<p><strong>Solution:</strong></p>
+
+<p>Dividing: $a_{\max} / v_{\max} = \omega^2 x_0 / (\omega x_0) = \omega$.</p>
+
+<p>$\omega = 18 / 3.0 = 6.0\ \mathrm{rad/s}$.</p>
+
+<p>$T = 2\pi/\omega = 2\pi/6.0 = \pi/3 \approx 1.05\ \mathrm{s}$.</p>
+
+<p>$x_0 = v_{\max} / \omega = 3.0 / 6.0 = 0.50\ \mathrm{m}$.</p>
+
+<p><strong>Why this makes sense:</strong> A half-meter amplitude with a period of about 1 second means the object moves at an average speed of roughly $4x_0/T = 2.0/1.05 \approx 1.9\ \mathrm{m/s}$, and a peak speed of $3.0\ \mathrm{m/s}$ — reasonable for this size of oscillation.</p>
+
+<hr>
+
+<h2>Practice Problems</h2>
+
+<h3>Problem 1</h3>
+<p>A particle in SHM has an amplitude of 6.0 cm and a frequency of 4.0 Hz. At $t = 0$, the particle is at $x = 0$ and moving in the positive direction.</p>
+<p>(a) Write the equation for displacement as a function of time.</p>
+<p>(b) Find the velocity at $t = 0.10$ s.</p>
+<p>(c) Find the acceleration when the displacement is $-3.0$ cm.</p>
+<p>(d) How long does it take for the particle to go from $x = 0$ to $x = 3.0$ cm?</p>
+
+<h3>Problem 2</h3>
+<p>An oscillator has the velocity–time equation $v = 2.0\cos(5.0t)$, with $v$ in m/s and $t$ in s. Assuming $x = 0$ when $t = 0$, find:</p>
+<p>(a) The amplitude.</p>
+<p>(b) The displacement as a function of time $x(t)$.</p>
+<p>(c) The maximum acceleration.</p>
+<p>(d) The acceleration at $t = \pi/15$ s.</p>
+
+<h3>Problem 3</h3>
+<p>The acceleration of a particle in SHM is given by $a = -36x$, with $x$ in meters. If the particle has a speed of $1.20\ \mathrm{m/s}$ when it passes through equilibrium, find:</p>
+<p>(a) The angular frequency.</p>
+<p>(b) The amplitude.</p>
+<p>(c) The speed when $x = 10.0$ cm.</p>
+<p>(d) The acceleration at the same position.</p>
+
+<h3>Problem 4</h3>
+<p>Two identical mass-spring systems oscillate with the same amplitude of 5.0 cm and period of 0.80 s. System A is at $x = +5.0$ cm at $t = 0$. System B is at $x = 0$ moving negative at $t = 0$.</p>
+<p>(a) Write $x(t)$ for each system.</p>
+<p>(b) What is the phase difference between them?</p>
+<p>(c) At what time after $t = 0$ do they both have the same displacement for the first time?</p>
+
+<h3>Problem 5</h3>
+<p>Below is a description of an oscillator's motion at four instants during one cycle. For each instant, state the displacement $x$ (in terms of $x_0$), velocity $v$ (in terms of $v_{\max}$), and acceleration $a$ (in terms of $a_{\max}$):</p>
+<p>(a) $\omega t = \pi/3$</p>
+<p>(b) $\omega t = 2\pi/3$</p>
+<p>(c) $\omega t = \pi$</p>
+<p>(d) $\omega t = 5\pi/3$</p>
+
+<p>Assume $x = x_0\sin(\omega t)$.</p>
+
+<h3>Problem 6 <em>(IB Exam Style)</em></h3>
+<p>A particle undergoes SHM with displacement given by $x = 0.080\sin(2.5\pi t)$, where $x$ is in meters and $t$ is in seconds.</p>
+
+<p>(a) Determine the amplitude and period of the motion. [2 marks]</p>
+<p>(b) Calculate the maximum speed of the particle. [2 marks]</p>
+<p>(c) On graph paper, sketch the variation with time $t$ (from $t = 0$ to $t = 0.80$ s) of:</p>
+<p> (i) the displacement $x$</p>
+<p> (ii) the velocity $v$</p>
+<p>Label the axes with appropriate values. [4 marks]</p>
+<p>(d) Using your graphs or otherwise, determine the phase difference between the displacement and the velocity. [1 mark]</p>
+
+<hr>
+
+<h2>Answers</h2>
+
+<h3>Answer 1</h3>
+<p>(a) $x_0 = 0.060\ \mathrm{m}$, $\omega = 2\pi f = 8\pi\ \mathrm{rad/s}$. Starting at equilibrium moving positive: $x = 0.060\sin(8\pi t)$.</p>
+
+<p>(b) $v = \omega x_0\cos(\omega t) = 8\pi \times 0.060 \times \cos(8\pi \times 0.10) = 0.48\pi\cos(0.8\pi)$.</p>
+<p>$\cos(0.8\pi) = \cos(144^\circ) = -\cos(36^\circ) \approx -0.809$.</p>
+<p>$v \approx 0.48\pi \times (-0.809) \approx -1.22\ \mathrm{m/s}$.</p>
+
+<p>(c) $a = -\omega^2 x = -(8\pi)^2 \times (-0.030) = 64\pi^2 \times 0.030 = 1.92\pi^2 \approx 18.9\ \mathrm{m/s^2}$ (positive, toward equilibrium since $x$ is negative).</p>
+
+<p>(d) $x = 0.060\sin(8\pi t) = 0.030$ → $\sin(8\pi t) = 0.5$ → $8\pi t = \pi/6$ → $t = 1/48 \approx 0.0208\ \mathrm{s}$.</p>
+
+<hr>
+
+<h3>Answer 2</h3>
+<p>(a) $v = \omega x_0\cos(\omega t)$. Given $v = 2.0\cos(5.0t)$, so $\omega = 5.0\ \mathrm{rad/s}$, and $\omega x_0 = 2.0$, so $x_0 = 2.0/5.0 = 0.40\ \mathrm{m}$.</p>
+
+<p>(b) Since $x = 0$ at $t = 0$ and $v$ is positive ($\cos(0) = +1$), use sine: $x = 0.40\sin(5.0t)$.</p>
+
+<p>(c) $a_{\max} = \omega^2 x_0 = 25 \times 0.40 = 10\ \mathrm{m/s^2}$.</p>
+
+<p>(d) $t = \pi/15$, so $\omega t = 5.0 \times \pi/15 = \pi/3$. $x = 0.40\sin(\pi/3) = 0.40 \times \sqrt{3}/2 = 0.20\sqrt{3}$.</p>
+<p>$a = -\omega^2 x = -25 \times 0.20\sqrt{3} = -5.0\sqrt{3} \approx -8.66\ \mathrm{m/s^2}$.</p>
+
+<hr>
+
+<h3>Answer 3</h3>
+<p>(a) $a = -36x$, so $\omega^2 = 36$, $\omega = 6.0\ \mathrm{rad/s}$.</p>
+
+<p>(b) At equilibrium, $v = v_{\max} = \omega x_0$, so $x_0 = 1.20/6.0 = 0.20\ \mathrm{m} = 20\ \mathrm{cm}$.</p>
+
+<p>(c) $|v| = \omega\sqrt{x_0^2 - x^2} = 6.0\sqrt{(0.20)^2 - (0.10)^2} = 6.0\sqrt{0.04 - 0.01} = 6.0\sqrt{0.03} = 6.0 \times 0.1732 \approx 1.04\ \mathrm{m/s}$.</p>
+
+<p>(d) $a = -\omega^2 x = -36 \times 0.10 = -3.6\ \mathrm{m/s^2}$.</p>
+
+<hr>
+
+<h3>Answer 4</h3>
+<p>$\omega = 2\pi/T = 2\pi/0.80 = 2.5\pi\ \mathrm{rad/s}$.</p>
+
+<p>(a) A: starts at $+x_0$ → $x_A = 0.050\cos(2.5\pi t)$.</p>
+<p>B: starts at $0$ moving negative → $x_B = -0.050\sin(2.5\pi t) = 0.050\sin(2.5\pi t + \pi)$.</p>
+
+<p>(b) $x_A = 0.050\cos(2.5\pi t) = 0.050\sin(2.5\pi t + \pi/2)$.</p>
+<p>$x_B = 0.050\sin(2.5\pi t + \pi) = -0.050\sin(2.5\pi t)$.</p>
+<p>Phase difference: $\Delta\phi = (\pi/2) - \pi = -\pi/2$. B lags A by $\pi/2$ rad, or A leads B by $\pi/2$.</p>
+
+<p>(c) Set $x_A = x_B$: $0.050\cos(2.5\pi t) = -0.050\sin(2.5\pi t)$ → $\cos(2.5\pi t) = -\sin(2.5\pi t)$→ $\tan(2.5\pi t) = -1$ → $2.5\pi t = 3\pi/4$ (first positive solution in second quadrant) → $t = (3\pi/4)/(2.5\pi) = 3/10 = 0.30\ \mathrm{s}$.</p>
+
+<hr>
+
+<h3>Answer 5</h3>
+<p>(a) $\omega t = \pi/3$: $x = x_0\sin(\pi/3) = x_0\sqrt{3}/2 \approx 0.866x_0$.</p>
+<p>$v = v_{\max}\cos(\pi/3) = v_{\max}/2$.</p>
+<p>$a = -a_{\max}\sin(\pi/3) = -a_{\max}\sqrt{3}/2 \approx -0.866a_{\max}$.</p>
+
+<p>(b) $\omega t = 2\pi/3$: $x = x_0\sin(2\pi/3) = x_0\sqrt{3}/2 \approx 0.866x_0$.</p>
+<p>$v = v_{\max}\cos(2\pi/3) = -v_{\max}/2$.</p>
+<p>$a = -a_{\max}\sin(2\pi/3) = -0.866a_{\max}$.</p>
+
+<p>(c) $\omega t = \pi$: $x = x_0\sin(\pi) = 0$.</p>
+<p>$v = v_{\max}\cos(\pi) = -v_{\max}$.</p>
+<p>$a = -a_{\max}\sin(\pi) = 0$.</p>
+
+<p>(d) $\omega t = 5\pi/3$: $x = x_0\sin(5\pi/3) = -x_0\sqrt{3}/2$.</p>
+<p>$v = v_{\max}\cos(5\pi/3) = v_{\max}/2$.</p>
+<p>$a = -a_{\max}\sin(5\pi/3) = a_{\max}\sqrt{3}/2$.</p>
+
+<hr>
+
+<h3>Answer 6 (IB Exam Style)</h3>
+
+<p>(a) $x_0 = 0.080\ \mathrm{m}$, $\omega = 2.5\pi\ \mathrm{rad/s}$, $T = 2\pi/\omega = 2\pi/(2.5\pi) = 0.80\ \mathrm{s}$.</p>
+<p><strong>[2 marks — 1 for amplitude, 1 for period]</strong></p>
+
+<p>(b) $v_{\max} = \omega x_0 = 2.5\pi \times 0.080 = 0.20\pi \approx 0.628\ \mathrm{m/s}$.</p>
+<p><strong>[2 marks — 1 for formula, 1 for correct answer]</strong></p>
+
+<p>(c) The $x$–$t$ graph is a sine wave from $0$ to $0.80$ s (one full period), amplitude $0.080$ m. It crosses zero at $0, 0.40, 0.80$ s, peaks at $+0.080$ m at $0.20$ s, and troughs at $-0.080$ m at $0.60$ s.</p>
+
+<p>The $v$–$t$ graph is a cosine wave, amplitude $0.20\pi \approx 0.628$ m/s. It peaks at $+0.628$ m/s at $t = 0$, crosses zero at $t = 0.20$ s, troughs at $-0.628$ m/s at $t = 0.40$ s, crosses zero at $t = 0.60$ s, peaks again at $t = 0.80$ s.</p>
+<p><strong>[4 marks — 1 for correct shape of x, 1 for correct values on x, 1 for correct shape of v, 1 for correct values on v]</strong></p>
+
+<p>(d) Phase difference: The velocity leads the displacement by $\pi/2$ radians (quarter cycle). This is visible from the graphs: $v$ reaches its maximum a quarter-cycle before $x$ reaches its maximum.</p>
+<p><strong>[1 mark]</strong></p>
+
+<hr>
+
+<h2>Key Takeaways</h2>
+
+<ol>
+<li><strong>Displacement</strong>: $x = x_0\sin(\omega t)$ (start at equilibrium) or $x = x_0\cos(\omega t)$ (start at max). The most general form includes a phase constant: $x = x_0\sin(\omega t + \phi)$.</li>
+</ol>
+
+<ol>
+<li><strong>Velocity</strong>: $v = \omega\sqrt{x_0^2 - x^2}$ relates $v$ to $x$; $v_{\max} = \omega x_0$ at equilibrium. The velocity graph leads the displacement graph by $\pi/2$ rad.</li>
+</ol>
+
+<ol>
+<li><strong>Acceleration</strong>: $a = -\omega^2 x$ always. $a_{\max} = \omega^2 x_0$ at the extremes. $a = 0$ at equilibrium. The acceleration is always opposite to displacement.</li>
+</ol>
+
+<ol>
+<li><strong>Phase</strong> describes where an oscillator is in its cycle. <strong>Phase difference</strong> compares two oscillators. In phase: $\Delta\phi = 0, 2\pi,\ldots$ Antiphase: $\Delta\phi = \pi, 3\pi,\ldots$</li>
+</ol>
+
+<ol>
+<li>The <strong>three graphs</strong> ($x$ vs $t$, $v$ vs $t$, $a$ vs $t$) tell the same story from different perspectives. $v$ is the slope of $x$; $a$ is the slope of $v$; $a \propto -x$.</li>
+</ol>
+
+
+<nav class="nav">
+  <a href="index.html">← Lesson Index</a>
+  <a href="L29_shm_1.html">← Lesson 29</a>
+  <a href="L31_shm_3.html">Lesson 31 →</a>
+</nav>
+
+</body>
+</html>
