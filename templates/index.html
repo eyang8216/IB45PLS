@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="csrf-token" content="{{ csrf_token }}">
-<title>Lessons — IB Study Hub</title>
+<title>IB Study Hub</title>
 <link rel="stylesheet" href="/static/style.css">
 <script>
 window.MathJax = {
@@ -17,207 +17,227 @@ window.MathJax = {
 </head>
 <body>
 
+<!-- TOP NAVIGATION -->
+<nav class="top-nav">
+  <div class="top-nav-inner">
+    <a href="/" class="nav-brand">📚 IB Study Hub</a>
+    <div class="nav-links">
+      <div class="nav-user">
+        <span>👤</span>
+        <span class="nav-user-name">{{ session.get('user', 'Student') }}</span>
+      </div>
+      <a href="/dashboard" class="nav-link">📊 Dashboard</a>
+      <a href="/logout" class="nav-link">Logout</a>
+    </div>
+  </div>
+</nav>
+
 <!-- HERO -->
 <header class="hero">
   <div class="hero-content">
     <h1>Your IB Study Hub</h1>
-    <p class="hero-subtitle">IB Sciences · Lang Lit · SAT Prep</p>
-    <p class="hero-meta">250+ lessons · Paper 1/2 practice · AI grading · Timed SAT tests</p>
-    <nav class="hero-nav">
-      <a href="/dashboard">📊 Dashboard</a>
-      <a href="/logout">🚪 Logout</a>
-    </nav>
-  </div>
-  <div class="hero-decoration">
-    <span>📊</span><span>🧪</span><span>⚛️</span><span>📐</span><span>🧬</span><span>🇨🇳</span><span>🇬🇧</span><span>🎓</span>
+    <p class="hero-subtitle">Complete lessons, practice, and AI support for IB Diploma</p>
+    <p class="hero-meta">270+ lessons · Paper 1/2 practice · AI tutor · Personalized grading</p>
   </div>
 </header>
 
-<section class="subject-section">
-  <h2 class="section-label">IB Diploma Subjects</h2>
+<!-- MAIN CONTENT -->
+<main class="main-content">
 
-  <div class="subject-rows">
-    <!-- Row 1: Sciences -->
-    <div class="subject-row-three">
-      <div class="subject-card" style="--card-accent: #2c6b4f">
-        <a href="/subjects/economics/" class="card-main-link"><div class="card-icon">📊</div>
-        <div class="card-content">
-          <h2>Economics HL</h2>
-          <p>Micro, Macro, International, Development + HL Extensions</p>
-          <span class="card-badge">67 Lessons</span>
-        </div>
-        <div class="card-arrow">→</div>
-      </a>
-        <a href="/subjects/economics/practice/" class="card-practice-link">📝 Practice Problems →</a>
-      </div>
-
-      <div class="subject-card" style="--card-accent: #2c5f2d">
-        <a href="/subjects/chemistry/" class="card-main-link"><div class="card-icon">🧪</div>
-        <div class="card-content">
-          <h2>Chemistry HL</h2>
-          <p>Stoichiometry, Bonding, Energetics, Kinetics, Organic &amp; more</p>
-          <span class="card-badge">41 Lessons</span>
-        </div>
-        <div class="card-arrow">→</div>
-      </a>
-        <a href="/subjects/chemistry/practice/" class="card-practice-link">📝 Practice Problems →</a>
-      </div>
-
-      <div class="subject-card" style="--card-accent: #6c3483">
-        <a href="/subjects/physics/" class="card-main-link"><div class="card-icon">⚛️</div>
-        <div class="card-content">
-          <h2>Physics HL</h2>
-          <p>Mechanics, Thermal, Waves, Electricity, Quantum &amp; more</p>
-          <span class="card-badge">67 Lessons</span>
-        </div>
-        <div class="card-arrow">→</div>
-      </a>
-        <a href="/subjects/physics/practice/" class="card-practice-link">📝 Practice Problems →</a>
-      </div>
+  <!-- IB Sciences -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-label">IB Sciences</div>
     </div>
+    <div class="subjects-grid">
 
-    <!-- Row 2: Math + Bio + Chinese -->
-    <div class="subject-row-three">
-      <div class="subject-card" style="--card-accent: #1a5276">
-        <a href="/subjects/math/" class="card-main-link"><div class="card-icon">📐</div>
-        <div class="card-content">
-          <h2>Math AA HL</h2>
-          <p>Algebra, Functions, Trig, Calculus, Vectors, Stats &amp; Probability</p>
-          <span class="card-badge">50 Lessons</span>
-        </div>
-        <div class="card-arrow">→</div>
-      </a>
-        <a href="/subjects/math/practice/" class="card-practice-link">📝 Practice Problems →</a>
-      </div>
-
-      <div class="subject-card" style="--card-accent: #27ae60">
-        <a href="/subjects/biology/" class="card-main-link"><div class="card-icon">🧬</div>
-        <div class="card-content">
-          <h2>Biology HL</h2>
-          <p>Water, Cells, Evolution, Genetics, Ecology, Physiology &amp; more</p>
-          <span class="card-badge">54 Lessons</span>
-        </div>
-        <div class="card-arrow">→</div>
-      </a>
-        <a href="/subjects/biology/practice/" class="card-practice-link">📝 Practice Problems →</a>
-      </div>
-
-      <a href="/subjects/chinese/" class="subject-card" style="--card-accent: #b22222">
-        <div class="card-icon">🇨🇳</div>
-        <div class="card-content">
-          <h2>Chinese Lang Lit SL</h2>
-          <p>Paper 1 &amp; 2 practice with rubric-based AI grading</p>
-          <span class="card-badge">7 Prompts</span>
-        </div>
-        <div class="card-arrow">→</div>
-      </a>
-    </div>
-
-    <!-- Row 3: English (centered) -->
-    <div class="subject-row-center">
-      <a href="/subjects/english/" class="subject-card" style="--card-accent: #1a5276">
-        <div class="card-icon">🇬🇧</div>
-        <div class="card-content">
-          <h2>English Lang Lit SL</h2>
-          <p>Paper 1 guided textual analysis with AI grading against the IB rubric</p>
-          <span class="card-badge">3 Prompts</span>
-        </div>
-        <div class="card-arrow">→</div>
-      </a>
-    </div>
-
-    <!-- Final row: SAT + Dashboard -->
-    <div class="final-row">
-      <a href="/subjects/sat/" class="sat-big-card" style="--sat-accent: #e67e22">
-        <div class="sat-icon-row">
-          <span class="sat-icon">🎓</span>
-        </div>
-        <div class="sat-content">
-          <h2>SAT Prep</h2>
-          <p>50 lessons covering all SAT Math and Reading &amp; Writing topics, plus 5 timed practice tests with answer keys.</p>
-          <div class="sat-stats">
-            <span class="sat-stat">📚 50 Lessons</span>
-            <span class="sat-stat">📋 5 Practice Tests</span>
-            <span class="sat-stat">🤖 AI-Graded</span>
-            <span class="sat-stat">⏱️ Timed Tests</span>
+      <a href="/subjects/economics/" class="subject-card">
+        <div class="subject-card-header">
+          <span class="subject-icon">📊</span>
+          <div class="subject-info">
+            <h3 class="subject-title">
+              Economics
+              <span class="level-badge hl">HL</span>
+            </h3>
+            <p class="subject-description">Microeconomics, Macroeconomics, International Economics, Development + HL extensions (Game Theory, Asymmetric Information)</p>
           </div>
         </div>
-        <div class="sat-arrow">→</div>
-      </a>
-
-      <a href="/dashboard" class="dash-card">
-        <span class="dash-icon">📊</span>
-        <div class="dash-content">
-          <h2>Your Dashboard</h2>
-          <p>Track lesson progress, view mock attempts &amp; see your growth over time</p>
+        <div class="subject-meta">
+          <span class="subject-lessons">67 lessons</span>
+          <span>Practice problems</span>
+          <span class="subject-arrow">→</span>
         </div>
-        <span class="dash-arrow">→</span>
       </a>
-    </div>
-  </div>
-</section>
 
-<!-- FEATURES -->
-<section class="features">
-  <div class="feature">
-    <span class="feature-icon">🎯</span>
-    <h3>IB 7 Standard</h3>
-    <p>Every lesson includes practice problems, worked examples, and IB-style evaluation questions.</p>
-  </div>
-  <div class="feature">
-    <span class="feature-icon">📱</span>
-    <h3>Print-Friendly</h3>
-    <p>Lessons use clean typography with print stylesheets. Study on screen or on paper.</p>
-  </div>
-  <div class="feature">
-    <span class="feature-icon">🤖</span>
-    <h3>AI Tutor</h3>
-    <p>Stuck on a concept? Click the chat bubble to ask your personal IB tutor for help.</p>
-  </div>
-  <div class="feature">
-    <span class="feature-icon">🔢</span>
-    <h3>MathJax Powered</h3>
-    <p>Beautiful math and chemical equation rendering. $$E=mc^2$$ — looks great everywhere.</p>
-  </div>
-</section>
+      <a href="/subjects/chemistry/" class="subject-card">
+        <div class="subject-card-header">
+          <span class="subject-icon">🧪</span>
+          <div class="subject-info">
+            <h3 class="subject-title">
+              Chemistry
+              <span class="level-badge hl">HL</span>
+            </h3>
+            <p class="subject-description">Stoichiometry, Atomic Structure, Bonding, Energetics, Kinetics, Equilibrium, Acids & Bases, Redox, Organic Chemistry</p>
+          </div>
+        </div>
+        <div class="subject-meta">
+          <span class="subject-lessons">41 lessons</span>
+          <span>Practice problems</span>
+          <span class="subject-arrow">→</span>
+        </div>
+      </a>
+
+      <a href="/subjects/physics/" class="subject-card">
+        <div class="subject-card-header">
+          <span class="subject-icon">⚛️</span>
+          <div class="subject-info">
+            <h3 class="subject-title">
+              Physics
+              <span class="level-badge hl">HL</span>
+            </h3>
+            <p class="subject-description">Mechanics, Thermal Physics, Waves, Electricity & Magnetism, Circular Motion, Atomic Physics, Quantum Physics, Nuclear Physics</p>
+          </div>
+        </div>
+        <div class="subject-meta">
+          <span class="subject-lessons">67 lessons</span>
+          <span>Practice problems</span>
+          <span class="subject-arrow">→</span>
+        </div>
+      </a>
+
+      <a href="/subjects/biology/" class="subject-card">
+        <div class="subject-card-header">
+          <span class="subject-icon">🧬</span>
+          <div class="subject-info">
+            <h3 class="subject-title">
+              Biology
+              <span class="level-badge hl">HL</span>
+            </h3>
+            <p class="subject-description">Cell Biology, Molecular Biology, Genetics, Ecology, Evolution & Biodiversity, Human Physiology, Nucleic Acids, Metabolism</p>
+          </div>
+        </div>
+        <div class="subject-meta">
+          <span class="subject-lessons">54 lessons</span>
+          <span>Practice problems</span>
+          <span class="subject-arrow">→</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Math -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-label">Mathematics</div>
+    </div>
+    <div class="subjects-grid">
+
+      <a href="/subjects/math/" class="subject-card">
+        <div class="subject-card-header">
+          <span class="subject-icon">📐</span>
+          <div class="subject-info">
+            <h3 class="subject-title">
+              Math: Analysis & Approaches
+              <span class="level-badge hl">HL</span>
+            </h3>
+            <p class="subject-description">Algebra, Functions, Trigonometry, Vectors, Statistics, Probability, Calculus (differentiation, integration, differential equations)</p>
+          </div>
+        </div>
+        <div class="subject-meta">
+          <span class="subject-lessons">50 lessons</span>
+          <span>Practice problems</span>
+          <span class="subject-arrow">→</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Languages -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-label">Language & Literature</div>
+    </div>
+    <div class="subjects-grid">
+
+      <a href="/subjects/chinese/" class="subject-card">
+        <div class="subject-card-header">
+          <span class="subject-icon">🇨🇳</span>
+          <div class="subject-info">
+            <h3 class="subject-title">
+              Chinese Lang Lit
+              <span class="level-badge sl">SL</span>
+            </h3>
+            <p class="subject-description">Paper 1 (Guided Literary Analysis) and Paper 2 (Comparative Essay) practice with AI grading and personalized feedback</p>
+          </div>
+        </div>
+        <div class="subject-meta">
+          <span class="subject-lessons">Paper 1 & 2 practice</span>
+          <span>AI grading</span>
+          <span class="subject-arrow">→</span>
+        </div>
+      </a>
+
+      <a href="/subjects/english/" class="subject-card">
+        <div class="subject-card-header">
+          <span class="subject-icon">🇬🇧</span>
+          <div class="subject-info">
+            <h3 class="subject-title">
+              English Lang Lit
+              <span class="level-badge sl">SL</span>
+            </h3>
+            <p class="subject-description">Paper 1 (Guided Literary Analysis) practice with AI grading, detailed rubric feedback, and improvement suggestions</p>
+          </div>
+        </div>
+        <div class="subject-meta">
+          <span class="subject-lessons">Paper 1 practice</span>
+          <span>AI grading</span>
+          <span class="subject-arrow">→</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- SAT -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-label">Standardized Tests</div>
+    </div>
+    <div class="subjects-grid">
+
+      <a href="/subjects/sat/" class="subject-card">
+        <div class="subject-card-header">
+          <span class="subject-icon">🎓</span>
+          <div class="subject-info">
+            <h3 class="subject-title">SAT Prep</h3>
+            <p class="subject-description">Full-length practice tests with auto-grading, Reading & Writing modules, Math modules, adaptive difficulty, and score reports</p>
+          </div>
+        </div>
+        <div class="subject-meta">
+          <span class="subject-lessons">Practice tests</span>
+          <span>Auto-grading</span>
+          <span>Timer</span>
+          <span class="subject-arrow">→</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+</main>
 
 <!-- FOOTER -->
 <footer class="site-footer">
-  <p>Lessons generated by AI agents using the official IB curriculum.<br>
-  Economics: Tragakes 3rd Ed. · Chemistry: Owen Exam Prep Guide · Physics: Hamper 3rd Ed. · Math: Pearson 2019 · Biology: Pearson 2023.</p>
-  <p class="footer-small">Built with ❤ for IB students everywhere.</p>
+  <p>IB Study Hub — Comprehensive IB Diploma preparation with AI support</p>
+  <p class="footer-small">All content aligned with IB curriculum standards</p>
 </footer>
 
-<!-- CHATBOT WIDGET -->
-<div id="chatbot">
-  <button id="chatbot-toggle" class="chatbot-toggle" title="Ask the AI Tutor">
-    <span class="chatbot-icon">🤖</span>
-    <span class="chatbot-label">Ask Tutor</span>
-  </button>
+{{ chatbot_html|safe }}
+<style>{{ nav_css|safe }}</style>
+<style>{{ chatbot_css|safe }}</style>
+<script>{{ chatbot_js|safe }}</script>
 
-  <div id="chatbot-window" class="chatbot-window hidden">
-    <div class="chatbot-header">
-      <h3>🤖 AI IB Tutor</h3>
-      <p>Ask me anything about IB subjects!</p>
-      <button id="chatbot-close" class="chatbot-close">✕</button>
-    </div>
-    <div id="chatbot-messages" class="chatbot-messages">
-      <div class="message bot">
-        <div class="message-content">
-          <p>Hi! I'm your IB tutor. I can help with Economics SL, Chemistry HL, Physics HL, Math AA HL, Biology HL, Chinese Lang Lit, and English Lang Lit.</p>
-          <p>What topic are you working on?</p>
-        </div>
-      </div>
-    </div>
-    <div class="chatbot-input-area">
-      <textarea id="chatbot-input" placeholder="Ask a question..." rows="1"></textarea>
-      <button id="chatbot-send">➤</button>
-    </div>
-    <div id="chatbot-status" class="chatbot-status"></div>
-  </div>
-</div>
-
-<script src="/static/chatbot.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </body>
 </html>
