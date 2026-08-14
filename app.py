@@ -1760,5 +1760,11 @@ Be encouraging but honest."""
     except Exception as e:
         return jsonify({"error": f"Grading failed: {e}"}), 500
 
+@app.route("/how-to-use")
+@login_required
+def how_to_use():
+    """How to Use guide page"""
+    return render_template("how_to_use.html")
+
 if __name__ == "__main__":
     app.run(debug=False, port=5050)
