@@ -1,50 +1,78 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Lesson 42: Trade Protectionism — Tariffs and Quotas</title>
-<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 42: Trade Protectionism — Tariffs and Quotas — Economics HL</title>
+<script>window.MathJax = { tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] } };</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<link rel="stylesheet" href="/static/lesson.css">
 <style>
-  @media print { body { font-size: 15px; } nav { display: none; } .page-break { page-break-before: always; } }
-  * { box-sizing: border-box; }
-  body { font-family: Georgia, 'Times New Roman', serif; font-size: 17px; line-height: 1.7; max-width: 850px; margin: 0 auto; padding: 30px 25px; color: #1a1a1a; background: #fff; }
-  h1 { font-size: 2em; text-align: center; border-bottom: 3px double #2c3e50; padding-bottom: 12px; margin-bottom: 8px; color: #2c3e50; }
-  h2 { font-size: 1.45em; color: #2c3e50; margin-top: 36px; border-bottom: 1px solid #ccc; padding-bottom: 5px; }
-  h3 { font-size: 1.2em; color: #34495e; margin-top: 28px; }
-  nav { text-align: center; margin: 15px 0 30px; font-size: 0.95em; }
-  nav a { color: #2980b9; text-decoration: none; padding: 0 12px; }
-  nav a:hover { text-decoration: underline; }
-  .box { border: 2px solid #2c3e50; padding: 12px 18px; margin: 16px 0; background: #f8f9fa; text-align: center; font-size: 1.15em; border-radius: 4px; }
-  table { border-collapse: collapse; width: 100%; margin: 14px 0; font-size: 0.95em; }
-  th, td { border: 1px solid #888; padding: 8px 11px; text-align: left; }
-  th { background: #2c3e50; color: #fff; }
-  tr:nth-child(even) { background: #f2f2f2; }
-  .work { background: #eaf2f8; border-left: 4px solid #2980b9; padding: 12px 16px; margin: 16px 0; border-radius: 3px; }
-  .tip { background: #fef9e7; border-left: 4px solid #f39c12; padding: 12px 16px; margin: 20px 0; border-radius: 3px; }
-  .eval { background: #e8f8f5; border-left: 4px solid #27ae60; padding: 14px 18px; margin: 24px 0; border-radius: 3px; }
-  .eval h2 { color: #27ae60; border-bottom-color: #27ae60; }
-  .answer { background: #f5f5f5; border-left: 4px solid #7f8c8d; padding: 10px 16px; margin: 10px 0; border-radius: 3px; }
-  code, pre { background: #f4f4f4; padding: 2px 6px; border-radius: 3px; font-size: 0.92em; }
-  pre { padding: 12px 16px; overflow-x: auto; line-height: 1.5; }
-  hr { border: none; border-top: 1px solid #ccc; margin: 30px 0; }
-  strong { color: #2c3e50; }
+/* Additional lesson-specific overrides if needed */
+.lesson-actions {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.lesson-actions button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.lesson-actions button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
 </style>
 </head>
 <body>
-<div class="lesson-completion" style="margin: 0 0 2rem 0; padding: 1rem; background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-radius: 8px; border: 2px solid #bae6fd;">
-<label class="completion-checkbox" style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer;">
-<input id="lesson-complete" style="width: 24px; height: 24px; cursor: pointer; accent-color: #10b981;" type="checkbox"/>
-<span style="font-size: 1rem; color: #0f172a; font-weight: 600;">✓ Mark this lesson as complete</span>
-</label>
-</div>
 
-<nav>
-<a href="Lesson41_BenefitsOfInternationalTrade.html">← Previous</a> |
-  <a href="index.html">Index</a> |
-  <a href="lesson_43_protectionism.html">Next →</a>
+<!-- Navigation Bar -->
+<nav class="lesson-nav">
+  <div class="nav-left">
+    <a href="/" class="nav-home">🏠 Home</a>
+    <span class="nav-separator">›</span>
+    <a href="/subjects/economics/" class="nav-subject">Economics HL</a>
+  </div>
+  <div class="nav-right">
+    <button onclick="openAI()" class="nav-btn">💬 Ask AI</button>
+    <button onclick="generatePractice()" class="nav-btn">✏️ Practice</button>
+    <a href="/dashboard" class="nav-btn">📊 Progress</a>
+    <a href="/how-to-use" class="nav-btn">❓ How to Use</a>
+  </div>
 </nav>
+
+<!-- Lesson Header with Completion -->
+<header class="lesson-header">
+  <div class="lesson-completion-bar">
+    <label class="completion-checkbox">
+      <input type="checkbox" id="lesson-complete" data-subject="economics" data-lesson="lesson_42_tariffs_quotas">
+      <span>✓ Mark as complete</span>
+    </label>
+    <div class="mastery-selector">
+      <label>Mastery:</label>
+      <select id="mastery-level" data-subject="economics" data-lesson="lesson_42_tariffs_quotas">
+        <option value="0">Not Started</option>
+        <option value="1">Learning</option>
+        <option value="2">Proficient</option>
+        <option value="3">Mastery</option>
+      </select>
+    </div>
+  </div>
+  <h1>Lesson 42: Trade Protectionism — Tariffs and Quotas</h1>
+</header>
+
+<!-- Main Content -->
+<main class="lesson-content">
 <h1>Lesson 42: Trade Protectionism — Tariffs and Quotas</h1>
 <p style="text-align:center;color:#666;font-style:italic;">Chapter 14.3 — Ellie Tragakes, IB Economics (3rd ed., Cambridge 2020)</p>
 <div class="objectives" style="background: #f0f4ff; border-left: 4px solid #2563eb; padding: 1rem 1.2rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0;">
@@ -316,6 +344,112 @@ function openAI() {
     alert('AI tutor coming soon for: ' + lessonTitle);
     // TODO: Implement AI tutor
 }
+</script>
+
+<!-- Interactive Actions -->
+<div class="lesson-actions">
+  <button onclick="generateFlashcards()">🃏 Generate Flashcards</button>
+  <button onclick="generatePractice()">📝 Practice Problems</button>
+  <button onclick="openAI()">🤖 Ask AI Tutor</button>
+</div>
+
+</main>
+
+<!-- Footer Navigation -->
+<footer class="lesson-footer">
+  <a href="/subjects/economics/" class="footer-link">← Back to Economics HL Index</a>
+  <a href="/dashboard" class="footer-link">View Dashboard →</a>
+</footer>
+
+<script>
+const SUBJECT = "economics";
+const LESSON_ID = "lesson_42_tariffs_quotas";
+
+// Load saved progress on page load
+async function loadProgress() {
+  try {
+    const response = await fetch(`/api/subject_progress/${SUBJECT}`);
+    if (!response.ok) return;
+    const data = await response.json();
+    const lessonData = data.lessons?.[LESSON_ID];
+
+    if (lessonData) {
+      // Set checkbox
+      const checkbox = document.getElementById('lesson-complete');
+      if (checkbox) checkbox.checked = lessonData.completed || false;
+
+      // Set mastery level
+      const masterySelect = document.getElementById('mastery-level');
+      if (masterySelect && lessonData.mastery_level !== undefined) {
+        masterySelect.value = lessonData.mastery_level;
+      }
+    }
+  } catch (e) {
+    console.error('Failed to load progress:', e);
+  }
+}
+
+// Save completion status
+document.getElementById('lesson-complete')?.addEventListener('change', async (e) => {
+  const completed = e.target.checked;
+  try {
+    const response = await fetch('/toggle_completion', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        subject: SUBJECT,
+        lesson: LESSON_ID,
+        completed: completed
+      })
+    });
+
+    if (!response.ok) {
+      console.error('Failed to save completion');
+      e.target.checked = !completed; // Revert on error
+    }
+  } catch (err) {
+    console.error('Error saving completion:', err);
+    e.target.checked = !completed;
+  }
+});
+
+// Save mastery level
+document.getElementById('mastery-level')?.addEventListener('change', async (e) => {
+  const level = parseInt(e.target.value);
+  try {
+    const response = await fetch('/update_mastery', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        subject: SUBJECT,
+        lesson: LESSON_ID,
+        level: level
+      })
+    });
+
+    if (!response.ok) {
+      console.error('Failed to save mastery level');
+    }
+  } catch (err) {
+    console.error('Error saving mastery:', err);
+  }
+});
+
+// Interactive button handlers
+function generateFlashcards() {
+  alert('Flashcard generation coming soon!');
+}
+
+function generatePractice() {
+  alert('Practice problem generation coming soon!');
+}
+
+function openAI() {
+  alert('AI Tutor coming soon!');
+}
+
+// Load progress when page loads
+document.addEventListener('DOMContentLoaded', loadProgress);
 </script>
 
 </body>

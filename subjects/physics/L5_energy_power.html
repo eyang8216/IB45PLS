@@ -1,180 +1,78 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Lesson 5: Lesson 5: Work, Energy and Power — IB Physics HL</title>
-<script>
-MathJax = {
-  tex: {
-    inlineMath: [['$', '$']],
-    displayMath: [['$$', '$$']]
-  },
-  options: {
-    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-  }
-};
-</script>
-<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 5: Work, Energy and Power — Physics HL</title>
+<script>window.MathJax = { tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] } };</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<link rel="stylesheet" href="/static/lesson.css">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap');
-  
-  :root {
-    --bg: #fdfcf9;
-    --text: #1a1a1a;
-    --accent: #2c5f2d;
-    --border: #d0cec7;
-    --code-bg: #f4f3ef;
-    --callout-bg: #f0f7f0;
-    --callout-border: #2c5f2d;
-    --warning-bg: #fff8e6;
-    --warning-border: #c4941a;
-  }
-  
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  
-  body {
-    font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
-    font-size: 17px;
-    line-height: 1.7;
-    color: var(--text);
-    background: var(--bg);
-    max-width: 780px;
-    margin: 0 auto;
-    padding: 2rem 1.5rem 4rem;
-  }
-  
-  h1 {
-    font-size: 2rem;
-    font-weight: 700;
-    margin: 0 0 1.5rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 3px solid var(--accent);
-    color: var(--accent);
-  }
-  
-  h2 {
-    font-size: 1.4rem;
-    font-weight: 700;
-    margin: 2.5rem 0 0.75rem;
-    color: #1a1a1a;
-  }
-  
-  h3 {
-    font-size: 1.15rem;
-    font-weight: 600;
-    margin: 1.5rem 0 0.5rem;
-  }
-  
-  p { margin: 0 0 1rem; }
-  
-  ul, ol { margin: 0 0 1rem 1.5rem; }
-  li { margin-bottom: 0.35rem; }
-  
-  code {
-    background: var(--code-bg);
-    padding: 0.15em 0.4em;
-    border-radius: 3px;
-    font-size: 0.9em;
-    font-family: 'SF Mono', 'Consolas', 'Monaco', monospace;
-  }
-  
-  pre {
-    background: var(--code-bg);
-    padding: 1rem 1.25rem;
-    border-radius: 6px;
-    overflow-x: auto;
-    margin: 0 0 1rem;
-    font-size: 0.85em;
-    line-height: 1.5;
-  }
-  
-  pre code {
-    background: none;
-    padding: 0;
-    font-size: inherit;
-  }
-  
-  blockquote {
-    border-left: 4px solid var(--callout-border);
-    background: var(--callout-bg);
-    margin: 0 0 1rem;
-    padding: 0.75rem 1.25rem;
-    border-radius: 0 6px 6px 0;
-  }
-  
-  blockquote.warning {
-    border-left-color: var(--warning-border);
-    background: var(--warning-bg);
-  }
-  
-  strong { font-weight: 700; }
-  
-  hr {
-    border: none;
-    border-top: 1px solid var(--border);
-    margin: 2rem 0;
-  }
-  
-  .nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 2.5rem 0 1rem;
-    padding-top: 1rem;
-    border-top: 1px solid var(--border);
-  }
-  
-  .nav a {
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: 600;
-    padding: 0.4rem 0.8rem;
-    border-radius: 4px;
-    transition: background 0.2s;
-  }
-  
-  .nav a:hover { background: var(--callout-bg); }
-  
-  .worked-example, .answer {
-    background: var(--code-bg);
-    border-radius: 6px;
-    padding: 1rem 1.25rem;
-    margin: 0.75rem 0 1.25rem;
-  }
-  
-  .worked-example strong:first-child, .answer strong:first-child {
-    color: var(--accent);
-  }
-  
-  @media print {
-    body { font-size: 12pt; max-width: 100%; padding: 0; }
-    .nav { display: none; }
-    h1 { font-size: 18pt; }
-    h2 { font-size: 14pt; }
-  }
-  
-  table {
-    border-collapse: collapse;
-    width: 100%;
-    margin: 0 0 1rem;
-  }
-  
-  th, td {
-    border: 1px solid var(--border);
-    padding: 0.5rem 0.75rem;
-    text-align: left;
-  }
-  
-  th {
-    background: var(--code-bg);
-    font-weight: 700;
-  }
+/* Additional lesson-specific overrides if needed */
+.lesson-actions {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.lesson-actions button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.lesson-actions button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
 </style>
 </head>
 <body>
 
+<!-- Navigation Bar -->
+<nav class="lesson-nav">
+  <div class="nav-left">
+    <a href="/" class="nav-home">🏠 Home</a>
+    <span class="nav-separator">›</span>
+    <a href="/subjects/physics/" class="nav-subject">Physics HL</a>
+  </div>
+  <div class="nav-right">
+    <button onclick="openAI()" class="nav-btn">💬 Ask AI</button>
+    <button onclick="generatePractice()" class="nav-btn">✏️ Practice</button>
+    <a href="/dashboard" class="nav-btn">📊 Progress</a>
+    <a href="/how-to-use" class="nav-btn">❓ How to Use</a>
+  </div>
+</nav>
+
+<!-- Lesson Header with Completion -->
+<header class="lesson-header">
+  <div class="lesson-completion-bar">
+    <label class="completion-checkbox">
+      <input type="checkbox" id="lesson-complete" data-subject="physics" data-lesson="L5_energy_power">
+      <span>✓ Mark as complete</span>
+    </label>
+    <div class="mastery-selector">
+      <label>Mastery:</label>
+      <select id="mastery-level" data-subject="physics" data-lesson="L5_energy_power">
+        <option value="0">Not Started</option>
+        <option value="1">Learning</option>
+        <option value="2">Proficient</option>
+        <option value="3">Mastery</option>
+      </select>
+    </div>
+  </div>
+  <h1>Lesson 5: Work, Energy and Power</h1>
+</header>
+
+<!-- Main Content -->
+<main class="lesson-content">
 <div class="lesson-actions" style="margin: 2rem 0; padding: 1.5rem; background: #f8fafc; border-radius: 8px; display: flex; gap: 1rem; flex-wrap: wrap;">
 <button class="action-btn" id="generate-flashcards-btn" style="padding: 0.75rem 1.5rem; background: #3b82f6; color: white; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: all 0.2s;">
         🗂️ Generate Flashcards
@@ -302,19 +200,8 @@ MathJax = {
 
 })();
 </script>
-<nav class="nav">
-<a href="index.html">← Lesson Index</a>
-<a href="L4_momentum_applications.html">← Lesson 4</a>
-<a href="L6_rigid_body_1.html">Lesson 6 →</a>
-</nav>
 <h1>Lesson 5: Work, Energy and Power</h1>
 
-<div class="lesson-completion" style="margin: 1rem 0; padding: 1rem; background: #f0f9ff; border-radius: 8px;">
-<label class="completion-checkbox" style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer;">
-<input id="lesson-complete" style="width: 24px; height: 24px; cursor: pointer; accent-color: #10b981;" type="checkbox"/>
-<span style="font-size: 1rem; color: #0f172a; font-weight: 500;">✓ Mark this lesson as complete</span>
-</label>
-</div>
 <h2>What You'll Learn</h2>
 <p>By the end of this lesson, you will be able to:</p>
 <ul>
@@ -591,10 +478,112 @@ MathJax = {
 <ol>
 <li><strong>Efficiency is always less than 1 in real systems.</strong> The "lost" energy is not destroyed — it becomes thermal energy, which is why machines get warm.</li>
 </ol>
-<nav class="nav">
-<a href="index.html">← Lesson Index</a>
-<a href="L4_momentum_applications.html">← Lesson 4</a>
-<a href="L6_rigid_body_1.html">Lesson 6 →</a>
-</nav>
+
+<!-- Interactive Actions -->
+<div class="lesson-actions">
+  <button onclick="generateFlashcards()">🃏 Generate Flashcards</button>
+  <button onclick="generatePractice()">📝 Practice Problems</button>
+  <button onclick="openAI()">🤖 Ask AI Tutor</button>
+</div>
+
+</main>
+
+<!-- Footer Navigation -->
+<footer class="lesson-footer">
+  <a href="/subjects/physics/" class="footer-link">← Back to Physics HL Index</a>
+  <a href="/dashboard" class="footer-link">View Dashboard →</a>
+</footer>
+
+<script>
+const SUBJECT = "physics";
+const LESSON_ID = "L5_energy_power";
+
+// Load saved progress on page load
+async function loadProgress() {
+  try {
+    const response = await fetch(`/api/subject_progress/${SUBJECT}`);
+    if (!response.ok) return;
+    const data = await response.json();
+    const lessonData = data.lessons?.[LESSON_ID];
+
+    if (lessonData) {
+      // Set checkbox
+      const checkbox = document.getElementById('lesson-complete');
+      if (checkbox) checkbox.checked = lessonData.completed || false;
+
+      // Set mastery level
+      const masterySelect = document.getElementById('mastery-level');
+      if (masterySelect && lessonData.mastery_level !== undefined) {
+        masterySelect.value = lessonData.mastery_level;
+      }
+    }
+  } catch (e) {
+    console.error('Failed to load progress:', e);
+  }
+}
+
+// Save completion status
+document.getElementById('lesson-complete')?.addEventListener('change', async (e) => {
+  const completed = e.target.checked;
+  try {
+    const response = await fetch('/toggle_completion', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        subject: SUBJECT,
+        lesson: LESSON_ID,
+        completed: completed
+      })
+    });
+
+    if (!response.ok) {
+      console.error('Failed to save completion');
+      e.target.checked = !completed; // Revert on error
+    }
+  } catch (err) {
+    console.error('Error saving completion:', err);
+    e.target.checked = !completed;
+  }
+});
+
+// Save mastery level
+document.getElementById('mastery-level')?.addEventListener('change', async (e) => {
+  const level = parseInt(e.target.value);
+  try {
+    const response = await fetch('/update_mastery', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        subject: SUBJECT,
+        lesson: LESSON_ID,
+        level: level
+      })
+    });
+
+    if (!response.ok) {
+      console.error('Failed to save mastery level');
+    }
+  } catch (err) {
+    console.error('Error saving mastery:', err);
+  }
+});
+
+// Interactive button handlers
+function generateFlashcards() {
+  alert('Flashcard generation coming soon!');
+}
+
+function generatePractice() {
+  alert('Practice problem generation coming soon!');
+}
+
+function openAI() {
+  alert('AI Tutor coming soon!');
+}
+
+// Load progress when page loads
+document.addEventListener('DOMContentLoaded', loadProgress);
+</script>
+
 </body>
 </html>

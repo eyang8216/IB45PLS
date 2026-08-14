@@ -1,43 +1,78 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Lesson 24: Adaptation to Environment and Ecological Niches (B4.1 &amp; B4.2) — IB Biology HL</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 24: Adaptation to Environment and Ecological Niches (B4.1 &amp; B4.2) — Biology HL</title>
 <script>window.MathJax = { tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] } };</script>
-<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<link rel="stylesheet" href="/static/lesson.css">
 <style>
-  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #1a6b3c; --border: #c4d4a9; --highlight: #e8f5e9; }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Palatino', 'Georgia', serif; background: var(--bg); color: var(--text); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; font-size: 17px; line-height: 1.7; }
-  h1 { font-size: 1.7rem; color: var(--accent); margin-bottom: 0.5rem; }
-  h2 { font-size: 1.25rem; color: var(--accent); border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; margin: 2rem 0 1rem; }
-  h3 { font-size: 1.1rem; color: #444; margin: 1.3rem 0 0.5rem; }
-  p, li { margin-bottom: 0.6rem; }
-  ul, ol { padding-left: 1.8rem; margin-bottom: 1rem; }
-  .worked { background: #e8f5e9; border-left: 4px solid #1a6b3c; padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
-  .worked strong { color: #1a6b3c; }
-  .answer { background: #fefdf7; border: 1px solid var(--border); padding: 0.8rem 1.2rem; margin: 0.5rem 0; border-radius: 6px; }
-  .nav { display: flex; justify-content: space-between; margin: 3rem 0 1rem; padding-top: 1rem; border-top: 2px solid var(--border); font-size: 0.9rem; }
-  .nav a { color: #1a5c9e; text-decoration: none; }
-  .nav a:hover { text-decoration: underline; }
-  .definition { background: #fff8e1; border-left: 4px solid #e6a817; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
-  .tip { background: #e3f2fd; border-left: 4px solid #1976d2; padding: 0.6rem 1rem; margin: 0.8rem 0; border-radius: 0 6px 6px 0; }
-  table { border-collapse: collapse; margin: 0.8rem 0; width: 100%; }
-  th, td { border: 1px solid var(--border); padding: 0.4rem 0.6rem; text-align: left; }
-  th { background: #f0f5e8; }
-  @media print { body { font-size: 14px; } .nav { display: none; } }
+/* Additional lesson-specific overrides if needed */
+.lesson-actions {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.lesson-actions button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.lesson-actions button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
 </style>
 </head>
 <body>
-<div class="lesson-completion" style="margin: 0 0 2rem 0; padding: 1rem; background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-radius: 8px; border: 2px solid #bae6fd;">
-<label class="completion-checkbox" style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer;">
-<input id="lesson-complete" style="width: 24px; height: 24px; cursor: pointer; accent-color: #10b981;" type="checkbox"/>
-<span style="font-size: 1rem; color: #0f172a; font-weight: 600;">✓ Mark this lesson as complete</span>
-</label>
-</div>
 
+<!-- Navigation Bar -->
+<nav class="lesson-nav">
+  <div class="nav-left">
+    <a href="/" class="nav-home">🏠 Home</a>
+    <span class="nav-separator">›</span>
+    <a href="/subjects/biology/" class="nav-subject">Biology HL</a>
+  </div>
+  <div class="nav-right">
+    <button onclick="openAI()" class="nav-btn">💬 Ask AI</button>
+    <button onclick="generatePractice()" class="nav-btn">✏️ Practice</button>
+    <a href="/dashboard" class="nav-btn">📊 Progress</a>
+    <a href="/how-to-use" class="nav-btn">❓ How to Use</a>
+  </div>
+</nav>
+
+<!-- Lesson Header with Completion -->
+<header class="lesson-header">
+  <div class="lesson-completion-bar">
+    <label class="completion-checkbox">
+      <input type="checkbox" id="lesson-complete" data-subject="biology" data-lesson="lesson_24">
+      <span>✓ Mark as complete</span>
+    </label>
+    <div class="mastery-selector">
+      <label>Mastery:</label>
+      <select id="mastery-level" data-subject="biology" data-lesson="lesson_24">
+        <option value="0">Not Started</option>
+        <option value="1">Learning</option>
+        <option value="2">Proficient</option>
+        <option value="3">Mastery</option>
+      </select>
+    </div>
+  </div>
+  <h1>Lesson 24: Adaptation to Environment and Ecological Niches (B4.1 &amp; B4.2)</h1>
+</header>
+
+<!-- Main Content -->
+<main class="lesson-content">
 <h2>What You'll Learn</h2>
 <ul>
 <li>What adaptation means in biology and how it differs from acclimatization</li>
@@ -1066,6 +1101,112 @@
 
 })();
 </script>
-<div class="nav"><a href="lesson_23.html">← Lesson 23</a><a href="index.html">⌂ Index</a><a href="lesson_25.html">Lesson 25 →</a></div>
+
+<!-- Interactive Actions -->
+<div class="lesson-actions">
+  <button onclick="generateFlashcards()">🃏 Generate Flashcards</button>
+  <button onclick="generatePractice()">📝 Practice Problems</button>
+  <button onclick="openAI()">🤖 Ask AI Tutor</button>
+</div>
+
+</main>
+
+<!-- Footer Navigation -->
+<footer class="lesson-footer">
+  <a href="/subjects/biology/" class="footer-link">← Back to Biology HL Index</a>
+  <a href="/dashboard" class="footer-link">View Dashboard →</a>
+</footer>
+
+<script>
+const SUBJECT = "biology";
+const LESSON_ID = "lesson_24";
+
+// Load saved progress on page load
+async function loadProgress() {
+  try {
+    const response = await fetch(`/api/subject_progress/${SUBJECT}`);
+    if (!response.ok) return;
+    const data = await response.json();
+    const lessonData = data.lessons?.[LESSON_ID];
+
+    if (lessonData) {
+      // Set checkbox
+      const checkbox = document.getElementById('lesson-complete');
+      if (checkbox) checkbox.checked = lessonData.completed || false;
+
+      // Set mastery level
+      const masterySelect = document.getElementById('mastery-level');
+      if (masterySelect && lessonData.mastery_level !== undefined) {
+        masterySelect.value = lessonData.mastery_level;
+      }
+    }
+  } catch (e) {
+    console.error('Failed to load progress:', e);
+  }
+}
+
+// Save completion status
+document.getElementById('lesson-complete')?.addEventListener('change', async (e) => {
+  const completed = e.target.checked;
+  try {
+    const response = await fetch('/toggle_completion', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        subject: SUBJECT,
+        lesson: LESSON_ID,
+        completed: completed
+      })
+    });
+
+    if (!response.ok) {
+      console.error('Failed to save completion');
+      e.target.checked = !completed; // Revert on error
+    }
+  } catch (err) {
+    console.error('Error saving completion:', err);
+    e.target.checked = !completed;
+  }
+});
+
+// Save mastery level
+document.getElementById('mastery-level')?.addEventListener('change', async (e) => {
+  const level = parseInt(e.target.value);
+  try {
+    const response = await fetch('/update_mastery', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        subject: SUBJECT,
+        lesson: LESSON_ID,
+        level: level
+      })
+    });
+
+    if (!response.ok) {
+      console.error('Failed to save mastery level');
+    }
+  } catch (err) {
+    console.error('Error saving mastery:', err);
+  }
+});
+
+// Interactive button handlers
+function generateFlashcards() {
+  alert('Flashcard generation coming soon!');
+}
+
+function generatePractice() {
+  alert('Practice problem generation coming soon!');
+}
+
+function openAI() {
+  alert('AI Tutor coming soon!');
+}
+
+// Load progress when page loads
+document.addEventListener('DOMContentLoaded', loadProgress);
+</script>
+
 </body>
 </html>

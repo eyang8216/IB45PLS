@@ -1,51 +1,78 @@
- <!DOCTYPE html>
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Lesson 33: Inflation — Consequences and the Phillips Curve</title>
-<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 33: Inflation - Consequences and the Phillips Curve — Economics HL</title>
+<script>window.MathJax = { tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] } };</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<link rel="stylesheet" href="/static/lesson.css">
 <style>
-  :root { --bg: #fdfcf9; --text: #1a1a1a; --accent: #2c5f8a; --border: #d0cdc4; --card-bg: #f8f5f0; --highlight: #e8f0f8; --heading: #1a3a52; }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: Georgia, 'Times New Roman', serif; font-size: 17px; line-height: 1.7; color: var(--text); background: var(--bg); max-width: 820px; margin: 0 auto; padding: 40px 32px 60px; }
-  nav.breadcrumb { font-size: 14px; margin-bottom: 32px; padding-bottom: 16px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
-  nav.breadcrumb a { color: var(--accent); text-decoration: none; } nav.breadcrumb a:hover { text-decoration: underline; }
-  h1 { font-size: 2em; color: var(--heading); margin-bottom: 8px; border-bottom: 3px solid var(--accent); padding-bottom: 10px; }
-  h2 { font-size: 1.4em; color: var(--heading); margin: 36px 0 12px; padding-left: 8px; border-left: 4px solid var(--accent); }
-  h3 { font-size: 1.15em; color: #2a4a30; margin: 24px 0 8px; }
-  p { margin: 10px 0; } ul, ol { margin: 8px 0 16px 24px; } li { margin: 5px 0; }
-  strong { color: #1a2a3a; }
-  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 15px; }
-  th { background: var(--heading); color: white; padding: 10px 12px; text-align: left; }
-  td { padding: 8px 12px; border: 1px solid var(--border); } tr:nth-child(even) { background: var(--card-bg); }
-  .highlight-box { background: var(--highlight); border-left: 4px solid var(--accent); padding: 14px 18px; margin: 16px 0; border-radius: 0 6px 6px 0; }
-  .tip-box { background: #fffdf0; border: 1px solid #e0c860; padding: 14px 18px; margin: 20px 0; border-radius: 6px; }
-  .tip-box::before { content: "IB Exam Tip"; font-weight: bold; display: block; margin-bottom: 6px; color: #8a6d20; }
-  .problem { background: var(--card-bg); padding: 14px 18px; margin: 14px 0; border-radius: 6px; border: 1px solid var(--border); }
-  .problem strong { color: var(--accent); }
-  .answer { border-left: 3px solid #5a8a5a; padding-left: 16px; margin: 10px 0 20px; }
-  .evaluate-box { background: #f4f0ea; border: 2px solid #8a6d3b; padding: 20px 24px; margin: 28px 0; border-radius: 8px; }
-  .evaluate-box h2 { border-left-color: #8a6d3b; }
-  .claspp { color: #6a5030; font-weight: bold; margin: 10px 0 4px; }
-  hr { border: none; border-top: 1px solid var(--border); margin: 32px 0; }
-  @media print { body { font-size: 12pt; padding: 20px; max-width: 100%; } nav.breadcrumb, .no-print { display: none; } h1 { font-size: 18pt; } h2 { font-size: 14pt; } .highlight-box, .tip-box, .problem, .evaluate-box { break-inside: avoid; } a { color: var(--text); text-decoration: none; } }
+/* Additional lesson-specific overrides if needed */
+.lesson-actions {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.lesson-actions button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.lesson-actions button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
 </style>
 </head>
 <body>
-<div class="lesson-completion" style="margin: 0 0 2rem 0; padding: 1rem; background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-radius: 8px; border: 2px solid #bae6fd;">
-<label class="completion-checkbox" style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer;">
-<input id="lesson-complete" style="width: 24px; height: 24px; cursor: pointer; accent-color: #10b981;" type="checkbox"/>
-<span style="font-size: 1rem; color: #0f172a; font-weight: 600;">✓ Mark this lesson as complete</span>
-</label>
-</div>
 
-<nav class="breadcrumb">
-<span><a href="lesson32_inflation_measurement.html">Lesson 32: Inflation Measurement</a></span>
-<span><a href="#">Index</a></span>
-<span><a href="lesson34_economic_growth.html">Lesson 34: Economic Growth</a></span>
+<!-- Navigation Bar -->
+<nav class="lesson-nav">
+  <div class="nav-left">
+    <a href="/" class="nav-home">🏠 Home</a>
+    <span class="nav-separator">›</span>
+    <a href="/subjects/economics/" class="nav-subject">Economics HL</a>
+  </div>
+  <div class="nav-right">
+    <button onclick="openAI()" class="nav-btn">💬 Ask AI</button>
+    <button onclick="generatePractice()" class="nav-btn">✏️ Practice</button>
+    <a href="/dashboard" class="nav-btn">📊 Progress</a>
+    <a href="/how-to-use" class="nav-btn">❓ How to Use</a>
+  </div>
 </nav>
+
+<!-- Lesson Header with Completion -->
+<header class="lesson-header">
+  <div class="lesson-completion-bar">
+    <label class="completion-checkbox">
+      <input type="checkbox" id="lesson-complete" data-subject="economics" data-lesson="lesson33_inflation_consequences">
+      <span>✓ Mark as complete</span>
+    </label>
+    <div class="mastery-selector">
+      <label>Mastery:</label>
+      <select id="mastery-level" data-subject="economics" data-lesson="lesson33_inflation_consequences">
+        <option value="0">Not Started</option>
+        <option value="1">Learning</option>
+        <option value="2">Proficient</option>
+        <option value="3">Mastery</option>
+      </select>
+    </div>
+  </div>
+  <h1>Lesson 33: Inflation - Consequences and the Phillips Curve</h1>
+</header>
+
+<!-- Main Content -->
+<main class="lesson-content">
 <h1>Lesson 33: Inflation - Consequences and the Phillips Curve</h1>
 <h2>What You'll Learn</h2>
 <ul>
@@ -173,10 +200,112 @@ $$\pi = \pi^e - \beta(u - u_n)$$
 <p><strong>Overall</strong>: 2% is a reasonable, not provably ideal, target.</p>
 </div>
 <hr/>
-<nav class="breadcrumb">
-<span><a href="lesson32_inflation_measurement.html">Lesson 32: Inflation Measurement</a></span>
-<span><a href="#">Index</a></span>
-<span><a href="lesson34_economic_growth.html">Lesson 34: Economic Growth</a></span>
-</nav>
+
+<!-- Interactive Actions -->
+<div class="lesson-actions">
+  <button onclick="generateFlashcards()">🃏 Generate Flashcards</button>
+  <button onclick="generatePractice()">📝 Practice Problems</button>
+  <button onclick="openAI()">🤖 Ask AI Tutor</button>
+</div>
+
+</main>
+
+<!-- Footer Navigation -->
+<footer class="lesson-footer">
+  <a href="/subjects/economics/" class="footer-link">← Back to Economics HL Index</a>
+  <a href="/dashboard" class="footer-link">View Dashboard →</a>
+</footer>
+
+<script>
+const SUBJECT = "economics";
+const LESSON_ID = "lesson33_inflation_consequences";
+
+// Load saved progress on page load
+async function loadProgress() {
+  try {
+    const response = await fetch(`/api/subject_progress/${SUBJECT}`);
+    if (!response.ok) return;
+    const data = await response.json();
+    const lessonData = data.lessons?.[LESSON_ID];
+
+    if (lessonData) {
+      // Set checkbox
+      const checkbox = document.getElementById('lesson-complete');
+      if (checkbox) checkbox.checked = lessonData.completed || false;
+
+      // Set mastery level
+      const masterySelect = document.getElementById('mastery-level');
+      if (masterySelect && lessonData.mastery_level !== undefined) {
+        masterySelect.value = lessonData.mastery_level;
+      }
+    }
+  } catch (e) {
+    console.error('Failed to load progress:', e);
+  }
+}
+
+// Save completion status
+document.getElementById('lesson-complete')?.addEventListener('change', async (e) => {
+  const completed = e.target.checked;
+  try {
+    const response = await fetch('/toggle_completion', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        subject: SUBJECT,
+        lesson: LESSON_ID,
+        completed: completed
+      })
+    });
+
+    if (!response.ok) {
+      console.error('Failed to save completion');
+      e.target.checked = !completed; // Revert on error
+    }
+  } catch (err) {
+    console.error('Error saving completion:', err);
+    e.target.checked = !completed;
+  }
+});
+
+// Save mastery level
+document.getElementById('mastery-level')?.addEventListener('change', async (e) => {
+  const level = parseInt(e.target.value);
+  try {
+    const response = await fetch('/update_mastery', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        subject: SUBJECT,
+        lesson: LESSON_ID,
+        level: level
+      })
+    });
+
+    if (!response.ok) {
+      console.error('Failed to save mastery level');
+    }
+  } catch (err) {
+    console.error('Error saving mastery:', err);
+  }
+});
+
+// Interactive button handlers
+function generateFlashcards() {
+  alert('Flashcard generation coming soon!');
+}
+
+function generatePractice() {
+  alert('Practice problem generation coming soon!');
+}
+
+function openAI() {
+  alert('AI Tutor coming soon!');
+}
+
+// Load progress when page loads
+document.addEventListener('DOMContentLoaded', loadProgress);
+</script>
+
 </body>
 </html>

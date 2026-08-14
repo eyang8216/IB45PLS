@@ -1,49 +1,78 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Lesson 58 — Theory of the Firm (HL Extension)</title>
-<script>
-MathJax = {
-  tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] }
-};
-</script>
-<script async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 58: Theory of the Firm (HL Extension) — Economics HL</title>
+<script>window.MathJax = { tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] } };</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<link rel="stylesheet" href="/static/lesson.css">
 <style>
-  body {
-    max-width: 800px; margin: 40px auto; font-family: 'Times New Roman', Georgia, serif;
-    font-size: 17px; line-height: 1.7; padding: 0 20px; color: #1a1a1a;
-  }
-  h1 { font-size: 22px; border-bottom: 2px solid #2c6b4f; padding-bottom: 8px; margin-top: 36px; color: #2c6b4f; }
-  h2 { font-size: 19px; margin-top: 28px; color: #2c3e50; }
-  h3 { font-size: 17px; margin-top: 22px; color: #444; }
-  p { margin: 0.6em 0; }
-  li { margin: 0.3em 0 0.3em 20px; }
-  hr { margin: 20px 0; border: none; border-top: 1px solid #ddd; }
-  .hl-badge { display: inline-block; background: #e74c3c; color: white; padding: 0.2rem 0.8rem; border-radius: 20px; font-size: 0.75rem; margin-bottom: 1rem; font-weight: bold; }
-  .math-block { text-align: center; margin: 1em 0; overflow-x: auto; }
-  pre { background: #f5f5f5; padding: 10px 14px; border-radius: 4px; overflow-x: auto; font-size: 14px; }
-  b { color: #222; }
-  table { border-collapse: collapse; margin: 16px 0; width: 100%; font-size: 15px; }
-  th { background: #2c6b4f; color: #fff; padding: 8px 12px; text-align: center; font-weight: bold; }
-  td { border: 1px solid #ccc; padding: 8px 12px; text-align: center; }
-  tr:nth-child(even) { background: #f9f9f9; }
-  .nav { text-align: center; margin: 30px 0; font-size: 14px; }
-  .nav a { margin: 0 8px; color: #2c6b4f; text-decoration: none; }
-  .nav a:hover { text-decoration: underline; }
+/* Additional lesson-specific overrides if needed */
+.lesson-actions {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.lesson-actions button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.lesson-actions button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
 </style>
 </head>
 <body>
-<div class="lesson-completion" style="margin: 0 0 2rem 0; padding: 1rem; background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border-radius: 8px; border: 2px solid #bae6fd;">
-<label class="completion-checkbox" style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer;">
-<input id="lesson-complete" style="width: 24px; height: 24px; cursor: pointer; accent-color: #10b981;" type="checkbox"/>
-<span style="font-size: 1rem; color: #0f172a; font-weight: 600;">✓ Mark this lesson as complete</span>
-</label>
-</div>
 
-<div class="nav"><a href="index.html">← Back to Index</a></div>
+<!-- Navigation Bar -->
+<nav class="lesson-nav">
+  <div class="nav-left">
+    <a href="/" class="nav-home">🏠 Home</a>
+    <span class="nav-separator">›</span>
+    <a href="/subjects/economics/" class="nav-subject">Economics HL</a>
+  </div>
+  <div class="nav-right">
+    <button onclick="openAI()" class="nav-btn">💬 Ask AI</button>
+    <button onclick="generatePractice()" class="nav-btn">✏️ Practice</button>
+    <a href="/dashboard" class="nav-btn">📊 Progress</a>
+    <a href="/how-to-use" class="nav-btn">❓ How to Use</a>
+  </div>
+</nav>
+
+<!-- Lesson Header with Completion -->
+<header class="lesson-header">
+  <div class="lesson-completion-bar">
+    <label class="completion-checkbox">
+      <input type="checkbox" id="lesson-complete" data-subject="economics" data-lesson="lesson_58_theory_firm_hl">
+      <span>✓ Mark as complete</span>
+    </label>
+    <div class="mastery-selector">
+      <label>Mastery:</label>
+      <select id="mastery-level" data-subject="economics" data-lesson="lesson_58_theory_firm_hl">
+        <option value="0">Not Started</option>
+        <option value="1">Learning</option>
+        <option value="2">Proficient</option>
+        <option value="3">Mastery</option>
+      </select>
+    </div>
+  </div>
+  <h1>Lesson 58: Theory of the Firm (HL Extension)</h1>
+</header>
+
+<!-- Main Content -->
+<main class="lesson-content">
 <span class="hl-badge">HL ONLY</span>
 <h1>Lesson 58: Theory of the Firm (HL Extension)</h1>
 <h2>Introduction to Advanced Firm Theory</h2>
@@ -153,8 +182,6 @@ MathJax = {
 <li>Returns to scale and their relationship to economies of scale</li>
 </ul>
 <p>These analytical tools allow you to understand not just <i>what</i> firms do, but <i>why</i> they make particular production decisions.</p>
-<div class="nav"><a href="index.html">← Back to Index</a></div>
-
 <div class="lesson-actions" style="margin: 2rem 0; padding: 1.5rem; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0;">
     <h3 style="margin: 0 0 1rem 0; font-size: 1.1rem; color: #334155;">📚 Study Tools</h3>
     <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
@@ -188,6 +215,112 @@ function openAI() {
     alert('AI tutor coming soon for: ' + lessonTitle);
     // TODO: Implement AI tutor
 }
+</script>
+
+<!-- Interactive Actions -->
+<div class="lesson-actions">
+  <button onclick="generateFlashcards()">🃏 Generate Flashcards</button>
+  <button onclick="generatePractice()">📝 Practice Problems</button>
+  <button onclick="openAI()">🤖 Ask AI Tutor</button>
+</div>
+
+</main>
+
+<!-- Footer Navigation -->
+<footer class="lesson-footer">
+  <a href="/subjects/economics/" class="footer-link">← Back to Economics HL Index</a>
+  <a href="/dashboard" class="footer-link">View Dashboard →</a>
+</footer>
+
+<script>
+const SUBJECT = "economics";
+const LESSON_ID = "lesson_58_theory_firm_hl";
+
+// Load saved progress on page load
+async function loadProgress() {
+  try {
+    const response = await fetch(`/api/subject_progress/${SUBJECT}`);
+    if (!response.ok) return;
+    const data = await response.json();
+    const lessonData = data.lessons?.[LESSON_ID];
+
+    if (lessonData) {
+      // Set checkbox
+      const checkbox = document.getElementById('lesson-complete');
+      if (checkbox) checkbox.checked = lessonData.completed || false;
+
+      // Set mastery level
+      const masterySelect = document.getElementById('mastery-level');
+      if (masterySelect && lessonData.mastery_level !== undefined) {
+        masterySelect.value = lessonData.mastery_level;
+      }
+    }
+  } catch (e) {
+    console.error('Failed to load progress:', e);
+  }
+}
+
+// Save completion status
+document.getElementById('lesson-complete')?.addEventListener('change', async (e) => {
+  const completed = e.target.checked;
+  try {
+    const response = await fetch('/toggle_completion', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        subject: SUBJECT,
+        lesson: LESSON_ID,
+        completed: completed
+      })
+    });
+
+    if (!response.ok) {
+      console.error('Failed to save completion');
+      e.target.checked = !completed; // Revert on error
+    }
+  } catch (err) {
+    console.error('Error saving completion:', err);
+    e.target.checked = !completed;
+  }
+});
+
+// Save mastery level
+document.getElementById('mastery-level')?.addEventListener('change', async (e) => {
+  const level = parseInt(e.target.value);
+  try {
+    const response = await fetch('/update_mastery', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        subject: SUBJECT,
+        lesson: LESSON_ID,
+        level: level
+      })
+    });
+
+    if (!response.ok) {
+      console.error('Failed to save mastery level');
+    }
+  } catch (err) {
+    console.error('Error saving mastery:', err);
+  }
+});
+
+// Interactive button handlers
+function generateFlashcards() {
+  alert('Flashcard generation coming soon!');
+}
+
+function generatePractice() {
+  alert('Practice problem generation coming soon!');
+}
+
+function openAI() {
+  alert('AI Tutor coming soon!');
+}
+
+// Load progress when page loads
+document.addEventListener('DOMContentLoaded', loadProgress);
 </script>
 
 </body>
