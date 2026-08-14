@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exam Mode — {{ subject_name }} Paper {{ paper_num }}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<style>
+.exam-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+.exam-header {
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.timer {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent);
+    font-family: 'Monaco', monospace;
+}
+
+.timer.warning {
+    color: var(--warning);
+}
+
+.timer.danger {
+    color: var(--danger);
+}
+
+.exam-questions {
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem;
+}
+
+.question-block {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.question-block:last-child {
+    border-bottom: none;
+}
+
+.question-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.question-number {
+    font-weight: 700;
+    font-size: 1.125rem;
+}
+
+.question-marks {
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.question-text {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.answer-area textarea {
+    width: 100%;
+    min-height: 150px;
+    padding: 1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-family: inherit;
+    font-size: 1rem;
+    resize: vertical;
+}
+
+.mcq-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.mcq-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.mcq-option:hover {
+    background: var(--bg-secondary);
+    border-color: var(--accent);
+}
+
+.mcq-option input[type="radio"] {
+    margin-top: 0.25rem;
+}
+
+.submit-section {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.submit-btn {
+    padding: 1rem 3rem;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 1.125rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.submit-btn:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+.loading-screen {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid var(--border);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+    <div class="nav-left">
+        <a href="/" class="nav-brand">IB45PLS</a>
+    </div>
+    <div class="nav-right">
+        <a href="/dashboard" class="nav-link">Exit Exam</a>
+    </div>
+</nav>
+
+<div class="exam-container">
+    <div class="exam-header">
+        <div>
+            <h1 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.25rem;">{{ subject_name }}</h1>
+            <p style="color: var(--text-secondary);">Paper {{ paper_num }} — Mock Exam</p>
+        </div>
+        <div class="timer" id="timer">90:00</div>
+    </div>
+
+    <div id="loading-screen" class="loading-screen">
+        <div class="spinner"></div>
+        <h2 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem;">Generating Exam...</h2>
+        <p style="color: var(--text-secondary);">This may take a moment</p>
+    </div>
+
+    <div id="exam-content" style="display: none;">
+        <div class="exam-questions" id="questions-container">
+            <!-- Questions will be loaded here -->
+        </div>
+
+        <div class="submit-section">
+            <button class="submit-btn" onclick="submitExam()">Submit Exam</button>
+        </div>
+    </div>
+</div>
+
+<script>
+let examData = null;
+let startTime = Date.now();
+let timerInterval = null;
+
+// Generate exam on load
+window.addEventListener('DOMContentLoaded', async () => {
+    try {
+        const response = await fetch('/generate_exam', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-Token': '{{ csrf_token }}'
+            },
+            body: JSON.stringify({
+                subject: '{{ subject }}',
+                paper: {{ paper_num }},
+                topics: [],  // All topics
+                level: 'HL'
+            })
+        });
+
+        examData = await response.json();
+
+        if (examData.error) {
+            document.getElementById('loading-screen').innerHTML = `
+                <h2>Error Loading Exam</h2>
+                <p>${examData.error}</p>
+                <a href="/dashboard">Return to Dashboard</a>
+            `;
+            return;
+        }
+
+        displayExam(examData);
+        startTimer(examData.duration_minutes || 90);
+
+    } catch (err) {
+        console.error(err);
+        document.getElementById('loading-screen').innerHTML = `
+            <h2>Error Loading Exam</h2>
+            <p>Unable to generate exam. Please try again.</p>
+            <a href="/dashboard">Return to Dashboard</a>
+        `;
+    }
+});
+
+function displayExam(exam) {
+    const container = document.getElementById('questions-container');
+    let html = '';
+    let questionNum = 1;
+
+    for (const section of exam.sections || []) {
+        if (section.name) {
+            html += `<h2 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1.5rem;">${section.name}</h2>`;
+        }
+
+        for (const question of section.questions || []) {
+            html += `
+                <div class="question-block">
+                    <div class="question-header">
+                        <span class="question-number">Question ${questionNum}</span>
+                        <span class="question-marks">[${question.marks || 1} marks]</span>
+                    </div>
+                    <div class="question-text">${question.question || question.text}</div>
+            `;
+
+            if (question.type === 'mcq' && question.options) {
+                html += '<div class="mcq-options">';
+                for (const option of question.options) {
+                    const optId = `q${questionNum}_${option[0]}`;
+                    html += `
+                        <label class="mcq-option">
+                            <input type="radio" name="q${questionNum}" value="${option[0]}" id="${optId}">
+                            <span>${option}</span>
+                        </label>
+                    `;
+                }
+                html += '</div>';
+            } else {
+                html += `
+                    <div class="answer-area">
+                        <textarea id="answer_${questionNum}" placeholder="Type your answer here..."></textarea>
+                    </div>
+                `;
+            }
+
+            html += '</div>';
+            questionNum++;
+        }
+    }
+
+    container.innerHTML = html;
+    document.getElementById('loading-screen').style.display = 'none';
+    document.getElementById('exam-content').style.display = 'block';
+}
+
+function startTimer(durationMinutes) {
+    const timerEl = document.getElementById('timer');
+    let remainingSeconds = durationMinutes * 60;
+
+    timerInterval = setInterval(() => {
+        remainingSeconds--;
+
+        const minutes = Math.floor(remainingSeconds / 60);
+        const seconds = remainingSeconds % 60;
+        timerEl.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+
+        if (remainingSeconds <= 300) {
+            timerEl.classList.add('warning');
+        }
+        if (remainingSeconds <= 60) {
+            timerEl.classList.add('danger');
+        }
+
+        if (remainingSeconds <= 0) {
+            clearInterval(timerInterval);
+            alert('Time is up! Your exam will be submitted automatically.');
+            submitExam();
+        }
+    }, 1000);
+}
+
+async function submitExam() {
+    if (!confirm('Are you sure you want to submit your exam?')) {
+        return;
+    }
+
+    clearInterval(timerInterval);
+
+    // Collect answers
+    const answers = [];
+    // This would collect all answers from the form
+
+    // For now, just record the attempt
+    const timeSpent = Math.floor((Date.now() - startTime) / 1000 / 60);
+
+    await fetch('/submit_exam', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': '{{ csrf_token }}'
+        },
+        body: JSON.stringify({
+            exam_type: '{{ subject }}',
+            paper: {{ paper_num }},
+            score: 0,  // Would be calculated
+            total: examData.total_marks || 75
+        })
+    });
+
+    alert('Exam submitted! Redirecting to dashboard...');
+    window.location.href = '/dashboard';
+}
+</script>
+
+</body>
+</html>

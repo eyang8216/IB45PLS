@@ -9,6 +9,10 @@ from functools import wraps
 from flask import Flask, render_template, request, jsonify, send_from_directory, abort, Response, session, redirect, url_for
 from werkzeug.security import generate_password_hash, check_password_hash
 
+# Import new modules
+from user_profile import UserProfile
+from practice_generator import PracticeGenerator, SpacedRepetition
+
 app = Flask(__name__)
 
 # ── Security config ──
@@ -845,6 +849,251 @@ def config():
     return jsonify({"api_configured": bool(OPENROUTER_API_KEY or GEMINI_API_KEY)})
 
 
+# ── ENHANCED FEATURES - Practice Generator & User Profiles ──
+
+# Initialize practice generator (lazy)
+practice_gen = None
+
+def get_practice_generator():
+    """Lazy init practice generator"""
+    global practice_gen
+    if practice_gen is None:
+        def api_caller(messages):
+            """Wrapper for API calls"""
+            for model in FREE_MODELS:
+                try:
+                    response = call_openrouter(messages, model)
+                    if response:
+                        return response
+                except:
+                    continue
+            return "Unable to generate content."
+        practice_gen = PracticeGenerator(api_caller)
+    return practice_gen
+
+
+@app.route("/dashboard_enhanced")
+@login_required
+def dashboard_enhanced():
+    """Enhanced dashboard with mastery tracking"""
+    username = session.get("user", "")
+    profile = UserProfile(username)
+    profile.update_streak()
+
+    subjects_progress = {}
+    for subject_key, subject_info in SUBJECTS.items():
+        total = subject_info.get("total_lessons", 0)
+        progress = profile.get_subject_progress(subject_key, total)
+        subjects_progress[subject_key] = {
+            **progress,
+            "name": subject_info["name"],
+            "icon": subject_info["icon"],
+            "color": subject_info["color"]
+        }
+
+    recent_practice = profile.data.get("practice_history", [])[-5:]
+    exam_attempts = profile.data.get("exam_attempts", [])[-5:]
+
+    recommendations = {}
+    for subject_key in SUBJECTS.keys():
+        recs = profile.get_recommended_lessons(subject_key)
+        if recs:
+            recommendations[subject_key] = recs[:3]
+
+    return render_template("dashboard_enhanced.html",
+        username=username,
+        streak=profile.data.get("study_streak", 0),
+        total_time=profile.data.get("total_study_time", 0),
+        subjects=subjects_progress,
+        recent_practice=recent_practice,
+        exam_attempts=exam_attempts,
+        recommendations=recommendations,
+        csrf_token=generate_csrf_token()
+    )
+
+
+@app.route("/mark_viewed", methods=["POST"])
+@login_required
+def mark_viewed_enhanced():
+    """Mark lesson as viewed with enhanced tracking"""
+    username = session.get("user", "")
+    data = request.get_json()
+    subject = data.get("subject", "")
+    lesson = data.get("lesson", "")
+
+    if not subject or not lesson:
+        return jsonify({"error": "Missing subject or lesson"}), 400
+
+    profile = UserProfile(username)
+    profile.mark_lesson_viewed(subject, lesson)
+    return jsonify({"success": True})
+
+
+@app.route("/generate_practice", methods=["POST"])
+@login_required
+def generate_practice():
+    """Generate AI practice problems for a lesson"""
+    if check_user_rate_limit(session.get("user", "")):
+        return jsonify({"error": "Rate limit exceeded. Try again in an hour."}), 429
+    record_user_request(session.get("user", ""))
+
+    data = request.get_json()
+    context = data.get("context", {})
+    subject = context.get("subject", "")
+    lesson = context.get("lesson", "")
+    syllabus = context.get("syllabus", "")
+    level = context.get("level", "HL")
+
+    gen = get_practice_generator()
+    problems = gen.generate_problems(subject, lesson, syllabus, level, count=5)
+
+    html = '<div class="practice-problems">'
+    for i, problem in enumerate(problems, 1):
+        html += f'<div class="problem" data-problem-id="{i}">'
+        html += f'<div class="problem-header">'
+        html += f'<span class="problem-number">Problem {i}</span>'
+        html += f'<span class="problem-difficulty {problem.get("difficulty", "medium")}">{problem.get("difficulty", "medium").title()}</span>'
+        html += f'<span class="problem-marks">[{problem.get("marks", 0)} marks]</span>'
+        html += f'</div>'
+        html += f'<div class="problem-question">{problem.get("question", "")}</div>'
+
+        if problem.get("type") == "mcq" and problem.get("options"):
+            html += '<div class="problem-options">'
+            for opt in problem["options"]:
+                html += f'<label><input type="radio" name="problem_{i}" value="{opt[0]}"> {opt}</label>'
+            html += '</div>'
+        else:
+            html += f'<textarea class="problem-answer" placeholder="Type your answer here..." rows="4"></textarea>'
+
+        html += f'<button class="show-answer-btn" onclick="showAnswer(this, \'{problem.get("correct_answer", "")}\', \'{problem.get("explanation", "")}\')">Show Answer</button>'
+        html += f'<div class="problem-solution" style="display: none;"></div>'
+        html += '</div>'
+    html += '</div>'
+
+    return jsonify({"html": html})
+
+
+@app.route("/generate_flashcards", methods=["POST"])
+@login_required
+def generate_flashcards():
+    """Generate flashcards for a lesson"""
+    if check_user_rate_limit(session.get("user", "")):
+        return jsonify({"error": "Rate limit exceeded"}), 429
+    record_user_request(session.get("user", ""))
+
+    data = request.get_json()
+    subject = data.get("subject", "")
+    lesson = data.get("lesson", "")
+    content = data.get("content_summary", "")
+
+    gen = get_practice_generator()
+    flashcards = gen.generate_flashcards(subject, lesson, content)
+
+    username = session.get("user", "")
+    profile = UserProfile(username)
+    for card in flashcards:
+        profile.add_flashcard(subject, lesson, card["front"], card["back"])
+
+    return jsonify({"success": True, "count": len(flashcards), "flashcards": flashcards})
+
+
+@app.route("/flashcards/<subject>")
+@login_required
+def flashcard_review(subject):
+    """Flashcard review interface"""
+    username = session.get("user", "")
+    profile = UserProfile(username)
+    due_cards = profile.get_due_flashcards(subject)
+
+    return render_template("flashcards.html",
+        subject=subject,
+        cards=due_cards,
+        total_due=len(due_cards),
+        csrf_token=generate_csrf_token()
+    )
+
+
+@app.route("/review_flashcard", methods=["POST"])
+@login_required
+def review_flashcard():
+    """Update flashcard after review"""
+    username = session.get("user", "")
+    data = request.get_json()
+    subject = data.get("subject", "")
+    card_index = data.get("card_index", 0)
+    quality = data.get("quality", 0)
+
+    profile = UserProfile(username)
+    if subject in profile.data["flashcards"] and card_index < len(profile.data["flashcards"][subject]):
+        card = profile.data["flashcards"][subject][card_index]
+        new_interval, new_reps, new_ease = SpacedRepetition.calculate_next_interval(
+            quality,
+            card.get("repetitions", 0),
+            card.get("ease_factor", 2.5),
+            card.get("interval", 1)
+        )
+
+        from datetime import datetime, timedelta
+        card["interval"] = new_interval
+        card["repetitions"] = new_reps
+        card["ease_factor"] = new_ease
+        card["next_review"] = (datetime.now() + timedelta(days=new_interval)).isoformat()
+        card["last_reviewed"] = datetime.now().isoformat()
+        profile.save()
+
+        return jsonify({"success": True, "next_review_days": new_interval})
+    return jsonify({"error": "Card not found"}), 404
+
+
+@app.route("/exam/<subject>/paper/<int:paper_num>")
+@login_required
+def exam_mode(subject, paper_num):
+    """Full exam mode"""
+    if subject not in SUBJECTS:
+        abort(404)
+    return render_template("exam_mode.html",
+        subject=subject,
+        subject_name=SUBJECTS[subject]["name"],
+        paper_num=paper_num,
+        csrf_token=generate_csrf_token()
+    )
+
+
+@app.route("/generate_exam", methods=["POST"])
+@login_required
+def generate_exam():
+    """Generate full exam paper"""
+    if check_user_rate_limit(session.get("user", "")):
+        return jsonify({"error": "Rate limit exceeded"}), 429
+    record_user_request(session.get("user", ""))
+
+    data = request.get_json()
+    subject = data.get("subject", "")
+    paper_type = data.get("paper", 1)
+    topics = data.get("topics", [])
+    level = data.get("level", "HL")
+
+    gen = get_practice_generator()
+    exam = gen.generate_exam_paper(subject, paper_type, topics, level)
+    return jsonify(exam)
+
+
+@app.route("/submit_exam", methods=["POST"])
+@login_required
+def submit_exam():
+    """Submit and grade exam"""
+    username = session.get("user", "")
+    data = request.get_json()
+    exam_type = data.get("exam_type", "")
+    paper_num = data.get("paper", 1)
+    score = data.get("score", 0)
+    total = data.get("total", 0)
+
+    profile = UserProfile(username)
+    profile.record_exam_attempt(exam_type, score, total, paper_num)
+    return jsonify({"success": True})
+
+
 @app.route("/api-config")
 @login_required
 def api_config():
@@ -1345,6 +1594,12 @@ def track_view():
 @app.route("/dashboard")
 @login_required
 def dashboard():
+    """Redirect to enhanced dashboard"""
+    return redirect(url_for("dashboard_enhanced"))
+
+@app.route("/dashboard_old")
+@login_required
+def dashboard_old():
     username = session.get("user", "")
     user_data = get_user_data(username)
     user_name = session.get("user_name", username)

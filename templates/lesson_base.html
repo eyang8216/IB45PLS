@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}Lesson{% endblock %} — IB45PLS</title>
+<script>window.MathJax = { tex: { inlineMath: [['$','$'], ['\\(','\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] } };</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='lesson.css') }}">
+{% block extra_head %}{% endblock %}
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="lesson-nav">
+    <div class="nav-left">
+        <a href="/" class="nav-home">🏠 Home</a>
+        <span class="nav-separator">›</span>
+        <a href="{{ subject_url }}" class="nav-subject">{{ subject_name }}</a>
+    </div>
+    <div class="nav-right">
+        <button id="ai-help-btn" class="nav-btn">💬 Ask AI</button>
+        <button id="practice-btn" class="nav-btn">✏️ Practice</button>
+        <a href="/dashboard" class="nav-btn">📊 Progress</a>
+    </div>
+</nav>
+
+<!-- Lesson Header -->
+<header class="lesson-header">
+    <div class="lesson-meta">
+        {% if level %}
+        <span class="level-badge {{ level|lower }}">{{ level }}</span>
+        {% endif %}
+        {% if syllabus_code %}
+        <span class="syllabus-code">{{ syllabus_code }}</span>
+        {% endif %}
+    </div>
+    <h1>{% block lesson_title %}Lesson Title{% endblock %}</h1>
+    {% if learning_objectives %}
+    <details class="learning-objectives">
+        <summary>📋 Learning Objectives</summary>
+        <ul>
+            {% for obj in learning_objectives %}
+            <li>{{ obj }}</li>
+            {% endfor %}
+        </ul>
+    </details>
+    {% endif %}
+</header>
+
+<!-- Main Content -->
+<main class="lesson-content">
+    {% block content %}
+    <!-- Lesson content goes here -->
+    {% endblock %}
+</main>
+
+<!-- Practice Section -->
+<aside id="practice-section" class="practice-section" style="display: none;">
+    <div class="practice-header">
+        <h2>Practice Problems</h2>
+        <button id="close-practice" class="close-btn">✕</button>
+    </div>
+    <div id="practice-content">
+        <p>Loading practice problems...</p>
+    </div>
+</aside>
+
+<!-- AI Chat Panel -->
+<div id="ai-panel" class="ai-panel" style="display: none;">
+    <div class="ai-header">
+        <h3>💬 Ask About This Lesson</h3>
+        <button id="close-ai" class="close-btn">✕</button>
+    </div>
+    <div id="ai-messages" class="ai-messages"></div>
+    <div class="ai-input-area">
+        <textarea id="ai-input" placeholder="Ask a question about this topic..." rows="2"></textarea>
+        <button id="ai-send">Send</button>
+    </div>
+</div>
+
+<!-- Footer Navigation -->
+<footer class="lesson-footer">
+    <div class="footer-nav">
+        {% if prev_lesson %}
+        <a href="{{ prev_lesson.url }}" class="footer-link prev">
+            ← {{ prev_lesson.title }}
+        </a>
+        {% else %}
+        <span class="footer-link disabled">← Previous</span>
+        {% endif %}
+
+        <a href="{{ subject_url }}" class="footer-link index">📚 All Lessons</a>
+
+        {% if next_lesson %}
+        <a href="{{ next_lesson.url }}" class="footer-link next">
+            {{ next_lesson.title }} →
+        </a>
+        {% else %}
+        <span class="footer-link disabled">Next →</span>
+        {% endif %}
+    </div>
+</footer>
+
+<script>
+// Context-aware AI chat
+const LESSON_CONTEXT = {
+    subject: "{{ subject_name }}",
+    lesson: "{% block lesson_title %}{% endblock %}",
+    syllabus: "{{ syllabus_code }}",
+    level: "{{ level }}"
+};
+
+document.getElementById('ai-help-btn').addEventListener('click', () => {
+    document.getElementById('ai-panel').style.display = 'block';
+});
+
+document.getElementById('close-ai').addEventListener('click', () => {
+    document.getElementById('ai-panel').style.display = 'none';
+});
+
+document.getElementById('ai-send').addEventListener('click', async () => {
+    const input = document.getElementById('ai-input');
+    const question = input.value.trim();
+    if (!question) return;
+
+    const messagesDiv = document.getElementById('ai-messages');
+    messagesDiv.innerHTML += `<div class="msg user">${question}</div>`;
+    input.value = '';
+
+    messagesDiv.innerHTML += `<div class="msg ai">Thinking...</div>`;
+
+    try {
+        const response = await fetch('/chat', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-Token': '{{ csrf_token() }}'
+            },
+            body: JSON.stringify({
+                message: question,
+                context: LESSON_CONTEXT
+            })
+        });
+
+        const data = await response.json();
+        const aiMsgs = messagesDiv.querySelectorAll('.msg.ai');
+        aiMsgs[aiMsgs.length - 1].textContent = data.response || 'Sorry, I had trouble with that.';
+    } catch (err) {
+        console.error(err);
+        const aiMsgs = messagesDiv.querySelectorAll('.msg.ai');
+        aiMsgs[aiMsgs.length - 1].textContent = 'Error connecting to AI.';
+    }
+
+    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+});
+
+// Practice problems
+document.getElementById('practice-btn').addEventListener('click', async () => {
+    const section = document.getElementById('practice-section');
+    section.style.display = 'block';
+
+    const content = document.getElementById('practice-content');
+    content.innerHTML = '<p>Loading...</p>';
+
+    try {
+        const response = await fetch('/generate_practice', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-Token': '{{ csrf_token() }}'
+            },
+            body: JSON.stringify({
+                context: LESSON_CONTEXT
+            })
+        });
+
+        const data = await response.json();
+        content.innerHTML = data.html || '<p>No practice problems available.</p>';
+    } catch (err) {
+        content.innerHTML = '<p>Error loading practice problems.</p>';
+    }
+});
+
+document.getElementById('close-practice').addEventListener('click', () => {
+    document.getElementById('practice-section').style.display = 'none';
+});
+
+// Mark lesson as viewed
+fetch('/mark_viewed', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+        'X-CSRF-Token': '{{ csrf_token() }}'
+    },
+    body: JSON.stringify({
+        subject: '{{ subject_key }}',
+        lesson: '{{ lesson_id }}'
+    })
+});
+</script>
+
+{% block extra_scripts %}{% endblock %}
+
+</body>
+</html>

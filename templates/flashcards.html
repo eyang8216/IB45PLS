@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flashcard Review — {{ subject }}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<style>
+.flashcard-container {
+    max-width: 600px;
+    margin: 3rem auto;
+    padding: 2rem;
+}
+
+.flashcard {
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 3rem;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+    box-shadow: var(--shadow);
+}
+
+.flashcard:hover {
+    transform: scale(1.02);
+}
+
+.flashcard.flipped {
+    background: var(--bg-secondary);
+}
+
+.card-content {
+    font-size: 1.5rem;
+    line-height: 1.6;
+}
+
+.card-side-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.quality-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    justify-content: center;
+}
+
+.quality-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--radius);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.quality-btn.again {
+    background: #fecaca;
+    color: #991b1b;
+}
+
+.quality-btn.hard {
+    background: #fed7aa;
+    color: #9a3412;
+}
+
+.quality-btn.good {
+    background: #bfdbfe;
+    color: #1e40af;
+}
+
+.quality-btn.easy {
+    background: #bbf7d0;
+    color: #166534;
+}
+
+.quality-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.progress-info {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--text-secondary);
+}
+
+.completion-message {
+    text-align: center;
+    padding: 3rem;
+}
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+    <div class="nav-left">
+        <a href="/" class="nav-brand">IB45PLS</a>
+    </div>
+    <div class="nav-right">
+        <a href="/dashboard" class="nav-link">Dashboard</a>
+    </div>
+</nav>
+
+<div class="flashcard-container">
+    <div class="progress-info">
+        <h2 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem;">{{ subject }} Flashcards</h2>
+        <p><span id="current-card">1</span> / {{ total_due }} cards due for review</p>
+    </div>
+
+    {% if cards %}
+    <div id="flashcard-deck">
+        <div class="flashcard" id="flashcard" onclick="flipCard()">
+            <div class="card-side-label" id="side-label">Question</div>
+            <div class="card-content" id="card-content">
+                {{ cards[0].front }}
+            </div>
+        </div>
+
+        <div class="quality-buttons" id="quality-buttons" style="display: none;">
+            <button class="quality-btn again" onclick="rateCard(0)">
+                Again<br><small>< 1 day</small>
+            </button>
+            <button class="quality-btn hard" onclick="rateCard(2)">
+                Hard<br><small>~3 days</small>
+            </button>
+            <button class="quality-btn good" onclick="rateCard(3)">
+                Good<br><small>~6 days</small>
+            </button>
+            <button class="quality-btn easy" onclick="rateCard(5)">
+                Easy<br><small>~10+ days</small>
+            </button>
+        </div>
+    </div>
+    {% else %}
+    <div class="completion-message">
+        <h2 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem;">🎉 All caught up!</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 2rem;">No flashcards due for review right now.</p>
+        <a href="/dashboard" class="btn btn-primary" style="display: inline-block; padding: 0.75rem 1.5rem; background: var(--accent); color: white; text-decoration: none; border-radius: var(--radius); font-weight: 500;">Back to Dashboard</a>
+    </div>
+    {% endif %}
+</div>
+
+<script>
+const cards = {{ cards | tojson }};
+let currentIndex = 0;
+let isFlipped = false;
+
+function flipCard() {
+    const flashcard = document.getElementById('flashcard');
+    const content = document.getElementById('card-content');
+    const label = document.getElementById('side-label');
+    const buttons = document.getElementById('quality-buttons');
+
+    isFlipped = !isFlipped;
+    flashcard.classList.toggle('flipped');
+
+    if (isFlipped) {
+        label.textContent = 'Answer';
+        content.textContent = cards[currentIndex].back;
+        buttons.style.display = 'flex';
+    } else {
+        label.textContent = 'Question';
+        content.textContent = cards[currentIndex].front;
+        buttons.style.display = 'none';
+    }
+}
+
+async function rateCard(quality) {
+    // Submit rating
+    await fetch('/review_flashcard', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': '{{ csrf_token }}'
+        },
+        body: JSON.stringify({
+            subject: '{{ subject }}',
+            card_index: currentIndex,
+            quality: quality
+        })
+    });
+
+    // Move to next card
+    currentIndex++;
+    document.getElementById('current-card').textContent = currentIndex + 1;
+
+    if (currentIndex >= cards.length) {
+        // All cards reviewed
+        document.getElementById('flashcard-deck').innerHTML = `
+            <div class="completion-message">
+                <h2 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem;">🎉 Review Complete!</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 2rem;">You've reviewed all ${cards.length} cards.</p>
+                <a href="/dashboard" class="btn btn-primary" style="display: inline-block; padding: 0.75rem 1.5rem; background: var(--accent); color: white; text-decoration: none; border-radius: var(--radius); font-weight: 500;">Back to Dashboard</a>
+            </div>
+        `;
+    } else {
+        // Show next card
+        isFlipped = false;
+        const flashcard = document.getElementById('flashcard');
+        const content = document.getElementById('card-content');
+        const label = document.getElementById('side-label');
+        const buttons = document.getElementById('quality-buttons');
+
+        flashcard.classList.remove('flipped');
+        label.textContent = 'Question';
+        content.textContent = cards[currentIndex].front;
+        buttons.style.display = 'none';
+    }
+}
+</script>
+
+</body>
+</html>
