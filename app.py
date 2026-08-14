@@ -66,21 +66,21 @@ LOGIN_ATTEMPTS = {}  # {ip: [timestamp, timestamp, ...]}
 MAX_ATTEMPTS = 5      # Max attempts
 ATTEMPT_WINDOW = 300   # 5-minute window
 
-# ── Chat/grading rate limiter (per user, 30 req/hour) ──
+# ── Chat/grading rate limiter (per user, 60 req/hour) ──
 USER_REQUESTS = {}     # {username: [timestamp, timestamp, ...]}
-MAX_REQUESTS_HOUR = 30  # 30 AI requests per user per hour
+MAX_REQUESTS_HOUR = 60  # 60 AI requests per user per hour
 REQUEST_WINDOW = 3600   # 1-hour window
 
 # Subject configuration
 SUBJECTS = {
     "economics": {
-        "name": "Economics SL",
+        "name": "Economics HL",
         "icon": "📊",
         "color": "#2c6b4f",
         "folder": "subjects/economics",
         "index": "index.html",
-        "description": "IB Economics SL — 57 lessons",
-        "total_lessons": 57
+        "description": "IB Economics HL — 67 lessons (SL + HL extensions)",
+        "total_lessons": 67
     },
     "chemistry": {
         "name": "Chemistry HL",
@@ -148,7 +148,7 @@ SUBJECTS = {
     }
 }
 
-SYSTEM_PROMPT = """You are a friendly, encouraging IB tutor assistant. You help students learn Economics SL, Chemistry HL, Physics HL, Math AA HL, Chinese Lang Lit SL, English Lang Lit SL, and Biology HL.
+SYSTEM_PROMPT = """You are a friendly, encouraging IB tutor assistant. You help students learn Economics HL, Chemistry HL, Physics HL, Math AA HL, Chinese Lang Lit SL, English Lang Lit SL, and Biology HL.
 
 Your teaching style:
 - Break down complex concepts into simple explanations
@@ -160,8 +160,8 @@ Your teaching style:
 - Be encouraging and celebrate understanding — these are challenging IB subjects!
 
 Subject context available:
-- Economics SL: Micro, Macro, International, Development — 57 lessons
-- Chemistry HL: Stoichiometry, Atomic Structure, Bonding, Energetics, Kinetics, Equilibrium, Acids/Bases, Redox, Organic — 41 lessons  
+- Economics HL: Micro, Macro, International, Development + HL extensions (Theory of the Firm, Game Theory, Asymmetric Information) — 67 lessons
+- Chemistry HL: Stoichiometry, Atomic Structure, Bonding, Energetics, Kinetics, Equilibrium, Acids/Bases, Redox, Organic — 41 lessons
 - Physics HL: Mechanics, Thermal, Waves, Electricity, Fields, Quantum, Relativity, Nuclear — 67 lessons
 - Math AA HL: Algebra, Functions, Trigonometry, Calculus, Vectors, Stats, Probability — 50 lessons
 - Biology HL: Water, Nucleic Acids, Cells, Evolution, Biodiversity, Carbohydrates, Lipids, Proteins, Membranes, Organelles, Respiration, Photosynthesis, Genetics, Ecology, Human Physiology — 54 lessons
@@ -292,38 +292,44 @@ NAV_CSS = """
 """
 
 CHATBOT_CSS = """
-/* ── Chatbot Widget ── */
+/* ── Chatbot Widget (Resizable) ── */
 #lessons-chatbot { position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 9999; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
-#lessons-chatbot .chatbot-toggle { display: flex; align-items: center; gap: 0.5rem; padding: 0.7rem 1.3rem; background: #1a1a2e; color: white; border: none; border-radius: 50px; font-size: 0.95rem; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.25); transition: all 0.2s; }
-#lessons-chatbot .chatbot-toggle:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.35); background: #16213e; }
-#lessons-chatbot .chatbot-icon { font-size: 1.4rem; margin-right: 0.1rem; }
-#lessons-chatbot .chatbot-window { position: absolute; bottom: 70px; right: 0; width: 420px; max-height: 600px; background: white; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.25); display: flex; flex-direction: column; overflow: hidden; border: 1px solid #ddd; }
+#lessons-chatbot .chatbot-toggle { display: flex; align-items: center; gap: 0.5rem; padding: 0.875rem 1.5rem; background: linear-gradient(135deg, #1e3a8a, #3b82f6); color: white; border: none; border-radius: 50px; font-size: 0.9375rem; font-weight: 500; cursor: pointer; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
+#lessons-chatbot .chatbot-toggle:hover { transform: translateY(-2px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); background: linear-gradient(135deg, #1e40af, #2563eb); }
+#lessons-chatbot .chatbot-icon { font-size: 1.5rem; }
+#lessons-chatbot .chatbot-window { position: absolute; bottom: 70px; right: 0; width: 420px; height: 600px; background: white; border-radius: 16px; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); display: flex; flex-direction: column; overflow: hidden; border: 1px solid #e5e7eb; resize: both; min-width: 320px; min-height: 400px; max-width: 800px; max-height: 80vh; }
 #lessons-chatbot .chatbot-window.hidden { display: none; }
-#lessons-chatbot .chatbot-header { background: linear-gradient(135deg, #1a1a2e, #16213e); color: white; padding: 0.8rem 1rem; position: relative; }
-#lessons-chatbot .chatbot-header h3 { font-size: 1rem; font-weight: 600; margin: 0 0 0.1rem; color: white; }
-#lessons-chatbot .chatbot-header p { font-size: 0.75rem; opacity: 0.8; margin: 0; }
-#lessons-chatbot .chatbot-close { position: absolute; top: 0.5rem; right: 0.7rem; background: none; border: none; color: white; font-size: 1.1rem; cursor: pointer; opacity: 0.7; }
-#lessons-chatbot .chatbot-close:hover { opacity: 1; }
-#lessons-chatbot .chatbot-messages { flex: 1; overflow-y: auto; padding: 0.8rem; display: flex; flex-direction: column; gap: 0.6rem; max-height: 420px; background: #fafaf8; }
-#lessons-chatbot .chatbot-messages .msg { display: flex; }
+#lessons-chatbot .chatbot-window::after { content: ''; position: absolute; bottom: 0; right: 0; width: 16px; height: 16px; background: linear-gradient(135deg, transparent 50%, #d1d5db 50%); cursor: nwse-resize; pointer-events: none; }
+#lessons-chatbot .chatbot-header { background: linear-gradient(135deg, #1e3a8a, #3b82f6); color: white; padding: 1rem 1.25rem; position: relative; flex-shrink: 0; cursor: move; }
+#lessons-chatbot .chatbot-header h3 { font-size: 1.0625rem; font-weight: 600; margin: 0 0 0.25rem; color: white; }
+#lessons-chatbot .chatbot-header p { font-size: 0.8125rem; opacity: 0.9; margin: 0; }
+#lessons-chatbot .chatbot-close { position: absolute; top: 0.75rem; right: 0.875rem; background: none; border: none; color: white; font-size: 1.25rem; cursor: pointer; opacity: 0.8; width: 2rem; height: 2rem; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.2s; }
+#lessons-chatbot .chatbot-close:hover { opacity: 1; background: rgba(255,255,255,0.1); }
+#lessons-chatbot .chatbot-messages { flex: 1; overflow-y: auto; padding: 1rem; display: flex; flex-direction: column; gap: 0.75rem; background: #f9fafb; }
+#lessons-chatbot .chatbot-messages .msg { display: flex; animation: msgSlide 0.3s ease; }
+@keyframes msgSlide { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 #lessons-chatbot .chatbot-messages .msg.user { justify-content: flex-end; }
-#lessons-chatbot .chatbot-messages .msg-content { max-width: 85%; padding: 0.6rem 0.9rem; border-radius: 16px; font-size: 0.85rem; line-height: 1.5; }
-#lessons-chatbot .chatbot-messages .msg.user .msg-content { background: #1a1a2e; color: white; border-bottom-right-radius: 4px; }
-#lessons-chatbot .chatbot-messages .msg.bot .msg-content { background: white; border: 1px solid #e0e0e0; border-bottom-left-radius: 4px; }
-#lessons-chatbot .chatbot-messages .msg-content p { margin: 0 0 0.3rem; }
+#lessons-chatbot .chatbot-messages .msg-content { max-width: 85%; padding: 0.75rem 1rem; border-radius: 12px; font-size: 0.9375rem; line-height: 1.6; word-wrap: break-word; }
+#lessons-chatbot .chatbot-messages .msg.user .msg-content { background: linear-gradient(135deg, #1e3a8a, #3b82f6); color: white; border-bottom-right-radius: 4px; }
+#lessons-chatbot .chatbot-messages .msg.bot .msg-content { background: white; border: 1px solid #e5e7eb; border-bottom-left-radius: 4px; color: #1a1d26; }
+#lessons-chatbot .chatbot-messages .msg-content p { margin: 0 0 0.5rem; }
 #lessons-chatbot .chatbot-messages .msg-content p:last-child { margin-bottom: 0; }
-#lessons-chatbot .chatbot-input-area { display: flex; gap: 0.3rem; padding: 0.6rem 0.7rem; border-top: 1px solid #e0e0e0; background: white; }
-#lessons-chatbot .chatbot-input-area textarea { flex: 1; border: 1px solid #ddd; border-radius: 18px; padding: 0.5rem 0.9rem; font-size: 0.85rem; font-family: inherit; resize: none; outline: none; max-height: 90px; }
-#lessons-chatbot .chatbot-input-area textarea:focus { border-color: #1a1a2e; }
-#lessons-chatbot .chatbot-input-area button { width: 36px; height: 36px; border-radius: 50%; border: none; background: #1a1a2e; color: white; font-size: 1rem; cursor: pointer; flex-shrink: 0; }
-#lessons-chatbot .chatbot-input-area button:disabled { background: #ccc; }
-#lessons-chatbot .chatbot-status { text-align: center; font-size: 0.7rem; color: #999; padding: 0.2rem; min-height: 20px; }
-#lessons-chatbot .typing { display: flex; gap: 4px; padding: 0.4rem 0; }
-#lessons-chatbot .typing span { width: 7px; height: 7px; border-radius: 50%; background: #aaa; animation: lcb 1.4s ease-in-out infinite; }
+#lessons-chatbot .chatbot-messages .msg-content code { background: rgba(0,0,0,0.05); padding: 0.125rem 0.375rem; border-radius: 4px; font-family: 'SF Mono', 'Monaco', 'Consolas', monospace; font-size: 0.875em; }
+#lessons-chatbot .chatbot-messages .msg.user .msg-content code { background: rgba(255,255,255,0.2); }
+#lessons-chatbot .chatbot-input-area { display: flex; align-items: flex-end; gap: 0.5rem; padding: 0.875rem; border-top: 1px solid #e5e7eb; background: white; flex-shrink: 0; }
+#lessons-chatbot .chatbot-input-area textarea { flex: 1; border: 1.5px solid #d1d5db; border-radius: 12px; padding: 0.75rem 1rem; font-size: 0.9375rem; font-family: inherit; resize: none; outline: none; max-height: 120px; transition: border-color 0.2s; }
+#lessons-chatbot .chatbot-input-area textarea:focus { border-color: #3b82f6; }
+#lessons-chatbot .chatbot-input-area button { width: 40px; height: 40px; border-radius: 50%; border: none; background: linear-gradient(135deg, #1e3a8a, #3b82f6); color: white; font-size: 1.125rem; cursor: pointer; flex-shrink: 0; transition: all 0.2s; display: flex; align-items: center; justify-content: center; }
+#lessons-chatbot .chatbot-input-area button:hover:not(:disabled) { background: linear-gradient(135deg, #1e40af, #2563eb); transform: scale(1.05); }
+#lessons-chatbot .chatbot-input-area button:disabled { background: #d1d5db; cursor: not-allowed; opacity: 0.6; }
+#lessons-chatbot .chatbot-status { text-align: center; font-size: 0.75rem; color: #9ca3af; padding: 0.375rem; min-height: 24px; }
+#lessons-chatbot .typing { display: flex; gap: 4px; padding: 0.5rem 0; }
+#lessons-chatbot .typing span { width: 8px; height: 8px; border-radius: 50%; background: #9ca3af; animation: lcb 1.4s ease-in-out infinite; }
 #lessons-chatbot .typing span:nth-child(2) { animation-delay: 0.2s; }
 #lessons-chatbot .typing span:nth-child(3) { animation-delay: 0.4s; }
-@keyframes lcb { 0%,60%,100%{transform:translateY(0);opacity:0.4} 30%{transform:translateY(-5px);opacity:1} }
-@media (max-width: 420px) { #lessons-chatbot .chatbot-window { width: calc(100vw - 1.5rem); right: -0.2rem; } }
+@keyframes lcb { 0%,60%,100%{transform:translateY(0);opacity:0.4} 30%{transform:translateY(-6px);opacity:1} }
+@media (max-width: 768px) { #lessons-chatbot .chatbot-window { width: calc(100vw - 2rem); right: -0.5rem; max-width: 100%; } #lessons-chatbot { right: 1rem; bottom: 1rem; } }
+@media (max-width: 480px) { #lessons-chatbot .chatbot-window { width: calc(100vw - 1rem); height: calc(100vh - 120px); max-height: calc(100vh - 120px); } }
 """
 
 CHATBOT_HTML = """
